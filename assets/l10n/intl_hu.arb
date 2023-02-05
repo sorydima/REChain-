@@ -1,0 +1,2395 @@
+{
+"@@locale": "hu",
+"@@last_modified": "2021-08-14 12:41:10.016566",
+"about": "Névjegy",
+"@about": {
+"type": "text",
+"placeholders": {}
+},
+"accept": "Elfogadás",
+"@accept": {
+"type": "text",
+"placeholders": {}
+},
+"acceptedTheInvitation": "{username} elfogadta a meghívást",
+"@acceptedTheInvitation": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"account": "Fiók",
+"@account": {
+"type": "text",
+"placeholders": {}
+},
+"accountInformation": "Fiókinformációk",
+"@accountInformation": {
+"type": "text",
+"placeholders": {}
+},
+"activatedEndToEndEncryption": "{username} aktiválta a végpontok közötti titkosítást",
+"@activatedEndToEndEncryption": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"addGroupDescription": "Csoportleírás hozzáadása",
+"@addGroupDescription": {
+"type": "text",
+"placeholders": {}
+},
+"admin": "Admin",
+"@admin": {
+"type": "text",
+"placeholders": {}
+},
+"alias": "álnév",
+"@alias": {
+"type": "text",
+"placeholders": {}
+},
+"alreadyHaveAnAccount": "Van már fiókod?",
+"@alreadyHaveAnAccount": {
+"type": "text",
+"placeholders": {}
+},
+"answeredTheCall": "{senderName} megválaszolta a hívást",
+"@answeredTheCall": {
+"type": "text",
+"placeholders": {
+"senderName": {}
+}
+},
+"anyoneCanJoin": "Bárki csatlakozhat",
+"@anyoneCanJoin": {
+"type": "text",
+"placeholders": {}
+},
+"archive": "Archívum",
+"@archive": {
+"type": "text",
+"placeholders": {}
+},
+"archivedRoom": "Archivált szoba",
+"@archivedRoom": {
+"type": "text",
+"placeholders": {}
+},
+"areGuestsAllowedToJoin": "Csatlakozhatnak-e vendégek",
+"@areGuestsAllowedToJoin": {
+"type": "text",
+"placeholders": {}
+},
+"areYouSure": "Biztos?",
+"@areYouSure": {
+"type": "text",
+"placeholders": {}
+},
+"askSSSSCache": "A kulcsok gyorsítótárazásához meg kell adni a biztonságos tárolóhoz tartozó jelmondatot vagy a visszaállítási kulcsot.",
+"@askSSSSCache": {
+"type": "text",
+"placeholders": {}
+},
+"askSSSSSign": "A másik fél igazolásához meg kell adni a biztonságos tárolóhoz tartozó jelmondatot vagy a visszaállítási kulcsot.",
+"@askSSSSSign": {
+"type": "text",
+"placeholders": {}
+},
+"askSSSSVerify": "A munkamenet hitelesítéséhez meg kell adni a biztonságos tárolóhoz tartozó jelmondatot vagy a visszaállítási kulcsot.",
+"@askSSSSVerify": {
+"type": "text",
+"placeholders": {}
+},
+"askVerificationRequest": "Elfogadod {username} hitelesítési kérelmét?",
+"@askVerificationRequest": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"authentication": "Hitelesítés",
+"@authentication": {
+"type": "text",
+"placeholders": {}
+},
+"avatarHasBeenChanged": "A profilkép megváltozott",
+"@avatarHasBeenChanged": {
+"type": "text",
+"placeholders": {}
+},
+"banFromChat": "Kitiltás a csevegésből",
+"@banFromChat": {
+"type": "text",
+"placeholders": {}
+},
+"banned": "Kitiltva",
+"@banned": {
+"type": "text",
+"placeholders": {}
+},
+"bannedUser": "{username} kitiltotta: {targetName}",
+"@bannedUser": {
+"type": "text",
+"placeholders": {
+"username": {},
+"targetName": {}
+}
+},
+"blockDevice": "Eszköz blokkolása",
+"@blockDevice": {
+"type": "text",
+"placeholders": {}
+},
+"cachedKeys": "Kulcsok gyorsítótárazása sikeres",
+"@cachedKeys": {
+"type": "text",
+"placeholders": {}
+},
+"cancel": "Mégse",
+"@cancel": {
+"type": "text",
+"placeholders": {}
+},
+"changeDeviceName": "Eszköznév módosítása",
+"@changeDeviceName": {
+"type": "text",
+"placeholders": {}
+},
+"changedTheChatAvatar": "{username} módosította a csevegési profilképét",
+"@changedTheChatAvatar": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"changedTheChatDescriptionTo": "{username} módosította a csevegés leírását erre: „{description}”",
+"@changedTheChatDescriptionTo": {
+"type": "text",
+"placeholders": {
+"username": {},
+"description": {}
+}
+},
+"changedTheChatNameTo": "{username} módosította a csevegés nevét erre: „{chatname}”",
+"@changedTheChatNameTo": {
+"type": "text",
+"placeholders": {
+"username": {},
+"chatname": {}
+}
+},
+"changedTheChatPermissions": "{username} módosította a csevegési engedélyeket",
+"@changedTheChatPermissions": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"changedTheDisplaynameTo": "{username} módosította a megjenelítési nevét erre: {displayname}",
+"@changedTheDisplaynameTo": {
+"type": "text",
+"placeholders": {
+"username": {},
+"displayname": {}
+}
+},
+"changedTheGuestAccessRules": "{username} módosította a vendégek hozzáférési szabályait",
+"@changedTheGuestAccessRules": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"changedTheGuestAccessRulesTo": "{username} módosította a vendégek hozzáférési szabályait, így: {rules}",
+"@changedTheGuestAccessRulesTo": {
+"type": "text",
+"placeholders": {
+"username": {},
+"rules": {}
+}
+},
+"changedTheHistoryVisibility": "{username} módosította az előzmények láthatóságát",
+"@changedTheHistoryVisibility": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"changedTheHistoryVisibilityTo": "{username} módosította az előzmények láthatóságát, így: {rules}",
+"@changedTheHistoryVisibilityTo": {
+"type": "text",
+"placeholders": {
+"username": {},
+"rules": {}
+}
+},
+"changedTheJoinRules": "{username} módosított a csatlakozási szabályokat",
+"@changedTheJoinRules": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"changedTheJoinRulesTo": "{username} módosította a csatlakozási szabályokat, így: {joinRules}",
+"@changedTheJoinRulesTo": {
+"type": "text",
+"placeholders": {
+"username": {},
+"joinRules": {}
+}
+},
+"changedTheProfileAvatar": "{username} módosította a profilképét",
+"@changedTheProfileAvatar": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"changedTheRoomAliases": "{username} módosította a szoba álneveit",
+"@changedTheRoomAliases": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"changedTheRoomInvitationLink": "{username} módosította a meghívó hivatkozást",
+"@changedTheRoomInvitationLink": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"changelog": "Változásnapló",
+"@changelog": {
+"type": "text",
+"placeholders": {}
+},
+"changePassword": "Jelszó módosítása",
+"@changePassword": {
+"type": "text",
+"placeholders": {}
+},
+"changesHaveBeenSaved": "A változások mentve",
+"@changesHaveBeenSaved": {
+"type": "text",
+"placeholders": {}
+},
+"changeTheHomeserver": "Válts a Katya 👽 AI 🧠 REChain 🪐 Blockchain Node hálózati szervereire",
+"@changeTheHomeserver": {
+"type": "text",
+"placeholders": {}
+},
+"changeTheme": "Stílus módosítása",
+"@changeTheme": {
+"type": "text",
+"placeholders": {}
+},
+"changeTheNameOfTheGroup": "Csoport nevének módosítása",
+"@changeTheNameOfTheGroup": {
+"type": "text",
+"placeholders": {}
+},
+"changeTheServer": "Kiszolgáló módosítása",
+"@changeTheServer": {
+"type": "text",
+"placeholders": {}
+},
+"changeWallpaper": "Háttér módosítása",
+"@changeWallpaper": {
+"type": "text",
+"placeholders": {}
+},
+"channelCorruptedDecryptError": "A titkosítás megsérült",
+"@channelCorruptedDecryptError": {
+"type": "text",
+"placeholders": {}
+},
+"chat": "Csevegés",
+"@chat": {
+"type": "text",
+"placeholders": {}
+},
+"chatDetails": "Csevegés részletei",
+"@chatDetails": {
+"type": "text",
+"placeholders": {}
+},
+"chooseAStrongPassword": "Válassz erős jelszót",
+"@chooseAStrongPassword": {
+"type": "text",
+"placeholders": {}
+},
+"chooseAUsername": "Válassz felhasználónevet",
+"@chooseAUsername": {
+"type": "text",
+"placeholders": {}
+},
+"close": "Bezárás",
+"@close": {
+"type": "text",
+"placeholders": {}
+},
+"compareEmojiMatch": "Hasonlítsd össze az emodzsikat a másik eszközön lévőkkel:",
+"@compareEmojiMatch": {
+"type": "text",
+"placeholders": {}
+},
+"compareNumbersMatch": "Hasonlítsd össze a számokat a másik eszközön lévőkkel:",
+"@compareNumbersMatch": {
+"type": "text",
+"placeholders": {}
+},
+"confirm": "Megerősítés",
+"@confirm": {
+"type": "text",
+"placeholders": {}
+},
+"connect": "Csatlakozás",
+"@connect": {
+"type": "text",
+"placeholders": {}
+},
+"connectionAttemptFailed": "Csatlakozási kísérlet sikertelen",
+"@connectionAttemptFailed": {
+"type": "text",
+"placeholders": {}
+},
+"contactHasBeenInvitedToTheGroup": "Meghívtad az ismerősödet a csoportba",
+"@contactHasBeenInvitedToTheGroup": {
+"type": "text",
+"placeholders": {}
+},
+"contentViewer": "Tartalommegjelenítő",
+"@contentViewer": {
+"type": "text",
+"placeholders": {}
+},
+"copiedToClipboard": "Vágólapra másolva",
+"@copiedToClipboard": {
+"type": "text",
+"placeholders": {}
+},
+"copy": "Másolás",
+"@copy": {
+"type": "text",
+"placeholders": {}
+},
+"couldNotDecryptMessage": "Nem sikerült visszafejteni a titkosított üzenetet: {error}",
+"@couldNotDecryptMessage": {
+"type": "text",
+"placeholders": {
+"error": {}
+}
+},
+"couldNotSetAvatar": "Nem sikerült beállítani a profilképet",
+"@couldNotSetAvatar": {
+"type": "text",
+"placeholders": {}
+},
+"couldNotSetDisplayname": "Nem sikerült beállítani a megjelenítési nevet",
+"@couldNotSetDisplayname": {
+"type": "text",
+"placeholders": {}
+},
+"countParticipants": "{count} résztvevő",
+"@countParticipants": {
+"type": "text",
+"placeholders": {
+"count": {}
+}
+},
+"create": "Létrehozás",
+"@create": {
+"type": "text",
+"placeholders": {}
+},
+"createAccountNow": "Új fiók létrehozása",
+"@createAccountNow": {
+"type": "text",
+"placeholders": {}
+},
+"createdTheChat": "{username} létrehozta a csevegést",
+"@createdTheChat": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"createNewGroup": "Új csoport létrehozása",
+"@createNewGroup": {
+"type": "text",
+"placeholders": {}
+},
+"crossSigningDisabled": "Eszközök közti aláírás kikapcsolva",
+"@crossSigningDisabled": {
+"type": "text",
+"placeholders": {}
+},
+"crossSigningEnabled": "Eszközök közti aláírás bekapcsolva",
+"@crossSigningEnabled": {
+"type": "text",
+"placeholders": {}
+},
+"currentlyActive": "Jelenleg aktív",
+"@currentlyActive": {
+"type": "text",
+"placeholders": {}
+},
+"darkTheme": "Sötét",
+"@darkTheme": {
+"type": "text",
+"placeholders": {}
+},
+"dateAndTimeOfDay": "{date}, {timeOfDay}",
+"@dateAndTimeOfDay": {
+"type": "text",
+"placeholders": {
+"date": {},
+"timeOfDay": {}
+}
+},
+"dateWithoutYear": "{month}. {day}.",
+"@dateWithoutYear": {
+"type": "text",
+"placeholders": {
+"month": {},
+"day": {}
+}
+},
+"dateWithYear": "{year}. {month}. {day}.",
+"@dateWithYear": {
+"type": "text",
+"placeholders": {
+"year": {},
+"month": {},
+"day": {}
+}
+},
+"deactivateAccountWarning": "Ez deaktiválja a felhasználói fiókodat. Ez nem vonható vissza! Biztos vagy benne?",
+"@deactivateAccountWarning": {
+"type": "text",
+"placeholders": {}
+},
+"delete": "Törlés",
+"@delete": {
+"type": "text",
+"placeholders": {}
+},
+"deleteAccount": "Fiók törlése",
+"@deleteAccount": {
+"type": "text",
+"placeholders": {}
+},
+"deleteMessage": "Üzenet törlése",
+"@deleteMessage": {
+"type": "text",
+"placeholders": {}
+},
+"deny": "Elutasítás",
+"@deny": {
+"type": "text",
+"placeholders": {}
+},
+"device": "Eszköz",
+"@device": {
+"type": "text",
+"placeholders": {}
+},
+"devices": "Eszközök",
+"@devices": {
+"type": "text",
+"placeholders": {}
+},
+"discardPicture": "Kép elvetése",
+"@discardPicture": {
+"type": "text",
+"placeholders": {}
+},
+"displaynameHasBeenChanged": "Megjelenítési név megváltozott",
+"@displaynameHasBeenChanged": {
+"type": "text",
+"placeholders": {}
+},
+"donate": "Adományozás",
+"@donate": {
+"type": "text",
+"placeholders": {}
+},
+"downloadFile": "Fájl letöltése",
+"@downloadFile": {
+"type": "text",
+"placeholders": {}
+},
+"editDisplayname": "Megjelenítési név módosítása",
+"@editDisplayname": {
+"type": "text",
+"placeholders": {}
+},
+"editJitsiInstance": "Jitsi példány módosítása",
+"@editJitsiInstance": {
+"type": "text",
+"placeholders": {}
+},
+"emoteExists": "A hangulatjel már létezik!",
+"@emoteExists": {
+"type": "text",
+"placeholders": {}
+},
+"emoteInvalid": "Érvénytelen rövid kód!",
+"@emoteInvalid": {
+"type": "text",
+"placeholders": {}
+},
+"emotePacks": "Hangulatjel-csomagok a szobához",
+"@emotePacks": {
+"type": "text",
+"placeholders": {}
+},
+"emoteSettings": "Hangulatjel-beállítások",
+"@emoteSettings": {
+"type": "text",
+"placeholders": {}
+},
+"emoteShortcode": "Rövid kód a hangulatjelhez",
+"@emoteShortcode": {
+"type": "text",
+"placeholders": {}
+},
+"emoteWarnNeedToPick": "A hangulatjelhez egy képet és egy rövid kódot kell választani!",
+"@emoteWarnNeedToPick": {
+"type": "text",
+"placeholders": {}
+},
+"emptyChat": "Üres csevegés",
+"@emptyChat": {
+"type": "text",
+"placeholders": {}
+},
+"enableEmotesGlobally": "Hangulatjel-csomag engedélyezése globálisan",
+"@enableEmotesGlobally": {
+"type": "text",
+"placeholders": {}
+},
+"enableEncryptionWarning": "Többé nem fogod tudni kikapcsolni a titkosítást. Biztos vagy benne?",
+"@enableEncryptionWarning": {
+"type": "text",
+"placeholders": {}
+},
+"encryption": "Titkosítás",
+"@encryption": {
+"type": "text",
+"placeholders": {}
+},
+"encryptionAlgorithm": "Titkosítási algoritmus",
+"@encryptionAlgorithm": {
+"type": "text",
+"placeholders": {}
+},
+"encryptionNotEnabled": "Titkosítás nincs engedélyezve",
+"@encryptionNotEnabled": {
+"type": "text",
+"placeholders": {}
+},
+"end2endEncryptionSettings": "Végpontok közötti titkosítás beállításai",
+"@end2endEncryptionSettings": {
+"type": "text",
+"placeholders": {}
+},
+"endedTheCall": "{senderName} befejezte a hívást",
+"@endedTheCall": {
+"type": "text",
+"placeholders": {
+"senderName": {}
+}
+},
+"enterAGroupName": "Adj meg egy csoportnevet",
+"@enterAGroupName": {
+"type": "text",
+"placeholders": {}
+},
+"enterAUsername": "Adj meg egy felhasználónevet",
+"@enterAUsername": {
+"type": "text",
+"placeholders": {}
+},
+"enterYourHomeserver": "Lépjen be a Katya 👽 AI 🧠 REChain 🪐 Blockchain Node hálózati szerverébe",
+"@enterYourHomeserver": {
+"type": "text",
+"placeholders": {}
+},
+"fileName": "Fájlnév",
+"@fileName": {
+"type": "text",
+"placeholders": {}
+},
+"fileSize": "Fájlméret",
+"@fileSize": {
+"type": "text",
+"placeholders": {}
+},
+"rechainonline": "REChain.Online",
+"@rechainonline": {
+"type": "text",
+"placeholders": {}
+},
+"forward": "Továbbítás",
+"@forward": {
+"type": "text",
+"placeholders": {}
+},
+"friday": "Péntek",
+"@friday": {
+"type": "text",
+"placeholders": {}
+},
+"fromJoining": "Csatlakozás óta",
+"@fromJoining": {
+"type": "text",
+"placeholders": {}
+},
+"fromTheInvitation": "Meghívás óta",
+"@fromTheInvitation": {
+"type": "text",
+"placeholders": {}
+},
+"group": "Csoport",
+"@group": {
+"type": "text",
+"placeholders": {}
+},
+"groupDescription": "Csoport leírása",
+"@groupDescription": {
+"type": "text",
+"placeholders": {}
+},
+"groupDescriptionHasBeenChanged": "A csoport leírása megváltozott",
+"@groupDescriptionHasBeenChanged": {
+"type": "text",
+"placeholders": {}
+},
+"groupIsPublic": "A csoport nyilvános",
+"@groupIsPublic": {
+"type": "text",
+"placeholders": {}
+},
+"groupWith": "Csoport vele: {displayname}",
+"@groupWith": {
+"type": "text",
+"placeholders": {
+"displayname": {}
+}
+},
+"guestsAreForbidden": "Nem lehetnek vendégek",
+"@guestsAreForbidden": {
+"type": "text",
+"placeholders": {}
+},
+"guestsCanJoin": "Csatlakozhatnak vendégek",
+"@guestsCanJoin": {
+"type": "text",
+"placeholders": {}
+},
+"hasWithdrawnTheInvitationFor": "{username} visszavonta {targetName} meghívását",
+"@hasWithdrawnTheInvitationFor": {
+"type": "text",
+"placeholders": {
+"username": {},
+"targetName": {}
+}
+},
+"help": "Súgó",
+"@help": {
+"type": "text",
+"placeholders": {}
+},
+"hideRedactedEvents": "Visszavont események elrejtése",
+"@hideRedactedEvents": {
+"type": "text",
+"placeholders": {}
+},
+"hideUnknownEvents": "Ismeretlen események elrejtése",
+"@hideUnknownEvents": {
+"type": "text",
+"placeholders": {}
+},
+"homeserverIsNotCompatible": "Ez a szerver nem kompatibilis",
+"@homeserverIsNotCompatible": {
+"type": "text",
+"placeholders": {}
+},
+"id": "ID",
+"@id": {
+"type": "text",
+"placeholders": {}
+},
+"identity": "Azonosító",
+"@identity": {
+"type": "text",
+"placeholders": {}
+},
+"ignoredUsers": "Figyelmen kívül hagyott felhasználók",
+"@ignoredUsers": {
+"type": "text",
+"placeholders": {}
+},
+"ignoreListDescription": "Figyelmen kívül hagyhatja azon felhasználókat, akik zavarják. Nem fog üzeneteket vagy szobameghívókat kapni a személyes listáján szereplő felhasználóktól.",
+"@ignoreListDescription": {
+"type": "text",
+"placeholders": {}
+},
+"ignoreUsername": "Felhasználó figyelmen kívül hagyása",
+"@ignoreUsername": {
+"type": "text",
+"placeholders": {}
+},
+"incorrectPassphraseOrKey": "Hibás jelmondat vagy visszaállítási kulcs",
+"@incorrectPassphraseOrKey": {
+"type": "text",
+"placeholders": {}
+},
+"inviteContact": "Ismerős meghívása",
+"@inviteContact": {
+"type": "text",
+"placeholders": {}
+},
+"inviteContactToGroup": "Ismerős meghívása a(z) {groupName} csoportba",
+"@inviteContactToGroup": {
+"type": "text",
+"placeholders": {
+"groupName": {}
+}
+},
+"invited": "Meghívott",
+"@invited": {
+"type": "text",
+"placeholders": {}
+},
+"invitedUser": "{username} meghívta: {targetName}",
+"@invitedUser": {
+"type": "text",
+"placeholders": {
+"username": {},
+"targetName": {}
+}
+},
+"invitedUsersOnly": "Csak meghívottak",
+"@invitedUsersOnly": {
+"type": "text",
+"placeholders": {}
+},
+"inviteText": "{username} meghívta Önt a REChain.Online platformra! \n1. Telepítse a REChain.Online-t: https://rechain.online \n2. Lépj be vagy regisztrálj! \n3. Nyissa meg a meghívó linkjét: {link}",
+"@inviteText": {
+"type": "text",
+"placeholders": {
+"username": {},
+"link": {}
+}
+},
+"isDeviceKeyCorrect": "Helyes-e a következő eszközkulcs?",
+"@isDeviceKeyCorrect": {
+"type": "text",
+"placeholders": {}
+},
+"isTyping": "gépel…",
+"@isTyping": {
+"type": "text",
+"placeholders": {}
+},
+"joinedTheChat": "{username} csatlakozott a csevegéshez",
+"@joinedTheChat": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"joinRoom": "Csatlakozás a szobához",
+"@joinRoom": {
+"type": "text",
+"placeholders": {}
+},
+"keysCached": "Kulcsok gyorsítótárazva",
+"@keysCached": {
+"type": "text",
+"placeholders": {}
+},
+"keysMissing": "A kulcsok hiányoznak",
+"@keysMissing": {
+"type": "text",
+"placeholders": {}
+},
+"kicked": "{username} kirúgta: {targetName}",
+"@kicked": {
+"type": "text",
+"placeholders": {
+"username": {},
+"targetName": {}
+}
+},
+"kickedAndBanned": "{username} kirúgta és kitiltotta: {targetName}",
+"@kickedAndBanned": {
+"type": "text",
+"placeholders": {
+"username": {},
+"targetName": {}
+}
+},
+"kickFromChat": "Kirúgás a csevegésből",
+"@kickFromChat": {
+"type": "text",
+"placeholders": {}
+},
+"lastActiveAgo": "Utoljára aktív: {localizedTimeShort}",
+"@lastActiveAgo": {
+"type": "text",
+"placeholders": {
+"localizedTimeShort": {}
+}
+},
+"lastSeenIp": "Utoljára látott IP",
+"@lastSeenIp": {
+"type": "text",
+"placeholders": {}
+},
+"lastSeenLongTimeAgo": "Már régen látta",
+"@lastSeenLongTimeAgo": {
+"type": "text",
+"placeholders": {}
+},
+"leave": "Csevegés elhagyása",
+"@leave": {
+"type": "text",
+"placeholders": {}
+},
+"leftTheChat": "Elhagyta a csevegést",
+"@leftTheChat": {
+"type": "text",
+"placeholders": {}
+},
+"license": "Licenc",
+"@license": {
+"type": "text",
+"placeholders": {}
+},
+"lightTheme": "Világos",
+"@lightTheme": {
+"type": "text",
+"placeholders": {}
+},
+"loadCountMoreParticipants": "További {count} résztvevő betöltése",
+"@loadCountMoreParticipants": {
+"type": "text",
+"placeholders": {
+"count": {}
+}
+},
+"loadingPleaseWait": "Betöltés… Várj.",
+"@loadingPleaseWait": {
+"type": "text",
+"placeholders": {}
+},
+"loadMore": "Továbbiak betöltése…",
+"@loadMore": {
+"type": "text",
+"placeholders": {}
+},
+"login": "Bejelentkezés",
+"@login": {
+"type": "text",
+"placeholders": {}
+},
+"logInTo": "Bejelentkezés a {homeserver} szerverre",
+"@logInTo": {
+"type": "text",
+"placeholders": {
+"homeserver": {}
+}
+},
+"logout": "Kijelentkezés",
+"@logout": {
+"type": "text",
+"placeholders": {}
+},
+"makeAModerator": "Kinevezés moderátorrá",
+"@makeAModerator": {
+"type": "text",
+"placeholders": {}
+},
+"makeAnAdmin": "Kinevezés adminná",
+"@makeAnAdmin": {
+"type": "text",
+"placeholders": {}
+},
+"makeSureTheIdentifierIsValid": "Bizonyosodj meg az azonosító helyességéről",
+"@makeSureTheIdentifierIsValid": {
+"type": "text",
+"placeholders": {}
+},
+"mention": "Megemlítés",
+"@mention": {
+"type": "text",
+"placeholders": {}
+},
+"messageWillBeRemovedWarning": "Az üzenet minden résztvevő számára törlődni fog",
+"@messageWillBeRemovedWarning": {
+"type": "text",
+"placeholders": {}
+},
+"moderator": "Moderátor",
+"@moderator": {
+"type": "text",
+"placeholders": {}
+},
+"monday": "Hétfő",
+"@monday": {
+"type": "text",
+"placeholders": {}
+},
+"muteChat": "Csevegés némítása",
+"@muteChat": {
+"type": "text",
+"placeholders": {}
+},
+"needPantalaimonWarning": "Jelenleg a Pantalaimon szükséges a végpontok közötti titkosítás használatához.",
+"@needPantalaimonWarning": {
+"type": "text",
+"placeholders": {}
+},
+"newMessageInrechainonline": "Új üzenet a REChain.Online Platformon!",
+"@newMessageInrechainonline": {
+"type": "text",
+"placeholders": {}
+},
+"newVerificationRequest": "Új hitelesítési kérelem!",
+"@newVerificationRequest": {
+"type": "text",
+"placeholders": {}
+},
+"no": "Nem",
+"@no": {
+"type": "text",
+"placeholders": {}
+},
+"noCrossSignBootstrap": "A REChain.Online jelenleg nem támogatja az eszközök közötti kereszt-aláírást. Kérjük, engedélyezze a REChain 🪐.",
+"@noCrossSignBootstrap": {
+"type": "text",
+"placeholders": {}
+},
+"noEmotesFound": "Nincsenek hangulatjelek. 😕",
+"@noEmotesFound": {
+"type": "text",
+"placeholders": {}
+},
+"noGoogleServicesWarning": "Úgy tűnik, hogy nincsenek Google-szolgáltatások a telefonján. Ez egy jó döntés az Ön magánélete szempontjából! Javasoljuk a microG használatát a REChain.Online Platformon a push értesítések fogadásához: https://microg.org/.",
+"@noGoogleServicesWarning": {
+"type": "text",
+"placeholders": {}
+},
+"noMegolmBootstrap": "A REChain.Online jelenleg nem támogatja az online kulcsmentést. Kérjük, engedélyezze a REChain 🪐.",
+"@noMegolmBootstrap": {
+"type": "text",
+"placeholders": {}
+},
+"none": "Nincs",
+"@none": {
+"type": "text",
+"placeholders": {}
+},
+"noPermission": "Nincsenek engedélyek",
+"@noPermission": {
+"type": "text",
+"placeholders": {}
+},
+"noRoomsFound": "Nem találhatók szobák…",
+"@noRoomsFound": {
+"type": "text",
+"placeholders": {}
+},
+"notSupportedInWeb": "Nem támogatott a weben",
+"@notSupportedInWeb": {
+"type": "text",
+"placeholders": {}
+},
+"numberSelected": "{number} kiválasztva",
+"@numberSelected": {
+"type": "text",
+"placeholders": {
+"number": {}
+}
+},
+"offline": "Offline",
+"@offline": {
+"type": "text",
+"placeholders": {}
+},
+"ok": "OK",
+"@ok": {
+"type": "text",
+"placeholders": {}
+},
+"online": "Online",
+"@online": {
+"type": "text",
+"placeholders": {}
+},
+"onlineKeyBackupDisabled": "Online kulcsmentés letiltva",
+"@onlineKeyBackupDisabled": {
+"type": "text",
+"placeholders": {}
+},
+"onlineKeyBackupEnabled": "Online kulcsmentés engedélyezve",
+"@onlineKeyBackupEnabled": {
+"type": "text",
+"placeholders": {}
+},
+"oopsSomethingWentWrong": "Hoppá, valami baj történt…",
+"@oopsSomethingWentWrong": {
+"type": "text",
+"placeholders": {}
+},
+"openAppToReadMessages": "Alkalmazás megnyitása az üzenetek elolvasásához",
+"@openAppToReadMessages": {
+"type": "text",
+"placeholders": {}
+},
+"openCamera": "Kamera megnyitása",
+"@openCamera": {
+"type": "text",
+"placeholders": {}
+},
+"optionalGroupName": "Csoportnév (nem kötelező)",
+"@optionalGroupName": {
+"type": "text",
+"placeholders": {}
+},
+"participatingUserDevices": "Résztvevő felhasználók eszközei",
+"@participatingUserDevices": {
+"type": "text",
+"placeholders": {}
+},
+"passphraseOrKey": "Jelmondat vagy visszaállítási kulcs",
+"@passphraseOrKey": {
+"type": "text",
+"placeholders": {}
+},
+"password": "Jelszó",
+"@password": {
+"type": "text",
+"placeholders": {}
+},
+"passwordHasBeenChanged": "A jelszó módosítva",
+"@passwordHasBeenChanged": {
+"type": "text",
+"placeholders": {}
+},
+"pickImage": "Kép választása",
+"@pickImage": {
+"type": "text",
+"placeholders": {}
+},
+"pin": "Rögzítés",
+"@pin": {
+"type": "text",
+"placeholders": {}
+},
+"play": "{fileName} lejátszása",
+"@play": {
+"type": "text",
+"placeholders": {
+"fileName": {}
+}
+},
+"pleaseChooseAUsername": "Válassz felhasználónevet",
+"@pleaseChooseAUsername": {
+"type": "text",
+"placeholders": {}
+},
+"pleaseEnterArechainonlineIdentifier": "Adja meg a Katya 👽 AI 🧠 REChain 🪐 Blockchain Node hálózati azonosítóját",
+"@pleaseEnterArechainonlineIdentifier": {
+"type": "text",
+"placeholders": {}
+},
+"pleaseEnterYourPassword": "Add meg a jelszavad",
+"@pleaseEnterYourPassword": {
+"type": "text",
+"placeholders": {}
+},
+"pleaseEnterYourUsername": "Add meg a felhasználónevedet",
+"@pleaseEnterYourUsername": {
+"type": "text",
+"placeholders": {}
+},
+"privacy": "Adatvédelem",
+"@privacy": {
+"type": "text",
+"placeholders": {}
+},
+"publicRooms": "Nyilvános szobák",
+"@publicRooms": {
+"type": "text",
+"placeholders": {}
+},
+"recording": "Felvétel",
+"@recording": {
+"type": "text",
+"placeholders": {}
+},
+"redactedAnEvent": "{username} visszavont egy eseményt",
+"@redactedAnEvent": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"reject": "Elutasítás",
+"@reject": {
+"type": "text",
+"placeholders": {}
+},
+"rejectedTheInvitation": "{username} elutasította a meghívást",
+"@rejectedTheInvitation": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"rejoin": "Újracsatlakozás",
+"@rejoin": {
+"type": "text",
+"placeholders": {}
+},
+"remove": "Eltávolítás",
+"@remove": {
+"type": "text",
+"placeholders": {}
+},
+"removeAllOtherDevices": "Minden más eszköz eltávolítása",
+"@removeAllOtherDevices": {
+"type": "text",
+"placeholders": {}
+},
+"removedBy": "{username} törölte",
+"@removedBy": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"removeDevice": "Eszköz eltávolítása",
+"@removeDevice": {
+"type": "text",
+"placeholders": {}
+},
+"unbanFromChat": "Kitiltás feloldása",
+"@unbanFromChat": {
+"type": "text",
+"placeholders": {}
+},
+"removeMessage": "Üzenet eltávolítása",
+"@removeMessage": {
+"type": "text",
+"placeholders": {}
+},
+"renderRichContent": "Formázott üzenetek megjelenítése",
+"@renderRichContent": {
+"type": "text",
+"placeholders": {}
+},
+"reply": "Válasz",
+"@reply": {
+"type": "text",
+"placeholders": {}
+},
+"requestPermission": "Jogosultság igénylése",
+"@requestPermission": {
+"type": "text",
+"placeholders": {}
+},
+"requestToReadOlderMessages": "Hozzáférés kérése a korábbi üzenetekhez",
+"@requestToReadOlderMessages": {
+"type": "text",
+"placeholders": {}
+},
+"revokeAllPermissions": "Minden jogosultság megvonása",
+"@revokeAllPermissions": {
+"type": "text",
+"placeholders": {}
+},
+"roomHasBeenUpgraded": "A szoba frissítve lett",
+"@roomHasBeenUpgraded": {
+"type": "text",
+"placeholders": {}
+},
+"saturday": "Szombat",
+"@saturday": {
+"type": "text",
+"placeholders": {}
+},
+"searchForAChat": "Csevegés keresése",
+"@searchForAChat": {
+"type": "text",
+"placeholders": {}
+},
+"seenByUser": "{username} látta",
+"@seenByUser": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"seenByUserAndCountOthers": "{count, plural, other{{username} és {count} másik résztvevő látta}}",
+"@seenByUserAndCountOthers": {
+"type": "text",
+"placeholders": {
+"username": {},
+"count": {}
+}
+},
+"seenByUserAndUser": "{username} és {username2} látta",
+"@seenByUserAndUser": {
+"type": "text",
+"placeholders": {
+"username": {},
+"username2": {}
+}
+},
+"send": "Küldés",
+"@send": {
+"type": "text",
+"placeholders": {}
+},
+"sendAMessage": "Üzenet küldése",
+"@sendAMessage": {
+"type": "text",
+"placeholders": {}
+},
+"sendAudio": "Hangüzenet küldése",
+"@sendAudio": {
+"type": "text",
+"placeholders": {}
+},
+"sendBugReports": "Hibajelentések engedélyezése a REChain 🪐-val",
+"@sendBugReports": {
+"type": "text",
+"placeholders": {}
+},
+"sendFile": "Fájl küldése",
+"@sendFile": {
+"type": "text",
+"placeholders": {}
+},
+"sendImage": "Kép küldése",
+"@sendImage": {
+"type": "text",
+"placeholders": {}
+},
+"sendOriginal": "Eredeti küldése",
+"@sendOriginal": {
+"type": "text",
+"placeholders": {}
+},
+"sendVideo": "Videó küldése",
+"@sendVideo": {
+"type": "text",
+"placeholders": {}
+},
+"sentAFile": "{username} fájlt küldött",
+"@sentAFile": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"sentAnAudio": "{username} hangüzenetet küldött",
+"@sentAnAudio": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"sentAPicture": "{username} képet küldött",
+"@sentAPicture": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"sentASticker": "{username} matricát küldött",
+"@sentASticker": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"sentAVideo": "{username} videót küldött",
+"@sentAVideo": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"sentCallInformations": "{senderName} hívásinformációt küldött",
+"@sentCallInformations": {
+"type": "text",
+"placeholders": {
+"senderName": {}
+}
+},
+"sentryInfo": "Adatvédelmi információk: https://rechain.online/en/privacy.html",
+"@sentryInfo": {
+"type": "text",
+"placeholders": {}
+},
+"sessionVerified": "Munkamenet hitelesítve",
+"@sessionVerified": {
+"type": "text",
+"placeholders": {}
+},
+"setAProfilePicture": "Profilkép beállítása",
+"@setAProfilePicture": {
+"type": "text",
+"placeholders": {}
+},
+"setGroupDescription": "Csoportleírás beállítása",
+"@setGroupDescription": {
+"type": "text",
+"placeholders": {}
+},
+"setInvitationLink": "Meghívó hivatkozás beállítása",
+"@setInvitationLink": {
+"type": "text",
+"placeholders": {}
+},
+"setStatus": "Állapot beállítása",
+"@setStatus": {
+"type": "text",
+"placeholders": {}
+},
+"settings": "Beállítások",
+"@settings": {
+"type": "text",
+"placeholders": {}
+},
+"share": "Megosztás",
+"@share": {
+"type": "text",
+"placeholders": {}
+},
+"sharedTheLocation": "{username} megosztotta a pozícióját",
+"@sharedTheLocation": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"signUp": "Feliratkozás",
+"@signUp": {
+"type": "text",
+"placeholders": {}
+},
+"skip": "Kihagyás",
+"@skip": {
+"type": "text",
+"placeholders": {}
+},
+"sourceCode": "Forráskód",
+"@sourceCode": {
+"type": "text",
+"placeholders": {}
+},
+"startedACall": "{senderName} hívást indított",
+"@startedACall": {
+"type": "text",
+"placeholders": {
+"senderName": {}
+}
+},
+"startYourFirstChat": "Kezdj el csevegni :-)",
+"@startYourFirstChat": {
+"type": "text",
+"placeholders": {}
+},
+"statusExampleMessage": "Hogy vagy?",
+"@statusExampleMessage": {
+"type": "text",
+"placeholders": {}
+},
+"submit": "Beküldés",
+"@submit": {
+"type": "text",
+"placeholders": {}
+},
+"sunday": "Vasárnap",
+"@sunday": {
+"type": "text",
+"placeholders": {}
+},
+"systemTheme": "Rendszer",
+"@systemTheme": {
+"type": "text",
+"placeholders": {}
+},
+"tapToShowMenu": "Koppintás a menü megjelenítéséhez",
+"@tapToShowMenu": {
+"type": "text",
+"placeholders": {}
+},
+"theyDontMatch": "Nem egyeznek",
+"@theyDontMatch": {
+"type": "text",
+"placeholders": {}
+},
+"theyMatch": "Megegyeznek",
+"@theyMatch": {
+"type": "text",
+"placeholders": {}
+},
+"thisRoomHasBeenArchived": "Ez a szoba archiválva lett.",
+"@thisRoomHasBeenArchived": {
+"type": "text",
+"placeholders": {}
+},
+"thursday": "Csütörtök",
+"@thursday": {
+"type": "text",
+"placeholders": {}
+},
+"timeOfDay": "{hours24}:{minutes}",
+"@timeOfDay": {
+"type": "text",
+"placeholders": {
+"hours12": {},
+"hours24": {},
+"minutes": {},
+"suffix": {}
+}
+},
+"title": "REChain.Online",
+"@title": {
+"description": "Title for the application",
+"type": "text",
+"placeholders": {}
+},
+"tryToSendAgain": "Újraküldés kísérlete",
+"@tryToSendAgain": {
+"type": "text",
+"placeholders": {}
+},
+"tuesday": "Kedd",
+"@tuesday": {
+"type": "text",
+"placeholders": {}
+},
+"unavailable": "Nem érhető el",
+"@unavailable": {
+"type": "text",
+"placeholders": {}
+},
+"unbannedUser": "{username} feloldotta {targetName} kitiltását",
+"@unbannedUser": {
+"type": "text",
+"placeholders": {
+"username": {},
+"targetName": {}
+}
+},
+"unblockDevice": "Eszköz blokkolásának megszüntetése",
+"@unblockDevice": {
+"type": "text",
+"placeholders": {}
+},
+"unknownDevice": "Ismeretlen eszköz",
+"@unknownDevice": {
+"type": "text",
+"placeholders": {}
+},
+"unknownEncryptionAlgorithm": "Ismeretlen titkosítási algoritmus",
+"@unknownEncryptionAlgorithm": {
+"type": "text",
+"placeholders": {}
+},
+"unknownEvent": "Ismeretlen esemény: „{type}”",
+"@unknownEvent": {
+"type": "text",
+"placeholders": {
+"type": {}
+}
+},
+"unknownSessionVerify": "Ismeretlen munkamenet, kérlek hitelesítsd",
+"@unknownSessionVerify": {
+"type": "text",
+"placeholders": {}
+},
+"unmuteChat": "Csevegés némításának megszüntetése",
+"@unmuteChat": {
+"type": "text",
+"placeholders": {}
+},
+"unpin": "Rögzítés megszüntetése",
+"@unpin": {
+"type": "text",
+"placeholders": {}
+},
+"unreadChats": "{unreadCount, plural, other{{unreadCount} olvasatlan csevegés}}",
+"@unreadChats": {
+"type": "text",
+"placeholders": {
+"unreadCount": {}
+}
+},
+"unreadMessages": "{unreadEvents, plural, other{{unreadEvents} olvasatlan üzenet}}",
+"@unreadMessages": {
+"type": "text",
+"placeholders": {
+"unreadEvents": {}
+}
+},
+"useAmoledTheme": "AMOLED kompatibilis színek használata?",
+"@useAmoledTheme": {
+"type": "text",
+"placeholders": {}
+},
+"userAndOthersAreTyping": "{username} és {count} másik résztvevő gépel…",
+"@userAndOthersAreTyping": {
+"type": "text",
+"placeholders": {
+"username": {},
+"count": {}
+}
+},
+"userAndUserAreTyping": "{username} és {username2} gépel…",
+"@userAndUserAreTyping": {
+"type": "text",
+"placeholders": {
+"username": {},
+"username2": {}
+}
+},
+"userIsTyping": "{username} gépel…",
+"@userIsTyping": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"userLeftTheChat": "{username} elhagyta a csevegést",
+"@userLeftTheChat": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"username": "Felhasználónév",
+"@username": {
+"type": "text",
+"placeholders": {}
+},
+"userSentUnknownEvent": "{username} {type} eseményt küldött",
+"@userSentUnknownEvent": {
+"type": "text",
+"placeholders": {
+"username": {},
+"type": {}
+}
+},
+"verifiedSession": "Sikeresen hitelesítetted a munkamenetedet!",
+"@verifiedSession": {
+"type": "text",
+"placeholders": {}
+},
+"verify": "Hitelesítés",
+"@verify": {
+"type": "text",
+"placeholders": {}
+},
+"verifyManual": "Kézi hitelesítés",
+"@verifyManual": {
+"type": "text",
+"placeholders": {}
+},
+"verifyStart": "Hitelesítés megkezdése",
+"@verifyStart": {
+"type": "text",
+"placeholders": {}
+},
+"verifySuccess": "Sikeres hitelesítés!",
+"@verifySuccess": {
+"type": "text",
+"placeholders": {}
+},
+"verifyTitle": "Másik fiók hitelesítése",
+"@verifyTitle": {
+"type": "text",
+"placeholders": {}
+},
+"verifyUser": "Felhasználó hitelesítése",
+"@verifyUser": {
+"type": "text",
+"placeholders": {}
+},
+"videoCall": "Videóhívás",
+"@videoCall": {
+"type": "text",
+"placeholders": {}
+},
+"visibilityOfTheChatHistory": "Csevegési előzmény láthatósága",
+"@visibilityOfTheChatHistory": {
+"type": "text",
+"placeholders": {}
+},
+"visibleForAllParticipants": "Minden résztvevő számára látható",
+"@visibleForAllParticipants": {
+"type": "text",
+"placeholders": {}
+},
+"visibleForEveryone": "Bárki számára látható",
+"@visibleForEveryone": {
+"type": "text",
+"placeholders": {}
+},
+"voiceMessage": "Hangüzenet",
+"@voiceMessage": {
+"type": "text",
+"placeholders": {}
+},
+"waitingPartnerAcceptRequest": "Várakozás partnerre, amíg elfogadja a kérést…",
+"@waitingPartnerAcceptRequest": {
+"type": "text",
+"placeholders": {}
+},
+"waitingPartnerEmoji": "Várakozás partnere, amíg elfogadja a hangulatjeleket…",
+"@waitingPartnerEmoji": {
+"type": "text",
+"placeholders": {}
+},
+"waitingPartnerNumbers": "Várakozás a partnerre, amíg elfogadja a számokat…",
+"@waitingPartnerNumbers": {
+"type": "text",
+"placeholders": {}
+},
+"wallpaper": "Háttér",
+"@wallpaper": {
+"type": "text",
+"placeholders": {}
+},
+"warning": "Figyelmeztetés!",
+"@warning": {
+"type": "text",
+"placeholders": {}
+},
+"warningEncryptionInBeta": "A végpontok közötti titkosítás egyelőre béta! Csak saját felelősségre!",
+"@warningEncryptionInBeta": {
+"type": "text",
+"placeholders": {}
+},
+"wednesday": "Szerda",
+"@wednesday": {
+"type": "text",
+"placeholders": {}
+},
+"welcomeText": "Üdvözöljük a REChain.Online oldalon! Egy privát és biztos jövő, amely már megérkezett!",
+"@welcomeText": {
+"type": "text",
+"placeholders": {}
+},
+"whoIsAllowedToJoinThisGroup": "Ki csatlakozhat a csoporthoz",
+"@whoIsAllowedToJoinThisGroup": {
+"type": "text",
+"placeholders": {}
+},
+"writeAMessage": "Írj egy üzenetet…",
+"@writeAMessage": {
+"type": "text",
+"placeholders": {}
+},
+"yes": "Igen",
+"@yes": {
+"type": "text",
+"placeholders": {}
+},
+"you": "Te",
+"@you": {
+"type": "text",
+"placeholders": {}
+},
+"youAreInvitedToThisChat": "Meghívtak ebbe a csevegésbe",
+"@youAreInvitedToThisChat": {
+"type": "text",
+"placeholders": {}
+},
+"youAreNoLongerParticipatingInThisChat": "Nem veszel részt ebben a csevegésben",
+"@youAreNoLongerParticipatingInThisChat": {
+"type": "text",
+"placeholders": {}
+},
+"youCannotInviteYourself": "Nem tudod meghívni magadat",
+"@youCannotInviteYourself": {
+"type": "text",
+"placeholders": {}
+},
+"youHaveBeenBannedFromThisChat": "Kitiltottak ebből a csevegésből",
+"@youHaveBeenBannedFromThisChat": {
+"type": "text",
+"placeholders": {}
+},
+"yourOwnUsername": "A saját felhasználóneved",
+"@yourOwnUsername": {
+"type": "text",
+"placeholders": {}
+},
+"withTheseAddressesRecoveryDescription": "Ezzekkel a címekkel vissza tudod állítani a jelszavad, ha szükséges",
+"@withTheseAddressesRecoveryDescription": {
+"type": "text",
+"placeholders": {}
+},
+"weSentYouAnEmail": "Küldtünk neked egy emailt",
+"@weSentYouAnEmail": {
+"type": "text",
+"placeholders": {}
+},
+"passwordRecovery": "Jelszó visszaállítás",
+"@passwordRecovery": {
+"type": "text",
+"placeholders": {}
+},
+"noPasswordRecoveryDescription": "Még nem adtál meg semmilyen módot a jelszavad visszaállítására",
+"@noPasswordRecoveryDescription": {
+"type": "text",
+"placeholders": {}
+},
+"inviteForMe": "Meghívás nekem",
+"@inviteForMe": {
+"type": "text",
+"placeholders": {}
+},
+"iHaveClickedOnLink": "Rákattintottam a linkre",
+"@iHaveClickedOnLink": {
+"type": "text",
+"placeholders": {}
+},
+"enterAnEmailAddress": "Adj meg egy email címet",
+"@enterAnEmailAddress": {
+"type": "text",
+"placeholders": {}
+},
+"encrypted": "Titkosított",
+"@encrypted": {
+"type": "text",
+"placeholders": {}
+},
+"edit": "Szerkeszt",
+"@edit": {
+"type": "text",
+"placeholders": {}
+},
+"directChats": "Közvetlen beszélgetés",
+"@directChats": {
+"type": "text",
+"placeholders": {}
+},
+"deviceId": "Eszköz ID",
+"@deviceId": {
+"type": "text",
+"placeholders": {}
+},
+"botMessages": "Bot üzenetek",
+"@botMessages": {
+"type": "text",
+"placeholders": {}
+},
+"repeatPassword": "Jelszó megismétlése",
+"@repeatPassword": {},
+"addEmail": "E-mail-cím hozzáadása",
+"@addEmail": {
+"type": "text",
+"placeholders": {}
+},
+"addNewFriend": "Új barát hozzáadása",
+"@addNewFriend": {
+"type": "text",
+"placeholders": {}
+},
+"all": "Összes",
+"@all": {
+"type": "text",
+"placeholders": {}
+},
+"allChats": "Összes csevegés",
+"@allChats": {
+"type": "text",
+"placeholders": {}
+},
+"autoplayImages": "Animált matricák és hangulatjelek automatikus lejátszása",
+"@autoplayImages": {
+"type": "text",
+"placeholder": {}
+},
+"sendOnEnter": "Küldés Enterrel",
+"@sendOnEnter": {},
+"cantOpenUri": "A(z) {uri} URI nem nyitható meg",
+"@cantOpenUri": {
+"type": "text",
+"placeholders": {
+"uri": {}
+}
+},
+"changeYourAvatar": "Profilkép módosítása",
+"@changeYourAvatar": {
+"type": "text",
+"placeholders": {}
+},
+"yourUserId": "Saját felhasználóazonosító:",
+"@yourUserId": {},
+"addToSpace": "Hozzáadás térhez",
+"@addToSpace": {},
+"areYouSureYouWantToLogout": "Biztos, hogy kijelentkezik?",
+"@areYouSureYouWantToLogout": {
+"type": "text",
+"placeholders": {}
+},
+"audioPlayerPlay": "Lejátszás",
+"@audioPlayerPlay": {
+"type": "text",
+"placeholders": {}
+},
+"badServerLoginTypesException": "A Katya 👽 AI 🧠 REChain 🪐 Blockchain Node Network szerver a következő bejelentkezéseket támogatja: \n {serverVersions} \nDe csak az alkalmazás támogatja: \n {supportedVersions}",
+"@badServerLoginTypesException": {
+"type": "text",
+"placeholders": {
+"serverVersions": {},
+"supportedVersions": {}
+}
+},
+"blocked": "Blokkolva",
+"@blocked": {
+"type": "text",
+"placeholders": {}
+},
+"passwordsDoNotMatch": "A jelszavak nem egyeznek.",
+"@passwordsDoNotMatch": {},
+"pleaseChooseAtLeastChars": "Válasszon legalább {min} karaktert.",
+"@pleaseChooseAtLeastChars": {
+"type": "text",
+"placeholders": {
+"min": {}
+}
+},
+"@bubbleSize": {
+"placeholders": {
+},
+"type": "text"
+},
+"@chatBackup": {
+"placeholders": {
+},
+"type": "text"
+},
+"@chatBackupDescription": {
+"placeholders": {
+},
+"type": "text"
+},
+"@chatHasBeenAddedToThisSpace": {
+},
+"@chatHasBeenRemovedFromThisSpace": {
+"placeholders": {
+},
+"type": "text"
+},
+"@chats": {
+"placeholders": {
+},
+"type": "text"
+},
+"@clearArchive": {
+},
+"@clearText": {
+"placeholders": {
+},
+"type": "text"
+},
+"@commandHint_ban": {
+"description": "Usage hint for the command /ban",
+"type": "text"
+},
+"@commandHint_clearcache": {
+"description": "Usage hint for the command /clearcache",
+"type": "text"
+},
+"@commandHint_create": {
+"description": "Usage hint for the command /create",
+"type": "text"
+},
+"@commandHint_discardsession": {
+"description": "Usage hint for the command /discardsession",
+"type": "text"
+},
+"@commandHint_dm": {
+"description": "Usage hint for the command /dm",
+"type": "text"
+},
+"@commandHint_html": {
+"description": "Usage hint for the command /html",
+"type": "text"
+},
+"@commandHint_invite": {
+"description": "Usage hint for the command /invite",
+"type": "text"
+},
+"@commandHint_join": {
+"description": "Usage hint for the command /join",
+"type": "text"
+},
+"@commandHint_kick": {
+"description": "Usage hint for the command /kick",
+"type": "text"
+},
+"@commandHint_leave": {
+"description": "Usage hint for the command /leave",
+"type": "text"
+},
+"@commandHint_myroomavatar": {
+"description": "Usage hint for the command /myroomavatar",
+"type": "text"
+},
+"@commandHint_myroomnick": {
+"description": "Usage hint for the command /myroomnick",
+"type": "text"
+},
+"@commandHint_plain": {
+"description": "Usage hint for the command /plain",
+"type": "text"
+},
+"@commandHint_send": {
+"description": "Usage hint for the command /send",
+"type": "text"
+},
+"@commandInvalid": {
+"type": "text"
+},
+"@commandMissing": {
+"description": "State that {command} is not a valid /command.",
+"placeholders": {
+"command": {
+}
+},
+"type": "text"
+},
+"@configureChat": {
+"placeholders": {
+},
+"type": "text"
+},
+"@containsDisplayName": {
+"placeholders": {
+},
+"type": "text"
+},
+"@containsUserName": {
+"placeholders": {
+},
+"type": "text"
+},
+"@contentHasBeenReported": {
+"placeholders": {
+},
+"type": "text"
+},
+"@copyToClipboard": {
+"placeholders": {
+},
+"type": "text"
+},
+"@createNewChatExplaination": {
+},
+"@createNewSpace": {
+"placeholders": {
+},
+"type": "text"
+},
+"@defaultPermissionLevel": {
+"placeholders": {
+},
+"type": "text"
+},
+"@deviceVerifyDescription": {
+"placeholders": {
+},
+"type": "text"
+},
+"@discover": {
+"placeholders": {
+},
+"type": "text"
+},
+"@discoverGroups": {
+"placeholders": {
+},
+"type": "text"
+},
+"@editChatPermissions": {
+"placeholders": {
+},
+"type": "text"
+},
+"@editRoomAliases": {
+"placeholders": {
+},
+"type": "text"
+},
+"@editRoomAvatar": {
+"placeholders": {
+},
+"type": "text"
+},
+"@enableChatBackup": {
+"placeholders": {
+},
+"type": "text"
+},
+"@enableEncryption": {
+"placeholders": {
+},
+"type": "text"
+},
+"@enterASpacepName": {
+},
+"@errorObtainingLocation": {
+"placeholders": {
+"error": {
+}
+},
+"type": "text"
+},
+"@everythingReady": {
+"placeholders": {
+},
+"type": "text"
+},
+"@extremeOffensive": {
+"placeholders": {
+},
+"type": "text"
+},
+"@fontSize": {
+"placeholders": {
+},
+"type": "text"
+},
+"@friends": {
+"placeholders": {
+},
+"type": "text"
+},
+"@goToTheNewRoom": {
+"placeholders": {
+},
+"type": "text"
+},
+"@groups": {
+"placeholders": {
+},
+"type": "text"
+},
+"@howOffensiveIsThisContent": {
+"placeholders": {
+},
+"type": "text"
+},
+"@ignore": {
+"placeholders": {
+},
+"type": "text"
+},
+"@inoffensive": {
+"placeholders": {
+},
+"type": "text"
+},
+"@invalidEmail": {
+"placeholders": {
+},
+"type": "text"
+},
+"@iWroteDownTheKey": {
+},
+"@locationDisabledNotice": {
+"placeholders": {
+},
+"type": "text"
+},
+"@locationPermissionDeniedNotice": {
+"placeholders": {
+},
+"type": "text"
+},
+"@loginWithOneClick": {
+},
+"@memberChanges": {
+"placeholders": {
+},
+"type": "text"
+},
+"@messages": {
+"placeholders": {
+},
+"type": "text"
+},
+"@newChat": {
+"placeholders": {
+},
+"type": "text"
+},
+"@newUsernameDescription": {
+},
+"@newVerificationRequest": {
+"placeholders": {
+},
+"type": "text"
+},
+"@next": {
+"placeholders": {
+},
+"type": "text"
+},
+"@noConnectionToTheServer": {
+"placeholders": {
+},
+"type": "text"
+},
+"@noDescription": {
+"placeholders": {
+},
+"type": "text"
+},
+"@noEncryptionForPublicRooms": {
+"placeholders": {
+},
+"type": "text"
+},
+"@noPublicRoomsFound": {
+"placeholders": {
+},
+"type": "text"
+},
+"@notifications": {
+"placeholders": {
+},
+"type": "text"
+},
+"@notificationsEnabledForThisAccount": {
+"placeholders": {
+},
+"type": "text"
+},
+"@numUsersTyping": {
+"placeholders": {
+"count": {
+}
+},
+"type": "text"
+},
+"@obtainingLocation": {
+"placeholders": {
+},
+"type": "text"
+},
+"@offensive": {
+"placeholders": {
+},
+"type": "text"
+},
+"@oopsPushError": {
+"placeholders": {
+},
+"type": "text"
+},
+"@openVideoCamera": {
+"placeholders": {
+},
+"type": "text"
+},
+"@scanQrCode": {
+},
+"@setupChatBackup": {
+},
+"@setupChatBackupDescription": {
+},
+"@shareYourInviteLink": {
+},
+"@typeInInviteLinkManually": {
+},
+"@yourChatBackupHasBeenSetUp": {
+},
+"@advanced": {
+},
+"@badServerVersionsException": {
+"placeholders": {
+"serverVersions": {
+},
+"supportedVersions": {
+}
+},
+"type": "text"
+},
+"@commandHint_me": {
+"description": "Usage hint for the command /me",
+"type": "text"
+},
+"@commandHint_op": {
+"description": "Usage hint for the command /op",
+"type": "text"
+},
+"@commandHint_react": {
+"description": "Usage hint for the command /react",
+"type": "text"
+},
+"@commandHint_unban": {
+"description": "Usage hint for the command /unban",
+"type": "text"
+},
+"@dehydrate": {
+},
+"@dehydrateTor": {
+},
+"@dehydrateTorLong": {
+},
+"@dehydrateWarning": {
+},
+"@dontAskAgain": {
+"placeholders": {
+},
+"type": "text"
+},
+"@editBlockedServers": {
+"placeholders": {
+},
+"type": "text"
+},
+"@hydrate": {
+},
+"@hydrateTor": {
+},
+"@numberRoomMembers": {
+"placeholders": {
+"number": {
+}
+},
+"type": "number"
+},
+"@showSpaces": {
+},
+"@suggestedRooms": {
+},
+"advanced": "Haladó",
+"badServerVersionsException": "A Katya 👽 AI 🧠 REChain 🪐 Blockchain Node Network szerver ezeket a specifikáció verziókat támogatja:\n{serverVersions}\nAzonban ez az app csak ezeket: {supportedVersions}",
+"commandHint_me": "Mit csinálsz épp",
+"commandHint_op": "Az adott felhasználó hozzáférési szintjét változtatja (alapértelmezett: 50)",
+"commandHint_react": "Válasz küldése reakcióként",
+"commandHint_unban": "Az adott felhasználó visszaengedése ebbe a szobába",
+"dehydrate": "Munkamenet exportálásssa és az eszköz törlése",
+"dehydrateTor": "Tor felhasználók: munkamenet dehidratálása",
+"dehydrateTorLong": "Tor felhasználóknak ajánlott a munkamenet dehidratálása az ablak bezárása előtt.",
+"dehydrateWarning": "Ez nem visszavonható. Bizonyosodj meg róla, hogy biztonságos helyen tárolod a mentett fájlt.",
+"dontAskAgain": "Félbehagyás, és ne kérdezze többször",
+"editBlockedServers": "Blokkolt szerverek szerkesztése",
+"hydrate": "Visszaállítás fájlból",
+"hydrateTor": "Tor felhasználók: hidratált munkamenet importálása",
+"numberRoomMembers": "{number} tag",
+"showSpaces": "Tér lista mutatása",
+"suggestedRooms": "Csoportok felfedezése ebben a térben",
+"bubbleSize": "Buborék méret",
+"chatBackup": "Beszélgetések mentése",
+"chatBackupDescription": "A beszélgetések mentése egy biztonsági kulccsal van védve. Bizonyosodj meg róla, hogy nem fogod elveszíteni.",
+"chatHasBeenAddedToThisSpace": "A beszélgetés hozzá lett adva ehhez a térhez",
+"chatHasBeenRemovedFromThisSpace": "A beszélgetés el lett távolítva ebből a térből",
+"chats": "Beszélgetések",
+"clearArchive": "Archívum törlése",
+"clearText": "Szöveg törlése",
+"commandHint_ban": "Felhasználó kitiltása ebből a szobából",
+"commandHint_clearcache": "Gyorsítótár törlése",
+"commandHint_create": "Egy üres csoport létrehozása\nA --no-encryption kapcsolóval titkosítatlan szoba hozható létre",
+"commandHint_discardsession": "Munkamenet elvetése",
+"commandHint_dm": "Közvetlen beszélgetés indítása\nA --no-encryption kapcsolóval titkosítatlan beszélgetés lesz létrehozva",
+"commandHint_html": "HTML formázott üzenet küldése",
+"commandHint_invite": "Felhasználó meghívása ebbe a szobába",
+"commandHint_join": "Csatlakozás a megadott szobához",
+"commandHint_kick": "A megadott felhasználó kirúgása a szobából",
+"commandHint_leave": "Ennek a szobának az elhagyása",
+"commandHint_myroomavatar": "Az ebben a szobában megjelenített profilképed megváltoztatása (mxc URI-t kell megadni)",
+"commandHint_myroomnick": "Az ebben a szobában megjelenített beceneved megváltoztatása",
+"commandHint_plain": "Formázatlan szöveg küldése",
+"commandHint_send": "Szöveg küldése",
+"commandInvalid": "Érvénytelen parancs",
+"commandMissing": "{command} nem egy parancs.",
+"configureChat": "Beszélgetés beállítása",
+"containsDisplayName": "Tartalmazza a megjelenített becenevet",
+"containsUserName": "Tartalmazza a felhasználónevet",
+"contentHasBeenReported": "A tartalom jelentve lett a szerver üzemeltetőinek",
+"copyToClipboard": "Vágólapra másolás",
+"createNewChatExplaination": "Egyszerűen szkenneld be a QR kódot, vagy oszdd meg a meghívási linket, ha a szkennelés nem lehetséges.",
+"createNewSpace": "Új tér",
+"defaultPermissionLevel": "Alapértelmezett hozzáférési szint",
+"deviceVerifyDescription": "A titkosítás csak akkor biztonságos, ha az összes eszköz ellenőrizve lett.",
+"discover": "Felfedezés",
+"discoverGroups": "Csoportok felfedezése",
+"editChatPermissions": "Beszélgetés engedélyek szerkesztése",
+"editRoomAliases": "Szoba címeinek szerkesztése",
+"editRoomAvatar": "Szoba profilképének szerkesztése",
+"enableChatBackup": "Engedélyezd a beszélgetések mentését, hogy soha ne veszítsd el a beszélgetéseidhez való hozzáférést.",
+"enableEncryption": "Titkosítás bekapcsolása",
+"enterASpacepName": "Add meg a tér nevét",
+"errorObtainingLocation": "Hiba a tartózkodási hely lekérése közben: {error}",
+"everythingReady": "Minden kész!",
+"extremeOffensive": "Extrém sértő",
+"fontSize": "Betűméret",
+"friends": "Ismerősök",
+"goToTheNewRoom": "Új szoba megnyitása",
+"groups": "Csoportok",
+"howOffensiveIsThisContent": "Mennyire sértő ez a tartalom?",
+"ignore": "Figyelmen kívül hagyás",
+"inoffensive": "Nem sértő",
+"invalidEmail": "Érvénytelen email",
+"iWroteDownTheKey": "Leírtam a kulcsot",
+"locationDisabledNotice": "A helymeghatározás ki van kapcsolva. Kérlek, kapcsold be, hogy meg tudd osztani a helyzeted.",
+"locationPermissionDeniedNotice": "A helymeghatározás nincs engedélyezve az alkalmazásnak. Kérlek engedélyezd, hogy meg tudd osztani a helyzeted.",
+"loginWithOneClick": "Bejelentkezés egy kattintással",
+"memberChanges": "Tagság változások",
+"messages": "Üzenetek",
+"newChat": "Új beszélgetés",
+"newUsernameDescription": "A Katya 👽 AI 🧠 REChain 🪐 Blockchain Node Network helyben címed valahogy így fog kinézni: @felhasználó:szerver",
+"next": "Következő",
+"noConnectionToTheServer": "Nem elérhető a szerver",
+"noDescription": "Nincs leírás",
+"noEncryptionForPublicRooms": "Csak akkor kapcsolható be a titkosítás, ha a szoba nem nyilvánosan hozzáférhető.",
+"noPublicRoomsFound": "Nem találhatók nyilvános szobák…",
+"notifications": "Értesítések",
+"notificationsEnabledForThisAccount": "Értesítések bekapcsolása ebben a fiókban",
+"numUsersTyping": "{count} felhasználó gépel…",
+"obtainingLocation": "Tartózkodási hely lekérése…",
+"offensive": "Sértő",
+"oopsPushError": "Oops! Sajnos hiba történt a push értesítések beállításakor.",
+"openVideoCamera": "Kamera megnyitása videóhoz",
+"scanQrCode": "QR kód beolvasása",
+"setupChatBackup": "Beszélgetések mentésének beállítása",
+"setupChatBackupDescription": "Az üzeneteid védelme érdekében generáltunk neked egy biztonsági kulcsot.\nKérlek, tárold egy biztonságos helyen, mint például egy jelszókezelő.",
+"shareYourInviteLink": "Meghívási link küldése",
+"typeInInviteLinkManually": "Meghívási link beírása...",
+"yourChatBackupHasBeenSetUp": "A beszélgetések mentése be lett állítva.",
+"pleaseEnterValidEmail": "Adjon meg egy érvényes e-mail-címet.",
+"@pleaseEnterValidEmail": {},
+"appLock": "Alkalmazászár",
+"@appLock": {
+"type": "text",
+"placeholders": {}
+},
+"@homeserver": {
+},
+"homeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"audioPlayerPause": "Szüneteltetés",
+"@audioPlayerPause": {
+"type": "text",
+"placeholders": {}
+}
+}

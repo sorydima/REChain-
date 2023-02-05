@@ -1,0 +1,3335 @@
+{
+"@@locale": "eu",
+"@@last_modified": "2021-08-14 12:41:10.062383",
+"about": "Honi buruz",
+"@about": {
+"type": "text",
+"placeholders": {}
+},
+"accept": "Ados",
+"@accept": {
+"type": "text",
+"placeholders": {}
+},
+"acceptedTheInvitation": "{username}-(e)k gonbidapena onartu du",
+"@acceptedTheInvitation": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"account": "Kontua",
+"@account": {
+"type": "text",
+"placeholders": {}
+},
+"accountInformation": "Kontuaren informazioa",
+"@accountInformation": {
+"type": "text",
+"placeholders": {}
+},
+"activatedEndToEndEncryption": "",
+"@activatedEndToEndEncryption": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"addGroupDescription": "Gehitu taldearen deskribapena",
+"@addGroupDescription": {
+"type": "text",
+"placeholders": {}
+},
+"admin": "Administratzailea",
+"@admin": {
+"type": "text",
+"placeholders": {}
+},
+"alias": "ezizena",
+"@alias": {
+"type": "text",
+"placeholders": {}
+},
+"alreadyHaveAnAccount": "Baduzu kontu bat?",
+"@alreadyHaveAnAccount": {
+"type": "text",
+"placeholders": {}
+},
+"answeredTheCall": "{senderName}-(e)k deia erantzun du",
+"@answeredTheCall": {
+"type": "text",
+"placeholders": {
+"senderName": {}
+}
+},
+"anyoneCanJoin": "Edonor batu daiteke",
+"@anyoneCanJoin": {
+"type": "text",
+"placeholders": {}
+},
+"archive": "",
+"@archive": {
+"type": "text",
+"placeholders": {}
+},
+"archivedRoom": "Artxibatutako gelak",
+"@archivedRoom": {
+"type": "text",
+"placeholders": {}
+},
+"areGuestsAllowedToJoin": "Ba al dute batzeko baimenik erabiltzaile gonbidatuek?",
+"@areGuestsAllowedToJoin": {
+"type": "text",
+"placeholders": {}
+},
+"areYouSure": "Ziur al zaude?",
+"@areYouSure": {
+"type": "text",
+"placeholders": {}
+},
+"askSSSSCache": "Mesedez sar ezazu zure biltegiratze segururako pasaesaldia edo berreskuratze gakoa katxean gakoak gordetzeko.",
+"@askSSSSCache": {
+"type": "text",
+"placeholders": {}
+},
+"askSSSSSign": "Beste pertsona ziurtatzeko, mesedez, sartu zure biltegiratze segururako pasaesaldia edo berreskuratze gakoa.",
+"@askSSSSSign": {
+"type": "text",
+"placeholders": {}
+},
+"askSSSSVerify": "Zure saioa egiaztatzeko, mesedez sar ezazu zure biltegiratze segururako pasaesaldia edo berreskuratze gakoa.",
+"@askSSSSVerify": {
+"type": "text",
+"placeholders": {}
+},
+"askVerificationRequest": "{username}-(r)en egiaztatze eskaera onartu?",
+"@askVerificationRequest": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"authentication": "Autentifikazioa",
+"@authentication": {
+"type": "text",
+"placeholders": {}
+},
+"avatarHasBeenChanged": "Profileko irudia aldatua izan da",
+"@avatarHasBeenChanged": {
+"type": "text",
+"placeholders": {}
+},
+"banFromChat": "Berriketa debekatu",
+"@banFromChat": {
+"type": "text",
+"placeholders": {}
+},
+"banned": "",
+"@banned": {
+"type": "text",
+"placeholders": {}
+},
+"bannedUser": "{username}-(e)k {targetName} debekatu du",
+"@bannedUser": {
+"type": "text",
+"placeholders": {
+"username": {},
+"targetName": {}
+}
+},
+"blockDevice": "Gailua blokeatu",
+"@blockDevice": {
+"type": "text",
+"placeholders": {}
+},
+"cachedKeys": "Gakoak ongi gorde dira",
+"@cachedKeys": {
+"type": "text",
+"placeholders": {}
+},
+"cancel": "Utzi",
+"@cancel": {
+"type": "text",
+"placeholders": {}
+},
+"changedTheChatAvatar": "{username}-(e)k berriketako irudia aldatu du",
+"@changedTheChatAvatar": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"changedTheChatDescriptionTo": "",
+"@changedTheChatDescriptionTo": {
+"type": "text",
+"placeholders": {
+"username": {},
+"description": {}
+}
+},
+"changedTheChatNameTo": "{username}-(e)k berriketaren izena '{chatname}'-(e)ra aldatu du",
+"@changedTheChatNameTo": {
+"type": "text",
+"placeholders": {
+"username": {},
+"chatname": {}
+}
+},
+"changedTheChatPermissions": "{username}-(e)k berriketaren baimenak aldatu ditu",
+"@changedTheChatPermissions": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"changedTheDisplaynameTo": "",
+"@changedTheDisplaynameTo": {
+"type": "text",
+"placeholders": {
+"username": {},
+"displayname": {}
+}
+},
+"changedTheGuestAccessRules": "{username}-(e)k gonbidatuen sarbide arauak aldatu ditu",
+"@changedTheGuestAccessRules": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"changedTheGuestAccessRulesTo": "",
+"@changedTheGuestAccessRulesTo": {
+"type": "text",
+"placeholders": {
+"username": {},
+"rules": {}
+}
+},
+"changedTheHistoryVisibility": "{username}-(e)k historiaren ikusgarritasuna aldatu du",
+"@changedTheHistoryVisibility": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"changedTheHistoryVisibilityTo": "{username}-(e)k historiaren ikusgarritasuna {rules}-(e)ra aldatu du",
+"@changedTheHistoryVisibilityTo": {
+"type": "text",
+"placeholders": {
+"username": {},
+"rules": {}
+}
+},
+"changedTheJoinRules": "{username}-(e)k batze arauak aldatu ditu",
+"@changedTheJoinRules": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"changedTheJoinRulesTo": "{username}-(e)k batzeko arauak {joinRules}-(e)ra aldatu ditu",
+"@changedTheJoinRulesTo": {
+"type": "text",
+"placeholders": {
+"username": {},
+"joinRules": {}
+}
+},
+"changedTheProfileAvatar": "{username}-(e)k profileko irudia aldatu du",
+"@changedTheProfileAvatar": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"changedTheRoomAliases": "{username}-(e)k gelaren ezizena aldatu du",
+"@changedTheRoomAliases": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"changedTheRoomInvitationLink": "{username}-(e)k gonbidapen esteka aldatu du",
+"@changedTheRoomInvitationLink": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"changelog": "Aldaketen erregistroa",
+"@changelog": {
+"type": "text",
+"placeholders": {}
+},
+"changesHaveBeenSaved": "",
+"@changesHaveBeenSaved": {
+"type": "text",
+"placeholders": {}
+},
+"changeTheHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"@changeTheHomeserver": {
+"type": "text",
+"placeholders": {}
+},
+"changeTheme": "",
+"@changeTheme": {
+"type": "text",
+"placeholders": {}
+},
+"changeTheNameOfTheGroup": "Taldearen izena aldatu",
+"@changeTheNameOfTheGroup": {
+"type": "text",
+"placeholders": {}
+},
+"changeTheServer": "Zerbitzaria aldatu",
+"@changeTheServer": {
+"type": "text",
+"placeholders": {}
+},
+"changeWallpaper": "Atzekaldea aldatu",
+"@changeWallpaper": {
+"type": "text",
+"placeholders": {}
+},
+"channelCorruptedDecryptError": "Enkriptatzea hondatu egin da",
+"@channelCorruptedDecryptError": {
+"type": "text",
+"placeholders": {}
+},
+"chat": "Berriketa",
+"@chat": {
+"type": "text",
+"placeholders": {}
+},
+"chatDetails": "Berriketaren xehetasunak",
+"@chatDetails": {
+"type": "text",
+"placeholders": {}
+},
+"chooseAStrongPassword": "Aukera ezazu pasahitz sendo bat",
+"@chooseAStrongPassword": {
+"type": "text",
+"placeholders": {}
+},
+"chooseAUsername": "Aukera ezazu erabiltzaile izen bat",
+"@chooseAUsername": {
+"type": "text",
+"placeholders": {}
+},
+"close": "Itxi",
+"@close": {
+"type": "text",
+"placeholders": {}
+},
+"compareEmojiMatch": "Konparatu eta egiazta ezazu ondorengo emojiak beste gailukoaren berdinak direla:",
+"@compareEmojiMatch": {
+"type": "text",
+"placeholders": {}
+},
+"compareNumbersMatch": "Konparatu eta egiazta ezazu ondorengo zenbakiak beste gailukoaren berdinak direla:",
+"@compareNumbersMatch": {
+"type": "text",
+"placeholders": {}
+},
+"confirm": "Baieztatu",
+"@confirm": {
+"type": "text",
+"placeholders": {}
+},
+"connect": "Konektatu",
+"@connect": {
+"type": "text",
+"placeholders": {}
+},
+"connectionAttemptFailed": "Konektatze saiakerak huts egin du",
+"@connectionAttemptFailed": {
+"type": "text",
+"placeholders": {}
+},
+"contactHasBeenInvitedToTheGroup": "Kontaktua taldera gonbidatua izan da",
+"@contactHasBeenInvitedToTheGroup": {
+"type": "text",
+"placeholders": {}
+},
+"contentViewer": "Eduki ikustailea",
+"@contentViewer": {
+"type": "text",
+"placeholders": {}
+},
+"copiedToClipboard": "Arbelera kopiatua",
+"@copiedToClipboard": {
+"type": "text",
+"placeholders": {}
+},
+"copy": "Kopiatu",
+"@copy": {
+"type": "text",
+"placeholders": {}
+},
+"couldNotDecryptMessage": "Ezin izan da mezua deszifratu: {error}",
+"@couldNotDecryptMessage": {
+"type": "text",
+"placeholders": {
+"error": {}
+}
+},
+"couldNotSetAvatar": "Ezin izan da irudia ezarri",
+"@couldNotSetAvatar": {
+"type": "text",
+"placeholders": {}
+},
+"couldNotSetDisplayname": "Ezin izan da bistaratze-izena ezarri",
+"@couldNotSetDisplayname": {
+"type": "text",
+"placeholders": {}
+},
+"countParticipants": "{count} partaide",
+"@countParticipants": {
+"type": "text",
+"placeholders": {
+"count": {}
+}
+},
+"create": "Sortu",
+"@create": {
+"type": "text",
+"placeholders": {}
+},
+"createAccountNow": "Sortu kontua orain",
+"@createAccountNow": {
+"type": "text",
+"placeholders": {}
+},
+"createdTheChat": "{username}-(e)k berriketa sortu du",
+"@createdTheChat": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"createNewGroup": "Talde berria sortu",
+"@createNewGroup": {
+"type": "text",
+"placeholders": {}
+},
+"crossSigningDisabled": "Sinadura gurutzatua desgaituta dago",
+"@crossSigningDisabled": {
+"type": "text",
+"placeholders": {}
+},
+"crossSigningEnabled": "",
+"@crossSigningEnabled": {
+"type": "text",
+"placeholders": {}
+},
+"currentlyActive": "",
+"@currentlyActive": {
+"type": "text",
+"placeholders": {}
+},
+"darkTheme": "",
+"@darkTheme": {
+"type": "text",
+"placeholders": {}
+},
+"dateAndTimeOfDay": "",
+"@dateAndTimeOfDay": {
+"type": "text",
+"placeholders": {
+"date": {},
+"timeOfDay": {}
+}
+},
+"dateWithoutYear": "",
+"@dateWithoutYear": {
+"type": "text",
+"placeholders": {
+"month": {},
+"day": {}
+}
+},
+"dateWithYear": "",
+"@dateWithYear": {
+"type": "text",
+"placeholders": {
+"year": {},
+"month": {},
+"day": {}
+}
+},
+"delete": "",
+"@delete": {
+"type": "text",
+"placeholders": {}
+},
+"deleteMessage": "",
+"@deleteMessage": {
+"type": "text",
+"placeholders": {}
+},
+"deny": "",
+"@deny": {
+"type": "text",
+"placeholders": {}
+},
+"device": "",
+"@device": {
+"type": "text",
+"placeholders": {}
+},
+"devices": "",
+"@devices": {
+"type": "text",
+"placeholders": {}
+},
+"discardPicture": "",
+"@discardPicture": {
+"type": "text",
+"placeholders": {}
+},
+"displaynameHasBeenChanged": "",
+"@displaynameHasBeenChanged": {
+"type": "text",
+"placeholders": {}
+},
+"donate": "",
+"@donate": {
+"type": "text",
+"placeholders": {}
+},
+"downloadFile": "",
+"@downloadFile": {
+"type": "text",
+"placeholders": {}
+},
+"editDisplayname": "",
+"@editDisplayname": {
+"type": "text",
+"placeholders": {}
+},
+"editJitsiInstance": "",
+"@editJitsiInstance": {
+"type": "text",
+"placeholders": {}
+},
+"emoteExists": "",
+"@emoteExists": {
+"type": "text",
+"placeholders": {}
+},
+"emoteInvalid": "",
+"@emoteInvalid": {
+"type": "text",
+"placeholders": {}
+},
+"emoteSettings": "",
+"@emoteSettings": {
+"type": "text",
+"placeholders": {}
+},
+"emoteShortcode": "",
+"@emoteShortcode": {
+"type": "text",
+"placeholders": {}
+},
+"emoteWarnNeedToPick": "",
+"@emoteWarnNeedToPick": {
+"type": "text",
+"placeholders": {}
+},
+"emptyChat": "",
+"@emptyChat": {
+"type": "text",
+"placeholders": {}
+},
+"enableEncryptionWarning": "",
+"@enableEncryptionWarning": {
+"type": "text",
+"placeholders": {}
+},
+"encryption": "",
+"@encryption": {
+"type": "text",
+"placeholders": {}
+},
+"encryptionAlgorithm": "",
+"@encryptionAlgorithm": {
+"type": "text",
+"placeholders": {}
+},
+"encryptionNotEnabled": "",
+"@encryptionNotEnabled": {
+"type": "text",
+"placeholders": {}
+},
+"end2endEncryptionSettings": "",
+"@end2endEncryptionSettings": {
+"type": "text",
+"placeholders": {}
+},
+"endedTheCall": "",
+"@endedTheCall": {
+"type": "text",
+"placeholders": {
+"senderName": {}
+}
+},
+"enterAGroupName": "",
+"@enterAGroupName": {
+"type": "text",
+"placeholders": {}
+},
+"enterAUsername": "",
+"@enterAUsername": {
+"type": "text",
+"placeholders": {}
+},
+"enterYourHomeserver": "",
+"@enterYourHomeserver": {
+"type": "text",
+"placeholders": {}
+},
+"fileName": "",
+"@fileName": {
+"type": "text",
+"placeholders": {}
+},
+"fileSize": "",
+"@fileSize": {
+"type": "text",
+"placeholders": {}
+},
+"rechainonline": "",
+"@rechainonline": {
+"type": "text",
+"placeholders": {}
+},
+"forward": "",
+"@forward": {
+"type": "text",
+"placeholders": {}
+},
+"friday": "",
+"@friday": {
+"type": "text",
+"placeholders": {}
+},
+"fromJoining": "",
+"@fromJoining": {
+"type": "text",
+"placeholders": {}
+},
+"fromTheInvitation": "",
+"@fromTheInvitation": {
+"type": "text",
+"placeholders": {}
+},
+"group": "",
+"@group": {
+"type": "text",
+"placeholders": {}
+},
+"groupDescription": "",
+"@groupDescription": {
+"type": "text",
+"placeholders": {}
+},
+"groupDescriptionHasBeenChanged": "",
+"@groupDescriptionHasBeenChanged": {
+"type": "text",
+"placeholders": {}
+},
+"groupIsPublic": "",
+"@groupIsPublic": {
+"type": "text",
+"placeholders": {}
+},
+"groupWith": "",
+"@groupWith": {
+"type": "text",
+"placeholders": {
+"displayname": {}
+}
+},
+"guestsAreForbidden": "",
+"@guestsAreForbidden": {
+"type": "text",
+"placeholders": {}
+},
+"guestsCanJoin": "",
+"@guestsCanJoin": {
+"type": "text",
+"placeholders": {}
+},
+"hasWithdrawnTheInvitationFor": "",
+"@hasWithdrawnTheInvitationFor": {
+"type": "text",
+"placeholders": {
+"username": {},
+"targetName": {}
+}
+},
+"help": "",
+"@help": {
+"type": "text",
+"placeholders": {}
+},
+"homeserverIsNotCompatible": "",
+"@homeserverIsNotCompatible": {
+"type": "text",
+"placeholders": {}
+},
+"id": "",
+"@id": {
+"type": "text",
+"placeholders": {}
+},
+"identity": "",
+"@identity": {
+"type": "text",
+"placeholders": {}
+},
+"incorrectPassphraseOrKey": "",
+"@incorrectPassphraseOrKey": {
+"type": "text",
+"placeholders": {}
+},
+"inviteContact": "",
+"@inviteContact": {
+"type": "text",
+"placeholders": {}
+},
+"inviteContactToGroup": "",
+"@inviteContactToGroup": {
+"type": "text",
+"placeholders": {
+"groupName": {}
+}
+},
+"invited": "",
+"@invited": {
+"type": "text",
+"placeholders": {}
+},
+"invitedUser": "",
+"@invitedUser": {
+"type": "text",
+"placeholders": {
+"username": {},
+"targetName": {}
+}
+},
+"invitedUsersOnly": "",
+"@invitedUsersOnly": {
+"type": "text",
+"placeholders": {}
+},
+"inviteText": "",
+"@inviteText": {
+"type": "text",
+"placeholders": {
+"username": {},
+"link": {}
+}
+},
+"isDeviceKeyCorrect": "",
+"@isDeviceKeyCorrect": {
+"type": "text",
+"placeholders": {}
+},
+"isTyping": "",
+"@isTyping": {
+"type": "text",
+"placeholders": {}
+},
+"joinedTheChat": "",
+"@joinedTheChat": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"joinRoom": "",
+"@joinRoom": {
+"type": "text",
+"placeholders": {}
+},
+"keysCached": "",
+"@keysCached": {
+"type": "text",
+"placeholders": {}
+},
+"keysMissing": "",
+"@keysMissing": {
+"type": "text",
+"placeholders": {}
+},
+"kicked": "",
+"@kicked": {
+"type": "text",
+"placeholders": {
+"username": {},
+"targetName": {}
+}
+},
+"kickedAndBanned": "",
+"@kickedAndBanned": {
+"type": "text",
+"placeholders": {
+"username": {},
+"targetName": {}
+}
+},
+"kickFromChat": "",
+"@kickFromChat": {
+"type": "text",
+"placeholders": {}
+},
+"lastActiveAgo": "",
+"@lastActiveAgo": {
+"type": "text",
+"placeholders": {
+"localizedTimeShort": {}
+}
+},
+"lastSeenIp": "",
+"@lastSeenIp": {
+"type": "text",
+"placeholders": {}
+},
+"lastSeenLongTimeAgo": "",
+"@lastSeenLongTimeAgo": {
+"type": "text",
+"placeholders": {}
+},
+"leave": "",
+"@leave": {
+"type": "text",
+"placeholders": {}
+},
+"leftTheChat": "",
+"@leftTheChat": {
+"type": "text",
+"placeholders": {}
+},
+"license": "",
+"@license": {
+"type": "text",
+"placeholders": {}
+},
+"lightTheme": "",
+"@lightTheme": {
+"type": "text",
+"placeholders": {}
+},
+"loadCountMoreParticipants": "",
+"@loadCountMoreParticipants": {
+"type": "text",
+"placeholders": {
+"count": {}
+}
+},
+"loadingPleaseWait": "",
+"@loadingPleaseWait": {
+"type": "text",
+"placeholders": {}
+},
+"loadMore": "",
+"@loadMore": {
+"type": "text",
+"placeholders": {}
+},
+"login": "",
+"@login": {
+"type": "text",
+"placeholders": {}
+},
+"logInTo": "",
+"@logInTo": {
+"type": "text",
+"placeholders": {
+"homeserver": {}
+}
+},
+"logout": "",
+"@logout": {
+"type": "text",
+"placeholders": {}
+},
+"makeAModerator": "",
+"@makeAModerator": {
+"type": "text",
+"placeholders": {}
+},
+"makeAnAdmin": "",
+"@makeAnAdmin": {
+"type": "text",
+"placeholders": {}
+},
+"makeSureTheIdentifierIsValid": "",
+"@makeSureTheIdentifierIsValid": {
+"type": "text",
+"placeholders": {}
+},
+"messageWillBeRemovedWarning": "",
+"@messageWillBeRemovedWarning": {
+"type": "text",
+"placeholders": {}
+},
+"moderator": "",
+"@moderator": {
+"type": "text",
+"placeholders": {}
+},
+"monday": "",
+"@monday": {
+"type": "text",
+"placeholders": {}
+},
+"muteChat": "",
+"@muteChat": {
+"type": "text",
+"placeholders": {}
+},
+"needPantalaimonWarning": "",
+"@needPantalaimonWarning": {
+"type": "text",
+"placeholders": {}
+},
+"newMessageInrechainonline": "",
+"@newMessageInrechainonline": {
+"type": "text",
+"placeholders": {}
+},
+"newVerificationRequest": "",
+"@newVerificationRequest": {
+"type": "text",
+"placeholders": {}
+},
+"no": "",
+"@no": {
+"type": "text",
+"placeholders": {}
+},
+"noCrossSignBootstrap": "",
+"@noCrossSignBootstrap": {
+"type": "text",
+"placeholders": {}
+},
+"noEmotesFound": "",
+"@noEmotesFound": {
+"type": "text",
+"placeholders": {}
+},
+"noGoogleServicesWarning": "",
+"@noGoogleServicesWarning": {
+"type": "text",
+"placeholders": {}
+},
+"noMegolmBootstrap": "",
+"@noMegolmBootstrap": {
+"type": "text",
+"placeholders": {}
+},
+"none": "",
+"@none": {
+"type": "text",
+"placeholders": {}
+},
+"noPermission": "",
+"@noPermission": {
+"type": "text",
+"placeholders": {}
+},
+"noRoomsFound": "",
+"@noRoomsFound": {
+"type": "text",
+"placeholders": {}
+},
+"notSupportedInWeb": "",
+"@notSupportedInWeb": {
+"type": "text",
+"placeholders": {}
+},
+"numberSelected": "",
+"@numberSelected": {
+"type": "text",
+"placeholders": {
+"number": {}
+}
+},
+"ok": "",
+"@ok": {
+"type": "text",
+"placeholders": {}
+},
+"onlineKeyBackupDisabled": "",
+"@onlineKeyBackupDisabled": {
+"type": "text",
+"placeholders": {}
+},
+"onlineKeyBackupEnabled": "",
+"@onlineKeyBackupEnabled": {
+"type": "text",
+"placeholders": {}
+},
+"oopsSomethingWentWrong": "",
+"@oopsSomethingWentWrong": {
+"type": "text",
+"placeholders": {}
+},
+"openAppToReadMessages": "",
+"@openAppToReadMessages": {
+"type": "text",
+"placeholders": {}
+},
+"openCamera": "",
+"@openCamera": {
+"type": "text",
+"placeholders": {}
+},
+"optionalGroupName": "",
+"@optionalGroupName": {
+"type": "text",
+"placeholders": {}
+},
+"participatingUserDevices": "",
+"@participatingUserDevices": {
+"type": "text",
+"placeholders": {}
+},
+"passphraseOrKey": "",
+"@passphraseOrKey": {
+"type": "text",
+"placeholders": {}
+},
+"password": "",
+"@password": {
+"type": "text",
+"placeholders": {}
+},
+"pickImage": "",
+"@pickImage": {
+"type": "text",
+"placeholders": {}
+},
+"pin": "",
+"@pin": {
+"type": "text",
+"placeholders": {}
+},
+"play": "",
+"@play": {
+"type": "text",
+"placeholders": {
+"fileName": {}
+}
+},
+"pleaseChooseAUsername": "",
+"@pleaseChooseAUsername": {
+"type": "text",
+"placeholders": {}
+},
+"pleaseEnterArechainonlineIdentifier": "",
+"@pleaseEnterArechainonlineIdentifier": {
+"type": "text",
+"placeholders": {}
+},
+"pleaseEnterYourPassword": "",
+"@pleaseEnterYourPassword": {
+"type": "text",
+"placeholders": {}
+},
+"pleaseEnterYourUsername": "",
+"@pleaseEnterYourUsername": {
+"type": "text",
+"placeholders": {}
+},
+"publicRooms": "",
+"@publicRooms": {
+"type": "text",
+"placeholders": {}
+},
+"recording": "",
+"@recording": {
+"type": "text",
+"placeholders": {}
+},
+"redactedAnEvent": "",
+"@redactedAnEvent": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"reject": "",
+"@reject": {
+"type": "text",
+"placeholders": {}
+},
+"rejectedTheInvitation": "",
+"@rejectedTheInvitation": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"rejoin": "",
+"@rejoin": {
+"type": "text",
+"placeholders": {}
+},
+"remove": "",
+"@remove": {
+"type": "text",
+"placeholders": {}
+},
+"removeAllOtherDevices": "",
+"@removeAllOtherDevices": {
+"type": "text",
+"placeholders": {}
+},
+"removedBy": "",
+"@removedBy": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"removeDevice": "",
+"@removeDevice": {
+"type": "text",
+"placeholders": {}
+},
+"unbanFromChat": "",
+"@unbanFromChat": {
+"type": "text",
+"placeholders": {}
+},
+"removeMessage": "",
+"@removeMessage": {
+"type": "text",
+"placeholders": {}
+},
+"renderRichContent": "",
+"@renderRichContent": {
+"type": "text",
+"placeholders": {}
+},
+"reply": "",
+"@reply": {
+"type": "text",
+"placeholders": {}
+},
+"requestPermission": "",
+"@requestPermission": {
+"type": "text",
+"placeholders": {}
+},
+"requestToReadOlderMessages": "",
+"@requestToReadOlderMessages": {
+"type": "text",
+"placeholders": {}
+},
+"revokeAllPermissions": "",
+"@revokeAllPermissions": {
+"type": "text",
+"placeholders": {}
+},
+"roomHasBeenUpgraded": "",
+"@roomHasBeenUpgraded": {
+"type": "text",
+"placeholders": {}
+},
+"saturday": "",
+"@saturday": {
+"type": "text",
+"placeholders": {}
+},
+"searchForAChat": "",
+"@searchForAChat": {
+"type": "text",
+"placeholders": {}
+},
+"seenByUser": "",
+"@seenByUser": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"seenByUserAndUser": "",
+"@seenByUserAndUser": {
+"type": "text",
+"placeholders": {
+"username": {},
+"username2": {}
+}
+},
+"send": "",
+"@send": {
+"type": "text",
+"placeholders": {}
+},
+"sendAMessage": "",
+"@sendAMessage": {
+"type": "text",
+"placeholders": {}
+},
+"sendAudio": "",
+"@sendAudio": {
+"type": "text",
+"placeholders": {}
+},
+"sendBugReports": "",
+"@sendBugReports": {
+"type": "text",
+"placeholders": {}
+},
+"sendFile": "",
+"@sendFile": {
+"type": "text",
+"placeholders": {}
+},
+"sendImage": "",
+"@sendImage": {
+"type": "text",
+"placeholders": {}
+},
+"sendOriginal": "",
+"@sendOriginal": {
+"type": "text",
+"placeholders": {}
+},
+"sendVideo": "",
+"@sendVideo": {
+"type": "text",
+"placeholders": {}
+},
+"sentAFile": "",
+"@sentAFile": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"sentAnAudio": "",
+"@sentAnAudio": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"sentAPicture": "",
+"@sentAPicture": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"sentASticker": "",
+"@sentASticker": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"sentAVideo": "",
+"@sentAVideo": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"sentCallInformations": "",
+"@sentCallInformations": {
+"type": "text",
+"placeholders": {
+"senderName": {}
+}
+},
+"sentryInfo": "",
+"@sentryInfo": {
+"type": "text",
+"placeholders": {}
+},
+"sessionVerified": "",
+"@sessionVerified": {
+"type": "text",
+"placeholders": {}
+},
+"setAProfilePicture": "",
+"@setAProfilePicture": {
+"type": "text",
+"placeholders": {}
+},
+"setGroupDescription": "",
+"@setGroupDescription": {
+"type": "text",
+"placeholders": {}
+},
+"setInvitationLink": "",
+"@setInvitationLink": {
+"type": "text",
+"placeholders": {}
+},
+"setStatus": "",
+"@setStatus": {
+"type": "text",
+"placeholders": {}
+},
+"settings": "",
+"@settings": {
+"type": "text",
+"placeholders": {}
+},
+"share": "",
+"@share": {
+"type": "text",
+"placeholders": {}
+},
+"sharedTheLocation": "",
+"@sharedTheLocation": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"signUp": "",
+"@signUp": {
+"type": "text",
+"placeholders": {}
+},
+"skip": "",
+"@skip": {
+"type": "text",
+"placeholders": {}
+},
+"sourceCode": "",
+"@sourceCode": {
+"type": "text",
+"placeholders": {}
+},
+"startedACall": "",
+"@startedACall": {
+"type": "text",
+"placeholders": {
+"senderName": {}
+}
+},
+"startYourFirstChat": "",
+"@startYourFirstChat": {
+"type": "text",
+"placeholders": {}
+},
+"statusExampleMessage": "",
+"@statusExampleMessage": {
+"type": "text",
+"placeholders": {}
+},
+"submit": "",
+"@submit": {
+"type": "text",
+"placeholders": {}
+},
+"sunday": "",
+"@sunday": {
+"type": "text",
+"placeholders": {}
+},
+"systemTheme": "",
+"@systemTheme": {
+"type": "text",
+"placeholders": {}
+},
+"tapToShowMenu": "",
+"@tapToShowMenu": {
+"type": "text",
+"placeholders": {}
+},
+"theyDontMatch": "",
+"@theyDontMatch": {
+"type": "text",
+"placeholders": {}
+},
+"theyMatch": "",
+"@theyMatch": {
+"type": "text",
+"placeholders": {}
+},
+"thisRoomHasBeenArchived": "",
+"@thisRoomHasBeenArchived": {
+"type": "text",
+"placeholders": {}
+},
+"thursday": "",
+"@thursday": {
+"type": "text",
+"placeholders": {}
+},
+"timeOfDay": "",
+"@timeOfDay": {
+"type": "text",
+"placeholders": {
+"hours12": {},
+"hours24": {},
+"minutes": {},
+"suffix": {}
+}
+},
+"title": "",
+"@title": {
+"description": "Title for the application",
+"type": "text",
+"placeholders": {}
+},
+"tryToSendAgain": "",
+"@tryToSendAgain": {
+"type": "text",
+"placeholders": {}
+},
+"tuesday": "",
+"@tuesday": {
+"type": "text",
+"placeholders": {}
+},
+"unbannedUser": "",
+"@unbannedUser": {
+"type": "text",
+"placeholders": {
+"username": {},
+"targetName": {}
+}
+},
+"unblockDevice": "",
+"@unblockDevice": {
+"type": "text",
+"placeholders": {}
+},
+"unknownDevice": "",
+"@unknownDevice": {
+"type": "text",
+"placeholders": {}
+},
+"unknownEncryptionAlgorithm": "",
+"@unknownEncryptionAlgorithm": {
+"type": "text",
+"placeholders": {}
+},
+"unknownEvent": "",
+"@unknownEvent": {
+"type": "text",
+"placeholders": {
+"type": {}
+}
+},
+"unknownSessionVerify": "",
+"@unknownSessionVerify": {
+"type": "text",
+"placeholders": {}
+},
+"unmuteChat": "",
+"@unmuteChat": {
+"type": "text",
+"placeholders": {}
+},
+"unpin": "",
+"@unpin": {
+"type": "text",
+"placeholders": {}
+},
+"useAmoledTheme": "",
+"@useAmoledTheme": {
+"type": "text",
+"placeholders": {}
+},
+"userAndOthersAreTyping": "",
+"@userAndOthersAreTyping": {
+"type": "text",
+"placeholders": {
+"username": {},
+"count": {}
+}
+},
+"userAndUserAreTyping": "",
+"@userAndUserAreTyping": {
+"type": "text",
+"placeholders": {
+"username": {},
+"username2": {}
+}
+},
+"userIsTyping": "",
+"@userIsTyping": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"userLeftTheChat": "",
+"@userLeftTheChat": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"username": "",
+"@username": {
+"type": "text",
+"placeholders": {}
+},
+"userSentUnknownEvent": "",
+"@userSentUnknownEvent": {
+"type": "text",
+"placeholders": {
+"username": {},
+"type": {}
+}
+},
+"verifiedSession": "",
+"@verifiedSession": {
+"type": "text",
+"placeholders": {}
+},
+"verify": "",
+"@verify": {
+"type": "text",
+"placeholders": {}
+},
+"verifyManual": "",
+"@verifyManual": {
+"type": "text",
+"placeholders": {}
+},
+"verifyStart": "",
+"@verifyStart": {
+"type": "text",
+"placeholders": {}
+},
+"verifySuccess": "",
+"@verifySuccess": {
+"type": "text",
+"placeholders": {}
+},
+"verifyTitle": "",
+"@verifyTitle": {
+"type": "text",
+"placeholders": {}
+},
+"verifyUser": "",
+"@verifyUser": {
+"type": "text",
+"placeholders": {}
+},
+"videoCall": "",
+"@videoCall": {
+"type": "text",
+"placeholders": {}
+},
+"visibilityOfTheChatHistory": "",
+"@visibilityOfTheChatHistory": {
+"type": "text",
+"placeholders": {}
+},
+"visibleForAllParticipants": "",
+"@visibleForAllParticipants": {
+"type": "text",
+"placeholders": {}
+},
+"visibleForEveryone": "",
+"@visibleForEveryone": {
+"type": "text",
+"placeholders": {}
+},
+"voiceMessage": "",
+"@voiceMessage": {
+"type": "text",
+"placeholders": {}
+},
+"waitingPartnerAcceptRequest": "",
+"@waitingPartnerAcceptRequest": {
+"type": "text",
+"placeholders": {}
+},
+"waitingPartnerEmoji": "",
+"@waitingPartnerEmoji": {
+"type": "text",
+"placeholders": {}
+},
+"waitingPartnerNumbers": "",
+"@waitingPartnerNumbers": {
+"type": "text",
+"placeholders": {}
+},
+"wallpaper": "",
+"@wallpaper": {
+"type": "text",
+"placeholders": {}
+},
+"warningEncryptionInBeta": "",
+"@warningEncryptionInBeta": {
+"type": "text",
+"placeholders": {}
+},
+"wednesday": "",
+"@wednesday": {
+"type": "text",
+"placeholders": {}
+},
+"welcomeText": "",
+"@welcomeText": {
+"type": "text",
+"placeholders": {}
+},
+"whoIsAllowedToJoinThisGroup": "",
+"@whoIsAllowedToJoinThisGroup": {
+"type": "text",
+"placeholders": {}
+},
+"writeAMessage": "",
+"@writeAMessage": {
+"type": "text",
+"placeholders": {}
+},
+"yes": "",
+"@yes": {
+"type": "text",
+"placeholders": {}
+},
+"you": "",
+"@you": {
+"type": "text",
+"placeholders": {}
+},
+"youAreInvitedToThisChat": "",
+"@youAreInvitedToThisChat": {
+"type": "text",
+"placeholders": {}
+},
+"youAreNoLongerParticipatingInThisChat": "",
+"@youAreNoLongerParticipatingInThisChat": {
+"type": "text",
+"placeholders": {}
+},
+"youCannotInviteYourself": "",
+"@youCannotInviteYourself": {
+"type": "text",
+"placeholders": {}
+},
+"youHaveBeenBannedFromThisChat": "",
+"@youHaveBeenBannedFromThisChat": {
+"type": "text",
+"placeholders": {}
+},
+"yourOwnUsername": "",
+"@yourOwnUsername": {
+"type": "text",
+"placeholders": {}
+},
+"publicGroups": "Talde publikoak",
+"@publicGroups": {
+"type": "text",
+"placeholders": {}
+},
+"editRoomAliases": "Editatu gelako goitizenak",
+"@editRoomAliases": {
+"type": "text",
+"placeholders": {}
+},
+"@addAccount": {
+},
+"@addDescription": {
+},
+"@addEmail": {
+"placeholders": {
+},
+"type": "text"
+},
+"@addNewFriend": {
+"placeholders": {
+},
+"type": "text"
+},
+"@addToBundle": {
+},
+"@addToSpace": {
+},
+"@addToSpaceDescription": {
+},
+"@addToStory": {
+},
+"@all": {
+"placeholders": {
+},
+"type": "text"
+},
+"@allChats": {
+"placeholders": {
+},
+"type": "text"
+},
+"@appLock": {
+"placeholders": {
+},
+"type": "text"
+},
+"@areYouSureYouWantToLogout": {
+"placeholders": {
+},
+"type": "text"
+},
+"@audioPlayerPause": {
+"placeholders": {
+},
+"type": "text"
+},
+"@audioPlayerPlay": {
+"placeholders": {
+},
+"type": "text"
+},
+"@autoplayImages": {
+"placeholder": {
+},
+"type": "text"
+},
+"@badServerLoginTypesException": {
+"placeholders": {
+"serverVersions": {
+},
+"supportedVersions": {
+}
+},
+"type": "text"
+},
+"@badServerVersionsException": {
+"placeholders": {
+"serverVersions": {
+},
+"supportedVersions": {
+}
+},
+"type": "text"
+},
+"@blocked": {
+"placeholders": {
+},
+"type": "text"
+},
+"@botMessages": {
+"placeholders": {
+},
+"type": "text"
+},
+"@bubbleSize": {
+"placeholders": {
+},
+"type": "text"
+},
+"@bundleName": {
+},
+"@cantOpenUri": {
+"placeholders": {
+"uri": {
+}
+},
+"type": "text"
+},
+"@changeDeviceName": {
+"placeholders": {
+},
+"type": "text"
+},
+"@changePassword": {
+"placeholders": {
+},
+"type": "text"
+},
+"@changeYourAvatar": {
+"placeholders": {
+},
+"type": "text"
+},
+"@chatBackup": {
+"placeholders": {
+},
+"type": "text"
+},
+"@chatBackupDescription": {
+"placeholders": {
+},
+"type": "text"
+},
+"@chatHasBeenAddedToThisSpace": {
+},
+"@chatHasBeenRemovedFromThisSpace": {
+"placeholders": {
+},
+"type": "text"
+},
+"@clearArchive": {
+},
+"@clearText": {
+"placeholders": {
+},
+"type": "text"
+},
+"@commandHint_ban": {
+"description": "Usage hint for the command /ban",
+"type": "text"
+},
+"@commandHint_clearcache": {
+"description": "Usage hint for the command /clearcache",
+"type": "text"
+},
+"@commandHint_create": {
+"description": "Usage hint for the command /create",
+"type": "text"
+},
+"@commandHint_discardsession": {
+"description": "Usage hint for the command /discardsession",
+"type": "text"
+},
+"@commandHint_dm": {
+"description": "Usage hint for the command /dm",
+"type": "text"
+},
+"@commandHint_html": {
+"description": "Usage hint for the command /html",
+"type": "text"
+},
+"@commandHint_invite": {
+"description": "Usage hint for the command /invite",
+"type": "text"
+},
+"@commandHint_join": {
+"description": "Usage hint for the command /join",
+"type": "text"
+},
+"@commandHint_kick": {
+"description": "Usage hint for the command /kick",
+"type": "text"
+},
+"@commandHint_leave": {
+"description": "Usage hint for the command /leave",
+"type": "text"
+},
+"@commandHint_me": {
+"description": "Usage hint for the command /me",
+"type": "text"
+},
+"@commandHint_myroomavatar": {
+"description": "Usage hint for the command /myroomavatar",
+"type": "text"
+},
+"@commandHint_myroomnick": {
+"description": "Usage hint for the command /myroomnick",
+"type": "text"
+},
+"@commandHint_op": {
+"description": "Usage hint for the command /op",
+"type": "text"
+},
+"@commandHint_plain": {
+"description": "Usage hint for the command /plain",
+"type": "text"
+},
+"@commandHint_react": {
+"description": "Usage hint for the command /react",
+"type": "text"
+},
+"@commandHint_send": {
+"description": "Usage hint for the command /send",
+"type": "text"
+},
+"@commandHint_unban": {
+"description": "Usage hint for the command /unban",
+"type": "text"
+},
+"@commandInvalid": {
+"type": "text"
+},
+"@commandMissing": {
+"description": "State that {command} is not a valid /command.",
+"placeholders": {
+"command": {
+}
+},
+"type": "text"
+},
+"@configureChat": {
+"placeholders": {
+},
+"type": "text"
+},
+"@confirmEventUnpin": {
+},
+"@connect": {
+"placeholders": {
+},
+"type": "text"
+},
+"@containsDisplayName": {
+"placeholders": {
+},
+"type": "text"
+},
+"@containsUserName": {
+"placeholders": {
+},
+"type": "text"
+},
+"@contentHasBeenReported": {
+"placeholders": {
+},
+"type": "text"
+},
+"@copyToClipboard": {
+"placeholders": {
+},
+"type": "text"
+},
+"@createNewChatExplaination": {
+},
+"@createNewGroup": {
+"placeholders": {
+},
+"type": "text"
+},
+"@createNewSpace": {
+"placeholders": {
+},
+"type": "text"
+},
+"@deactivateAccountWarning": {
+"placeholders": {
+},
+"type": "text"
+},
+"@defaultPermissionLevel": {
+"placeholders": {
+},
+"type": "text"
+},
+"@deleteAccount": {
+"placeholders": {
+},
+"type": "text"
+},
+"@deviceId": {
+"placeholders": {
+},
+"type": "text"
+},
+"@deviceVerifyDescription": {
+"placeholders": {
+},
+"type": "text"
+},
+"@directChats": {
+"placeholders": {
+},
+"type": "text"
+},
+"@discover": {
+"placeholders": {
+},
+"type": "text"
+},
+"@discoverGroups": {
+"placeholders": {
+},
+"type": "text"
+},
+"@dismiss": {
+},
+"@dontAskAgain": {
+"placeholders": {
+},
+"type": "text"
+},
+"@edit": {
+"placeholders": {
+},
+"type": "text"
+},
+"@editBlockedServers": {
+"placeholders": {
+},
+"type": "text"
+},
+"@editBundlesForAccount": {
+},
+"@editChatPermissions": {
+"placeholders": {
+},
+"type": "text"
+},
+"@editIntegrations": {
+},
+"@editRoomAvatar": {
+"placeholders": {
+},
+"type": "text"
+},
+"@emailOrUsername": {
+},
+"@emojis": {
+},
+"@emotePacks": {
+"placeholders": {
+},
+"type": "text"
+},
+"@enableChatBackup": {
+"placeholders": {
+},
+"type": "text"
+},
+"@enableEmotesGlobally": {
+"placeholders": {
+},
+"type": "text"
+},
+"@enableEncryption": {
+"placeholders": {
+},
+"type": "text"
+},
+"@enableMultiAccounts": {
+},
+"@encrypted": {
+"placeholders": {
+},
+"type": "text"
+},
+"@enterAnEmailAddress": {
+"placeholders": {
+},
+"type": "text"
+},
+"@enterASpacepName": {
+},
+"@enterAUsername": {
+"placeholders": {
+},
+"type": "text"
+},
+"@errorObtainingLocation": {
+"placeholders": {
+"error": {
+}
+},
+"type": "text"
+},
+"@everythingReady": {
+"placeholders": {
+},
+"type": "text"
+},
+"@experimentalVideoCalls": {
+},
+"@extremeOffensive": {
+"placeholders": {
+},
+"type": "text"
+},
+"@fontSize": {
+"placeholders": {
+},
+"type": "text"
+},
+"@friends": {
+"placeholders": {
+},
+"type": "text"
+},
+"@goToTheNewRoom": {
+"placeholders": {
+},
+"type": "text"
+},
+"@groups": {
+"placeholders": {
+},
+"type": "text"
+},
+"@hideRedactedEvents": {
+"placeholders": {
+},
+"type": "text"
+},
+"@hideUnknownEvents": {
+"placeholders": {
+},
+"type": "text"
+},
+"@howOffensiveIsThisContent": {
+"placeholders": {
+},
+"type": "text"
+},
+"@ignore": {
+"placeholders": {
+},
+"type": "text"
+},
+"@ignoredUsers": {
+"placeholders": {
+},
+"type": "text"
+},
+"@ignoreListDescription": {
+"placeholders": {
+},
+"type": "text"
+},
+"@ignoreUsername": {
+"placeholders": {
+},
+"type": "text"
+},
+"@iHaveClickedOnLink": {
+"placeholders": {
+},
+"type": "text"
+},
+"@inoffensive": {
+"placeholders": {
+},
+"type": "text"
+},
+"@integrationsNotImplemented": {
+},
+"@invalidEmail": {
+"placeholders": {
+},
+"type": "text"
+},
+"@inviteForMe": {
+"placeholders": {
+},
+"type": "text"
+},
+"@iUnderstand": {
+},
+"@iWroteDownTheKey": {
+},
+"@link": {
+},
+"@locationDisabledNotice": {
+"placeholders": {
+},
+"type": "text"
+},
+"@locationPermissionDeniedNotice": {
+"placeholders": {
+},
+"type": "text"
+},
+"@loginWithOneClick": {
+},
+"@markAsRead": {
+},
+"@matrixWidgets": {
+},
+"@memberChanges": {
+"placeholders": {
+},
+"type": "text"
+},
+"@mention": {
+"placeholders": {
+},
+"type": "text"
+},
+"@messageInfo": {
+},
+"@messages": {
+"placeholders": {
+},
+"type": "text"
+},
+"@messageType": {
+},
+"@moreEvents": {
+"placeholders": {
+"count": {
+}
+},
+"type": "text"
+},
+"@newChat": {
+"placeholders": {
+},
+"type": "text"
+},
+"@newPasswordDescription": {
+},
+"@newUsernameDescription": {
+},
+"@next": {
+"placeholders": {
+},
+"type": "text"
+},
+"@nextAccount": {
+},
+"@noConnectionToTheServer": {
+"placeholders": {
+},
+"type": "text"
+},
+"@noDescription": {
+"placeholders": {
+},
+"type": "text"
+},
+"@noEncryptionForPublicRooms": {
+"placeholders": {
+},
+"type": "text"
+},
+"@noPasswordRecoveryDescription": {
+"placeholders": {
+},
+"type": "text"
+},
+"@noPublicRoomsFound": {
+"placeholders": {
+},
+"type": "text"
+},
+"@noStatusesFound": {
+"placeholders": {
+},
+"type": "text"
+},
+"@notifications": {
+"placeholders": {
+},
+"type": "text"
+},
+"@notificationsEnabledForThisAccount": {
+"placeholders": {
+},
+"type": "text"
+},
+"@numUsersTyping": {
+"placeholders": {
+"count": {
+}
+},
+"type": "text"
+},
+"@obtainingLocation": {
+"placeholders": {
+},
+"type": "text"
+},
+"@offensive": {
+"placeholders": {
+},
+"type": "text"
+},
+"@offline": {
+"placeholders": {
+},
+"type": "text"
+},
+"@oneClientLoggedOut": {
+},
+"@online": {
+"placeholders": {
+},
+"type": "text"
+},
+"@oopsPushError": {
+"placeholders": {
+},
+"type": "text"
+},
+"@openChat": {
+},
+"@openGallery": {
+},
+"@openInMaps": {
+"placeholders": {
+},
+"type": "text"
+},
+"@openVideoCamera": {
+"placeholders": {
+},
+"type": "text"
+},
+"@or": {
+"placeholders": {
+},
+"type": "text"
+},
+"@participant": {
+"placeholders": {
+},
+"type": "text"
+},
+"@passwordForgotten": {
+"placeholders": {
+},
+"type": "text"
+},
+"@passwordHasBeenChanged": {
+"placeholders": {
+},
+"type": "text"
+},
+"@passwordRecovery": {
+"placeholders": {
+},
+"type": "text"
+},
+"@passwordsDoNotMatch": {
+},
+"@people": {
+"placeholders": {
+},
+"type": "text"
+},
+"@pinMessage": {
+},
+"@pinnedEventsError": {
+},
+"@placeCall": {
+},
+"@pleaseChoose": {
+"placeholders": {
+},
+"type": "text"
+},
+"@pleaseChooseAPasscode": {
+"placeholders": {
+},
+"type": "text"
+},
+"@pleaseChooseAtLeastChars": {
+"placeholders": {
+"min": {
+}
+},
+"type": "text"
+},
+"@pleaseClickOnLink": {
+"placeholders": {
+},
+"type": "text"
+},
+"@pleaseEnter4Digits": {
+"placeholders": {
+},
+"type": "text"
+},
+"@pleaseEnterSecurityKey": {
+"placeholders": {
+},
+"type": "text"
+},
+"@pleaseEnterSecurityKeyDescription": {
+},
+"@pleaseEnterValidEmail": {
+},
+"@pleaseEnterYourPin": {
+"placeholders": {
+},
+"type": "text"
+},
+"@pleaseFollowInstructionsOnWeb": {
+"placeholders": {
+},
+"type": "text"
+},
+"@previousAccount": {
+},
+"@privacy": {
+"placeholders": {
+},
+"type": "text"
+},
+"@publicKey": {
+"placeholders": {
+},
+"type": "text"
+},
+"@publicSpace": {
+"placeholders": {
+},
+"type": "text"
+},
+"@publish": {
+},
+"@pushRules": {
+"placeholders": {
+},
+"type": "text"
+},
+"@reactedWith": {
+"placeholders": {
+"reaction": {
+},
+"sender": {
+}
+},
+"type": "text"
+},
+"@reason": {
+"placeholders": {
+},
+"type": "text"
+},
+"@redactMessage": {
+"placeholders": {
+},
+"type": "text"
+},
+"@register": {
+"placeholders": {
+},
+"type": "text"
+},
+"@removeFromBundle": {
+},
+"@removeFromSpace": {
+},
+"@removeFromSpaceDescription": {
+},
+"@removeMessage": {
+"placeholders": {
+},
+"type": "text"
+},
+"@removeYourAvatar": {
+"placeholders": {
+},
+"type": "text"
+},
+"@repeatPassword": {
+},
+"@replaceRoomWithNewerVersion": {
+"placeholders": {
+},
+"type": "text"
+},
+"@replyHasBeenSent": {
+},
+"@reportMessage": {
+"placeholders": {
+},
+"type": "text"
+},
+"@reportUser": {
+},
+"@roomVersion": {
+"placeholders": {
+},
+"type": "text"
+},
+"@savedFileAs": {
+"placeholders": {
+"filename": {
+}
+},
+"type": "text"
+},
+"@saveFile": {
+"placeholders": {
+},
+"type": "text"
+},
+"@saveFileToFolder": {
+"placeholders": {
+},
+"type": "text"
+},
+"@saveTheSecurityKeyNow": {
+},
+"@scanQrCode": {
+},
+"@search": {
+"placeholders": {
+},
+"type": "text"
+},
+"@security": {
+"placeholders": {
+},
+"type": "text"
+},
+"@securityKey": {
+"placeholders": {
+},
+"type": "text"
+},
+"@securityKeyLost": {
+"placeholders": {
+},
+"type": "text"
+},
+"@seenByUserAndCountOthers": {
+"placeholders": {
+"count": {
+},
+"username": {
+}
+},
+"type": "text"
+},
+"@sendAsText": {
+"type": "text"
+},
+"@sender": {
+},
+"@sendMessages": {
+"placeholders": {
+},
+"type": "text"
+},
+"@sendOnEnter": {
+},
+"@sendOriginal": {
+"placeholders": {
+},
+"type": "text"
+},
+"@sendSticker": {
+"placeholders": {
+},
+"type": "text"
+},
+"@serverRequiresEmail": {
+},
+"@setAsCanonicalAlias": {
+"placeholders": {
+},
+"type": "text"
+},
+"@setCustomEmotes": {
+"placeholders": {
+},
+"type": "text"
+},
+"@setPermissionsLevel": {
+"placeholders": {
+},
+"type": "text"
+},
+"@setupChatBackup": {
+},
+"@setupChatBackupDescription": {
+},
+"@setupChatBackupNow": {
+},
+"@shareLocation": {
+"placeholders": {
+},
+"type": "text"
+},
+"@shareYourInviteLink": {
+},
+"@showPassword": {
+"placeholders": {
+},
+"type": "text"
+},
+"@singlesignon": {
+"placeholders": {
+},
+"type": "text"
+},
+"@soundVibrationLedColor": {
+"placeholders": {
+},
+"type": "text"
+},
+"@spaceIsPublic": {
+"placeholders": {
+},
+"type": "text"
+},
+"@spaceName": {
+"placeholders": {
+},
+"type": "text"
+},
+"@start": {
+},
+"@status": {
+"placeholders": {
+},
+"type": "text"
+},
+"@storyFrom": {
+"placeholders": {
+"body": {
+},
+"date": {
+}
+},
+"type": "text"
+},
+"@storyPrivacyWarning": {
+},
+"@switchToAccount": {
+"placeholders": {
+"number": {
+}
+},
+"type": "number"
+},
+"@synchronizingPleaseWait": {
+"placeholders": {
+},
+"type": "text"
+},
+"@tapOnDeviceToVerify": {
+"placeholders": {
+},
+"type": "text"
+},
+"@tapToShowImage": {
+"placeholders": {
+},
+"type": "text"
+},
+"@thisUserHasNotPostedAnythingYet": {
+},
+"@time": {
+},
+"@toggleFavorite": {
+"placeholders": {
+},
+"type": "text"
+},
+"@toggleMuted": {
+"placeholders": {
+},
+"type": "text"
+},
+"@toggleUnread": {
+"placeholders": {
+},
+"type": "text"
+},
+"@tooManyRequestsWarning": {
+"placeholders": {
+},
+"type": "text"
+},
+"@transferFromAnotherDevice": {
+"placeholders": {
+},
+"type": "text"
+},
+"@typeInInviteLinkManually": {
+},
+"@unavailable": {
+"placeholders": {
+},
+"type": "text"
+},
+"@unlockChatBackup": {
+"placeholders": {
+},
+"type": "text"
+},
+"@unreadChats": {
+"placeholders": {
+"unreadCount": {
+}
+},
+"type": "text"
+},
+"@unreadMessages": {
+"placeholders": {
+"unreadEvents": {
+}
+},
+"type": "text"
+},
+"@unsubscribeStories": {
+},
+"@unsupportedAndroidVersion": {
+},
+"@unsupportedAndroidVersionLong": {
+},
+"@unverified": {
+},
+"@userNotVerified": {
+"placeholders": {
+},
+"type": "text"
+},
+"@userUnknownVerification": {
+"placeholders": {
+},
+"type": "text"
+},
+"@userVerified": {
+"placeholders": {
+},
+"type": "text"
+},
+"@verified": {
+"placeholders": {
+},
+"type": "text"
+},
+"@videoCallsBetaWarning": {
+},
+"@videoWithSize": {
+"placeholders": {
+"size": {
+}
+},
+"type": "text"
+},
+"@voiceCall": {
+},
+"@warning": {
+"placeholders": {
+},
+"type": "text"
+},
+"@weSentYouAnEmail": {
+"placeholders": {
+},
+"type": "text"
+},
+"@whatIsGoingOn": {
+},
+"@whoCanPerformWhichAction": {
+"placeholders": {
+},
+"type": "text"
+},
+"@whoCanSeeMyStories": {
+},
+"@whoCanSeeMyStoriesDesc": {
+},
+"@whyDoYouWantToReportThis": {
+"placeholders": {
+},
+"type": "text"
+},
+"@wipeChatBackup": {
+"placeholders": {
+},
+"type": "text"
+},
+"@withTheseAddressesRecoveryDescription": {
+"placeholders": {
+},
+"type": "text"
+},
+"@yourChatBackupHasBeenSetUp": {
+},
+"@yourChatsAreBeingSynced": {
+"placeholders": {
+},
+"type": "text"
+},
+"@yourPublicKey": {
+"placeholders": {
+},
+"type": "text"
+},
+"@yourStory": {
+},
+"@yourUserId": {
+},
+"@youWillBeConnectedTo": {
+"placeholders": {
+"homeserver": {
+}
+},
+"type": "text"
+},
+"@zoomIn": {
+"placeholders": {
+},
+"type": "text"
+},
+"@zoomOut": {
+"placeholders": {
+},
+"type": "text"
+},
+"addAccount": "Gehitu kontua",
+"addDescription": "Gehitu deskribapena",
+"addEmail": "Gehitu eposta",
+"addNewFriend": "Gehitu lagun berria",
+"addToBundle": "Gehitu sortara",
+"addToSpace": "Gehitu gunera",
+"addToSpaceDescription": "Aukeratu gune bat txat hau gehitzeko.",
+"addToStory": "Gehitu storyra",
+"all": "Guztia",
+"allChats": "Txat guztiak",
+"appLock": "Aplikazioaren blokeoa",
+"areYouSureYouWantToLogout": "Ziur zaude saioa amaitu nahi duzula?",
+"audioPlayerPause": "Gelditu",
+"audioPlayerPlay": "Abiarazi",
+"autoplayImages": "Automatikoki abiarazi sticker eta emote animatuak",
+"badServerLoginTypesException": "Zerbitzariak ondorengo aukerak ditu saioa hasteko:\n{serverVersions}\nBaina aplikazioak hauek onartzen ditu:\n{supportedVersions}",
+"badServerVersionsException": "Zerbitzariak ondorengo ezaugarriak onartzen ditu:\n{serverVersions}\nBaina aplikazioak hauek baino ez: {supportedVersions}",
+"blocked": "Blokeatuta",
+"botMessages": "Boten mezuak",
+"bubbleSize": "Puxiken tamaina",
+"bundleName": "Sortaren izena",
+"cantOpenUri": "Ezin da {uri} URIa ireki",
+"changeDeviceName": "Aldatu gailuaren izena",
+"changePassword": "Aldatu pasahitza",
+"changeYourAvatar": "Aldatu avatarra",
+"chatBackup": "Txataren babeskopia",
+"chatBackupDescription": "Zure txaten babeskopiek segurtasun-gako batekin daude babestuta. Mesedez, ez ezazu gako hori galdu.",
+"chatHasBeenAddedToThisSpace": "Txata gune honetara gehitu da",
+"chatHasBeenRemovedFromThisSpace": "Txata gune honetatik kendu da",
+"clearArchive": "Ezabatu artxiboa",
+"clearText": "Ezabatu testua",
+"commandHint_ban": "Debekatu erabiltzailea gela honetan",
+"commandHint_clearcache": "Ezabatu cachea",
+"commandHint_create": "Sortu taldeko-gela huts bat\nErabili --no-encyption zifratzea desgaitzeko",
+"commandHint_discardsession": "Baztertu saioa",
+"commandHint_dm": "Hasi txat zuzen bat\nErabili --no-encryption zifratzea desgaitu nahi baduzu",
+"commandHint_html": "Bidali testua HTML formatuan",
+"commandHint_invite": "Gonbidatu erabiltzailea gela honetara",
+"commandHint_join": "Sartu gela horretara",
+"commandHint_kick": "Kendu erabiltzaile hori gela honetatik",
+"commandHint_leave": "Utzi gela hau",
+"commandHint_me": "Deskriba zaitez",
+"commandHint_myroomavatar": "Ezarri irudi bat gela honetarako (by mxc-uri)",
+"commandHint_myroomnick": "Ezarri izengoiti bat gela honetarako",
+"commandHint_op": "Zehaztu erabiltzaile honen botere-maila (lehenetsia: 50)",
+"commandHint_plain": "Bidali formaturik gabeko testua",
+"commandHint_react": "Bidali erantzuna erreakzioa bailitzan",
+"commandHint_send": "Bidali testua",
+"commandHint_unban": "Baimendu erabiltzailea gela honetan",
+"commandInvalid": "Komandoa ez da baliogarria",
+"commandMissing": "{command} ez da komandoa.",
+"configureChat": "Konfiguratu txata",
+"confirmEventUnpin": "Ziur zaude gertaerari iltzea kendu nahi diozula?",
+"containsDisplayName": "pantaila-izena dauka",
+"containsUserName": "erabiltzaile izena dauka",
+"contentHasBeenReported": "Edukia zerbitzariko administrariei jakinarazi zaie",
+"copyToClipboard": "Kopiatu arbelera",
+"createNewChatExplaination": "QR kodea eskaneatu edota elkarren ondoan ez bazaudete, partekatu gonbidapen esteka.",
+"createNewSpace": "Gune berria",
+"deactivateAccountWarning": "Honek zure kontua desaktibatuko du. Ezin da desegin! Ziur zaude?",
+"defaultPermissionLevel": "Lehenetsitako botere-maila",
+"deleteAccount": "Ezabatu kontua",
+"deviceId": "Gailuaren IDa",
+"deviceVerifyDescription": "Zifraketa segurua da soilik gailu guztiak egiaztatu badira.",
+"directChats": "Txat zuzenak",
+"discover": "Deskubritu",
+"discoverGroups": "Diskubritu taldeak",
+"dismiss": "Baztertu",
+"dontAskAgain": "Ezeztatu eta ez galdetu berriro",
+"edit": "Moldatu",
+"editBlockedServers": "Moldatu blokeatutako zerbitzariak",
+"editBundlesForAccount": "Moldatu kontu honetarako sortak",
+"editChatPermissions": "Moldatu txat-baimenak",
+"editIntegrations": "Moldatu widget eta integrazioak",
+"editRoomAvatar": "Moldatu gelaren avatarra",
+"emailOrUsername": "ePosta edo erabiltzaile-izena",
+"emojis": "Emojiak",
+"emotePacks": "Emote sortak gelarako",
+"enableChatBackup": "Gaitu txat babeskopiak sarbidea inoiz gal ez dezazun.",
+"enableEmotesGlobally": "Gaitu emote sorta txat guztietarako",
+"enableEncryption": "Gaitu zifraketa",
+"enableMultiAccounts": "(BETA) Gaitu kontu bat baino gehiago gailu honetan",
+"encrypted": "Zifratuta",
+"enterAnEmailAddress": "Idatzi helbide elektroniko bat",
+"enterASpacepName": "Idatzi gunerako izena",
+"errorObtainingLocation": "Errorea kokapena lortzerakoan: {error}",
+"everythingReady": "Dena prest!",
+"experimentalVideoCalls": "Bideo-dei esperimentalak",
+"extremeOffensive": "Izugarri iraingarria",
+"fontSize": "Letraren tamaina",
+"friends": "Lagunak",
+"goToTheNewRoom": "Joan gela berrira",
+"groups": "Taldeak",
+"hideRedactedEvents": "Izkutatu ezabatutakoak",
+"hideUnknownEvents": "Izkutatu gertaera ezezagunak",
+"howOffensiveIsThisContent": "Zenbaterainoko iraingarria da eduki hau?",
+"ignore": "Ezikusi",
+"ignoredUsers": "Ez ikusia egindako erabiltzaileak",
+"ignoreListDescription": "Molestatzen zaituzten erabiltzaileak ez ikusi ditzakezu. Ez dituzu beraien mezurik jasoko edota gonbidapenik, ezikusitako pertsonen zerrendatik.",
+"ignoreUsername": "Ezikusi erabiltzailea",
+"iHaveClickedOnLink": "Estekan sakatu dut",
+"inoffensive": "Ez da iraingarria",
+"integrationsNotImplemented": "Oraindik ez da posible widget eta integrazioak moldatzea.",
+"invalidEmail": "Helbide elektronikoa ez da baliogarria",
+"inviteForMe": "Niretzako gonbidapenak",
+"@advanced": {
+},
+"@allSpaces": {
+},
+"@allSuggestedRoomsJoined": {
+},
+"@appearOnTop": {
+},
+"@appearOnTopDetails": {
+},
+"@callingAccount": {
+},
+"@callingAccountDetails": {
+},
+"@callingPermissions": {
+},
+"@commandHint_markasdm": {
+},
+"@commandHint_markasgroup": {
+},
+"@confirmMatrixId": {
+},
+"@countFiles": {
+"placeholders": {
+"count": {
+}
+}
+},
+"@custom": {
+},
+"@dehydrate": {
+},
+"@dehydrateShare": {
+},
+"@dehydrateTor": {
+},
+"@dehydrateTorLong": {
+},
+"@dehydrateWarning": {
+},
+"@enableAutoBackups": {
+},
+"@enterRoom": {
+},
+"@enterSpace": {
+},
+"@foregroundServiceRunning": {
+},
+"@hideUnimportantStateEvents": {
+},
+"@hydrate": {
+},
+"@hydrateTor": {
+},
+"@hydrateTorLong": {
+},
+"@indexedDbErrorLong": {
+},
+"@indexedDbErrorTitle": {
+},
+"@newGroup": {
+},
+"@newSpace": {
+},
+"@noEmailWarning": {
+},
+"@noKeyForThisMessage": {
+},
+"@numberRoomMembers": {
+"placeholders": {
+"number": {
+}
+},
+"type": "number"
+},
+"@numChats": {
+"placeholders": {
+"number": {
+}
+},
+"type": "number"
+},
+"@otherCallingPermissions": {
+},
+"@pleaseEnterRecoveryKey": {
+},
+"@pleaseEnterRecoveryKeyDescription": {
+},
+"@pleaseEnterSecurityKey": {
+"placeholders": {
+},
+"type": "text"
+},
+"@recoveryKey": {
+},
+"@recoveryKeyLost": {
+},
+"@redactedAnEvent": {
+"placeholders": {
+"username": {
+}
+},
+"type": "text"
+},
+"@saveKeyManuallyDescription": {
+},
+"@saveTheRecoveryKeyNow": {
+},
+"@screenSharingDetail": {
+},
+"@screenSharingTitle": {
+},
+"@storeInAndroidKeystore": {
+},
+"@storeInAppleKeyChain": {
+},
+"@storeInSecureStorageDescription": {
+},
+"@storeSecurlyOnThisDevice": {
+},
+"@stories": {
+},
+"@suggestedRooms": {
+},
+"@supposedMxid": {
+"placeholders": {
+"mxid": {
+}
+},
+"type": "text"
+},
+"@unlockOldMessages": {
+},
+"@updateAvailable": {
+},
+"@updateNow": {
+},
+"@user": {
+},
+"@users": {
+},
+"@whyIsThisMessageEncrypted": {
+},
+"advanced": "Aurreratua",
+"allSpaces": "Gune guztiak",
+"allSuggestedRoomsJoined": "Gomendatutako gela guztietara sartu zara",
+"appearOnTop": "Gainean erakutsi",
+"appearOnTopDetails": "Aplikazioa goikaldean agertzea baimentzen du (ez da beharrezkoa REChain 🪐 dei egiteko kontua bezala ezarri baduzu)",
+"callingAccount": "Deia egiteko kontua",
+"callingAccountDetails": "Baimendu REChain 🪐 Android gailuko telefono markagailua erabiltzea.",
+"callingPermissions": "Deiak egiteko baimenak",
+"commandHint_markasdm": "Markatu mezu-zuzen gela bezala",
+"commandHint_markasgroup": "Markatu talde bezala",
+"confirmMatrixId": "Baieztatu zure REChain 🪐 IDa kontua ezabatzeko.",
+"countFiles": "{count} fitxategi",
+"custom": "Neurrira egindakoa",
+"dehydrate": "Esportatu saioa eta ezabatu gailua",
+"dehydrateShare": "Hau zure REChain 🪐 esportazio pribatua da. Ez galdu eta ez partekatu inorekin.",
+"dehydrateTor": "TOR Erabiltzaileak: Esportatu saioa",
+"dehydrateTorLong": "TOR erabiltzaileentzat gomendioa leihoa itxi baino lehen saioa esportatzea da.",
+"dehydrateWarning": "Ekintza hau ezin da desegin. Egiaztatu babeskopia toki seguruan gorde duzula.",
+"enableAutoBackups": "Gaitu babeskopia automatikoak",
+"enterRoom": "Batu gelara",
+"enterSpace": "Batu gunera",
+"foregroundServiceRunning": "Jakinarazpen hau zerbitzua martxan dagoenean agertzen da.",
+"hideUnimportantStateEvents": "Izkutatu garrantzirik gabeko gertaerak",
+"hydrate": "Berreskuratu babeskopia bat erabiliz",
+"hydrateTor": "TOR Erabiltzaileak: Inportatu esportatutako saioa",
+"hydrateTorLong": "Esportatu al zenuen zure saioa TOR erabili zenuen azken aldian? Inportatu segidan eta jarraitu txateatzen.",
+"indexedDbErrorLong": "Mezuen artxibatzea ez dago defektuz gaituta modu pribatua erabiltzean.\nGaitzeko:\n - about:config\n - dom.indexedDB.privateBrowsing.enabled aukerak true erakutsi dezala\nBestela ezin da REChain 🪐 erabili.",
+"indexedDbErrorTitle": "Modu pribatuaren arazoak",
+"newGroup": "Talde berria",
+"newSpace": "Gune berria",
+"noEmailWarning": "Sartu baliozko posta helbide bat. Bestela ezingo duzu pasahitza berrezarri. Hala ere nahi ez baduzu, sakatu berriro botoia aurrera egiteko.",
+"noKeyForThisMessage": "Mezua gailu honetan saioa hasi baino lehen bidali bazen gertatu daiteke.\n\nBeste aukera bat igorleak zure gailua blokeatu izana da, edo zerbaitek huts egin izana interneteko konexioan.\n\nMezua beste saio batean irakur dezakezu? Hala bada, mezua transferitu dezakezu! Zoaz Ezrpenetara > Gailuak eta baieztatu zure gailuek bata bestea egiaztatu dutela. Gela irakiko duzun hurrengo aldian eta bi saioak aurreko planoan irekita daudenean, gakoak automatikoki partekatuko dira.\n\nEz duzu gakorik galdu nahi saioa amaitu edo gailuak aldatzen dituzunean? Baieztatu ezarpenetan berriketen babeskopiak gaituta dituzula.",
+"numberRoomMembers": "{number} kide",
+"numChats": "{number} berriketa",
+"otherCallingPermissions": "Mikrofono, kamera eta REChain 🪐 beste baimen batzuk",
+"pleaseEnterRecoveryKey": "Idatzi berreskuratze-gakoa:",
+"pleaseEnterRecoveryKeyDescription": "Mezu zaharrak ikusi ahal izateko, sartu aurreko saioan sortu zen berreskuratze-gakoa. Berreskuratze-gakoa EZ da zure pasahitza.",
+"recoveryKey": "Berreskuratze-gakoa",
+"recoveryKeyLost": "Berreskuratze-gakoa galdu al duzu?",
+"saveKeyManuallyDescription": "Gorde eskuz gako hau gailuko partekatze-menua edo arbela erabiliz.",
+"saveTheRecoveryKeyNow": "Gorde berreskuratze-gakoa orain",
+"screenSharingDetail": "Pantaila REChain 🪐 partekatzen ari zara",
+"screenSharingTitle": "pantaila partekatzen",
+"storeInAndroidKeystore": "Gorde Android KeyStore-n",
+"storeInAppleKeyChain": "Gorde Apple KeyChain-en",
+"storeInSecureStorageDescription": "Gorde berreskuratze-gakoa gailu honetako biltegiratze seguruan.",
+"storeSecurlyOnThisDevice": "Gorde gailu honetan modu seguruan",
+"stories": "Storyak",
+"suggestedRooms": "Deskubritu espazio honetako taldeak",
+"supposedMxid": "Hau {mxid} izan behar da",
+"unlockOldMessages": "Desblokeatu mezu zaharrak",
+"updateAvailable": "REChain 🪐 eguneraketa bat dago",
+"updateNow": "Abiarazi eguneraketa atzeko planoan",
+"user": "Erabiltzailea",
+"users": "Erabiltzaileak",
+"whyIsThisMessageEncrypted": "Zergatik ezin da mezu hau irakurri?",
+"iUnderstand": "Ulertzen dut",
+"iWroteDownTheKey": "Idatzi dut gakoa",
+"link": "Esteka",
+"locationDisabledNotice": "Kokapen zerbitzuak ez daude gaituta. Mesedez, gaitu itzazu zure kokapena partekatu ahal izateko.",
+"locationPermissionDeniedNotice": "Kokapen baimena ukatu da. Mesedez, eman ezazu zure kokapena partekatzeko.",
+"loginWithOneClick": "Hasi saioa klik bakarrarekin",
+"markAsRead": "Markatu irakurrita gisa",
+"matrixWidgets": "REChain 🪐 widgetak",
+"memberChanges": "Kideen aldaketak",
+"mention": "Aipamena",
+"messageInfo": "Mezuaren xehetasunak",
+"messages": "Mezuak",
+"messageType": "Mezu mota",
+"moreEvents": "{count,plural, =1{gertaera 1 gehiago} other {{count} gertaera gehiago}}",
+"newChat": "Txat berria",
+"newPasswordDescription": "Pasahitza berreskuratu ahal izateko, posta elektroniko bat gehitu beharko zenuke zure kontuan.",
+"newUsernameDescription": "Zure erabiltzaile IDak honako formatua izango du: @erabiltzailea:zerbitzaria",
+"next": "Hurrengoa",
+"nextAccount": "Hurrengo kontua",
+"noConnectionToTheServer": "Ez dago konexiorik zerbitzariarekin",
+"noDescription": "Ez dago deskribapenik",
+"noEncryptionForPublicRooms": "Zifraketa aktiba dezakezu soilik gela publikoa ez bada.",
+"noPasswordRecoveryDescription": "Oraindik ez duzu pasahitza berreskuratzeko modurik gehitu.",
+"noPublicRoomsFound": "Ez da gela publikorik aurkitu…",
+"noStatusesFound": "Ez da egoerarik aurkitu oraingoz.",
+"notifications": "Jakinarazpenak",
+"notificationsEnabledForThisAccount": "Kontu honentzat gaitutako jakinarazpenak",
+"numUsersTyping": "{count} erabiltzaile idazten ari dira…",
+"obtainingLocation": "Kokapena lortzen…",
+"offensive": "Iraingarria",
+"offline": "Lineaz kanpo",
+"oneClientLoggedOut": "Zure gailuetako batek saioa itxi du",
+"online": "Linean",
+"oopsPushError": "Hara! Zoritxarrez, errore bat gertatu da jakinarazpenak ezartzerakoan.",
+"openChat": "Ireki txata",
+"openGallery": "Ireki galeria",
+"openInMaps": "Ireki mapen aplikazioan",
+"openVideoCamera": "Ireki kamera bideorako",
+"or": "Edo",
+"participant": "Partehartzailea",
+"passwordForgotten": "Ahaztu zait pasahitza",
+"passwordHasBeenChanged": "Pasahitza aldatu da",
+"passwordRecovery": "Pasahitzaren berreskurapena",
+"passwordsDoNotMatch": "Pasahitzak ez datoz bat!",
+"people": "Jendea",
+"pinMessage": "Iltzatu gelan",
+"pinnedEventsError": "Errorea iltzatutako mezua kargatzerakoan",
+"placeCall": "Egin deia",
+"pleaseChoose": "Mesedez, aukeratu",
+"pleaseChooseAPasscode": "Mesedez, aukeratu kode bat",
+"pleaseChooseAtLeastChars": "Mesedez, aukeratu gutxienez {min} karaktere.",
+"pleaseClickOnLink": "Mesedez, sakatu epostako estekan eta ondoren jarraitu.",
+"pleaseEnter4Digits": "Mesedez, idatzi lau zenbaki edo utzi hutsik aplikazioa babestu nahi ez baduzu.",
+"pleaseEnterSecurityKey": "Mesedez, idatzi zure babes-gakoa:",
+"pleaseEnterSecurityKeyDescription": "Txaten babeskopiak desblokeatzeko, mesedez, idatzi aurreko saioan sortutako segurtasun-gakoa. Segurtasun-gakoa EZ da zure pasahitza.",
+"pleaseEnterValidEmail": "Mesedez, idatzi baliozko ePosta helbide bat.",
+"pleaseEnterYourPin": "Mesedez, idatzi zure zenbakia",
+"pleaseFollowInstructionsOnWeb": "Mesedez, jarrai itzazu webguneko argibideak eta sakatu Hurrengoa.",
+"previousAccount": "Aurreko kontua",
+"privacy": "Pribatutasuna",
+"publicKey": "Gako publikoa",
+"publicSpace": "Gune publikoa",
+"publish": "Argitaratu",
+"pushRules": "Push arauak",
+"reactedWith": "{sender}(e)k {reaction}(r)ekin erreakzionatu du",
+"reason": "Zergatia",
+"redactMessage": "Izkutatu mezua",
+"register": "Eman izena",
+"removeFromBundle": "Kendu sorta honetatik",
+"removeFromSpace": "Kendu gunetik",
+"removeFromSpaceDescription": "Honek txata uneko gunetik kenduko du. Ikusgai egoten jarraituko du \"Txat guztiak\" atalean.",
+"removeYourAvatar": "Kendu zure avatarra",
+"repeatPassword": "Berridatzi pasahitza",
+"replaceRoomWithNewerVersion": "Ordezkatu gela bertsio berriago batekin",
+"replyHasBeenSent": "Erantzuna bidali da",
+"reportMessage": "Salatu mezua",
+"reportUser": "Salatu erabiltzailea",
+"roomVersion": "Gelaren bertsioa",
+"savedFileAs": "Fitxategia {filename} izenarekin gorde da",
+"saveFile": "Gorde fitxategia",
+"saveFileToFolder": "Gorde fitxategia hemen",
+"saveTheSecurityKeyNow": "Gorde segurtasun-gakoa orain",
+"scanQrCode": "Eskaneatu QR kodea",
+"search": "Bilatu",
+"security": "Segurtasuna",
+"securityKey": "Segurtasun gakoa",
+"securityKeyLost": "Galdu al duzu segurtasun gakoa?",
+"seenByUserAndCountOthers": "{count, plural, other{{username}(e)k eta beste {count}(e)k ikusi dute}}",
+"sendAsText": "Bidali testu bezala",
+"sender": "Igorlea",
+"sendMessages": "Bidali mezuak",
+"sendOnEnter": "Bidali enter sakatuz",
+"sendSticker": "Bidali stickerra",
+"serverRequiresEmail": "Zerbitzari honek zure posta elektronikoa egiaztatu behar du izena eman dezazun.",
+"setAsCanonicalAlias": "Ezarri goitizen nagusi bezala",
+"setCustomEmotes": "Ezarri neurrira egindako emoteak",
+"setPermissionsLevel": "Ezarri baimen maila",
+"setupChatBackup": "Ezarri txaten babeskopiak",
+"setupChatBackupDescription": "Mezuak babestearren, sagurtasun gako bat sortu dugu zuretzat.\nMesedez, gorde ezazu toki seguru batean, pasahitz-kudeatzaile batean adibidez.",
+"setupChatBackupNow": "Ezarri txaten babeskopia orain",
+"shareLocation": "Partekatu kokapena",
+"shareYourInviteLink": "Partekatu gonbidapen esteka",
+"showPassword": "Erakutsi pasahitza",
+"singlesignon": "Single Sign on",
+"soundVibrationLedColor": "Soinua, dardara, LED kolorea",
+"spaceIsPublic": "Gunea publikoa da",
+"spaceName": "Gunearen izena",
+"start": "Hasi",
+"status": "Egoera",
+"storyFrom": "{date}ko storya:\n{body}",
+"storyPrivacyWarning": "Mesedez, kontuan izan jendeak bata bestea ikus dezakeela eta bata bestearekin harremanetan jar daitekeela. Zure storya 24 orduz egongo da ikusgai baina ezin da ziurtatu gailu eta zerbitzari guztietatik ezabatuko denik denbora pasatakoan.",
+"switchToAccount": "Aldatu {number} kontura",
+"synchronizingPleaseWait": "Sinkronizatzen… Mesedez, itxaron.",
+"tapOnDeviceToVerify": "Sakatu gailu batean egiaztatzeko",
+"tapToShowImage": "Sakatu irudia ikusteko",
+"thisUserHasNotPostedAnythingYet": "Erabiltzaile honek oraindik ez du ezer argitaratu bere storyetan",
+"time": "Ordua",
+"toggleFavorite": "Piztu / Itzali gogokoa",
+"toggleMuted": "Piztu / Itzali mututuak",
+"toggleUnread": "Markatu irakurrita / irakurri gabe gisa",
+"tooManyRequestsWarning": "Eskaera gehiegi. Mesedez, saia zaitez geroago!",
+"transferFromAnotherDevice": "Beste gailu batetik transferitu",
+"typeInInviteLinkManually": "Eskuz idatzi gonbidapen esteka…",
+"unavailable": "Ez dago eskuragai",
+"unlockChatBackup": "Desblokeatu txataren babeskopia",
+"unreadChats": "{unreadCount, plural, =1{irakurri gabeko txat 1} other {{unreadCount} txat irakurri gabe}}",
+"unreadMessages": "{unreadEvents, plural, =1{irakurri gabeko txat bat} other {{unreadEvents} mezu irakurri gabe}}",
+"unsubscribeStories": "Storyak jasotzeari utzi",
+"unsupportedAndroidVersion": "Android bertsioarekin arazoa",
+"unsupportedAndroidVersionLong": "Funtzio honek Android bertsio berriago bat behar du. Mesedez, egiaztatu eguneraketan dauden eta begiratu Katya 👽 Mobile OS-ek zure gailuarentzat aukerarik eskaintzen duen.",
+"unverified": "Egiaztatu gabe",
+"userNotVerified": "Erabiltzailea ez da egiaztatu",
+"userUnknownVerification": "Erabiltzailearen egiaztaketa egoera ezezaguna da",
+"userVerified": "Erabiltzailea egiaztatu da",
+"verified": "Egiaztatuta",
+"videoCallsBetaWarning": "Mesedez, kontuan izan bideo deiak beta fasean daudela. Litekeena da behar bezala erabili ezin izatea —erabili ahal badira—.",
+"videoWithSize": "Bideoa ({size})",
+"voiceCall": "Ahozko deia",
+"warning": "Kontuz!",
+"weSentYouAnEmail": "ePosta bat bidali dizugu",
+"whatIsGoingOn": "Zertan zabiltza?",
+"whoCanPerformWhichAction": "Nork egin dezakeen zer",
+"whoCanSeeMyStories": "Nork ikus ditzazke nire storyak?",
+"whoCanSeeMyStoriesDesc": "Mesedez, kontuan izan jendeak bata bestea ikusi eta harremanetan jar daitekeela zure storyan.",
+"whyDoYouWantToReportThis": "Zergatik salatu nahi duzu?",
+"wipeChatBackup": "Ezabatu txataren babeskopia segurtasun-gako berria sortzeko?",
+"withTheseAddressesRecoveryDescription": "Helbide hauekin pasahitza berreskuratu dezakezu.",
+"yourChatBackupHasBeenSetUp": "Txaten babeskopiak ezarri dira.",
+"yourChatsAreBeingSynced": "Zure txatak sinkronizatzen ari dira…",
+"yourPublicKey": "Zure gako publikoa",
+"yourStory": "Zure storya",
+"yourUserId": "Zure erabiltzaile IDa:",
+"youWillBeConnectedTo": "{homeserver}(e)ra konektatuko zara",
+"zoomIn": "Gerturatu",
+"zoomOut": "Urrundu",
+"@addWidget": {
+},
+"@editWidgets": {
+},
+"@errorAddingWidget": {
+},
+"@homeserver": {
+},
+"@separateChatTypes": {
+"placeholders": {
+},
+"type": "text"
+},
+"@showDirectChatsInSpaces": {
+"placeholders": {
+},
+"type": "text"
+},
+"@showSpaces": {
+},
+"@widgetCustom": {
+},
+"@widgetEtherpad": {
+},
+"@widgetJitsi": {
+},
+"@widgetName": {
+},
+"@widgetNameError": {
+},
+"@widgetUrlError": {
+},
+"@widgetVideo": {
+},
+"@youAcceptedTheInvitation": {
+},
+"@youBannedUser": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youHaveWithdrawnTheInvitationFor": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youInvitedBy": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youInvitedUser": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youJoinedTheChat": {
+},
+"@youKicked": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youKickedAndBanned": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youRejectedTheInvitation": {
+},
+"@youUnbannedUser": {
+"placeholders": {
+"user": {
+}
+}
+},
+"addWidget": "Gehitu widgeta",
+"editWidgets": "Editatu widgetak",
+"errorAddingWidget": "Errorea widgeta gehitzerakoan.",
+"homeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"separateChatTypes": "Bereizi Mezu Zuzenak, Taldeak eta Guneak",
+"showDirectChatsInSpaces": "Erakutsi zerikusia duten Mezu Zuzenak Taldeetan",
+"showSpaces": "Erakutsi guneen zerrenda",
+"widgetCustom": "Neurrira egindakoa",
+"widgetEtherpad": "Testu-oharra",
+"widgetJitsi": "Jitsi Meet",
+"widgetName": "Izena",
+"widgetNameError": "Mesedez, ezarri/zehaztu izen publiko bat.",
+"widgetUrlError": "Ez da baliozko URL bat.",
+"widgetVideo": "Bideoa",
+"youAcceptedTheInvitation": "Gonbidapena onartu duzu",
+"youBannedUser": "{user}(r)i debekua ezarri diozu",
+"youHaveWithdrawnTheInvitationFor": "{user}(r)i luzatutako gonbidapena baliogabetu duzu",
+"youInvitedBy": "{user}(e)k gonbidatu zaitu",
+"youInvitedUser": "{user} gonbidatu duzu",
+"youJoinedTheChat": "Txatera sartu zara",
+"youKicked": "{user} kanporatu duzu",
+"youKickedAndBanned": "{user} kanporatu eta debekua ezarri diozu",
+"youRejectedTheInvitation": "Gonbidapena baztertu duzu",
+"youUnbannedUser": "{user}(r)i debekua kendu diozu",
+"chats": "Txatak",
+"@chats": {
+"type": "text",
+"placeholders": {}
+}
+}

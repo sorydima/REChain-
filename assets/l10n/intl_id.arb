@@ -1,0 +1,3139 @@
+{
+"@@last_modified": "2021-08-14 12:41:10.002360",
+"setAsCanonicalAlias": "Atur sebagai alias utama",
+"@setAsCanonicalAlias": {
+"type": "text",
+"placeholders": {}
+},
+"roomVersion": "Versi ruangan",
+"@roomVersion": {
+"type": "text",
+"placeholders": {}
+},
+"publicGroups": "Grup-grup Publik",
+"@publicGroups": {
+"type": "text",
+"placeholders": {}
+},
+"people": "Orang-orang",
+"@people": {
+"type": "text",
+"placeholders": {}
+},
+"goToTheNewRoom": "Pergi ke ruangan yang baru",
+"@goToTheNewRoom": {
+"type": "text",
+"placeholders": {}
+},
+"chats": "Chat",
+"@chats": {
+"type": "text",
+"placeholders": {}
+},
+"blockDevice": "Blokir Perangkat",
+"@blockDevice": {
+"type": "text",
+"placeholders": {}
+},
+"avatarHasBeenChanged": "Avatar diubah",
+"@avatarHasBeenChanged": {
+"type": "text",
+"placeholders": {}
+},
+"authentication": "Autentikasi",
+"@authentication": {
+"type": "text",
+"placeholders": {}
+},
+"areYouSureYouWantToLogout": "Apakah Anda yakin ingin keluar?",
+"@areYouSureYouWantToLogout": {
+"type": "text",
+"placeholders": {}
+},
+"areYouSure": "Apa Anda yakin?",
+"@areYouSure": {
+"type": "text",
+"placeholders": {}
+},
+"archive": "Arsip",
+"@archive": {
+"type": "text",
+"placeholders": {}
+},
+"anyoneCanJoin": "Siapa saja dapat bergabung",
+"@anyoneCanJoin": {
+"type": "text",
+"placeholders": {}
+},
+"answeredTheCall": "{senderName} menjawab panggilan",
+"@answeredTheCall": {
+"type": "text",
+"placeholders": {
+"senderName": {}
+}
+},
+"alreadyHaveAnAccount": "Sudah memiliki akun?",
+"@alreadyHaveAnAccount": {
+"type": "text",
+"placeholders": {}
+},
+"alias": "alias",
+"@alias": {
+"type": "text",
+"placeholders": {}
+},
+"admin": "Admin",
+"@admin": {
+"type": "text",
+"placeholders": {}
+},
+"addGroupDescription": "Tambahkan deskripsi grup",
+"@addGroupDescription": {
+"type": "text",
+"placeholders": {}
+},
+"accountInformation": "Informasi akun",
+"@accountInformation": {
+"type": "text",
+"placeholders": {}
+},
+"account": "Akun",
+"@account": {
+"type": "text",
+"placeholders": {}
+},
+"acceptedTheInvitation": "{username} menerima undangannya",
+"@acceptedTheInvitation": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"accept": "Terima",
+"@accept": {
+"type": "text",
+"placeholders": {}
+},
+"about": "Tentang",
+"@about": {
+"type": "text",
+"placeholders": {}
+},
+"isTyping": "sedang mengetik…",
+"@isTyping": {
+"type": "text",
+"placeholders": {}
+},
+"isDeviceKeyCorrect": "Apakah kunci perangkat berikut ini benar?",
+"@isDeviceKeyCorrect": {
+"type": "text",
+"placeholders": {}
+},
+"inviteText": "{username} telah mengundang Anda ke REChain.Online Platform!\n1. Instal REChain.Online: https://rechain.online\n2. Daftar atau masuk!\n3. Buka tautan undangan ini: {link}",
+"@inviteText": {
+"type": "text",
+"placeholders": {
+"username": {},
+"link": {}
+}
+},
+"inviteForMe": "Undangan untuk saya",
+"@inviteForMe": {
+"type": "text",
+"placeholders": {}
+},
+"invitedUsersOnly": "Pengguna yang diundang saja",
+"@invitedUsersOnly": {
+"type": "text",
+"placeholders": {}
+},
+"invitedUser": "{username} mengundang {targetName}",
+"@invitedUser": {
+"type": "text",
+"placeholders": {
+"username": {},
+"targetName": {}
+}
+},
+"invited": "Diundang",
+"@invited": {
+"type": "text",
+"placeholders": {}
+},
+"inviteContactToGroup": "Undang kontak ke {groupName}",
+"@inviteContactToGroup": {
+"type": "text",
+"placeholders": {
+"groupName": {}
+}
+},
+"inviteContact": "Undang kontak",
+"@inviteContact": {
+"type": "text",
+"placeholders": {}
+},
+"incorrectPassphraseOrKey": "Frasa sandi atau kunci pemulihan yang salah",
+"@incorrectPassphraseOrKey": {
+"type": "text",
+"placeholders": {}
+},
+"iHaveClickedOnLink": "Saya sudah klik tautannya",
+"@iHaveClickedOnLink": {
+"type": "text",
+"placeholders": {}
+},
+"ignoreUsername": "Abaikan nama pengguna",
+"@ignoreUsername": {
+"type": "text",
+"placeholders": {}
+},
+"ignoreListDescription": "Anda dapat mengabaikan pengguna yang mengganggu. Anda tidak akan dapat menerima pesan atau undangan ruang apapun dari pengguna di daftar abaian pribadi Anda.",
+"@ignoreListDescription": {
+"type": "text",
+"placeholders": {}
+},
+"ignoredUsers": "Pengguna yang diabaikan",
+"@ignoredUsers": {
+"type": "text",
+"placeholders": {}
+},
+"identity": "Identitas",
+"@identity": {
+"type": "text",
+"placeholders": {}
+},
+"id": "ID",
+"@id": {
+"type": "text",
+"placeholders": {}
+},
+"homeserverIsNotCompatible": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node tidak kompatibel",
+"@homeserverIsNotCompatible": {
+"type": "text",
+"placeholders": {}
+},
+"hideUnknownEvents": "Sembunyikan peristiwa tidak dikenal",
+"@hideUnknownEvents": {
+"type": "text",
+"placeholders": {}
+},
+"hideRedactedEvents": "Sembunyikan peristiwa yang dihapus",
+"@hideRedactedEvents": {
+"type": "text",
+"placeholders": {}
+},
+"help": "Bantuan",
+"@help": {
+"type": "text",
+"placeholders": {}
+},
+"hasWithdrawnTheInvitationFor": "{username} telah mencabut undangan untuk {targetName}",
+"@hasWithdrawnTheInvitationFor": {
+"type": "text",
+"placeholders": {
+"username": {},
+"targetName": {}
+}
+},
+"guestsCanJoin": "Tamu bisa bergabung",
+"@guestsCanJoin": {
+"type": "text",
+"placeholders": {}
+},
+"guestsAreForbidden": "Tamu dilarang",
+"@guestsAreForbidden": {
+"type": "text",
+"placeholders": {}
+},
+"groupWith": "Grup dengan {displayname}",
+"@groupWith": {
+"type": "text",
+"placeholders": {
+"displayname": {}
+}
+},
+"groupIsPublic": "Grup bersifat publik",
+"@groupIsPublic": {
+"type": "text",
+"placeholders": {}
+},
+"groupDescriptionHasBeenChanged": "Deskripsi grup diubah",
+"@groupDescriptionHasBeenChanged": {
+"type": "text",
+"placeholders": {}
+},
+"groupDescription": "Deskripsi grup",
+"@groupDescription": {
+"type": "text",
+"placeholders": {}
+},
+"group": "Grup",
+"@group": {
+"type": "text",
+"placeholders": {}
+},
+"fromTheInvitation": "Dari undangan",
+"@fromTheInvitation": {
+"type": "text",
+"placeholders": {}
+},
+"fromJoining": "Dari bergabung",
+"@fromJoining": {
+"type": "text",
+"placeholders": {}
+},
+"friday": "Jumat",
+"@friday": {
+"type": "text",
+"placeholders": {}
+},
+"forward": "Teruskan",
+"@forward": {
+"type": "text",
+"placeholders": {}
+},
+"rechainonline": "REChain.Online",
+"@rechainonline": {
+"type": "text",
+"placeholders": {}
+},
+"fileSize": "Ukuran file",
+"@fileSize": {
+"type": "text",
+"placeholders": {}
+},
+"fileName": "Nama file",
+"@fileName": {
+"type": "text",
+"placeholders": {}
+},
+"everythingReady": "Semua siap!",
+"@everythingReady": {
+"type": "text",
+"placeholders": {}
+},
+"enterYourHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"@enterYourHomeserver": {
+"type": "text",
+"placeholders": {}
+},
+"enterAUsername": "Masukkan nama pengguna",
+"@enterAUsername": {
+"type": "text",
+"placeholders": {}
+},
+"enterAnEmailAddress": "Masukkan alamat email",
+"@enterAnEmailAddress": {
+"type": "text",
+"placeholders": {}
+},
+"enterAGroupName": "Masukkan nama grup",
+"@enterAGroupName": {
+"type": "text",
+"placeholders": {}
+},
+"endedTheCall": "{senderName} mengakhiri panggilan",
+"@endedTheCall": {
+"type": "text",
+"placeholders": {
+"senderName": {}
+}
+},
+"encryption": "Enkripsi",
+"@encryption": {
+"type": "text",
+"placeholders": {}
+},
+"encrypted": "Terenkripsi",
+"@encrypted": {
+"type": "text",
+"placeholders": {}
+},
+"enableEncryptionWarning": "Anda tidak akan bisa menonaktifkan enkripsi. Apa Anda yakin?",
+"@enableEncryptionWarning": {
+"type": "text",
+"placeholders": {}
+},
+"enableEmotesGlobally": "Aktifkan paket emote secara global",
+"@enableEmotesGlobally": {
+"type": "text",
+"placeholders": {}
+},
+"emptyChat": "Chat kosong",
+"@emptyChat": {
+"type": "text",
+"placeholders": {}
+},
+"emoteWarnNeedToPick": "Anda harus memilih shortcode emote dan gambar!",
+"@emoteWarnNeedToPick": {
+"type": "text",
+"placeholders": {}
+},
+"emoteShortcode": "Shortcode emote",
+"@emoteShortcode": {
+"type": "text",
+"placeholders": {}
+},
+"emoteSettings": "Pengaturan Emote",
+"@emoteSettings": {
+"type": "text",
+"placeholders": {}
+},
+"emotePacks": "Paket emote untuk ruangan",
+"@emotePacks": {
+"type": "text",
+"placeholders": {}
+},
+"emoteInvalid": "Shortcode emote tidak valid!",
+"@emoteInvalid": {
+"type": "text",
+"placeholders": {}
+},
+"emoteExists": "Emote sudah ada!",
+"@emoteExists": {
+"type": "text",
+"placeholders": {}
+},
+"editRoomAliases": "Edit alias ruangan",
+"@editRoomAliases": {
+"type": "text",
+"placeholders": {}
+},
+"editJitsiInstance": "Edit instansi Jitsi",
+"@editJitsiInstance": {
+"type": "text",
+"placeholders": {}
+},
+"editDisplayname": "Edit nama tampilan",
+"@editDisplayname": {
+"type": "text",
+"placeholders": {}
+},
+"edit": "Edit",
+"@edit": {
+"type": "text",
+"placeholders": {}
+},
+"downloadFile": "Unduh berkas",
+"@downloadFile": {
+"type": "text",
+"placeholders": {}
+},
+"displaynameHasBeenChanged": "Nama tampilan telah diubah",
+"@displaynameHasBeenChanged": {
+"type": "text",
+"placeholders": {}
+},
+"discardPicture": "Buang gambar",
+"@discardPicture": {
+"type": "text",
+"placeholders": {}
+},
+"directChats": "Chat Langsung",
+"@directChats": {
+"type": "text",
+"placeholders": {}
+},
+"deviceVerifyDescription": "Enkripsi hanya aman jika semua perangkat telah diverifikasi.",
+"@deviceVerifyDescription": {
+"type": "text",
+"placeholders": {}
+},
+"devices": "Perangkat",
+"@devices": {
+"type": "text",
+"placeholders": {}
+},
+"deviceId": "ID Perangkat",
+"@deviceId": {
+"type": "text",
+"placeholders": {}
+},
+"device": "Perangkat",
+"@device": {
+"type": "text",
+"placeholders": {}
+},
+"deny": "Tolak",
+"@deny": {
+"type": "text",
+"placeholders": {}
+},
+"deleteMessage": "Hapus pesan",
+"@deleteMessage": {
+"type": "text",
+"placeholders": {}
+},
+"deleteAccount": "Hapus akun",
+"@deleteAccount": {
+"type": "text",
+"placeholders": {}
+},
+"delete": "Hapus",
+"@delete": {
+"type": "text",
+"placeholders": {}
+},
+"deactivateAccountWarning": "Ini akan menonaktifkan akun pengguna Anda. Ini tidak bisa dibatalkan! Apa Anda yakin?",
+"@deactivateAccountWarning": {
+"type": "text",
+"placeholders": {}
+},
+"dateWithYear": "{day}-{month}-{year}",
+"@dateWithYear": {
+"type": "text",
+"placeholders": {
+"year": {},
+"month": {},
+"day": {}
+}
+},
+"dateWithoutYear": "{day}-{month}",
+"@dateWithoutYear": {
+"type": "text",
+"placeholders": {
+"month": {},
+"day": {}
+}
+},
+"dateAndTimeOfDay": "{timeOfDay}, {date}",
+"@dateAndTimeOfDay": {
+"type": "text",
+"placeholders": {
+"date": {},
+"timeOfDay": {}
+}
+},
+"currentlyActive": "Aktif",
+"@currentlyActive": {
+"type": "text",
+"placeholders": {}
+},
+"crossSigningEnabled": "Tanda tangan silang dinyalakan",
+"@crossSigningEnabled": {
+"type": "text",
+"placeholders": {}
+},
+"crossSigningDisabled": "Tanda tangan silang dimatikan",
+"@crossSigningDisabled": {
+"type": "text",
+"placeholders": {}
+},
+"createNewGroup": "Buat grup baru",
+"@createNewGroup": {
+"type": "text",
+"placeholders": {}
+},
+"createdTheChat": "{username} membuat chat ini",
+"@createdTheChat": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"createAccountNow": "Buat akun sekarang",
+"@createAccountNow": {
+"type": "text",
+"placeholders": {}
+},
+"create": "Buat",
+"@create": {
+"type": "text",
+"placeholders": {}
+},
+"countParticipants": "{count} anggota",
+"@countParticipants": {
+"type": "text",
+"placeholders": {
+"count": {}
+}
+},
+"couldNotSetDisplayname": "Tidak dapat mengubah nama tampilan",
+"@couldNotSetDisplayname": {
+"type": "text",
+"placeholders": {}
+},
+"couldNotSetAvatar": "Tidak dapat mengubah avatar",
+"@couldNotSetAvatar": {
+"type": "text",
+"placeholders": {}
+},
+"couldNotDecryptMessage": "Tidak dapat mendekripsikan pesan: {error}",
+"@couldNotDecryptMessage": {
+"type": "text",
+"placeholders": {
+"error": {}
+}
+},
+"copyToClipboard": "Salin ke papan klip",
+"@copyToClipboard": {
+"type": "text",
+"placeholders": {}
+},
+"copy": "Salin",
+"@copy": {
+"type": "text",
+"placeholders": {}
+},
+"copiedToClipboard": "Disalin ke papan klip",
+"@copiedToClipboard": {
+"type": "text",
+"placeholders": {}
+},
+"contentViewer": "Tampilan konten",
+"@contentViewer": {
+"type": "text",
+"placeholders": {}
+},
+"chatBackup": "Cadangan chat",
+"@chatBackup": {
+"type": "text",
+"placeholders": {}
+},
+"chat": "Chat",
+"@chat": {
+"type": "text",
+"placeholders": {}
+},
+"channelCorruptedDecryptError": "Enkripsi telah rusak",
+"@channelCorruptedDecryptError": {
+"type": "text",
+"placeholders": {}
+},
+"changeYourAvatar": "Ubah avatar Anda",
+"@changeYourAvatar": {
+"type": "text",
+"placeholders": {}
+},
+"changeWallpaper": "Ubah wallpaper",
+"@changeWallpaper": {
+"type": "text",
+"placeholders": {}
+},
+"changeTheServer": "Ubah server",
+"@changeTheServer": {
+"type": "text",
+"placeholders": {}
+},
+"changeTheNameOfTheGroup": "Ubah nama grup",
+"@changeTheNameOfTheGroup": {
+"type": "text",
+"placeholders": {}
+},
+"changeTheHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"@changeTheHomeserver": {
+"type": "text",
+"placeholders": {}
+},
+"changePassword": "Ubah kata sandi",
+"@changePassword": {
+"type": "text",
+"placeholders": {}
+},
+"changelog": "Changelog",
+"@changelog": {
+"type": "text",
+"placeholders": {}
+},
+"changedTheRoomInvitationLink": "{username} mengubah tautan undangan",
+"@changedTheRoomInvitationLink": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"changedTheRoomAliases": "{username} mengubah alias ruangan",
+"@changedTheRoomAliases": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"changedTheProfileAvatar": "{username} mengubah avatarnya",
+"@changedTheProfileAvatar": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"changedTheJoinRulesTo": "{username} mengubah aturan bergabung ke: {joinRules}",
+"@changedTheJoinRulesTo": {
+"type": "text",
+"placeholders": {
+"username": {},
+"joinRules": {}
+}
+},
+"changedTheJoinRules": "{username} mengubah aturan bergabung",
+"@changedTheJoinRules": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"changedTheHistoryVisibilityTo": "{username} mengubah visibilitas sejarah ke: {rules}",
+"@changedTheHistoryVisibilityTo": {
+"type": "text",
+"placeholders": {
+"username": {},
+"rules": {}
+}
+},
+"changedTheHistoryVisibility": "{username} mengubah visibilitas sejarah",
+"@changedTheHistoryVisibility": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"changedTheGuestAccessRulesTo": "{username} mengubah aturan akses tamu ke: {rules}",
+"@changedTheGuestAccessRulesTo": {
+"type": "text",
+"placeholders": {
+"username": {},
+"rules": {}
+}
+},
+"changedTheGuestAccessRules": "{username} mengubah aturan akses tamu",
+"@changedTheGuestAccessRules": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"changedTheDisplaynameTo": "{username} mengubah nama tampilan ke: '{displayname}'",
+"@changedTheDisplaynameTo": {
+"type": "text",
+"placeholders": {
+"username": {},
+"displayname": {}
+}
+},
+"changedTheChatPermissions": "{username} mengubah izin chat",
+"@changedTheChatPermissions": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"changedTheChatNameTo": "{username} mengubah nama chat ke: '{chatname}'",
+"@changedTheChatNameTo": {
+"type": "text",
+"placeholders": {
+"username": {},
+"chatname": {}
+}
+},
+"changedTheChatDescriptionTo": "{username} mengubah deskripsi chat ke: '{description}'",
+"@changedTheChatDescriptionTo": {
+"type": "text",
+"placeholders": {
+"username": {},
+"description": {}
+}
+},
+"changedTheChatAvatar": "{username} mengubah avatar chat",
+"@changedTheChatAvatar": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"changeDeviceName": "Ganti nama perangkat",
+"@changeDeviceName": {
+"type": "text",
+"placeholders": {}
+},
+"cantOpenUri": "Tidak bisa membuka URI ini {uri}",
+"@cantOpenUri": {
+"type": "text",
+"placeholders": {
+"uri": {}
+}
+},
+"cancel": "Batal",
+"@cancel": {
+"type": "text",
+"placeholders": {}
+},
+"cachedKeys": "Kunci dicache",
+"@cachedKeys": {
+"type": "text",
+"placeholders": {}
+},
+"botMessages": "Pesan bot",
+"@botMessages": {
+"type": "text",
+"placeholders": {}
+},
+"blocked": "Diblokir",
+"@blocked": {
+"type": "text",
+"placeholders": {}
+},
+"bannedUser": "{username} mencekal {targetName}",
+"@bannedUser": {
+"type": "text",
+"placeholders": {
+"username": {},
+"targetName": {}
+}
+},
+"banned": "Dicekal",
+"@banned": {
+"type": "text",
+"placeholders": {}
+},
+"banFromChat": "Cekal dari chat",
+"@banFromChat": {
+"type": "text",
+"placeholders": {}
+},
+"badServerVersionsException": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node ini mendukung versi Spec ini:\n{serverVersions}\nTetapi aplikasi ini hanya mendukung {supportedVersions}",
+"@badServerVersionsException": {
+"type": "text",
+"placeholders": {
+"serverVersions": {},
+"supportedVersions": {}
+}
+},
+"sendOnEnter": "Kirim dengan enter",
+"@sendOnEnter": {},
+"badServerLoginTypesException": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node ini mendukung tipe masuk ini:\n{serverVersions}\nTetapi aplikasi ini mendukung:\n{supportedVersions}",
+"@badServerLoginTypesException": {
+"type": "text",
+"placeholders": {
+"serverVersions": {},
+"supportedVersions": {}
+}
+},
+"autoplayImages": "Mainkan stiker beranimasi dan emote secara otomatis",
+"@autoplayImages": {
+"type": "text",
+"placeholder": {}
+},
+"audioPlayerPlay": "Main",
+"@audioPlayerPlay": {
+"type": "text",
+"placeholders": {}
+},
+"audioPlayerPause": "Jeda",
+"@audioPlayerPause": {
+"type": "text",
+"placeholders": {}
+},
+"askVerificationRequest": "Terima permintaan verifikasi dari {username}?",
+"@askVerificationRequest": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"askSSSSVerify": "Mohon masukkan frasa sandi atau kunci pemulihan penyimpanan aman Anda untuk memverifikasi sesi Anda.",
+"@askSSSSVerify": {
+"type": "text",
+"placeholders": {}
+},
+"askSSSSSign": "Untuk dapat menandatangani orang lain, silakan masukkan frasa sandi atau kunci pemulihan penyimpanan aman Anda.",
+"@askSSSSSign": {
+"type": "text",
+"placeholders": {}
+},
+"askSSSSCache": "Mohon masukkan frasa sandi atau kunci pemulihan penyimpanan aman Anda untuk men-cache kunci.",
+"@askSSSSCache": {
+"type": "text",
+"placeholders": {}
+},
+"areGuestsAllowedToJoin": "Apakah pengguna tamu diizinkan untuk bergabung",
+"@areGuestsAllowedToJoin": {
+"type": "text",
+"placeholders": {}
+},
+"archivedRoom": "Ruangan yang Diarsipkan",
+"@archivedRoom": {
+"type": "text",
+"placeholders": {}
+},
+"appLock": "Kunci aplikasi",
+"@appLock": {
+"type": "text",
+"placeholders": {}
+},
+"allChats": "Semua obrolan",
+"@allChats": {
+"type": "text",
+"placeholders": {}
+},
+"all": "Semua",
+"@all": {
+"type": "text",
+"placeholders": {}
+},
+"addToSpace": "Tambah ke space",
+"@addToSpace": {},
+"addNewFriend": "Tambah teman baru",
+"@addNewFriend": {
+"type": "text",
+"placeholders": {}
+},
+"addEmail": "Tambah email",
+"@addEmail": {
+"type": "text",
+"placeholders": {}
+},
+"end2endEncryptionSettings": "Pengaturan enkripsi ujung-ke-ujung",
+"@end2endEncryptionSettings": {
+"type": "text",
+"placeholders": {}
+},
+"encryptionNotEnabled": "Enkripsi tidak diaktifkan",
+"@encryptionNotEnabled": {
+"type": "text",
+"placeholders": {}
+},
+"encryptionAlgorithm": "Algoritma enkripsi",
+"@encryptionAlgorithm": {
+"type": "text",
+"placeholders": {}
+},
+"containsUserName": "Berisi nama pengguna",
+"@containsUserName": {
+"type": "text",
+"placeholders": {}
+},
+"containsDisplayName": "Berisi nama tampilan",
+"@containsDisplayName": {
+"type": "text",
+"placeholders": {}
+},
+"contactHasBeenInvitedToTheGroup": "Kontak telah diundang ke grup",
+"@contactHasBeenInvitedToTheGroup": {
+"type": "text",
+"placeholders": {}
+},
+"connectionAttemptFailed": "Upaya koneksi gagal",
+"@connectionAttemptFailed": {
+"type": "text",
+"placeholders": {}
+},
+"connect": "Hubungkan",
+"@connect": {
+"type": "text",
+"placeholders": {}
+},
+"confirm": "Konfirmasi",
+"@confirm": {
+"type": "text",
+"placeholders": {}
+},
+"compareNumbersMatch": "Bandingkan dan pastikan angka cocok di perangkat lainnya:",
+"@compareNumbersMatch": {
+"type": "text",
+"placeholders": {}
+},
+"compareEmojiMatch": "Bandingkan dan pastikan emoji cocok di perangkat lainnya:",
+"@compareEmojiMatch": {
+"type": "text",
+"placeholders": {}
+},
+"close": "Tutup",
+"@close": {
+"type": "text",
+"placeholders": {}
+},
+"clearArchive": "Bersihkan arsip",
+"@clearArchive": {},
+"chooseAUsername": "Pilih username",
+"@chooseAUsername": {
+"type": "text",
+"placeholders": {}
+},
+"chooseAStrongPassword": "Pilih kata sandi yang kuat",
+"@chooseAStrongPassword": {
+"type": "text",
+"placeholders": {}
+},
+"chatDetails": "Detail chat",
+"@chatDetails": {
+"type": "text",
+"placeholders": {}
+},
+"chatBackupDescription": "Cadangan chat Anda diamankan dengan kunci keamanan. Pastikan Anda untuk tidak menghilangkannya.",
+"@chatBackupDescription": {
+"type": "text",
+"placeholders": {}
+},
+"activatedEndToEndEncryption": "{username} mengaktifkan enkripsi ujung ke ujung",
+"@activatedEndToEndEncryption": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"loadingPleaseWait": "Memuat… Mohon tunggu.",
+"@loadingPleaseWait": {
+"type": "text",
+"placeholders": {}
+},
+"loadCountMoreParticipants": "Muat {count} anggota",
+"@loadCountMoreParticipants": {
+"type": "text",
+"placeholders": {
+"count": {}
+}
+},
+"license": "Lisensi",
+"@license": {
+"type": "text",
+"placeholders": {}
+},
+"leftTheChat": "Keluar dari chat",
+"@leftTheChat": {
+"type": "text",
+"placeholders": {}
+},
+"leave": "Tinggalkan",
+"@leave": {
+"type": "text",
+"placeholders": {}
+},
+"lastSeenIp": "IP terakhir dilihat",
+"@lastSeenIp": {
+"type": "text",
+"placeholders": {}
+},
+"lastActiveAgo": "Terakhir aktif: {localizedTimeShort}",
+"@lastActiveAgo": {
+"type": "text",
+"placeholders": {
+"localizedTimeShort": {}
+}
+},
+"kickFromChat": "Keluarkan dari chat",
+"@kickFromChat": {
+"type": "text",
+"placeholders": {}
+},
+"kickedAndBanned": "{username} mengeluarkan dan mencekal {targetName}",
+"@kickedAndBanned": {
+"type": "text",
+"placeholders": {
+"username": {},
+"targetName": {}
+}
+},
+"kicked": "{username} mengeluarkan {targetName}",
+"@kicked": {
+"type": "text",
+"placeholders": {
+"username": {},
+"targetName": {}
+}
+},
+"keysMissing": "Tidak ada kunci",
+"@keysMissing": {
+"type": "text",
+"placeholders": {}
+},
+"keysCached": "Kunci telah dicache",
+"@keysCached": {
+"type": "text",
+"placeholders": {}
+},
+"joinRoom": "Gabung ruangan",
+"@joinRoom": {
+"type": "text",
+"placeholders": {}
+},
+"joinedTheChat": "{username} telah bergabung di chat",
+"@joinedTheChat": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"loadMore": "Muat lebih banyak…",
+"@loadMore": {
+"type": "text",
+"placeholders": {}
+},
+"noPublicRoomsFound": "Tidak menemukan ruangan publik…",
+"@noPublicRoomsFound": {
+"type": "text",
+"placeholders": {}
+},
+"noPermission": "Tidak ada izin",
+"@noPermission": {
+"type": "text",
+"placeholders": {}
+},
+"noPasswordRecoveryDescription": "Anda belum menambahkan cara untuk memulihkan kata sandi Anda.",
+"@noPasswordRecoveryDescription": {
+"type": "text",
+"placeholders": {}
+},
+"none": "Tidak Ada",
+"@none": {
+"type": "text",
+"placeholders": {}
+},
+"noMegolmBootstrap": "Silakan aktifkan cadangan kunci online di dalam REChain 🪐 sebagai gantinya.",
+"@noMegolmBootstrap": {
+"type": "text",
+"placeholders": {}
+},
+"noGoogleServicesWarning": "Sepertinya Anda tidak memiliki layanan Google di ponsel Anda. Keputusan bagus untuk privasi Anda! Untuk menerima pemberitahuan push dari Platform REChain.Online, sebaiknya gunakan https://microg.org/ atau https://unifiedpush.org/.",
+"@noGoogleServicesWarning": {
+"type": "text",
+"placeholders": {}
+},
+"noEncryptionForPublicRooms": "Anda hanya dapat mengaktifkan enkripsi setelah ruangan tidak lagi dapat diakses secara publik.",
+"@noEncryptionForPublicRooms": {
+"type": "text",
+"placeholders": {}
+},
+"noEmotesFound": "Tidak ada emote yang ditemukan. 😕",
+"@noEmotesFound": {
+"type": "text",
+"placeholders": {}
+},
+"next": "Lanjut",
+"@next": {
+"type": "text",
+"placeholders": {}
+},
+"newVerificationRequest": "Permintaan verifikasi baru!",
+"@newVerificationRequest": {
+"type": "text",
+"placeholders": {}
+},
+"newMessageInrechainonline": "Pesan baru di Platform REChain.Online!",
+"@newMessageInrechainonline": {
+"type": "text",
+"placeholders": {}
+},
+"newChat": "Chat baru",
+"@newChat": {
+"type": "text",
+"placeholders": {}
+},
+"needPantalaimonWarning": "Perlu diketahui bahwa Anda memerlukan Pantalaimon untuk menggunakan enkripsi ujung-ke-ujung untuk saat ini.",
+"@needPantalaimonWarning": {
+"type": "text",
+"placeholders": {}
+},
+"muteChat": "Bisukan chat",
+"@muteChat": {
+"type": "text",
+"placeholders": {}
+},
+"monday": "Senin",
+"@monday": {
+"type": "text",
+"placeholders": {}
+},
+"moderator": "Moderator",
+"@moderator": {
+"type": "text",
+"placeholders": {}
+},
+"messageWillBeRemovedWarning": "Pesan akan dihapus untuk semua anggota",
+"@messageWillBeRemovedWarning": {
+"type": "text",
+"placeholders": {}
+},
+"mention": "Sebutkan",
+"@mention": {
+"type": "text",
+"placeholders": {}
+},
+"memberChanges": "Perubahan anggota",
+"@memberChanges": {
+"type": "text",
+"placeholders": {}
+},
+"makeSureTheIdentifierIsValid": "Pastikan pengenalnya valid",
+"@makeSureTheIdentifierIsValid": {
+"type": "text",
+"placeholders": {}
+},
+"makeAnAdmin": "Jadikan admin",
+"@makeAnAdmin": {
+"type": "text",
+"placeholders": {}
+},
+"makeAModerator": "Jadikan moderator",
+"@makeAModerator": {
+"type": "text",
+"placeholders": {}
+},
+"logout": "Keluar",
+"@logout": {
+"type": "text",
+"placeholders": {}
+},
+"logInTo": "Masuk ke {homeserver}",
+"@logInTo": {
+"type": "text",
+"placeholders": {
+"homeserver": {}
+}
+},
+"login": "Masuk",
+"@login": {
+"type": "text",
+"placeholders": {}
+},
+"noRoomsFound": "Tidak ada ruangan yang ditemukan…",
+"@noRoomsFound": {
+"type": "text",
+"placeholders": {}
+},
+"zoomOut": "Perkecil",
+"@zoomOut": {
+"type": "text",
+"placeholders": {}
+},
+"zoomIn": "Perbesar",
+"@zoomIn": {
+"type": "text",
+"placeholders": {}
+},
+"youWillBeConnectedTo": "Anda akan dihubungkan ke {homeserver}",
+"@youWillBeConnectedTo": {
+"type": "text",
+"placeholders": {
+"homeserver": {}
+}
+},
+"verified": "Terverifikasi",
+"@verified": {
+"type": "text",
+"placeholders": {}
+},
+"userLeftTheChat": "{username} keluar dari chat",
+"@userLeftTheChat": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"unavailable": "Tidak tersedia",
+"@unavailable": {
+"type": "text",
+"placeholders": {}
+},
+"transferFromAnotherDevice": "Transfer dari perangkat lain",
+"@transferFromAnotherDevice": {
+"type": "text",
+"placeholders": {}
+},
+"tapOnDeviceToVerify": "Ketuk perangkat untuk memverifikasi",
+"@tapOnDeviceToVerify": {
+"type": "text",
+"placeholders": {}
+},
+"showPassword": "Tampilkan kata sandi",
+"@showPassword": {
+"type": "text",
+"placeholders": {}
+},
+"securityKeyLost": "Kunci keamanan hilang?",
+"@securityKeyLost": {
+"type": "text",
+"placeholders": {}
+},
+"securityKey": "Kunci keamanan",
+"@securityKey": {
+"type": "text",
+"placeholders": {}
+},
+"removeYourAvatar": "Hapus avatar Anda",
+"@removeYourAvatar": {
+"type": "text",
+"placeholders": {}
+},
+"register": "Daftar",
+"@register": {
+"type": "text",
+"placeholders": {}
+},
+"pushRules": "Aturan push",
+"@pushRules": {
+"type": "text",
+"placeholders": {}
+},
+"pleaseFollowInstructionsOnWeb": "Mohon ikuti petunjuk di situs web dan tekan lanjut.",
+"@pleaseFollowInstructionsOnWeb": {
+"type": "text",
+"placeholders": {}
+},
+"pleaseEnterSecurityKey": "Mohon masukkan kunci keamanan Anda:",
+"@pleaseEnterSecurityKey": {
+"type": "text",
+"placeholders": {}
+},
+"pleaseChoose": "Mohon pilih",
+"@pleaseChoose": {
+"type": "text",
+"placeholders": {}
+},
+"oopsPushError": "Ups! Sayangnya, terjadi kesalahan saat mengatur pemberitahuan push.",
+"@oopsPushError": {
+"type": "text",
+"placeholders": {}
+},
+"onlineKeyBackupEnabled": "Cadangan Kunci Online dinyalakan",
+"@onlineKeyBackupEnabled": {
+"type": "text",
+"placeholders": {}
+},
+"onlineKeyBackupDisabled": "Cadangan Kunci Online dimatikan",
+"@onlineKeyBackupDisabled": {
+"type": "text",
+"placeholders": {}
+},
+"online": "Online",
+"@online": {
+"type": "text",
+"placeholders": {}
+},
+"ok": "Ok",
+"@ok": {
+"type": "text",
+"placeholders": {}
+},
+"offline": "Offline",
+"@offline": {
+"type": "text",
+"placeholders": {}
+},
+"numberSelected": "{number} terpilih",
+"@numberSelected": {
+"type": "text",
+"placeholders": {
+"number": {}
+}
+},
+"notSupportedInWeb": "Tidak didukung di web",
+"@notSupportedInWeb": {
+"type": "text",
+"placeholders": {}
+},
+"notificationsEnabledForThisAccount": "Notifikasi diaktifkan untuk akun ini",
+"@notificationsEnabledForThisAccount": {
+"type": "text",
+"placeholders": {}
+},
+"notifications": "Notifikasi",
+"@notifications": {
+"type": "text",
+"placeholders": {}
+},
+"noStatusesFound": "Tidak ada status yang ditemukan sejauh ini.",
+"@noStatusesFound": {
+"type": "text",
+"placeholders": {}
+},
+"yourPublicKey": "Kunci publik Anda",
+"@yourPublicKey": {
+"type": "text",
+"placeholders": {}
+},
+"yourOwnUsername": "Nama pengguna Anda sendiri",
+"@yourOwnUsername": {
+"type": "text",
+"placeholders": {}
+},
+"yourChatsAreBeingSynced": "Chat Anda sedang disinkronasikan…",
+"@yourChatsAreBeingSynced": {
+"type": "text",
+"placeholders": {}
+},
+"youHaveBeenBannedFromThisChat": "Anda telah dicekal dari chat ini",
+"@youHaveBeenBannedFromThisChat": {
+"type": "text",
+"placeholders": {}
+},
+"youCannotInviteYourself": "Anda tidak bisa mengundang Anda sendiri",
+"@youCannotInviteYourself": {
+"type": "text",
+"placeholders": {}
+},
+"youAreNoLongerParticipatingInThisChat": "Anda tidak berpartisipasi lagi di chat ini",
+"@youAreNoLongerParticipatingInThisChat": {
+"type": "text",
+"placeholders": {}
+},
+"youAreInvitedToThisChat": "Anda diundang ke chat ini",
+"@youAreInvitedToThisChat": {
+"type": "text",
+"placeholders": {}
+},
+"you": "Anda",
+"@you": {
+"type": "text",
+"placeholders": {}
+},
+"yes": "Ya",
+"@yes": {
+"type": "text",
+"placeholders": {}
+},
+"writeAMessage": "Tulis pesan…",
+"@writeAMessage": {
+"type": "text",
+"placeholders": {}
+},
+"withTheseAddressesRecoveryDescription": "Dengan alamat ini Anda bisa memulihkan kata sandi Anda.",
+"@withTheseAddressesRecoveryDescription": {
+"type": "text",
+"placeholders": {}
+},
+"wipeChatBackup": "Hapus cadangan chat untuk membuat kunci keamanan baru?",
+"@wipeChatBackup": {
+"type": "text",
+"placeholders": {}
+},
+"whyDoYouWantToReportThis": "Kenapa Anda ingin melaporkannya?",
+"@whyDoYouWantToReportThis": {
+"type": "text",
+"placeholders": {}
+},
+"whoIsAllowedToJoinThisGroup": "Siapa yang dapat bergabung ke grup ini",
+"@whoIsAllowedToJoinThisGroup": {
+"type": "text",
+"placeholders": {}
+},
+"whoCanPerformWhichAction": "Siapa yang dapat melakukan tindakan apa",
+"@whoCanPerformWhichAction": {
+"type": "text",
+"placeholders": {}
+},
+"weSentYouAnEmail": "Kami mengirim Anda email",
+"@weSentYouAnEmail": {
+"type": "text",
+"placeholders": {}
+},
+"welcomeText": "Selamat datang di REChain.Online! Masa Depan Pribadi dan Aman yang telah tiba!",
+"@welcomeText": {
+"type": "text",
+"placeholders": {}
+},
+"wednesday": "Rabu",
+"@wednesday": {
+"type": "text",
+"placeholders": {}
+},
+"warningEncryptionInBeta": "Enkripsi ujung-ke-ujung saat ini masih dalam beta! Gunakan dengan resiko Anda sendiri!",
+"@warningEncryptionInBeta": {
+"type": "text",
+"placeholders": {}
+},
+"warning": "Peringatan!",
+"@warning": {
+"type": "text",
+"placeholders": {}
+},
+"wallpaper": "Latar belakang",
+"@wallpaper": {
+"type": "text",
+"placeholders": {}
+},
+"waitingPartnerNumbers": "Menunggu pengguna untuk menerima angka…",
+"@waitingPartnerNumbers": {
+"type": "text",
+"placeholders": {}
+},
+"waitingPartnerEmoji": "Menunggu pengguna untuk menerima emoji…",
+"@waitingPartnerEmoji": {
+"type": "text",
+"placeholders": {}
+},
+"waitingPartnerAcceptRequest": "Menunggu pengguna untuk menerima permintaan…",
+"@waitingPartnerAcceptRequest": {
+"type": "text",
+"placeholders": {}
+},
+"voiceMessage": "Pesan suara",
+"@voiceMessage": {
+"type": "text",
+"placeholders": {}
+},
+"visibleForEveryone": "Terlihat untuk semua orang",
+"@visibleForEveryone": {
+"type": "text",
+"placeholders": {}
+},
+"visibleForAllParticipants": "Terlihat untuk semua anggota",
+"@visibleForAllParticipants": {
+"type": "text",
+"placeholders": {}
+},
+"visibilityOfTheChatHistory": "Visibilitas sejarah chat",
+"@visibilityOfTheChatHistory": {
+"type": "text",
+"placeholders": {}
+},
+"videoCall": "Panggilan video",
+"@videoCall": {
+"type": "text",
+"placeholders": {}
+},
+"verifyUser": "Verifikasi Pengguna",
+"@verifyUser": {
+"type": "text",
+"placeholders": {}
+},
+"verifyTitle": "Memverifikasi akun lain",
+"@verifyTitle": {
+"type": "text",
+"placeholders": {}
+},
+"verifySuccess": "Anda berhasil memverifikasi!",
+"@verifySuccess": {
+"type": "text",
+"placeholders": {}
+},
+"verifyStart": "Mulai Verifikasi",
+"@verifyStart": {
+"type": "text",
+"placeholders": {}
+},
+"verifyManual": "Verifikasi Secara Manual",
+"@verifyManual": {
+"type": "text",
+"placeholders": {}
+},
+"verify": "Verifikasi",
+"@verify": {
+"type": "text",
+"placeholders": {}
+},
+"verifiedSession": "Berhasil memverifikasi sesi!",
+"@verifiedSession": {
+"type": "text",
+"placeholders": {}
+},
+"userVerified": "Pengguna terverifikasi",
+"@userVerified": {
+"type": "text",
+"placeholders": {}
+},
+"userUnknownVerification": "Pengguna memiliki status verifikasi yang tidak dikenal",
+"@userUnknownVerification": {
+"type": "text",
+"placeholders": {}
+},
+"userSentUnknownEvent": "{username} mengirim peristiwa {type}",
+"@userSentUnknownEvent": {
+"type": "text",
+"placeholders": {
+"username": {},
+"type": {}
+}
+},
+"userNotVerified": "Pengguna tidak diverifikasi",
+"@userNotVerified": {
+"type": "text",
+"placeholders": {}
+},
+"username": "Nama Pengguna",
+"@username": {
+"type": "text",
+"placeholders": {}
+},
+"userIsTyping": "{username} sedang mengetik…",
+"@userIsTyping": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"userAndUserAreTyping": "{username} dan {username2} sedang mengetik…",
+"@userAndUserAreTyping": {
+"type": "text",
+"placeholders": {
+"username": {},
+"username2": {}
+}
+},
+"userAndOthersAreTyping": "{username} dan {count} lainnya sedang mengetik…",
+"@userAndOthersAreTyping": {
+"type": "text",
+"placeholders": {
+"username": {},
+"count": {}
+}
+},
+"useAmoledTheme": "Gunakan warna yang kompatibel dengan AMOLED?",
+"@useAmoledTheme": {
+"type": "text",
+"placeholders": {}
+},
+"unreadMessages": "{unreadEvents, plural, =1{1 pesan belum dibaca} other{{unreadEvents} pesan belum dibaca}}",
+"@unreadMessages": {
+"type": "text",
+"placeholders": {
+"unreadEvents": {}
+}
+},
+"unreadChats": "{unreadCount, plural, =1{1 chat belum dibaca} other{{unreadCount} chat belum dibaca}}",
+"@unreadChats": {
+"type": "text",
+"placeholders": {
+"unreadCount": {}
+}
+},
+"unpin": "Lepaskan pin",
+"@unpin": {
+"type": "text",
+"placeholders": {}
+},
+"unmuteChat": "Bunyikan chat",
+"@unmuteChat": {
+"type": "text",
+"placeholders": {}
+},
+"unlockChatBackup": "Buka cadangan chat",
+"@unlockChatBackup": {
+"type": "text",
+"placeholders": {}
+},
+"unknownSessionVerify": "Sesi tidak dikenal, mohon verifikasi",
+"@unknownSessionVerify": {
+"type": "text",
+"placeholders": {}
+},
+"unknownEvent": "Peristiwa tidak dikenal '{type}'",
+"@unknownEvent": {
+"type": "text",
+"placeholders": {
+"type": {}
+}
+},
+"unknownEncryptionAlgorithm": "Algoritma enkripsi tidak dikenal",
+"@unknownEncryptionAlgorithm": {
+"type": "text",
+"placeholders": {}
+},
+"unknownDevice": "Perangkat tidak dikenal",
+"@unknownDevice": {
+"type": "text",
+"placeholders": {}
+},
+"unblockDevice": "Hilangkan Pemblokiran Perangkat",
+"@unblockDevice": {
+"type": "text",
+"placeholders": {}
+},
+"unbannedUser": "{username} menghilangkan cekalan {targetName}",
+"@unbannedUser": {
+"type": "text",
+"placeholders": {
+"username": {},
+"targetName": {}
+}
+},
+"tuesday": "Selasa",
+"@tuesday": {
+"type": "text",
+"placeholders": {}
+},
+"tryToSendAgain": "Coba kirim lagi",
+"@tryToSendAgain": {
+"type": "text",
+"placeholders": {}
+},
+"tooManyRequestsWarning": "Terlalu banyak permintaan. Coba lagi nanti!",
+"@tooManyRequestsWarning": {
+"type": "text",
+"placeholders": {}
+},
+"toggleUnread": "Tandai Baca/Belum Dibaca",
+"@toggleUnread": {
+"type": "text",
+"placeholders": {}
+},
+"toggleMuted": "Beralih Bisuan",
+"@toggleMuted": {
+"type": "text",
+"placeholders": {}
+},
+"toggleFavorite": "Beralih Favorit",
+"@toggleFavorite": {
+"type": "text",
+"placeholders": {}
+},
+"title": "REChain.Online",
+"@title": {
+"description": "Title for the application",
+"type": "text",
+"placeholders": {}
+},
+"timeOfDay": "{hours12}.{minutes} {suffix}",
+"@timeOfDay": {
+"type": "text",
+"placeholders": {
+"hours12": {},
+"hours24": {},
+"minutes": {},
+"suffix": {}
+}
+},
+"thursday": "Kamis",
+"@thursday": {
+"type": "text",
+"placeholders": {}
+},
+"thisRoomHasBeenArchived": "Ruangan ini telah diarsipkan.",
+"@thisRoomHasBeenArchived": {
+"type": "text",
+"placeholders": {}
+},
+"theyMatch": "Cocok",
+"@theyMatch": {
+"type": "text",
+"placeholders": {}
+},
+"theyDontMatch": "Tidak Cocok",
+"@theyDontMatch": {
+"type": "text",
+"placeholders": {}
+},
+"tapToShowMenu": "Ketuk untuk menampilkan menu",
+"@tapToShowMenu": {
+"type": "text",
+"placeholders": {}
+},
+"tapToShowImage": "Ketuk untuk menampilkan gambar",
+"@tapToShowImage": {
+"type": "text",
+"placeholders": {}
+},
+"systemTheme": "Sistem",
+"@systemTheme": {
+"type": "text",
+"placeholders": {}
+},
+"synchronizingPleaseWait": "Menyinkronkan... Mohon menunggu.",
+"@synchronizingPleaseWait": {
+"type": "text",
+"placeholders": {}
+},
+"sunday": "Minggu",
+"@sunday": {
+"type": "text",
+"placeholders": {}
+},
+"submit": "Kirim",
+"@submit": {
+"type": "text",
+"placeholders": {}
+},
+"statusExampleMessage": "Apa kabar hari ini?",
+"@statusExampleMessage": {
+"type": "text",
+"placeholders": {}
+},
+"status": "Status",
+"@status": {
+"type": "text",
+"placeholders": {}
+},
+"startYourFirstChat": "Mulai chat pertamamu sekarang juga! 🙂\n- Ketuk di tombol pesan\n- Masukkan nama pengguna teman\n- Selamat bersenang-senang mengobrol",
+"@startYourFirstChat": {
+"type": "text",
+"placeholders": {}
+},
+"startedACall": "{senderName} memulai panggilan",
+"@startedACall": {
+"type": "text",
+"placeholders": {
+"senderName": {}
+}
+},
+"spaceName": "Nama space",
+"@spaceName": {
+"type": "text",
+"placeholders": {}
+},
+"spaceIsPublic": "Space publik",
+"@spaceIsPublic": {
+"type": "text",
+"placeholders": {}
+},
+"sourceCode": "Sumber kode",
+"@sourceCode": {
+"type": "text",
+"placeholders": {}
+},
+"soundVibrationLedColor": "Suara, getaran warna LED",
+"@soundVibrationLedColor": {
+"type": "text",
+"placeholders": {}
+},
+"skip": "Lewat",
+"@skip": {
+"type": "text",
+"placeholders": {}
+},
+"singlesignon": "Login Masuk Tunggal",
+"@singlesignon": {
+"type": "text",
+"placeholders": {}
+},
+"signUp": "Daftar",
+"@signUp": {
+"type": "text",
+"placeholders": {}
+},
+"shareLocation": "Bagikan lokasi",
+"@shareLocation": {
+"type": "text",
+"placeholders": {}
+},
+"sharedTheLocation": "{username} membagikan lokasinya",
+"@sharedTheLocation": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"share": "Bagikan",
+"@share": {
+"type": "text",
+"placeholders": {}
+},
+"settings": "Pengaturan",
+"@settings": {
+"type": "text",
+"placeholders": {}
+},
+"setStatus": "Tetapkan status",
+"@setStatus": {
+"type": "text",
+"placeholders": {}
+},
+"setPermissionsLevel": "Tetapkan level izin",
+"@setPermissionsLevel": {
+"type": "text",
+"placeholders": {}
+},
+"setInvitationLink": "Tetapkan tautan undangan",
+"@setInvitationLink": {
+"type": "text",
+"placeholders": {}
+},
+"setGroupDescription": "Tetapkan deskripsi grup",
+"@setGroupDescription": {
+"type": "text",
+"placeholders": {}
+},
+"setCustomEmotes": "Tetapkan emote kustom",
+"@setCustomEmotes": {
+"type": "text",
+"placeholders": {}
+},
+"setAProfilePicture": "Tetapkan gambar profil",
+"@setAProfilePicture": {
+"type": "text",
+"placeholders": {}
+},
+"sessionVerified": "Sesi telah diverifikasi",
+"@sessionVerified": {
+"type": "text",
+"placeholders": {}
+},
+"sentryInfo": "Informasi tentang privasi Anda: https://rechain.online/en/privacy.html",
+"@sentryInfo": {
+"type": "text",
+"placeholders": {}
+},
+"sentCallInformations": "{senderName} mengirim informasi panggilan",
+"@sentCallInformations": {
+"type": "text",
+"placeholders": {
+"senderName": {}
+}
+},
+"sentAVideo": "{username} mengirim video",
+"@sentAVideo": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"sentASticker": "{username} mengirim stiker",
+"@sentASticker": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"sentAPicture": "{username} mengirim gambar",
+"@sentAPicture": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"sentAnAudio": "{username} mengirim suara",
+"@sentAnAudio": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"sentAFile": "{username} mengirim file",
+"@sentAFile": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"seenByUserAndUser": "Dilihat oleh {username} dan {username2}",
+"@seenByUserAndUser": {
+"type": "text",
+"placeholders": {
+"username": {},
+"username2": {}
+}
+},
+"seenByUserAndCountOthers": "{count, plural, other{Dilihat oleh {username} dan {count} lainnya}}",
+"@seenByUserAndCountOthers": {
+"type": "text",
+"placeholders": {
+"username": {},
+"count": {}
+}
+},
+"seenByUser": "Dilihat oleh {username}",
+"@seenByUser": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"security": "Keamanan",
+"@security": {
+"type": "text",
+"placeholders": {}
+},
+"searchForAChat": "Cari chat",
+"@searchForAChat": {
+"type": "text",
+"placeholders": {}
+},
+"search": "Cari",
+"@search": {
+"type": "text",
+"placeholders": {}
+},
+"saveFileToFolder": "Simpan file ke folder ini",
+"@saveFileToFolder": {
+"type": "text",
+"placeholders": {}
+},
+"revokeAllPermissions": "Hilangkan semua izin",
+"@revokeAllPermissions": {
+"type": "text",
+"placeholders": {}
+},
+"requestToReadOlderMessages": "Minta membaca pesan lama",
+"@requestToReadOlderMessages": {
+"type": "text",
+"placeholders": {}
+},
+"requestPermission": "Minta izin",
+"@requestPermission": {
+"type": "text",
+"placeholders": {}
+},
+"reportMessage": "Laporkan pesan",
+"@reportMessage": {
+"type": "text",
+"placeholders": {}
+},
+"reply": "Balas",
+"@reply": {
+"type": "text",
+"placeholders": {}
+},
+"replaceRoomWithNewerVersion": "Menggantikan ruangan dengan versi baru",
+"@replaceRoomWithNewerVersion": {
+"type": "text",
+"placeholders": {}
+},
+"renderRichContent": "Render konten pesan kaya",
+"@renderRichContent": {
+"type": "text",
+"placeholders": {}
+},
+"removeMessage": "Hapus pesan",
+"@removeMessage": {
+"type": "text",
+"placeholders": {}
+},
+"unbanFromChat": "Hilangkan cekalan dari chat",
+"@unbanFromChat": {
+"type": "text",
+"placeholders": {}
+},
+"remove": "Hapus",
+"@remove": {
+"type": "text",
+"placeholders": {}
+},
+"rejoin": "Gabung kembali",
+"@rejoin": {
+"type": "text",
+"placeholders": {}
+},
+"rejectedTheInvitation": "{username} menolak undangannya",
+"@rejectedTheInvitation": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"reject": "Tolak",
+"@reject": {
+"type": "text",
+"placeholders": {}
+},
+"redactMessage": "Hapus pesan",
+"@redactMessage": {
+"type": "text",
+"placeholders": {}
+},
+"redactedAnEvent": "{username} menghapus sebuah peristiwa",
+"@redactedAnEvent": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"pleaseEnterYourPassword": "Mohon masukkan kata sandi Anda",
+"@pleaseEnterYourPassword": {
+"type": "text",
+"placeholders": {}
+},
+"pleaseEnterArechainonlineIdentifier": "Masukkan Katya 👽 AI 🧠 REChain 🪐 Blockchain Node Network ID.",
+"@pleaseEnterArechainonlineIdentifier": {
+"type": "text",
+"placeholders": {}
+},
+"pleaseClickOnLink": "Mohon klik tautan di email dan lanjut.",
+"@pleaseClickOnLink": {
+"type": "text",
+"placeholders": {}
+},
+"pleaseChooseAUsername": "Mohon pilih nama pengguna",
+"@pleaseChooseAUsername": {
+"type": "text",
+"placeholders": {}
+},
+"pleaseChooseAPasscode": "Mohon pilih kode sandi",
+"@pleaseChooseAPasscode": {
+"type": "text",
+"placeholders": {}
+},
+"play": "Mainkan {fileName}",
+"@play": {
+"type": "text",
+"placeholders": {
+"fileName": {}
+}
+},
+"pin": "Pin",
+"@pin": {
+"type": "text",
+"placeholders": {}
+},
+"passwordRecovery": "Pemulihan kata sandi",
+"@passwordRecovery": {
+"type": "text",
+"placeholders": {}
+},
+"passwordHasBeenChanged": "Kata sandi telah diubah",
+"@passwordHasBeenChanged": {
+"type": "text",
+"placeholders": {}
+},
+"passwordForgotten": "Lupa kata sandi",
+"@passwordForgotten": {
+"type": "text",
+"placeholders": {}
+},
+"password": "Kata sandi",
+"@password": {
+"type": "text",
+"placeholders": {}
+},
+"passphraseOrKey": "frasa sandi atau kunci pemulihan",
+"@passphraseOrKey": {
+"type": "text",
+"placeholders": {}
+},
+"participatingUserDevices": "Perangkat pengguna yang disertai",
+"@participatingUserDevices": {
+"type": "text",
+"placeholders": {}
+},
+"participant": "Peserta",
+"@participant": {
+"type": "text",
+"placeholders": {}
+},
+"or": "Atau",
+"@or": {
+"type": "text",
+"placeholders": {}
+},
+"optionalGroupName": "(Opsional) Nama grup",
+"@optionalGroupName": {
+"type": "text",
+"placeholders": {}
+},
+"serverRequiresEmail": "Server ini harus memvalidasi alamat email Anda untuk registrasi.",
+"@serverRequiresEmail": {},
+"openInMaps": "Buka di peta",
+"@openInMaps": {
+"type": "text",
+"placeholders": {}
+},
+"enableMultiAccounts": "(BETA) Aktifkan multi-akun di perangkat ini",
+"@enableMultiAccounts": {},
+"bundleName": "Nama bundel",
+"@bundleName": {},
+"removeFromBundle": "Hilangkan dari bundel ini",
+"@removeFromBundle": {},
+"addToBundle": "Tambah ke bundel",
+"@addToBundle": {},
+"editBundlesForAccount": "Edit bundel untuk akun ini",
+"@editBundlesForAccount": {},
+"addAccount": "Tambah akun",
+"@addAccount": {},
+"oneClientLoggedOut": "Salah satu client Anda telah keluar",
+"@oneClientLoggedOut": {},
+"openCamera": "Buka kamera",
+"@openCamera": {
+"type": "text",
+"placeholders": {}
+},
+"openAppToReadMessages": "Buka aplikasi untuk membaca pesan",
+"@openAppToReadMessages": {
+"type": "text",
+"placeholders": {}
+},
+"oopsSomethingWentWrong": "Ups, ada yang salah…",
+"@oopsSomethingWentWrong": {
+"type": "text",
+"placeholders": {}
+},
+"offensive": "Menyinggung",
+"@offensive": {
+"type": "text",
+"placeholders": {}
+},
+"obtainingLocation": "Mendapatkan lokasi…",
+"@obtainingLocation": {
+"type": "text",
+"placeholders": {}
+},
+"numUsersTyping": "{count} pengguna sedang mengetik…",
+"@numUsersTyping": {
+"type": "text",
+"placeholders": {
+"count": {}
+}
+},
+"newUsernameDescription": "ID pengguna Anda akan memiliki format @namapengguna:namaserver",
+"@newUsernameDescription": {},
+"newPasswordDescription": "Untuk bisa memulihkan kata sandi, Anda nanti harus menambahkan alamat email ke akun Anda.",
+"@newPasswordDescription": {},
+"scanQrCode": "Pindai kode QR",
+"@scanQrCode": {},
+"typeInInviteLinkManually": "Masukkan tautan undangan secara manual...",
+"@typeInInviteLinkManually": {},
+"shareYourInviteLink": "Bagikan tautan undangan Anda",
+"@shareYourInviteLink": {},
+"createNewChatExplaination": "Cukup pindai kode QR atau bagikan tautan undangan Anda jika Anda tidak bersebelahan.",
+"@createNewChatExplaination": {},
+"norechainonlineServer": "{server1} bukan server Jaringan Katya 👽 AI 🧠 REChain 🪐 Blockchain Node, gunakan {server2} sebagai gantinya?",
+"@norechainonlineServer": {
+"type": "text",
+"placeholders": {
+"server1": {},
+"server2": {}
+}
+},
+"noDescription": "Tidak ada deskripsi",
+"@noDescription": {
+"type": "text",
+"placeholders": {}
+},
+"noCrossSignBootstrap": "REChain.Online saat ini tidak mendukung penandatanganan silang. Harap aktifkan di dalam REChain 🪐.",
+"@noCrossSignBootstrap": {
+"type": "text",
+"placeholders": {}
+},
+"no": "Tidak",
+"@no": {
+"type": "text",
+"placeholders": {}
+},
+"noConnectionToTheServer": "Tidak ada koneksi ke server",
+"@noConnectionToTheServer": {
+"type": "text",
+"placeholders": {}
+},
+"moreEvents": "{count,plural, =1{1 peristiwa lebih} other{{count} peristiwa lebih}}",
+"@moreEvents": {
+"type": "text",
+"placeholders": {
+"count": {}
+}
+},
+"messages": "Pesan",
+"@messages": {
+"type": "text",
+"placeholders": {}
+},
+"loginWith": "Masuk dengan {brand}",
+"@loginWith": {
+"type": "text",
+"placeholders": {
+"brand": {}
+}
+},
+"locationDisabledNotice": "Layanan lokasi dinonaktifkan. Mohon mengaktifkannya untuk bisa membagikan lokasi Anda.",
+"@locationDisabledNotice": {
+"type": "text",
+"placeholders": {}
+},
+"locationPermissionDeniedNotice": "Izin lokasi ditolak. Mohon memberikan izin untuk bisa membagikan lokasi Anda.",
+"@locationPermissionDeniedNotice": {
+"type": "text",
+"placeholders": {}
+},
+"lightTheme": "Terang",
+"@lightTheme": {
+"type": "text",
+"placeholders": {}
+},
+"lastSeenLongTimeAgo": "Terlihat beberapa waktu yang lalu",
+"@lastSeenLongTimeAgo": {
+"type": "text",
+"placeholders": {}
+},
+"invalidEmail": "Email tidak valid",
+"@invalidEmail": {
+"type": "text",
+"placeholders": {}
+},
+"inoffensive": "Tidak menyinggung",
+"@inoffensive": {
+"type": "text",
+"placeholders": {}
+},
+"ignore": "Abaikan",
+"@ignore": {
+"type": "text",
+"placeholders": {}
+},
+"howOffensiveIsThisContent": "Seberapa menyinggungnya konten ini?",
+"@howOffensiveIsThisContent": {
+"type": "text",
+"placeholders": {}
+},
+"groups": "Grup",
+"@groups": {
+"type": "text",
+"placeholders": {}
+},
+"friends": "Teman",
+"@friends": {
+"type": "text",
+"placeholders": {}
+},
+"fontSize": "Ukuran font",
+"@fontSize": {
+"type": "text",
+"placeholders": {}
+},
+"errorObtainingLocation": "Gagal mendapat lokasi: {error}",
+"@errorObtainingLocation": {
+"type": "text",
+"placeholders": {
+"error": {}
+}
+},
+"homeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"@homeserver": {},
+"enterASpacepName": "Masukkan nama space",
+"@enterASpacepName": {},
+"enableEncryption": "Aktifkan enkripsi",
+"@enableEncryption": {
+"type": "text",
+"placeholders": {}
+},
+"enableChatBackup": "Aktifkan cadangan chat untuk tidak kehilangan akses chat Anda.",
+"@enableChatBackup": {
+"type": "text",
+"placeholders": {}
+},
+"editRoomAvatar": "Edit avatar ruangan",
+"@editRoomAvatar": {
+"type": "text",
+"placeholders": {}
+},
+"editChatPermissions": "Edit izin chat",
+"@editChatPermissions": {
+"type": "text",
+"placeholders": {}
+},
+"editBlockedServers": "Edit server yang diblokir",
+"@editBlockedServers": {
+"type": "text",
+"placeholders": {}
+},
+"dontAskAgain": "Batalkan dan jangan tanya lagi",
+"@dontAskAgain": {
+"type": "text",
+"placeholders": {}
+},
+"donate": "Beri Donasi",
+"@donate": {
+"type": "text",
+"placeholders": {}
+},
+"discoverGroups": "Temukan grup",
+"@discoverGroups": {
+"type": "text",
+"placeholders": {}
+},
+"discover": "Temukan",
+"@discover": {
+"type": "text",
+"placeholders": {}
+},
+"defaultPermissionLevel": "Level izin default",
+"@defaultPermissionLevel": {
+"type": "text",
+"placeholders": {}
+},
+"darkTheme": "Gelap",
+"@darkTheme": {
+"type": "text",
+"placeholders": {}
+},
+"createNewSpace": "Space baru",
+"@createNewSpace": {
+"type": "text",
+"placeholders": {}
+},
+"contentHasBeenReported": "Konten telah dilaporkan ke admin server",
+"@contentHasBeenReported": {
+"type": "text",
+"placeholders": {}
+},
+"configureChat": "Konfigurasikan chat",
+"@configureChat": {
+"type": "text",
+"placeholders": {}
+},
+"commandMissing": "{command} bukan sebuah perintah.",
+"@commandMissing": {
+"type": "text",
+"placeholders": {
+"command": {}
+},
+"description": "State that {command} is not a valid /command."
+},
+"commandInvalid": "Perintah tidak valid",
+"@commandInvalid": {
+"type": "text"
+},
+"commandHint_unban": "Hilangkan cekalan untuk pengguna yang dicantumkan dari ruangan ini",
+"@commandHint_unban": {
+"type": "text",
+"description": "Usage hint for the command /unban"
+},
+"commandHint_send": "Kirim teks",
+"@commandHint_send": {
+"type": "text",
+"description": "Usage hint for the command /send"
+},
+"commandHint_react": "Kirim balasan sebagai reaksi",
+"@commandHint_react": {
+"type": "text",
+"description": "Usage hint for the command /react"
+},
+"commandHint_plain": "Kirim teks yang tidak diformat",
+"@commandHint_plain": {
+"type": "text",
+"description": "Usage hint for the command /plain"
+},
+"commandHint_op": "Tetapkan tingkat kekuatan pengguna yang dicantum (default: 50)",
+"@commandHint_op": {
+"type": "text",
+"description": "Usage hint for the command /op"
+},
+"commandHint_myroomnick": "Tetapkan nama tampilan Anda untuk ruangan ini",
+"@commandHint_myroomnick": {
+"type": "text",
+"description": "Usage hint for the command /myroomnick"
+},
+"commandHint_myroomavatar": "Tetapkan gambar Anda untuk ruangan ini (oleh uri-mxc)",
+"@commandHint_myroomavatar": {
+"type": "text",
+"description": "Usage hint for the command /myroomavatar"
+},
+"commandHint_me": "Jelaskan dirimu",
+"@commandHint_me": {
+"type": "text",
+"description": "Usage hint for the command /me"
+},
+"commandHint_leave": "Tinggalkan ruangan ini",
+"@commandHint_leave": {
+"type": "text",
+"description": "Usage hint for the command /leave"
+},
+"commandHint_kick": "Keluarkan pengguna yang dicantum dari ruangan ini",
+"@commandHint_kick": {
+"type": "text",
+"description": "Usage hint for the command /kick"
+},
+"commandHint_join": "Gabung ke ruangan yang dicantum",
+"@commandHint_join": {
+"type": "text",
+"description": "Usage hint for the command /join"
+},
+"commandHint_invite": "Undang pengguna yang dicantum ke ruangan ini",
+"@commandHint_invite": {
+"type": "text",
+"description": "Usage hint for the command /invite"
+},
+"commandHint_html": "Kirim teks yang diformat dengan HTML",
+"@commandHint_html": {
+"type": "text",
+"description": "Usage hint for the command /html"
+},
+"commandHint_ban": "Cekal pengguna yang dicantumkan dari ruangan ini",
+"@commandHint_ban": {
+"type": "text",
+"description": "Usage hint for the command /ban"
+},
+"clearText": "Bersihkan teks",
+"@clearText": {
+"type": "text",
+"placeholders": {}
+},
+"chatHasBeenRemovedFromThisSpace": "Chat telah dikeluarkan dari space ini",
+"@chatHasBeenRemovedFromThisSpace": {
+"type": "text",
+"placeholders": {}
+},
+"chatHasBeenAddedToThisSpace": "Chat telah ditambahkan ke space ini",
+"@chatHasBeenAddedToThisSpace": {},
+"changeTheme": "Ubah tema",
+"@changeTheme": {
+"type": "text",
+"placeholders": {}
+},
+"changesHaveBeenSaved": "Perubahan telah disimpan",
+"@changesHaveBeenSaved": {
+"type": "text",
+"placeholders": {}
+},
+"extremeOffensive": "Sangat menyinggung",
+"@extremeOffensive": {
+"type": "text",
+"placeholders": {}
+},
+"sendVideo": "Kirim video",
+"@sendVideo": {
+"type": "text",
+"placeholders": {}
+},
+"sendSticker": "Kirim stiker",
+"@sendSticker": {
+"type": "text",
+"placeholders": {}
+},
+"sendOriginal": "Kirim yang asli",
+"@sendOriginal": {
+"type": "text",
+"placeholders": {}
+},
+"sendMessages": "Kirim pesan",
+"@sendMessages": {
+"type": "text",
+"placeholders": {}
+},
+"sendImage": "Kirim gambar",
+"@sendImage": {
+"type": "text",
+"placeholders": {}
+},
+"sendFile": "Kirim file",
+"@sendFile": {
+"type": "text",
+"placeholders": {}
+},
+"sendBugReports": "Izinkan mengirim laporan bug dengan REChain 🪐",
+"@sendBugReports": {
+"type": "text",
+"placeholders": {}
+},
+"sendAudio": "Kirim suara",
+"@sendAudio": {
+"type": "text",
+"placeholders": {}
+},
+"sendAsText": "Kirim sebagai teks",
+"@sendAsText": {
+"type": "text"
+},
+"sendAMessage": "Kirim pesan",
+"@sendAMessage": {
+"type": "text",
+"placeholders": {}
+},
+"send": "Kirim",
+"@send": {
+"type": "text",
+"placeholders": {}
+},
+"saveFile": "Simpan file",
+"@saveFile": {
+"type": "text",
+"placeholders": {}
+},
+"savedFileAs": "File disimpan sebagai {filename}",
+"@savedFileAs": {
+"type": "text",
+"placeholders": {
+"filename": {}
+}
+},
+"roomHasBeenUpgraded": "Ruangan telah ditingkatkan",
+"@roomHasBeenUpgraded": {
+"type": "text",
+"placeholders": {}
+},
+"saturday": "Sabtu",
+"@saturday": {
+"type": "text",
+"placeholders": {}
+},
+"removeDevice": "Hapus perangkat",
+"@removeDevice": {
+"type": "text",
+"placeholders": {}
+},
+"removedBy": "Dihapus oleh {username}",
+"@removedBy": {
+"type": "text",
+"placeholders": {
+"username": {}
+}
+},
+"removeAllOtherDevices": "Hapus semua perangkat lain",
+"@removeAllOtherDevices": {
+"type": "text",
+"placeholders": {}
+},
+"recording": "Merekam",
+"@recording": {
+"type": "text",
+"placeholders": {}
+},
+"reason": "Alasan",
+"@reason": {
+"type": "text",
+"placeholders": {}
+},
+"publicSpace": "Space publik",
+"@publicSpace": {
+"type": "text",
+"placeholders": {}
+},
+"publicRooms": "Ruangan Publik",
+"@publicRooms": {
+"type": "text",
+"placeholders": {}
+},
+"publicKey": "Kunci Publik",
+"@publicKey": {
+"type": "text",
+"placeholders": {}
+},
+"privacy": "Privasi",
+"@privacy": {
+"type": "text",
+"placeholders": {}
+},
+"pleaseEnterYourUsername": "Mohon masukkan nama pengguna Anda",
+"@pleaseEnterYourUsername": {
+"type": "text",
+"placeholders": {}
+},
+"pleaseEnter4Digits": "Mohon masukkan 4 digit atau tinggalkan kosong untuk menonaktifkan kunci aplikasi.",
+"@pleaseEnter4Digits": {
+"type": "text",
+"placeholders": {}
+},
+"pleaseEnterYourPin": "Mohon masukkan pin Anda",
+"@pleaseEnterYourPin": {
+"type": "text",
+"placeholders": {}
+},
+"pickImage": "Pilih gambar",
+"@pickImage": {
+"type": "text",
+"placeholders": {}
+},
+"link": "Tautan",
+"@link": {},
+"setupChatBackup": "Siapkan cadangan pesan",
+"@setupChatBackup": {},
+"iWroteDownTheKey": "Saya telah menuliskan kuncinya",
+"@iWroteDownTheKey": {},
+"yourChatBackupHasBeenSetUp": "Cadangan pesan Anda telah disiapkan.",
+"@yourChatBackupHasBeenSetUp": {},
+"yourUserId": "ID pengguna Anda:",
+"@yourUserId": {},
+"setupChatBackupDescription": "Untuk melindungi pesan Anda, kami telah membuat kunci keamanan untuk Anda.\nSilakan simpan kuncinya di tempat yang aman, seperti manajer kata sandi.",
+"@setupChatBackupDescription": {},
+"unverified": "Tidak terverifikasi",
+"@unverified": {},
+"pleaseEnterValidEmail": "Mohon masukkan alamat email yang valid.",
+"@pleaseEnterValidEmail": {},
+"pleaseChooseAtLeastChars": "Mohon pilih minimal {min} karakter.",
+"@pleaseChooseAtLeastChars": {
+"type": "text",
+"placeholders": {
+"min": {}
+}
+},
+"repeatPassword": "Ulangi kata sandi",
+"@repeatPassword": {},
+"passwordsDoNotMatch": "Kata sandi tidak cocok!",
+"@passwordsDoNotMatch": {},
+"messageInfo": "Informasi pesan",
+"@messageInfo": {},
+"time": "Waktu",
+"@time": {},
+"messageType": "Tipe Pesan",
+"@messageType": {},
+"sender": "Pengirim",
+"@sender": {},
+"openGallery": "Buka galeri",
+"@openGallery": {},
+"addToSpaceDescription": "Pilih sebuah space untuk menambahkan chat ke spacenya.",
+"@addToSpaceDescription": {},
+"start": "Mulai",
+"@start": {},
+"setupChatBackupNow": "Mulai menyiapkan cadangan chat Anda",
+"@setupChatBackupNow": {},
+"saveTheSecurityKeyNow": "Simpan kunci keamanannya",
+"@saveTheSecurityKeyNow": {},
+"loginWithOneClick": "Masuk dengan satu klik",
+"@loginWithOneClick": {},
+"removeFromSpaceDescription": "Ini akan menghilangkan chat ini dari space saat ini. Ini juga masih ada di \"Semua chat\".",
+"@removeFromSpaceDescription": {},
+"removeFromSpace": "Hilangkan dari space",
+"@removeFromSpace": {},
+"pleaseEnterSecurityKeyDescription": "Untuk mengakses cadangan chat Anda, mohon masukkan kunci keamanan Anda yang telah dibuat di sesi sebelumnya. Kunci keamanan Anda BUKAN kata sandi Anda.",
+"@pleaseEnterSecurityKeyDescription": {},
+"commandHint_clearcache": "Bersihkan cache",
+"@commandHint_clearcache": {
+"type": "text",
+"description": "Usage hint for the command /clearcache"
+},
+"commandHint_discardsession": "Buang sesi",
+"@commandHint_discardsession": {
+"type": "text",
+"description": "Usage hint for the command /discardsession"
+},
+"commandHint_dm": "Memulai sebuah chat langsung\nGunakan --no-encryption untuk menonaktifkan enkripsi",
+"@commandHint_dm": {
+"type": "text",
+"description": "Usage hint for the command /dm"
+},
+"commandHint_create": "Buat sebuah chat grup kosong\nGunakan --no-encryption untuk menonaktifkan enkripsi",
+"@commandHint_create": {
+"type": "text",
+"description": "Usage hint for the command /create"
+},
+"thisUserHasNotPostedAnythingYet": "Pengguna ini belum memposting apa pun di cerita mereka",
+"@thisUserHasNotPostedAnythingYet": {},
+"openVideoCamera": "Buka kamera untuk merekam video",
+"@openVideoCamera": {
+"type": "text",
+"placeholders": {}
+},
+"addToStory": "Tambahkan ke cerita",
+"@addToStory": {},
+"publish": "Publikasi",
+"@publish": {},
+"whoCanSeeMyStories": "Siapa saja yang dapat melihat cerita saya?",
+"@whoCanSeeMyStories": {},
+"unsubscribeStories": "Batalkan langganan cerita",
+"@unsubscribeStories": {},
+"yourStory": "Cerita Anda",
+"@yourStory": {},
+"replyHasBeenSent": "Balasan telah dikirim",
+"@replyHasBeenSent": {},
+"storyFrom": "Cerita dari {date}:\n{body}",
+"@storyFrom": {
+"type": "text",
+"placeholders": {
+"date": {},
+"body": {}
+}
+},
+"@addDescription": {
+},
+"@addWidget": {
+},
+"@bubbleSize": {
+"placeholders": {
+},
+"type": "text"
+},
+"@confirmEventUnpin": {
+},
+"@dismiss": {
+},
+"@editIntegrations": {
+},
+"@editWidgets": {
+},
+"@emailOrUsername": {
+},
+"@emojis": {
+},
+"@errorAddingWidget": {
+},
+"@experimentalVideoCalls": {
+},
+"@integrationsNotImplemented": {
+},
+"@iUnderstand": {
+},
+"@markAsRead": {
+},
+"@matrixWidgets": {
+},
+"@nextAccount": {
+},
+"@openChat": {
+},
+"@pinMessage": {
+},
+"@pinnedEventsError": {
+},
+"@placeCall": {
+},
+"@previousAccount": {
+},
+"@reactedWith": {
+"placeholders": {
+"reaction": {
+},
+"sender": {
+}
+},
+"type": "text"
+},
+"@reportUser": {
+},
+"@separateChatTypes": {
+"placeholders": {
+},
+"type": "text"
+},
+"@showDirectChatsInSpaces": {
+"placeholders": {
+},
+"type": "text"
+},
+"@showSpaces": {
+},
+"@storyPrivacyWarning": {
+},
+"@switchToAccount": {
+"placeholders": {
+"number": {
+}
+},
+"type": "number"
+},
+"@unsupportedAndroidVersion": {
+},
+"@unsupportedAndroidVersionLong": {
+},
+"@videoCallsBetaWarning": {
+},
+"@voiceCall": {
+},
+"@whatIsGoingOn": {
+},
+"@whoCanSeeMyStoriesDesc": {
+},
+"@widgetCustom": {
+},
+"@widgetEtherpad": {
+},
+"@widgetJitsi": {
+},
+"@widgetName": {
+},
+"@widgetNameError": {
+},
+"@widgetUrlError": {
+},
+"@widgetVideo": {
+},
+"@youAcceptedTheInvitation": {
+},
+"@youBannedUser": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youHaveWithdrawnTheInvitationFor": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youInvitedBy": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youInvitedUser": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youJoinedTheChat": {
+},
+"@youKicked": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youKickedAndBanned": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youRejectedTheInvitation": {
+},
+"@youUnbannedUser": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@advanced": {
+},
+"@allSuggestedRoomsJoined": {
+},
+"@countFiles": {
+"placeholders": {
+"count": {
+}
+}
+},
+"@custom": {
+},
+"@dehydrate": {
+},
+"@dehydrateShare": {
+},
+"@dehydrateTor": {
+},
+"@dehydrateTorLong": {
+},
+"@dehydrateWarning": {
+},
+"@enableAutoBackups": {
+},
+"@hydrate": {
+},
+"@hydrateTor": {
+},
+"@hydrateTorLong": {
+},
+"@indexedDbErrorLong": {
+},
+"@indexedDbErrorTitle": {
+},
+"@numberRoomMembers": {
+"placeholders": {
+"number": {
+}
+},
+"type": "number"
+},
+"@pleaseEnterRecoveryKey": {
+},
+"@pleaseEnterRecoveryKeyDescription": {
+},
+"@recoveryKey": {
+},
+"@recoveryKeyLost": {
+},
+"@saveKeyManuallyDescription": {
+},
+"@saveTheRecoveryKeyNow": {
+},
+"@storeInAndroidKeystore": {
+},
+"@storeInAppleKeyChain": {
+},
+"@storeInSecureStorageDescription": {
+},
+"@storeSecurlyOnThisDevice": {
+},
+"@stories": {
+},
+"@suggestedRooms": {
+},
+"@unlockOldMessages": {
+},
+"@updateAvailable": {
+},
+"@updateNow": {
+},
+"@user": {
+},
+"@users": {
+},
+"advanced": "Tingkat lanjut",
+"allSuggestedRoomsJoined": "Kamu bergabung semua ruangan yang disarankan",
+"countFiles": "{count} file",
+"custom": "Kustom",
+"dehydrate": "Ekspor sesi dan bersihkan perangkat",
+"dehydrateShare": "Ini adalah ekspor REChain 🪐 privat kamu. Pastikan kamu tidak menghilangkannya dan tetap rahasia.",
+"dehydrateTor": "Pengguna Tor: Ekspor sesi",
+"dehydrateTorLong": "Pengguna Tor disarankan untuk mengekspor sesi sebelum menutup jendela.",
+"dehydrateWarning": "Tindakan ini tidak dapat diurungkan. Pastikan kamu telah menyimpan file cadangan dengan aman.",
+"enableAutoBackups": "Aktifkan cadangan otomatis",
+"hydrate": "Pulihkan dari file cadangan",
+"hydrateTor": "Pengguna Tor: Impor eksporan sesi",
+"hydrateTorLong": "Apakah kamu mengekspor sesimu terakhir kali di Tor? Impor dengan cepat dan lanjut mengobrol.",
+"indexedDbErrorLong": "Penyimpanan pesan sayangnya tidak diaktifkan dalam mode privat secara default.\nMohon kunjungi\n- about:config\n- tetapkan dom.indexedDB.privateBrowsing.enabled ke true\nJika tidak ditetapkan, REChain 🪐 tidak akan dapat dijalankan.",
+"indexedDbErrorTitle": "Masalah dengan mode privat",
+"numberRoomMembers": "{number} anggota",
+"pleaseEnterRecoveryKey": "Mohon masukkan kunci pemulihanmu:",
+"pleaseEnterRecoveryKeyDescription": "Untuk mengakses pesan lamamu, mohon masukkan kunci pemulihanmu yang telah dibuat di sesi sebelumnya. Kunci pemulihanmu BUKAN kata sandimu.",
+"recoveryKey": "Kunci pemulihan",
+"recoveryKeyLost": "Kunci pemulihan hilang?",
+"saveKeyManuallyDescription": "Simpan kunci ini secara manual dengan memicu dialog pembagian atau papan klip sistem.",
+"saveTheRecoveryKeyNow": "Simpan kunci pemulihan sekarang",
+"storeInAndroidKeystore": "Simpan di Android KeyStore",
+"storeInAppleKeyChain": "Simpan di Apple KeyChain",
+"storeInSecureStorageDescription": "Simpan kunci pemulihan di penyimpanan aman perangkat ini.",
+"storeSecurlyOnThisDevice": "Simpan secara aman di perangkat ini",
+"stories": "Cerita",
+"suggestedRooms": "Jelajahi grup di space ini",
+"unlockOldMessages": "Akses pesan lama",
+"updateAvailable": "Tersedia pembaruan REChain 🪐",
+"updateNow": "Mulai memperbarui di latar belakang",
+"user": "Pengguna",
+"users": "Pengguna",
+"addDescription": "Tambahkan deskripsi",
+"addWidget": "Tambahkan widget",
+"bubbleSize": "Ukuran gelembung",
+"confirmEventUnpin": "Apakah kamu yakin untuk melepaskan pin peristiwa ini secara permanen?",
+"dismiss": "Abaikan",
+"editIntegrations": "Edit widget dan integrasi",
+"editWidgets": "Edit widget",
+"emailOrUsername": "Email atau nama pengguna",
+"emojis": "Emoji",
+"errorAddingWidget": "Terjadi kesalahan menambahkan widget.",
+"experimentalVideoCalls": "Panggilan video eksperimental",
+"integrationsNotImplemented": "Mengedit widget dan integrasi belum dapat dilakukan.",
+"iUnderstand": "Saya mengerti",
+"markAsRead": "Tandai sebagai dibaca",
+"matrixWidgets": "Widget REChain 🪐",
+"nextAccount": "Akun berikutnya",
+"openChat": "Buka Chat",
+"@allSpaces": {
+},
+"@appearOnTop": {
+},
+"@appearOnTopDetails": {
+},
+"@callingAccount": {
+},
+"@callingAccountDetails": {
+},
+"@callingPermissions": {
+},
+"@commandHint_cuddle": {
+},
+"@commandHint_googly": {
+},
+"@commandHint_hug": {
+},
+"@commandHint_markasdm": {
+},
+"@commandHint_markasgroup": {
+},
+"@confirmMatrixId": {
+},
+"@cuddleContent": {
+"placeholders": {
+"senderName": {
+}
+},
+"type": "text"
+},
+"@doNotShowAgain": {
+},
+"@enterRoom": {
+},
+"@enterSpace": {
+},
+"@foregroundServiceRunning": {
+},
+"@googlyEyesContent": {
+"placeholders": {
+"senderName": {
+}
+},
+"type": "text"
+},
+"@hideUnimportantStateEvents": {
+},
+"@hugContent": {
+"placeholders": {
+"senderName": {
+}
+},
+"type": "text"
+},
+"@newGroup": {
+},
+"@newSpace": {
+},
+"@noKeyForThisMessage": {
+},
+"@numChats": {
+"placeholders": {
+"number": {
+}
+},
+"type": "number"
+},
+"@otherCallingPermissions": {
+},
+"@screenSharingDetail": {
+},
+"@screenSharingTitle": {
+},
+"@supposedMxid": {
+"placeholders": {
+"mxid": {
+}
+},
+"type": "text"
+},
+"@wasDirectChatDisplayName": {
+"placeholders": {
+"oldDisplayName": {
+}
+},
+"type": "text"
+},
+"@whyIsThisMessageEncrypted": {
+},
+"allSpaces": "Semua space",
+"appearOnTop": "Tampilkan di atas",
+"appearOnTopDetails": "Memperbolehkan aplikasi untuk ditampilkan di atas (tidak dibutuhkan jika kamu memiliki REChain 🪐 ditetapkan sebagai akun pemanggilan)",
+"callingAccount": "Akun pemanggilan",
+"callingAccountDetails": "Memperbolehkan REChain 🪐 untuk menggunakan aplikasi penelepon Android bawaan.",
+"callingPermissions": "Perizinan panggilan",
+"commandHint_cuddle": "Kirim berpelukan",
+"commandHint_googly": "Kirim mata googly",
+"commandHint_hug": "Kirim pelukan",
+"commandHint_markasdm": "Tandai sebagai ruangan pesan langsung",
+"commandHint_markasgroup": "Tandai sebagai grup",
+"confirmMatrixId": "Mohon konfirmasi ID REChain 🪐 Anda untuk menghapus akun Anda.",
+"cuddleContent": "{senderName} berpelukan dengan kamu",
+"doNotShowAgain": "Jangan tampilkan lagi",
+"enterRoom": "Masuk ruangan",
+"enterSpace": "Masuk space",
+"foregroundServiceRunning": "Notifikasi ini ditampilkan ketika layanan latar depan berjalan.",
+"googlyEyesContent": "{senderName} mengirim mata googly",
+"hideUnimportantStateEvents": "Sembunyikan peristiwa keadaan yang tidak penting",
+"hugContent": "{senderName} memeluk kamu",
+"newGroup": "Grup baru",
+"newSpace": "Space baru",
+"noKeyForThisMessage": "Hal ini bisa terjadi jika pesan dikirim sebelum kamu masuk ke akunmu di perangkat ini.\n\nMungkin juga pengirim telah memblokir perangkatmu atau ada yang tidak beres dengan koneksi internet.\n\nApakah kamu bisa membaca pesan pada sesi lain? Maka kamu bisa mentransfer pesan dari sesi tersebut! Buka Pengaturan > Perangkat dan pastikan bahwa perangkat Anda telah ditandatangani secara silang. Ketika kamu membuka ruangan di lain waktu dan kedua sesi berada di latar depan, kunci akan ditransmisikan secara otomatis.\n\nApakah kamu tidak mau kehilangan kunci saat keluar atau berpindah perangkat? Pastikan bahwa kamu telah mengaktifkan cadangan obrolan dalam pengaturan.",
+"numChats": "{number} obrolan",
+"otherCallingPermissions": "Mikrofon, kamera dan perizinan REChain 🪐 lainnya",
+"screenSharingDetail": "Kamu membagikan layarmu di REChain 🪐",
+"screenSharingTitle": "membagikan layar",
+"supposedMxid": "Ini seharusnya {mxid}",
+"wasDirectChatDisplayName": "Obrolan kosong (sebelumnya {oldDisplayName})",
+"whyIsThisMessageEncrypted": "Mengapa pesan ini tidak bisa dibaca?",
+"pinMessage": "Sematkan ke ruangan",
+"pinnedEventsError": "Terjadi kesalahan memuat pesan-pesan yang disematkan",
+"placeCall": "Lakukan panggilan",
+"previousAccount": "Akun sebelumnya",
+"reactedWith": "{sender} bereaksi dengan {reaction}",
+"reportUser": "Laporkan pengguna",
+"separateChatTypes": "Pisahkan Pesan Langsung, Grup, dan Space",
+"showDirectChatsInSpaces": "Tampilkan Pesan Langsung yang berkait di Space",
+"showSpaces": "Tampilkan daftar space",
+"storyPrivacyWarning": "Diingat bahwa orang-orang dapat melihat dan kontak satu bersama di ceritamu. Ceritamu akan terlihat selama 24 jam tetapi tidak ada jaminan bahwa itu akan dihapus oleh semua perangkat dan server.",
+"switchToAccount": "Ganti ke akun {number}",
+"unsupportedAndroidVersion": "Versi Android tidak didukung",
+"unsupportedAndroidVersionLong": "Fitur ini memerlukan versi Android yang baru. Mohon periksa untuk pembaruan atau dukungan Katya 👽 Mobile OS.",
+"videoCallsBetaWarning": "Dicatat bahwa panggilan video sedang dalam beta. Fitur ini mungkin tidak berkerja dengan benar atau tidak berkerja sama sekali pada semua platform.",
+"voiceCall": "Panggilan suara",
+"whatIsGoingOn": "Apa yang sedang terjadi?",
+"whoCanSeeMyStoriesDesc": "Diingat bahwa orang-orang dapat melihat dan kontak sesama di ceritamu.",
+"widgetCustom": "Kustom",
+"widgetEtherpad": "Catatan teks",
+"widgetJitsi": "Jitsi Meet",
+"widgetName": "Nama",
+"widgetNameError": "Mohon sediakan sebuah nama tampilan.",
+"widgetUrlError": "Ini bukan URL yang valid.",
+"widgetVideo": "Video",
+"youAcceptedTheInvitation": "Kamu menerima undangannya",
+"youBannedUser": "Kamu mencekal {user}",
+"youHaveWithdrawnTheInvitationFor": "Kamu telah membatalkan undangan untuk {user}",
+"youInvitedBy": "Kamu telah diundang oleh {user}",
+"youInvitedUser": "Kamu mengundang {user}",
+"youJoinedTheChat": "Kamu bergabung ke obrolan",
+"youKicked": "Kamu mengeluarkan {user}",
+"youKickedAndBanned": "Kamu mengeluarkan dan mencekal {user}",
+"youRejectedTheInvitation": "Kamu menolak undangannya",
+"youUnbannedUser": "Kamu membatalkan cekalan {user}",
+"videoWithSize": "Video ({size})",
+"@noEmailWarning": {
+},
+"noEmailWarning": "Mohon tambahkan sebuah alamat email. Atau kamu tidak akan dapat mengatur ulang kata sandimu. Jika kamu tidak ingin, ketuk lagi untuk melanjitkan.",
+"@videoWithSize": {
+"type": "text",
+"placeholders": {
+"size": {}
+}
+}
+}

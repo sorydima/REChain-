@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "877790798155",
+    "project_id": "rechainonline-d4190",
+    "storage_bucket": "rechainonline-d4190.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:877790798155:android:610cc405a9a2d093d848ce",
+        "android_client_info": {
+          "package_name": "com.rechain.online"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "877790798155-7ie30rm339rt8ag9l8h0u22cpolcs70u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUPpKULmfylr9YFqf8m4q3U8SHTv2iJfE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "877790798155-7ie30rm339rt8ag9l8h0u22cpolcs70u.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "877790798155-do64urg89fr961eur4iusehvhq66icbp.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.rechain.online"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
