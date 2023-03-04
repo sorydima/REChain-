@@ -9,10 +9,14 @@ import 'package:rechainonline/pages/chat_list/chat_list_item.dart';
 import 'package:rechainonline/pages/chat_list/search_title.dart';
 import 'package:rechainonline/pages/chat_list/space_view.dart';
 import 'package:rechainonline/pages/chat_list/stories_header.dart';
+import 'package:rechainonline/utils/adaptive_bottom_sheet.dart';
+import 'package:rechainonline/utils/matrix_sdk_extensions/client_stories_extension.dart';
+import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
+import 'package:rechainonline/utils/stream_extension.dart';
 import 'package:rechainonline/widgets/avatar.dart';
 import 'package:rechainonline/widgets/profile_bottom_sheet.dart';
 import 'package:rechainonline/widgets/public_room_bottom_sheet.dart';
-import '../../utils/stream_extension.dart';
+import '../../config/themes.dart';
 import '../../widgets/connection_status_header.dart';
 import '../../widgets/matrix.dart';
 
@@ -60,9 +64,10 @@ class ChatListViewBody extends StatelessWidget {
             if (controller.waitForFirstSync && client.prevBatch != null) {
               final rooms = controller.filteredRooms;
               final displayStoriesHeader = {
-                ActiveFilter.allChats,
-                ActiveFilter.messages,
-              }.contains(controller.activeFilter);
+                    ActiveFilter.allChats,
+                    ActiveFilter.messages,
+                  }.contains(controller.activeFilter) &&
+                  client.storiesRooms.isNotEmpty;
               return ListView.builder(
                 controller: controller.scrollController,
                 // add +1 space below in order to properly scroll below the spaces bar
@@ -72,75 +77,87 @@ class ChatListViewBody extends StatelessWidget {
                     return Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        if (roomSearchResult != null) ...[
+                        if (controller.isSearchMode) ...[
                           SearchTitle(
                             title: L10n.of(context)!.publicRooms,
                             icon: const Icon(Icons.explore_outlined),
                           ),
                           AnimatedContainer(
-                            height: roomSearchResult.chunk.isEmpty ? 0 : 106,
-                            duration: const Duration(milliseconds: 250),
                             clipBehavior: Clip.hardEdge,
                             decoration: const BoxDecoration(),
-                            child: ListView.builder(
-                              scrollDirection: Axis.horizontal,
-                              itemCount: roomSearchResult.chunk.length,
-                              itemBuilder: (context, i) => _SearchItem(
-                                title: roomSearchResult.chunk[i].name ??
-                                    roomSearchResult
-                                        .chunk[i].canonicalAlias?.localpart ??
-                                    L10n.of(context)!.group,
-                                avatar: roomSearchResult.chunk[i].avatarUrl,
-                                onPressed: () => showModalBottomSheet(
-                                  context: context,
-                                  builder: (c) => PublicRoomBottomSheet(
-                                    roomAlias: roomSearchResult
-                                            .chunk[i].canonicalAlias ??
-                                        roomSearchResult.chunk[i].roomId,
-                                    outerContext: context,
-                                    chunk: roomSearchResult.chunk[i],
+                            height: roomSearchResult == null ||
+                                    roomSearchResult.chunk.isEmpty
+                                ? 0
+                                : 106,
+                            duration: rechainonlineThemes.animationDuration,
+                            curve: rechainonlineThemes.animationCurve,
+                            child: roomSearchResult == null
+                                ? null
+                                : ListView.builder(
+                                    scrollDirection: Axis.horizontal,
+                                    itemCount: roomSearchResult.chunk.length,
+                                    itemBuilder: (context, i) => _SearchItem(
+                                      title: roomSearchResult.chunk[i].name ??
+                                          roomSearchResult.chunk[i]
+                                              .canonicalAlias?.localpart ??
+                                          L10n.of(context)!.group,
+                                      avatar:
+                                          roomSearchResult.chunk[i].avatarUrl,
+                                      onPressed: () => showAdaptiveBottomSheet(
+                                        context: context,
+                                        builder: (c) => PublicRoomBottomSheet(
+                                          roomAlias: roomSearchResult
+                                                  .chunk[i].canonicalAlias ??
+                                              roomSearchResult.chunk[i].roomId,
+                                          outerContext: context,
+                                          chunk: roomSearchResult.chunk[i],
+                                        ),
+                                      ),
+                                    ),
                                   ),
-                                ),
-                              ),
-                            ),
                           ),
-                        ],
-                        if (userSearchResult != null) ...[
                           SearchTitle(
                             title: L10n.of(context)!.users,
                             icon: const Icon(Icons.group_outlined),
                           ),
                           AnimatedContainer(
-                            height: userSearchResult.results.isEmpty ? 0 : 106,
-                            duration: const Duration(milliseconds: 250),
                             clipBehavior: Clip.hardEdge,
                             decoration: const BoxDecoration(),
-                            child: ListView.builder(
-                              scrollDirection: Axis.horizontal,
-                              itemCount: userSearchResult.results.length,
-                              itemBuilder: (context, i) => _SearchItem(
-                                title:
-                                    userSearchResult.results[i].displayName ??
-                                        userSearchResult
-                                            .results[i].userId.localpart ??
-                                        L10n.of(context)!.unknownDevice,
-                                avatar: userSearchResult.results[i].avatarUrl,
-                                onPressed: () => showModalBottomSheet(
-                                  context: context,
-                                  builder: (c) => ProfileBottomSheet(
-                                    userId: userSearchResult.results[i].userId,
-                                    outerContext: context,
+                            height: userSearchResult == null ||
+                                    userSearchResult.results.isEmpty
+                                ? 0
+                                : 106,
+                            duration: rechainonlineThemes.animationDuration,
+                            curve: rechainonlineThemes.animationCurve,
+                            child: userSearchResult == null
+                                ? null
+                                : ListView.builder(
+                                    scrollDirection: Axis.horizontal,
+                                    itemCount: userSearchResult.results.length,
+                                    itemBuilder: (context, i) => _SearchItem(
+                                      title: userSearchResult
+                                              .results[i].displayName ??
+                                          userSearchResult
+                                              .results[i].userId.localpart ??
+                                          L10n.of(context)!.unknownDevice,
+                                      avatar:
+                                          userSearchResult.results[i].avatarUrl,
+                                      onPressed: () => showAdaptiveBottomSheet(
+                                        context: context,
+                                        builder: (c) => ProfileBottomSheet(
+                                          userId: userSearchResult
+                                              .results[i].userId,
+                                          outerContext: context,
+                                        ),
+                                      ),
+                                    ),
                                   ),
-                                ),
-                              ),
-                            ),
                           ),
-                        ],
-                        if (controller.isSearchMode)
                           SearchTitle(
                             title: L10n.of(context)!.stories,
                             icon: const Icon(Icons.camera_alt_outlined),
                           ),
+                        ],
                         if (displayStoriesHeader)
                           StoriesHeader(
                             key: const Key('stories_header'),
@@ -149,9 +166,9 @@ class ChatListViewBody extends StatelessWidget {
                         const ConnectionStatusHeader(),
                         AnimatedContainer(
                           height: controller.isTorBrowser ? 64 : 0,
-                          duration: const Duration(milliseconds: 300),
+                          duration: rechainonlineThemes.animationDuration,
+                          curve: rechainonlineThemes.animationCurve,
                           clipBehavior: Clip.hardEdge,
-                          curve: Curves.bounceInOut,
                           decoration: const BoxDecoration(),
                           child: Material(
                             color: Theme.of(context).colorScheme.surface,
@@ -172,35 +189,28 @@ class ChatListViewBody extends StatelessWidget {
                             icon: const Icon(Icons.chat_outlined),
                           ),
                         if (rooms.isEmpty && !controller.isSearchMode)
-                          Column(
-                            key: const ValueKey(null),
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            mainAxisSize: MainAxisSize.min,
-                            children: <Widget>[
-                              Image.asset(
-                                'assets/private_chat_wallpaper.png',
-                                width: 160,
-                                height: 160,
-                              ),
-                              Center(
-                                child: Text(
-                                  L10n.of(context)!.startYourFirstChat,
-                                  textAlign: TextAlign.start,
-                                  style: const TextStyle(
-                                    color: Colors.grey,
-                                    fontSize: 16,
-                                  ),
+                          Padding(
+                            padding: const EdgeInsets.all(32.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  'assets/start_chat.png',
+                                  height: 256,
                                 ),
-                              ),
-                              const SizedBox(height: 16),
-                            ],
+                                const Divider(height: 1),
+                              ],
+                            ),
                           ),
                       ],
                     );
                   }
                   i--;
-                  if (!rooms[i].displayname.toLowerCase().contains(
-                      controller.searchController.text.toLowerCase())) {
+                  if (!rooms[i]
+                      .getLocalizedDisplayname(MatrixLocals(L10n.of(context)!))
+                      .toLowerCase()
+                      .contains(
+                          controller.searchController.text.toLowerCase())) {
                     return Container();
                   }
                   return ChatListItem(
@@ -218,9 +228,9 @@ class ChatListViewBody extends StatelessWidget {
             }
             const dummyChatCount = 5;
             final titleColor =
-                Theme.of(context).textTheme.bodyText1!.color!.withAlpha(100);
+                Theme.of(context).textTheme.bodyLarge!.color!.withAlpha(100);
             final subtitleColor =
-                Theme.of(context).textTheme.bodyText1!.color!.withAlpha(50);
+                Theme.of(context).textTheme.bodyLarge!.color!.withAlpha(50);
             return ListView.builder(
               key: const Key('dummychats'),
               itemCount: dummyChatCount,
@@ -231,7 +241,7 @@ class ChatListViewBody extends StatelessWidget {
                     backgroundColor: titleColor,
                     child: CircularProgressIndicator(
                       strokeWidth: 1,
-                      color: Theme.of(context).textTheme.bodyText1!.color,
+                      color: Theme.of(context).textTheme.bodyLarge!.color,
                     ),
                   ),
                   title: Row(
@@ -312,6 +322,7 @@ class _SearchItem extends StatelessWidget {
                   title,
                   maxLines: 2,
                   textAlign: TextAlign.center,
+                  overflow: TextOverflow.ellipsis,
                   style: const TextStyle(
                     fontSize: 12,
                   ),

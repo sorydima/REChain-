@@ -2361,6 +2361,673 @@
 },
 "@yourUserId": {
 },
+"@addAccount": {
+},
+"@addDescription": {
+},
+"@addToBundle": {
+},
+"@addToSpaceDescription": {
+},
+"@addWidget": {
+},
+"@allSpaces": {
+},
+"@appearOnTopDetails": {
+},
+"@bundleName": {
+},
+"@callingAccount": {
+},
+"@callingPermissions": {
+},
+"@commandHint_create": {
+"description": "Usage hint for the command /create",
+"type": "text"
+},
+"@commandHint_discardsession": {
+"description": "Usage hint for the command /discardsession",
+"type": "text"
+},
+"@commandHint_dm": {
+"description": "Usage hint for the command /dm",
+"type": "text"
+},
+"@commandHint_googly": {
+},
+"@commandHint_html": {
+"description": "Usage hint for the command /html",
+"type": "text"
+},
+"@commandHint_hug": {
+},
+"@commandHint_invite": {
+"description": "Usage hint for the command /invite",
+"type": "text"
+},
+"@commandHint_join": {
+"description": "Usage hint for the command /join",
+"type": "text"
+},
+"@commandHint_leave": {
+"description": "Usage hint for the command /leave",
+"type": "text"
+},
+"@commandHint_markasdm": {
+},
+"@commandHint_markasgroup": {
+},
+"@commandHint_myroomavatar": {
+"description": "Usage hint for the command /myroomavatar",
+"type": "text"
+},
+"@commandHint_myroomnick": {
+"description": "Usage hint for the command /myroomnick",
+"type": "text"
+},
+"@commandHint_plain": {
+"description": "Usage hint for the command /plain",
+"type": "text"
+},
+"@commandHint_react": {
+"description": "Usage hint for the command /react",
+"type": "text"
+},
+"@commandHint_send": {
+"description": "Usage hint for the command /send",
+"type": "text"
+},
+"@commandInvalid": {
+"type": "text"
+},
+"@commandMissing": {
+"description": "State that {command} is not a valid /command.",
+"placeholders": {
+"command": {
+}
+},
+"type": "text"
+},
+"@confirmEventUnpin": {
+},
+"@confirmMatrixId": {
+},
+"@countFiles": {
+"placeholders": {
+"count": {
+}
+}
+},
+"@createNewSpace": {
+"placeholders": {
+},
+"type": "text"
+},
+"@custom": {
+},
+"@dehydrate": {
+},
+"@dehydrateShare": {
+},
+"@dehydrateTor": {
+},
+"@dehydrateTorLong": {
+},
+"@dehydrateWarning": {
+},
+"@deviceKeys": {
+},
+"@disableEncryptionWarning": {
+},
+"@doNotShowAgain": {
+},
+"@editBundlesForAccount": {
+},
+"@editWidgets": {
+},
+"@emailOrUsername": {
+},
+"@emojis": {
+},
+"@enableAutoBackups": {
+},
+"@enableMultiAccounts": {
+},
+"@encryptThisChat": {
+},
+"@endToEndEncryption": {
+},
+"@enterASpacepName": {
+},
+"@enterInviteLinkOrMatrixId": {
+},
+"@enterRoom": {
+},
+"@enterSpace": {
+},
+"@errorAddingWidget": {
+},
+"@errorObtainingLocation": {
+"placeholders": {
+"error": {
+}
+},
+"type": "text"
+},
+"@experimentalVideoCalls": {
+},
+"@foregroundServiceRunning": {
+},
+"@hideUnimportantStateEvents": {
+},
+"@homeserver": {
+},
+"@hydrate": {
+},
+"@hydrateTor": {
+},
+"@hydrateTorLong": {
+},
+"@indexedDbErrorTitle": {
+},
+"@iUnderstand": {
+},
+"@letsStart": {
+},
+"@link": {
+},
+"@locationDisabledNotice": {
+"placeholders": {
+},
+"type": "text"
+},
+"@locationPermissionDeniedNotice": {
+"placeholders": {
+},
+"type": "text"
+},
+"@loginWithOneClick": {
+},
+"@markAsRead": {
+},
+"@matrixWidgets": {
+},
+"@messageInfo": {
+},
+"@messageType": {
+},
+"@newGroup": {
+},
+"@newSpace": {
+},
+"@nextAccount": {
+},
+"@noBackupWarning": {
+},
+"@noEmailWarning": {
+},
+"@noMatrixServer": {
+"placeholders": {
+"server1": {
+},
+"server2": {
+}
+},
+"type": "text"
+},
+"@noOtherDevicesFound": {
+},
+"@noSearchResult": {
+},
+"@numChats": {
+"placeholders": {
+"number": {
+}
+},
+"type": "number"
+},
+"@obtainingLocation": {
+"placeholders": {
+},
+"type": "text"
+},
+"@oneClientLoggedOut": {
+},
+"@oopsPushError": {
+"placeholders": {
+},
+"type": "text"
+},
+"@openChat": {
+},
+"@openGallery": {
+},
+"@openVideoCamera": {
+"placeholders": {
+},
+"type": "text"
+},
+"@or": {
+"placeholders": {
+},
+"type": "text"
+},
+"@otherCallingPermissions": {
+},
+"@pinMessage": {
+},
+"@placeCall": {
+},
+"@pleaseChoose": {
+"placeholders": {
+},
+"type": "text"
+},
+"@pleaseEnterRecoveryKey": {
+},
+"@pleaseEnterRecoveryKeyDescription": {
+},
+"@previousAccount": {
+},
+"@publish": {
+},
+"@reactedWith": {
+"placeholders": {
+"reaction": {
+},
+"sender": {
+}
+},
+"type": "text"
+},
+"@recoveryKey": {
+},
+"@recoveryKeyLost": {
+},
+"@register": {
+"placeholders": {
+},
+"type": "text"
+},
+"@removeFromBundle": {
+},
+"@removeFromSpace": {
+},
+"@removeYourAvatar": {
+"placeholders": {
+},
+"type": "text"
+},
+"@reopenChat": {
+},
+"@replyHasBeenSent": {
+},
+"@reportUser": {
+},
+"@saveFile": {
+"placeholders": {
+},
+"type": "text"
+},
+"@scanQrCode": {
+},
+"@screenSharingDetail": {
+},
+"@screenSharingTitle": {
+},
+"@sendAsText": {
+"type": "text"
+},
+"@sender": {
+},
+"@sendSticker": {
+"placeholders": {
+},
+"type": "text"
+},
+"@serverRequiresEmail": {
+},
+"@shareLocation": {
+"placeholders": {
+},
+"type": "text"
+},
+"@shareYourInviteLink": {
+},
+"@showDirectChatsInSpaces": {
+"placeholders": {
+},
+"type": "text"
+},
+"@singlesignon": {
+"placeholders": {
+},
+"type": "text"
+},
+"@sorryThatsNotPossible": {
+},
+"@spaceIsPublic": {
+"placeholders": {
+},
+"type": "text"
+},
+"@spaceName": {
+"placeholders": {
+},
+"type": "text"
+},
+"@start": {
+},
+"@startFirstChat": {
+},
+"@storeInAndroidKeystore": {
+},
+"@storeInAppleKeyChain": {
+},
+"@storeInSecureStorageDescription": {
+},
+"@storeSecurlyOnThisDevice": {
+},
+"@stories": {
+},
+"@storyFrom": {
+"placeholders": {
+"body": {
+},
+"date": {
+}
+},
+"type": "text"
+},
+"@storyPrivacyWarning": {
+},
+"@switchToAccount": {
+"placeholders": {
+"number": {
+}
+},
+"type": "number"
+},
+"@synchronizingPleaseWait": {
+"placeholders": {
+},
+"type": "text"
+},
+"@thisUserHasNotPostedAnythingYet": {
+},
+"@time": {
+},
+"@typeInInviteLinkManually": {
+},
+"@unlockOldMessages": {
+},
+"@unsubscribeStories": {
+},
+"@unsupportedAndroidVersion": {
+},
+"@unsupportedAndroidVersionLong": {
+},
+"@unverified": {
+},
+"@updateAvailable": {
+},
+"@updateNow": {
+},
+"@user": {
+},
+"@users": {
+},
+"@videoCallsBetaWarning": {
+},
+"@videoWithSize": {
+"placeholders": {
+"size": {
+}
+},
+"type": "text"
+},
+"@voiceCall": {
+},
+"@wasDirectChatDisplayName": {
+"placeholders": {
+"oldDisplayName": {
+}
+},
+"type": "text"
+},
+"@whoCanSeeMyStoriesDesc": {
+},
+"@whyIsThisMessageEncrypted": {
+},
+"@widgetCustom": {
+},
+"@widgetJitsi": {
+},
+"@widgetName": {
+},
+"@widgetNameError": {
+},
+"@widgetUrlError": {
+},
+"@widgetVideo": {
+},
+"@youAcceptedTheInvitation": {
+},
+"@youBannedUser": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youHaveWithdrawnTheInvitationFor": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youInvitedBy": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youInvitedUser": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youJoinedTheChat": {
+},
+"@youKicked": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youKickedAndBanned": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youRejectedTheInvitation": {
+},
+"@yourStory": {
+},
+"@youUnbannedUser": {
+"placeholders": {
+"user": {
+}
+}
+},
+"addAccount": "アカウントを追加",
+"addDescription": "説明を追加",
+"addToBundle": "バンドルに追加",
+"addToSpaceDescription": "このチャットを追加するスペースを選択してください。",
+"addWidget": "ウィジェットを追加",
+"allSpaces": "すべてのスペース",
+"appearOnTopDetails": "アプリをトップに表示できるようにする（すでに通話アカウントとしてREChain 🪐を設定している場合は必要ありません）",
+"bundleName": "バンドル名",
+"callingAccount": "通話アカウント",
+"callingPermissions": "通話の権限",
+"commandHint_create": "空のグループチャットを作成\n暗号化を無効にするには、--no-encryption を使用",
+"commandHint_discardsession": "セッションを破棄",
+"commandHint_dm": "ダイレクトチャットを開始する\n暗号化を無効にするには、--no-encryptionを使用してください",
+"commandHint_googly": "ぎょろ目を送る",
+"commandHint_html": "HTML形式のテキストを送信",
+"commandHint_hug": "ハグを送る",
+"commandHint_invite": "指定したユーザーをこの部屋に招待",
+"commandHint_join": "指定した部屋に参加",
+"commandHint_leave": "この部屋を退出",
+"commandHint_markasdm": "ダイレクトメッセージの部屋としてマークする",
+"commandHint_markasgroup": "グループとしてマーク",
+"commandHint_myroomavatar": "この部屋の写真を設定する (mxc-uriで)",
+"commandHint_myroomnick": "この部屋の表示名を設定する",
+"commandHint_plain": "書式設定されていないテキストを送信する",
+"commandHint_react": "リアクションとして返信を送信する",
+"commandHint_send": "テキストを送信",
+"commandInvalid": "コマンドが無効",
+"commandMissing": "{command} はコマンドではありません。",
+"confirmEventUnpin": "イベントの固定を完全に解除してもよろしいですか？",
+"confirmMatrixId": "アカウントを削除するには、REChain 🪐 IDを確認してください。",
+"countFiles": "{count}個のファイル",
+"createNewSpace": "新しいスペース",
+"custom": "カスタム",
+"dehydrate": "セッションのエクスポートとデバイスの消去",
+"dehydrateShare": "これはあなたの非公開の REChain 🪐 エクスポートです。なくさないようにして、公開せず保管してください。",
+"dehydrateTor": "TOR ユーザー: セッションをエクスポート",
+"dehydrateTorLong": "TOR ユーザーの場合、ウィンドウを閉じる前にセッションをエクスポートすることをお勧めします。",
+"dehydrateWarning": "この操作は元に戻せません。バックアップファイルを安全に保存してください。",
+"deviceKeys": "デバイスキー:",
+"disableEncryptionWarning": "セキュリティ上の理由から、以前は暗号化が有効だったチャットで暗号化を無効にすることはできません。",
+"doNotShowAgain": "今後表示しない",
+"editBundlesForAccount": "このアカウントのバンドルを編集",
+"editWidgets": "ウィジェットを編集",
+"emailOrUsername": "メールアドレスまたはユーザー名",
+"emojis": "絵文字",
+"enableAutoBackups": "自動バックアップを有効にする",
+"enableMultiAccounts": "(ベータ版) このデバイスで複数のアカウントを有効にする",
+"encryptThisChat": "このチャットを暗号化する",
+"endToEndEncryption": "エンドツーエンド暗号化",
+"enterASpacepName": "スペース名を入力してください",
+"enterInviteLinkOrMatrixId": "招待リンクまたはREChain 🪐のIDを入力してください...",
+"enterRoom": "部屋に入る",
+"enterSpace": "スペースに入る",
+"errorAddingWidget": "ウィジェットの追加中にエラーが発生しました。",
+"errorObtainingLocation": "位置情報の取得中にエラーが発生しました: {error}",
+"experimentalVideoCalls": "実験的なビデオ通話",
+"foregroundServiceRunning": "この通知は、フォアグラウンド サービスの実行中に表示されます。",
+"hideUnimportantStateEvents": "重要でない状態イベントを非表示にする",
+"homeserver": "ホームサーバー",
+"hydrate": "バックアップファイルから復元",
+"hydrateTor": "TOR ユーザー: セッションのエクスポートをインポート",
+"hydrateTorLong": "前回、TOR でセッションをエクスポートしましたか？すぐにインポートしてチャットを続けましょう。",
+"indexedDbErrorTitle": "プライベートモードに関する問題",
+"iUnderstand": "わかりました",
+"letsStart": "始めましょう",
+"link": "リンク",
+"locationDisabledNotice": "位置情報サービスが無効になっています。位置情報を共有できるようにするには、位置情報サービスを有効にしてください。",
+"locationPermissionDeniedNotice": "位置情報の権限が拒否されました。位置情報を共有できるように許可してください。",
+"loginWithOneClick": "ワンクリックでサインイン",
+"markAsRead": "既読にする",
+"matrixWidgets": "REChain 🪐のウィジェット",
+"messageInfo": "メッセージの情報",
+"messageType": "メッセージの種類",
+"newGroup": "新しいグループ",
+"newSpace": "新しいスペース",
+"nextAccount": "次のアカウント",
+"noBackupWarning": "警告！チャットのバックアップを有効にしないと、暗号化されたメッセージにアクセスできなくなります。ログアウトする前に、まずチャットのバックアップを有効にすることを強くお勧めします。",
+"noEmailWarning": "有効なメールアドレスを入力してください。入力しないと、パスワードをリセットすることができなくなります。不要な場合は、もう一度ボタンをタップして続けてください。",
+"noOtherDevicesFound": "他のデバイスが見つかりません",
+"noSearchResult": "一致する検索結果がありません。",
+"numChats": "{number} チャット",
+"obtainingLocation": "位置情報を取得しています…",
+"oneClientLoggedOut": "クライアントの 1つがログアウトしました",
+"oopsPushError": "おっと！残念ながら、プッシュ通知の設定中にエラーが発生しました。",
+"openChat": "チャットを開く",
+"openGallery": "ギャラリーを開く",
+"openVideoCamera": "ビデオ用にカメラを開く",
+"or": "または",
+"otherCallingPermissions": "マイク、カメラ、その他REChain 🪐の権限",
+"pinMessage": "部屋にピン留めする",
+"placeCall": "電話をかける",
+"pleaseChoose": "選択してください",
+"pleaseEnterRecoveryKey": "リカバリーキーを入力してください。",
+"pleaseEnterRecoveryKeyDescription": "古いメッセージを解除するには、以前のセッションで生成されたリカバリーキーを入力してください。リカバリーキーはパスワードではありません。",
+"previousAccount": "前のアカウント",
+"publish": "公開",
+"reactedWith": "{sender} が {reaction} で反応しました",
+"recoveryKey": "リカバリーキー",
+"recoveryKeyLost": "リカバリーキーを紛失した場合",
+"register": "登録",
+"removeFromBundle": "このバンドルから削除",
+"removeFromSpace": "スペースから削除",
+"removeYourAvatar": "アバターを削除する",
+"reopenChat": "チャットを再開する",
+"replyHasBeenSent": "返信が送信されました",
+"reportUser": "ユーザーを報告",
+"saveFile": "ファイルを保存",
+"scanQrCode": "QRコードをスキャン",
+"screenSharingDetail": "REChain 🪐で画面を共有しています",
+"screenSharingTitle": "画面共有",
+"sendAsText": "テキストとして送信",
+"sender": "送信者",
+"sendSticker": "ステッカーを送る",
+"serverRequiresEmail": "このサーバーは、登録のためにメールアドレスを検証する必要があります。",
+"shareLocation": "位置情報の共有",
+"shareYourInviteLink": "招待リンクを共有する",
+"showDirectChatsInSpaces": "関連するダイレクトチャットをスペースに表示する",
+"singlesignon": "シングルサインオン",
+"sorryThatsNotPossible": "申し訳ありません...それは不可能です",
+"spaceIsPublic": "スペースは公開されています",
+"spaceName": "スペース名",
+"start": "開始",
+"startFirstChat": "最初のチャットを開始する",
+"storeInAndroidKeystore": "Android KeyStoreに保存する",
+"storeInAppleKeyChain": "Apple KeyChainに保存",
+"storeInSecureStorageDescription": "このデバイスの安全なストレージにリカバリーキーを保存。",
+"storeSecurlyOnThisDevice": "このデバイスに安全に保管する",
+"stories": "ストーリー",
+"storyFrom": "{date}からのストーリー:\n{body}",
+"storyPrivacyWarning": "あなたのストーリーでは、人々がお互いを見て連絡を取ることができることに注意してください。ストーリーは24時間表示されますが、すべてのデバイスとサーバーから削除されるという保証はありません。",
+"switchToAccount": "アカウント {number} に切り替える",
+"synchronizingPleaseWait": "同期中...お待ちください。",
+"thisUserHasNotPostedAnythingYet": "このユーザーはまだストーリーに何も投稿していません",
+"time": "時間",
+"typeInInviteLinkManually": "招待リンクを手動で入力...",
+"unlockOldMessages": "古いメッセージのロックを解除する",
+"unsubscribeStories": "ストーリーの購読を解除する",
+"unsupportedAndroidVersion": "サポートされていないAndroidのバージョン",
+"unsupportedAndroidVersionLong": "この機能を利用するには、より新しいAndroidのバージョンが必要です。アップデートまたはKatya ® 👽 Mobile OSのサポートをご確認ください。",
+"unverified": "未検証",
+"updateAvailable": "REChain 🪐のアップデートが利用可能",
+"updateNow": "バックグラウンドでアップデートを開始",
+"user": "ユーザー",
+"users": "ユーザー",
+"videoCallsBetaWarning": "ビデオ通話は、現在ベータ版であることにご注意ください。すべてのプラットフォームで期待通りに動作しない、あるいはまったく動作しない可能性があります。",
+"videoWithSize": "ビデオ ({size})",
+"voiceCall": "音声通話",
+"wasDirectChatDisplayName": "空のチャット (以前は {oldDisplayName})",
+"whoCanSeeMyStoriesDesc": "あなたのストーリーでは、人々がお互いを見て連絡を取ることができることに注意してください。",
+"whyIsThisMessageEncrypted": "このメッセージが読めない理由",
+"widgetCustom": "カスタム",
+"widgetJitsi": "Jitsi Meet",
+"widgetName": "名称",
+"widgetNameError": "表示名を入力してください。",
+"widgetUrlError": "有効なURLではありません。",
+"widgetVideo": "動画",
+"youAcceptedTheInvitation": "👍 招待を承諾しました",
+"youBannedUser": "{user} を禁止しました",
+"youHaveWithdrawnTheInvitationFor": "{user} への招待を取り下げました",
+"youInvitedBy": "📩 {user} から招待されました",
+"youInvitedUser": "📩 {user} を招待しました",
+"youJoinedTheChat": "チャットに参加しました",
+"youKicked": "👞 {user} をキックしました",
+"youKickedAndBanned": "🙅 {user} をキックしてブロックしました",
+"youRejectedTheInvitation": "招待を拒否しました",
+"yourStory": "あなたのストーリー",
+"youUnbannedUser": "{user} の禁止を解除しました",
 "addToSpace": "スペースに追加",
 "addToStory": "ストーリーに追加",
 "autoplayImages": "GIFを自動的に再生する",

@@ -11,7 +11,7 @@ import 'package:vrouter/vrouter.dart';
 
 import 'package:rechainonline/pages/chat_details/chat_details_view.dart';
 import 'package:rechainonline/pages/settings/settings.dart';
-import 'package:rechainonline/utils/matrix_sdk_extensions.dart/matrix_locals.dart';
+import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
 import 'package:rechainonline/widgets/matrix.dart';
 

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
 
+import 'package:rechainonline/config/themes.dart';
 import 'chat.dart';
 
 class ChatEmojiPicker extends StatelessWidget {
@@ -11,7 +12,8 @@ class ChatEmojiPicker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
-      duration: const Duration(milliseconds: 300),
+      duration: rechainonlineThemes.animationDuration,
+      curve: rechainonlineThemes.animationCurve,
       height: controller.showEmojiPicker
           ? MediaQuery.of(context).size.height / 2
           : 0,

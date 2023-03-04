@@ -2,14 +2,12 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:matrix/matrix.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 import 'package:vrouter/vrouter.dart';
 
+import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/pages/chat_encryption_settings/chat_encryption_settings.dart';
-import 'package:rechainonline/widgets/avatar.dart';
-import 'package:rechainonline/widgets/layouts/max_width_body.dart';
-import 'package:rechainonline/widgets/matrix.dart';
-import '../../utils/matrix_sdk_extensions.dart/device_extension.dart';
-import '../../widgets/m2_popup_menu_button.dart';
+import 'package:rechainonline/utils/beautify_string_extension.dart';
 
 class ChatEncryptionSettingsView extends StatelessWidget {
   final ChatEncryptionSettingsController controller;
@@ -19,184 +17,181 @@ class ChatEncryptionSettingsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final room = Matrix.of(context).client.getRoomById(controller.roomId!)!;
-
-    return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.close_outlined),
-          onPressed: () =>
-              VRouter.of(context).toSegments(['rooms', controller.roomId!]),
-        ),
-        title: Text(L10n.of(context)!.tapOnDeviceToVerify),
-        elevation: 0,
-      ),
-      body: MaxWidthBody(
-        withScrolling: true,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            ListTile(
-              title: Text(L10n.of(context)!.deviceVerifyDescription),
-              leading: CircleAvatar(
-                backgroundColor: Theme.of(context).secondaryHeaderColor,
-                foregroundColor: Theme.of(context).colorScheme.secondary,
-                child: const Icon(Icons.lock),
+    final room = controller.room;
+    return StreamBuilder<Object>(
+        stream: room.client.onSync.stream.where(
+            (s) => s.rooms?.join?[room.id] != null || s.deviceLists != null),
+        builder: (context, _) => Scaffold(
+              appBar: AppBar(
+                leading: IconButton(
+                  icon: const Icon(Icons.close_outlined),
+                  onPressed: () => VRouter.of(context)
+                      .toSegments(['rooms', controller.roomId!]),
+                ),
+                title: Text(L10n.of(context)!.endToEndEncryption),
+                actions: [
+                  TextButton(
+                    onPressed: () =>
+                        launchUrlString(AppConfig.encryptionTutorial),
+                    child: Text(L10n.of(context)!.help),
+                  ),
+                ],
               ),
-            ),
-            const Divider(height: 1),
-            StreamBuilder(
-                stream: room.onUpdate.stream,
-                builder: (context, snapshot) {
-                  return FutureBuilder<List<DeviceKeys>>(
-                    future: room.getUserDeviceKeys(),
-                    builder: (BuildContext context, snapshot) {
-                      if (snapshot.hasError) {
-                        return Center(
-                          child: Text(
-                              '${L10n.of(context)!.oopsSomethingWentWrong}: ${snapshot.error}'),
-                        );
-                      }
-                      if (!snapshot.hasData) {
-                        return const Center(
-                            child: CircularProgressIndicator.adaptive(
-                                strokeWidth: 2));
-                      }
-                      final deviceKeys = snapshot.data!;
-                      return ListView.builder(
-                        shrinkWrap: true,
-                        physics: const NeverScrollableScrollPhysics(),
-                        itemCount: deviceKeys.length,
-                        itemBuilder: (BuildContext context, int i) => Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: <Widget>[
-                            if (i == 0 ||
-                                deviceKeys[i].userId !=
-                                    deviceKeys[i - 1].userId) ...{
-                              const Divider(height: 1, thickness: 1),
-                              M2PopupMenuButton(
-                                onSelected: (dynamic action) => controller
-                                    .onSelected(context, action, deviceKeys[i]),
-                                itemBuilder: (c) {
-                                  final items = <PopupMenuEntry<String>>[];
-                                  if (room
-                                          .client
-                                          .userDeviceKeys[deviceKeys[i].userId]!
-                                          .verified ==
-                                      UserVerifiedStatus.unknown) {
-                                    items.add(PopupMenuItem(
-                                      value: 'verify_user',
-                                      child: Text(L10n.of(context)!.verifyUser),
-                                    ));
-                                  }
-                                  return items;
-                                },
-                                child: ListTile(
-                                  leading: Avatar(
-                                    mxContent: room
-                                        .unsafeGetUserFromMemoryOrFallback(
-                                            deviceKeys[i].userId)
-                                        .avatarUrl,
-                                    name: room
-                                        .unsafeGetUserFromMemoryOrFallback(
-                                            deviceKeys[i].userId)
-                                        .calcDisplayname(),
-                                  ),
-                                  title: Text(
-                                    room
-                                        .unsafeGetUserFromMemoryOrFallback(
-                                            deviceKeys[i].userId)
-                                        .calcDisplayname(),
-                                  ),
-                                  subtitle: Text(
-                                    deviceKeys[i].userId,
-                                    style: const TextStyle(
-                                        fontWeight: FontWeight.w300),
-                                  ),
-                                ),
-                              ),
-                            },
-                            M2PopupMenuButton(
-                              onSelected: (dynamic action) => controller
-                                  .onSelected(context, action, deviceKeys[i]),
-                              itemBuilder: (c) {
-                                final items = <PopupMenuEntry<String>>[];
-                                if (deviceKeys[i].blocked ||
-                                    !deviceKeys[i].verified) {
-                                  items.add(PopupMenuItem(
-                                    value: deviceKeys[i].userId ==
-                                            room.client.userID
-                                        ? 'verify'
-                                        : 'verify_user',
-                                    child: Text(L10n.of(context)!.verifyStart),
-                                  ));
-                                }
-                                if (deviceKeys[i].blocked) {
-                                  items.add(PopupMenuItem(
-                                    value: 'unblock',
-                                    child:
-                                        Text(L10n.of(context)!.unblockDevice),
-                                  ));
-                                }
-                                if (!deviceKeys[i].blocked) {
-                                  items.add(PopupMenuItem(
-                                    value: 'block',
-                                    child: Text(L10n.of(context)!.blockDevice),
-                                  ));
-                                }
-                                return items;
-                              },
-                              child: ListTile(
-                                leading: CircleAvatar(
-                                  foregroundColor: Colors.white,
-                                  backgroundColor: deviceKeys[i].color,
-                                  child: Icon(deviceKeys[i].icon),
-                                ),
-                                title: Text(
-                                  deviceKeys[i].displayname,
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                                subtitle: Row(
+              body: ListView(
+                children: [
+                  SwitchListTile(
+                    secondary: CircleAvatar(
+                        foregroundColor:
+                            Theme.of(context).colorScheme.onPrimaryContainer,
+                        backgroundColor:
+                            Theme.of(context).colorScheme.primaryContainer,
+                        child: const Icon(Icons.lock_outlined)),
+                    title: Text(L10n.of(context)!.encryptThisChat),
+                    value: room.encrypted,
+                    onChanged: controller.enableEncryption,
+                  ),
+                  Center(
+                    child: Image.asset(
+                      'assets/encryption.png',
+                      width: 212,
+                    ),
+                  ),
+                  const Divider(height: 1),
+                  if (room.isDirectChat)
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: SizedBox(
+                        width: double.infinity,
+                        child: ElevatedButton.icon(
+                          onPressed: controller.startVerification,
+                          icon: const Icon(Icons.verified_outlined),
+                          label: Text(L10n.of(context)!.verifyStart),
+                        ),
+                      ),
+                    ),
+                  if (room.encrypted) ...[
+                    const SizedBox(height: 16),
+                    ListTile(
+                      title: Text(
+                        L10n.of(context)!.deviceKeys,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    StreamBuilder(
+                      stream: room.onUpdate.stream,
+                      builder: (context, snapshot) => FutureBuilder<
+                              List<DeviceKeys>>(
+                          future: room.getUserDeviceKeys(),
+                          builder: (BuildContext context, snapshot) {
+                            if (snapshot.hasError) {
+                              return Center(
+                                child: Text(
+                                    '${L10n.of(context)!.oopsSomethingWentWrong}: ${snapshot.error}'),
+                              );
+                            }
+                            if (!snapshot.hasData) {
+                              return const Center(
+                                  child: CircularProgressIndicator.adaptive(
+                                      strokeWidth: 2));
+                            }
+                            final deviceKeys = snapshot.data!;
+                            return ListView.builder(
+                              shrinkWrap: true,
+                              physics: const NeverScrollableScrollPhysics(),
+                              itemCount: deviceKeys.length,
+                              itemBuilder: (BuildContext context, int i) =>
+                                  SwitchListTile(
+                                value: !deviceKeys[i].blocked,
+                                activeColor: deviceKeys[i].verified
+                                    ? Colors.green
+                                    : Colors.orange,
+                                onChanged: (_) =>
+                                    controller.toggleDeviceKey(deviceKeys[i]),
+                                title: Row(
                                   children: [
-                                    Text(
-                                      deviceKeys[i].deviceId!,
-                                      style: const TextStyle(
-                                          fontWeight: FontWeight.w300),
+                                    Icon(
+                                      deviceKeys[i].verified
+                                          ? Icons.verified_outlined
+                                          : deviceKeys[i].blocked
+                                              ? Icons.block_outlined
+                                              : Icons.info_outlined,
+                                      color: deviceKeys[i].verified
+                                          ? Colors.green
+                                          : deviceKeys[i].blocked
+                                              ? Colors.red
+                                              : Colors.orange,
+                                      size: 20,
                                     ),
-                                    const Spacer(),
+                                    const SizedBox(width: 4),
                                     Text(
-                                      deviceKeys[i].blocked
-                                          ? L10n.of(context)!.blocked
-                                          : deviceKeys[i].verified
-                                              ? L10n.of(context)!.verified
-                                              : L10n.of(context)!.unverified,
-                                      style: TextStyle(
-                                        fontSize: 14,
-                                        color: deviceKeys[i].color,
+                                      deviceKeys[i].deviceId ??
+                                          L10n.of(context)!.unknownDevice,
+                                    ),
+                                    const SizedBox(width: 4),
+                                    Flexible(
+                                      fit: FlexFit.loose,
+                                      child: Material(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(
+                                              AppConfig.borderRadius),
+                                          side: BorderSide(
+                                            color: Theme.of(context)
+                                                .colorScheme
+                                                .primary,
+                                          ),
+                                        ),
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .primaryContainer,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(4.0),
+                                          child: Text(
+                                            deviceKeys[i].userId,
+                                            maxLines: 1,
+                                            overflow: TextOverflow.ellipsis,
+                                            style: TextStyle(
+                                              color: Theme.of(context)
+                                                  .colorScheme
+                                                  .primary,
+                                              fontSize: 12,
+                                              fontStyle: FontStyle.italic,
+                                            ),
+                                          ),
+                                        ),
                                       ),
                                     ),
                                   ],
                                 ),
+                                subtitle: Text(
+                                  deviceKeys[i].ed25519Key?.beautified ??
+                                      L10n.of(context)!
+                                          .unknownEncryptionAlgorithm,
+                                  style: TextStyle(
+                                    fontFamily: 'RobotoMono',
+                                    color:
+                                        Theme.of(context).colorScheme.secondary,
+                                  ),
+                                ),
                               ),
-                            ),
-                          ],
+                            );
+                          }),
+                    ),
+                  ] else
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Center(
+                        child: Text(
+                          L10n.of(context)!.encryptionNotEnabled,
+                          style: const TextStyle(
+                            fontStyle: FontStyle.italic,
+                          ),
                         ),
-                      );
-                    },
-                  );
-                }),
-          ],
-        ),
-      ),
-    );
+                      ),
+                    ),
+                ],
+              ),
+            ));
   }
-}
-
-extension on DeviceKeys {
-  Color get color => blocked
-      ? Colors.red
-      : verified
-          ? Colors.green
-          : Colors.orange;
 }

@@ -7,6 +7,7 @@ import 'package:matrix/matrix.dart';
 import 'package:matrix_link_text/link_text.dart';
 import 'package:video_player/video_player.dart';
 
+import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/pages/story/story_page.dart';
 import 'package:rechainonline/utils/date_time_extension.dart';
 import 'package:rechainonline/utils/localized_exception_extension.dart';
@@ -14,7 +15,7 @@ import 'package:rechainonline/utils/platform_infos.dart';
 import 'package:rechainonline/utils/string_color.dart';
 import 'package:rechainonline/utils/url_launcher.dart';
 import 'package:rechainonline/widgets/avatar.dart';
-import '../../widgets/m2_popup_menu_button.dart';
+import '../../config/themes.dart';
 
 class StoryView extends StatelessWidget {
   final StoryPageController controller;
@@ -102,9 +103,13 @@ class StoryView extends StatelessWidget {
                     icon: Icon(Icons.adaptive.share_outlined),
                     onPressed: controller.share,
                   ),
-                M2PopupMenuButton<PopupStoryAction>(
+                PopupMenuButton<PopupStoryAction>(
                   color: Colors.white,
                   onSelected: controller.onPopupStoryAction,
+                  icon: Icon(
+                    Icons.adaptive.more_outlined,
+                    color: Colors.white,
+                  ),
                   itemBuilder: (context) => [
                     if (controller.currentEvent?.canRedact ?? false)
                       PopupMenuItem(
@@ -242,7 +247,8 @@ class StoryView extends StatelessWidget {
                 onHorizontalDragStart: controller.hold,
                 onHorizontalDragEnd: controller.unhold,
                 child: AnimatedContainer(
-                  duration: const Duration(milliseconds: 200),
+                  duration: rechainonlineThemes.animationDuration,
+                  curve: rechainonlineThemes.animationCurve,
                   padding: const EdgeInsets.symmetric(
                     horizontal: 16.0,
                     vertical: 80,
@@ -274,6 +280,7 @@ class StoryView extends StatelessWidget {
                         fontSize: 24,
                         color: Colors.blue.shade50,
                         decoration: TextDecoration.underline,
+                        decorationColor: Colors.blue.shade50,
                         shadows: event.messageType == MessageTypes.Text
                             ? null
                             : textShadows,
@@ -303,7 +310,8 @@ class StoryView extends StatelessWidget {
                               ? LinearProgressIndicator(
                                   color: Colors.white,
                                   minHeight: 2,
-                                  backgroundColor: Colors.grey.shade600,
+                                  backgroundColor:
+                                      Colors.white.withOpacity(0.25),
                                   value: controller.loadingMode
                                       ? null
                                       : controller.progress.inMilliseconds /
@@ -315,7 +323,7 @@ class StoryView extends StatelessWidget {
                                   height: 2,
                                   color: i < controller.index
                                       ? Colors.white
-                                      : Colors.grey.shade600,
+                                      : Colors.white.withOpacity(0.25),
                                 ),
                         ),
                     ],
@@ -324,36 +332,47 @@ class StoryView extends StatelessWidget {
               ),
               if (!controller.isOwnStory && currentEvent != null)
                 Positioned(
-                  bottom: 16,
-                  left: 16,
-                  right: 16,
+                  bottom: 8,
+                  left: 8,
+                  right: 8,
                   child: SafeArea(
-                    child: TextField(
-                      focusNode: controller.replyFocus,
-                      controller: controller.replyController,
-                      onSubmitted: controller.replyAction,
-                      textInputAction: TextInputAction.send,
-                      readOnly: controller.replyLoading,
-                      decoration: InputDecoration(
-                        hintText: L10n.of(context)!.reply,
-                        prefixIcon: IconButton(
-                          onPressed: controller.replyEmojiAction,
-                          icon: const Icon(Icons.emoji_emotions_outlined),
-                        ),
-                        suffixIcon: controller.replyLoading
-                            ? const SizedBox(
-                                width: 16,
-                                height: 16,
-                                child: Center(
-                                  child: CircularProgressIndicator.adaptive(
-                                      strokeWidth: 2),
+                    child: Material(
+                      borderRadius: const BorderRadius.only(
+                        bottomLeft: Radius.circular(AppConfig.borderRadius),
+                        bottomRight: Radius.circular(AppConfig.borderRadius),
+                      ),
+                      shadowColor: Colors.black.withAlpha(64),
+                      clipBehavior: Clip.hardEdge,
+                      elevation: 4,
+                      child: TextField(
+                        focusNode: controller.replyFocus,
+                        controller: controller.replyController,
+                        onSubmitted: controller.replyAction,
+                        textInputAction: TextInputAction.send,
+                        readOnly: controller.replyLoading,
+                        decoration: InputDecoration(
+                          contentPadding:
+                              const EdgeInsets.fromLTRB(0, 16, 0, 16),
+                          hintText: L10n.of(context)!.reply,
+                          prefixIcon: IconButton(
+                            onPressed: controller.replyEmojiAction,
+                            icon: const Icon(Icons.emoji_emotions_outlined),
+                          ),
+                          suffixIcon: controller.replyLoading
+                              ? const SizedBox(
+                                  width: 16,
+                                  height: 16,
+                                  child: Center(
+                                    child: CircularProgressIndicator.adaptive(
+                                        strokeWidth: 2),
+                                  ),
+                                )
+                              : IconButton(
+                                  onPressed: controller.replyAction,
+                                  icon: const Icon(Icons.send_outlined),
                                 ),
-                              )
-                            : IconButton(
-                                onPressed: controller.replyAction,
-                                icon: const Icon(Icons.send_outlined),
-                              ),
-                        fillColor: Theme.of(context).colorScheme.background,
+                          fillColor: Theme.of(context).colorScheme.background,
+                        ),
                       ),
                     ),
                   ),

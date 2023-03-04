@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'package:adaptive_dialog/adaptive_dialog.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:keyboard_shortcuts/keyboard_shortcuts.dart';
 import 'package:matrix/matrix.dart';
@@ -9,7 +10,6 @@ import 'package:vrouter/vrouter.dart';
 import 'package:rechainonline/widgets/avatar.dart';
 import 'package:rechainonline/widgets/matrix.dart';
 import '../../utils/rechainonline_share.dart';
-import '../../widgets/m2_popup_menu_button.dart';
 import 'chat_list.dart';
 
 class ClientChooserButton extends StatelessWidget {
@@ -67,6 +67,16 @@ class ClientChooserButton extends StatelessWidget {
         ),
       ),
       PopupMenuItem(
+        value: SettingsAction.archive,
+        child: Row(
+          children: [
+            const Icon(Icons.archive_outlined),
+            const SizedBox(width: 18),
+            Text(L10n.of(context)!.archive),
+          ],
+        ),
+      ),
+      PopupMenuItem(
         value: SettingsAction.settings,
         child: Row(
           children: [
@@ -92,7 +102,7 @@ class ClientChooserButton extends StatelessWidget {
                 Text(
                   bundle!,
                   style: TextStyle(
-                    color: Theme.of(context).textTheme.subtitle1!.color,
+                    color: Theme.of(context).textTheme.titleMedium!.color,
                     fontSize: 14,
                   ),
                 ),
@@ -104,8 +114,13 @@ class ClientChooserButton extends StatelessWidget {
             .map(
               (client) => PopupMenuItem(
                 value: client,
-                child: FutureBuilder<Profile>(
-                  future: client!.fetchOwnProfile(),
+                child: FutureBuilder<Profile?>(
+                  // analyzer does not understand this type cast for error
+                  // handling
+                  //
+                  // ignore: unnecessary_cast
+                  future: (client!.fetchOwnProfile() as Future<Profile?>)
+                      .onError((e, s) => null),
                   builder: (context, snapshot) => Row(
                     children: [
                       Avatar(
@@ -192,7 +207,7 @@ class ClientChooserButton extends StatelessWidget {
             onKeysPressed: () => _previousAccount(matrix, context),
             child: Container(),
           ),
-          M2PopupMenuButton<Object>(
+          PopupMenuButton<Object>(
             onSelected: (o) => _clientSelected(o, context),
             itemBuilder: _bundleMenuItems,
             child: Material(
@@ -226,7 +241,7 @@ class ClientChooserButton extends StatelessWidget {
   void _clientSelected(
     Object object,
     BuildContext context,
-  ) {
+  ) async {
     if (object is Client) {
       controller.setActiveClient(object);
     } else if (object is String) {
@@ -234,7 +249,15 @@ class ClientChooserButton extends StatelessWidget {
     } else if (object is SettingsAction) {
       switch (object) {
         case SettingsAction.addAccount:
-          VRouter.of(context).to('/settings/account');
+          final consent = await showOkCancelAlertDialog(
+            context: context,
+            title: L10n.of(context)!.addAccount,
+            message: L10n.of(context)!.enableMultiAccounts,
+            okLabel: L10n.of(context)!.next,
+            cancelLabel: L10n.of(context)!.cancel,
+          );
+          if (consent != OkCancelResult.ok) return;
+          VRouter.of(context).to('/settings/addaccount');
           break;
         case SettingsAction.newStory:
           VRouter.of(context).to('/stories/create');
@@ -253,6 +276,9 @@ class ClientChooserButton extends StatelessWidget {
           break;
         case SettingsAction.settings:
           VRouter.of(context).to('/settings');
+          break;
+        case SettingsAction.archive:
+          VRouter.of(context).to('/archive');
           break;
       }
     }
@@ -331,4 +357,5 @@ enum SettingsAction {
   newSpace,
   invite,
   settings,
+  archive,
 }

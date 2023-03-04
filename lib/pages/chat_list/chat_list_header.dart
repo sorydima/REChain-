@@ -67,8 +67,17 @@ class ChatListHeader extends StatelessWidget implements PreferredSizeWidget {
                             ),
                       suffixIcon: controller.isSearchMode
                           ? controller.isSearching
-                              ? const CircularProgressIndicator.adaptive(
-                                  strokeWidth: 2,
+                              ? const Padding(
+                                  padding: EdgeInsets.symmetric(
+                                    vertical: 10.0,
+                                    horizontal: 12,
+                                  ),
+                                  child: SizedBox.square(
+                                    dimension: 24,
+                                    child: CircularProgressIndicator.adaptive(
+                                      strokeWidth: 2,
+                                    ),
+                                  ),
                                 )
                               : TextButton(
                                   onPressed: controller.setServer,

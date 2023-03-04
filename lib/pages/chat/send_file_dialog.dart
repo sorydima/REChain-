@@ -4,6 +4,7 @@ import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:future_loading_dialog/future_loading_dialog.dart';
 import 'package:matrix/matrix.dart';
 
+import 'package:rechainonline/utils/localized_exception_extension.dart';
 import 'package:rechainonline/utils/size_string.dart';
 import '../../utils/resize_image.dart';
 
@@ -47,8 +48,9 @@ class SendFileDialogState extends State<SendFileDialog> {
       )
           .catchError((e) {
         scaffoldMessenger.showSnackBar(
-          SnackBar(content: Text(e.toLocalizedString())),
+          SnackBar(content: Text((e as Object).toLocalizedString(context))),
         );
+        return null;
       });
     }
     Navigator.of(context, rootNavigator: false).pop();

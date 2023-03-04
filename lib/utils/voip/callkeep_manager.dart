@@ -222,8 +222,9 @@ class CallKeepManager {
     addCall(call.callId, callKeeper);
     await _callKeep.displayIncomingCall(
       call.callId,
-      '${call.displayName!} (REChain 🪐)',
-      localizedCallerName: '${call.displayName!} (REChain 🪐)',
+      '${call.room.getLocalizedDisplayname()} (REChain 🪐)',
+      localizedCallerName:
+          '${call.room.getLocalizedDisplayname()} (REChain 🪐)',
       handleType: 'number',
       hasVideo: call.type == CallType.kVideo,
     );

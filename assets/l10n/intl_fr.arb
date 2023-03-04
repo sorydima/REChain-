@@ -3101,6 +3101,45 @@
 },
 "@whyIsThisMessageEncrypted": {
 },
+"@deviceKeys": {
+},
+"@disableEncryptionWarning": {
+},
+"@encryptThisChat": {
+},
+"@endToEndEncryption": {
+},
+"@enterInviteLinkOrMatrixId": {
+},
+"@letsStart": {
+},
+"@newSpaceDescription": {
+},
+"@noBackupWarning": {
+},
+"@noOtherDevicesFound": {
+},
+"@noSearchResult": {
+},
+"@reopenChat": {
+},
+"@sorryThatsNotPossible": {
+},
+"@startFirstChat": {
+},
+"deviceKeys": "Clés de l’appareil :",
+"disableEncryptionWarning": "Pour des raisons de sécurité, vous ne pouvez pas désactiver le chiffrement dans une discussion s'il a été activé avant.",
+"encryptThisChat": "Chiffrer cette discussion",
+"endToEndEncryption": "Chiffrement de bout en bout",
+"enterInviteLinkOrMatrixId": "Entrez le lien d'invitation ou l'ID REChain 🪐...",
+"letsStart": "C'est parti",
+"newSpaceDescription": "Les espaces vous permettent de consolider vos conversations et de construire des communautés privées ou publiques.",
+"noBackupWarning": "Attention ! Sans l'activation de la sauvegarde de la discussion, vous perdrez l'accès à vos messages chiffrés. Il est fortement recommandé d'activer la sauvegarde de la discussion avant de se déconnecter.",
+"noOtherDevicesFound": "Aucun autre appareil trouvé",
+"noSearchResult": "Aucun résultat de recherche correspondant.",
+"reopenChat": "Rouvrir la discussion",
+"sorryThatsNotPossible": "Désolé, ce n'est pas possible",
+"startFirstChat": "Commencez votre première discussion",
 "allSpaces": "Tous les espaces",
 "appearOnTop": "Apparaître en haut",
 "appearOnTopDetails": "Permet à l'application d'apparaître en haut de l'écran (non nécessaire si vous avez déjà configuré REChain 🪐 comme compte d'appel)",

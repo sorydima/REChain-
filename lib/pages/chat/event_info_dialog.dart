@@ -6,11 +6,12 @@ import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:matrix/matrix.dart';
 
 import 'package:rechainonline/config/app_config.dart';
+import 'package:rechainonline/utils/adaptive_bottom_sheet.dart';
 import 'package:rechainonline/utils/date_time_extension.dart';
 import 'package:rechainonline/widgets/avatar.dart';
 
 extension EventInfoDialogExtension on Event {
-  void showInfoDialog(BuildContext context) => showModalBottomSheet(
+  void showInfoDialog(BuildContext context) => showAdaptiveBottomSheet(
         context: context,
         builder: (context) =>
             EventInfoDialog(l10n: L10n.of(context)!, event: this),

@@ -58,13 +58,8 @@ class SettingsNotifications extends StatefulWidget {
 
 class SettingsNotificationsController extends State<SettingsNotifications> {
   bool? getNotificationSetting(NotificationSettingsItem item) {
-    final pushRulesRaw = Matrix.of(context)
-        .client
-        .accountData['m.push_rules']
-        ?.content
-        .tryGetMap<String, dynamic>('device');
-    if (pushRulesRaw == null) return null;
-    final pushRules = PushRuleSet.fromJson(pushRulesRaw);
+    final pushRules = Matrix.of(context).client.globalPushRules;
+    if (pushRules == null) return null;
     switch (item.type) {
       case PushRuleKind.content:
         return pushRules.content

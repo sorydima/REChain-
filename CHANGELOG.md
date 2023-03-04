@@ -1,4 +1,4 @@
-Create, modify and use ready-made QR-codes for all occasions! Chats, groups, channels, matrix spaces, hidden chats and matrix groups! REChain 🪐 - We strive to show all the world's giants that it is possible to create cool products that are of great importance for society, for people to interact with each other, without selling advertising, personal data of users, their rights and freedoms! 🦄
+Most people know REChain 🪐 as a secure collaboration and messaging app. They know what it looks like on their phone or laptop, appreciate that it’s end-to-end encrypted, and make increasing use of features like threads, polls and location-sharing. 🥰 🌈 📡
 
 Dream big! Stay safe! Stay true! Stay private! Stay tuned! 😎🌍
 
@@ -10,33 +10,39 @@ Making the world a better place since 2017 ✅😼
 
 CHANGELOG:
 
-chore: Add keys to roomlist and stories header;
-chore: Add unread badge to navigation rail and adjust design;
-chore: Adjust colors;
-chore: Better design chat list items;
-chore: Better load first client;
-design: Hide unimportant state events instead of folding;
-design: Improve login design;
-design: Nicer display notification short texts;
-feat: Background and terminated calls;
-feat: New navigation design;
-fix: Hide password at login page;
-fix: Import session on iOS;
-fix: Incorrect setState inside setState in ChatListController;
-fix: Password not obscure for a second when submitting login textfield;
-fix: Popup menu without elevation;
-fix: Push error message;
-fix: Remove emoji picker workaround;
-fix: Set theme after start app;
-fix: Settings profile picture;
-fix: Share files;
-fix: UIA request handler;
-fix: Update emoji picker for web and desktop;
-Improved (most) icons/image scaling, including avatar scaling;
-refactor: Chat list body code;
-refactor: Minor chatlist refactoring;
-refactor: No longer need selected of chat list;
-refactor: Remove unused dependencies.
+chore: Display warning when logout without backup;
+chore: Downgrade flutter CI version;
+chore: Follow up audioplayer on linux;
+chore: Follow up chat encryption desgin;
+chore: Follow up fix audioplayer on android;
+chore: Follow up formatting;
+chore: Follow up remove hero animation;
+chore: Follow up secrity settings design;
+chore: Follow up settings page;
+chore: Follow up settings page design;
+chore: Follow up style adjustments;
+chore: Lookup l10n in pushhelper if null;
+chore: Update matrix package to 0.17.0;
+docs/qr-stable.svg: update the QR code;
+feat: Enable audioplayer for web and linux;
+fix: Display error when user tries to send too large file;
+refactor: Do only instantiate AudioPlayer() object when in use;
+refactor: Remove syncstatus verbose logs;
+refactor: Store cached files in tmp directory so OS will clear file cache from time to time;
+style: Adjust key verification dialog;
+style: Bootstrap design adjustments;
+style: Encryption page adjustments;
+style: Enhance user device settings design;
+style: Enhanced chat details design;
+style: Give chat list tiles rounded corners;
+style: Link underline color;
+style: Make adaptive bottom sheets scrollable by default;
+style: Make invite page more pretty;
+style: New settings design;
+style: Nicer chips in encryption settings and icons showing device status;
+style: Use emojis on web as well;
+style: Use robotomono to display device keys;
+utils/url_launcher: force opening http(s) links in external browser.
 
 Need help? 🤔
 Email us! 👇

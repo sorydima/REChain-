@@ -2860,6 +2860,27 @@
 }
 }
 },
+"@deviceKeys": {
+},
+"@disableEncryptionWarning": {
+},
+"@encryptThisChat": {
+},
+"@endToEndEncryption": {
+},
+"@newSpaceDescription": {
+},
+"@sorryThatsNotPossible": {
+},
+"@startFirstChat": {
+},
+"deviceKeys": "设备密钥：",
+"disableEncryptionWarning": "出于安全考虑 ，您不能在之前已启用的对话中禁用加密。",
+"encryptThisChat": "加密这个对话",
+"endToEndEncryption": "端对端加密",
+"newSpaceDescription": "空间让您可以整合聊天并建立私人或公共讨论区。",
+"sorryThatsNotPossible": "非常抱歉……这是做不到的",
+"startFirstChat": "发起你的第一个聊天",
 "@custom": {
 },
 "@dehydrate": {

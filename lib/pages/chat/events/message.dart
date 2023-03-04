@@ -100,9 +100,13 @@ class Message extends StatelessWidget {
     final noBubble = {
           MessageTypes.Video,
           MessageTypes.Image,
-          MessageTypes.Sticker,
+          MessageTypes.Sticker
         }.contains(event.messageType) &&
         !event.redacted;
+    final noPadding = {
+      MessageTypes.File,
+      MessageTypes.Audio,
+    }.contains(event.messageType);
 
     if (ownMessage) {
       color = displayEvent.status.isError
@@ -161,7 +165,10 @@ class Message extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.bold,
-                              color: displayname.color,
+                              color: (Theme.of(context).brightness ==
+                                      Brightness.light
+                                  ? displayname.color
+                                  : displayname.lightColorText),
                             ),
                           );
                         }),
@@ -187,7 +194,7 @@ class Message extends StatelessWidget {
                       borderRadius:
                           BorderRadius.circular(AppConfig.borderRadius),
                     ),
-                    padding: noBubble
+                    padding: noBubble || noPadding
                         ? EdgeInsets.zero
                         : EdgeInsets.all(16 * AppConfig.bubbleSizeFactor),
                     constraints: const BoxConstraints(
@@ -299,8 +306,11 @@ class Message extends StatelessWidget {
               child: Center(
                   child: Material(
                 color: displayTime
-                    ? Theme.of(context).backgroundColor
-                    : Theme.of(context).backgroundColor.withOpacity(0.33),
+                    ? Theme.of(context).colorScheme.background
+                    : Theme.of(context)
+                        .colorScheme
+                        .background
+                        .withOpacity(0.33),
                 borderRadius: BorderRadius.circular(AppConfig.borderRadius / 2),
                 clipBehavior: Clip.antiAlias,
                 child: Padding(

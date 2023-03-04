@@ -6,7 +6,7 @@ import 'package:future_loading_dialog/future_loading_dialog.dart';
 import 'package:matrix/matrix.dart';
 
 import 'package:rechainonline/utils/localized_exception_extension.dart';
-import 'package:rechainonline/utils/matrix_sdk_extensions.dart/client_stories_extension.dart';
+import 'package:rechainonline/utils/matrix_sdk_extensions/client_stories_extension.dart';
 import 'package:rechainonline/widgets/avatar.dart';
 import 'package:rechainonline/widgets/matrix.dart';
 

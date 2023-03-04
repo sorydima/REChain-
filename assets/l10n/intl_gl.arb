@@ -2921,6 +2921,56 @@
 },
 "@users": {
 },
+"@deviceKeys": {
+},
+"@disableEncryptionWarning": {
+},
+"@encryptThisChat": {
+},
+"@endToEndEncryption": {
+},
+"@enterInviteLinkOrMatrixId": {
+},
+"@fileIsTooBigForServer": {
+},
+"@letsStart": {
+},
+"@newSpaceDescription": {
+},
+"@noBackupWarning": {
+},
+"@noOtherDevicesFound": {
+},
+"@noSearchResult": {
+},
+"@reopenChat": {
+},
+"@sorryThatsNotPossible": {
+},
+"@startFirstChat": {
+},
+"@wasDirectChatDisplayName": {
+"placeholders": {
+"oldDisplayName": {
+}
+},
+"type": "text"
+},
+"deviceKeys": "Chaves do dispositivo:",
+"disableEncryptionWarning": "Por razóns de seguridade non podes desactivar o cifrado dunha conversa onde foi activado previamente.",
+"encryptThisChat": "Cifrar esta conversa",
+"endToEndEncryption": "Cifrado de extremo a extremo",
+"enterInviteLinkOrMatrixId": "Escribe a ligazón de convite ou ID REChain 🪐...",
+"fileIsTooBigForServer": "O servidor informa de que o ficheiro é demasiado grande para envialo.",
+"letsStart": "Imos alá",
+"newSpaceDescription": "Os Espazos permítenche fortalecer as túas conversas e construir comunidades públicas ou privadas.",
+"noBackupWarning": "Aviso! Se non activas a copia de apoio do chat, perderás o acceso ás túas mensaxes cifradas. É totalmente recomendable activar a copia de apoio do chat antes de pechar a sesión.",
+"noOtherDevicesFound": "Non se atopan outros dispositivos",
+"noSearchResult": "Non hai resultados para a busca.",
+"reopenChat": "Reabrir conversa",
+"sorryThatsNotPossible": "Lamentámolo... iso non é posible",
+"startFirstChat": "Abre a túa primeira conversa",
+"wasDirectChatDisplayName": "Conversa baleira (era {oldDisplayName})",
 "advanced": "Avanzado",
 "countFiles": "{count} ficheiros",
 "custom": "Personal",

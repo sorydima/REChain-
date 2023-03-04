@@ -2282,6 +2282,164 @@
 },
 "@suggestedRooms": {
 },
+"@addAccount": {
+},
+"@commandHint_cuddle": {
+},
+"@commandHint_googly": {
+},
+"@commandHint_hug": {
+},
+"@commandHint_markasgroup": {
+},
+"@confirmMatrixId": {
+},
+"@cuddleContent": {
+"placeholders": {
+"senderName": {
+}
+},
+"type": "text"
+},
+"@dehydrateShare": {
+},
+"@googlyEyesContent": {
+"placeholders": {
+"senderName": {
+}
+},
+"type": "text"
+},
+"@link": {
+},
+"@noSearchResult": {
+},
+"@openInMaps": {
+"placeholders": {
+},
+"type": "text"
+},
+"@or": {
+"placeholders": {
+},
+"type": "text"
+},
+"@participant": {
+"placeholders": {
+},
+"type": "text"
+},
+"@passwordForgotten": {
+"placeholders": {
+},
+"type": "text"
+},
+"@people": {
+"placeholders": {
+},
+"type": "text"
+},
+"@pleaseChoose": {
+"placeholders": {
+},
+"type": "text"
+},
+"@pleaseEnter4Digits": {
+"placeholders": {
+},
+"type": "text"
+},
+"@pleaseEnterYourPin": {
+"placeholders": {
+},
+"type": "text"
+},
+"@reason": {
+"placeholders": {
+},
+"type": "text"
+},
+"@redactMessage": {
+"placeholders": {
+},
+"type": "text"
+},
+"@register": {
+"placeholders": {
+},
+"type": "text"
+},
+"@reportMessage": {
+"placeholders": {
+},
+"type": "text"
+},
+"@roomVersion": {
+"placeholders": {
+},
+"type": "text"
+},
+"@saveFile": {
+"placeholders": {
+},
+"type": "text"
+},
+"@search": {
+"placeholders": {
+},
+"type": "text"
+},
+"@security": {
+"placeholders": {
+},
+"type": "text"
+},
+"@sendMessages": {
+"placeholders": {
+},
+"type": "text"
+},
+"@sendSticker": {
+"placeholders": {
+},
+"type": "text"
+},
+"@updateAvailable": {
+},
+"@updateNow": {
+},
+"addAccount": "Fiók hozzáadása",
+"commandHint_cuddle": "Ölelés küldése",
+"commandHint_googly": "Gülüszemek küldése",
+"commandHint_hug": "Ölelés küldése",
+"commandHint_markasgroup": "Csoportnak jelölés",
+"confirmMatrixId": "A fiók törléséhez adja meg a REChain 🪐 ID-t.",
+"cuddleContent": "{senderName} megölelt",
+"dehydrateShare": "Ez egy privát REChain 🪐-export. Tartsa biztonságban, és ne vessze el.",
+"googlyEyesContent": "{senderName} gülüszemeket küld",
+"link": "Hivatkozás",
+"noSearchResult": "Nincs megfelelő találat.",
+"openInMaps": "Megnyitás térképen",
+"or": "Vagy",
+"participant": "Résztvevő",
+"passwordForgotten": "Elfelejtett jelszó",
+"people": "Emberek",
+"pleaseChoose": "Kérjük válasszon",
+"pleaseEnter4Digits": "Írjon be 4 számjegyet, vagy hagyja üresen a zár kikapcsolásához.",
+"pleaseEnterAMatrixIdentifier": "Írj be egy REChain 🪐-azonosítót.",
+"pleaseEnterYourPin": "Írja be a PIN-kódot",
+"reason": "Ok",
+"redactMessage": "Üzenet visszavonása",
+"register": "Regisztrálás",
+"reportMessage": "Üzenet jelentése",
+"roomVersion": "Szobaverzió",
+"saveFile": "Fájl mentése",
+"search": "Keresés",
+"security": "Biztonság",
+"sendMessages": "Üzenetek küldése",
+"sendSticker": "Matrica küldése",
+"updateAvailable": "REChain 🪐-frissítés elérhető",
+"updateNow": "Frissítés elindítása a háttérben",
 "advanced": "Haladó",
 "badServerVersionsException": "A Katya 👽 AI 🧠 REChain 🪐 Blockchain Node Network szerver ezeket a specifikáció verziókat támogatja:\n{serverVersions}\nAzonban ez az app csak ezeket: {supportedVersions}",
 "commandHint_me": "Mit csinálsz épp",

@@ -22,16 +22,64 @@ class Settings extends StatefulWidget {
 }
 
 class SettingsController extends State<Settings> {
-  Future<dynamic>? profileFuture;
-  Profile? profile;
+  Future<Profile>? profileFuture;
   bool profileUpdated = false;
 
   void updateProfile() => setState(() {
         profileUpdated = true;
-        profile = profileFuture = null;
+        profileFuture = null;
       });
 
+  void setDisplaynameAction() async {
+    final profile = await profileFuture;
+    final input = await showTextInputDialog(
+      useRootNavigator: false,
+      context: context,
+      title: L10n.of(context)!.editDisplayname,
+      okLabel: L10n.of(context)!.ok,
+      cancelLabel: L10n.of(context)!.cancel,
+      textFields: [
+        DialogTextField(
+          initialText: profile?.displayName ??
+              Matrix.of(context).client.userID!.localpart,
+        )
+      ],
+    );
+    if (input == null) return;
+    final matrix = Matrix.of(context);
+    final success = await showFutureLoadingDialog(
+      context: context,
+      future: () =>
+          matrix.client.setDisplayName(matrix.client.userID!, input.single),
+    );
+    if (success.error == null) {
+      updateProfile();
+    }
+  }
+
+  void logoutAction() async {
+    final noBackup = showChatBackupBanner == true;
+    if (await showOkCancelAlertDialog(
+          useRootNavigator: false,
+          context: context,
+          title: L10n.of(context)!.areYouSureYouWantToLogout,
+          message: L10n.of(context)!.noBackupWarning,
+          isDestructiveAction: noBackup,
+          okLabel: L10n.of(context)!.logout,
+          cancelLabel: L10n.of(context)!.cancel,
+        ) ==
+        OkCancelResult.cancel) {
+      return;
+    }
+    final matrix = Matrix.of(context);
+    await showFutureLoadingDialog(
+      context: context,
+      future: () => matrix.client.logout(),
+    );
+  }
+
   void setAvatarAction() async {
+    final profile = await profileFuture;
     final actions = [
       if (PlatformInfos.isMobile)
         SheetAction(
@@ -131,9 +179,18 @@ class SettingsController extends State<Settings> {
   }
 
   bool? crossSigningCached;
-  bool showChatBackupBanner = false;
+  bool? showChatBackupBanner;
 
-  void firstRunBootstrapAction() async {
+  void firstRunBootstrapAction([_]) async {
+    if (showChatBackupBanner != true) {
+      showOkAlertDialog(
+        context: context,
+        title: L10n.of(context)!.chatBackup,
+        message: L10n.of(context)!.onlineKeyBackupEnabled,
+        okLabel: L10n.of(context)!.close,
+      );
+      return;
+    }
     await BootstrapDialog(
       client: Matrix.of(context).client,
     ).show(context);
@@ -143,16 +200,11 @@ class SettingsController extends State<Settings> {
   @override
   Widget build(BuildContext context) {
     final client = Matrix.of(context).client;
-    profileFuture ??= client
-        .getProfileFromUserId(
+    profileFuture ??= client.getProfileFromUserId(
       client.userID!,
       cache: !profileUpdated,
       getFromRooms: !profileUpdated,
-    )
-        .then((p) {
-      if (mounted) setState(() => profile = p);
-      return p;
-    });
+    );
     return SettingsView(this);
   }
 }

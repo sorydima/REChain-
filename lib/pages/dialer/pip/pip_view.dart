@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'constants.dart';
+import 'package:rechainonline/config/themes.dart';
 import 'dismiss_keyboard.dart';
 
 class PIPView extends StatefulWidget {
@@ -45,11 +45,11 @@ class PIPViewState extends State<PIPView> with TickerProviderStateMixin {
     super.initState();
     _corner = widget.initialCorner;
     _toggleFloatingAnimationController = AnimationController(
-      duration: defaultAnimationDuration,
+      duration: rechainonlineThemes.animationDuration,
       vsync: this,
     );
     _dragAnimationController = AnimationController(
-      duration: defaultAnimationDuration,
+      duration: rechainonlineThemes.animationDuration,
       vsync: this,
     );
   }

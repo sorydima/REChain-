@@ -11,7 +11,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/config/setting_keys.dart';
 import 'package:rechainonline/utils/client_manager.dart';
-import 'package:rechainonline/utils/matrix_sdk_extensions.dart/matrix_locals.dart';
+import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
 import 'package:rechainonline/utils/voip/callkeep_manager.dart';
 
@@ -43,21 +43,24 @@ Future<void> pushHelper(
       onDidReceiveNotificationResponse: onSelectNotification,
       onDidReceiveBackgroundNotificationResponse: onSelectNotification,
     );
+
+    l10n ??= lookupL10n(const Locale('en'));
     flutterLocalNotificationsPlugin.show(
       0,
-      l10n?.newMessageInrechainonline,
-      l10n?.openAppToReadMessages,
+      l10n.newMessageInrechainonline,
+      l10n.openAppToReadMessages,
       NotificationDetails(
-          iOS: const DarwinNotificationDetails(),
-          android: AndroidNotificationDetails(
-            AppConfig.pushNotificationsChannelId,
-            AppConfig.pushNotificationsChannelName,
-            channelDescription: AppConfig.pushNotificationsChannelDescription,
-            number: notification.counts?.unread,
-            ticker: l10n!.unreadChats(notification.counts?.unread ?? 1),
-            importance: Importance.max,
-            priority: Priority.high,
-          )),
+        iOS: const DarwinNotificationDetails(),
+        android: AndroidNotificationDetails(
+          AppConfig.pushNotificationsChannelId,
+          AppConfig.pushNotificationsChannelName,
+          channelDescription: AppConfig.pushNotificationsChannelDescription,
+          number: notification.counts?.unread,
+          ticker: l10n.unreadChats(notification.counts?.unread ?? 1),
+          importance: Importance.max,
+          priority: Priority.high,
+        ),
+      ),
     );
     rethrow;
   }
@@ -199,7 +202,9 @@ Future<void> _tryPushHelper(
     styleInformation: messagingStyleInformation ??
         MessagingStyleInformation(
           Person(name: event.room.client.userID),
-          conversationTitle: event.room.displayname,
+          conversationTitle: event.room.getLocalizedDisplayname(
+            MatrixLocals(l10n),
+          ),
           groupConversation: !event.room.isDirectChat,
           messages: [newMessage],
         ),
@@ -216,7 +221,9 @@ Future<void> _tryPushHelper(
 
   await flutterLocalNotificationsPlugin.show(
     id,
-    event.room.displayname,
+    event.room.getLocalizedDisplayname(
+      MatrixLocals(l10n),
+    ),
     body,
     platformChannelSpecifics,
     payload: event.roomId,

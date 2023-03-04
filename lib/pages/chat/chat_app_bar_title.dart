@@ -5,7 +5,8 @@ import 'package:vrouter/vrouter.dart';
 
 import 'package:rechainonline/pages/chat/chat.dart';
 import 'package:rechainonline/pages/user_bottom_sheet/user_bottom_sheet.dart';
-import 'package:rechainonline/utils/matrix_sdk_extensions.dart/matrix_locals.dart';
+import 'package:rechainonline/utils/adaptive_bottom_sheet.dart';
+import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
 import 'package:rechainonline/widgets/avatar.dart';
 
 class ChatAppBarTitle extends StatelessWidget {
@@ -26,7 +27,7 @@ class ChatAppBarTitle extends StatelessWidget {
       splashColor: Colors.transparent,
       highlightColor: Colors.transparent,
       onTap: directChatMatrixID != null
-          ? () => showModalBottomSheet(
+          ? () => showAdaptiveBottomSheet(
                 context: context,
                 builder: (c) => UserBottomSheet(
                   user: room
@@ -36,14 +37,19 @@ class ChatAppBarTitle extends StatelessWidget {
                       '${room.unsafeGetUserFromMemoryOrFallback(directChatMatrixID).mention} ',
                 ),
               )
-          : () => VRouter.of(context).toSegments(['rooms', room.id, 'details']),
+          : controller.isArchived
+              ? null
+              : () =>
+                  VRouter.of(context).toSegments(['rooms', room.id, 'details']),
       child: Row(
         children: [
           Hero(
             tag: 'content_banner',
             child: Avatar(
               mxContent: room.avatar,
-              name: room.displayname,
+              name: room.getLocalizedDisplayname(
+                MatrixLocals(L10n.of(context)!),
+              ),
               size: 32,
             ),
           ),

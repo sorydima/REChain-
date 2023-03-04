@@ -1358,6 +1358,12 @@
 "type": {}
 }
 },
+"@updateAvailable": {
+},
+"@updateNow": {
+},
+"updateAvailable": "dostupná aktualizácia REChain 🪐",
+"updateNow": "Začať aktualizáciu na pozadí",
 "unknownSessionVerify": "Neznáma relácia, prosím verifikujte ju",
 "@unknownSessionVerify": {
 "type": "text",

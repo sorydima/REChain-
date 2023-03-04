@@ -6,7 +6,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'package:adaptive_dialog/adaptive_dialog.dart';
-import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:collection/collection.dart';
 import 'package:desktop_notifications/desktop_notifications.dart';
 import 'package:flutter_app_lock/flutter_app_lock.dart';
@@ -20,10 +19,9 @@ import 'package:matrix/matrix.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:universal_html/html.dart' as html;
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 import 'package:vrouter/vrouter.dart';
 
-import 'package:rechainonline/config/themes.dart';
 import 'package:rechainonline/utils/client_manager.dart';
 import 'package:rechainonline/utils/localized_exception_extension.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
@@ -34,7 +32,7 @@ import '../config/setting_keys.dart';
 import '../pages/key_verification/key_verification_dialog.dart';
 import '../utils/account_bundles.dart';
 import '../utils/background_push.dart';
-import '../utils/rechainonlinesdk_store.dart';
+import '../utils/famedlysdk_store.dart';
 import 'local_notifications_extension.dart';
 
 // import 'package:flutter_secure_storage/flutter_secure_storage.dart';
@@ -329,15 +327,15 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
         );
 
         if (state != LoginState.loggedIn) {
-          widget.router!.currentState!.to(
+          widget.router?.currentState?.to(
             '/rooms',
-            queryParameters: widget.router!.currentState!.queryParameters,
+            queryParameters: widget.router?.currentState?.queryParameters ?? {},
           );
         }
       } else {
-        widget.router!.currentState!.to(
+        widget.router?.currentState?.to(
           state == LoginState.loggedIn ? '/rooms' : '/home',
-          queryParameters: widget.router!.currentState!.queryParameters,
+          queryParameters: widget.router?.currentState?.queryParameters ?? {},
         );
       }
     });
@@ -412,7 +410,7 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
             cancelLabel: L10n.of(context)!.doNotShowAgain,
           );
           if (result == OkCancelResult.ok && link != null) {
-            launch(link.toString());
+            launchUrlString(link.toString());
           }
           if (result == OkCancelResult.cancel) {
             await store.setItemBool(SettingKeys.showNoGoogle, true);
@@ -432,8 +430,6 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
     voipPlugin = webrtcIsSupported ? VoipPlugin(client) : null;
   }
 
-  bool _firstStartup = true;
-
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     Logs().v('AppLifecycleState = $state');
@@ -442,10 +438,6 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
     client.backgroundSync = foreground;
     client.syncPresence = foreground ? null : PresenceType.unavailable;
     client.requestHistoryOnLimitedTimeline = !foreground;
-    if (_firstStartup) {
-      _firstStartup = false;
-      backgroundPush?.setupPush();
-    }
   }
 
   void initSettings() {
@@ -488,19 +480,6 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
     store
         .getItemBool(SettingKeys.experimentalVoip, AppConfig.experimentalVoip)
         .then((value) => AppConfig.experimentalVoip = value);
-    store.getItem(SettingKeys.chatColor).then((value) {
-      if (value != null && int.tryParse(value) != null) {
-        AppConfig.colorSchemeSeed = Color(int.parse(value));
-        WidgetsBinding.instance.addPostFrameCallback((_) {
-          if (mounted) {
-            AdaptiveTheme.of(context).setTheme(
-              light: rechainonlineThemes.buildTheme(Brightness.light),
-              dark: rechainonlineThemes.buildTheme(Brightness.dark),
-            );
-          }
-        });
-      }
-    });
   }
 
   @override

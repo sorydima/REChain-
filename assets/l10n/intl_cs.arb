@@ -2566,6 +2566,51 @@
 "type": "text",
 "placeholders": {}
 },
+"@commandHint_cuddle": {
+},
+"@commandHint_googly": {
+},
+"@commandHint_hug": {
+},
+"@confirmMatrixId": {
+},
+"@cuddleContent": {
+"placeholders": {
+"senderName": {
+}
+},
+"type": "text"
+},
+"@disableEncryptionWarning": {
+},
+"@googlyEyesContent": {
+"placeholders": {
+"senderName": {
+}
+},
+"type": "text"
+},
+"@hugContent": {
+"placeholders": {
+"senderName": {
+}
+},
+"type": "text"
+},
+"@updateAvailable": {
+},
+"@updateNow": {
+},
+"commandHint_cuddle": "Poslat mazlení",
+"commandHint_googly": "Poslat kroutící se očička",
+"commandHint_hug": "Poslat obejmutí",
+"confirmMatrixId": "Prosím, potvrďte vaše REChain 🪐 ID, abyste mohli smazat váš účet.",
+"cuddleContent": "{senderName} se s vámi mazlí",
+"disableEncryptionWarning": "Z bezpečnostních důvodů nemůžete vypnout šifrování v chatu, kde již bylo dříve zapnuto.",
+"googlyEyesContent": "{senderName} vám posílá kroutící se očička",
+"hugContent": "{senderName} vás objímá",
+"updateAvailable": "K dispozici aktualizace REChain 🪐",
+"updateNow": "Spustit aktualizaci na pozadí",
 "chatHasBeenAddedToThisSpace": "Do tohoto prostoru byl přidán chat",
 "@chatHasBeenAddedToThisSpace": {},
 "addToSpace": "Přidat do prostoru",

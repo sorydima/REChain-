@@ -9,14 +9,13 @@ import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/pages/chat_details/chat_details.dart';
 import 'package:rechainonline/pages/chat_details/participant_list_item.dart';
 import 'package:rechainonline/utils/rechainonline_share.dart';
-import 'package:rechainonline/utils/matrix_sdk_extensions.dart/matrix_locals.dart';
+import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
 import 'package:rechainonline/widgets/avatar.dart';
 import 'package:rechainonline/widgets/chat_settings_popup_menu.dart';
 import 'package:rechainonline/widgets/content_banner.dart';
 import 'package:rechainonline/widgets/layouts/max_width_body.dart';
 import 'package:rechainonline/widgets/matrix.dart';
 import '../../utils/url_launcher.dart';
-import '../../widgets/m2_popup_menu_button.dart';
 
 class ChatDetailsView extends StatelessWidget {
   final ChatDetailsController controller;
@@ -42,7 +41,7 @@ class ChatDetailsView extends StatelessWidget {
         (room.summary.mJoinedMemberCount ?? 0);
     final canRequestMoreMembers =
         controller.members!.length < actualMembersCount;
-    final iconColor = Theme.of(context).textTheme.bodyText1!.color;
+    final iconColor = Theme.of(context).textTheme.bodyLarge!.color;
     return StreamBuilder(
         stream: room.onUpdate.stream,
         builder: (context, snapshot) {
@@ -101,42 +100,51 @@ class ChatDetailsView extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: <Widget>[
                             ListTile(
-                              leading: room.canSendEvent('m.room.topic')
-                                  ? CircleAvatar(
-                                      backgroundColor: Theme.of(context)
-                                          .scaffoldBackgroundColor,
-                                      foregroundColor: iconColor,
-                                      radius: Avatar.defaultSize / 2,
-                                      child: const Icon(Icons.edit_outlined),
+                              onTap: room.canSendEvent(EventTypes.RoomTopic)
+                                  ? controller.setTopicAction
+                                  : null,
+                              trailing: room.canSendEvent(EventTypes.RoomTopic)
+                                  ? Icon(
+                                      Icons.edit_outlined,
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onBackground,
                                     )
                                   : null,
                               title: Text(
-                                  '${L10n.of(context)!.groupDescription}:',
-                                  style: TextStyle(
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .secondary,
-                                      fontWeight: FontWeight.bold)),
-                              subtitle: LinkText(
-                                text: room.topic.isEmpty
-                                    ? L10n.of(context)!.addGroupDescription
-                                    : room.topic,
-                                linkStyle:
-                                    const TextStyle(color: Colors.blueAccent),
-                                textStyle: TextStyle(
-                                  fontSize: 14,
-                                  color: Theme.of(context)
-                                      .textTheme
-                                      .bodyText2!
-                                      .color,
+                                L10n.of(context)!.groupDescription,
+                                style: TextStyle(
+                                  color:
+                                      Theme.of(context).colorScheme.secondary,
+                                  fontWeight: FontWeight.bold,
                                 ),
-                                onLinkTap: (url) =>
-                                    UrlLauncher(context, url).launchUrl(),
                               ),
-                              onTap: room.canSendEvent('m.room.topic')
-                                  ? controller.setTopicAction
-                                  : null,
                             ),
+                            if (room.topic.isNotEmpty)
+                              Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 16.0),
+                                child: LinkText(
+                                  text: room.topic.isEmpty
+                                      ? L10n.of(context)!.addGroupDescription
+                                      : room.topic,
+                                  linkStyle:
+                                      const TextStyle(color: Colors.blueAccent),
+                                  textStyle: TextStyle(
+                                    fontSize: 14,
+                                    color: Theme.of(context)
+                                        .textTheme
+                                        .bodyMedium!
+                                        .color,
+                                    decorationColor: Theme.of(context)
+                                        .textTheme
+                                        .bodyMedium!
+                                        .color,
+                                  ),
+                                  onLinkTap: (url) =>
+                                      UrlLauncher(context, url).launchUrl(),
+                                ),
+                              ),
                             const SizedBox(height: 8),
                             const Divider(height: 1),
                             ListTile(
@@ -198,7 +206,7 @@ class ChatDetailsView extends StatelessWidget {
                                     Text(L10n.of(context)!.setCustomEmotes),
                                 onTap: controller.goToEmoteSettings,
                               ),
-                              M2PopupMenuButton(
+                              PopupMenuButton(
                                 onSelected: controller.setJoinRulesAction,
                                 itemBuilder: (BuildContext context) =>
                                     <PopupMenuEntry<JoinRules>>[
@@ -232,7 +240,7 @@ class ChatDetailsView extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              M2PopupMenuButton(
+                              PopupMenuButton(
                                 onSelected:
                                     controller.setHistoryVisibilityAction,
                                 itemBuilder: (BuildContext context) =>
@@ -285,7 +293,7 @@ class ChatDetailsView extends StatelessWidget {
                                 ),
                               ),
                               if (room.joinRules == JoinRules.public)
-                                M2PopupMenuButton(
+                                PopupMenuButton(
                                   onSelected: controller.setGuestAccessAction,
                                   itemBuilder: (BuildContext context) =>
                                       <PopupMenuEntry<GuestAccess>>[

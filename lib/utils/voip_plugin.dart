@@ -13,7 +13,7 @@ import 'package:rechainonline/pages/chat_list/chat_list.dart';
 import 'package:rechainonline/pages/dialer/dialer.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
 import 'package:rechainonline/widgets/rechainonline_chat_app.dart';
-import '../../utils/rechainonlinesdk_store.dart';
+import '../../utils/famedlysdk_store.dart';
 import '../../utils/voip/callkeep_manager.dart';
 import '../../utils/voip/user_media_manager.dart';
 
@@ -91,16 +91,12 @@ class VoipPlugin with WidgetsBindingObserver implements WebRTCDelegate {
               overlayEntry = null;
             }),
       );
-      Overlay.of(context)!.insert(overlayEntry!);
+      /// Overlay.of(context).insert(overlayEntry!);
     }
   }
 
   @override
   MediaDevices get mediaDevices => webrtc_impl.navigator.mediaDevices;
-
-  @override
-  // remove this from sdk once callkeep is stable
-  bool get isBackgroud => false;
 
   @override
   bool get isWeb => kIsWeb;

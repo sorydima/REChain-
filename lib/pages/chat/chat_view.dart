@@ -22,7 +22,6 @@ import 'package:rechainonline/widgets/connection_status_header.dart';
 import 'package:rechainonline/widgets/matrix.dart';
 import 'package:rechainonline/widgets/unread_rooms_badge.dart';
 import '../../utils/stream_extension.dart';
-import '../../widgets/m2_popup_menu_button.dart';
 import 'chat_emoji_picker.dart';
 import 'chat_input_row.dart';
 
@@ -67,7 +66,7 @@ class ChatView extends StatelessWidget {
           tooltip: L10n.of(context)!.pinMessage,
         ),
         if (controller.selectedEvents.length == 1)
-          M2PopupMenuButton<_EventContextAction>(
+          PopupMenuButton<_EventContextAction>(
             onSelected: (action) {
               switch (action) {
                 case _EventContextAction.info:
@@ -108,6 +107,20 @@ class ChatView extends StatelessWidget {
             ],
           ),
       ];
+    } else if (controller.isArchived) {
+      return [
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: TextButton.icon(
+            onPressed: controller.forgetRoom,
+            style: TextButton.styleFrom(
+              foregroundColor: Theme.of(context).colorScheme.error,
+            ),
+            icon: const Icon(Icons.delete_forever_outlined),
+            label: Text(L10n.of(context)!.delete),
+          ),
+        )
+      ];
     } else {
       return [
         if (Matrix.of(context).voipPlugin != null &&
@@ -145,6 +158,7 @@ class ChatView extends StatelessWidget {
           context: context, future: () => controller.room!.join());
     }
     final bottomSheetPadding = rechainonlineThemes.isColumnMode(context) ? 16.0 : 8.0;
+    final colorScheme = Theme.of(context).colorScheme;
 
     return VWidgetGuard(
       onSystemPop: (redirector) async {
@@ -213,6 +227,20 @@ class ChatView extends StatelessWidget {
                           height: double.infinity,
                           fit: BoxFit.cover,
                           filterQuality: FilterQuality.medium,
+                        )
+                      else
+                        Container(
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              begin: Alignment.topCenter,
+                              colors: [
+                                colorScheme.primaryContainer.withAlpha(64),
+                                colorScheme.secondaryContainer.withAlpha(64),
+                                colorScheme.tertiaryContainer.withAlpha(64),
+                                colorScheme.primaryContainer.withAlpha(64),
+                              ],
+                            ),
+                          ),
                         ),
                       SafeArea(
                         child: Column(
@@ -262,16 +290,54 @@ class ChatView extends StatelessWidget {
                                           Brightness.light
                                       ? Colors.white
                                       : Colors.black,
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      const ConnectionStatusHeader(),
-                                      ReactionsPicker(controller),
-                                      ReplyDisplay(controller),
-                                      ChatInputRow(controller),
-                                      ChatEmojiPicker(controller),
-                                    ],
-                                  ),
+                                  child: controller.room?.isAbandonedDMRoom ==
+                                          true
+                                      ? Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceEvenly,
+                                          children: [
+                                            TextButton.icon(
+                                              style: TextButton.styleFrom(
+                                                padding:
+                                                    const EdgeInsets.all(16),
+                                                foregroundColor:
+                                                    Theme.of(context)
+                                                        .colorScheme
+                                                        .error,
+                                              ),
+                                              icon: const Icon(
+                                                Icons.archive_outlined,
+                                              ),
+                                              onPressed: controller.leaveChat,
+                                              label: Text(
+                                                L10n.of(context)!.leave,
+                                              ),
+                                            ),
+                                            TextButton.icon(
+                                              style: TextButton.styleFrom(
+                                                padding:
+                                                    const EdgeInsets.all(16),
+                                              ),
+                                              icon: const Icon(
+                                                Icons.chat_outlined,
+                                              ),
+                                              onPressed:
+                                                  controller.recreateChat,
+                                              label: Text(
+                                                  L10n.of(context)!.reopenChat),
+                                            ),
+                                          ],
+                                        )
+                                      : Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            const ConnectionStatusHeader(),
+                                            ReactionsPicker(controller),
+                                            ReplyDisplay(controller),
+                                            ChatInputRow(controller),
+                                            ChatEmojiPicker(controller),
+                                          ],
+                                        ),
                                 ),
                               ),
                           ],

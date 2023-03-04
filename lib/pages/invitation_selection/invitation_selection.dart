@@ -9,6 +9,7 @@ import 'package:matrix/matrix.dart';
 import 'package:vrouter/vrouter.dart';
 
 import 'package:rechainonline/pages/invitation_selection/invitation_selection_view.dart';
+import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
 import 'package:rechainonline/widgets/matrix.dart';
 import '../../utils/localized_exception_extension.dart';
 
@@ -55,7 +56,11 @@ class InvitationSelectionController extends State<InvitationSelection> {
     if (OkCancelResult.ok !=
         await showOkCancelAlertDialog(
           context: context,
-          title: L10n.of(context)!.inviteContactToGroup(room.displayname),
+          title: L10n.of(context)!.inviteContactToGroup(
+            room.getLocalizedDisplayname(
+              MatrixLocals(L10n.of(context)!),
+            ),
+          ),
           okLabel: L10n.of(context)!.yes,
           cancelLabel: L10n.of(context)!.cancel,
         )) {
@@ -74,7 +79,7 @@ class InvitationSelectionController extends State<InvitationSelection> {
   void searchUserWithCoolDown(String text) async {
     coolDown?.cancel();
     coolDown = Timer(
-      const Duration(seconds: 1),
+      const Duration(milliseconds: 500),
       () => searchUser(context, text),
     );
   }

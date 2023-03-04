@@ -23,31 +23,31 @@ abstract class rechainonlineThemes {
   );
 
   static var fallbackTextTheme = const TextTheme(
-    bodyText1: fallbackTextStyle,
-    bodyText2: fallbackTextStyle,
-    button: fallbackTextStyle,
-    caption: fallbackTextStyle,
-    overline: fallbackTextStyle,
-    headline1: fallbackTextStyle,
-    headline2: fallbackTextStyle,
-    headline3: fallbackTextStyle,
-    headline4: fallbackTextStyle,
-    headline5: fallbackTextStyle,
-    headline6: fallbackTextStyle,
-    subtitle1: fallbackTextStyle,
-    subtitle2: fallbackTextStyle,
+    bodyLarge: fallbackTextStyle,
+    bodyMedium: fallbackTextStyle,
+    labelLarge: fallbackTextStyle,
+    bodySmall: fallbackTextStyle,
+    labelSmall: fallbackTextStyle,
+    displayLarge: fallbackTextStyle,
+    displayMedium: fallbackTextStyle,
+    displaySmall: fallbackTextStyle,
+    headlineMedium: fallbackTextStyle,
+    headlineSmall: fallbackTextStyle,
+    titleLarge: fallbackTextStyle,
+    titleMedium: fallbackTextStyle,
+    titleSmall: fallbackTextStyle,
   );
 
-  static ThemeData buildTheme(Brightness brightness,
-          [ColorScheme? colorScheme]) =>
+  static const Duration animationDuration = Duration(milliseconds: 250);
+  static const Curve animationCurve = Curves.easeInOut;
+
+  static ThemeData buildTheme(Brightness brightness, [Color? seed]) =>
       ThemeData(
         visualDensity: VisualDensity.standard,
         useMaterial3: true,
         brightness: brightness,
-        colorSchemeSeed: AppConfig.colorSchemeSeed ??
-            colorScheme?.primary ??
-            AppConfig.chatColor,
-        textTheme: PlatformInfos.isDesktop
+        colorSchemeSeed: seed ?? AppConfig.colorSchemeSeed,
+        textTheme: PlatformInfos.isDesktop || PlatformInfos.isWeb
             ? brightness == Brightness.light
                 ? Typography.material2018().black.merge(fallbackTextTheme)
                 : Typography.material2018().white.merge(fallbackTextTheme)
@@ -58,8 +58,16 @@ abstract class rechainonlineThemes {
         dividerColor: brightness == Brightness.light
             ? Colors.blueGrey.shade50
             : Colors.blueGrey.shade900,
-        inputDecorationTheme: const InputDecorationTheme(
-          border: InputBorder.none,
+        popupMenuTheme: PopupMenuThemeData(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(AppConfig.borderRadius),
+          ),
+        ),
+        inputDecorationTheme: InputDecorationTheme(
+          border: UnderlineInputBorder(
+            borderSide: BorderSide.none,
+            borderRadius: BorderRadius.circular(AppConfig.borderRadius / 2),
+          ),
           filled: true,
         ),
         appBarTheme: AppBarTheme(
@@ -72,10 +80,32 @@ abstract class rechainonlineThemes {
             statusBarBrightness: brightness,
           ),
         ),
+        textButtonTheme: TextButtonThemeData(
+          style: TextButton.styleFrom(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(AppConfig.borderRadius / 2),
+            ),
+          ),
+        ),
+        outlinedButtonTheme: OutlinedButtonThemeData(
+          style: OutlinedButton.styleFrom(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(AppConfig.borderRadius / 2),
+            ),
+          ),
+        ),
+        dialogTheme: DialogTheme(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(AppConfig.borderRadius / 2),
+          ),
+        ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             padding: const EdgeInsets.all(16),
             textStyle: const TextStyle(fontSize: 16),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(AppConfig.borderRadius),
+            ),
           ),
         ),
       );

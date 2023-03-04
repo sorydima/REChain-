@@ -14,7 +14,7 @@ import 'package:vrouter/vrouter.dart';
 import 'package:rechainonline/pages/chat/cupertino_widgets_bottom_sheet.dart';
 import 'package:rechainonline/pages/chat/edit_widgets_dialog.dart';
 import 'package:rechainonline/pages/chat/widgets_bottom_sheet.dart';
-import 'm2_popup_menu_button.dart';
+import 'package:rechainonline/utils/adaptive_bottom_sheet.dart';
 import 'matrix.dart';
 
 class ChatSettingsPopupMenu extends StatefulWidget {
@@ -126,7 +126,7 @@ class ChatSettingsPopupMenuState extends State<ChatSettingsPopupMenu> {
           onKeysPressed: _showWidgets,
           child: Container(),
         ),
-        M2PopupMenuButton(
+        PopupMenuButton(
           onSelected: (String choice) async {
             switch (choice) {
               case 'widgets':
@@ -185,7 +185,7 @@ class ChatSettingsPopupMenuState extends State<ChatSettingsPopupMenu> {
           context: context,
           builder: (context) => CupertinoWidgetsBottomSheet(room: widget.room),
         )
-      : showModalBottomSheet(
+      : showAdaptiveBottomSheet(
           context: context,
           builder: (context) => WidgetsBottomSheet(room: widget.room),
         );

@@ -5,8 +5,9 @@ import 'package:matrix/matrix.dart';
 import 'package:matrix_link_text/link_text.dart';
 
 import 'package:rechainonline/pages/chat/events/video_player.dart';
+import 'package:rechainonline/utils/adaptive_bottom_sheet.dart';
 import 'package:rechainonline/utils/date_time_extension.dart';
-import 'package:rechainonline/utils/matrix_sdk_extensions.dart/matrix_locals.dart';
+import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
 import 'package:rechainonline/widgets/avatar.dart';
 import 'package:rechainonline/widgets/matrix.dart';
 import '../../../config/app_config.dart';
@@ -52,7 +53,7 @@ class MessageContent extends StatelessWidget {
     }
     event.requestKey();
     final sender = event.senderFromMemoryOrFallback;
-    await showModalBottomSheet(
+    await showAdaptiveBottomSheet(
       context: context,
       builder: (context) => Scaffold(
         appBar: AppBar(
@@ -112,7 +113,13 @@ class MessageContent extends StatelessWidget {
           case CuteEventContent.eventType:
             return CuteContent(event);
           case MessageTypes.Audio:
-            if (PlatformInfos.isMobile || PlatformInfos.isMacOS) {
+            if (PlatformInfos.isMobile ||
+                    PlatformInfos.isMacOS ||
+                    PlatformInfos.isWeb
+                // Disabled until https://github.com/bleonard252/just_audio_mpv/issues/3
+                // is fixed
+                //   || PlatformInfos.isLinux
+                ) {
               return AudioPlayerWidget(
                 event,
                 color: textColor,
@@ -150,6 +157,7 @@ class MessageContent extends StatelessWidget {
                   color: textColor.withAlpha(150),
                   fontSize: bigEmotes ? fontSize * 3 : fontSize,
                   decoration: TextDecoration.underline,
+                  decorationColor: textColor.withAlpha(150),
                 ),
                 room: event.room,
                 emoteSize: bigEmotes ? fontSize * 3 : fontSize * 1.5,
@@ -205,7 +213,7 @@ class MessageContent extends StatelessWidget {
           default:
             if (event.redacted) {
               return FutureBuilder<User?>(
-                  future: event.fetchSenderUser(),
+                  future: event.redactedBecause?.fetchSenderUser(),
                   builder: (context, snapshot) {
                     return _ButtonContent(
                       label: L10n.of(context)!.redactedAnEvent(snapshot.data
@@ -239,6 +247,7 @@ class MessageContent extends StatelessWidget {
                       color: textColor.withAlpha(150),
                       fontSize: bigEmotes ? fontSize * 3 : fontSize,
                       decoration: TextDecoration.underline,
+                      decorationColor: textColor.withAlpha(150),
                     ),
                     onLinkTap: (url) => UrlLauncher(context, url).launchUrl(),
                   );

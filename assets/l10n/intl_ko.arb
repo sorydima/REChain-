@@ -2596,6 +2596,38 @@
 "targetName": {}
 }
 },
+"@commandHint_googly": {
+},
+"@commandHint_markasgroup": {
+},
+"@confirmMatrixId": {
+},
+"@dehydrate": {
+},
+"@dehydrateShare": {
+},
+"@dehydrateWarning": {
+},
+"@googlyEyesContent": {
+"placeholders": {
+"senderName": {
+}
+},
+"type": "text"
+},
+"@updateAvailable": {
+},
+"@updateNow": {
+},
+"commandHint_googly": "왕눈이 눈알 보내기",
+"commandHint_markasgroup": "",
+"confirmMatrixId": "계정을 삭제하려면 REChain 🪐 ID를 확인해 주세요.",
+"dehydrate": "세션을 내보내고 기기 초기화 하기",
+"dehydrateShare": "REChain 🪐 개인 내보내기 파일입니다. 분실하지 않도록 하시고 비공개로 보관하세요.",
+"dehydrateWarning": "이 동작은 되돌릴 수 없습니다. 백업 파일을 꼭 안전하게 보관하세요.",
+"googlyEyesContent": "{senderName} 님이 왕눈이 눈알을 보냈습니다",
+"updateAvailable": "REChain 🪐 업데이트 이용가능",
+"updateNow": "백그라운드에서 업데이트 시작",
 "link": "링크",
 "@link": {},
 "yourUserId": "당신의 유저 ID:",

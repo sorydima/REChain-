@@ -6,7 +6,6 @@ abstract class SettingKeys {
   static const String hideUnimportantStateEvents = 'com.rechain.hideUnimportantStateEvents';
   static const String showDirectChatsInSpaces = 'com.rechain.showDirectChatsInSpaces';
   static const String separateChatTypes = 'com.rechain.separateChatTypes';
-  static const String chatColor = 'com.rechain.chat_color';
   static const String sentry = 'Sentry';
   static const String theme = 'Theme';
   static const String amoledEnabled = 'Amoled_enabled';

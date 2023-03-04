@@ -2762,6 +2762,70 @@
 },
 "type": "text"
 },
+"@commandHint_hug": {
+},
+"@deviceKeys": {
+},
+"@disableEncryptionWarning": {
+},
+"@doNotShowAgain": {
+},
+"@encryptThisChat": {
+},
+"@endToEndEncryption": {
+},
+"@enterInviteLinkOrMatrixId": {
+},
+"@fileIsTooBigForServer": {
+},
+"@hugContent": {
+"placeholders": {
+"senderName": {
+}
+},
+"type": "text"
+},
+"@letsStart": {
+},
+"@newSpaceDescription": {
+},
+"@noBackupWarning": {
+},
+"@noOtherDevicesFound": {
+},
+"@noSearchResult": {
+},
+"@reopenChat": {
+},
+"@sorryThatsNotPossible": {
+},
+"@startFirstChat": {
+},
+"@wasDirectChatDisplayName": {
+"placeholders": {
+"oldDisplayName": {
+}
+},
+"type": "text"
+},
+"commandHint_hug": "Bidali besarkada",
+"deviceKeys": "Gailuaren gakoak:",
+"disableEncryptionWarning": "Segurtasun arrazoiak direla-eta, ezin duzu lehendik zifratuta zegoen txat bateko zifraketa ezgaitu.",
+"doNotShowAgain": "Ez erakutsi berriro",
+"encryptThisChat": "Zifratu txata",
+"endToEndEncryption": "Puntuz puntuko zifraketa",
+"enterInviteLinkOrMatrixId": "Sartu gonbidapen-esteka edo REChain 🪐 IDa…",
+"fileIsTooBigForServer": "Zerbitzariak dio fitxategia handiegia dela bidali ahal izateko.",
+"hugContent": "{senderName}(e)k besarkatu zaitu",
+"letsStart": "Has gaitezen",
+"newSpaceDescription": "Guneek txatak taldekatzea ahalbidetzen dute eta komunitate pribatu edo publikoak osatzea.",
+"noBackupWarning": "Adi! Txataren babeskopia gaitzen ez baduzu, ezingo dituzu zifratutako txatak atzitu. Oso gomendagarria da txaten babeskopia gaitzea saioa amaitu baino lehen.",
+"noOtherDevicesFound": "Ez da beste gailurik aurkitu",
+"noSearchResult": "Ez da emaitzarik aurkitu.",
+"reopenChat": "Ireki txata berriro",
+"sorryThatsNotPossible": "Barka… hori ez da posible",
+"startFirstChat": "Hasi zure lehen txata",
+"wasDirectChatDisplayName": "Txata hutsik dago ({oldDisplayName} zen lehen)",
 "addAccount": "Gehitu kontua",
 "addDescription": "Gehitu deskribapena",
 "addEmail": "Gehitu eposta",

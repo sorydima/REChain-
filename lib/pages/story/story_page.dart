@@ -13,10 +13,11 @@ import 'package:video_player/video_player.dart';
 import 'package:vrouter/vrouter.dart';
 
 import 'package:rechainonline/pages/story/story_view.dart';
+import 'package:rechainonline/utils/adaptive_bottom_sheet.dart';
 import 'package:rechainonline/utils/date_time_extension.dart';
 import 'package:rechainonline/utils/localized_exception_extension.dart';
-import 'package:rechainonline/utils/matrix_sdk_extensions.dart/client_stories_extension.dart';
-import 'package:rechainonline/utils/matrix_sdk_extensions.dart/ios_badge_client_extension.dart';
+import 'package:rechainonline/utils/matrix_sdk_extensions/client_stories_extension.dart';
+import 'package:rechainonline/utils/matrix_sdk_extensions/ios_badge_client_extension.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
 import 'package:rechainonline/utils/room_status_extension.dart';
 import 'package:rechainonline/utils/story_theme_data.dart';
@@ -58,7 +59,7 @@ class StoryPageController extends State<StoryPage> {
   void replyEmojiAction() async {
     if (replyLoading) return;
     _modalOpened = true;
-    await showModalBottomSheet(
+    await showAdaptiveBottomSheet(
       context: context,
       builder: (context) => EmojiPicker(
         onEmojiSelected: (c, e) {
@@ -123,7 +124,7 @@ class StoryPageController extends State<StoryPage> {
 
   void displaySeenByUsers() async {
     _modalOpened = true;
-    await showModalBottomSheet(
+    await showAdaptiveBottomSheet(
       context: context,
       builder: (context) => Scaffold(
         appBar: AppBar(

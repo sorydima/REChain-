@@ -6,7 +6,7 @@ import 'package:vrouter/vrouter.dart';
 import 'package:rechainonline/pages/image_viewer/image_viewer_view.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
 import 'package:rechainonline/widgets/matrix.dart';
-import '../../utils/matrix_sdk_extensions.dart/event_extension.dart';
+import '../../utils/matrix_sdk_extensions/event_extension.dart';
 
 class ImageViewer extends StatefulWidget {
   final Event event;

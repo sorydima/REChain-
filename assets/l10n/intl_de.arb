@@ -2543,6 +2543,80 @@
 "type": "text",
 "placeholders": {}
 },
+"@commandHint_cuddle": {
+},
+"@commandHint_googly": {
+},
+"@commandHint_hug": {
+},
+"@cuddleContent": {
+"placeholders": {
+"senderName": {
+}
+},
+"type": "text"
+},
+"@deviceKeys": {
+},
+"@disableEncryptionWarning": {
+},
+"@encryptThisChat": {
+},
+"@endToEndEncryption": {
+},
+"@enterInviteLinkOrMatrixId": {
+},
+"@googlyEyesContent": {
+"placeholders": {
+"senderName": {
+}
+},
+"type": "text"
+},
+"@hugContent": {
+"placeholders": {
+"senderName": {
+}
+},
+"type": "text"
+},
+"@letsStart": {
+},
+"@newSpaceDescription": {
+},
+"@noSearchResult": {
+},
+"@reopenChat": {
+},
+"@sorryThatsNotPossible": {
+},
+"@startFirstChat": {
+},
+"@wasDirectChatDisplayName": {
+"placeholders": {
+"oldDisplayName": {
+}
+},
+"type": "text"
+},
+"commandHint_cuddle": "Umarmung senden",
+"commandHint_googly": "Googly Eyes senden",
+"commandHint_hug": "Umarmung senden",
+"cuddleContent": "{senderName} knuddelt dich",
+"deviceKeys": "Geräteschlüssel:",
+"disableEncryptionWarning": "Aus Sicherheitsgründen können Sie die Verschlüsselung in einem Chat nicht deaktivieren, wo sie zuvor aktiviert wurde.",
+"encryptThisChat": "Diesen Chat verschlüsseln",
+"endToEndEncryption": "Ende-zu-Ende-Verschlüsselung",
+"enterInviteLinkOrMatrixId": "Einladungslink oder REChain 🪐-ID eingeben …",
+"googlyEyesContent": "{senderName} hat dir Googly Eyes gesendet",
+"hugContent": "{senderName} umarmt dich",
+"letsStart": "Los geht's",
+"newSpaceDescription": "Mit Spaces kannst du deine Chats zusammenfassen und private oder öffentliche Communities aufbauen.",
+"noSearchResult": "Keine Suchergebnisse.",
+"reopenChat": "Chat wieder eröffnen",
+"sorryThatsNotPossible": "Sorry ... das ist nicht möglich",
+"startFirstChat": "Starte deinen ersten Chat",
+"wasDirectChatDisplayName": "Leerer Chat (was {oldDisplayName}",
 "zoomOut": "Verkleinern",
 "@zoomOut": {
 "type": "text",

@@ -2851,6 +2851,48 @@
 }
 }
 },
+"@deviceKeys": {
+},
+"@disableEncryptionWarning": {
+},
+"@encryptThisChat": {
+},
+"@endToEndEncryption": {
+},
+"@enterInviteLinkOrMatrixId": {
+},
+"@fileIsTooBigForServer": {
+},
+"@letsStart": {
+},
+"@newSpaceDescription": {
+},
+"@noBackupWarning": {
+},
+"@noOtherDevicesFound": {
+},
+"@noSearchResult": {
+},
+"@reopenChat": {
+},
+"@sorryThatsNotPossible": {
+},
+"@startFirstChat": {
+},
+"deviceKeys": "Apparaatsleutels:",
+"disableEncryptionWarning": "Om veiligheidsredenen kun je versleuteling niet uitschakelen in een chat, waar deze eerder is ingeschakeld.",
+"encryptThisChat": "Versleutel deze chat",
+"endToEndEncryption": "Eind-tot-eind-versleuteling",
+"enterInviteLinkOrMatrixId": "Uitnodigingslink of REChain 🪐-ID invoeren...",
+"fileIsTooBigForServer": "De server meldt dat het bestand te groot is om te verzenden.",
+"letsStart": "Laten we beginnen",
+"newSpaceDescription": "Met spaces kun je je chats samenvoegen en privé- of openbare community's bouwen.",
+"noBackupWarning": "Waarschuwing! Zonder de chatback-up in te schakelen, verlies je de toegang tot je versleutelde berichten. Het is sterk aanbevolen om eerst de chatback-up in te schakelen voordat je uitlogt.",
+"noOtherDevicesFound": "Geen andere apparaten gevonden",
+"noSearchResult": "Geen passende zoekresultaten.",
+"reopenChat": "Chat heropenen",
+"sorryThatsNotPossible": "Sorry, dat is niet mogelijk",
+"startFirstChat": "Begin je eerste chat",
 "@custom": {
 },
 "@dehydrate": {

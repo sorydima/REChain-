@@ -22,8 +22,9 @@ class SeenByRow extends StatelessWidget {
             const BoxConstraints(maxWidth: rechainonlineThemes.columnWidth * 2.5),
         height: seenByUsers.isEmpty ? 0 : 24,
         duration: seenByUsers.isEmpty
-            ? const Duration(milliseconds: 0)
-            : const Duration(milliseconds: 300),
+            ? Duration.zero
+            : rechainonlineThemes.animationDuration,
+        curve: rechainonlineThemes.animationCurve,
         alignment: controller.timeline!.events.isNotEmpty &&
                 controller.timeline!.events.first.senderId ==
                     Matrix.of(context).client.userID
@@ -50,7 +51,7 @@ class SeenByRow extends StatelessWidget {
                 width: 16,
                 height: 16,
                 child: Material(
-                  color: Theme.of(context).backgroundColor,
+                  color: Theme.of(context).colorScheme.background,
                   borderRadius: BorderRadius.circular(32),
                   child: Center(
                     child: Text(

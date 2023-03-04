@@ -196,7 +196,7 @@ class InputBar extends StatelessWidget {
           ret.add({
             'type': 'room',
             'mxid': (r.canonicalAlias.isNotEmpty) ? r.canonicalAlias : r.id,
-            'displayname': r.displayname,
+            'displayname': r.getLocalizedDisplayname(),
             'avatar_url': r.avatar?.toString(),
           });
         }
@@ -232,7 +232,7 @@ class InputBar extends StatelessWidget {
                 hint,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
-                style: Theme.of(context).textTheme.caption,
+                style: Theme.of(context).textTheme.bodySmall,
               ),
             ],
           ),

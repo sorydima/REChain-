@@ -13,7 +13,7 @@ import 'package:video_player/video_player.dart';
 
 import 'package:rechainonline/pages/chat/events/image_bubble.dart';
 import 'package:rechainonline/utils/localized_exception_extension.dart';
-import 'package:rechainonline/utils/matrix_sdk_extensions.dart/event_extension.dart';
+import 'package:rechainonline/utils/matrix_sdk_extensions/event_extension.dart';
 
 class EventVideoPlayer extends StatefulWidget {
   final Event event;

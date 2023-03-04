@@ -7,6 +7,7 @@ import 'package:matrix/matrix.dart';
 
 import 'package:rechainonline/pages/new_private_chat/new_private_chat_view.dart';
 import 'package:rechainonline/pages/new_private_chat/qr_scanner_modal.dart';
+import 'package:rechainonline/utils/adaptive_bottom_sheet.dart';
 import 'package:rechainonline/utils/rechainonline_share.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
 import 'package:rechainonline/utils/url_launcher.dart';
@@ -25,38 +26,15 @@ class NewPrivateChatController extends State<NewPrivateChat> {
   final formKey = GlobalKey<FormState>();
   bool loading = false;
 
-  bool _hideFab = false;
-
-  // remove leading matrix.to from text field in order to simplify pasting
   final List<TextInputFormatter> removeMatrixToFormatters = [
     FilteringTextInputFormatter.deny(NewPrivateChatController.prefix),
     FilteringTextInputFormatter.deny(NewPrivateChatController.prefixNoProtocol),
   ];
 
-  bool get hideFab => _hideFab;
-
   static const Set<String> supportedSigils = {'@', '!', '#'};
 
   static const String prefix = 'https://matrix.to/#/';
   static const String prefixNoProtocol = 'matrix.to/#/';
-
-  void setHideFab() {
-    if (textFieldFocus.hasFocus != _hideFab) {
-      setState(() => _hideFab = textFieldFocus.hasFocus);
-    }
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    textFieldFocus.addListener(setHideFab);
-  }
-
-  @override
-  void dispose() {
-    textFieldFocus.removeListener(setHideFab);
-    super.dispose();
-  }
 
   void submitAction([_]) async {
     controller.text = controller.text.trim();
@@ -97,10 +75,8 @@ class NewPrivateChatController extends State<NewPrivateChat> {
         return;
       }
     }
-    await showModalBottomSheet(
+    await showAdaptiveBottomSheet(
       context: context,
-      useRootNavigator: false,
-      //useSafeArea: false,
       builder: (_) => const QrScannerModal(),
     );
   }

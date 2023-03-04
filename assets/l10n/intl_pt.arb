@@ -1,3 +1,188 @@
 {
-"@@last_modified": "2021-08-14 12:41:09.940318"
+"@@last_modified": "2021-08-14 12:41:09.940318",
+"@about": {
+"placeholders": {
+},
+"type": "text"
+},
+"@account": {
+"placeholders": {
+},
+"type": "text"
+},
+"@admin": {
+"placeholders": {
+},
+"type": "text"
+},
+"@areYouSure": {
+"placeholders": {
+},
+"type": "text"
+},
+"@cancel": {
+"placeholders": {
+},
+"type": "text"
+},
+"@close": {
+"placeholders": {
+},
+"type": "text"
+},
+"@copiedToClipboard": {
+"placeholders": {
+},
+"type": "text"
+},
+"@dateAndTimeOfDay": {
+"placeholders": {
+"date": {
+},
+"timeOfDay": {
+}
+},
+"type": "text"
+},
+"@dateWithoutYear": {
+"placeholders": {
+"day": {
+},
+"month": {
+}
+},
+"type": "text"
+},
+"@dateWithYear": {
+"placeholders": {
+"day": {
+},
+"month": {
+},
+"year": {
+}
+},
+"type": "text"
+},
+"@delete": {
+"placeholders": {
+},
+"type": "text"
+},
+"@friday": {
+"placeholders": {
+},
+"type": "text"
+},
+"@help": {
+"placeholders": {
+},
+"type": "text"
+},
+"@login": {
+"placeholders": {
+},
+"type": "text"
+},
+"@logout": {
+"placeholders": {
+},
+"type": "text"
+},
+"@messages": {
+"placeholders": {
+},
+"type": "text"
+},
+"@monday": {
+"placeholders": {
+},
+"type": "text"
+},
+"@notifications": {
+"placeholders": {
+},
+"type": "text"
+},
+"@openCamera": {
+"placeholders": {
+},
+"type": "text"
+},
+"@privacy": {
+"placeholders": {
+},
+"type": "text"
+},
+"@reason": {
+"placeholders": {
+},
+"type": "text"
+},
+"@saturday": {
+"placeholders": {
+},
+"type": "text"
+},
+"@search": {
+"placeholders": {
+},
+"type": "text"
+},
+"@settings": {
+"placeholders": {
+},
+"type": "text"
+},
+"@sunday": {
+"placeholders": {
+},
+"type": "text"
+},
+"@thursday": {
+"placeholders": {
+},
+"type": "text"
+},
+"@tuesday": {
+"placeholders": {
+},
+"type": "text"
+},
+"@users": {
+},
+"@wednesday": {
+"placeholders": {
+},
+"type": "text"
+},
+"about": "Sobre",
+"account": "Conta",
+"admin": "Admin",
+"areYouSure": "Tens a certeza?",
+"cancel": "Cancelar",
+"close": "Fechar",
+"copiedToClipboard": "Copiada para a área de transferência",
+"dateAndTimeOfDay": "{date}, {timeOfDay}",
+"dateWithoutYear": "{day}-{month}",
+"dateWithYear": "{day}-{month}-{year}",
+"delete": "Eliminar",
+"friday": "sexta-feira",
+"help": "Ajuda",
+"login": "Iniciar sessão",
+"logout": "Terminar sessão",
+"messages": "Mensagens",
+"monday": "segunda-feira",
+"notifications": "Notificações",
+"openCamera": "Abrir câmara",
+"privacy": "Privacidade",
+"reason": "Razão",
+"saturday": "sábado",
+"search": "Pesquisar",
+"settings": "Configurações",
+"sunday": "domingo",
+"thursday": "quinta-feira",
+"tuesday": "terça-feira",
+"users": "Utilizadores",
+"wednesday": "quarta-feira"
 }

@@ -13,11 +13,11 @@ import 'package:matrix/matrix.dart';
 import 'package:unifiedpush/unifiedpush.dart';
 import 'package:vrouter/vrouter.dart';
 
-import 'package:rechainonline/utils/matrix_sdk_extensions.dart/client_stories_extension.dart';
+import 'package:rechainonline/utils/matrix_sdk_extensions/client_stories_extension.dart';
 import 'package:rechainonline/utils/push_helper.dart';
 import '../config/app_config.dart';
 import '../config/setting_keys.dart';
-import 'rechainonlinesdk_store.dart';
+import 'famedlysdk_store.dart';
 import 'platform_infos.dart';
 
 import 'package:fcm_shared_isolate/fcm_shared_isolate.dart';
@@ -65,7 +65,6 @@ class BackgroundPush {
         activeRoomId: router?.currentState?.pathParameters['roomid'],
         onSelectNotification: goToRoom,
       ),
-      onNewToken: _newFcmToken,
     );
     if (Platform.isAndroid) {
       UnifiedPush.initialize(
@@ -94,20 +93,10 @@ class BackgroundPush {
     instance.router = router;
     // ignore: prefer_initializing_formals
     instance.onFcmError = onFcmError;
-    instance.fullInit();
     return instance;
   }
 
-  Future<void> fullInit() => setupPush();
-
-  void handleLoginStateChanged(_) => setupPush();
-
   StreamSubscription<SyncUpdate>? onRoomSync;
-
-  void _newFcmToken(String token) {
-    _fcmToken = token;
-    setupPush();
-  }
 
   Future<void> setupPusher({
     String? gatewayUrl,
@@ -236,7 +225,7 @@ class BackgroundPush {
     if (context == null) {
       return;
     }
-    if (await store.getItemBool(SettingKeys.showNoGoogle, true) != true) {
+    if (await store.getItemBool(SettingKeys.showNoGoogle, true) == true) {
       return;
     }
     await loadLocale();

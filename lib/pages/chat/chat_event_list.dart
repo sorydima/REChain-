@@ -10,7 +10,8 @@ import 'package:rechainonline/pages/chat/events/message.dart';
 import 'package:rechainonline/pages/chat/seen_by_row.dart';
 import 'package:rechainonline/pages/chat/typing_indicators.dart';
 import 'package:rechainonline/pages/user_bottom_sheet/user_bottom_sheet.dart';
-import 'package:rechainonline/utils/matrix_sdk_extensions.dart/filtered_timeline_extension.dart';
+import 'package:rechainonline/utils/adaptive_bottom_sheet.dart';
+import 'package:rechainonline/utils/matrix_sdk_extensions/filtered_timeline_extension.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
 
 class ChatEventList extends StatelessWidget {
@@ -89,7 +90,7 @@ class ChatEventList extends StatelessWidget {
                     onSwipe: (direction) =>
                         controller.replyAction(replyTo: event),
                     onInfoTab: controller.showEventInfo,
-                    onAvatarTab: (Event event) => showModalBottomSheet(
+                    onAvatarTab: (Event event) => showAdaptiveBottomSheet(
                           context: context,
                           builder: (c) => UserBottomSheet(
                             user: event.senderFromMemoryOrFallback,

@@ -16,19 +16,21 @@ import 'package:image_picker/image_picker.dart';
 import 'package:matrix/matrix.dart';
 import 'package:record/record.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vrouter/vrouter.dart';
 
 import 'package:rechainonline/pages/chat/chat_view.dart';
 import 'package:rechainonline/pages/chat/event_info_dialog.dart';
 import 'package:rechainonline/pages/chat/recording_dialog.dart';
-import 'package:rechainonline/utils/matrix_sdk_extensions.dart/event_extension.dart';
-import 'package:rechainonline/utils/matrix_sdk_extensions.dart/ios_badge_client_extension.dart';
-import 'package:rechainonline/utils/matrix_sdk_extensions.dart/matrix_locals.dart';
+import 'package:rechainonline/utils/adaptive_bottom_sheet.dart';
+import 'package:rechainonline/utils/matrix_sdk_extensions/event_extension.dart';
+import 'package:rechainonline/utils/matrix_sdk_extensions/ios_badge_client_extension.dart';
+import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
 import 'package:rechainonline/widgets/matrix.dart';
 import '../../utils/account_bundles.dart';
 import '../../utils/localized_exception_extension.dart';
-import '../../utils/matrix_sdk_extensions.dart/matrix_file_extension.dart';
+import '../../utils/matrix_sdk_extensions/matrix_file_extension.dart';
 import 'send_file_dialog.dart';
 import 'send_location_dialog.dart';
 import 'sticker_picker_dialog.dart';
@@ -132,6 +134,42 @@ class ChatController extends State<Chat> {
 
   bool showEmojiPicker = false;
 
+  void recreateChat() async {
+    final room = this.room;
+    final userId = room?.directChatMatrixID;
+    if (room == null || userId == null) {
+      throw Exception(
+          'Try to recreate a room with is not a DM room. This should not be possible from the UI!');
+    }
+    final success = await showFutureLoadingDialog(
+        context: context,
+        future: () async {
+          final client = room.client;
+          final waitForSync = client.onSync.stream
+              .firstWhere((s) => s.rooms?.leave?.containsKey(room.id) ?? false);
+          await room.leave();
+          await waitForSync;
+          return await client.startDirectChat(userId);
+        });
+    final roomId = success.result;
+    if (roomId == null) return;
+    VRouter.of(context).toSegments(['rooms', roomId]);
+  }
+
+  void leaveChat() async {
+    final room = this.room;
+    if (room == null) {
+      throw Exception(
+          'Leave room button clicked while room is null. This should not be possible from the UI!');
+    }
+    final success = await showFutureLoadingDialog(
+      context: context,
+      future: room.leave,
+    );
+    if (success.error != null) return;
+    VRouter.of(context).to('/rooms');
+  }
+
   EmojiPickerType emojiPickerType = EmojiPickerType.keyboard;
 
   void requestHistory() async {
@@ -172,10 +210,20 @@ class ChatController extends State<Chat> {
     }
   }
 
+  void _loadDraft() async {
+    final prefs = await SharedPreferences.getInstance();
+    final draft = prefs.getString('draft_$roomId');
+    if (draft != null && draft.isNotEmpty) {
+      sendController.text = draft;
+      setState(() => inputText = draft);
+    }
+  }
+
   @override
   void initState() {
     scrollController.addListener(_updateScrollController);
     inputFocus.addListener(_inputFocusListener);
+    _loadDraft();
     super.initState();
   }
 
@@ -257,6 +305,9 @@ class ChatController extends State<Chat> {
 
   Future<void> send() async {
     if (sendController.text.trim().isEmpty) return;
+    _storeInputTimeoutTimer?.cancel();
+    final prefs = await SharedPreferences.getInstance();
+    prefs.remove('draft_$roomId');
     var parseCommands = true;
 
     final commandMatch = RegExp(r'^\/(\w+)').firstMatch(sendController.text);
@@ -377,9 +428,8 @@ class ChatController extends State<Chat> {
   }
 
   void sendStickerAction() async {
-    final sticker = await showModalBottomSheet<ImagePackImageContent>(
+    final sticker = await showAdaptiveBottomSheet<ImagePackImageContent>(
       context: context,
-      useRootNavigator: false,
       builder: (c) => StickerPickerDialog(room: room!),
     );
     if (sticker == null) return;
@@ -396,6 +446,7 @@ class ChatController extends State<Chat> {
   }
 
   void voiceMessageAction() async {
+    final scaffoldMessenger = ScaffoldMessenger.of(context);
     if (PlatformInfos.isAndroid) {
       final info = await DeviceInfoPlugin().androidInfo;
       if (info.version.sdkInt < 19) {
@@ -413,6 +464,7 @@ class ChatController extends State<Chat> {
     final result = await showDialog<RecordingResult>(
       context: context,
       useRootNavigator: false,
+      barrierDismissible: false,
       builder: (c) => const RecordingDialog(),
     );
     if (result == null) return;
@@ -435,7 +487,16 @@ class ChatController extends State<Chat> {
           'waveform': result.waveform,
         },
       },
-    );
+    ).catchError((e) {
+      scaffoldMessenger.showSnackBar(
+        SnackBar(
+          content: Text(
+            (e as Object).toLocalizedString(context),
+          ),
+        ),
+      );
+      return null;
+    });
     setState(() {
       replyEvent = null;
     });
@@ -584,6 +645,7 @@ class ChatController extends State<Chat> {
   }
 
   bool get canRedactSelectedEvents {
+    if (isArchived) return false;
     final clients = matrix!.currentBundle;
     for (final event in selectedEvents) {
       if (event.canRedact == false &&
@@ -593,7 +655,9 @@ class ChatController extends State<Chat> {
   }
 
   bool get canEditSelectedEvents {
-    if (selectedEvents.length != 1 || !selectedEvents.first.status.isSent) {
+    if (isArchived ||
+        selectedEvents.length != 1 ||
+        !selectedEvents.first.status.isSent) {
       return false;
     }
     return currentRoomBundle
@@ -709,6 +773,15 @@ class ChatController extends State<Chat> {
     if (_allReactionEvents
         .any((e) => e.content['m.relates_to']['key'] == emoji.emoji)) return;
     return sendEmojiAction(emoji.emoji);
+  }
+
+  void forgetRoom() async {
+    final result = await showFutureLoadingDialog(
+      context: context,
+      future: room!.forget,
+    );
+    if (result.error != null) return;
+    VRouter.of(context).to('/archive');
   }
 
   void typeEmoji(Emoji? emoji) {
@@ -919,7 +992,15 @@ class ChatController extends State<Chat> {
     );
   }
 
+  Timer? _storeInputTimeoutTimer;
+  static const Duration _storeInputTimeout = Duration(milliseconds: 500);
+
   void onInputBarChanged(String text) {
+    _storeInputTimeoutTimer?.cancel();
+    _storeInputTimeoutTimer = Timer(_storeInputTimeout, () async {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setString('draft_$roomId', text);
+    });
     setReadMarker();
     if (text.endsWith(' ') && matrix!.hasComplexBundles) {
       final clients = currentRoomBundle;
@@ -953,6 +1034,9 @@ class ChatController extends State<Chat> {
     }
     setState(() => inputText = text);
   }
+
+  bool get isArchived =>
+      {Membership.leave, Membership.ban}.contains(room?.membership);
 
   void showEventInfo([Event? event]) =>
       (event ?? selectedEvents.single).showInfoDialog(context);
@@ -998,11 +1082,13 @@ class ChatController extends State<Chat> {
             Matrix.of(context).voipPlugin!.voip.requestTurnServerCredentials());
     if (success.result != null) {
       final voipPlugin = Matrix.of(context).voipPlugin;
-      await voipPlugin!.voip.inviteToCall(room!.id, callType).catchError((e) {
+      try {
+        await voipPlugin!.voip.inviteToCall(room!.id, callType);
+      } catch (e) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text((e as Object).toLocalizedString(context))),
+          SnackBar(content: Text(e.toLocalizedString(context))),
         );
-      });
+      }
     } else {
       await showOkAlertDialog(
         context: context,

@@ -15,18 +15,19 @@ import 'package:vrouter/vrouter.dart';
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/config/themes.dart';
 import 'package:rechainonline/pages/chat_list/chat_list_view.dart';
-import 'package:rechainonline/utils/rechainonlinesdk_store.dart';
+import 'package:rechainonline/pages/settings_security/settings_security.dart';
+import 'package:rechainonline/utils/famedlysdk_store.dart';
 import 'package:rechainonline/utils/localized_exception_extension.dart';
-import 'package:rechainonline/utils/matrix_sdk_extensions.dart/client_stories_extension.dart';
+import 'package:rechainonline/utils/matrix_sdk_extensions/client_stories_extension.dart';
+import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
 import '../../../utils/account_bundles.dart';
-import '../../utils/matrix_sdk_extensions.dart/matrix_file_extension.dart';
+import '../../utils/matrix_sdk_extensions/matrix_file_extension.dart';
 import '../../utils/url_launcher.dart';
 import '../../utils/voip/callkeep_manager.dart';
 import '../../widgets/rechainonline_chat_app.dart';
 import '../../widgets/matrix.dart';
 import '../bootstrap/bootstrap_dialog.dart';
-import '../settings_account/settings_account.dart';
 
 import 'package:rechainonline/utils/tor_stub.dart'
     if (dart.library.html) 'package:tor_detector_web/tor_detector_web.dart';
@@ -55,6 +56,7 @@ enum ActiveFilter {
 
 class ChatList extends StatefulWidget {
   static BuildContext? contextForVoip;
+
   const ChatList({Key? key}) : super(key: key);
 
   @override
@@ -224,7 +226,7 @@ class ChatListController extends State<ChatList>
 
   void onSearchEnter(String text) {
     if (text.isEmpty) {
-      cancelSearch();
+      cancelSearch(unfocus: false);
       return;
     }
 
@@ -235,12 +237,15 @@ class ChatListController extends State<ChatList>
     _coolDown = Timer(const Duration(milliseconds: 500), _search);
   }
 
-  void cancelSearch() => setState(() {
-        searchController.clear();
-        isSearchMode = false;
-        roomSearchResult = userSearchResult = null;
-        isSearching = false;
-      });
+  void cancelSearch({bool unfocus = true}) {
+    setState(() {
+      searchController.clear();
+      isSearchMode = false;
+      roomSearchResult = userSearchResult = null;
+      isSearching = false;
+    });
+    if (unfocus) FocusManager.instance.primaryFocus?.unfocus();
+  }
 
   bool isTorBrowser = false;
 
@@ -347,8 +352,6 @@ class ChatListController extends State<ChatList>
     }
   }
 
-  StreamSubscription? _onSyncStatus;
-
   @override
   void initState() {
     _initReceiveSharingIntent();
@@ -358,15 +361,13 @@ class ChatListController extends State<ChatList>
     _hackyWebRTCFixForWeb();
     CallKeepManager().initialize();
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-      searchServer = await Store().getItem(_serverStoreNamespace);
+      if (mounted) {
+        searchServer = await Store().getItem(_serverStoreNamespace);
+        Matrix.of(context).backgroundPush?.setupPush();
+      }
     });
 
     _checkTorBrowser();
-    Matrix.of(context).backgroundPush?.setupPush();
-    _onSyncStatus =
-        Matrix.of(context).client.onSyncStatus.stream.listen((status) {
-      Logs().v('Sync Status: ${status.status.name}');
-    });
 
     super.initState();
   }
@@ -376,7 +377,6 @@ class ChatListController extends State<ChatList>
     _intentDataStreamSubscription?.cancel();
     _intentFileStreamSubscription?.cancel();
     _intentUriStreamSubscription?.cancel();
-    _onSyncStatus?.cancel();
     scrollController.removeListener(_onScroll);
     super.dispose();
   }
@@ -502,7 +502,8 @@ class ChatListController extends State<ChatList>
             .map(
               (space) => AlertDialogAction(
                 key: space.id,
-                label: space.displayname,
+                label: space
+                    .getLocalizedDisplayname(MatrixLocals(L10n.of(context)!)),
               ),
             )
             .toList());
@@ -680,7 +681,7 @@ class ChatListController extends State<ChatList>
   }
 
   Future<void> dehydrate() =>
-      SettingsAccountController.dehydrateDevice(context);
+      SettingsSecurityController.dehydrateDevice(context);
 }
 
 enum EditBundleAction { addToBundle, removeFromBundle }

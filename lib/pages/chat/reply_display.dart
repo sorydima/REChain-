@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:matrix/matrix.dart';
 
-import 'package:rechainonline/utils/matrix_sdk_extensions.dart/matrix_locals.dart';
+import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
+import '../../config/themes.dart';
 import 'chat.dart';
 import 'events/reply_content.dart';
 
@@ -14,7 +15,8 @@ class ReplyDisplay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
-      duration: const Duration(milliseconds: 300),
+      duration: rechainonlineThemes.animationDuration,
+      curve: rechainonlineThemes.animationCurve,
       height: controller.editEvent != null || controller.replyEvent != null
           ? 56
           : 0,
@@ -78,7 +80,7 @@ class _EditContent extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
                 maxLines: 1,
                 style: TextStyle(
-                  color: Theme.of(context).textTheme.bodyText2!.color,
+                  color: Theme.of(context).textTheme.bodyMedium!.color,
                 ),
               );
             }),

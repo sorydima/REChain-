@@ -1337,6 +1337,51 @@
 },
 "@yourUserId": {
 },
+"@commandHint_googly": {
+},
+"@cuddleContent": {
+"placeholders": {
+"senderName": {
+}
+},
+"type": "text"
+},
+"@googlyEyesContent": {
+"placeholders": {
+"senderName": {
+}
+},
+"type": "text"
+},
+"@hugContent": {
+"placeholders": {
+"senderName": {
+}
+},
+"type": "text"
+},
+"@identity": {
+"placeholders": {
+},
+"type": "text"
+},
+"@ignore": {
+"placeholders": {
+},
+"type": "text"
+},
+"@ignoredUsers": {
+"placeholders": {
+},
+"type": "text"
+},
+"commandHint_googly": "ارسال چند چشم گوگولی",
+"cuddleContent": "{senderName} شما را در آغوش می‌گیرد",
+"googlyEyesContent": "{senderName} به شما چشمان گوگولی می‌فرستد",
+"hugContent": "{senderName} شما را بغل می‌کند",
+"identity": "هویت",
+"ignore": "نادیده‌گرفتن",
+"ignoredUsers": "کاربران نادیده‌گرفته شده",
 "alias": "نام مستعار",
 "allSpaces": "همہ اسپیسها",
 "allSuggestedRoomsJoined": "همہ اتاقهای پیشنھادی را پیوستید",

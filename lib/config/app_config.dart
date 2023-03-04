@@ -22,6 +22,7 @@ abstract class AppConfig {
   static String _privacyUrl = 'https://rechain.online/en/privacy.html';
   static String get privacyUrl => _privacyUrl;
   static const String enablePushTutorial = 'https://rechain.online/en/privacy.html';
+  static const String encryptionTutorial = 'https://rechain.online/en/privacy.html#4';
   static const String appId = 'com.rechain.online';
   static const String appOpenUrlScheme = 'com.rechain';
   static String _webBaseUrl = 'https://rechain.online/web';

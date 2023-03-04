@@ -8,7 +8,7 @@ import 'package:rechainonline/widgets/matrix.dart';
 import '../../../config/app_config.dart';
 import '../../../config/setting_keys.dart';
 import '../../../pages/image_viewer/image_viewer.dart';
-import '../../../utils/matrix_sdk_extensions.dart/matrix_locals.dart';
+import '../../../utils/matrix_sdk_extensions/matrix_locals.dart';
 import '../../../utils/url_launcher.dart';
 
 class HtmlMessage extends StatelessWidget {
@@ -46,9 +46,10 @@ class HtmlMessage extends StatelessWidget {
       defaultTextStyle: defaultTextStyle,
       emoteSize: emoteSize,
       linkStyle: linkStyle ??
-          themeData.textTheme.bodyText2!.copyWith(
+          themeData.textTheme.bodyMedium!.copyWith(
             color: themeData.colorScheme.secondary,
             decoration: TextDecoration.underline,
+            decorationColor: themeData.colorScheme.secondary,
           ),
       shrinkToFit: true,
       maxLines: maxLines,

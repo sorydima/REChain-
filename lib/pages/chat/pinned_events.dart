@@ -9,7 +9,7 @@ import 'package:matrix_link_text/link_text.dart';
 
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/pages/chat/chat.dart';
-import 'package:rechainonline/utils/matrix_sdk_extensions.dart/matrix_locals.dart';
+import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
 import 'package:rechainonline/utils/url_launcher.dart';
 
 class PinnedEvents extends StatelessWidget {
@@ -21,10 +21,11 @@ class PinnedEvents extends StatelessWidget {
       BuildContext context, List<Event?> events) async {
     final eventId = events.length == 1
         ? events.single?.eventId
-        : await showModalActionSheet<String>(
+        : await showConfirmationDialog<String>(
             context: context,
+            title: L10n.of(context)!.pinMessage,
             actions: events
-                .map((event) => SheetAction(
+                .map((event) => AlertDialogAction(
                       key: event?.eventId ?? '',
                       label: event?.calcLocalizedBodyFallback(
                             MatrixLocals(L10n.of(context)!),
@@ -120,6 +121,9 @@ class PinnedEvents extends StatelessWidget {
                                     .onSurfaceVariant,
                                 fontSize: fontSize,
                                 decoration: TextDecoration.underline,
+                                decorationColor: Theme.of(context)
+                                    .colorScheme
+                                    .onSurfaceVariant,
                               ),
                               onLinkTap: (url) =>
                                   UrlLauncher(context, url).launchUrl(),

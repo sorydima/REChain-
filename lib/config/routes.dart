@@ -19,7 +19,6 @@ import 'package:rechainonline/pages/new_private_chat/new_private_chat.dart';
 import 'package:rechainonline/pages/new_space/new_space.dart';
 import 'package:rechainonline/pages/settings/settings.dart';
 import 'package:rechainonline/pages/settings_3pid/settings_3pid.dart';
-import 'package:rechainonline/pages/settings_account/settings_account.dart';
 import 'package:rechainonline/pages/settings_chat/settings_chat.dart';
 import 'package:rechainonline/pages/settings_emotes/settings_emotes.dart';
 import 'package:rechainonline/pages/settings_ignore_list/settings_ignore_list.dart';
@@ -94,6 +93,13 @@ class AppRoutes {
             VWidget(
               path: '/archive',
               widget: const Archive(),
+              stackedRoutes: [
+                VWidget(
+                  path: ':roomid',
+                  widget: const Chat(),
+                  buildTransition: _dynamicTransition,
+                ),
+              ],
             ),
             VWidget(
               path: '/newprivatechat',
@@ -220,13 +226,25 @@ class AppRoutes {
                 ),
               ],
             ),
-            VWidget(
+            VNester(
               path: '/archive',
-              widget: const TwoColumnLayout(
-                mainView: Archive(),
-                sideView: EmptyPage(),
+              widgetBuilder: (child) => TwoColumnLayout(
+                mainView: const Archive(),
+                sideView: child,
               ),
               buildTransition: _fadeTransition,
+              nestedRoutes: [
+                VWidget(
+                  path: '',
+                  widget: const EmptyPage(),
+                  buildTransition: _dynamicTransition,
+                ),
+                VWidget(
+                  path: ':roomid',
+                  widget: const Chat(),
+                  buildTransition: _dynamicTransition,
+                ),
+              ],
             ),
           ],
         ),
@@ -326,38 +344,31 @@ class AppRoutes {
           ],
         ),
         VWidget(
-          path: 'account',
-          widget: const SettingsAccount(),
-          buildTransition: _dynamicTransition,
+          path: 'addaccount',
+          widget: const HomeserverPicker(),
+          buildTransition: _fadeTransition,
           stackedRoutes: [
             VWidget(
-              path: 'add',
-              widget: const HomeserverPicker(),
+              path: 'login',
+              widget: const Login(),
               buildTransition: _fadeTransition,
-              stackedRoutes: [
-                VWidget(
-                  path: 'login',
-                  widget: const Login(),
-                  buildTransition: _fadeTransition,
-                ),
-                VWidget(
-                    path: 'connect',
-                    widget: const ConnectPage(),
-                    buildTransition: _fadeTransition,
-                    stackedRoutes: [
-                      VWidget(
-                        path: 'login',
-                        widget: const Login(),
-                        buildTransition: _fadeTransition,
-                      ),
-                      VWidget(
-                        path: 'signup',
-                        widget: const SignupPage(),
-                        buildTransition: _fadeTransition,
-                      ),
-                    ]),
-              ],
             ),
+            VWidget(
+                path: 'connect',
+                widget: const ConnectPage(),
+                buildTransition: _fadeTransition,
+                stackedRoutes: [
+                  VWidget(
+                    path: 'login',
+                    widget: const Login(),
+                    buildTransition: _fadeTransition,
+                  ),
+                  VWidget(
+                    path: 'signup',
+                    widget: const SignupPage(),
+                    buildTransition: _fadeTransition,
+                  ),
+                ]),
           ],
         ),
         VWidget(

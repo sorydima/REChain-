@@ -12,6 +12,7 @@ import 'package:matrix/matrix.dart';
 import 'package:vibration/vibration.dart';
 import 'package:wakelock/wakelock.dart';
 
+import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
 import 'package:rechainonline/widgets/avatar.dart';
 import 'pip/pip_view.dart';
@@ -111,7 +112,9 @@ class Calling extends StatefulWidget {
 class MyCallingPage extends State<Calling> {
   Room? get room => call.room;
 
-  String get displayName => call.displayName ?? '';
+  String get displayName => call.room.getLocalizedDisplayname(
+        MatrixLocals(L10n.of(context)!),
+      );
 
   String get callId => widget.callId;
 
@@ -446,7 +449,9 @@ class MyCallingPage extends State<Calling> {
     if (call.localHold || call.remoteOnHold) {
       var title = '';
       if (call.localHold) {
-        title = '${call.displayName} held the call.';
+        title = '${call.room.getLocalizedDisplayname(
+          MatrixLocals(L10n.of(context)!),
+        )} held the call.';
       } else if (call.remoteOnHold) {
         title = 'You held the call.';
       }

@@ -2566,6 +2566,48 @@
 "type": "text",
 "placeholders": {}
 },
+"@deviceKeys": {
+},
+"@disableEncryptionWarning": {
+},
+"@encryptThisChat": {
+},
+"@endToEndEncryption": {
+},
+"@enterInviteLinkOrMatrixId": {
+},
+"@fileIsTooBigForServer": {
+},
+"@letsStart": {
+},
+"@newSpaceDescription": {
+},
+"@noBackupWarning": {
+},
+"@noOtherDevicesFound": {
+},
+"@noSearchResult": {
+},
+"@reopenChat": {
+},
+"@sorryThatsNotPossible": {
+},
+"@startFirstChat": {
+},
+"deviceKeys": "Seadme võtmed:",
+"disableEncryptionWarning": "Kui vestluses on krüptimine kasutusele võetud, siis turvalisuse huvides ei saa seda hiljem välja lülitada.",
+"encryptThisChat": "Krüpti see vestlus",
+"endToEndEncryption": "Läbiv krüptimine",
+"enterInviteLinkOrMatrixId": "Sisesta kutse link või REChain 🪐 ID...",
+"fileIsTooBigForServer": "Serveri seadistuste alusel on see fail saatmiseks liiga suur.",
+"letsStart": "Sõidame!",
+"newSpaceDescription": "Kogukonnad võimaldavad sul koondada erinevaid vestlusi ning korraldada avalikku või privaatset ühistegevust.",
+"noBackupWarning": "Hoiatus! Kui sa ei lülita sisse vestluse varundust, siis sul puudub hiljem ligipääs krüptitud sõnumitele. Me tungivalt soovitame, et palun lülita vestluse varundamine sisse enne väljalogimist.",
+"noOtherDevicesFound": "Muid seadmeid ei leidu",
+"noSearchResult": "Sobivaid otsingutulemusi ei leidu.",
+"reopenChat": "Alusta vestlust uuesti",
+"sorryThatsNotPossible": "Vabandust... see ei ole võimalik",
+"startFirstChat": "Alusta oma esimest vestlust",
 "chatHasBeenAddedToThisSpace": "Lisasime vestluse kogukonda",
 "@chatHasBeenAddedToThisSpace": {},
 "addToSpace": "Lisa kogukonda",

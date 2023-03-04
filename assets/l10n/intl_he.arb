@@ -1570,6 +1570,18 @@
 "server2": {}
 }
 },
+"@bubbleSize": {
+"placeholders": {
+},
+"type": "text"
+},
+"@updateAvailable": {
+},
+"@updateNow": {
+},
+"bubbleSize": "גודל בועות",
+"updateAvailable": "עדכון REChain 🪐 זמין",
+"updateNow": "התחל עדכון ברקע",
 "none": "ללא",
 "@none": {
 "type": "text",

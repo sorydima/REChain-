@@ -21,10 +21,8 @@ class ArchiveController extends State<Archive> {
   Future<List<Room>> getArchive(BuildContext context) async {
     final archive = this.archive;
     if (archive != null) return archive;
-    return await Matrix.of(context).client.loadArchive();
+    return this.archive = await Matrix.of(context).client.loadArchive();
   }
-
-  void forgetAction(int i) => setState(() => archive?.removeAt(i));
 
   void forgetAllAction() async {
     final archive = this.archive;
@@ -44,7 +42,7 @@ class ArchiveController extends State<Archive> {
       context: context,
       future: () async {
         while (archive.isNotEmpty) {
-          Logs().v('Forget room ${archive.last.displayname}');
+          Logs().v('Forget room ${archive.last.getLocalizedDisplayname()}');
           await archive.last.forget();
           archive.removeLast();
         }

@@ -2629,6 +2629,48 @@
 "min": {}
 }
 },
+"@deviceKeys": {
+},
+"@disableEncryptionWarning": {
+},
+"@encryptThisChat": {
+},
+"@endToEndEncryption": {
+},
+"@enterInviteLinkOrMatrixId": {
+},
+"@fileIsTooBigForServer": {
+},
+"@letsStart": {
+},
+"@newSpaceDescription": {
+},
+"@noBackupWarning": {
+},
+"@noOtherDevicesFound": {
+},
+"@noSearchResult": {
+},
+"@reopenChat": {
+},
+"@sorryThatsNotPossible": {
+},
+"@startFirstChat": {
+},
+"deviceKeys": "Aygıt anahtarları:",
+"disableEncryptionWarning": "Güvenlik nedeniyle, daha önce etkinleştirildiği bir sohbette şifrelemeyi devre dışı bırakamazsınız.",
+"encryptThisChat": "Bu sohbeti şifrele",
+"endToEndEncryption": "Uçtan uca şifreleme",
+"enterInviteLinkOrMatrixId": "Davet bağlantısını veya REChain 🪐 kimliğini girin...",
+"fileIsTooBigForServer": "Sunucu, dosyanın gönderilemeyecek kadar büyük olduğunu bildiriyor.",
+"letsStart": "Başlayalım",
+"newSpaceDescription": "Alanlar, sohbetlerinizi birleştirmenize ve özel veya genel topluluklar oluşturmanıza olanak tanır.",
+"noBackupWarning": "Uyarı! Sohbet yedeklemesini etkinleştirmezseniz, şifrelenen mesajlarınıza erişiminizi kaybedersiniz. Oturumu kapatmadan önce sohbet yedeklemesini etkinleştirmeniz önemle tavsiye edilir.",
+"noOtherDevicesFound": "Başka aygıt bulunamadı",
+"noSearchResult": "Eşleşen arama sonucu yok.",
+"reopenChat": "Sohbeti yeniden aç",
+"sorryThatsNotPossible": "Üzgünüm... bu mümkün değil",
+"startFirstChat": "İlk sohbetinizi başlatın",
 "messageInfo": "Mesaj bilgileri",
 "@messageInfo": {},
 "time": "Zaman",

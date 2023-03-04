@@ -20,37 +20,41 @@ class NewPrivateChatView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final qrCodeSize =
+        min(MediaQuery.of(context).size.width - 16, 200).toDouble();
     return Scaffold(
       appBar: AppBar(
         leading: const BackButton(),
         title: Text(L10n.of(context)!.newChat),
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         actions: [
-          TextButton(
-            onPressed: () => VRouter.of(context).to('/newgroup'),
-            child: Text(
-              L10n.of(context)!.createNewGroup,
-              style: TextStyle(color: Theme.of(context).colorScheme.secondary),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextButton(
+              onPressed: () => VRouter.of(context).to('/newgroup'),
+              child: Text(
+                L10n.of(context)!.createNewGroup,
+                style:
+                    TextStyle(color: Theme.of(context).colorScheme.secondary),
+              ),
             ),
           )
         ],
       ),
-      body: MaxWidthBody(
-        withScrolling: true,
-        child: Column(
-          children: [
-            Container(
-              margin: const EdgeInsets.all(_qrCodePadding),
-              alignment: Alignment.center,
-              padding: const EdgeInsets.all(_qrCodePadding * 2),
-              child: InkWell(
-                onTap: controller.inviteAction,
-                borderRadius: BorderRadius.circular(12),
+      body: Column(
+        children: [
+          Expanded(
+            child: MaxWidthBody(
+              withScrolling: true,
+              child: Container(
+                margin: const EdgeInsets.all(_qrCodePadding),
+                alignment: Alignment.center,
+                padding: const EdgeInsets.all(_qrCodePadding * 2),
                 child: Material(
                   borderRadius: BorderRadius.circular(12),
-                  elevation: 6,
+                  elevation: 10,
                   color: Colors.white,
-                  shadowColor: const Color(0x44000000),
+                  shadowColor: Theme.of(context).appBarTheme.shadowColor,
                   clipBehavior: Clip.hardEdge,
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -59,35 +63,59 @@ class NewPrivateChatView extends StatelessWidget {
                         data:
                             'https://matrix.to/#/${Matrix.of(context).client.userID}',
                         version: QrVersions.auto,
-                        size: min(MediaQuery.of(context).size.width - 16, 200),
+                        size: qrCodeSize,
                       ),
-                      Image.asset('assets/share.png', width: 48, height: 48),
+                      TextButton.icon(
+                        style: TextButton.styleFrom(
+                          fixedSize:
+                              Size.fromWidth(qrCodeSize - (2 * _qrCodePadding)),
+                        ),
+                        icon: Icon(Icons.adaptive.share_outlined),
+                        label: Text(L10n.of(context)!.shareYourInviteLink),
+                        onPressed: controller.inviteAction,
+                      ),
+                      const SizedBox(height: 8),
+                      if (PlatformInfos.isMobile) ...[
+                        OutlinedButton.icon(
+                          style: OutlinedButton.styleFrom(
+                            backgroundColor:
+                                Theme.of(context).colorScheme.primaryContainer,
+                            fixedSize: Size.fromWidth(
+                              qrCodeSize - (2 * _qrCodePadding),
+                            ),
+                          ),
+                          icon: const Icon(Icons.qr_code_scanner_outlined),
+                          label: Text(L10n.of(context)!.scanQrCode),
+                          onPressed: controller.openScannerAction,
+                        ),
+                        const SizedBox(height: 8),
+                      ],
                     ],
                   ),
                 ),
               ),
             ),
-            ListTile(
-              subtitle: Text(
-                L10n.of(context)!.createNewChatExplaination,
-                textAlign: TextAlign.center,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(12),
+          ),
+          MaxWidthBody(
+            withScrolling: false,
+            child: Padding(
+              padding: const EdgeInsets.all(12.0),
               child: Form(
                 key: controller.formKey,
                 child: TextFormField(
                   controller: controller.controller,
                   autocorrect: false,
-                  autofocus: !PlatformInfos.isMobile,
                   textInputAction: TextInputAction.go,
                   focusNode: controller.textFieldFocus,
                   onFieldSubmitted: controller.submitAction,
                   validator: controller.validateForm,
                   inputFormatters: controller.removeMatrixToFormatters,
                   decoration: InputDecoration(
-                    labelText: L10n.of(context)!.typeInInviteLinkManually,
+                    contentPadding: const EdgeInsets.symmetric(
+                      horizontal: 12,
+                      vertical: 6,
+                    ),
+                    labelText: L10n.of(context)!.enterInviteLinkOrMatrixId,
                     hintText: '@username',
                     prefixText: NewPrivateChatController.prefixNoProtocol,
                     suffixIcon: IconButton(
@@ -98,17 +126,9 @@ class NewPrivateChatView extends StatelessWidget {
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: PlatformInfos.isMobile && !controller.hideFab
-          ? FloatingActionButton.extended(
-              onPressed: controller.openScannerAction,
-              label: Text(L10n.of(context)!.scanQrCode),
-              icon: const Icon(Icons.camera_alt_outlined),
-            )
-          : null,
     );
   }
 }

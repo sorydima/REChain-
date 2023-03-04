@@ -6,10 +6,11 @@ import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:future_loading_dialog/future_loading_dialog.dart';
 import 'package:matrix/matrix.dart';
 import 'package:punycode/punycode.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 import 'package:vrouter/vrouter.dart';
 
 import 'package:rechainonline/config/app_config.dart';
+import 'package:rechainonline/utils/adaptive_bottom_sheet.dart';
 import 'package:rechainonline/widgets/matrix.dart';
 import 'package:rechainonline/widgets/profile_bottom_sheet.dart';
 import 'package:rechainonline/widgets/public_room_bottom_sheet.dart';
@@ -55,17 +56,17 @@ class UrlLauncher {
             // to an apple maps thingy
             // https://developer.apple.com/library/archive/featuredarticles/iPhoneURLScheme_Reference/MapLinks/MapLinks.html
             final ll = '${latlong.first},${latlong.last}';
-            launch('https://maps.apple.com/?q=$ll&sll=$ll');
+            launchUrlString('https://maps.apple.com/?q=$ll&sll=$ll');
           } else {
             // transmute geo URIs on desktop to openstreetmap links, as those usually can't handle
             // geo URIs
-            launch(
+            launchUrlString(
                 'https://www.openstreetmap.org/?mlat=${latlong.first}&mlon=${latlong.last}#map=16/${latlong.first}/${latlong.last}');
           }
           return;
         }
       }
-      launch(url!);
+      launchUrlString(url!);
       return;
     }
     if (uri.host.isEmpty) {
@@ -83,7 +84,10 @@ class UrlLauncher {
           ? 'xn--$hostPartPunycode'
           : hostPart;
     }).join('.');
-    launch(uri.replace(host: newHost).toString());
+    // Force LaunchMode.externalApplication, otherwise url_launcher will default
+    // to opening links in a webview on mobile platforms.
+    launchUrlString(uri.replace(host: newHost).toString(),
+        mode: LaunchMode.externalApplication);
   }
 
   void openMatrixToUrl() async {
@@ -145,7 +149,7 @@ class UrlLauncher {
         }
         return;
       } else {
-        await showModalBottomSheet(
+        await showAdaptiveBottomSheet(
           context: context,
           builder: (c) => PublicRoomBottomSheet(
             roomAlias: identityParts.primaryIdentifier,
@@ -182,7 +186,7 @@ class UrlLauncher {
         }
       }
     } else if (identityParts.primaryIdentifier.sigil == '@') {
-      await showModalBottomSheet(
+      await showAdaptiveBottomSheet(
         context: context,
         builder: (c) => ProfileBottomSheet(
           userId: identityParts.primaryIdentifier,

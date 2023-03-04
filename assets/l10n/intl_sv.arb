@@ -2778,6 +2778,329 @@
 },
 "@yourUserId": {
 },
+"@allSpaces": {
+},
+"@appearOnTop": {
+},
+"@appearOnTopDetails": {
+},
+"@callingAccount": {
+},
+"@callingAccountDetails": {
+},
+"@callingPermissions": {
+},
+"@commandHint_cuddle": {
+},
+"@commandHint_googly": {
+},
+"@commandHint_hug": {
+},
+"@commandHint_markasdm": {
+},
+"@commandHint_markasgroup": {
+},
+"@confirmMatrixId": {
+},
+"@countFiles": {
+"placeholders": {
+"count": {
+}
+}
+},
+"@cuddleContent": {
+"placeholders": {
+"senderName": {
+}
+},
+"type": "text"
+},
+"@custom": {
+},
+"@dehydrate": {
+},
+"@dehydrateShare": {
+},
+"@dehydrateTor": {
+},
+"@dehydrateTorLong": {
+},
+"@dehydrateWarning": {
+},
+"@deviceKeys": {
+},
+"@disableEncryptionWarning": {
+},
+"@doNotShowAgain": {
+},
+"@enableAutoBackups": {
+},
+"@encryptThisChat": {
+},
+"@endToEndEncryption": {
+},
+"@enterInviteLinkOrMatrixId": {
+},
+"@enterRoom": {
+},
+"@enterSpace": {
+},
+"@fileIsTooBigForServer": {
+},
+"@foregroundServiceRunning": {
+},
+"@googlyEyesContent": {
+"placeholders": {
+"senderName": {
+}
+},
+"type": "text"
+},
+"@hideUnimportantStateEvents": {
+},
+"@hugContent": {
+"placeholders": {
+"senderName": {
+}
+},
+"type": "text"
+},
+"@hydrate": {
+},
+"@hydrateTor": {
+},
+"@hydrateTorLong": {
+},
+"@indexedDbErrorLong": {
+},
+"@indexedDbErrorTitle": {
+},
+"@letsStart": {
+},
+"@newGroup": {
+},
+"@newSpace": {
+},
+"@newSpaceDescription": {
+},
+"@noBackupWarning": {
+},
+"@noEmailWarning": {
+},
+"@noKeyForThisMessage": {
+},
+"@noOtherDevicesFound": {
+},
+"@noSearchResult": {
+},
+"@numChats": {
+"placeholders": {
+"number": {
+}
+},
+"type": "number"
+},
+"@otherCallingPermissions": {
+},
+"@pleaseEnterRecoveryKey": {
+},
+"@pleaseEnterRecoveryKeyDescription": {
+},
+"@recoveryKey": {
+},
+"@recoveryKeyLost": {
+},
+"@reopenChat": {
+},
+"@saveKeyManuallyDescription": {
+},
+"@screenSharingDetail": {
+},
+"@screenSharingTitle": {
+},
+"@separateChatTypes": {
+"placeholders": {
+},
+"type": "text"
+},
+"@showDirectChatsInSpaces": {
+"placeholders": {
+},
+"type": "text"
+},
+"@sorryThatsNotPossible": {
+},
+"@startFirstChat": {
+},
+"@storeInAndroidKeystore": {
+},
+"@storeInAppleKeyChain": {
+},
+"@storeInSecureStorageDescription": {
+},
+"@storeSecurlyOnThisDevice": {
+},
+"@stories": {
+},
+"@supposedMxid": {
+"placeholders": {
+"mxid": {
+}
+},
+"type": "text"
+},
+"@unlockOldMessages": {
+},
+"@updateAvailable": {
+},
+"@updateNow": {
+},
+"@user": {
+},
+"@users": {
+},
+"@wasDirectChatDisplayName": {
+"placeholders": {
+"oldDisplayName": {
+}
+},
+"type": "text"
+},
+"@whyIsThisMessageEncrypted": {
+},
+"@youAcceptedTheInvitation": {
+},
+"@youBannedUser": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youHaveWithdrawnTheInvitationFor": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youInvitedBy": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youInvitedUser": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youJoinedTheChat": {
+},
+"@youKicked": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youKickedAndBanned": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youRejectedTheInvitation": {
+},
+"@youUnbannedUser": {
+"placeholders": {
+"user": {
+}
+}
+},
+"allSpaces": "Alla utrymmen",
+"appearOnTop": "Visa ovanpå",
+"appearOnTopDetails": "Tillåt att appen visas ovanpå (behövs inte om du redan har REChain 🪐 konfigurerat som ett samtalskonto)",
+"callingAccount": "Samtalskonto",
+"callingAccountDetails": "Tillåt REChain 🪐 att använda Androids ring-app.",
+"callingPermissions": "Samtalsbehörighet",
+"commandHint_cuddle": "Skicka en omfamning",
+"commandHint_googly": "Skicka några googly ögon",
+"commandHint_hug": "Skicka en kram",
+"commandHint_markasdm": "Märk som rum för direktmeddelanden",
+"commandHint_markasgroup": "Märk som grupp",
+"confirmMatrixId": "Bekräfta ditt REChain 🪐-ID för att radera ditt konto.",
+"countFiles": "{count} filer",
+"cuddleContent": "{senderName} omfamnar dig",
+"custom": "Anpassad",
+"dehydrate": "Exportera sessionen och rensa enheten",
+"dehydrateShare": "Detta är din privata REChain 🪐-export. Tappa inte bort den och håll den för dig själv.",
+"dehydrateTor": "TOR-användare: Exportera session",
+"dehydrateTorLong": "TOR-användare rekommenderas att exportera sessionen innan fönstret stängs.",
+"dehydrateWarning": "Denna åtgärd kan inte ångras. Försäkra dig om att backupen är i säkert förvar.",
+"deviceKeys": "Enhetsnycklar:",
+"disableEncryptionWarning": "Av säkerhetsskäl kan du inte stänga av kryptering i en chatt där det tidigare aktiverats.",
+"doNotShowAgain": "Visa inte igen",
+"enableAutoBackups": "Aktivera automatisk säkerhetskopiering",
+"encryptThisChat": "Kryptera denna chatt",
+"endToEndEncryption": "Totalsträckskryptering",
+"enterInviteLinkOrMatrixId": "Ange länk för inbjudan eller REChain 🪐-ID...",
+"enterRoom": "Gå till rummet",
+"enterSpace": "Gå till utrymme",
+"fileIsTooBigForServer": "Servern informerar om att filen är för stor för att skickas.",
+"foregroundServiceRunning": "Denna notifikation visas när förgrundstjänsten körs.",
+"googlyEyesContent": "{senderName} skickar dig googly ögon",
+"hideUnimportantStateEvents": "Göm oviktiga tillståndshändelser",
+"hugContent": "{senderName} kramar dig",
+"hydrate": "Återställ från säkerhetskopia",
+"hydrateTor": "TOR-användare: Importera session från tidigare export",
+"hydrateTorLong": "Exporterade du sessionen när du senast använde TOR? Importera den enkelt och fortsätt chatta.",
+"indexedDbErrorLong": "Meddelandelagring är tyvärr inte aktiverat i privat läge som standard.\nGå till\n - about:config\n - sätt dom.indexedDB.privateBrowsing.enabled till true\nAnnars går det inte att använda REChain 🪐.",
+"indexedDbErrorTitle": "Problem med privat läge",
+"letsStart": "Lås oss börja",
+"newGroup": "Ny grupp",
+"newSpace": "Nytt utrymme",
+"newSpaceDescription": "Utrymmen möjliggör konsolidering av chattar och att bygga privata eller offentliga gemenskaper.",
+"noBackupWarning": "Varning! Om du inte aktiverar säkerhetskopiering av chattar så tappar du åtkomst till krypterade meddelanden. Det är rekommenderat att du aktiverar säkerhetskopiering innan du loggar ut.",
+"noEmailWarning": "Utan en giltig e-postadress kommer du inte kunna återställa ditt lösenord. Om du inte vill ange en e-postadress, tryck på knappen igen för att fortsätta.",
+"noKeyForThisMessage": "Detta kan hända om meddelandet skickas innan du har loggat in på ditt konto på denna enhet.\n\nDet kan också vara så att avsändaren har blockerat din enhet eller att något gick fel med Internetanslutningen.\n\nKan du läsa meddelandet i en annan session? Isåfall kan du överföra meddelandet från den sessionen! Gå till Inställningar > Enhet och säkerställ att dina enheter har verifierat varandra. När du öppnar rummet nästa gång och båda sessionerna är i förgrunden, så kommer nycklarna att överföras automatiskt.\n\nOm du vill behålla nycklarna när du loggar ut eller byter enhet, kontrollera att du har aktiverat säkerhetskopiering av chattar i inställningarna.",
+"noOtherDevicesFound": "Inga andra enheter hittades",
+"noSearchResult": "Inga träffar.",
+"numChats": "{number} chattar",
+"otherCallingPermissions": "Mikrofon, kamera och andra behörigheter för REChain 🪐",
+"pleaseEnterRecoveryKey": "Ange din återställningsnyckel:",
+"pleaseEnterRecoveryKeyDescription": "Ange din återställningsnyckel från en tidigare session för att låsa upp äldre meddelanden. Din återställningsnyckel är INTE ditt lösenord.",
+"recoveryKey": "Återställningsnyckel",
+"recoveryKeyLost": "Borttappad återställningsnyckel?",
+"reopenChat": "Återöppna chatt",
+"saveKeyManuallyDescription": "Spara nyckeln manuellt genom att aktivera dela-funktionen eller urklippshanteraren på enheten.",
+"screenSharingDetail": "Du delar din skärm i REChain 🪐",
+"screenSharingTitle": "skärmdelning",
+"separateChatTypes": "Separata direktchattar och grupper",
+"showDirectChatsInSpaces": "Visa relaterade direktchattar i utrymmen",
+"sorryThatsNotPossible": "Det där är inte möjligt",
+"startFirstChat": "Starta din första chatt",
+"storeInAndroidKeystore": "Lagra i Androids nyckellagring (KeyStore)",
+"storeInAppleKeyChain": "Lagra i Apples nyckelkedja (KeyChain)",
+"storeInSecureStorageDescription": "Lagra återställningsnyckeln på säker plats på denna enhet.",
+"storeSecurlyOnThisDevice": "Lagra säkert på denna enhet",
+"stories": "Berättelser",
+"supposedMxid": "Detta bör vara {mxid}",
+"unlockOldMessages": "Lås upp äldre meddelanden",
+"updateAvailable": "REChain 🪐-uppdatering tillgänglig",
+"updateNow": "Påbörja uppdatering i bakgrunden",
+"user": "Användare",
+"users": "Användare",
+"wasDirectChatDisplayName": "Tom chatt (var {oldDisplayName})",
+"whyIsThisMessageEncrypted": "Varför kan inte detta meddelande läsas?",
+"youAcceptedTheInvitation": "👍 Du accepterade inbjudan",
+"youBannedUser": "Du förbjöd {user}",
+"youHaveWithdrawnTheInvitationFor": "Du har återkallat inbjudan till {user}",
+"youInvitedBy": "📩 Du har blivit inbjuden av {user}",
+"youInvitedUser": "📩 Du bjöd in {user}",
+"youJoinedTheChat": "Du gick med i chatten",
+"youKicked": "👞 Du sparkade ut {user}",
+"youKickedAndBanned": "🙅 Du sparkade ut och förbjöd {user}",
+"youRejectedTheInvitation": "Du avvisade inbjudan",
+"youUnbannedUser": "Du återkallade förbudet för {user}",
 "addAccount": "Lägg till konto",
 "addDescription": "Lägg till beskrivning",
 "addToBundle": "Utöka paket",
