@@ -128,7 +128,7 @@ class LoginController extends State<Login> {
             context: context,
             useRootNavigator: false,
             message:
-                L10n.of(context)!.noMatrixServer(newDomain, oldHomeserver!),
+                L10n.of(context)!.norechainonlineServer(newDomain, oldHomeserver!),
             okLabel: L10n.of(context)!.ok,
             cancelLabel: L10n.of(context)!.cancel,
           );

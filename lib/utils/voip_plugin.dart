@@ -92,7 +92,7 @@ class VoipPlugin with WidgetsBindingObserver implements WebRTCDelegate {
           },
         ),
       );
-      Overlay.of(context).insert(overlayEntry!);
+      // Overlay.of(context).insert(overlayEntry!);
     }
   }
 

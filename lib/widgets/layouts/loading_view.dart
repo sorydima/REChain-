@@ -14,7 +14,6 @@ class LoadingView extends StatelessWidget {
   Widget build(BuildContext context) {
     WidgetsBinding.instance.addPostFrameCallback(
       (_) async {
-        await UpdateCheckerNoStore(context).checkUpdate();
         VRouter.of(context).to(
           Matrix.of(context).widget.clients.any(
                     (client) =>
