@@ -4,7 +4,6 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 
 import 'package:adaptive_dialog/adaptive_dialog.dart';
-import 'package:file_picker_cross/file_picker_cross.dart';
 import 'package:flutter_app_lock/flutter_app_lock.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
@@ -13,6 +12,7 @@ import 'package:intl/intl.dart';
 import 'package:matrix/matrix.dart';
 
 import 'package:rechainonline/config/setting_keys.dart';
+import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_file_extension.dart';
 import 'package:rechainonline/widgets/matrix.dart';
 import '../bootstrap/bootstrap_dialog.dart';
 import 'settings_security_view.dart';
@@ -56,7 +56,8 @@ class SettingsSecurityController extends State<SettingsSecurity> {
     );
     if (success.error == null) {
       ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(L10n.of(context)!.passwordHasBeenChanged)));
+        SnackBar(content: Text(L10n.of(context)!.passwordHasBeenChanged)),
+      );
     }
   }
 
@@ -151,7 +152,8 @@ class SettingsSecurityController extends State<SettingsSecurity> {
             auth: AuthenticationPassword(
               password: input.single,
               identifier: AuthenticationUserIdentifier(
-                  user: Matrix.of(context).client.userID!),
+                user: Matrix.of(context).client.userID!,
+              ),
             ),
           ),
     );
@@ -175,24 +177,23 @@ class SettingsSecurityController extends State<SettingsSecurity> {
     if (response != OkCancelResult.ok) {
       return;
     }
-    await showFutureLoadingDialog(
+    final file = await showFutureLoadingDialog(
       context: context,
       future: () async {
-        try {
-          final export = await Matrix.of(context).client.exportDump();
-          final filePickerCross = FilePickerCross(
-              Uint8List.fromList(const Utf8Codec().encode(export!)),
-              path:
-                  '/rechainonline-export-${DateFormat(DateFormat.YEAR_MONTH_DAY).format(DateTime.now())}.rechainonlinebackup',
-              fileExtension: 'rechainonlinebackup');
-          await filePickerCross.exportToStorage(
-            subject: L10n.of(context)!.dehydrateShare,
-          );
-        } catch (e, s) {
-          Logs().e('Export error', e, s);
-        }
+        final export = await Matrix.of(context).client.exportDump();
+        if (export == null) throw Exception('Export data is null.');
+
+        final exportBytes = Uint8List.fromList(
+          const Utf8Codec().encode(export),
+        );
+
+        final exportFileName =
+            'rechainonline-export-${DateFormat(DateFormat.YEAR_MONTH_DAY).format(DateTime.now())}.rechainonlinebackup';
+
+        return MatrixFile(bytes: exportBytes, name: exportFileName);
       },
     );
+    file.result?.save(context);
   }
 
   @override

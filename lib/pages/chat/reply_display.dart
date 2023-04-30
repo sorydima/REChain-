@@ -33,10 +33,14 @@ class ReplyDisplay extends StatelessWidget {
             ),
             Expanded(
               child: controller.replyEvent != null
-                  ? ReplyContent(controller.replyEvent!,
-                      timeline: controller.timeline!)
-                  : _EditContent(controller.editEvent
-                      ?.getDisplayEvent(controller.timeline!)),
+                  ? ReplyContent(
+                      controller.replyEvent!,
+                      timeline: controller.timeline!,
+                    )
+                  : _EditContent(
+                      controller.editEvent
+                          ?.getDisplayEvent(controller.timeline!),
+                    ),
             ),
           ],
         ),
@@ -54,7 +58,7 @@ class _EditContent extends StatelessWidget {
   Widget build(BuildContext context) {
     final event = this.event;
     if (event == null) {
-      return Container();
+      return const SizedBox.shrink();
     }
     return Row(
       children: <Widget>[
@@ -64,26 +68,27 @@ class _EditContent extends StatelessWidget {
         ),
         Container(width: 15.0),
         FutureBuilder<String>(
-            future: event.calcLocalizedBody(
-              MatrixLocals(L10n.of(context)!),
-              withSenderNamePrefix: false,
-              hideReply: true,
-            ),
-            builder: (context, snapshot) {
-              return Text(
-                snapshot.data ??
-                    event.calcLocalizedBodyFallback(
-                      MatrixLocals(L10n.of(context)!),
-                      withSenderNamePrefix: false,
-                      hideReply: true,
-                    ),
-                overflow: TextOverflow.ellipsis,
-                maxLines: 1,
-                style: TextStyle(
-                  color: Theme.of(context).textTheme.bodyMedium!.color,
-                ),
-              );
-            }),
+          future: event.calcLocalizedBody(
+            MatrixLocals(L10n.of(context)!),
+            withSenderNamePrefix: false,
+            hideReply: true,
+          ),
+          builder: (context, snapshot) {
+            return Text(
+              snapshot.data ??
+                  event.calcLocalizedBodyFallback(
+                    MatrixLocals(L10n.of(context)!),
+                    withSenderNamePrefix: false,
+                    hideReply: true,
+                  ),
+              overflow: TextOverflow.ellipsis,
+              maxLines: 1,
+              style: TextStyle(
+                color: Theme.of(context).textTheme.bodyMedium!.color,
+              ),
+            );
+          },
+        ),
       ],
     );
   }

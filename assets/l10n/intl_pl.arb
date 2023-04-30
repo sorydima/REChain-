@@ -312,7 +312,7 @@
 "type": "text",
 "placeholders": {}
 },
-"changeTheHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@changeTheHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -789,7 +789,7 @@
 "type": "text",
 "placeholders": {}
 },
-"enterYourHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@enterYourHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -1307,7 +1307,7 @@
 "type": "text",
 "placeholders": {}
 },
-"pleaseEnterArechainonlineIdentifier": "Wprowadź Katya 👽 AI 🧠 REChain 🪐 Blockchain Node Network ID.",
+"pleaseEnterArechainonlineIdentifier": "Wprowadź Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network ID.",
 "@pleaseEnterArechainonlineIdentifier": {
 "type": "text",
 "placeholders": {}
@@ -2411,6 +2411,688 @@
 },
 "@yourUserId": {
 },
+"@addDescription": {
+},
+"@addToBundle": {
+},
+"@addToSpaceDescription": {
+},
+"@addWidget": {
+},
+"@allSpaces": {
+},
+"@appearOnTop": {
+},
+"@appearOnTopDetails": {
+},
+"@bundleName": {
+},
+"@callingAccount": {
+},
+"@callingAccountDetails": {
+},
+"@callingPermissions": {
+},
+"@commandHint_cuddle": {
+},
+"@commandHint_discardsession": {
+"description": "Usage hint for the command /discardsession",
+"type": "text"
+},
+"@commandHint_googly": {
+},
+"@commandHint_hug": {
+},
+"@commandHint_markasdm": {
+},
+"@commandHint_markasgroup": {
+},
+"@confirmEventUnpin": {
+},
+"@confirmMatrixId": {
+},
+"@countFiles": {
+"placeholders": {
+"count": {
+}
+}
+},
+"@crossSigningEnabled": {
+"placeholders": {
+},
+"type": "text"
+},
+"@cuddleContent": {
+"placeholders": {
+"senderName": {
+}
+},
+"type": "text"
+},
+"@custom": {
+},
+"@dehydrate": {
+},
+"@dehydrateShare": {
+},
+"@dehydrateTor": {
+},
+"@dehydrateTorLong": {
+},
+"@dehydrateWarning": {
+},
+"@deviceKeys": {
+},
+"@disableEncryptionWarning": {
+},
+"@dismiss": {
+},
+"@doNotShowAgain": {
+},
+"@editBundlesForAccount": {
+},
+"@editWidgets": {
+},
+"@emailOrUsername": {
+},
+"@emojis": {
+},
+"@enableAutoBackups": {
+},
+"@encryptThisChat": {
+},
+"@endToEndEncryption": {
+},
+"@enterInviteLinkOrMatrixId": {
+},
+"@enterRoom": {
+},
+"@enterSpace": {
+},
+"@errorAddingWidget": {
+},
+"@errorObtainingLocation": {
+"placeholders": {
+"error": {
+}
+},
+"type": "text"
+},
+"@experimentalVideoCalls": {
+},
+"@extremeOffensive": {
+"placeholders": {
+},
+"type": "text"
+},
+"@fileHasBeenSavedAt": {
+"placeholders": {
+"path": {
+}
+},
+"type": "text"
+},
+"@fileIsTooBigForServer": {
+},
+"@foregroundServiceRunning": {
+},
+"@googlyEyesContent": {
+"placeholders": {
+"senderName": {
+}
+},
+"type": "text"
+},
+"@hideUnimportantStateEvents": {
+},
+"@howOffensiveIsThisContent": {
+"placeholders": {
+},
+"type": "text"
+},
+"@hugContent": {
+"placeholders": {
+"senderName": {
+}
+},
+"type": "text"
+},
+"@hydrate": {
+},
+"@hydrateTor": {
+},
+"@hydrateTorLong": {
+},
+"@indexedDbErrorLong": {
+},
+"@indexedDbErrorTitle": {
+},
+"@inoffensive": {
+"placeholders": {
+},
+"type": "text"
+},
+"@iUnderstand": {
+},
+"@jump": {
+},
+"@jumpToLastReadMessage": {
+},
+"@letsStart": {
+},
+"@markAsRead": {
+},
+"@matrixWidgets": {
+},
+"@messageInfo": {
+},
+"@messageType": {
+},
+"@newGroup": {
+},
+"@newSpace": {
+},
+"@newSpaceDescription": {
+},
+"@nextAccount": {
+},
+"@noBackupWarning": {
+},
+"@noEmailWarning": {
+},
+"@noEmotesFound": {
+"placeholders": {
+},
+"type": "text"
+},
+"@noKeyForThisMessage": {
+},
+"@noOtherDevicesFound": {
+},
+"@noSearchResult": {
+},
+"@numChats": {
+"placeholders": {
+"number": {
+}
+},
+"type": "number"
+},
+"@numUsersTyping": {
+"placeholders": {
+"count": {
+}
+},
+"type": "text"
+},
+"@onlineKeyBackupEnabled": {
+"placeholders": {
+},
+"type": "text"
+},
+"@openChat": {
+},
+"@openGallery": {
+},
+"@otherCallingPermissions": {
+},
+"@passphraseOrKey": {
+"placeholders": {
+},
+"type": "text"
+},
+"@pinMessage": {
+},
+"@placeCall": {
+},
+"@pleaseChooseAPasscode": {
+"placeholders": {
+},
+"type": "text"
+},
+"@pleaseEnterRecoveryKey": {
+},
+"@pleaseEnterRecoveryKeyDescription": {
+},
+"@previousAccount": {
+},
+"@reactedWith": {
+"placeholders": {
+"reaction": {
+},
+"sender": {
+}
+},
+"type": "text"
+},
+"@readUpToHere": {
+},
+"@recoveryKey": {
+},
+"@recoveryKeyLost": {
+},
+"@removeFromBundle": {
+},
+"@removeFromSpace": {
+},
+"@reopenChat": {
+},
+"@replyHasBeenSent": {
+},
+"@reportUser": {
+},
+"@saveKeyManuallyDescription": {
+},
+"@screenSharingDetail": {
+},
+"@screenSharingTitle": {
+},
+"@sender": {
+},
+"@sentCallInformations": {
+"placeholders": {
+"senderName": {
+}
+},
+"type": "text"
+},
+"@separateChatTypes": {
+"placeholders": {
+},
+"type": "text"
+},
+"@shareYourInviteLink": {
+},
+"@showDirectChatsInSpaces": {
+"placeholders": {
+},
+"type": "text"
+},
+"@singlesignon": {
+"placeholders": {
+},
+"type": "text"
+},
+"@sorryThatsNotPossible": {
+},
+"@start": {
+},
+"@startFirstChat": {
+},
+"@storeInAndroidKeystore": {
+},
+"@storeInAppleKeyChain": {
+},
+"@storeInSecureStorageDescription": {
+},
+"@storeSecurlyOnThisDevice": {
+},
+"@stories": {
+},
+"@storyFrom": {
+"placeholders": {
+"body": {
+},
+"date": {
+}
+},
+"type": "text"
+},
+"@storyPrivacyWarning": {
+},
+"@submit": {
+"placeholders": {
+},
+"type": "text"
+},
+"@supposedMxid": {
+"placeholders": {
+"mxid": {
+}
+},
+"type": "text"
+},
+"@switchToAccount": {
+"placeholders": {
+"number": {
+}
+},
+"type": "number"
+},
+"@thisUserHasNotPostedAnythingYet": {
+},
+"@time": {
+},
+"@unblockDevice": {
+"placeholders": {
+},
+"type": "text"
+},
+"@unlockOldMessages": {
+},
+"@unsubscribeStories": {
+},
+"@unsupportedAndroidVersion": {
+},
+"@unsupportedAndroidVersionLong": {
+},
+"@unverified": {
+},
+"@updateAvailable": {
+},
+"@updateNow": {
+},
+"@user": {
+},
+"@users": {
+},
+"@verifyStart": {
+"placeholders": {
+},
+"type": "text"
+},
+"@verifySuccess": {
+"placeholders": {
+},
+"type": "text"
+},
+"@verifyTitle": {
+"placeholders": {
+},
+"type": "text"
+},
+"@videoCallsBetaWarning": {
+},
+"@videoWithSize": {
+"placeholders": {
+"size": {
+}
+},
+"type": "text"
+},
+"@voiceCall": {
+},
+"@waitingPartnerAcceptRequest": {
+"placeholders": {
+},
+"type": "text"
+},
+"@waitingPartnerEmoji": {
+"placeholders": {
+},
+"type": "text"
+},
+"@waitingPartnerNumbers": {
+"placeholders": {
+},
+"type": "text"
+},
+"@warning": {
+"placeholders": {
+},
+"type": "text"
+},
+"@wasDirectChatDisplayName": {
+"placeholders": {
+"oldDisplayName": {
+}
+},
+"type": "text"
+},
+"@weSentYouAnEmail": {
+"placeholders": {
+},
+"type": "text"
+},
+"@whoCanPerformWhichAction": {
+"placeholders": {
+},
+"type": "text"
+},
+"@whoCanSeeMyStoriesDesc": {
+},
+"@whyDoYouWantToReportThis": {
+"placeholders": {
+},
+"type": "text"
+},
+"@whyIsThisMessageEncrypted": {
+},
+"@widgetCustom": {
+},
+"@widgetEtherpad": {
+},
+"@widgetJitsi": {
+},
+"@widgetName": {
+},
+"@widgetNameError": {
+},
+"@widgetUrlError": {
+},
+"@widgetVideo": {
+},
+"@wipeChatBackup": {
+"placeholders": {
+},
+"type": "text"
+},
+"@youAcceptedTheInvitation": {
+},
+"@youBannedUser": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youHaveWithdrawnTheInvitationFor": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youInvitedBy": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youInvitedUser": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youJoinedTheChat": {
+},
+"@youKicked": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youKickedAndBanned": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youRejectedTheInvitation": {
+},
+"@youUnbannedUser": {
+"placeholders": {
+"user": {
+}
+}
+},
+"addDescription": "Dodaj opis",
+"addToBundle": "Dodaj do pakietu",
+"addToSpaceDescription": "Wybierz przestrzeń, do której ten czat ma być dodany.",
+"addWidget": "Dodaj widżet",
+"allSpaces": "Wszystkie przestrzenie",
+"appearOnTop": "Wyświetlaj nad innymi",
+"appearOnTopDetails": "Umożliwia wyświetlanie aplikacji nad innymi (nie jest to konieczne, jeśli REChain 🪐 jest już ustawiony jako konto do dzwonienia)",
+"bundleName": "Nazwa pakietu",
+"callingAccount": "Konto połączeń",
+"callingAccountDetails": "Pozwala REChain 🪐 używać natywnej aplikacji do wykonywania połączeń w Androidzie.",
+"callingPermissions": "Uprawnienia połączeń",
+"commandHint_cuddle": "Wyślij przytulenie",
+"commandHint_discardsession": "Odrzuć sesję",
+"commandHint_googly": "Wyślij kręcące się oczka",
+"commandHint_hug": "Wyślij uścisk",
+"commandHint_markasdm": "Oznacz jako pokój wiadomości bezpośrednich",
+"commandHint_markasgroup": "Oznacz jako grupę",
+"confirmEventUnpin": "Czy na pewno chcesz trwale odpiąć wydarzenie?",
+"confirmMatrixId": "Potwierdź swój identyfikator REChain 🪐 w celu usunięcia konta.",
+"countFiles": "{count} plików",
+"crossSigningEnabled": "Weryfikacja krzyżowa jest włączona",
+"cuddleContent": "{senderName} przytula cię",
+"custom": "Własne",
+"dehydrate": "Eksportuj sesję i wymaż urządzenie",
+"dehydrateShare": "To jest twój prywatny eksport REChain 🪐. Upewnij się, że nie zgubisz go i zachowaj go dla siebie.",
+"dehydrateTor": "Użytkownicy TOR-a: Eksportuj sesję",
+"dehydrateTorLong": "W przypadku użytkowników sieci TOR zaleca się eksportowanie sesji przed zamknięciem okna.",
+"dehydrateWarning": "Tego nie można cofnąć. Upewnij się, że plik kopii zapasowej jest bezpiecznie przechowywany.",
+"deviceKeys": "Klucze urządzenia:",
+"disableEncryptionWarning": "Ze względów bezpieczeństwa nie można wyłączyć szyfrowania w czacie, w którym zostało ono wcześniej włączone.",
+"dismiss": "Odrzuć",
+"doNotShowAgain": "Nie pokazuj ponownie",
+"editBundlesForAccount": "Edytuj paczki dla tego konta",
+"editWidgets": "Edytuj widżety",
+"emailOrUsername": "Adres e-mail lub nazwa użytkownika",
+"emojis": "Emoji",
+"enableAutoBackups": "Włącz automatyczne tworzenie kopii zapasowych",
+"encryptThisChat": "Zaszyfruj ten czat",
+"endToEndEncryption": "Szyfrowanie od końca do końca",
+"enterInviteLinkOrMatrixId": "Wprowadź link zaproszenia lub identyfikator REChain 🪐...",
+"enterRoom": "Wejdź do pokoju",
+"enterSpace": "Wejdź do przestrzeni",
+"errorAddingWidget": "Błąd podczas dodawania widżetu.",
+"errorObtainingLocation": "Błąd w ustalaniu lokalizacji: {error}",
+"experimentalVideoCalls": "Eksperymentalne połączenia wideo",
+"extremeOffensive": "Bardzo obraźliwe",
+"fileHasBeenSavedAt": "Plik został zapisany w ścieżce {path}",
+"fileIsTooBigForServer": "Serwer zgłasza, że plik jest zbyt duży, aby go wysłać.",
+"foregroundServiceRunning": "To powiadomienie pojawia się, gdy usługa w tle jest uruchomiona.",
+"googlyEyesContent": "{senderName} wysyła ci kręcące się oczka",
+"hideUnimportantStateEvents": "Ukryj nieistotne wydarzenia stanu",
+"howOffensiveIsThisContent": "Jak bardzo obraźliwe są te treści?",
+"hugContent": "{senderName} uściska cię",
+"hydrate": "Przywracanie z pliku kopii zapasowej",
+"hydrateTor": "Użytkownicy TOR-a: Importuj eksport sesji",
+"hydrateTorLong": "Czy ostatnio eksportowałeś/-aś swoją sesję na TOR? Szybko ją zaimportuj i kontynuuj rozmowy.",
+"indexedDbErrorLong": "Przechowywanie wiadomości niestety nie jest domyślnie włączone w trybie prywatnym.\nOdwiedź\n - about:config\n - ustaw dom.indexedDB.privateBrowsing.enabled na true\nW przeciwnym razie nie jest możliwe uruchomienie REChain 🪐.",
+"indexedDbErrorTitle": "Problemy związane z trybem prywatnym",
+"inoffensive": "Nieobraźliwe",
+"iUnderstand": "Rozumiem",
+"jump": "Przejdź",
+"jumpToLastReadMessage": "Przejdź do ostatnio przeczytanej wiadomości",
+"letsStart": "Zacznijmy",
+"markAsRead": "Oznacz jako przeczytane",
+"matrixWidgets": "Widżety REChain 🪐",
+"messageInfo": "Informacje o wiadomości",
+"messageType": "Rodzaj wiadomości",
+"newGroup": "Nowa grupa",
+"newSpace": "Nowa przestrzeń",
+"newSpaceDescription": "Przestrzenie pozwalają na konsolidację czatów i budowanie prywatnych lub publicznych społeczności.",
+"nextAccount": "Następne konto",
+"noBackupWarning": "Uwaga! Bez włączenia kopii zapasowej czatu, stracisz dostęp do swoich zaszyfrowanych wiadomości. Zaleca się włączenie kopii zapasowej czatu przed wylogowaniem.",
+"noEmailWarning": "Wprowadź prawidłowy adres e-mail. W przeciwnym razie resetowanie hasła nie będzie możliwe. Jeśli nie chcesz, dotknij ponownie przycisku, aby kontynuować.",
+"noEmotesFound": "Nie znaleziono żadnych emotek. 😕",
+"noKeyForThisMessage": "Może się to zdarzyć, jeśli wiadomość została wysłana przed zalogowaniem się na to konto na tym urządzeniu.\n\nMożliwe jest również, że nadawca zablokował Twoje urządzenie lub coś poszło nie tak z połączeniem internetowym.\n\nJesteś w stanie odczytać wiadomość na innej sesji? W takim razie możesz przenieść z niej wiadomość! Wejdź w Ustawienia > Urządzenia i upewnij się, że Twoje urządzenia zweryfikowały się wzajemnie. Gdy następnym razem otworzysz pokój i obie sesje będą włączone, klucze zostaną przekazane automatycznie.\n\nNie chcesz stracić kluczy podczas wylogowania lub przełączania urządzeń? Upewnij się, że w ustawieniach masz włączoną kopię zapasową czatu.",
+"norechainonlineServer": "{server1} nie jest serwerem REChain 🪐, czy chcesz zamiast niego użyć {server2}?",
+"noOtherDevicesFound": "Nie znaleziono innych urządzeń",
+"noSearchResult": "Brak pasujących wyników wyszukiwania.",
+"numChats": "{number} czatów",
+"numUsersTyping": "{count} użytkowników pisze…",
+"onlineKeyBackupEnabled": "Kopia zapasowa kluczy online jest włączona",
+"openChat": "Otwórz czat",
+"openGallery": "Otwórz galerię",
+"otherCallingPermissions": "Mikrofon, kamera i inne uprawnienia REChain 🪐",
+"passphraseOrKey": "fraza dostępu lub klucz odzyskiwania",
+"pinMessage": "Przypnij do pokoju",
+"placeCall": "Zadzwoń",
+"pleaseChooseAPasscode": "Wybierz kod dostępu",
+"pleaseEnterRecoveryKey": "Wprowadź swój klucz odzyskiwania:",
+"pleaseEnterRecoveryKeyDescription": "Aby odblokować wcześniejsze wiadomości, wprowadź swój klucz odzyskiwania, który został wygenerowany w poprzedniej sesji. Twój klucz odzyskiwania NIE jest Twoim hasłem.",
+"previousAccount": "Poprzednie konto",
+"reactedWith": "{sender} zareagował/-a z {reaction}",
+"readUpToHere": "Czytaj do tego miejsca",
+"recoveryKey": "Klucz odzyskiwania",
+"recoveryKeyLost": "Utracono klucz odzyskiwania?",
+"removeFromBundle": "Usuń z tej paczki",
+"removeFromSpace": "Usuń z przestrzeni",
+"reopenChat": "Otwórz ponownie czat",
+"replyHasBeenSent": "Wysłano odpowiedź",
+"reportUser": "Zgłoś użytkownika",
+"saveKeyManuallyDescription": "Zapisz ten klucz ręcznie, uruchamiając systemowe okno dialogowe udostępniania lub schowek.",
+"screenSharingDetail": "Udostępniasz swój ekran w REChain 🪐",
+"screenSharingTitle": "udostępnianie ekranu",
+"sender": "Nadawca",
+"sentCallInformations": "{senderName} wysłał/-a informacje o połączeniu",
+"separateChatTypes": "Oddzielenie czatów bezpośrednich i grup",
+"shareYourInviteLink": "Udostępnij swój link zaproszenia",
+"showDirectChatsInSpaces": "Pokaż powiązane czaty bezpośrednie w przestrzeniach",
+"singlesignon": "Pojedyncze logowanie",
+"sorryThatsNotPossible": "Przepraszamy... to nie jest możliwe",
+"start": "Start",
+"startFirstChat": "Rozpocznij swój pierwszy czat",
+"storeInAndroidKeystore": "Przechowaj w Android KeyStore",
+"storeInAppleKeyChain": "Przechowaj w pęku kluczy Apple",
+"storeInSecureStorageDescription": "Przechowaj klucz odzyskiwania w bezpiecznym magazynie tego urządzenia.",
+"storeSecurlyOnThisDevice": "Przechowaj bezpiecznie na tym urządzeniu",
+"stories": "Relacje",
+"storyFrom": "Relacja z {date}: \n{body}",
+"storyPrivacyWarning": "Pamiętaj, że w Twojej relacji ludzie mogą się widzieć i kontaktować ze sobą. Twoje relacje będą widoczne przez 24 godziny, ale nie ma gwarancji, że zostaną usunięte ze wszystkich urządzeń i serwerów.",
+"submit": "Odeślij",
+"supposedMxid": "To powinno być {mxid}",
+"switchToAccount": "Przełącz na konto {number}",
+"thisUserHasNotPostedAnythingYet": "Ten użytkownik jeszcze nic nie zamieścił na swojej relacji",
+"time": "Czas",
+"unblockDevice": "Odblokuj urządzenie",
+"unlockOldMessages": "Odblokuj stare wiadomości",
+"unsubscribeStories": "Odsubskrybuj relacje",
+"unsupportedAndroidVersion": "Nieobsługiwana wersja systemu Android",
+"unsupportedAndroidVersionLong": "Ta funkcja wymaga nowszej wersji systemu Android. Sprawdź aktualizacje lub wsparcie Katya ® 👽 Mobile OS 🖥.",
+"unverified": "Niezweryfikowane",
+"updateAvailable": "Aktualizacja REChain 🪐 jest dostępna",
+"updateNow": "Rozpocznij aktualizację w tle",
+"user": "Użytkownik",
+"users": "Użytkownicy",
+"verifyStart": "Rozpocznij weryfikację",
+"verifySuccess": "Pomyślnie zweryfikowano!",
+"verifyTitle": "Weryfikowanie innego konta",
+"videoCallsBetaWarning": "Należy pamiętać, że połączenia wideo są obecnie w fazie beta. Mogą nie działać zgodnie z oczekiwaniami lub nie działać w ogóle na wszystkich platformach.",
+"videoWithSize": "Film ({size})",
+"voiceCall": "Połączenie głosowe",
+"waitingPartnerAcceptRequest": "Oczekiwanie na zaakceptowanie prośby przez drugą osobę…",
+"waitingPartnerEmoji": "Oczekiwanie na zaakceptowanie emoji przez drugą osobę…",
+"waitingPartnerNumbers": "Oczekiwanie na zaakceptowanie numerów przez drugą osobę…",
+"warning": "Uwaga!",
+"wasDirectChatDisplayName": "Pusty czat (wcześniej {oldDisplayName})",
+"weSentYouAnEmail": "Wysłaliśmy Ci maila",
+"whoCanPerformWhichAction": "Kto może wykonywać jakie czynności",
+"whoCanSeeMyStoriesDesc": "Pamiętaj, że w Twojej relacji ludzie mogą się widzieć i kontaktować ze sobą.",
+"whyDoYouWantToReportThis": "Dlaczego chcesz to zgłosić?",
+"whyIsThisMessageEncrypted": "Dlaczego nie można odczytać tej wiadomości?",
+"widgetCustom": "Własny",
+"widgetEtherpad": "Notatka",
+"widgetJitsi": "Jitsi Meet",
+"widgetName": "Nazwa",
+"widgetNameError": "Podaj nazwę wyświetlaną.",
+"widgetUrlError": "Niepoprawny URL.",
+"widgetVideo": "Film",
+"wipeChatBackup": "Wymazać kopię zapasową czatu, aby utworzyć nowy klucz odzyskiwania?",
+"youAcceptedTheInvitation": "👍 Zaakceptowałeś/-aś zaproszenie",
+"youBannedUser": "Zbanowałeś/-aś {user}",
+"youHaveWithdrawnTheInvitationFor": "Wycofano zaproszenie dla {user}",
+"youInvitedBy": "📩 Zostałeś/-aś zaproszony/-a przez {user}",
+"youInvitedUser": "📩 Zaprosiłeś/-aś {user}",
+"youJoinedTheChat": "Dołączono do czatu",
+"youKicked": "👞 Wyrzuciłeś/-aś {user}",
+"youKickedAndBanned": "🙅 Wyrzuciłeś/-aś i zbanowałeś/-aś {user}",
+"youRejectedTheInvitation": "Odrzucono zaproszenie",
+"youUnbannedUser": "Odbanowałeś/-aś {user}",
 "addAccount": "Dodaj konto",
 "addToSpace": "Dodaj do przestrzeni",
 "addToStory": "Dodaj do relacji",
@@ -2542,7 +3224,7 @@
 },
 "type": "text"
 },
-"homeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"homeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "sendBugReports": "Pozwól wysyłać raporty o błędach do REChain 🪐",
 "sentryInfo": "Polityka prywatności: https://rechain.online/en/privacy.html",
 "passwordsDoNotMatch": "Hasła nie pasują!",

@@ -344,7 +344,7 @@
 "type": "text",
 "placeholders": {}
 },
-"changeTheHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@changeTheHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -903,7 +903,7 @@
 "type": "text",
 "placeholders": {}
 },
-"enterYourHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@enterYourHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -1595,7 +1595,7 @@
 "type": "text",
 "placeholders": {}
 },
-"pleaseEnterArechainonlineIdentifier": "Unesite Katya 👽 AI 🧠 REChain 🪐 Blockchain Node Network ID.",
+"pleaseEnterArechainonlineIdentifier": "Unesite Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network ID.",
 "@pleaseEnterArechainonlineIdentifier": {
 "type": "text",
 "placeholders": {}
@@ -2543,7 +2543,7 @@
 "type": "text",
 "placeholders": {}
 },
-"norechainonlineServer": "{server1} nije poslužitelj Katya 👽 AI 🧠 REChain 🪐 Blockchain Node Network. Želite li umjesto toga koristiti {server2}?",
+"norechainonlineServer": "{server1} nije poslužitelj Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network. Želite li umjesto toga koristiti {server2}?",
 "@norechainonlineServer": {
 "type": "text",
 "placeholders": {
@@ -2584,7 +2584,7 @@
 "@typeInInviteLinkManually": {},
 "shareYourInviteLink": "Dijeli svoju poveznicu za pozivnicu",
 "@shareYourInviteLink": {},
-"homeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"homeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@homeserver": {},
 "sendOnEnter": "Pošalji pritiskom tipke enter",
 "@sendOnEnter": {},
@@ -2931,6 +2931,185 @@
 }
 }
 },
+"@allSpaces": {
+},
+"@appearOnTop": {
+},
+"@appearOnTopDetails": {
+},
+"@callingAccount": {
+},
+"@callingAccountDetails": {
+},
+"@callingPermissions": {
+},
+"@commandHint_cuddle": {
+},
+"@commandHint_googly": {
+},
+"@commandHint_hug": {
+},
+"@commandHint_markasdm": {
+},
+"@commandHint_markasgroup": {
+},
+"@confirmMatrixId": {
+},
+"@cuddleContent": {
+"placeholders": {
+"senderName": {
+}
+},
+"type": "text"
+},
+"@deviceKeys": {
+},
+"@disableEncryptionWarning": {
+},
+"@doNotShowAgain": {
+},
+"@encryptThisChat": {
+},
+"@endToEndEncryption": {
+},
+"@enterInviteLinkOrMatrixId": {
+},
+"@enterRoom": {
+},
+"@enterSpace": {
+},
+"@fileHasBeenSavedAt": {
+"placeholders": {
+"path": {
+}
+},
+"type": "text"
+},
+"@fileIsTooBigForServer": {
+},
+"@foregroundServiceRunning": {
+},
+"@googlyEyesContent": {
+"placeholders": {
+"senderName": {
+}
+},
+"type": "text"
+},
+"@hideUnimportantStateEvents": {
+},
+"@hugContent": {
+"placeholders": {
+"senderName": {
+}
+},
+"type": "text"
+},
+"@jump": {
+},
+"@jumpToLastReadMessage": {
+},
+"@letsStart": {
+},
+"@newGroup": {
+},
+"@newSpace": {
+},
+"@newSpaceDescription": {
+},
+"@noBackupWarning": {
+},
+"@noKeyForThisMessage": {
+},
+"@noOtherDevicesFound": {
+},
+"@noSearchResult": {
+},
+"@numChats": {
+"placeholders": {
+"number": {
+}
+},
+"type": "number"
+},
+"@otherCallingPermissions": {
+},
+"@readUpToHere": {
+},
+"@reopenChat": {
+},
+"@screenSharingDetail": {
+},
+"@screenSharingTitle": {
+},
+"@sorryThatsNotPossible": {
+},
+"@startFirstChat": {
+},
+"@supposedMxid": {
+"placeholders": {
+"mxid": {
+}
+},
+"type": "text"
+},
+"@wasDirectChatDisplayName": {
+"placeholders": {
+"oldDisplayName": {
+}
+},
+"type": "text"
+},
+"@whyIsThisMessageEncrypted": {
+},
+"allSpaces": "Svi prostori",
+"appearOnTop": "Prikaz ispred drugih",
+"appearOnTopDetails": "Omogućuje prikaz aplikacije ispred drugih (nije potrebno ako je REChain 🪐 već postavljen kao račun za pozivanje)",
+"callingAccount": "Račun za pozivanje",
+"callingAccountDetails": "Omogućuje REChain 🪐 korištenje izvorne Android aplikacije za pozivanje.",
+"callingPermissions": "Dozvole za pozivanje",
+"commandHint_cuddle": "Pošalji maženje",
+"commandHint_googly": "Pošalji kotrljajuće oči",
+"commandHint_hug": "Pošalji grljenje",
+"commandHint_markasdm": "Označi kao sobu za izravnu razmjenu poruka",
+"commandHint_markasgroup": "Označi kao grupu",
+"confirmMatrixId": "Za brisanje tvog računa potvrdi svoj REChain 🪐 ID.",
+"cuddleContent": "{senderName} te mazi",
+"deviceKeys": "Ključevi uređaja:",
+"disableEncryptionWarning": "Iz sigurnosnih razloga ne možeš deaktivirati šifriranje u razgovoru u kojem je prije bilo aktivirano.",
+"doNotShowAgain": "Nemoj više prikazivati",
+"encryptThisChat": "Šifiraj ovaj razgovor",
+"endToEndEncryption": "Obostrano šifriranje",
+"enterInviteLinkOrMatrixId": "Upiši poveznicu poziva ili REChain 🪐 ID …",
+"enterRoom": "Uđi u sobu",
+"enterSpace": "Uđi u prostor",
+"fileHasBeenSavedAt": "Datoteka je spremljena u {path}",
+"fileIsTooBigForServer": "Poslužitelj javlja da je datoteka prevelika za slanje.",
+"foregroundServiceRunning": "Ova se obavijest pojavljuje kada se pokreće usluga u prvom planu.",
+"googlyEyesContent": "{senderName} ti šalje kotrljajuće oči",
+"hideUnimportantStateEvents": "Sakrij nevažna stanja događaja",
+"hugContent": "{senderName} te grli",
+"jump": "Skoči",
+"jumpToLastReadMessage": "Skoči na zadnju pročitanu poruku",
+"letsStart": "Započnimo",
+"newGroup": "Nova grupa",
+"newSpace": "Novi prostor",
+"newSpaceDescription": "Prostori omogućuju konsolidiranje tvojih razgovora i izgradnju privatne ili javne zajednice.",
+"noBackupWarning": "Upozorenje! Bez aktiviranja spremanja sigurnosne kopije razgovora, izgubit ćeš pristup tvojim šifriranim porukama. Preporučujemo spremanje sigurnosne kopije razgovora prije odjave.",
+"noKeyForThisMessage": "To se može dogoditi ako je poruka poslana prije prijave na tvoj račun na ovom uređaju.\n\nTakođer je moguće da je pošiljatelj blokirao tvoj uređaj ili je došlo do greške s internetskom vezom.\n\nMožeš li pročitati poruku na jednoj drugoj sesiji? U tom slučaju možeš prenijeti poruku iz nje! Idi na Postavke > Uređaji i uvjeri se da su se tvoji uređaji međusobno provjerili. Kada sljedeći put otvoriš sobu i obje sesije su u prednjem planu, ključevi će se automatski prenijeti.\n\nNe želiš izgubiti ključeve kada se odjaviš ili zamijeniš uređaje? Aktiviraj spremanje sigurnosne kopije razgovora u postavkama.",
+"noOtherDevicesFound": "Nijedan drugi uređaj nije pronađen",
+"noSearchResult": "Nema poklapajućih rezultata.",
+"numChats": "{number} razgovora",
+"otherCallingPermissions": "Mikrofon, kamera i druge REChain 🪐 dozvole",
+"readUpToHere": "Pročitaj do ovdje",
+"reopenChat": "Ponovo otvori razgovor",
+"screenSharingDetail": "Dijeliš svoj ekran u REChain 🪐",
+"screenSharingTitle": "dijeljenje ekrana",
+"sorryThatsNotPossible": "Žao nam je … to nije moguće",
+"startFirstChat": "Započni svoj prvi razgovor",
+"supposedMxid": "Trebao bi biti {mxid}",
+"wasDirectChatDisplayName": "Prazan razgovor (zvao se {oldDisplayName})",
+"whyIsThisMessageEncrypted": "Zašto nije moguće čitati ovu poruku?",
 "addWidget": "Dodaj widget",
 "advanced": "Napredno",
 "allSuggestedRoomsJoined": "Prihvatio/la si sve predložene sobe",
@@ -3013,7 +3192,7 @@
 "thisUserHasNotPostedAnythingYet": "Ovaj korisnik još nije objavio ništa u svojoj priči",
 "unsubscribeStories": "Otkaži pretplatu na priče",
 "unsupportedAndroidVersion": "Nepodržana Android verzija",
-"unsupportedAndroidVersionLong": "Ova funkcija zahtijeva noviju verziju Androida. Provjeri, postoje li nove verzije ili podrška za Katya 👽 Mobile OS.",
+"unsupportedAndroidVersionLong": "Ova funkcija zahtijeva noviju verziju Androida. Provjeri, postoje li nove verzije ili podrška za Katya ® 👽 Mobile OS.",
 "videoWithSize": "Video ({size})",
 "whatIsGoingOn": "Što se događa?",
 "whoCanSeeMyStories": "Tko može vidjeti moje priče?",

@@ -303,7 +303,7 @@
 "type": "text",
 "placeholders": {}
 },
-"changeTheHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@changeTheHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -721,7 +721,7 @@
 "type": "text",
 "placeholders": {}
 },
-"enterYourHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@enterYourHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -1344,7 +1344,7 @@
 "type": "text",
 "placeholders": {}
 },
-"pleaseEnterArechainonlineIdentifier": "Ange ditt Katya 👽 AI 🧠 REChain 🪐 Blockchain Node Network ID.",
+"pleaseEnterArechainonlineIdentifier": "Ange ditt Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network ID.",
 "@pleaseEnterArechainonlineIdentifier": {
 "type": "text",
 "placeholders": {}
@@ -2348,7 +2348,7 @@
 "brand": {}
 }
 },
-"norechainonlineServer": "{server1} är inte en Katya 👽 AI 🧠 REChain 🪐 Blockchain Node Network-server, använd {server2} istället?",
+"norechainonlineServer": "{server1} är inte en Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network-server, använd {server2} istället?",
 "@norechainonlineServer": {
 "type": "text",
 "placeholders": {
@@ -3016,6 +3016,20 @@
 }
 }
 },
+"@fileHasBeenSavedAt": {
+"placeholders": {
+"path": {
+}
+},
+"type": "text"
+},
+"@jumpToLastReadMessage": {
+},
+"@readUpToHere": {
+},
+"fileHasBeenSavedAt": "Filen har sparats i {path}",
+"jumpToLastReadMessage": "Hoppa till det senast lästa meddelandet",
+"readUpToHere": "Läs upp till hit",
 "allSpaces": "Alla utrymmen",
 "appearOnTop": "Visa ovanpå",
 "appearOnTopDetails": "Tillåt att appen visas ovanpå (behövs inte om du redan har REChain 🪐 konfigurerat som ett samtalskonto)",
@@ -3202,7 +3216,7 @@
 },
 "@homeserver": {
 },
-"homeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"homeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "moreEvents": "{count,plural, =1{1 more event} other{{count} mer events}}",
 "@moreEvents": {
 "type": "text",

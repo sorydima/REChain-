@@ -1,0 +1,6 @@
+framework module geolocator_apple {
+  umbrella header "geolocator_apple-umbrella.h"
+
+  export *
+  module * { export * }
+}

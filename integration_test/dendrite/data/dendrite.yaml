@@ -67,7 +67,7 @@ global:
   # Lists of domains that the server will trust as identity servers to verify third
   # party identifiers such as phone numbers and email addresses.
   trusted_third_party_id_servers:
-    - matrix.katya.wtf
+    - matrix.org
     - vector.im
 
   # Disables federation. Dendrite will not be able to communicate with other servers
@@ -210,7 +210,7 @@ federation_api:
   # be required to satisfy key requests for servers that are no longer online when
   # joining some rooms.
   key_perspectives:
-    - server_name: matrix.katya.wtf
+    - server_name: matrix.org
       keys:
         - key_id: ed25519:auto
           public_key: Noi6WqcDj0QmPxCNQqgezwTlBKrfqehY1u2FyWP9uYw

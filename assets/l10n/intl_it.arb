@@ -153,7 +153,7 @@
 "type": "text",
 "placeholders": {}
 },
-"badServerLoginTypesException": "L'Katya 👽 AI 🧠 REChain 🪐 Blockchain Node supporta i tipi di accesso:\n{serverVersions}\nMa questa applicazione supporta solo:\n{supportedVersions}",
+"badServerLoginTypesException": "L'Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node supporta i tipi di accesso:\n{serverVersions}\nMa questa applicazione supporta solo:\n{supportedVersions}",
 "@badServerLoginTypesException": {
 "type": "text",
 "placeholders": {
@@ -161,7 +161,7 @@
 "supportedVersions": {}
 }
 },
-"badServerVersionsException": "L'Katya 👽 AI 🧠 REChain 🪐 Blockchain Node supporta le versioni Spec:\n{serverVersions}\nMa questa applicazione supporta solo {supportedVersions}",
+"badServerVersionsException": "L'Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node supporta le versioni Spec:\n{serverVersions}\nMa questa applicazione supporta solo {supportedVersions}",
 "@badServerVersionsException": {
 "type": "text",
 "placeholders": {
@@ -336,7 +336,7 @@
 "type": "text",
 "placeholders": {}
 },
-"changeTheHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@changeTheHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -784,7 +784,7 @@
 "type": "text",
 "placeholders": {}
 },
-"enterYourHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@enterYourHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -1444,7 +1444,7 @@
 "type": "text",
 "placeholders": {}
 },
-"pleaseEnterArechainonlineIdentifier": "Inserisci il Katya 👽 AI 🧠 REChain 🪐 Blockchain Node Network ID.",
+"pleaseEnterArechainonlineIdentifier": "Inserisci il Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network ID.",
 "@pleaseEnterArechainonlineIdentifier": {
 "type": "text",
 "placeholders": {}

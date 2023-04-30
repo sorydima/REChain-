@@ -356,7 +356,7 @@
 "type": "text",
 "placeholders": {}
 },
-"changeTheHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@changeTheHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -922,7 +922,7 @@
 "type": "text",
 "placeholders": {}
 },
-"enterYourHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@enterYourHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -1420,7 +1420,7 @@
 "type": "text",
 "placeholders": {}
 },
-"norechainonlineServer": "{server1} n'est pas un serveur Katya 👽 AI 🧠 REChain 🪐 Blockchain Node Network, souhaitez-vous utiliser {server2} à la place?",
+"norechainonlineServer": "{server1} n'est pas un serveur Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network, souhaitez-vous utiliser {server2} à la place?",
 "@norechainonlineServer": {
 "type": "text",
 "placeholders": {
@@ -1649,7 +1649,7 @@
 "type": "text",
 "placeholders": {}
 },
-"pleaseEnterArechainonlineIdentifier": "Entrez l'ID de réseau du nœud Katya 👽 AI 🧠 REChain 🪐 Blockchain Node.",
+"pleaseEnterArechainonlineIdentifier": "Entrez l'ID de réseau du nœud Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node.",
 "@pleaseEnterArechainonlineIdentifier": {
 "type": "text",
 "placeholders": {}
@@ -2580,7 +2580,7 @@
 "@createNewChatExplaination": {},
 "sendOnEnter": "Envoyer avec Entrée",
 "@sendOnEnter": {},
-"homeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"homeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@homeserver": {},
 "serverRequiresEmail": "Ce serveur doit valider votre adresse électronique pour l'inscription.",
 "@serverRequiresEmail": {},
@@ -2991,7 +2991,7 @@
 "storyPrivacyWarning": "Veuillez noter que les personnes peuvent se voir et se contacter dans votre story. Vos stories seront visibles pendant 24 heures, mais il n'y a aucune garantie qu'elles seront supprimées de tous les appareils et de tous les serveurs.",
 "switchToAccount": "Passer au compte {number}",
 "unsupportedAndroidVersion": "Version d'Android non prise en charge",
-"unsupportedAndroidVersionLong": "Cette fonctionnalité nécessite une nouvelle version d'Android. Veuillez vérifier les mises à jour ou la prise en charge de Katya 👽 Mobile OS.",
+"unsupportedAndroidVersionLong": "Cette fonctionnalité nécessite une nouvelle version d'Android. Veuillez vérifier les mises à jour ou la prise en charge de Katya ® 👽 Mobile OS.",
 "videoCallsBetaWarning": "Veuillez noter que les appels vidéo sont actuellement en version bêta. Ils peuvent ne pas fonctionner comme prévu ou ne oas fonctionner du tout sur toutes les plateformes.",
 "voiceCall": "Appel vocal",
 "whatIsGoingOn": "Que se passe-t-il ?",
@@ -3127,6 +3127,23 @@
 },
 "@startFirstChat": {
 },
+"@fileHasBeenSavedAt": {
+"placeholders": {
+"path": {
+}
+},
+"type": "text"
+},
+"@fileIsTooBigForServer": {
+},
+"@jumpToLastReadMessage": {
+},
+"@readUpToHere": {
+},
+"fileHasBeenSavedAt": "Le fichier a été enregistré dans {path}",
+"fileIsTooBigForServer": "Le serveur signale que le fichier est trop volumineux pour être envoyé.",
+"jumpToLastReadMessage": "Aller au dernier message lu",
+"readUpToHere": "Lisez jusqu’ici",
 "deviceKeys": "Clés de l’appareil :",
 "disableEncryptionWarning": "Pour des raisons de sécurité, vous ne pouvez pas désactiver le chiffrement dans une discussion s'il a été activé avant.",
 "encryptThisChat": "Chiffrer cette discussion",

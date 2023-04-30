@@ -164,7 +164,7 @@
 "type": "text",
 "placeholders": {}
 },
-"badServerLoginTypesException": "See Katya 👽 AI 🧠 REChain 🪐 Blockchain Node võrguserver toetab Matrixi võrgu sisselogimist: \n {serverVersions} \nKuid see rakendus toetab ainult järgmisi funktsioone: \n {supportedVersions}",
+"badServerLoginTypesException": "See Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node võrguserver toetab Matrixi võrgu sisselogimist: \n {serverVersions} \nKuid see rakendus toetab ainult järgmisi funktsioone: \n {supportedVersions}",
 "@badServerLoginTypesException": {
 "type": "text",
 "placeholders": {
@@ -172,7 +172,7 @@
 "supportedVersions": {}
 }
 },
-"badServerVersionsException": "See Katya 👽 AI 🧠 REChain 🪐 Blockchain Node võrguserver toetab järgmisi Matrixi spetsifikatsiooni versioone: \n {serverVersions} \nKuid see rakendus toetab ainult järgmisi versioone: {supportedVersions}",
+"badServerVersionsException": "See Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node võrguserver toetab järgmisi Matrixi spetsifikatsiooni versioone: \n {serverVersions} \nKuid see rakendus toetab ainult järgmisi versioone: {supportedVersions}",
 "@badServerVersionsException": {
 "type": "text",
 "placeholders": {
@@ -354,7 +354,7 @@
 "type": "text",
 "placeholders": {}
 },
-"changeTheHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@changeTheHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -913,7 +913,7 @@
 "type": "text",
 "placeholders": {}
 },
-"enterYourHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@enterYourHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -1411,7 +1411,7 @@
 "type": "text",
 "placeholders": {}
 },
-"norechainonlineServer": "{server1} ei ole Katya 👽 AI 🧠 REChain 🪐 Blockchain Node Network server, võib-olla peaksime selle asemel kasutama serverit {server2}?",
+"norechainonlineServer": "{server1} ei ole Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network server, võib-olla peaksime selle asemel kasutama serverit {server2}?",
 "@norechainonlineServer": {
 "type": "text",
 "placeholders": {
@@ -1640,7 +1640,7 @@
 "type": "text",
 "placeholders": {}
 },
-"pleaseEnterArechainonlineIdentifier": "Sisestage Katya 👽 AI 🧠 REChain 🪐 Blockchain Node võrgu ID.",
+"pleaseEnterArechainonlineIdentifier": "Sisestage Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node võrgu ID.",
 "@pleaseEnterArechainonlineIdentifier": {
 "type": "text",
 "placeholders": {}
@@ -2622,15 +2622,15 @@
 "@createNewChatExplaination": {},
 "sendOnEnter": "Saada sõnum sisestusklahvi vajutusel",
 "@sendOnEnter": {},
-"homeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"homeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@homeserver": {},
 "serverRequiresEmail": "See koduserver eeldab registreerimisel kasutatava e-postiaadressi kinnitamist.",
 "@serverRequiresEmail": {},
-"newUsernameDescription": "Teie Katya 👽 AI 🧠 REChain 🪐 Blockchain Node Network kasutajanimi on vormingus @username:Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"newUsernameDescription": "Teie Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network kasutajanimi on vormingus @username:Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@newUsernameDescription": {},
 "newPasswordDescription": "Selleks, et saaksid vajadusel oma salasõna taastada, peaksid hiljem lisama oma kasutajakontole e-posti aadressi.",
 "@newPasswordDescription": {},
-"enableMultiAccounts": "(EKSPERIMENTAALNE) Selles seadmes on mitu Katya 👽 AI 🧠 REChain 🪐 Blockchain Node Network kasutajakontot!",
+"enableMultiAccounts": "(EKSPERIMENTAALNE) Selles seadmes on mitu Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network kasutajakontot!",
 "@enableMultiAccounts": {},
 "bundleName": "Köite nimi",
 "@bundleName": {},
@@ -2642,7 +2642,7 @@
 "@editBundlesForAccount": {},
 "addAccount": "Lisa kasutajakonto",
 "@addAccount": {},
-"oneClientLoggedOut": "Üks teie klientrakendustest on Katya 👽 AI 🧠 REChain 🪐 Blockchain Node Networkist välja loginud.",
+"oneClientLoggedOut": "Üks teie klientrakendustest on Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Networkist välja loginud.",
 "@oneClientLoggedOut": {},
 "link": "Link",
 "@link": {},
@@ -3026,7 +3026,7 @@
 "thisUserHasNotPostedAnythingYet": "See kasutaja pole ühtegi jutustust veel avaldanud",
 "unsubscribeStories": "Loobu jutustuste tellimusest",
 "unsupportedAndroidVersion": "See Androidi versioon ei ole toetatud",
-"unsupportedAndroidVersionLong": "See funktsionaalsus eeldab uuemat Androidi versiooni. Palun kontrolli, kas sinu nutiseadmele leidub süsteemiuuendusi või saaks seal Katya 👽 Mobile OS'i kasutada.",
+"unsupportedAndroidVersionLong": "See funktsionaalsus eeldab uuemat Androidi versiooni. Palun kontrolli, kas sinu nutiseadmele leidub süsteemiuuendusi või saaks seal Katya ® 👽 Mobile OS'i kasutada.",
 "videoCallsBetaWarning": "Palun arvesta, et videokõned on veel beetajärgus. Nad ei pruugi veel toimida kõikidel platvormidel korrektselt.",
 "videoWithSize": "Video ({size})",
 "voiceCall": "Häälkõne",
@@ -3131,6 +3131,23 @@
 },
 "@whyIsThisMessageEncrypted": {
 },
+"@fileHasBeenSavedAt": {
+"placeholders": {
+"path": {
+}
+},
+"type": "text"
+},
+"@jump": {
+},
+"@jumpToLastReadMessage": {
+},
+"@readUpToHere": {
+},
+"fileHasBeenSavedAt": "Fail on salvestatud kausta: {path}",
+"jump": "Hüppa",
+"jumpToLastReadMessage": "Liigu viimase loetud sõnumini",
+"readUpToHere": "Siiamaani on loetud",
 "allSpaces": "Kõik kogukonnad",
 "appearOnTop": "Luba pealmise rakendusena",
 "appearOnTopDetails": "Sellega lubad rakendust avada kõige pealmisena (pole vajalik, kui REChain 🪐 on juba seadistatud toimima helistamiskontoga)",

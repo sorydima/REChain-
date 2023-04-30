@@ -1,0 +1,30 @@
+{
+  "name": "record_macos",
+  "version": "0.2.0",
+  "summary": "macOS implementation for record package.",
+  "description": "macOS implementation for record package.",
+  "homepage": "https://github.com/llfbandit/record/tree/master/record_macos",
+  "license": {
+    "file": "../LICENSE"
+  },
+  "authors": {
+    "Your Company": "email@example.com"
+  },
+  "source": {
+    "path": "."
+  },
+  "source_files": "Classes/**/*",
+  "dependencies": {
+    "FlutterMacOS": [
+
+    ]
+  },
+  "platforms": {
+    "osx": "10.15"
+  },
+  "pod_target_xcconfig": {
+    "DEFINES_MODULE": "YES"
+  },
+  "swift_versions": "5.0",
+  "swift_version": "5.0"
+}

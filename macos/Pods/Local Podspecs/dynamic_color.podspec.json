@@ -1,0 +1,25 @@
+{
+  "name": "dynamic_color",
+  "authors": "Material Flutter team + Ebrahim Byagowi",
+  "license": "BSD-3-Clause",
+  "homepage": "https://github.com/material-foundation/material-dynamic-color-flutter",
+  "summary": "Retrieves accent color",
+  "version": "0.0.2",
+  "source": {
+    "path": "."
+  },
+  "source_files": "Classes/**/*",
+  "dependencies": {
+    "FlutterMacOS": [
+
+    ]
+  },
+  "platforms": {
+    "osx": "10.11"
+  },
+  "pod_target_xcconfig": {
+    "DEFINES_MODULE": "YES"
+  },
+  "swift_versions": "5.0",
+  "swift_version": "5.0"
+}

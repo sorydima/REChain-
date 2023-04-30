@@ -207,7 +207,7 @@
 "type": "text",
 "placeholders": {}
 },
-"homeserverIsNotCompatible": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node tidak kompatibel",
+"homeserverIsNotCompatible": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node tidak kompatibel",
 "@homeserverIsNotCompatible": {
 "type": "text",
 "placeholders": {}
@@ -312,7 +312,7 @@
 "type": "text",
 "placeholders": {}
 },
-"enterYourHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@enterYourHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -620,7 +620,7 @@
 "type": "text",
 "placeholders": {}
 },
-"changeTheHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@changeTheHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -789,7 +789,7 @@
 "type": "text",
 "placeholders": {}
 },
-"badServerVersionsException": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node ini mendukung versi Spec ini:\n{serverVersions}\nTetapi aplikasi ini hanya mendukung {supportedVersions}",
+"badServerVersionsException": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node ini mendukung versi Spec ini:\n{serverVersions}\nTetapi aplikasi ini hanya mendukung {supportedVersions}",
 "@badServerVersionsException": {
 "type": "text",
 "placeholders": {
@@ -799,7 +799,7 @@
 },
 "sendOnEnter": "Kirim dengan enter",
 "@sendOnEnter": {},
-"badServerLoginTypesException": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node ini mendukung tipe masuk ini:\n{serverVersions}\nTetapi aplikasi ini mendukung:\n{supportedVersions}",
+"badServerLoginTypesException": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node ini mendukung tipe masuk ini:\n{serverVersions}\nTetapi aplikasi ini mendukung:\n{supportedVersions}",
 "@badServerLoginTypesException": {
 "type": "text",
 "placeholders": {
@@ -2019,7 +2019,7 @@
 "type": "text",
 "placeholders": {}
 },
-"pleaseEnterArechainonlineIdentifier": "Masukkan Katya 👽 AI 🧠 REChain 🪐 Blockchain Node Network ID.",
+"pleaseEnterArechainonlineIdentifier": "Masukkan Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network ID.",
 "@pleaseEnterArechainonlineIdentifier": {
 "type": "text",
 "placeholders": {}
@@ -2161,7 +2161,7 @@
 "@shareYourInviteLink": {},
 "createNewChatExplaination": "Cukup pindai kode QR atau bagikan tautan undangan Anda jika Anda tidak bersebelahan.",
 "@createNewChatExplaination": {},
-"norechainonlineServer": "{server1} bukan server Jaringan Katya 👽 AI 🧠 REChain 🪐 Blockchain Node, gunakan {server2} sebagai gantinya?",
+"norechainonlineServer": "{server1} bukan server Jaringan Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node, gunakan {server2} sebagai gantinya?",
 "@norechainonlineServer": {
 "type": "text",
 "placeholders": {
@@ -2270,7 +2270,7 @@
 "error": {}
 }
 },
-"homeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"homeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@homeserver": {},
 "enterASpacepName": "Masukkan nama space",
 "@enterASpacepName": {},
@@ -3104,6 +3104,23 @@
 },
 "@whyIsThisMessageEncrypted": {
 },
+"@fileHasBeenSavedAt": {
+"placeholders": {
+"path": {
+}
+},
+"type": "text"
+},
+"@jump": {
+},
+"@jumpToLastReadMessage": {
+},
+"@readUpToHere": {
+},
+"fileHasBeenSavedAt": "Berkas telah disimpan di {path}",
+"jump": "Lompat",
+"jumpToLastReadMessage": "Pergi ke pesan terakhir dibaca",
+"readUpToHere": "Baca sampai sini",
 "allSpaces": "Semua space",
 "appearOnTop": "Tampilkan di atas",
 "appearOnTopDetails": "Memperbolehkan aplikasi untuk ditampilkan di atas (tidak dibutuhkan jika kamu memiliki REChain 🪐 ditetapkan sebagai akun pemanggilan)",
@@ -3146,7 +3163,7 @@
 "storyPrivacyWarning": "Diingat bahwa orang-orang dapat melihat dan kontak satu bersama di ceritamu. Ceritamu akan terlihat selama 24 jam tetapi tidak ada jaminan bahwa itu akan dihapus oleh semua perangkat dan server.",
 "switchToAccount": "Ganti ke akun {number}",
 "unsupportedAndroidVersion": "Versi Android tidak didukung",
-"unsupportedAndroidVersionLong": "Fitur ini memerlukan versi Android yang baru. Mohon periksa untuk pembaruan atau dukungan Katya 👽 Mobile OS.",
+"unsupportedAndroidVersionLong": "Fitur ini memerlukan versi Android yang baru. Mohon periksa untuk pembaruan atau dukungan Katya ® 👽 Mobile OS.",
 "videoCallsBetaWarning": "Dicatat bahwa panggilan video sedang dalam beta. Fitur ini mungkin tidak berkerja dengan benar atau tidak berkerja sama sekali pada semua platform.",
 "voiceCall": "Panggilan suara",
 "whatIsGoingOn": "Apa yang sedang terjadi?",

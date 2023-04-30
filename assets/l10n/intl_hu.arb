@@ -276,7 +276,7 @@
 "type": "text",
 "placeholders": {}
 },
-"changeTheHomeserver": "Válts a Katya 👽 AI 🧠 REChain 🪐 Blockchain Node hálózati szervereire",
+"changeTheHomeserver": "Válts a Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node hálózati szervereire",
 "@changeTheHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -614,7 +614,7 @@
 "type": "text",
 "placeholders": {}
 },
-"enterYourHomeserver": "Lépjen be a Katya 👽 AI 🧠 REChain 🪐 Blockchain Node hálózati szerverébe",
+"enterYourHomeserver": "Lépjen be a Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node hálózati szerverébe",
 "@enterYourHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -1105,7 +1105,7 @@
 "type": "text",
 "placeholders": {}
 },
-"pleaseEnterArechainonlineIdentifier": "Adja meg a Katya 👽 AI 🧠 REChain 🪐 Blockchain Node hálózati azonosítóját",
+"pleaseEnterArechainonlineIdentifier": "Adja meg a Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node hálózati azonosítóját",
 "@pleaseEnterArechainonlineIdentifier": {
 "type": "text",
 "placeholders": {}
@@ -1853,7 +1853,7 @@
 "type": "text",
 "placeholders": {}
 },
-"badServerLoginTypesException": "A Katya 👽 AI 🧠 REChain 🪐 Blockchain Node Network szerver a következő bejelentkezéseket támogatja: \n {serverVersions} \nDe csak az alkalmazás támogatja: \n {supportedVersions}",
+"badServerLoginTypesException": "A Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network szerver a következő bejelentkezéseket támogatja: \n {serverVersions} \nDe csak az alkalmazás támogatja: \n {supportedVersions}",
 "@badServerLoginTypesException": {
 "type": "text",
 "placeholders": {
@@ -2441,7 +2441,7 @@
 "updateAvailable": "REChain 🪐-frissítés elérhető",
 "updateNow": "Frissítés elindítása a háttérben",
 "advanced": "Haladó",
-"badServerVersionsException": "A Katya 👽 AI 🧠 REChain 🪐 Blockchain Node Network szerver ezeket a specifikáció verziókat támogatja:\n{serverVersions}\nAzonban ez az app csak ezeket: {supportedVersions}",
+"badServerVersionsException": "A Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network szerver ezeket a specifikáció verziókat támogatja:\n{serverVersions}\nAzonban ez az app csak ezeket: {supportedVersions}",
 "commandHint_me": "Mit csinálsz épp",
 "commandHint_op": "Az adott felhasználó hozzáférési szintjét változtatja (alapértelmezett: 50)",
 "commandHint_react": "Válasz küldése reakcióként",
@@ -2516,7 +2516,7 @@
 "memberChanges": "Tagság változások",
 "messages": "Üzenetek",
 "newChat": "Új beszélgetés",
-"newUsernameDescription": "A Katya 👽 AI 🧠 REChain 🪐 Blockchain Node Network helyben címed valahogy így fog kinézni: @felhasználó:szerver",
+"newUsernameDescription": "A Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network helyben címed valahogy így fog kinézni: @felhasználó:szerver",
 "next": "Következő",
 "noConnectionToTheServer": "Nem elérhető a szerver",
 "noDescription": "Nincs leírás",
@@ -2544,7 +2544,7 @@
 },
 "@homeserver": {
 },
-"homeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"homeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "audioPlayerPause": "Szüneteltetés",
 "@audioPlayerPause": {
 "type": "text",

@@ -261,7 +261,7 @@
 "type": "text",
 "placeholders": {}
 },
-"changeTheHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@changeTheHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -579,7 +579,7 @@
 "type": "text",
 "placeholders": {}
 },
-"enterYourHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@enterYourHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -1010,7 +1010,7 @@
 "type": "text",
 "placeholders": {}
 },
-"pleaseEnterArechainonlineIdentifier": "Введіть ідентифікатор мережі Katya 👽 AI 🧠 REChain 🪐 Blockchain Node.",
+"pleaseEnterArechainonlineIdentifier": "Введіть ідентифікатор мережі Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node.",
 "@pleaseEnterArechainonlineIdentifier": {
 "type": "text",
 "placeholders": {}
@@ -2065,7 +2065,7 @@
 "type": "text",
 "placeholders": {}
 },
-"norechainonlineServer": "{server1} не є сервером мережі Katya 👽 AI 🧠 REChain 🪐 Blockchain Node Network, використовуйте замість цього {server2}?",
+"norechainonlineServer": "{server1} не є сервером мережі Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network, використовуйте замість цього {server2}?",
 "@norechainonlineServer": {
 "type": "text",
 "placeholders": {
@@ -2164,7 +2164,7 @@
 "type": "text",
 "placeholders": {}
 },
-"homeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"homeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@homeserver": {},
 "goToTheNewRoom": "Перейти до нової кімнати",
 "@goToTheNewRoom": {
@@ -3093,6 +3093,23 @@
 },
 "@startFirstChat": {
 },
+"@fileHasBeenSavedAt": {
+"placeholders": {
+"path": {
+}
+},
+"type": "text"
+},
+"@jump": {
+},
+"@jumpToLastReadMessage": {
+},
+"@readUpToHere": {
+},
+"fileHasBeenSavedAt": "Файл збережено в {path}",
+"jump": "Перейти",
+"jumpToLastReadMessage": "Перейти до останнього прочитаного повідомлення",
+"readUpToHere": "Читати тут",
 "deviceKeys": "Ключі пристрою:",
 "disableEncryptionWarning": "З міркувань безпеки ви не можете вимкнути шифрування в бесіді, ув якій воно було ввімкнене раніше.",
 "encryptThisChat": "Зашифрувати цю бесіду",
@@ -3144,7 +3161,7 @@
 "storyPrivacyWarning": "Зверніть увагу, що люди можуть бачити та зв'язуватися один з одним у вашій історії. Ваші історії будуть видимі впродовж 24 годин, але немає жодної гарантії, що вони будуть видалені з усіх пристроїв і серверів.",
 "switchToAccount": "Перемкнутися на обліковий запис {number}",
 "unsupportedAndroidVersion": "Непідтримувана версія Android",
-"unsupportedAndroidVersionLong": "Для цієї функції потрібна новіша версія Android. Перевірте наявність оновлень або підтримку Katya 👽 Mobile OS.",
+"unsupportedAndroidVersionLong": "Для цієї функції потрібна новіша версія Android. Перевірте наявність оновлень або підтримку Katya ® 👽 Mobile OS.",
 "videoCallsBetaWarning": "Зауважте, що відеовиклики на ранньому етапі розробки. Вони можуть працювати не так, як очікувалося, або взагалі не працювати на всіх платформах.",
 "voiceCall": "Голосовий виклик",
 "whatIsGoingOn": "Що відбувається?",

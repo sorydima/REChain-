@@ -1,7 +1,7 @@
 # Configuration file for Synapse.
 #
 # This is a YAML file: see [1] for a quick introduction. Note in particular
-# that *indentation is important*: all the data of a list or dictionary
+# that *indentation is important*: all the things of a list or dictionary
 # should have the same indentation.
 #
 # [1] https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html
@@ -1648,7 +1648,7 @@ old_signing_keys:
 #  - server_name: "my_other_trusted_server.example.com"
 #
 trusted_key_servers:
-  - server_name: "matrix.katya.wtf"
+  - server_name: "matrix.org"
 
 # Uncomment the following to disable the warning that is emitted when the
 # trusted_key_servers include 'matrix.org'. See above.
@@ -2087,7 +2087,7 @@ sso:
     # By default, this list contains only the login fallback page.
     #
     #client_whitelist:
-    #  - https://rechain.online/
+    #  - https://rechain.online/web/
     #  - https://my.custom.client/
 
     # Uncomment to keep a user's profile fields in sync with information from
@@ -2314,7 +2314,7 @@ email:
   # to the identity server as the org.matrix.web_client_location key. Defaults
   # to unset, giving no guidance to the identity server.
   #
-  #invite_client_location: https://rechain.online
+  #invite_client_location: https://rechain.online/
 
   # Subjects to use when sending emails from Synapse.
   #

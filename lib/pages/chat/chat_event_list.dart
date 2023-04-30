@@ -48,6 +48,22 @@ class ChatEventList extends StatelessWidget {
         (BuildContext context, int i) {
           // Footer to display typing indicator and read receipts:
           if (i == 0) {
+            if (controller.timeline!.isRequestingFuture) {
+              return const Center(
+                child: CircularProgressIndicator.adaptive(strokeWidth: 2),
+              );
+            }
+            if (controller.timeline!.canRequestFuture) {
+              Center(
+                child: OutlinedButton(
+                  style: OutlinedButton.styleFrom(
+                    backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+                  ),
+                  onPressed: controller.requestFuture,
+                  child: Text(L10n.of(context)!.loadMore),
+                ),
+              );
+            }
             return Column(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -64,7 +80,7 @@ class ChatEventList extends StatelessWidget {
                 child: CircularProgressIndicator.adaptive(strokeWidth: 2),
               );
             }
-            if (controller.canLoadMore) {
+            if (controller.timeline!.canRequestHistory) {
               Center(
                 child: OutlinedButton(
                   style: OutlinedButton.styleFrom(
@@ -75,7 +91,7 @@ class ChatEventList extends StatelessWidget {
                 ),
               );
             }
-            return Container();
+            return const SizedBox.shrink();
           }
 
           // The message at this index:
@@ -86,19 +102,20 @@ class ChatEventList extends StatelessWidget {
             index: i - 1,
             controller: controller.scrollController,
             child: event.isVisibleInGui
-                ? Message(event,
+                ? Message(
+                    event,
                     onSwipe: (direction) =>
                         controller.replyAction(replyTo: event),
                     onInfoTab: controller.showEventInfo,
                     onAvatarTab: (Event event) => showAdaptiveBottomSheet(
-                          context: context,
-                          builder: (c) => UserBottomSheet(
-                            user: event.senderFromMemoryOrFallback,
-                            outerContext: context,
-                            onMention: () => controller.sendController.text +=
-                                '${event.senderFromMemoryOrFallback.mention} ',
-                          ),
-                        ),
+                      context: context,
+                      builder: (c) => UserBottomSheet(
+                        user: event.senderFromMemoryOrFallback,
+                        outerContext: context,
+                        onMention: () => controller.sendController.text +=
+                            '${event.senderFromMemoryOrFallback.mention} ',
+                      ),
+                    ),
                     onSelect: controller.onSelectMessage,
                     scrollToEventId: (String eventId) =>
                         controller.scrollToEventId(eventId),
@@ -106,10 +123,14 @@ class ChatEventList extends StatelessWidget {
                     selected: controller.selectedEvents
                         .any((e) => e.eventId == event.eventId),
                     timeline: controller.timeline!,
+                    displayReadMarker:
+                        controller.readMarkerEventId == event.eventId &&
+                            controller.timeline?.allowNewEvent == false,
                     nextEvent: i < controller.timeline!.events.length
                         ? controller.timeline!.events[i]
-                        : null)
-                : Container(),
+                        : null,
+                  )
+                : const SizedBox.shrink(),
           );
         },
         childCount: controller.timeline!.events.length + 2,

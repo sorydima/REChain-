@@ -11,8 +11,8 @@ class TombstoneDisplay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (controller.room!.getState(EventTypes.RoomTombstone) == null) {
-      return Container();
+    if (controller.room.getState(EventTypes.RoomTombstone) == null) {
+      return const SizedBox.shrink();
     }
     return SizedBox(
       height: 72,
@@ -26,7 +26,7 @@ class TombstoneDisplay extends StatelessWidget {
             child: const Icon(Icons.upgrade_outlined),
           ),
           title: Text(
-            controller.room!
+            controller.room
                 .getState(EventTypes.RoomTombstone)!
                 .parsedTombstoneContent
                 .body,

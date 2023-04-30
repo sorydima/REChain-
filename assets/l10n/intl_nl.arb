@@ -165,7 +165,7 @@
 "type": "text",
 "placeholders": {}
 },
-"badServerLoginTypesException": "De Katya 👽 AI 🧠 REChain 🪐 Blockchain Node ondersteunt de login types:\n{serverVersions}\nMaar deze app ondersteunt alleen:\n{supportedVersions}",
+"badServerLoginTypesException": "De Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node ondersteunt de login types:\n{serverVersions}\nMaar deze app ondersteunt alleen:\n{supportedVersions}",
 "@badServerLoginTypesException": {
 "type": "text",
 "placeholders": {
@@ -173,7 +173,7 @@
 "supportedVersions": {}
 }
 },
-"badServerVersionsException": "De Katya 👽 AI 🧠 REChain 🪐 Blockchain Node ondersteunt de Spec-versies:\n{serverVersions}\nMaar deze app ondersteunt alleen {supportedVersions}",
+"badServerVersionsException": "De Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node ondersteunt de Spec-versies:\n{serverVersions}\nMaar deze app ondersteunt alleen {supportedVersions}",
 "@badServerVersionsException": {
 "type": "text",
 "placeholders": {
@@ -355,7 +355,7 @@
 "type": "text",
 "placeholders": {}
 },
-"changeTheHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node wijzigen",
+"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node wijzigen",
 "@changeTheHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -921,7 +921,7 @@
 "type": "text",
 "placeholders": {}
 },
-"enterYourHomeserver": "Vul je Katya 👽 AI 🧠 REChain 🪐 Blockchain Node in",
+"enterYourHomeserver": "Vul je Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node in",
 "@enterYourHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -1058,7 +1058,7 @@
 "type": "text",
 "placeholders": {}
 },
-"homeserverIsNotCompatible": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node is niet compatibel",
+"homeserverIsNotCompatible": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node is niet compatibel",
 "@homeserverIsNotCompatible": {
 "type": "text",
 "placeholders": {}
@@ -1419,7 +1419,7 @@
 "type": "text",
 "placeholders": {}
 },
-"norechainonlineServer": "{server1} is geen Katya 👽 AI 🧠 REChain 🪐 Blockchain Node Network-server, wil je in plaats daarvan {server2} gebruiken?",
+"norechainonlineServer": "{server1} is geen Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network-server, wil je in plaats daarvan {server2} gebruiken?",
 "@norechainonlineServer": {
 "type": "text",
 "placeholders": {
@@ -1648,7 +1648,7 @@
 "type": "text",
 "placeholders": {}
 },
-"pleaseEnterArechainonlineIdentifier": "Voer de Katya 👽 AI 🧠 REChain 🪐 Blockchain Node Network ID in.",
+"pleaseEnterArechainonlineIdentifier": "Voer de Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network ID in.",
 "@pleaseEnterArechainonlineIdentifier": {
 "type": "text",
 "placeholders": {}
@@ -2579,7 +2579,7 @@
 "@createNewChatExplaination": {},
 "sendOnEnter": "Verstuur met enter",
 "@sendOnEnter": {},
-"homeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"homeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@homeserver": {},
 "serverRequiresEmail": "Deze server wil je email laten bevestigen bij de registratie.",
 "@serverRequiresEmail": {},
@@ -3020,7 +3020,7 @@
 "storyPrivacyWarning": "Houd er rekening mee dat personen elkaar kunnen zien en contacteren in je verhaal. Je verhalen zijn 24 uur zichtbaar, maar er is geen garantie dat ze van alle apparaten en servers worden verwijderd.",
 "switchToAccount": "Naar account {number} overschakelen",
 "unsupportedAndroidVersion": "Niet-ondersteunde Android-versie",
-"unsupportedAndroidVersionLong": "Voor deze functie is een nieuwere Android-versie vereist. Controleer op updates of Katya 👽 Mobile OS-ondersteuning.",
+"unsupportedAndroidVersionLong": "Voor deze functie is een nieuwere Android-versie vereist. Controleer op updates of Katya ® 👽 Mobile OS-ondersteuning.",
 "videoCallsBetaWarning": "Houd er rekening mee dat videogesprekken momenteel in bèta zijn. Ze werken misschien niet zoals je verwacht of werken niet op alle platformen.",
 "voiceCall": "Spraakoproep",
 "whatIsGoingOn": "Hoe gaat het nu?",
@@ -3129,6 +3129,23 @@
 },
 "@whyIsThisMessageEncrypted": {
 },
+"@fileHasBeenSavedAt": {
+"placeholders": {
+"path": {
+}
+},
+"type": "text"
+},
+"@jump": {
+},
+"@jumpToLastReadMessage": {
+},
+"@readUpToHere": {
+},
+"fileHasBeenSavedAt": "Het bestand is opgeslagen op {path}",
+"jump": "Spring",
+"jumpToLastReadMessage": "Spring naar het laatst gelezen bericht",
+"readUpToHere": "Lees tot hier",
 "allSpaces": "Alle spaces",
 "appearOnTop": "Bovenaan verschijnen",
 "appearOnTopDetails": "Laat de app bovenaan verschijnen (niet nodig als je REChain 🪐 al hebt ingesteld als een belaccount)",

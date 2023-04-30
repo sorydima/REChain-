@@ -164,7 +164,7 @@
 "type": "text",
 "placeholders": {}
 },
-"badServerLoginTypesException": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node podporuje přihlášení typu:\n{serverVersions}\nAle tato aplikace podporuje pouze:\n{supportedVersions}",
+"badServerLoginTypesException": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node podporuje přihlášení typu:\n{serverVersions}\nAle tato aplikace podporuje pouze:\n{supportedVersions}",
 "@badServerLoginTypesException": {
 "type": "text",
 "placeholders": {
@@ -172,7 +172,7 @@
 "supportedVersions": {}
 }
 },
-"badServerVersionsException": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node podporuje specifikaci verzí:\n{serverVersions}\nAle tato aplikace podporuje pouze verze {supportedVersions}",
+"badServerVersionsException": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node podporuje specifikaci verzí:\n{serverVersions}\nAle tato aplikace podporuje pouze verze {supportedVersions}",
 "@badServerVersionsException": {
 "type": "text",
 "placeholders": {
@@ -354,7 +354,7 @@
 "type": "text",
 "placeholders": {}
 },
-"changeTheHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@changeTheHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -913,7 +913,7 @@
 "type": "text",
 "placeholders": {}
 },
-"enterYourHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@enterYourHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -1411,7 +1411,7 @@
 "type": "text",
 "placeholders": {}
 },
-"norechainonlineServer": "{server1} není server Katya 👽 AI 🧠 REChain 🪐 Blockchain Node Network server, použít místo něj server {server2}?",
+"norechainonlineServer": "{server1} není server Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network server, použít místo něj server {server2}?",
 "@norechainonlineServer": {
 "type": "text",
 "placeholders": {
@@ -1640,7 +1640,7 @@
 "type": "text",
 "placeholders": {}
 },
-"pleaseEnterArechainonlineIdentifier": "Zadejte ID sítě uzlu Katya 👽 AI 🧠 REChain 🪐 Blockchain Node.",
+"pleaseEnterArechainonlineIdentifier": "Zadejte ID sítě uzlu Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node.",
 "@pleaseEnterArechainonlineIdentifier": {
 "type": "text",
 "placeholders": {}
@@ -2625,7 +2625,7 @@
 "@createNewChatExplaination": {},
 "sendOnEnter": "Odeslat při vstupu",
 "@sendOnEnter": {},
-"homeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"homeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@homeserver": {},
 "serverRequiresEmail": "Tento server potřebuje k registraci ověřit vaši e -mailovou adresu.",
 "@serverRequiresEmail": {},
@@ -2924,7 +2924,7 @@
 "storyPrivacyWarning": "Upozorňujeme, že lidé se ve vašem příběhu mohou navzájem vidět a kontaktovat. Vaše příběhy budou viditelné po dobu 24 hodin, ale není zaručeno, že budou smazány ze všech zařízení a serverů.",
 "switchToAccount": "Přepnout na účet {number}",
 "unsupportedAndroidVersion": "Nepodporovaná verze Androidu",
-"unsupportedAndroidVersionLong": "Tato funkce vyžaduje novější verzi Android. Zkontrolujte prosím aktualizace nebo podporu Katya 👽 Mobile OS.",
+"unsupportedAndroidVersionLong": "Tato funkce vyžaduje novější verzi Android. Zkontrolujte prosím aktualizace nebo podporu Katya ® 👽 Mobile OS.",
 "videoCallsBetaWarning": "Upozorňujeme, že videohovory jsou aktuálně ve verzi beta. Nemusí fungovat podle očekávání nebo fungovat vůbec na všech platformách.",
 "voiceCall": "Hlasový hovor",
 "whatIsGoingOn": "Co se děje?",

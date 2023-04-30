@@ -23,7 +23,8 @@ class FlutterHiveCollectionsDatabase extends HiveCollectionsDatabase {
   static const String _cipherStorageKey = 'hive_encryption_key';
 
   static Future<FlutterHiveCollectionsDatabase> databaseBuilder(
-      Client client) async {
+    Client client,
+  ) async {
     Logs().d('Open Hive...');
     HiveAesCipher? hiverCipher;
     try {
@@ -95,9 +96,10 @@ class FlutterHiveCollectionsDatabase extends HiveCollectionsDatabase {
           directory = Directory.current;
         }
       }
-      directory = Directory(directory.uri
-          .resolve(kDebugMode ? 'hive_debug' : 'hive')
-          .toFilePath());
+      // do not destroy your stable REChain 🪐 in debug mode
+      directory = Directory(
+        directory.uri.resolve(kDebugMode ? 'hive_debug' : 'hive').toFilePath(),
+      );
       directory.create(recursive: true);
       path = directory.path;
     }

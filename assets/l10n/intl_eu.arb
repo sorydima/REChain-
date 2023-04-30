@@ -266,7 +266,7 @@
 "type": "text",
 "placeholders": {}
 },
-"changeTheHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@changeTheHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -3259,7 +3259,7 @@
 "unreadMessages": "{unreadEvents, plural, =1{irakurri gabeko txat bat} other {{unreadEvents} mezu irakurri gabe}}",
 "unsubscribeStories": "Storyak jasotzeari utzi",
 "unsupportedAndroidVersion": "Android bertsioarekin arazoa",
-"unsupportedAndroidVersionLong": "Funtzio honek Android bertsio berriago bat behar du. Mesedez, egiaztatu eguneraketan dauden eta begiratu Katya 👽 Mobile OS-ek zure gailuarentzat aukerarik eskaintzen duen.",
+"unsupportedAndroidVersionLong": "Funtzio honek Android bertsio berriago bat behar du. Mesedez, egiaztatu eguneraketan dauden eta begiratu Katya ® 👽 Mobile OS-ek zure gailuarentzat aukerarik eskaintzen duen.",
 "unverified": "Egiaztatu gabe",
 "userNotVerified": "Erabiltzailea ez da egiaztatu",
 "userUnknownVerification": "Erabiltzailearen egiaztaketa egoera ezezaguna da",
@@ -3370,7 +3370,7 @@
 "addWidget": "Gehitu widgeta",
 "editWidgets": "Editatu widgetak",
 "errorAddingWidget": "Errorea widgeta gehitzerakoan.",
-"homeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"homeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "separateChatTypes": "Bereizi Mezu Zuzenak, Taldeak eta Guneak",
 "showDirectChatsInSpaces": "Erakutsi zerikusia duten Mezu Zuzenak Taldeetan",
 "showSpaces": "Erakutsi guneen zerrenda",

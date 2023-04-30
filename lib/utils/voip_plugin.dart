@@ -13,7 +13,7 @@ import 'package:rechainonline/pages/chat_list/chat_list.dart';
 import 'package:rechainonline/pages/dialer/dialer.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
 import 'package:rechainonline/widgets/rechainonline_chat_app.dart';
-import '../../utils/famedlysdk_store.dart';
+import '../../utils/rechainonlinesdk_store.dart';
 import '../../utils/voip/callkeep_manager.dart';
 import '../../utils/voip/user_media_manager.dart';
 
@@ -82,16 +82,17 @@ class VoipPlugin with WidgetsBindingObserver implements WebRTCDelegate {
     } else {
       overlayEntry = OverlayEntry(
         builder: (_) => Calling(
-            context: context,
-            client: client,
-            callId: callId,
-            call: call,
-            onClear: () {
-              overlayEntry?.remove();
-              overlayEntry = null;
-            }),
+          context: context,
+          client: client,
+          callId: callId,
+          call: call,
+          onClear: () {
+            overlayEntry?.remove();
+            overlayEntry = null;
+          },
+        ),
       );
-      /// Overlay.of(context).insert(overlayEntry!);
+      Overlay.of(context).insert(overlayEntry!);
     }
   }
 
@@ -103,8 +104,9 @@ class VoipPlugin with WidgetsBindingObserver implements WebRTCDelegate {
 
   @override
   Future<RTCPeerConnection> createPeerConnection(
-          Map<String, dynamic> configuration,
-          [Map<String, dynamic> constraints = const {}]) =>
+    Map<String, dynamic> configuration, [
+    Map<String, dynamic> constraints = const {},
+  ]) =>
       webrtc_impl.createPeerConnection(configuration, constraints);
 
   @override
@@ -116,7 +118,7 @@ class VoipPlugin with WidgetsBindingObserver implements WebRTCDelegate {
       kIsWeb ? false : await CallKeepManager().hasPhoneAccountEnabled;
 
   @override
-  void playRingtone() async {
+  Future<void> playRingtone() async {
     if (!background && !await hasCallingAccount) {
       try {
         await UserMediaManager().startRingingTone();
@@ -125,7 +127,7 @@ class VoipPlugin with WidgetsBindingObserver implements WebRTCDelegate {
   }
 
   @override
-  void stopRingtone() async {
+  Future<void> stopRingtone() async {
     if (!background && !await hasCallingAccount) {
       try {
         await UserMediaManager().stopRingingTone();
@@ -134,7 +136,7 @@ class VoipPlugin with WidgetsBindingObserver implements WebRTCDelegate {
   }
 
   @override
-  void handleNewCall(CallSession call) async {
+  Future<void> handleNewCall(CallSession call) async {
     if (PlatformInfos.isAndroid) {
       // probably works on ios too
       final hasCallingAccount = await CallKeepManager().hasPhoneAccountEnabled;
@@ -150,7 +152,9 @@ class VoipPlugin with WidgetsBindingObserver implements WebRTCDelegate {
         try {
           final wasForeground = await FlutterForegroundTask.isAppOnForeground;
           await Store().setItem(
-              'wasForeground', wasForeground == true ? 'true' : 'false');
+            'wasForeground',
+            wasForeground == true ? 'true' : 'false',
+          );
           FlutterForegroundTask.setOnLockScreenVisibility(true);
           FlutterForegroundTask.wakeUpScreen();
           FlutterForegroundTask.launchApp();
@@ -162,10 +166,13 @@ class VoipPlugin with WidgetsBindingObserver implements WebRTCDelegate {
         try {
           if (!hasCallingAccount) {
             ScaffoldMessenger.of(rechainonlineChatApp.routerKey.currentContext!)
-                .showSnackBar(const SnackBar(
-                    content: Text(
-              'No calling accounts found (used for native calls UI)',
-            )));
+                .showSnackBar(
+              const SnackBar(
+                content: Text(
+                  'No calling accounts found (used for native calls UI)',
+                ),
+              ),
+            );
           }
         } catch (e) {
           Logs().e('failed to show snackbar');
@@ -177,7 +184,7 @@ class VoipPlugin with WidgetsBindingObserver implements WebRTCDelegate {
   }
 
   @override
-  void handleCallEnded(CallSession session) async {
+  Future<void> handleCallEnded(CallSession session) async {
     if (overlayEntry != null) {
       overlayEntry!.remove();
       overlayEntry = null;
@@ -191,12 +198,12 @@ class VoipPlugin with WidgetsBindingObserver implements WebRTCDelegate {
   }
 
   @override
-  void handleGroupCallEnded(GroupCall groupCall) {
+  Future<void> handleGroupCallEnded(GroupCall groupCall) async {
     // TODO: implement handleGroupCallEnded
   }
 
   @override
-  void handleNewGroupCall(GroupCall groupCall) {
+  Future<void> handleNewGroupCall(GroupCall groupCall) async {
     // TODO: implement handleNewGroupCall
   }
 
@@ -206,7 +213,7 @@ class VoipPlugin with WidgetsBindingObserver implements WebRTCDelegate {
       voip.currentCID == null && voip.currentGroupCID == null;
 
   @override
-  void handleMissedCall(CallSession session) {
+  Future<void> handleMissedCall(CallSession session) async {
     // TODO: implement handleMissedCall
   }
 }

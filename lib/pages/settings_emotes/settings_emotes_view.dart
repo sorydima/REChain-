@@ -107,7 +107,7 @@ class EmotesSettingsView extends StatelessWidget {
                     )
                   : ListView.separated(
                       separatorBuilder: (BuildContext context, int i) =>
-                          Container(),
+                          const SizedBox.shrink(),
                       itemCount: imageKeys.length + 1,
                       itemBuilder: (BuildContext context, int i) {
                         if (i >= imageKeys.length) {
@@ -140,16 +140,17 @@ class EmotesSettingsView extends StatelessWidget {
                                 actions: !useShortCuts
                                     ? {}
                                     : {
-                                        SubmitLineIntent:
-                                            CallbackAction(onInvoke: (i) {
-                                          controller.submitImageAction(
-                                            imageCode,
-                                            textEditingController.text,
-                                            image,
-                                            textEditingController,
-                                          );
-                                          return null;
-                                        }),
+                                        SubmitLineIntent: CallbackAction(
+                                          onInvoke: (i) {
+                                            controller.submitImageAction(
+                                              imageCode,
+                                              textEditingController.text,
+                                              image,
+                                              textEditingController,
+                                            );
+                                            return null;
+                                          },
+                                        ),
                                       },
                                 child: TextField(
                                   readOnly: controller.readonly,

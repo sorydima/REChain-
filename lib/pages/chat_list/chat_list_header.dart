@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
 
 import 'package:rechainonline/config/app_config.dart';
+import 'package:rechainonline/config/themes.dart';
 import 'package:rechainonline/pages/chat_list/chat_list.dart';
 import 'package:rechainonline/pages/chat_list/client_chooser_button.dart';
 import '../../widgets/matrix.dart';
@@ -16,7 +17,13 @@ class ChatListHeader extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     final selectMode = controller.selectMode;
 
-    return AppBar(
+    return SliverAppBar(
+      floating: true,
+      pinned:
+          rechainonlineThemes.isColumnMode(context) || selectMode != SelectMode.normal,
+      scrolledUnderElevation: selectMode == SelectMode.normal ? 0 : null,
+      backgroundColor:
+          selectMode == SelectMode.normal ? Colors.transparent : null,
       automaticallyImplyLeading: false,
       leading: selectMode == SelectMode.normal
           ? null
@@ -43,10 +50,6 @@ class ChatListHeader extends StatelessWidget implements PreferredSizeWidget {
                     textInputAction: TextInputAction.search,
                     onChanged: controller.onSearchEnter,
                     decoration: InputDecoration(
-                      fillColor: Theme.of(context)
-                          .colorScheme
-                          .secondaryContainer
-                          .withAlpha(128),
                       border: UnderlineInputBorder(
                         borderSide: BorderSide.none,
                         borderRadius:
@@ -120,22 +123,28 @@ class ChatListHeader extends StatelessWidget implements PreferredSizeWidget {
                     ),
                   IconButton(
                     tooltip: L10n.of(context)!.toggleUnread,
-                    icon: Icon(controller.anySelectedRoomNotMarkedUnread
-                        ? Icons.mark_chat_read_outlined
-                        : Icons.mark_chat_unread_outlined),
+                    icon: Icon(
+                      controller.anySelectedRoomNotMarkedUnread
+                          ? Icons.mark_chat_read_outlined
+                          : Icons.mark_chat_unread_outlined,
+                    ),
                     onPressed: controller.toggleUnread,
                   ),
                   IconButton(
                     tooltip: L10n.of(context)!.toggleFavorite,
-                    icon: Icon(controller.anySelectedRoomNotFavorite
-                        ? Icons.push_pin_outlined
-                        : Icons.push_pin),
+                    icon: Icon(
+                      controller.anySelectedRoomNotFavorite
+                          ? Icons.push_pin_outlined
+                          : Icons.push_pin,
+                    ),
                     onPressed: controller.toggleFavouriteRoom,
                   ),
                   IconButton(
-                    icon: Icon(controller.anySelectedRoomNotMuted
-                        ? Icons.notifications_off_outlined
-                        : Icons.notifications_outlined),
+                    icon: Icon(
+                      controller.anySelectedRoomNotMuted
+                          ? Icons.notifications_off_outlined
+                          : Icons.notifications_outlined,
+                    ),
                     tooltip: L10n.of(context)!.toggleMuted,
                     onPressed: controller.toggleMuted,
                   ),

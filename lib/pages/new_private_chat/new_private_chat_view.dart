@@ -21,7 +21,7 @@ class NewPrivateChatView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final qrCodeSize =
-        min(MediaQuery.of(context).size.width - 16, 200).toDouble();
+        min(MediaQuery.of(context).size.width - 16, 256).toDouble();
     return Scaffold(
       appBar: AppBar(
         leading: const BackButton(),
@@ -69,6 +69,7 @@ class NewPrivateChatView extends StatelessWidget {
                         style: TextButton.styleFrom(
                           fixedSize:
                               Size.fromWidth(qrCodeSize - (2 * _qrCodePadding)),
+                          foregroundColor: Colors.black,
                         ),
                         icon: Icon(Icons.adaptive.share_outlined),
                         label: Text(L10n.of(context)!.shareYourInviteLink),

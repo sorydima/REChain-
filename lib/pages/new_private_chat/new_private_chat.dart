@@ -44,7 +44,7 @@ class NewPrivateChatController extends State<NewPrivateChat> {
 
   String? validateForm(String? value) {
     if (value!.isEmpty) {
-      return L10n.of(context)!.pleaseEnterArechainonlineIdentifier;
+      return L10n.of(context)!.pleaseEnterAMatrixIdentifier;
     }
     if (!controller.text.isValidMatrixId ||
         !supportedSigils.contains(controller.text.sigil)) {

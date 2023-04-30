@@ -337,7 +337,7 @@
 "type": "text",
 "placeholders": {}
 },
-"changeTheHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@changeTheHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -884,7 +884,7 @@
 "type": "text",
 "placeholders": {}
 },
-"enterYourHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@enterYourHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -1576,7 +1576,7 @@
 "type": "text",
 "placeholders": {}
 },
-"pleaseEnterArechainonlineIdentifier": "请输入 Katya 👽 AI 🧠 REChain 🪐 Blockchain Node 区块链节点网络 ID。",
+"pleaseEnterArechainonlineIdentifier": "请输入 Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node 区块链节点网络 ID。",
 "@pleaseEnterArechainonlineIdentifier": {
 "type": "text",
 "placeholders": {}
@@ -2489,7 +2489,7 @@
 "type": "text",
 "placeholders": {}
 },
-"norechainonlineServer": "{server1} 不是 Katya 👽 AI 🧠 REChain 🪐 Blockchain Node 区块链节点网络服务器，试试 {server2}？",
+"norechainonlineServer": "{server1} 不是 Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node 区块链节点网络服务器，试试 {server2}？",
 "@norechainonlineServer": {
 "type": "text",
 "placeholders": {
@@ -2589,7 +2589,7 @@
 "type": "text",
 "placeholders": {}
 },
-"homeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"homeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@homeserver": {},
 "newPasswordDescription": "若您要使用密码重置功能，您在注册之后需要给账户添加一个电子邮件地址。",
 "@newPasswordDescription": {},
@@ -3128,7 +3128,7 @@
 "storyPrivacyWarning": "请注意，人们可以在你的 Story 中看到和联系彼此。您的故事在 24 小时内可见，但不能保证它们将从所有设备和服务器上删除。",
 "switchToAccount": "切换到账户 {number}",
 "unsupportedAndroidVersion": "不受支持的 Android 版本",
-"unsupportedAndroidVersionLong": "这个功能需要较新版本的 Android 系统。请检查更新或 Katya 👽 Mobile OS 支持。",
+"unsupportedAndroidVersionLong": "这个功能需要较新版本的 Android 系统。请检查更新或 Katya ® 👽 Mobile OS 支持。",
 "videoCallsBetaWarning": "请注意，视频通话目前处于测试阶段。它们可能不能像预期的那样工作，或者在所有平台上都不能工作。",
 "voiceCall": "语音通话",
 "whatIsGoingOn": "发生什么事了？",

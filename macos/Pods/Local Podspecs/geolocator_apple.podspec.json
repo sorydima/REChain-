@@ -1,0 +1,30 @@
+{
+  "name": "geolocator_apple",
+  "version": "1.2.0",
+  "summary": "Geolocation macOS plugin for Flutter.",
+  "description": "Geolocation macOS plugin for Flutter. This plugin provides the Apple implementation for the geolocator plugin.",
+  "homepage": "http://github.com/baseflow/flutter-geolocator",
+  "license": {
+    "type": "MIT",
+    "file": "../LICENSE"
+  },
+  "authors": {
+    "Baseflow": "hello@baseflow.com"
+  },
+  "source": {
+    "http": "https://github.com/baseflow/flutter-geolocator/tree/master/"
+  },
+  "source_files": "Classes/**/*",
+  "public_header_files": "Classes/**/*.h",
+  "dependencies": {
+    "FlutterMacOS": [
+
+    ]
+  },
+  "platforms": {
+    "osx": "10.11"
+  },
+  "pod_target_xcconfig": {
+    "DEFINES_MODULE": "YES"
+  }
+}

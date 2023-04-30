@@ -314,7 +314,7 @@
 "type": "text",
 "placeholders": {}
 },
-"changeTheHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@changeTheHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -890,9 +890,9 @@
 "type": "text",
 "placeholders": {}
 },
-"homeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"homeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@homeserver": {},
-"enterYourHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@enterYourHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -1368,7 +1368,7 @@
 "type": "text",
 "placeholders": {}
 },
-"norechainonlineServer": "{server1} não é um servidor Katya 👽 AI 🧠 REChain 🪐 Blockchain Node Network, use {server2}?",
+"norechainonlineServer": "{server1} não é um servidor Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network, use {server2}?",
 "@norechainonlineServer": {
 "type": "text",
 "placeholders": {
@@ -1697,7 +1697,7 @@
 "type": "text",
 "placeholders": {}
 },
-"pleaseEnterArechainonlineIdentifier": "Digite a ID de rede do nó de Katya 👽 AI 🧠 REChain 🪐 Blockchain Node.",
+"pleaseEnterArechainonlineIdentifier": "Digite a ID de rede do nó de Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node.",
 "@pleaseEnterArechainonlineIdentifier": {
 "type": "text",
 "placeholders": {}

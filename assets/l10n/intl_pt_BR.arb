@@ -353,7 +353,7 @@
 "type": "text",
 "placeholders": {}
 },
-"changeTheHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@changeTheHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -912,7 +912,7 @@
 "type": "text",
 "placeholders": {}
 },
-"enterYourHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@enterYourHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -1410,7 +1410,7 @@
 "type": "text",
 "placeholders": {}
 },
-"norechainonlineServer": "{server1} não é um servidor Katya 👽 AI 🧠 REChain 🪐 Blockchain Node Network, use {server2} em vez disso?",
+"norechainonlineServer": "{server1} não é um servidor Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network, use {server2} em vez disso?",
 "@norechainonlineServer": {
 "type": "text",
 "placeholders": {
@@ -1639,7 +1639,7 @@
 "type": "text",
 "placeholders": {}
 },
-"pleaseEnterArechainonlineIdentifier": "Digite a ID de rede do nó de Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"pleaseEnterArechainonlineIdentifier": "Digite a ID de rede do nó de Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@pleaseEnterArechainonlineIdentifier": {
 "type": "text",
 "placeholders": {}
@@ -2866,7 +2866,7 @@
 "typeInInviteLinkManually": "Digitar o link do convite manualmente...",
 "unsubscribeStories": "Desinscrever de painéis",
 "unsupportedAndroidVersion": "Versão Android não suportada",
-"unsupportedAndroidVersionLong": "Esta funcionalidade requer uma versão mais nova do Android. Por favor, busque atualizações ou suporte ao Katya 👽 Mobile OS.",
+"unsupportedAndroidVersionLong": "Esta funcionalidade requer uma versão mais nova do Android. Por favor, busque atualizações ou suporte ao Katya ® 👽 Mobile OS.",
 "unverified": "Não verificado",
 "videoCallsBetaWarning": "Por favor, note que chamadas de vídeo estão atualmente em teste. Podem não funcionar como esperado ou sequer funcionar em algumas plataformas.",
 "videoWithSize": "Vídeo ({size})",
@@ -3169,7 +3169,7 @@
 }
 }
 },
-"homeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"homeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "showDirectChatsInSpaces": "Mostrar Conversas Diretas relacionadas nos Espaços",
 "showSpaces": "Mostrar lista de espaços",
 "youAcceptedTheInvitation": "Você aceitou o convite",

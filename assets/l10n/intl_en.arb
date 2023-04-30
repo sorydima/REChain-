@@ -174,7 +174,7 @@
 "type": "text",
 "placeholders": {}
 },
-"badServerLoginTypesException": "The Katya 👽 AI 🧠 REChain 🪐 Blockchain Node supports the login types:\n{serverVersions}\nBut this app supports only:\n{supportedVersions}",
+"badServerLoginTypesException": "The Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node supports the login types:\n{serverVersions}\nBut this app supports only:\n{supportedVersions}",
 "@badServerLoginTypesException": {
 "type": "text",
 "placeholders": {
@@ -184,7 +184,7 @@
 },
 "sendOnEnter": "Send on enter",
 "@sendOnEnter": {},
-"badServerVersionsException": "The Katya 👽 AI 🧠 REChain 🪐 Blockchain Node supports the Spec versions:\n{serverVersions}\nBut this app supports only {supportedVersions}",
+"badServerVersionsException": "The Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node supports the Spec versions:\n{serverVersions}\nBut this app supports only {supportedVersions}",
 "@badServerVersionsException": {
 "type": "text",
 "placeholders": {
@@ -371,7 +371,7 @@
 "type": "text",
 "placeholders": {}
 },
-"changeTheHomeserver": "Change the Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"changeTheHomeserver": "Change the Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@changeTheHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -967,9 +967,9 @@
 "type": "text",
 "placeholders": {}
 },
-"homeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"homeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@homeserver": {},
-"enterYourHomeserver": "Enter your Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"enterYourHomeserver": "Enter your Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@enterYourHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -1106,7 +1106,7 @@
 "type": "text",
 "placeholders": {}
 },
-"homeserverIsNotCompatible": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node is not compatible",
+"homeserverIsNotCompatible": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node is not compatible",
 "@homeserverIsNotCompatible": {
 "type": "text",
 "placeholders": {}
@@ -3031,6 +3031,17 @@
 },
 "@whyIsThisMessageEncrypted": {
 },
+"@fileHasBeenSavedAt": {
+"placeholders": {
+"path": {
+}
+},
+"type": "text"
+},
+"fileHasBeenSavedAt": "File has been saved at {path}",
+"jump": "Jump",
+"jumpToLastReadMessage": "Jump to last read message",
+"readUpToHere": "Read up to here",
 "allSpaces": "All spaces",
 "appearOnTop": "Appear on top",
 "appearOnTopDetails": "Allows the app to appear on top (not needed if you already have REChain 🪐 setup as a calling account)",

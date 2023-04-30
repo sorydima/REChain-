@@ -4,7 +4,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'package:adaptive_dialog/adaptive_dialog.dart';
-import 'package:file_picker_cross/file_picker_cross.dart';
+import 'package:collection/collection.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:future_loading_dialog/future_loading_dialog.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -51,10 +52,11 @@ class HomeserverPickerController extends State<HomeserverPicker> {
     Hive.openBox('test').then((value) => null).catchError(
       (e, s) async {
         await showOkAlertDialog(
-            context: context,
-            title: L10n.of(context)!.indexedDbErrorTitle,
-            message: L10n.of(context)!.indexedDbErrorLong,
-            onWillPop: () async => false);
+          context: context,
+          title: L10n.of(context)!.indexedDbErrorTitle,
+          message: L10n.of(context)!.indexedDbErrorLong,
+          onWillPop: () async => false,
+        );
         _checkTorBrowser();
       },
     );
@@ -85,9 +87,11 @@ class HomeserverPickerController extends State<HomeserverPicker> {
       });
 
   List<HomeserverBenchmarkResult> get filteredHomeservers => benchmarkResults!
-      .where((element) =>
-          element.homeserver.baseUrl.host.contains(searchTerm) ||
-          (element.homeserver.description?.contains(searchTerm) ?? false))
+      .where(
+        (element) =>
+            element.homeserver.baseUrl.host.contains(searchTerm) ||
+            (element.homeserver.description?.contains(searchTerm) ?? false),
+      )
       .toList();
 
   void _loadHomeserverList() async {
@@ -183,18 +187,20 @@ class HomeserverPickerController extends State<HomeserverPicker> {
   }
 
   Future<void> restoreBackup() async {
-    final file = await FilePickerCross.importFromStorage();
-    if (file.fileName == null) return;
+    final picked = await FilePicker.platform.pickFiles(withData: true);
+    final file = picked?.files.firstOrNull;
+    if (file == null) return;
     await showFutureLoadingDialog(
-        context: context,
-        future: () async {
-          try {
-            final client = Matrix.of(context).getLoginClient();
-            await client.importDump(file.toString());
-            Matrix.of(context).initMatrix();
-          } catch (e, s) {
-            Logs().e('Future error:', e, s);
-          }
-        });
+      context: context,
+      future: () async {
+        try {
+          final client = Matrix.of(context).getLoginClient();
+          await client.importDump(String.fromCharCodes(file.bytes!));
+          Matrix.of(context).initMatrix();
+        } catch (e, s) {
+          Logs().e('Future error:', e, s);
+        }
+      },
+    );
   }
 }

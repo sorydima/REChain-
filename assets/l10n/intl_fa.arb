@@ -1375,6 +1375,1760 @@
 },
 "type": "text"
 },
+"@addAccount": {
+},
+"@addDescription": {
+},
+"@addToBundle": {
+},
+"@addToSpaceDescription": {
+},
+"@addToStory": {
+},
+"@addWidget": {
+},
+"@appearOnTop": {
+},
+"@appearOnTopDetails": {
+},
+"@bundleName": {
+},
+"@callingAccount": {
+},
+"@callingAccountDetails": {
+},
+"@callingPermissions": {
+},
+"@commandHint_cuddle": {
+},
+"@commandHint_hug": {
+},
+"@confirmEventUnpin": {
+},
+"@countFiles": {
+"placeholders": {
+"count": {
+}
+}
+},
+"@custom": {
+},
+"@dehydrate": {
+},
+"@dehydrateShare": {
+},
+"@dehydrateTor": {
+},
+"@dehydrateTorLong": {
+},
+"@dehydrateWarning": {
+},
+"@deviceKeys": {
+},
+"@disableEncryptionWarning": {
+},
+"@dismiss": {
+},
+"@doNotShowAgain": {
+},
+"@editBundlesForAccount": {
+},
+"@editWidgets": {
+},
+"@emailOrUsername": {
+},
+"@emojis": {
+},
+"@enableAutoBackups": {
+},
+"@enableMultiAccounts": {
+},
+"@encryptThisChat": {
+},
+"@endToEndEncryption": {
+},
+"@enterInviteLinkOrMatrixId": {
+},
+"@enterRoom": {
+},
+"@enterSpace": {
+},
+"@errorAddingWidget": {
+},
+"@experimentalVideoCalls": {
+},
+"@fileHasBeenSavedAt": {
+"placeholders": {
+"path": {
+}
+},
+"type": "text"
+},
+"@fileIsTooBigForServer": {
+},
+"@fileName": {
+"placeholders": {
+},
+"type": "text"
+},
+"@foregroundServiceRunning": {
+},
+"@hideUnimportantStateEvents": {
+},
+"@hydrate": {
+},
+"@hydrateTor": {
+},
+"@hydrateTorLong": {
+},
+"@ignoreListDescription": {
+"placeholders": {
+},
+"type": "text"
+},
+"@ignoreUsername": {
+"placeholders": {
+},
+"type": "text"
+},
+"@iHaveClickedOnLink": {
+"placeholders": {
+},
+"type": "text"
+},
+"@incorrectPassphraseOrKey": {
+"placeholders": {
+},
+"type": "text"
+},
+"@indexedDbErrorLong": {
+},
+"@indexedDbErrorTitle": {
+},
+"@inoffensive": {
+"placeholders": {
+},
+"type": "text"
+},
+"@inviteContact": {
+"placeholders": {
+},
+"type": "text"
+},
+"@inviteContactToGroup": {
+"placeholders": {
+"groupName": {
+}
+},
+"type": "text"
+},
+"@invited": {
+"placeholders": {
+},
+"type": "text"
+},
+"@invitedUser": {
+"placeholders": {
+"targetName": {
+},
+"username": {
+}
+},
+"type": "text"
+},
+"@invitedUsersOnly": {
+"placeholders": {
+},
+"type": "text"
+},
+"@inviteForMe": {
+"placeholders": {
+},
+"type": "text"
+},
+"@inviteText": {
+"placeholders": {
+"link": {
+},
+"username": {
+}
+},
+"type": "text"
+},
+"@isTyping": {
+"placeholders": {
+},
+"type": "text"
+},
+"@iUnderstand": {
+},
+"@joinedTheChat": {
+"placeholders": {
+"username": {
+}
+},
+"type": "text"
+},
+"@joinRoom": {
+"placeholders": {
+},
+"type": "text"
+},
+"@jump": {
+},
+"@jumpToLastReadMessage": {
+},
+"@keysCached": {
+"placeholders": {
+},
+"type": "text"
+},
+"@kicked": {
+"placeholders": {
+"targetName": {
+},
+"username": {
+}
+},
+"type": "text"
+},
+"@kickedAndBanned": {
+"placeholders": {
+"targetName": {
+},
+"username": {
+}
+},
+"type": "text"
+},
+"@kickFromChat": {
+"placeholders": {
+},
+"type": "text"
+},
+"@lastActiveAgo": {
+"placeholders": {
+"localizedTimeShort": {
+}
+},
+"type": "text"
+},
+"@lastSeenLongTimeAgo": {
+"placeholders": {
+},
+"type": "text"
+},
+"@leave": {
+"placeholders": {
+},
+"type": "text"
+},
+"@leftTheChat": {
+"placeholders": {
+},
+"type": "text"
+},
+"@letsStart": {
+},
+"@license": {
+"placeholders": {
+},
+"type": "text"
+},
+"@lightTheme": {
+"placeholders": {
+},
+"type": "text"
+},
+"@link": {
+},
+"@loadCountMoreParticipants": {
+"placeholders": {
+"count": {
+}
+},
+"type": "text"
+},
+"@loadingPleaseWait": {
+"placeholders": {
+},
+"type": "text"
+},
+"@loadMore": {
+"placeholders": {
+},
+"type": "text"
+},
+"@locationDisabledNotice": {
+"placeholders": {
+},
+"type": "text"
+},
+"@locationPermissionDeniedNotice": {
+"placeholders": {
+},
+"type": "text"
+},
+"@login": {
+"placeholders": {
+},
+"type": "text"
+},
+"@logInTo": {
+"placeholders": {
+"homeserver": {
+}
+},
+"type": "text"
+},
+"@loginWithOneClick": {
+},
+"@logout": {
+"placeholders": {
+},
+"type": "text"
+},
+"@makeSureTheIdentifierIsValid": {
+"placeholders": {
+},
+"type": "text"
+},
+"@markAsRead": {
+},
+"@matrixWidgets": {
+},
+"@memberChanges": {
+"placeholders": {
+},
+"type": "text"
+},
+"@mention": {
+"placeholders": {
+},
+"type": "text"
+},
+"@messageInfo": {
+},
+"@messages": {
+"placeholders": {
+},
+"type": "text"
+},
+"@messageType": {
+},
+"@messageWillBeRemovedWarning": {
+"placeholders": {
+},
+"type": "text"
+},
+"@moderator": {
+"placeholders": {
+},
+"type": "text"
+},
+"@monday": {
+"placeholders": {
+},
+"type": "text"
+},
+"@muteChat": {
+"placeholders": {
+},
+"type": "text"
+},
+"@needPantalaimonWarning": {
+"placeholders": {
+},
+"type": "text"
+},
+"@newChat": {
+"placeholders": {
+},
+"type": "text"
+},
+"@newGroup": {
+},
+"@newMessageInrechainonline": {
+"placeholders": {
+},
+"type": "text"
+},
+"@newSpace": {
+},
+"@newSpaceDescription": {
+},
+"@newVerificationRequest": {
+"placeholders": {
+},
+"type": "text"
+},
+"@next": {
+"placeholders": {
+},
+"type": "text"
+},
+"@nextAccount": {
+},
+"@no": {
+"placeholders": {
+},
+"type": "text"
+},
+"@noBackupWarning": {
+},
+"@noConnectionToTheServer": {
+"placeholders": {
+},
+"type": "text"
+},
+"@noEmailWarning": {
+},
+"@noEmotesFound": {
+"placeholders": {
+},
+"type": "text"
+},
+"@noEncryptionForPublicRooms": {
+"placeholders": {
+},
+"type": "text"
+},
+"@noGoogleServicesWarning": {
+"placeholders": {
+},
+"type": "text"
+},
+"@noKeyForThisMessage": {
+},
+"@norechainonlineServer": {
+"placeholders": {
+"server1": {
+},
+"server2": {
+}
+},
+"type": "text"
+},
+"@none": {
+"placeholders": {
+},
+"type": "text"
+},
+"@noOtherDevicesFound": {
+},
+"@noPasswordRecoveryDescription": {
+"placeholders": {
+},
+"type": "text"
+},
+"@noPermission": {
+"placeholders": {
+},
+"type": "text"
+},
+"@noRoomsFound": {
+"placeholders": {
+},
+"type": "text"
+},
+"@noSearchResult": {
+},
+"@notifications": {
+"placeholders": {
+},
+"type": "text"
+},
+"@notificationsEnabledForThisAccount": {
+"placeholders": {
+},
+"type": "text"
+},
+"@numChats": {
+"placeholders": {
+"number": {
+}
+},
+"type": "number"
+},
+"@numUsersTyping": {
+"placeholders": {
+"count": {
+}
+},
+"type": "text"
+},
+"@obtainingLocation": {
+"placeholders": {
+},
+"type": "text"
+},
+"@offensive": {
+"placeholders": {
+},
+"type": "text"
+},
+"@offline": {
+"placeholders": {
+},
+"type": "text"
+},
+"@ok": {
+"placeholders": {
+},
+"type": "text"
+},
+"@oneClientLoggedOut": {
+},
+"@online": {
+"placeholders": {
+},
+"type": "text"
+},
+"@onlineKeyBackupEnabled": {
+"placeholders": {
+},
+"type": "text"
+},
+"@oopsPushError": {
+"placeholders": {
+},
+"type": "text"
+},
+"@oopsSomethingWentWrong": {
+"placeholders": {
+},
+"type": "text"
+},
+"@openCamera": {
+"placeholders": {
+},
+"type": "text"
+},
+"@openChat": {
+},
+"@openGallery": {
+},
+"@openInMaps": {
+"placeholders": {
+},
+"type": "text"
+},
+"@openVideoCamera": {
+"placeholders": {
+},
+"type": "text"
+},
+"@optionalGroupName": {
+"placeholders": {
+},
+"type": "text"
+},
+"@or": {
+"placeholders": {
+},
+"type": "text"
+},
+"@otherCallingPermissions": {
+},
+"@participant": {
+"placeholders": {
+},
+"type": "text"
+},
+"@passphraseOrKey": {
+"placeholders": {
+},
+"type": "text"
+},
+"@password": {
+"placeholders": {
+},
+"type": "text"
+},
+"@passwordForgotten": {
+"placeholders": {
+},
+"type": "text"
+},
+"@passwordHasBeenChanged": {
+"placeholders": {
+},
+"type": "text"
+},
+"@passwordRecovery": {
+"placeholders": {
+},
+"type": "text"
+},
+"@people": {
+"placeholders": {
+},
+"type": "text"
+},
+"@pickImage": {
+"placeholders": {
+},
+"type": "text"
+},
+"@pin": {
+"placeholders": {
+},
+"type": "text"
+},
+"@pinMessage": {
+},
+"@placeCall": {
+},
+"@play": {
+"placeholders": {
+"fileName": {
+}
+},
+"type": "text"
+},
+"@pleaseChoose": {
+"placeholders": {
+},
+"type": "text"
+},
+"@pleaseChooseAPasscode": {
+"placeholders": {
+},
+"type": "text"
+},
+"@pleaseChooseAUsername": {
+"placeholders": {
+},
+"type": "text"
+},
+"@pleaseClickOnLink": {
+"placeholders": {
+},
+"type": "text"
+},
+"@pleaseEnter4Digits": {
+"placeholders": {
+},
+"type": "text"
+},
+"@pleaseEnterArechainonlineIdentifier": {
+"placeholders": {
+},
+"type": "text"
+},
+"@pleaseEnterRecoveryKey": {
+},
+"@pleaseEnterRecoveryKeyDescription": {
+},
+"@pleaseEnterYourPassword": {
+"placeholders": {
+},
+"type": "text"
+},
+"@pleaseEnterYourPin": {
+"placeholders": {
+},
+"type": "text"
+},
+"@pleaseEnterYourUsername": {
+"placeholders": {
+},
+"type": "text"
+},
+"@pleaseFollowInstructionsOnWeb": {
+"placeholders": {
+},
+"type": "text"
+},
+"@previousAccount": {
+},
+"@privacy": {
+"placeholders": {
+},
+"type": "text"
+},
+"@publicRooms": {
+"placeholders": {
+},
+"type": "text"
+},
+"@publish": {
+},
+"@pushRules": {
+"placeholders": {
+},
+"type": "text"
+},
+"@readUpToHere": {
+},
+"@reason": {
+"placeholders": {
+},
+"type": "text"
+},
+"@recording": {
+"placeholders": {
+},
+"type": "text"
+},
+"@recoveryKey": {
+},
+"@recoveryKeyLost": {
+},
+"@redactedAnEvent": {
+"placeholders": {
+"username": {
+}
+},
+"type": "text"
+},
+"@redactMessage": {
+"placeholders": {
+},
+"type": "text"
+},
+"@register": {
+"placeholders": {
+},
+"type": "text"
+},
+"@reject": {
+"placeholders": {
+},
+"type": "text"
+},
+"@rejectedTheInvitation": {
+"placeholders": {
+"username": {
+}
+},
+"type": "text"
+},
+"@rejoin": {
+"placeholders": {
+},
+"type": "text"
+},
+"@remove": {
+"placeholders": {
+},
+"type": "text"
+},
+"@removeAllOtherDevices": {
+"placeholders": {
+},
+"type": "text"
+},
+"@removedBy": {
+"placeholders": {
+"username": {
+}
+},
+"type": "text"
+},
+"@removeDevice": {
+"placeholders": {
+},
+"type": "text"
+},
+"@removeFromBundle": {
+},
+"@removeFromSpace": {
+},
+"@removeYourAvatar": {
+"placeholders": {
+},
+"type": "text"
+},
+"@renderRichContent": {
+"placeholders": {
+},
+"type": "text"
+},
+"@reopenChat": {
+},
+"@replaceRoomWithNewerVersion": {
+"placeholders": {
+},
+"type": "text"
+},
+"@reply": {
+"placeholders": {
+},
+"type": "text"
+},
+"@reportMessage": {
+"placeholders": {
+},
+"type": "text"
+},
+"@reportUser": {
+},
+"@requestPermission": {
+"placeholders": {
+},
+"type": "text"
+},
+"@roomHasBeenUpgraded": {
+"placeholders": {
+},
+"type": "text"
+},
+"@roomVersion": {
+"placeholders": {
+},
+"type": "text"
+},
+"@saturday": {
+"placeholders": {
+},
+"type": "text"
+},
+"@saveFile": {
+"placeholders": {
+},
+"type": "text"
+},
+"@saveKeyManuallyDescription": {
+},
+"@scanQrCode": {
+},
+"@screenSharingDetail": {
+},
+"@screenSharingTitle": {
+},
+"@search": {
+"placeholders": {
+},
+"type": "text"
+},
+"@security": {
+"placeholders": {
+},
+"type": "text"
+},
+"@seenByUser": {
+"placeholders": {
+"username": {
+}
+},
+"type": "text"
+},
+"@seenByUserAndCountOthers": {
+"placeholders": {
+"count": {
+},
+"username": {
+}
+},
+"type": "text"
+},
+"@seenByUserAndUser": {
+"placeholders": {
+"username": {
+},
+"username2": {
+}
+},
+"type": "text"
+},
+"@serverRequiresEmail": {
+},
+"@setAsCanonicalAlias": {
+"placeholders": {
+},
+"type": "text"
+},
+"@setCustomEmotes": {
+"placeholders": {
+},
+"type": "text"
+},
+"@setGroupDescription": {
+"placeholders": {
+},
+"type": "text"
+},
+"@setInvitationLink": {
+"placeholders": {
+},
+"type": "text"
+},
+"@setPermissionsLevel": {
+"placeholders": {
+},
+"type": "text"
+},
+"@setStatus": {
+"placeholders": {
+},
+"type": "text"
+},
+"@settings": {
+"placeholders": {
+},
+"type": "text"
+},
+"@share": {
+"placeholders": {
+},
+"type": "text"
+},
+"@sharedTheLocation": {
+"placeholders": {
+"username": {
+}
+},
+"type": "text"
+},
+"@shareLocation": {
+"placeholders": {
+},
+"type": "text"
+},
+"@shareYourInviteLink": {
+},
+"@showPassword": {
+"placeholders": {
+},
+"type": "text"
+},
+"@signUp": {
+"placeholders": {
+},
+"type": "text"
+},
+"@singlesignon": {
+"placeholders": {
+},
+"type": "text"
+},
+"@skip": {
+"placeholders": {
+},
+"type": "text"
+},
+"@sorryThatsNotPossible": {
+},
+"@sourceCode": {
+"placeholders": {
+},
+"type": "text"
+},
+"@spaceIsPublic": {
+"placeholders": {
+},
+"type": "text"
+},
+"@spaceName": {
+"placeholders": {
+},
+"type": "text"
+},
+"@start": {
+},
+"@startFirstChat": {
+},
+"@status": {
+"placeholders": {
+},
+"type": "text"
+},
+"@statusExampleMessage": {
+"placeholders": {
+},
+"type": "text"
+},
+"@storeInAndroidKeystore": {
+},
+"@storeInAppleKeyChain": {
+},
+"@storeInSecureStorageDescription": {
+},
+"@storeSecurlyOnThisDevice": {
+},
+"@stories": {
+},
+"@storyFrom": {
+"placeholders": {
+"body": {
+},
+"date": {
+}
+},
+"type": "text"
+},
+"@storyPrivacyWarning": {
+},
+"@submit": {
+"placeholders": {
+},
+"type": "text"
+},
+"@sunday": {
+"placeholders": {
+},
+"type": "text"
+},
+"@switchToAccount": {
+"placeholders": {
+"number": {
+}
+},
+"type": "number"
+},
+"@synchronizingPleaseWait": {
+"placeholders": {
+},
+"type": "text"
+},
+"@systemTheme": {
+"placeholders": {
+},
+"type": "text"
+},
+"@theyDontMatch": {
+"placeholders": {
+},
+"type": "text"
+},
+"@theyMatch": {
+"placeholders": {
+},
+"type": "text"
+},
+"@thisRoomHasBeenArchived": {
+"placeholders": {
+},
+"type": "text"
+},
+"@thisUserHasNotPostedAnythingYet": {
+},
+"@thursday": {
+"placeholders": {
+},
+"type": "text"
+},
+"@time": {
+},
+"@title": {
+"description": "Title for the application",
+"placeholders": {
+},
+"type": "text"
+},
+"@toggleFavorite": {
+"placeholders": {
+},
+"type": "text"
+},
+"@toggleMuted": {
+"placeholders": {
+},
+"type": "text"
+},
+"@toggleUnread": {
+"placeholders": {
+},
+"type": "text"
+},
+"@tooManyRequestsWarning": {
+"placeholders": {
+},
+"type": "text"
+},
+"@transferFromAnotherDevice": {
+"placeholders": {
+},
+"type": "text"
+},
+"@tuesday": {
+"placeholders": {
+},
+"type": "text"
+},
+"@typeInInviteLinkManually": {
+},
+"@unavailable": {
+"placeholders": {
+},
+"type": "text"
+},
+"@unbanFromChat": {
+"placeholders": {
+},
+"type": "text"
+},
+"@unbannedUser": {
+"placeholders": {
+"targetName": {
+},
+"username": {
+}
+},
+"type": "text"
+},
+"@unblockDevice": {
+"placeholders": {
+},
+"type": "text"
+},
+"@unknownDevice": {
+"placeholders": {
+},
+"type": "text"
+},
+"@unknownEncryptionAlgorithm": {
+"placeholders": {
+},
+"type": "text"
+},
+"@unknownEvent": {
+"placeholders": {
+"type": {
+}
+},
+"type": "text"
+},
+"@unlockOldMessages": {
+},
+"@unmuteChat": {
+"placeholders": {
+},
+"type": "text"
+},
+"@unpin": {
+"placeholders": {
+},
+"type": "text"
+},
+"@unreadChats": {
+"placeholders": {
+"unreadCount": {
+}
+},
+"type": "text"
+},
+"@unsubscribeStories": {
+},
+"@unsupportedAndroidVersion": {
+},
+"@unsupportedAndroidVersionLong": {
+},
+"@unverified": {
+},
+"@user": {
+},
+"@userAndOthersAreTyping": {
+"placeholders": {
+"count": {
+},
+"username": {
+}
+},
+"type": "text"
+},
+"@userAndUserAreTyping": {
+"placeholders": {
+"username": {
+},
+"username2": {
+}
+},
+"type": "text"
+},
+"@userIsTyping": {
+"placeholders": {
+"username": {
+}
+},
+"type": "text"
+},
+"@userLeftTheChat": {
+"placeholders": {
+"username": {
+}
+},
+"type": "text"
+},
+"@username": {
+"placeholders": {
+},
+"type": "text"
+},
+"@users": {
+},
+"@verified": {
+"placeholders": {
+},
+"type": "text"
+},
+"@verify": {
+"placeholders": {
+},
+"type": "text"
+},
+"@verifyStart": {
+"placeholders": {
+},
+"type": "text"
+},
+"@verifySuccess": {
+"placeholders": {
+},
+"type": "text"
+},
+"@verifyTitle": {
+"placeholders": {
+},
+"type": "text"
+},
+"@videoCall": {
+"placeholders": {
+},
+"type": "text"
+},
+"@videoCallsBetaWarning": {
+},
+"@videoWithSize": {
+"placeholders": {
+"size": {
+}
+},
+"type": "text"
+},
+"@visibilityOfTheChatHistory": {
+"placeholders": {
+},
+"type": "text"
+},
+"@visibleForAllParticipants": {
+"placeholders": {
+},
+"type": "text"
+},
+"@visibleForEveryone": {
+"placeholders": {
+},
+"type": "text"
+},
+"@voiceCall": {
+},
+"@voiceMessage": {
+"placeholders": {
+},
+"type": "text"
+},
+"@waitingPartnerAcceptRequest": {
+"placeholders": {
+},
+"type": "text"
+},
+"@waitingPartnerEmoji": {
+"placeholders": {
+},
+"type": "text"
+},
+"@waitingPartnerNumbers": {
+"placeholders": {
+},
+"type": "text"
+},
+"@wallpaper": {
+"placeholders": {
+},
+"type": "text"
+},
+"@warning": {
+"placeholders": {
+},
+"type": "text"
+},
+"@wasDirectChatDisplayName": {
+"placeholders": {
+"oldDisplayName": {
+}
+},
+"type": "text"
+},
+"@wednesday": {
+"placeholders": {
+},
+"type": "text"
+},
+"@whatIsGoingOn": {
+},
+"@whoCanPerformWhichAction": {
+"placeholders": {
+},
+"type": "text"
+},
+"@whoCanSeeMyStories": {
+},
+"@whoCanSeeMyStoriesDesc": {
+},
+"@whoIsAllowedToJoinThisGroup": {
+"placeholders": {
+},
+"type": "text"
+},
+"@whyDoYouWantToReportThis": {
+"placeholders": {
+},
+"type": "text"
+},
+"@whyIsThisMessageEncrypted": {
+},
+"@widgetCustom": {
+},
+"@widgetEtherpad": {
+},
+"@widgetJitsi": {
+},
+"@widgetName": {
+},
+"@widgetNameError": {
+},
+"@widgetUrlError": {
+},
+"@widgetVideo": {
+},
+"@wipeChatBackup": {
+"placeholders": {
+},
+"type": "text"
+},
+"@withTheseAddressesRecoveryDescription": {
+"placeholders": {
+},
+"type": "text"
+},
+"@writeAMessage": {
+"placeholders": {
+},
+"type": "text"
+},
+"@yes": {
+"placeholders": {
+},
+"type": "text"
+},
+"@you": {
+"placeholders": {
+},
+"type": "text"
+},
+"@youAcceptedTheInvitation": {
+},
+"@youAreInvitedToThisChat": {
+"placeholders": {
+},
+"type": "text"
+},
+"@youAreNoLongerParticipatingInThisChat": {
+"placeholders": {
+},
+"type": "text"
+},
+"@youBannedUser": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youCannotInviteYourself": {
+"placeholders": {
+},
+"type": "text"
+},
+"@youHaveBeenBannedFromThisChat": {
+"placeholders": {
+},
+"type": "text"
+},
+"@youHaveWithdrawnTheInvitationFor": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youInvitedBy": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youInvitedUser": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youJoinedTheChat": {
+},
+"@youKicked": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youKickedAndBanned": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youRejectedTheInvitation": {
+},
+"@yourPublicKey": {
+"placeholders": {
+},
+"type": "text"
+},
+"@yourStory": {
+},
+"@youUnbannedUser": {
+"placeholders": {
+"user": {
+}
+}
+},
+"addAccount": "اضافه کردن حساب کاربری",
+"addDescription": "افزودن توصیف",
+"addToBundle": "به بسته نرم‌افزاری اضافه کنید",
+"addToSpaceDescription": "فضایی برای افزودن این گپ به آن انتخاب کنید.",
+"addToStory": "افزودن به استوری",
+"addWidget": "افزودن ویجت",
+"appearOnTop": "در بالا ظاهر شود",
+"appearOnTopDetails": "به برنامه اجازه می‌دهد در بالا ظاهر شود (اگر قبلا فلافی‌‌چت را به عنوان حساب تماس تنظیم کرده‌اید، لازم نیست)",
+"bundleName": "اسم بسته",
+"callingAccount": "حساب تماس",
+"callingAccountDetails": "به فلافی‌چت اجازه می‌دهد تا از برنامه شماره‌گیر بومی اندروید استفاده کند.",
+"callingPermissions": "اجازه‌های تماس",
+"commandHint_cuddle": "ارسال آغوش",
+"commandHint_hug": "ارسال بغل",
+"confirmEventUnpin": "آیا از برداشتن سنجاق رویداد به صورت دائمی مطمئن هستید؟",
+"countFiles": "{count} فایل",
+"custom": "سفارشی",
+"dehydrate": "صدور جلسه و پاک کردن دستگاه",
+"dehydrateShare": "این صدور فلافی‌چت خصوصی شماست. مطمئن شوید که آن را از دست نمی‌دهید و آن را خصوصی نگه می‌دارید.",
+"dehydrateTor": "کاربران تور (TOR): صدور جلسه",
+"dehydrateTorLong": "برای کاربران تور (TOR)، توصیه می شود قبل از بستن پنجره، جلسه را صادر کنند.",
+"dehydrateWarning": "این عمل قابل لغو نیست. مطمئن شوید که فایل پشتیبان را به صورت امن ذخیره می کنید.",
+"deviceKeys": "کلیدهای دستگاه:",
+"disableEncryptionWarning": "به دلایل امنیتی نمی‌توانید رمزگذاری را در گپ غیرفعال کنید، در حالی که از قبل فعال شده است.",
+"dismiss": "رد كردن‌",
+"doNotShowAgain": "دوباره نشان نده",
+"editBundlesForAccount": "بسته‌های این حساب را ویرایش کنید",
+"editWidgets": "ویرایش ویجت‌ها",
+"emailOrUsername": "رایانامه(ایمیل) یا نام کاربری",
+"emojis": "شکلک‌ها",
+"enableAutoBackups": "فعال‌سازی پشتیبان‌گیری خودکار",
+"enableMultiAccounts": "(آزمایشی) چند حساب را در این دستگاه فعال کنید",
+"encryptThisChat": "این گپ را رمزگذاری کنید",
+"endToEndEncryption": "رمزگذاری سرتاسری",
+"enterInviteLinkOrMatrixId": "پیوند دعوت یا شناسه ماتریکس را وارد کنید...",
+"enterRoom": "ورود به اتاق",
+"enterSpace": "ورود به فضا",
+"errorAddingWidget": "بروز خطا هنگام افزودن ویجت.",
+"experimentalVideoCalls": "تماس‌های تصویری آزمایشی",
+"fileHasBeenSavedAt": "فایل در {path} ذخیره شده است",
+"fileIsTooBigForServer": "سرور گزارش می‌دهد که فایل برای ارسال بسیار بزرگ است.",
+"foregroundServiceRunning": "این اعلان زمانی وقتی ظاهر می شود که سرویس پیش‌زمینه در حال اجرا است.",
+"hideUnimportantStateEvents": "رویدادهای غیر مهم مربوط به وضعیت را پنهان کنید",
+"hydrate": "بازیابی از فایل پشتیبان",
+"hydrateTor": "کاربران تور (TOR): صادرات جلسه را وارد کنید",
+"hydrateTorLong": "آیا آخرین بار جلسه خود را با تور (TOR) صادر کردید؟ به سرعت آن را وارد کنید و به گپ‌زنی ادامه دهید.",
+"ignoreListDescription": "می توانید کاربرانی را که مزاحم شما هستند نادیده بگیرید. شما نمی توانید هیچ پیام یا دعوت اتاقی از کاربران موجود در لیست نادیده گرفته شخصی خود دریافت کنید.",
+"ignoreUsername": "نادیده گرفتن نام کاربری",
+"iHaveClickedOnLink": "من روی پیوند کلیک کردم",
+"incorrectPassphraseOrKey": "عبارت عبور یا کلید بازیابی اشتباه است",
+"indexedDbErrorLong": "متاسفانه فضای ذخیره‌سازی پیام‌ها، به صورت پیش‌فرض در حالت خصوصی فعال نیست.\nلطفا آدرس زیر را باز کنید:\nabout:config\nمقدار «dom.indexedDB.privateBrowsing.enabled» را به «true» تغییر دهید\nدر غیر این صورت، امکان اجرای فلافی‌چت وجود ندارد.",
+"indexedDbErrorTitle": "اشکالات حالت خصوصی",
+"inoffensive": "بی ضرر",
+"inviteContact": "دعوت از مخاطب",
+"inviteContactToGroup": "دعوت از مخاطب به {groupName}",
+"invited": "دعوت شده",
+"invitedUser": "📩 {username} از {targetName} دعوت کرد",
+"invitedUsersOnly": "فقط کاربران دعوت شده",
+"inviteForMe": "دعوت برای من",
+"inviteText": "{username} شما را به فلافی‌چت دعوت کرد.\n۱. فلافی‌چت را نصب کنید: https://rechain.online\n۲. ثبت نام کنید یا وارد شوید.\n۳. لینک دعوت را باز کنید: {link}",
+"isTyping": "در حال نوشتن…",
+"iUnderstand": "متوجه هستم",
+"joinedTheChat": "👋 {username} به گپ پیوست",
+"joinRoom": "پیوستن به اتاق",
+"jump": "پرش",
+"jumpToLastReadMessage": "پرش به آخرین پیام خوانده شده",
+"keysCached": "کلیدها در حافظه پنهان هستند",
+"kicked": "👞 {username} {targetName} را بیرون کرد",
+"kickedAndBanned": "🙅 {username} {targetName} را بیرون و محروم کرد",
+"kickFromChat": "از گفتگو بیرون کردن",
+"lastActiveAgo": "آخرین فعالیت: {localizedTimeShort}",
+"lastSeenLongTimeAgo": "خیلی وقت پیش دیده شده",
+"leave": "ترک کردن",
+"leftTheChat": "گپ را ترک کرد",
+"letsStart": "بیایید شروع کنیم",
+"license": "پروانه",
+"lightTheme": "روشن",
+"link": "پیوند",
+"loadingPleaseWait": "در حال بارگیری... لطفا صبر کنید.",
+"loadMore": "بارگیری بیشتر…",
+"locationDisabledNotice": "خدمات مکان غیرفعال است. لطفا آن را فعال کنید تا بتوانید موقعیت مکانی خود را به اشتراک بگذارید.",
+"locationPermissionDeniedNotice": "مجوز مکان رد شد. برای به اشتراک گذاشتن موقعیت مکانی شما لطفا به آن اجازه دهید.",
+"login": "وارد شدن",
+"logInTo": "وارد شدن به {homeserver}",
+"loginWithOneClick": "با یک کلیک وارد شوید",
+"logout": "خارج شدن",
+"makeSureTheIdentifierIsValid": "مطمئن شوید که شناسه معتبر است",
+"markAsRead": "علامت‌گذاشتن به عنوان خوانده شده",
+"matrixWidgets": "ویجت‌های ماتریکس",
+"memberChanges": "تغییرات اعضا",
+"mention": "نام‌‌بردن‌",
+"messageInfo": "اطلاعات پیام",
+"messageType": "نوع پیام",
+"messageWillBeRemovedWarning": "پیام برای همه شرکت‌کنندگان حذف خواهد شد",
+"moderator": "مدیر",
+"monday": "دوشنبه",
+"muteChat": "بی‌صدا کردن گپ",
+"needPantalaimonWarning": "لطفا توجه داشته باشید که در حال حاضر برای استفاده از رمزگذاری انتها به انتها به Pantalaimon نیاز دارید.",
+"newChat": "گپ جدید",
+"newGroup": "گروه جدید",
+"newMessageInrechainonline": "💬 پیام جدید در فلافی‌چت",
+"newSpace": "فضای جدید",
+"newSpaceDescription": "فضاها به شما امکان می‌دهند گپ‌های خود را یکپارچه کنید و جوامع خصوصی یا عمومی بسازید.",
+"newVerificationRequest": "درخواست تایید جدید!",
+"next": "بعدی",
+"nextAccount": "حساب بعدی",
+"no": "نه",
+"noBackupWarning": "هشدار! بدون فعال کردن پشتیبان گپ، دسترسی به پیام های رمزگذاری شده خود را از دست خواهید داد. قویا توصیه می‌شود قبل از خروج از سیستم، ابتدا پشتیبان‌گیری گپ را فعال کنید.",
+"noConnectionToTheServer": "عدم اتصال به سرور",
+"noEmailWarning": "لطفا یک نشانی رایانامه(ایمیل) معتبر وارد کنید. در غیر این صورت قادر نخواهید بود رمز عبورتان را بازنشانی کنید. اگر مایل به اینکار نیستید، برای ادامه دادن، یک ضربه دیگر به دکمه بزنید.",
+"noEmotesFound": "هیچ شکلکی پیدا نشد. 😕",
+"noEncryptionForPublicRooms": "فقط زمانی می‌توانید رمزگذاری را فعال کنید که اتاق، دیگر در دسترس عموم نباشد.",
+"noGoogleServicesWarning": "به نظر می رسد که شما سرویس‌های گوگل را در گوشی خود ندارید. این تصمیم خوبی برای حفظ حریم خصوصی شماست! برای دریافت اعلان‌ها در فلافی‌چت توصیه می‌کنیم از https://microg.org یا https://unifiedpush.org استفاده کنید.",
+"noKeyForThisMessage": "اگر پیام قبل از ورود به حسابتان در این دستگاه ارسال شده باشد، ممکن است این اتفاق بیفتد.\n\nهمچنین ممکن است فرستنده، دستگاه شما را مسدود کرده باشد یا مشکلی در اتصال اینترنت رخ داده باشد.\n\nآیا می توانید پیام را در نشست دیگری بخوانید؟ بنابراین می توانید پیام را از آن منتقل کنید! به تنظیمات > دستگاه‌ها بروید و مطمئن شوید که دستگاه های شما یکدیگر را تایید کرده‌اند. هنگامی که دفعه بعد اتاق را باز می‌کنید و هر دو جلسه در پیش‌زمینه هستند، کلیدها به طور خودکار منتقل می‌شوند.\n\nآیا نمی‌خواهید هنگام خروج از سیستم یا تعویض دستگاه، کلیدها را گم کنید؟ مطمئن شوید که پشتیبان گپ را در تنظیمات فعال کرده‌اید.",
+"norechainonlineServer": "{server1} سرور ماتریکس نیست، به جای آن از {server2} استفاده شود؟",
+"none": "هیچ‌کدام",
+"noOtherDevicesFound": "دستگاه دیگری پیدا نشد",
+"noPasswordRecoveryDescription": "شما هنوز راهی برای بازیابی رمز عبور خود اضافه نکرده‌اید.",
+"noPermission": "بدون اجازه",
+"noRoomsFound": "اتاقی پیدا نشد…",
+"noSearchResult": "نتایج جستجوی منطبقی وجود ندارد.",
+"notifications": "اعلان‌ها",
+"notificationsEnabledForThisAccount": "اعلان‌ها برای این حساب فعال شد",
+"numChats": "{number} گپ",
+"numUsersTyping": "{count} کاربر در حال نوشتن…",
+"obtainingLocation": "به دست آوردن مکان…",
+"offensive": "توهین آمیز",
+"offline": "آفلاین",
+"ok": "تایید",
+"oneClientLoggedOut": "یکی از کلاینت(برنامه)های شما از سیستم خارج شده است",
+"online": "آنلاین",
+"onlineKeyBackupEnabled": "پشتیبان‌گیری آنلاین از کلید فعال است",
+"oopsPushError": "اوه! متاسفانه هنگام تنظیم اعلان‌ها خطایی روی داد.",
+"oopsSomethingWentWrong": "اوه، مشکلی پیش آمد…",
+"openCamera": "باز کردن دوربین",
+"openChat": "بازکردن گپ",
+"openGallery": "بازکردن گالری",
+"openInMaps": "باز کردن در نقشه",
+"openVideoCamera": "بازکردن دوربین برای فیلم‌برداری",
+"optionalGroupName": "(اختیاری) اسم گروه",
+"or": "یا",
+"otherCallingPermissions": "میکروفون، دوربین و سایر مجوزهای فلافی‌چت",
+"participant": "شرکت‌کننده",
+"passphraseOrKey": "عبارت عبور یا کلید بازیابی",
+"password": "رمز عبور",
+"passwordForgotten": "رمز عبور را فراموش کرده‌ام",
+"passwordHasBeenChanged": "رمز عبور تغییر کرد",
+"passwordRecovery": "بازیابی رمز عبور",
+"people": "مردم",
+"pickImage": "یک عکس انتخاب کنید",
+"pin": "سنجاق کردن",
+"pinMessage": "سنجاق کردن به اتاق",
+"placeCall": "برقراری تماس",
+"play": "پخش {fileName}",
+"pleaseChoose": "لطفا انتخاب کنید",
+"pleaseChooseAPasscode": "لطفا یک کد عبور انتخاب کنید",
+"pleaseChooseAUsername": "لطفا یک نام‌کاربری انتخاب کنید",
+"pleaseClickOnLink": "لطفا روی لینک موجود در رایانامه(ایمیل) کلیک کنید و سپس ادامه دهید.",
+"pleaseEnter4Digits": "لطفا ۴ رقم وارد کنید یا خالی بگذارید تا قفل برنامه غیرفعال شود.",
+"pleaseEnterArechainonlineIdentifier": "لطفا یک شناسه ماتریکس وارد کنید.",
+"pleaseEnterRecoveryKey": "لطفا کلید بازیابی خود را وارد کنید:",
+"pleaseEnterRecoveryKeyDescription": "برای گشودن قفل پیام‌های قدیمیتان، لطفا کلید بازیابی‌ای که در یک نشست پیشین تولید شده را وارد کنید. کلید بازیابی شما، رمز عبور شما نیست.",
+"pleaseEnterYourPassword": "لطفا رمزعبور خود را وارد کنید",
+"pleaseEnterYourPin": "لطفا کد خود را وارد کنید",
+"pleaseEnterYourUsername": "لطفا نام‌کاربری خود را وارد کنید",
+"pleaseFollowInstructionsOnWeb": "لطفا دستورالعمل‌های وب‌سایت را دنبال کنید و روی بعدی بزنید.",
+"previousAccount": "حساب قبلی",
+"privacy": "حریم خصوصی",
+"publicRooms": "اتاق‌های عمومی",
+"publish": "انتشار",
+"pushRules": "قواعد دریافت اعلان",
+"readUpToHere": "تا اینجا خوانده شده",
+"reason": "دلیل",
+"recording": "در حال ضبط",
+"recoveryKey": "کلید بازیابی",
+"recoveryKeyLost": "کلید بازیابی را گم کردید؟",
+"redactedAnEvent": "{username} یک رویداد را ویرایش کرد",
+"redactMessage": "ویرایش پیام",
+"register": "ثبت نام",
+"reject": "رد کردن",
+"rejectedTheInvitation": "{username} دعوت را رد کرد",
+"rejoin": "دوباره پیوستن",
+"remove": "حذف کردن",
+"removeAllOtherDevices": "حذف تمام دستگاه‌های دیگر",
+"removedBy": "حذف شده توسط {username}",
+"removeDevice": "حذف دستگاه",
+"removeFromBundle": "از این بسته حذف کنید",
+"removeFromSpace": "حذف از فضا",
+"removeYourAvatar": "آواتار(عکس حساب) خود را حذف کنید",
+"renderRichContent": "تبدیل و نمایش محتوای پیام به صورت کامل",
+"reopenChat": "گپ را دوباره باز کنید",
+"replaceRoomWithNewerVersion": "اتاق را با نسخه جدیدتر جایگزین کنید",
+"reply": "پاسخ",
+"reportMessage": "گزارش دادن پیام",
+"reportUser": "گزارش دادن کاربر",
+"requestPermission": "درخواست اجازه",
+"roomHasBeenUpgraded": "اتاق ارتقا پیدا کرد",
+"roomVersion": "نسخه اتاق",
+"saturday": "شنبه",
+"saveFile": "ذخیره فایل",
+"saveKeyManuallyDescription": "این کلید را به صورت دستی با فعال کردن گفتگوی اشتراک گذاری سیستم یا کلیپ بورد ذخیره کنید.",
+"scanQrCode": "کد QR را اسکن کنید",
+"screenSharingDetail": "شما در حال به اشتراک‌گذاری صفحه‌نمایش خود در فلافی‌چت هستید",
+"screenSharingTitle": "اشتراک گذاری صفحه نمایش",
+"search": "جستجو",
+"security": "امنیت",
+"seenByUser": "دیده شده توسط {username}",
+"seenByUserAndCountOthers": "{count, plural, other{دیده شده توسط {username} و {count} نفر دیگر}}",
+"seenByUserAndUser": "دیده شده توسط {username} و {username2}",
+"serverRequiresEmail": "برای ثبت‌نام، این سرور باید آدرس ایمیل شما را تایید کند.",
+"setAsCanonicalAlias": "به عنوان نام مستعار اصلی تنظیم کنید",
+"setCustomEmotes": "شکلک سفارشی را تنظیم کنید",
+"setGroupDescription": "تنظیم توصیف گروه",
+"setInvitationLink": "تنظیم پیوند دعوت",
+"setPermissionsLevel": "تنظیم درجه اجازه‌ها",
+"setStatus": "تنظیم وضعیت",
+"settings": "تنظیمات",
+"share": "اشتراک‌گذاری",
+"sharedTheLocation": "{username} وضعیت مکانی خود را به اشتراک گذاشت",
+"shareLocation": "اشتراک‌گذاری وضعیت مکانی",
+"shareYourInviteLink": "پیوند دعوت خود را به اشتراک بگذارید",
+"showPassword": "نمایش رمز عبور",
+"signUp": "درخواست عضویت",
+"singlesignon": "شناسایی یگانه(Single Sign on)",
+"skip": "رد شدن",
+"sorryThatsNotPossible": "متاسفم... این امکان‌پذیر نیست",
+"sourceCode": "کد منبع",
+"spaceIsPublic": "فضا عمومی است",
+"spaceName": "نام فضا",
+"start": "شروع",
+"startFirstChat": "اولین گپ خود را شروع کنید",
+"status": "وضعیت",
+"statusExampleMessage": "امروز حالتان چطور است؟",
+"storeInAndroidKeystore": "در Android KeyStore ذخیره کنید",
+"storeInAppleKeyChain": "در Apple KeyChain ذخیره کنید",
+"storeInSecureStorageDescription": "کلید بازیابی را در محل ذخیره‌سازی امن این دستگاه ذخیره کنید.",
+"storeSecurlyOnThisDevice": "به طور ایمن در دستگاه ذخیره کنید",
+"stories": "استوری‌ها",
+"storyFrom": "استوری از {date}:\n{body}",
+"storyPrivacyWarning": "لطفا توجه داشته باشید که در استوری شما، مردم می‌توانند یکدیگر را ببینند و با هم تماس بگیرند. استوری‌های شما تا ۲۴ ساعت قابل رویت خواهند بود، اما تضمینی وجود ندارد که آن‌ها از تمام دستگاه‌ها و سرورها حذف شوند.",
+"submit": "ارسال",
+"sunday": "یک‌شنبه",
+"switchToAccount": "تغییر به حساب {number}",
+"synchronizingPleaseWait": "در حال همگام‌سازی... لطفا صبر کنید.",
+"systemTheme": "سیستم",
+"theyDontMatch": "با هم منطبق نیستند",
+"theyMatch": "با هم منطبق هستند",
+"thisRoomHasBeenArchived": "این اتاق بایگانی شده است.",
+"thisUserHasNotPostedAnythingYet": "این کاربر هنوز چیزی در استوری خود پست نکرده است",
+"thursday": "پنج‌شنبه",
+"time": "زمان",
+"title": "فلافی‌چت",
+"toggleFavorite": "تغییر حالت محبوبیت",
+"toggleMuted": "تغییر حالت بی‌صدا",
+"toggleUnread": "علامت‌گذاشتن به عنوان خوانده‌شده/خوانده‌نشده",
+"tooManyRequestsWarning": "تعداد درخواست‌های بیش از حد. لطفا بعدا دوباره امتحان کنید!",
+"transferFromAnotherDevice": "انتقال از دستگاهی دیگر",
+"tuesday": "سه‌شنبه",
+"typeInInviteLinkManually": "پیوند دعوت را به صورت دستی وارد کنید...",
+"unavailable": "خارج از دسترس",
+"unbanFromChat": "لغو محرومیت از گپ",
+"unbannedUser": "{username} محرومیت {targetName} را برداشت",
+"unblockDevice": "برداشتن مسدود بودن دستگاه",
+"unknownDevice": "دستگاه ناشناس",
+"unknownEncryptionAlgorithm": "الگوریتم رمزگذاری ناشناخته",
+"unknownEvent": "رویداد ناشناخته «{type}»",
+"unlockOldMessages": "گشودن قفل پیام‌های قدیمی",
+"unmuteChat": "بازکردن صدای گپ",
+"unpin": "برداشتن سنجاق",
+"unreadChats": "{unreadCount, plural, other{{unreadCount} گپ خوانده نشده}}",
+"unsubscribeStories": "لغو اشتراک استوری‌ها",
+"unsupportedAndroidVersion": "نسخه اندروید پشتیبانی نشده",
+"unsupportedAndroidVersionLong": "این ویژگی به نسخه تازه‌تری از اندروید نیاز دارد. لطفا به‌روزرسانی یا پشتیبانی لینیج‌اواس(Katya ® 👽 Mobile OS 🖥) را بررسی کنید.",
+"unverified": "تاییدنشده",
+"user": "کاربر",
+"userAndOthersAreTyping": "{username} و {count} نفر دیگر در حال تایپ کردن…",
+"userAndUserAreTyping": "{username} و {username2} در حال تایپ کردن…",
+"userIsTyping": "{username} در حال تایپ کردن…",
+"userLeftTheChat": "🚪{username} گپ را ترک کرد",
+"username": "نام‌کاربری",
+"users": "کاربرها",
+"verified": "تاییدشده",
+"verify": "بازبینی و تایید",
+"verifyStart": "شروع بازبینی و تایید",
+"verifySuccess": "بازبینی و تایید با موفقیت انجام شد!",
+"verifyTitle": "در حال تایید حساب دیگر",
+"videoCall": "تماس تصویری",
+"videoCallsBetaWarning": "لطفا توجه داشته باشید که تماس‌های تصویری در حال حاضر آزمایشی هستند. ممکن است طبق انتظار کار نکنند یا روی همه پلتفرم‌ها اصلا کار نکنند.",
+"videoWithSize": "ویدئو ({size})",
+"visibilityOfTheChatHistory": "قابلیت دیدن تاریخچه گپ",
+"visibleForAllParticipants": "قابل رویت برای تمام شرکت‌کنندگان",
+"visibleForEveryone": "قابل رویت برای همه",
+"voiceCall": "تماس صوتی",
+"voiceMessage": "پیام صوتی",
+"waitingPartnerAcceptRequest": "در انتظار پذیرفتن درخواست از جانب فرد دیگر…",
+"waitingPartnerEmoji": "در انتظار پذیرفتن شکلک از جانب فرد دیگر…",
+"waitingPartnerNumbers": "در انتظار پذیرفتن اعداد از جانب فرد دیگر…",
+"wallpaper": "کاغذدیواری",
+"warning": "هشدار!",
+"wasDirectChatDisplayName": "گپ خالی ({oldDisplayName} بود)",
+"wednesday": "چهارشنبه",
+"whatIsGoingOn": "چه خبر؟",
+"whoCanPerformWhichAction": "چه کسی توان انجام کدام عمل را داراست",
+"whoCanSeeMyStories": "چه کسی می‌تواند استوری‌های من را ببیند؟",
+"whoCanSeeMyStoriesDesc": "لطفا توجه داشته باشید که در استوری شما، مردم می‌توانند یکدیگر را ببینند و با هم تماس بگیرند.",
+"whoIsAllowedToJoinThisGroup": "چه کسی اجازه پیوستن به این گروه را دارد",
+"whyDoYouWantToReportThis": "چرا می‌خواهید گزارش دهید؟",
+"whyIsThisMessageEncrypted": "چرا این پیام قابل خواندن نیست؟",
+"widgetCustom": "سفارشی",
+"widgetEtherpad": "یادداشت متنی",
+"widgetJitsi": "جیتسی‌میت(Jitsi Meet)",
+"widgetName": "نام",
+"widgetNameError": "لطفا یک نام نمایشی مشخص کنید.",
+"widgetUrlError": "این آدرس وب معتبر نیست.",
+"widgetVideo": "ویدئو",
+"wipeChatBackup": "برای ایجاد کلید بازیابی جدید، پشتیبان گپ خود را پاک می‌کنید؟",
+"withTheseAddressesRecoveryDescription": "با این آدرس‌ها می‌توانید رمز خود را بازیابی کنید.",
+"writeAMessage": "نوشتن پیام…",
+"yes": "بله",
+"you": "شما",
+"youAcceptedTheInvitation": "👍 شما دعوت را پذیرفتید",
+"youAreInvitedToThisChat": "شما به این گپ دعوت شدید",
+"youAreNoLongerParticipatingInThisChat": "شما دیگر در این گپ شرکت نمی‌کنید",
+"youBannedUser": "شما {user} را محروم کردید",
+"youCannotInviteYourself": "شما نمی‌توانید خودتان را دعوت کنید",
+"youHaveBeenBannedFromThisChat": "شما از این گپ محروم شده‌اید",
+"youHaveWithdrawnTheInvitationFor": "شما دعوت {user} را پس‌گرفتید",
+"youInvitedBy": "📩 شما توسط {user} دعوت شده‌اید",
+"youInvitedUser": "📩 شما {user} را دعوت کردید",
+"youJoinedTheChat": "شما به گپ پیوستید",
+"youKicked": "👞 شما {user} را بیرون کردید",
+"youKickedAndBanned": "🙅 شما {user} را بیرون و محروم کردید",
+"youRejectedTheInvitation": "شما دعوت را رد کردید",
+"yourPublicKey": "کلید عمومی شما",
+"yourStory": "استوری شما",
+"youUnbannedUser": "شما محرومیت {user} را برداشتید",
 "commandHint_googly": "ارسال چند چشم گوگولی",
 "cuddleContent": "{senderName} شما را در آغوش می‌گیرد",
 "googlyEyesContent": "{senderName} به شما چشمان گوگولی می‌فرستد",

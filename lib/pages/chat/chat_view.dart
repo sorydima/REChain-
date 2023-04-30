@@ -49,11 +49,12 @@ class ChatView extends StatelessWidget {
         if (controller.canSaveSelectedEvent)
           // Use builder context to correctly position the share dialog on iPad
           Builder(
-              builder: (context) => IconButton(
-                    icon: Icon(Icons.adaptive.share),
-                    tooltip: L10n.of(context)!.share,
-                    onPressed: () => controller.saveSelectedEvent(context),
-                  )),
+            builder: (context) => IconButton(
+              icon: Icon(Icons.adaptive.share),
+              tooltip: L10n.of(context)!.share,
+              onPressed: () => controller.saveSelectedEvent(context),
+            ),
+          ),
         if (controller.canRedactSelectedEvents)
           IconButton(
             icon: const Icon(Icons.delete_outlined),
@@ -124,38 +125,25 @@ class ChatView extends StatelessWidget {
     } else {
       return [
         if (Matrix.of(context).voipPlugin != null &&
-            controller.room!.isDirectChat)
+            controller.room.isDirectChat)
           IconButton(
             onPressed: controller.onPhoneButtonTap,
             icon: const Icon(Icons.call_outlined),
             tooltip: L10n.of(context)!.placeCall,
           ),
-        EncryptionButton(controller.room!),
-        ChatSettingsPopupMenu(controller.room!, !controller.room!.isDirectChat),
+        EncryptionButton(controller.room),
+        ChatSettingsPopupMenu(controller.room, !controller.room.isDirectChat),
       ];
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    controller.matrix ??= Matrix.of(context);
-    final client = controller.matrix!.client;
-    controller.sendingClient ??= client;
-    controller.room = controller.sendingClient!.getRoomById(controller.roomId!);
-    if (controller.room == null) {
-      return Scaffold(
-        appBar: AppBar(
-          title: Text(L10n.of(context)!.oopsSomethingWentWrong),
-        ),
-        body: Center(
-          child: Text(L10n.of(context)!.youAreNoLongerParticipatingInThisChat),
-        ),
-      );
-    }
-
-    if (controller.room!.membership == Membership.invite) {
+    if (controller.room.membership == Membership.invite) {
       showFutureLoadingDialog(
-          context: context, future: () => controller.room!.join());
+        context: context,
+        future: () => controller.room.join(),
+      );
     }
     final bottomSheetPadding = rechainonlineThemes.isColumnMode(context) ? 16.0 : 8.0;
     final colorScheme = Theme.of(context).colorScheme;
@@ -171,13 +159,13 @@ class ChatView extends StatelessWidget {
         }
       },
       child: GestureDetector(
-        onTapDown: controller.setReadMarker,
+        onTapDown: (_) => controller.setReadMarker(),
         behavior: HitTestBehavior.opaque,
         child: StreamBuilder(
-          stream: controller.room!.onUpdate.stream
+          stream: controller.room.onUpdate.stream
               .rateLimit(const Duration(seconds: 1)),
-          builder: (context, snapshot) => FutureBuilder<bool>(
-            future: controller.getTimeline(),
+          builder: (context, snapshot) => FutureBuilder(
+            future: controller.loadTimelineFuture,
             builder: (BuildContext context, snapshot) {
               return Scaffold(
                 appBar: AppBar(
@@ -195,7 +183,7 @@ class ChatView extends StatelessWidget {
                           color: Theme.of(context).colorScheme.primary,
                         )
                       : UnreadRoomsBadge(
-                          filter: (r) => r.id != controller.roomId!,
+                          filter: (r) => r.id != controller.roomId,
                           badgePosition: BadgePosition.topEnd(end: 8, top: 4),
                           child: const Center(child: BackButton()),
                         ),
@@ -249,24 +237,27 @@ class ChatView extends StatelessWidget {
                             PinnedEvents(controller),
                             Expanded(
                               child: GestureDetector(
-                                  onTap: controller.clearSingleSelectedEvent,
-                                  child: Builder(
-                                    builder: (context) {
-                                      if (controller.timeline == null) {
-                                        return const Center(
-                                          child: CircularProgressIndicator
-                                              .adaptive(strokeWidth: 2),
-                                        );
-                                      }
-
-                                      return ChatEventList(
-                                        controller: controller,
+                                onTap: controller.clearSingleSelectedEvent,
+                                child: Builder(
+                                  builder: (context) {
+                                    if (controller.timeline == null) {
+                                      return const Center(
+                                        child:
+                                            CircularProgressIndicator.adaptive(
+                                          strokeWidth: 2,
+                                        ),
                                       );
-                                    },
-                                  )),
+                                    }
+
+                                    return ChatEventList(
+                                      controller: controller,
+                                    );
+                                  },
+                                ),
+                              ),
                             ),
-                            if (controller.room!.canSendDefaultMessages &&
-                                controller.room!.membership == Membership.join)
+                            if (controller.room.canSendDefaultMessages &&
+                                controller.room.membership == Membership.join)
                               Container(
                                 margin: EdgeInsets.only(
                                   bottom: bottomSheetPadding,
@@ -274,7 +265,8 @@ class ChatView extends StatelessWidget {
                                   right: bottomSheetPadding,
                                 ),
                                 constraints: const BoxConstraints(
-                                    maxWidth: rechainonlineThemes.columnWidth * 2.5),
+                                  maxWidth: rechainonlineThemes.columnWidth * 2.5,
+                                ),
                                 alignment: Alignment.center,
                                 child: Material(
                                   borderRadius: const BorderRadius.only(
@@ -290,7 +282,7 @@ class ChatView extends StatelessWidget {
                                           Brightness.light
                                       ? Colors.white
                                       : Colors.black,
-                                  child: controller.room?.isAbandonedDMRoom ==
+                                  child: controller.room.isAbandonedDMRoom ==
                                           true
                                       ? Row(
                                           mainAxisAlignment:
@@ -319,12 +311,13 @@ class ChatView extends StatelessWidget {
                                                     const EdgeInsets.all(16),
                                               ),
                                               icon: const Icon(
-                                                Icons.chat_outlined,
+                                                Icons.forum_outlined,
                                               ),
                                               onPressed:
                                                   controller.recreateChat,
                                               label: Text(
-                                                  L10n.of(context)!.reopenChat),
+                                                L10n.of(context)!.reopenChat,
+                                              ),
                                             ),
                                           ],
                                         )

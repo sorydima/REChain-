@@ -24,35 +24,40 @@ class MultipleEmotesSettingsView extends StatelessWidget {
       body: StreamBuilder(
         stream: room.onUpdate.stream,
         builder: (context, snapshot) {
-          final Map<String, Event?> packs =
-              room.states['im.ponies.room_emotes'] ?? <String, Event>{};
+          final packStateEvents = room.states['im.ponies.room_emotes'];
+          // we need to manually convert the map using Map.of, otherwise assigning null will throw a type error.
+          final Map<String, Event?> packs = packStateEvents != null
+              ? Map<String, Event?>.of(packStateEvents)
+              : <String, Event?>{};
           if (!packs.containsKey('')) {
             packs[''] = null;
           }
           final keys = packs.keys.toList();
           keys.sort();
           return ListView.separated(
-              separatorBuilder: (BuildContext context, int i) => Container(),
-              itemCount: keys.length,
-              itemBuilder: (BuildContext context, int i) {
-                final event = packs[keys[i]];
-                String? packName =
-                    keys[i].isNotEmpty ? keys[i] : 'Default Pack';
-                if (event != null && event.content['pack'] is Map) {
-                  if (event.content['pack']['displayname'] is String) {
-                    packName = event.content['pack']['displayname'];
-                  } else if (event.content['pack']['name'] is String) {
-                    packName = event.content['pack']['name'];
-                  }
+            separatorBuilder: (BuildContext context, int i) =>
+                const SizedBox.shrink(),
+            itemCount: keys.length,
+            itemBuilder: (BuildContext context, int i) {
+              final event = packs[keys[i]];
+              String? packName = keys[i].isNotEmpty ? keys[i] : 'Default Pack';
+              if (event != null && event.content['pack'] is Map) {
+                if (event.content['pack']['displayname'] is String) {
+                  packName = event.content['pack']['displayname'];
+                } else if (event.content['pack']['name'] is String) {
+                  packName = event.content['pack']['name'];
                 }
-                return ListTile(
-                  title: Text(packName!),
-                  onTap: () async {
-                    VRouter.of(context).toSegments(
-                        ['rooms', room.id, 'details', 'emotes', keys[i]]);
-                  },
-                );
-              });
+              }
+              return ListTile(
+                title: Text(packName!),
+                onTap: () async {
+                  VRouter.of(context).toSegments(
+                    ['rooms', room.id, 'details', 'emotes', keys[i]],
+                  );
+                },
+              );
+            },
+          );
         },
       ),
     );

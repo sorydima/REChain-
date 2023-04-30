@@ -356,7 +356,7 @@
 "type": "text",
 "placeholders": {}
 },
-"changeTheHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@changeTheHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -922,7 +922,7 @@
 "type": "text",
 "placeholders": {}
 },
-"enterYourHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@enterYourHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -1420,7 +1420,7 @@
 "type": "text",
 "placeholders": {}
 },
-"norechainonlineServer": "{server1}, Katya 👽 AI 🧠 REChain 🪐 Blockchain Node Network sunucusu değil, bunun yerine {server2} kullanılsın mı?",
+"norechainonlineServer": "{server1}, Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network sunucusu değil, bunun yerine {server2} kullanılsın mı?",
 "@norechainonlineServer": {
 "type": "text",
 "placeholders": {
@@ -1649,7 +1649,7 @@
 "type": "text",
 "placeholders": {}
 },
-"pleaseEnterArechainonlineIdentifier": "Lütfen bir Katya 👽 AI 🧠 REChain 🪐 Blockchain Node Zinciri Düğüm Ağı Kimliği girin.",
+"pleaseEnterArechainonlineIdentifier": "Lütfen bir Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Zinciri Düğüm Ağı Kimliği girin.",
 "@pleaseEnterArechainonlineIdentifier": {
 "type": "text",
 "placeholders": {}
@@ -2580,7 +2580,7 @@
 "@createNewChatExplaination": {},
 "sendOnEnter": "Enter tuşu ile gönder",
 "@sendOnEnter": {},
-"homeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"homeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@homeserver": {},
 "serverRequiresEmail": "Bu sunucunun kayıt için e-posta adresinizi doğrulaması gerekiyor.",
 "@serverRequiresEmail": {},
@@ -3029,7 +3029,7 @@
 "storyPrivacyWarning": "İnsanların hikayenizde birbirlerini görebileceğini ve iletişim kurabileceğini lütfen unutmayın. Hikayeleriniz 24 saat boyunca görünür olacaktır ancak tüm aygıtlardan ve sunuculardan silineceklerinin garantisi yoktur.",
 "switchToAccount": "{number}. hesaba geç",
 "unsupportedAndroidVersion": "Desteklenmeyen Android sürümü",
-"unsupportedAndroidVersionLong": "Bu özellik daha yeni bir Android sürümü gerektiriyor. Lütfen güncellemelere veya Katya 👽 Mobile OS desteğine bakın.",
+"unsupportedAndroidVersionLong": "Bu özellik daha yeni bir Android sürümü gerektiriyor. Lütfen güncellemelere veya Katya ® 👽 Mobile OS desteğine bakın.",
 "videoCallsBetaWarning": "Görüntülü aramaların şu anda beta aşamasında olduğunu lütfen unutmayın. Tüm platformlarda beklendiği gibi veya hiç çalışmayabilirler.",
 "voiceCall": "Sesli arama",
 "whatIsGoingOn": "Ne oluyor?",
@@ -3126,6 +3126,23 @@
 },
 "@whyIsThisMessageEncrypted": {
 },
+"@fileHasBeenSavedAt": {
+"placeholders": {
+"path": {
+}
+},
+"type": "text"
+},
+"@jump": {
+},
+"@jumpToLastReadMessage": {
+},
+"@readUpToHere": {
+},
+"fileHasBeenSavedAt": "Dosya {path} konumuna kaydedildi",
+"jump": "Atla",
+"jumpToLastReadMessage": "Son okunan mesaja atla",
+"readUpToHere": "Buraya kadar oku",
 "allSpaces": "Tüm alanlar",
 "appearOnTop": "Üstte görün",
 "appearOnTopDetails": "Uygulamanın üstte görünmesine izin verir (REChain 🪐'ı zaten bir arama hesabı olarak ayarladıysanız gerekli değildir)",

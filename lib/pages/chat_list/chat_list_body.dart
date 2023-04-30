@@ -8,6 +8,7 @@ import 'package:rechainonline/pages/chat_list/chat_list.dart';
 import 'package:rechainonline/pages/chat_list/chat_list_item.dart';
 import 'package:rechainonline/pages/chat_list/search_title.dart';
 import 'package:rechainonline/pages/chat_list/space_view.dart';
+import 'package:rechainonline/pages/chat_list/start_chat_fab.dart';
 import 'package:rechainonline/pages/chat_list/stories_header.dart';
 import 'package:rechainonline/utils/adaptive_bottom_sheet.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/client_stories_extension.dart';
@@ -19,6 +20,7 @@ import 'package:rechainonline/widgets/public_room_bottom_sheet.dart';
 import '../../config/themes.dart';
 import '../../widgets/connection_status_header.dart';
 import '../../widgets/matrix.dart';
+import 'chat_list_header.dart';
 
 class ChatListViewBody extends StatelessWidget {
   final ChatListController controller;
@@ -46,37 +48,38 @@ class ChatListViewBody extends StatelessWidget {
         );
       },
       child: StreamBuilder(
-          key: ValueKey(client.userID.toString() +
+        key: ValueKey(
+          client.userID.toString() +
               controller.activeFilter.toString() +
-              controller.activeSpaceId.toString()),
-          stream: client.onSync.stream
-              .where((s) => s.hasRoomUpdate)
-              .rateLimit(const Duration(seconds: 1)),
-          builder: (context, _) {
-            if (controller.activeFilter == ActiveFilter.spaces &&
-                !controller.isSearchMode) {
-              return SpaceView(
-                controller,
-                scrollController: controller.scrollController,
-                key: Key(controller.activeSpaceId ?? 'Spaces'),
-              );
-            }
-            if (controller.waitForFirstSync && client.prevBatch != null) {
-              final rooms = controller.filteredRooms;
-              final displayStoriesHeader = {
-                    ActiveFilter.allChats,
-                    ActiveFilter.messages,
-                  }.contains(controller.activeFilter) &&
-                  client.storiesRooms.isNotEmpty;
-              return ListView.builder(
+              controller.activeSpaceId.toString(),
+        ),
+        stream: client.onSync.stream
+            .where((s) => s.hasRoomUpdate)
+            .rateLimit(const Duration(seconds: 1)),
+        builder: (context, _) {
+          if (controller.activeFilter == ActiveFilter.spaces &&
+              !controller.isSearchMode) {
+            return SpaceView(
+              controller,
+              scrollController: controller.scrollController,
+              key: Key(controller.activeSpaceId ?? 'Spaces'),
+            );
+          }
+          if (controller.waitForFirstSync && client.prevBatch != null) {
+            final rooms = controller.filteredRooms;
+            final displayStoriesHeader = {
+                  ActiveFilter.allChats,
+                  ActiveFilter.messages,
+                }.contains(controller.activeFilter) &&
+                client.storiesRooms.isNotEmpty;
+            return SafeArea(
+              child: CustomScrollView(
                 controller: controller.scrollController,
-                // add +1 space below in order to properly scroll below the spaces bar
-                itemCount: rooms.length + 1,
-                itemBuilder: (BuildContext context, int i) {
-                  if (i == 0) {
-                    return Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
+                slivers: [
+                  ChatListHeader(controller: controller),
+                  SliverList(
+                    delegate: SliverChildListDelegate(
+                      [
                         if (controller.isSearchMode) ...[
                           SearchTitle(
                             title: L10n.of(context)!.publicRooms,
@@ -186,9 +189,9 @@ class ChatListViewBody extends StatelessWidget {
                         if (controller.isSearchMode)
                           SearchTitle(
                             title: L10n.of(context)!.chats,
-                            icon: const Icon(Icons.chat_outlined),
+                            icon: const Icon(Icons.forum_outlined),
                           ),
-                        if (rooms.isEmpty && !controller.isSearchMode)
+                        if (rooms.isEmpty && !controller.isSearchMode) ...[
                           Padding(
                             padding: const EdgeInsets.all(32.0),
                             child: Column(
@@ -202,91 +205,112 @@ class ChatListViewBody extends StatelessWidget {
                               ],
                             ),
                           ),
-                      ],
-                    );
-                  }
-                  i--;
-                  if (!rooms[i]
-                      .getLocalizedDisplayname(MatrixLocals(L10n.of(context)!))
-                      .toLowerCase()
-                      .contains(
-                          controller.searchController.text.toLowerCase())) {
-                    return Container();
-                  }
-                  return ChatListItem(
-                    rooms[i],
-                    key: Key('chat_list_item_${rooms[i].id}'),
-                    selected: controller.selectedRoomIds.contains(rooms[i].id),
-                    onTap: controller.selectMode == SelectMode.select
-                        ? () => controller.toggleSelection(rooms[i].id)
-                        : null,
-                    onLongPress: () => controller.toggleSelection(rooms[i].id),
-                    activeChat: controller.activeChat == rooms[i].id,
-                  );
-                },
-              );
-            }
-            const dummyChatCount = 5;
-            final titleColor =
-                Theme.of(context).textTheme.bodyLarge!.color!.withAlpha(100);
-            final subtitleColor =
-                Theme.of(context).textTheme.bodyLarge!.color!.withAlpha(50);
-            return ListView.builder(
-              key: const Key('dummychats'),
-              itemCount: dummyChatCount,
-              itemBuilder: (context, i) => Opacity(
-                opacity: (dummyChatCount - i) / dummyChatCount,
-                child: ListTile(
-                  leading: CircleAvatar(
-                    backgroundColor: titleColor,
-                    child: CircularProgressIndicator(
-                      strokeWidth: 1,
-                      color: Theme.of(context).textTheme.bodyLarge!.color,
-                    ),
-                  ),
-                  title: Row(
-                    children: [
-                      Expanded(
-                        child: Container(
-                          height: 14,
-                          decoration: BoxDecoration(
-                            color: titleColor,
-                            borderRadius: BorderRadius.circular(3),
+                          Center(
+                            child: StartChatFloatingActionButton(
+                              activeFilter: controller.activeFilter,
+                              roomsIsEmpty: true,
+                              scrolledToTop: controller.scrolledToTop,
+                            ),
                           ),
-                        ),
-                      ),
-                      const SizedBox(width: 36),
-                      Container(
-                        height: 14,
-                        width: 14,
-                        decoration: BoxDecoration(
-                          color: subtitleColor,
-                          borderRadius: BorderRadius.circular(14),
-                        ),
-                      ),
-                      const SizedBox(width: 12),
-                      Container(
-                        height: 14,
-                        width: 14,
-                        decoration: BoxDecoration(
-                          color: subtitleColor,
-                          borderRadius: BorderRadius.circular(14),
-                        ),
-                      ),
-                    ],
-                  ),
-                  subtitle: Container(
-                    decoration: BoxDecoration(
-                      color: subtitleColor,
-                      borderRadius: BorderRadius.circular(3),
+                        ],
+                      ],
                     ),
-                    height: 12,
-                    margin: const EdgeInsets.only(right: 22),
                   ),
-                ),
+                  SliverList(
+                    delegate: SliverChildBuilderDelegate(
+                      (BuildContext context, int i) {
+                        if (!rooms[i]
+                            .getLocalizedDisplayname(
+                              MatrixLocals(L10n.of(context)!),
+                            )
+                            .toLowerCase()
+                            .contains(
+                              controller.searchController.text.toLowerCase(),
+                            )) {
+                          return const SizedBox.shrink();
+                        }
+                        return ChatListItem(
+                          rooms[i],
+                          key: Key('chat_list_item_${rooms[i].id}'),
+                          selected:
+                              controller.selectedRoomIds.contains(rooms[i].id),
+                          onTap: controller.selectMode == SelectMode.select
+                              ? () => controller.toggleSelection(rooms[i].id)
+                              : null,
+                          onLongPress: () =>
+                              controller.toggleSelection(rooms[i].id),
+                          activeChat: controller.activeChat == rooms[i].id,
+                        );
+                      },
+                      childCount: rooms.length,
+                    ),
+                  ),
+                ],
               ),
             );
-          }),
+          }
+          const dummyChatCount = 5;
+          final titleColor =
+              Theme.of(context).textTheme.bodyLarge!.color!.withAlpha(100);
+          final subtitleColor =
+              Theme.of(context).textTheme.bodyLarge!.color!.withAlpha(50);
+          return ListView.builder(
+            key: const Key('dummychats'),
+            itemCount: dummyChatCount,
+            itemBuilder: (context, i) => Opacity(
+              opacity: (dummyChatCount - i) / dummyChatCount,
+              child: ListTile(
+                leading: CircleAvatar(
+                  backgroundColor: titleColor,
+                  child: CircularProgressIndicator(
+                    strokeWidth: 1,
+                    color: Theme.of(context).textTheme.bodyLarge!.color,
+                  ),
+                ),
+                title: Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        height: 14,
+                        decoration: BoxDecoration(
+                          color: titleColor,
+                          borderRadius: BorderRadius.circular(3),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 36),
+                    Container(
+                      height: 14,
+                      width: 14,
+                      decoration: BoxDecoration(
+                        color: subtitleColor,
+                        borderRadius: BorderRadius.circular(14),
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+                    Container(
+                      height: 14,
+                      width: 14,
+                      decoration: BoxDecoration(
+                        color: subtitleColor,
+                        borderRadius: BorderRadius.circular(14),
+                      ),
+                    ),
+                  ],
+                ),
+                subtitle: Container(
+                  decoration: BoxDecoration(
+                    color: subtitleColor,
+                    borderRadius: BorderRadius.circular(3),
+                  ),
+                  height: 12,
+                  margin: const EdgeInsets.only(right: 22),
+                ),
+              ),
+            ),
+          );
+        },
+      ),
     );
   }
 }

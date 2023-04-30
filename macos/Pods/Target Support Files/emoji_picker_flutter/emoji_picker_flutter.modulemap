@@ -1,0 +1,6 @@
+framework module emoji_picker_flutter {
+  umbrella header "emoji_picker_flutter-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -16,25 +16,25 @@ abstract class AppConfig {
   static const double messageFontSize = 15.75;
   static const bool allowOtherHomeservers = true;
   static const bool enableRegistration = true;
-  static const Color primaryColor = Color.fromARGB(255, 135, 103, 172);
+  static const Color primaryColor = Color(0xFF5625BA);
   static const Color primaryColorLight = Color(0xFFCCBDEA);
   static const Color secondaryColor = Color(0xFF41a2bc);
   static String _privacyUrl = 'https://rechain.online/en/privacy.html';
   static String get privacyUrl => _privacyUrl;
-  static const String enablePushTutorial = 'https://rechain.online/en/privacy.html';
+  static const String enablePushTutorial = 'https://rechain.online/en/privacy.html#6';
   static const String encryptionTutorial = 'https://rechain.online/en/privacy.html#4';
   static const String appId = 'com.rechain.online';
   static const String appOpenUrlScheme = 'com.rechain';
   static String _webBaseUrl = 'https://rechain.online/web';
   static String get webBaseUrl => _webBaseUrl;
-  static const String sourceCodeUrl = 'mailto:support@rechain.email';
+  static const String sourceCodeUrl = 'https://github.com/sorydima/REChain-';
   static const String supportUrl = 'mailto:support@rechain.email';
   static const bool enableSentry = true;
   static const String sentryDns = 'https://d46ee6f0fff24af391dee1220860b36d@o1288037.ingest.sentry.io/6504348';
   static bool renderHtml = true;
-  static bool hideRedactedEvents = true;
+  static bool hideRedactedEvents = false;
   static bool hideUnknownEvents = true;
-  static bool hideUnimportantStateEvents = true;
+  static bool hideUnimportantStateEvents = false;
   static bool showDirectChatsInSpaces = true;
   static bool separateChatTypes = true;
   static bool autoplayImages = true;
@@ -43,7 +43,7 @@ abstract class AppConfig {
   static const bool hideTypingUsernames = false;
   static const bool hideAllStateEvents = false;
   static const String inviteLinkPrefix = 'https://matrix.to/#/';
-  static const String deepLinkPrefix = 'com.rechain://online/';
+  static const String deepLinkPrefix = 'com.rechain://chat/';
   static const String schemePrefix = 'matrix:';
   static const String pushNotificationsChannelId = 'rechainonline_push';
   static const String pushNotificationsChannelName = 'REChain 🪐 Push Channel!';
@@ -62,8 +62,9 @@ abstract class AppConfig {
         colorSchemeSeed = Color(json['chat_color']);
       } catch (e) {
         Logs().w(
-            'Invalid color! Please make sure to define the color in this format: "0xffdd0000"',
-            e);
+          'Invalid color! Please make sure to define the color in this format: "0xffdd0000"',
+          e,
+        );
       }
     }
     if (json['application_name'] is String) {

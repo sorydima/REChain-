@@ -29,22 +29,33 @@ class PublicRoomBottomSheet extends StatelessWidget {
 
   void _joinRoom(BuildContext context) async {
     final client = Matrix.of(context).client;
+    final chunk = this.chunk;
+    final navigator = Navigator.of(context);
+    final router = VRouter.of(context);
     final result = await showFutureLoadingDialog<String>(
       context: context,
-      future: () => chunk?.joinRule == 'knock'
-          ? client.knockRoom(chunk!.roomId)
-          : client.joinRoom(roomAlias ?? chunk!.roomId),
+      future: () async {
+        if (chunk != null && client.getRoomById(chunk.roomId) != null) {
+          return chunk.roomId;
+        }
+        final roomId = chunk != null && chunk.joinRule == 'knock'
+            ? await client.knockRoom(chunk.roomId)
+            : await client.joinRoom(roomAlias ?? chunk!.roomId);
+
+        if (client.getRoomById(roomId) == null) {
+          await client.onSync.stream.firstWhere(
+            (sync) => sync.rooms?.join?.containsKey(roomId) ?? false,
+          );
+        }
+        return roomId;
+      },
     );
     if (result.error == null) {
-      if (client.getRoomById(result.result!) == null) {
-        await client.onSync.stream.firstWhere(
-            (sync) => sync.rooms?.join?.containsKey(result.result) ?? false);
-      }
+      navigator.pop();
       // don't open the room if the joined room is a space
       if (!client.getRoomById(result.result!)!.isSpace) {
-        VRouter.of(context).toSegments(['rooms', result.result!]);
+        router.toSegments(['rooms', result.result!]);
       }
-      Navigator.of(context, rootNavigator: false).pop();
       return;
     }
   }
@@ -93,66 +104,69 @@ class PublicRoomBottomSheet extends StatelessWidget {
           ],
         ),
         body: FutureBuilder<PublicRoomsChunk>(
-            future: _search(context),
-            builder: (context, snapshot) {
-              final profile = snapshot.data;
-              return ListView(
-                padding: EdgeInsets.zero,
-                children: [
-                  if (profile == null)
-                    Container(
-                      height: 156,
-                      alignment: Alignment.center,
-                      color: Theme.of(context).secondaryHeaderColor,
-                      child: snapshot.hasError
-                          ? Text(snapshot.error!.toLocalizedString(context))
-                          : const CircularProgressIndicator.adaptive(
-                              strokeWidth: 2),
-                    )
-                  else
-                    Center(
-                      child: Padding(
-                        padding: const EdgeInsets.all(16.0),
-                        child: Avatar(
-                          mxContent: profile.avatarUrl,
-                          name: profile.name ?? roomAlias,
-                          size: Avatar.defaultSize * 3,
-                          fontSize: 36,
-                        ),
+          future: _search(context),
+          builder: (context, snapshot) {
+            final profile = snapshot.data;
+            return ListView(
+              padding: EdgeInsets.zero,
+              children: [
+                if (profile == null)
+                  Container(
+                    height: 156,
+                    alignment: Alignment.center,
+                    color: Theme.of(context).secondaryHeaderColor,
+                    child: snapshot.hasError
+                        ? Text(snapshot.error!.toLocalizedString(context))
+                        : const CircularProgressIndicator.adaptive(
+                            strokeWidth: 2,
+                          ),
+                  )
+                else
+                  Center(
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Avatar(
+                        mxContent: profile.avatarUrl,
+                        name: profile.name ?? roomAlias,
+                        size: Avatar.defaultSize * 3,
+                        fontSize: 36,
                       ),
                     ),
-                  ListTile(
-                    title: Text(profile?.name ??
+                  ),
+                ListTile(
+                  title: Text(
+                    profile?.name ??
                         roomAlias?.localpart ??
                         chunk!.roomId.localpart ??
-                        ''),
-                    subtitle: Text(
-                      '${L10n.of(context)!.participant}: ${profile?.numJoinedMembers ?? 0}',
-                    ),
-                    trailing: const Icon(Icons.account_box_outlined),
+                        '',
                   ),
-                  if (profile?.topic?.isNotEmpty ?? false)
-                    ListTile(
-                      title: Text(
-                        L10n.of(context)!.groupDescription,
-                        style: TextStyle(
-                          color: Theme.of(context).colorScheme.secondary,
-                        ),
-                      ),
-                      subtitle: LinkText(
-                        text: profile!.topic!,
-                        linkStyle: const TextStyle(color: Colors.blueAccent),
-                        textStyle: TextStyle(
-                          fontSize: 14,
-                          color: Theme.of(context).textTheme.bodyMedium!.color,
-                        ),
-                        onLinkTap: (url) =>
-                            UrlLauncher(context, url).launchUrl(),
+                  subtitle: Text(
+                    '${L10n.of(context)!.participant}: ${profile?.numJoinedMembers ?? 0}',
+                  ),
+                  trailing: const Icon(Icons.account_box_outlined),
+                ),
+                if (profile?.topic?.isNotEmpty ?? false)
+                  ListTile(
+                    title: Text(
+                      L10n.of(context)!.groupDescription,
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.secondary,
                       ),
                     ),
-                ],
-              );
-            }),
+                    subtitle: LinkText(
+                      text: profile!.topic!,
+                      linkStyle: const TextStyle(color: Colors.blueAccent),
+                      textStyle: TextStyle(
+                        fontSize: 14,
+                        color: Theme.of(context).textTheme.bodyMedium!.color,
+                      ),
+                      onLinkTap: (url) => UrlLauncher(context, url).launchUrl(),
+                    ),
+                  ),
+              ],
+            );
+          },
+        ),
       ),
     );
   }

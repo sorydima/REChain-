@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:adaptive_dialog/adaptive_dialog.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
-import 'package:flutter_web_auth/flutter_web_auth.dart';
+import 'package:flutter_web_auth_2/flutter_web_auth_2.dart';
 import 'package:future_loading_dialog/future_loading_dialog.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:matrix/matrix.dart';
@@ -103,11 +103,10 @@ class ConnectPageController extends State<ConnectPage> {
           .any((flow) => flow.type == flowType) ??
       false;
 
-  bool get supportsSso =>
-      (PlatformInfos.isMobile ||
-          PlatformInfos.isWeb ||
-          PlatformInfos.isMacOS) &&
-      _supportsFlow('m.login.sso');
+  bool get supportsSso => _supportsFlow('m.login.sso');
+
+  bool isDefaultPlatform =
+      (PlatformInfos.isMobile || PlatformInfos.isWeb || PlatformInfos.isMacOS);
 
   bool get supportsLogin => _supportsFlow('m.login.password');
 
@@ -118,8 +117,9 @@ class ConnectPageController extends State<ConnectPage> {
   List<IdentityProvider>? get identityProviders {
     final loginTypes = _rawLoginTypes;
     if (loginTypes == null) return null;
-    final rawProviders = loginTypes.tryGetList('flows')!.singleWhere((flow) =>
-        flow['type'] == AuthenticationTypes.sso)['identity_providers'];
+    final rawProviders = loginTypes.tryGetList('flows')!.singleWhere(
+          (flow) => flow['type'] == AuthenticationTypes.sso,
+        )['identity_providers'];
     final list = (rawProviders as List)
         .map((json) => IdentityProvider.fromJson(json))
         .toList();
@@ -132,11 +132,15 @@ class ConnectPageController extends State<ConnectPage> {
   void ssoLoginAction(String id) async {
     final redirectUrl = kIsWeb
         ? '${html.window.origin!}/web/auth.html'
-        : '${AppConfig.appOpenUrlScheme.toLowerCase()}://login';
+        : isDefaultPlatform
+            ? '${AppConfig.appOpenUrlScheme.toLowerCase()}://login'
+            : 'http://localhost:3001//login';
     final url =
         '${Matrix.of(context).getLoginClient().homeserver?.toString()}/_matrix/client/r0/login/sso/redirect/${Uri.encodeComponent(id)}?redirectUrl=${Uri.encodeQueryComponent(redirectUrl)}';
-    final urlScheme = Uri.parse(redirectUrl).scheme;
-    final result = await FlutterWebAuth.authenticate(
+    final urlScheme = isDefaultPlatform
+        ? Uri.parse(redirectUrl).scheme
+        : "http://localhost:3001";
+    final result = await FlutterWebAuth2.authenticate(
       url: url,
       callbackUrlScheme: urlScheme,
     );
@@ -163,9 +167,11 @@ class ConnectPageController extends State<ConnectPage> {
             RequestType.GET,
             '/client/r0/login',
           )
-          .then((loginTypes) => setState(() {
-                _rawLoginTypes = loginTypes;
-              }));
+          .then(
+            (loginTypes) => setState(() {
+              _rawLoginTypes = loginTypes;
+            }),
+          );
     }
   }
 

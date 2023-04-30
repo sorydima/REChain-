@@ -354,7 +354,7 @@
 "type": "text",
 "placeholders": {}
 },
-"changeTheHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@changeTheHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -913,7 +913,7 @@
 "type": "text",
 "placeholders": {}
 },
-"enterYourHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@enterYourHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -1411,7 +1411,7 @@
 "type": "text",
 "placeholders": {}
 },
-"norechainonlineServer": "{server1} non é un servidor Katya 👽 AI 🧠 REChain 🪐 Blockchain Node Network, usa {server2} no seu lugar?",
+"norechainonlineServer": "{server1} non é un servidor Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network, usa {server2} no seu lugar?",
 "@norechainonlineServer": {
 "type": "text",
 "placeholders": {
@@ -1640,7 +1640,7 @@
 "type": "text",
 "placeholders": {}
 },
-"pleaseEnterArechainonlineIdentifier": "Introduce o ID de rede de Katya 👽 AI 🧠 REChain 🪐 Blockchain Node.",
+"pleaseEnterArechainonlineIdentifier": "Introduce o ID de rede de Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node.",
 "@pleaseEnterArechainonlineIdentifier": {
 "type": "text",
 "placeholders": {}
@@ -2580,7 +2580,7 @@
 "@createNewChatExplaination": {},
 "sendOnEnter": "Enter para enviar",
 "@sendOnEnter": {},
-"homeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"homeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@homeserver": {},
 "serverRequiresEmail": "O servidor precisa validar o teu enderezo de email para rexistrarte.",
 "@serverRequiresEmail": {},
@@ -3036,7 +3036,7 @@
 "storyPrivacyWarning": "Ten en conta que outras persoas poden verse en contactar entre elas na túa historia. As historias son visibles durante 24 horas pero non hai garantía de que sexan eliminadas en tódolos dispositivos e servidores.",
 "switchToAccount": "Cambiar á conta {number}",
 "unsupportedAndroidVersion": "Version de Android non soportada",
-"unsupportedAndroidVersionLong": "Esta característica require unha vesión máis recente de Android. Mira se hai actualizacións ou soporte de Katya 👽 Mobile OS.",
+"unsupportedAndroidVersionLong": "Esta característica require unha vesión máis recente de Android. Mira se hai actualizacións ou soporte de Katya ® 👽 Mobile OS.",
 "videoCallsBetaWarning": "Ten en conta que as chamadas de vídeo están en fase beta. Poderían non funcionar correctamente ou non funcionar nalgunhas plataformas.",
 "voiceCall": "Chamada de voz",
 "whatIsGoingOn": "Que acontece?",
@@ -3137,6 +3137,20 @@
 },
 "@whyIsThisMessageEncrypted": {
 },
+"@fileHasBeenSavedAt": {
+"placeholders": {
+"path": {
+}
+},
+"type": "text"
+},
+"@jumpToLastReadMessage": {
+},
+"@readUpToHere": {
+},
+"fileHasBeenSavedAt": "Gardouse o ficheiro en {path}",
+"jumpToLastReadMessage": "Ir á última mensaxe lida",
+"readUpToHere": "Lin ate aquí",
 "allSpaces": "Tódolos espazos",
 "allSuggestedRoomsJoined": "Unícheste a tódalas salas suxeridas",
 "appearOnTop": "Aparecer arriba",

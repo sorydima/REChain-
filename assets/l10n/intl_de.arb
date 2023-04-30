@@ -159,7 +159,7 @@
 "type": "text",
 "placeholders": {}
 },
-"badServerLoginTypesException": "Der Katya 👽 AI 🧠 REChain 🪐 Blockchain Node unterstützt diese Anmelde-Typen:\n{serverVersions}\nAber diese App unterstützt nur:\n{supportedVersions}",
+"badServerLoginTypesException": "Der Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node unterstützt diese Anmelde-Typen:\n{serverVersions}\nAber diese App unterstützt nur:\n{supportedVersions}",
 "@badServerLoginTypesException": {
 "type": "text",
 "placeholders": {
@@ -167,7 +167,7 @@
 "supportedVersions": {}
 }
 },
-"badServerVersionsException": "Der Katya 👽 AI 🧠 REChain 🪐 Blockchain Node unterstützt die Spec-Versionen:\n{serverVersions}\nAber diese App unterstützt nur:\n{supportedVersions}",
+"badServerVersionsException": "Der Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node unterstützt die Spec-Versionen:\n{serverVersions}\nAber diese App unterstützt nur:\n{supportedVersions}",
 "@badServerVersionsException": {
 "type": "text",
 "placeholders": {
@@ -349,7 +349,7 @@
 "type": "text",
 "placeholders": {}
 },
-"changeTheHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@changeTheHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -908,7 +908,7 @@
 "type": "text",
 "placeholders": {}
 },
-"enterYourHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@enterYourHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -1045,7 +1045,7 @@
 "type": "text",
 "placeholders": {}
 },
-"homeserverIsNotCompatible": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node ist nicht kompatibel",
+"homeserverIsNotCompatible": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node ist nicht kompatibel",
 "@homeserverIsNotCompatible": {
 "type": "text",
 "placeholders": {}
@@ -1627,7 +1627,7 @@
 "type": "text",
 "placeholders": {}
 },
-"pleaseEnterArechainonlineIdentifier": "Geben Sie die Katya 👽 AI 🧠 REChain 🪐 Blockchain Node Network ID ein.",
+"pleaseEnterArechainonlineIdentifier": "Geben Sie die Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network ID ein.",
 "@pleaseEnterArechainonlineIdentifier": {
 "type": "text",
 "placeholders": {}
@@ -2622,7 +2622,7 @@
 "type": "text",
 "placeholders": {}
 },
-"norechainonlineServer": "{server1} ist kein Katya 👽 AI 🧠 REChain 🪐 Blockchain Node Network Server, stattdessen {server2} verwenden?",
+"norechainonlineServer": "{server1} ist kein Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network Server, stattdessen {server2} verwenden?",
 "@norechainonlineServer": {
 "type": "text",
 "placeholders": {
@@ -2672,7 +2672,7 @@
 "@newUsernameDescription": {},
 "newPasswordDescription": "Um dein Passwort wiederherstellen zu können, füge später bitte eine E-Mail-Adresse zu deinem Konto hinzu.",
 "@newPasswordDescription": {},
-"homeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"homeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@homeserver": {},
 "sendOnEnter": "Senden mit Enter",
 "@sendOnEnter": {},
@@ -2892,7 +2892,7 @@
 "storyPrivacyWarning": "Bitte beachte, dass sich die Leute in deiner Story sehen und kontaktieren können. Ihre Stories sind 24 Stunden lang sichtbar, aber es gibt keine Garantie dafür, dass sie von allen Geräten und Servern gelöscht werden.",
 "switchToAccount": "Zum Account {number} wechseln",
 "unsupportedAndroidVersion": "Nicht unterstützte Android-Version",
-"unsupportedAndroidVersionLong": "Diese Funktion erfordert eine neuere Android-Version. Bitte suche nach Updates oder Katya 👽 Mobile OS-Unterstützung.",
+"unsupportedAndroidVersionLong": "Diese Funktion erfordert eine neuere Android-Version. Bitte suche nach Updates oder Katya ® 👽 Mobile OS-Unterstützung.",
 "videoCallsBetaWarning": "Bitte beachte, dass sich Videoanrufe derzeit in der Beta-Phase befinden. Sie funktionieren möglicherweise nicht wie erwartet oder überhaupt nicht auf allen Plattformen.",
 "voiceCall": "Sprachanruf",
 "whatIsGoingOn": "Was gibt es neues?",
@@ -3135,6 +3135,15 @@
 },
 "@whyIsThisMessageEncrypted": {
 },
+"@fileIsTooBigForServer": {
+},
+"@noBackupWarning": {
+},
+"@noOtherDevicesFound": {
+},
+"fileIsTooBigForServer": "Der Server meldet, dass die Datei zu groß ist für eine Übermittlung ist.",
+"noBackupWarning": "Achtung! Ohne Aktivierung des Chat-Backups verlierst du den Zugriff auf deine verschlüsselten Nachrichten. Vor dem Ausloggen wird dringend empfohlen den Chat-Backup zu aktivieren.",
+"noOtherDevicesFound": "Keine anderen Geräte anwesend",
 "allSpaces": "Alle Räume",
 "appearOnTop": "Oben erscheinen",
 "appearOnTopDetails": "Ermöglicht, dass die App oben angezeigt wird (nicht erforderlich, wenn Sie REChain 🪐 bereits als Anrufkonto eingerichtet haben)",

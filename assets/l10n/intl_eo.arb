@@ -348,7 +348,7 @@
 "type": "text",
 "placeholders": {}
 },
-"changeTheHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@changeTheHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -902,7 +902,7 @@
 "type": "text",
 "placeholders": {}
 },
-"enterYourHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@enterYourHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -1606,7 +1606,7 @@
 "type": "text",
 "placeholders": {}
 },
-"pleaseEnterArechainonlineIdentifier": "Enigu la Katya 👽 AI 🧠 REChain 🪐 Blockchain Node Network ID.",
+"pleaseEnterArechainonlineIdentifier": "Enigu la Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network ID.",
 "@pleaseEnterArechainonlineIdentifier": {
 "type": "text",
 "placeholders": {}
@@ -2527,7 +2527,7 @@
 "@sendAsText": {
 "type": "text"
 },
-"norechainonlineServer": "{servilo1} ne estas servilo Katya 👽 AI 🧠 REChain 🪐 Blockchain Node Network, eble ni provu servilon {server2} anstataŭe?",
+"norechainonlineServer": "{servilo1} ne estas servilo Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network, eble ni provu servilon {server2} anstataŭe?",
 "@norechainonlineServer": {
 "type": "text",
 "placeholders": {
@@ -2554,7 +2554,7 @@
 },
 "addToSpace": "Aldoni al aro",
 "@addToSpace": {},
-"homeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"homeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@homeserver": {},
 "sendOnEnter": "Sendi per eniga klavo",
 "@sendOnEnter": {}

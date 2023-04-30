@@ -174,7 +174,7 @@
 },
 "sendOnEnter": "Lähetä painamalla rivinvaihtonäppäintä",
 "@sendOnEnter": {},
-"badServerVersionsException": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node -verkkopalvelin, joka tukee REChain 🪐 Spec -versioita: \n {serverVersions}, mutta tämä sovellus tukee vain versioita {supportedVersions}",
+"badServerVersionsException": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node -verkkopalvelin, joka tukee REChain 🪐 Spec -versioita: \n {serverVersions}, mutta tämä sovellus tukee vain versioita {supportedVersions}",
 "@badServerVersionsException": {
 "type": "text",
 "placeholders": {
@@ -718,9 +718,9 @@
 "type": "text",
 "placeholders": {}
 },
-"homeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"homeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@homeserver": {},
-"enterYourHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@enterYourHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -1114,7 +1114,7 @@
 "type": "text",
 "placeholders": {}
 },
-"norechainonlineServer": "{server1} ei ole Katya 👽 AI 🧠 REChain 🪐 Blockchain Node Network -palvelin, käytetäänkö sen sijaan {palvelin2}?",
+"norechainonlineServer": "{server1} ei ole Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network -palvelin, käytetäänkö sen sijaan {palvelin2}?",
 "@norechainonlineServer": {
 "type": "text",
 "placeholders": {
@@ -1297,7 +1297,7 @@
 "type": "text",
 "placeholders": {}
 },
-"changeTheHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@changeTheHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -2362,7 +2362,7 @@
 "type": "text",
 "placeholders": {}
 },
-"pleaseEnterArechainonlineIdentifier": "Anna Katya 👽 AI 🧠 REChain 🪐 Blockchain Node Network ID.",
+"pleaseEnterArechainonlineIdentifier": "Anna Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network ID.",
 "@pleaseEnterArechainonlineIdentifier": {
 "type": "text",
 "placeholders": {}
@@ -2800,7 +2800,7 @@
 "storyPrivacyWarning": "Huomaathan ihmisten pystyvän näkemään ja olemaan yhteydessä toisiinsa tarinassasi. Tarinasi tulevat olemaan näkyvissä 24 tuntia, mutta niiden poistamisesta kaikilta laitteilta ja palvelimilta ei ole takeita.",
 "switchToAccount": "Siirry tilille {number}",
 "unsupportedAndroidVersion": "Ei tuettu Android-versio",
-"unsupportedAndroidVersionLong": "Tämä ominaisuus vaatii uudemman Android-version. Tarkista päivitykset tai Katya 👽 Mobile OS-tuki.",
+"unsupportedAndroidVersionLong": "Tämä ominaisuus vaatii uudemman Android-version. Tarkista päivitykset tai Katya ® 👽 Mobile OS-tuki.",
 "videoCallsBetaWarning": "Huomaathan videopuheluiden ovan beta-asteella. Ne eivät ehkä toimi odotetusti tai toimi ollenkaan kaikilla alustoilla.",
 "voiceCall": "Äänipuhelu",
 "whatIsGoingOn": "Mitä on meneillään?",

@@ -1,0 +1,6 @@
+framework module wakelock_macos {
+  umbrella header "wakelock_macos-umbrella.h"
+
+  export *
+  module * { export * }
+}

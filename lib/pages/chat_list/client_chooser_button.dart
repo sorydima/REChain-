@@ -20,11 +20,13 @@ class ClientChooserButton extends StatelessWidget {
   List<PopupMenuEntry<Object>> _bundleMenuItems(BuildContext context) {
     final matrix = Matrix.of(context);
     final bundles = matrix.accountBundles.keys.toList()
-      ..sort((a, b) => a!.isValidMatrixId == b!.isValidMatrixId
-          ? 0
-          : a.isValidMatrixId && !b.isValidMatrixId
-              ? -1
-              : 1);
+      ..sort(
+        (a, b) => a!.isValidMatrixId == b!.isValidMatrixId
+            ? 0
+            : a.isValidMatrixId && !b.isValidMatrixId
+                ? -1
+                : 1,
+      );
     return <PopupMenuEntry<Object>>[
       PopupMenuItem(
         value: SettingsAction.newStory,
@@ -142,7 +144,9 @@ class ClientChooserButton extends StatelessWidget {
                       IconButton(
                         icon: const Icon(Icons.edit_outlined),
                         onPressed: () => controller.editBundlesForAccount(
-                            client.userID, bundle),
+                          client.userID,
+                          bundle,
+                        ),
                       ),
                     ],
                   ),
@@ -185,7 +189,7 @@ class ClientChooserButton extends StatelessWidget {
                 index,
                 context,
               ),
-              child: Container(),
+              child: const SizedBox.shrink(),
             ),
           ),
           KeyBoardShortcuts(
@@ -195,7 +199,7 @@ class ClientChooserButton extends StatelessWidget {
             },
             helpLabel: L10n.of(context)!.nextAccount,
             onKeysPressed: () => _nextAccount(matrix, context),
-            child: Container(),
+            child: const SizedBox.shrink(),
           ),
           KeyBoardShortcuts(
             keysToPress: {
@@ -205,7 +209,7 @@ class ClientChooserButton extends StatelessWidget {
             },
             helpLabel: L10n.of(context)!.previousAccount,
             onKeysPressed: () => _previousAccount(matrix, context),
-            child: Container(),
+            child: const SizedBox.shrink(),
           ),
           PopupMenuButton<Object>(
             onSelected: (o) => _clientSelected(o, context),
@@ -270,9 +274,12 @@ class ClientChooserButton extends StatelessWidget {
           break;
         case SettingsAction.invite:
           rechainonlineShare.share(
-              L10n.of(context)!.inviteText(Matrix.of(context).client.userID!,
-                  'https://matrix.to/#/${Matrix.of(context).client.userID}?client=com.rechain'),
-              context);
+            L10n.of(context)!.inviteText(
+              Matrix.of(context).client.userID!,
+              'https://matrix.to/#/${Matrix.of(context).client.userID}?client=com.rechain',
+            ),
+            context,
+          );
           break;
         case SettingsAction.settings:
           VRouter.of(context).to('/settings');
@@ -290,11 +297,13 @@ class ClientChooserButton extends StatelessWidget {
     BuildContext context,
   ) {
     final bundles = matrix.accountBundles.keys.toList()
-      ..sort((a, b) => a!.isValidMatrixId == b!.isValidMatrixId
-          ? 0
-          : a.isValidMatrixId && !b.isValidMatrixId
-              ? -1
-              : 1);
+      ..sort(
+        (a, b) => a!.isValidMatrixId == b!.isValidMatrixId
+            ? 0
+            : a.isValidMatrixId && !b.isValidMatrixId
+                ? -1
+                : 1,
+      );
     // beginning from end if negative
     if (index < 0) {
       int clientCount = 0;
@@ -320,11 +329,13 @@ class ClientChooserButton extends StatelessWidget {
     int index = 0;
 
     final bundles = matrix.accountBundles.keys.toList()
-      ..sort((a, b) => a!.isValidMatrixId == b!.isValidMatrixId
-          ? 0
-          : a.isValidMatrixId && !b.isValidMatrixId
-              ? -1
-              : 1);
+      ..sort(
+        (a, b) => a!.isValidMatrixId == b!.isValidMatrixId
+            ? 0
+            : a.isValidMatrixId && !b.isValidMatrixId
+                ? -1
+                : 1,
+      );
     for (final bundleName in bundles) {
       final bundle = matrix.accountBundles[bundleName];
       if (bundle == null) return null;

@@ -1,4 +1,4 @@
-Most people know REChain 🪐 as a secure collaboration and messaging app. They know what it looks like on their phone or laptop, appreciate that it’s end-to-end encrypted, and make increasing use of features like threads, polls and location-sharing. 🥰 🌈 📡
+Most people know the REChain 🪐 Platform as a secure collaboration and messaging app. They know what it looks like on their phone or laptop, appreciate that it’s end-to-end encrypted, and make increasing use of features like threads, polls and location-sharing. 🥰 🌈 📡
 
 Dream big! Stay safe! Stay true! Stay private! Stay tuned! 😎🌍
 
@@ -10,39 +10,23 @@ Making the world a better place since 2017 ✅😼
 
 CHANGELOG:
 
-chore: Display warning when logout without backup;
-chore: Downgrade flutter CI version;
-chore: Follow up audioplayer on linux;
-chore: Follow up chat encryption desgin;
-chore: Follow up fix audioplayer on android;
-chore: Follow up formatting;
-chore: Follow up remove hero animation;
-chore: Follow up secrity settings design;
-chore: Follow up settings page;
-chore: Follow up settings page design;
-chore: Follow up style adjustments;
-chore: Lookup l10n in pushhelper if null;
-chore: Update matrix package to 0.17.0;
-docs/qr-stable.svg: update the QR code;
-feat: Enable audioplayer for web and linux;
-fix: Display error when user tries to send too large file;
-refactor: Do only instantiate AudioPlayer() object when in use;
-refactor: Remove syncstatus verbose logs;
-refactor: Store cached files in tmp directory so OS will clear file cache from time to time;
-style: Adjust key verification dialog;
-style: Bootstrap design adjustments;
-style: Encryption page adjustments;
-style: Enhance user device settings design;
-style: Enhanced chat details design;
-style: Give chat list tiles rounded corners;
-style: Link underline color;
-style: Make adaptive bottom sheets scrollable by default;
-style: Make invite page more pretty;
-style: New settings design;
-style: Nicer chips in encryption settings and icons showing device status;
-style: Use emojis on web as well;
-style: Use robotomono to display device keys;
-utils/url_launcher: force opening http(s) links in external browser.
+feat: Add visual read marker!
+feat: Jump to the last read event!
+feat: Use fragmented timeline to jump to an event!
+feat: Change to the flutterwebauth2!
+fix: Join public room!
+fix: Download files on the WEB and iOS with the correct mimetype!
+fix: Set the FCM priority to the MAX on Android or Katya ® 👽 System!
+refactor: CI scripts and the old workarounds for the build scripts!
+refactor: Container -> SizedBox.shrink()!
+refactor: Client in the Chat Page!
+refactor: Not nullable room in the Chat Page!
+refactor: Switch to the file_picker package and get the rid of some dependency overrides!
+refactor: Use the correct Matrix Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network instance!
+style: Make the emptypage logo bigger!
+style: Minor adjustments for the modal bottom sheets!
+style: Move chats to the top!
+style: Use Sliver List for the Chat List!
 
 Need help? 🤔
 Email us! 👇

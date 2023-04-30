@@ -266,7 +266,7 @@
 "type": "text",
 "placeholders": {}
 },
-"changeTheHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@changeTheHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -594,7 +594,7 @@
 "type": "text",
 "placeholders": {}
 },
-"enterYourHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@enterYourHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -1060,7 +1060,7 @@
 "type": "text",
 "placeholders": {}
 },
-"pleaseEnterArechainonlineIdentifier": "أدخل معرف شبكة عقدة Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"pleaseEnterArechainonlineIdentifier": "أدخل معرف شبكة عقدة Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@pleaseEnterArechainonlineIdentifier": {
 "type": "text",
 "placeholders": {}
@@ -1706,7 +1706,7 @@
 "@shareYourInviteLink": {},
 "createNewChatExplaination": "اطلب من أصدقائك مسح رمز الاستجابة السريعة أو أرسل لهم رابط الدعوة.",
 "@createNewChatExplaination": {},
-"norechainonlineServer": "{server1} ليس خادم Katya 👽 AI 🧠 REChain 🪐 Blockchain Node Network ، بدلاً من ذلك تريد استخدام {server2}؟",
+"norechainonlineServer": "{server1} ليس خادم Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network ، بدلاً من ذلك تريد استخدام {server2}؟",
 "@norechainonlineServer": {
 "type": "text",
 "placeholders": {
@@ -1816,7 +1816,7 @@
 "type": "text",
 "placeholders": {}
 },
-"homeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"homeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@homeserver": {},
 "enterASpacepName": "أدخل اسم الفضاء",
 "@enterASpacepName": {},
@@ -2811,7 +2811,7 @@
 "time": "الوقت",
 "unsubscribeStories": "إلغاء الإشتراك بالقصص",
 "unsupportedAndroidVersion": "نسخة أندرويد غير مدعومة",
-"unsupportedAndroidVersionLong": "تتطلب هذه الميزة إصدار Android أحدث. يرجى التحقق من وجود تحديثات أو دعم Katya 👽 Mobile OS.",
+"unsupportedAndroidVersionLong": "تتطلب هذه الميزة إصدار Android أحدث. يرجى التحقق من وجود تحديثات أو دعم Katya ® 👽 Mobile OS.",
 "unverified": "غير مؤكد",
 "videoCallsBetaWarning": "يرجى ملاحظة أن مكالمات الفيديو حالياً في مرحلة تجريبية. قد لا تعمل كما هو متوقع أو تعمل على الإطلاق على جميع المنصات.",
 "videoWithSize": "فيديو ({size})",

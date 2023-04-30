@@ -23,7 +23,7 @@ class ChatInputRow extends StatelessWidget {
   Widget build(BuildContext context) {
     if (controller.showEmojiPicker &&
         controller.emojiPickerType == EmojiPickerType.reaction) {
-      return Container();
+      return const SizedBox.shrink();
     }
     return Row(
       crossAxisAlignment: CrossAxisAlignment.end,
@@ -72,7 +72,7 @@ class ChatInputRow extends StatelessWidget {
                             ),
                           ),
                         )
-                  : Container(),
+                  : const SizedBox.shrink(),
             ]
           : <Widget>[
               KeyBoardShortcuts(
@@ -146,7 +146,7 @@ class ChatInputRow extends StatelessWidget {
                             contentPadding: const EdgeInsets.all(0),
                           ),
                         ),
-                      if (controller.room!
+                      if (controller.room
                           .getImagePacks(ImagePackUsage.sticker)
                           .isNotEmpty)
                         PopupMenuItem<String>(
@@ -215,9 +215,9 @@ class ChatInputRow extends StatelessWidget {
                   ),
                 ),
               ),
-              if (controller.matrix!.isMultiAccount &&
-                  controller.matrix!.hasComplexBundles &&
-                  controller.matrix!.currentBundle!.length > 1)
+              if (Matrix.of(context).isMultiAccount &&
+                  Matrix.of(context).hasComplexBundles &&
+                  Matrix.of(context).currentBundle!.length > 1)
                 Container(
                   height: 56,
                   alignment: Alignment.center,
@@ -227,7 +227,7 @@ class ChatInputRow extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 4.0),
                   child: InputBar(
-                    room: controller.room!,
+                    room: controller.room,
                     minLines: 1,
                     maxLines: 8,
                     autofocus: !PlatformInfos.isMobile,
@@ -279,8 +279,9 @@ class _ChatAccountPicker extends StatelessWidget {
 
   const _ChatAccountPicker(this.controller, {Key? key}) : super(key: key);
 
-  void _popupMenuButtonSelected(String mxid) {
-    final client = controller.matrix!.currentBundle!
+  void _popupMenuButtonSelected(String mxid, BuildContext context) {
+    final client = Matrix.of(context)
+        .currentBundle!
         .firstWhere((cl) => cl!.userID == mxid, orElse: () => null);
     if (client == null) {
       Logs().w('Attempted to switch to a non-existing client $mxid');
@@ -291,37 +292,37 @@ class _ChatAccountPicker extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    controller.matrix ??= Matrix.of(context);
     final clients = controller.currentRoomBundle;
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: FutureBuilder<Profile>(
-        future: controller.sendingClient!.fetchOwnProfile(),
+        future: controller.sendingClient.fetchOwnProfile(),
         builder: (context, snapshot) => PopupMenuButton<String>(
-          onSelected: _popupMenuButtonSelected,
+          onSelected: (mxid) => _popupMenuButtonSelected(mxid, context),
           itemBuilder: (BuildContext context) => clients
-              .map((client) => PopupMenuItem<String>(
-                    value: client!.userID,
-                    child: FutureBuilder<Profile>(
-                      future: client.fetchOwnProfile(),
-                      builder: (context, snapshot) => ListTile(
-                        leading: Avatar(
-                          mxContent: snapshot.data?.avatarUrl,
-                          name: snapshot.data?.displayName ??
-                              client.userID!.localpart,
-                          size: 20,
-                        ),
-                        title:
-                            Text(snapshot.data?.displayName ?? client.userID!),
-                        contentPadding: const EdgeInsets.all(0),
+              .map(
+                (client) => PopupMenuItem<String>(
+                  value: client!.userID,
+                  child: FutureBuilder<Profile>(
+                    future: client.fetchOwnProfile(),
+                    builder: (context, snapshot) => ListTile(
+                      leading: Avatar(
+                        mxContent: snapshot.data?.avatarUrl,
+                        name: snapshot.data?.displayName ??
+                            client.userID!.localpart,
+                        size: 20,
                       ),
+                      title: Text(snapshot.data?.displayName ?? client.userID!),
+                      contentPadding: const EdgeInsets.all(0),
                     ),
-                  ))
+                  ),
+                ),
+              )
               .toList(),
           child: Avatar(
             mxContent: snapshot.data?.avatarUrl,
             name: snapshot.data?.displayName ??
-                controller.matrix!.client.userID!.localpart,
+                Matrix.of(context).client.userID!.localpart,
             size: 20,
           ),
         ),

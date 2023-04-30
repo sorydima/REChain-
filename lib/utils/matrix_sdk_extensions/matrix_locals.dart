@@ -19,7 +19,7 @@ class MatrixLocals extends MatrixLocalizations {
 
   @override
   String answeredTheCall(String senderName) {
-    return l10n.answeredTheCall(senderName);
+    return l10n.answeredTheCall(senderName, senderName);
   }
 
   @override
@@ -62,7 +62,9 @@ class MatrixLocals extends MatrixLocalizations {
 
   @override
   String changedTheGuestAccessRulesTo(
-      String senderName, String localizedString) {
+    String senderName,
+    String localizedString,
+  ) {
     return l10n.changedTheGuestAccessRulesTo(senderName, localizedString);
   }
 
@@ -73,7 +75,9 @@ class MatrixLocals extends MatrixLocalizations {
 
   @override
   String changedTheHistoryVisibilityTo(
-      String senderName, String localizedString) {
+    String senderName,
+    String localizedString,
+  ) {
     return l10n.changedTheHistoryVisibilityTo(senderName, localizedString);
   }
 
@@ -245,7 +249,7 @@ class MatrixLocals extends MatrixLocalizations {
 
   @override
   String unknownEvent(String typeKey) {
-    return l10n.unknownEvent(typeKey);
+    return l10n.unknownEvent(typeKey, typeKey);
   }
 
   @override
@@ -304,4 +308,7 @@ class MatrixLocals extends MatrixLocalizations {
   @override
   String wasDirectChatDisplayName(String oldDisplayName) =>
       l10n.wasDirectChatDisplayName(oldDisplayName);
+
+  //@override
+  String get unknownUser => l10n.user;
 }

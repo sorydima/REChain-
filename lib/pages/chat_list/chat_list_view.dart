@@ -15,7 +15,6 @@ import 'package:rechainonline/widgets/avatar.dart';
 import 'package:rechainonline/widgets/unread_rooms_badge.dart';
 import '../../widgets/matrix.dart';
 import 'chat_list_body.dart';
-import 'chat_list_header.dart';
 import 'start_chat_fab.dart';
 
 class ChatListView extends StatelessWidget {
@@ -30,30 +29,30 @@ class ChatListView extends StatelessWidget {
         NavigationDestination(
           icon: UnreadRoomsBadge(
             badgePosition: badgePosition,
-            filter: controller.getRoomFilterByActiveFilter(ActiveFilter.groups),
-            child: const Icon(Icons.groups_outlined),
+            filter:
+                controller.getRoomFilterByActiveFilter(ActiveFilter.messages),
+            child: const Icon(Icons.forum_outlined),
           ),
           selectedIcon: UnreadRoomsBadge(
             badgePosition: badgePosition,
-            filter: controller.getRoomFilterByActiveFilter(ActiveFilter.groups),
-            child: const Icon(Icons.groups),
+            filter:
+                controller.getRoomFilterByActiveFilter(ActiveFilter.messages),
+            child: const Icon(Icons.forum),
           ),
-          label: L10n.of(context)!.groups,
+          label: L10n.of(context)!.messages,
         ),
         NavigationDestination(
           icon: UnreadRoomsBadge(
             badgePosition: badgePosition,
-            filter:
-                controller.getRoomFilterByActiveFilter(ActiveFilter.messages),
-            child: const Icon(Icons.chat_outlined),
+            filter: controller.getRoomFilterByActiveFilter(ActiveFilter.groups),
+            child: const Icon(Icons.group_outlined),
           ),
           selectedIcon: UnreadRoomsBadge(
             badgePosition: badgePosition,
-            filter:
-                controller.getRoomFilterByActiveFilter(ActiveFilter.messages),
-            child: const Icon(Icons.chat),
+            filter: controller.getRoomFilterByActiveFilter(ActiveFilter.groups),
+            child: const Icon(Icons.group),
           ),
-          label: L10n.of(context)!.messages,
+          label: L10n.of(context)!.groups,
         ),
       ] else
         NavigationDestination(
@@ -61,13 +60,13 @@ class ChatListView extends StatelessWidget {
             badgePosition: badgePosition,
             filter:
                 controller.getRoomFilterByActiveFilter(ActiveFilter.allChats),
-            child: const Icon(Icons.chat_outlined),
+            child: const Icon(Icons.forum_outlined),
           ),
           selectedIcon: UnreadRoomsBadge(
             badgePosition: badgePosition,
             filter:
                 controller.getRoomFilterByActiveFilter(ActiveFilter.allChats),
-            child: const Icon(Icons.chat),
+            child: const Icon(Icons.forum),
           ),
           label: L10n.of(context)!.chats,
         ),
@@ -109,56 +108,60 @@ class ChatListView extends StatelessWidget {
             children: [
               if (rechainonlineThemes.isColumnMode(context) &&
                   rechainonlineThemes.getDisplayNavigationRail(context)) ...[
-                Builder(builder: (context) {
-                  final allSpaces = client.rooms.where((room) => room.isSpace);
-                  final rootSpaces = allSpaces
-                      .where(
-                        (space) => !allSpaces.any(
-                          (parentSpace) => parentSpace.spaceChildren
-                              .any((child) => child.roomId == space.id),
-                        ),
-                      )
-                      .toList();
-                  final destinations = getNavigationDestinations(context);
+                Builder(
+                  builder: (context) {
+                    final allSpaces =
+                        client.rooms.where((room) => room.isSpace);
+                    final rootSpaces = allSpaces
+                        .where(
+                          (space) => !allSpaces.any(
+                            (parentSpace) => parentSpace.spaceChildren
+                                .any((child) => child.roomId == space.id),
+                          ),
+                        )
+                        .toList();
+                    final destinations = getNavigationDestinations(context);
 
-                  return SizedBox(
-                    width: 64,
-                    child: ListView.builder(
-                      scrollDirection: Axis.vertical,
-                      itemCount: rootSpaces.length + destinations.length,
-                      itemBuilder: (context, i) {
-                        if (i < destinations.length) {
+                    return SizedBox(
+                      width: rechainonlineThemes.navRailWidth,
+                      child: ListView.builder(
+                        scrollDirection: Axis.vertical,
+                        itemCount: rootSpaces.length + destinations.length,
+                        itemBuilder: (context, i) {
+                          if (i < destinations.length) {
+                            return NaviRailItem(
+                              isSelected: i == controller.selectedIndex,
+                              onTap: () => controller.onDestinationSelected(i),
+                              icon: destinations[i].icon,
+                              selectedIcon: destinations[i].selectedIcon,
+                              toolTip: destinations[i].label,
+                            );
+                          }
+                          i -= destinations.length;
+                          final isSelected =
+                              controller.activeFilter == ActiveFilter.spaces &&
+                                  rootSpaces[i].id == controller.activeSpaceId;
                           return NaviRailItem(
-                            isSelected: i == controller.selectedIndex,
-                            onTap: () => controller.onDestinationSelected(i),
-                            icon: destinations[i].icon,
-                            selectedIcon: destinations[i].selectedIcon,
-                            toolTip: destinations[i].label,
-                          );
-                        }
-                        i -= destinations.length;
-                        final isSelected =
-                            controller.activeFilter == ActiveFilter.spaces &&
-                                rootSpaces[i].id == controller.activeSpaceId;
-                        return NaviRailItem(
-                          toolTip: rootSpaces[i].getLocalizedDisplayname(
-                              MatrixLocals(L10n.of(context)!)),
-                          isSelected: isSelected,
-                          onTap: () =>
-                              controller.setActiveSpace(rootSpaces[i].id),
-                          icon: Avatar(
-                            mxContent: rootSpaces[i].avatar,
-                            name: rootSpaces[i].getLocalizedDisplayname(
+                            toolTip: rootSpaces[i].getLocalizedDisplayname(
                               MatrixLocals(L10n.of(context)!),
                             ),
-                            size: 32,
-                            fontSize: 12,
-                          ),
-                        );
-                      },
-                    ),
-                  );
-                }),
+                            isSelected: isSelected,
+                            onTap: () =>
+                                controller.setActiveSpace(rootSpaces[i].id),
+                            icon: Avatar(
+                              mxContent: rootSpaces[i].avatar,
+                              name: rootSpaces[i].getLocalizedDisplayname(
+                                MatrixLocals(L10n.of(context)!),
+                              ),
+                              size: 32,
+                              fontSize: 12,
+                            ),
+                          );
+                        },
+                      ),
+                    );
+                  },
+                ),
                 Container(
                   color: Theme.of(context).dividerColor,
                   width: 1,
@@ -170,7 +173,6 @@ class ChatListView extends StatelessWidget {
                   excludeFromSemantics: true,
                   behavior: HitTestBehavior.translucent,
                   child: Scaffold(
-                    appBar: ChatListHeader(controller: controller),
                     body: ChatListViewBody(controller),
                     bottomNavigationBar: controller.displayNavigationBar
                         ? NavigationBar(
@@ -181,24 +183,24 @@ class ChatListView extends StatelessWidget {
                             destinations: getNavigationDestinations(context),
                           )
                         : null,
-                    floatingActionButtonLocation:
-                        controller.filteredRooms.isEmpty
-                            ? FloatingActionButtonLocation.centerFloat
-                            : null,
-                    floatingActionButton: selectMode == SelectMode.normal
-                        ? KeyBoardShortcuts(
-                            keysToPress: {
-                              LogicalKeyboardKey.controlLeft,
-                              LogicalKeyboardKey.keyN
-                            },
-                            onKeysPressed: () =>
-                                VRouter.of(context).to('/newprivatechat'),
-                            helpLabel: L10n.of(context)!.newChat,
-                            child: StartChatFloatingActionButton(
-                              controller: controller,
-                            ),
-                          )
-                        : null,
+                    floatingActionButton: KeyBoardShortcuts(
+                      keysToPress: {
+                        LogicalKeyboardKey.controlLeft,
+                        LogicalKeyboardKey.keyN
+                      },
+                      onKeysPressed: () =>
+                          VRouter.of(context).to('/newprivatechat'),
+                      helpLabel: L10n.of(context)!.newChat,
+                      child: selectMode == SelectMode.normal &&
+                              controller.filteredRooms.isNotEmpty &&
+                              !controller.isSearchMode
+                          ? StartChatFloatingActionButton(
+                              activeFilter: controller.activeFilter,
+                              roomsIsEmpty: false,
+                              scrolledToTop: controller.scrolledToTop,
+                            )
+                          : const SizedBox.shrink(),
+                    ),
                   ),
                 ),
               ),

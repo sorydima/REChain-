@@ -144,9 +144,10 @@ class StoryView extends StatelessWidget {
           final events = controller.events;
           if (snapshot.connectionState != ConnectionState.done) {
             return const Center(
-                child: CircularProgressIndicator.adaptive(
-              strokeWidth: 2,
-            ));
+              child: CircularProgressIndicator.adaptive(
+                strokeWidth: 2,
+              ),
+            );
           }
           if (events.isEmpty) {
             return Center(
@@ -206,7 +207,7 @@ class StoryView extends StatelessWidget {
                       final videoPlayerController = snapshot.data;
                       if (videoPlayerController == null) {
                         controller.loadingModeOn();
-                        return Container();
+                        return const SizedBox.shrink();
                       }
                       controller.loadingModeOff();
                       return Center(child: VideoPlayer(videoPlayerController));
@@ -218,12 +219,14 @@ class StoryView extends StatelessWidget {
                       !PlatformInfos.isMobile))
                 FutureBuilder<MatrixFile>(
                   future: controller.downloadAndDecryptAttachment(
-                      event, event.messageType == MessageTypes.Video),
+                    event,
+                    event.messageType == MessageTypes.Video,
+                  ),
                   builder: (context, snapshot) {
                     final matrixFile = snapshot.data;
                     if (matrixFile == null) {
                       controller.loadingModeOn();
-                      return Container();
+                      return const SizedBox.shrink();
                     }
                     controller.loadingModeOff();
                     return Container(
@@ -364,7 +367,8 @@ class StoryView extends StatelessWidget {
                                   height: 16,
                                   child: Center(
                                     child: CircularProgressIndicator.adaptive(
-                                        strokeWidth: 2),
+                                      strokeWidth: 2,
+                                    ),
                                   ),
                                 )
                               : IconButton(

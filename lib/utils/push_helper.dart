@@ -58,7 +58,7 @@ Future<void> pushHelper(
           number: notification.counts?.unread,
           ticker: l10n.unreadChats(notification.counts?.unread ?? 1),
           importance: Importance.max,
-          priority: Priority.high,
+          priority: Priority.max,
         ),
       ),
     );
@@ -111,7 +111,9 @@ Future<void> _tryPushHelper(
         await flutterLocalNotificationsPlugin.cancelAll();
         final store = await SharedPreferences.getInstance();
         await store.setString(
-            SettingKeys.notificationCurrentIds, json.encode({}));
+          SettingKeys.notificationCurrentIds,
+          json.encode({}),
+        );
       }
     }
     return;
@@ -177,15 +179,15 @@ Future<void> _tryPushHelper(
   final id = await mapRoomIdToInt(event.room.id);
 
   // Show notification
+  final person = Person(
+    name: event.senderFromMemoryOrFallback.calcDisplayname(),
+    icon:
+        avatarFile == null ? null : BitmapFilePathAndroidIcon(avatarFile.path),
+  );
   final newMessage = Message(
     body,
     event.originServerTs,
-    Person(
-      name: event.senderFromMemoryOrFallback.calcDisplayname(),
-      icon: avatarFile == null
-          ? null
-          : BitmapFilePathAndroidIcon(avatarFile.path),
-    ),
+    person,
   );
 
   final messagingStyleInformation = PlatformInfos.isAndroid
@@ -194,23 +196,25 @@ Future<void> _tryPushHelper(
       : null;
   messagingStyleInformation?.messages?.add(newMessage);
 
+  final roomName = event.room.getLocalizedDisplayname(MatrixLocals(l10n));
+
   final androidPlatformChannelSpecifics = AndroidNotificationDetails(
-    AppConfig.pushNotificationsChannelId,
-    AppConfig.pushNotificationsChannelName,
-    channelDescription: AppConfig.pushNotificationsChannelDescription,
+    event.room.id,
+    roomName,
+    channelDescription:
+        event.room.isDirectChat ? l10n.directChats : l10n.groups,
     number: notification.counts?.unread,
+    category: AndroidNotificationCategory.message,
     styleInformation: messagingStyleInformation ??
         MessagingStyleInformation(
-          Person(name: event.room.client.userID),
-          conversationTitle: event.room.getLocalizedDisplayname(
-            MatrixLocals(l10n),
-          ),
+          person,
+          conversationTitle: roomName,
           groupConversation: !event.room.isDirectChat,
           messages: [newMessage],
         ),
     ticker: l10n.unreadChats(notification.counts?.unread ?? 1),
     importance: Importance.max,
-    priority: Priority.high,
+    priority: Priority.max,
     groupKey: event.room.id,
   );
   const iOSPlatformChannelSpecifics = DarwinNotificationDetails();
@@ -237,7 +241,8 @@ Future<void> _tryPushHelper(
 Future<int> mapRoomIdToInt(String roomId) async {
   final store = await SharedPreferences.getInstance();
   final idMap = Map<String, int>.from(
-      jsonDecode(store.getString(SettingKeys.notificationCurrentIds) ?? '{}'));
+    jsonDecode(store.getString(SettingKeys.notificationCurrentIds) ?? '{}'),
+  );
   int? currentInt;
   try {
     currentInt = idMap[roomId];

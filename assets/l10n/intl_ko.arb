@@ -189,12 +189,12 @@
 "type": "text",
 "placeholders": {}
 },
-"enterYourHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@enterYourHomeserver": {
 "type": "text",
 "placeholders": {}
 },
-"homeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"homeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@homeserver": {},
 "enterAUsername": "유저 이름 입력",
 "@enterAUsername": {
@@ -652,7 +652,7 @@
 "type": "text",
 "placeholders": {}
 },
-"changeTheHomeserver": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
 "@changeTheHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -1443,7 +1443,7 @@
 "@shareYourInviteLink": {},
 "createNewChatExplaination": "서로 가깝지 않다면 초대 링크를 공유하거나 QR 코드를 스캔하세요.",
 "@createNewChatExplaination": {},
-"norechainonlineServer": "{server1}은(는) Katya 👽 AI 🧠 REChain 🪐 Blockchain Node Network 서버가 아닙니다. 대신 {server2}를 사용해야 합니까?",
+"norechainonlineServer": "{server1}은(는) Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network 서버가 아닙니다. 대신 {server2}를 사용해야 합니까?",
 "@norechainonlineServer": {
 "type": "text",
 "placeholders": {
@@ -1862,7 +1862,7 @@
 "type": "text",
 "placeholders": {}
 },
-"pleaseEnterArechainonlineIdentifier": "Katya 👽 AI 🧠 REChain 🪐 Blockchain Node 블록체인 노드 네트워크 ID 입력",
+"pleaseEnterArechainonlineIdentifier": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node 블록체인 노드 네트워크 ID 입력",
 "@pleaseEnterArechainonlineIdentifier": {
 "type": "text",
 "placeholders": {}
@@ -2796,7 +2796,7 @@
 "thisUserHasNotPostedAnythingYet": "이 유저는 스토리에 아무것도 올리지 않았습니다",
 "unsubscribeStories": "스토리 구독 해제",
 "unsupportedAndroidVersion": "지원되지 않는 안드로이드 버전",
-"unsupportedAndroidVersionLong": "이 기능은 새로운 안드로이드 버전을 요구합니다. Katya 👽 Mobile OS 지원이나 업데이트를 확인해주세요.",
+"unsupportedAndroidVersionLong": "이 기능은 새로운 안드로이드 버전을 요구합니다. Katya ® 👽 Mobile OS 지원이나 업데이트를 확인해주세요.",
 "videoCallsBetaWarning": "영상 통화는 베타임을 확인해주세요. 의도한 대로 작동하지 않거나 모든 플랫폼에서 작동하지 않을 수 있습니다.",
 "videoWithSize": "영상 ({size})",
 "voiceCall": "음성 통화",

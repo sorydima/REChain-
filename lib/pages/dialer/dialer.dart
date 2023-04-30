@@ -18,9 +18,12 @@ import 'package:rechainonline/widgets/avatar.dart';
 import 'pip/pip_view.dart';
 
 class _StreamView extends StatelessWidget {
-  const _StreamView(this.wrappedStream,
-      {Key? key, this.mainView = false, required this.matrixClient})
-      : super(key: key);
+  const _StreamView(
+    this.wrappedStream, {
+    Key? key,
+    this.mainView = false,
+    required this.matrixClient,
+  }) : super(key: key);
 
   final WrappedMediaStream wrappedStream;
   final Client matrixClient;
@@ -49,43 +52,48 @@ class _StreamView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        decoration: const BoxDecoration(
-          color: Colors.black54,
-        ),
-        child: Stack(
-          alignment: Alignment.center,
-          children: <Widget>[
-            if (videoMuted)
-              Container(
-                color: Colors.transparent,
-              ),
-            if (!videoMuted)
-              RTCVideoView(
-                // yes, it must explicitly be casted even though I do not feel
-                // comfortable with it...
-                wrappedStream.renderer as RTCVideoRenderer,
-                mirror: mirrored,
-                objectFit: RTCVideoViewObjectFit.RTCVideoViewObjectFitContain,
-              ),
-            if (videoMuted)
-              Positioned(
-                  child: Avatar(
+      decoration: const BoxDecoration(
+        color: Colors.black54,
+      ),
+      child: Stack(
+        alignment: Alignment.center,
+        children: <Widget>[
+          if (videoMuted)
+            Container(
+              color: Colors.transparent,
+            ),
+          if (!videoMuted)
+            RTCVideoView(
+              // yes, it must explicitly be casted even though I do not feel
+              // comfortable with it...
+              wrappedStream.renderer as RTCVideoRenderer,
+              mirror: mirrored,
+              objectFit: RTCVideoViewObjectFit.RTCVideoViewObjectFitContain,
+            ),
+          if (videoMuted)
+            Positioned(
+              child: Avatar(
                 mxContent: avatarUrl,
                 name: displayName,
                 size: mainView ? 96 : 48,
                 client: matrixClient,
                 // textSize: mainView ? 36 : 24,
                 // matrixClient: matrixClient,
-              )),
-            if (!isScreenSharing)
-              Positioned(
-                left: 4.0,
-                bottom: 4.0,
-                child: Icon(audioMuted ? Icons.mic_off : Icons.mic,
-                    color: Colors.white, size: 18.0),
-              )
-          ],
-        ));
+              ),
+            ),
+          if (!isScreenSharing)
+            Positioned(
+              left: 4.0,
+              bottom: 4.0,
+              child: Icon(
+                audioMuted ? Icons.mic_off : Icons.mic,
+                color: Colors.white,
+                size: 18.0,
+              ),
+            )
+        ],
+      ),
+    );
   }
 }
 
@@ -96,14 +104,14 @@ class Calling extends StatefulWidget {
   final CallSession call;
   final Client client;
 
-  const Calling(
-      {required this.context,
-      required this.call,
-      required this.client,
-      required this.callId,
-      this.onClear,
-      Key? key})
-      : super(key: key);
+  const Calling({
+    required this.context,
+    required this.call,
+    required this.client,
+    required this.callId,
+    this.onClear,
+    Key? key,
+  }) : super(key: key);
 
   @override
   MyCallingPage createState() => MyCallingPage();
@@ -188,7 +196,8 @@ class MyCallingPage extends State<Calling> {
           event == CallEvent.kRemoteHoldUnhold) {
         setState(() {});
         Logs().i(
-            'Call hold event: local ${call.localHold}, remote ${call.remoteOnHold}');
+          'Call hold event: local ${call.localHold}, remote ${call.remoteOnHold}',
+        );
       }
     });
     _state = call.state;
@@ -221,7 +230,9 @@ class MyCallingPage extends State<Calling> {
 
   void _resizeLocalVideo(Orientation orientation) {
     final shortSide = min(
-        MediaQuery.of(context).size.width, MediaQuery.of(context).size.height);
+      MediaQuery.of(context).size.width,
+      MediaQuery.of(context).size.height,
+    );
     _localVideoMargin = remoteStream != null
         ? const EdgeInsets.only(top: 20.0, right: 20.0)
         : EdgeInsets.zero;
@@ -286,8 +297,9 @@ class MyCallingPage extends State<Calling> {
           foregroundTaskOptions: const ForegroundTaskOptions(),
         );
         FlutterForegroundTask.startService(
-            notificationTitle: L10n.of(context)!.screenSharingTitle,
-            notificationText: L10n.of(context)!.screenSharingDetail);
+          notificationTitle: L10n.of(context)!.screenSharingTitle,
+          notificationText: L10n.of(context)!.screenSharingDetail,
+        );
       } else {
         FlutterForegroundTask.stopService();
       }
@@ -313,7 +325,8 @@ class MyCallingPage extends State<Calling> {
   void _switchCamera() async {
     if (call.localUserMediaStream != null) {
       await Helper.switchCamera(
-          call.localUserMediaStream!.stream!.getVideoTracks()[0]);
+        call.localUserMediaStream!.stream!.getVideoTracks()[0],
+      );
       if (PlatformInfos.isMobile) {
         call.facingMode == 'user'
             ? call.facingMode = 'environment'
@@ -455,22 +468,27 @@ class MyCallingPage extends State<Calling> {
       } else if (call.remoteOnHold) {
         title = 'You held the call.';
       }
-      stackWidgets.add(Center(
-        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          const Icon(
-            Icons.pause,
-            size: 48.0,
-            color: Colors.white,
+      stackWidgets.add(
+        Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Icon(
+                Icons.pause,
+                size: 48.0,
+                color: Colors.white,
+              ),
+              Text(
+                title,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 24.0,
+                ),
+              )
+            ],
           ),
-          Text(
-            title,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 24.0,
-            ),
-          )
-        ]),
-      ));
+        ),
+      );
       return stackWidgets;
     }
 
@@ -484,10 +502,15 @@ class MyCallingPage extends State<Calling> {
     }
 
     if (primaryStream != null) {
-      stackWidgets.add(Center(
-        child: _StreamView(primaryStream,
-            mainView: true, matrixClient: widget.client),
-      ));
+      stackWidgets.add(
+        Center(
+          child: _StreamView(
+            primaryStream,
+            mainView: true,
+            matrixClient: widget.client,
+          ),
+        ),
+      );
     }
 
     if (isFloating || !connected) {
@@ -504,47 +527,58 @@ class MyCallingPage extends State<Calling> {
 
     if (call.remoteScreenSharingStream != null) {
       final remoteUserMediaStream = call.remoteUserMediaStream;
-      secondaryStreamViews.add(SizedBox(
-        width: _localVideoWidth,
-        height: _localVideoHeight,
-        child: _StreamView(remoteUserMediaStream!, matrixClient: widget.client),
-      ));
+      secondaryStreamViews.add(
+        SizedBox(
+          width: _localVideoWidth,
+          height: _localVideoHeight,
+          child:
+              _StreamView(remoteUserMediaStream!, matrixClient: widget.client),
+        ),
+      );
       secondaryStreamViews.add(const SizedBox(height: 10));
     }
 
     final localStream =
         call.localUserMediaStream ?? call.localScreenSharingStream;
     if (localStream != null && !isFloating) {
-      secondaryStreamViews.add(SizedBox(
-        width: _localVideoWidth,
-        height: _localVideoHeight,
-        child: _StreamView(localStream, matrixClient: widget.client),
-      ));
+      secondaryStreamViews.add(
+        SizedBox(
+          width: _localVideoWidth,
+          height: _localVideoHeight,
+          child: _StreamView(localStream, matrixClient: widget.client),
+        ),
+      );
       secondaryStreamViews.add(const SizedBox(height: 10));
     }
 
     if (call.localScreenSharingStream != null && !isFloating) {
-      secondaryStreamViews.add(SizedBox(
-        width: _localVideoWidth,
-        height: _localVideoHeight,
-        child: _StreamView(call.remoteUserMediaStream!,
-            matrixClient: widget.client),
-      ));
+      secondaryStreamViews.add(
+        SizedBox(
+          width: _localVideoWidth,
+          height: _localVideoHeight,
+          child: _StreamView(
+            call.remoteUserMediaStream!,
+            matrixClient: widget.client,
+          ),
+        ),
+      );
       secondaryStreamViews.add(const SizedBox(height: 10));
     }
 
     if (secondaryStreamViews.isNotEmpty) {
-      stackWidgets.add(Container(
-        padding: const EdgeInsets.fromLTRB(0, 20, 0, 120),
-        alignment: Alignment.bottomRight,
-        child: Container(
-          width: _localVideoWidth,
-          margin: _localVideoMargin,
-          child: Column(
-            children: secondaryStreamViews,
+      stackWidgets.add(
+        Container(
+          padding: const EdgeInsets.fromLTRB(0, 20, 0, 120),
+          alignment: Alignment.bottomRight,
+          child: Container(
+            width: _localVideoWidth,
+            margin: _localVideoMargin,
+            child: Column(
+              children: secondaryStreamViews,
+            ),
           ),
         ),
-      ));
+      );
     }
 
     return stackWidgets;
@@ -552,27 +586,31 @@ class MyCallingPage extends State<Calling> {
 
   @override
   Widget build(BuildContext context) {
-    return PIPView(builder: (context, isFloating) {
-      return Scaffold(
+    return PIPView(
+      builder: (context, isFloating) {
+        return Scaffold(
           resizeToAvoidBottomInset: !isFloating,
           floatingActionButtonLocation:
               FloatingActionButtonLocation.centerFloat,
           floatingActionButton: SizedBox(
-              width: 320.0,
-              height: 150.0,
-              child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: _buildActionButtons(isFloating))),
+            width: 320.0,
+            height: 150.0,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: _buildActionButtons(isFloating),
+            ),
+          ),
           body: OrientationBuilder(
-              builder: (BuildContext context, Orientation orientation) {
-            return Container(
+            builder: (BuildContext context, Orientation orientation) {
+              return Container(
                 decoration: const BoxDecoration(
                   color: Colors.black87,
                 ),
-                child: Stack(children: [
-                  ..._buildContent(orientation, isFloating),
-                  if (!isFloating)
-                    Positioned(
+                child: Stack(
+                  children: [
+                    ..._buildContent(orientation, isFloating),
+                    if (!isFloating)
+                      Positioned(
                         top: 24.0,
                         left: 24.0,
                         child: IconButton(
@@ -581,9 +619,15 @@ class MyCallingPage extends State<Calling> {
                           onPressed: () {
                             PIPView.of(context)?.setFloating(true);
                           },
-                        ))
-                ]));
-          }));
-    });
+                        ),
+                      )
+                  ],
+                ),
+              );
+            },
+          ),
+        );
+      },
+    );
   }
 }
