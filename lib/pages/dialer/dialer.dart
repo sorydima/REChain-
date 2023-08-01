@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_foreground_task/flutter_foreground_task.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
-import 'package:flutter_webrtc/flutter_webrtc.dart';
+// import 'package:flutter_webrtc/flutter_webrtc.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:matrix/matrix.dart';
 import 'package:vibration/vibration.dart';
@@ -61,14 +61,6 @@ class _StreamView extends StatelessWidget {
           if (videoMuted)
             Container(
               color: Colors.transparent,
-            ),
-          if (!videoMuted)
-            RTCVideoView(
-              // yes, it must explicitly be casted even though I do not feel
-              // comfortable with it...
-              wrappedStream.renderer as RTCVideoRenderer,
-              mirror: mirrored,
-              objectFit: RTCVideoViewObjectFit.RTCVideoViewObjectFitContain,
             ),
           if (videoMuted)
             Positioned(
@@ -127,20 +119,6 @@ class MyCallingPage extends State<Calling> {
   String get callId => widget.callId;
 
   CallSession get call => widget.call;
-
-  MediaStream? get localStream {
-    if (call.localUserMediaStream != null) {
-      return call.localUserMediaStream!.stream!;
-    }
-    return null;
-  }
-
-  MediaStream? get remoteStream {
-    if (call.getRemoteStreams.isNotEmpty) {
-      return call.getRemoteStreams[0].stream!;
-    }
-    return null;
-  }
 
   bool get speakerOn => call.speakerOn;
 
@@ -228,22 +206,6 @@ class MyCallingPage extends State<Calling> {
     call.cleanUp.call();
   }
 
-  void _resizeLocalVideo(Orientation orientation) {
-    final shortSide = min(
-      MediaQuery.of(context).size.width,
-      MediaQuery.of(context).size.height,
-    );
-    _localVideoMargin = remoteStream != null
-        ? const EdgeInsets.only(top: 20.0, right: 20.0)
-        : EdgeInsets.zero;
-    _localVideoWidth = remoteStream != null
-        ? shortSide / 3
-        : MediaQuery.of(context).size.width;
-    _localVideoHeight = remoteStream != null
-        ? shortSide / 4
-        : MediaQuery.of(context).size.height;
-  }
-
   void _handleCallState(CallState state) {
     Logs().v('CallingPage::handleCallState: ${state.toString()}');
     if ({CallState.kConnected, CallState.kEnded}.contains(state)) {
@@ -322,11 +284,11 @@ class MyCallingPage extends State<Calling> {
     });
   }
 
+  /*
   void _switchCamera() async {
     if (call.localUserMediaStream != null) {
-      await Helper.switchCamera(
-        call.localUserMediaStream!.stream!.getVideoTracks()[0],
-      );
+      // await Helper.switchCamera(
+        call.localUserMediaStream!.stream!.getVideoTracks()[0],);
       if (PlatformInfos.isMobile) {
         call.facingMode == 'user'
             ? call.facingMode = 'environment'
@@ -335,6 +297,7 @@ class MyCallingPage extends State<Calling> {
     }
     setState(() {});
   }
+  */
 
   /*
   void _switchSpeaker() {
@@ -517,7 +480,7 @@ class MyCallingPage extends State<Calling> {
       return stackWidgets;
     }
 
-    _resizeLocalVideo(orientation);
+    // _resizeLocalVideo(orientation);
 
     if (call.getRemoteStreams.isEmpty) {
       return stackWidgets;

@@ -2925,6 +2925,9 @@
 }
 }
 },
+"@openLinkInBrowser": {
+},
+"openLinkInBrowser": "Otwórz link w przeglądarce",
 "addDescription": "Dodaj opis",
 "addToBundle": "Dodaj do pakietu",
 "addToSpaceDescription": "Wybierz przestrzeń, do której ten czat ma być dodany.",

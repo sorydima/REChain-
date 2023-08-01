@@ -3148,6 +3148,33 @@
 },
 "@readUpToHere": {
 },
+"@allRooms": {
+"placeholders": {
+},
+"type": "text"
+},
+"@continueWith": {
+},
+"@jump": {
+},
+"@openLinkInBrowser": {
+},
+"@pleaseTryAgainLaterOrChooseDifferentServer": {
+},
+"@report": {
+},
+"@reportErrorDescription": {
+},
+"@signInWithPassword": {
+},
+"allRooms": "Todas as Conversas en grupo",
+"continueWith": "Continuar con:",
+"jump": "Ir alá",
+"openLinkInBrowser": "Abrir ligazón no navegador",
+"pleaseTryAgainLaterOrChooseDifferentServer": "Inténtao máis tarde ou elixe un servidor diferente.",
+"report": "informar",
+"reportErrorDescription": "Vaia! Algo fallou. Inténtao máis tarde. Se queres, podes informar do problema aos desenvolvedores.",
+"signInWithPassword": "Accede con contrasinal",
 "fileHasBeenSavedAt": "Gardouse o ficheiro en {path}",
 "jumpToLastReadMessage": "Ir á última mensaxe lida",
 "readUpToHere": "Lin ate aquí",

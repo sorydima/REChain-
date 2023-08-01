@@ -9,7 +9,6 @@ import 'package:rechainonline/pages/chat_details/chat_details.dart';
 import 'package:rechainonline/pages/chat_encryption_settings/chat_encryption_settings.dart';
 import 'package:rechainonline/pages/chat_list/chat_list.dart';
 import 'package:rechainonline/pages/chat_permissions_settings/chat_permissions_settings.dart';
-import 'package:rechainonline/pages/connect/connect_page.dart';
 import 'package:rechainonline/pages/device_settings/device_settings.dart';
 import 'package:rechainonline/pages/homeserver_picker/homeserver_picker.dart';
 import 'package:rechainonline/pages/invitation_selection/invitation_selection.dart';
@@ -27,7 +26,6 @@ import 'package:rechainonline/pages/settings_notifications/settings_notification
 import 'package:rechainonline/pages/settings_security/settings_security.dart';
 import 'package:rechainonline/pages/settings_stories/settings_stories.dart';
 import 'package:rechainonline/pages/settings_style/settings_style.dart';
-import 'package:rechainonline/pages/sign_up/signup.dart';
 import 'package:rechainonline/pages/story/story_page.dart';
 import 'package:rechainonline/widgets/layouts/empty_page.dart';
 import 'package:rechainonline/widgets/layouts/loading_view.dart';
@@ -267,23 +265,6 @@ class AppRoutes {
               buildTransition: _fadeTransition,
             ),
             VWidget(
-              path: 'connect',
-              widget: const ConnectPage(),
-              buildTransition: _fadeTransition,
-              stackedRoutes: [
-                VWidget(
-                  path: 'login',
-                  widget: const Login(),
-                  buildTransition: _fadeTransition,
-                ),
-                VWidget(
-                  path: 'signup',
-                  widget: const SignupPage(),
-                  buildTransition: _fadeTransition,
-                ),
-              ],
-            ),
-            VWidget(
               path: 'logs',
               widget: const LogViewer(),
               buildTransition: _dynamicTransition,
@@ -357,23 +338,6 @@ class AppRoutes {
               path: 'login',
               widget: const Login(),
               buildTransition: _fadeTransition,
-            ),
-            VWidget(
-              path: 'connect',
-              widget: const ConnectPage(),
-              buildTransition: _fadeTransition,
-              stackedRoutes: [
-                VWidget(
-                  path: 'login',
-                  widget: const Login(),
-                  buildTransition: _fadeTransition,
-                ),
-                VWidget(
-                  path: 'signup',
-                  widget: const SignupPage(),
-                  buildTransition: _fadeTransition,
-                ),
-              ],
             ),
           ],
         ),

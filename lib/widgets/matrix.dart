@@ -32,7 +32,7 @@ import '../config/setting_keys.dart';
 import '../pages/key_verification/key_verification_dialog.dart';
 import '../utils/account_bundles.dart';
 import '../utils/background_push.dart';
-import '../utils/rechainonlinesdk_store.dart';
+import '../utils/famedlysdk_store.dart';
 import 'local_notifications_extension.dart';
 
 // import 'package:flutter_secure_storage/flutter_secure_storage.dart';
@@ -244,8 +244,7 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
 
   bool webHasFocus = true;
 
-  String? get activeRoomId =>
-      VRouter.of(navigatorContext).pathParameters['roomid'];
+  String? get activeRoomId => navigatorContext.vRouter.pathParameters['roomid'];
 
   final linuxNotifications =
       PlatformInfos.isLinux ? NotificationsClient() : null;
@@ -430,14 +429,6 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
     }
 
     createVoipPlugin();
-  }
-
-  void createVoipPlugin() async {
-    if (await store.getItemBool(SettingKeys.experimentalVoip) == false) {
-      voipPlugin = null;
-      return;
-    }
-    voipPlugin = webrtcIsSupported ? VoipPlugin(client) : null;
   }
 
   @override

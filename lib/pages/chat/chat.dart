@@ -23,6 +23,7 @@ import 'package:rechainonline/pages/chat/chat_view.dart';
 import 'package:rechainonline/pages/chat/event_info_dialog.dart';
 import 'package:rechainonline/pages/chat/recording_dialog.dart';
 import 'package:rechainonline/utils/adaptive_bottom_sheet.dart';
+import 'package:rechainonline/utils/error_reporter.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/event_extension.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/ios_badge_client_extension.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
@@ -76,7 +77,7 @@ class ChatPageWithRoom extends StatefulWidget {
 }
 
 class ChatController extends State<ChatPageWithRoom> {
-  Room get room => widget.room;
+  Room get room => sendingClient.getRoomById(roomId) ?? widget.room;
 
   late Client sendingClient;
 
@@ -151,7 +152,10 @@ class ChatController extends State<ChatPageWithRoom> {
 
   Event? editEvent;
 
-  bool showScrollDownButton = false;
+  bool _scrolledUp = false;
+
+  bool get showScrollDownButton =>
+      _scrolledUp || timeline?.allowNewEvent == false;
 
   bool get selectMode => selectedEvents.isNotEmpty;
 
@@ -200,6 +204,7 @@ class ChatController extends State<ChatPageWithRoom> {
 
   void requestHistory() async {
     if (!timeline!.canRequestHistory) return;
+    Logs().v('Requesting history...');
     try {
       await timeline!.requestHistory(historyCount: _loadHistoryCount);
     } catch (err) {
@@ -218,6 +223,7 @@ class ChatController extends State<ChatPageWithRoom> {
     final timeline = this.timeline;
     if (timeline == null) return;
     if (!timeline.canRequestFuture) return;
+    Logs().v('Requesting future...');
     try {
       final mostRecentEventId = timeline.events.first.eventId;
       await timeline.requestFuture(historyCount: _loadHistoryCount);
@@ -240,18 +246,11 @@ class ChatController extends State<ChatPageWithRoom> {
     }
     setReadMarker();
     if (!scrollController.hasClients) return;
-    if (scrollController.position.pixels ==
-        scrollController.position.maxScrollExtent) {
-      requestHistory();
-    } else if (scrollController.position.pixels == 0) {
-      requestFuture();
-    }
     if (timeline?.allowNewEvent == false ||
-        scrollController.position.pixels > 0 && showScrollDownButton == false) {
-      setState(() => showScrollDownButton = true);
-    } else if (scrollController.position.pixels == 0 &&
-        showScrollDownButton == true) {
-      setState(() => showScrollDownButton = false);
+        scrollController.position.pixels > 0 && _scrolledUp == false) {
+      setState(() => _scrolledUp = true);
+    } else if (scrollController.position.pixels == 0 && _scrolledUp == true) {
+      setState(() => _scrolledUp = false);
     }
   }
 
@@ -272,7 +271,10 @@ class ChatController extends State<ChatPageWithRoom> {
     super.initState();
     sendingClient = Matrix.of(context).client;
     readMarkerEventId = room.fullyRead;
-    loadTimelineFuture = _getTimeline();
+    loadTimelineFuture =
+        _getTimeline(eventContextId: readMarkerEventId).onError(
+      ErrorReporter(context, 'Unable to load timeline').onErrorCallback,
+    );
   }
 
   void updateView() {
@@ -284,11 +286,14 @@ class ChatController extends State<ChatPageWithRoom> {
 
   Future<void> _getTimeline({
     String? eventContextId,
-    Duration timeout = const Duration(seconds: 5),
+    Duration timeout = const Duration(seconds: 7),
   }) async {
     await Matrix.of(context).client.roomsLoading;
     await Matrix.of(context).client.accountDataLoading;
-    eventContextId ??= room.fullyRead;
+    if (eventContextId != null &&
+        (!eventContextId.isValidMatrixId || eventContextId.sigil != '\$')) {
+      eventContextId = null;
+    }
     try {
       timeline = await room
           .getTimeline(
@@ -296,19 +301,22 @@ class ChatController extends State<ChatPageWithRoom> {
             eventContextId: eventContextId,
           )
           .timeout(timeout);
-    } on TimeoutException catch (_) {
+    } catch (e, s) {
+      Logs().w('Unable to load timeline on event ID $eventContextId', e, s);
       if (!mounted) return;
       timeline = await room.getTimeline(onUpdate: updateView);
       if (!mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(L10n.of(context)!.jumpToLastReadMessage),
-          action: SnackBarAction(
-            label: L10n.of(context)!.jump,
-            onPressed: () => scrollToEventId(eventContextId!),
+      if (e is TimeoutException || e is IOException) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(L10n.of(context)!.jumpToLastReadMessage),
+            action: SnackBarAction(
+              label: L10n.of(context)!.jump,
+              onPressed: () => scrollToEventId(eventContextId!),
+            ),
           ),
-        ),
-      );
+        );
+      }
     }
     timeline!.requestKeys(onlineKeyBackupOnly: false);
     if (timeline!.events.isNotEmpty) {
@@ -348,7 +356,7 @@ class ChatController extends State<ChatPageWithRoom> {
     eventId ??= timeline.events.first.eventId;
     Logs().v('Set read marker...', eventId);
     // ignore: unawaited_futures
-    _setReadMarkerFuture = timeline.setReadMarker(eventId).then((_) {
+    _setReadMarkerFuture = timeline.setReadMarker(eventId: eventId).then((_) {
       _setReadMarkerFuture = null;
     });
     room.client.updateIosBadge();
@@ -365,7 +373,7 @@ class ChatController extends State<ChatPageWithRoom> {
   TextEditingController sendController = TextEditingController();
 
   void setSendingClient(Client c) {
-    // first cancle typing with the old sending client
+    // first cancel typing with the old sending client
     if (currentlyTyping) {
       // no need to have the setting typing to false be blocking
       typingCoolDown?.cancel();
@@ -373,6 +381,15 @@ class ChatController extends State<ChatPageWithRoom> {
       room.setTyping(false);
       currentlyTyping = false;
     }
+    // then cancel the old timeline
+    // fixes bug with read reciepts and quick switching
+    loadTimelineFuture = _getTimeline(eventContextId: room.fullyRead).onError(
+      ErrorReporter(
+        context,
+        'Unable to load timeline after changing sending Client',
+      ).onErrorCallback,
+    );
+
     // then set the new sending client
     setState(() => sendingClient = c);
   }
@@ -390,7 +407,7 @@ class ChatController extends State<ChatPageWithRoom> {
 
     final commandMatch = RegExp(r'^\/(\w+)').firstMatch(sendController.text);
     if (commandMatch != null &&
-        !room.client.commands.keys.contains(commandMatch[1]!.toLowerCase())) {
+        !sendingClient.commands.keys.contains(commandMatch[1]!.toLowerCase())) {
       final l10n = L10n.of(context)!;
       final dialogResult = await showOkCancelAlertDialog(
         context: context,
@@ -442,6 +459,22 @@ class ChatController extends State<ChatPageWithRoom> {
               ).detectFileType,
             )
             .toList(),
+        room: room,
+      ),
+    );
+  }
+
+  void sendImageFromClipBoard(Uint8List? image) async {
+    await showDialog(
+      context: context,
+      useRootNavigator: false,
+      builder: (c) => SendFileDialog(
+        files: [
+          MatrixFile(
+            bytes: image!,
+            name: "image from Clipboard",
+          ).detectFileType,
+        ],
         room: room,
       ),
     );
@@ -798,9 +831,13 @@ class ChatController extends State<ChatPageWithRoom> {
     if (eventIndex == -1) {
       setState(() {
         timeline = null;
+        _scrolledUp = false;
         loadTimelineFuture = _getTimeline(
           eventContextId: eventId,
           timeout: const Duration(seconds: 30),
+        ).onError(
+          ErrorReporter(context, 'Unable to load timeline after scroll to ID')
+              .onErrorCallback,
         );
       });
       await loadTimelineFuture;
@@ -820,7 +857,11 @@ class ChatController extends State<ChatPageWithRoom> {
     if (!timeline!.allowNewEvent) {
       setState(() {
         timeline = null;
-        loadTimelineFuture = _getTimeline();
+        _scrolledUp = false;
+        loadTimelineFuture = _getTimeline().onError(
+          ErrorReporter(context, 'Unable to load timeline after scroll down')
+              .onErrorCallback,
+        );
       });
       await loadTimelineFuture;
       setReadMarker(eventId: timeline!.events.first.eventId);
@@ -844,8 +885,11 @@ class ChatController extends State<ChatPageWithRoom> {
     setState(() => showEmojiPicker = false);
     if (emoji == null) return;
     // make sure we don't send the same emoji twice
-    if (_allReactionEvents
-        .any((e) => e.content['m.relates_to']['key'] == emoji.emoji)) return;
+    if (_allReactionEvents.any(
+      (e) => e.content.tryGetMap('m.relates_to')?['key'] == emoji.emoji,
+    )) {
+      return;
+    }
     return sendEmojiAction(emoji.emoji);
   }
 

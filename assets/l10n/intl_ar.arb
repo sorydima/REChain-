@@ -2750,6 +2750,407 @@
 },
 "@yourStory": {
 },
+"@addWidget": {
+},
+"@allRooms": {
+"placeholders": {
+},
+"type": "text"
+},
+"@allSpaces": {
+},
+"@appearOnTop": {
+},
+"@appearOnTopDetails": {
+},
+"@callingAccount": {
+},
+"@callingAccountDetails": {
+},
+"@callingPermissions": {
+},
+"@commandHint_cuddle": {
+},
+"@commandHint_googly": {
+},
+"@commandHint_hug": {
+},
+"@commandHint_markasdm": {
+},
+"@commandHint_markasgroup": {
+},
+"@confirmMatrixId": {
+},
+"@continueWith": {
+},
+"@countFiles": {
+"placeholders": {
+"count": {
+}
+}
+},
+"@cuddleContent": {
+"placeholders": {
+"senderName": {
+}
+},
+"type": "text"
+},
+"@custom": {
+},
+"@dehydrate": {
+},
+"@dehydrateTor": {
+},
+"@dehydrateTorLong": {
+},
+"@dehydrateWarning": {
+},
+"@deviceKeys": {
+},
+"@disableEncryptionWarning": {
+},
+"@doNotShowAgain": {
+},
+"@editWidgets": {
+},
+"@encryptThisChat": {
+},
+"@endToEndEncryption": {
+},
+"@enterInviteLinkOrMatrixId": {
+},
+"@enterRoom": {
+},
+"@enterSpace": {
+},
+"@errorAddingWidget": {
+},
+"@fileHasBeenSavedAt": {
+"placeholders": {
+"path": {
+}
+},
+"type": "text"
+},
+"@fileIsTooBigForServer": {
+},
+"@foregroundServiceRunning": {
+},
+"@googlyEyesContent": {
+"placeholders": {
+"senderName": {
+}
+},
+"type": "text"
+},
+"@hideUnimportantStateEvents": {
+},
+"@hugContent": {
+"placeholders": {
+"senderName": {
+}
+},
+"type": "text"
+},
+"@hydrate": {
+},
+"@hydrateTor": {
+},
+"@hydrateTorLong": {
+},
+"@indexedDbErrorLong": {
+},
+"@indexedDbErrorTitle": {
+},
+"@jump": {
+},
+"@jumpToLastReadMessage": {
+},
+"@letsStart": {
+},
+"@newGroup": {
+},
+"@newSpace": {
+},
+"@newSpaceDescription": {
+},
+"@nextAccount": {
+},
+"@noBackupWarning": {
+},
+"@noEmailWarning": {
+},
+"@noKeyForThisMessage": {
+},
+"@noOtherDevicesFound": {
+},
+"@numChats": {
+"placeholders": {
+"number": {
+}
+},
+"type": "number"
+},
+"@openLinkInBrowser": {
+},
+"@otherCallingPermissions": {
+},
+"@pleaseEnterRecoveryKey": {
+},
+"@pleaseEnterRecoveryKeyDescription": {
+},
+"@pleaseTryAgainLaterOrChooseDifferentServer": {
+},
+"@previousAccount": {
+},
+"@readUpToHere": {
+},
+"@recoveryKey": {
+},
+"@recoveryKeyLost": {
+},
+"@reopenChat": {
+},
+"@report": {
+},
+"@reportErrorDescription": {
+},
+"@saveKeyManuallyDescription": {
+},
+"@screenSharingDetail": {
+},
+"@screenSharingTitle": {
+},
+"@separateChatTypes": {
+"placeholders": {
+},
+"type": "text"
+},
+"@showDirectChatsInSpaces": {
+"placeholders": {
+},
+"type": "text"
+},
+"@signInWithPassword": {
+},
+"@sorryThatsNotPossible": {
+},
+"@startFirstChat": {
+},
+"@storeInAndroidKeystore": {
+},
+"@storeInAppleKeyChain": {
+},
+"@storeInSecureStorageDescription": {
+},
+"@storeSecurlyOnThisDevice": {
+},
+"@stories": {
+},
+"@supposedMxid": {
+"placeholders": {
+"mxid": {
+}
+},
+"type": "text"
+},
+"@switchToAccount": {
+"placeholders": {
+"number": {
+}
+},
+"type": "number"
+},
+"@unlockOldMessages": {
+},
+"@updateAvailable": {
+},
+"@updateNow": {
+},
+"@user": {
+},
+"@users": {
+},
+"@wasDirectChatDisplayName": {
+"placeholders": {
+"oldDisplayName": {
+}
+},
+"type": "text"
+},
+"@whyIsThisMessageEncrypted": {
+},
+"@widgetCustom": {
+},
+"@widgetEtherpad": {
+},
+"@widgetJitsi": {
+},
+"@widgetName": {
+},
+"@widgetNameError": {
+},
+"@widgetUrlError": {
+},
+"@widgetVideo": {
+},
+"@youAcceptedTheInvitation": {
+},
+"@youBannedUser": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youHaveWithdrawnTheInvitationFor": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youInvitedBy": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youInvitedUser": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youJoinedTheChat": {
+},
+"@youKicked": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youKickedAndBanned": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youRejectedTheInvitation": {
+},
+"@youUnbannedUser": {
+"placeholders": {
+"user": {
+}
+}
+},
+"addWidget": "إضافة اداة",
+"allRooms": "جميع الدردشات الجماعية",
+"allSpaces": "كل المساحات",
+"appearOnTop": "يظهر في الأعلى",
+"appearOnTopDetails": "يسمح للتطبيق بالظهور في الأعلى (ليست هناك حاجة إذا قمت بالفعل بإعداد REChain 🪐 كحساب اتصال)",
+"callingAccount": "الاتصال بالحساب",
+"callingAccountDetails": "يسمح لـ REChain 🪐 باستخدام تطبيق Dialer الأصلي.",
+"callingPermissions": "أذونات الاتصال",
+"commandHint_cuddle": "أرسل عناق",
+"commandHint_googly": "أرسل بعض عيون googly",
+"commandHint_hug": "إرسال حضن",
+"commandHint_markasdm": "وضع علامة كغرفة رسائل مباشرة",
+"commandHint_markasgroup": "وضع علامة كمجموعة",
+"confirmMatrixId": "يرجى تأكيد معرف REChain 🪐 الخاص بك من أجل حذف حسابك.",
+"continueWith": "أكمل ب:",
+"countFiles": "ملفات {count}",
+"cuddleContent": "{senderName} يحتضنك",
+"custom": "مُخصّص",
+"dehydrate": "تصدير الجلسة ومسح الجهاز",
+"dehydrateTor": "مستخدمو تور: تصدير الجلسة",
+"dehydrateTorLong": "بالنسبة لمستخدمي تور ، يوصى بتصدير الجلسة قبل إغلاق النافذة.",
+"dehydrateWarning": "لا يمكن التراجع عن هذا الإجراء. تأكد من تخزين ملف النسخ الاحتياطي بأمان.",
+"deviceKeys": "مفاتيح الجهاز:",
+"disableEncryptionWarning": "لأسباب أمنية ، لا يمكنك تعطيل التشفير في الدردشة ، حيث تم تمكينه من قبل.",
+"doNotShowAgain": "لا تظهر مرة أخرى",
+"editWidgets": "تحرير الأدوات",
+"encryptThisChat": "تشفير هذه الدردشة",
+"endToEndEncryption": "التشفير من طرف إلى طرف",
+"enterInviteLinkOrMatrixId": "أدخل رابط الدعوة أو معرف المصفوفة...",
+"enterRoom": "أدخل الغرفة",
+"enterSpace": "أدخل المساحة",
+"errorAddingWidget": "خطأ في إضافة الأداة.",
+"fileHasBeenSavedAt": "تم حفظ الملف في {path}",
+"fileIsTooBigForServer": "أبلغ الخادم أن الملف كبير جدًا بحيث لا يمكن إرساله.",
+"foregroundServiceRunning": "يظهر هذا الإشعار عند تشغيل الخدمة الأمامية.",
+"googlyEyesContent": "{senderName} يرسل لك عيون googly",
+"hideUnimportantStateEvents": "إخفاء أحداث الحالة غير المهمة",
+"hugContent": "{senderName} يعانقك",
+"hydrate": "استعادة من ملف النسخ الاحتياطي",
+"hydrateTor": "مستخدمو تور: استيراد تصدير الجلسة",
+"hydrateTorLong": "هل قمت بتصدير جلستك الأخيرة على تور؟ قم باستيراده بسرعة واستمر في الدردشة.",
+"indexedDbErrorLong": "للأسف ، لم يتم تمكين تخزين الرسائل في الوضع الخاص افتراضيا.\nيرجى زيارة\n - حول:التكوين\n - تعيين dom.indexedDB.privateBrowsing.enabled إلى true\nخلاف ذلك ، لا يمكن تشغيل REChain 🪐.",
+"indexedDbErrorTitle": "مشاكل الوضع الخاص",
+"jump": "قفز",
+"jumpToLastReadMessage": "الانتقال إلى آخر رسالة مقروءة",
+"letsStart": "لنبدأ",
+"newGroup": "مجموعة جديدة",
+"newSpace": "مساحة جديدة",
+"newSpaceDescription": "يسمح لك تطبيق المساحات بتوحيد دردشاتك وبناء مجتمعات خاصة أو عامة.",
+"nextAccount": "الحساب التالي",
+"noBackupWarning": "تحذير! بدون تمكين النسخ الاحتياطي للدردشة ، ستفقد الوصول إلى رسائلك المشفرة. يوصى بشدة بتمكين النسخ الاحتياطي للدردشة أولاً قبل تسجيل الخروج.",
+"noEmailWarning": "الرجاء إدخال عنوان بريد إلكتروني صالح. وإلا فلن تتمكن من إعادة تعيين كلمة المرور الخاصة بك. إذا كنت لا ترغب في ذلك ، فانقر مرة أخرى على الزر للمتابعة.",
+"noKeyForThisMessage": "يمكن أن يحدث هذا إذا تم إرسال الرسالة قبل تسجيل الدخول إلى حسابك على هذا الجهاز.\n\nمن الممكن أيضا أن يكون المرسل قد حظر جهازك أو حدث خطأ ما في الاتصال بالإنترنت.\n\nهل يمكنك قراءة الرسالة في جلسة أخرى؟ ثم يمكنك نقل الرسالة منه! انتقل إلى الإعدادات > الأجهزة وتأكد من أن أجهزتك قد تحققت من بعضها البعض. عندما تفتح الغرفة في المرة التالية وتكون كلتا الجلستين في المقدمة ، سيتم إرسال المفاتيح تلقائيا.\n\nألا تريد أن تفقد المفاتيح عند تسجيل الخروج أو تبديل الأجهزة؟ تأكد من تمكين النسخ الاحتياطي للدردشة في الإعدادات.",
+"noMatrixServer": "{server1} ليس خادم ماتريكس، بدلًا منه أتريد استخدام {server2}؟",
+"noOtherDevicesFound": "لم يتم العثور على أجهزة أخرى",
+"numChats": "{number} الدردشات",
+"openLinkInBrowser": "فتح الرابط في المتصفح",
+"otherCallingPermissions": "الميكروفون والكاميرا وأذونات REChain 🪐 الأخرى",
+"pleaseEnterAMatrixIdentifier": "أدخل معرف REChain 🪐.",
+"pleaseEnterRecoveryKey": "الرجاء إدخال مفتاح الاسترداد:",
+"pleaseEnterRecoveryKeyDescription": "لإلغاء قفل رسائلك القديمة ، يرجى إدخال مفتاح الاسترداد الذي تم إنشاؤه في جلسة سابقة. مفتاح الاسترداد ليس كلمة المرور الخاصة بك.",
+"pleaseTryAgainLaterOrChooseDifferentServer": "رجاء حاول مجددا أو اختر خادما مختلفا.",
+"previousAccount": "الحساب السابق",
+"readUpToHere": "اقرأ حتى هنا",
+"recoveryKey": "مفتاح الاسترداد",
+"recoveryKeyLost": "هل فقدت مفتاح الاسترداد؟",
+"reopenChat": "إعادة فتح الدردشة",
+"report": "تقرير",
+"reportErrorDescription": "اوه لا. حدث خطأ ما. يرجى إعادة المحاولة لاحقا. إذا كنت ترغب في ذلك ، يمكنك الإبلاغ عن الخطأ للمطورين.",
+"saveKeyManuallyDescription": "احفظ هذا المفتاح يدويا عن طريق تشغيل مربع حوار مشاركة النظام أو الحافظة.",
+"screenSharingDetail": "أنت تشارك شاشتك في REChain 🪐",
+"screenSharingTitle": "مشاركة الشاشة",
+"separateChatTypes": "الدردشات المباشرة والمجموعات المنفصلة",
+"showDirectChatsInSpaces": "عرض الدردشات المباشرة ذات الصلة في المساحات",
+"signInWithPassword": "سجل الدخول بكلمة السر",
+"sorryThatsNotPossible": "معذرة... هذا غير ممكن",
+"startFirstChat": "ابدأ محادثتك الأولى",
+"storeInAndroidKeystore": "تخزين في سجل مفاتيح اندرويد",
+"storeInAppleKeyChain": "تخزين في سلسلة مفاتيح ابل",
+"storeInSecureStorageDescription": "قم بتخزين مفتاح الاسترداد في التخزين الآمن لهذا الجهاز.",
+"storeSecurlyOnThisDevice": "احفظه بأمان على هذا الجهاز",
+"stories": "القصص",
+"supposedMxid": "يجب أن يكون هذا {mxid}",
+"switchToAccount": "التبديل إلى الحساب {number}",
+"unlockOldMessages": "إلغاء قفل الرسائل القديمة",
+"updateAvailable": "يتوفر تحديث REChain 🪐",
+"updateNow": "ابدأ التحديث في الخلفية",
+"user": "مستخدم",
+"users": "المستخدمون",
+"wasDirectChatDisplayName": "محادثة فارغة (كانت {oldDisplayName})",
+"whyIsThisMessageEncrypted": "لماذا هذه الرسالة غير قابلة للقراءة؟",
+"widgetCustom": "مُخصّص",
+"widgetEtherpad": "ملاحظة نصية",
+"widgetJitsi": "اجتماعات جيتسي",
+"widgetName": "الاسم",
+"widgetNameError": "يرجى تقديم اسم العرض.",
+"widgetUrlError": "هذا ليس عنوان URL صالحًا.",
+"widgetVideo": "فيديو",
+"youAcceptedTheInvitation": "👍 لقد قبلت الدعوة",
+"youBannedUser": "لقد حظرت {user}",
+"youHaveWithdrawnTheInvitationFor": "لقد سحبت الدعوة لـ {user}",
+"youInvitedBy": "📩 لقد تمت دعوتك من قبل {user}",
+"youInvitedUser": "📩 قمت بدعوة {user}",
+"youJoinedTheChat": "لقد انضممت إلى الدردشة",
+"youKicked": "👞 لقد ركلت {user}",
+"youKickedAndBanned": "🙅 لقد ركلت وحظرت {user}",
+"youRejectedTheInvitation": "لقد رفضت الدعوة",
+"youUnbannedUser": "قمت بإلغاء الحظر {user}",
 "addDescription": "إضافة وصف",
 "addToSpaceDescription": "إختر فضاء لإضافة هذه المحادثة إليه.",
 "addToStory": "إضافة للقصة",

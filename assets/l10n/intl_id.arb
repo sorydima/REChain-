@@ -3117,6 +3117,30 @@
 },
 "@readUpToHere": {
 },
+"@allRooms": {
+"placeholders": {
+},
+"type": "text"
+},
+"@continueWith": {
+},
+"@openLinkInBrowser": {
+},
+"@pleaseTryAgainLaterOrChooseDifferentServer": {
+},
+"@report": {
+},
+"@reportErrorDescription": {
+},
+"@signInWithPassword": {
+},
+"allRooms": "Semua Percakapan Grup",
+"continueWith": "Lanjutkan dengan:",
+"openLinkInBrowser": "Buka tautan dalam peramban",
+"pleaseTryAgainLaterOrChooseDifferentServer": "Silakan coba lagi nanti atau pilih server yang lain.",
+"report": "laporkan",
+"reportErrorDescription": "Aduh. Ada yang salah. Silakan coba lahi nanti. Jika kamu mau, kamu bisa melaporkan kutu ini kepada para pengembang.",
+"signInWithPassword": "Masuk dengan kata sandi",
 "fileHasBeenSavedAt": "Berkas telah disimpan di {path}",
 "jump": "Lompat",
 "jumpToLastReadMessage": "Pergi ke pesan terakhir dibaca",

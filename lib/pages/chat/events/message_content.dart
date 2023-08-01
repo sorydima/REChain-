@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_gen/gen_l10n/l10n.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:matrix/matrix.dart';
-import 'package:matrix_link_text/link_text.dart';
 
 import 'package:rechainonline/pages/chat/events/video_player.dart';
 import 'package:rechainonline/utils/adaptive_bottom_sheet.dart';
@@ -150,23 +150,10 @@ class MessageContent extends StatelessWidget {
               if (event.messageType == MessageTypes.Emote) {
                 html = '* $html';
               }
-              final bigEmotes = event.onlyEmotes &&
-                  event.numberEmotes > 0 &&
-                  event.numberEmotes <= 10;
               return HtmlMessage(
                 html: html,
-                defaultTextStyle: TextStyle(
-                  color: textColor,
-                  fontSize: bigEmotes ? fontSize * 3 : fontSize,
-                ),
-                linkStyle: TextStyle(
-                  color: textColor.withAlpha(150),
-                  fontSize: bigEmotes ? fontSize * 3 : fontSize,
-                  decoration: TextDecoration.underline,
-                  decorationColor: textColor.withAlpha(150),
-                ),
+                // textColor: textColor,
                 room: event.room,
-                emoteSize: bigEmotes ? fontSize * 3 : fontSize * 1.5,
               );
             }
             // else we fall through to the normal message rendering
@@ -242,25 +229,26 @@ class MessageContent extends StatelessWidget {
                 hideReply: true,
               ),
               builder: (context, snapshot) {
-                return LinkText(
+                return Linkify(
                   text: snapshot.data ??
                       event.calcLocalizedBodyFallback(
                         MatrixLocals(L10n.of(context)!),
                         hideReply: true,
                       ),
-                  textStyle: TextStyle(
+                  style: TextStyle(
                     color: textColor,
                     fontSize: bigEmotes ? fontSize * 3 : fontSize,
                     decoration:
                         event.redacted ? TextDecoration.lineThrough : null,
                   ),
+                  options: const LinkifyOptions(humanize: false),
                   linkStyle: TextStyle(
                     color: textColor.withAlpha(150),
                     fontSize: bigEmotes ? fontSize * 3 : fontSize,
                     decoration: TextDecoration.underline,
                     decorationColor: textColor.withAlpha(150),
                   ),
-                  onLinkTap: (url) => UrlLauncher(context, url).launchUrl(),
+                  onOpen: (url) => UrlLauncher(context, url.url).launchUrl(),
                 );
               },
             );

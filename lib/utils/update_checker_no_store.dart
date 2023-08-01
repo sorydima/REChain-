@@ -11,3 +11,7 @@ import 'package:matrix/matrix.dart';
 import 'package:path_provider/path_provider.dart';
 
 import 'platform_infos.dart';
+
+/// Helper class checking for the updates on platforms without the store releases
+///
+/// Currently, this is only on Windows

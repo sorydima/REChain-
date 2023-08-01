@@ -3077,6 +3077,95 @@
 },
 "@whyIsThisMessageEncrypted": {
 },
+"@allRooms": {
+"placeholders": {
+},
+"type": "text"
+},
+"@continueWith": {
+},
+"@deviceKeys": {
+},
+"@disableEncryptionWarning": {
+},
+"@encryptThisChat": {
+},
+"@endToEndEncryption": {
+},
+"@enterInviteLinkOrMatrixId": {
+},
+"@fileHasBeenSavedAt": {
+"placeholders": {
+"path": {
+}
+},
+"type": "text"
+},
+"@fileIsTooBigForServer": {
+},
+"@jump": {
+},
+"@jumpToLastReadMessage": {
+},
+"@letsStart": {
+},
+"@newSpaceDescription": {
+},
+"@noBackupWarning": {
+},
+"@noOtherDevicesFound": {
+},
+"@openLinkInBrowser": {
+},
+"@pleaseTryAgainLaterOrChooseDifferentServer": {
+},
+"@readUpToHere": {
+},
+"@reopenChat": {
+},
+"@report": {
+},
+"@reportErrorDescription": {
+},
+"@signInWithPassword": {
+},
+"@sorryThatsNotPossible": {
+},
+"@startFirstChat": {
+},
+"@wasDirectChatDisplayName": {
+"placeholders": {
+"oldDisplayName": {
+}
+},
+"type": "text"
+},
+"allRooms": "Kaikki ryhmäkeskustelut",
+"continueWith": "Jatka käyttäen:",
+"deviceKeys": "Laite-avaimet:",
+"disableEncryptionWarning": "Turvallisuuden vuoksi et voi poistaa salausta käytöstä huoneista, joissa se on aiemmin otettu käyttöön.",
+"encryptThisChat": "Salaa tämä keskustelu",
+"endToEndEncryption": "Päästä-päähän salaus",
+"enterInviteLinkOrMatrixId": "Syötä kutsulinkki tai REChain 🪐 ID...",
+"fileHasBeenSavedAt": "Tiedosto on tallennettu sijaintiin {path}",
+"fileIsTooBigForServer": "Palvelimen mukaan tiedosto on liian suuri lähetettäväksi.",
+"jump": "Hyppää",
+"jumpToLastReadMessage": "Hyppää viimeiseen luettuun viestiin",
+"letsStart": "Aloitetaan",
+"newSpaceDescription": "Tilat mahdollistavat keskusteluidesi keräämisen ja yksityisten tai julkisten yhteisöjen rakentamisen.",
+"noBackupWarning": "Varoitus! Ilman avainvarmuuskopion käyttöönottoa menetät pääsyn salattuihin viesteihisi. Suosittelemme ehdottomasti avainvarmuuskopion käyttöönottoa ennen uloskirjautumista.",
+"noOtherDevicesFound": "Muita laitteita ei löytynyt",
+"openLinkInBrowser": "Avaa linkki selaimessa",
+"pleaseEnterAMatrixIdentifier": "Syötä REChain 🪐-ID.",
+"pleaseTryAgainLaterOrChooseDifferentServer": "Yritä myöhemmin uudelleen tai valitse toinen palvelin.",
+"readUpToHere": "Luettu tähän asti",
+"reopenChat": "Avaa keskustelu uudelleen",
+"report": "ilmoita",
+"reportErrorDescription": "Voi ei. Jokin meni pieleen. Yritäthän myöhemmin uudelleen. Halutessasi voit ilmoittaa ongelman kehittäjille.",
+"signInWithPassword": "Kirjaudu sisään salasanalla",
+"sorryThatsNotPossible": "Anteeksi... se ei ole mahdollista",
+"startFirstChat": "Aloita ensimmäinen keskustelusi",
+"wasDirectChatDisplayName": "Tyhjä keskustelu (oli {oldDisplayName})",
 "allSpaces": "Kaikki tilat",
 "allSuggestedRoomsJoined": "Olet liittynyt kaikkiin ehdotettuihin huoneisiin",
 "appearOnTop": "Näy päällä",

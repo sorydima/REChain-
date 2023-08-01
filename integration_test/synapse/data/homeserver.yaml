@@ -1,7 +1,7 @@
 # Configuration file for Synapse.
 #
 # This is a YAML file: see [1] for a quick introduction. Note in particular
-# that *indentation is important*: all the things of a list or dictionary
+# that *indentation is important*: all the elements of a list or dictionary
 # should have the same indentation.
 #
 # [1] https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html
@@ -2300,10 +2300,7 @@ email:
   # Custom URL for client links within the email notifications. By default
   # links will be based on "https://matrix.to".
   #
-  # (This setting used to be called rechain_base_url; the old name is still
-  # supported for backwards-compatibility but is now deprecated.)
-  #
-  #client_base_url: "http://localhost/rechain"
+  #client_base_url: "http://localhost/web"
 
   # Configure the time that a validation email will expire after sending.
   # Defaults to 1h.

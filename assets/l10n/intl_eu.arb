@@ -3367,6 +3367,69 @@
 }
 }
 },
+"@allRooms": {
+"placeholders": {
+},
+"type": "text"
+},
+"@commandHint_cuddle": {
+},
+"@commandHint_googly": {
+},
+"@continueWith": {
+},
+"@cuddleContent": {
+"placeholders": {
+"senderName": {
+}
+},
+"type": "text"
+},
+"@fileHasBeenSavedAt": {
+"placeholders": {
+"path": {
+}
+},
+"type": "text"
+},
+"@googlyEyesContent": {
+"placeholders": {
+"senderName": {
+}
+},
+"type": "text"
+},
+"@jump": {
+},
+"@jumpToLastReadMessage": {
+},
+"@openLinkInBrowser": {
+},
+"@pleaseTryAgainLaterOrChooseDifferentServer": {
+},
+"@readUpToHere": {
+},
+"@report": {
+},
+"@reportErrorDescription": {
+},
+"@signInWithPassword": {
+},
+"allRooms": "Talde-txat guztiak",
+"commandHint_cuddle": "Bidali besarkada goxoa",
+"commandHint_googly": "Bidali begi dibertigarri batzuk",
+"continueWith": "Jarraitu honekin:",
+"cuddleContent": "{senderName}(e)k samurki besarkatu zaitu",
+"fileHasBeenSavedAt": "Fitxategia {path}(e)n gorde da",
+"googlyEyesContent": "{senderName}(e)k begi dibertigarri batzuk bidali dizkizu",
+"jump": "Joan",
+"jumpToLastReadMessage": "Joan irakurritako azken mezura",
+"openLinkInBrowser": "Ireki esteka nabigatzailean",
+"pleaseTryAgainLaterOrChooseDifferentServer": "Saiatu geroago edo hautatu beste zerbitzari bat.",
+"readUpToHere": "Honaino irakurrita",
+"report": "eman berri",
+"reportErrorDescription": "Ez! Zerbaitek huts egin du. Saiatu berriro geroago. Nahi izanez gero, eman garatzaileei errorearen berri.",
+"signInWithPassword": "Hasi saioa pasahitzarekin",
 "addWidget": "Gehitu widgeta",
 "editWidgets": "Editatu widgetak",
 "errorAddingWidget": "Errorea widgeta gehitzerakoan.",

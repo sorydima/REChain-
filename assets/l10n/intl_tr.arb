@@ -3139,6 +3139,30 @@
 },
 "@readUpToHere": {
 },
+"@allRooms": {
+"placeholders": {
+},
+"type": "text"
+},
+"@continueWith": {
+},
+"@openLinkInBrowser": {
+},
+"@pleaseTryAgainLaterOrChooseDifferentServer": {
+},
+"@report": {
+},
+"@reportErrorDescription": {
+},
+"@signInWithPassword": {
+},
+"allRooms": "Tüm Grup Sohbetleri",
+"continueWith": "Devam et:",
+"openLinkInBrowser": "Bağlantıyı tarayıcıda aç",
+"pleaseTryAgainLaterOrChooseDifferentServer": "Lütfen daha sonra tekrar deneyin veya farklı bir sunucu seçin.",
+"report": "bildir",
+"reportErrorDescription": "Olamaz. Bir şeyler yanlış gitti. Lütfen daha sonra tekrar deneyin. İsterseniz hatayı geliştiricilere bildirebilirsiniz.",
+"signInWithPassword": "Parola ile oturum aç",
 "fileHasBeenSavedAt": "Dosya {path} konumuna kaydedildi",
 "jump": "Atla",
 "jumpToLastReadMessage": "Son okunan mesaja atla",

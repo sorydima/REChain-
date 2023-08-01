@@ -3062,6 +3062,30 @@
 },
 "@whyIsThisMessageEncrypted": {
 },
+"@allRooms": {
+"placeholders": {
+},
+"type": "text"
+},
+"@continueWith": {
+},
+"@openLinkInBrowser": {
+},
+"@pleaseTryAgainLaterOrChooseDifferentServer": {
+},
+"@report": {
+},
+"@reportErrorDescription": {
+},
+"@signInWithPassword": {
+},
+"allRooms": "Svi grupni razgovori",
+"continueWith": "Nastavi sa:",
+"openLinkInBrowser": "Otvori poveznicu u pregledniku",
+"pleaseTryAgainLaterOrChooseDifferentServer": "Pokušaj ponovo kasnije ili odaberi jedan drugi poslužitelj.",
+"report": "prijavi",
+"reportErrorDescription": "Dogodila se greška. Pokušaj ponovo kasnije. Ako želiš, grešku možeš prijaviti programerima.",
+"signInWithPassword": "Prijavi se s lozinkom",
 "allSpaces": "Svi prostori",
 "appearOnTop": "Prikaz ispred drugih",
 "appearOnTopDetails": "Omogućuje prikaz aplikacije ispred drugih (nije potrebno ako je REChain 🪐 već postavljen kao račun za pozivanje)",

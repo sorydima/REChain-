@@ -11,7 +11,7 @@ import 'package:rechainonline/utils/custom_http_client.dart';
 import 'package:rechainonline/utils/custom_image_resizer.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/flutter_hive_collections_database.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
-import 'rechainonlinesdk_store.dart';
+import 'famedlysdk_store.dart';
 
 abstract class ClientManager {
   static const String clientNamespace = 'com.rechain.store.clients';

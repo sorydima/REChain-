@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter_foreground_task/flutter_foreground_task.dart';
-import 'package:flutter_webrtc/flutter_webrtc.dart' as webrtc_impl;
+// import 'package:flutter_webrtc/flutter_webrtc.dart' as webrtc_impl;
 import 'package:matrix/matrix.dart';
 import 'package:webrtc_interface/webrtc_interface.dart' hide Navigator;
 
@@ -13,11 +13,11 @@ import 'package:rechainonline/pages/chat_list/chat_list.dart';
 import 'package:rechainonline/pages/dialer/dialer.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
 import 'package:rechainonline/widgets/rechainonline_chat_app.dart';
-import '../../utils/rechainonlinesdk_store.dart';
+import '../../utils/famedlysdk_store.dart';
 import '../../utils/voip/callkeep_manager.dart';
 import '../../utils/voip/user_media_manager.dart';
 
-class VoipPlugin with WidgetsBindingObserver implements WebRTCDelegate {
+abstract class VoipPlugin with WidgetsBindingObserver implements WebRTCDelegate {
   final Client client;
   VoipPlugin(this.client) {
     voip = VoIP(client, this);
@@ -59,9 +59,7 @@ class VoipPlugin with WidgetsBindingObserver implements WebRTCDelegate {
   }
 
   void addCallingOverlay(String callId, CallSession call) {
-    final context = kIsWeb
-        ? ChatList.contextForVoip!
-        : rechainonlineChatApp.routerKey.currentContext!; // web is weird
+
     if (overlayEntry != null) {
       Logs().e('[VOIP] addCallingOverlay: The call session already exists?');
       overlayEntry!.remove();
@@ -70,7 +68,7 @@ class VoipPlugin with WidgetsBindingObserver implements WebRTCDelegate {
     // falling back on a dialog
     if (kIsWeb) {
       showDialog(
-        context: context,
+        // context: context,
         builder: (context) => Calling(
           context: context,
           client: client,
@@ -82,7 +80,7 @@ class VoipPlugin with WidgetsBindingObserver implements WebRTCDelegate {
     } else {
       overlayEntry = OverlayEntry(
         builder: (_) => Calling(
-          context: context,
+          // context: context,
           client: client,
           callId: callId,
           call: call,
@@ -96,23 +94,11 @@ class VoipPlugin with WidgetsBindingObserver implements WebRTCDelegate {
     }
   }
 
-  @override
-  MediaDevices get mediaDevices => webrtc_impl.navigator.mediaDevices;
+  // @override
+  // MediaDevices get mediaDevices => webrtc_impl.navigator.mediaDevices;
 
   @override
   bool get isWeb => kIsWeb;
-
-  @override
-  Future<RTCPeerConnection> createPeerConnection(
-    Map<String, dynamic> configuration, [
-    Map<String, dynamic> constraints = const {},
-  ]) =>
-      webrtc_impl.createPeerConnection(configuration, constraints);
-
-  @override
-  VideoRenderer createRenderer() {
-    return webrtc_impl.RTCVideoRenderer();
-  }
 
   Future<bool> get hasCallingAccount async =>
       kIsWeb ? false : await CallKeepManager().hasPhoneAccountEnabled;
@@ -163,20 +149,6 @@ class VoipPlugin with WidgetsBindingObserver implements WebRTCDelegate {
         }
         // use fallback flutter call pages for outgoing and video calls.
         addCallingOverlay(call.callId, call);
-        try {
-          if (!hasCallingAccount) {
-            ScaffoldMessenger.of(rechainonlineChatApp.routerKey.currentContext!)
-                .showSnackBar(
-              const SnackBar(
-                content: Text(
-                  'No calling accounts found (used for native calls UI)',
-                ),
-              ),
-            );
-          }
-        } catch (e) {
-          Logs().e('failed to show snackbar');
-        }
       }
     } else {
       addCallingOverlay(call.callId, call);

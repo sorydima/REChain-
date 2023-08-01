@@ -129,7 +129,7 @@ class ChatPermissionsSettingsView extends StatelessWidget {
                           }
                           final String roomVersion = room
                                   .getState(EventTypes.RoomCreate)!
-                                  .content['room_version'] ??
+                                  // .content['room_version'] ??
                               '1';
 
                           return ListTile(

@@ -3022,6 +3022,118 @@
 },
 "@whyIsThisMessageEncrypted": {
 },
+"@allRooms": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@commandHint_cuddle": {
+    },
+    "@commandHint_hug": {
+    },
+    "@cuddleContent": {
+        "placeholders": {
+            "senderName": {
+            }
+        },
+        "type": "text"
+    },
+    "@deviceKeys": {
+    },
+    "@disableEncryptionWarning": {
+    },
+    "@doNotShowAgain": {
+    },
+    "@encryptThisChat": {
+    },
+    "@endToEndEncryption": {
+    },
+    "@enterInviteLinkOrMatrixId": {
+    },
+    "@fileHasBeenSavedAt": {
+        "placeholders": {
+            "path": {
+            }
+        },
+        "type": "text"
+    },
+    "@fileIsTooBigForServer": {
+    },
+    "@fileName": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@hideUnimportantStateEvents": {
+    },
+    "@hugContent": {
+        "placeholders": {
+            "senderName": {
+            }
+        },
+        "type": "text"
+    },
+    "@jump": {
+    },
+    "@jumpToLastReadMessage": {
+    },
+    "@letsStart": {
+    },
+    "@newSpaceDescription": {
+    },
+    "@noBackupWarning": {
+    },
+    "@noOtherDevicesFound": {
+    },
+    "@openLinkInBrowser": {
+    },
+    "@readUpToHere": {
+    },
+    "@reopenChat": {
+    },
+    "@report": {
+    },
+    "@reportErrorDescription": {
+    },
+    "@sorryThatsNotPossible": {
+    },
+    "@startFirstChat": {
+    },
+    "@wasDirectChatDisplayName": {
+        "placeholders": {
+            "oldDisplayName": {
+            }
+        },
+        "type": "text"
+    },
+    "allRooms": "Все группы",
+    "commandHint_cuddle": "Отправить объятия",
+    "commandHint_hug": "Отправить обнимашки",
+    "cuddleContent": "{senderName} обнял Вас",
+    "deviceKeys": "Ключи устройств:",
+    "disableEncryptionWarning": "В целях безопасности Вы не можете отключить шифрование в чате, где оно было включено.",
+    "doNotShowAgain": "Не показывать снова",
+    "encryptThisChat": "Зашифровать этот чат",
+    "endToEndEncryption": "Сквозное шифрование",
+    "enterInviteLinkOrMatrixId": "Введите ссылку приглашения или REChain 🪐 ID...",
+    "fileHasBeenSavedAt": "Файл сохранён в {path}",
+    "fileIsTooBigForServer": "Файл слишком большой.",
+    "hideUnimportantStateEvents": "Скрыть необязательные события статуса",
+    "hugContent": "{senderName} обнял Вас",
+    "jump": "Перейти",
+    "jumpToLastReadMessage": "Перейти к последнему прочитанному сообщению",
+    "letsStart": "Давайте начнём",
+    "newSpaceDescription": "Пространства позволяют объединять Ваши чаты и создавать частные или общедоступные сообщества.",
+    "noBackupWarning": "Внимание! Без резервных копий, Вы потеряете доступ к своим зашифрованным сообщениям. Крайне рекомендуется включить резервные копии перед выходом.",
+    "noOtherDevicesFound": "Другие устройства не найдены",
+    "openLinkInBrowser": "Открыть ссылку в браузере",
+    "readUpToHere": "Дочитать до сюда",
+    "reopenChat": "Открыть чат заново",
+    "report": "сообщить",
+    "reportErrorDescription": "О, нет. Что-то пошло не так. Пожалуйста, повторите попытку позже. При желании вы можете сообщить об ошибке разработчикам.",
+    "sorryThatsNotPossible": "Извините... это невозможно",
+    "startFirstChat": "Начните Ваш первый чат",
+    "wasDirectChatDisplayName": "Пустой чат (был {oldDisplayName})",
 "advanced": "Продвинутое",
 "allSpaces": "Все пространства",
 "allSuggestedRoomsJoined": "Вы присоединились ко всем предложенным комнатам",

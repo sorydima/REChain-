@@ -19,21 +19,31 @@ abstract class AppConfig {
   static const Color primaryColor = Color(0xFF5625BA);
   static const Color primaryColorLight = Color(0xFFCCBDEA);
   static const Color secondaryColor = Color(0xFF41a2bc);
-  static String _privacyUrl = 'https://rechain.online/en/privacy.html';
+  static String _privacyUrl =
+      'https://rechain.online/en/privacy.html';
   static String get privacyUrl => _privacyUrl;
-  static const String enablePushTutorial = 'https://rechain.online/en/privacy.html#6';
-  static const String encryptionTutorial = 'https://rechain.online/en/privacy.html#4';
+  static const String enablePushTutorial =
+      'https://rechain.online/en/privacy.html';
+  static const String encryptionTutorial =
+      'https://rechain.online/en/privacy.html';
   static const String appId = 'com.rechain.online';
   static const String appOpenUrlScheme = 'com.rechain';
   static String _webBaseUrl = 'https://rechain.online/web';
   static String get webBaseUrl => _webBaseUrl;
-  static const String sourceCodeUrl = 'https://github.com/sorydima/REChain-';
-  static const String supportUrl = 'mailto:support@rechain.email';
+  static const String sourceCodeUrl = 'https://github.com/sorydima/REChain-.git';
+  static const String supportUrl =
+      'mailto:support@rechain.email';
+  static final Uri newIssueUrl = Uri(
+    scheme: 'https',
+    host: 'github',
+    path: '/sorydima/REChain-/issues/new',
+  );
   static const bool enableSentry = true;
-  static const String sentryDns = 'https://d46ee6f0fff24af391dee1220860b36d@o1288037.ingest.sentry.io/6504348';
+  static const String sentryDns =
+      'https://d46ee6f0fff24af391dee1220860b36d@o1288037.ingest.sentry.io/6504348';
   static bool renderHtml = true;
   static bool hideRedactedEvents = false;
-  static bool hideUnknownEvents = true;
+  static bool hideUnknownEvents = false;
   static bool hideUnimportantStateEvents = false;
   static bool showDirectChatsInSpaces = true;
   static bool separateChatTypes = true;
@@ -47,12 +57,15 @@ abstract class AppConfig {
   static const String schemePrefix = 'matrix:';
   static const String pushNotificationsChannelId = 'rechainonline_push';
   static const String pushNotificationsChannelName = 'REChain 🪐 Push Channel!';
-  static const String pushNotificationsChannelDescription = 'Push Notifications For The REChain 🪐 Platform!';
+  static const String pushNotificationsChannelDescription =
+      'Push Notifications For The REChain 🪐 Platform!';
   static const String pushNotificationsAppId = 'com.rechain.online';
-  static const String pushNotificationsGatewayUrl = 'https://matrix-client.matrix.org/_matrix/push/v1/notify';
+  static const String pushNotificationsGatewayUrl =
+      'https://matrix-client.matrix.org/_matrix/push/v1/notify';
   static const String pushNotificationsPusherFormat = 'event_id_only';
   static const String emojiFontName = 'Noto Emoji';
-  static const String emojiFontUrl = 'https://github.com/googlefonts/noto-emoji/';
+  static const String emojiFontUrl =
+      'https://github.com/googlefonts/noto-emoji/';
   static const double borderRadius = 16.0;
   static const double columnWidth = 360.0;
 

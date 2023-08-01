@@ -26,6 +26,7 @@ class NewPrivateChatController extends State<NewPrivateChat> {
   final formKey = GlobalKey<FormState>();
   bool loading = false;
 
+  // remove leading matrix.to from text field in order to simplify pasting
   final List<TextInputFormatter> removeMatrixToFormatters = [
     FilteringTextInputFormatter.deny(NewPrivateChatController.prefix),
     FilteringTextInputFormatter.deny(NewPrivateChatController.prefixNoProtocol),

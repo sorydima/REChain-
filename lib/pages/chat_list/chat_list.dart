@@ -16,7 +16,7 @@ import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/config/themes.dart';
 import 'package:rechainonline/pages/chat_list/chat_list_view.dart';
 import 'package:rechainonline/pages/settings_security/settings_security.dart';
-import 'package:rechainonline/utils/rechainonlinesdk_store.dart';
+import 'package:rechainonline/utils/famedlysdk_store.dart';
 import 'package:rechainonline/utils/localized_exception_extension.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/client_stories_extension.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
@@ -253,7 +253,7 @@ class ChatListController extends State<ChatList>
   BoxConstraints? snappingSheetContainerSize;
 
   final ScrollController scrollController = ScrollController();
-  bool scrolledToTop = true;
+  final ValueNotifier<bool> scrolledToTop = ValueNotifier(true);
 
   final StreamController<Client> _clientStream = StreamController.broadcast();
 
@@ -263,10 +263,8 @@ class ChatListController extends State<ChatList>
 
   void _onScroll() {
     final newScrolledToTop = scrollController.position.pixels <= 0;
-    if (newScrolledToTop != scrolledToTop) {
-      setState(() {
-        scrolledToTop = newScrolledToTop;
-      });
+    if (newScrolledToTop != scrolledToTop.value) {
+      scrolledToTop.value = newScrolledToTop;
     }
   }
 

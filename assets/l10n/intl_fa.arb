@@ -2793,6 +2793,30 @@
 }
 }
 },
+"@allRooms": {
+"placeholders": {
+},
+"type": "text"
+},
+"@continueWith": {
+},
+"@openLinkInBrowser": {
+},
+"@pleaseTryAgainLaterOrChooseDifferentServer": {
+},
+"@report": {
+},
+"@reportErrorDescription": {
+},
+"@signInWithPassword": {
+},
+"allRooms": "تمام چت‌های گروهی",
+"continueWith": "ادامه دادن با:",
+"openLinkInBrowser": "بازکردن پیوند در مرورگر",
+"pleaseTryAgainLaterOrChooseDifferentServer": "لطفا بعدا تلاش کنید یا سرور دیگری انتخاب کنید.",
+"report": "گزارش",
+"reportErrorDescription": "اوه نه. اشتباهی رخ داد. لطفا بعدا تلاش کنید. اگر تمایل دارید، می‌توانید این اشکال را با توسعه‌دهندگان گزارش دهید.",
+"signInWithPassword": "ورود با رمزعبور",
 "addAccount": "اضافه کردن حساب کاربری",
 "addDescription": "افزودن توصیف",
 "addToBundle": "به بسته نرم‌افزاری اضافه کنید",

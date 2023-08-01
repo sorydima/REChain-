@@ -3144,6 +3144,30 @@
 },
 "@readUpToHere": {
 },
+"@allRooms": {
+"placeholders": {
+},
+"type": "text"
+},
+"@continueWith": {
+},
+"@openLinkInBrowser": {
+},
+"@pleaseTryAgainLaterOrChooseDifferentServer": {
+},
+"@report": {
+},
+"@reportErrorDescription": {
+},
+"@signInWithPassword": {
+},
+"allRooms": "Kõik vestlusrühmad",
+"continueWith": "Jätkamiseks kasuta:",
+"openLinkInBrowser": "Ava link veebibrauseris",
+"pleaseTryAgainLaterOrChooseDifferentServer": "Palun proovi hiljem uuesti või muuda serveri nime.",
+"report": "teata",
+"reportErrorDescription": "Oh appike! Midagi läks valesti. Palun proovi hiljem uuesti. Kui soovid, võid sellest veast arendajatele teatada.",
+"signInWithPassword": "Logi sisse salasõnaga",
 "fileHasBeenSavedAt": "Fail on salvestatud kausta: {path}",
 "jump": "Hüppa",
 "jumpToLastReadMessage": "Liigu viimase loetud sõnumini",

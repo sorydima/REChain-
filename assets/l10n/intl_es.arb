@@ -2660,6 +2660,58 @@
 },
 "@whatIsGoingOn": {
 },
+"@allSpaces": {
+},
+"@commandHint_markasgroup": {
+},
+"@newGroup": {
+},
+"@newSpace": {
+},
+"@nextAccount": {
+},
+"@previousAccount": {
+},
+"@stories": {
+},
+"@users": {
+},
+"@whoCanSeeMyStories": {
+},
+"@widgetEtherpad": {
+},
+"@widgetJitsi": {
+},
+"@widgetUrlError": {
+},
+"@youAcceptedTheInvitation": {
+},
+"@youInvitedBy": {
+"placeholders": {
+"user": {
+}
+}
+},
+"@youRejectedTheInvitation": {
+},
+"@yourStory": {
+},
+"allSpaces": "Todos los espacios",
+"commandHint_markasgroup": "Marcar como grupo",
+"newGroup": "Nuevo grupo",
+"newSpace": "Nuevo espacio",
+"nextAccount": "Siguiente cuenta",
+"previousAccount": "Cuenta anterior",
+"stories": "Historias",
+"users": "Usuarios",
+"whoCanSeeMyStories": "¿Quién puede ver mis historias?",
+"widgetEtherpad": "Nota de texto",
+"widgetJitsi": "Jitsi Meet",
+"widgetUrlError": "Esta no es una URL válida.",
+"youAcceptedTheInvitation": "👍 Aceptaste la invitación",
+"youInvitedBy": "📩 Has sido invitado por {user}",
+"youRejectedTheInvitation": "Rechazaste la invitación",
+"yourStory": "Tu historia",
 "addDescription": "Añadir descripción",
 "addToSpaceDescription": "Elige un espacio para añadir este chat a el.",
 "commandHint_clearcache": "Limpiar cache",

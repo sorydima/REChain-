@@ -3106,6 +3106,30 @@
 },
 "@readUpToHere": {
 },
+"@allRooms": {
+"placeholders": {
+},
+"type": "text"
+},
+"@continueWith": {
+},
+"@openLinkInBrowser": {
+},
+"@pleaseTryAgainLaterOrChooseDifferentServer": {
+},
+"@report": {
+},
+"@reportErrorDescription": {
+},
+"@signInWithPassword": {
+},
+"allRooms": "Усі групові бесіди",
+"continueWith": "Продовжити за допомогою:",
+"openLinkInBrowser": "Відкрити посилання у браузері",
+"pleaseTryAgainLaterOrChooseDifferentServer": "Спробуйте пізніше або виберіть інший сервер.",
+"report": "повідомити",
+"reportErrorDescription": "О, ні. Щось пішло не так. Повторіть спробу пізніше. Якщо хочете, можете повідомити про помилку розробникам.",
+"signInWithPassword": "Увійти за допомогою пароля",
 "fileHasBeenSavedAt": "Файл збережено в {path}",
 "jump": "Перейти",
 "jumpToLastReadMessage": "Перейти до останнього прочитаного повідомлення",

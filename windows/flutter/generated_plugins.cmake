@@ -8,7 +8,8 @@ list(APPEND FLUTTER_PLUGIN_LIST
   desktop_lifecycle
   dynamic_color
   emoji_picker_flutter
-  flutter_webrtc
+  file_selector_windows
+  pasteboard
   permission_handler_windows
   record_windows
   share_plus

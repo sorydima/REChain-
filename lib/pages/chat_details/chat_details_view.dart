@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_gen/gen_l10n/l10n.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:matrix/matrix.dart';
-import 'package:matrix_link_text/link_text.dart';
 import 'package:vrouter/vrouter.dart';
 
 import 'package:rechainonline/config/app_config.dart';
@@ -125,13 +125,14 @@ class ChatDetailsView extends StatelessWidget {
                               padding: const EdgeInsets.symmetric(
                                 horizontal: 16.0,
                               ),
-                              child: LinkText(
+                              child: Linkify(
                                 text: room.topic.isEmpty
                                     ? L10n.of(context)!.addGroupDescription
                                     : room.topic,
+                                options: const LinkifyOptions(humanize: false),
                                 linkStyle:
                                     const TextStyle(color: Colors.blueAccent),
-                                textStyle: TextStyle(
+                                style: TextStyle(
                                   fontSize: 14,
                                   color: Theme.of(context)
                                       .textTheme
@@ -142,8 +143,8 @@ class ChatDetailsView extends StatelessWidget {
                                       .bodyMedium!
                                       .color,
                                 ),
-                                onLinkTap: (url) =>
-                                    UrlLauncher(context, url).launchUrl(),
+                                onOpen: (url) =>
+                                    UrlLauncher(context, url.url).launchUrl(),
                               ),
                             ),
                           const SizedBox(height: 8),

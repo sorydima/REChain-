@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:matrix/matrix.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
@@ -54,14 +53,18 @@ class ChatEventList extends StatelessWidget {
               );
             }
             if (controller.timeline!.canRequestFuture) {
-              Center(
-                child: OutlinedButton(
-                  style: OutlinedButton.styleFrom(
-                    backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-                  ),
-                  onPressed: controller.requestFuture,
-                  child: Text(L10n.of(context)!.loadMore),
-                ),
+              return Builder(
+                builder: (context) {
+                  WidgetsBinding.instance.addPostFrameCallback(
+                    (_) => controller.requestFuture(),
+                  );
+                  return Center(
+                    child: IconButton(
+                      onPressed: controller.requestFuture,
+                      icon: const Icon(Icons.refresh_outlined),
+                    ),
+                  );
+                },
               );
             }
             return Column(
@@ -81,14 +84,18 @@ class ChatEventList extends StatelessWidget {
               );
             }
             if (controller.timeline!.canRequestHistory) {
-              Center(
-                child: OutlinedButton(
-                  style: OutlinedButton.styleFrom(
-                    backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-                  ),
-                  onPressed: controller.requestHistory,
-                  child: Text(L10n.of(context)!.loadMore),
-                ),
+              return Builder(
+                builder: (context) {
+                  WidgetsBinding.instance.addPostFrameCallback(
+                    (_) => controller.requestHistory(),
+                  );
+                  return Center(
+                    child: IconButton(
+                      onPressed: controller.requestHistory,
+                      icon: const Icon(Icons.refresh_outlined),
+                    ),
+                  );
+                },
               );
             }
             return const SizedBox.shrink();

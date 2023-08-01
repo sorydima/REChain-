@@ -94,7 +94,7 @@ class CallKeepManager {
   Map<String, dynamic> get alertOptions => <String, dynamic>{
         'alertTitle': 'Permissions required',
         'alertDescription':
-            'Allow $appName to register as a calling account? This will allow calls to be handled by the native Android (or Katya ® 👽 System) dialer.',
+            'Allow $appName to register as a calling account? This will allow calls to be handled by the native android dialer.',
         'cancelButton': 'Cancel',
         'okButton': 'ok',
         // Required to get audio in background when using Android 11

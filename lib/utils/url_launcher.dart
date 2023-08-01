@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'package:adaptive_dialog/adaptive_dialog.dart';
 import 'package:collection/collection.dart' show IterableExtension;
@@ -22,7 +23,7 @@ class UrlLauncher {
 
   const UrlLauncher(this.context, this.url);
 
-  void launchUrl() {
+  void launchUrl() async {
     if (url!.toLowerCase().startsWith(AppConfig.deepLinkPrefix) ||
         url!.toLowerCase().startsWith(AppConfig.inviteLinkPrefix) ||
         {'#', '@', '!', '+', '\$'}.contains(url![0]) ||
@@ -37,6 +38,35 @@ class UrlLauncher {
       );
       return;
     }
+    final consent = await showModalActionSheet<_LaunchUrlResponse>(
+      context: context,
+      title: url,
+      style: AdaptiveStyle.material,
+      actions: [
+        SheetAction(
+          key: _LaunchUrlResponse.copy,
+          icon: Icons.copy_outlined,
+          label: L10n.of(context)!.copy,
+        ),
+        SheetAction(
+          key: _LaunchUrlResponse.launch,
+          icon: Icons.launch_outlined,
+          label: L10n.of(context)!.openLinkInBrowser,
+        ),
+      ],
+    );
+    if (consent == _LaunchUrlResponse.copy) {
+      await Clipboard.setData(ClipboardData(text: uri.toString()));
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(L10n.of(context)!.copiedToClipboard),
+        ),
+      );
+      return;
+    }
+
+    if (consent != _LaunchUrlResponse.launch) return;
+
     if (!{'https', 'http'}.contains(uri.scheme)) {
       // just launch non-https / non-http uris directly
 
@@ -102,6 +132,9 @@ class UrlLauncher {
           AppConfig.inviteLinkPrefix,
         );
 
+    // The identifier might be a matrix.to url and needs escaping. Or, it might have multiple
+    // identifiers (room id & event id), or it might also have a query part.
+    // All this needs parsing.
     final identityParts = url.parseIdentifierIntoParts() ??
         Uri.tryParse(url)?.host.parseIdentifierIntoParts() ??
         Uri.tryParse(url)
@@ -202,4 +235,9 @@ class UrlLauncher {
       );
     }
   }
+}
+
+enum _LaunchUrlResponse {
+  launch,
+  copy,
 }

@@ -82,7 +82,7 @@ Future<void> _tryPushHelper(
   if (!isBackgroundMessage &&
       activeRoomId == notification.roomId &&
       activeRoomId != null &&
-      client?.syncPresence == null) {
+      client.syncPresence == null) {
     Logs().v('Room is in foreground. Stop push helper here.');
     return;
   }
@@ -144,7 +144,7 @@ Future<void> _tryPushHelper(
     return;
   }
 
-  l10n ??= await L10n.delegate.load(window.locale);
+  l10n ??= await L10n.delegate.load(PlatformDispatcher.instance.locale);
   final matrixLocals = MatrixLocals(l10n);
 
   // Calculate the body
@@ -198,11 +198,33 @@ Future<void> _tryPushHelper(
 
   final roomName = event.room.getLocalizedDisplayname(MatrixLocals(l10n));
 
+  final notificationGroupId =
+      event.room.isDirectChat ? 'directChats' : 'groupChats';
+  final groupName = event.room.isDirectChat ? l10n.directChats : l10n.groups;
+
+  final messageRooms = AndroidNotificationChannelGroup(
+    notificationGroupId,
+    groupName,
+  );
+  final roomsChannel = AndroidNotificationChannel(
+    event.room.id,
+    roomName,
+    groupId: notificationGroupId,
+  );
+
+  await flutterLocalNotificationsPlugin
+      .resolvePlatformSpecificImplementation<
+          AndroidFlutterLocalNotificationsPlugin>()
+      ?.createNotificationChannelGroup(messageRooms);
+  await flutterLocalNotificationsPlugin
+      .resolvePlatformSpecificImplementation<
+          AndroidFlutterLocalNotificationsPlugin>()
+      ?.createNotificationChannel(roomsChannel);
+
   final androidPlatformChannelSpecifics = AndroidNotificationDetails(
     event.room.id,
     roomName,
-    channelDescription:
-        event.room.isDirectChat ? l10n.directChats : l10n.groups,
+    channelDescription: groupName,
     number: notification.counts?.unread,
     category: AndroidNotificationCategory.message,
     styleInformation: messagingStyleInformation ??
@@ -215,7 +237,7 @@ Future<void> _tryPushHelper(
     ticker: l10n.unreadChats(notification.counts?.unread ?? 1),
     importance: Importance.max,
     priority: Priority.max,
-    groupKey: event.room.id,
+    groupKey: notificationGroupId,
   );
   const iOSPlatformChannelSpecifics = DarwinNotificationDetails();
   final platformChannelSpecifics = NotificationDetails(

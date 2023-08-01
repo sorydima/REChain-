@@ -7,8 +7,10 @@ list(APPEND FLUTTER_PLUGIN_LIST
   desktop_lifecycle
   dynamic_color
   emoji_picker_flutter
+  file_selector_linux
   flutter_secure_storage_linux
   handy_window
+  pasteboard
   record_linux
   url_launcher_linux
   window_to_front

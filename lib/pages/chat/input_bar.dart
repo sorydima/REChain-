@@ -5,6 +5,7 @@ import 'package:emojis/emoji.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:matrix/matrix.dart';
+import 'package:pasteboard/pasteboard.dart';
 import 'package:slugify/slugify.dart';
 
 import 'package:rechainonline/config/app_config.dart';
@@ -21,6 +22,7 @@ class InputBar extends StatelessWidget {
   final TextInputType? keyboardType;
   final TextInputAction? textInputAction;
   final ValueChanged<String>? onSubmitted;
+  final ValueChanged<Uint8List?>? onSubmitImage;
   final FocusNode? focusNode;
   final TextEditingController? controller;
   final InputDecoration? decoration;
@@ -34,6 +36,7 @@ class InputBar extends StatelessWidget {
     this.maxLines,
     this.keyboardType,
     this.onSubmitted,
+    this.onSubmitImage,
     this.focusNode,
     this.controller,
     this.decoration,
@@ -183,12 +186,13 @@ class InputBar extends StatelessWidget {
         final state = r.getState(EventTypes.RoomCanonicalAlias);
         if ((state != null &&
                 ((state.content['alias'] is String &&
-                        state.content['alias']
+                        state.content
+                            .tryGet<String>('alias')!
                             .split(':')[0]
                             .toLowerCase()
                             .contains(roomSearch)) ||
                     (state.content['alt_aliases'] is List &&
-                        state.content['alt_aliases'].any(
+                        (state.content['alt_aliases'] as List).any(
                           (l) =>
                               l is String &&
                               l
@@ -263,6 +267,8 @@ class InputBar extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             MxcImage(
+              // ensure proper ordering ...
+              key: ValueKey(suggestion['name']),
               uri: suggestion['mxc'] is String
                   ? Uri.parse(suggestion['mxc'] ?? '')
                   : null,
@@ -398,6 +404,10 @@ class InputBar extends StatelessWidget {
               LogicalKeySet(LogicalKeyboardKey.shift, LogicalKeyboardKey.enter):
                   NewLineIntent(),
               LogicalKeySet(LogicalKeyboardKey.enter): SubmitLineIntent(),
+              LogicalKeySet(
+                LogicalKeyboardKey.controlLeft,
+                LogicalKeyboardKey.keyM,
+              ): PasteLineIntent()
             },
       child: Actions(
         actions: !useShortCuts
@@ -424,6 +434,16 @@ class InputBar extends StatelessWidget {
                     return null;
                   },
                 ),
+                PasteLineIntent: CallbackAction(
+                  onInvoke: (i) async {
+                    final image = await Pasteboard.image;
+                    if (image != null) {
+                      onSubmitImage!(image);
+                      return null;
+                    }
+                    return null;
+                  },
+                )
               },
         child: TypeAheadField<Map<String, String?>>(
           direction: AxisDirection.up,
@@ -473,3 +493,5 @@ class InputBar extends StatelessWidget {
 class NewLineIntent extends Intent {}
 
 class SubmitLineIntent extends Intent {}
+
+class PasteLineIntent extends Intent {}
