@@ -1,569 +1,1144 @@
 {
-"@@last_modified": "2021-08-14 12:41:09.781172",
-"about": "Giới thiệu",
-"@about": {
-"type": "text",
-"placeholders": {}
-},
-"accept": "Đồng ý",
-"@accept": {
-"type": "text",
-"placeholders": {}
-},
-"acceptedTheInvitation": "{username} đã đồng ý lời mời",
-"@acceptedTheInvitation": {
-"type": "text",
-"placeholders": {
-"username": {}
-}
-},
-"account": "Tài khoản",
-"@account": {
-"type": "text",
-"placeholders": {}
-},
-"accountInformation": "Thông tin tài khoản",
-"@accountInformation": {
-"type": "text",
-"placeholders": {}
-},
-"activatedEndToEndEncryption": "{username} đã kích hoạt mã hóa đầu cuối 2 chiều",
-"@activatedEndToEndEncryption": {
-"type": "text",
-"placeholders": {
-"username": {}
-}
-},
-"addGroupDescription": "Thêm mô tả cho nhóm",
-"@addGroupDescription": {
-"type": "text",
-"placeholders": {}
-},
-"admin": "Quản trị viên",
-"@admin": {
-"type": "text",
-"placeholders": {}
-},
-"alias": "bí danh",
-"@alias": {
-"type": "text",
-"placeholders": {}
-},
-"alreadyHaveAnAccount": "Bạn đã có tài khoản?",
-"@alreadyHaveAnAccount": {
-"type": "text",
-"placeholders": {}
-},
-"answeredTheCall": "{senderName} đã trả lời cuộc gọi",
-"@answeredTheCall": {
-"type": "text",
-"placeholders": {
-"senderName": {}
-}
-},
-"anyoneCanJoin": "Mọi người đều có thể gia nhập",
-"@anyoneCanJoin": {
-"type": "text",
-"placeholders": {}
-},
-"archive": "Lưu trữ",
-"@archive": {
-"type": "text",
-"placeholders": {}
-},
-"archivedRoom": "Phòng hội thảo đã lưu trữ",
-"@archivedRoom": {
-"type": "text",
-"placeholders": {}
-},
-"areGuestsAllowedToJoin": "Khách vãng lai có được tham gia không",
-"@areGuestsAllowedToJoin": {
-"type": "text",
-"placeholders": {}
-},
-"areYouSure": "Bạn chắc chứ?",
-"@areYouSure": {
-"type": "text",
-"placeholders": {}
-},
-"askSSSSCache": "Vui lòng nhập cụm mật khẩu hoặc khóa khôi phục để lưu khóa vào bộ nhớ cache.",
-"@askSSSSCache": {
-"type": "text",
-"placeholders": {}
-},
-"blockDevice": "Thiết bị bị chặn",
-"@blockDevice": {
-"type": "text",
-"placeholders": {}
-},
-"zoomOut": "Thu nhỏ",
-"@zoomOut": {
-"type": "text",
-"placeholders": {}
-},
-"zoomIn": "Phóng to",
-"@zoomIn": {
-"type": "text",
-"placeholders": {}
-},
-"youWillBeConnectedTo": "Bạn sẽ được kết nối tới {homeserver}",
-"@youWillBeConnectedTo": {
-"type": "text",
-"placeholders": {
-"homeserver": {}
-}
-},
-"verified": "Đã xác thực",
-"@verified": {
-"type": "text",
-"placeholders": {}
-},
-"transferFromAnotherDevice": "Chuyển từ thiết bị khác",
-"@transferFromAnotherDevice": {
-"type": "text",
-"placeholders": {}
-},
-"tapOnDeviceToVerify": "Chạm vào một thiết bị để chứng thực",
-"@tapOnDeviceToVerify": {
-"type": "text",
-"placeholders": {}
-},
-"showPassword": "Hiển thị mật khẩu",
-"@showPassword": {
-"type": "text",
-"placeholders": {}
-},
-"securityKeyLost": "Thất lạc khoá bảo mật?",
-"@securityKeyLost": {
-"type": "text",
-"placeholders": {}
-},
-"securityKey": "Khóa bảo mật",
-"@securityKey": {
-"type": "text",
-"placeholders": {}
-},
-"pleaseFollowInstructionsOnWeb": "Vui lòng làm theo hướng dẫn trên trang web và bấm tiếp",
-"@pleaseFollowInstructionsOnWeb": {
-"type": "text",
-"placeholders": {}
-},
-"pleaseEnterSecurityKey": "Vui lòng nhập khoá bảo mật",
-"@pleaseEnterSecurityKey": {
-"type": "text",
-"placeholders": {}
-},
-"noEncryptionForPublicRooms": "Bạn chỉ có thể kích hoạt mã hoá khi phòng này không mở",
-"@noEncryptionForPublicRooms": {
-"type": "text",
-"placeholders": {}
-},
-"next": "Tiếp",
-"@next": {
-"type": "text",
-"placeholders": {}
-},
-"everythingReady": "Mọi thứ đã sẵn sàng!",
-"@everythingReady": {
-"type": "text",
-"placeholders": {}
-},
-"emoteSettings": "Cài đặt biểu tượng cảm xúc",
-"@emoteSettings": {
-"type": "text",
-"placeholders": {}
-},
-"editDisplayname": "Sửa tên hiển thị",
-"@editDisplayname": {
-"type": "text",
-"placeholders": {}
-},
-"downloadFile": "Tải ảnh xuống",
-"@downloadFile": {
-"type": "text",
-"placeholders": {}
-},
-"displaynameHasBeenChanged": "Tên hiển thị đã được thay đổi",
-"@displaynameHasBeenChanged": {
-"type": "text",
-"placeholders": {}
-},
-"discardPicture": "Xoá hình ảnh",
-"@discardPicture": {
-"type": "text",
-"placeholders": {}
-},
-"deviceVerifyDescription": "Mã hoá chỉ bảo mật khi tất cả các thiết bị đều được chứng thực",
-"@deviceVerifyDescription": {
-"type": "text",
-"placeholders": {}
-},
-"devices": "Các thiết bị",
-"@devices": {
-"type": "text",
-"placeholders": {}
-},
-"deviceId": "Mã xác định thiết bị",
-"@deviceId": {
-"type": "text",
-"placeholders": {}
-},
-"device": "Thiết bị",
-"@device": {
-"type": "text",
-"placeholders": {}
-},
-"deny": "Từ chối",
-"@deny": {
-"type": "text",
-"placeholders": {}
-},
-"deleteMessage": "Xoá tin nhắn",
-"@deleteMessage": {
-"type": "text",
-"placeholders": {}
-},
-"deleteAccount": "Xoá tài khoản",
-"@deleteAccount": {
-"type": "text",
-"placeholders": {}
-},
-"delete": "Xoá",
-"@delete": {
-"type": "text",
-"placeholders": {}
-},
-"deactivateAccountWarning": "Việc này sẽ vô hiệu hoá tài khoản của bạn. Điều này không thể đảo ngược được! Bạn chắc là vẫn muốn tiếp tục chứ?",
-"@deactivateAccountWarning": {
-"type": "text",
-"placeholders": {}
-},
-"dateWithYear": "{day}/{month}/{year}",
-"@dateWithYear": {
-"type": "text",
-"placeholders": {
-"year": {},
-"month": {},
-"day": {}
-}
-},
-"dateWithoutYear": "{day}/{month}",
-"@dateWithoutYear": {
-"type": "text",
-"placeholders": {
-"month": {},
-"day": {}
-}
-},
-"dateAndTimeOfDay": "{date}, {timeOfDay}",
-"@dateAndTimeOfDay": {
-"type": "text",
-"placeholders": {
-"date": {},
-"timeOfDay": {}
-}
-},
-"currentlyActive": "Đang hoạt động",
-"@currentlyActive": {
-"type": "text",
-"placeholders": {}
-},
-"createNewGroup": "Tạo một nhóm mới",
-"@createNewGroup": {
-"type": "text",
-"placeholders": {}
-},
-"createdTheChat": "{username} đã tạo cuộc trò chuyện",
-"@createdTheChat": {
-"type": "text",
-"placeholders": {
-"username": {}
-}
-},
-"createAccountNow": "Tạo tài khoản mới ngay",
-"@createAccountNow": {
-"type": "text",
-"placeholders": {}
-},
-"create": "Tạo",
-"@create": {
-"type": "text",
-"placeholders": {}
-},
-"countParticipants": "{count} thành viên",
-"@countParticipants": {
-"type": "text",
-"placeholders": {
-"count": {}
-}
-},
-"couldNotSetDisplayname": "Không thể thay tên hiển thị",
-"@couldNotSetDisplayname": {
-"type": "text",
-"placeholders": {}
-},
-"couldNotSetAvatar": "Không thể đặt ảnh đại diện",
-"@couldNotSetAvatar": {
-"type": "text",
-"placeholders": {}
-},
-"couldNotDecryptMessage": "Không thể giải mã tin nhắn: {error}",
-"@couldNotDecryptMessage": {
-"type": "text",
-"placeholders": {
-"error": {}
-}
-},
-"copy": "Sao chép",
-"@copy": {
-"type": "text",
-"placeholders": {}
-},
-"contactHasBeenInvitedToTheGroup": "Liên hệ đã được mời vào nhóm",
-"@contactHasBeenInvitedToTheGroup": {
-"type": "text",
-"placeholders": {}
-},
-"connectionAttemptFailed": "Kết nối thất bại",
-"@connectionAttemptFailed": {
-"type": "text",
-"placeholders": {}
-},
-"connect": "Kết nối",
-"@connect": {
-"type": "text",
-"placeholders": {}
-},
-"confirm": "Xác nhận",
-"@confirm": {
-"type": "text",
-"placeholders": {}
-},
-"compareNumbersMatch": "So sánh và đảm bảo các số sau đây giống trên máy còn lại",
-"@compareNumbersMatch": {
-"type": "text",
-"placeholders": {}
-},
-"compareEmojiMatch": "So sánh và đảm bảo các biểu tượng cảm xúc sau đây giống với các biểu tượng trên máy còn lại",
-"@compareEmojiMatch": {
-"type": "text",
-"placeholders": {}
-},
-"close": "Đóng",
-"@close": {
-"type": "text",
-"placeholders": {}
-},
-"chooseAUsername": "Chọn tên người dùng",
-"@chooseAUsername": {
-"type": "text",
-"placeholders": {}
-},
-"chooseAStrongPassword": "Chọn một mật khẩu mạnh",
-"@chooseAStrongPassword": {
-"type": "text",
-"placeholders": {}
-},
-"chatDetails": "Chi tiết cuộc trò chuyện",
-"@chatDetails": {
-"type": "text",
-"placeholders": {}
-},
-"chatBackupDescription": "Bản sao lưu cuộc trò chuyện của bạn được bảo mật bằng một khoá bảo mật. Bạn đừng làm mất nó.",
-"@chatBackupDescription": {
-"type": "text",
-"placeholders": {}
-},
-"chatBackup": "Sao lưu cuộc trò chuyện",
-"@chatBackup": {
-"type": "text",
-"placeholders": {}
-},
-"chat": "Chat",
-"@chat": {
-"type": "text",
-"placeholders": {}
-},
-"changeWallpaper": "Thay hình nền",
-"@changeWallpaper": {
-"type": "text",
-"placeholders": {}
-},
-"changeTheServer": "Thay đổi máy chủ",
-"@changeTheServer": {
-"type": "text",
-"placeholders": {}
-},
-"changeTheNameOfTheGroup": "Thay đổi tên nhóm",
-"@changeTheNameOfTheGroup": {
-"type": "text",
-"placeholders": {}
-},
-"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
-"@changeTheHomeserver": {
-"type": "text",
-"placeholders": {}
-},
-"changePassword": "Thay đổi mật khẩu",
-"@changePassword": {
-"type": "text",
-"placeholders": {}
-},
-"changelog": "Lịch sử thay đổi",
-"@changelog": {
-"type": "text",
-"placeholders": {}
-},
-"changedTheRoomInvitationLink": "{username} đã thay đổi đường dẫn mời",
-"@changedTheRoomInvitationLink": {
-"type": "text",
-"placeholders": {
-"username": {}
-}
-},
-"changedTheRoomAliases": "{username} đã đổi địa chỉ phòng chat",
-"@changedTheRoomAliases": {
-"type": "text",
-"placeholders": {
-"username": {}
-}
-},
-"changedTheProfileAvatar": "{username} đã thay đổi ảnh đại diện của mình",
-"@changedTheProfileAvatar": {
-"type": "text",
-"placeholders": {
-"username": {}
-}
-},
-"changedTheGuestAccessRulesTo": "{username} đã thay đổi quy tắc truy cập đối với khách thành: {rules}",
-"@changedTheGuestAccessRulesTo": {
-"type": "text",
-"placeholders": {
-"username": {},
-"rules": {}
-}
-},
-"changedTheGuestAccessRules": "{username} đã thay đổi quy tắc truy cập đối với khách",
-"@changedTheGuestAccessRules": {
-"type": "text",
-"placeholders": {
-"username": {}
-}
-},
-"changedTheChatPermissions": "{username} đã thay đổi quyền trong phòng chat",
-"@changedTheChatPermissions": {
-"type": "text",
-"placeholders": {
-"username": {}
-}
-},
-"changedTheChatNameTo": "{username} đã thay đổi tên phòng chat thành: '{chatname}'",
-"@changedTheChatNameTo": {
-"type": "text",
-"placeholders": {
-"username": {},
-"chatname": {}
-}
-},
-"changedTheChatDescriptionTo": "{username} đã thay đổi mô tả phòng chat thành: '{description}'",
-"@changedTheChatDescriptionTo": {
-"type": "text",
-"placeholders": {
-"username": {},
-"description": {}
-}
-},
-"changedTheChatAvatar": "{username} đã thay đổi ảnh phòng chat",
-"@changedTheChatAvatar": {
-"type": "text",
-"placeholders": {
-"username": {}
-}
-},
-"changeDeviceName": "Thay đổi tên thiết bị",
-"@changeDeviceName": {
-"type": "text",
-"placeholders": {}
-},
-"cancel": "Hủy",
-"@cancel": {
-"type": "text",
-"placeholders": {}
-},
-"cachedKeys": "Khóa đã được lưu vào bộ nhớ tạm",
-"@cachedKeys": {
-"type": "text",
-"placeholders": {}
-},
-"blocked": "Đã chặn",
-"@blocked": {
-"type": "text",
-"placeholders": {}
-},
-"bannedUser": "{username} đã cấm {targetName}",
-"@bannedUser": {
-"type": "text",
-"placeholders": {
-"username": {},
-"targetName": {}
-}
-},
-"banned": "Đã bị cấm",
-"@banned": {
-"type": "text",
-"placeholders": {}
-},
-"banFromChat": "Cấm khỏi cuộc trò chuyện",
-"@banFromChat": {
-"type": "text",
-"placeholders": {}
-},
-"badServerVersionsException": "Máy chủ nhà hỗ trợ Spec phiên bản:\n{serverVerions}\nNhưng ứng dụng này chỉ hỗ trợ {supportedVersions}",
-"@badServerVersionsException": {
-"type": "text",
-"placeholders": {
-"serverVersions": {},
-"supportedVersions": {}
-}
-},
-"badServerLoginTypesException": "Máy chủ nhà hỗ trợ kiểu đăng nhập:\n{serverVersions}\nNhưng ứng dụng này chỉ hỗ trợ:\n{supportedVersions}",
-"@badServerLoginTypesException": {
-"type": "text",
-"placeholders": {
-"serverVersions": {},
-"supportedVersions": {}
-}
-},
-"avatarHasBeenChanged": "Ảnh đại diện đã được thay đổi",
-"@avatarHasBeenChanged": {
-"type": "text",
-"placeholders": {}
-},
-"authentication": "Xác thực",
-"@authentication": {
-"type": "text",
-"placeholders": {}
-},
-"askVerificationRequest": "Bạn có đồng ý yêu cầu chứng thực từ {username} không?",
-"@askVerificationRequest": {
-"type": "text",
-"placeholders": {
-"username": {}
-}
-},
-"askSSSSVerify": "Vui lòng nhập mật khẩu bảo mật hoặc khóa khôi phục để chứng thực phiên của bạn.",
-"@askSSSSVerify": {
-"type": "text",
-"placeholders": {}
-},
-"areYouSureYouWantToLogout": "Bạn có chắc bạn muốn đăng xuất không?",
-"@areYouSureYouWantToLogout": {
-"type": "text",
-"placeholders": {}
-},
-"addEmail": "Thêm email",
-"@addEmail": {
-"type": "text",
-"placeholders": {}
-}
+	"@@last_modified": "2021-08-14 12:41:09.781172",
+	"about": "Giới thiệu",
+	"@about": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"accept": "Đồng ý",
+	"@accept": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"acceptedTheInvitation": "{username} đã đồng ý lời mời",
+	"@acceptedTheInvitation": {
+		"type": "text",
+		"placeholders": {
+			"username": {}
+		}
+	},
+	"account": "Tài khoản",
+	"@account": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"accountInformation": "Thông tin tài khoản",
+	"@accountInformation": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"activatedEndToEndEncryption": "{username} đã kích hoạt mã hóa đầu cuối 2 chiều",
+	"@activatedEndToEndEncryption": {
+		"type": "text",
+		"placeholders": {
+			"username": {}
+		}
+	},
+	"addGroupDescription": "Thêm mô tả cho nhóm",
+	"@addGroupDescription": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"admin": "Quản trị viên",
+	"@admin": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"alias": "bí danh",
+	"@alias": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"alreadyHaveAnAccount": "Bạn đã có tài khoản?",
+	"@alreadyHaveAnAccount": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"answeredTheCall": "{senderName} đã trả lời cuộc gọi",
+	"@answeredTheCall": {
+		"type": "text",
+		"placeholders": {
+			"senderName": {}
+		}
+	},
+	"anyoneCanJoin": "Mọi người đều có thể gia nhập",
+	"@anyoneCanJoin": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"archive": "Lưu trữ",
+	"@archive": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"archivedRoom": "Phòng hội thảo đã lưu trữ",
+	"@archivedRoom": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"areGuestsAllowedToJoin": "Khách vãng lai có được tham gia không",
+	"@areGuestsAllowedToJoin": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"areYouSure": "Bạn chắc chứ?",
+	"@areYouSure": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"askSSSSCache": "Vui lòng nhập cụm mật khẩu hoặc khóa khôi phục để lưu khóa vào bộ nhớ cache.",
+	"@askSSSSCache": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"blockDevice": "Thiết bị bị chặn",
+	"@blockDevice": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"zoomOut": "Thu nhỏ",
+	"@zoomOut": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"zoomIn": "Phóng to",
+	"@zoomIn": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"youWillBeConnectedTo": "Bạn sẽ được kết nối tới {homeserver}",
+	"@youWillBeConnectedTo": {
+		"type": "text",
+		"placeholders": {
+			"homeserver": {}
+		}
+	},
+	"verified": "Đã xác thực",
+	"@verified": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"transferFromAnotherDevice": "Chuyển từ thiết bị khác",
+	"@transferFromAnotherDevice": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"tapOnDeviceToVerify": "Chạm vào một thiết bị để chứng thực",
+	"@tapOnDeviceToVerify": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"showPassword": "Hiển thị mật khẩu",
+	"@showPassword": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"securityKeyLost": "Thất lạc khoá bảo mật?",
+	"@securityKeyLost": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"securityKey": "Khóa bảo mật",
+	"@securityKey": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"pleaseFollowInstructionsOnWeb": "Vui lòng làm theo hướng dẫn trên trang web và bấm tiếp",
+	"@pleaseFollowInstructionsOnWeb": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"pleaseEnterSecurityKey": "Vui lòng nhập khoá bảo mật",
+	"@pleaseEnterSecurityKey": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"noEncryptionForPublicRooms": "Bạn chỉ có thể kích hoạt mã hoá khi phòng này không mở",
+	"@noEncryptionForPublicRooms": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"next": "Tiếp",
+	"@next": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"everythingReady": "Mọi thứ đã sẵn sàng!",
+	"@everythingReady": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"emoteSettings": "Cài đặt biểu tượng cảm xúc",
+	"@emoteSettings": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"editDisplayname": "Sửa tên hiển thị",
+	"@editDisplayname": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"downloadFile": "Tải ảnh xuống",
+	"@downloadFile": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"displaynameHasBeenChanged": "Tên hiển thị đã được thay đổi",
+	"@displaynameHasBeenChanged": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"discardPicture": "Xoá hình ảnh",
+	"@discardPicture": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"deviceVerifyDescription": "Mã hoá chỉ bảo mật khi tất cả các thiết bị đều được chứng thực",
+	"@deviceVerifyDescription": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"devices": "Các thiết bị",
+	"@devices": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"deviceId": "Mã xác định thiết bị",
+	"@deviceId": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"device": "Thiết bị",
+	"@device": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"deny": "Từ chối",
+	"@deny": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"deleteMessage": "Xoá tin nhắn",
+	"@deleteMessage": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"deleteAccount": "Xoá tài khoản",
+	"@deleteAccount": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"delete": "Xoá",
+	"@delete": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"deactivateAccountWarning": "Việc này sẽ vô hiệu hoá tài khoản của bạn. Điều này không thể đảo ngược được! Bạn chắc là vẫn muốn tiếp tục chứ?",
+	"@deactivateAccountWarning": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"dateWithYear": "{day}/{month}/{year}",
+	"@dateWithYear": {
+		"type": "text",
+		"placeholders": {
+			"year": {},
+			"month": {},
+			"day": {}
+		}
+	},
+	"dateWithoutYear": "{day}/{month}",
+	"@dateWithoutYear": {
+		"type": "text",
+		"placeholders": {
+			"month": {},
+			"day": {}
+		}
+	},
+	"dateAndTimeOfDay": "{date}, {timeOfDay}",
+	"@dateAndTimeOfDay": {
+		"type": "text",
+		"placeholders": {
+			"date": {},
+			"timeOfDay": {}
+		}
+	},
+	"currentlyActive": "Đang hoạt động",
+	"@currentlyActive": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"createNewGroup": "Tạo một nhóm mới",
+	"@createNewGroup": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"createdTheChat": "{username} đã tạo cuộc trò chuyện",
+	"@createdTheChat": {
+		"type": "text",
+		"placeholders": {
+			"username": {}
+		}
+	},
+	"createAccountNow": "Tạo tài khoản mới ngay",
+	"@createAccountNow": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"create": "Tạo",
+	"@create": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"countParticipants": "{count} thành viên",
+	"@countParticipants": {
+		"type": "text",
+		"placeholders": {
+			"count": {}
+		}
+	},
+	"couldNotSetDisplayname": "Không thể thay tên hiển thị",
+	"@couldNotSetDisplayname": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"couldNotSetAvatar": "Không thể đặt ảnh đại diện",
+	"@couldNotSetAvatar": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"couldNotDecryptMessage": "Không thể giải mã tin nhắn: {error}",
+	"@couldNotDecryptMessage": {
+		"type": "text",
+		"placeholders": {
+			"error": {}
+		}
+	},
+	"copy": "Sao chép",
+	"@copy": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"contactHasBeenInvitedToTheGroup": "Liên hệ đã được mời vào nhóm",
+	"@contactHasBeenInvitedToTheGroup": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"connectionAttemptFailed": "Kết nối thất bại",
+	"@connectionAttemptFailed": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"connect": "Kết nối",
+	"@connect": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"confirm": "Xác nhận",
+	"@confirm": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"compareNumbersMatch": "So sánh và đảm bảo các số sau đây giống trên máy còn lại",
+	"@compareNumbersMatch": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"compareEmojiMatch": "So sánh và đảm bảo các biểu tượng cảm xúc sau đây giống với các biểu tượng trên máy còn lại",
+	"@compareEmojiMatch": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"close": "Đóng",
+	"@close": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"chooseAUsername": "Chọn tên người dùng",
+	"@chooseAUsername": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"chooseAStrongPassword": "Chọn một mật khẩu mạnh",
+	"@chooseAStrongPassword": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"chatDetails": "Chi tiết cuộc trò chuyện",
+	"@chatDetails": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"chatBackupDescription": "Bản sao lưu cuộc trò chuyện của bạn được bảo mật bằng một khoá bảo mật. Bạn đừng làm mất nó.",
+	"@chatBackupDescription": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"chatBackup": "Sao lưu cuộc trò chuyện",
+	"@chatBackup": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"chat": "Chat",
+	"@chat": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"changeWallpaper": "Thay hình nền",
+	"@changeWallpaper": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"changeTheServer": "Thay đổi máy chủ",
+	"@changeTheServer": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"changeTheNameOfTheGroup": "Thay đổi tên nhóm",
+	"@changeTheNameOfTheGroup": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"@changeTheHomeserver": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"changePassword": "Thay đổi mật khẩu",
+	"@changePassword": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"changelog": "Lịch sử thay đổi",
+	"@changelog": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"changedTheRoomInvitationLink": "{username} đã thay đổi đường dẫn mời",
+	"@changedTheRoomInvitationLink": {
+		"type": "text",
+		"placeholders": {
+			"username": {}
+		}
+	},
+	"changedTheRoomAliases": "{username} đã đổi địa chỉ phòng chat",
+	"@changedTheRoomAliases": {
+		"type": "text",
+		"placeholders": {
+			"username": {}
+		}
+	},
+	"changedTheProfileAvatar": "{username} đã thay đổi ảnh đại diện của mình",
+	"@changedTheProfileAvatar": {
+		"type": "text",
+		"placeholders": {
+			"username": {}
+		}
+	},
+	"changedTheGuestAccessRulesTo": "{username} đã thay đổi quy tắc truy cập đối với khách thành: {rules}",
+	"@changedTheGuestAccessRulesTo": {
+		"type": "text",
+		"placeholders": {
+			"username": {},
+			"rules": {}
+		}
+	},
+	"changedTheGuestAccessRules": "{username} đã thay đổi quy tắc truy cập đối với khách",
+	"@changedTheGuestAccessRules": {
+		"type": "text",
+		"placeholders": {
+			"username": {}
+		}
+	},
+	"changedTheChatPermissions": "{username} đã thay đổi quyền trong phòng chat",
+	"@changedTheChatPermissions": {
+		"type": "text",
+		"placeholders": {
+			"username": {}
+		}
+	},
+	"changedTheChatNameTo": "{username} đã thay đổi tên phòng chat thành: '{chatname}'",
+	"@changedTheChatNameTo": {
+		"type": "text",
+		"placeholders": {
+			"username": {},
+			"chatname": {}
+		}
+	},
+	"changedTheChatDescriptionTo": "{username} đã thay đổi mô tả phòng chat thành: '{description}'",
+	"@changedTheChatDescriptionTo": {
+		"type": "text",
+		"placeholders": {
+			"username": {},
+			"description": {}
+		}
+	},
+	"changedTheChatAvatar": "{username} đã thay đổi ảnh phòng chat",
+	"@changedTheChatAvatar": {
+		"type": "text",
+		"placeholders": {
+			"username": {}
+		}
+	},
+	"changeDeviceName": "Thay đổi tên thiết bị",
+	"@changeDeviceName": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"cancel": "Hủy",
+	"@cancel": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"cachedKeys": "Khóa đã được lưu vào bộ nhớ tạm",
+	"@cachedKeys": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"blocked": "Đã chặn",
+	"@blocked": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"bannedUser": "{username} đã cấm {targetName}",
+	"@bannedUser": {
+		"type": "text",
+		"placeholders": {
+			"username": {},
+			"targetName": {}
+		}
+	},
+	"banned": "Đã bị cấm",
+	"@banned": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"banFromChat": "Cấm khỏi cuộc trò chuyện",
+	"@banFromChat": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"badServerVersionsException": "Máy chủ nhà hỗ trợ Spec phiên bản:\n{serverVerions}\nNhưng ứng dụng này chỉ hỗ trợ {supportedVersions}",
+	"@badServerVersionsException": {
+		"type": "text",
+		"placeholders": {
+			"serverVersions": {},
+			"supportedVersions": {}
+		}
+	},
+	"badServerLoginTypesException": "Máy chủ nhà hỗ trợ kiểu đăng nhập:\n{serverVersions}\nNhưng ứng dụng này chỉ hỗ trợ:\n{supportedVersions}",
+	"@badServerLoginTypesException": {
+		"type": "text",
+		"placeholders": {
+			"serverVersions": {},
+			"supportedVersions": {}
+		}
+	},
+	"avatarHasBeenChanged": "Ảnh đại diện đã được thay đổi",
+	"@avatarHasBeenChanged": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"authentication": "Xác thực",
+	"@authentication": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"askVerificationRequest": "Bạn có đồng ý yêu cầu chứng thực từ {username} không?",
+	"@askVerificationRequest": {
+		"type": "text",
+		"placeholders": {
+			"username": {}
+		}
+	},
+	"askSSSSVerify": "Vui lòng nhập mật khẩu bảo mật hoặc khóa khôi phục để chứng thực phiên của bạn.",
+	"@askSSSSVerify": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"areYouSureYouWantToLogout": "Bạn có chắc bạn muốn đăng xuất không?",
+	"@areYouSureYouWantToLogout": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"addEmail": "Thêm email",
+	"@addEmail": {
+		"type": "text",
+		"placeholders": {}
+	},
+	"addAccount": "",
+	"addDescription": "",
+	"addNewFriend": "",
+	"addToBundle": "",
+	"addToSpace": "",
+	"addToSpaceDescription": "",
+	"addToStory": "",
+	"addWidget": "",
+	"advanced": "",
+	"all": "",
+	"allChats": "",
+	"allRooms": "",
+	"allSpaces": "",
+	"allSuggestedRoomsJoined": "",
+	"appLock": "",
+	"appearOnTop": "",
+	"appearOnTopDetails": "",
+	"askSSSSSign": "",
+	"audioPlayerPause": "",
+	"audioPlayerPlay": "",
+	"autoplayImages": "",
+	"botMessages": "",
+	"bubbleSize": "",
+	"bundleName": "",
+	"callingAccount": "",
+	"callingAccountDetails": "",
+	"callingPermissions": "",
+	"cantOpenUri": "",
+	"changeTheme": "",
+	"changeYourAvatar": "",
+	"changedTheDisplaynameTo": "",
+	"changedTheHistoryVisibility": "",
+	"changedTheHistoryVisibilityTo": "",
+	"changedTheJoinRules": "",
+	"changedTheJoinRulesTo": "",
+	"changesHaveBeenSaved": "",
+	"channelCorruptedDecryptError": "",
+	"chatHasBeenAddedToThisSpace": "",
+	"chatHasBeenRemovedFromThisSpace": "",
+	"chats": "",
+	"clearArchive": "",
+	"clearText": "",
+	"commandHint_ban": "",
+	"commandHint_clearcache": "",
+	"commandHint_create": "",
+	"commandHint_cuddle": "",
+	"commandHint_discardsession": "",
+	"commandHint_dm": "",
+	"commandHint_googly": "",
+	"commandHint_html": "",
+	"commandHint_hug": "",
+	"commandHint_invite": "",
+	"commandHint_join": "",
+	"commandHint_kick": "",
+	"commandHint_leave": "",
+	"commandHint_markasdm": "",
+	"commandHint_markasgroup": "",
+	"commandHint_me": "",
+	"commandHint_myroomavatar": "",
+	"commandHint_myroomnick": "",
+	"commandHint_op": "",
+	"commandHint_plain": "",
+	"commandHint_react": "",
+	"commandHint_send": "",
+	"commandHint_unban": "",
+	"commandInvalid": "",
+	"commandMissing": "",
+	"configureChat": "",
+	"confirmEventUnpin": "",
+	"confirmMatrixId": "",
+	"containsDisplayName": "",
+	"containsUserName": "",
+	"contentHasBeenReported": "",
+	"contentViewer": "",
+	"continueWith": "",
+	"copiedToClipboard": "",
+	"copyToClipboard": "",
+	"countFiles": "",
+	"createNewChatExplaination": "",
+	"createNewSpace": "",
+	"crossSigningDisabled": "",
+	"crossSigningEnabled": "",
+	"cuddleContent": "",
+	"custom": "",
+	"darkTheme": "",
+	"defaultPermissionLevel": "",
+	"dehydrate": "",
+	"dehydrateShare": "",
+	"dehydrateTor": "",
+	"dehydrateTorLong": "",
+	"dehydrateWarning": "",
+	"deviceKeys": "",
+	"directChats": "",
+	"disableEncryptionWarning": "",
+	"discover": "",
+	"discoverGroups": "",
+	"dismiss": "",
+	"doNotShowAgain": "",
+	"donate": "",
+	"dontAskAgain": "",
+	"edit": "",
+	"editBlockedServers": "",
+	"editBundlesForAccount": "",
+	"editChatPermissions": "",
+	"editIntegrations": "",
+	"editJitsiInstance": "",
+	"editRoomAliases": "",
+	"editRoomAvatar": "",
+	"editWidgets": "",
+	"emailOrUsername": "",
+	"emojis": "",
+	"emoteExists": "",
+	"emoteInvalid": "",
+	"emotePacks": "",
+	"emoteShortcode": "",
+	"emoteWarnNeedToPick": "",
+	"emptyChat": "",
+	"enableAutoBackups": "",
+	"enableChatBackup": "",
+	"enableEmotesGlobally": "",
+	"enableEncryption": "",
+	"enableEncryptionWarning": "",
+	"enableMultiAccounts": "",
+	"encryptThisChat": "",
+	"encrypted": "",
+	"encryption": "",
+	"encryptionAlgorithm": "",
+	"encryptionNotEnabled": "",
+	"end2endEncryptionSettings": "",
+	"endToEndEncryption": "",
+	"endedTheCall": "",
+	"enterAGroupName": "",
+	"enterASpacepName": "",
+	"enterAUsername": "",
+	"enterAnEmailAddress": "",
+	"enterInviteLinkOrMatrixId": "",
+	"enterRoom": "",
+	"enterSpace": "",
+	"enterYourHomeserver": "",
+	"errorAddingWidget": "",
+	"errorObtainingLocation": "",
+	"experimentalVideoCalls": "",
+	"extremeOffensive": "",
+	"fileHasBeenSavedAt": "",
+	"fileIsTooBigForServer": "",
+	"fileName": "",
+	"fileSize": "",
+	"fontSize": "",
+	"foregroundServiceRunning": "",
+	"forward": "",
+	"friday": "",
+	"friends": "",
+	"fromJoining": "",
+	"fromTheInvitation": "",
+	"goToTheNewRoom": "",
+	"googlyEyesContent": "",
+	"group": "",
+	"groupDescription": "",
+	"groupDescriptionHasBeenChanged": "",
+	"groupIsPublic": "",
+	"groupWith": "",
+	"groups": "",
+	"guestsAreForbidden": "",
+	"guestsCanJoin": "",
+	"hasWithdrawnTheInvitationFor": "",
+	"help": "",
+	"hideRedactedEvents": "",
+	"hideUnimportantStateEvents": "",
+	"hideUnknownEvents": "",
+	"homeserver": "",
+	"homeserverIsNotCompatible": "",
+	"howOffensiveIsThisContent": "",
+	"hugContent": "",
+	"hydrate": "",
+	"hydrateTor": "",
+	"hydrateTorLong": "",
+	"iHaveClickedOnLink": "",
+	"iUnderstand": "",
+	"iWroteDownTheKey": "",
+	"id": "",
+	"identity": "",
+	"ignore": "",
+	"ignoreListDescription": "",
+	"ignoreUsername": "",
+	"ignoredUsers": "",
+	"incorrectPassphraseOrKey": "",
+	"indexedDbErrorLong": "",
+	"indexedDbErrorTitle": "",
+	"inoffensive": "",
+	"integrationsNotImplemented": "",
+	"invalidEmail": "",
+	"inviteContact": "",
+	"inviteContactToGroup": "",
+	"inviteForMe": "",
+	"inviteText": "",
+	"invited": "",
+	"invitedUser": "",
+	"invitedUsersOnly": "",
+	"isDeviceKeyCorrect": "",
+	"isTyping": "",
+	"joinRoom": "",
+	"joinedTheChat": "",
+	"jump": "",
+	"jumpToLastReadMessage": "",
+	"keysCached": "",
+	"keysMissing": "",
+	"kickFromChat": "",
+	"kicked": "",
+	"kickedAndBanned": "",
+	"lastActiveAgo": "",
+	"lastSeenIp": "",
+	"lastSeenLongTimeAgo": "",
+	"leave": "",
+	"leftTheChat": "",
+	"letsStart": "",
+	"license": "",
+	"lightTheme": "",
+	"link": "",
+	"loadCountMoreParticipants": "",
+	"loadMore": "",
+	"loadingPleaseWait": "",
+	"locationDisabledNotice": "",
+	"locationPermissionDeniedNotice": "",
+	"logInTo": "",
+	"login": "",
+	"loginWith": "",
+	"loginWithOneClick": "",
+	"logout": "",
+	"makeAModerator": "",
+	"makeAnAdmin": "",
+	"makeSureTheIdentifierIsValid": "",
+	"markAsRead": "",
+	"matrixWidgets": "",
+	"memberChanges": "",
+	"mention": "",
+	"messageInfo": "",
+	"messageType": "",
+	"messageWillBeRemovedWarning": "",
+	"messages": "",
+	"moderator": "",
+	"monday": "",
+	"moreEvents": "",
+	"muteChat": "",
+	"needPantalaimonWarning": "",
+	"newChat": "",
+	"newGroup": "",
+	"newMessageInrechainonline": "",
+	"newPasswordDescription": "",
+	"newSpace": "",
+	"newSpaceDescription": "",
+	"newUsernameDescription": "",
+	"newVerificationRequest": "",
+	"nextAccount": "",
+	"no": "",
+	"noBackupWarning": "",
+	"noConnectionToTheServer": "",
+	"noCrossSignBootstrap": "",
+	"noDescription": "",
+	"noEmailWarning": "",
+	"noEmotesFound": "",
+	"noGoogleServicesWarning": "",
+	"noKeyForThisMessage": "",
+	"noMatrixServer": "",
+	"noMegolmBootstrap": "",
+	"noOtherDevicesFound": "",
+	"noPasswordRecoveryDescription": "",
+	"noPermission": "",
+	"noPublicRoomsFound": "",
+	"noRoomsFound": "",
+	"noSearchResult": "",
+	"noStatusesFound": "",
+	"none": "",
+	"norechainonlineServer": "",
+	"notSupportedInWeb": "",
+	"notifications": "",
+	"notificationsEnabledForThisAccount": "",
+	"numChats": "",
+	"numUsersTyping": "",
+	"numberRoomMembers": "",
+	"numberSelected": "",
+	"obtainingLocation": "",
+	"offensive": "",
+	"offline": "",
+	"ok": "",
+	"oneClientLoggedOut": "",
+	"online": "",
+	"onlineKeyBackupDisabled": "",
+	"onlineKeyBackupEnabled": "",
+	"oopsPushError": "",
+	"oopsSomethingWentWrong": "",
+	"openAppToReadMessages": "",
+	"openCamera": "",
+	"openChat": "",
+	"openGallery": "",
+	"openInMaps": "",
+	"openLinkInBrowser": "",
+	"openVideoCamera": "",
+	"optionalAddEmail": "",
+	"optionalGroupName": "",
+	"or": "",
+	"otherCallingPermissions": "",
+	"participant": "",
+	"participatingUserDevices": "",
+	"passphraseOrKey": "",
+	"password": "",
+	"passwordForgotten": "",
+	"passwordHasBeenChanged": "",
+	"passwordRecovery": "",
+	"passwordsDoNotMatch": "",
+	"people": "",
+	"pickImage": "",
+	"pin": "",
+	"pinMessage": "",
+	"pinnedEventsError": "",
+	"placeCall": "",
+	"play": "",
+	"pleaseChoose": "",
+	"pleaseChooseAPasscode": "",
+	"pleaseChooseAUsername": "",
+	"pleaseChooseAtLeastChars": "",
+	"pleaseClickOnLink": "",
+	"pleaseEnter4Digits": "",
+	"pleaseEnterAMatrixIdentifier": "",
+	"pleaseEnterArechainonlineIdentifier": "",
+	"pleaseEnterRecoveryKey": "",
+	"pleaseEnterRecoveryKeyDescription": "",
+	"pleaseEnterSecurityKeyDescription": "",
+	"pleaseEnterValidEmail": "",
+	"pleaseEnterYourPassword": "",
+	"pleaseEnterYourPin": "",
+	"pleaseEnterYourUsername": "",
+	"pleaseTryAgainLaterOrChooseDifferentServer": "",
+	"previousAccount": "",
+	"privacy": "",
+	"publicGroups": "",
+	"publicKey": "",
+	"publicRooms": "",
+	"publicSpace": "",
+	"publish": "",
+	"pushRules": "",
+	"reactedWith": "",
+	"readUpToHere": "",
+	"reason": "",
+	"rechainonline": "",
+	"recording": "",
+	"recoveryKey": "",
+	"recoveryKeyLost": "",
+	"redactMessage": "",
+	"redactedAnEvent": "",
+	"register": "",
+	"reject": "",
+	"rejectedTheInvitation": "",
+	"rejoin": "",
+	"remove": "",
+	"removeAllOtherDevices": "",
+	"removeDevice": "",
+	"removeFromBundle": "",
+	"removeFromSpace": "",
+	"removeFromSpaceDescription": "",
+	"removeMessage": "",
+	"removeYourAvatar": "",
+	"removedBy": "",
+	"renderRichContent": "",
+	"reopenChat": "",
+	"repeatPassword": "",
+	"replaceRoomWithNewerVersion": "",
+	"reply": "",
+	"replyHasBeenSent": "",
+	"report": "",
+	"reportErrorDescription": "",
+	"reportMessage": "",
+	"reportUser": "",
+	"requestPermission": "",
+	"requestToReadOlderMessages": "",
+	"revokeAllPermissions": "",
+	"roomHasBeenUpgraded": "",
+	"roomVersion": "",
+	"saturday": "",
+	"saveFile": "",
+	"saveFileToFolder": "",
+	"saveKeyManuallyDescription": "",
+	"saveTheRecoveryKeyNow": "",
+	"saveTheSecurityKeyNow": "",
+	"savedFileAs": "",
+	"scanQrCode": "",
+	"screenSharingDetail": "",
+	"screenSharingTitle": "",
+	"search": "",
+	"searchForAChat": "",
+	"security": "",
+	"seenByUser": "",
+	"seenByUserAndCountOthers": "",
+	"seenByUserAndUser": "",
+	"send": "",
+	"sendAMessage": "",
+	"sendAsText": "",
+	"sendAudio": "",
+	"sendBugReports": "",
+	"sendFile": "",
+	"sendImage": "",
+	"sendMessages": "",
+	"sendOnEnter": "",
+	"sendOriginal": "",
+	"sendSticker": "",
+	"sendVideo": "",
+	"sender": "",
+	"sentAFile": "",
+	"sentAPicture": "",
+	"sentASticker": "",
+	"sentAVideo": "",
+	"sentAnAudio": "",
+	"sentCallInformations": "",
+	"sentryInfo": "",
+	"separateChatTypes": "",
+	"serverRequiresEmail": "",
+	"sessionVerified": "",
+	"setAProfilePicture": "",
+	"setAsCanonicalAlias": "",
+	"setCustomEmotes": "",
+	"setGroupDescription": "",
+	"setInvitationLink": "",
+	"setPermissionsLevel": "",
+	"setStatus": "",
+	"settings": "",
+	"setupChatBackup": "",
+	"setupChatBackupDescription": "",
+	"setupChatBackupNow": "",
+	"share": "",
+	"shareLocation": "",
+	"shareYourInviteLink": "",
+	"sharedTheLocation": "",
+	"showDirectChatsInSpaces": "",
+	"showSpaces": "",
+	"signInWithPassword": "",
+	"signUp": "",
+	"singlesignon": "",
+	"skip": "",
+	"sorryThatsNotPossible": "",
+	"soundVibrationLedColor": "",
+	"sourceCode": "",
+	"spaceIsPublic": "",
+	"spaceName": "",
+	"start": "",
+	"startFirstChat": "",
+	"startYourFirstChat": "",
+	"startedACall": "",
+	"status": "",
+	"statusExampleMessage": "",
+	"storeInAndroidKeystore": "",
+	"storeInAppleKeyChain": "",
+	"storeInSecureStorageDescription": "",
+	"storeSecurlyOnThisDevice": "",
+	"stories": "",
+	"storyFrom": "",
+	"storyPrivacyWarning": "",
+	"submit": "",
+	"suggestedRooms": "",
+	"sunday": "",
+	"supposedMxid": "",
+	"switchToAccount": "",
+	"synchronizingPleaseWait": "",
+	"systemTheme": "",
+	"tapToShowImage": "",
+	"tapToShowMenu": "",
+	"theyDontMatch": "",
+	"theyMatch": "",
+	"thisRoomHasBeenArchived": "",
+	"thisUserHasNotPostedAnythingYet": "",
+	"thursday": "",
+	"time": "",
+	"timeOfDay": "",
+	"title": "",
+	"toggleFavorite": "",
+	"toggleMuted": "",
+	"toggleUnread": "",
+	"tooManyRequestsWarning": "",
+	"tryToSendAgain": "",
+	"tuesday": "",
+	"typeInInviteLinkManually": "",
+	"unavailable": "",
+	"unbanFromChat": "",
+	"unbannedUser": "",
+	"unblockDevice": "",
+	"unknownDevice": "",
+	"unknownEncryptionAlgorithm": "",
+	"unknownEvent": "",
+	"unknownSessionVerify": "",
+	"unlockChatBackup": "",
+	"unlockOldMessages": "",
+	"unmuteChat": "",
+	"unpin": "",
+	"unreadChats": "",
+	"unreadMessages": "",
+	"unsubscribeStories": "",
+	"unsupportedAndroidVersion": "",
+	"unsupportedAndroidVersionLong": "",
+	"unverified": "",
+	"updateAvailable": "",
+	"updateNow": "",
+	"useAmoledTheme": "",
+	"user": "",
+	"userAndOthersAreTyping": "",
+	"userAndUserAreTyping": "",
+	"userIsTyping": "",
+	"userLeftTheChat": "",
+	"userNotVerified": "",
+	"userSentUnknownEvent": "",
+	"userUnknownVerification": "",
+	"userVerified": "",
+	"username": "",
+	"users": "",
+	"verifiedSession": "",
+	"verify": "",
+	"verifyManual": "",
+	"verifyStart": "",
+	"verifySuccess": "",
+	"verifyTitle": "",
+	"verifyUser": "",
+	"videoCall": "",
+	"videoCallsBetaWarning": "",
+	"videoWithSize": "",
+	"visibilityOfTheChatHistory": "",
+	"visibleForAllParticipants": "",
+	"visibleForEveryone": "",
+	"voiceCall": "",
+	"voiceMessage": "",
+	"waitingPartnerAcceptRequest": "",
+	"waitingPartnerEmoji": "",
+	"waitingPartnerNumbers": "",
+	"wallpaper": "",
+	"warning": "",
+	"warningEncryptionInBeta": "",
+	"wasDirectChatDisplayName": "",
+	"weSentYouAnEmail": "",
+	"wednesday": "",
+	"welcomeText": "",
+	"whatIsGoingOn": "",
+	"whoCanPerformWhichAction": "",
+	"whoCanSeeMyStories": "",
+	"whoCanSeeMyStoriesDesc": "",
+	"whoIsAllowedToJoinThisGroup": "",
+	"whyDoYouWantToReportThis": "",
+	"whyIsThisMessageEncrypted": "",
+	"widgetCustom": "",
+	"widgetEtherpad": "",
+	"widgetJitsi": "",
+	"widgetName": "",
+	"widgetNameError": "",
+	"widgetUrlError": "",
+	"widgetVideo": "",
+	"wipeChatBackup": "",
+	"withTheseAddressesRecoveryDescription": "",
+	"writeAMessage": "",
+	"yes": "",
+	"you": "",
+	"youAcceptedTheInvitation": "",
+	"youAreInvitedToThisChat": "",
+	"youAreNoLongerParticipatingInThisChat": "",
+	"youBannedUser": "",
+	"youCannotInviteYourself": "",
+	"youHaveBeenBannedFromThisChat": "",
+	"youHaveWithdrawnTheInvitationFor": "",
+	"youInvitedBy": "",
+	"youInvitedUser": "",
+	"youJoinedTheChat": "",
+	"youKicked": "",
+	"youKickedAndBanned": "",
+	"youRejectedTheInvitation": "",
+	"youUnbannedUser": "",
+	"yourChatBackupHasBeenSetUp": "",
+	"yourChatsAreBeingSynced": "",
+	"yourOwnUsername": "",
+	"yourPublicKey": "",
+	"yourStory": "",
+	"yourUserId": ""
 }
