@@ -151,14 +151,6 @@
 "@commandInvalid": {
 "type": "text"
 },
-"commandMissing": "{{command} විධානයක් නොවේ.",
-"@commandMissing": {
-"type": "text",
-"placeholders": {
-"command": {}
-},
-"description": "State that {command} is not a valid /command."
-},
 "compareEmojiMatch": "සසඳා බලා පහත දැක්වෙන ඉමොජි අනෙක් උපාංගයට නිසැකවම ගැලපෙන බවට වග බලා ගන්න:",
 "@compareEmojiMatch": {
 "type": "text",

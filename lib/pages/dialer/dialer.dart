@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_foreground_task/flutter_foreground_task.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
-// import 'package:flutter_webrtc/flutter_webrtc.dart';
+import 'package:flutter_webrtc/flutter_webrtc.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:matrix/matrix.dart';
 import 'package:vibration/vibration.dart';
@@ -62,6 +62,14 @@ class _StreamView extends StatelessWidget {
             Container(
               color: Colors.transparent,
             ),
+          if (!videoMuted)
+            RTCVideoView(
+              // yes, it must explicitly be casted even though I do not feel
+              // comfortable with it...
+              wrappedStream.renderer as RTCVideoRenderer,
+              mirror: mirrored,
+              objectFit: RTCVideoViewObjectFit.RTCVideoViewObjectFitContain,
+            ),
           if (videoMuted)
             Positioned(
               child: Avatar(
@@ -113,12 +121,26 @@ class MyCallingPage extends State<Calling> {
   Room? get room => call.room;
 
   String get displayName => call.room.getLocalizedDisplayname(
-        MatrixLocals(L10n.of(context)!),
+        MatrixLocals(L10n.of(widget.context)!),
       );
 
   String get callId => widget.callId;
 
   CallSession get call => widget.call;
+
+  MediaStream? get localStream {
+    if (call.localUserMediaStream != null) {
+      return call.localUserMediaStream!.stream!;
+    }
+    return null;
+  }
+
+  MediaStream? get remoteStream {
+    if (call.getRemoteStreams.isNotEmpty) {
+      return call.getRemoteStreams[0].stream!;
+    }
+    return null;
+  }
 
   bool get speakerOn => call.speakerOn;
 
@@ -206,6 +228,22 @@ class MyCallingPage extends State<Calling> {
     call.cleanUp.call();
   }
 
+  void _resizeLocalVideo(Orientation orientation) {
+    final shortSide = min(
+      MediaQuery.of(widget.context).size.width,
+      MediaQuery.of(widget.context).size.height,
+    );
+    _localVideoMargin = remoteStream != null
+        ? const EdgeInsets.only(top: 20.0, right: 20.0)
+        : EdgeInsets.zero;
+    _localVideoWidth = remoteStream != null
+        ? shortSide / 3
+        : MediaQuery.of(widget.context).size.width;
+    _localVideoHeight = remoteStream != null
+        ? shortSide / 4
+        : MediaQuery.of(widget.context).size.height;
+  }
+
   void _handleCallState(CallState state) {
     Logs().v('CallingPage::handleCallState: ${state.toString()}');
     if ({CallState.kConnected, CallState.kEnded}.contains(state)) {
@@ -253,14 +291,15 @@ class MyCallingPage extends State<Calling> {
           androidNotificationOptions: AndroidNotificationOptions(
             channelId: 'notification_channel_id',
             channelName: 'Foreground Notification',
-            channelDescription: L10n.of(context)!.foregroundServiceRunning,
+            channelDescription:
+                L10n.of(widget.context)!.foregroundServiceRunning,
           ),
           iosNotificationOptions: const IOSNotificationOptions(),
           foregroundTaskOptions: const ForegroundTaskOptions(),
         );
         FlutterForegroundTask.startService(
-          notificationTitle: L10n.of(context)!.screenSharingTitle,
-          notificationText: L10n.of(context)!.screenSharingDetail,
+          notificationTitle: L10n.of(widget.context)!.screenSharingTitle,
+          notificationText: L10n.of(widget.context)!.screenSharingDetail,
         );
       } else {
         FlutterForegroundTask.stopService();
@@ -284,11 +323,11 @@ class MyCallingPage extends State<Calling> {
     });
   }
 
-  /*
   void _switchCamera() async {
     if (call.localUserMediaStream != null) {
-      // await Helper.switchCamera(
-        call.localUserMediaStream!.stream!.getVideoTracks()[0],);
+      await Helper.switchCamera(
+        call.localUserMediaStream!.stream!.getVideoTracks()[0],
+      );
       if (PlatformInfos.isMobile) {
         call.facingMode == 'user'
             ? call.facingMode = 'environment'
@@ -297,7 +336,6 @@ class MyCallingPage extends State<Calling> {
     }
     setState(() {});
   }
-  */
 
   /*
   void _switchSpeaker() {
@@ -324,7 +362,7 @@ class MyCallingPage extends State<Calling> {
       child: Icon(_speakerOn ? Icons.volume_up : Icons.volume_off),
       onPressed: _switchSpeaker,
       foregroundColor: Colors.black54,
-      backgroundColor: Theme.of(context).backgroundColor,
+      backgroundColor: Theme.of(widget.context).backgroundColor,
     );
     */
     final hangupButton = FloatingActionButton(
@@ -426,7 +464,7 @@ class MyCallingPage extends State<Calling> {
       var title = '';
       if (call.localHold) {
         title = '${call.room.getLocalizedDisplayname(
-          MatrixLocals(L10n.of(context)!),
+          MatrixLocals(L10n.of(widget.context)!),
         )} held the call.';
       } else if (call.remoteOnHold) {
         title = 'You held the call.';
@@ -480,7 +518,7 @@ class MyCallingPage extends State<Calling> {
       return stackWidgets;
     }
 
-    // _resizeLocalVideo(orientation);
+    _resizeLocalVideo(orientation);
 
     if (call.getRemoteStreams.isEmpty) {
       return stackWidgets;

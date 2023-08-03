@@ -1086,14 +1086,6 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"inviteText": "{усернаме} вас позива на РЕЦхаин.Онлине. \n1. Инсталирајте РЕЦхаин.Онлине: хттпс://рецхаин.онлине \n2. Региструјте се или се пријавите \n3. Отворите везу са позивницом: {линк}",
-	"@inviteText": {
-		"type": "text",
-		"placeholders": {
-			"username": {},
-			"link": {}
-		}
-	},
 	"isDeviceKeyCorrect": "Да ли је кључ уређаја исправан?",
 	"@isDeviceKeyCorrect": {
 		"type": "text",

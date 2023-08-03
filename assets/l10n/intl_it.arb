@@ -1181,13 +1181,6 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"moreEvents": "{count,plural =1{1 altro evento} other{{count} altri eventi}}",
-	"@moreEvents": {
-		"type": "text",
-		"placeholders": {
-			"count": {}
-		}
-	},
 	"muteChat": "Silenzia discussione",
 	"@muteChat": {
 		"type": "text",

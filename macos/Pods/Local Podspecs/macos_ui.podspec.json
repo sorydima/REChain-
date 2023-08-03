@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "summary": "Native functionality for the macos_ui Flutter package.",
   "description": "A new flutter plugin project.",
-  "homepage": "https://github.com/GroovinChip/macos_ui",
+  "homepage": "https://github.com/macosui/macos_ui",
   "license": {
     "file": "../LICENSE"
   },

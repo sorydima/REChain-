@@ -705,14 +705,6 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"inviteText": "{усернаме} вас је позвао на РЕЦхаин.Онлине. \n1. Инсталирајте РЕЦхаин.Онлине: хттпс://рецхаин.онлине \n2. Региструјте се на Платформи или се пријавите на њу! \n3. Отворите одговор на позивницу: {линк}",
-	"@inviteText": {
-		"type": "text",
-		"placeholders": {
-			"username": {},
-			"link": {}
-		}
-	},
 	"isDeviceKeyCorrect": "Je nasledujúci kód zariadenia správny?",
 	"@isDeviceKeyCorrect": {
 		"type": "text",

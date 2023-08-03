@@ -2,7 +2,7 @@
   "name": "dynamic_color",
   "authors": "Material Flutter team + Ebrahim Byagowi",
   "license": "BSD-3-Clause",
-  "homepage": "https://github.com/material-foundation/material-dynamic-color-flutter",
+  "homepage": "https://github.com/material-foundation/flutter-packages/tree/main/packages/dynamic_color",
   "summary": "Retrieves accent color",
   "version": "0.0.2",
   "source": {

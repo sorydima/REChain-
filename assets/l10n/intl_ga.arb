@@ -1530,14 +1530,6 @@
 	"@typeInInviteLinkManually": {},
 	"createNewChatExplaination": "Ní gá duit ach an cód QR a scanadh nó do nasc cuiridh a roinnt mura bhfuil sibh in aice lena chéile.",
 	"@createNewChatExplaination": {},
-	"inviteText": "Thug {Ainm úsáideora} cuireadh duit chuig Ardán REChain.Online! \n1. Suiteáil REChain.Online: https://rechain.online \n2. Cláraigh nó sínigh isteach! \n3. Oscail an nasc cuireadh: {link}",
-	"@inviteText": {
-		"type": "text",
-		"placeholders": {
-			"username": {},
-			"link": {}
-		}
-	},
 	"shareYourInviteLink": "Roinn do nasc cuiridh",
 	"@shareYourInviteLink": {},
 	"norechainonlineServer": "Ní freastalaí Líonra nód Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node é {Server1}. Úsáid {server2} ina ionad?",

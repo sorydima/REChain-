@@ -2341,14 +2341,6 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"userSentUnknownEvent": "{username} enviou un evento {type]",
-	"@userSentUnknownEvent": {
-		"type": "text",
-		"placeholders": {
-			"username": {},
-			"type": {}
-		}
-	},
 	"userUnknownVerification": "A usuaria ten un estado de verificación descoñecido",
 	"@userUnknownVerification": {
 		"type": "text",

@@ -1,0 +1,6 @@
+framework module flutter_web_auth_2 {
+  umbrella header "flutter_web_auth_2-umbrella.h"
+
+  export *
+  module * { export * }
+}

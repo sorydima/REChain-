@@ -1,0 +1,32 @@
+{
+  "name": "macos_window_utils",
+  "version": "1.0.0",
+  "summary": "Flutter library for window modifications on macOS.",
+  "description": "macos_window_utils is a Flutter package that provides a set of methods for\nmodifying the NSWindow of a Flutter application on macOS. With this package,\nyou can easily customize the appearance and behavior of your app's window,\nincluding the title bar, transparency effects, shadow, and more.",
+  "homepage": "https://github.com/Adrian-Samoticha/macos_window_utils.dart",
+  "license": {
+    "file": "../LICENSE",
+    "type": "MIT"
+  },
+  "authors": {
+    "Adrian Samoticha": "adrian@samoticha.de"
+  },
+  "source": {
+    "git": "https://github.com/Adrian-Samoticha/macos_window_utils.dart.git",
+    "tag": "1.0.0"
+  },
+  "source_files": "Classes/**/*",
+  "dependencies": {
+    "FlutterMacOS": [
+
+    ]
+  },
+  "platforms": {
+    "osx": "10.14.6"
+  },
+  "pod_target_xcconfig": {
+    "DEFINES_MODULE": "YES"
+  },
+  "swift_versions": "5.0",
+  "swift_version": "5.0"
+}

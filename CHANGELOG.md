@@ -10,7 +10,7 @@ Making the world a better place since 2017 ✅😼
 
 CHANGELOG:
 
-## v3.3.0
+## v3.3.0+1122(1124 Desktop)
 - Added translation using Weblate;
 - Translated using Weblate (Arabic);
 - Translated using Weblate (Chinese (Simplified));

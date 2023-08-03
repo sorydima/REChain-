@@ -129,7 +129,7 @@ class LoginController extends State<Login> {
             context: context,
             useRootNavigator: false,
             message:
-                L10n.of(context)!.norechainonlineServer(newDomain, oldHomeserver!),
+                L10n.of(context)!.norechainonlineServer(newDomain, oldHomeserver!, newDomain, oldHomeserver!, newDomain),
             okLabel: L10n.of(context)!.ok,
             cancelLabel: L10n.of(context)!.cancel,
           );

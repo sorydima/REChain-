@@ -18,24 +18,29 @@
 #import <Foundation/Foundation.h>
 
 #import <WebRTC/RTCMacros.h>
-#import <WebRTC/RTCAudioDevice.h>
+#import <WebRTC/RTCIODevice.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void (^RTCOnAudioDevicesDidUpdate)(void);
+typedef void (^RTCOnAudioDevicesDidUpdate)();
 
 RTC_OBJC_EXPORT
 @interface RTC_OBJC_TYPE (RTCAudioDeviceModule) : NSObject
 
-@property(nonatomic, readonly) NSArray<RTC_OBJC_TYPE(RTCAudioDevice) *> *outputDevices;
-@property(nonatomic, readonly) NSArray<RTC_OBJC_TYPE(RTCAudioDevice) *> *inputDevices;
+@property(nonatomic, readonly) NSArray<RTC_OBJC_TYPE(RTCIODevice) *> *outputDevices;
+@property(nonatomic, readonly) NSArray<RTC_OBJC_TYPE(RTCIODevice) *> *inputDevices;
 
 @property(nonatomic, readonly) BOOL playing;
 @property(nonatomic, readonly) BOOL recording;
 
+@property(nonatomic, assign) RTC_OBJC_TYPE(RTCIODevice) *outputDevice;
+@property(nonatomic, assign) RTC_OBJC_TYPE(RTCIODevice) *inputDevice;
+
 // Executes low-level API's in sequence to switch the device
-- (BOOL)setOutputDevice: (nullable RTCAudioDevice *)device;
-- (BOOL)setInputDevice: (nullable RTCAudioDevice *)device;
+// Use outputDevice / inputDevice property unless you need to know if setting the device is
+// successful.
+- (BOOL)trySetOutputDevice:(nullable RTCIODevice *)device;
+- (BOOL)trySetInputDevice:(nullable RTCIODevice *)device;
 
 - (BOOL)setDevicesUpdatedHandler: (nullable RTCOnAudioDevicesDidUpdate) handler;
 

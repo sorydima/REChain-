@@ -1017,14 +1017,6 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"inviteText": "{username}があなたをREChain.Onlineプラットフォームに招待しました！ \n1。 REChain.Onlineをインストールしてください：https：//rechain.online \n2。新しいアカウントを作成するか、サインインしてください。 \n3。招待リンクを開きます：{リンク}",
-	"@inviteText": {
-		"type": "text",
-		"placeholders": {
-			"username": {},
-			"link": {}
-		}
-	},
 	"isDeviceKeyCorrect": "このデバイスキーは正しいですか？",
 	"@isDeviceKeyCorrect": {
 		"type": "text",
