@@ -63,13 +63,13 @@ IDI_APP_ICON            ICON                    "resources\\app_icon.ico"
 #ifdef FLUTTER_BUILD_NUMBER
 #define VERSION_AS_NUMBER FLUTTER_BUILD_NUMBER
 #else
-#define VERSION_AS_NUMBER 3,0,0
+#define VERSION_AS_NUMBER 3,3,0
 #endif
 
 #ifdef FLUTTER_BUILD_NAME
 #define VERSION_AS_STRING #FLUTTER_BUILD_NAME
 #else
-#define VERSION_AS_STRING "3.0.0"
+#define VERSION_AS_STRING "3.3.0"
 #endif
 
 VS_VERSION_INFO VERSIONINFO
@@ -93,7 +93,7 @@ BEGIN
             VALUE "FileDescription", "REChain.Online! - PRIVATE & SECURE FUTURE!" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "REChain 🪐" "\0"
-            VALUE "LegalCopyright", "Need help? 🤔 Email us! 👇 A Dmitry Sorokin production. All rights reserved. Powered by REChain. 🪐 Copyright © 2019-2023 REChain, Inc REChain ® is a registered trademark pr@rechain.email support@rechain.email Please allow anywhere from 1 to 5 business days for E-mail responses! 💌" "\0"
+            VALUE "LegalCopyright", "Need help? 🤔 Email us! 👇 A Dmitry Sorokin production. All rights reserved. Powered by REChain. 🪐 Copyright © 2019-2023 REChain, Inc REChain ® is a registered trademark hr@rechain.email p2p@rechain.email pr@rechain.email sorydima@rechain.email support@rechain.email Please allow anywhere from 1 to 5 business days for E-mail responses! 💌" "\0"
             VALUE "OriginalFilename", "REChain 🪐.exe" "\0"
             VALUE "ProductName", "REChain 🪐" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
