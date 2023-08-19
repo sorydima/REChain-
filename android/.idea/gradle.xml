@@ -25,14 +25,14 @@
             <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_foreground_task-3.10.0/android" />
             <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_keyboard_visibility-5.4.1/android" />
             <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_local_notifications-12.0.4/android" />
-            <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_native_splash-2.3.1/android" />
+            <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_native_splash-2.3.2/android" />
             <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_olm-1.2.0/android" />
             <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_openssl_crypto-0.1.0/android" />
             <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.15/android" />
             <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_ringtone_player-3.2.0/android" />
             <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_secure_storage-7.0.1/android" />
             <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_web_auth_2-2.1.5/android" />
-            <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_webrtc-0.9.36/android" />
+            <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_webrtc-0.9.40/android" />
             <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/image_picker_android-0.8.7+4/android" />
             <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/just_audio-0.9.34/android" />
             <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/move_to_background-1.0.2/android" />
@@ -48,14 +48,14 @@
             <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/sqflite-2.3.0/android" />
             <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/uni_links-0.5.1/android" />
             <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/unifiedpush_android-1.1.2/android" />
-            <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/url_launcher_android-6.0.37/android" />
+            <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/url_launcher_android-6.0.38/android" />
             <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/vibration-1.7.7/android" />
             <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/video_compress-3.1.2/android" />
             <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/video_player_android-2.4.9/android" />
             <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/wakelock-0.6.2/android" />
-            <option value="$USER_HOME$/flutter/packages/integration_test/android" />
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$USER_HOME$/flutter/packages/integration_test/android" />
           </set>
         </option>
       </GradleProjectSettings>
