@@ -10,7 +10,7 @@
 
 ![Screenshot](https://rechain.online/assets/images/banner.png)
 
-# Features
+# Features:
 
 - 📩 Send all kinds of messages, images and files!
 - 🎙️ Voice messages!
@@ -32,18 +32,43 @@
 
 ... and much more.
 
+# Installation:
 
-# Installation
-
-Please, visit the website for the installation instructions:
+Please, visit the website for the installation instructions 🪐:
 
 - https://rechain.online
 
+# Donate US! ⌛️ 
 
-# Special thanks
+### For tea, coffee! For the future of decentralized and distributed internet. We do cool and, in my opinion, useful things for the safety and security of users' personal data. And on a completely non-commercial basis! 😎
 
-* <a href="https://github.com/googlefonts/noto-emoji/">Noto Emoji Font</a> for the awesome emojis.
+## Tether - (TRC20) - Tron 🍕: TRZ7jyMBNtRtqokkkJ7g5BJDzFycDv8cBm
 
-* <a href="https://github.com/madsrh/WoodenBeaver">WoodenBeaver</a> sound theme for the notification sound.
+![QR for Donation!](https://rechain.online/ru/QR.jpg)
 
-* The Matrix Foundation for making and maintaining the [emoji translations](https://github.com/matrix-org/matrix-doc/blob/main/data-definitions/sas-emoji.json) used for emoji verification, licensed Apache 2.0.
+# Special thanks!
+
+* <a href="https://github.com/googlefonts/noto-emoji/">Noto Emoji Font</a> for the awesome emojis!
+
+* <a href="https://github.com/madsrh/WoodenBeaver">WoodenBeaver</a> sound theme for the notification sound!
+
+* The Matrix Foundation for making and maintaining the [Emoji Translations](https://github.com/matrix-org/matrix-doc/blob/main/data-definitions/sas-emoji.json) used for Emoji verification, licensed Apache 2.0!
+
+# HowTO - Building!
+
+Please, send US an E-Mail to support@rechain.email for the build instructions! 👻
+
+Need help? 🤔
+Email us! 👇
+A Dmitry Sorokin production. All rights reserved.
+Powered by REChain. 🪐
+Copyright © 2019-2023 REChain, Inc
+REChain ® is a registered trademark
+hr@rechain.email
+p2p@rechain.email
+pr@rechain.email
+sorydima@rechain.email
+support@rechain.email
+sip@rechain.email
+music@rechain.email
+Please allow anywhere from 1 to 5 business days for E-mail responses! 💌
