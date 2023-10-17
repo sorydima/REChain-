@@ -42,6 +42,8 @@ https://rechain.online
 
 - TRZ7jyMBNtRtqokkkJ7g5BJDzFycDv8cBm
 
+![Donate](https://rechain.online/QR.jpg)
+
 # Special thanks
 
 * <a href="https://github.com/googlefonts/noto-emoji/">Noto Emoji Font</a> for the awesome emojis.
