@@ -1,69 +1,49 @@
-![Screenshot](https://github.com/krille-chan/fluffychat/blob/main/assets/banner_transparent.png?raw=true)
+![Screenshot](https://rechain.online/assets/images/REChain.png)
 
-[FluffyChat](https://fluffychat.im) is an open source, nonprofit and cute [[matrix](https://matrix.org)] client written in [Flutter](https://flutter.dev). The goal of the app is to create an easy to use instant messenger which is open source and accessible for everyone.
+[REChain ®️ 🪐](https://rechain.online/) is an primarily designed as a security and privacy analysis analogue fully focused on the use of platform moments and messages for communication, built on a source code library, including those developed by us, for those who respect freedom and privacy, as well as the safety and security of personal data. 🌤 Our task was to make a tool pleasant and enjoyable to use, with which each of you can communicate, expand content, create workspaces, organize a workflow. 🌈 We strive to show all the world's giants that it is possible to create cool products that are of great importance for society, for people to interact with each other, without selling advertising, personal data of users, their rights and freedoms! 🦄 It's written in [Flutter](https://flutter.dev). Our mission is to create an easy to use instant messenger which is open source and accessible for everyone.
 
 ### Links:
 
-- 🌐 [[Weblate] Translate FluffyChat into your language](https://hosted.weblate.org/projects/fluffychat/)
-- 🌍 [[m] Join the community](https://matrix.to/#/#fluffychat:matrix.org)
-- 📰 [[Mastodon] Get updates on social media](https://mastodon.art/@krille)
-- 🖥️ [[Famedly] Server hosting and professional support](https://famedly.com/kontakt)
-- 💝 [[Liberapay] Support FluffyChat development](https://de.liberapay.com/KrilleChritzelius)
+- 🌍 [[Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network] Join the community!](https://matrix.to/#/#chatting:matrix.katya.wtf)
 
-<a href='https://ko-fi.com/C1C86VN53' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi5.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+### Our Goal:
 
-### Screenshots:
-
-![Screenshot](https://github.com/krille-chan/fluffychat/blob/main/docs/screenshots/product.jpeg?raw=true)
+![Screenshot](https://rechain.online/assets/images/banner.png)
 
 # Features
 
-- 📩 Send all kinds of messages, images and files
-- 🎙️ Voice messages
-- 📍 Location sharing
-- 🔔 Push notifications
-- 💬 Unlimited private and public group chats
-- 📣 Public channels with thousands of participants
-- 🛠️ Feature rich group moderation including all matrix features
-- 🔍 Discover and join public groups
-- 🌙 Dark mode
-- 🎨 Material You design
-- 📟 Hides complexity of Matrix IDs behind simple QR codes
-- 😄 Custom emotes and stickers
-- 🌌 Spaces
-- 🔄 Compatible with Element, Nheko, NeoChat and all other Matrix apps
-- 🔐 End to end encryption
-- 🔒 Encrypted chat backup
-- 😀 Emoji verification & cross signing
+- 📩 Send all kinds of messages, images and files!
+- 🎙️ Voice messages!
+- 📍 Location sharing!
+- 🔔 Push notifications!
+- 💬 Unlimited private and public group chats!
+- 📣 Public channels with thousands of participants!
+- 🛠️ Feature rich group moderation including all Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network features!
+- 🔍 Discover and join public groups!
+- 🌙 Dark mode!
+- 🎨 "Material You" design!
+- 📟 Hides complexity of the Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network IDs behind simple QR codes!
+- 😄 Custom emotes and stickers!
+- 🌌 Spaces!
+- 🔄 Compatible with Element, Nheko, NeoChat and all other Matrix apps!
+- 🔐 End-to-end encryption!
+- 🔒 Encrypted chat backup!
+- 😀 Emoji verification & cross signing!
 
 ... and much more.
 
 
 # Installation
 
-Please visit the website for installation instructions:
+Please, visit the website for the installation instructions:
 
-- https://fluffychat.im
-
-# How to build
-
-Please visit the [Wiki](https://github.com/krille-chan/fluffychat/wiki) for build instructions:
-
-- https://github.com/krille-chan/fluffychat/wiki/How-To-Build
+- https://rechain.online
 
 
 # Special thanks
-
-* <a href="https://github.com/fabiyamada">Fabiyamada</a> is a graphics designer from Brasil and has made the fluffychat logo and the banner. Big thanks for her great designs.
-
-* <a href="https://github.com/advocatux">Advocatux</a> has made the Spanish translation with great love and care. He always stands by my side and supports my work with great commitment.
-
-* Thanks to MTRNord and Sorunome for developing.
-
-* Also thanks to all translators and testers! With your help, fluffychat is now available in more than 12 languages.
 
 * <a href="https://github.com/googlefonts/noto-emoji/">Noto Emoji Font</a> for the awesome emojis.
 
 * <a href="https://github.com/madsrh/WoodenBeaver">WoodenBeaver</a> sound theme for the notification sound.
 
-* The Matrix Foundation for making and maintaining the [emoji translations](https://github.com/matrix-org/matrix-doc/blob/main/data-definitions/sas-emoji.json) used for emoji verification, licensed Apache 2.0
+* The Matrix Foundation for making and maintaining the [emoji translations](https://github.com/matrix-org/matrix-doc/blob/main/data-definitions/sas-emoji.json) used for emoji verification, licensed Apache 2.0.
