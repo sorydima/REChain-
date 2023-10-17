@@ -9,6 +9,7 @@ import 'package:matrix/matrix.dart';
 
 import 'package:rechainonline/pages/device_settings/device_settings_view.dart';
 import 'package:rechainonline/pages/key_verification/key_verification_dialog.dart';
+import 'package:rechainonline/utils/localized_exception_extension.dart';
 import '../../widgets/matrix.dart';
 
 class DevicesSettings extends StatefulWidget {
@@ -33,7 +34,6 @@ class DevicesSettingsController extends State<DevicesSettings> {
 
   void removeDevicesAction(List<Device> devices) async {
     if (await showOkCancelAlertDialog(
-          useRootNavigator: false,
           context: context,
           title: L10n.of(context)!.areYouSure,
           okLabel: L10n.of(context)!.yes,
@@ -59,8 +59,8 @@ class DevicesSettingsController extends State<DevicesSettings> {
       );
       reload();
     } catch (e, s) {
-      Logs().v('Error while deleting devices', e, s);
-      setState(() => errorDeletingDevices = e.toString());
+      Logs().w('Error while deleting devices', e, s);
+      setState(() => errorDeletingDevices = e.toLocalizedString(context));
     } finally {
       setState(() => loadingDeletingDevices = false);
     }
@@ -68,7 +68,6 @@ class DevicesSettingsController extends State<DevicesSettings> {
 
   void renameDeviceAction(Device device) async {
     final displayName = await showTextInputDialog(
-      useRootNavigator: false,
       context: context,
       title: L10n.of(context)!.changeDeviceName,
       okLabel: L10n.of(context)!.ok,
@@ -76,7 +75,7 @@ class DevicesSettingsController extends State<DevicesSettings> {
       textFields: [
         DialogTextField(
           hintText: device.displayName,
-        )
+        ),
       ],
     );
     if (displayName == null) return;

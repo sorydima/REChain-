@@ -10,7 +10,7 @@ import 'package:flutter_webrtc/flutter_webrtc.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:matrix/matrix.dart';
 import 'package:vibration/vibration.dart';
-import 'package:wakelock/wakelock.dart';
+import 'package:wakelock_plus/wakelock_plus.dart';
 
 import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
@@ -90,7 +90,7 @@ class _StreamView extends StatelessWidget {
                 color: Colors.white,
                 size: 18.0,
               ),
-            )
+            ),
         ],
       ),
     );
@@ -205,7 +205,7 @@ class MyCallingPage extends State<Calling> {
     if (call.type == CallType.kVideo) {
       try {
         // Enable wakelock (keep screen on)
-        unawaited(Wakelock.enable());
+        unawaited(WakelockPlus.enable());
       } catch (_) {}
     }
   }
@@ -217,7 +217,7 @@ class MyCallingPage extends State<Calling> {
     );
     if (call.type == CallType.kVideo) {
       try {
-        unawaited(Wakelock.disable());
+        unawaited(WakelockPlus.disable());
       } catch (_) {}
     }
   }
@@ -485,7 +485,7 @@ class MyCallingPage extends State<Calling> {
                   color: Colors.white,
                   fontSize: 24.0,
                 ),
-              )
+              ),
             ],
           ),
         ),
@@ -621,7 +621,7 @@ class MyCallingPage extends State<Calling> {
                             PIPView.of(context)?.setFloating(true);
                           },
                         ),
-                      )
+                      ),
                   ],
                 ),
               );

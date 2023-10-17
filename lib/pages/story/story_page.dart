@@ -7,17 +7,16 @@ import 'package:adaptive_dialog/adaptive_dialog.dart';
 import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:future_loading_dialog/future_loading_dialog.dart';
+import 'package:go_router/go_router.dart';
 import 'package:matrix/matrix.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:video_player/video_player.dart';
-import 'package:vrouter/vrouter.dart';
 
 import 'package:rechainonline/pages/story/story_view.dart';
 import 'package:rechainonline/utils/adaptive_bottom_sheet.dart';
 import 'package:rechainonline/utils/date_time_extension.dart';
 import 'package:rechainonline/utils/localized_exception_extension.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/client_stories_extension.dart';
-import 'package:rechainonline/utils/matrix_sdk_extensions/ios_badge_client_extension.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
 import 'package:rechainonline/utils/room_status_extension.dart';
 import 'package:rechainonline/utils/story_theme_data.dart';
@@ -121,7 +120,7 @@ class StoryPageController extends State<StoryPage> {
   void share() async {
     Matrix.of(context).shareContent = currentEvent?.content;
     hold();
-    VRouter.of(context).to('share');
+    context.go('share');
   }
 
   void displaySeenByUsers() async {
@@ -200,7 +199,7 @@ class StoryPageController extends State<StoryPage> {
     return room.ownPowerLevel >= 100;
   }
 
-  String get roomId => VRouter.of(context).pathParameters['roomid'] ?? '';
+  String get roomId => GoRouterState.of(context).pathParameters['roomid'] ?? '';
 
   Future<VideoPlayerController?>? loadVideoControllerFuture;
 
@@ -229,9 +228,9 @@ class StoryPageController extends State<StoryPage> {
   void skip() {
     if (index + 1 >= max) {
       if (isOwnStory) {
-        VRouter.of(context).to('/stories/create');
+        context.go('/rooms/stories/create');
       } else {
-        VRouter.of(context).to('/rooms');
+        context.go('/rooms');
       }
       return;
     }
@@ -474,8 +473,6 @@ class StoryPageController extends State<StoryPage> {
   void maybeSetReadMarker() {
     final currentEvent = this.currentEvent;
     if (currentEvent == null) return;
-    final room = currentEvent.room;
-    room.client.updateIosBadge();
     if (index == events.length - 1) {
       timeline!.setReadMarker();
       return;
@@ -500,7 +497,8 @@ class StoryPageController extends State<StoryPage> {
               currentEvent!.senderFromMemoryOrFallback.startDirectChat(),
         );
         if (roomIdResult.error != null) return;
-        VRouter.of(context).toSegments(['rooms', roomIdResult.result!]);
+        context.go('/rooms/${roomIdResult.result!}');
+
         break;
     }
   }

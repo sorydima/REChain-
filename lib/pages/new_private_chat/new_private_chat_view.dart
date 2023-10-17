@@ -3,8 +3,8 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_gen/gen_l10n/l10n.dart';
+import 'package:go_router/go_router.dart';
 import 'package:qr_flutter/qr_flutter.dart';
-import 'package:vrouter/vrouter.dart';
 
 import 'package:rechainonline/pages/new_private_chat/new_private_chat.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
@@ -24,28 +24,28 @@ class NewPrivateChatView extends StatelessWidget {
         min(MediaQuery.of(context).size.width - 16, 256).toDouble();
     return Scaffold(
       appBar: AppBar(
-        leading: const BackButton(),
+        leading: const Center(child: BackButton()),
         title: Text(L10n.of(context)!.newChat),
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         actions: [
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextButton(
-              onPressed: () => VRouter.of(context).to('/newgroup'),
+              onPressed: () => context.go('/rooms/newgroup'),
               child: Text(
-                L10n.of(context)!.createNewGroup,
+                L10n.of(context)!.createGroup,
                 style:
                     TextStyle(color: Theme.of(context).colorScheme.secondary),
               ),
             ),
-          )
+          ),
         ],
       ),
       body: Column(
         children: [
           Expanded(
             child: MaxWidthBody(
-              withScrolling: true,
+              withFrame: false,
               child: Container(
                 margin: const EdgeInsets.all(_qrCodePadding),
                 alignment: Alignment.center,
@@ -72,7 +72,7 @@ class NewPrivateChatView extends StatelessWidget {
                           foregroundColor: Colors.black,
                         ),
                         icon: Icon(Icons.adaptive.share_outlined),
-                        label: Text(L10n.of(context)!.shareYourInviteLink),
+                        label: Text(L10n.of(context)!.shareInviteLink),
                         onPressed: controller.inviteAction,
                       ),
                       const SizedBox(height: 8),
@@ -98,7 +98,6 @@ class NewPrivateChatView extends StatelessWidget {
             ),
           ),
           MaxWidthBody(
-            withScrolling: false,
             child: Padding(
               padding: const EdgeInsets.all(12.0),
               child: Form(

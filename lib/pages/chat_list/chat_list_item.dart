@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:adaptive_dialog/adaptive_dialog.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:future_loading_dialog/future_loading_dialog.dart';
+import 'package:go_router/go_router.dart';
 import 'package:matrix/matrix.dart';
-import 'package:vrouter/vrouter.dart';
 
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
@@ -37,6 +37,33 @@ class ChatListItem extends StatelessWidget {
     if (onTap != null) return onTap!();
     if (activeChat) return;
     if (room.membership == Membership.invite) {
+      final inviterId =
+          room.getState(EventTypes.RoomMember, room.client.userID!)?.senderId;
+      final profile = inviterId == null
+          ? null
+          : await showFutureLoadingDialog(
+              context: context,
+              future: () => room.client.getProfileFromUserId(inviterId),
+            );
+      final consent = await showOkCancelAlertDialog(
+        context: context,
+        title: L10n.of(context)!.inviteForMe,
+        message: L10n.of(context)!.youInvitedBy(
+          profile?.result?.displayName ??
+              profile?.result?.userId.localpart ??
+              L10n.of(context)!.user,
+        ),
+        okLabel: L10n.of(context)!.joinRoom,
+        cancelLabel: L10n.of(context)!.delete,
+        barrierDismissible: false,
+      );
+      if (consent == OkCancelResult.cancel) {
+        await showFutureLoadingDialog(
+          context: context,
+          future: room.leave,
+        );
+        return;
+      }
       final joinResult = await showFutureLoadingDialog(
         context: context,
         future: () async {
@@ -61,7 +88,7 @@ class ChatListItem extends StatelessWidget {
     }
 
     if (room.membership == Membership.leave) {
-      VRouter.of(context).toSegments(['archive', room.id]);
+      context.go('/rooms/archive/${room.id}');
     }
 
     if (room.membership == Membership.join) {
@@ -86,7 +113,7 @@ class ChatListItem extends StatelessWidget {
         Matrix.of(context).shareContent = null;
       }
 
-      VRouter.of(context).toSegments(['rooms', room.id]);
+      context.go('/rooms/${room.id}');
     }
   }
 
@@ -119,14 +146,15 @@ class ChatListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final isMuted = room.pushRuleState != PushRuleState.notify;
     final typingText = room.getLocalizedTypingText(context);
-    final ownMessage =
-        room.lastEvent?.senderId == Matrix.of(context).client.userID;
+    final lastEvent = room.lastEvent;
+    final ownMessage = lastEvent?.senderId == Matrix.of(context).client.userID;
     final unread = room.isUnread || room.membership == Membership.invite;
     final unreadBubbleSize = unread || room.hasNewMessages
         ? room.notificationCount > 0
             ? 20.0
             : 14.0
         : 0.0;
+    final hasNotifications = room.notificationCount > 0;
     final displayname = room.getLocalizedDisplayname(
       MatrixLocals(L10n.of(context)!),
     );
@@ -170,9 +198,9 @@ class ChatListItem extends StatelessWidget {
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   softWrap: false,
-                  style: TextStyle(
-                    fontWeight: unread ? FontWeight.bold : null,
-                  ),
+                  style: unread
+                      ? const TextStyle(fontWeight: FontWeight.bold)
+                      : null,
                 ),
               ),
               if (isMuted)
@@ -183,10 +211,10 @@ class ChatListItem extends StatelessWidget {
                     size: 16,
                   ),
                 ),
-              if (room.isFavourite)
+              if (room.isFavourite || room.membership == Membership.invite)
                 Padding(
                   padding: EdgeInsets.only(
-                    right: room.notificationCount > 0 ? 4.0 : 0.0,
+                    right: hasNotifications ? 4.0 : 0.0,
                   ),
                   child: Icon(
                     Icons.push_pin,
@@ -194,18 +222,19 @@ class ChatListItem extends StatelessWidget {
                     color: Theme.of(context).colorScheme.primary,
                   ),
                 ),
-              Padding(
-                padding: const EdgeInsets.only(left: 4.0),
-                child: Text(
-                  room.timeCreated.localizedTimeShort(context),
-                  style: TextStyle(
-                    fontSize: 13,
-                    color: unread
-                        ? Theme.of(context).colorScheme.secondary
-                        : Theme.of(context).textTheme.bodyMedium!.color,
+              if (lastEvent != null && room.membership != Membership.invite)
+                Padding(
+                  padding: const EdgeInsets.only(left: 4.0),
+                  child: Text(
+                    lastEvent.originServerTs.localizedTimeShort(context),
+                    style: TextStyle(
+                      fontSize: 13,
+                      color: unread
+                          ? Theme.of(context).colorScheme.secondary
+                          : Theme.of(context).textTheme.bodyMedium!.color,
+                    ),
                   ),
                 ),
-              ),
             ],
           ),
           subtitle: Row(
@@ -259,7 +288,9 @@ class ChatListItem extends StatelessWidget {
                         builder: (context, snapshot) {
                           return Text(
                             room.membership == Membership.invite
-                                ? L10n.of(context)!.youAreInvitedToThisChat
+                                ? room.isDirectChat
+                                    ? L10n.of(context)!.invitePrivateChat
+                                    : L10n.of(context)!.inviteGroupChat
                                 : snapshot.data ??
                                     room.lastEvent?.calcLocalizedBodyFallback(
                                       MatrixLocals(L10n.of(context)!),
@@ -295,9 +326,7 @@ class ChatListItem extends StatelessWidget {
                 curve: rechainonlineThemes.animationCurve,
                 padding: const EdgeInsets.symmetric(horizontal: 7),
                 height: unreadBubbleSize,
-                width: room.notificationCount == 0 &&
-                        !unread &&
-                        !room.hasNewMessages
+                width: !hasNotifications && !unread && !room.hasNewMessages
                     ? 0
                     : (unreadBubbleSize - 9) *
                             room.notificationCount.toString().length +
@@ -306,19 +335,19 @@ class ChatListItem extends StatelessWidget {
                   color: room.highlightCount > 0 ||
                           room.membership == Membership.invite
                       ? Colors.red
-                      : room.notificationCount > 0 || room.markedUnread
+                      : hasNotifications || room.markedUnread
                           ? Theme.of(context).colorScheme.primary
                           : Theme.of(context).colorScheme.primaryContainer,
                   borderRadius: BorderRadius.circular(AppConfig.borderRadius),
                 ),
                 child: Center(
-                  child: room.notificationCount > 0
+                  child: hasNotifications
                       ? Text(
                           room.notificationCount.toString(),
                           style: TextStyle(
                             color: room.highlightCount > 0
                                 ? Colors.white
-                                : room.notificationCount > 0
+                                : hasNotifications
                                     ? Theme.of(context).colorScheme.onPrimary
                                     : Theme.of(context)
                                         .colorScheme

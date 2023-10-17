@@ -6,10 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:collection/collection.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:future_loading_dialog/future_loading_dialog.dart';
+import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:matrix/matrix.dart';
 import 'package:video_player/video_player.dart';
-import 'package:vrouter/vrouter.dart';
 
 import 'package:rechainonline/pages/add_story/add_story_view.dart';
 import 'package:rechainonline/pages/add_story/invite_story_page.dart';
@@ -17,6 +17,7 @@ import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_file_extension.
 import 'package:rechainonline/utils/resize_image.dart';
 import 'package:rechainonline/utils/story_theme_data.dart';
 import 'package:rechainonline/utils/string_color.dart';
+import 'package:rechainonline/widgets/app_lock.dart';
 import 'package:rechainonline/widgets/matrix.dart';
 import '../../utils/matrix_sdk_extensions/client_stories_extension.dart';
 
@@ -69,9 +70,11 @@ class AddStoryController extends State<AddStoryPage> {
   }
 
   void importMedia() async {
-    final picked = await FilePicker.platform.pickFiles(
-      type: FileType.image,
-      withData: true,
+    final picked = await AppLock.of(context).pauseWhile(
+      FilePicker.platform.pickFiles(
+        type: FileType.image,
+        withData: true,
+      ),
     );
     final file = picked?.files.firstOrNull;
     if (file == null) return;
@@ -207,7 +210,7 @@ class AddStoryController extends State<AddStoryPage> {
       },
     );
     if (postResult.error == null) {
-      VRouter.of(context).pop();
+      context.pop();
     }
   }
 

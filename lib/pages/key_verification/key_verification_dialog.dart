@@ -108,10 +108,10 @@ class KeyVerificationPageState extends State<KeyVerificationDialog> {
     var title = Text(L10n.of(context)!.verifyTitle);
     Widget body;
     final buttons = <Widget>[];
+
     switch (widget.request.state) {
       case KeyVerificationState.showQRSuccess:
       case KeyVerificationState.confirmQRScan:
-      case KeyVerificationState.askChoice:
         throw 'Not implemented';
       case KeyVerificationState.askSSSS:
         // prompt the user for their ssss passphrase / key
@@ -179,7 +179,7 @@ class KeyVerificationPageState extends State<KeyVerificationDialog> {
             const SizedBox(height: 16),
             Text(
               L10n.of(context)!.askVerificationRequest(displayName),
-            )
+            ),
           ],
         );
         buttons.add(
@@ -200,6 +200,7 @@ class KeyVerificationPageState extends State<KeyVerificationDialog> {
           ),
         );
         break;
+      case KeyVerificationState.askChoice:
       case KeyVerificationState.waitingAccept:
         body = Center(
           child: Column(
@@ -343,7 +344,7 @@ class KeyVerificationPageState extends State<KeyVerificationDialog> {
     }
     return Scaffold(
       appBar: AppBar(
-        leading: const CloseButton(),
+        leading: const Center(child: CloseButton()),
         title: title,
       ),
       body: ListView(

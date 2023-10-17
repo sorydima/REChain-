@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_gen/gen_l10n/l10n.dart';
-import 'package:vrouter/vrouter.dart';
+import 'package:go_router/go_router.dart';
 
 import 'package:rechainonline/pages/chat/chat.dart';
-import 'package:rechainonline/pages/user_bottom_sheet/user_bottom_sheet.dart';
-import 'package:rechainonline/utils/adaptive_bottom_sheet.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
 import 'package:rechainonline/widgets/avatar.dart';
 
@@ -19,25 +17,13 @@ class ChatAppBarTitle extends StatelessWidget {
     if (controller.selectedEvents.isNotEmpty) {
       return Text(controller.selectedEvents.length.toString());
     }
-    final directChatMatrixID = room.directChatMatrixID;
     return InkWell(
+      hoverColor: Colors.transparent,
       splashColor: Colors.transparent,
       highlightColor: Colors.transparent,
-      onTap: directChatMatrixID != null
-          ? () => showAdaptiveBottomSheet(
-                context: context,
-                builder: (c) => UserBottomSheet(
-                  user: room
-                      .unsafeGetUserFromMemoryOrFallback(directChatMatrixID),
-                  outerContext: context,
-                  onMention: () => controller.sendController.text +=
-                      '${room.unsafeGetUserFromMemoryOrFallback(directChatMatrixID).mention} ',
-                ),
-              )
-          : controller.isArchived
-              ? null
-              : () =>
-                  VRouter.of(context).toSegments(['rooms', room.id, 'details']),
+      onTap: controller.isArchived
+          ? null
+          : () => context.go('/rooms/${room.id}/details'),
       child: Row(
         children: [
           Hero(

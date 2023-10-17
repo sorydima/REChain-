@@ -50,7 +50,7 @@ pid_file: /data/homeserver.pid
 
 # The absolute URL to the web client which / will redirect to.
 #
-#web_client_location: https://rechain.online/web/
+#web_client_location: https://riot.example.com/
 
 # The public-facing base URL that clients use to access this Homeserver (not
 # including _matrix/...). This is the same URL a user might enter into the
@@ -1741,7 +1741,7 @@ saml2_config:
     #      text: "https://example.com/privacy-policy"
     #  keywords:
     #    - lang: en
-    #      text: ["Matrix", "REChain"]
+    #      text: ["Matrix", "Element"]
     #  logo:
     #    - lang: en
     #      text: "https://example.com/logo.svg"
@@ -2087,7 +2087,7 @@ sso:
     # By default, this list contains only the login fallback page.
     #
     #client_whitelist:
-    #  - https://rechain.online/web/
+    #  - https://riot.im/develop
     #  - https://my.custom.client/
 
     # Uncomment to keep a user's profile fields in sync with information from
@@ -2300,7 +2300,10 @@ email:
   # Custom URL for client links within the email notifications. By default
   # links will be based on "https://matrix.to".
   #
-  #client_base_url: "http://localhost/web"
+  # (This setting used to be called riot_base_url; the old name is still
+  # supported for backwards-compatibility but is now deprecated.)
+  #
+  #client_base_url: "http://localhost/riot"
 
   # Configure the time that a validation email will expire after sending.
   # Defaults to 1h.
@@ -2311,7 +2314,7 @@ email:
   # to the identity server as the org.matrix.web_client_location key. Defaults
   # to unset, giving no guidance to the identity server.
   #
-  #invite_client_location: https://rechain.online/
+  #invite_client_location: https://app.element.io
 
   # Subjects to use when sending emails from Synapse.
   #

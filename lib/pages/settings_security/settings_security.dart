@@ -4,15 +4,13 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 
 import 'package:adaptive_dialog/adaptive_dialog.dart';
-import 'package:flutter_app_lock/flutter_app_lock.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:future_loading_dialog/future_loading_dialog.dart';
 import 'package:intl/intl.dart';
 import 'package:matrix/matrix.dart';
 
-import 'package:rechainonline/config/setting_keys.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_file_extension.dart';
+import 'package:rechainonline/widgets/app_lock.dart';
 import 'package:rechainonline/widgets/matrix.dart';
 import '../bootstrap/bootstrap_dialog.dart';
 import 'settings_security_view.dart';
@@ -62,10 +60,8 @@ class SettingsSecurityController extends State<SettingsSecurity> {
   }
 
   void setAppLockAction() async {
-    final currentLock =
-        await const FlutterSecureStorage().read(key: SettingKeys.appLockKey);
-    if (currentLock?.isNotEmpty ?? false) {
-      await AppLock.of(context)!.showLockScreen();
+    if (AppLock.of(context).isActive) {
+      AppLock.of(context).showLockScreen();
     }
     final newLock = await showTextInputDialog(
       useRootNavigator: false,
@@ -86,17 +82,12 @@ class SettingsSecurityController extends State<SettingsSecurity> {
           obscureText: true,
           maxLines: 1,
           minLines: 1,
-        )
+          maxLength: 4,
+        ),
       ],
     );
     if (newLock != null) {
-      await const FlutterSecureStorage()
-          .write(key: SettingKeys.appLockKey, value: newLock.single);
-      if (newLock.single.isEmpty) {
-        AppLock.of(context)!.disable();
-      } else {
-        AppLock.of(context)!.enable();
-      }
+      await AppLock.of(context).changePincode(newLock.single);
     }
   }
 
@@ -142,7 +133,7 @@ class SettingsSecurityController extends State<SettingsSecurity> {
           hintText: '******',
           minLines: 1,
           maxLines: 1,
-        )
+        ),
       ],
     );
     if (input == null) return;
@@ -188,7 +179,7 @@ class SettingsSecurityController extends State<SettingsSecurity> {
         );
 
         final exportFileName =
-            'rechainonline-export-${DateFormat(DateFormat.YEAR_MONTH_DAY).format(DateTime.now())}.rechainonlinebackup';
+            'rechainonline-export-${DateFormat(DateFormat.YEAR_MONTH_DAY).format(DateTime.now())}.rechainonline';
 
         return MatrixFile(bytes: exportBytes, name: exportFileName);
       },

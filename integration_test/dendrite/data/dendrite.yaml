@@ -7,22 +7,22 @@
 # The version of the configuration file.
 version: 2
 
-# Global REChain 🪐 configuration. This configuration applies to all components.
+# Global Matrix configuration. This configuration applies to all components.
 global:
   # The domain name of this homeserver.
   server_name: localhost
 
   # The path to the signing private key file, used to sign requests and events.
   # Note that this is NOT the same private key as used for TLS! To generate a
-  # signing key, use "./bin/generate-keys --private-key rechain_key.pem".
-  private_key: rechain_key.pem
+  # signing key, use "./bin/generate-keys --private-key matrix_key.pem".
+  private_key: matrix_key.pem
 
   # The paths and expiry timestamps (as a UNIX timestamp in millisecond precision)
   # to old signing private keys that were formerly in use on this domain. These
   # keys will not be used for federation request or event signing, but will be
   # provided to any other homeserver that asks when trying to verify old events.
   old_private_keys:
-  #  - private_key: old_rechain_key.pem
+  #  - private_key: old_matrix_key.pem
   #    expired_at: 1601024554498
 
   # How long a remote server can cache our server signing key before requesting it
@@ -68,10 +68,11 @@ global:
   # party identifiers such as phone numbers and email addresses.
   trusted_third_party_id_servers:
     - matrix.katya.wtf
+    - matrix.org
     - vector.im
 
   # Disables federation. Dendrite will not be able to communicate with other servers
-  # in the REChain federation and the federation API will not be exposed.
+  # in the Matrix federation and the federation API will not be exposed.
   disable_federation: false
 
   # Configures the handling of presence events. Inbound controls whether we receive
@@ -210,7 +211,7 @@ federation_api:
   # be required to satisfy key requests for servers that are no longer online when
   # joining some rooms.
   key_perspectives:
-    - server_name: matrix.katya.wtf
+    - server_name: matrix.org
       keys:
         - key_id: ed25519:auto
           public_key: Noi6WqcDj0QmPxCNQqgezwTlBKrfqehY1u2FyWP9uYw
@@ -258,8 +259,8 @@ mscs:
   database:
     connection_string: file:mscs.db
   mscs:
-  #  - msc2836  #
-  #  - msc2946  #
+  #  - msc2836  # (Threading, see https://github.com/matrix-org/matrix-doc/pull/2836)
+  #  - msc2946  # (Spaces Summary, see https://github.com/matrix-org/matrix-doc/pull/2946)
 
 # Configuration for the Sync API.
 sync_api:
@@ -291,7 +292,10 @@ user_api:
   # consume more CPU resources but makes it harder to brute force password hashes. This value
   # can be lowered if performing tests or on embedded Dendrite instances (e.g WASM builds).
   bcrypt_cost: 10
-  
+
+  # The length of time that a token issued for a relying party from
+  # /_matrix/client/r0/user/{userId}/openid/request_token endpoint
+  # is considered to be valid in milliseconds.
   # The default lifetime is 3600000ms (60 minutes).
   # openid_token_lifetime_ms: 3600000
 

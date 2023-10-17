@@ -3,9 +3,9 @@ import 'package:flutter/services.dart';
 
 import 'package:adaptive_dialog/adaptive_dialog.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
+import 'package:go_router/go_router.dart';
 import 'package:keyboard_shortcuts/keyboard_shortcuts.dart';
 import 'package:matrix/matrix.dart';
-import 'package:vrouter/vrouter.dart';
 
 import 'package:rechainonline/widgets/avatar.dart';
 import 'package:rechainonline/widgets/matrix.dart';
@@ -44,7 +44,7 @@ class ClientChooserButton extends StatelessWidget {
           children: [
             const Icon(Icons.group_add_outlined),
             const SizedBox(width: 18),
-            Text(L10n.of(context)!.createNewGroup),
+            Text(L10n.of(context)!.createGroup),
           ],
         ),
       ),
@@ -195,7 +195,7 @@ class ClientChooserButton extends StatelessWidget {
           KeyBoardShortcuts(
             keysToPress: {
               LogicalKeyboardKey.controlLeft,
-              LogicalKeyboardKey.tab
+              LogicalKeyboardKey.tab,
             },
             helpLabel: L10n.of(context)!.nextAccount,
             onKeysPressed: () => _nextAccount(matrix, context),
@@ -205,7 +205,7 @@ class ClientChooserButton extends StatelessWidget {
             keysToPress: {
               LogicalKeyboardKey.controlLeft,
               LogicalKeyboardKey.shiftLeft,
-              LogicalKeyboardKey.tab
+              LogicalKeyboardKey.tab,
             },
             helpLabel: L10n.of(context)!.previousAccount,
             onKeysPressed: () => _previousAccount(matrix, context),
@@ -221,7 +221,7 @@ class ClientChooserButton extends StatelessWidget {
                 mxContent: snapshot.data?.avatarUrl,
                 name: snapshot.data?.displayName ??
                     matrix.client.userID!.localpart,
-                size: 28,
+                size: 32,
                 fontSize: 12,
               ),
             ),
@@ -235,7 +235,7 @@ class ClientChooserButton extends StatelessWidget {
     if (index > 0 && index < 10) {
       return {
         LogicalKeyboardKey.altLeft,
-        LogicalKeyboardKey(0x00000000030 + index)
+        LogicalKeyboardKey(0x00000000030 + index),
       };
     } else {
       return null;
@@ -261,31 +261,25 @@ class ClientChooserButton extends StatelessWidget {
             cancelLabel: L10n.of(context)!.cancel,
           );
           if (consent != OkCancelResult.ok) return;
-          VRouter.of(context).to('/settings/addaccount');
+          context.go('/rooms/settings/addaccount');
           break;
         case SettingsAction.newStory:
-          VRouter.of(context).to('/stories/create');
+          context.go('/rooms/stories/create');
           break;
         case SettingsAction.newGroup:
-          VRouter.of(context).to('/newgroup');
+          context.go('/rooms/newgroup');
           break;
         case SettingsAction.newSpace:
-          VRouter.of(context).to('/newspace');
+          context.go('/rooms/newspace');
           break;
         case SettingsAction.invite:
-          rechainonlineShare.share(
-            L10n.of(context)!.inviteText(
-              Matrix.of(context).client.userID!,
-              'https://matrix.to/#/${Matrix.of(context).client.userID}?client=com.rechain',
-            ),
-            context,
-          );
+          rechainonlineShare.shareInviteLink(context);
           break;
         case SettingsAction.settings:
-          VRouter.of(context).to('/settings');
+          context.go('/rooms/settings');
           break;
         case SettingsAction.archive:
-          VRouter.of(context).to('/archive');
+          context.go('/rooms/archive');
           break;
       }
     }

@@ -403,31 +403,6 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
       onBlurSub = html.window.onBlur.listen((_) => webHasFocus = false);
     }
 
-    if (PlatformInfos.isMobile) {
-      backgroundPush = BackgroundPush(
-        client,
-        context,
-        widget.router,
-        onFcmError: (errorMsg, {Uri? link}) async {
-          final result = await showOkCancelAlertDialog(
-            barrierDismissible: true,
-            context: context,
-            title: L10n.of(context)!.oopsSomethingWentWrong,
-            message: errorMsg,
-            okLabel:
-                link == null ? L10n.of(context)!.ok : L10n.of(context)!.help,
-            cancelLabel: L10n.of(context)!.doNotShowAgain,
-          );
-          if (result == OkCancelResult.ok && link != null) {
-            launchUrlString(link.toString());
-          }
-          if (result == OkCancelResult.cancel) {
-            await store.setItemBool(SettingKeys.showNoGoogle, true);
-          }
-        },
-      );
-    }
-
     createVoipPlugin();
   }
 

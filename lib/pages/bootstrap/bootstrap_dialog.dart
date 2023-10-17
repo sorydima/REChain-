@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:adaptive_dialog/adaptive_dialog.dart';
@@ -8,11 +7,11 @@ import 'package:future_loading_dialog/future_loading_dialog.dart';
 import 'package:matrix/encryption.dart';
 import 'package:matrix/encryption/utils/bootstrap.dart';
 import 'package:matrix/matrix.dart';
-import 'package:share_plus/share_plus.dart';
 
 import 'package:rechainonline/config/themes.dart';
+import 'package:rechainonline/utils/rechainonline_share.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
-import 'package:rechainonline/widgets/adaptive_flat_button.dart';
+import '../../utils/adaptive_bottom_sheet.dart';
 import '../key_verification/key_verification_dialog.dart';
 
 class BootstrapDialog extends StatefulWidget {
@@ -24,19 +23,11 @@ class BootstrapDialog extends StatefulWidget {
     required this.client,
   }) : super(key: key);
 
-  Future<bool?> show(BuildContext context) => PlatformInfos.isCupertinoStyle
-      ? showCupertinoDialog(
-          context: context,
-          builder: (context) => this,
-          barrierDismissible: true,
-          useRootNavigator: false,
-        )
-      : showDialog(
-          context: context,
-          builder: (context) => this,
-          barrierDismissible: true,
-          useRootNavigator: false,
-        );
+  Future<bool?> show(BuildContext context) => showAdaptiveBottomSheet(
+        context: context,
+        builder: (context) => this,
+        maxHeight: 600,
+      );
 
   @override
   BootstrapDialogState createState() => BootstrapDialogState();
@@ -97,10 +88,8 @@ class BootstrapDialogState extends State<BootstrapDialog> {
   @override
   Widget build(BuildContext context) {
     _wipe ??= widget.wipe;
-    final buttons = <AdaptiveFlatButton>[];
-    Widget body = PlatformInfos.isCupertinoStyle
-        ? const CupertinoActivityIndicator()
-        : const LinearProgressIndicator();
+    final buttons = <Widget>[];
+    Widget body = const CircularProgressIndicator.adaptive();
     titleText = L10n.of(context)!.loadingPleaseWait;
 
     if (bootstrap.newSsssKey?.recoveryKey != null &&
@@ -170,12 +159,7 @@ class BootstrapDialogState extends State<BootstrapDialog> {
                   value: _recoveryKeyCopied,
                   activeColor: Theme.of(context).colorScheme.primary,
                   onChanged: (b) {
-                    final box = context.findRenderObject() as RenderBox;
-                    Share.share(
-                      key!,
-                      sharePositionOrigin:
-                          box.localToGlobal(Offset.zero) & box.size,
-                    );
+                    rechainonlineShare.share(key!, context);
                     setState(() => _recoveryKeyCopied = true);
                   },
                   title: Text(L10n.of(context)!.copyToClipboard),
@@ -302,18 +286,31 @@ class BootstrapDialogState extends State<BootstrapDialog> {
                                 _recoveryKeyInputLoading = true;
                               });
                               try {
-                                final key =
-                                    _recoveryKeyTextEditingController.text;
+                                final key = _recoveryKeyTextEditingController
+                                    .text
+                                    .trim();
                                 await bootstrap.newSsssKey!.unlock(
                                   keyOrPassphrase: key,
                                 );
-                                Logs().d('SSSS unlocked');
-                                await bootstrap.client.encryption!.crossSigning
-                                    .selfSign(
-                                  keyOrPassphrase: key,
-                                );
-                                Logs().d('Successful elfsigned');
                                 await bootstrap.openExistingSsss();
+                                Logs().d('SSSS unlocked');
+                                if (bootstrap.encryption.crossSigning.enabled) {
+                                  Logs().v(
+                                    'Cross signing is already enabled. Try to self-sign',
+                                  );
+                                  try {
+                                    await bootstrap
+                                        .client.encryption!.crossSigning
+                                        .selfSign(recoveryKey: key);
+                                    Logs().d('Successful selfsigned');
+                                  } catch (e, s) {
+                                    Logs().e(
+                                      'Unable to self sign with recovery key after successfully open existing SSSS',
+                                      e,
+                                      s,
+                                    );
+                                  }
+                                }
                               } catch (e, s) {
                                 Logs().w('Unable to unlock SSSS', e, s);
                                 setState(
@@ -380,7 +377,7 @@ class BootstrapDialogState extends State<BootstrapDialog> {
                                 setState(() => _createBootstrap(true));
                               }
                             },
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -413,12 +410,12 @@ class BootstrapDialogState extends State<BootstrapDialog> {
           break;
         case BootstrapState.error:
           titleText = L10n.of(context)!.oopsSomethingWentWrong;
-          body = const Icon(Icons.error_outline, color: Colors.red, size: 40);
+          body = const Icon(Icons.error_outline, color: Colors.red, size: 80);
           buttons.add(
-            AdaptiveFlatButton(
-              label: L10n.of(context)!.close,
+            OutlinedButton(
               onPressed: () =>
                   Navigator.of(context, rootNavigator: false).pop<bool>(false),
+              child: Text(L10n.of(context)!.close),
             ),
           );
           break;
@@ -432,28 +429,36 @@ class BootstrapDialogState extends State<BootstrapDialog> {
             ],
           );
           buttons.add(
-            AdaptiveFlatButton(
-              label: L10n.of(context)!.close,
+            OutlinedButton(
               onPressed: () =>
                   Navigator.of(context, rootNavigator: false).pop<bool>(false),
+              child: Text(L10n.of(context)!.close),
             ),
           );
           break;
       }
     }
 
-    final title = Text(titleText!);
-    if (PlatformInfos.isCupertinoStyle) {
-      return CupertinoAlertDialog(
-        title: title,
-        content: body,
-        actions: buttons,
-      );
-    }
-    return AlertDialog(
-      title: title,
-      content: body,
-      actions: buttons,
+    return Scaffold(
+      appBar: AppBar(
+        leading: Center(
+          child: CloseButton(
+            onPressed: () =>
+                Navigator.of(context, rootNavigator: false).pop<bool>(true),
+          ),
+        ),
+        title: Text(titleText ?? L10n.of(context)!.loadingPleaseWait),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            body,
+            const SizedBox(height: 8),
+            ...buttons,
+          ],
+        ),
+      ),
     );
   }
 }

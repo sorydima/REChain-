@@ -78,7 +78,7 @@ class ChatInputRow extends StatelessWidget {
               KeyBoardShortcuts(
                 keysToPress: {
                   LogicalKeyboardKey.altLeft,
-                  LogicalKeyboardKey.keyA
+                  LogicalKeyboardKey.keyA,
                 },
                 onKeysPressed: () =>
                     controller.onAddPopupMenuButtonSelected('file'),
@@ -184,7 +184,7 @@ class ChatInputRow extends StatelessWidget {
                 child: KeyBoardShortcuts(
                   keysToPress: {
                     LogicalKeyboardKey.altLeft,
-                    LogicalKeyboardKey.keyE
+                    LogicalKeyboardKey.keyE,
                   },
                   onKeysPressed: controller.emojiPickerAction,
                   helpLabel: L10n.of(context)!.emojis,
@@ -235,6 +235,7 @@ class ChatInputRow extends StatelessWidget {
                     textInputAction:
                         AppConfig.sendOnEnter ? TextInputAction.send : null,
                     onSubmitted: controller.onInputBarSubmitted,
+                    onSubmitImage: controller.sendImageFromClipBoard,
                     focusNode: controller.inputFocus,
                     controller: controller.sendController,
                     decoration: InputDecoration(

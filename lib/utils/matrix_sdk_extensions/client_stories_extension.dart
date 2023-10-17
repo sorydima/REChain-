@@ -51,7 +51,7 @@ extension ClientStoriesExtension on Client {
       powerLevelContentOverride: {"events_default": 100},
       name: 'Stories from ${userID!.localpart}',
       topic:
-          'This is a room for stories sharing, not unlike the similarly named features in other messaging networks. For the best experience, please, use REChain 🪐 or Katya ® 👽.',
+          'This is the Chatting Matrix Space Room for the stories sharing, not unlike the similarly named features in other messaging networks. For the best experience, please, use the REChain ®️ 🪐 or the minesTrix.',
       initialState: [
         StateEvent(
           type: EventTypes.Encryption,
@@ -72,11 +72,20 @@ extension ClientStoriesExtension on Client {
       invite: invite,
     );
     if (getRoomById(roomId) == null) {
-      // Wait for room actually appears in sync
-      await onSync.stream
-          .firstWhere((sync) => sync.rooms?.join?.containsKey(roomId) ?? false);
+      await onSync.stream.firstWhere(
+        (sync) =>
+            sync.rooms?.join?[roomId]?.state
+                ?.any((state) => state.type == EventTypes.Encrypted) ??
+            false,
+      );
     }
-    return getRoomById(roomId)!;
+    final room = getRoomById(roomId);
+    if (room == null || !room.encrypted) {
+      throw Exception(
+        'Unable to create and wait for encrypted room to appear in Sync.',
+      );
+    }
+    return room;
   }
 
   Future<Room?> getStoriesRoom(BuildContext context) async {

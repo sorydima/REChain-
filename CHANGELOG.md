@@ -1,4 +1,6 @@
-Most people know the REChain 🪐 Platform as a secure collaboration and messaging app. They know what it looks like on their phone or laptop, appreciate that it’s end-to-end encrypted, and make increasing use of features like threads, polls and location-sharing. 🥰 🌈 📡
+Most people know the REChain ®️ 🪐 Platform as a secure collaboration and messaging app. They know what it looks like on their phone or laptop, appreciate that it’s end-to-end encrypted, and make increasing use of features like threads, polls and location-sharing. 🥰 🌈 📡
+
+🦄
 
 Dream big! Stay safe! Stay true! Stay private! Stay tuned! 😎🌍
 
@@ -10,67 +12,52 @@ Making the world a better place since 2017 ✅😼
 
 CHANGELOG:
 
-## v3.3.1+1123 (+1124 Desktop)
-- Added translation using Weblate;
-- Translated using Weblate (Arabic);
-- Translated using Weblate (Chinese (Simplified));
-- Translated using Weblate (Croatian);
-- Translated using Weblate (Estonian);
-- Translated using Weblate (Galician);
-- Translated using Weblate (Indonesian);
-- Translated using Weblate (Polish);
-- Translated using Weblate (Romanian);
-- Translated using Weblate (Russian);
-- Translated using Weblate (Spanish);
-- Translated using Weblate (Ukrainian);
-- build: Remove dependency overwrite for FFI;
-- build: Update dependencies;
-- builds: Change minSDKversion of Android from 16 to 19;
-- builds: Do not allow failure for Linux x_86;
-- builds: Do not use verbose mode on building Linux;
-- builds: Linux with Flutter 3.3.10;
-- builds: Remove workaround for building Linux arm64;
-- builds: Update file_picker to 5.3.0;
-- builds: Update flutter_table_html;
-- builds: Update flutter_html;
-- chore: Add missing blockquote style;
-- chore: Allow failure in build Linux for now;
-- chore: Ask for storage persistence;
-- chore: Clean unused translations;
-- chore: Enhance room pills;
-- chore: Minor code clean up;
-- chore: Update flutter_web_rtc;
-- chore: Change release curl calls to use --fail-with-body;
-- chore: Update macOS icons and add build script;
-- design: Replace anime images with neutral cupertino icons;
-- feat: Add toggle to mute notifications from Chat Groups;
-- feat: Allow Ruby tags in html;
-- feat: Display progress value for initial sync;
-- feat: Implement new error reporting tool when critical features break, like playing audio or video messages or opening a chat;
-- feat: Clean up macOS build metadata;
-- feat: Set display information correctly;
-- feat: Update macOS build files;
-- feat: Update macOS build information for macOS Ventura;
-- fix "Unhandled Exception: VRouter.of(context) was called with a context which does not contain a VRouter.";
-- fix: Broken arb file;
-- fix: Do not unnecessary request all members in public rooms;
-- fix: Remove wrong rendered linebreak in html;
-- fix: Scroll down button;
-- fix: Scroll up and scroll down buttons in chat list;
-- fix: Scrolldown button;
-- fix: Too long file name cause a render overflow;
-- fix: Try to reload timeline on IOException;
-- fix: User pills;
-- fix: Broken CI artifact uploads;
-- fix: Custom emote placeholder;
-- fix: Path of libolm;
-- fix: Quick account switching;
-- fix: Read reciepts;
-- perf: Use valuenotifier to not rebuild chatlist;
-- refactor: Reimplement flutter_matrix_html locally;
-- refactor: Update Roboto and Noto_Emoji;
-- refactor: Use AnimatedSize for FAB;
-- refactor: Use DateTime for weekday localization.
+## v3.7.0 (1125)
+
+Release with a lot of bug fixes and refactorings under the hood. REChain ®️ 🪐 now uses go_router instead of vrouter, works with the newest Flutter SDK and supports "reason" field for the redactions. For the AOSP & Katya ® 👽 System there is a new "background-fetch mode" for the Push Notifications which should make the notifications in background faster and more reliable and reduce battery-usage.
+
+- feat: Background fetch mode on Android!
+- feat: Improved mouse support for selecting events!
+- feat: Write and display reason for redacting a message!
+- build: Add curl to build packages!
+- build: Re-add handywindow Linux code lines!
+- build: Update Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network, Matrix, Flutter, Dart & others SDKs!
+- build: Update targetSdkVersion to 33 (Android 13)!
+- build: Update to Flutter 3.13.7!
+- change: Remove widgets feature!
+- chore: Display username in userbottomsheet!
+- chore: Make appbar buttons correct size!
+- chore: Update file picker!
+- ci: Build snap on snapcraft again and only promote from CI!
+- ci: Test if app builds for iOS!
+- design: Add scale animation hover effects on navrail and story buttons!
+- design: Big redesign of three column mode to advanced two column mode!
+- design: Chat list design adjustments!
+- design: Display last story as tiny message bubble in chat list!
+- design: Improve invite chat UX!
+- design: Move chatbackup in adaptive bottom sheet!
+- design: New three column layout for wide screens!
+- design: Nicer user bottom sheet!
+- design: Redesign style page!
+- docs: Update README.md!
+- feat/ChatListItem: small changes!
+- fix: Bootstrap on first try fails sometimes!
+- fix: Cancel search on back button tap on Android!
+- fix: Do not allow empty search server!
+- fix: First story appears to be unencrypted sometimes!
+- fix: Remove MPV and Zenity to fix Linux snap builds!
+- fix: Unable to send files from snap version!
+- refactor: Change group description to chat description!
+- refactor: Make router static!
+- refactor: Migrate from pathsegment routing!
+- refactor: Migrate routes to go_router!
+- refactor: Remove bubble size slider!
+- refactor: Replace vrouter with go_router!
+- refactor: Space routes to normal room routes!
+- refactor: Update badge!
+- refactor: Update HTML build files!
+
+#shotonkatyamobileos 👽 🤖
 
 Need help? 🤔
 Email us! 👇
@@ -83,4 +70,6 @@ p2p@rechain.email
 pr@rechain.email
 sorydima@rechain.email
 support@rechain.email
+sip@rechain.email
+music@rechain.email
 Please allow anywhere from 1 to 5 business days for E-mail responses! 💌

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:matrix/matrix.dart';
-import 'package:vrouter/vrouter.dart';
 
 import 'package:rechainonline/pages/chat_permissions_settings/chat_permissions_settings.dart';
 import 'package:rechainonline/pages/chat_permissions_settings/permission_list_tile.dart';
@@ -19,17 +18,10 @@ class ChatPermissionsSettingsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: VRouter.of(context).path.startsWith('/spaces/')
-            ? null
-            : IconButton(
-                icon: const Icon(Icons.close_outlined),
-                onPressed: () => VRouter.of(context)
-                    .toSegments(['rooms', controller.roomId!]),
-              ),
-        title: Text(L10n.of(context)!.editChatPermissions),
+        leading: const Center(child: BackButton()),
+        title: Text(L10n.of(context)!.chatPermissions),
       ),
       body: MaxWidthBody(
-        withScrolling: true,
         child: StreamBuilder(
           stream: controller.onChanged,
           builder: (context, _) {
@@ -53,7 +45,7 @@ class ChatPermissionsSettingsView extends StatelessWidget {
                 Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    for (var entry in powerLevels.entries)
+                    for (final entry in powerLevels.entries)
                       PermissionsListTile(
                         permissionKey: entry.key,
                         permission: entry.value,
@@ -103,7 +95,7 @@ class ChatPermissionsSettingsView extends StatelessWidget {
                         ),
                       ),
                     ),
-                    for (var entry in eventsPowerLevels.entries)
+                    for (final entry in eventsPowerLevels.entries)
                       PermissionsListTile(
                         permissionKey: entry.key,
                         category: 'events',

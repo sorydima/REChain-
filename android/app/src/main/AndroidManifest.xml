@@ -19,7 +19,11 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.BIND_TELECOM_CONNECTION_SERVICE"/>
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"
+                     android:maxSdkVersion="29" />
+    <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />
+
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
@@ -27,7 +31,7 @@
     <uses-sdk
             tools:overrideLibrary="io.wazo.callkeep, net.touchcapture.qr.flutterqr, com.cloudwebrtc.webrtc, org.webrtc, com.it_nomads.fluttersecurestorage, com.pichillilorenzo.flutter_inappwebview, com.example.video_compress, com.otaliastudios.transcoder, com.otaliastudios.opengl, com.kineapps.flutter_file_dialog, com.llfbandit.record, com.pravera.flutter_foreground_task"/>
     <application
-        android:label="REChain 🪐"
+        android:label="REChain ®️ 🪐"
         android:icon="@mipmap/ic_launcher"
         android:requestLegacyExternalStorage="true"
         android:allowBackup="false"
@@ -69,7 +73,7 @@
                <action android:name="android.intent.action.VIEW" />
                <category android:name="android.intent.category.DEFAULT" />
                <category android:name="android.intent.category.BROWSABLE" />
-               <data android:scheme="com.rechain" android:host="chat" />
+               <data android:scheme="com.rechain" android:host="online" />
             </intent-filter>
             <intent-filter>
                <action android:name="android.intent.action.SEND" />

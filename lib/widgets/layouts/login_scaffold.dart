@@ -10,19 +10,21 @@ import 'package:rechainonline/utils/platform_infos.dart';
 class LoginScaffold extends StatelessWidget {
   final Widget body;
   final AppBar? appBar;
+  final bool enforceMobileMode;
 
   const LoginScaffold({
     Key? key,
     required this.body,
     this.appBar,
+    this.enforceMobileMode = false,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final isMobileMode = !rechainonlineThemes.isColumnMode(context);
+    final isMobileMode =
+        enforceMobileMode || !rechainonlineThemes.isColumnMode(context);
     final scaffold = Scaffold(
       key: const Key('LoginScaffold'),
-      backgroundColor: isMobileMode ? null : Colors.transparent,
       appBar: appBar == null
           ? null
           : AppBar(
@@ -40,7 +42,8 @@ class LoginScaffold extends StatelessWidget {
       body: body,
       bottomNavigationBar: isMobileMode
           ? Material(
-              color: Theme.of(context).colorScheme.onInverseSurface,
+              elevation: 4,
+              shadowColor: Theme.of(context).colorScheme.onBackground,
               child: const _PrivacyButtons(
                 mainAxisAlignment: MainAxisAlignment.center,
               ),
@@ -50,11 +53,11 @@ class LoginScaffold extends StatelessWidget {
     if (isMobileMode) return scaffold;
     return Container(
       decoration: BoxDecoration(
-        gradient: rechainonlineThemes.backgroundGradient(context, 156),
+        gradient: rechainonlineThemes.backgroundGradient(context, 255),
       ),
       child: Column(
         children: [
-          const SizedBox(height: 64),
+          const SizedBox(height: 16),
           Expanded(
             child: Center(
               child: Padding(

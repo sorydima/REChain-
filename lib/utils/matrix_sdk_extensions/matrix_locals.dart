@@ -19,7 +19,7 @@ class MatrixLocals extends MatrixLocalizations {
 
   @override
   String answeredTheCall(String senderName) {
-    return l10n.answeredTheCall(senderName, senderName);
+    return l10n.answeredTheCall(senderName);
   }
 
   @override
@@ -182,8 +182,12 @@ class MatrixLocals extends MatrixLocalizations {
   String get noPermission => l10n.noKeyForThisMessage;
 
   @override
-  String redactedAnEvent(Event senderName) {
-    return l10n.redactedAnEvent(senderName);
+  String redactedAnEvent(Event redactedEvent) {
+    return l10n.redactedAnEvent(
+      redactedEvent.redactedBecause?.senderFromMemoryOrFallback
+              .calcDisplayname() ??
+          l10n.user,
+    );
   }
 
   @override
@@ -192,8 +196,10 @@ class MatrixLocals extends MatrixLocalizations {
   }
 
   @override
-  String removedBy(Event calcDisplayname) {
-    return l10n.removedBy(calcDisplayname);
+  String removedBy(Event redactedEvent) {
+    return l10n.redactedBy(
+      redactedEvent.senderFromMemoryOrFallback.calcDisplayname(),
+    );
   }
 
   @override

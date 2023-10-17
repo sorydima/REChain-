@@ -5,7 +5,6 @@ import 'package:desktop_drop/desktop_drop.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:future_loading_dialog/future_loading_dialog.dart';
 import 'package:matrix/matrix.dart';
-import 'package:vrouter/vrouter.dart';
 
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/config/themes.dart';
@@ -55,17 +54,18 @@ class ChatView extends StatelessWidget {
               onPressed: () => controller.saveSelectedEvent(context),
             ),
           ),
+        if (controller.canPinSelectedEvents)
+          IconButton(
+            icon: const Icon(Icons.push_pin_outlined),
+            onPressed: controller.pinEvent,
+            tooltip: L10n.of(context)!.pinMessage,
+          ),
         if (controller.canRedactSelectedEvents)
           IconButton(
             icon: const Icon(Icons.delete_outlined),
             tooltip: L10n.of(context)!.redactMessage,
             onPressed: controller.redactEventsAction,
           ),
-        IconButton(
-          icon: const Icon(Icons.push_pin_outlined),
-          onPressed: controller.pinEvent,
-          tooltip: L10n.of(context)!.pinMessage,
-        ),
         if (controller.selectedEvents.length == 1)
           PopupMenuButton<_EventContextAction>(
             onSelected: (action) {
@@ -120,7 +120,7 @@ class ChatView extends StatelessWidget {
             icon: const Icon(Icons.delete_forever_outlined),
             label: Text(L10n.of(context)!.delete),
           ),
-        )
+        ),
       ];
     } else {
       return [
@@ -132,7 +132,7 @@ class ChatView extends StatelessWidget {
             tooltip: L10n.of(context)!.placeCall,
           ),
         EncryptionButton(controller.room),
-        ChatSettingsPopupMenu(controller.room, !controller.room.isDirectChat),
+        ChatSettingsPopupMenu(controller.room, true),
       ];
     }
   }
@@ -146,16 +146,18 @@ class ChatView extends StatelessWidget {
       );
     }
     final bottomSheetPadding = rechainonlineThemes.isColumnMode(context) ? 16.0 : 8.0;
+    final scrollUpBannerEventId = controller.scrollUpBannerEventId;
 
-    return VWidgetGuard(
-      onSystemPop: (redirector) async {
+    return WillPopScope(
+      onWillPop: () async {
         if (controller.selectedEvents.isNotEmpty) {
           controller.clearSelectedEvents();
-          redirector.stopRedirection();
+          return false;
         } else if (controller.showEmojiPicker) {
           controller.emojiPickerAction();
-          redirector.stopRedirection();
+          return false;
         }
+        return true;
       },
       child: GestureDetector(
         onTapDown: (_) => controller.setReadMarker(),
@@ -168,7 +170,6 @@ class ChatView extends StatelessWidget {
             builder: (BuildContext context, snapshot) {
               return Scaffold(
                 appBar: AppBar(
-                  elevation: 3,
                   actionsIconTheme: IconThemeData(
                     color: controller.selectedEvents.isEmpty
                         ? null
@@ -215,20 +216,44 @@ class ChatView extends StatelessWidget {
                           height: double.infinity,
                           fit: BoxFit.cover,
                           filterQuality: FilterQuality.medium,
-                        )
-                      else
-                        Container(
-                          decoration: BoxDecoration(
-                            gradient: rechainonlineThemes.backgroundGradient(
-                              context,
-                              64,
-                            ),
-                          ),
                         ),
                       SafeArea(
                         child: Column(
                           children: <Widget>[
                             TombstoneDisplay(controller),
+                            if (scrollUpBannerEventId != null)
+                              Material(
+                                color: Theme.of(context)
+                                    .colorScheme
+                                    .secondaryContainer,
+                                child: ListTile(
+                                  leading: IconButton(
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .onSurfaceVariant,
+                                    icon: const Icon(Icons.close),
+                                    tooltip: L10n.of(context)!.close,
+                                    onPressed: () {
+                                      controller.discardScrollUpBannerEventId();
+                                      controller.setReadMarker();
+                                    },
+                                  ),
+                                  title: Text(
+                                    L10n.of(context)!.jumpToLastReadMessage,
+                                  ),
+                                  contentPadding:
+                                      const EdgeInsets.only(left: 8),
+                                  trailing: TextButton(
+                                    onPressed: () {
+                                      controller.scrollToEventId(
+                                        scrollUpBannerEventId,
+                                      );
+                                      controller.discardScrollUpBannerEventId();
+                                    },
+                                    child: Text(L10n.of(context)!.jump),
+                                  ),
+                                ),
+                              ),
                             PinnedEvents(controller),
                             Expanded(
                               child: GestureDetector(

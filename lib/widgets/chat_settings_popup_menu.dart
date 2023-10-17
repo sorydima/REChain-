@@ -1,20 +1,15 @@
 import 'dart:async';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:adaptive_dialog/adaptive_dialog.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:future_loading_dialog/future_loading_dialog.dart';
+import 'package:go_router/go_router.dart';
 import 'package:keyboard_shortcuts/keyboard_shortcuts.dart';
 import 'package:matrix/matrix.dart';
-import 'package:vrouter/vrouter.dart';
 
-import 'package:rechainonline/pages/chat/cupertino_widgets_bottom_sheet.dart';
-import 'package:rechainonline/pages/chat/edit_widgets_dialog.dart';
-import 'package:rechainonline/pages/chat/widgets_bottom_sheet.dart';
-import 'package:rechainonline/utils/adaptive_bottom_sheet.dart';
 import 'matrix.dart';
 
 class ChatSettingsPopupMenu extends StatefulWidget {
@@ -48,16 +43,6 @@ class ChatSettingsPopupMenuState extends State<ChatSettingsPopupMenu> {
           (u) => setState(() {}),
         );
     final items = <PopupMenuEntry<String>>[
-      PopupMenuItem<String>(
-        value: 'widgets',
-        child: Row(
-          children: [
-            const Icon(Icons.widgets_outlined),
-            const SizedBox(width: 12),
-            Text(L10n.of(context)!.matrixWidgets),
-          ],
-        ),
-      ),
       widget.room.pushRuleState == PushRuleState.notify
           ? PopupMenuItem<String>(
               value: 'mute',
@@ -111,35 +96,15 @@ class ChatSettingsPopupMenuState extends State<ChatSettingsPopupMenu> {
         KeyBoardShortcuts(
           keysToPress: {
             LogicalKeyboardKey.controlLeft,
-            LogicalKeyboardKey.keyI
+            LogicalKeyboardKey.keyI,
           },
           helpLabel: L10n.of(context)!.chatDetails,
           onKeysPressed: _showChatDetails,
           child: const SizedBox.shrink(),
         ),
-        KeyBoardShortcuts(
-          keysToPress: {
-            LogicalKeyboardKey.controlLeft,
-            LogicalKeyboardKey.keyW
-          },
-          helpLabel: L10n.of(context)!.matrixWidgets,
-          onKeysPressed: _showWidgets,
-          child: const SizedBox.shrink(),
-        ),
         PopupMenuButton(
           onSelected: (String choice) async {
             switch (choice) {
-              case 'widgets':
-                if (widget.room.widgets.isNotEmpty) {
-                  _showWidgets();
-                } else {
-                  showDialog(
-                    context: context,
-                    builder: (context) => EditWidgetsDialog(room: widget.room),
-                    useRootNavigator: false,
-                  );
-                }
-                break;
               case 'leave':
                 final confirmed = await showOkCancelAlertDialog(
                   useRootNavigator: false,
@@ -154,7 +119,7 @@ class ChatSettingsPopupMenuState extends State<ChatSettingsPopupMenu> {
                     future: () => widget.room.leave(),
                   );
                   if (success.error == null) {
-                    VRouter.of(context).to('/rooms');
+                    context.go('/rooms');
                   }
                 }
                 break;
@@ -183,22 +148,11 @@ class ChatSettingsPopupMenuState extends State<ChatSettingsPopupMenu> {
     );
   }
 
-  void _showWidgets() => [TargetPlatform.iOS, TargetPlatform.macOS]
-          .contains(Theme.of(context).platform)
-      ? showCupertinoModalPopup(
-          context: context,
-          builder: (context) => CupertinoWidgetsBottomSheet(room: widget.room),
-        )
-      : showAdaptiveBottomSheet(
-          context: context,
-          builder: (context) => WidgetsBottomSheet(room: widget.room),
-        );
-
   void _showChatDetails() {
-    if (VRouter.of(context).path.endsWith('/details')) {
-      VRouter.of(context).toSegments(['rooms', widget.room.id]);
+    if (GoRouterState.of(context).uri.path.endsWith('/details')) {
+      context.go('/rooms/${widget.room.id}');
     } else {
-      VRouter.of(context).toSegments(['rooms', widget.room.id, 'details']);
+      context.go('/rooms/${widget.room.id}/details');
     }
   }
 }

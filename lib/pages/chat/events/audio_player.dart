@@ -8,7 +8,6 @@ import 'package:just_audio/just_audio.dart';
 import 'package:matrix/matrix.dart';
 import 'package:path_provider/path_provider.dart';
 
-import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/utils/error_reporter.dart';
 import 'package:rechainonline/utils/localized_exception_extension.dart';
 import '../../../utils/matrix_sdk_extensions/event_extension.dart';
@@ -119,6 +118,10 @@ class AudioPlayerState extends State<AudioPlayerWidget> {
                 AudioPlayerWidget.wavesCount)
             .round();
       });
+      if (state.inMilliseconds.toDouble() == maxPosition) {
+        audioPlayer.stop();
+        audioPlayer.seek(null);
+      }
     });
     onDurationChanged ??= audioPlayer.durationStream.listen((max) {
       if (max == null || max == Duration.zero) return;
@@ -182,7 +185,7 @@ class AudioPlayerState extends State<AudioPlayerWidget> {
   Widget build(BuildContext context) {
     final statusText = this.statusText ??= _durationString ?? '00:00';
     return Padding(
-      padding: EdgeInsets.all(16 * AppConfig.bubbleSizeFactor),
+      padding: const EdgeInsets.all(16),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
@@ -245,7 +248,7 @@ class AudioPlayerState extends State<AudioPlayerWidget> {
                         ),
                       ),
                     ),
-                  )
+                  ),
               ],
             ),
           ),

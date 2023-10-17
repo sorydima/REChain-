@@ -5,10 +5,15 @@ import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:share_plus/share_plus.dart';
 
 import 'package:rechainonline/utils/platform_infos.dart';
+import '../widgets/matrix.dart';
 
 abstract class rechainonlineShare {
-  static Future<void> share(String text, BuildContext context) async {
-    if (PlatformInfos.isMobile) {
+  static Future<void> share(
+    String text,
+    BuildContext context, {
+    bool copyOnly = false,
+  }) async {
+    if (PlatformInfos.isMobile && !copyOnly) {
       final box = context.findRenderObject() as RenderBox;
       return Share.share(
         text,
@@ -22,5 +27,17 @@ abstract class rechainonlineShare {
       SnackBar(content: Text(L10n.of(context)!.copiedToClipboard)),
     );
     return;
+  }
+
+  static Future<void> shareInviteLink(BuildContext context) async {
+    final client = Matrix.of(context).client;
+    final ownProfile = await client.fetchOwnProfile();
+    await rechainonlineShare.share(
+      L10n.of(context)!.inviteText(
+        ownProfile.displayName ?? client.userID!,
+        'https://matrix.to/#/${client.userID}?client=com.rechain',
+      ),
+      context,
+    );
   }
 }

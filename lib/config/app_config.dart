@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:matrix/matrix.dart';
 
 abstract class AppConfig {
-  static String _applicationName = 'REChain 🪐';
+  static String _applicationName = 'REChain ®️ 🪐';
   static String get applicationName => _applicationName;
   static String? _applicationWelcomeMessage;
   static String? get applicationWelcomeMessage => _applicationWelcomeMessage;
@@ -56,9 +56,9 @@ abstract class AppConfig {
   static const String deepLinkPrefix = 'com.rechain://chat/';
   static const String schemePrefix = 'matrix:';
   static const String pushNotificationsChannelId = 'rechainonline_push';
-  static const String pushNotificationsChannelName = 'REChain 🪐 Push Channel!';
+  static const String pushNotificationsChannelName = 'REChain ®️ 🪐 Push Channel!';
   static const String pushNotificationsChannelDescription =
-      'Push Notifications For The REChain 🪐 Platform!';
+      'Push Notifications For The REChain ®️ 🪐 Platform!';
   static const String pushNotificationsAppId = 'com.rechain.online';
   static const String pushNotificationsGatewayUrl =
       'https://matrix-client.matrix.org/_matrix/push/v1/notify';

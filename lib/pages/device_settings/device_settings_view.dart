@@ -15,7 +15,7 @@ class DevicesSettingsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const BackButton(),
+        leading: const Center(child: BackButton()),
         title: Text(L10n.of(context)!.devices),
       ),
       body: MaxWidthBody(
@@ -39,6 +39,8 @@ class DevicesSettingsView extends StatelessWidget {
               );
             }
             return ListView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
               itemCount: controller.notThisDevice.length + 1,
               itemBuilder: (BuildContext context, int i) {
                 if (i == 0) {

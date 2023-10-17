@@ -45,7 +45,7 @@ class NewPrivateChatController extends State<NewPrivateChat> {
 
   String? validateForm(String? value) {
     if (value!.isEmpty) {
-      return L10n.of(context)!.pleaseEnterArechainonlineIdentifier;
+      return L10n.of(context)!.pleaseEnterAMatrixIdentifier;
     }
     if (!controller.text.isValidMatrixId ||
         !supportedSigils.contains(controller.text.sigil)) {
@@ -57,10 +57,7 @@ class NewPrivateChatController extends State<NewPrivateChat> {
     return null;
   }
 
-  void inviteAction() => rechainonlineShare.share(
-        'https://matrix.to/#/${Matrix.of(context).client.userID}',
-        context,
-      );
+  void inviteAction() => rechainonlineShare.shareInviteLink(context);
 
   void openScannerAction() async {
     if (PlatformInfos.isAndroid) {

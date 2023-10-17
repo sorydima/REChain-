@@ -4,6 +4,7 @@ import 'package:flutter_gen/gen_l10n/l10n.dart';
 
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/widgets/layouts/login_scaffold.dart';
+import 'package:rechainonline/widgets/matrix.dart';
 import '../../config/themes.dart';
 import '../../widgets/mxc_image.dart';
 import 'homeserver_app_bar.dart';
@@ -19,12 +20,11 @@ class HomeserverPickerView extends StatelessWidget {
     final identityProviders = controller.identityProviders;
     final errorText = controller.error;
     return LoginScaffold(
+      enforceMobileMode: Matrix.of(context).client.isLogged(),
       appBar: AppBar(
         titleSpacing: 12,
-        title: Padding(
-          padding: const EdgeInsets.all(0.0),
-          child: HomeserverAppBar(controller: controller),
-        ),
+        automaticallyImplyLeading: false,
+        title: HomeserverAppBar(controller: controller),
       ),
       body: SafeArea(
         child: Column(
@@ -57,38 +57,16 @@ class HomeserverPickerView extends StatelessWidget {
                   ? const Center(child: CircularProgressIndicator.adaptive())
                   : ListView(
                       children: [
-                        Image.asset(
-                          'assets/info-logo.png',
-                          height: 96,
-                        ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                          child: Row(
-                            children: [
-                              Expanded(
-                                child: Divider(
-                                  thickness: 1,
-                                  height: 1,
-                                  color: Theme.of(context).dividerColor,
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(12.0),
-                                child: Text(
-                                  L10n.of(context)!.continueWith,
-                                  style: const TextStyle(fontSize: 12),
-                                ),
-                              ),
-                              Expanded(
-                                child: Divider(
-                                  thickness: 1,
-                                  height: 1,
-                                  color: Theme.of(context).dividerColor,
-                                ),
-                              ),
-                            ],
-                          ),
+                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                          child: rechainonlineThemes.isColumnMode(context)
+                              ? Image.asset(
+                                  'assets/info-logo.png',
+                                  height: 96,
+                                )
+                              : Image.asset('assets/banner_transparent.png'),
                         ),
+                        const SizedBox(height: 12),
                         if (errorText != null) ...[
                           const Center(
                             child: Icon(
@@ -140,9 +118,11 @@ class HomeserverPickerView extends StatelessWidget {
                                         height: 24,
                                       ),
                                     ),
-                              label: provider.name ??
-                                  provider.brand ??
-                                  L10n.of(context)!.singlesignon,
+                              label: L10n.of(context)!.signInWith(
+                                provider.name ??
+                                    provider.brand ??
+                                    L10n.of(context)!.singlesignon,
+                              ),
                               onPressed: () =>
                                   controller.ssoLoginAction(provider.id!),
                             ),
@@ -156,12 +136,21 @@ class HomeserverPickerView extends StatelessWidget {
                           ),
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 12),
-                          child: TextButton(
-                            style: TextButton.styleFrom(
-                              padding: const EdgeInsets.symmetric(vertical: 12),
+                          child: Center(
+                            child: SizedBox(
+                              width: 256,
+                              child: TextButton(
+                                style: TextButton.styleFrom(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 12),
+                                ),
+                                onPressed: controller.restoreBackup,
+                                child: Text(
+                                  L10n.of(context)!.hydrate,
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
                             ),
-                            onPressed: controller.restoreBackup,
-                            child: Text(L10n.of(context)!.hydrate),
                           ),
                         ),
                       ],
@@ -189,16 +178,35 @@ class _LoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 12),
-      margin: const EdgeInsets.only(bottom: 16),
-      width: double.infinity,
-      child: ElevatedButton.icon(
-        style: ElevatedButton.styleFrom(
-          padding: const EdgeInsets.symmetric(vertical: 12),
+      margin: const EdgeInsets.only(bottom: 12),
+      alignment: Alignment.center,
+      child: SizedBox(
+        width: 256,
+        child: OutlinedButton(
+          style: OutlinedButton.styleFrom(
+            side: BorderSide(
+              width: 1,
+              color: Theme.of(context).colorScheme.onBackground,
+            ),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(90),
+            ),
+            foregroundColor: Theme.of(context).colorScheme.onBackground,
+          ),
+          onPressed: onPressed,
+          child: Row(
+            children: [
+              icon,
+              const SizedBox(width: 16),
+              Expanded(
+                child: Text(
+                  label,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+            ],
+          ),
         ),
-        onPressed: onPressed,
-        icon: icon,
-        label: Text(label),
       ),
     );
   }

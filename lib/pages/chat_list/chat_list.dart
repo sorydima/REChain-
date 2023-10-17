@@ -3,14 +3,15 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'package:adaptive_dialog/adaptive_dialog.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:future_loading_dialog/future_loading_dialog.dart';
+import 'package:go_router/go_router.dart';
 import 'package:matrix/matrix.dart';
 import 'package:receive_sharing_intent/receive_sharing_intent.dart';
 import 'package:uni_links/uni_links.dart';
-import 'package:vrouter/vrouter.dart';
 
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/config/themes.dart';
@@ -56,8 +57,14 @@ enum ActiveFilter {
 
 class ChatList extends StatefulWidget {
   static BuildContext? contextForVoip;
+  final bool displayNavigationRail;
+  final String? activeChat;
 
-  const ChatList({Key? key}) : super(key: key);
+  const ChatList({
+    Key? key,
+    this.displayNavigationRail = false,
+    required this.activeChat,
+  }) : super(key: key);
 
   @override
   ChatListController createState() => ChatListController();
@@ -175,7 +182,10 @@ class ChatListController extends State<ChatList>
           initialText: searchServer,
           keyboardType: TextInputType.url,
           autocorrect: false,
-        )
+          validator: (server) => server?.contains('.') == true
+              ? null
+              : L10n.of(context)!.invalidServerName,
+        ),
       ],
     );
     if (newServer == null) return;
@@ -183,10 +193,12 @@ class ChatListController extends State<ChatList>
     setState(() {
       searchServer = newServer.single;
     });
-    onSearchEnter(searchController.text);
+    _coolDown?.cancel();
+    _coolDown = Timer(const Duration(milliseconds: 500), _search);
   }
 
   final TextEditingController searchController = TextEditingController();
+  final FocusNode searchFocusNode = FocusNode();
 
   void _search() async {
     final client = Matrix.of(context).client;
@@ -238,6 +250,15 @@ class ChatListController extends State<ChatList>
     _coolDown = Timer(const Duration(milliseconds: 500), _search);
   }
 
+  void startSearch() {
+    setState(() {
+      isSearchMode = true;
+    });
+    searchFocusNode.requestFocus();
+    _coolDown?.cancel();
+    _coolDown = Timer(const Duration(milliseconds: 500), _search);
+  }
+
   void cancelSearch({bool unfocus = true}) {
     setState(() {
       searchController.clear();
@@ -245,7 +266,7 @@ class ChatListController extends State<ChatList>
       roomSearchResult = userSearchResult = null;
       isSearching = false;
     });
-    if (unfocus) FocusManager.instance.primaryFocus?.unfocus();
+    if (unfocus) searchFocusNode.unfocus();
   }
 
   bool isTorBrowser = false;
@@ -259,7 +280,7 @@ class ChatListController extends State<ChatList>
 
   Stream<Client> get clientStream => _clientStream.stream;
 
-  void addAccountAction() => VRouter.of(context).to('/settings/account');
+  void addAccountAction() => context.go('/rooms/settings/account');
 
   void _onScroll() {
     final newScrolledToTop = scrollController.position.pixels <= 0;
@@ -271,7 +292,7 @@ class ChatListController extends State<ChatList>
   void editSpace(BuildContext context, String spaceId) async {
     await Matrix.of(context).client.getRoomById(spaceId)!.postLoad();
     if (mounted) {
-      VRouter.of(context).toSegments(['spaces', spaceId]);
+      context.push('/rooms/$spaceId/details');
     }
   }
 
@@ -281,7 +302,7 @@ class ChatListController extends State<ChatList>
 
   final selectedRoomIds = <String>{};
 
-  String? get activeChat => VRouter.of(context).pathParameters['roomid'];
+  String? get activeChat => widget.activeChat;
 
   SelectMode get selectMode => Matrix.of(context).shareContent != null
       ? SelectMode.share
@@ -300,7 +321,7 @@ class ChatListController extends State<ChatList>
         name: file.path,
       ).detectFileType,
     };
-    VRouter.of(context).to('/rooms');
+    context.go('/rooms');
   }
 
   void _processIncomingSharedText(String? text) {
@@ -315,12 +336,12 @@ class ChatListController extends State<ChatList>
       'msgtype': 'm.text',
       'body': text,
     };
-    VRouter.of(context).to('/rooms');
+    context.go('/rooms');
   }
 
   void _processIncomingUris(String? text) async {
     if (text == null) return;
-    VRouter.of(context).to('/rooms');
+    context.go('/rooms');
     WidgetsBinding.instance.addPostFrameCallback((_) {
       UrlLauncher(context, text).openMatrixToUrl();
     });
@@ -364,6 +385,11 @@ class ChatListController extends State<ChatList>
         searchServer = await Store().getItem(_serverStoreNamespace);
         Matrix.of(context).backgroundPush?.setupPush();
       }
+
+      // Workaround for system UI overlay style not applied on app start
+      SystemChrome.setSystemUIOverlayStyle(
+        Theme.of(context).appBarTheme.systemOverlayStyle!,
+      );
     });
 
     _checkTorBrowser();
@@ -582,7 +608,7 @@ class ChatListController extends State<ChatList>
   }
 
   void setActiveClient(Client client) {
-    VRouter.of(context).to('/rooms');
+    context.go('/rooms');
     setState(() {
       activeFilter = AppConfig.separateChatTypes
           ? ActiveFilter.messages
@@ -595,7 +621,7 @@ class ChatListController extends State<ChatList>
   }
 
   void setActiveBundle(String bundle) {
-    VRouter.of(context).to('/rooms');
+    context.go('/rooms');
     setState(() {
       selectedRoomIds.clear();
       Matrix.of(context).activeBundle = bundle;
@@ -674,10 +700,7 @@ class ChatListController extends State<ChatList>
   }
 
   @override
-  Widget build(BuildContext context) {
-    Matrix.of(context).navigatorContext = context;
-    return ChatListView(this);
-  }
+  Widget build(BuildContext context) => ChatListView(this);
 
   void _hackyWebRTCFixForWeb() {
     ChatList.contextForVoip = context;

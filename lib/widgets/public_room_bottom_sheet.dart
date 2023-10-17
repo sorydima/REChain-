@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:future_loading_dialog/future_loading_dialog.dart';
+import 'package:go_router/go_router.dart';
 import 'package:matrix/matrix.dart';
-import 'package:vrouter/vrouter.dart';
 
 import 'package:rechainonline/utils/url_launcher.dart';
 import 'package:rechainonline/widgets/avatar.dart';
@@ -31,7 +31,6 @@ class PublicRoomBottomSheet extends StatelessWidget {
     final client = Matrix.of(context).client;
     final chunk = this.chunk;
     final navigator = Navigator.of(context);
-    final router = VRouter.of(context);
     final result = await showFutureLoadingDialog<String>(
       context: context,
       future: () async {
@@ -54,7 +53,7 @@ class PublicRoomBottomSheet extends StatelessWidget {
       navigator.pop();
       // don't open the room if the joined room is a space
       if (!client.getRoomById(result.result!)!.isSpace) {
-        router.toSegments(['rooms', result.result!]);
+        context.go('/rooms/${result.result!}');
       }
       return;
     }
@@ -148,7 +147,7 @@ class PublicRoomBottomSheet extends StatelessWidget {
                 if (profile?.topic?.isNotEmpty ?? false)
                   ListTile(
                     title: Text(
-                      L10n.of(context)!.groupDescription,
+                      L10n.of(context)!.chatDescription,
                       style: TextStyle(
                         color: Theme.of(context).colorScheme.secondary,
                       ),

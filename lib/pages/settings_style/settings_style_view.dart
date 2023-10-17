@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_gen/gen_l10n/l10n.dart';
 
+import 'package:rechainonline/config/themes.dart';
 import 'package:rechainonline/widgets/layouts/max_width_body.dart';
 import '../../config/app_config.dart';
 import '../../widgets/matrix.dart';
@@ -18,14 +19,22 @@ class SettingsStyleView extends StatelessWidget {
     final wallpaper = Matrix.of(context).wallpaper;
     return Scaffold(
       appBar: AppBar(
-        leading: const BackButton(),
+        leading: const Center(child: BackButton()),
         title: Text(L10n.of(context)!.changeTheme),
       ),
       backgroundColor: Theme.of(context).colorScheme.surface,
       body: MaxWidthBody(
-        withScrolling: true,
         child: Column(
           children: [
+            ListTile(
+              title: Text(
+                L10n.of(context)!.setColorTheme,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.secondary,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
             SizedBox(
               height: colorPickerSize + 24,
               child: ListView(
@@ -40,17 +49,59 @@ class SettingsStyleView extends StatelessWidget {
                           onTap: () => controller.setChatColor(color),
                           child: color == null
                               ? Material(
-                                  elevation:
-                                      AppConfig.colorSchemeSeed?.value == null
-                                          ? 100
-                                          : 0,
+                                  elevation: 6,
                                   shadowColor: AppConfig.colorSchemeSeed,
                                   borderRadius:
                                       BorderRadius.circular(colorPickerSize),
-                                  child: Image.asset(
-                                    'assets/colors.png',
-                                    width: colorPickerSize,
-                                    height: colorPickerSize,
+                                  child: DecoratedBox(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(
+                                        colorPickerSize,
+                                      ),
+                                      gradient: rechainonlineThemes.backgroundGradient(
+                                        context,
+                                        255,
+                                      ),
+                                    ),
+                                    child: SizedBox(
+                                      height: colorPickerSize,
+                                      child: Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                          horizontal: 8.0,
+                                        ),
+                                        child: Center(
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: [
+                                              if (controller.currentColor ==
+                                                  null)
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                    right: 8.0,
+                                                  ),
+                                                  child: Icon(
+                                                    Icons.check,
+                                                    size: 16,
+                                                    color: Theme.of(context)
+                                                        .colorScheme
+                                                        .onBackground,
+                                                  ),
+                                                ),
+                                              Text(
+                                                L10n.of(context)!.systemTheme,
+                                                textAlign: TextAlign.center,
+                                                style: TextStyle(
+                                                  color: Theme.of(context)
+                                                      .colorScheme
+                                                      .onBackground,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
                                   ),
                                 )
                               : Material(
@@ -78,7 +129,17 @@ class SettingsStyleView extends StatelessWidget {
                     .toList(),
               ),
             ),
+            const SizedBox(height: 8),
             const Divider(height: 1),
+            ListTile(
+              title: Text(
+                L10n.of(context)!.setTheme,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.secondary,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
             RadioListTile<ThemeMode>(
               groupValue: controller.currentTheme,
               value: ThemeMode.system,
@@ -135,7 +196,7 @@ class SettingsStyleView extends StatelessWidget {
             const Divider(height: 1),
             ListTile(
               title: Text(
-                L10n.of(context)!.messages,
+                L10n.of(context)!.messagesStyle,
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.secondary,
                   fontWeight: FontWeight.bold,
@@ -146,17 +207,17 @@ class SettingsStyleView extends StatelessWidget {
               alignment: Alignment.centerLeft,
               padding: const EdgeInsets.symmetric(horizontal: 12),
               child: Material(
-                color: Theme.of(context).colorScheme.primary,
-                elevation: 6,
-                shadowColor:
-                    Theme.of(context).secondaryHeaderColor.withAlpha(100),
+                color: Theme.of(context).colorScheme.primaryContainer,
                 borderRadius: BorderRadius.circular(AppConfig.borderRadius),
                 child: Padding(
-                  padding: EdgeInsets.all(16 * AppConfig.bubbleSizeFactor),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 8,
+                  ),
                   child: Text(
                     'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor',
                     style: TextStyle(
-                      color: Theme.of(context).colorScheme.onPrimary,
+                      color: Theme.of(context).colorScheme.onPrimaryContainer,
                       fontSize:
                           AppConfig.messageFontSize * AppConfig.fontSizeFactor,
                     ),
@@ -175,18 +236,6 @@ class SettingsStyleView extends StatelessWidget {
               value: AppConfig.fontSizeFactor,
               semanticFormatterCallback: (d) => d.toString(),
               onChanged: controller.changeFontSizeFactor,
-            ),
-            ListTile(
-              title: Text(L10n.of(context)!.bubbleSize),
-              trailing: Text('× ${AppConfig.bubbleSizeFactor}'),
-            ),
-            Slider.adaptive(
-              min: 0.5,
-              max: 1.5,
-              divisions: 4,
-              value: AppConfig.bubbleSizeFactor,
-              semanticFormatterCallback: (d) => d.toString(),
-              onChanged: controller.changeBubbleSizeFactor,
             ),
           ],
         ),

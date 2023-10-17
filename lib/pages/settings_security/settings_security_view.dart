@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_gen/gen_l10n/l10n.dart';
-import 'package:vrouter/vrouter.dart';
+import 'package:go_router/go_router.dart';
 
 import 'package:rechainonline/utils/beautify_string_extension.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
@@ -20,20 +20,19 @@ class SettingsSecurityView extends StatelessWidget {
       body: ListTileTheme(
         iconColor: Theme.of(context).colorScheme.onBackground,
         child: MaxWidthBody(
-          withScrolling: true,
           child: Column(
             children: [
               ListTile(
                 leading: const Icon(Icons.camera_outlined),
                 trailing: const Icon(Icons.chevron_right_outlined),
                 title: Text(L10n.of(context)!.whoCanSeeMyStories),
-                onTap: () => VRouter.of(context).to('stories'),
+                onTap: () => context.go('/rooms/settings/security/stories'),
               ),
               ListTile(
                 leading: const Icon(Icons.block_outlined),
                 trailing: const Icon(Icons.chevron_right_outlined),
                 title: Text(L10n.of(context)!.ignoredUsers),
-                onTap: () => VRouter.of(context).to('ignorelist'),
+                onTap: () => context.go('/rooms/settings/security/ignorelist'),
               ),
               ListTile(
                 leading: const Icon(Icons.password_outlined),
@@ -47,7 +46,7 @@ class SettingsSecurityView extends StatelessWidget {
                 leading: const Icon(Icons.mail_outlined),
                 trailing: const Icon(Icons.chevron_right_outlined),
                 title: Text(L10n.of(context)!.passwordRecovery),
-                onTap: () => VRouter.of(context).to('3pid'),
+                onTap: () => context.go('/rooms/settings/security/3pid'),
               ),
               if (Matrix.of(context).client.encryption != null) ...{
                 const Divider(thickness: 1),

@@ -6,38 +6,43 @@ import 'package:collection/collection.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:future_loading_dialog/future_loading_dialog.dart';
+import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:matrix/matrix.dart' as matrix;
 import 'package:matrix/matrix.dart';
-import 'package:vrouter/vrouter.dart';
 
 import 'package:rechainonline/pages/chat_details/chat_details_view.dart';
 import 'package:rechainonline/pages/settings/settings.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
+import 'package:rechainonline/widgets/app_lock.dart';
 import 'package:rechainonline/widgets/matrix.dart';
 
 enum AliasActions { copy, delete, setCanonical }
 
 class ChatDetails extends StatefulWidget {
-  const ChatDetails({Key? key}) : super(key: key);
+  final String roomId;
+
+  const ChatDetails({
+    Key? key,
+    required this.roomId,
+  }) : super(key: key);
 
   @override
   ChatDetailsController createState() => ChatDetailsController();
 }
 
 class ChatDetailsController extends State<ChatDetails> {
-  List<User>? members;
   bool displaySettings = false;
 
   void toggleDisplaySettings() =>
       setState(() => displaySettings = !displaySettings);
 
-  String? get roomId => VRouter.of(context).pathParameters['roomid'];
+  String? get roomId => widget.roomId;
 
   void setDisplaynameAction() async {
     final room = Matrix.of(context).client.getRoomById(roomId!)!;
     final input = await showTextInputDialog(
-      useRootNavigator: false,
       context: context,
       title: L10n.of(context)!.changeTheNameOfTheGroup,
       okLabel: L10n.of(context)!.ok,
@@ -49,7 +54,7 @@ class ChatDetailsController extends State<ChatDetails> {
               L10n.of(context)!,
             ),
           ),
-        )
+        ),
       ],
     );
     if (input == null) return;
@@ -98,7 +103,6 @@ class ChatDetailsController extends State<ChatDetails> {
       return setAliasAction();
     }
     final select = await showConfirmationDialog(
-      useRootNavigator: false,
       context: context,
       title: L10n.of(context)!.editRoomAliases,
       actions: [
@@ -171,7 +175,6 @@ class ChatDetailsController extends State<ChatDetails> {
     final domain = room.client.userID!.domain;
 
     final input = await showTextInputDialog(
-      useRootNavigator: false,
       context: context,
       title: L10n.of(context)!.setInvitationLink,
       okLabel: L10n.of(context)!.ok,
@@ -182,7 +185,7 @@ class ChatDetailsController extends State<ChatDetails> {
           suffixText: domain,
           hintText: L10n.of(context)!.alias,
           initialText: room.canonicalAlias.localpart,
-        )
+        ),
       ],
     );
     if (input == null) return;
@@ -196,18 +199,17 @@ class ChatDetailsController extends State<ChatDetails> {
   void setTopicAction() async {
     final room = Matrix.of(context).client.getRoomById(roomId!)!;
     final input = await showTextInputDialog(
-      useRootNavigator: false,
       context: context,
-      title: L10n.of(context)!.setGroupDescription,
+      title: L10n.of(context)!.setChatDescription,
       okLabel: L10n.of(context)!.ok,
       cancelLabel: L10n.of(context)!.cancel,
       textFields: [
         DialogTextField(
-          hintText: L10n.of(context)!.setGroupDescription,
+          hintText: L10n.of(context)!.noChatDescriptionYet,
           initialText: room.topic,
-          minLines: 1,
-          maxLines: 4,
-        )
+          minLines: 4,
+          maxLines: 8,
+        ),
       ],
     );
     if (input == null) return;
@@ -218,36 +220,96 @@ class ChatDetailsController extends State<ChatDetails> {
     if (success.error == null) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text(L10n.of(context)!.groupDescriptionHasBeenChanged),
+          content: Text(L10n.of(context)!.chatDescriptionHasBeenChanged),
         ),
       );
     }
   }
 
-  void setGuestAccessAction(GuestAccess guestAccess) => showFutureLoadingDialog(
-        context: context,
-        future: () => Matrix.of(context)
-            .client
-            .getRoomById(roomId!)!
-            .setGuestAccess(guestAccess),
-      );
+  void setGuestAccess() async {
+    final room = Matrix.of(context).client.getRoomById(roomId!)!;
+    final currentGuestAccess = room.guestAccess;
+    final newGuestAccess = await showConfirmationDialog<GuestAccess>(
+      context: context,
+      title: L10n.of(context)!.areGuestsAllowedToJoin,
+      actions: GuestAccess.values
+          .map(
+            (guestAccess) => AlertDialogAction(
+              key: guestAccess,
+              label: guestAccess
+                  .getLocalizedString(MatrixLocals(L10n.of(context)!)),
+              isDefaultAction: guestAccess == currentGuestAccess,
+            ),
+          )
+          .toList(),
+    );
+    if (newGuestAccess == null || newGuestAccess == currentGuestAccess) return;
+    await showFutureLoadingDialog(
+      context: context,
+      future: () => room.setGuestAccess(newGuestAccess),
+    );
+  }
 
-  void setHistoryVisibilityAction(HistoryVisibility historyVisibility) =>
-      showFutureLoadingDialog(
-        context: context,
-        future: () => Matrix.of(context)
-            .client
-            .getRoomById(roomId!)!
-            .setHistoryVisibility(historyVisibility),
-      );
+  void setHistoryVisibility() async {
+    final room = Matrix.of(context).client.getRoomById(roomId!)!;
+    final currentHistoryVisibility = room.historyVisibility;
+    final newHistoryVisibility =
+        await showConfirmationDialog<HistoryVisibility>(
+      context: context,
+      title: L10n.of(context)!.visibilityOfTheChatHistory,
+      actions: HistoryVisibility.values
+          .map(
+            (visibility) => AlertDialogAction(
+              key: visibility,
+              label: visibility
+                  .getLocalizedString(MatrixLocals(L10n.of(context)!)),
+              isDefaultAction: visibility == currentHistoryVisibility,
+            ),
+          )
+          .toList(),
+    );
+    if (newHistoryVisibility == null ||
+        newHistoryVisibility == currentHistoryVisibility) return;
+    await showFutureLoadingDialog(
+      context: context,
+      future: () => room.setHistoryVisibility(newHistoryVisibility),
+    );
+  }
 
-  void setJoinRulesAction(JoinRules joinRule) => showFutureLoadingDialog(
-        context: context,
-        future: () => Matrix.of(context)
-            .client
-            .getRoomById(roomId!)!
-            .setJoinRules(joinRule),
-      );
+  void setJoinRules() async {
+    final room = Matrix.of(context).client.getRoomById(roomId!)!;
+    final currentJoinRule = room.joinRules;
+    final newJoinRule = await showConfirmationDialog<JoinRules>(
+      context: context,
+      title: L10n.of(context)!.whoIsAllowedToJoinThisGroup,
+      actions: JoinRules.values
+          .map(
+            (joinRule) => AlertDialogAction(
+              key: joinRule,
+              label:
+                  joinRule.getLocalizedString(MatrixLocals(L10n.of(context)!)),
+              isDefaultAction: joinRule == currentJoinRule,
+            ),
+          )
+          .toList(),
+    );
+    if (newJoinRule == null || newJoinRule == currentJoinRule) return;
+    await showFutureLoadingDialog(
+      context: context,
+      future: () async {
+        await room.setJoinRules(newJoinRule);
+        room.client.setRoomVisibilityOnDirectory(
+          roomId!,
+          visibility: {
+            JoinRules.public,
+            JoinRules.knock,
+          }.contains(newJoinRule)
+              ? matrix.Visibility.public
+              : matrix.Visibility.private,
+        );
+      },
+    );
+  }
 
   void goToEmoteSettings() async {
     final room = Matrix.of(context).client.getRoomById(roomId!)!;
@@ -257,9 +319,9 @@ class ChatDetailsController extends State<ChatDetails> {
     if ((room.states['im.ponies.room_emotes'] ?? <String, Event>{})
         .keys
         .any((String s) => s.isNotEmpty)) {
-      VRouter.of(context).to('multiple_emotes');
+      context.push('/rooms/${room.id}/details/multiple_emotes');
     } else {
-      VRouter.of(context).to('emotes');
+      context.push('/rooms/${room.id}/details/emotes');
     }
   }
 
@@ -315,9 +377,11 @@ class ChatDetailsController extends State<ChatDetails> {
         name: result.path,
       );
     } else {
-      final picked = await FilePicker.platform.pickFiles(
-        type: FileType.image,
-        withData: true,
+      final picked = await AppLock.of(context).pauseWhile(
+        FilePicker.platform.pickFiles(
+          type: FileType.image,
+          withData: true,
+        ),
       );
       final pickedFile = picked?.files.firstOrNull;
       if (pickedFile == null) return;
@@ -332,26 +396,8 @@ class ChatDetailsController extends State<ChatDetails> {
     );
   }
 
-  void requestMoreMembersAction() async {
-    final room = Matrix.of(context).client.getRoomById(roomId!);
-    final participants = await showFutureLoadingDialog(
-      context: context,
-      future: () => room!.requestParticipants(),
-    );
-    if (participants.error == null) {
-      setState(() => members = participants.result);
-    }
-  }
-
   static const fixedWidth = 360.0;
 
   @override
-  Widget build(BuildContext context) {
-    members ??=
-        Matrix.of(context).client.getRoomById(roomId!)!.getParticipants();
-    return SizedBox(
-      width: fixedWidth,
-      child: ChatDetailsView(this),
-    );
-  }
+  Widget build(BuildContext context) => ChatDetailsView(this);
 }

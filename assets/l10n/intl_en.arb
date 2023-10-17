@@ -2951,6 +2951,89 @@
 		"placeholders": {},
 		"type": "text"
 	},
+	"@emoteKeyboardNoRecents": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@redactedBy": {
+        "placeholders": {
+            "username": {
+            }
+        },
+        "type": "text"
+    },
+    "@redactedByBecause": {
+        "placeholders": {
+            "reason": {
+            },
+            "username": {
+            }
+        },
+        "type": "text"
+    },
+    "@savedEmotePack": {
+        "placeholders": {
+            "path": {
+            }
+        },
+        "type": "text"
+    },
+    "@sendTypingNotifications": {
+    },
+    "@signInWith": {
+        "placeholders": {
+            "provider": {
+            }
+        },
+        "type": "text"
+    },
+    "@wrongPinEntered": {
+        "placeholders": {
+            "seconds": {
+            }
+        },
+        "type": "text"
+    },
+    "addChatDescription": "Add a chat description",
+    "anyoneCanKnock": "Anyone can knock",
+    "chatDescription": "Chat description",
+    "chatDescriptionHasBeenChanged": "Chat description changed",
+    "chatPermissions": "Chat permissions",
+    "createGroup": "Create group",
+    "directChat": "Direct chat",
+    "emoteKeyboardNoRecents": "Recently-used emotes will appear here...",
+    "exportEmotePack": "Export Emote pack as .zip",
+    "importEmojis": "Import Emojis",
+    "importFromZipFile": "Import from .zip file",
+    "importNow": "Import now",
+    "importZipFile": "Import .zip file",
+    "invalidInput": "Invalid input!",
+    "invalidServerName": "Invalid server name",
+    "invite": "Invite",
+    "inviteContactToGroupQuestion": "Do you want to invite {contact} to the chat \"{groupName}\"?",
+    "inviteGroupChat": "📨 Invite group chat",
+    "invitePrivateChat": "📨 Invite private chat",
+    "messagesStyle": "Messages:",
+    "noChatDescriptionYet": "No chat description created yet.",
+    "noOneCanJoin": "No one can join",
+    "notAnImage": "Not an image file.",
+    "optionalRedactReason": "(Optional) Reason for redacting this message...",
+    "profileNotFound": "The user could not be found on the server. Maybe there is a connection problem or the user doesn't exist.",
+    "redactedBy": "Redacted by {username}",
+    "redactedByBecause": "Redacted by {username} because: \"{reason}\"",
+    "redactMessageDescription": "The message will be redacted for all participants in this conversation. This cannot be undone.",
+    "replace": "Replace",
+    "requests": "Requests",
+    "savedEmotePack": "Saved emote pack to {path}!",
+    "sendTypingNotifications": "Send typing notifications",
+    "setChatDescription": "Set chat description",
+    "setColorTheme": "Set color theme:",
+    "setTheme": "Set theme:",
+    "shareInviteLink": "Share invite link",
+    "signInWith": "Sign in with {provider}",
+    "tryAgain": "Try again",
+    "wrongPinEntered": "Wrong pin entered! Try again in {seconds} seconds...",
 	"allRooms": "All Group Chats",
 	"continueWith": "Continue with:",
 	"openLinkInBrowser": "Open link in browser",

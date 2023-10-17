@@ -1,22 +1,23 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
-import 'dart:typed_data';
-import 'dart:ui';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+import 'package:flutter_app_badger/flutter_app_badger.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:http/http.dart' as http;
 import 'package:matrix/matrix.dart';
 import 'package:unifiedpush/unifiedpush.dart';
-import 'package:vrouter/vrouter.dart';
 
 import 'package:rechainonline/utils/matrix_sdk_extensions/client_stories_extension.dart';
 import 'package:rechainonline/utils/push_helper.dart';
+import 'package:rechainonline/widgets/rechainonline_chat_app.dart';
 import '../config/app_config.dart';
 import '../config/setting_keys.dart';
+import '../widgets/matrix.dart';
 import 'famedlysdk_store.dart';
 import 'platform_infos.dart';
 
@@ -31,16 +32,16 @@ class BackgroundPush {
   final FlutterLocalNotificationsPlugin _flutterLocalNotificationsPlugin =
       FlutterLocalNotificationsPlugin();
   Client client;
-  BuildContext? context;
-  GlobalKey<VRouterState>? router;
+  MatrixState? matrix;
   String? _fcmToken;
   void Function(String errorMsg, {Uri? link})? onFcmError;
   L10n? l10n;
   Store? _store;
   Store get store => _store ??= Store();
   Future<void> loadLocale() async {
+    final context = matrix?.context;
     // inspired by _lookupL10n in .dart_tool/flutter_gen/gen_l10n/l10n.dart
-    l10n ??= (context != null ? L10n.of(context!) : null) ??
+    l10n ??= (context != null ? L10n.of(context) : null) ??
         (await L10n.delegate.load(PlatformDispatcher.instance.locale));
   }
 
@@ -63,8 +64,8 @@ class BackgroundPush {
         ),
         client: client,
         l10n: l10n,
-        activeRoomId: router?.currentState?.pathParameters['roomid'],
-        onSelectNotification: goToRoom,
+        activeRoomId: matrix?.activeRoomId,
+        // onSelectNotification: goToRoom,
       ),
     );
     if (Platform.isAndroid) {
@@ -83,18 +84,33 @@ class BackgroundPush {
   }
 
   factory BackgroundPush(
-    Client client,
-    BuildContext context,
-    GlobalKey<VRouterState>? router, {
+    MatrixState matrix, {
     final void Function(String errorMsg, {Uri? link})? onFcmError,
   }) {
-    final instance = BackgroundPush.clientOnly(client);
-    instance.context = context;
-    // ignore: prefer_initializing_formals
-    instance.router = router;
+    final instance = BackgroundPush.clientOnly(matrix.client);
+    instance.matrix = matrix;
     // ignore: prefer_initializing_formals
     instance.onFcmError = onFcmError;
     return instance;
+  }
+
+  Future<void> cancelNotification(String roomId) async {
+    Logs().v('Cancel notification for room', roomId);
+    final id = await mapRoomIdToInt(roomId);
+    await FlutterLocalNotificationsPlugin().cancel(id);
+
+    // Workaround for app icon badge not updating
+    if (Platform.isIOS) {
+      final unreadCount = client.rooms
+          .where((room) => room.isUnreadOrInvited && room.id != roomId)
+          .length;
+      if (unreadCount == 0) {
+        FlutterAppBadger.removeBadge();
+      } else {
+        FlutterAppBadger.updateBadgeCount(unreadCount);
+      }
+      return;
+    }
   }
 
   StreamSubscription<SyncUpdate>? onRoomSync;
@@ -138,7 +154,11 @@ class BackgroundPush {
           currentPushers.first.lang == 'en' &&
           currentPushers.first.data.url.toString() == gatewayUrl &&
           currentPushers.first.data.format ==
-              AppConfig.pushNotificationsPusherFormat) {
+              AppConfig.pushNotificationsPusherFormat &&
+          mapEquals(
+            currentPushers.single.data.additionalProperties,
+            {"data_message": pusherDataMessageFormat},
+          )) {
         Logs().i('[Push] Pusher already set');
       } else {
         Logs().i('Need to set new pusher');
@@ -175,6 +195,7 @@ class BackgroundPush {
             data: PusherData(
               url: Uri.parse(gatewayUrl!),
               format: AppConfig.pushNotificationsPusherFormat,
+              additionalProperties: {"data_message": pusherDataMessageFormat},
             ),
             kind: 'http',
           ),
@@ -186,13 +207,19 @@ class BackgroundPush {
     }
   }
 
+  final pusherDataMessageFormat = Platform.isAndroid
+      ? 'android'
+      : Platform.isIOS
+          ? 'ios'
+          : null;
+
   bool _wentToRoomOnStartup = false;
 
   Future<void> setupPush() async {
     Logs().d("SetupPush");
     if (client.onLoginStateChanged.value != LoginState.loggedIn ||
         !PlatformInfos.isMobile ||
-        context == null) {
+        matrix == null) {
       return;
     }
     // Do not setup unifiedpush if this has been initialized by
@@ -213,17 +240,16 @@ class BackgroundPush {
         .then((details) {
       if (details == null ||
           !details.didNotificationLaunchApp ||
-          _wentToRoomOnStartup ||
-          router == null) {
+          _wentToRoomOnStartup) {
         return;
       }
       _wentToRoomOnStartup = true;
-      goToRoom(details.notificationResponse);
+      // goToRoom(details.notificationResponse);
     });
   }
 
   Future<void> _noFcmWarning() async {
-    if (context == null) {
+    if (matrix == null) {
       return;
     }
     if (await store.getItemBool(SettingKeys.showNoGoogle, true) == true) {
@@ -262,29 +288,8 @@ class BackgroundPush {
     );
   }
 
-  Future<void> goToRoom(NotificationResponse? response) async {
-    try {
-      final roomId = response?.payload;
-      Logs().v('[Push] Attempting to go to room $roomId...');
-      if (router == null || roomId == null) {
-        return;
-      }
-      await client.roomsLoading;
-      await client.accountDataLoading;
-      final isStory = client
-              .getRoomById(roomId)
-              ?.getState(EventTypes.RoomCreate)
-              ?.content
-              .tryGet<String>('type') ==
-          ClientStoriesExtension.storiesRoomType;
-      router!.currentState!.toSegments([isStory ? 'stories' : 'rooms', roomId]);
-    } catch (e, s) {
-      Logs().e('[Push] Failed to open room', e, s);
-    }
-  }
-
   Future<void> setupUp() async {
-    await UnifiedPush.registerAppWithDialog(context!);
+    await UnifiedPush.registerAppWithDialog(matrix!.context);
   }
 
   Future<void> _newUpEndpoint(String newEndpoint, String i) async {
@@ -357,7 +362,7 @@ class BackgroundPush {
       PushNotification.fromJson(data),
       client: client,
       l10n: l10n,
-      activeRoomId: router?.currentState?.pathParameters['roomid'],
+      activeRoomId: matrix?.activeRoomId,
     );
   }
 
@@ -371,26 +376,6 @@ class BackgroundPush {
         (await store.getItem(SettingKeys.notificationCurrentIds)) ?? '{}',
       ),
     );
-  }
-
-  Future<int> mapRoomIdToInt(String roomId) async {
-    await _loadIdMap();
-    int? currentInt;
-    try {
-      currentInt = idMap[roomId];
-    } catch (_) {
-      currentInt = null;
-    }
-    if (currentInt != null) {
-      return currentInt;
-    }
-    var nCurrentInt = 0;
-    while (idMap.values.contains(currentInt)) {
-      nCurrentInt++;
-    }
-    idMap[roomId] = nCurrentInt;
-    await store.setItem(SettingKeys.notificationCurrentIds, json.encode(idMap));
-    return nCurrentInt;
   }
 
   bool _clearingPushLock = false;

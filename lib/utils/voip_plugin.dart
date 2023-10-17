@@ -3,7 +3,6 @@ import 'dart:core';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter_foreground_task/flutter_foreground_task.dart';
 import 'package:flutter_webrtc/flutter_webrtc.dart' as webrtc_impl;
 import 'package:matrix/matrix.dart';
@@ -12,23 +11,16 @@ import 'package:webrtc_interface/webrtc_interface.dart' hide Navigator;
 import 'package:rechainonline/pages/chat_list/chat_list.dart';
 import 'package:rechainonline/pages/dialer/dialer.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
-import 'package:rechainonline/widgets/rechainonline_chat_app.dart';
 import '../../utils/famedlysdk_store.dart';
 import '../../utils/voip/callkeep_manager.dart';
 import '../../utils/voip/user_media_manager.dart';
+import '../widgets/matrix.dart';
 
 class VoipPlugin with WidgetsBindingObserver implements WebRTCDelegate {
-  final Client client;
-  VoipPlugin(this.client) {
+  final MatrixState matrix;
+  Client get client => matrix.client;
+  VoipPlugin(this.matrix) {
     voip = VoIP(client, this);
-    Connectivity()
-        .onConnectivityChanged
-        .listen(_handleNetworkChanged)
-        .onError((e) => _currentConnectivity = ConnectivityResult.none);
-    Connectivity()
-        .checkConnectivity()
-        .then((result) => _currentConnectivity = result)
-        .catchError((e) => _currentConnectivity = ConnectivityResult.none);
     if (!kIsWeb) {
       final wb = WidgetsBinding.instance;
       wb.addObserver(this);
@@ -38,18 +30,8 @@ class VoipPlugin with WidgetsBindingObserver implements WebRTCDelegate {
   bool background = false;
   bool speakerOn = false;
   late VoIP voip;
-  ConnectivityResult? _currentConnectivity;
   OverlayEntry? overlayEntry;
-
-  void _handleNetworkChanged(ConnectivityResult result) async {
-    /// Got a new connectivity status!
-    if (_currentConnectivity != result) {
-      voip.calls.forEach((_, sess) {
-        sess.restartIce();
-      });
-    }
-    _currentConnectivity = result;
-  }
+  BuildContext get context => matrix.context;
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState? state) {
@@ -59,9 +41,8 @@ class VoipPlugin with WidgetsBindingObserver implements WebRTCDelegate {
   }
 
   void addCallingOverlay(String callId, CallSession call) {
-    final context = kIsWeb
-        ? ChatList.contextForVoip!
-        : rechainonlineChatApp.routerKey.currentContext!; // web is weird
+    final context =
+        kIsWeb ? ChatList.contextForVoip! : this.context; // web is weird
 
     if (overlayEntry != null) {
       Logs().e('[VOIP] addCallingOverlay: The call session already exists?');
@@ -166,8 +147,7 @@ class VoipPlugin with WidgetsBindingObserver implements WebRTCDelegate {
         addCallingOverlay(call.callId, call);
         try {
           if (!hasCallingAccount) {
-            ScaffoldMessenger.of(rechainonlineChatApp.routerKey.currentContext!)
-                .showSnackBar(
+            ScaffoldMessenger.of(context).showSnackBar(
               const SnackBar(
                 content: Text(
                   'No calling accounts found (used for native calls UI)',

@@ -4,7 +4,6 @@ import 'package:flutter_blurhash/flutter_blurhash.dart';
 import 'package:matrix/matrix.dart';
 
 import 'package:rechainonline/pages/image_viewer/image_viewer.dart';
-import 'package:rechainonline/widgets/matrix.dart';
 import 'package:rechainonline/widgets/mxc_image.dart';
 
 class ImageBubble extends StatelessWidget {
@@ -72,7 +71,7 @@ class ImageBubble extends StatelessWidget {
     }
     if (!tapToView) return;
     showDialog(
-      context: Matrix.of(context).navigatorContext,
+      context: context,
       useRootNavigator: false,
       builder: (_) => ImageViewer(event),
     );

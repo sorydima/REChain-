@@ -9,14 +9,15 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:flutter_web_auth_2/flutter_web_auth_2.dart';
 import 'package:future_loading_dialog/future_loading_dialog.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:matrix/matrix.dart';
 import 'package:universal_html/html.dart' as html;
-import 'package:vrouter/vrouter.dart';
 
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/pages/homeserver_picker/homeserver_picker_view.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
+import 'package:rechainonline/widgets/app_lock.dart';
 import 'package:rechainonline/widgets/matrix.dart';
 import '../../utils/localized_exception_extension.dart';
 
@@ -155,7 +156,7 @@ class HomeserverPickerController extends State<HomeserverPicker> {
     return list;
   }
 
-  void login() => VRouter.of(context).to('login');
+  void login() => context.go('${GoRouterState.of(context).fullPath}/login');
 
   @override
   void initState() {
@@ -165,13 +166,12 @@ class HomeserverPickerController extends State<HomeserverPicker> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    Matrix.of(context).navigatorContext = context;
-    return HomeserverPickerView(this);
-  }
+  Widget build(BuildContext context) => HomeserverPickerView(this);
 
   Future<void> restoreBackup() async {
-    final picked = await FilePicker.platform.pickFiles(withData: true);
+    final picked = await AppLock.of(context).pauseWhile(
+      FilePicker.platform.pickFiles(withData: true),
+    );
     final file = picked?.files.firstOrNull;
     if (file == null) return;
     await showFutureLoadingDialog(

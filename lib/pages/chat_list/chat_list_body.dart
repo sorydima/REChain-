@@ -10,12 +10,12 @@ import 'package:rechainonline/pages/chat_list/chat_list_item.dart';
 import 'package:rechainonline/pages/chat_list/search_title.dart';
 import 'package:rechainonline/pages/chat_list/space_view.dart';
 import 'package:rechainonline/pages/chat_list/stories_header.dart';
+import 'package:rechainonline/pages/user_bottom_sheet/user_bottom_sheet.dart';
 import 'package:rechainonline/utils/adaptive_bottom_sheet.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/client_stories_extension.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
 import 'package:rechainonline/utils/stream_extension.dart';
 import 'package:rechainonline/widgets/avatar.dart';
-import 'package:rechainonline/widgets/profile_bottom_sheet.dart';
 import 'package:rechainonline/widgets/public_room_bottom_sheet.dart';
 import '../../config/themes.dart';
 import '../../widgets/connection_status_header.dart';
@@ -150,9 +150,8 @@ class ChatListViewBody extends StatelessWidget {
                                         userSearchResult.results[i].avatarUrl,
                                     onPressed: () => showAdaptiveBottomSheet(
                                       context: context,
-                                      builder: (c) => ProfileBottomSheet(
-                                        userId:
-                                            userSearchResult.results[i].userId,
+                                      builder: (c) => UserBottomSheet(
+                                        profile: userSearchResult.results[i],
                                         outerContext: context,
                                       ),
                                     ),

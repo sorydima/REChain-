@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'package:adaptive_dialog/adaptive_dialog.dart';
@@ -5,12 +8,19 @@ import 'package:collection/collection.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:future_loading_dialog/future_loading_dialog.dart';
+import 'package:go_router/go_router.dart';
+import 'package:http/http.dart' hide Client;
 import 'package:matrix/matrix.dart';
-import 'package:vrouter/vrouter.dart';
 
 import 'package:rechainonline/utils/client_manager.dart';
+import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_file_extension.dart';
+import 'package:rechainonline/widgets/app_lock.dart';
 import '../../widgets/matrix.dart';
+import 'import_archive_dialog.dart';
 import 'settings_emotes_view.dart';
+
+import 'package:archive/archive.dart'
+    if (dart.library.io) 'package:archive/archive_io.dart';
 
 class EmotesSettings extends StatefulWidget {
   const EmotesSettings({Key? key}) : super(key: key);
@@ -20,10 +30,12 @@ class EmotesSettings extends StatefulWidget {
 }
 
 class EmotesSettingsController extends State<EmotesSettings> {
-  String? get roomId => VRouter.of(context).pathParameters['roomid'];
+  String? get roomId => GoRouterState.of(context).pathParameters['roomid'];
+
   Room? get room =>
       roomId != null ? Matrix.of(context).client.getRoomById(roomId!) : null;
-  String? get stateKey => VRouter.of(context).pathParameters['state_key'];
+
+  String? get stateKey => GoRouterState.of(context).pathParameters['state_key'];
 
   bool showSave = false;
   TextEditingController newImageCodeController = TextEditingController();
@@ -44,6 +56,7 @@ class EmotesSettingsController extends State<EmotesSettings> {
   }
 
   ImagePackContent? _pack;
+
   ImagePackContent? get pack {
     if (_pack != null) {
       return _pack;
@@ -52,7 +65,7 @@ class EmotesSettingsController extends State<EmotesSettings> {
     return _pack;
   }
 
-  Future<void> _save(BuildContext context) async {
+  Future<void> save(BuildContext context) async {
     if (readonly) {
       return;
     }
@@ -161,7 +174,7 @@ class EmotesSettingsController extends State<EmotesSettings> {
       room == null ? false : !(room!.canSendEvent('im.ponies.room_emotes'));
 
   void saveAction() async {
-    await _save(context);
+    await save(context);
     setState(() {
       showSave = false;
     });
@@ -198,7 +211,7 @@ class EmotesSettingsController extends State<EmotesSettings> {
       return;
     }
     pack!.images[imageCode] = newImageController.value!;
-    await _save(context);
+    await save(context);
     setState(() {
       newImageCodeController.text = '';
       newImageController.value = null;
@@ -209,9 +222,11 @@ class EmotesSettingsController extends State<EmotesSettings> {
   void imagePickerAction(
     ValueNotifier<ImagePackImageContent?> controller,
   ) async {
-    final result = await FilePicker.platform.pickFiles(
-      type: FileType.image,
-      withData: true,
+    final result = await AppLock.of(context).pauseWhile(
+      FilePicker.platform.pickFiles(
+        type: FileType.image,
+        withData: true,
+      ),
     );
     final pickedFile = result?.files.firstOrNull;
     if (pickedFile == null) return;
@@ -261,5 +276,80 @@ class EmotesSettingsController extends State<EmotesSettings> {
   @override
   Widget build(BuildContext context) {
     return EmotesSettingsView(this);
+  }
+
+  Future<void> importEmojiZip() async {
+    final result = await showFutureLoadingDialog<Archive?>(
+      context: context,
+      future: () async {
+        final result = await AppLock.of(context).pauseWhile(
+          FilePicker.platform.pickFiles(
+            type: FileType.custom,
+            allowedExtensions: [
+              'zip',
+              // TODO: add further encoders
+            ],
+            // TODO: migrate to stream, currently brrrr because of `archive_io`.
+            withData: true,
+          ),
+        );
+
+        if (result == null) return null;
+
+        final buffer = InputStream(result.files.single.bytes);
+
+        final archive = ZipDecoder().decodeBuffer(buffer);
+
+        return archive;
+      },
+    );
+
+    final archive = result.result;
+    if (archive == null) return;
+
+    await showDialog(
+      context: context,
+      builder: (context) => ImportEmoteArchiveDialog(
+        controller: this,
+        archive: archive,
+      ),
+    );
+    setState(() {});
+  }
+
+  Future<void> exportAsZip() async {
+    final client = Matrix.of(context).client;
+
+    await showFutureLoadingDialog(
+      context: context,
+      future: () async {
+        final pack = _getPack();
+        final archive = Archive();
+        for (final entry in pack.images.entries) {
+          final emote = entry.value;
+          final name = entry.key;
+          final url = emote.url.getDownloadLink(client);
+          final response = await get(url);
+
+          archive.addFile(
+            ArchiveFile(
+              name,
+              response.bodyBytes.length,
+              response.bodyBytes,
+            ),
+          );
+        }
+        final fileName =
+            '${pack.pack.displayName ?? client.userID?.localpart ?? 'emotes'}.zip';
+        final output = ZipEncoder().encode(archive);
+
+        if (output == null) return;
+
+        MatrixFile(
+          name: fileName,
+          bytes: Uint8List.fromList(output),
+        ).save(context);
+      },
+    );
   }
 }

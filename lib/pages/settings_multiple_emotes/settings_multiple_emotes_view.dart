@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_gen/gen_l10n/l10n.dart';
+import 'package:go_router/go_router.dart';
 import 'package:matrix/matrix.dart';
-import 'package:vrouter/vrouter.dart';
 
 import 'package:rechainonline/pages/settings_multiple_emotes/settings_multiple_emotes.dart';
 import 'package:rechainonline/widgets/matrix.dart';
@@ -18,7 +18,7 @@ class MultipleEmotesSettingsView extends StatelessWidget {
     final room = Matrix.of(context).client.getRoomById(controller.roomId!)!;
     return Scaffold(
       appBar: AppBar(
-        leading: const BackButton(),
+        leading: const Center(child: BackButton()),
         title: Text(L10n.of(context)!.emotePacks),
       ),
       body: StreamBuilder(
@@ -49,8 +49,9 @@ class MultipleEmotesSettingsView extends StatelessWidget {
               return ListTile(
                 title: Text(packName),
                 onTap: () async {
-                  VRouter.of(context).toSegments(
-                    ['rooms', room.id, 'details', 'emotes', keys[i]],
+                  context.go(
+                    ['', 'rooms', room.id, 'details', 'emotes', keys[i]]
+                        .join('/'),
                   );
                 },
               );

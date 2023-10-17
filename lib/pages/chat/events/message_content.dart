@@ -88,7 +88,7 @@ class MessageContent extends StatelessWidget {
                 event.calcLocalizedBodyFallback(
                   MatrixLocals(l10n),
                 ),
-              )
+              ),
             ],
           ),
         ),
@@ -99,8 +99,7 @@ class MessageContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final fontSize = AppConfig.messageFontSize * AppConfig.fontSizeFactor;
-    final buttonTextColor =
-        event.senderId == Matrix.of(context).client.userID ? textColor : null;
+    final buttonTextColor = textColor;
     switch (event.type) {
       case EventTypes.Message:
       case EventTypes.Encrypted:
@@ -152,7 +151,7 @@ class MessageContent extends StatelessWidget {
               }
               return HtmlMessage(
                 html: html,
-                // textColor: textColor,
+                textColor: textColor,
                 room: event.room,
               );
             }
@@ -163,8 +162,9 @@ class MessageContent extends StatelessWidget {
             return _ButtonContent(
               textColor: buttonTextColor,
               onPressed: () => _verifyOrRequestKey(context),
-              icon: const Icon(Icons.lock_outline),
+              icon: '🔒',
               label: L10n.of(context)!.encrypted,
+              fontSize: fontSize,
             );
           case MessageTypes.Location:
             final geoUri =
@@ -208,14 +208,22 @@ class MessageContent extends StatelessWidget {
               return FutureBuilder<User?>(
                 future: event.redactedBecause?.fetchSenderUser(),
                 builder: (context, snapshot) {
+                  final reason =
+                      event.redactedBecause?.content.tryGet<String>('reason');
+                  final redactedBy = snapshot.data?.calcDisplayname() ??
+                      event.redactedBecause?.senderId.localpart ??
+                      L10n.of(context)!.user;
                   return _ButtonContent(
-                    label: L10n.of(context)!.redactedAnEvent(
-                      snapshot.data?.calcDisplayname() ??
-                          event.senderFromMemoryOrFallback.calcDisplayname(),
-                    ),
-                    icon: const Icon(Icons.delete_outlined),
+                    label: reason == null
+                        ? L10n.of(context)!.redactedBy(redactedBy)
+                        : L10n.of(context)!.redactedByBecause(
+                            redactedBy,
+                            reason,
+                          ),
+                    icon: '🗑️',
                     textColor: buttonTextColor,
                     onPressed: () => onInfoTab!(event),
+                    fontSize: fontSize,
                   );
                 },
               );
@@ -262,9 +270,10 @@ class MessageContent extends StatelessWidget {
                 snapshot.data?.calcDisplayname() ??
                     event.senderFromMemoryOrFallback.calcDisplayname(),
               ),
-              icon: const Icon(Icons.phone_outlined),
+              icon: '📞',
               textColor: buttonTextColor,
               onPressed: () => onInfoTab!(event),
+              fontSize: fontSize,
             );
           },
         );
@@ -278,9 +287,10 @@ class MessageContent extends StatelessWidget {
                     event.senderFromMemoryOrFallback.calcDisplayname(),
                 event.type,
               ),
-              icon: const Icon(Icons.info_outlined),
+              icon: 'ℹ️',
               textColor: buttonTextColor,
               onPressed: () => onInfoTab!(event),
+              fontSize: fontSize,
             );
           },
         );
@@ -291,26 +301,29 @@ class MessageContent extends StatelessWidget {
 class _ButtonContent extends StatelessWidget {
   final void Function() onPressed;
   final String label;
-  final Icon icon;
+  final String icon;
   final Color? textColor;
+  final double fontSize;
 
   const _ButtonContent({
     required this.label,
     required this.icon,
     required this.textColor,
     required this.onPressed,
+    required this.fontSize,
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return OutlinedButton.icon(
-      onPressed: onPressed,
-      icon: icon,
-      label: Text(label, overflow: TextOverflow.ellipsis),
-      style: OutlinedButton.styleFrom(
-        foregroundColor: textColor,
-        backgroundColor: Colors.white.withAlpha(64),
+    return InkWell(
+      onTap: onPressed,
+      child: Text(
+        '$icon  $label',
+        style: TextStyle(
+          color: textColor,
+          fontSize: fontSize,
+        ),
       ),
     );
   }

@@ -27,7 +27,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png" />
 
-  <title>REChain 🪐</title>
+  <title>REChain ®️ 🪐</title>
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" type="text/css" href="splash/style.css">
 </head>
@@ -62,7 +62,7 @@
             function waitForActivation(serviceWorker) {
               serviceWorker.addEventListener('statechange', () => {
                 if (serviceWorker.state == 'activated') {
-                  console.log('Installed new service worker for the REChain 🪐 Platform!');
+                  console.log('Installed new service worker for the REChain ®️ 🪐 Platform!');
                   loadMainDartJs();
                 }
               });
@@ -74,12 +74,12 @@
             } else if (!reg.active.scriptURL.endsWith(serviceWorkerVersion)) {
               // When the app updates the serviceWorkerVersion changes, so we
               // need to ask the service worker to update.
-              console.log('New service worker for the REChain 🪐 Platform is available!');
+              console.log('New service worker for the REChain ®️ 🪐 Platform is available!');
               reg.update();
               waitForActivation(reg.installing);
             } else {
               // Existing service worker is still good.
-              console.log('Loading app from the service worker for the REChain 🪐 Platform!');
+              console.log('Loading app from the service worker for the REChain ®️ 🪐 Platform!');
               loadMainDartJs();
             }
           });
@@ -89,7 +89,7 @@
         setTimeout(() => {
           if (!scriptLoaded) {
             console.warn(
-              'Failed to load the REChain 🪐 Platform from the service worker! Falling back to the plain <script> tag!',
+              'Failed to load the REChain ®️ 🪐 Platform from the service worker! Falling back to the plain <script> tag!',
             );
             loadMainDartJs();
           }

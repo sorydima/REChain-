@@ -1,8 +1,7 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_gen/gen_l10n/l10n.dart';
-import 'package:vrouter/vrouter.dart';
+import 'package:go_router/go_router.dart';
 
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/config/setting_keys.dart';
@@ -24,12 +23,11 @@ class SettingsChatView extends StatelessWidget {
       body: ListTileTheme(
         iconColor: Theme.of(context).textTheme.bodyLarge!.color,
         child: MaxWidthBody(
-          withScrolling: true,
           child: Column(
             children: [
               ListTile(
                 title: Text(L10n.of(context)!.emoteSettings),
-                onTap: () => VRouter.of(context).to('emotes'),
+                onTap: () => context.go('/rooms/settings/chat/emotes'),
                 trailing: const Icon(Icons.chevron_right_outlined),
                 leading: const Icon(Icons.emoji_emotions_outlined),
               ),
@@ -67,23 +65,28 @@ class SettingsChatView extends StatelessWidget {
                 ),
               const Divider(),
               SettingsSwitchListTile.adaptive(
+                title: L10n.of(context)!.sendTypingNotifications,
+                onChanged: (b) => AppConfig.sendTypingNotifications = b,
+                storeKey: SettingKeys.sendTypingNotifications,
+                defaultValue: AppConfig.sendTypingNotifications,
+              ),
+              SettingsSwitchListTile.adaptive(
                 title: L10n.of(context)!.sendOnEnter,
                 onChanged: (b) => AppConfig.sendOnEnter = b,
                 storeKey: SettingKeys.sendOnEnter,
                 defaultValue: AppConfig.sendOnEnter,
               ),
-              if (Matrix.of(context).webrtcIsSupported)
-                SettingsSwitchListTile.adaptive(
-                  title: L10n.of(context)!.experimentalVideoCalls,
-                  onChanged: (b) {
-                    AppConfig.experimentalVoip = b;
-                    Matrix.of(context).createVoipPlugin();
-                    return;
-                  },
-                  storeKey: SettingKeys.experimentalVoip,
-                  defaultValue: AppConfig.experimentalVoip,
-                ),
-              if (Matrix.of(context).webrtcIsSupported && !kIsWeb)
+              SettingsSwitchListTile.adaptive(
+                title: L10n.of(context)!.experimentalVideoCalls,
+                onChanged: (b) {
+                  AppConfig.experimentalVoip = b;
+                  Matrix.of(context).createVoipPlugin();
+                  return;
+                },
+                storeKey: SettingKeys.experimentalVoip,
+                defaultValue: AppConfig.experimentalVoip,
+              ),
+              if (PlatformInfos.isMobile)
                 ListTile(
                   title: Text(L10n.of(context)!.callingPermissions),
                   onTap: () =>

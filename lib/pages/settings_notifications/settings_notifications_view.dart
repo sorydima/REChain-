@@ -19,11 +19,10 @@ class SettingsNotificationsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const BackButton(),
+        leading: const Center(child: BackButton()),
         title: Text(L10n.of(context)!.notifications),
       ),
       body: MaxWidthBody(
-        withScrolling: true,
         child: StreamBuilder(
           stream: Matrix.of(context)
               .client
@@ -58,7 +57,7 @@ class SettingsNotificationsView extends StatelessWidget {
                       ),
                     ),
                   ),
-                  for (var item in NotificationSettingsItem.items)
+                  for (final item in NotificationSettingsItem.items)
                     SwitchListTile.adaptive(
                       value: controller.getNotificationSetting(item) ?? true,
                       title: Text(item.title(context)),

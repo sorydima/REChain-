@@ -3,8 +3,8 @@ import 'package:flutter/services.dart';
 
 import 'package:badges/badges.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
+import 'package:go_router/go_router.dart';
 import 'package:keyboard_shortcuts/keyboard_shortcuts.dart';
-import 'package:vrouter/vrouter.dart';
 
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/config/themes.dart';
@@ -86,13 +86,16 @@ class ChatListView extends StatelessWidget {
       stream: Matrix.of(context).onShareContentChanged.stream,
       builder: (_, __) {
         final selectMode = controller.selectMode;
-        return VWidgetGuard(
-          onSystemPop: (redirector) async {
+        return WillPopScope(
+          onWillPop: () async {
             final selMode = controller.selectMode;
+            if (controller.isSearchMode) {
+              controller.cancelSearch();
+              return false;
+            }
             if (selMode != SelectMode.normal) {
               controller.cancelAction();
-              redirector.stopRedirection();
-              return;
+              return false;
             }
             if (controller.activeFilter !=
                 (AppConfig.separateChatTypes
@@ -100,14 +103,14 @@ class ChatListView extends StatelessWidget {
                     : ActiveFilter.allChats)) {
               controller
                   .onDestinationSelected(AppConfig.separateChatTypes ? 1 : 0);
-              redirector.stopRedirection();
-              return;
+              return false;
             }
+            return true;
           },
           child: Row(
             children: [
               if (rechainonlineThemes.isColumnMode(context) &&
-                  rechainonlineThemes.getDisplayNavigationRail(context)) ...[
+                  controller.widget.displayNavigationRail) ...[
                 Builder(
                   builder: (context) {
                     final allSpaces =
@@ -176,7 +179,14 @@ class ChatListView extends StatelessWidget {
                     body: ChatListViewBody(controller),
                     bottomNavigationBar: controller.displayNavigationBar
                         ? NavigationBar(
+                            elevation: 4,
+                            labelBehavior:
+                                NavigationDestinationLabelBehavior.alwaysHide,
                             height: 64,
+                            shadowColor:
+                                Theme.of(context).colorScheme.onBackground,
+                            surfaceTintColor:
+                                Theme.of(context).colorScheme.background,
                             selectedIndex: controller.selectedIndex,
                             onDestinationSelected:
                                 controller.onDestinationSelected,
@@ -186,10 +196,9 @@ class ChatListView extends StatelessWidget {
                     floatingActionButton: KeyBoardShortcuts(
                       keysToPress: {
                         LogicalKeyboardKey.controlLeft,
-                        LogicalKeyboardKey.keyN
+                        LogicalKeyboardKey.keyN,
                       },
-                      onKeysPressed: () =>
-                          VRouter.of(context).to('/newprivatechat'),
+                      onKeysPressed: () => context.go('/rooms/newprivatechat'),
                       helpLabel: L10n.of(context)!.newChat,
                       child: selectMode == SelectMode.normal &&
                               !controller.isSearchMode
