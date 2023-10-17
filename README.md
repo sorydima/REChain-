@@ -26,7 +26,7 @@ REChain 🪐 - primarily designed as a security and privacy analysis analogue fu
 
 # Community
 
-- 🌍 [[m] Join the community](https://matrix.to/#/#chatting:matrix.katya.wtf)
+- 🌍 [[Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network] Join the community!](https://matrix.to/#/#chatting:matrix.katya.wtf)
 
 # Installation
 
