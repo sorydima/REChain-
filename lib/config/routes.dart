@@ -1,13 +1,17 @@
-import 'package:flutter/material.dart';
+import 'dart:async';
 
-import 'package:vrouter/vrouter.dart';
+import 'package:flutter/cupertino.dart';
 
+import 'package:go_router/go_router.dart';
+
+import 'package:rechainonline/config/themes.dart';
 import 'package:rechainonline/pages/add_story/add_story.dart';
 import 'package:rechainonline/pages/archive/archive.dart';
 import 'package:rechainonline/pages/chat/chat.dart';
 import 'package:rechainonline/pages/chat_details/chat_details.dart';
 import 'package:rechainonline/pages/chat_encryption_settings/chat_encryption_settings.dart';
 import 'package:rechainonline/pages/chat_list/chat_list.dart';
+import 'package:rechainonline/pages/chat_members/chat_members.dart';
 import 'package:rechainonline/pages/chat_permissions_settings/chat_permissions_settings.dart';
 import 'package:rechainonline/pages/device_settings/device_settings.dart';
 import 'package:rechainonline/pages/homeserver_picker/homeserver_picker.dart';
@@ -27,352 +31,397 @@ import 'package:rechainonline/pages/settings_security/settings_security.dart';
 import 'package:rechainonline/pages/settings_stories/settings_stories.dart';
 import 'package:rechainonline/pages/settings_style/settings_style.dart';
 import 'package:rechainonline/pages/story/story_page.dart';
+import 'package:rechainonline/pages/tasks/tasks.dart';
 import 'package:rechainonline/widgets/layouts/empty_page.dart';
-import 'package:rechainonline/widgets/layouts/loading_view.dart';
-import 'package:rechainonline/widgets/layouts/side_view_layout.dart';
 import 'package:rechainonline/widgets/layouts/two_column_layout.dart';
 import 'package:rechainonline/widgets/log_view.dart';
+import 'package:rechainonline/widgets/matrix.dart';
 
-class AppRoutes {
-  final bool columnMode;
+abstract class AppRoutes {
+  static FutureOr<String?> loggedInRedirect(
+    BuildContext context,
+    GoRouterState state,
+  ) =>
+      Matrix.of(context).client.isLogged() ? '/rooms' : null;
 
-  AppRoutes(this.columnMode);
+  static FutureOr<String?> loggedOutRedirect(
+    BuildContext context,
+    GoRouterState state,
+  ) =>
+      Matrix.of(context).client.isLogged() ? null : '/home';
 
-  List<VRouteElement> get routes => [
-        ..._homeRoutes,
-        if (columnMode) ..._tabletRoutes,
-        if (!columnMode) ..._mobileRoutes,
-      ];
+  AppRoutes();
 
-  List<VRouteElement> get _mobileRoutes => [
-        VWidget(
-          path: '/rooms',
-          widget: const ChatList(),
-          stackedRoutes: [
-            VWidget(
-              path: '/stories/create',
-              widget: const AddStoryPage(),
-            ),
-            VWidget(
-              path: '/stories/:roomid',
-              widget: const StoryPage(),
-              stackedRoutes: [
-                VWidget(
-                  path: 'share',
-                  widget: const AddStoryPage(),
-                ),
-              ],
-            ),
-            VWidget(
-              path: '/spaces/:roomid',
-              widget: const ChatDetails(),
-              stackedRoutes: _chatDetailsRoutes,
-            ),
-            VWidget(
-              path: ':roomid',
-              widget: const ChatPage(),
-              stackedRoutes: [
-                VWidget(
-                  path: 'encryption',
-                  widget: const ChatEncryptionSettings(),
-                ),
-                VWidget(
-                  path: 'invite',
-                  widget: const InvitationSelection(),
-                ),
-                VWidget(
-                  path: 'details',
-                  widget: const ChatDetails(),
-                  stackedRoutes: _chatDetailsRoutes,
-                ),
-              ],
-            ),
-            VWidget(
-              path: '/settings',
-              widget: const Settings(),
-              stackedRoutes: _settingsRoutes,
-            ),
-            VWidget(
-              path: '/archive',
-              widget: const Archive(),
-              stackedRoutes: [
-                VWidget(
-                  path: ':roomid',
-                  widget: const ChatPage(),
-                  buildTransition: _dynamicTransition,
-                ),
-              ],
-            ),
-            VWidget(
-              path: '/newprivatechat',
-              widget: const NewPrivateChat(),
-            ),
-            VWidget(
-              path: '/newgroup',
-              widget: const NewGroup(),
-            ),
-            VWidget(
-              path: '/newspace',
-              widget: const NewSpace(),
-            ),
-          ],
-        ),
-      ];
-  List<VRouteElement> get _tabletRoutes => [
-        VNester(
-          path: '/rooms',
-          widgetBuilder: (child) => TwoColumnLayout(
-            mainView: const ChatList(),
-            sideView: child,
+  static final List<RouteBase> routes = [
+    GoRoute(
+      path: '/',
+      redirect: (context, state) =>
+          Matrix.of(context).client.isLogged() ? '/rooms' : '/home',
+    ),
+    GoRoute(
+      path: '/home',
+      pageBuilder: (context, state) => defaultPageBuilder(
+        context,
+        const HomeserverPicker(),
+      ),
+      redirect: loggedInRedirect,
+      routes: [
+        GoRoute(
+          path: 'login',
+          pageBuilder: (context, state) => defaultPageBuilder(
+            context,
+            const Login(),
           ),
-          buildTransition: _fadeTransition,
-          nestedRoutes: [
-            VWidget(
-              path: '',
-              widget: const EmptyPage(),
-              buildTransition: _fadeTransition,
-              stackedRoutes: [
-                VWidget(
-                  path: '/stories/create',
-                  buildTransition: _fadeTransition,
-                  widget: const AddStoryPage(),
+          redirect: loggedInRedirect,
+        ),
+      ],
+    ),
+    GoRoute(
+      path: '/logs',
+      pageBuilder: (context, state) => defaultPageBuilder(
+        context,
+        const LogViewer(),
+      ),
+    ),
+    ShellRoute(
+      pageBuilder: (context, state, child) => defaultPageBuilder(
+        context,
+        rechainonlineThemes.isColumnMode(context) &&
+                state.fullPath?.startsWith('/rooms/settings') == false
+            ? TwoColumnLayout(
+                displayNavigationRail:
+                    state.path?.startsWith('/rooms/settings') != true,
+                mainView: ChatList(
+                  activeChat: state.pathParameters['roomid'],
+                  displayNavigationRail:
+                      state.path?.startsWith('/rooms/settings') != true,
                 ),
-                VWidget(
-                  path: '/stories/:roomid',
-                  buildTransition: _fadeTransition,
-                  widget: const StoryPage(),
-                  stackedRoutes: [
-                    VWidget(
-                      path: 'share',
-                      widget: const AddStoryPage(),
-                    ),
-                  ],
-                ),
-                VWidget(
-                  path: '/spaces/:roomid',
-                  widget: const ChatDetails(),
-                  buildTransition: _fadeTransition,
-                  stackedRoutes: _chatDetailsRoutes,
-                ),
-                VWidget(
-                  path: '/newprivatechat',
-                  widget: const NewPrivateChat(),
-                  buildTransition: _fadeTransition,
-                ),
-                VWidget(
-                  path: '/newgroup',
-                  widget: const NewGroup(),
-                  buildTransition: _fadeTransition,
-                ),
-                VWidget(
-                  path: '/newspace',
-                  widget: const NewSpace(),
-                  buildTransition: _fadeTransition,
-                ),
-                VNester(
-                  path: ':roomid',
-                  widgetBuilder: (child) => SideViewLayout(
-                    mainView: const ChatPage(),
-                    sideView: child,
+                sideView: child,
+              )
+            : child,
+      ),
+      routes: [
+        GoRoute(
+          path: '/rooms',
+          redirect: loggedOutRedirect,
+          pageBuilder: (context, state) => defaultPageBuilder(
+            context,
+            rechainonlineThemes.isColumnMode(context)
+                ? const EmptyPage()
+                : ChatList(
+                    activeChat: state.pathParameters['roomid'],
                   ),
-                  buildTransition: _fadeTransition,
-                  nestedRoutes: [
-                    VWidget(
-                      path: '',
-                      widget: const ChatPage(),
-                      buildTransition: _fadeTransition,
+          ),
+          routes: [
+            GoRoute(
+              path: 'stories/create',
+              pageBuilder: (context, state) => defaultPageBuilder(
+                context,
+                const AddStoryPage(),
+              ),
+              redirect: loggedOutRedirect,
+            ),
+            GoRoute(
+              path: 'stories/:roomid',
+              pageBuilder: (context, state) => defaultPageBuilder(
+                context,
+                const StoryPage(),
+              ),
+              redirect: loggedOutRedirect,
+              routes: [
+                GoRoute(
+                  path: 'share',
+                  pageBuilder: (context, state) => defaultPageBuilder(
+                    context,
+                    const AddStoryPage(),
+                  ),
+                  redirect: loggedOutRedirect,
+                ),
+              ],
+            ),
+            GoRoute(
+              path: 'archive',
+              pageBuilder: (context, state) => defaultPageBuilder(
+                context,
+                const Archive(),
+              ),
+              routes: [
+                GoRoute(
+                  path: ':roomid',
+                  pageBuilder: (context, state) => defaultPageBuilder(
+                    context,
+                    ChatPage(
+                      roomId: state.pathParameters['roomid']!,
                     ),
-                    VWidget(
-                      path: 'encryption',
-                      widget: const ChatEncryptionSettings(),
-                      buildTransition: _fadeTransition,
+                  ),
+                  redirect: loggedOutRedirect,
+                ),
+              ],
+              redirect: loggedOutRedirect,
+            ),
+            GoRoute(
+              path: 'newprivatechat',
+              pageBuilder: (context, state) => defaultPageBuilder(
+                context,
+                const NewPrivateChat(),
+              ),
+              redirect: loggedOutRedirect,
+            ),
+            GoRoute(
+              path: 'newgroup',
+              pageBuilder: (context, state) => defaultPageBuilder(
+                context,
+                const NewGroup(),
+              ),
+              redirect: loggedOutRedirect,
+            ),
+            GoRoute(
+              path: 'newspace',
+              pageBuilder: (context, state) => defaultPageBuilder(
+                context,
+                const NewSpace(),
+              ),
+              redirect: loggedOutRedirect,
+            ),
+            ShellRoute(
+              pageBuilder: (context, state, child) => defaultPageBuilder(
+                context,
+                rechainonlineThemes.isColumnMode(context)
+                    ? TwoColumnLayout(
+                        mainView: const Settings(),
+                        sideView: child,
+                        displayNavigationRail: false,
+                      )
+                    : child,
+              ),
+              routes: [
+                GoRoute(
+                  path: 'settings',
+                  pageBuilder: (context, state) => defaultPageBuilder(
+                    context,
+                    rechainonlineThemes.isColumnMode(context)
+                        ? const EmptyPage()
+                        : const Settings(),
+                  ),
+                  routes: [
+                    GoRoute(
+                      path: 'notifications',
+                      pageBuilder: (context, state) => defaultPageBuilder(
+                        context,
+                        const SettingsNotifications(),
+                      ),
+                      redirect: loggedOutRedirect,
                     ),
-                    VWidget(
-                      path: 'details',
-                      widget: const ChatDetails(),
-                      buildTransition: _fadeTransition,
-                      stackedRoutes: _chatDetailsRoutes,
+                    GoRoute(
+                      path: 'style',
+                      pageBuilder: (context, state) => defaultPageBuilder(
+                        context,
+                        const SettingsStyle(),
+                      ),
+                      redirect: loggedOutRedirect,
                     ),
-                    VWidget(
-                      path: 'invite',
-                      widget: const InvitationSelection(),
-                      buildTransition: _fadeTransition,
+                    GoRoute(
+                      path: 'devices',
+                      pageBuilder: (context, state) => defaultPageBuilder(
+                        context,
+                        const DevicesSettings(),
+                      ),
+                      redirect: loggedOutRedirect,
+                    ),
+                    GoRoute(
+                      path: 'chat',
+                      pageBuilder: (context, state) => defaultPageBuilder(
+                        context,
+                        const SettingsChat(),
+                      ),
+                      routes: [
+                        GoRoute(
+                          path: 'emotes',
+                          pageBuilder: (context, state) => defaultPageBuilder(
+                            context,
+                            const EmotesSettings(),
+                          ),
+                        ),
+                      ],
+                      redirect: loggedOutRedirect,
+                    ),
+                    GoRoute(
+                      path: 'addaccount',
+                      redirect: loggedOutRedirect,
+                      pageBuilder: (context, state) => defaultPageBuilder(
+                        context,
+                        const HomeserverPicker(),
+                      ),
+                      routes: [
+                        GoRoute(
+                          path: 'login',
+                          pageBuilder: (context, state) => defaultPageBuilder(
+                            context,
+                            const Login(),
+                          ),
+                          redirect: loggedOutRedirect,
+                        ),
+                      ],
+                    ),
+                    GoRoute(
+                      path: 'security',
+                      redirect: loggedOutRedirect,
+                      pageBuilder: (context, state) => defaultPageBuilder(
+                        context,
+                        const SettingsSecurity(),
+                      ),
+                      routes: [
+                        GoRoute(
+                          path: 'stories',
+                          pageBuilder: (context, state) => defaultPageBuilder(
+                            context,
+                            const SettingsStories(),
+                          ),
+                          redirect: loggedOutRedirect,
+                        ),
+                        GoRoute(
+                          path: 'ignorelist',
+                          pageBuilder: (context, state) => defaultPageBuilder(
+                            context,
+                            const SettingsIgnoreList(),
+                          ),
+                          redirect: loggedOutRedirect,
+                        ),
+                        GoRoute(
+                          path: '3pid',
+                          pageBuilder: (context, state) => defaultPageBuilder(
+                            context,
+                            const Settings3Pid(),
+                          ),
+                          redirect: loggedOutRedirect,
+                        ),
+                      ],
                     ),
                   ],
+                  redirect: loggedOutRedirect,
                 ),
               ],
             ),
-          ],
-        ),
-        VWidget(
-          path: '/rooms',
-          widget: const TwoColumnLayout(
-            mainView: ChatList(),
-            sideView: EmptyPage(),
-          ),
-          buildTransition: _fadeTransition,
-          stackedRoutes: [
-            VNester(
-              path: '/settings',
-              widgetBuilder: (child) => TwoColumnLayout(
-                mainView: const Settings(),
-                sideView: child,
+            GoRoute(
+              path: ':roomid',
+              pageBuilder: (context, state) => defaultPageBuilder(
+                context,
+                ChatPage(roomId: state.pathParameters['roomid']!),
               ),
-              buildTransition: _dynamicTransition,
-              nestedRoutes: [
-                VWidget(
-                  path: '',
-                  widget: const EmptyPage(),
-                  buildTransition: _dynamicTransition,
-                  stackedRoutes: _settingsRoutes,
+              redirect: loggedOutRedirect,
+              routes: [
+                GoRoute(
+                  path: 'encryption',
+                  pageBuilder: (context, state) => defaultPageBuilder(
+                    context,
+                    const ChatEncryptionSettings(),
+                  ),
+                  redirect: loggedOutRedirect,
+                ),
+                GoRoute(
+                  path: 'invite',
+                  pageBuilder: (context, state) => defaultPageBuilder(
+                    context,
+                    InvitationSelection(
+                      roomId: state.pathParameters['roomid']!,
+                    ),
+                  ),
+                  redirect: loggedOutRedirect,
+                ),
+                GoRoute(
+                  path: 'details',
+                  pageBuilder: (context, state) => defaultPageBuilder(
+                    context,
+                    ChatDetails(
+                      roomId: state.pathParameters['roomid']!,
+                    ),
+                  ),
+                  routes: [
+                    GoRoute(
+                      path: 'members',
+                      pageBuilder: (context, state) => defaultPageBuilder(
+                        context,
+                        ChatMembersPage(
+                          roomId: state.pathParameters['roomid']!,
+                        ),
+                      ),
+                      redirect: loggedOutRedirect,
+                    ),
+                    GoRoute(
+                      path: 'permissions',
+                      pageBuilder: (context, state) => defaultPageBuilder(
+                        context,
+                        const ChatPermissionsSettings(),
+                      ),
+                      redirect: loggedOutRedirect,
+                    ),
+                    GoRoute(
+                      path: 'invite',
+                      pageBuilder: (context, state) => defaultPageBuilder(
+                        context,
+                        InvitationSelection(
+                          roomId: state.pathParameters['roomid']!,
+                        ),
+                      ),
+                      redirect: loggedOutRedirect,
+                    ),
+                    GoRoute(
+                      path: 'multiple_emotes',
+                      pageBuilder: (context, state) => defaultPageBuilder(
+                        context,
+                        const MultipleEmotesSettings(),
+                      ),
+                      redirect: loggedOutRedirect,
+                    ),
+                    GoRoute(
+                      path: 'emotes',
+                      pageBuilder: (context, state) => defaultPageBuilder(
+                        context,
+                        const EmotesSettings(),
+                      ),
+                      redirect: loggedOutRedirect,
+                    ),
+                    GoRoute(
+                      path: 'emotes/:state_key',
+                      pageBuilder: (context, state) => defaultPageBuilder(
+                        context,
+                        const EmotesSettings(),
+                      ),
+                      redirect: loggedOutRedirect,
+                    ),
+                  ],
+                  redirect: loggedOutRedirect,
+                ),
+                GoRoute(
+                  path: 'tasks',
+                  pageBuilder: (context, state) => defaultPageBuilder(
+                    context,
+                    TasksPage(
+                      room: Matrix.of(context)
+                          .client
+                          .getRoomById(state.pathParameters['roomid']!)!,
+                    ),
+                  ),
                 ),
               ],
             ),
-            VNester(
-              path: '/archive',
-              widgetBuilder: (child) => TwoColumnLayout(
-                mainView: const Archive(),
-                sideView: child,
-              ),
-              buildTransition: _fadeTransition,
-              nestedRoutes: [
-                VWidget(
-                  path: '',
-                  widget: const EmptyPage(),
-                  buildTransition: _dynamicTransition,
-                ),
-                VWidget(
-                  path: ':roomid',
-                  widget: const ChatPage(),
-                  buildTransition: _dynamicTransition,
-                ),
-              ],
-            ),
           ],
         ),
-      ];
+      ],
+    ),
+  ];
 
-  List<VRouteElement> get _homeRoutes => [
-        VWidget(path: '/', widget: const LoadingView()),
-        VWidget(
-          path: '/home',
-          widget: const HomeserverPicker(),
-          buildTransition: _fadeTransition,
-          stackedRoutes: [
-            VWidget(
-              path: 'login',
-              widget: const Login(),
-              buildTransition: _fadeTransition,
-            ),
-            VWidget(
-              path: 'logs',
-              widget: const LogViewer(),
-              buildTransition: _dynamicTransition,
-            ),
-          ],
-        ),
-      ];
-
-  List<VRouteElement> get _chatDetailsRoutes => [
-        VWidget(
-          path: 'permissions',
-          widget: const ChatPermissionsSettings(),
-          buildTransition: _dynamicTransition,
-        ),
-        VWidget(
-          path: 'invite',
-          widget: const InvitationSelection(),
-          buildTransition: _dynamicTransition,
-        ),
-        VWidget(
-          path: 'multiple_emotes',
-          widget: const MultipleEmotesSettings(),
-          buildTransition: _dynamicTransition,
-        ),
-        VWidget(
-          path: 'emotes',
-          widget: const EmotesSettings(),
-          buildTransition: _dynamicTransition,
-        ),
-        VWidget(
-          path: 'emotes/:state_key',
-          widget: const EmotesSettings(),
-          buildTransition: _dynamicTransition,
-        ),
-      ];
-
-  List<VRouteElement> get _settingsRoutes => [
-        VWidget(
-          path: 'notifications',
-          widget: const SettingsNotifications(),
-          buildTransition: _dynamicTransition,
-        ),
-        VWidget(
-          path: 'style',
-          widget: const SettingsStyle(),
-          buildTransition: _dynamicTransition,
-        ),
-        VWidget(
-          path: 'devices',
-          widget: const DevicesSettings(),
-          buildTransition: _dynamicTransition,
-        ),
-        VWidget(
-          path: 'chat',
-          widget: const SettingsChat(),
-          buildTransition: _dynamicTransition,
-          stackedRoutes: [
-            VWidget(
-              path: 'emotes',
-              widget: const EmotesSettings(),
-              buildTransition: _dynamicTransition,
-            ),
-          ],
-        ),
-        VWidget(
-          path: 'addaccount',
-          widget: const HomeserverPicker(),
-          buildTransition: _fadeTransition,
-          stackedRoutes: [
-            VWidget(
-              path: 'login',
-              widget: const Login(),
-              buildTransition: _fadeTransition,
-            ),
-          ],
-        ),
-        VWidget(
-          path: 'security',
-          widget: const SettingsSecurity(),
-          buildTransition: _dynamicTransition,
-          stackedRoutes: [
-            VWidget(
-              path: 'stories',
-              widget: const SettingsStories(),
-              buildTransition: _dynamicTransition,
-            ),
-            VWidget(
-              path: 'ignorelist',
-              widget: const SettingsIgnoreList(),
-              buildTransition: _dynamicTransition,
-            ),
-            VWidget(
-              path: '3pid',
-              widget: const Settings3Pid(),
-              buildTransition: _dynamicTransition,
-            ),
-          ],
-        ),
-        VWidget(
-          path: 'logs',
-          widget: const LogViewer(),
-          buildTransition: _dynamicTransition,
-        ),
-      ];
-
-  FadeTransition Function(dynamic, dynamic, dynamic)? get _dynamicTransition =>
-      columnMode ? _fadeTransition : null;
-
-  FadeTransition _fadeTransition(animation1, _, child) =>
-      FadeTransition(opacity: animation1, child: child);
+  static Page defaultPageBuilder(BuildContext context, Widget child) =>
+      CustomTransitionPage(
+        child: child,
+        transitionsBuilder: (context, animation, secondaryAnimation, child) =>
+            rechainonlineThemes.isColumnMode(context)
+                ? FadeTransition(opacity: animation, child: child)
+                : CupertinoPageTransition(
+                    primaryRouteAnimation: animation,
+                    secondaryRouteAnimation: secondaryAnimation,
+                    linearTransition: false,
+                    child: child,
+                  ),
+      );
 }

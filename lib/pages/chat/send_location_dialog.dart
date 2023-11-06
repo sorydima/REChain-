@@ -9,15 +9,14 @@ import 'package:geolocator/geolocator.dart';
 import 'package:matrix/matrix.dart';
 
 import 'package:rechainonline/pages/chat/events/map_bubble.dart';
-import 'package:rechainonline/utils/platform_infos.dart';
 
 class SendLocationDialog extends StatefulWidget {
   final Room room;
 
   const SendLocationDialog({
     required this.room,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   SendLocationDialogState createState() => SendLocationDialogState();
@@ -99,7 +98,7 @@ class SendLocationDialogState extends State<SendLocationDialog> {
       contentWidget = Text(L10n.of(context)!.locationPermissionDeniedNotice);
     } else if (error != null) {
       contentWidget =
-          Text(L10n.of(context)!.errorObtainingLocation(error.toString()));
+          Text("Error obtaining location!");
     } else {
       contentWidget = Row(
         mainAxisSize: MainAxisSize.min,
@@ -111,23 +110,7 @@ class SendLocationDialogState extends State<SendLocationDialog> {
         ],
       );
     }
-    if (PlatformInfos.isCupertinoStyle) {
-      return CupertinoAlertDialog(
-        title: Text(L10n.of(context)!.shareLocation),
-        content: contentWidget,
-        actions: [
-          CupertinoDialogAction(
-            onPressed: Navigator.of(context, rootNavigator: false).pop,
-            child: Text(L10n.of(context)!.cancel),
-          ),
-          CupertinoDialogAction(
-            onPressed: isSending ? null : sendAction,
-            child: Text(L10n.of(context)!.send),
-          ),
-        ],
-      );
-    }
-    return AlertDialog(
+    return AlertDialog.adaptive(
       title: Text(L10n.of(context)!.shareLocation),
       content: contentWidget,
       actions: [

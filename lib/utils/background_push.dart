@@ -18,10 +18,9 @@ import 'package:rechainonline/widgets/rechainonline_chat_app.dart';
 import '../config/app_config.dart';
 import '../config/setting_keys.dart';
 import '../widgets/matrix.dart';
-import 'famedlysdk_store.dart';
 import 'platform_infos.dart';
 
-import 'package:fcm_shared_isolate/fcm_shared_isolate.dart';
+//import 'package:fcm_shared_isolate/fcm_shared_isolate.dart';
 
 class NoTokenException implements Exception {
   String get cause => 'Cannot get firebase token';
@@ -36,8 +35,7 @@ class BackgroundPush {
   String? _fcmToken;
   void Function(String errorMsg, {Uri? link})? onFcmError;
   L10n? l10n;
-  Store? _store;
-  Store get store => _store ??= Store();
+
   Future<void> loadLocale() async {
     final context = matrix?.context;
     // inspired by _lookupL10n in .dart_tool/flutter_gen/gen_l10n/l10n.dart
@@ -47,7 +45,7 @@ class BackgroundPush {
 
   final pendingTests = <String, Completer<void>>{};
 
-  final dynamic firebase = FcmSharedIsolate();
+  final dynamic firebase = null; //FcmSharedIsolate();
 
   DateTime? lastReceivedPush;
 
@@ -65,7 +63,7 @@ class BackgroundPush {
         client: client,
         l10n: l10n,
         activeRoomId: matrix?.activeRoomId,
-        // onSelectNotification: goToRoom,
+        onSelectNotification: goToRoom,
       ),
     );
     if (Platform.isAndroid) {
@@ -244,7 +242,7 @@ class BackgroundPush {
         return;
       }
       _wentToRoomOnStartup = true;
-      // goToRoom(details.notificationResponse);
+      goToRoom(details.notificationResponse);
     });
   }
 
@@ -252,7 +250,7 @@ class BackgroundPush {
     if (matrix == null) {
       return;
     }
-    if (await store.getItemBool(SettingKeys.showNoGoogle, true) == true) {
+    if ((matrix?.store.getBool(SettingKeys.showNoGoogle) ?? false) == true) {
       return;
     }
     await loadLocale();
@@ -286,6 +284,28 @@ class BackgroundPush {
       gatewayUrl: AppConfig.pushNotificationsGatewayUrl,
       token: _fcmToken,
     );
+  }
+
+  Future<void> goToRoom(NotificationResponse? response) async {
+    try {
+      final roomId = response?.payload;
+      Logs().v('[Push] Attempting to go to room $roomId...');
+      if (roomId == null) {
+        return;
+      }
+      await client.roomsLoading;
+      await client.accountDataLoading;
+      final isStory = client
+              .getRoomById(roomId)
+              ?.getState(EventTypes.RoomCreate)
+              ?.content
+              .tryGet<String>('type') ==
+          ClientStoriesExtension.storiesRoomType;
+      rechainonlineChatApp.router
+          .go('/${isStory ? 'rooms/stories' : 'rooms'}/$roomId');
+    } catch (e, s) {
+      Logs().e('[Push] Failed to open room', e, s);
+    }
   }
 
   Future<void> setupUp() async {
@@ -333,16 +353,17 @@ class BackgroundPush {
       oldTokens: oldTokens,
       useDeviceSpecificAppId: true,
     );
-    await store.setItem(SettingKeys.unifiedPushEndpoint, newEndpoint);
-    await store.setItemBool(SettingKeys.unifiedPushRegistered, true);
+    await matrix?.store.setString(SettingKeys.unifiedPushEndpoint, newEndpoint);
+    await matrix?.store.setBool(SettingKeys.unifiedPushRegistered, true);
   }
 
   Future<void> _upUnregistered(String i) async {
     upAction = true;
     Logs().i('[Push] Removing UnifiedPush endpoint...');
-    final oldEndpoint = await store.getItem(SettingKeys.unifiedPushEndpoint);
-    await store.setItemBool(SettingKeys.unifiedPushRegistered, false);
-    await store.deleteItem(SettingKeys.unifiedPushEndpoint);
+    final oldEndpoint =
+        matrix?.store.getString(SettingKeys.unifiedPushEndpoint);
+    await matrix?.store.setBool(SettingKeys.unifiedPushRegistered, false);
+    await matrix?.store.remove(SettingKeys.unifiedPushEndpoint);
     if (oldEndpoint?.isNotEmpty ?? false) {
       // remove the old pusher
       await setupPusher(
@@ -368,12 +389,12 @@ class BackgroundPush {
 
   /// Workaround for the problem that local notification IDs must be int but we
   /// sort by [roomId] which is a String. To make sure that we don't have duplicated
-  /// IDs we map the [roomId] to a number and store this number.
+  /// IDs we map the [roomId] to a number and matrix?.store this number.
   late Map<String, int> idMap;
   Future<void> _loadIdMap() async {
     idMap = Map<String, int>.from(
       json.decode(
-        (await store.getItem(SettingKeys.notificationCurrentIds)) ?? '{}',
+        (matrix?.store.getString(SettingKeys.notificationCurrentIds)) ?? '{}',
       ),
     );
   }
@@ -447,7 +468,7 @@ class BackgroundPush {
         }
       }
       if (changed) {
-        await store.setItem(
+        await matrix?.store.setString(
           SettingKeys.notificationCurrentIds,
           json.encode(idMap),
         );

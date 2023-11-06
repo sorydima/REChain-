@@ -15,7 +15,7 @@ import 'package:rechainonline/utils/url_launcher.dart';
 class PinnedEvents extends StatelessWidget {
   final ChatController controller;
 
-  const PinnedEvents(this.controller, {Key? key}) : super(key: key);
+  const PinnedEvents(this.controller, {super.key});
 
   Future<void> _displayPinnedEventsDialog(
     BuildContext context,
@@ -73,6 +73,12 @@ class PinnedEvents extends StatelessWidget {
         final fontSize = AppConfig.messageFontSize * AppConfig.fontSizeFactor;
         return Material(
           color: Theme.of(context).colorScheme.surfaceVariant,
+          shape: Border(
+            bottom: BorderSide(
+              width: 1,
+              color: Theme.of(context).dividerColor,
+            ),
+          ),
           child: InkWell(
             onTap: () => _displayPinnedEventsDialog(
               context,

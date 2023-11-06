@@ -8,9 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:adaptive_dialog/adaptive_dialog.dart';
 import 'package:collection/collection.dart';
 import 'package:desktop_notifications/desktop_notifications.dart';
-import 'package:flutter_app_lock/flutter_app_lock.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:future_loading_dialog/future_loading_dialog.dart';
 import 'package:http/http.dart' as http;
 import 'package:image_picker/image_picker.dart';
@@ -20,19 +18,18 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:universal_html/html.dart' as html;
 import 'package:url_launcher/url_launcher_string.dart';
-import 'package:vrouter/vrouter.dart';
 
 import 'package:rechainonline/utils/client_manager.dart';
 import 'package:rechainonline/utils/localized_exception_extension.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
 import 'package:rechainonline/utils/uia_request_manager.dart';
 import 'package:rechainonline/utils/voip_plugin.dart';
+import 'package:rechainonline/widgets/rechainonline_chat_app.dart';
 import '../config/app_config.dart';
 import '../config/setting_keys.dart';
 import '../pages/key_verification/key_verification_dialog.dart';
 import '../utils/account_bundles.dart';
 import '../utils/background_push.dart';
-import '../utils/famedlysdk_store.dart';
 import 'local_notifications_extension.dart';
 
 // import 'package:flutter_secure_storage/flutter_secure_storage.dart';
@@ -40,22 +37,19 @@ import 'local_notifications_extension.dart';
 class Matrix extends StatefulWidget {
   final Widget? child;
 
-  final GlobalKey<VRouterState>? router;
-
-  final BuildContext context;
-
   final List<Client> clients;
 
   final Map<String, String>? queryParameters;
 
+  final SharedPreferences store;
+
   const Matrix({
     this.child,
-    required this.router,
-    required this.context,
     required this.clients,
+    required this.store,
     this.queryParameters,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   MatrixState createState() => MatrixState();
@@ -68,8 +62,7 @@ class Matrix extends StatefulWidget {
 class MatrixState extends State<Matrix> with WidgetsBindingObserver {
   int _activeClient = -1;
   String? activeBundle;
-  Store store = Store();
-  late BuildContext navigatorContext;
+  SharedPreferences get store => widget.store;
 
   HomeserverSummary? loginHomeserverSummary;
   XFile? loginAvatar;
@@ -87,12 +80,6 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
     }
     return widget.clients[_activeClient];
   }
-
-  bool get webrtcIsSupported =>
-      kIsWeb ||
-      PlatformInfos.isMobile ||
-      PlatformInfos.isWindows ||
-      PlatformInfos.isMacOS;
 
   VoipPlugin? voipPlugin;
 
@@ -174,10 +161,13 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
         if (!widget.clients.contains(_loginClientCandidate)) {
           widget.clients.add(_loginClientCandidate!);
         }
-        ClientManager.addClientNameToStore(_loginClientCandidate!.clientName);
+        ClientManager.addClientNameToStore(
+          _loginClientCandidate!.clientName,
+          store,
+        );
         _registerSubs(_loginClientCandidate!.clientName);
         _loginClientCandidate = null;
-        widget.router!.currentState!.to('/rooms');
+        rechainonlineChatApp.router.go('/rooms');
       });
     return candidate;
   }
@@ -203,7 +193,7 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
     try {
       if (client.isLogged()) {
         // TODO: Figure out how this works in multi account
-        final statusMsg = await store.getItem(SettingKeys.ownStatusMessage);
+        final statusMsg = store.getString(SettingKeys.ownStatusMessage);
         if (statusMsg?.isNotEmpty ?? false) {
           Logs().v('Send cached status message: "$statusMsg"');
           await client.setPresence(
@@ -244,7 +234,11 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
 
   bool webHasFocus = true;
 
-  String? get activeRoomId => navigatorContext.vRouter.pathParameters['roomid'];
+  String? get activeRoomId {
+    final route = rechainonlineChatApp.router.routeInformationProvider.value.uri.path;
+    if (!route.startsWith('/rooms/')) return null;
+    return route.split('/')[2];
+  }
 
   final linuxNotifications =
       PlatformInfos.isLinux ? NotificationsClient() : null;
@@ -313,20 +307,20 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
         if (!hidPopup &&
             {KeyVerificationState.done, KeyVerificationState.error}
                 .contains(request.state)) {
-          Navigator.of(navigatorContext).pop('dialog');
+          Navigator.of(context).pop('dialog');
         }
         hidPopup = true;
       };
       request.onUpdate = null;
       hidPopup = true;
-      await KeyVerificationDialog(request: request).show(navigatorContext);
+      await KeyVerificationDialog(request: request).show(context);
     });
     onLoginStateChanged[name] ??= c.onLoginStateChanged.stream.listen((state) {
       final loggedInWithMultipleClients = widget.clients.length > 1;
       if (loggedInWithMultipleClients && state != LoginState.loggedIn) {
         _cancelSubs(c.clientName);
         widget.clients.remove(c);
-        ClientManager.removeClientNameFromStore(c.clientName);
+        ClientManager.removeClientNameFromStore(c.clientName, store);
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(L10n.of(context)!.oneClientLoggedOut),
@@ -334,16 +328,11 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
         );
 
         if (state != LoginState.loggedIn) {
-          widget.router?.currentState?.to(
-            '/rooms',
-            queryParameters: widget.router?.currentState?.queryParameters ?? {},
-          );
+          rechainonlineChatApp.router.go('/rooms');
         }
       } else {
-        widget.router?.currentState?.to(
-          state == LoginState.loggedIn ? '/rooms' : '/home',
-          queryParameters: widget.router?.currentState?.queryParameters ?? {},
-        );
+        rechainonlineChatApp.router
+            .go(state == LoginState.loggedIn ? '/rooms' : '/home');
       }
     });
     onUiaRequest[name] ??= c.onUiaRequest.stream.listen(uiaRequestHandler);
@@ -375,23 +364,6 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
   }
 
   void initMatrix() {
-    // Display the app lock
-    if (PlatformInfos.isMobile) {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        ([TargetPlatform.linux].contains(Theme.of(context).platform)
-                ? SharedPreferences.getInstance()
-                    .then((prefs) => prefs.getString(SettingKeys.appLockKey))
-                : const FlutterSecureStorage()
-                    .read(key: SettingKeys.appLockKey))
-            .then((lock) {
-          if (lock?.isNotEmpty ?? false) {
-            AppLock.of(widget.context)!.enable();
-            AppLock.of(widget.context)!.showLockScreen();
-          }
-        });
-      });
-    }
-
     _initWithStore();
 
     for (final c in widget.clients) {
@@ -403,15 +375,43 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
       onBlurSub = html.window.onBlur.listen((_) => webHasFocus = false);
     }
 
+    if (PlatformInfos.isMobile) {
+      backgroundPush = BackgroundPush(
+        this
+        // onFcmError: (errorMsg, {Uri? link}) async {
+        //   final result = await showOkCancelAlertDialog(
+        //     barrierDismissible: true,
+        //     context: context,
+        //     title: L10n.of(context)!.pushNotificationsNotAvailable,
+        //     message: errorMsg,
+        //     fullyCapitalizedForMaterial: false,
+        //     okLabel: link == null
+        //         ? L10n.of(context)!.ok
+        //         : L10n.of(context)!.learnMore,
+        //     cancelLabel: L10n.of(context)!.doNotShowAgain,
+        //   );
+        //   if (result == OkCancelResult.ok && link != null) {
+        //     launchUrlString(
+        //       link.toString(),
+        //       mode: LaunchMode.externalApplication,
+        //     );
+        //   }
+        //   if (result == OkCancelResult.cancel) {
+        //     await store.setBool(SettingKeys.showNoGoogle, true);
+        //   }
+        // },
+      );
+    }
+
     createVoipPlugin();
   }
 
   void createVoipPlugin() async {
-    if (await store.getItemBool(SettingKeys.experimentalVoip) == false) {
+    if (store.getBool(SettingKeys.experimentalVoip) == false) {
       voipPlugin = null;
       return;
     }
-    /// voipPlugin = webrtcIsSupported ? VoipPlugin(client) : null;
+    voipPlugin = VoipPlugin(this);
   }
 
   @override
@@ -425,51 +425,40 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
   }
 
   void initSettings() {
-    store.getItem(SettingKeys.wallpaper).then((final path) async {
-      if (path == null) return;
-      final file = File(path);
-      if (await file.exists()) {
-        wallpaper = file;
-      }
-    });
-    store.getItem(SettingKeys.fontSizeFactor).then(
-          (value) => AppConfig.fontSizeFactor =
-              double.tryParse(value ?? '') ?? AppConfig.fontSizeFactor,
-        );
-    store.getItem(SettingKeys.bubbleSizeFactor).then(
-          (value) => AppConfig.bubbleSizeFactor =
-              double.tryParse(value ?? '') ?? AppConfig.bubbleSizeFactor,
-        );
-    store
-        .getItemBool(SettingKeys.renderHtml, AppConfig.renderHtml)
-        .then((value) => AppConfig.renderHtml = value);
-    store
-        .getItemBool(
-          SettingKeys.hideRedactedEvents,
-          AppConfig.hideRedactedEvents,
-        )
-        .then((value) => AppConfig.hideRedactedEvents = value);
-    store
-        .getItemBool(SettingKeys.hideUnknownEvents, AppConfig.hideUnknownEvents)
-        .then((value) => AppConfig.hideUnknownEvents = value);
-    store
-        .getItemBool(
-          SettingKeys.showDirectChatsInSpaces,
-          AppConfig.showDirectChatsInSpaces,
-        )
-        .then((value) => AppConfig.showDirectChatsInSpaces = value);
-    store
-        .getItemBool(SettingKeys.separateChatTypes, AppConfig.separateChatTypes)
-        .then((value) => AppConfig.separateChatTypes = value);
-    store
-        .getItemBool(SettingKeys.autoplayImages, AppConfig.autoplayImages)
-        .then((value) => AppConfig.autoplayImages = value);
-    store
-        .getItemBool(SettingKeys.sendOnEnter, AppConfig.sendOnEnter)
-        .then((value) => AppConfig.sendOnEnter = value);
-    store
-        .getItemBool(SettingKeys.experimentalVoip, AppConfig.experimentalVoip)
-        .then((value) => AppConfig.experimentalVoip = value);
+    final path = store.getString(SettingKeys.wallpaper);
+    if (path != null) wallpaper = File(path);
+
+    AppConfig.fontSizeFactor =
+        double.tryParse(store.getString(SettingKeys.fontSizeFactor) ?? '') ??
+            AppConfig.fontSizeFactor;
+
+    AppConfig.renderHtml =
+        store.getBool(SettingKeys.renderHtml) ?? AppConfig.renderHtml;
+
+    AppConfig.hideRedactedEvents =
+        store.getBool(SettingKeys.hideRedactedEvents) ??
+            AppConfig.hideRedactedEvents;
+
+    AppConfig.hideUnknownEvents =
+        store.getBool(SettingKeys.hideUnknownEvents) ??
+            AppConfig.hideUnknownEvents;
+
+    AppConfig.separateChatTypes =
+        store.getBool(SettingKeys.separateChatTypes) ??
+            AppConfig.separateChatTypes;
+
+    AppConfig.autoplayImages =
+        store.getBool(SettingKeys.autoplayImages) ?? AppConfig.autoplayImages;
+
+    AppConfig.sendTypingNotifications =
+        store.getBool(SettingKeys.sendTypingNotifications) ??
+            AppConfig.sendTypingNotifications;
+
+    AppConfig.sendOnEnter =
+        store.getBool(SettingKeys.sendOnEnter) ?? AppConfig.sendOnEnter;
+
+    AppConfig.experimentalVoip = store.getBool(SettingKeys.experimentalVoip) ??
+        AppConfig.experimentalVoip;
   }
 
   @override
@@ -496,30 +485,6 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
       create: (_) => this,
       child: widget.child,
     );
-  }
-}
-
-class FixedThreepidCreds extends ThreepidCreds {
-  FixedThreepidCreds({
-    required String sid,
-    required String clientSecret,
-    String? idServer,
-    String? idAccessToken,
-  }) : super(
-          sid: sid,
-          clientSecret: clientSecret,
-          idServer: idServer,
-          idAccessToken: idAccessToken,
-        );
-
-  @override
-  Map<String, dynamic> toJson() {
-    final data = <String, dynamic>{};
-    data['sid'] = sid;
-    data['client_secret'] = clientSecret;
-    if (idServer != null) data['id_server'] = idServer;
-    if (idAccessToken != null) data['id_access_token'] = idAccessToken;
-    return data;
   }
 }
 

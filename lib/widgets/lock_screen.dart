@@ -1,88 +1,124 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
-import 'package:flutter_app_lock/flutter_app_lock.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:pin_code_text_field/pin_code_text_field.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:rechainonline/config/app_config.dart';
-import 'package:rechainonline/config/setting_keys.dart';
 import 'package:rechainonline/config/themes.dart';
-import 'layouts/login_scaffold.dart';
+import 'package:rechainonline/widgets/app_lock.dart';
+import 'package:rechainonline/widgets/theme_builder.dart';
 
 class LockScreen extends StatefulWidget {
-  const LockScreen({Key? key}) : super(key: key);
+  const LockScreen({super.key});
 
   @override
-  LockScreenState createState() => LockScreenState();
+  State<LockScreen> createState() => _LockScreenState();
 }
 
-class LockScreenState extends State<LockScreen> {
+class _LockScreenState extends State<LockScreen> {
+  String? _errorText;
+  int _coolDownSeconds = 5;
+  bool _inputBlocked = false;
   final TextEditingController _textEditingController = TextEditingController();
-  final FocusNode _focusNode = FocusNode();
-  bool _wrongInput = false;
+
+  void tryUnlock(BuildContext context) async {
+    setState(() {
+      _errorText = null;
+    });
+    if (_textEditingController.text.length < 4) return;
+
+    final enteredPin = int.tryParse(_textEditingController.text);
+    if (enteredPin == null || _textEditingController.text.length != 4) {
+      setState(() {
+        _errorText = L10n.of(context)!.invalidInput;
+      });
+      _textEditingController.clear();
+      return;
+    }
+
+    if (AppLock.of(context).unlock(enteredPin.toString())) {
+      setState(() {
+        _inputBlocked = false;
+        _errorText = null;
+      });
+      _textEditingController.clear();
+      return;
+    }
+
+    setState(() {
+      _errorText = L10n.of(context)!.wrongPinEntered(_coolDownSeconds);
+      _inputBlocked = true;
+    });
+    Future.delayed(Duration(seconds: _coolDownSeconds)).then((_) {
+      setState(() {
+        _inputBlocked = false;
+        _coolDownSeconds *= 2;
+        _errorText = null;
+      });
+    });
+    _textEditingController.clear();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: rechainonlineThemes.buildTheme(Brightness.light),
-      darkTheme: rechainonlineThemes.buildTheme(Brightness.dark),
-      localizationsDelegates: L10n.localizationsDelegates,
-      supportedLocales: L10n.supportedLocales,
-      home: Builder(
-        builder: (context) => LoginScaffold(
-          appBar: AppBar(
-            automaticallyImplyLeading: false,
-            elevation: 0,
-            centerTitle: true,
-            title: Text(L10n.of(context)!.pleaseEnterYourPin),
-            backgroundColor: Colors.transparent,
-          ),
-          body: Container(
-            decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.background,
-              gradient: LinearGradient(
-                begin: Alignment.topRight,
-                end: Alignment.bottomLeft,
-                stops: const [
-                  0.1,
-                  0.4,
-                  0.6,
-                  0.9,
-                ],
-                colors: [
-                  Theme.of(context).secondaryHeaderColor.withAlpha(16),
-                  Theme.of(context).primaryColor.withAlpha(16),
-                  Theme.of(context).colorScheme.secondary.withAlpha(16),
-                  Theme.of(context).colorScheme.background.withAlpha(16),
-                ],
-              ),
+    return ThemeBuilder(
+      builder: (context, themeMode, primaryColor) => MaterialApp(
+        title: AppConfig.applicationName,
+        themeMode: themeMode,
+        theme: rechainonlineThemes.buildTheme(context, Brightness.light, primaryColor),
+        darkTheme:
+            rechainonlineThemes.buildTheme(context, Brightness.dark, primaryColor),
+        localizationsDelegates: L10n.localizationsDelegates,
+        supportedLocales: L10n.supportedLocales,
+        home: Builder(
+          builder: (context) => Scaffold(
+            appBar: AppBar(
+              title: Text(L10n.of(context)!.pleaseEnterYourPin),
+              centerTitle: true,
             ),
-            alignment: Alignment.center,
-            child: PinCodeTextField(
-              autofocus: true,
-              controller: _textEditingController,
-              focusNode: _focusNode,
-              pinBoxRadius: AppConfig.borderRadius,
-              pinTextStyle: const TextStyle(fontSize: 32),
-              hideCharacter: true,
-              hasError: _wrongInput,
-              onDone: (String input) async {
-                if (input ==
-                    await ([TargetPlatform.linux]
-                            .contains(Theme.of(context).platform)
-                        ? SharedPreferences.getInstance().then(
-                            (prefs) => prefs.getString(SettingKeys.appLockKey),
-                          )
-                        : const FlutterSecureStorage()
-                            .read(key: SettingKeys.appLockKey))) {
-                  AppLock.of(context)!.didUnlock();
-                } else {
-                  _textEditingController.clear();
-                  setState(() => _wrongInput = true);
-                  _focusNode.requestFocus();
-                }
-              },
+            extendBodyBehindAppBar: true,
+            body: Center(
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(
+                    maxWidth: rechainonlineThemes.columnWidth,
+                  ),
+                  child: ListView(
+                    shrinkWrap: true,
+                    children: [
+                      Center(
+                        child: Image.asset(
+                          'assets/info-logo.png',
+                          width: 256,
+                        ),
+                      ),
+                      TextField(
+                        controller: _textEditingController,
+                        textInputAction: TextInputAction.done,
+                        keyboardType: TextInputType.number,
+                        obscureText: true,
+                        autofocus: true,
+                        textAlign: TextAlign.center,
+                        readOnly: _inputBlocked,
+                        onChanged: (_) => tryUnlock(context),
+                        onSubmitted: (_) => tryUnlock(context),
+                        style: const TextStyle(fontSize: 40),
+                        decoration: InputDecoration(
+                          errorText: _errorText,
+                          hintText: '****',
+                        ),
+                      ),
+                      if (_inputBlocked)
+                        const Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: LinearProgressIndicator(),
+                        ),
+                    ],
+                  ),
+                ),
+              ),
             ),
           ),
         ),

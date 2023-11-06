@@ -17,7 +17,6 @@ import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/config/themes.dart';
 import 'package:rechainonline/pages/chat_list/chat_list_view.dart';
 import 'package:rechainonline/pages/settings_security/settings_security.dart';
-import 'package:rechainonline/utils/famedlysdk_store.dart';
 import 'package:rechainonline/utils/localized_exception_extension.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/client_stories_extension.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
@@ -61,10 +60,10 @@ class ChatList extends StatefulWidget {
   final String? activeChat;
 
   const ChatList({
-    Key? key,
+    super.key,
     this.displayNavigationRail = false,
     required this.activeChat,
-  }) : super(key: key);
+  });
 
   @override
   ChatListController createState() => ChatListController();
@@ -189,7 +188,7 @@ class ChatListController extends State<ChatList>
       ],
     );
     if (newServer == null) return;
-    Store().setItem(_serverStoreNamespace, newServer.single);
+    Matrix.of(context).store.setString(_serverStoreNamespace, newServer.single);
     setState(() {
       searchServer = newServer.single;
     });
@@ -382,7 +381,8 @@ class ChatListController extends State<ChatList>
     CallKeepManager().initialize();
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       if (mounted) {
-        searchServer = await Store().getItem(_serverStoreNamespace);
+        searchServer =
+            Matrix.of(context).store.getString(_serverStoreNamespace);
         Matrix.of(context).backgroundPush?.setupPush();
       }
 
@@ -471,6 +471,7 @@ class ChatListController extends State<ChatList>
           title: L10n.of(context)!.areYouSure,
           okLabel: L10n.of(context)!.yes,
           cancelLabel: L10n.of(context)!.cancel,
+          message: "Archive",
         ) ==
         OkCancelResult.ok;
     if (!confirmed) return;

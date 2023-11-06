@@ -4,16 +4,13 @@ publish_to: none
 version: 3.7.0+1125
 
 environment:
-  sdk: ">=2.18.0 <3.0.0"
-
-analyzer:
-  enable-experiment:
-  - non-nullable
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
-  adaptive_dialog: ^1.8.3+1
+  adaptive_dialog: ^1.9.0+2
   animations: ^2.0.7
-  archive: ^3.3.2
+  archive: ^3.3.9
+  async: ^2.11.0
   badges: ^3.1.1
   blurhash_dart: ^1.1.0
   callkeep: ^0.3.2
@@ -28,12 +25,11 @@ dependencies:
   emoji_picker_flutter: ^1.5.1
   emoji_proposal: ^0.0.1
   emojis: ^0.9.9
-  fcm_shared_isolate: ^0.1.0
-  file_picker: ^5.3.0
+  #fcm_shared_isolate: ^0.1.0
+  file_picker: ^6.0.0
   flutter:
     sdk: flutter
   flutter_app_badger: ^1.5.0
-  flutter_app_lock: ^3.0.0
   flutter_blurhash: ^0.7.0
   flutter_cache_manager: ^3.3.0
   flutter_foreground_task: ^6.0.0+1
@@ -41,21 +37,21 @@ dependencies:
   flutter_html: ^3.0.0-beta.2
   flutter_html_table: ^3.0.0-beta.2
   flutter_linkify: ^6.0.0
-  flutter_local_notifications: ^15.1.0+1
+  flutter_local_notifications: ^16.1.0
   flutter_localizations:
     sdk: flutter
   flutter_map: ^4.0.0
-  flutter_math_fork: ^0.6.3+1
+  flutter_math_fork: ^0.7.1
   flutter_olm: ^1.2.0
   flutter_openssl_crypto: ^0.1.0
   flutter_ringtone_player: ^3.1.1
   flutter_secure_storage: ^9.0.0
   flutter_typeahead: ^4.3.2
-  flutter_web_auth_2: ^2.1.1
-  flutter_webrtc: ^0.9.34
-  future_loading_dialog: ^0.2.3
+  flutter_web_auth_2: ^3.0.3
+  flutter_webrtc: ^0.9.37
+  future_loading_dialog: ^0.3.0
   geolocator: ^7.6.2
-  go_router: ^10.0.0
+  go_router: ^12.0.1
   hive: ^2.2.3
   hive_flutter: ^1.1.0
   http: ^0.13.4
@@ -65,20 +61,19 @@ dependencies:
   keyboard_shortcuts: ^0.1.4
   latlong2: ^0.8.1
   linkify: ^5.0.0
-  matrix: ^0.22.1
+  matrix: ^0.22.6
   matrix_homeserver_recommendations: ^0.3.0
   native_imaging: ^0.1.0
   package_info_plus: ^4.0.0
   pasteboard: ^0.2.0
   path_provider: ^2.0.9
-  permission_handler: ^10.0.0
-  pin_code_text_field: ^1.8.0
+  permission_handler: ^11.0.1
   provider: ^6.0.2
   punycode: ^1.0.0
   qr_code_scanner: ^1.0.0
   qr_flutter: ^4.0.0
   receive_sharing_intent: ^1.4.5
-  record: ^4.4.4
+  record: ^4.4.4 # Upgrade to 5 currently breaks playing on iOS
   scroll_to_index: ^3.0.1
   share_plus: ^7.0.0
   shared_preferences: ^2.2.0 # Pinned because https://github.com/flutter/flutter/issues/118401
@@ -92,13 +87,12 @@ dependencies:
   vibration: ^1.7.4-nullsafety.0
   video_compress: ^3.1.1
   video_player: ^2.2.18
-  vrouter: ^1.2.1
-  wakelock_plus: ^1.1.1
+  wakelock_plus: ^1.1.3
   webrtc_interface: ^1.0.13
 
 dev_dependencies:
   dart_code_metrics: ^5.7.5
-  flutter_lints: ^2.0.1
+  flutter_lints: ^3.0.0
   flutter_native_splash: ^2.0.3+1
   flutter_test:
     sdk: flutter

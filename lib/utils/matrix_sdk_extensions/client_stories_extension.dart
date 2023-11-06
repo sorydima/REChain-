@@ -72,6 +72,7 @@ extension ClientStoriesExtension on Client {
       invite: invite,
     );
     if (getRoomById(roomId) == null) {
+      // Wait for room actually appears in sync and is encrypted.
       await onSync.stream.firstWhere(
         (sync) =>
             sync.rooms?.join?[roomId]?.state

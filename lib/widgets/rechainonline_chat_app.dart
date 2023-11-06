@@ -1,87 +1,69 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_gen/gen_l10n/l10n.dart';
+import 'package:go_router/go_router.dart';
 import 'package:matrix/matrix.dart';
-import 'package:vrouter/vrouter.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:rechainonline/config/routes.dart';
 import 'package:rechainonline/config/themes.dart';
+import 'package:rechainonline/widgets/app_lock.dart';
 import 'package:rechainonline/widgets/theme_builder.dart';
 import '../config/app_config.dart';
 import '../utils/custom_scroll_behaviour.dart';
 import 'matrix.dart';
 
-class rechainonlineChatApp extends StatefulWidget {
+class rechainonlineChatApp extends StatelessWidget {
   final Widget? testWidget;
   final List<Client> clients;
-  final Map<String, String>? queryParameters;
-  static GlobalKey<VRouterState> routerKey = GlobalKey<VRouterState>();
+  final String? pincode;
+  final SharedPreferences store;
+
   const rechainonlineChatApp({
-    Key? key,
+    super.key,
     this.testWidget,
     required this.clients,
-    this.queryParameters,
-  }) : super(key: key);
+    required this.store,
+    this.pincode,
+  });
 
   /// getInitialLink may rereturn the value multiple times if this view is
   /// opened multiple times for example if the user logs out after they logged
   /// in with qr code or magic link.
   static bool gotInitialLink = false;
 
-  @override
-  rechainonlineChatAppState createState() => rechainonlineChatAppState();
-}
-
-class rechainonlineChatAppState extends State<rechainonlineChatApp> {
-  bool? columnMode;
-  String? _initialUrl;
-
-  @override
-  void initState() {
-    super.initState();
-    _initialUrl =
-        widget.clients.any((client) => client.isLogged()) ? '/rooms' : '/home';
-  }
+  // Router must be outside of build method so that hot reload does not reset
+  // the current path.
+  static final GoRouter router = GoRouter(routes: AppRoutes.routes);
 
   @override
   Widget build(BuildContext context) {
     return ThemeBuilder(
-      builder: (context, themeMode, primaryColor) => LayoutBuilder(
-        builder: (context, constraints) {
-          final isColumnMode =
-              rechainonlineThemes.isColumnModeByWidth(constraints.maxWidth);
-          if (isColumnMode != columnMode) {
-            Logs().v('Set Column Mode = $isColumnMode');
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              setState(() {
-                _initialUrl = rechainonlineChatApp.routerKey.currentState?.url;
-                columnMode = isColumnMode;
-                rechainonlineChatApp.routerKey = GlobalKey<VRouterState>();
-              });
-            });
-          }
-          return VRouter(
-            key: rechainonlineChatApp.routerKey,
-            title: AppConfig.applicationName,
-            debugShowCheckedModeBanner: false,
-            themeMode: themeMode,
-            theme: rechainonlineThemes.buildTheme(Brightness.light, primaryColor),
-            darkTheme: rechainonlineThemes.buildTheme(Brightness.dark, primaryColor),
-            scrollBehavior: CustomScrollBehavior(),
-            logs: kReleaseMode ? VLogs.none : VLogs.info,
-            localizationsDelegates: L10n.localizationsDelegates,
-            supportedLocales: L10n.supportedLocales,
-            initialUrl: _initialUrl ?? '/',
-            routes: AppRoutes(columnMode ?? false).routes,
-            builder: (context, child) => Matrix(
-              context: context,
-              router: rechainonlineChatApp.routerKey,
-              clients: widget.clients,
-              child: child,
+      builder: (context, themeMode, primaryColor) => MaterialApp.router(
+        title: AppConfig.applicationName,
+        themeMode: themeMode,
+        theme: rechainonlineThemes.buildTheme(context, Brightness.light, primaryColor),
+        darkTheme:
+            rechainonlineThemes.buildTheme(context, Brightness.dark, primaryColor),
+        scrollBehavior: CustomScrollBehavior(),
+        localizationsDelegates: L10n.localizationsDelegates,
+        supportedLocales: L10n.supportedLocales,
+        routerConfig: router,
+        builder: (context, child) => AppLockWidget(
+          pincode: pincode,
+          clients: clients,
+          // Need a navigator above the Matrix widget for
+          // displaying dialogs
+          child: Navigator(
+            onGenerateRoute: (_) => MaterialPageRoute(
+              builder: (_) => Matrix(
+                clients: clients,
+                store: store,
+                child: testWidget ?? child,
+              ),
             ),
-          );
-        },
+          ),
+        ),
       ),
     );
   }

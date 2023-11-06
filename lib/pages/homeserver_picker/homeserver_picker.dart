@@ -8,7 +8,6 @@ import 'package:collection/collection.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:flutter_web_auth_2/flutter_web_auth_2.dart';
-import 'package:future_loading_dialog/future_loading_dialog.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:matrix/matrix.dart';
@@ -25,7 +24,7 @@ import 'package:rechainonline/utils/tor_stub.dart'
     if (dart.library.html) 'package:tor_detector_web/tor_detector_web.dart';
 
 class HomeserverPicker extends StatefulWidget {
-  const HomeserverPicker({Key? key}) : super(key: key);
+  const HomeserverPicker({super.key});
 
   @override
   HomeserverPickerController createState() => HomeserverPickerController();
@@ -33,6 +32,8 @@ class HomeserverPicker extends StatefulWidget {
 
 class HomeserverPickerController extends State<HomeserverPicker> {
   bool isLoading = false;
+  bool isLoggingIn = false;
+
   final TextEditingController homeserverController = TextEditingController(
     text: AppConfig.defaultHomeserver,
   );
@@ -113,40 +114,60 @@ class HomeserverPickerController extends State<HomeserverPicker> {
 
   Map<String, dynamic>? _rawLoginTypes;
 
-  void ssoLoginAction(String id) async {
+  void ssoLoginAction(String? id) async {
     final redirectUrl = kIsWeb
         ? '${html.window.origin!}/web/auth.html'
         : isDefaultPlatform
             ? '${AppConfig.appOpenUrlScheme.toLowerCase()}://login'
             : 'http://localhost:3001//login';
-    final url =
-        '${Matrix.of(context).getLoginClient().homeserver?.toString()}/_matrix/client/r0/login/sso/redirect/${Uri.encodeComponent(id)}?redirectUrl=${Uri.encodeQueryComponent(redirectUrl)}';
+
+    final url = Matrix.of(context).getLoginClient().homeserver!.replace(
+      path: '/_matrix/client/r0/login/sso/redirect${id == null ? '' : '/$id'}',
+      queryParameters: {'redirectUrl': redirectUrl},
+    );
+
     final urlScheme = isDefaultPlatform
         ? Uri.parse(redirectUrl).scheme
         : "http://localhost:3001";
     final result = await FlutterWebAuth2.authenticate(
-      url: url,
+      url: url.toString(),
       callbackUrlScheme: urlScheme,
     );
     final token = Uri.parse(result).queryParameters['loginToken'];
     if (token?.isEmpty ?? false) return;
 
-    await showFutureLoadingDialog(
-      context: context,
-      future: () => Matrix.of(context).getLoginClient().login(
+    setState(() {
+      error = null;
+      isLoading = isLoggingIn = true;
+    });
+    try {
+      await Matrix.of(context).getLoginClient().login(
             LoginType.mLoginToken,
             token: token,
             initialDeviceDisplayName: PlatformInfos.clientName,
-          ),
-    );
+          );
+    } catch (e) {
+      setState(() {
+        error = e.toLocalizedString(context);
+      });
+    } finally {
+      if (mounted) {
+        setState(() {
+          isLoading = isLoggingIn = false;
+        });
+      }
+    }
   }
 
   List<IdentityProvider>? get identityProviders {
     final loginTypes = _rawLoginTypes;
     if (loginTypes == null) return null;
-    final rawProviders = loginTypes.tryGetList('flows')!.singleWhere(
-          (flow) => flow['type'] == AuthenticationTypes.sso,
-        )['identity_providers'];
+    final List? rawProviders = loginTypes.tryGetList('flows')!.singleWhere(
+              (flow) => flow['type'] == AuthenticationTypes.sso,
+            )['identity_providers'] ??
+        [
+          {'id': null},
+        ];
     final list = (rawProviders as List)
         .map((json) => IdentityProvider.fromJson(json))
         .toList();
@@ -174,18 +195,25 @@ class HomeserverPickerController extends State<HomeserverPicker> {
     );
     final file = picked?.files.firstOrNull;
     if (file == null) return;
-    await showFutureLoadingDialog(
-      context: context,
-      future: () async {
-        try {
-          final client = Matrix.of(context).getLoginClient();
-          await client.importDump(String.fromCharCodes(file.bytes!));
-          Matrix.of(context).initMatrix();
-        } catch (e, s) {
-          Logs().e('Future error:', e, s);
-        }
-      },
-    );
+    setState(() {
+      error = null;
+      isLoading = isLoggingIn = true;
+    });
+    try {
+      final client = Matrix.of(context).getLoginClient();
+      await client.importDump(String.fromCharCodes(file.bytes!));
+      Matrix.of(context).initMatrix();
+    } catch (e) {
+      setState(() {
+        error = e.toLocalizedString(context);
+      });
+    } finally {
+      if (mounted) {
+        setState(() {
+          isLoading = isLoggingIn = false;
+        });
+      }
+    }
   }
 }
 

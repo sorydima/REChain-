@@ -12,14 +12,10 @@ import 'package:universal_html/html.dart' as html;
 
 class FlutterHiveCollectionsDatabase extends HiveCollectionsDatabase {
   FlutterHiveCollectionsDatabase(
-    String name,
-    String path, {
-    HiveCipher? key,
-  }) : super(
-          name,
-          path,
-          key: key,
-        );
+    super.name,
+    String super.path, {
+    super.key,
+  });
 
   static const String _cipherStorageKey = 'hive_encryption_key';
 
@@ -101,7 +97,6 @@ class FlutterHiveCollectionsDatabase extends HiveCollectionsDatabase {
           directory = Directory.current;
         }
       }
-      // do not destroy your stable rechainonline in debug mode
       directory = Directory(
         directory.uri.resolve(kDebugMode ? 'hive_debug' : 'hive').toFilePath(),
       );

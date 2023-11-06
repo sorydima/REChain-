@@ -13,7 +13,7 @@ import 'homeserver_picker.dart';
 class HomeserverPickerView extends StatelessWidget {
   final HomeserverPickerController controller;
 
-  const HomeserverPickerView(this.controller, {Key? key}) : super(key: key);
+  const HomeserverPickerView(this.controller, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -57,15 +57,6 @@ class HomeserverPickerView extends StatelessWidget {
                   ? const Center(child: CircularProgressIndicator.adaptive())
                   : ListView(
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                          child: rechainonlineThemes.isColumnMode(context)
-                              ? Image.asset(
-                                  'assets/info-logo.png',
-                                  height: 96,
-                                )
-                              : Image.asset('assets/banner_transparent.png'),
-                        ),
                         const SizedBox(height: 12),
                         if (errorText != null) ...[
                           const Center(
@@ -97,8 +88,18 @@ class HomeserverPickerView extends StatelessWidget {
                               ),
                             ),
                           ),
-                          const SizedBox(height: 12),
-                        ],
+                          const SizedBox(height: 36),
+                        ] else
+                          Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 8.0),
+                            child: rechainonlineThemes.isColumnMode(context)
+                                ? Image.asset(
+                                    'assets/info-logo.png',
+                                    height: 96,
+                                  )
+                                : Image.asset('assets/banner_transparent.png'),
+                          ),
                         if (identityProviders != null) ...[
                           ...identityProviders.map(
                             (provider) => _LoginButton(
@@ -124,7 +125,7 @@ class HomeserverPickerView extends StatelessWidget {
                                     L10n.of(context)!.singlesignon,
                               ),
                               onPressed: () =>
-                                  controller.ssoLoginAction(provider.id!),
+                                  controller.ssoLoginAction(provider.id),
                             ),
                           ),
                         ],
@@ -143,6 +144,8 @@ class HomeserverPickerView extends StatelessWidget {
                                 style: TextButton.styleFrom(
                                   padding:
                                       const EdgeInsets.symmetric(vertical: 12),
+                                  foregroundColor:
+                                      Theme.of(context).colorScheme.secondary,
                                 ),
                                 onPressed: controller.restoreBackup,
                                 child: Text(
@@ -172,8 +175,7 @@ class _LoginButton extends StatelessWidget {
     required this.icon,
     required this.label,
     required this.onPressed,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
 
 import 'package:collection/collection.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:matrix/matrix.dart';
-import 'package:universal_html/html.dart' as html;
-import 'package:flutter_app_lock/flutter_app_lock.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/utils/client_manager.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
+import 'package:rechainonline/widgets/error_widget.dart';
 import 'config/setting_keys.dart';
 import 'utils/background_push.dart';
 import 'widgets/rechainonline_chat_app.dart';
-import 'widgets/lock_screen.dart';
 
 void main() async {
   Logs().i('Welcome to ${AppConfig.applicationName} <3');
@@ -24,7 +22,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   Logs().nativeColors = !PlatformInfos.isIOS;
-  final clients = await ClientManager.getClients();
+  final store = await SharedPreferences.getInstance();
+  final clients = await ClientManager.getClients(store: store);
 
   // If the app starts in detached mode, we assume that it is in
   // background fetch mode for processing push notifications. This is
@@ -35,7 +34,7 @@ void main() async {
     // starting the Flutter engine but process incoming push notifications.
     BackgroundPush.clientOnly(clients.first);
     // To start the flutter engine afterwards we add an custom observer.
-    WidgetsBinding.instance.addObserver(AppStarter(clients));
+    WidgetsBinding.instance.addObserver(AppStarter(clients, store));
     Logs().i(
       '${AppConfig.applicationName} started in background-fetch mode. No GUI will be created unless the app is no longer detached.',
     );
@@ -46,11 +45,11 @@ void main() async {
   Logs().i(
     '${AppConfig.applicationName} started in foreground mode. Rendering GUI...',
   );
-  await startGui(clients);
+  await startGui(clients, store);
 }
 
 /// Fetch the pincode for the applock and start the flutter engine.
-Future<void> startGui(List<Client> clients) async {
+Future<void> startGui(List<Client> clients, SharedPreferences store) async {
   // Fetch the pin for the applock if existing for mobile applications.
   String? pin;
   if (PlatformInfos.isMobile) {
@@ -67,36 +66,18 @@ Future<void> startGui(List<Client> clients) async {
   await firstClient?.roomsLoading;
   await firstClient?.accountDataLoading;
 
-  final queryParameters = <String, String>{};
-  if (kIsWeb) {
-    queryParameters
-        .addAll(Uri.parse(html.window.location.href).queryParameters);
-  }
-
-  runApp(
-    PlatformInfos.isMobile
-        ? AppLock(
-            builder: (args) => rechainonlineChatApp(
-              clients: clients,
-              queryParameters: queryParameters,
-            ),
-            lockScreen: const LockScreen(),
-            enabled: false,
-          )
-        : rechainonlineChatApp(
-            clients: clients,
-            queryParameters: queryParameters,
-          ),
-  );
+  ErrorWidget.builder = (details) => rechainonlineChatErrorWidget(details);
+  runApp(rechainonlineChatApp(clients: clients, pincode: pin, store: store));
 }
 
 /// Watches the lifecycle changes to start the application when it
 /// is no longer detached.
 class AppStarter with WidgetsBindingObserver {
   final List<Client> clients;
+  final SharedPreferences store;
   bool guiStarted = false;
 
-  AppStarter(this.clients);
+  AppStarter(this.clients, this.store);
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
@@ -106,7 +87,7 @@ class AppStarter with WidgetsBindingObserver {
     Logs().i(
       '${AppConfig.applicationName} switches from the detached background-fetch mode to ${state.name} mode. Rendering GUI...',
     );
-    startGui(clients);
+    startGui(clients, store);
     // We must make sure that the GUI is only started once.
     guiStarted = true;
   }

@@ -16,8 +16,7 @@ class ChatSettingsPopupMenu extends StatefulWidget {
   final Room room;
   final bool displayChatDetails;
 
-  const ChatSettingsPopupMenu(this.room, this.displayChatDetails, {Key? key})
-      : super(key: key);
+  const ChatSettingsPopupMenu(this.room, this.displayChatDetails, {super.key});
 
   @override
   ChatSettingsPopupMenuState createState() => ChatSettingsPopupMenuState();
@@ -64,6 +63,16 @@ class ChatSettingsPopupMenuState extends State<ChatSettingsPopupMenu> {
                 ],
               ),
             ),
+      PopupMenuItem<String>(
+        value: 'todos',
+        child: Row(
+          children: [
+            const Icon(Icons.task_alt_outlined),
+            const SizedBox(width: 12),
+            Text("ToDo Lists!"),
+          ],
+        ),
+      ),
       PopupMenuItem<String>(
         value: 'leave',
         child: Row(
@@ -112,6 +121,7 @@ class ChatSettingsPopupMenuState extends State<ChatSettingsPopupMenu> {
                   title: L10n.of(context)!.areYouSure,
                   okLabel: L10n.of(context)!.ok,
                   cancelLabel: L10n.of(context)!.cancel,
+                  message: "Archive!",
                 );
                 if (confirmed == OkCancelResult.ok) {
                   final success = await showFutureLoadingDialog(
@@ -136,6 +146,9 @@ class ChatSettingsPopupMenuState extends State<ChatSettingsPopupMenu> {
                   future: () =>
                       widget.room.setPushRuleState(PushRuleState.notify),
                 );
+                break;
+              case 'todos':
+                context.go('/rooms/${widget.room.id}/tasks');
                 break;
               case 'details':
                 _showChatDetails();

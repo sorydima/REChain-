@@ -23,6 +23,7 @@ class ChatListItem extends StatelessWidget {
   final bool selected;
   final void Function()? onTap;
   final void Function()? onLongPress;
+  final void Function()? onForget;
 
   const ChatListItem(
     this.room, {
@@ -30,8 +31,9 @@ class ChatListItem extends StatelessWidget {
     this.selected = false,
     this.onTap,
     this.onLongPress,
-    Key? key,
-  }) : super(key: key);
+    this.onForget,
+    super.key,
+  });
 
   void clickAction(BuildContext context) async {
     if (onTap != null) return onTap!();
@@ -132,6 +134,7 @@ class ChatListItem extends StatelessWidget {
         title: L10n.of(context)!.areYouSure,
         okLabel: L10n.of(context)!.yes,
         cancelLabel: L10n.of(context)!.no,
+        message: "Archive!",
       );
       if (confirmed == OkCancelResult.cancel) return;
       await showFutureLoadingDialog(
@@ -361,6 +364,12 @@ class ChatListItem extends StatelessWidget {
             ],
           ),
           onTap: () => clickAction(context),
+          trailing: onForget == null
+              ? null
+              : IconButton(
+                  icon: const Icon(Icons.delete_outlined),
+                  onPressed: onForget,
+                ),
         ),
       ),
     );

@@ -19,8 +19,8 @@ class MatrixLocals extends MatrixLocalizations {
 
   @override
   String answeredTheCall(String senderName) {
-    return l10n.answeredTheCall(senderName);
-  }
+     return l10n.answeredTheCall(senderName, senderName);
+   }
 
   @override
   String get anyoneCanJoin => l10n.anyoneCanJoin;
@@ -317,4 +317,7 @@ class MatrixLocals extends MatrixLocalizations {
 
   @override
   String get unknownUser => l10n.user;
+
+  @override
+  String hasKnocked(String targetName) => l10n.hasKnocked(targetName);
 }

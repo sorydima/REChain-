@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:matrix/matrix.dart';
 
+import 'package:rechainonline/pages/tasks/tasks.dart';
 import 'uia_request_manager.dart';
 
 extension LocalizedExceptionExtension on Object {
@@ -19,6 +20,9 @@ extension LocalizedExceptionExtension on Object {
           return (this as MatrixException).errorMessage;
       }
     }
+    // if (this is TodoListChangedException) {
+    //   return L10n.of(context)!.todoListChangedError;
+    // }
     if (this is FileTooBigMatrixException) {
       return L10n.of(context)!.fileIsTooBigForServer;
     }
@@ -38,6 +42,7 @@ extension LocalizedExceptionExtension on Object {
         supportedVersions,
         serverVersions,
         supportedVersions,
+        serverVersions,
       );
     }
     if (this is BadServerLoginTypesException) {
@@ -50,12 +55,13 @@ extension LocalizedExceptionExtension on Object {
           .supportedLoginTypes
           .toString()
           .replaceAll('{', '"')
+          .replaceAll('}', '"')
           .replaceAll('}', '"');
-      return L10n.of(context)!.badServerLoginTypesException(
-        serverVersions,
-        supportedVersions,
-        supportedVersions,
-      );
+      // return L10n.of(context)!.badServerLoginTypesException(
+      //   serverVersions,
+      //   supportedVersions,
+      //   supportedVersions,
+      // );
     }
     if (this is MatrixConnectionException || this is SocketException) {
       return L10n.of(context)!.noConnectionToTheServer;

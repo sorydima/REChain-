@@ -16,7 +16,7 @@ import '../bootstrap/bootstrap_dialog.dart';
 import 'settings_security_view.dart';
 
 class SettingsSecurity extends StatefulWidget {
-  const SettingsSecurity({Key? key}) : super(key: key);
+  const SettingsSecurity({super.key});
 
   @override
   SettingsSecurityController createState() => SettingsSecurityController();
@@ -179,7 +179,7 @@ class SettingsSecurityController extends State<SettingsSecurity> {
         );
 
         final exportFileName =
-            'rechainonline-export-${DateFormat(DateFormat.YEAR_MONTH_DAY).format(DateTime.now())}.rechainonline';
+            'rechainonline-export-${DateFormat(DateFormat.YEAR_MONTH_DAY).format(DateTime.now())}.rechainonlinebackup';
 
         return MatrixFile(bytes: exportBytes, name: exportFileName);
       },
