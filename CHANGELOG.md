@@ -23,7 +23,7 @@ Release with a lot of bug fixes and refactorings under the hood. REChain ®️ �
 - build: Re-add handywindow Linux code lines!
 - build: Update Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network, Matrix, Flutter, Dart & others SDKs!
 - build: Update targetSdkVersion to 33 (Android 13)!
-- build: Update to Flutter 3.13.7!
+- build: Update to Flutter 3.13.9!
 - change: Remove widgets feature!
 - chore: Display username in userbottomsheet!
 - chore: Make appbar buttons correct size!
