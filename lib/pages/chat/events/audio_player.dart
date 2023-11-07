@@ -20,8 +20,7 @@ class AudioPlayerWidget extends StatefulWidget {
 
   static const int wavesCount = 40;
 
-  const AudioPlayerWidget(this.event, {this.color = Colors.black, Key? key})
-      : super(key: key);
+  const AudioPlayerWidget(this.event, {this.color = Colors.black, super.key});
 
   @override
   AudioPlayerState createState() => AudioPlayerState();
@@ -223,8 +222,8 @@ class AudioPlayerState extends State<AudioPlayerWidget> {
               children: [
                 for (var i = 0; i < AudioPlayerWidget.wavesCount; i++)
                   Expanded(
-                    child: InkWell(
-                      onTap: () => audioPlayer?.seek(
+                    child: GestureDetector(
+                      onTapDown: (_) => audioPlayer?.seek(
                         Duration(
                           milliseconds:
                               (maxPosition / AudioPlayerWidget.wavesCount)

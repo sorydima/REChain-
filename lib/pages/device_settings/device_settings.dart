@@ -13,7 +13,7 @@ import 'package:rechainonline/utils/localized_exception_extension.dart';
 import '../../widgets/matrix.dart';
 
 class DevicesSettings extends StatefulWidget {
-  const DevicesSettings({Key? key}) : super(key: key);
+  const DevicesSettings({super.key});
 
   @override
   DevicesSettingsController createState() => DevicesSettingsController();
@@ -38,6 +38,7 @@ class DevicesSettingsController extends State<DevicesSettings> {
           title: L10n.of(context)!.areYouSure,
           okLabel: L10n.of(context)!.yes,
           cancelLabel: L10n.of(context)!.cancel,
+          message: "Remove",
         ) ==
         OkCancelResult.cancel) return;
     final matrix = Matrix.of(context);

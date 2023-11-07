@@ -29,7 +29,7 @@ enum _EventContextAction { info, report }
 class ChatView extends StatelessWidget {
   final ChatController controller;
 
-  const ChatView(this.controller, {Key? key}) : super(key: key);
+  const ChatView(this.controller, {super.key});
 
   List<Widget> _appBarActions(BuildContext context) {
     if (controller.selectMode) {
@@ -91,38 +91,25 @@ class ChatView extends StatelessWidget {
                   ],
                 ),
               ),
-              PopupMenuItem(
-                value: _EventContextAction.report,
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    const Icon(
-                      Icons.shield_outlined,
-                      color: Colors.red,
-                    ),
-                    const SizedBox(width: 12),
-                    Text(L10n.of(context)!.reportMessage),
-                  ],
+              if (controller.selectedEvents.single.status.isSent)
+                PopupMenuItem(
+                  value: _EventContextAction.report,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const Icon(
+                        Icons.shield_outlined,
+                        color: Colors.red,
+                      ),
+                      const SizedBox(width: 12),
+                      Text(L10n.of(context)!.reportMessage),
+                    ],
+                  ),
                 ),
-              ),
             ],
           ),
       ];
-    } else if (controller.isArchived) {
-      return [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: TextButton.icon(
-            onPressed: controller.forgetRoom,
-            style: TextButton.styleFrom(
-              foregroundColor: Theme.of(context).colorScheme.error,
-            ),
-            icon: const Icon(Icons.delete_forever_outlined),
-            label: Text(L10n.of(context)!.delete),
-          ),
-        ),
-      ];
-    } else {
+    } else if (!controller.room.isArchived) {
       return [
         if (Matrix.of(context).voipPlugin != null &&
             controller.room.isDirectChat)
@@ -135,6 +122,7 @@ class ChatView extends StatelessWidget {
         ChatSettingsPopupMenu(controller.room, true),
       ];
     }
+    return [];
   }
 
   @override
@@ -225,7 +213,13 @@ class ChatView extends StatelessWidget {
                               Material(
                                 color: Theme.of(context)
                                     .colorScheme
-                                    .secondaryContainer,
+                                    .surfaceVariant,
+                                shape: Border(
+                                  bottom: BorderSide(
+                                    width: 1,
+                                    color: Theme.of(context).dividerColor,
+                                  ),
+                                ),
                                 child: ListTile(
                                   leading: IconButton(
                                     color: Theme.of(context)

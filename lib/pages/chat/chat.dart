@@ -43,9 +43,9 @@ class ChatPage extends StatelessWidget {
   final String roomId;
 
   const ChatPage({
-    Key? key,
+    super.key,
     required this.roomId,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -95,9 +95,9 @@ class ChatPageWithRoom extends StatefulWidget {
   final Room room;
 
   const ChatPageWithRoom({
-    Key? key,
+    super.key,
     required this.room,
-  }) : super(key: key);
+  });
 
   @override
   ChatController createState() => ChatController();
@@ -149,9 +149,8 @@ class ChatController extends State<ChatPageWithRoom> {
       );
     }
 
-    await showDialog(
+    await showAdaptiveDialog(
       context: context,
-      useRootNavigator: false,
       builder: (c) => SendFileDialog(
         files: matrixFiles,
         room: room,
@@ -276,8 +275,18 @@ class ChatController extends State<ChatPageWithRoom> {
     if (timeline?.allowNewEvent == false ||
         scrollController.position.pixels > 0 && _scrolledUp == false) {
       setState(() => _scrolledUp = true);
-    } else if (scrollController.position.pixels == 0 && _scrolledUp == true) {
+    } else if (scrollController.position.pixels <= 0 && _scrolledUp == true) {
       setState(() => _scrolledUp = false);
+    }
+
+    if (scrollController.position.pixels == 0 ||
+        scrollController.position.pixels == 64) {
+      requestFuture();
+    } else if (scrollController.position.pixels ==
+            scrollController.position.maxScrollExtent ||
+        scrollController.position.pixels + 64 ==
+            scrollController.position.maxScrollExtent) {
+      requestHistory();
     }
   }
 
@@ -452,7 +461,6 @@ class ChatController extends State<ChatPageWithRoom> {
       final l10n = L10n.of(context)!;
       final dialogResult = await showOkCancelAlertDialog(
         context: context,
-        useRootNavigator: false,
         title: l10n.commandInvalid,
         message: l10n.commandMissing(commandMatch[0]!),
         okLabel: l10n.sendAsText,
@@ -485,14 +493,13 @@ class ChatController extends State<ChatPageWithRoom> {
   void sendFileAction() async {
     final result = await AppLock.of(context).pauseWhile(
       FilePicker.platform.pickFiles(
-        allowMultiple: true,
+        allowMultiple: false,
         withData: true,
       ),
     );
     if (result == null || result.files.isEmpty) return;
-    await showDialog(
+    await showAdaptiveDialog(
       context: context,
-      useRootNavigator: false,
       builder: (c) => SendFileDialog(
         files: result.files
             .map(
@@ -508,9 +515,8 @@ class ChatController extends State<ChatPageWithRoom> {
   }
 
   void sendImageFromClipBoard(Uint8List? image) async {
-    await showDialog(
+    await showAdaptiveDialog(
       context: context,
-      useRootNavigator: false,
       builder: (c) => SendFileDialog(
         files: [
           MatrixFile(
@@ -524,19 +530,17 @@ class ChatController extends State<ChatPageWithRoom> {
   }
 
   void sendImageAction() async {
-    //AppLock.of(context).pauseWhile();
     final result = await AppLock.of(context).pauseWhile(
       FilePicker.platform.pickFiles(
         type: FileType.image,
         withData: true,
-        allowMultiple: true,
+        allowMultiple: false,
       ),
     );
     if (result == null || result.files.isEmpty) return;
 
-    await showDialog(
+    await showAdaptiveDialog(
       context: context,
-      useRootNavigator: false,
       builder: (c) => SendFileDialog(
         files: result.files
             .map(
@@ -557,9 +561,8 @@ class ChatController extends State<ChatPageWithRoom> {
     final file = await ImagePicker().pickImage(source: ImageSource.camera);
     if (file == null) return;
     final bytes = await file.readAsBytes();
-    await showDialog(
+    await showAdaptiveDialog(
       context: context,
-      useRootNavigator: false,
       builder: (c) => SendFileDialog(
         files: [
           MatrixImageFile(
@@ -575,12 +578,14 @@ class ChatController extends State<ChatPageWithRoom> {
   void openVideoCameraAction() async {
     // Make sure the textfield is unfocused before opening the camera
     FocusScope.of(context).requestFocus(FocusNode());
-    final file = await ImagePicker().pickVideo(source: ImageSource.camera);
+    final file = await ImagePicker().pickVideo(
+      source: ImageSource.camera,
+      maxDuration: const Duration(minutes: 1),
+    );
     if (file == null) return;
     final bytes = await file.readAsBytes();
-    await showDialog(
+    await showAdaptiveDialog(
       context: context,
-      useRootNavigator: false,
       builder: (c) => SendFileDialog(
         files: [
           MatrixVideoFile(
@@ -629,7 +634,6 @@ class ChatController extends State<ChatPageWithRoom> {
     if (await Record().hasPermission() == false) return;
     final result = await showDialog<RecordingResult>(
       context: context,
-      useRootNavigator: false,
       barrierDismissible: false,
       builder: (c) => const RecordingDialog(),
     );
@@ -686,9 +690,8 @@ class ChatController extends State<ChatPageWithRoom> {
   }
 
   void sendLocationAction() async {
-    await showDialog(
+    await showAdaptiveDialog(
       context: context,
-      useRootNavigator: false,
       builder: (c) => SendLocationDialog(room: room),
     );
   }
@@ -743,7 +746,6 @@ class ChatController extends State<ChatPageWithRoom> {
     );
     if (score == null) return;
     final reason = await showTextInputDialog(
-      useRootNavigator: false,
       context: context,
       title: L10n.of(context)!.whyDoYouWantToReportThis,
       okLabel: L10n.of(context)!.ok,
@@ -768,6 +770,25 @@ class ChatController extends State<ChatPageWithRoom> {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text(L10n.of(context)!.contentHasBeenReported)),
     );
+  }
+
+  void deleteErrorEventsAction() async {
+    try {
+      if (selectedEvents.any((event) => event.status != EventStatus.error)) {
+        throw Exception(
+          'Tried to delete failed to send events but one event is not failed to sent',
+        );
+      }
+      for (final event in selectedEvents) {
+        await event.remove();
+      }
+      setState(selectedEvents.clear);
+    } catch (e, s) {
+      ErrorReporter(
+        context,
+        'Error while delete error events action',
+      ).onErrorCallback(e, s);
+    }
   }
 
   void redactEventsAction() async {
@@ -830,6 +851,7 @@ class ChatController extends State<ChatPageWithRoom> {
     if (isArchived) return false;
     final clients = Matrix.of(context).currentBundle;
     for (final event in selectedEvents) {
+      if (!event.status.isSent) return false;
       if (event.canRedact == false &&
           !(clients!.any((cl) => event.senderId == cl!.userID))) return false;
     }
@@ -843,8 +865,7 @@ class ChatController extends State<ChatPageWithRoom> {
         !selectedEvents.single.status.isSent) {
       return false;
     }
-    return currentRoomBundle
-        .any((cl) => selectedEvents.first.senderId == cl!.userID);
+    return true;
   }
 
   bool get canEditSelectedEvents {
@@ -912,7 +933,7 @@ class ChatController extends State<ChatPageWithRoom> {
     }
     await scrollController.scrollToIndex(
       eventIndex,
-      preferPosition: AutoScrollPosition.end,
+      preferPosition: AutoScrollPosition.middle,
     );
     _updateScrollController();
   }
@@ -955,15 +976,6 @@ class ChatController extends State<ChatPageWithRoom> {
       return;
     }
     return sendEmojiAction(emoji.emoji);
-  }
-
-  void forgetRoom() async {
-    final result = await showFutureLoadingDialog(
-      context: context,
-      future: room.forget,
-    );
-    if (result.error != null) return;
-    context.go('/rooms/archive');
   }
 
   void typeEmoji(Emoji? emoji) {
@@ -1053,7 +1065,6 @@ class ChatController extends State<ChatPageWithRoom> {
   void goToNewRoomAction() async {
     if (OkCancelResult.ok !=
         await showOkCancelAlertDialog(
-          useRootNavigator: false,
           context: context,
           title: L10n.of(context)!.goToTheNewRoom,
           message: room
@@ -1285,7 +1296,6 @@ class ChatController extends State<ChatPageWithRoom> {
         context: context,
         title: L10n.of(context)!.unavailable,
         okLabel: L10n.of(context)!.next,
-        useRootNavigator: false,
       );
     }
   }

@@ -61,6 +61,16 @@ Future<int?> showPermissionChooser(
             initialText: currentLevel.toString(),
             keyboardType: TextInputType.number,
             autocorrect: false,
+            validator: (text) {
+              if (text == null) {
+                return "Please. enter a number!";
+              }
+              final level = int.tryParse(text);
+              if (level == null || level < 0) {
+                return "Please, enter a number!";
+              }
+              return null;
+            },
           ),
         ],
       );

@@ -9,7 +9,7 @@ import 'package:rechainonline/pages/new_space/new_space_view.dart';
 import 'package:rechainonline/widgets/matrix.dart';
 
 class NewSpace extends StatefulWidget {
-  const NewSpace({Key? key}) : super(key: key);
+  const NewSpace({super.key});
 
   @override
   NewSpaceController createState() => NewSpaceController();

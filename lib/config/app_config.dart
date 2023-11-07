@@ -3,13 +3,12 @@ import 'dart:ui';
 import 'package:matrix/matrix.dart';
 
 abstract class AppConfig {
-  static String _applicationName = 'REChain ®️ 🪐';
+  static String _applicationName = 'REChain ® 🪐';
   static String get applicationName => _applicationName;
   static String? _applicationWelcomeMessage;
   static String? get applicationWelcomeMessage => _applicationWelcomeMessage;
   static String _defaultHomeserver = 'matrix.katya.wtf';
   static String get defaultHomeserver => _defaultHomeserver;
-  static double bubbleSizeFactor = 1;
   static double fontSizeFactor = 1;
   static const Color chatColor = primaryColor;
   static Color? colorSchemeSeed = primaryColor;
@@ -20,45 +19,43 @@ abstract class AppConfig {
   static const Color primaryColorLight = Color(0xFFCCBDEA);
   static const Color secondaryColor = Color(0xFF41a2bc);
   static String _privacyUrl =
-      'https://rechain.online/en/privacy.html';
+      'https://github.com/sorydima/REChain-/blob/main/PRIVACY.md';
   static String get privacyUrl => _privacyUrl;
   static const String enablePushTutorial =
-      'https://rechain.online/en/privacy.html';
+      'https://spec.matrix.org/unstable/push-gateway-api';
   static const String encryptionTutorial =
-      'https://rechain.online/en/privacy.html';
+      'https://matrix.org/docs/matrix-concepts/end-to-end-encryption';
   static const String appId = 'com.rechain.online';
   static const String appOpenUrlScheme = 'com.rechain';
   static String _webBaseUrl = 'https://rechain.online/web';
   static String get webBaseUrl => _webBaseUrl;
-  static const String sourceCodeUrl = 'https://github.com/sorydima/REChain-.git';
+  static const String sourceCodeUrl =
+      'https://github.com/sorydima/REChain-.git';
   static const String supportUrl =
-      'mailto:support@rechain.email';
+      'https://github.com/sorydima/REChain-/issues';
   static final Uri newIssueUrl = Uri(
     scheme: 'https',
-    host: 'github',
+    host: 'github.com',
     path: '/sorydima/REChain-/issues/new',
   );
-  static const bool enableSentry = true;
-  static const String sentryDns =
-      'https://d46ee6f0fff24af391dee1220860b36d@o1288037.ingest.sentry.io/6504348';
   static bool renderHtml = true;
   static bool hideRedactedEvents = false;
   static bool hideUnknownEvents = false;
   static bool hideUnimportantStateEvents = false;
-  static bool showDirectChatsInSpaces = true;
   static bool separateChatTypes = true;
   static bool autoplayImages = true;
+  static bool sendTypingNotifications = true;
   static bool sendOnEnter = false;
   static bool experimentalVoip = true;
   static const bool hideTypingUsernames = false;
   static const bool hideAllStateEvents = false;
   static const String inviteLinkPrefix = 'https://matrix.to/#/';
-  static const String deepLinkPrefix = 'com.rechain://chat/';
+  static const String deepLinkPrefix = 'com.rechain://online/';
   static const String schemePrefix = 'matrix:';
   static const String pushNotificationsChannelId = 'rechainonline_push';
-  static const String pushNotificationsChannelName = 'REChain ®️ 🪐 Push Channel!';
+  static const String pushNotificationsChannelName = 'REChain ® 🪐 Push Channel!';
   static const String pushNotificationsChannelDescription =
-      'Push Notifications For The REChain ®️ 🪐 Platform!';
+      'Push Notifications for the REChain ® 🪐!';
   static const String pushNotificationsAppId = 'com.rechain.online';
   static const String pushNotificationsGatewayUrl =
       'https://matrix-client.matrix.org/_matrix/push/v1/notify';
@@ -75,7 +72,7 @@ abstract class AppConfig {
         colorSchemeSeed = Color(json['chat_color']);
       } catch (e) {
         Logs().w(
-          'Invalid color! Please make sure to define the color in this format: "0xffdd0000"',
+          'Invalid color in config.json! Please, make sure to define the color in this format: "0xffdd0000"',
           e,
         );
       }
