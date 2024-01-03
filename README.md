@@ -60,17 +60,4 @@ Please, visit the website for the installation instructions 🪐:
 
 Please, send US an E-Mail to support@rechain.email for the build instructions! 👻
 
-Need help? 🤔
-Email us! 👇
-A Dmitry Sorokin production. All rights reserved.
-Powered by REChain. 🪐
-Copyright © 2019-2023 REChain, Inc
-REChain ® is a registered trademark
-hr@rechain.email
-p2p@rechain.email
-pr@rechain.email
-sorydima@rechain.email
-support@rechain.email
-sip@rechain.email
-music@rechain.email
-Please allow anywhere from 1 to 5 business days for E-mail responses! 💌
+Copyright © 2019-2024 Need help? 🤔 Email us! 👇 A Dmitry Sorokin production. All rights reserved. Powered by REChain. 🪐 Copyright © 2019-2024 REChain, Inc REChain ® is a registered trademark hr@rechain.email p2p@rechain.email pr@rechain.email sorydima@rechain.email support@rechain.email sip@rechain.email music@rechain.email Please allow anywhere from 1 to 5 business days for E-mail responses! 💌
