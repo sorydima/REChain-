@@ -50,15 +50,15 @@ Please, visit the website for the installation instructions 🪐:
 
 # Socials! 🦄
 
-* <a href="https://twitter.com/rechain_inc">Twitter/X.com</a> Twitter/X.com
+* <a href="https://twitter.com/rechain_inc">Twitter/X.com</a>
 
-* <a href="https://instagram.com/rechain_inc">Instagram</a> Instagram
+* <a href="https://instagram.com/rechain_inc">Instagram</a>
 
-* <a href="https://facebook.com/rechainINC">Facebook</a> Facebook
+* <a href="https://facebook.com/rechainINC">Facebook</a>
 
-* <a href="https://matrix.to/#/#chatting:matrix.katya.wtf">Matrix</a> Matrix
+* <a href="https://matrix.to/#/#chatting:matrix.katya.wtf">Matrix</a>
 
-* <a href="https://t.me/bitbotchain">Telegram</a> Telegram
+* <a href="https://t.me/bitbotchain">Telegram</a>
 
 # Special thanks!
 
