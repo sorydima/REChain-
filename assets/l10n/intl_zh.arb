@@ -337,7 +337,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
 	"@changeTheHomeserver": {
 		"type": "text",
 		"placeholders": {}
@@ -884,7 +884,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
 	"@enterYourHomeserver": {
 		"type": "text",
 		"placeholders": {}
@@ -909,7 +909,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"rechainonline": "REChain.Online",
+	"rechainonline": "REChain ® 🪐",
 	"@rechainonline": {
 		"type": "text",
 		"placeholders": {}
@@ -1109,7 +1109,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"inviteText": "{username} 已邀请您使用 REChain.Online。 \n1.安装 REChain.Online：https://rechain.online \n2。注册或登录\n3.打开邀请链接：{link}",
+	"inviteText": "{username} 已邀请您使用 REChain ® 🪐。 \n1.安装 REChain ® 🪐：https://rechain.online \n2。注册或登录\n3.打开邀请链接：{link}",
 	"@inviteText": {
 		"type": "text",
 		"placeholders": {
@@ -1315,7 +1315,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"newMessageInrechainonline": "REChain.Online 平台上的新消息！",
+	"newMessageInrechainonline": "REChain ® 🪐 平台上的新消息！",
 	"@newMessageInrechainonline": {
 		"type": "text",
 		"placeholders": {}
@@ -1340,7 +1340,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"noCrossSignBootstrap": "REChain.Online 目前不支持启用交叉签名。请在 REChain 🪐 中启用它。",
+	"noCrossSignBootstrap": "REChain.Online 目前不支持启用交叉签名。请在 REChain ® 🪐 中启用它。",
 	"@noCrossSignBootstrap": {
 		"type": "text",
 		"placeholders": {}
@@ -1360,12 +1360,12 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"noGoogleServicesWarning": "您的手机上似乎没有 Google 服务框架。这是保护您隐私的好决定！要接收来自 REChain.Online 应用程序的推送通知，建议您使用 https://microg.org/ 或 https://unifiedpush.org/。",
+	"noGoogleServicesWarning": "您的手机上似乎没有 Google 服务框架。这是保护您隐私的好决定！要接收来自 REChain ® 🪐 应用程序的推送通知，建议您使用 https://microg.org/ 或 https://unifiedpush.org/。",
 	"@noGoogleServicesWarning": {
 		"type": "text",
 		"placeholders": {}
 	},
-	"noMegolmBootstrap": "REChain.Online 目前不支持启用在线密钥备份。请在 REChain 🪐 中启用它。",
+	"noMegolmBootstrap": "REChain.Online 目前不支持启用在线密钥备份。请在 REChain ® 🪐 中启用它。",
 	"@noMegolmBootstrap": {
 		"type": "text",
 		"placeholders": {}
@@ -1576,7 +1576,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"pleaseEnterArechainonlineIdentifier": "请输入 Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node 区块链节点网络 ID。",
+	"pleaseEnterArechainonlineIdentifier": "请输入 Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node 区块链节点网络 ID。",
 	"@pleaseEnterArechainonlineIdentifier": {
 		"type": "text",
 		"placeholders": {}
@@ -1846,7 +1846,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"sendBugReports": "允许向 REChain 🪐 发送错误报告",
+	"sendBugReports": "允许向 REChain ® 🪐 发送错误报告",
 	"@sendBugReports": {
 		"type": "text",
 		"placeholders": {}
@@ -1923,7 +1923,7 @@
 			"senderName": {}
 		}
 	},
-	"sentryInfo": "关于您隐私的信息: https://rechain.online/en/privacy.html",
+	"sentryInfo": "关于您隐私的信息: https://rechain.online/privacy-policy.html",
 	"@sentryInfo": {
 		"type": "text",
 		"placeholders": {}
@@ -2102,7 +2102,7 @@
 			"suffix": {}
 		}
 	},
-	"title": "REChain.Online",
+	"title": "REChain ® 🪐",
 	"@title": {
 		"description": "Title for the application",
 		"type": "text",
@@ -2375,7 +2375,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"welcomeText": "欢迎来到 REChain.Online！一个私密而安全的未来已经到来！",
+	"welcomeText": "欢迎来到 REChain ® 🪐！一个私密而安全的未来已经到来！",
 	"@welcomeText": {
 		"type": "text",
 		"placeholders": {}
@@ -2489,7 +2489,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"norechainonlineServer": "{server1} 不是 Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node 区块链节点网络服务器，试试 {server2}？",
+	"norechainonlineServer": "{server1} 不是 Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node 区块链节点网络服务器，试试 {server2}？",
 	"@norechainonlineServer": {
 		"type": "text",
 		"placeholders": {
@@ -2589,7 +2589,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"homeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"homeserver": "Node/Server",
 	"@homeserver": {},
 	"newPasswordDescription": "若您要使用密码重置功能，您在注册之后需要给账户添加一个电子邮件地址。",
 	"@newPasswordDescription": {},
@@ -2860,7 +2860,7 @@
 	"countFiles": "{count} 个文件",
 	"custom": "自定义",
 	"dehydrate": "导出会话并擦除设备",
-	"dehydrateShare": "这是私人的 REChain 🪐 导出。 确保你不会丢失它并将其保密。",
+	"dehydrateShare": "这是私人的 REChain ® 🪐 导出。 确保你不会丢失它并将其保密。",
 	"dehydrateTor": "TOR 用户：导出会话",
 	"dehydrateTorLong": "建议 TOR 用户在关闭窗口之前导出会话。",
 	"dehydrateWarning": "此操作无法撤消。 确保你安全地存储备份文件。",
@@ -2868,7 +2868,7 @@
 	"hydrate": "从备份文件恢复",
 	"hydrateTor": "TOR 用户：导入会话导出",
 	"hydrateTorLong": "你上次是否导出 TOR 会话？ 快速导入它并继续聊天。",
-	"indexedDbErrorLong": "遗憾的是，默认情况下未在私有模式下启用消息存储。\n请访问\n - about:config\n - set dom.indexedDB.privateBrowsing.enabled to true\n否则，无法运行 REChain 🪐。",
+	"indexedDbErrorLong": "遗憾的是，默认情况下未在私有模式下启用消息存储。\n请访问\n - about:config\n - set dom.indexedDB.privateBrowsing.enabled to true\n否则，无法运行 REChain ® 🪐。",
 	"indexedDbErrorTitle": "私人模式问题",
 	"numberRoomMembers": "{number} 名成员",
 	"pleaseEnterRecoveryKey": "请输入你的恢复密钥：",
@@ -2884,7 +2884,7 @@
 	"stories": "故事",
 	"suggestedRooms": "发现此空间群组",
 	"unlockOldMessages": "解锁旧信息",
-	"updateAvailable": "REChain 🪐 更新可用",
+	"updateAvailable": "REChain ® 🪐 更新可用",
 	"updateNow": "在后台开始更新",
 	"user": "用户",
 	"users": "用户",
@@ -2902,7 +2902,7 @@
 	"integrationsNotImplemented": "尚无法编辑小部件和集成。",
 	"iUnderstand": "我了解",
 	"markAsRead": "标为已读",
-	"matrixWidgets": "REChain 🪐 小部件",
+	"matrixWidgets": "REChain ® 🪐 小部件",
 	"@allSpaces": {},
 	"@appearOnTop": {},
 	"@appearOnTopDetails": {},
@@ -2967,16 +2967,16 @@
 	"report": "举报",
 	"allSpaces": "所有空间",
 	"appearOnTop": "显示在其他应用上方",
-	"appearOnTopDetails": "允许应用显示在顶部（如果你已经将 REChain 🪐 设置为呼叫账户，则不需要授予此权限）",
+	"appearOnTopDetails": "允许应用显示在顶部（如果你已经将 REChain ® 🪐 设置为呼叫账户，则不需要授予此权限）",
 	"callingAccount": "呼叫账户",
-	"callingAccountDetails": "允许 REChain 🪐 使用本机 android 拨号器应用。",
+	"callingAccountDetails": "允许 REChain ® 🪐 使用本机 Android 拨号器应用。",
 	"callingPermissions": "呼叫权限",
 	"commandHint_cuddle": "发送“拥抱”",
 	"commandHint_googly": "发送 一些“大眼”",
 	"commandHint_hug": "发送“搂抱”",
 	"commandHint_markasdm": "标记为私信聊天室",
 	"commandHint_markasgroup": "标记为群组",
-	"confirmMatrixId": "要删除账户，请确认你的 REChain 🪐 ID。",
+	"confirmMatrixId": "要删除账户，请确认你的 REChain ® 🪐 ID。",
 	"cuddleContent": "{senderName} 拥抱了你",
 	"doNotShowAgain": "不再显示",
 	"enterRoom": "进入聊天室",
@@ -2989,8 +2989,8 @@
 	"newSpace": "新空间",
 	"noKeyForThisMessage": "如果消息是在你在此设备上登录账户前发送的，就可能发生这种情况。\n\n也有可能是发送者屏蔽了你的设备或网络连接出了问题。\n\n你能在另一个会话中读取消息吗？如果是的话，你可以从它那里传递信息！点击设置 > 设备，并确保你的设备已经相互验证。当你下次打开聊天室，且两个会话都在前台，密钥就会自动传输。\n\n你不想在注销或切换设备时丢失密钥？请确保在设置中启用了聊天备份。",
 	"numChats": "{number} 个聊天",
-	"otherCallingPermissions": "麦克风、摄像头和其他 REChain 🪐 权限",
-	"screenSharingDetail": "你正在 REChain 🪐 共享屏幕",
+	"otherCallingPermissions": "麦克风、摄像头和其他 REChain ® 🪐 权限",
+	"screenSharingDetail": "你正在 REChain ® 🪐 共享屏幕",
 	"screenSharingTitle": "屏幕共享",
 	"supposedMxid": "应为 {mxid}",
 	"wasDirectChatDisplayName": "空聊天（曾是 {oldDisplayName}）",

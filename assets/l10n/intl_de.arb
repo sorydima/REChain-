@@ -159,7 +159,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"badServerLoginTypesException": "Der Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node unterstützt diese Anmelde-Typen:\n{serverVersions}\nAber diese App unterstützt nur:\n{supportedVersions}",
+	"badServerLoginTypesException": "Der Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node unterstützt diese Anmelde-Typen:\n{serverVersions}\nAber diese App unterstützt nur:\n{supportedVersions}",
 	"@badServerLoginTypesException": {
 		"type": "text",
 		"placeholders": {
@@ -167,7 +167,7 @@
 			"supportedVersions": {}
 		}
 	},
-	"badServerVersionsException": "Der Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node unterstützt die Spec-Versionen:\n{serverVersions}\nAber diese App unterstützt nur:\n{supportedVersions}",
+	"badServerVersionsException": "Der Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node unterstützt die Spec-Versionen:\n{serverVersions}\nAber diese App unterstützt nur:\n{supportedVersions}",
 	"@badServerVersionsException": {
 		"type": "text",
 		"placeholders": {
@@ -349,7 +349,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
 	"@changeTheHomeserver": {
 		"type": "text",
 		"placeholders": {}
@@ -908,7 +908,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
 	"@enterYourHomeserver": {
 		"type": "text",
 		"placeholders": {}
@@ -940,7 +940,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"rechainonline": "REChain.Online",
+	"rechainonline": "REChain ® 🪐",
 	"@rechainonline": {
 		"type": "text",
 		"placeholders": {}
@@ -1045,7 +1045,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"homeserverIsNotCompatible": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node ist nicht kompatibel",
+	"homeserverIsNotCompatible": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node ist nicht kompatibel",
 	"@homeserverIsNotCompatible": {
 		"type": "text",
 		"placeholders": {}
@@ -1140,7 +1140,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"inviteText": "{username} hat Sie auf die REChain.Online Plattform eingeladen! \n1. Installieren Sie REChain.Online: https://rechain.online \n2. Erstellen Sie ein neues Konto oder melden Sie sich bei der Plattform an! \n3. Öffne den Einladungslink: {link}",
+	"inviteText": "{username} hat Sie auf die REChain ® 🪐 Plattform eingeladen! \n1. Installieren Sie REChain ® 🪐: https://rechain.online \n2. Erstellen Sie ein neues Konto oder melden Sie sich bei der Plattform an! \n3. Öffne den Einladungslink: {link}",
 	"@inviteText": {
 		"type": "text",
 		"placeholders": {
@@ -1356,7 +1356,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"newMessageInrechainonline": "Neue Nachricht auf der REChain.Online Plattform!",
+	"newMessageInrechainonline": "Neue Nachricht auf der REChain ® 🪐 Plattform!",
 	"@newMessageInrechainonline": {
 		"type": "text",
 		"placeholders": {}
@@ -1381,7 +1381,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"noCrossSignBootstrap": "REChain.Online unterstützt derzeit nicht die Aktivierung der Cross-Signing-Authentifizierung. Bitte aktivieren Sie es stattdessen innerhalb der REChain 🪐.",
+	"noCrossSignBootstrap": "REChain.Online unterstützt derzeit nicht die Aktivierung der Cross-Signing-Authentifizierung. Bitte aktivieren Sie es stattdessen innerhalb der REChain ® 🪐.",
 	"@noCrossSignBootstrap": {
 		"type": "text",
 		"placeholders": {}
@@ -1401,12 +1401,12 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"noGoogleServicesWarning": "Anscheinend haben Sie keine Google-Dienste auf Ihrem Gerät. Dies ist eine gute Wahl für Ihre Privatsphäre! Um Push-Benachrichtigungen von der REChain.Online-Plattform zu erhalten, empfehlen wir Ihnen die Nutzung des microG https://microg.org/ oder des Unified Push https://unifiedpush.org/.",
+	"noGoogleServicesWarning": "Anscheinend haben Sie keine Google-Dienste auf Ihrem Gerät. Dies ist eine gute Wahl für Ihre Privatsphäre! Um Push-Benachrichtigungen von der REChain ® 🪐-Plattform zu erhalten, empfehlen wir Ihnen die Nutzung des microG https://microg.org/ oder des Unified Push https://unifiedpush.org/.",
 	"@noGoogleServicesWarning": {
 		"type": "text",
 		"placeholders": {}
 	},
-	"noMegolmBootstrap": "REChain.Online unterstützt derzeit keine Online-Schlüsselsicherung über das Netzwerk. Bitte aktivieren Sie es stattdessen innerhalb der REChain 🪐.",
+	"noMegolmBootstrap": "REChain.Online unterstützt derzeit keine Online-Schlüsselsicherung über das Netzwerk. Bitte aktivieren Sie es stattdessen innerhalb der REChain ® 🪐.",
 	"@noMegolmBootstrap": {
 		"type": "text",
 		"placeholders": {}
@@ -1627,7 +1627,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"pleaseEnterArechainonlineIdentifier": "Geben Sie die Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network ID ein.",
+	"pleaseEnterArechainonlineIdentifier": "Geben Sie die Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network ID ein.",
 	"@pleaseEnterArechainonlineIdentifier": {
 		"type": "text",
 		"placeholders": {}
@@ -1902,7 +1902,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"sendBugReports": "Erlaube das Senden von Fehlermeldungen via REChain 🪐",
+	"sendBugReports": "Erlaube das Senden von Fehlermeldungen via REChain ® 🪐",
 	"@sendBugReports": {
 		"type": "text",
 		"placeholders": {}
@@ -1979,7 +1979,7 @@
 			"senderName": {}
 		}
 	},
-	"sentryInfo": "Information über deine Privatsphäre: https://rechain.online/en/privacy.html",
+	"sentryInfo": "Information über deine Privatsphäre: https://rechain.online/privacy-policy.html",
 	"@sentryInfo": {
 		"type": "text",
 		"placeholders": {}
@@ -2173,7 +2173,7 @@
 			"suffix": {}
 		}
 	},
-	"title": "REChain.Online",
+	"title": "REChain ® 🪐",
 	"@title": {
 		"description": "Title for the application",
 		"type": "text",
@@ -2446,7 +2446,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"welcomeText": "Willkommen bei REChain.Online! Eine private und sichere Zukunft, die bereits angekommen ist!",
+	"welcomeText": "Willkommen bei REChain ® 🪐! Eine private und sichere Zukunft, die bereits angekommen ist!",
 	"@welcomeText": {
 		"type": "text",
 		"placeholders": {}
@@ -2589,7 +2589,7 @@
 	"disableEncryptionWarning": "Aus Sicherheitsgründen können Sie die Verschlüsselung in einem Chat nicht deaktivieren, wo sie zuvor aktiviert wurde.",
 	"encryptThisChat": "Diesen Chat verschlüsseln",
 	"endToEndEncryption": "Ende-zu-Ende-Verschlüsselung",
-	"enterInviteLinkOrMatrixId": "Einladungslink oder REChain 🪐-ID eingeben …",
+	"enterInviteLinkOrMatrixId": "Einladungslink oder REChain ® 🪐-ID eingeben …",
 	"googlyEyesContent": "{senderName} hat dir Googly Eyes gesendet",
 	"hugContent": "{senderName} umarmt dich",
 	"letsStart": "Los geht's",
@@ -2604,7 +2604,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"norechainonlineServer": "{server1} ist kein Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network Server, stattdessen {server2} verwenden?",
+	"norechainonlineServer": "{server1} ist kein Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network Server, stattdessen {server2} verwenden?",
 	"@norechainonlineServer": {
 		"type": "text",
 		"placeholders": {
@@ -2654,7 +2654,7 @@
 	"@newUsernameDescription": {},
 	"newPasswordDescription": "Um dein Passwort wiederherstellen zu können, füge später bitte eine E-Mail-Adresse zu deinem Konto hinzu.",
 	"@newPasswordDescription": {},
-	"homeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"homeserver": "Node/Server",
 	"@homeserver": {},
 	"sendOnEnter": "Senden mit Enter",
 	"@sendOnEnter": {},
@@ -2823,7 +2823,7 @@
 	"integrationsNotImplemented": "Das Bearbeiten von Widgets und Integrationen ist noch nicht möglich.",
 	"iUnderstand": "Ich habe verstanden",
 	"markAsRead": "Als gelesen markiert",
-	"matrixWidgets": "REChain 🪐-Widgets",
+	"matrixWidgets": "REChain ® 🪐-Widgets",
 	"nextAccount": "Nächster Account",
 	"openChat": "Chat öffnen",
 	"pinMessage": "An Raum anheften",
@@ -2948,7 +2948,7 @@
 	"countFiles": "{count} Dateien",
 	"custom": "Brauch",
 	"dehydrate": "Sitzung exportieren und Gerät löschen",
-	"dehydrateShare": "Dies ist dein privater REChain 🪐-Export. Stelle sicher, dass du ihn nicht verlierst und bewahre ihn privat auf.",
+	"dehydrateShare": "Dies ist dein privater REChain ® 🪐-Export. Stelle sicher, dass du ihn nicht verlierst und bewahre ihn privat auf.",
 	"dehydrateTor": "TOR-Benutzer: Sitzung exportieren",
 	"dehydrateTorLong": "Für TOR-Benutzer wird empfohlen, die Sitzung zu exportieren, bevor das Fenster geschlossen wird.",
 	"dehydrateWarning": "Diese Aktion kann nicht rückgängig gemacht werden. Stelle sicher, dass du die Sicherungsdatei sicher aufbewahrst.",
@@ -2956,7 +2956,7 @@
 	"hydrate": "Aus Sicherungsdatei wiederherstellen",
 	"hydrateTor": "TOR-Benutzer: Session-Export importieren",
 	"hydrateTorLong": "Hast du deine Sitzung das letzte Mal auf TOR exportiert? Importiere sie schnell und chatte weiter.",
-	"indexedDbErrorLong": "Die Nachrichtenspeicherung ist im privaten Modus standardmäßig leider nicht aktiviert.\nBitte besuche\n- about:config\n- Setze dom.indexedDB.privateBrowsing.enabled auf true\nAndernfalls ist es nicht möglich, REChain 🪐 auszuführen.",
+	"indexedDbErrorLong": "Die Nachrichtenspeicherung ist im privaten Modus standardmäßig leider nicht aktiviert.\nBitte besuche\n- about:config\n- Setze dom.indexedDB.privateBrowsing.enabled auf true\nAndernfalls ist es nicht möglich, REChain ® 🪐 auszuführen.",
 	"indexedDbErrorTitle": "Probleme im Privatmodus",
 	"numberRoomMembers": "{number} Mitglieder",
 	"pleaseEnterRecoveryKey": "Bitte gebe deinen Wiederherstellungsschlüssel ein:",
@@ -2972,7 +2972,7 @@
 	"stories": "Status",
 	"suggestedRooms": "Entdecke Gruppen in diesem Bereich",
 	"unlockOldMessages": "Entsperre alte Nachrichten",
-	"updateAvailable": "REChain 🪐-Update verfügbar",
+	"updateAvailable": "REChain ® 🪐-Update verfügbar",
 	"updateNow": "Update im Hintergrund starten",
 	"user": "Benutzer",
 	"users": "Benutzer",
@@ -3017,13 +3017,13 @@
 	"noOtherDevicesFound": "Keine anderen Geräte anwesend",
 	"allSpaces": "Alle Räume",
 	"appearOnTop": "Oben erscheinen",
-	"appearOnTopDetails": "Ermöglicht, dass die App oben angezeigt wird (nicht erforderlich, wenn Sie REChain 🪐 bereits als Anrufkonto eingerichtet haben)",
+	"appearOnTopDetails": "Ermöglicht, dass die App oben angezeigt wird (nicht erforderlich, wenn Sie REChain ® 🪐 bereits als Anrufkonto eingerichtet haben)",
 	"callingAccount": "Anrufkonto",
-	"callingAccountDetails": "Ermöglicht REChain 🪐, die native Android-Dialer-App zu verwenden.",
+	"callingAccountDetails": "Ermöglicht REChain ® 🪐, die native Android-Dialer-App zu verwenden.",
 	"callingPermissions": "Anrufberechtigungen",
 	"commandHint_markasdm": "Als Direktnachrichtenraum markieren",
 	"commandHint_markasgroup": "Als Gruppe markieren",
-	"confirmMatrixId": "Bitte bestätigen deine REChain 🪐 -ID, um dein Konto zu löschen.",
+	"confirmMatrixId": "Bitte bestätigen deine REChain ® 🪐 -ID, um dein Konto zu löschen.",
 	"doNotShowAgain": "Nicht mehr anzeigen",
 	"enterRoom": "Raum betreten",
 	"enterSpace": "Raum betreten",
@@ -3033,8 +3033,8 @@
 	"newSpace": "Neuer Raum",
 	"noKeyForThisMessage": "Dies kann passieren, wenn die Nachricht gesendet wurde, bevor du dich auf diesem Gerät bei deinem Konto angemeldet hast.\n\nEs ist auch möglich, dass der Absender dein Gerät blockiert hat oder etwas mit der Internetverbindung schief gelaufen ist.\n\nKannst du die Nachricht in einer anderen Sitzung lesen? Dann kannst du die Nachricht davon übertragen! Gehe zu denEinstellungen > Geräte und vergewissere dich, dass sich deine Geräte gegenseitig verifiziert haben. Wenn du den Raum das nächste Mal öffnest und beide Sitzungen im Vordergrund sind, werden die Schlüssel automatisch übertragen.\n\nDu möchtest die Schlüssel beim Abmelden oder Gerätewechsel nicht verlieren? Stelle sicher, dass du das Chat-Backup in den Einstellungen aktiviert hast.",
 	"numChats": "{number} Chats",
-	"otherCallingPermissions": "Mikrofon, Kamera und andere REChain 🪐 - Berechtigungen",
-	"screenSharingDetail": "Du teilst deinen Bildschirm in REChain 🪐",
+	"otherCallingPermissions": "Mikrofon, Kamera und andere REChain ® 🪐 - Berechtigungen",
+	"screenSharingDetail": "Du teilst deinen Bildschirm in REChain ® 🪐",
 	"screenSharingTitle": "Bildschirm teilen",
 	"supposedMxid": "das sollte sein {mxid}",
 	"whyIsThisMessageEncrypted": "Warum ist diese Nachricht nicht lesbar?",

@@ -41,10 +41,12 @@ import 'sticker_picker_dialog.dart';
 
 class ChatPage extends StatelessWidget {
   final String roomId;
+  final String? shareText;
 
   const ChatPage({
     super.key,
     required this.roomId,
+    this.shareText,
   });
 
   @override
@@ -69,6 +71,7 @@ class ChatPage extends StatelessWidget {
           child: ChatPageWithRoom(
             key: Key('chat_page_$roomId'),
             room: room,
+            shareText: shareText,
           ),
         ),
         if (rechainonlineThemes.isThreeColumnMode(context) &&
@@ -93,17 +96,20 @@ class ChatPage extends StatelessWidget {
 
 class ChatPageWithRoom extends StatefulWidget {
   final Room room;
+  final String? shareText;
 
   const ChatPageWithRoom({
     super.key,
     required this.room,
+    this.shareText,
   });
 
   @override
   ChatController createState() => ChatController();
 }
 
-class ChatController extends State<ChatPageWithRoom> {
+class ChatController extends State<ChatPageWithRoom>
+    with WidgetsBindingObserver {
   Room get room => sendingClient.getRoomById(roomId) ?? widget.room;
 
   late Client sendingClient;
@@ -187,8 +193,6 @@ class ChatController extends State<ChatPageWithRoom> {
 
   final int _loadHistoryCount = 100;
 
-  String inputText = '';
-
   String pendingText = '';
 
   bool showEmojiPicker = false;
@@ -201,20 +205,10 @@ class ChatController extends State<ChatPageWithRoom> {
         'Try to recreate a room with is not a DM room. This should not be possible from the UI!',
       );
     }
-    final success = await showFutureLoadingDialog(
+    await showFutureLoadingDialog(
       context: context,
-      future: () async {
-        final client = room.client;
-        final waitForSync = client.onSync.stream
-            .firstWhere((s) => s.rooms?.leave?.containsKey(room.id) ?? false);
-        await room.leave();
-        await waitForSync;
-        return await client.startDirectChat(userId);
-      },
+      future: () => room.invite(userId),
     );
-    final roomId = success.result;
-    if (roomId == null) return;
-    context.go('/rooms/$roomId');
   }
 
   void leaveChat() async {
@@ -228,21 +222,10 @@ class ChatController extends State<ChatPageWithRoom> {
 
   EmojiPickerType emojiPickerType = EmojiPickerType.keyboard;
 
-  void requestHistory() async {
+  void requestHistory([_]) async {
     if (!timeline!.canRequestHistory) return;
     Logs().v('Requesting history...');
-    try {
-      await timeline!.requestHistory(historyCount: _loadHistoryCount);
-    } catch (err) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(
-            (err).toLocalizedString(context),
-          ),
-        ),
-      );
-      rethrow;
-    }
+    await timeline!.requestHistory(historyCount: _loadHistoryCount);
   }
 
   void requestFuture() async {
@@ -250,27 +233,15 @@ class ChatController extends State<ChatPageWithRoom> {
     if (timeline == null) return;
     if (!timeline.canRequestFuture) return;
     Logs().v('Requesting future...');
-    try {
-      final mostRecentEventId = timeline.events.first.eventId;
-      await timeline.requestFuture(historyCount: _loadHistoryCount);
-      setReadMarker(eventId: mostRecentEventId);
-    } catch (err) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(
-            (err).toLocalizedString(context),
-          ),
-        ),
-      );
-      rethrow;
-    }
+    final mostRecentEventId = timeline.events.first.eventId;
+    await timeline.requestFuture(historyCount: _loadHistoryCount);
+    setReadMarker(eventId: mostRecentEventId);
   }
 
   void _updateScrollController() {
     if (!mounted) {
       return;
     }
-    setReadMarker();
     if (!scrollController.hasClients) return;
     if (timeline?.allowNewEvent == false ||
         scrollController.position.pixels > 0 && _scrolledUp == false) {
@@ -282,20 +253,14 @@ class ChatController extends State<ChatPageWithRoom> {
     if (scrollController.position.pixels == 0 ||
         scrollController.position.pixels == 64) {
       requestFuture();
-    } else if (scrollController.position.pixels ==
-            scrollController.position.maxScrollExtent ||
-        scrollController.position.pixels + 64 ==
-            scrollController.position.maxScrollExtent) {
-      requestHistory();
     }
   }
 
   void _loadDraft() async {
     final prefs = await SharedPreferences.getInstance();
-    final draft = prefs.getString('draft_$roomId');
+    final draft = widget.shareText ?? prefs.getString('draft_$roomId');
     if (draft != null && draft.isNotEmpty) {
       sendController.text = draft;
-      setState(() => inputText = draft);
     }
   }
 
@@ -317,7 +282,6 @@ class ChatController extends State<ChatPageWithRoom> {
       if (fullyRead.isEmpty) return;
       if (timeline!.events.any((event) => event.eventId == fullyRead)) {
         Logs().v('Scroll up to visible event', fullyRead);
-        scrollToEventId(fullyRead);
         setReadMarker();
         return;
       }
@@ -346,6 +310,13 @@ class ChatController extends State<ChatPageWithRoom> {
 
   Future<void>? loadTimelineFuture;
 
+  int? animateInEventIndex;
+
+  void onInsert(int i) {
+    // setState will be called by updateView() anyway
+    animateInEventIndex = i;
+  }
+
   Future<void> _getTimeline({
     String? eventContextId,
   }) async {
@@ -359,11 +330,15 @@ class ChatController extends State<ChatPageWithRoom> {
       timeline = await room.getTimeline(
         onUpdate: updateView,
         eventContextId: eventContextId,
+        onInsert: onInsert,
       );
     } catch (e, s) {
       Logs().w('Unable to load timeline on event ID $eventContextId', e, s);
       if (!mounted) return;
-      timeline = await room.getTimeline(onUpdate: updateView);
+      timeline = await room.getTimeline(
+        onUpdate: updateView,
+        onInsert: onInsert,
+      );
       if (!mounted) return;
       if (e is TimeoutException || e is IOException) {
         _showScrollUpMaterialBanner(eventContextId!);
@@ -385,6 +360,15 @@ class ChatController extends State<ChatPageWithRoom> {
     });
 
     return;
+  }
+
+  String? scrollToEventIdMarker;
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state != AppLifecycleState.resumed) return;
+    if (!_scrolledUp) return;
+    setReadMarker();
   }
 
   Future<void>? _setReadMarkerFuture;
@@ -483,7 +467,8 @@ class ChatController extends State<ChatPageWithRoom> {
     );
 
     setState(() {
-      inputText = pendingText;
+      sendController.text = pendingText;
+      _inputTextIsEmpty = pendingText.isEmpty;
       replyEvent = null;
       editEvent = null;
       pendingText = '';
@@ -931,6 +916,9 @@ class ChatController extends State<ChatPageWithRoom> {
       });
       return;
     }
+    setState(() {
+      scrollToEventIdMarker = eventId;
+    });
     await scrollController.scrollToIndex(
       eventIndex,
       preferPosition: AutoScrollPosition.middle,
@@ -949,7 +937,7 @@ class ChatController extends State<ChatPageWithRoom> {
         );
       });
       await loadTimelineFuture;
-      setReadMarker(eventId: timeline!.events.first.eventId);
+      setReadMarker();
     }
     scrollController.jumpTo(0);
   }
@@ -1051,7 +1039,7 @@ class ChatController extends State<ChatPageWithRoom> {
     setState(() {
       pendingText = sendController.text;
       editEvent = selectedEvents.first;
-      inputText = sendController.text =
+      sendController.text =
           editEvent!.getDisplayEvent(timeline!).calcLocalizedBodyFallback(
                 MatrixLocals(L10n.of(context)!),
                 withSenderNamePrefix: false,
@@ -1193,12 +1181,18 @@ class ChatController extends State<ChatPageWithRoom> {
   static const Duration _storeInputTimeout = Duration(milliseconds: 500);
 
   void onInputBarChanged(String text) {
+    if (_inputTextIsEmpty != text.isEmpty) {
+      setReadMarker();
+      setState(() {
+        _inputTextIsEmpty = text.isEmpty;
+      });
+    }
+
     _storeInputTimeoutTimer?.cancel();
     _storeInputTimeoutTimer = Timer(_storeInputTimeout, () async {
       final prefs = await SharedPreferences.getInstance();
       await prefs.setString('draft_$roomId', text);
     });
-    setReadMarker();
     if (text.endsWith(' ') && Matrix.of(context).hasComplexBundles) {
       final clients = currentRoomBundle;
       for (final client in clients) {
@@ -1207,8 +1201,7 @@ class ChatController extends State<ChatPageWithRoom> {
             text.toLowerCase() == '${prefix.toLowerCase()} ') {
           setSendingClient(client);
           setState(() {
-            inputText = '';
-            sendController.text = '';
+            sendController.clear();
           });
           return;
         }
@@ -1233,8 +1226,9 @@ class ChatController extends State<ChatPageWithRoom> {
         );
       }
     }
-    setState(() => inputText = text);
   }
+
+  bool _inputTextIsEmpty = true;
 
   bool get isArchived =>
       {Membership.leave, Membership.ban}.contains(room.membership);
@@ -1302,7 +1296,7 @@ class ChatController extends State<ChatPageWithRoom> {
 
   void cancelReplyEventAction() => setState(() {
         if (editEvent != null) {
-          inputText = sendController.text = pendingText;
+          sendController.text = pendingText;
           pendingText = '';
         }
         replyEvent = null;

@@ -72,7 +72,8 @@ extension ClientStoriesExtension on Client {
       invite: invite,
     );
     if (getRoomById(roomId) == null) {
-      // Wait for room actually appears in sync and is encrypted.
+      // Wait for room actually appears in sync and is encrypted. This is a
+      // workaround for https://github.com/krille-chan/fluffychat/issues/520
       await onSync.stream.firstWhere(
         (sync) =>
             sync.rooms?.join?[roomId]?.state

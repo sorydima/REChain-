@@ -3,16 +3,22 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_gen/gen_l10n/l10n.dart';
+import 'package:matrix/encryption.dart';
 import 'package:matrix/matrix.dart';
 
-import 'package:rechainonline/pages/tasks/tasks.dart';
 import 'uia_request_manager.dart';
 
 extension LocalizedExceptionExtension on Object {
-  String toLocalizedString(BuildContext context) {
+  String toLocalizedString(
+    BuildContext context, [
+    ExceptionContext? exceptionContext,
+  ]) {
     if (this is MatrixException) {
       switch ((this as MatrixException).error) {
         case MatrixError.M_FORBIDDEN:
+          if (exceptionContext == ExceptionContext.changePassword) {
+            return L10n.of(context)!.passwordIsWrong;
+          }
           return L10n.of(context)!.noPermission;
         case MatrixError.M_LIMIT_EXCEEDED:
           return L10n.of(context)!.tooManyRequestsWarning;
@@ -20,9 +26,9 @@ extension LocalizedExceptionExtension on Object {
           return (this as MatrixException).errorMessage;
       }
     }
-    // if (this is TodoListChangedException) {
-    //   return L10n.of(context)!.todoListChangedError;
-    // }
+    if (this is InvalidPassphraseException) {
+      return L10n.of(context)!.wrongRecoveryKey;
+    }
     if (this is FileTooBigMatrixException) {
       return L10n.of(context)!.fileIsTooBigForServer;
     }
@@ -40,9 +46,6 @@ extension LocalizedExceptionExtension on Object {
       return L10n.of(context)!.badServerVersionsException(
         serverVersions,
         supportedVersions,
-        serverVersions,
-        supportedVersions,
-        serverVersions,
       );
     }
     if (this is BadServerLoginTypesException) {
@@ -55,15 +58,15 @@ extension LocalizedExceptionExtension on Object {
           .supportedLoginTypes
           .toString()
           .replaceAll('{', '"')
-          .replaceAll('}', '"')
           .replaceAll('}', '"');
-      // return L10n.of(context)!.badServerLoginTypesException(
-      //   serverVersions,
-      //   supportedVersions,
-      //   supportedVersions,
-      // );
+      return L10n.of(context)!.badServerLoginTypesException(
+        serverVersions,
+        supportedVersions,
+      );
     }
-    if (this is MatrixConnectionException || this is SocketException) {
+    if (this is MatrixConnectionException ||
+        this is SocketException ||
+        this is SyncConnectionException) {
       return L10n.of(context)!.noConnectionToTheServer;
     }
     if (this is String) return toString();
@@ -71,4 +74,8 @@ extension LocalizedExceptionExtension on Object {
     Logs().w('Something went wrong: ', this);
     return L10n.of(context)!.oopsSomethingWentWrong;
   }
+}
+
+enum ExceptionContext {
+  changePassword,
 }

@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<head>
-  <title>Authentication complete! 🪐</title>
-</head>
-<body>
-  <p>Authentication is complete! 📡 If this does not happen automatically, please,
-  close the window! Sincerely, Yours Mr. Detective Pikachu! 🐾
-  <script>
+<title>Authentication is complete!</title>
+<p>Authentication is complete! 🤖 👾 If this does not happen automatically, please, close the window! Yours, Mr. Detective Pikachu 🐾! 👻</p>
+<script>
+  if (window.opener) {
     window.opener.postMessage({
       'flutter-web-auth-2': window.location.href
     }, window.location.origin);
-    window.close();
-  </script>
-</body>
+  } else {
+    localStorage.setItem('flutter-web-auth-2', window.location.href);
+  }
+  window.close();
+</script>

@@ -305,7 +305,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
 	"@changeTheHomeserver": {
 		"type": "text",
 		"placeholders": {}
@@ -743,7 +743,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
 	"@enterYourHomeserver": {
 		"type": "text",
 		"placeholders": {}
@@ -768,7 +768,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"rechainonline": "REChain.Online",
+	"rechainonline": "REChain ® 🪐",
 	"@rechainonline": {
 		"type": "text",
 		"placeholders": {}
@@ -953,7 +953,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"inviteText": "{username} har invitert deg til REChain.Online-plattformen! \n1. Installer REChain.Online: https://rechain.online \n2. Registrer deg eller logg inn! \n3. Åpne invitasjonslenken: {link}",
+	"inviteText": "{username} har invitert deg til REChain ® 🪐-plattformen! \n1. Installer REChain ® 🪐: https://rechain.online \n2. Registrer deg eller logg inn! \n3. Åpne invitasjonslenken: {link}",
 	"@inviteText": {
 		"type": "text",
 		"placeholders": {
@@ -1145,7 +1145,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"newMessageInrechainonline": "Ny melding på REChain.Online-plattformen!",
+	"newMessageInrechainonline": "Ny melding på REChain ® 🪐-plattformen!",
 	"@newMessageInrechainonline": {
 		"type": "text",
 		"placeholders": {}
@@ -1165,7 +1165,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"noCrossSignBootstrap": "Slå på spredning av tillit i REChain 🪐 i stedet.",
+	"noCrossSignBootstrap": "Slå på spredning av tillit i REChain ® 🪐-i stedet.",
 	"@noCrossSignBootstrap": {
 		"type": "text",
 		"placeholders": {}
@@ -1180,12 +1180,12 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"noGoogleServicesWarning": "Bruk https://microg.org/ for å få Google-tjenester (uten å kompromittere personvernet ditt) for å få push-varsler fra REChain.Online-plattformen!",
+	"noGoogleServicesWarning": "Bruk https://microg.org/ for å få Google-tjenester (uten å kompromittere personvernet ditt) for å få push-varsler fra REChain ® 🪐-plattformen!",
 	"@noGoogleServicesWarning": {
 		"type": "text",
 		"placeholders": {}
 	},
-	"noMegolmBootstrap": "Slå på nettbasert sikkerhetskopiering av nettnøkler i REChain 🪐 i stedet.",
+	"noMegolmBootstrap": "Slå på nettbasert sikkerhetskopiering av nettnøkler i REChain ® 🪐-i stedet.",
 	"@noMegolmBootstrap": {
 		"type": "text",
 		"placeholders": {}
@@ -1356,7 +1356,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"pleaseEnterArechainonlineIdentifier": "Skriv inn Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network ID.",
+	"pleaseEnterArechainonlineIdentifier": "Skriv inn Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network ID.",
 	"@pleaseEnterArechainonlineIdentifier": {
 		"type": "text",
 		"placeholders": {}
@@ -1575,7 +1575,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"sendBugReports": "Tillat forsendelse av feilrapporter med REChain 🪐",
+	"sendBugReports": "Tillat forsendelse av feilrapporter med REChain ® 🪐",
 	"@sendBugReports": {
 		"type": "text",
 		"placeholders": {}
@@ -1647,7 +1647,7 @@
 			"senderName": {}
 		}
 	},
-	"sentryInfo": "Personvernsinfo: https://rechain.online/en/privacy.html",
+	"sentryInfo": "Personvernsinfo: https://rechain.online/privacy-policy.html",
 	"@sentryInfo": {
 		"type": "text",
 		"placeholders": {}
@@ -1786,7 +1786,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"title": "REChain.Online",
+	"title": "REChain ® 🪐",
 	"@title": {
 		"description": "Title for the application",
 		"type": "text",
@@ -2024,7 +2024,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"welcomeText": "Velkommen til REChain.Online! En privat og sikker fremtid som allerede har kommet!",
+	"welcomeText": "Velkommen til REChain ® 🪐! En privat og sikker fremtid som allerede har kommet!",
 	"@welcomeText": {
 		"type": "text",
 		"placeholders": {}

@@ -154,7 +154,7 @@ class _Reaction extends StatelessWidget {
           border: reacted!
               ? Border.all(
                   width: 1,
-                  color: Theme.of(context).primaryColor,
+                  color: Theme.of(context).colorScheme.primary,
                 )
               : null,
           borderRadius: BorderRadius.circular(AppConfig.borderRadius),
@@ -210,6 +210,7 @@ class _AdaptableReactorsDialog extends StatelessWidget {
                 mxContent: reactor.avatarUrl,
                 name: reactor.displayName,
                 client: client,
+                presenceUserId: reactor.stateKey,
               ),
               label: Text(reactor.displayName!),
             ),

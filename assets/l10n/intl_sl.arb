@@ -1,725 +1,1015 @@
 {
 	"passwordsDoNotMatch": "Geslo se ne ujema!",
-	"@passwordsDoNotMatch": {},
+	"@passwordsDoNotMatch":
+	{},
 	"pleaseEnterValidEmail": "Vnesite veljaven elektronski naslov.",
-	"@pleaseEnterValidEmail": {},
+	"@pleaseEnterValidEmail":
+	{},
 	"repeatPassword": "Ponovite geslo",
-	"@repeatPassword": {},
+	"@repeatPassword":
+	{},
 	"about": "O aplikaciji",
-	"@about": {
+	"@about":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"accept": "Sprejmi",
-	"@accept": {
+	"@accept":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"account": "Račun",
-	"@account": {
+	"@account":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"accountInformation": "Podatki o računu",
-	"@accountInformation": {
+	"@accountInformation":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"activatedEndToEndEncryption": "Uporabnik {username} je aktiviral šifriranje od konca do konca",
-	"@activatedEndToEndEncryption": {
+	"@activatedEndToEndEncryption":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"addEmail": "Dodajte e-pošto",
-	"@addEmail": {
+	"@addEmail":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"addGroupDescription": "Dodajte opis skupine",
-	"@addGroupDescription": {
+	"@addGroupDescription":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"addNewFriend": "Dodaj novega prijatelja",
-	"@addNewFriend": {
+	"@addNewFriend":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"addToSpace": "Dodajte v prostor",
-	"@addToSpace": {},
+	"@addToSpace":
+	{},
 	"alias": "vzdevek",
-	"@alias": {
+	"@alias":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"all": "Vse",
-	"@all": {
+	"@all":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"allChats": "Vsi klepeti",
-	"@allChats": {
+	"@allChats":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"alreadyHaveAnAccount": "Že imate račun?",
-	"@alreadyHaveAnAccount": {
+	"@alreadyHaveAnAccount":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"answeredTheCall": "Oseba {senderName} je odgovorila na klic",
-	"@answeredTheCall": {
+	"@answeredTheCall":
+	{
 		"type": "text",
-		"placeholders": {
-			"senderName": {}
+		"placeholders":
+		{
+			"senderName":
+			{}
 		}
 	},
 	"anyoneCanJoin": "Pridruži se lahko vsak",
-	"@anyoneCanJoin": {
+	"@anyoneCanJoin":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"appLock": "Zaklepanje aplikacije",
-	"@appLock": {
+	"@appLock":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"archivedRoom": "Arhivirana soba",
-	"@archivedRoom": {
+	"@archivedRoom":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"askSSSSSign": "Če želite podpisati drugo osebo, vnesite geslo za varno trgovino ali obnovitveni ključ.",
-	"@askSSSSSign": {
+	"@askSSSSSign":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"askSSSSVerify": "Vnesite geslo za varno hrambo ali ključ za obnovitev, da preverite svojo sejo.",
-	"@askSSSSVerify": {
+	"@askSSSSVerify":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"askVerificationRequest": "Ali želite sprejeti to zahtevo za preverjanje od {username}?",
-	"@askVerificationRequest": {
+	"@askVerificationRequest":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"audioPlayerPause": "Pavza",
-	"@audioPlayerPause": {
+	"@audioPlayerPause":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"audioPlayerPlay": "Predvajaj",
-	"@audioPlayerPlay": {
+	"@audioPlayerPlay":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"authentication": "Preverjanje pristnosti",
-	"@authentication": {
+	"@authentication":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"autoplayImages": "Samodejno predvajajte animirane nalepke in čustva",
-	"@autoplayImages": {
+	"@autoplayImages":
+	{
 		"type": "text",
-		"placeholder": {}
+		"placeholder":
+		{}
 	},
 	"avatarHasBeenChanged": "Avatar spremenjen",
-	"@avatarHasBeenChanged": {
+	"@avatarHasBeenChanged":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"badServerLoginTypesException": "Domači strežnik podpira vrste prijave:\n{serverVersions}\nToda ta aplikacija podpira samo:\n{supportedVersions}",
-	"@badServerLoginTypesException": {
+	"@badServerLoginTypesException":
+	{
 		"type": "text",
-		"placeholders": {
-			"serverVersions": {},
-			"supportedVersions": {}
+		"placeholders":
+		{
+			"serverVersions":
+			{},
+			"supportedVersions":
+			{}
 		}
 	},
 	"sendOnEnter": "Pošlji ob vstopu",
-	"@sendOnEnter": {},
+	"@sendOnEnter":
+	{},
 	"banFromChat": "Prepoved klepeta",
-	"@banFromChat": {
+	"@banFromChat":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"banned": "Prepovedano",
-	"@banned": {
+	"@banned":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"bannedUser": "{username} je prepovedan v {targetName}",
-	"@bannedUser": {
+	"@bannedUser":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {},
-			"targetName": {}
+		"placeholders":
+		{
+			"username":
+			{},
+			"targetName":
+			{}
 		}
 	},
 	"blockDevice": "Blokirana naprava",
-	"@blockDevice": {
+	"@blockDevice":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"blocked": "Blokirano",
-	"@blocked": {
+	"@blocked":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"botMessages": "Botova sporočila",
-	"@botMessages": {
+	"@botMessages":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"cachedKeys": "Ključi so shranjeni",
-	"@cachedKeys": {
+	"@cachedKeys":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"cancel": "Prekliči",
-	"@cancel": {
+	"@cancel":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"cantOpenUri": "URI-ja {uri} ni mogoče odpreti",
-	"@cantOpenUri": {
+	"@cantOpenUri":
+	{
 		"type": "text",
-		"placeholders": {
-			"uri": {}
+		"placeholders":
+		{
+			"uri":
+			{}
 		}
 	},
 	"changedTheChatAvatar": "{username} je spremenil avatar za klepet",
-	"@changedTheChatAvatar": {
+	"@changedTheChatAvatar":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"changedTheChatPermissions": "{username} je spremenila dovoljenja za klepet",
-	"@changedTheChatPermissions": {
+	"@changedTheChatPermissions":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"changedTheDisplaynameTo": "{username} je spremenil svoje prikazno ime v: '{displayname}'",
-	"@changedTheDisplaynameTo": {
+	"@changedTheDisplaynameTo":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {},
-			"displayname": {}
+		"placeholders":
+		{
+			"username":
+			{},
+			"displayname":
+			{}
 		}
 	},
 	"changedTheGuestAccessRules": "{username} je spremenila pravila dostopa za goste",
-	"@changedTheGuestAccessRules": {
+	"@changedTheGuestAccessRules":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"changedTheGuestAccessRulesTo": "{username} je spremenila pravila dostopa za goste v: {rules}",
-	"@changedTheGuestAccessRulesTo": {
+	"@changedTheGuestAccessRulesTo":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {},
-			"rules": {}
+		"placeholders":
+		{
+			"username":
+			{},
+			"rules":
+			{}
 		}
 	},
 	"changedTheHistoryVisibilityTo": "{username} je spremenil vidnost zgodovine v: {rules}",
-	"@changedTheHistoryVisibilityTo": {
+	"@changedTheHistoryVisibilityTo":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {},
-			"rules": {}
+		"placeholders":
+		{
+			"username":
+			{},
+			"rules":
+			{}
 		}
 	},
 	"changedTheJoinRules": "{username} je spremenil pravila za pridružitev",
-	"@changedTheJoinRules": {
+	"@changedTheJoinRules":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"changedTheJoinRulesTo": "{username} je spremenila pravila pridružitve v: {joinRules}",
-	"@changedTheJoinRulesTo": {
+	"@changedTheJoinRulesTo":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {},
-			"joinRules": {}
+		"placeholders":
+		{
+			"username":
+			{},
+			"joinRules":
+			{}
 		}
 	},
 	"changedTheProfileAvatar": "{username} je spremenil avatar",
-	"@changedTheProfileAvatar": {
+	"@changedTheProfileAvatar":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"changedTheRoomAliases": "{username} je spremenil vzdevke sobe",
-	"@changedTheRoomAliases": {
+	"@changedTheRoomAliases":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"changedTheRoomInvitationLink": "{username} je spremenil povezavo za povabilo",
-	"@changedTheRoomInvitationLink": {
+	"@changedTheRoomInvitationLink":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"changelog": "Dnevnik sprememb",
-	"@changelog": {
+	"@changelog":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"changePassword": "Spremeni geslo",
-	"@changePassword": {
+	"@changePassword":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"changesHaveBeenSaved": "Spremembe so shranjene",
-	"@changesHaveBeenSaved": {
+	"@changesHaveBeenSaved":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
-	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
-	"@changeTheHomeserver": {
+	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
+	"@changeTheHomeserver":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"changeTheme": "Spremenite svoj slog",
-	"@changeTheme": {
+	"@changeTheme":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"changeTheNameOfTheGroup": "Spremenite ime skupine",
-	"@changeTheNameOfTheGroup": {
+	"@changeTheNameOfTheGroup":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"changeTheServer": "Spremenite strežnik",
-	"@changeTheServer": {
+	"@changeTheServer":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"changeYourAvatar": "Spremenite svoj avatar",
-	"@changeYourAvatar": {
+	"@changeYourAvatar":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"chat": "Klepet",
-	"@chat": {
+	"@chat":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"yourUserId": "Vaš ID uporabnika:",
-	"@yourUserId": {},
+	"@yourUserId":
+	{},
 	"setupChatBackup": "Nastavite varnostno kopiranje klepeta",
-	"@setupChatBackup": {},
+	"@setupChatBackup":
+	{},
 	"iWroteDownTheKey": "Zapisal sem ključ",
-	"@iWroteDownTheKey": {},
+	"@iWroteDownTheKey":
+	{},
 	"yourChatBackupHasBeenSetUp": "Varnostna kopija klepeta je nastavljena.",
-	"@yourChatBackupHasBeenSetUp": {},
+	"@yourChatBackupHasBeenSetUp":
+	{},
 	"chatBackup": "Varnostno kopiranje klepeta",
-	"@chatBackup": {
+	"@chatBackup":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"chatDetails": "Podrobnosti klepeta",
-	"@chatDetails": {
+	"@chatDetails":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"chatHasBeenAddedToThisSpace": "Klepet je bil dodan v ta prostor",
-	"@chatHasBeenAddedToThisSpace": {},
+	"@chatHasBeenAddedToThisSpace":
+	{},
 	"chatHasBeenRemovedFromThisSpace": "Klepet je bil odstranjen iz tega prostora",
-	"@chatHasBeenRemovedFromThisSpace": {
+	"@chatHasBeenRemovedFromThisSpace":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"chats": "Klepeti",
-	"@chats": {
+	"@chats":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"chooseAStrongPassword": "Izberite močno geslo",
-	"@chooseAStrongPassword": {
+	"@chooseAStrongPassword":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"chooseAUsername": "Izberi uporabniško ime",
-	"@chooseAUsername": {
+	"@chooseAUsername":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"clearArchive": "Počisti arhiv",
-	"@clearArchive": {},
+	"@clearArchive":
+	{},
 	"clearText": "Počisti besedilo",
-	"@clearText": {
+	"@clearText":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"close": "Zapri",
-	"@close": {
+	"@close":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"commandHint_ban": "Izključi določenega uporabnika iz te sobe",
-	"@commandHint_ban": {
+	"@commandHint_ban":
+	{
 		"type": "text",
 		"description": "Usage hint for the command /ban"
 	},
 	"commandHint_html": "Pošljite besedilo v obliki HTML",
-	"@commandHint_html": {
+	"@commandHint_html":
+	{
 		"type": "text",
 		"description": "Usage hint for the command /html"
 	},
 	"commandHint_invite": "Povabi danega uporabnika v to sobo",
-	"@commandHint_invite": {
+	"@commandHint_invite":
+	{
 		"type": "text",
 		"description": "Usage hint for the command /invite"
 	},
 	"commandHint_join": "Pridružite se dani sobi",
-	"@commandHint_join": {
+	"@commandHint_join":
+	{
 		"type": "text",
 		"description": "Usage hint for the command /join"
 	},
 	"commandHint_kick": "Odstranite danega uporabnika iz te sobe",
-	"@commandHint_kick": {
+	"@commandHint_kick":
+	{
 		"type": "text",
 		"description": "Usage hint for the command /kick"
 	},
 	"commandHint_me": "Opisi sebe",
-	"@commandHint_me": {
+	"@commandHint_me":
+	{
 		"type": "text",
 		"description": "Usage hint for the command /me"
 	},
 	"commandHint_myroomavatar": "Nastavite svojo sliko za to sobo",
-	"@commandHint_myroomavatar": {
+	"@commandHint_myroomavatar":
+	{
 		"type": "text",
 		"description": "Usage hint for the command /myroomavatar"
 	},
 	"commandHint_op": "Nastavite raven moči danega uporabnika (privzeto: 50)",
-	"@commandHint_op": {
+	"@commandHint_op":
+	{
 		"type": "text",
 		"description": "Usage hint for the command /op"
 	},
 	"commandHint_react": "Pošljite odgovor kot reakcijo",
-	"@commandHint_react": {
+	"@commandHint_react":
+	{
 		"type": "text",
 		"description": "Usage hint for the command /react"
 	},
 	"commandHint_send": "Pošlji besedilo",
-	"@commandHint_send": {
+	"@commandHint_send":
+	{
 		"type": "text",
 		"description": "Usage hint for the command /send"
 	},
 	"commandHint_unban": "Prekliči izključitev določenega uporabnika iz te sobe",
-	"@commandHint_unban": {
+	"@commandHint_unban":
+	{
 		"type": "text",
 		"description": "Usage hint for the command /unban"
 	},
 	"commandInvalid": "Ukaz ni veljaven",
-	"@commandInvalid": {
+	"@commandInvalid":
+	{
 		"type": "text"
 	},
 	"commandMissing": "{command} is not a command.",
-	"@commandMissing": {
+	"@commandMissing":
+	{
 		"type": "text",
-		"placeholders": {
-			"command": {}
+		"placeholders":
+		{
+			"command":
+			{}
 		},
 		"description": "State that {command} is not a valid /command."
 	},
 	"compareEmojiMatch": "Primerjajte in se prepričajte, da se naslednji emoji ujemajo s tistimi iz druge naprave:",
-	"@compareEmojiMatch": {
+	"@compareEmojiMatch":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"compareNumbersMatch": "Primerjajte in se prepričajte, da se naslednje številke ujemajo s številkami druge naprave:",
-	"@compareNumbersMatch": {
+	"@compareNumbersMatch":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"configureChat": "Konfigurirajte klepet",
-	"@configureChat": {
+	"@configureChat":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"confirm": "Potrdi",
-	"@confirm": {
+	"@confirm":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"connectionAttemptFailed": "Poskus povezave ni uspel",
-	"@connectionAttemptFailed": {
+	"@connectionAttemptFailed":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"containsDisplayName": "Vsebuje prikazno ime",
-	"@containsDisplayName": {
+	"@containsDisplayName":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"containsUserName": "Vsebuje uporabniško ime",
-	"@containsUserName": {
+	"@containsUserName":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"contentViewer": "Pregledovalnik vsebine",
-	"@contentViewer": {
+	"@contentViewer":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"pleaseChooseAtLeastChars": "Izberite najmanj {min} znakov.",
-	"@pleaseChooseAtLeastChars": {
+	"@pleaseChooseAtLeastChars":
+	{
 		"type": "text",
-		"placeholders": {
-			"min": {}
+		"placeholders":
+		{
+			"min":
+			{}
 		}
 	},
 	"archive": "Arhiv",
-	"@archive": {
+	"@archive":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"areYouSure": "Ali si prepričan?",
-	"@areYouSure": {
+	"@areYouSure":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"acceptedTheInvitation": "{username} je sprejel povabilo",
-	"@acceptedTheInvitation": {
+	"@acceptedTheInvitation":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"areYouSureYouWantToLogout": "Ali ste prepričani, da se želite odjaviti?",
-	"@areYouSureYouWantToLogout": {
+	"@areYouSureYouWantToLogout":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"changedTheChatDescriptionTo": "{username} je spremenil opis klepeta v: '{description}'",
-	"@changedTheChatDescriptionTo": {
+	"@changedTheChatDescriptionTo":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {},
-			"description": {}
+		"placeholders":
+		{
+			"username":
+			{},
+			"description":
+			{}
 		}
 	},
 	"areGuestsAllowedToJoin": "Ali se lahko gostujoči uporabniki pridružijo",
-	"@areGuestsAllowedToJoin": {
+	"@areGuestsAllowedToJoin":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"admin": "Admin",
-	"@admin": {
+	"@admin":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"badServerVersionsException": "Domači strežnik podpira različice Spec:\n{serverVersions}\nToda ta aplikacija podpira samo {supportedVersions}",
-	"@badServerVersionsException": {
+	"@badServerVersionsException":
+	{
 		"type": "text",
-		"placeholders": {
-			"serverVersions": {},
-			"supportedVersions": {}
+		"placeholders":
+		{
+			"serverVersions":
+			{},
+			"supportedVersions":
+			{}
 		}
 	},
 	"changedTheChatNameTo": "{username} je spremenil ime klepeta v: '{chatname}'",
-	"@changedTheChatNameTo": {
+	"@changedTheChatNameTo":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {},
-			"chatname": {}
+		"placeholders":
+		{
+			"username":
+			{},
+			"chatname":
+			{}
 		}
 	},
 	"changeDeviceName": "Spremenite ime naprave",
-	"@changeDeviceName": {
+	"@changeDeviceName":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"changeWallpaper": "Spremeni ozadje",
-	"@changeWallpaper": {
+	"@changeWallpaper":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"changedTheHistoryVisibility": "{username} je spremenila vidnost zgodovine",
-	"@changedTheHistoryVisibility": {
+	"@changedTheHistoryVisibility":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"channelCorruptedDecryptError": "Šifriranje je poškodovano",
-	"@channelCorruptedDecryptError": {
+	"@channelCorruptedDecryptError":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"setupChatBackupDescription": "Za zaščito vaših sporočil smo za vas ustvarili varnostni ključ.\nProsimo, da to shranite na varnem mestu, na primer v upravitelju gesel.",
-	"@setupChatBackupDescription": {},
+	"@setupChatBackupDescription":
+	{},
 	"contentHasBeenReported": "Vsebina je bila prijavljena skrbnikom strežnika",
-	"@contentHasBeenReported": {
+	"@contentHasBeenReported":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"chatBackupDescription": "Varnostna kopija klepeta je zavarovana z varnostnim ključem. Prosimo, pazite, da ga ne izgubite.",
-	"@chatBackupDescription": {
+	"@chatBackupDescription":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"commandHint_myroomnick": "Nastavite prikazno ime za to sobo",
-	"@commandHint_myroomnick": {
+	"@commandHint_myroomnick":
+	{
 		"type": "text",
 		"description": "Usage hint for the command /myroomnick"
 	},
 	"connect": "Povežite se",
-	"@connect": {
+	"@connect":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"contactHasBeenInvitedToTheGroup": "Kontakt je bil povabljen v skupino",
-	"@contactHasBeenInvitedToTheGroup": {
+	"@contactHasBeenInvitedToTheGroup":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"commandHint_leave": "Zapusti to sobo",
-	"@commandHint_leave": {
+	"@commandHint_leave":
+	{
 		"type": "text",
 		"description": "Usage hint for the command /leave"
 	},
 	"commandHint_plain": "Pošlji neformatirano besedilo",
-	"@commandHint_plain": {
+	"@commandHint_plain":
+	{
 		"type": "text",
 		"description": "Usage hint for the command /plain"
 	},
 	"copiedToClipboard": "Kopirano v odložišče",
-	"@copiedToClipboard": {
+	"@copiedToClipboard":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"copy": "Kopiraj",
-	"@copy": {
+	"@copy":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"copyToClipboard": "Kopiraj v odložišče",
-	"@copyToClipboard": {
+	"@copyToClipboard":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"couldNotDecryptMessage": "Sporočila ni bilo mogoče dešifrirati: {error}",
-	"@couldNotDecryptMessage": {
+	"@couldNotDecryptMessage":
+	{
 		"type": "text",
-		"placeholders": {
-			"error": {}
+		"placeholders":
+		{
+			"error":
+			{}
 		}
 	},
 	"couldNotSetAvatar": "Avatarja ni bilo mogoče nastaviti",
-	"@couldNotSetAvatar": {
+	"@couldNotSetAvatar":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"couldNotSetDisplayname": "Prikaznega imena ni bilo mogoče nastaviti",
-	"@couldNotSetDisplayname": {
+	"@couldNotSetDisplayname":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"countParticipants": "{count} udeležencev",
-	"@countParticipants": {
+	"@countParticipants":
+	{
 		"type": "text",
-		"placeholders": {
-			"count": {}
+		"placeholders":
+		{
+			"count":
+			{}
 		}
 	},
 	"create": "Ustvari",
-	"@create": {
+	"@create":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"createAccountNow": "Ustvarite račun zdaj",
-	"@createAccountNow": {
+	"@createAccountNow":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"createNewGroup": "Ustvari novo skupino",
-	"@createNewGroup": {
+	"@createNewGroup":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"createNewSpace": "Nov prostor",
-	"@createNewSpace": {
+	"@createNewSpace":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"crossSigningEnabled": "Navzkrižno podpisovanje DA",
-	"@crossSigningEnabled": {
+	"@crossSigningEnabled":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"crossSigningDisabled": "Navzkrižno podpisovanje NE",
-	"@crossSigningDisabled": {
+	"@crossSigningDisabled":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"currentlyActive": "Trenutno aktiven",
-	"@currentlyActive": {
+	"@currentlyActive":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"darkTheme": "Temno",
-	"@darkTheme": {
+	"@darkTheme":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"defaultPermissionLevel": "Privzeta raven dovoljenja",
-	"@defaultPermissionLevel": {
+	"@defaultPermissionLevel":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"dateWithYear": "{day}-{month}-{year}",
-	"@dateWithYear": {
+	"@dateWithYear":
+	{
 		"type": "text",
-		"placeholders": {
-			"year": {},
-			"month": {},
-			"day": {}
+		"placeholders":
+		{
+			"year":
+			{},
+			"month":
+			{},
+			"day":
+			{}
 		}
 	},
 	"dateWithoutYear": "{month}-{day}",
-	"@dateWithoutYear": {
+	"@dateWithoutYear":
+	{
 		"type": "text",
-		"placeholders": {
-			"month": {},
-			"day": {}
+		"placeholders":
+		{
+			"month":
+			{},
+			"day":
+			{}
 		}
 	},
 	"createdTheChat": "{username} je ustvaril klepet",
-	"@createdTheChat": {
+	"@createdTheChat":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"dateAndTimeOfDay": "{date}, {timeOfDay}",
-	"@dateAndTimeOfDay": {
+	"@dateAndTimeOfDay":
+	{
 		"type": "text",
-		"placeholders": {
-			"date": {},
-			"timeOfDay": {}
+		"placeholders":
+		{
+			"date":
+			{},
+			"timeOfDay":
+			{}
 		}
 	},
 	"deactivateAccountWarning": "S tem boste deaktivirali vaš uporabniški račun. Tega ni mogoče razveljaviti! Ali si prepričan?",
-	"@deactivateAccountWarning": {
+	"@deactivateAccountWarning":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"addAccount": "",
 	"addDescription": "",

@@ -164,7 +164,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"badServerLoginTypesException": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node podporuje přihlášení typu:\n{serverVersions}\nAle tato aplikace podporuje pouze:\n{supportedVersions}",
+	"badServerLoginTypesException": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node podporuje přihlášení typu:\n{serverVersions}\nAle tato aplikace podporuje pouze:\n{supportedVersions}",
 	"@badServerLoginTypesException": {
 		"type": "text",
 		"placeholders": {
@@ -172,7 +172,7 @@
 			"supportedVersions": {}
 		}
 	},
-	"badServerVersionsException": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node podporuje specifikaci verzí:\n{serverVersions}\nAle tato aplikace podporuje pouze verze {supportedVersions}",
+	"badServerVersionsException": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node podporuje specifikaci verzí:\n{serverVersions}\nAle tato aplikace podporuje pouze verze {supportedVersions}",
 	"@badServerVersionsException": {
 		"type": "text",
 		"placeholders": {
@@ -354,7 +354,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
 	"@changeTheHomeserver": {
 		"type": "text",
 		"placeholders": {}
@@ -913,7 +913,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
 	"@enterYourHomeserver": {
 		"type": "text",
 		"placeholders": {}
@@ -945,7 +945,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"rechainonline": "REChain.Online",
+	"rechainonline": "REChain ® 🪐",
 	"@rechainonline": {
 		"type": "text",
 		"placeholders": {}
@@ -1145,7 +1145,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"inviteText": "{username} vás pozval na platformu REChain.Online! \n1. Nainstalujte REChain.Online: https://rechain.online \n2. Zaregistrujte se nebo se přihlaste do platformy! \n3. Otevřete odkaz na pozvánku: {link}",
+	"inviteText": "{username} vás pozval na platformu REChain ® 🪐! \n1. Nainstalujte REChain ® 🪐: https://rechain.online \n2. Zaregistrujte se nebo se přihlaste do platformy! \n3. Otevřete odkaz na pozvánku: {link}",
 	"@inviteText": {
 		"type": "text",
 		"placeholders": {
@@ -1361,7 +1361,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"newMessageInrechainonline": "Nová zpráva na platformě REChain.Online!",
+	"newMessageInrechainonline": "Nová zpráva na platformě REChain ® 🪐!",
 	"@newMessageInrechainonline": {
 		"type": "text",
 		"placeholders": {}
@@ -1386,7 +1386,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"noCrossSignBootstrap": "REChain.Online aktuálně nepodporuje aktivaci podpisu křížového podpisu. Místo toho jej povolte v rámci REChain 🪐.",
+	"noCrossSignBootstrap": "REChain.Online aktuálně nepodporuje aktivaci podpisu křížového podpisu. Místo toho jej povolte v rámci REChain ® 🪐.",
 	"@noCrossSignBootstrap": {
 		"type": "text",
 		"placeholders": {}
@@ -1406,12 +1406,12 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"noGoogleServicesWarning": "Zdá se, že v zařízení nemáte žádné služby Google. Toto je dobré rozhodnutí pro vaše soukromí! Chcete-li přijímat oznámení push z platformy REChain.Online, doporučujeme použít https://microg.org/ nebo https://unifiedpush.org/.",
+	"noGoogleServicesWarning": "Zdá se, že v zařízení nemáte žádné služby Google. Toto je dobré rozhodnutí pro vaše soukromí! Chcete-li přijímat oznámení push z platformy REChain ® 🪐, doporučujeme použít https://microg.org/ nebo https://unifiedpush.org/.",
 	"@noGoogleServicesWarning": {
 		"type": "text",
 		"placeholders": {}
 	},
-	"norechainonlineServer": "{server1} není server Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network server, použít místo něj server {server2}?",
+	"norechainonlineServer": "{server1} není server Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network server, použít místo něj server {server2}?",
 	"@norechainonlineServer": {
 		"type": "text",
 		"placeholders": {
@@ -1419,7 +1419,7 @@
 			"server2": {}
 		}
 	},
-	"noMegolmBootstrap": "Místo toho zapněte online zálohování klíče prostřednictvím sítě v rámci REChain 🪐.",
+	"noMegolmBootstrap": "Místo toho zapněte online zálohování klíče prostřednictvím sítě v rámci REChain ® 🪐.",
 	"@noMegolmBootstrap": {
 		"type": "text",
 		"placeholders": {}
@@ -1640,7 +1640,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"pleaseEnterArechainonlineIdentifier": "Zadejte ID sítě uzlu Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node.",
+	"pleaseEnterArechainonlineIdentifier": "Zadejte ID sítě uzlu Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node.",
 	"@pleaseEnterArechainonlineIdentifier": {
 		"type": "text",
 		"placeholders": {}
@@ -1915,7 +1915,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"sendBugReports": "Povolte zasílání hlášení o chybách prostřednictvím REChain 🪐",
+	"sendBugReports": "Povolte zasílání hlášení o chybách prostřednictvím REChain ® 🪐",
 	"@sendBugReports": {
 		"type": "text",
 		"placeholders": {}
@@ -1992,7 +1992,7 @@
 			"senderName": {}
 		}
 	},
-	"sentryInfo": "Informace o vašem soukromí: https://rechain.online/en/privacy.html",
+	"sentryInfo": "Informace o vašem soukromí: https://rechain.online/privacy-policy.html",
 	"@sentryInfo": {
 		"type": "text",
 		"placeholders": {}
@@ -2186,7 +2186,7 @@
 			"suffix": {}
 		}
 	},
-	"title": "REChain.Online",
+	"title": "REChain ® 🪐",
 	"@title": {
 		"description": "Title for the application",
 		"type": "text",
@@ -2459,7 +2459,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"welcomeText": "Vítejte na REChain.Online! Soukromá a bezpečná budoucnost, která již dorazila!",
+	"welcomeText": "REChain ® 🪐! Soukromá a bezpečná budoucnost, která již dorazila!",
 	"@welcomeText": {
 		"type": "text",
 		"placeholders": {}
@@ -2594,12 +2594,12 @@
 	"commandHint_cuddle": "Poslat mazlení",
 	"commandHint_googly": "Poslat kroutící se očička",
 	"commandHint_hug": "Poslat obejmutí",
-	"confirmMatrixId": "Prosím, potvrďte vaše REChain 🪐 ID, abyste mohli smazat váš účet.",
+	"confirmMatrixId": "Prosím, potvrďte vaše REChain ® 🪐 ID, abyste mohli smazat váš účet.",
 	"cuddleContent": "{senderName} se s vámi mazlí",
 	"disableEncryptionWarning": "Z bezpečnostních důvodů nemůžete vypnout šifrování v chatu, kde již bylo dříve zapnuto.",
 	"googlyEyesContent": "{senderName} vám posílá kroutící se očička",
 	"hugContent": "{senderName} vás objímá",
-	"updateAvailable": "K dispozici aktualizace REChain 🪐",
+	"updateAvailable": "K dispozici aktualizace REChain ® 🪐",
 	"updateNow": "Spustit aktualizaci na pozadí",
 	"chatHasBeenAddedToThisSpace": "Do tohoto prostoru byl přidán chat",
 	"@chatHasBeenAddedToThisSpace": {},
@@ -2615,7 +2615,7 @@
 	"@createNewChatExplaination": {},
 	"sendOnEnter": "Odeslat při vstupu",
 	"@sendOnEnter": {},
-	"homeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"homeserver": "Node/Server",
 	"@homeserver": {},
 	"serverRequiresEmail": "Tento server potřebuje k registraci ověřit vaši e -mailovou adresu.",
 	"@serverRequiresEmail": {},
@@ -2848,7 +2848,7 @@
 	"integrationsNotImplemented": "Úpravy widgetů a integrace nejsou zatím možné.",
 	"iUnderstand": "Rozumím",
 	"markAsRead": "Označit jako přečtené",
-	"matrixWidgets": "REChain 🪐 widgety",
+	"matrixWidgets": "REChain ® 🪐 widgety",
 	"nextAccount": "Další účet",
 	"openChat": "Otevřete chat",
 	"pinMessage": "Připnout zprávu do místnosti",

@@ -276,7 +276,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"changeTheHomeserver": "Válts a Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node hálózati szervereire",
+	"changeTheHomeserver": "Válts a Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node hálózati szervereire",
 	"@changeTheHomeserver": {
 		"type": "text",
 		"placeholders": {}
@@ -614,7 +614,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"enterYourHomeserver": "Lépjen be a Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node hálózati szerverébe",
+	"enterYourHomeserver": "Lépjen be a Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node hálózati szerverébe",
 	"@enterYourHomeserver": {
 		"type": "text",
 		"placeholders": {}
@@ -629,7 +629,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"rechainonline": "REChain.Online",
+	"rechainonline": "REChain ® 🪐",
 	"@rechainonline": {
 		"type": "text",
 		"placeholders": {}
@@ -779,7 +779,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"inviteText": "{username} meghívta Önt a REChain.Online platformra! \n1. Telepítse a REChain.Online-t: https://rechain.online \n2. Lépj be vagy regisztrálj! \n3. Nyissa meg a meghívó linkjét: {link}",
+	"inviteText": "{username} meghívta Önt a REChain ® 🪐 platformra! \n1. Telepítse a REChain ® 🪐-t: https://rechain.online \n2. Lépj be vagy regisztrálj! \n3. Nyissa meg a meghívó linkjét: {link}",
 	"@inviteText": {
 		"type": "text",
 		"placeholders": {
@@ -956,7 +956,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"newMessageInrechainonline": "Új üzenet a REChain.Online Platformon!",
+	"newMessageInrechainonline": "Új üzenet a REChain ® 🪐 Platformon!",
 	"@newMessageInrechainonline": {
 		"type": "text",
 		"placeholders": {}
@@ -971,7 +971,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"noCrossSignBootstrap": "A REChain.Online jelenleg nem támogatja az eszközök közötti kereszt-aláírást. Kérjük, engedélyezze a REChain 🪐.",
+	"noCrossSignBootstrap": "A REChain.Online jelenleg nem támogatja az eszközök közötti kereszt-aláírást. Kérjük, engedélyezze a REChain ® 🪐.",
 	"@noCrossSignBootstrap": {
 		"type": "text",
 		"placeholders": {}
@@ -981,12 +981,12 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"noGoogleServicesWarning": "Úgy tűnik, hogy nincsenek Google-szolgáltatások a telefonján. Ez egy jó döntés az Ön magánélete szempontjából! Javasoljuk a microG használatát a REChain.Online Platformon a push értesítések fogadásához: https://microg.org/.",
+	"noGoogleServicesWarning": "Úgy tűnik, hogy nincsenek Google-szolgáltatások a telefonján. Ez egy jó döntés az Ön magánélete szempontjából! Javasoljuk a microG használatát a REChain ® 🪐 Platformon a push értesítések fogadásához: https://microg.org/.",
 	"@noGoogleServicesWarning": {
 		"type": "text",
 		"placeholders": {}
 	},
-	"noMegolmBootstrap": "A REChain.Online jelenleg nem támogatja az online kulcsmentést. Kérjük, engedélyezze a REChain 🪐.",
+	"noMegolmBootstrap": "A REChain.Online jelenleg nem támogatja az online kulcsmentést. Kérjük, engedélyezze a REChain ® 🪐.",
 	"@noMegolmBootstrap": {
 		"type": "text",
 		"placeholders": {}
@@ -1105,7 +1105,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"pleaseEnterArechainonlineIdentifier": "Adja meg a Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node hálózati azonosítóját",
+	"pleaseEnterArechainonlineIdentifier": "Adja meg a Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node hálózati azonosítóját",
 	"@pleaseEnterArechainonlineIdentifier": {
 		"type": "text",
 		"placeholders": {}
@@ -1269,7 +1269,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"sendBugReports": "Hibajelentések engedélyezése a REChain 🪐-val",
+	"sendBugReports": "Hibajelentések engedélyezése a REChain ® 🪐-val",
 	"@sendBugReports": {
 		"type": "text",
 		"placeholders": {}
@@ -1336,7 +1336,7 @@
 			"senderName": {}
 		}
 	},
-	"sentryInfo": "Adatvédelmi információk: https://rechain.online/en/privacy.html",
+	"sentryInfo": "Adatvédelmi információk: https://rechain.online/privacy-policy.html",
 	"@sentryInfo": {
 		"type": "text",
 		"placeholders": {}
@@ -1465,7 +1465,7 @@
 			"suffix": {}
 		}
 	},
-	"title": "REChain.Online",
+	"title": "REChain ® 🪐",
 	"@title": {
 		"description": "Title for the application",
 		"type": "text",
@@ -1688,7 +1688,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"welcomeText": "Üdvözöljük a REChain.Online oldalon! Egy privát és biztos jövő, amely már megérkezett!",
+	"welcomeText": "Üdvözöljük a REChain ® 🪐 oldalon! Egy privát és biztos jövő, amely már megérkezett!",
 	"@welcomeText": {
 		"type": "text",
 		"placeholders": {}
@@ -1853,7 +1853,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"badServerLoginTypesException": "A Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network szerver a következő bejelentkezéseket támogatja: \n {serverVersions} \nDe csak az alkalmazás támogatja: \n {supportedVersions}",
+	"badServerLoginTypesException": "A Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network szerver a következő bejelentkezéseket támogatja: \n {serverVersions} \nDe csak az alkalmazás támogatja: \n {supportedVersions}",
 	"@badServerLoginTypesException": {
 		"type": "text",
 		"placeholders": {
@@ -2300,9 +2300,9 @@
 	"commandHint_googly": "Gülüszemek küldése",
 	"commandHint_hug": "Ölelés küldése",
 	"commandHint_markasgroup": "Csoportnak jelölés",
-	"confirmMatrixId": "A fiók törléséhez adja meg a REChain 🪐 ID-t.",
+	"confirmMatrixId": "A fiók törléséhez adja meg a REChain ® 🪐 ID-t.",
 	"cuddleContent": "{senderName} megölelt",
-	"dehydrateShare": "Ez egy privát REChain 🪐-export. Tartsa biztonságban, és ne vessze el.",
+	"dehydrateShare": "Ez egy privát REChain ® 🪐-export. Tartsa biztonságban, és ne vessze el.",
 	"googlyEyesContent": "{senderName} gülüszemeket küld",
 	"link": "Hivatkozás",
 	"noSearchResult": "Nincs megfelelő találat.",
@@ -2313,7 +2313,7 @@
 	"people": "Emberek",
 	"pleaseChoose": "Kérjük válasszon",
 	"pleaseEnter4Digits": "Írjon be 4 számjegyet, vagy hagyja üresen a zár kikapcsolásához.",
-	"pleaseEnterAMatrixIdentifier": "Írj be egy REChain 🪐-azonosítót.",
+	"pleaseEnterAMatrixIdentifier": "Írj be egy REChain ® 🪐-azonosítót.",
 	"pleaseEnterYourPin": "Írja be a PIN-kódot",
 	"reason": "Ok",
 	"redactMessage": "Üzenet visszavonása",
@@ -2325,10 +2325,10 @@
 	"security": "Biztonság",
 	"sendMessages": "Üzenetek küldése",
 	"sendSticker": "Matrica küldése",
-	"updateAvailable": "REChain 🪐-frissítés elérhető",
+	"updateAvailable": "REChain ® 🪐-frissítés elérhető",
 	"updateNow": "Frissítés elindítása a háttérben",
 	"advanced": "Haladó",
-	"badServerVersionsException": "A Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network szerver ezeket a specifikáció verziókat támogatja:\n{serverVersions}\nAzonban ez az app csak ezeket: {supportedVersions}",
+	"badServerVersionsException": "A Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network szerver ezeket a specifikáció verziókat támogatja:\n{serverVersions}\nAzonban ez az app csak ezeket: {supportedVersions}",
 	"commandHint_me": "Mit csinálsz épp",
 	"commandHint_op": "Az adott felhasználó hozzáférési szintjét változtatja (alapértelmezett: 50)",
 	"commandHint_react": "Válasz küldése reakcióként",
@@ -2403,7 +2403,7 @@
 	"memberChanges": "Tagság változások",
 	"messages": "Üzenetek",
 	"newChat": "Új beszélgetés",
-	"newUsernameDescription": "A Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network helyben címed valahogy így fog kinézni: @felhasználó:szerver",
+	"newUsernameDescription": "A Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network helyben címed valahogy így fog kinézni: @felhasználó:szerver",
 	"next": "Következő",
 	"noConnectionToTheServer": "Nem elérhető a szerver",
 	"noDescription": "Nincs leírás",
@@ -2430,7 +2430,7 @@
 		"placeholders": {}
 	},
 	"@homeserver": {},
-	"homeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"homeserver": "Node/Server",
 	"audioPlayerPause": "Szüneteltetés",
 	"@audioPlayerPause": {
 		"type": "text",

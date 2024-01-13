@@ -129,7 +129,7 @@ class LoginController extends State<Login> {
             context: context,
             useRootNavigator: false,
             message:
-                L10n.of(context)!.noMatrixServer(newDomain, oldHomeserver!),
+                L10n.of(context)!.norechainonlineServer(newDomain, oldHomeserver!),
             okLabel: L10n.of(context)!.ok,
             cancelLabel: L10n.of(context)!.cancel,
           );
@@ -227,7 +227,7 @@ class LoginController extends State<Login> {
       context: context,
       future: () => Matrix.of(context).getLoginClient().request(
             RequestType.POST,
-            '/client/r0/account/password',
+            '/client/v3/account/password',
             data: data,
           ),
     );

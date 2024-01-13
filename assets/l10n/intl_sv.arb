@@ -1,6 +1,6 @@
 {
 	"@@last_modified": "2021-08-14 12:41:09.835634",
-	"about": "Om REChain.Online",
+	"about": "Om REChain ® 🪐",
 	"@about": {
 		"type": "text",
 		"placeholders": {}
@@ -303,7 +303,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
 	"@changeTheHomeserver": {
 		"type": "text",
 		"placeholders": {}
@@ -721,7 +721,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
 	"@enterYourHomeserver": {
 		"type": "text",
 		"placeholders": {}
@@ -741,7 +741,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"rechainonline": "REChain.Online",
+	"rechainonline": "REChain ® 🪐",
 	"@rechainonline": {
 		"type": "text",
 		"placeholders": {}
@@ -921,7 +921,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"inviteText": "{username} bjöd in dig till REChain.Online. \n1. Installera REChain.Online: https://rechain.online \n2. Registrera dig eller logga in \n3. Öppna inbjudningslänk: {link}",
+	"inviteText": "{username} bjöd in dig till REChain ® 🪐. \n1. Installera REChain ® 🪐: https://rechain.online \n2. Registrera dig eller logga in \n3. Öppna inbjudningslänk: {link}",
 	"@inviteText": {
 		"type": "text",
 		"placeholders": {
@@ -1113,7 +1113,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"newMessageInrechainonline": "Nytt meddelande på REChain.Online-plattformen!",
+	"newMessageInrechainonline": "Nytt meddelande på REChain ® 🪐-plattformen!",
 	"@newMessageInrechainonline": {
 		"type": "text",
 		"placeholders": {}
@@ -1138,7 +1138,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"noCrossSignBootstrap": "REChain.Online stöder för närvarande inte aktiverad korssignering. Vänligen aktivera det från REChain 🪐.",
+	"noCrossSignBootstrap": "REChain.Online stöder för närvarande inte aktiverad korssignering. Vänligen aktivera det från REChain ® 🪐.",
 	"@noCrossSignBootstrap": {
 		"type": "text",
 		"placeholders": {}
@@ -1153,12 +1153,12 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"noGoogleServicesWarning": "Det verkar som att du inte har Google-tjänster på din telefon. Det är ett bra beslut för din integritet! För att få push-meddelanden på REChain.Online-plattformen rekommenderar vi att du använder https://microg.org/ eller https://unifiedpush.org/.",
+	"noGoogleServicesWarning": "Det verkar som att du inte har Google-tjänster på din telefon. Det är ett bra beslut för din integritet! För att få push-meddelanden på REChain ® 🪐-plattformen rekommenderar vi att du använder https://microg.org/ eller https://unifiedpush.org/.",
 	"@noGoogleServicesWarning": {
 		"type": "text",
 		"placeholders": {}
 	},
-	"noMegolmBootstrap": "Vänligen aktivera online-nyckelbackup från REChain 🪐 istället.",
+	"noMegolmBootstrap": "Vänligen aktivera online-nyckelbackup från REChain ® 🪐 istället.",
 	"@noMegolmBootstrap": {
 		"type": "text",
 		"placeholders": {}
@@ -1344,7 +1344,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"pleaseEnterArechainonlineIdentifier": "Ange ditt Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network ID.",
+	"pleaseEnterArechainonlineIdentifier": "Ange ditt Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network ID.",
 	"@pleaseEnterArechainonlineIdentifier": {
 		"type": "text",
 		"placeholders": {}
@@ -1553,7 +1553,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"sendBugReports": "Tillåt att skicka buggrapporter med REChain 🪐",
+	"sendBugReports": "Tillåt att skicka buggrapporter med REChain ® 🪐",
 	"@sendBugReports": {
 		"type": "text",
 		"placeholders": {}
@@ -1625,7 +1625,7 @@
 			"senderName": {}
 		}
 	},
-	"sentryInfo": "Information om din intigritet: https://rechain.online/en/privacy.html",
+	"sentryInfo": "Information om din intigritet: https://rechain.online/privacy-policy.html",
 	"@sentryInfo": {
 		"type": "text",
 		"placeholders": {}
@@ -1774,7 +1774,7 @@
 			"suffix": {}
 		}
 	},
-	"title": "REChain.Online",
+	"title": "REChain ® 🪐",
 	"@title": {
 		"description": "Title for the application",
 		"type": "text",
@@ -2017,7 +2017,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"welcomeText": "Välkommen till REChain.Online! En privat och säker framtid som redan har anlänt!",
+	"welcomeText": "Välkommen till REChain ® 🪐! En privat och säker framtid som redan har anlänt!",
 	"@welcomeText": {
 		"type": "text",
 		"placeholders": {}
@@ -2348,7 +2348,7 @@
 			"brand": {}
 		}
 	},
-	"norechainonlineServer": "{server1} är inte en Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network-server, använd {server2} istället?",
+	"norechainonlineServer": "{server1} är inte en Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network-server, använd {server2} istället?",
 	"@norechainonlineServer": {
 		"type": "text",
 		"placeholders": {
@@ -2856,21 +2856,21 @@
 	"readUpToHere": "Läs upp till hit",
 	"allSpaces": "Alla utrymmen",
 	"appearOnTop": "Visa ovanpå",
-	"appearOnTopDetails": "Tillåt att appen visas ovanpå (behövs inte om du redan har REChain 🪐 konfigurerat som ett samtalskonto)",
+	"appearOnTopDetails": "Tillåt att appen visas ovanpå (behövs inte om du redan har REChain ® 🪐 konfigurerat som ett samtalskonto)",
 	"callingAccount": "Samtalskonto",
-	"callingAccountDetails": "Tillåt REChain 🪐 att använda Androids ring-app.",
+	"callingAccountDetails": "Tillåt REChain ® 🪐 att använda Androids ring-app.",
 	"callingPermissions": "Samtalsbehörighet",
 	"commandHint_cuddle": "Skicka en omfamning",
 	"commandHint_googly": "Skicka några googly ögon",
 	"commandHint_hug": "Skicka en kram",
 	"commandHint_markasdm": "Märk som rum för direktmeddelanden",
 	"commandHint_markasgroup": "Märk som grupp",
-	"confirmMatrixId": "Bekräfta ditt REChain 🪐-ID för att radera ditt konto.",
+	"confirmMatrixId": "Bekräfta ditt REChain ® 🪐-ID för att radera ditt konto.",
 	"countFiles": "{count} filer",
 	"cuddleContent": "{senderName} omfamnar dig",
 	"custom": "Anpassad",
 	"dehydrate": "Exportera sessionen och rensa enheten",
-	"dehydrateShare": "Detta är din privata REChain 🪐-export. Tappa inte bort den och håll den för dig själv.",
+	"dehydrateShare": "Detta är din privata REChain ® 🪐-export. Tappa inte bort den och håll den för dig själv.",
 	"dehydrateTor": "TOR-användare: Exportera session",
 	"dehydrateTorLong": "TOR-användare rekommenderas att exportera sessionen innan fönstret stängs.",
 	"dehydrateWarning": "Denna åtgärd kan inte ångras. Försäkra dig om att backupen är i säkert förvar.",
@@ -2880,7 +2880,7 @@
 	"enableAutoBackups": "Aktivera automatisk säkerhetskopiering",
 	"encryptThisChat": "Kryptera denna chatt",
 	"endToEndEncryption": "Totalsträckskryptering",
-	"enterInviteLinkOrMatrixId": "Ange länk för inbjudan eller REChain 🪐-ID...",
+	"enterInviteLinkOrMatrixId": "Ange länk för inbjudan eller REChain ® 🪐-ID...",
 	"enterRoom": "Gå till rummet",
 	"enterSpace": "Gå till utrymme",
 	"fileIsTooBigForServer": "Servern informerar om att filen är för stor för att skickas.",
@@ -2891,7 +2891,7 @@
 	"hydrate": "Återställ från säkerhetskopia",
 	"hydrateTor": "TOR-användare: Importera session från tidigare export",
 	"hydrateTorLong": "Exporterade du sessionen när du senast använde TOR? Importera den enkelt och fortsätt chatta.",
-	"indexedDbErrorLong": "Meddelandelagring är tyvärr inte aktiverat i privat läge som standard.\nGå till\n - about:config\n - sätt dom.indexedDB.privateBrowsing.enabled till true\nAnnars går det inte att använda REChain 🪐.",
+	"indexedDbErrorLong": "Meddelandelagring är tyvärr inte aktiverat i privat läge som standard.\nGå till\n - about:config\n - sätt dom.indexedDB.privateBrowsing.enabled till true\nAnnars går det inte att använda REChain ® 🪐.",
 	"indexedDbErrorTitle": "Problem med privat läge",
 	"letsStart": "Lås oss börja",
 	"newGroup": "Ny grupp",
@@ -2903,14 +2903,14 @@
 	"noOtherDevicesFound": "Inga andra enheter hittades",
 	"noSearchResult": "Inga träffar.",
 	"numChats": "{number} chattar",
-	"otherCallingPermissions": "Mikrofon, kamera och andra behörigheter för REChain 🪐",
+	"otherCallingPermissions": "Mikrofon, kamera och andra behörigheter för REChain ® 🪐.",
 	"pleaseEnterRecoveryKey": "Ange din återställningsnyckel:",
 	"pleaseEnterRecoveryKeyDescription": "Ange din återställningsnyckel från en tidigare session för att låsa upp äldre meddelanden. Din återställningsnyckel är INTE ditt lösenord.",
 	"recoveryKey": "Återställningsnyckel",
 	"recoveryKeyLost": "Borttappad återställningsnyckel?",
 	"reopenChat": "Återöppna chatt",
 	"saveKeyManuallyDescription": "Spara nyckeln manuellt genom att aktivera dela-funktionen eller urklippshanteraren på enheten.",
-	"screenSharingDetail": "Du delar din skärm i REChain 🪐",
+	"screenSharingDetail": "Du delar din skärm i REChain ® 🪐.",
 	"screenSharingTitle": "skärmdelning",
 	"separateChatTypes": "Separata direktchattar och grupper",
 	"showDirectChatsInSpaces": "Visa relaterade direktchattar i utrymmen",
@@ -2923,7 +2923,7 @@
 	"stories": "Berättelser",
 	"supposedMxid": "Detta bör vara {mxid}",
 	"unlockOldMessages": "Lås upp äldre meddelanden",
-	"updateAvailable": "REChain 🪐-uppdatering tillgänglig",
+	"updateAvailable": "REChain ® 🪐-uppdatering tillgänglig",
 	"updateNow": "Påbörja uppdatering i bakgrunden",
 	"user": "Användare",
 	"users": "Användare",
@@ -2967,7 +2967,7 @@
 	"link": "Länk",
 	"loginWithOneClick": "Logga in med ett klick",
 	"markAsRead": "Markera som läst",
-	"matrixWidgets": "REChain 🪐 widgetar",
+	"matrixWidgets": "REChain ® 🪐 widgetar",
 	"messageInfo": "Meddelandeinformation",
 	"messageType": "Meddelandetyp",
 	"newPasswordDescription": "För att kunna återställa ditt lösenord så bör du vid tillfälle lägga till en e-postadress till ditt konto.",
@@ -3039,7 +3039,7 @@
 		"placeholders": {}
 	},
 	"@homeserver": {},
-	"homeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"homeserver": "Node/Server",
 	"moreEvents": "{count,plural, =1{1 more event} other{{count} mer events}}",
 	"@moreEvents": {
 		"type": "text",

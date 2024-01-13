@@ -336,7 +336,7 @@
 "type": "text",
 "placeholders": {}
 },
-"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
 "@changeTheHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -779,7 +779,7 @@
 "type": "text",
 "placeholders": {}
 },
-"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
 "@enterYourHomeserver": {
 "type": "text",
 "placeholders": {}
@@ -804,7 +804,7 @@
 "type": "text",
 "placeholders": {}
 },
-"rechainonline": "REChain.Online",
+"rechainonline": "REChain ® 🪐",
 "@rechainonline": {
 "type": "text",
 "placeholders": {}
@@ -994,7 +994,7 @@
 "type": "text",
 "placeholders": {}
 },
-"inviteText": "{username} 邀請您使用 REChain.Online\n1.安裝 REChain.Online：https://rechain.online\n2。登錄或註冊\n3.打開邀請網址：{link}",
+"inviteText": "{username} 邀請您使用 REChain ® 🪐\n1.安裝 REChain ® 🪐：https://rechain.online\n2。登錄或註冊\n3.打開邀請網址：{link}",
 "@inviteText": {
 "type": "text",
 "placeholders": {
@@ -1193,7 +1193,7 @@
 "type": "text",
 "placeholders": {}
 },
-"newMessageInrechainonline": "REChain.Online 上的新消息！",
+"newMessageInrechainonline": "REChain ® 🪐 上的新消息！",
 "@newMessageInrechainonline": {
 "type": "text",
 "placeholders": {}
@@ -1218,7 +1218,7 @@
 "type": "text",
 "placeholders": {}
 },
-"noCrossSignBootstrap": "REChain.Online 目前不支持啟用交叉簽名。請在 REChain 🪐 中啟用它。",
+"noCrossSignBootstrap": "REChain.Online 目前不支持啟用交叉簽名。請在 REChain ® 🪐 中啟用它。",
 "@noCrossSignBootstrap": {
 "type": "text",
 "placeholders": {}
@@ -1238,12 +1238,12 @@
 "type": "text",
 "placeholders": {}
 },
-"noGoogleServicesWarning": "您的手機上似乎沒有 Google 服務框架。這是保護您隱私的好決定！但為了接收來自 REChain.Online 的推送通知，我們建議您使用 https://microg.org/ 或 https://unifiedpush.org/。",
+"noGoogleServicesWarning": "您的手機上似乎沒有 Google 服務框架。這是保護您隱私的好決定！但為了接收來自 REChain ® 🪐 的推送通知，我們建議您使用 https://microg.org/ 或 https://unifiedpush.org/。",
 "@noGoogleServicesWarning": {
 "type": "text",
 "placeholders": {}
 },
-"noMegolmBootstrap": "REChain.Online 目前不支持啟用在線密鑰備份。請在 REChain 🪐 中啟用它。",
+"noMegolmBootstrap": "REChain.Online 目前不支持啟用在線密鑰備份。請在 REChain ® 🪐 中啟用它。",
 "@noMegolmBootstrap": {
 "type": "text",
 "placeholders": {}
@@ -1429,7 +1429,7 @@
 "type": "text",
 "placeholders": {}
 },
-"pleaseEnterArechainonlineIdentifier": "請輸入 Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node 區塊鏈節點網絡 ID。",
+"pleaseEnterArechainonlineIdentifier": "請輸入 Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node 區塊鏈節點網絡 ID。",
 "@pleaseEnterArechainonlineIdentifier": {
 "type": "text",
 "placeholders": {}
@@ -1653,7 +1653,7 @@
 "type": "text",
 "placeholders": {}
 },
-"sendBugReports": "允許向REChain🪐回報錯誤",
+"sendBugReports": "允許向REChain ® 🪐回報錯誤",
 "@sendBugReports": {
 "type": "text",
 "placeholders": {}
@@ -1725,7 +1725,7 @@
 "senderName": {}
 }
 },
-"sentryInfo": "關於您的隱私：https://rechain.online/en/privacy.html",
+"sentryInfo": "關於您的隱私：https://rechain.online/privacy-policy.html",
 "@sentryInfo": {
 "type": "text",
 "placeholders": {}
@@ -1884,7 +1884,7 @@
 "suffix": {}
 }
 },
-"title": "REChain.Online",
+"title": "REChain ® 🪐",
 "@title": {
 "description": "Title for the application",
 "type": "text",
@@ -2157,7 +2157,7 @@
 "type": "text",
 "placeholders": {}
 },
-"welcomeText": "歡迎來到 REChain.Online！一個私密而安全的未來已經到來！",
+"welcomeText": "歡迎來到 REChain ® 🪐！一個私密而安全的未來已經到來！",
 "@welcomeText": {
 "type": "text",
 "placeholders": {}

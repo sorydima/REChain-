@@ -3,9 +3,8 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class EmptyPage extends StatelessWidget {
-  final bool loading;
-  static const double _width = 300;
-  const EmptyPage({this.loading = false, super.key});
+  static const double _width = 400;
+  const EmptyPage({super.key});
   @override
   Widget build(BuildContext context) {
     final width = min(MediaQuery.of(context).size.width, EmptyPage._width) / 2;
@@ -14,31 +13,17 @@ class EmptyPage extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         elevation: 0,
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        backgroundColor: Colors.transparent,
       ),
       extendBodyBehindAppBar: true,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(
-            child: Hero(
-              tag: 'info-logo',
-              child: Image.asset(
-                'assets/favicon.png',
-                width: width,
-                height: width,
-                filterQuality: FilterQuality.medium,
-              ),
-            ),
-          ),
-          if (loading)
-            Center(
-              child: SizedBox(
-                width: width,
-                child: const LinearProgressIndicator(),
-              ),
-            ),
-        ],
+      body: Container(
+        alignment: Alignment.center,
+        child: Image.asset(
+          'assets/info-logo.png',
+          width: width,
+          height: width,
+          filterQuality: FilterQuality.medium,
+        ),
       ),
     );
   }

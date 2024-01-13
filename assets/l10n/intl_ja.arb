@@ -337,7 +337,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
 	"@changeTheHomeserver": {
 		"type": "text",
 		"placeholders": {}
@@ -792,7 +792,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
 	"@enterYourHomeserver": {
 		"type": "text",
 		"placeholders": {}
@@ -817,7 +817,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"rechainonline": "REChain.Online",
+	"rechainonline": "REChain ® 🪐",
 	"@rechainonline": {
 		"type": "text",
 		"placeholders": {}
@@ -1208,7 +1208,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"newMessageInrechainonline": "REChain.Onlineプラットフォームの新しいメッセージ！",
+	"newMessageInrechainonline": "REChain ® 🪐プラットフォームの新しいメッセージ！",
 	"@newMessageInrechainonline": {
 		"type": "text",
 		"placeholders": {}
@@ -1233,7 +1233,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"noCrossSignBootstrap": "REChain.Onlineは現在、相互署名機能をサポートしていません。 REChain 🪐内で有効にしてください。",
+	"noCrossSignBootstrap": "REChain.Onlineは現在、相互署名機能をサポートしていません。 REChain ® 🪐内で有効にしてください。",
 	"@noCrossSignBootstrap": {
 		"type": "text",
 		"placeholders": {}
@@ -1258,7 +1258,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"noMegolmBootstrap": "代わりに、REChain 🪐内でオンラインキーバックアップを有効にしてください。",
+	"noMegolmBootstrap": "代わりに、REChain ® 🪐内でオンラインキーバックアップを有効にしてください。",
 	"@noMegolmBootstrap": {
 		"type": "text",
 		"placeholders": {}
@@ -1454,7 +1454,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"pleaseEnterArechainonlineIdentifier": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain NodeブロックチェーンノードネットワークID",
+	"pleaseEnterArechainonlineIdentifier": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain NodeブロックチェーンノードネットワークID",
 	"@pleaseEnterArechainonlineIdentifier": {
 		"type": "text",
 		"placeholders": {}
@@ -1693,7 +1693,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"sendBugReports": "バグレポートをREChain🪐へ送信することを許可する",
+	"sendBugReports": "バグレポートをREChain ® 🪐へ送信することを許可する",
 	"@sendBugReports": {
 		"type": "text",
 		"placeholders": {}
@@ -1765,7 +1765,7 @@
 			"senderName": {}
 		}
 	},
-	"sentryInfo": "プライバシーについての情報: https://rechain.online/en/privacy.html",
+	"sentryInfo": "プライバシーについての情報: https://rechain.online/privacy-policy.html",
 	"@sentryInfo": {
 		"type": "text",
 		"placeholders": {}
@@ -1929,7 +1929,7 @@
 			"suffix": {}
 		}
 	},
-	"title": "REChain.Online",
+	"title": "REChain ® 🪐",
 	"@title": {
 		"description": "Title for the application",
 		"type": "text",
@@ -2202,7 +2202,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"welcomeText": "REChain.Onlineへようこそ！先導的なプライベートで安全な未来が到来しました！",
+	"welcomeText": "REChain ® 🪐へようこそ！先導的なプライベートで安全な未来が到来しました！",
 	"@welcomeText": {
 		"type": "text",
 		"placeholders": {}
@@ -2685,7 +2685,7 @@
 	"addToSpaceDescription": "このチャットを追加するスペースを選択してください。",
 	"addWidget": "ウィジェットを追加",
 	"allSpaces": "すべてのスペース",
-	"appearOnTopDetails": "アプリをトップに表示できるようにする（すでに通話アカウントとしてREChain 🪐を設定している場合は必要ありません）",
+	"appearOnTopDetails": "アプリをトップに表示できるようにする（すでに通話アカウントとしてREChain ® 🪐を設定している場合は必要ありません）",
 	"bundleName": "バンドル名",
 	"callingAccount": "通話アカウント",
 	"callingPermissions": "通話の権限",
@@ -2708,12 +2708,12 @@
 	"commandInvalid": "コマンドが無効",
 	"commandMissing": "{command} はコマンドではありません。",
 	"confirmEventUnpin": "イベントの固定を完全に解除してもよろしいですか？",
-	"confirmMatrixId": "アカウントを削除するには、REChain 🪐 IDを確認してください。",
+	"confirmMatrixId": "アカウントを削除するには、REChain ® 🪐 IDを確認してください。",
 	"countFiles": "{count}個のファイル",
 	"createNewSpace": "新しいスペース",
 	"custom": "カスタム",
 	"dehydrate": "セッションのエクスポートとデバイスの消去",
-	"dehydrateShare": "これはあなたの非公開の REChain 🪐 エクスポートです。なくさないようにして、公開せず保管してください。",
+	"dehydrateShare": "これはあなたの非公開の REChain ® 🪐 エクスポートです。なくさないようにして、公開せず保管してください。",
 	"dehydrateTor": "TOR ユーザー: セッションをエクスポート",
 	"dehydrateTorLong": "TOR ユーザーの場合、ウィンドウを閉じる前にセッションをエクスポートすることをお勧めします。",
 	"dehydrateWarning": "この操作は元に戻せません。バックアップファイルを安全に保存してください。",
@@ -2729,7 +2729,7 @@
 	"encryptThisChat": "このチャットを暗号化する",
 	"endToEndEncryption": "エンドツーエンド暗号化",
 	"enterASpacepName": "スペース名を入力してください",
-	"enterInviteLinkOrMatrixId": "招待リンクまたはREChain 🪐のIDを入力してください...",
+	"enterInviteLinkOrMatrixId": "招待リンクまたはREChain ® 🪐のIDを入力してください...",
 	"enterRoom": "部屋に入る",
 	"enterSpace": "スペースに入る",
 	"errorAddingWidget": "ウィジェットの追加中にエラーが発生しました。",
@@ -2737,7 +2737,7 @@
 	"experimentalVideoCalls": "実験的なビデオ通話",
 	"foregroundServiceRunning": "この通知は、フォアグラウンド サービスの実行中に表示されます。",
 	"hideUnimportantStateEvents": "重要でない状態イベントを非表示にする",
-	"homeserver": "ホームサーバー",
+	"homeserver": "Node/Server",
 	"hydrate": "バックアップファイルから復元",
 	"hydrateTor": "TOR ユーザー: セッションのエクスポートをインポート",
 	"hydrateTorLong": "前回、TOR でセッションをエクスポートしましたか？すぐにインポートしてチャットを続けましょう。",
@@ -2749,7 +2749,7 @@
 	"locationPermissionDeniedNotice": "位置情報の権限が拒否されました。位置情報を共有できるように許可してください。",
 	"loginWithOneClick": "ワンクリックでサインイン",
 	"markAsRead": "既読にする",
-	"matrixWidgets": "REChain 🪐のウィジェット",
+	"matrixWidgets": "REChain ® 🪐のウィジェット",
 	"messageInfo": "メッセージの情報",
 	"messageType": "メッセージの種類",
 	"newGroup": "新しいグループ",
@@ -2767,7 +2767,7 @@
 	"openGallery": "ギャラリーを開く",
 	"openVideoCamera": "ビデオ用にカメラを開く",
 	"or": "または",
-	"otherCallingPermissions": "マイク、カメラ、その他REChain 🪐の権限",
+	"otherCallingPermissions": "マイク、カメラ、その他REChain ® 🪐の権限",
 	"pinMessage": "部屋にピン留めする",
 	"placeCall": "電話をかける",
 	"pleaseChoose": "選択してください",
@@ -2787,7 +2787,7 @@
 	"reportUser": "ユーザーを報告",
 	"saveFile": "ファイルを保存",
 	"scanQrCode": "QRコードをスキャン",
-	"screenSharingDetail": "REChain 🪐で画面を共有しています",
+	"screenSharingDetail": "REChain ® 🪐で画面を共有しています",
 	"screenSharingTitle": "画面共有",
 	"sendAsText": "テキストとして送信",
 	"sender": "送信者",
@@ -2819,7 +2819,7 @@
 	"unsupportedAndroidVersion": "サポートされていないAndroidのバージョン",
 	"unsupportedAndroidVersionLong": "この機能を利用するには、より新しいAndroidのバージョンが必要です。アップデートまたはKatya ® 👽 Mobile OSのサポートをご確認ください。",
 	"unverified": "未検証",
-	"updateAvailable": "REChain 🪐のアップデートが利用可能",
+	"updateAvailable": "REChain ® 🪐のアップデートが利用可能",
 	"updateNow": "バックグラウンドでアップデートを開始",
 	"user": "ユーザー",
 	"users": "ユーザー",

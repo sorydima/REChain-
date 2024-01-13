@@ -56,7 +56,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"rechainonline": "REChain 🪐",
+	"rechainonline": "REChain ® 🪐",
 	"@rechainonline": {
 		"type": "text",
 		"placeholders": {}
@@ -249,7 +249,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"homeserver": "Namų serveris",
+	"homeserver": "Node/Server",
 	"@homeserver": {},
 	"enterYourHomeserver": "Įveskite namų serverį",
 	"@enterYourHomeserver": {
@@ -446,7 +446,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"pleaseEnterArechainonlineIdentifier": "Įveskite REChain 🪐 ID.",
+	"pleaseEnterArechainonlineIdentifier": "Įveskite REChain ® 🪐 ID.",
 	"@pleaseEnterArechainonlineIdentifier": {
 		"type": "text",
 		"placeholders": {}
@@ -1199,7 +1199,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"newMessageInrechainonline": "Nauja žinutė REChain 🪐",
+	"newMessageInrechainonline": "Nauja žinutė REChain ® 🪐",
 	"@newMessageInrechainonline": {
 		"type": "text",
 		"placeholders": {}
@@ -1771,7 +1771,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"title": "REChain 🪐",
+	"title": "REChain ® 🪐",
 	"@title": {
 		"description": "Title for the application",
 		"type": "text",
@@ -1802,7 +1802,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"noCrossSignBootstrap": "REChain.Online šiuo metu nepalaiko kryžminio pasirašymo įgalinimo. Įgalinkite jį naudodami REChain 🪐.",
+	"noCrossSignBootstrap": "REChain.Online šiuo metu nepalaiko kryžminio pasirašymo įgalinimo. Įgalinkite jį naudodami REChain ® 🪐.",
 	"@noCrossSignBootstrap": {
 		"type": "text",
 		"placeholders": {}
@@ -1812,12 +1812,12 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"noMegolmBootstrap": "Vietoj to įjunkite internetinę rakto atsarginę kopiją iš REChain 🪐.",
+	"noMegolmBootstrap": "Vietoj to įjunkite internetinę rakto atsarginę kopiją iš REChain ® 🪐.",
 	"@noMegolmBootstrap": {
 		"type": "text",
 		"placeholders": {}
 	},
-	"noGoogleServicesWarning": "Atrodo, kad jūsų telefone nėra Google paslaugų. Tai geras sprendimas jūsų privatumui! Norėdami gauti tiesioginius pranešimus REChain.Online, rekomenduojame naudoti https://microg.org/ arba https://unifiedpush.org/.",
+	"noGoogleServicesWarning": "Atrodo, kad jūsų telefone nėra Google paslaugų. Tai geras sprendimas jūsų privatumui! Norėdami gauti tiesioginius pranešimus REChain ® 🪐, rekomenduojame naudoti https://microg.org/ arba https://unifiedpush.org/.",
 	"@noGoogleServicesWarning": {
 		"type": "text",
 		"placeholders": {}
@@ -1945,7 +1945,7 @@
 			"username": {}
 		}
 	},
-	"sendBugReports": "Leisti siųsti pranešimus apie klaidas naudojant REChain 🪐",
+	"sendBugReports": "Leisti siųsti pranešimus apie klaidas naudojant REChain ® 🪐",
 	"@sendBugReports": {
 		"type": "text",
 		"placeholders": {}
@@ -2353,7 +2353,7 @@
 			"targetName": {}
 		}
 	},
-	"inviteText": "{username} pakvietė jus į REChain.Online platformą! \n1. Įdiekite REChain.Online platformą: https://rechain.online! \n2. Užsiregistruok arba prisijunk! \n3. Atidarykite kvietimo nuorodą: {link}!",
+	"inviteText": "{username} pakvietė jus į REChain ® 🪐 platformą! \n1. Įdiekite REChain ® 🪐 platformą: https://rechain.online! \n2. Užsiregistruok arba prisijunk! \n3. Atidarykite kvietimo nuorodą: {link}!",
 	"@inviteText": {
 		"type": "text",
 		"placeholders": {
@@ -2445,7 +2445,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"welcomeText": "Sveiki atvykę į REChain.Online! Privati ir saugi ateitis! (kuris jau atvyko!)",
+	"welcomeText": "Sveiki atvykę į REChain ® 🪐! Privati ir saugi ateitis! (kuris jau atvyko!)",
 	"@welcomeText": {
 		"type": "text",
 		"placeholders": {}
@@ -2698,7 +2698,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"norechainonlineServer": "{server1} nėra REChain 🪐 serveris, ar naudoti {server2}?",
+	"norechainonlineServer": "{server1} nėra REChain ® 🪐 serveris, ar naudoti {server2}?",
 	"@norechainonlineServer": {
 		"type": "text",
 		"placeholders": {
@@ -2741,7 +2741,7 @@
 			"senderName": {}
 		}
 	},
-	"sentryInfo": "Informacija apie jūsų privatumą: https://rechain.online/en/privacy.html",
+	"sentryInfo": "Informacija apie jūsų privatumą: https://rechain.online/privacy-policy.html",
 	"@sentryInfo": {
 		"type": "text",
 		"placeholders": {}
@@ -2794,7 +2794,7 @@
 			"unreadEvents": {}
 		}
 	},
-	"matrixWidgets": "REChain 🪐 programėlės",
+	"matrixWidgets": "REChain ® 🪐 programėlės",
 	"@matrixWidgets": {},
 	"integrationsNotImplemented": "Redaguoti programėles ir integracijas kol kas negalima.",
 	"@integrationsNotImplemented": {},
@@ -2900,17 +2900,17 @@
 	"allSpaces": "Visos erdvės",
 	"allSuggestedRoomsJoined": "Prisijungėte prie visų siūlomų kambarių",
 	"appearOnTop": "Rodyti viršuje",
-	"appearOnTopDetails": "Leidžia programėlę rodyti viršuje (nebūtina, jei jau esate nustatę REChain 🪐 kaip skambinimo paskyrą)",
+	"appearOnTopDetails": "Leidžia programėlę rodyti viršuje (nebūtina, jei jau esate nustatę REChain ® 🪐 kaip skambinimo paskyrą)",
 	"callingAccount": "Skambinimo paskyra",
-	"callingAccountDetails": "Leidžia REChain 🪐 naudoti vietinę Android rinkiklio programą.",
+	"callingAccountDetails": "Leidžia REChain ® 🪐 naudoti vietinę Android rinkiklio programą.",
 	"callingPermissions": "Skambinimo leidimai",
 	"commandHint_markasdm": "Pažymėti kaip tiesioginio pokalbio kambarį",
 	"commandHint_markasgroup": "Pažymėti kaip grupę",
-	"confirmMatrixId": "Norėdami ištrinti savo paskyrą, patvirtinkite savo REChain 🪐 ID.",
+	"confirmMatrixId": "Norėdami ištrinti savo paskyrą, patvirtinkite savo REChain ® 🪐 ID.",
 	"countFiles": "{count} failai",
 	"custom": "Pasirinktinis",
 	"dehydrate": "Eksportuoti sesiją ir išvalyti įrenginį",
-	"dehydrateShare": "Tai jūsų privatus REChain 🪐 eksportas. Pasirūpinkite, kad jo neprarastumėte ir išsaugotumėte privatumą.",
+	"dehydrateShare": "Tai jūsų privatus REChain ® 🪐 eksportas. Pasirūpinkite, kad jo neprarastumėte ir išsaugotumėte privatumą.",
 	"dehydrateTor": "TOR Naudotojai: Eksportuoti sesiją",
 	"dehydrateTorLong": "TOR naudotojams rekomenduojama eksportuoti sesiją prieš uždarant langą.",
 	"dehydrateWarning": "Šio veiksmo negalima atšaukti. Įsitikinkite, kad saugiai saugote atsarginę kopiją.",
@@ -2922,7 +2922,7 @@
 	"hydrate": "Atkurti iš atsarginės kopijos failo",
 	"hydrateTor": "TOR Naudotojai: Importuoti sesijos eksportą",
 	"hydrateTorLong": "Ar paskutinį kartą eksportavote savo sesiją naudodami TOR? Greitai ją importuokite ir tęskite pokalbį.",
-	"indexedDbErrorLong": "Deja, pagal numatytuosius nustatymus žinučių saugojimas privačiame režime nėra įjungtas.\nPrašome apsilankyti\n - about:config\n - nustatykite dom.indexedDB.privateBrowsing.enabled į true\nPriešingu atveju REChain 🪐 paleisti neįmanoma.",
+	"indexedDbErrorLong": "Deja, pagal numatytuosius nustatymus žinučių saugojimas privačiame režime nėra įjungtas.\nPrašome apsilankyti\n - about:config\n - nustatykite dom.indexedDB.privateBrowsing.enabled į true\nPriešingu atveju REChain ® 🪐 paleisti neįmanoma.",
 	"indexedDbErrorTitle": "Privataus režimo problemos",
 	"newGroup": "Nauja grupė",
 	"newSpace": "Nauja erdvė",
@@ -2930,14 +2930,14 @@
 	"noKeyForThisMessage": "Taip gali atsitikti, jei žinutė buvo išsiųsta prieš prisijungiant prie paskyros šiame prietaise.\n\nTaip pat gali būti, kad siuntėjas užblokavo jūsų prietaisą arba kažkas sutriko su interneto ryšiu.\n\nAr galite perskaityti žinutę kitoje sesijoje? Tada galite perkelti žinutę iš jos! Eikite į Nustatymai > Prietaisai ir įsitikinkite, kad jūsų prietaisai patvirtino vienas kitą. Kai kitą kartą atidarysite kambarį ir abi sesijos bus pirmame plane, raktai bus perduoti automatiškai.\n\nNenorite prarasti raktų atsijungdami arba keisdami įrenginius? Įsitikinkite, kad nustatymuose įjungėte pokalbių atsarginę kopiją.",
 	"numberRoomMembers": "{number} nariai",
 	"numChats": "{number} pokalbiai",
-	"otherCallingPermissions": "Mikrofonas, kamera ir kiti REChain 🪐 leidimai",
+	"otherCallingPermissions": "Mikrofonas, kamera ir kiti REChain ® 🪐 leidimai",
 	"pleaseEnterRecoveryKey": "Įveskite savo atkūrimo raktą:",
 	"pleaseEnterRecoveryKeyDescription": "Norėdami atrakinti senas žinutes, įveskite atkūrimo raktą, kuris buvo sukurtas ankstesnės sesijos metu. Atkūrimo raktas NĖRA jūsų slaptažodis.",
 	"recoveryKey": "Atkūrimo raktas",
 	"recoveryKeyLost": "Pamestas atkūrimo raktas?",
 	"saveKeyManuallyDescription": "Įrašykite šį raktą rankiniu būdu, įjungę sistemos bendrinimo dialogo langą arba iškarpinę.",
 	"saveTheRecoveryKeyNow": "Išsaugoti atkūrimo raktą dabar",
-	"screenSharingDetail": "Bendrinate savo ekraną per REChain 🪐",
+	"screenSharingDetail": "Bendrinate savo ekraną per REChain ® 🪐",
 	"screenSharingTitle": "ekrano bendrinimas",
 	"storeInAndroidKeystore": "Saugoti Android raktų saugykloje",
 	"storeInAppleKeyChain": "Saugoti Apple raktų grandinėje",
@@ -2947,7 +2947,7 @@
 	"suggestedRooms": "Atraskite grupes šioje erdvėje",
 	"supposedMxid": "Tai turėtų būti {mxid}",
 	"unlockOldMessages": "Atrakinti senas žinutes",
-	"updateAvailable": "Galimas REChain 🪐 atnaujinimas",
+	"updateAvailable": "Galimas REChain ® 🪐 atnaujinimas",
 	"updateNow": "Pradėti atnaujinimą fone",
 	"user": "Vartotojas",
 	"users": "Vartotojai",

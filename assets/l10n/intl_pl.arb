@@ -312,7 +312,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
 	"@changeTheHomeserver": {
 		"type": "text",
 		"placeholders": {}
@@ -789,7 +789,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
 	"@enterYourHomeserver": {
 		"type": "text",
 		"placeholders": {}
@@ -809,7 +809,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"rechainonline": "REChain.Online",
+	"rechainonline": "REChain ® 🪐",
 	"@rechainonline": {
 		"type": "text",
 		"placeholders": {}
@@ -974,7 +974,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"inviteText": "{username} zaprosił Cię do dołączenia do platformy REChain.Online! \n1. Zainstaluj REChain.Online: https://rechain.online \n2. RegisterORLogin! \n3. Otwórz link z zaproszeniem: {link}",
+	"inviteText": "{username} zaprosił Cię do dołączenia do platformy REChain ® 🪐! \n1. Zainstaluj REChain ® 🪐: https://rechain.online \n2. RegisterORLogin! \n3. Otwórz link z zaproszeniem: {link}",
 	"@inviteText": {
 		"type": "text",
 		"placeholders": {
@@ -1168,7 +1168,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"newMessageInrechainonline": "Nowa wiadomość na platformie REChain.Online!",
+	"newMessageInrechainonline": "Nowa wiadomość na platformie REChain ® 🪐!",
 	"@newMessageInrechainonline": {
 		"type": "text",
 		"placeholders": {}
@@ -1307,7 +1307,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"pleaseEnterArechainonlineIdentifier": "Wprowadź Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network ID.",
+	"pleaseEnterArechainonlineIdentifier": "Wprowadź Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network ID.",
 	"@pleaseEnterArechainonlineIdentifier": {
 		"type": "text",
 		"placeholders": {}
@@ -1650,7 +1650,7 @@
 			"suffix": {}
 		}
 	},
-	"title": "REChain.Online",
+	"title": "REChain ® 🪐",
 	"@title": {
 		"description": "Title for the application",
 		"type": "text",
@@ -1818,7 +1818,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"welcomeText": "Witamy w REChain.Online! Prywatna i bezpieczna przyszłość, która już nadeszła!",
+	"welcomeText": "Witamy w REChain ® 🪐! Prywatna i bezpieczna przyszłość, która już nadeszła!",
 	"@welcomeText": {
 		"type": "text",
 		"placeholders": {}
@@ -2644,10 +2644,10 @@
 	"addWidget": "Dodaj widżet",
 	"allSpaces": "Wszystkie przestrzenie",
 	"appearOnTop": "Wyświetlaj nad innymi",
-	"appearOnTopDetails": "Umożliwia wyświetlanie aplikacji nad innymi (nie jest to konieczne, jeśli REChain 🪐 jest już ustawiony jako konto do dzwonienia)",
+	"appearOnTopDetails": "Umożliwia wyświetlanie aplikacji nad innymi (nie jest to konieczne, jeśli REChain ® 🪐 jest już ustawiony jako konto do dzwonienia)",
 	"bundleName": "Nazwa pakietu",
 	"callingAccount": "Konto połączeń",
-	"callingAccountDetails": "Pozwala REChain 🪐 używać natywnej aplikacji do wykonywania połączeń w Androidzie.",
+	"callingAccountDetails": "Pozwala REChain ® 🪐 używać natywnej aplikacji do wykonywania połączeń w Androidzie.",
 	"callingPermissions": "Uprawnienia połączeń",
 	"commandHint_cuddle": "Wyślij przytulenie",
 	"commandHint_discardsession": "Odrzuć sesję",
@@ -2656,13 +2656,13 @@
 	"commandHint_markasdm": "Oznacz jako pokój wiadomości bezpośrednich",
 	"commandHint_markasgroup": "Oznacz jako grupę",
 	"confirmEventUnpin": "Czy na pewno chcesz trwale odpiąć wydarzenie?",
-	"confirmMatrixId": "Potwierdź swój identyfikator REChain 🪐 w celu usunięcia konta.",
+	"confirmMatrixId": "Potwierdź swój identyfikator REChain ® 🪐 w celu usunięcia konta.",
 	"countFiles": "{count} plików",
 	"crossSigningEnabled": "Weryfikacja krzyżowa jest włączona",
 	"cuddleContent": "{senderName} przytula cię",
 	"custom": "Własne",
 	"dehydrate": "Eksportuj sesję i wymaż urządzenie",
-	"dehydrateShare": "To jest twój prywatny eksport REChain 🪐. Upewnij się, że nie zgubisz go i zachowaj go dla siebie.",
+	"dehydrateShare": "To jest twój prywatny eksport REChain ® 🪐. Upewnij się, że nie zgubisz go i zachowaj go dla siebie.",
 	"dehydrateTor": "Użytkownicy TOR-a: Eksportuj sesję",
 	"dehydrateTorLong": "W przypadku użytkowników sieci TOR zaleca się eksportowanie sesji przed zamknięciem okna.",
 	"dehydrateWarning": "Tego nie można cofnąć. Upewnij się, że plik kopii zapasowej jest bezpiecznie przechowywany.",
@@ -2677,7 +2677,7 @@
 	"enableAutoBackups": "Włącz automatyczne tworzenie kopii zapasowych",
 	"encryptThisChat": "Zaszyfruj ten czat",
 	"endToEndEncryption": "Szyfrowanie od końca do końca",
-	"enterInviteLinkOrMatrixId": "Wprowadź link zaproszenia lub identyfikator REChain 🪐...",
+	"enterInviteLinkOrMatrixId": "Wprowadź link zaproszenia lub identyfikator REChain ® 🪐...",
 	"enterRoom": "Wejdź do pokoju",
 	"enterSpace": "Wejdź do przestrzeni",
 	"errorAddingWidget": "Błąd podczas dodawania widżetu.",
@@ -2694,7 +2694,7 @@
 	"hydrate": "Przywracanie z pliku kopii zapasowej",
 	"hydrateTor": "Użytkownicy TOR-a: Importuj eksport sesji",
 	"hydrateTorLong": "Czy ostatnio eksportowałeś/-aś swoją sesję na TOR? Szybko ją zaimportuj i kontynuuj rozmowy.",
-	"indexedDbErrorLong": "Przechowywanie wiadomości niestety nie jest domyślnie włączone w trybie prywatnym.\nOdwiedź\n - about:config\n - ustaw dom.indexedDB.privateBrowsing.enabled na true\nW przeciwnym razie nie jest możliwe uruchomienie REChain 🪐.",
+	"indexedDbErrorLong": "Przechowywanie wiadomości niestety nie jest domyślnie włączone w trybie prywatnym.\nOdwiedź\n - about:config\n - ustaw dom.indexedDB.privateBrowsing.enabled na true\nW przeciwnym razie nie jest możliwe uruchomienie REChain ® 🪐.",
 	"indexedDbErrorTitle": "Problemy związane z trybem prywatnym",
 	"inoffensive": "Nieobraźliwe",
 	"iUnderstand": "Rozumiem",
@@ -2702,7 +2702,7 @@
 	"jumpToLastReadMessage": "Przejdź do ostatnio przeczytanej wiadomości",
 	"letsStart": "Zacznijmy",
 	"markAsRead": "Oznacz jako przeczytane",
-	"matrixWidgets": "Widżety REChain 🪐",
+	"matrixWidgets": "Widżety REChain ® 🪐",
 	"messageInfo": "Informacje o wiadomości",
 	"messageType": "Rodzaj wiadomości",
 	"newGroup": "Nowa grupa",
@@ -2713,7 +2713,7 @@
 	"noEmailWarning": "Wprowadź prawidłowy adres e-mail. W przeciwnym razie resetowanie hasła nie będzie możliwe. Jeśli nie chcesz, dotknij ponownie przycisku, aby kontynuować.",
 	"noEmotesFound": "Nie znaleziono żadnych emotek. 😕",
 	"noKeyForThisMessage": "Może się to zdarzyć, jeśli wiadomość została wysłana przed zalogowaniem się na to konto na tym urządzeniu.\n\nMożliwe jest również, że nadawca zablokował Twoje urządzenie lub coś poszło nie tak z połączeniem internetowym.\n\nJesteś w stanie odczytać wiadomość na innej sesji? W takim razie możesz przenieść z niej wiadomość! Wejdź w Ustawienia > Urządzenia i upewnij się, że Twoje urządzenia zweryfikowały się wzajemnie. Gdy następnym razem otworzysz pokój i obie sesje będą włączone, klucze zostaną przekazane automatycznie.\n\nNie chcesz stracić kluczy podczas wylogowania lub przełączania urządzeń? Upewnij się, że w ustawieniach masz włączoną kopię zapasową czatu.",
-	"norechainonlineServer": "{server1} nie jest serwerem REChain 🪐, czy chcesz zamiast niego użyć {server2}?",
+	"norechainonlineServer": "{server1} nie jest serwerem REChain ® 🪐, czy chcesz zamiast niego użyć {server2}?",
 	"noOtherDevicesFound": "Nie znaleziono innych urządzeń",
 	"noSearchResult": "Brak pasujących wyników wyszukiwania.",
 	"numChats": "{number} czatów",
@@ -2721,7 +2721,7 @@
 	"onlineKeyBackupEnabled": "Kopia zapasowa kluczy online jest włączona",
 	"openChat": "Otwórz czat",
 	"openGallery": "Otwórz galerię",
-	"otherCallingPermissions": "Mikrofon, kamera i inne uprawnienia REChain 🪐",
+	"otherCallingPermissions": "Mikrofon, kamera i inne uprawnienia REChain ® 🪐",
 	"passphraseOrKey": "fraza dostępu lub klucz odzyskiwania",
 	"pinMessage": "Przypnij do pokoju",
 	"placeCall": "Zadzwoń",
@@ -2739,7 +2739,7 @@
 	"replyHasBeenSent": "Wysłano odpowiedź",
 	"reportUser": "Zgłoś użytkownika",
 	"saveKeyManuallyDescription": "Zapisz ten klucz ręcznie, uruchamiając systemowe okno dialogowe udostępniania lub schowek.",
-	"screenSharingDetail": "Udostępniasz swój ekran w REChain 🪐",
+	"screenSharingDetail": "Udostępniasz swój ekran w REChain ® 🪐",
 	"screenSharingTitle": "udostępnianie ekranu",
 	"sender": "Nadawca",
 	"sentCallInformations": "{senderName} wysłał/-a informacje o połączeniu",
@@ -2768,7 +2768,7 @@
 	"unsupportedAndroidVersion": "Nieobsługiwana wersja systemu Android",
 	"unsupportedAndroidVersionLong": "Ta funkcja wymaga nowszej wersji systemu Android. Sprawdź aktualizacje lub wsparcie Katya ® 👽 Mobile OS 🖥.",
 	"unverified": "Niezweryfikowane",
-	"updateAvailable": "Aktualizacja REChain 🪐 jest dostępna",
+	"updateAvailable": "Aktualizacja REChain ® 🪐 jest dostępna",
 	"updateNow": "Rozpocznij aktualizację w tle",
 	"user": "Użytkownik",
 	"users": "Użytkownicy",
@@ -2935,9 +2935,9 @@
 		"placeholders": {},
 		"type": "text"
 	},
-	"homeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
-	"sendBugReports": "Pozwól wysyłać raporty o błędach do REChain 🪐",
-	"sentryInfo": "Polityka prywatności: https://rechain.online/en/privacy.html",
+	"homeserver": "Node/Server",
+	"sendBugReports": "Pozwól wysyłać raporty o błędach do REChain ® 🪐",
+	"sentryInfo": "Polityka prywatności: https://rechain.online/privacy-policy.html",
 	"passwordsDoNotMatch": "Hasła nie pasują!",
 	"@passwordsDoNotMatch": {},
 	"allChats": "Wszystkich przestrzeń",

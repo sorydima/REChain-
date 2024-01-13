@@ -38,7 +38,7 @@ class DevicesSettingsController extends State<DevicesSettings> {
           title: L10n.of(context)!.areYouSure,
           okLabel: L10n.of(context)!.yes,
           cancelLabel: L10n.of(context)!.cancel,
-          message: "Remove",
+          message: L10n.of(context)!.removeDevicesDescription,
         ) ==
         OkCancelResult.cancel) return;
     final matrix = Matrix.of(context);
@@ -92,7 +92,7 @@ class DevicesSettingsController extends State<DevicesSettings> {
   }
 
   void verifyDeviceAction(Device device) async {
-    final req = Matrix.of(context)
+    final req = await Matrix.of(context)
         .client
         .userDeviceKeys[Matrix.of(context).client.userID!]!
         .deviceKeys[device.deviceId]!

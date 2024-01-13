@@ -336,7 +336,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
 	"@changeTheHomeserver": {
 		"type": "text",
 		"placeholders": {}
@@ -861,7 +861,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
 	"@enterYourHomeserver": {
 		"type": "text",
 		"placeholders": {}
@@ -886,7 +886,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"rechainonline": "REChain.Online",
+	"rechainonline": "REChain ® 🪐",
 	"@rechainonline": {
 		"type": "text",
 		"placeholders": {}
@@ -1277,7 +1277,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"newMessageInrechainonline": "Нова порука — REChain.Online",
+	"newMessageInrechainonline": "Нова порука — REChain ® 🪐",
 	"@newMessageInrechainonline": {
 		"type": "text",
 		"placeholders": {}
@@ -1538,7 +1538,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"pleaseEnterArechainonlineIdentifier": "Унесите ИД из мреже Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network.",
+	"pleaseEnterArechainonlineIdentifier": "Унесите ИД из мреже Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network.",
 	"@pleaseEnterArechainonlineIdentifier": {
 		"type": "text",
 		"placeholders": {}
@@ -1787,7 +1787,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"sendBugReports": "Дозволи слање извештаја о грешци помоћу REChain 🪐",
+	"sendBugReports": "Дозволи слање извештаја о грешци помоћу REChain ® 🪐",
 	"@sendBugReports": {
 		"type": "text",
 		"placeholders": {}
@@ -1859,7 +1859,7 @@
 			"senderName": {}
 		}
 	},
-	"sentryInfo": "Информације о вашој приватности: https://rechain.online/en/privacy.html",
+	"sentryInfo": "Информације о вашој приватности: https://rechain.online/privacy-policy.html",
 	"@sentryInfo": {
 		"type": "text",
 		"placeholders": {}
@@ -2028,7 +2028,7 @@
 			"suffix": {}
 		}
 	},
-	"title": "REChain.Online",
+	"title": "REChain ® 🪐",
 	"@title": {
 		"description": "Title for the application",
 		"type": "text",

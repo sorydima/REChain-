@@ -1,5 +1,4 @@
 abstract class SettingKeys {
-  static const String wallpaper = 'com.rechain.wallpaper';
   static const String renderHtml = 'com.rechain.renderHtml';
   static const String hideRedactedEvents = 'com.rechain.hideRedactedEvents';
   static const String hideUnknownEvents = 'com.rechain.hideUnknownEvents';

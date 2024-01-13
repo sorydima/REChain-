@@ -165,7 +165,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"badServerLoginTypesException": "De Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node ondersteunt de login types:\n{serverVersions}\nMaar deze app ondersteunt alleen:\n{supportedVersions}",
+	"badServerLoginTypesException": "De Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node ondersteunt de login types:\n{serverVersions}\nMaar deze app ondersteunt alleen:\n{supportedVersions}",
 	"@badServerLoginTypesException": {
 		"type": "text",
 		"placeholders": {
@@ -173,7 +173,7 @@
 			"supportedVersions": {}
 		}
 	},
-	"badServerVersionsException": "De Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node ondersteunt de Spec-versies:\n{serverVersions}\nMaar deze app ondersteunt alleen {supportedVersions}",
+	"badServerVersionsException": "De Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node ondersteunt de Spec-versies:\n{serverVersions}\nMaar deze app ondersteunt alleen {supportedVersions}",
 	"@badServerVersionsException": {
 		"type": "text",
 		"placeholders": {
@@ -355,7 +355,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node wijzigen",
+	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node wijzigen",
 	"@changeTheHomeserver": {
 		"type": "text",
 		"placeholders": {}
@@ -921,7 +921,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"enterYourHomeserver": "Vul je Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node in",
+	"enterYourHomeserver": "Vul je Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node in",
 	"@enterYourHomeserver": {
 		"type": "text",
 		"placeholders": {}
@@ -953,7 +953,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"rechainonline": "REChain.Online",
+	"rechainonline": "",
 	"@rechainonline": {
 		"type": "text",
 		"placeholders": {}
@@ -1058,7 +1058,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"homeserverIsNotCompatible": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node is niet compatibel",
+	"homeserverIsNotCompatible": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node is niet compatibel",
 	"@homeserverIsNotCompatible": {
 		"type": "text",
 		"placeholders": {}
@@ -1153,7 +1153,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"inviteText": "{username} heeft je uitgenodigd voor het REChain.Online Platform!\n1. Installeer REChain.Online: https://rechain.online\n2. Registreer of log in!\n3. Open deze uitnodigingslink: {link}",
+	"inviteText": "{username} heeft je uitgenodigd voor het REChain ® 🪐 Platform!\n1. Installeer REChain ® 🪐: https://rechain.online\n2. Registreer of log in!\n3. Open deze uitnodigingslink: {link}",
 	"@inviteText": {
 		"type": "text",
 		"placeholders": {
@@ -1369,7 +1369,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"newMessageInrechainonline": "Nieuw bericht op het REChain.Online Platform!",
+	"newMessageInrechainonline": "Nieuw bericht op het REChain ® 🪐 Platform!",
 	"@newMessageInrechainonline": {
 		"type": "text",
 		"placeholders": {}
@@ -1394,7 +1394,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"noCrossSignBootstrap": "REChain.Online biedt momenteel geen ondersteuning voor het inschakelen van cross-signing. Schakel het in binnen de REChain 🪐.",
+	"noCrossSignBootstrap": "REChain.Online biedt momenteel geen ondersteuning voor het inschakelen van cross-signing. Schakel het in binnen de REChain ® 🪐.",
 	"@noCrossSignBootstrap": {
 		"type": "text",
 		"placeholders": {}
@@ -1414,12 +1414,12 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"noGoogleServicesWarning": "Het lijkt erop dat je geen Google-services op je telefoon hebt staan. Dat is een goede beslissing voor uw privacy! Om pushmeldingen van het REChain.Online Platform te ontvangen, raden we u aan https://microg.org/ of https://unifiedpush.org te gebruiken.",
+	"noGoogleServicesWarning": "Het lijkt erop dat je geen Google-services op je telefoon hebt staan. Dat is een goede beslissing voor uw privacy! Om pushmeldingen van het REChain ® 🪐 Platform te ontvangen, raden we u aan https://microg.org/ of https://unifiedpush.org te gebruiken.",
 	"@noGoogleServicesWarning": {
 		"type": "text",
 		"placeholders": {}
 	},
-	"norechainonlineServer": "{server1} is geen Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network-server, wil je in plaats daarvan {server2} gebruiken?",
+	"norechainonlineServer": "{server1} is geen Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network-server, wil je in plaats daarvan {server2} gebruiken?",
 	"@norechainonlineServer": {
 		"type": "text",
 		"placeholders": {
@@ -1427,7 +1427,7 @@
 			"server2": {}
 		}
 	},
-	"noMegolmBootstrap": "Schakel in plaats daarvan de online sleutelback-up in de REChain 🪐 in.",
+	"noMegolmBootstrap": "Schakel in plaats daarvan de online sleutelback-up in de REChain ® 🪐 in.",
 	"@noMegolmBootstrap": {
 		"type": "text",
 		"placeholders": {}
@@ -1648,7 +1648,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"pleaseEnterArechainonlineIdentifier": "Voer de Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network ID in.",
+	"pleaseEnterArechainonlineIdentifier": "Voer de Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network ID in.",
 	"@pleaseEnterArechainonlineIdentifier": {
 		"type": "text",
 		"placeholders": {}
@@ -1923,7 +1923,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"sendBugReports": "Bugrapporten met REChain 🪐 versturen",
+	"sendBugReports": "Bugrapporten met REChain ® 🪐 versturen",
 	"@sendBugReports": {
 		"type": "text",
 		"placeholders": {}
@@ -2000,7 +2000,7 @@
 			"senderName": {}
 		}
 	},
-	"sentryInfo": "Informatie over je privacy: https://rechain.online/en/privacy.html",
+	"sentryInfo": "Informatie over je privacy: https://rechain.online/privacy-policy.html",
 	"@sentryInfo": {
 		"type": "text",
 		"placeholders": {}
@@ -2194,7 +2194,7 @@
 			"suffix": {}
 		}
 	},
-	"title": "REChain.Online",
+	"title": "REChain ® 🪐",
 	"@title": {
 		"description": "Title for the application",
 		"type": "text",
@@ -2467,7 +2467,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"welcomeText": "Welkom bij REChain.Online! Een privé en veilige toekomst die al is aangebroken!",
+	"welcomeText": "Welkom bij REChain ® 🪐! Een privé en veilige toekomst die al is aangebroken!",
 	"@welcomeText": {
 		"type": "text",
 		"placeholders": {}
@@ -2579,7 +2579,7 @@
 	"@createNewChatExplaination": {},
 	"sendOnEnter": "Verstuur met enter",
 	"@sendOnEnter": {},
-	"homeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"homeserver": "Node/Server",
 	"@homeserver": {},
 	"serverRequiresEmail": "Deze server wil je email laten bevestigen bij de registratie.",
 	"@serverRequiresEmail": {},
@@ -2815,7 +2815,7 @@
 	"disableEncryptionWarning": "Om veiligheidsredenen kun je versleuteling niet uitschakelen in een chat, waar deze eerder is ingeschakeld.",
 	"encryptThisChat": "Versleutel deze chat",
 	"endToEndEncryption": "Eind-tot-eind-versleuteling",
-	"enterInviteLinkOrMatrixId": "Uitnodigingslink of REChain 🪐-ID invoeren...",
+	"enterInviteLinkOrMatrixId": "Uitnodigingslink of REChain ® 🪐-ID invoeren...",
 	"fileIsTooBigForServer": "De server meldt dat het bestand te groot is om te verzenden.",
 	"letsStart": "Laten we beginnen",
 	"newSpaceDescription": "Met spaces kun je je chats samenvoegen en privé- of openbare community's bouwen.",
@@ -2865,7 +2865,7 @@
 	"countFiles": "{count} bestanden",
 	"custom": "Aangepast",
 	"dehydrate": "Sessie exporteren en apparaat wissen",
-	"dehydrateShare": "Dit is je prive REChain 🪐 export. Zorg ervoor dat je het niet verliest en houd het privé.",
+	"dehydrateShare": "Dit is je prive REChain ® 🪐 export. Zorg ervoor dat je het niet verliest en houd het privé.",
 	"dehydrateTor": "TOR-sessie: Exporteer sessie",
 	"dehydrateTorLong": "Voor TOR-sessies is het aanbevolen de sessie te exporteren alvorens het venster te sluiten.",
 	"dehydrateWarning": "Deze actie kan niet ongedaan worden gemaakt. Zorg ervoor dat je het back-upbestand veilig opslaat.",
@@ -2873,7 +2873,7 @@
 	"hydrate": "Herstellen vanuit back-upbestand",
 	"hydrateTor": "TOR-sessie: Importeren sessie export",
 	"hydrateTorLong": "Heb je de vorige keer je sessie geëxporteerd met TOR? Importeer het dan snel en ga verder met chatten.",
-	"indexedDbErrorLong": "Het opslaan van berichten is helaas niet standaard ingeschakeld in de privémodus.\nBezoek alsjeblieft\n - about:config\n - stel dom.indexedDB.privateBrowsing.enabled in op true\nAnders is het niet mogelijk om REChain 🪐 op te starten.",
+	"indexedDbErrorLong": "Het opslaan van berichten is helaas niet standaard ingeschakeld in de privémodus.\nBezoek alsjeblieft\n - about:config\n - stel dom.indexedDB.privateBrowsing.enabled in op true\nAnders is het niet mogelijk om REChain ® 🪐 op te starten.",
 	"indexedDbErrorTitle": "Problemen met privémodus",
 	"numberRoomMembers": "{number} leden",
 	"pleaseEnterRecoveryKey": "Voer jouw herstelsleutel in:",
@@ -2889,7 +2889,7 @@
 	"stories": "Verhalen",
 	"suggestedRooms": "Ontdek groepen in deze space",
 	"unlockOldMessages": "Oude berichten ontgrendelen",
-	"updateAvailable": "REChain 🪐-update beschikbaar",
+	"updateAvailable": "REChain ® 🪐-update beschikbaar",
 	"updateNow": "Update op de achtergrond starten",
 	"user": "Persoon",
 	"users": "Personen",
@@ -2907,7 +2907,7 @@
 	"integrationsNotImplemented": "Widgets en integraties wijzigen is nog niet mogelijk.",
 	"iUnderstand": "Ik begrijp het",
 	"markAsRead": "Markeer als gelezen",
-	"matrixWidgets": "REChain 🪐 Widgets",
+	"matrixWidgets": "REChain ® 🪐 Widgets",
 	"nextAccount": "Volgende account",
 	"openChat": "Chat openen",
 	"pinMessage": "Maak vast aan kamer",
@@ -3016,16 +3016,16 @@
 	"readUpToHere": "Lees tot hier",
 	"allSpaces": "Alle spaces",
 	"appearOnTop": "Bovenaan verschijnen",
-	"appearOnTopDetails": "Laat de app bovenaan verschijnen (niet nodig als je REChain 🪐 al hebt ingesteld als een belaccount)",
+	"appearOnTopDetails": "Laat de app bovenaan verschijnen (niet nodig als je REChain ® 🪐 al hebt ingesteld als een belaccount)",
 	"callingAccount": "Belaccount",
-	"callingAccountDetails": "Hiermee kan REChain 🪐 de Android-kiezer-app gebruiken.",
+	"callingAccountDetails": "Hiermee kan REChain ® 🪐 de Android-kiezer-app gebruiken.",
 	"callingPermissions": "Belrechten",
 	"commandHint_cuddle": "Een knuffel versturen",
 	"commandHint_googly": "Wat wiebelogen versturen",
 	"commandHint_hug": "Een knuffel versturen",
 	"commandHint_markasdm": "Markeer als privéberichtenkamer",
 	"commandHint_markasgroup": "Markeer als groep",
-	"confirmMatrixId": "Bevestig jouw REChain 🪐 ID om je account te verwijderen.",
+	"confirmMatrixId": "Bevestig jouw REChain ® 🪐 ID om je account te verwijderen.",
 	"cuddleContent": "{senderName} knuffelt je",
 	"doNotShowAgain": "Niet meer tonen",
 	"enterRoom": "Kamer betreden",
@@ -3038,8 +3038,8 @@
 	"newSpace": "Nieuwe space",
 	"noKeyForThisMessage": "Dit kan gebeuren als het bericht is verzonden voordat je bij je account op dit apparaat hebt aangemeld.\n\nHet is ook mogelijk dat de afzender je apparaat heeft geblokkeerd of dat er iets mis is gegaan met de internetverbinding.\n\nKan je het bericht wel lezen op een andere sessie? Dan kan je het bericht daarvandaan overzetten! Ga naar Instellingen > Apparaten en zorg ervoor dat je apparaten elkaar hebben geverifieerd. Wanneer je de kamer de volgende keer opent en beide sessies op de voorgrond staan, zullen de sleutels automatisch worden verzonden.\n\nWil je de sleutels niet verliezen als je uitlogt of van apparaat wisselt? Zorg er dan voor dat je de chat back-up hebt aangezet in de instellingen.",
 	"numChats": "{number} chats",
-	"otherCallingPermissions": "Microfoon, camera en andere REChain 🪐-rechten",
-	"screenSharingDetail": "Je deelt je scherm in REChain 🪐",
+	"otherCallingPermissions": "Microfoon, camera en andere REChain ® 🪐-rechten",
+	"screenSharingDetail": "Je deelt je scherm in REChain ® 🪐",
 	"screenSharingTitle": "scherm delen",
 	"supposedMxid": "Dit moet {mxid} zijn",
 	"wasDirectChatDisplayName": "Lege chat (was {oldDisplayName})",

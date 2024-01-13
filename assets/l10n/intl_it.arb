@@ -153,7 +153,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"badServerLoginTypesException": "L'Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node supporta i tipi di accesso:\n{serverVersions}\nMa questa applicazione supporta solo:\n{supportedVersions}",
+	"badServerLoginTypesException": "L'Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node supporta i tipi di accesso:\n{serverVersions}\nMa questa applicazione supporta solo:\n{supportedVersions}",
 	"@badServerLoginTypesException": {
 		"type": "text",
 		"placeholders": {
@@ -161,7 +161,7 @@
 			"supportedVersions": {}
 		}
 	},
-	"badServerVersionsException": "L'Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node supporta le versioni Spec:\n{serverVersions}\nMa questa applicazione supporta solo {supportedVersions}",
+	"badServerVersionsException": "L'Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node supporta le versioni Spec:\n{serverVersions}\nMa questa applicazione supporta solo {supportedVersions}",
 	"@badServerVersionsException": {
 		"type": "text",
 		"placeholders": {
@@ -336,7 +336,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
 	"@changeTheHomeserver": {
 		"type": "text",
 		"placeholders": {}
@@ -784,7 +784,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
 	"@enterYourHomeserver": {
 		"type": "text",
 		"placeholders": {}
@@ -809,7 +809,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"rechainonline": "REChain.Online",
+	"rechainonline": "REChain ® 🪐",
 	"@rechainonline": {
 		"type": "text",
 		"placeholders": {}
@@ -1004,7 +1004,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"inviteText": "{username} ti ha invitato alla piattaforma REChain.Online! \n1. Installa REChain.Online: https://rechain.online \n2. Registrati o fai il login! \n3. Apri il link di invito: {link}",
+	"inviteText": "{username} ti ha invitato alla piattaforma REChain ® 🪐! \n1. Installa REChain ® 🪐: https://rechain.online \n2. Registrati o fai il login! \n3. Apri il link di invito: {link}",
 	"@inviteText": {
 		"type": "text",
 		"placeholders": {
@@ -1196,7 +1196,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"newMessageInrechainonline": "Nuovo messaggio sulla piattaforma REChain.Online!",
+	"newMessageInrechainonline": "Nuovo messaggio sulla piattaforma REChain ® 🪐!",
 	"@newMessageInrechainonline": {
 		"type": "text",
 		"placeholders": {}
@@ -1221,7 +1221,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"noCrossSignBootstrap": "REChain.Online attualmente non supporta l'abilitazione della firma incrociata. Abilitalo invece all'interno di REChain 🪐.",
+	"noCrossSignBootstrap": "REChain.Online attualmente non supporta l'abilitazione della firma incrociata. Abilitalo invece all'interno di REChain ® 🪐.",
 	"@noCrossSignBootstrap": {
 		"type": "text",
 		"placeholders": {}
@@ -1241,12 +1241,12 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"noGoogleServicesWarning": "Sembra che tu non abbia i servizi Google sul tuo telefono. Questa è una buona decisione per la tua privacy! Per ricevere notifiche push dalla piattaforma REChain.Online consigliamo di utilizzare https://microg.org/ o https://unifiedpush.org/.",
+	"noGoogleServicesWarning": "Sembra che tu non abbia i servizi Google sul tuo telefono. Questa è una buona decisione per la tua privacy! Per ricevere notifiche push dalla piattaforma REChain ® 🪐 consigliamo di utilizzare https://microg.org/ o https://unifiedpush.org/.",
 	"@noGoogleServicesWarning": {
 		"type": "text",
 		"placeholders": {}
 	},
-	"noMegolmBootstrap": "REChain.Online attualmente non supporta l'abilitazione del backup delle chiavi online. Si prega di abilitarlo all'interno di REChain 🪐.",
+	"noMegolmBootstrap": "REChain.Online attualmente non supporta l'abilitazione del backup delle chiavi online. Si prega di abilitarlo all'interno di REChain ® 🪐.",
 	"@noMegolmBootstrap": {
 		"type": "text",
 		"placeholders": {}
@@ -1437,7 +1437,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"pleaseEnterArechainonlineIdentifier": "Inserisci il Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network ID.",
+	"pleaseEnterArechainonlineIdentifier": "Inserisci il Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network ID.",
 	"@pleaseEnterArechainonlineIdentifier": {
 		"type": "text",
 		"placeholders": {}
@@ -1671,7 +1671,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"sendBugReports": "Consenti l'invio di segnalazioni di errore con REChain 🪐",
+	"sendBugReports": "Consenti l'invio di segnalazioni di errore con REChain ® 🪐",
 	"@sendBugReports": {
 		"type": "text",
 		"placeholders": {}
@@ -1743,7 +1743,7 @@
 			"senderName": {}
 		}
 	},
-	"sentryInfo": "Informazioni sulla privacy: https://rechain.online/en/privacy.html",
+	"sentryInfo": "Informazioni sulla privacy: https://rechain.online/privacy-policy.html",
 	"@sentryInfo": {
 		"type": "text",
 		"placeholders": {}
@@ -1902,7 +1902,7 @@
 			"suffix": {}
 		}
 	},
-	"title": "REChain.Online",
+	"title": "REChain ® 🪐",
 	"@title": {
 		"description": "Title for the application",
 		"type": "text",
@@ -2175,7 +2175,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"welcomeText": "Benvenuto in REChain.Online! Un Futuro Privato e Sicuro che è già arrivato!",
+	"welcomeText": "Benvenuto in REChain ® 🪐! Un Futuro Privato e Sicuro che è già arrivato!",
 	"@welcomeText": {
 		"type": "text",
 		"placeholders": {}

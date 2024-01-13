@@ -1,570 +1,807 @@
 {
 	"@@last_modified": "2021-08-14 12:41:09.781172",
 	"about": "Giới thiệu",
-	"@about": {
+	"@about":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"accept": "Đồng ý",
-	"@accept": {
+	"@accept":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"acceptedTheInvitation": "{username} đã đồng ý lời mời",
-	"@acceptedTheInvitation": {
+	"@acceptedTheInvitation":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"account": "Tài khoản",
-	"@account": {
+	"@account":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"accountInformation": "Thông tin tài khoản",
-	"@accountInformation": {
+	"@accountInformation":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"activatedEndToEndEncryption": "{username} đã kích hoạt mã hóa đầu cuối 2 chiều",
-	"@activatedEndToEndEncryption": {
+	"@activatedEndToEndEncryption":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"addGroupDescription": "Thêm mô tả cho nhóm",
-	"@addGroupDescription": {
+	"@addGroupDescription":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"admin": "Quản trị viên",
-	"@admin": {
+	"@admin":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"alias": "bí danh",
-	"@alias": {
+	"@alias":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"alreadyHaveAnAccount": "Bạn đã có tài khoản?",
-	"@alreadyHaveAnAccount": {
+	"@alreadyHaveAnAccount":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"answeredTheCall": "{senderName} đã trả lời cuộc gọi",
-	"@answeredTheCall": {
+	"@answeredTheCall":
+	{
 		"type": "text",
-		"placeholders": {
-			"senderName": {}
+		"placeholders":
+		{
+			"senderName":
+			{}
 		}
 	},
 	"anyoneCanJoin": "Mọi người đều có thể gia nhập",
-	"@anyoneCanJoin": {
+	"@anyoneCanJoin":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"archive": "Lưu trữ",
-	"@archive": {
+	"@archive":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"archivedRoom": "Phòng hội thảo đã lưu trữ",
-	"@archivedRoom": {
+	"@archivedRoom":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"areGuestsAllowedToJoin": "Khách vãng lai có được tham gia không",
-	"@areGuestsAllowedToJoin": {
+	"@areGuestsAllowedToJoin":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"areYouSure": "Bạn chắc chứ?",
-	"@areYouSure": {
+	"@areYouSure":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"askSSSSCache": "Vui lòng nhập cụm mật khẩu hoặc khóa khôi phục để lưu khóa vào bộ nhớ cache.",
-	"@askSSSSCache": {
+	"@askSSSSCache":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"blockDevice": "Thiết bị bị chặn",
-	"@blockDevice": {
+	"@blockDevice":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"zoomOut": "Thu nhỏ",
-	"@zoomOut": {
+	"@zoomOut":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"zoomIn": "Phóng to",
-	"@zoomIn": {
+	"@zoomIn":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"youWillBeConnectedTo": "Bạn sẽ được kết nối tới {homeserver}",
-	"@youWillBeConnectedTo": {
+	"@youWillBeConnectedTo":
+	{
 		"type": "text",
-		"placeholders": {
-			"homeserver": {}
+		"placeholders":
+		{
+			"homeserver":
+			{}
 		}
 	},
 	"verified": "Đã xác thực",
-	"@verified": {
+	"@verified":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"transferFromAnotherDevice": "Chuyển từ thiết bị khác",
-	"@transferFromAnotherDevice": {
+	"@transferFromAnotherDevice":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"tapOnDeviceToVerify": "Chạm vào một thiết bị để chứng thực",
-	"@tapOnDeviceToVerify": {
+	"@tapOnDeviceToVerify":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"showPassword": "Hiển thị mật khẩu",
-	"@showPassword": {
+	"@showPassword":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"securityKeyLost": "Thất lạc khoá bảo mật?",
-	"@securityKeyLost": {
+	"@securityKeyLost":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"securityKey": "Khóa bảo mật",
-	"@securityKey": {
+	"@securityKey":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"pleaseFollowInstructionsOnWeb": "Vui lòng làm theo hướng dẫn trên trang web và bấm tiếp",
-	"@pleaseFollowInstructionsOnWeb": {
+	"@pleaseFollowInstructionsOnWeb":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"pleaseEnterSecurityKey": "Vui lòng nhập khoá bảo mật",
-	"@pleaseEnterSecurityKey": {
+	"@pleaseEnterSecurityKey":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"noEncryptionForPublicRooms": "Bạn chỉ có thể kích hoạt mã hoá khi phòng này không mở",
-	"@noEncryptionForPublicRooms": {
+	"@noEncryptionForPublicRooms":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"next": "Tiếp",
-	"@next": {
+	"@next":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"everythingReady": "Mọi thứ đã sẵn sàng!",
-	"@everythingReady": {
+	"@everythingReady":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"emoteSettings": "Cài đặt biểu tượng cảm xúc",
-	"@emoteSettings": {
+	"@emoteSettings":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"editDisplayname": "Sửa tên hiển thị",
-	"@editDisplayname": {
+	"@editDisplayname":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"downloadFile": "Tải ảnh xuống",
-	"@downloadFile": {
+	"@downloadFile":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"displaynameHasBeenChanged": "Tên hiển thị đã được thay đổi",
-	"@displaynameHasBeenChanged": {
+	"@displaynameHasBeenChanged":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"discardPicture": "Xoá hình ảnh",
-	"@discardPicture": {
+	"@discardPicture":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"deviceVerifyDescription": "Mã hoá chỉ bảo mật khi tất cả các thiết bị đều được chứng thực",
-	"@deviceVerifyDescription": {
+	"@deviceVerifyDescription":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"devices": "Các thiết bị",
-	"@devices": {
+	"@devices":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"deviceId": "Mã xác định thiết bị",
-	"@deviceId": {
+	"@deviceId":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"device": "Thiết bị",
-	"@device": {
+	"@device":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"deny": "Từ chối",
-	"@deny": {
+	"@deny":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"deleteMessage": "Xoá tin nhắn",
-	"@deleteMessage": {
+	"@deleteMessage":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"deleteAccount": "Xoá tài khoản",
-	"@deleteAccount": {
+	"@deleteAccount":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"delete": "Xoá",
-	"@delete": {
+	"@delete":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"deactivateAccountWarning": "Việc này sẽ vô hiệu hoá tài khoản của bạn. Điều này không thể đảo ngược được! Bạn chắc là vẫn muốn tiếp tục chứ?",
-	"@deactivateAccountWarning": {
+	"@deactivateAccountWarning":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"dateWithYear": "{day}/{month}/{year}",
-	"@dateWithYear": {
+	"@dateWithYear":
+	{
 		"type": "text",
-		"placeholders": {
-			"year": {},
-			"month": {},
-			"day": {}
+		"placeholders":
+		{
+			"year":
+			{},
+			"month":
+			{},
+			"day":
+			{}
 		}
 	},
 	"dateWithoutYear": "{day}/{month}",
-	"@dateWithoutYear": {
+	"@dateWithoutYear":
+	{
 		"type": "text",
-		"placeholders": {
-			"month": {},
-			"day": {}
+		"placeholders":
+		{
+			"month":
+			{},
+			"day":
+			{}
 		}
 	},
 	"dateAndTimeOfDay": "{date}, {timeOfDay}",
-	"@dateAndTimeOfDay": {
+	"@dateAndTimeOfDay":
+	{
 		"type": "text",
-		"placeholders": {
-			"date": {},
-			"timeOfDay": {}
+		"placeholders":
+		{
+			"date":
+			{},
+			"timeOfDay":
+			{}
 		}
 	},
 	"currentlyActive": "Đang hoạt động",
-	"@currentlyActive": {
+	"@currentlyActive":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"createNewGroup": "Tạo một nhóm mới",
-	"@createNewGroup": {
+	"@createNewGroup":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"createdTheChat": "{username} đã tạo cuộc trò chuyện",
-	"@createdTheChat": {
+	"@createdTheChat":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"createAccountNow": "Tạo tài khoản mới ngay",
-	"@createAccountNow": {
+	"@createAccountNow":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"create": "Tạo",
-	"@create": {
+	"@create":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"countParticipants": "{count} thành viên",
-	"@countParticipants": {
+	"@countParticipants":
+	{
 		"type": "text",
-		"placeholders": {
-			"count": {}
+		"placeholders":
+		{
+			"count":
+			{}
 		}
 	},
 	"couldNotSetDisplayname": "Không thể thay tên hiển thị",
-	"@couldNotSetDisplayname": {
+	"@couldNotSetDisplayname":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"couldNotSetAvatar": "Không thể đặt ảnh đại diện",
-	"@couldNotSetAvatar": {
+	"@couldNotSetAvatar":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"couldNotDecryptMessage": "Không thể giải mã tin nhắn: {error}",
-	"@couldNotDecryptMessage": {
+	"@couldNotDecryptMessage":
+	{
 		"type": "text",
-		"placeholders": {
-			"error": {}
+		"placeholders":
+		{
+			"error":
+			{}
 		}
 	},
 	"copy": "Sao chép",
-	"@copy": {
+	"@copy":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"contactHasBeenInvitedToTheGroup": "Liên hệ đã được mời vào nhóm",
-	"@contactHasBeenInvitedToTheGroup": {
+	"@contactHasBeenInvitedToTheGroup":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"connectionAttemptFailed": "Kết nối thất bại",
-	"@connectionAttemptFailed": {
+	"@connectionAttemptFailed":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"connect": "Kết nối",
-	"@connect": {
+	"@connect":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"confirm": "Xác nhận",
-	"@confirm": {
+	"@confirm":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"compareNumbersMatch": "So sánh và đảm bảo các số sau đây giống trên máy còn lại",
-	"@compareNumbersMatch": {
+	"@compareNumbersMatch":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"compareEmojiMatch": "So sánh và đảm bảo các biểu tượng cảm xúc sau đây giống với các biểu tượng trên máy còn lại",
-	"@compareEmojiMatch": {
+	"@compareEmojiMatch":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"close": "Đóng",
-	"@close": {
+	"@close":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"chooseAUsername": "Chọn tên người dùng",
-	"@chooseAUsername": {
+	"@chooseAUsername":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"chooseAStrongPassword": "Chọn một mật khẩu mạnh",
-	"@chooseAStrongPassword": {
+	"@chooseAStrongPassword":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"chatDetails": "Chi tiết cuộc trò chuyện",
-	"@chatDetails": {
+	"@chatDetails":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"chatBackupDescription": "Bản sao lưu cuộc trò chuyện của bạn được bảo mật bằng một khoá bảo mật. Bạn đừng làm mất nó.",
-	"@chatBackupDescription": {
+	"@chatBackupDescription":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"chatBackup": "Sao lưu cuộc trò chuyện",
-	"@chatBackup": {
+	"@chatBackup":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"chat": "Chat",
-	"@chat": {
+	"@chat":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"changeWallpaper": "Thay hình nền",
-	"@changeWallpaper": {
+	"@changeWallpaper":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"changeTheServer": "Thay đổi máy chủ",
-	"@changeTheServer": {
+	"@changeTheServer":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"changeTheNameOfTheGroup": "Thay đổi tên nhóm",
-	"@changeTheNameOfTheGroup": {
+	"@changeTheNameOfTheGroup":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
-	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
-	"@changeTheHomeserver": {
+	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
+	"@changeTheHomeserver":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"changePassword": "Thay đổi mật khẩu",
-	"@changePassword": {
+	"@changePassword":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"changelog": "Lịch sử thay đổi",
-	"@changelog": {
+	"@changelog":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"changedTheRoomInvitationLink": "{username} đã thay đổi đường dẫn mời",
-	"@changedTheRoomInvitationLink": {
+	"@changedTheRoomInvitationLink":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"changedTheRoomAliases": "{username} đã đổi địa chỉ phòng chat",
-	"@changedTheRoomAliases": {
+	"@changedTheRoomAliases":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"changedTheProfileAvatar": "{username} đã thay đổi ảnh đại diện của mình",
-	"@changedTheProfileAvatar": {
+	"@changedTheProfileAvatar":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"changedTheGuestAccessRulesTo": "{username} đã thay đổi quy tắc truy cập đối với khách thành: {rules}",
-	"@changedTheGuestAccessRulesTo": {
+	"@changedTheGuestAccessRulesTo":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {},
-			"rules": {}
+		"placeholders":
+		{
+			"username":
+			{},
+			"rules":
+			{}
 		}
 	},
 	"changedTheGuestAccessRules": "{username} đã thay đổi quy tắc truy cập đối với khách",
-	"@changedTheGuestAccessRules": {
+	"@changedTheGuestAccessRules":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"changedTheChatPermissions": "{username} đã thay đổi quyền trong phòng chat",
-	"@changedTheChatPermissions": {
+	"@changedTheChatPermissions":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"changedTheChatNameTo": "{username} đã thay đổi tên phòng chat thành: '{chatname}'",
-	"@changedTheChatNameTo": {
+	"@changedTheChatNameTo":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {},
-			"chatname": {}
+		"placeholders":
+		{
+			"username":
+			{},
+			"chatname":
+			{}
 		}
 	},
 	"changedTheChatDescriptionTo": "{username} đã thay đổi mô tả phòng chat thành: '{description}'",
-	"@changedTheChatDescriptionTo": {
+	"@changedTheChatDescriptionTo":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {},
-			"description": {}
+		"placeholders":
+		{
+			"username":
+			{},
+			"description":
+			{}
 		}
 	},
 	"changedTheChatAvatar": "{username} đã thay đổi ảnh phòng chat",
-	"@changedTheChatAvatar": {
+	"@changedTheChatAvatar":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"changeDeviceName": "Thay đổi tên thiết bị",
-	"@changeDeviceName": {
+	"@changeDeviceName":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"cancel": "Hủy",
-	"@cancel": {
+	"@cancel":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"cachedKeys": "Khóa đã được lưu vào bộ nhớ tạm",
-	"@cachedKeys": {
+	"@cachedKeys":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"blocked": "Đã chặn",
-	"@blocked": {
+	"@blocked":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"bannedUser": "{username} đã cấm {targetName}",
-	"@bannedUser": {
+	"@bannedUser":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {},
-			"targetName": {}
+		"placeholders":
+		{
+			"username":
+			{},
+			"targetName":
+			{}
 		}
 	},
 	"banned": "Đã bị cấm",
-	"@banned": {
+	"@banned":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"banFromChat": "Cấm khỏi cuộc trò chuyện",
-	"@banFromChat": {
+	"@banFromChat":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"badServerVersionsException": "Máy chủ nhà hỗ trợ Spec phiên bản:\n{serverVerions}\nNhưng ứng dụng này chỉ hỗ trợ {supportedVersions}",
-	"@badServerVersionsException": {
+	"@badServerVersionsException":
+	{
 		"type": "text",
-		"placeholders": {
-			"serverVersions": {},
-			"supportedVersions": {}
+		"placeholders":
+		{
+			"serverVersions":
+			{},
+			"supportedVersions":
+			{}
 		}
 	},
 	"badServerLoginTypesException": "Máy chủ nhà hỗ trợ kiểu đăng nhập:\n{serverVersions}\nNhưng ứng dụng này chỉ hỗ trợ:\n{supportedVersions}",
-	"@badServerLoginTypesException": {
+	"@badServerLoginTypesException":
+	{
 		"type": "text",
-		"placeholders": {
-			"serverVersions": {},
-			"supportedVersions": {}
+		"placeholders":
+		{
+			"serverVersions":
+			{},
+			"supportedVersions":
+			{}
 		}
 	},
 	"avatarHasBeenChanged": "Ảnh đại diện đã được thay đổi",
-	"@avatarHasBeenChanged": {
+	"@avatarHasBeenChanged":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"authentication": "Xác thực",
-	"@authentication": {
+	"@authentication":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"askVerificationRequest": "Bạn có đồng ý yêu cầu chứng thực từ {username} không?",
-	"@askVerificationRequest": {
+	"@askVerificationRequest":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"askSSSSVerify": "Vui lòng nhập mật khẩu bảo mật hoặc khóa khôi phục để chứng thực phiên của bạn.",
-	"@askSSSSVerify": {
+	"@askSSSSVerify":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"areYouSureYouWantToLogout": "Bạn có chắc bạn muốn đăng xuất không?",
-	"@areYouSureYouWantToLogout": {
+	"@areYouSureYouWantToLogout":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"addEmail": "Thêm email",
-	"@addEmail": {
+	"@addEmail":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"addAccount": "",
 	"addDescription": "",

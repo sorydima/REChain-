@@ -164,7 +164,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"rechainonline": "REChain.Online",
+	"rechainonline": "REChain ® 🪐",
 	"@rechainonline": {
 		"type": "text",
 		"placeholders": {}
@@ -189,12 +189,12 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
 	"@enterYourHomeserver": {
 		"type": "text",
 		"placeholders": {}
 	},
-	"homeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"homeserver": "Node/Server",
 	"@homeserver": {},
 	"enterAUsername": "유저 이름 입력",
 	"@enterAUsername": {
@@ -652,7 +652,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
 	"@changeTheHomeserver": {
 		"type": "text",
 		"placeholders": {}
@@ -1139,7 +1139,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"welcomeText": "REChain.Online에 오신 것을 환영합니다! 미리 도착한 사적이고 안전한 미래!",
+	"welcomeText": "REChain ® 🪐에 오신 것을 환영합니다! 미리 도착한 사적이고 안전한 미래!",
 	"@welcomeText": {
 		"type": "text",
 		"placeholders": {}
@@ -1443,7 +1443,7 @@
 	"@shareYourInviteLink": {},
 	"createNewChatExplaination": "서로 가깝지 않다면 초대 링크를 공유하거나 QR 코드를 스캔하세요.",
 	"@createNewChatExplaination": {},
-	"norechainonlineServer": "{server1}은(는) Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network 서버가 아닙니다. 대신 {server2}를 사용해야 합니까?",
+	"norechainonlineServer": "{server1}은(는) Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network 서버가 아닙니다. 대신 {server2}를 사용해야 합니까?",
 	"@norechainonlineServer": {
 		"type": "text",
 		"placeholders": {
@@ -1495,7 +1495,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"newMessageInrechainonline": "REChain.Online 플랫폼의 새로운 메시지!",
+	"newMessageInrechainonline": "REChain ® 🪐 플랫폼의 새로운 메시지!",
 	"@newMessageInrechainonline": {
 		"type": "text",
 		"placeholders": {}
@@ -1581,7 +1581,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"noCrossSignBootstrap": "REChain.Online은 현재 교차 서명 활성화를 지원하지 않습니다. REChain 🪐 내에서 활성화하십시오.",
+	"noCrossSignBootstrap": "REChain.Online은 현재 교차 서명 활성화를 지원하지 않습니다. REChain ® 🪐 내에서 활성화하십시오.",
 	"@noCrossSignBootstrap": {
 		"type": "text",
 		"placeholders": {}
@@ -1751,7 +1751,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"title": "REChain.Online",
+	"title": "REChain ® 🪐",
 	"@title": {
 		"description": "Title for the application",
 		"type": "text",
@@ -1862,7 +1862,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"pleaseEnterArechainonlineIdentifier": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node 블록체인 노드 네트워크 ID 입력",
+	"pleaseEnterArechainonlineIdentifier": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node 블록체인 노드 네트워크 ID 입력",
 	"@pleaseEnterArechainonlineIdentifier": {
 		"type": "text",
 		"placeholders": {}
@@ -1984,12 +1984,12 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"noMegolmBootstrap": "대신 REChain 🪐 내에서 온라인 키 백업을 켜십시오.",
+	"noMegolmBootstrap": "대신 REChain ® 🪐 내에서 온라인 키 백업을 켜십시오.",
 	"@noMegolmBootstrap": {
 		"type": "text",
 		"placeholders": {}
 	},
-	"noGoogleServicesWarning": "휴대전화에 Google 서비스가 없는 것 같습니다. 귀하의 개인 정보를 위한 좋은 결정! REChain.Online 플랫폼에서 푸시 알림을 수신하려면 https://microg.org/ 또는 https://unifiedpush.org/를 사용하는 것이 좋습니다!",
+	"noGoogleServicesWarning": "휴대전화에 Google 서비스가 없는 것 같습니다. 귀하의 개인 정보를 위한 좋은 결정! REChain ® 🪐 플랫폼에서 푸시 알림을 수신하려면 https://microg.org/ 또는 https://unifiedpush.org/를 사용하는 것이 좋습니다!",
 	"@noGoogleServicesWarning": {
 		"type": "text",
 		"placeholders": {}
@@ -2136,7 +2136,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"sentryInfo": "당신의 프라이버시에 대한 정보: https://rechain.online/en/privacy.html",
+	"sentryInfo": "당신의 프라이버시에 대한 정보: https://rechain.online/privacy-policy.html",
 	"@sentryInfo": {
 		"type": "text",
 		"placeholders": {}
@@ -2175,7 +2175,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"sendBugReports": "REChain 🪐로 버그 제보 허용",
+	"sendBugReports": "REChain ® 🪐로 버그 제보 허용",
 	"@sendBugReports": {
 		"type": "text",
 		"placeholders": {}
@@ -2368,7 +2368,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"inviteText": "{username}이(가) 귀하를 REChain.Online 플랫폼에 초대했습니다!\n1. REChain.Online 설치: https://rechain.online\n2. 가입하거나 로그인하세요!\n3. 초대 링크 열기: {link}",
+	"inviteText": "{username}이(가) 귀하를 REChain ® 🪐 플랫폼에 초대했습니다!\n1. REChain ® 🪐 설치: https://rechain.online\n2. 가입하거나 로그인하세요!\n3. 초대 링크 열기: {link}",
 	"@inviteText": {
 		"type": "text",
 		"placeholders": {
@@ -2612,12 +2612,12 @@
 	"@updateNow": {},
 	"commandHint_googly": "왕눈이 눈알 보내기",
 	"commandHint_markasgroup": "",
-	"confirmMatrixId": "계정을 삭제하려면 REChain 🪐 ID를 확인해 주세요.",
+	"confirmMatrixId": "계정을 삭제하려면 REChain ® 🪐 ID를 확인해 주세요.",
 	"dehydrate": "세션을 내보내고 기기 초기화 하기",
-	"dehydrateShare": "REChain 🪐 개인 내보내기 파일입니다. 분실하지 않도록 하시고 비공개로 보관하세요.",
+	"dehydrateShare": "REChain ® 🪐 개인 내보내기 파일입니다. 분실하지 않도록 하시고 비공개로 보관하세요.",
 	"dehydrateWarning": "이 동작은 되돌릴 수 없습니다. 백업 파일을 꼭 안전하게 보관하세요.",
 	"googlyEyesContent": "{senderName} 님이 왕눈이 눈알을 보냈습니다",
-	"updateAvailable": "REChain 🪐 업데이트 이용가능",
+	"updateAvailable": "REChain ® 🪐 업데이트 이용가능",
 	"updateNow": "백그라운드에서 업데이트 시작",
 	"link": "링크",
 	"@link": {},
@@ -2740,7 +2740,7 @@
 	"integrationsNotImplemented": "아직 위젯과 통합을 편집하는 것은 가능하지 않습니다.",
 	"iUnderstand": "동의합니다",
 	"markAsRead": "읽음으로 표시하기",
-	"matrixWidgets": "REChain 🪐위젯",
+	"matrixWidgets": "REChain ® 🪐위젯",
 	"openChat": "채팅 열기",
 	"pinMessage": "방에 고정",
 	"pinnedEventsError": "고정된 메시지 불러오는 중 오류",

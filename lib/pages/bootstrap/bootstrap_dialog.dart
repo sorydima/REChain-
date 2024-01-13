@@ -5,11 +5,12 @@ import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:future_loading_dialog/future_loading_dialog.dart';
 import 'package:matrix/encryption.dart';
-import 'package:matrix/encryption/utils/bootstrap.dart';
 import 'package:matrix/matrix.dart';
 
 import 'package:rechainonline/config/themes.dart';
+import 'package:rechainonline/utils/error_reporter.dart';
 import 'package:rechainonline/utils/rechainonline_share.dart';
+import 'package:rechainonline/utils/localized_exception_extension.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
 import '../../utils/adaptive_bottom_sheet.dart';
 import '../key_verification/key_verification_dialog.dart';
@@ -140,7 +141,7 @@ class BootstrapDialogState extends State<BootstrapDialog> {
                 ),
                 const SizedBox(height: 16),
                 if (_supportsSecureStorage)
-                  CheckboxListTile(
+                  CheckboxListTile.adaptive(
                     contentPadding: const EdgeInsets.symmetric(horizontal: 8.0),
                     value: _storeInSecureStorage,
                     activeColor: Theme.of(context).colorScheme.primary,
@@ -154,7 +155,7 @@ class BootstrapDialogState extends State<BootstrapDialog> {
                         Text(L10n.of(context)!.storeInSecureStorageDescription),
                   ),
                 const SizedBox(height: 16),
-                CheckboxListTile(
+                CheckboxListTile.adaptive(
                   contentPadding: const EdgeInsets.symmetric(horizontal: 8.0),
                   value: _recoveryKeyCopied,
                   activeColor: Theme.of(context).colorScheme.primary,
@@ -272,7 +273,7 @@ class BootstrapDialogState extends State<BootstrapDialog> {
                       style: ElevatedButton.styleFrom(
                         foregroundColor:
                             Theme.of(context).colorScheme.onPrimary,
-                        backgroundColor: Theme.of(context).primaryColor,
+                        backgroundColor: Theme.of(context).colorScheme.primary,
                       ),
                       icon: _recoveryKeyInputLoading
                           ? const CircularProgressIndicator.adaptive()
@@ -311,11 +312,19 @@ class BootstrapDialogState extends State<BootstrapDialog> {
                                     );
                                   }
                                 }
-                              } catch (e, s) {
-                                Logs().w('Unable to unlock SSSS', e, s);
+                              } on InvalidPassphraseException catch (e) {
                                 setState(
                                   () => _recoveryKeyInputError =
-                                      L10n.of(context)!.oopsSomethingWentWrong,
+                                      e.toLocalizedString(context),
+                                );
+                              } catch (e, s) {
+                                ErrorReporter(
+                                  context,
+                                  'Unable to open SSSS with recovery key',
+                                ).onErrorCallback(e, s);
+                                setState(
+                                  () => _recoveryKeyInputError =
+                                      e.toLocalizedString(context),
                                 );
                               } finally {
                                 setState(
@@ -424,8 +433,17 @@ class BootstrapDialogState extends State<BootstrapDialog> {
           body = Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Image.asset('assets/backup.png', fit: BoxFit.contain),
-              Text(L10n.of(context)!.yourChatBackupHasBeenSetUp),
+              const Icon(
+                Icons.check_circle_rounded,
+                size: 120,
+                color: Colors.green,
+              ),
+              const SizedBox(height: 16),
+              Text(
+                L10n.of(context)!.yourChatBackupHasBeenSetUp,
+                style: const TextStyle(fontSize: 20),
+              ),
+              const SizedBox(height: 16),
             ],
           );
           buttons.add(

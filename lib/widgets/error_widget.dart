@@ -11,10 +11,15 @@ class rechainonlineChatErrorWidget extends StatefulWidget {
 }
 
 class _rechainonlineChatErrorWidgetState extends State<rechainonlineChatErrorWidget> {
+  static final Set<String> knownExceptions = {};
   @override
   void initState() {
     super.initState();
 
+    if (knownExceptions.contains(widget.details.exception.toString())) {
+      return;
+    }
+    knownExceptions.add(widget.details.exception.toString());
     WidgetsBinding.instance.addPostFrameCallback((_) {
       ErrorReporter(context, 'Error Widget').onErrorCallback(
         widget.details.exception,
@@ -32,15 +37,6 @@ class _rechainonlineChatErrorWidgetState extends State<rechainonlineChatErrorWid
           child: Material(
             color: Colors.white.withOpacity(0.9),
             borderRadius: BorderRadius.circular(8),
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                '😲 Oh no! Something is broken 😲\n${widget.details.exception}',
-                maxLines: 5,
-                textAlign: TextAlign.center,
-                style: const TextStyle(color: Colors.black),
-              ),
-            ),
           ),
         ),
       ),

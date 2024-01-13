@@ -254,7 +254,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
 	"@changeTheHomeserver": {
 		"type": "text",
 		"placeholders": {}
@@ -565,7 +565,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
 	"@enterYourHomeserver": {
 		"type": "text",
 		"placeholders": {}
@@ -580,7 +580,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"rechainonline": "REChain.Online",
+	"rechainonline": "REChain ® 🪐",
 	"@rechainonline": {
 		"type": "text",
 		"placeholders": {}
@@ -988,7 +988,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"pleaseEnterArechainonlineIdentifier": "Унесите ИД мреже Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"pleaseEnterArechainonlineIdentifier": "Унесите ИД мреже Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
 	"@pleaseEnterArechainonlineIdentifier": {
 		"type": "text",
 		"placeholders": {}
@@ -1304,7 +1304,7 @@
 			"suffix": {}
 		}
 	},
-	"title": "REChain.Online",
+	"title": "REChain ® 🪐",
 	"@title": {
 		"description": "Title for the application",
 		"type": "text",
@@ -1352,7 +1352,7 @@
 	},
 	"@updateAvailable": {},
 	"@updateNow": {},
-	"updateAvailable": "dostupná aktualizácia REChain 🪐",
+	"updateAvailable": "dostupná aktualizácia REChain ® 🪐",
 	"updateNow": "Začať aktualizáciu na pozadí",
 	"unknownSessionVerify": "Neznáma relácia, prosím verifikujte ju",
 	"@unknownSessionVerify": {

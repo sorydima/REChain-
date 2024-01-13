@@ -107,7 +107,7 @@ Need help? 🤔
 Email us! 👇
 A Dmitry Sorokin production. All rights reserved.
 Powered by REChain ®️ 🪐.
-Copyright © 2019-2023 REChain, Inc
+Copyright © 2019-2024 REChain, Inc
 REChain ® is a registered trademark
 hr@rechain.email
 p2p@rechain.email

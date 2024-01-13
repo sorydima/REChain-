@@ -1,2610 +1,4257 @@
 {
 	"zoomOut": "Zúmáil amach",
-	"@zoomOut": {
+	"@zoomOut":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"zoomIn": "Zúmáil isteach",
-	"@zoomIn": {
+	"@zoomIn":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"youWillBeConnectedTo": "Beidh tú ceangailte le {homeserver}",
-	"@youWillBeConnectedTo": {
+	"@youWillBeConnectedTo":
+	{
 		"type": "text",
-		"placeholders": {
-			"homeserver": {}
+		"placeholders":
+		{
+			"homeserver":
+			{}
 		}
 	},
 	"you": "Tú",
-	"@you": {
+	"@you":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"yes": "Tá",
-	"@yes": {
+	"@yes":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"wednesday": "Dé Céadaoin",
-	"@wednesday": {
+	"@wednesday":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"warning": "Rabhadh!",
-	"@warning": {
+	"@warning":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"wallpaper": "Cúlbhrat",
-	"@wallpaper": {
+	"@wallpaper":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"verify": "Deimhnigh",
-	"@verify": {
+	"@verify":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"verified": "Deimhnithe",
-	"@verified": {
+	"@verified":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"username": "Ainm úsáideora",
-	"@username": {
+	"@username":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"unpin": "Bain biorán",
-	"@unpin": {
+	"@unpin":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"unavailable": "Níl ar fáil",
-	"@unavailable": {
+	"@unavailable":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"tuesday": "Dé Máirt",
-	"@tuesday": {
+	"@tuesday":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
-	"title": "REChain.Online",
-	"@title": {
+	"title": "REChain ® 🪐",
+	"@title":
+	{
 		"description": "Title for the application",
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"timeOfDay": "{hours12}:{minutes} {suffix}",
-	"@timeOfDay": {
+	"@timeOfDay":
+	{
 		"type": "text",
-		"placeholders": {
-			"hours12": {},
-			"hours24": {},
-			"minutes": {},
-			"suffix": {}
+		"placeholders":
+		{
+			"hours12":
+			{},
+			"hours24":
+			{},
+			"minutes":
+			{},
+			"suffix":
+			{}
 		}
 	},
 	"thursday": "Déardaoin",
-	"@thursday": {
+	"@thursday":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"systemTheme": "Córas",
-	"@systemTheme": {
+	"@systemTheme":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"sunday": "Dé Domhnaigh",
-	"@sunday": {
+	"@sunday":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"submit": "Cuir isteach",
-	"@submit": {
+	"@submit":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"statusExampleMessage": "Conas atá tú inniu?",
-	"@statusExampleMessage": {
+	"@statusExampleMessage":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"status": "Staid",
-	"@status": {
+	"@status":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"skip": "Léim",
-	"@skip": {
+	"@skip":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"share": "Roinn",
-	"@share": {
+	"@share":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"settings": "Socruithe",
-	"@settings": {
+	"@settings":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"send": "Seol",
-	"@send": {
+	"@send":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"security": "Slándáil",
-	"@security": {
+	"@security":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"search": "Cuardaigh",
-	"@search": {
+	"@search":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"saturday": "Dé Sathairn",
-	"@saturday": {
+	"@saturday":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"reply": "Freagair",
-	"@reply": {
+	"@reply":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"remove": "Bain",
-	"@remove": {
+	"@remove":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"rejoin": "Téigh ar ais isteach",
-	"@rejoin": {
+	"@rejoin":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"reject": "Diúltaigh",
-	"@reject": {
+	"@reject":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"register": "Cláraigh",
-	"@register": {
+	"@register":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"recording": "Ag Taifeadadh",
-	"@recording": {
+	"@recording":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"reason": "Fáth",
-	"@reason": {
+	"@reason":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"privacy": "Príobháideacht",
-	"@privacy": {
+	"@privacy":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"pin": "Biorán",
-	"@pin": {
+	"@pin":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"people": "Daoine",
-	"@people": {
+	"@people":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"password": "Pasfhocal",
-	"@password": {
+	"@password":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"participant": "Rannpháirtí",
-	"@participant": {
+	"@participant":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"directChats": "Comhráite Díreacha",
-	"@directChats": {
+	"@directChats":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"deviceId": "ID gléis",
-	"@deviceId": {
+	"@deviceId":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"deleteMessage": "Scrios an teachtaireacht",
-	"@deleteMessage": {
+	"@deleteMessage":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"deleteAccount": "Scrios an cuntas",
-	"@deleteAccount": {
+	"@deleteAccount":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"crossSigningEnabled": "Tá cros-shíniú tosaithe",
-	"@crossSigningEnabled": {
+	"@crossSigningEnabled":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"crossSigningDisabled": "Cros-síniú casta as",
-	"@crossSigningDisabled": {
+	"@crossSigningDisabled":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"createNewSpace": "Spás nua",
-	"@createNewSpace": {
+	"@createNewSpace":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"countParticipants": "{count} rannpháirtithe",
-	"@countParticipants": {
+	"@countParticipants":
+	{
 		"type": "text",
-		"placeholders": {
-			"count": {}
+		"placeholders":
+		{
+			"count":
+			{}
 		}
 	},
 	"or": "Nó",
-	"@or": {
+	"@or":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"online": "Ar líne",
-	"@online": {
+	"@online":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"ok": "togha",
-	"@ok": {
+	"@ok":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"offline": "As líne",
-	"@offline": {
+	"@offline":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"offensive": "Maslach",
-	"@offensive": {
+	"@offensive":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"notifications": "Fógraí",
-	"@notifications": {
+	"@notifications":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"none": "Aon cheann",
-	"@none": {
+	"@none":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"no": "Níl",
-	"@no": {
+	"@no":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"next": "Ar Aghaidh",
-	"@next": {
+	"@next":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"monday": "Dé Luain",
-	"@monday": {
+	"@monday":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"moderator": "Modhnóir",
-	"@moderator": {
+	"@moderator":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"messages": "Teachtaireachtaí",
-	"@messages": {
+	"@messages":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"mention": "Luaigh",
-	"@mention": {
+	"@mention":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"logout": "Logáil amach",
-	"@logout": {
+	"@logout":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"login": "Logáil isteach",
-	"@login": {
+	"@login":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"lightTheme": "Solas",
-	"@lightTheme": {
+	"@lightTheme":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"license": "Ceadúnas",
-	"@license": {
+	"@license":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"leave": "Fág",
-	"@leave": {
+	"@leave":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"invited": "Le cuireadh",
-	"@invited": {
+	"@invited":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"inoffensive": "Neamhurchóideach",
-	"@inoffensive": {
+	"@inoffensive":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"ignore": "Tabhair neamhaird ar",
-	"@ignore": {
+	"@ignore":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"identity": "Aitheantas",
-	"@identity": {
+	"@identity":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"id": "ID",
-	"@id": {
+	"@id":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"help": "Cabhair",
-	"@help": {
+	"@help":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"groups": "Grúpaí",
-	"@groups": {
+	"@groups":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"group": "Grúpa",
-	"@group": {
+	"@group":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"friends": "Cairde",
-	"@friends": {
+	"@friends":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"friday": "Dé hAoine",
-	"@friday": {
+	"@friday":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"forward": "Seol ar aghaidh",
-	"@forward": {
+	"@forward":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
-	"rechainonline": "REChain.Online",
-	"@rechainonline": {
+	"rechainonline": "REChain ® 🪐",
+	"@rechainonline":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
-	"homeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
-	"@homeserver": {},
+	"homeserver": "Node/Server",
+	"@homeserver":
+	{},
 	"encryption": "Criptiúchán",
-	"@encryption": {
+	"@encryption":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"encrypted": "Criptithe",
-	"@encrypted": {
+	"@encrypted":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"edit": "Cuir in eagar",
-	"@edit": {
+	"@edit":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"donate": "Bronn",
-	"@donate": {
+	"@donate":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"discover": "Tar ar",
-	"@discover": {
+	"@discover":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"devices": "Gléasanna",
-	"@devices": {
+	"@devices":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"device": "Gléas",
-	"@device": {
+	"@device":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"deny": "Diúltaigh",
-	"@deny": {
+	"@deny":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"delete": "Scrios",
-	"@delete": {
+	"@delete":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"dateWithYear": "{day}/{month}/{year}",
-	"@dateWithYear": {
+	"@dateWithYear":
+	{
 		"type": "text",
-		"placeholders": {
-			"year": {},
-			"month": {},
-			"day": {}
+		"placeholders":
+		{
+			"year":
+			{},
+			"month":
+			{},
+			"day":
+			{}
 		}
 	},
 	"dateWithoutYear": "{day}/{month}",
-	"@dateWithoutYear": {
+	"@dateWithoutYear":
+	{
 		"type": "text",
-		"placeholders": {
-			"month": {},
-			"day": {}
+		"placeholders":
+		{
+			"month":
+			{},
+			"day":
+			{}
 		}
 	},
 	"dateAndTimeOfDay": "{date}, {timeOfDay}",
-	"@dateAndTimeOfDay": {
+	"@dateAndTimeOfDay":
+	{
 		"type": "text",
-		"placeholders": {
-			"date": {},
-			"timeOfDay": {}
+		"placeholders":
+		{
+			"date":
+			{},
+			"timeOfDay":
+			{}
 		}
 	},
 	"contentViewer": "Amharcóir ábhair",
-	"@contentViewer": {
+	"@contentViewer":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"containsUserName": "Coinníonn sé ainm úsáideora",
-	"@containsUserName": {
+	"@containsUserName":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"configureChat": "Cumraigh comhrá",
-	"@configureChat": {
+	"@configureChat":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"commandInvalid": "Ordú neamhbhailí",
-	"@commandInvalid": {
+	"@commandInvalid":
+	{
 		"type": "text"
 	},
 	"commandHint_send": "Seol téacs",
-	"@commandHint_send": {
+	"@commandHint_send":
+	{
 		"type": "text",
 		"description": "Usage hint for the command /send"
 	},
 	"commandHint_me": "Déan cur síos ort féin",
-	"@commandHint_me": {
+	"@commandHint_me":
+	{
 		"type": "text",
 		"description": "Usage hint for the command /me"
 	},
 	"clearText": "Glan an téacs",
-	"@clearText": {
+	"@clearText":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"clearArchive": "Glan an cartlann",
-	"@clearArchive": {},
+	"@clearArchive":
+	{},
 	"chatDetails": "Sonraí comhrá",
-	"@chatDetails": {
+	"@chatDetails":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"chatBackup": "Cúltaca comhrá",
-	"@chatBackup": {
+	"@chatBackup":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"changeWallpaper": "Athraigh cúlbhrat",
-	"@changeWallpaper": {
+	"@changeWallpaper":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"changedTheChatAvatar": "D'athraigh {username} abhatár an chomhrá",
-	"@changedTheChatAvatar": {
+	"@changedTheChatAvatar":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"changeDeviceName": "Athraigh ainm an ghléis",
-	"@changeDeviceName": {
+	"@changeDeviceName":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"cantOpenUri": "Ní féidir an URI {uri} a oscailt",
-	"@cantOpenUri": {
+	"@cantOpenUri":
+	{
 		"type": "text",
-		"placeholders": {
-			"uri": {}
+		"placeholders":
+		{
+			"uri":
+			{}
 		}
 	},
 	"cancel": "Cealaigh",
-	"@cancel": {
+	"@cancel":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"cachedKeys": "Eochracha i dtaisce",
-	"@cachedKeys": {
+	"@cachedKeys":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"botMessages": "Teachtaireachtaí bota",
-	"@botMessages": {
+	"@botMessages":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"blocked": "Bactha",
-	"@blocked": {
+	"@blocked":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"blockDevice": "Bac Gléas",
-	"@blockDevice": {
+	"@blockDevice":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"bannedUser": "Chuir {username} cosc ar {targetName}",
-	"@bannedUser": {
+	"@bannedUser":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {},
-			"targetName": {}
+		"placeholders":
+		{
+			"username":
+			{},
+			"targetName":
+			{}
 		}
 	},
 	"banned": "Coiscthe",
-	"@banned": {
+	"@banned":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"banFromChat": "Toirmisc ón gcomhrá",
-	"@banFromChat": {
+	"@banFromChat":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"sendOnEnter": "Seol ar iontráil",
-	"@sendOnEnter": {},
+	"@sendOnEnter":
+	{},
 	"avatarHasBeenChanged": "D'athraigh abhatár",
-	"@avatarHasBeenChanged": {
+	"@avatarHasBeenChanged":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"authentication": "Fíordheimhniú",
-	"@authentication": {
+	"@authentication":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"archivedRoom": "Seomra cartlainne",
-	"@archivedRoom": {
+	"@archivedRoom":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"archive": "Cartlann",
-	"@archive": {
+	"@archive":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"appLock": "Bac aip",
-	"@appLock": {
+	"@appLock":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"anyoneCanJoin": "Is féidir le aon duine dul isteach",
-	"@anyoneCanJoin": {
+	"@anyoneCanJoin":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"answeredTheCall": "D'fhreagair {senderName} an glao",
-	"@answeredTheCall": {
+	"@answeredTheCall":
+	{
 		"type": "text",
-		"placeholders": {
-			"senderName": {}
+		"placeholders":
+		{
+			"senderName":
+			{}
 		}
 	},
 	"alreadyHaveAnAccount": "An bhfuil cuntas agat cheana féin?",
-	"@alreadyHaveAnAccount": {
+	"@alreadyHaveAnAccount":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"allChats": "Gach comhrá",
-	"@allChats": {
+	"@allChats":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"all": "Gach",
-	"@all": {
+	"@all":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"alias": "ailias",
-	"@alias": {
+	"@alias":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"admin": "Riarthóir",
-	"@admin": {
+	"@admin":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"addToSpace": "Cuir go spás",
-	"@addToSpace": {},
+	"@addToSpace":
+	{},
 	"addNewFriend": "Cuir cara nua",
-	"@addNewFriend": {
+	"@addNewFriend":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"addGroupDescription": "Cuir tuairisc grúpa",
-	"@addGroupDescription": {
+	"@addGroupDescription":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"addEmail": "Cuir ríomhphoist",
-	"@addEmail": {
+	"@addEmail":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"activatedEndToEndEncryption": "Thosaigh {username} an criptiú ó dheireadh go deireadh",
-	"@activatedEndToEndEncryption": {
+	"@activatedEndToEndEncryption":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"accountInformation": "Faisnéis cuntais",
-	"@accountInformation": {
+	"@accountInformation":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"account": "Cuntas",
-	"@account": {
+	"@account":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"acceptedTheInvitation": "Ghlac {username} leis an cuireadh",
-	"@acceptedTheInvitation": {
+	"@acceptedTheInvitation":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"accept": "Glac",
-	"@accept": {
+	"@accept":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"about": "Faoi",
-	"@about": {
+	"@about":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"audioPlayerPlay": "Seinn",
-	"@audioPlayerPlay": {
+	"@audioPlayerPlay":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"audioPlayerPause": "Cuir ar sos",
-	"@audioPlayerPause": {
+	"@audioPlayerPause":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"askVerificationRequest": "Glac leis an iarratas fíoraithe seo ó {username}?",
-	"@askVerificationRequest": {
+	"@askVerificationRequest":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"askSSSSCache": "Cuir isteach do phasfrása stóir sábháilte nó d'eochair téarnaimh chun na heochracha a thaisceadh le do thoil.",
-	"@askSSSSCache": {
+	"@askSSSSCache":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"areYouSureYouWantToLogout": "An bhfuil tú cinnte gur mhaith leat logáil amach?",
-	"@areYouSureYouWantToLogout": {
+	"@areYouSureYouWantToLogout":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"areYouSure": "An bhfuil tú cinnte?",
-	"@areYouSure": {
+	"@areYouSure":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"areGuestsAllowedToJoin": "An bhfuil cead ag aoi-úsáideoirí a bheith páirteach",
-	"@areGuestsAllowedToJoin": {
+	"@areGuestsAllowedToJoin":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"invitedUser": "Thug {username} cuireadh do {targetName}",
-	"@invitedUser": {
+	"@invitedUser":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {},
-			"targetName": {}
+		"placeholders":
+		{
+			"username":
+			{},
+			"targetName":
+			{}
 		}
 	},
 	"hideRedactedEvents": "Folaigh imeachtaí athdhéanta",
-	"@hideRedactedEvents": {
+	"@hideRedactedEvents":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"guestsCanJoin": "Is féidir le haíonna páirt a ghlacadh",
-	"@guestsCanJoin": {
+	"@guestsCanJoin":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"guestsAreForbidden": "Tá cosc ar aíonna",
-	"@guestsAreForbidden": {
+	"@guestsAreForbidden":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"groupWith": "Grúpa le {displayname}",
-	"@groupWith": {
+	"@groupWith":
+	{
 		"type": "text",
-		"placeholders": {
-			"displayname": {}
+		"placeholders":
+		{
+			"displayname":
+			{}
 		}
 	},
 	"groupIsPublic": "Tá an grúpa poiblí",
-	"@groupIsPublic": {
+	"@groupIsPublic":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"groupDescriptionHasBeenChanged": "D'athraigh cur síos an ghrúpa",
-	"@groupDescriptionHasBeenChanged": {
+	"@groupDescriptionHasBeenChanged":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"fromTheInvitation": "Ón gcuireadh",
-	"@fromTheInvitation": {
+	"@fromTheInvitation":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
-	"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
-	"@enterYourHomeserver": {
+	"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
+	"@enterYourHomeserver":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"enterAUsername": "Cuir isteach ainm úsáideora",
-	"@enterAUsername": {
+	"@enterAUsername":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"end2endEncryptionSettings": "Socruithe criptithe ó dheireadh go deireadh",
-	"@end2endEncryptionSettings": {
+	"@end2endEncryptionSettings":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"emoteInvalid": "Gearrchód emote neamhbhailí!",
-	"@emoteInvalid": {
+	"@emoteInvalid":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"emoteExists": "Tá iomaite ann cheana féin!",
-	"@emoteExists": {
+	"@emoteExists":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"editRoomAvatar": "Cuir in eagar abhatár an tseomra",
-	"@editRoomAvatar": {
+	"@editRoomAvatar":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"editRoomAliases": "Cuir ailiasanna an tseomra in eagar",
-	"@editRoomAliases": {
+	"@editRoomAliases":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"editJitsiInstance": "Cuir ásc Jitsi in eagar",
-	"@editJitsiInstance": {
+	"@editJitsiInstance":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"editChatPermissions": "Cuir ceadanna an chomhrá in eagar",
-	"@editChatPermissions": {
+	"@editChatPermissions":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"editBlockedServers": "Cuir freastalaí blocáilte in eagar",
-	"@editBlockedServers": {
+	"@editBlockedServers":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"defaultPermissionLevel": "Leibhéal ceada réamhshocraithe",
-	"@defaultPermissionLevel": {
+	"@defaultPermissionLevel":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"unblockDevice": "Díbhlocáil Gléas",
-	"@unblockDevice": {
+	"@unblockDevice":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"contactHasBeenInvitedToTheGroup": "Tugadh cuireadh don theagmháil a thar isteach sa grúpa",
-	"@contactHasBeenInvitedToTheGroup": {
+	"@contactHasBeenInvitedToTheGroup":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"compareNumbersMatch": "Déan comparáid idir na huimhreacha seo a leanas agus déan cinnte go bhfuil na huimhreacha seo a leanas ag teacht le huimhreacha an ghléis eile:",
-	"@compareNumbersMatch": {
+	"@compareNumbersMatch":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"compareEmojiMatch": "Déan comparáid agus déan cinnte go bhfuil an emoji seo a leanas comhoiriúnach le emoji an ghléis eile:",
-	"@compareEmojiMatch": {
+	"@compareEmojiMatch":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"commandMissing": "Ní ordú é {command}.",
-	"@commandMissing": {
+	"@commandMissing":
+	{
 		"type": "text",
-		"placeholders": {
-			"command": {}
+		"placeholders":
+		{
+			"command":
+			{}
 		},
 		"description": "State that {command} is not a valid /command."
 	},
 	"commandHint_react": "Seol freagra mar fhreagairt",
-	"@commandHint_react": {
+	"@commandHint_react":
+	{
 		"type": "text",
 		"description": "Usage hint for the command /react"
 	},
 	"commandHint_op": "Socraigh leibhéal cumhachta an úsáideora áirithe (réamhshocrú: 50)",
-	"@commandHint_op": {
+	"@commandHint_op":
+	{
 		"type": "text",
 		"description": "Usage hint for the command /op"
 	},
 	"commandHint_myroomnick": "Socraigh d'ainm taispeána don seomra seo",
-	"@commandHint_myroomnick": {
+	"@commandHint_myroomnick":
+	{
 		"type": "text",
 		"description": "Usage hint for the command /myroomnick"
 	},
 	"commandHint_myroomavatar": "Cuir do phictiúr don seomra seo (le mxc-uri)",
-	"@commandHint_myroomavatar": {
+	"@commandHint_myroomavatar":
+	{
 		"type": "text",
 		"description": "Usage hint for the command /myroomavatar"
 	},
 	"commandHint_kick": "Bain an t-úsáideoir áirithe den seomra seo",
-	"@commandHint_kick": {
+	"@commandHint_kick":
+	{
 		"type": "text",
 		"description": "Usage hint for the command /kick"
 	},
 	"commandHint_join": "Téigh isteach sa seomra áirithe",
-	"@commandHint_join": {
+	"@commandHint_join":
+	{
 		"type": "text",
 		"description": "Usage hint for the command /join"
 	},
 	"commandHint_ban": "Cuir cosc ar an úsáideoir áirithe ón seomra seo",
-	"@commandHint_ban": {
+	"@commandHint_ban":
+	{
 		"type": "text",
 		"description": "Usage hint for the command /ban"
 	},
 	"commandHint_invite": "Cuir cosc ar an úsáideoir áirithe ón seomra seo",
-	"@commandHint_invite": {
+	"@commandHint_invite":
+	{
 		"type": "text",
 		"description": "Usage hint for the command /invite"
 	},
 	"chooseAStrongPassword": "Roghnaigh pasfhocal láidir",
-	"@chooseAStrongPassword": {
+	"@chooseAStrongPassword":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"chatHasBeenRemovedFromThisSpace": "Baineadh comhrá as an spás seo",
-	"@chatHasBeenRemovedFromThisSpace": {
+	"@chatHasBeenRemovedFromThisSpace":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"chatHasBeenAddedToThisSpace": "Cuireadh comhrá leis an spás seo",
-	"@chatHasBeenAddedToThisSpace": {},
+	"@chatHasBeenAddedToThisSpace":
+	{},
 	"chatBackupDescription": "Tá do chúltaca comhrá daingnithe le heochair slándála. Déan cinnte nach gcaillfidh tú é.",
-	"@chatBackupDescription": {
+	"@chatBackupDescription":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"channelCorruptedDecryptError": "Truaillíodh an criptiú",
-	"@channelCorruptedDecryptError": {
+	"@channelCorruptedDecryptError":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"changeTheNameOfTheGroup": "Athraigh ainm an ghrúpa",
-	"@changeTheNameOfTheGroup": {
+	"@changeTheNameOfTheGroup":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"changesHaveBeenSaved": "Sábháladh athruithe",
-	"@changesHaveBeenSaved": {
+	"@changesHaveBeenSaved":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"changedTheRoomInvitationLink": "D'athraigh {username} nasc an chuiridh",
-	"@changedTheRoomInvitationLink": {
+	"@changedTheRoomInvitationLink":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"changedTheRoomAliases": "D'athraigh {username} ailiasanna an tseomra",
-	"@changedTheRoomAliases": {
+	"@changedTheRoomAliases":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"changedTheProfileAvatar": "D'athraigh {username} a n-abhatár",
-	"@changedTheProfileAvatar": {
+	"@changedTheProfileAvatar":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"changedTheJoinRulesTo": "D'athraigh {username} na rialacha ceangail go: {joinRules}",
-	"@changedTheJoinRulesTo": {
+	"@changedTheJoinRulesTo":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {},
-			"joinRules": {}
+		"placeholders":
+		{
+			"username":
+			{},
+			"joinRules":
+			{}
 		}
 	},
 	"changedTheJoinRules": "D'athraigh {username} na rialacha ceangail",
-	"@changedTheJoinRules": {
+	"@changedTheJoinRules":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"changedTheHistoryVisibilityTo": "D'athraigh {username} infheictheacht na staire go: {rules}",
-	"@changedTheHistoryVisibilityTo": {
+	"@changedTheHistoryVisibilityTo":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {},
-			"rules": {}
+		"placeholders":
+		{
+			"username":
+			{},
+			"rules":
+			{}
 		}
 	},
 	"changedTheHistoryVisibility": "D'athraigh {username} infheictheacht na staire",
-	"@changedTheHistoryVisibility": {
+	"@changedTheHistoryVisibility":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"changedTheDisplaynameTo": "D'athraigh {username} a n-ainm taispeána go: '{displayname}'",
-	"@changedTheDisplaynameTo": {
+	"@changedTheDisplaynameTo":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {},
-			"displayname": {}
+		"placeholders":
+		{
+			"username":
+			{},
+			"displayname":
+			{}
 		}
 	},
 	"changedTheChatPermissions": "D'athraigh {username} na ceadanna comhrá",
-	"@changedTheChatPermissions": {
+	"@changedTheChatPermissions":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"changedTheChatNameTo": "D'athraigh {username} an t-ainm comhrá go: '{chatname}'",
-	"@changedTheChatNameTo": {
+	"@changedTheChatNameTo":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {},
-			"chatname": {}
+		"placeholders":
+		{
+			"username":
+			{},
+			"chatname":
+			{}
 		}
 	},
 	"changedTheChatDescriptionTo": "D'athraigh {username} an cur síos comhrá go: '{description}'",
-	"@changedTheChatDescriptionTo": {
+	"@changedTheChatDescriptionTo":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {},
-			"description": {}
+		"placeholders":
+		{
+			"username":
+			{},
+			"description":
+			{}
 		}
 	},
 	"autoplayImages": "Seinn greamáin agus straoiseog beoite go huathoibríoch",
-	"@autoplayImages": {
+	"@autoplayImages":
+	{
 		"type": "text",
-		"placeholder": {}
+		"placeholder":
+		{}
 	},
 	"createdTheChat": "Rinne {username} an comhrá",
-	"@createdTheChat": {
+	"@createdTheChat":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"createNewGroup": "Déan grúpa nua",
-	"@createNewGroup": {
+	"@createNewGroup":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"createAccountNow": "Déan cuntas anois",
-	"@createAccountNow": {
+	"@createAccountNow":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"copyToClipboard": "Cóipeáil ar an ghearrthaisce",
-	"@copyToClipboard": {
+	"@copyToClipboard":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"copiedToClipboard": "Cóipeáilte ar an ghearrthaisce",
-	"@copiedToClipboard": {
+	"@copiedToClipboard":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"containsDisplayName": "Coinníonn sé ainm taispeána",
-	"@containsDisplayName": {
+	"@containsDisplayName":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"connectionAttemptFailed": "Theip ar iarracht an naisc",
-	"@connectionAttemptFailed": {
+	"@connectionAttemptFailed":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"commandHint_plain": "Seol téacs neamhfhoirmithe",
-	"@commandHint_plain": {
+	"@commandHint_plain":
+	{
 		"type": "text",
 		"description": "Usage hint for the command /plain"
 	},
 	"commandHint_leave": "Fág an seomra seo",
-	"@commandHint_leave": {
+	"@commandHint_leave":
+	{
 		"type": "text",
 		"description": "Usage hint for the command /leave"
 	},
 	"commandHint_html": "Seol téacs HTML-formáidithe",
-	"@commandHint_html": {
+	"@commandHint_html":
+	{
 		"type": "text",
 		"description": "Usage hint for the command /html"
 	},
 	"chooseAUsername": "Roghnaigh ainm úsáideora",
-	"@chooseAUsername": {
+	"@chooseAUsername":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"changeYourAvatar": "Athraigh do abhatár",
-	"@changeYourAvatar": {
+	"@changeYourAvatar":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"changeTheServer": "Athraigh an freastalaí",
-	"@changeTheServer": {
+	"@changeTheServer":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"changeTheme": "Athraigh do stíl",
-	"@changeTheme": {
+	"@changeTheme":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
-	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
-	"@changeTheHomeserver": {
+	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
+	"@changeTheHomeserver":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"voiceMessage": "Glórphost",
-	"@voiceMessage": {
+	"@voiceMessage":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"videoCall": "Físghlao",
-	"@videoCall": {
+	"@videoCall":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"verifyUser": "Fíoraigh Úsáideoir",
-	"@verifyUser": {
+	"@verifyUser":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"verifyStart": "Tosaigh Fíorú",
-	"@verifyStart": {
+	"@verifyStart":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"verifyManual": "Fíoraigh de láimh",
-	"@verifyManual": {
+	"@verifyManual":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"unmuteChat": "Neamhciúnaigh comhrá",
-	"@unmuteChat": {
+	"@unmuteChat":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"hideUnknownEvents": "Folaigh imeachtaí anaithnide",
-	"@hideUnknownEvents": {
+	"@hideUnknownEvents":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"unknownDevice": "Gléas anaithnid",
-	"@unknownDevice": {
+	"@unknownDevice":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"toggleUnread": "Marcáil Léite/Neamhléite",
-	"@toggleUnread": {
+	"@toggleUnread":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"toggleMuted": "Scoránaigh mar ciúnaithe",
-	"@toggleMuted": {
+	"@toggleMuted":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"toggleFavorite": "Scoránaigh mar ceann is fearr leat",
-	"@toggleFavorite": {
+	"@toggleFavorite":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"theyMatch": "Tá siad ag teacht le chéile",
-	"@theyMatch": {
+	"@theyMatch":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"spaceName": "Ainm an spáis",
-	"@spaceName": {
+	"@spaceName":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"sourceCode": "Cód foinseach",
-	"@sourceCode": {
+	"@sourceCode":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"signUp": "Cláraigh Cuntas",
-	"@signUp": {
+	"@signUp":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"showPassword": "Taispeáin pasfhocal",
-	"@showPassword": {
+	"@showPassword":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"shareLocation": "Roinn suíomh",
-	"@shareLocation": {
+	"@shareLocation":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"setStatus": "Cuir stádas",
-	"@setStatus": {
+	"@setStatus":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"sendVideo": "Seol físeán",
-	"@sendVideo": {
+	"@sendVideo":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"sendSticker": "Seol greamán",
-	"@sendSticker": {
+	"@sendSticker":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"sendOriginal": "Seol an bunchóip",
-	"@sendOriginal": {
+	"@sendOriginal":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"sendMessages": "Seol teachtaireachtaí",
-	"@sendMessages": {
+	"@sendMessages":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"sendImage": "Seol íomhá",
-	"@sendImage": {
+	"@sendImage":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"sendFile": "Seol comhad",
-	"@sendFile": {
+	"@sendFile":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"sendAudio": "Seol fuaim",
-	"@sendAudio": {
+	"@sendAudio":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"securityKey": "Eochair slándála",
-	"@securityKey": {
+	"@securityKey":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"saveFile": "Sábháil comhad",
-	"@saveFile": {
+	"@saveFile":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"roomVersion": "Leagan seomra",
-	"@roomVersion": {
+	"@roomVersion":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"requestPermission": "Iarr cead",
-	"@requestPermission": {
+	"@requestPermission":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"reportMessage": "Tuairiscigh teachtaireacht",
-	"@reportMessage": {
+	"@reportMessage":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"removeMessage": "Bain teachtaireacht",
-	"@removeMessage": {
+	"@removeMessage":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"removeDevice": "Bain gléas",
-	"@removeDevice": {
+	"@removeDevice":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"redactMessage": "Bain teachtaireacht amach",
-	"@redactMessage": {
+	"@redactMessage":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"pushRules": "Rialacha na bhfógraí",
-	"@pushRules": {
+	"@pushRules":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"publicSpace": "Spás poiblí",
-	"@publicSpace": {
+	"@publicSpace":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"publicRooms": "Seomraí Poiblí",
-	"@publicRooms": {
+	"@publicRooms":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"publicKey": "Eochair Phoiblí",
-	"@publicKey": {
+	"@publicKey":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"publicGroups": "Grúpaí Poiblí",
-	"@publicGroups": {
+	"@publicGroups":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"pleaseChoose": "Roghnaigh le do thoil",
-	"@pleaseChoose": {
+	"@pleaseChoose":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"play": "Seinn {fileName}",
-	"@play": {
+	"@play":
+	{
 		"type": "text",
-		"placeholders": {
-			"fileName": {}
+		"placeholders":
+		{
+			"fileName":
+			{}
 		}
 	},
 	"passwordRecovery": "Aisfháil pasfhocail",
-	"@passwordRecovery": {
+	"@passwordRecovery":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"passwordForgotten": "Pasfhocal dearmadta",
-	"@passwordForgotten": {
+	"@passwordForgotten":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"openCamera": "Oscail ceamara",
-	"@openCamera": {
+	"@openCamera":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"obtainingLocation": "ag Aimsiú an suíomh…",
-	"@obtainingLocation": {
+	"@obtainingLocation":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"numberSelected": "{number} roghnaithe",
-	"@numberSelected": {
+	"@numberSelected":
+	{
 		"type": "text",
-		"placeholders": {
-			"number": {}
+		"placeholders":
+		{
+			"number":
+			{}
 		}
 	},
 	"noPermission": "Gan cead",
-	"@noPermission": {
+	"@noPermission":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"noDescription": "Gan cuntas",
-	"@noDescription": {
+	"@noDescription":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"newChat": "Comhrá nua",
-	"@newChat": {
+	"@newChat":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"muteChat": "Ciúnaigh comhrá",
-	"@muteChat": {
+	"@muteChat":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"memberChanges": "Athruithe ball",
-	"@memberChanges": {
+	"@memberChanges":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"loadMore": "Lódáil níos mó…",
-	"@loadMore": {
+	"@loadMore":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"joinRoom": "Téigh isteach sa seomra",
-	"@joinRoom": {
+	"@joinRoom":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"isTyping": "ag clóscríobh…",
-	"@isTyping": {
+	"@isTyping":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"inviteContact": "Tabhair cuireadh do theagmháil",
-	"@inviteContact": {
+	"@inviteContact":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"invalidEmail": "Ríomhphost neamhbhailí",
-	"@invalidEmail": {
+	"@invalidEmail":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"ignoreUsername": "Tabhair neamhaird ar ainm úsáideora",
-	"@ignoreUsername": {
+	"@ignoreUsername":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"ignoredUsers": "Úsáideoirí a dtugann tú neamhaird orthu",
-	"@ignoredUsers": {
+	"@ignoredUsers":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"groupDescription": "Cur síos ar an ngrúpa",
-	"@groupDescription": {
+	"@groupDescription":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"fromJoining": "Ó tar isteach",
-	"@fromJoining": {
+	"@fromJoining":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"fontSize": "Méid cló",
-	"@fontSize": {
+	"@fontSize":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"encryptionAlgorithm": "Algartam criptithe",
-	"@encryptionAlgorithm": {
+	"@encryptionAlgorithm":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"enableEncryption": "Tosaigh criptiú",
-	"@enableEncryption": {
+	"@enableEncryption":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"editDisplayname": "Cuir ainm taispeána in eagar",
-	"@editDisplayname": {
+	"@editDisplayname":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"discoverGroups": "Tar ar ghrúpaí",
-	"@discoverGroups": {
+	"@discoverGroups":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"discardPicture": "Scrios pictiúr",
-	"@discardPicture": {
+	"@discardPicture":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"currentlyActive": "Gníomhach faoi láthair",
-	"@currentlyActive": {
+	"@currentlyActive":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"changelog": "Loga na n-athruithe",
-	"@changelog": {
+	"@changelog":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"fileSize": "Méid an chomhaid",
-	"@fileSize": {
+	"@fileSize":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"fileName": "Ainm an chomhaid",
-	"@fileName": {
+	"@fileName":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"everythingReady": "Gach rud réidh!",
-	"@everythingReady": {
+	"@everythingReady":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"emptyChat": "Comhrá folamh",
-	"@emptyChat": {
+	"@emptyChat":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"emoteShortcode": "Gearrchód straoiseoige",
-	"@emoteShortcode": {
+	"@emoteShortcode":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"emoteSettings": "Socruithe straoiseoige",
-	"@emoteSettings": {
+	"@emoteSettings":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"downloadFile": "Íoslódáil comhad",
-	"@downloadFile": {
+	"@downloadFile":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"changePassword": "Athraigh an pasfhocal",
-	"@changePassword": {
+	"@changePassword":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"darkTheme": "Dorcha",
-	"@darkTheme": {
+	"@darkTheme":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"create": "Cruthaigh",
-	"@create": {
+	"@create":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"copy": "Cóipeáil",
-	"@copy": {
+	"@copy":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"connect": "Ceangail",
-	"@connect": {
+	"@connect":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"confirm": "Deimhnigh",
-	"@confirm": {
+	"@confirm":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"close": "Dún",
-	"@close": {
+	"@close":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"chats": "Comhráite",
-	"@chats": {
+	"@chats":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"chat": "Comhrá",
-	"@chat": {
+	"@chat":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"scanQrCode": "Scan cód QR",
-	"@scanQrCode": {},
+	"@scanQrCode":
+	{},
 	"typeInInviteLinkManually": "Clóscríobh an nasc cuiridh de láimh...",
-	"@typeInInviteLinkManually": {},
+	"@typeInInviteLinkManually":
+	{},
 	"createNewChatExplaination": "Ní gá duit ach an cód QR a scanadh nó do nasc cuiridh a roinnt mura bhfuil sibh in aice lena chéile.",
-	"@createNewChatExplaination": {},
+	"@createNewChatExplaination":
+	{},
 	"shareYourInviteLink": "Roinn do nasc cuiridh",
-	"@shareYourInviteLink": {},
-	"norechainonlineServer": "Ní freastalaí Líonra nód Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node é {Server1}. Úsáid {server2} ina ionad?",
-	"@norechainonlineServer": {
+	"@shareYourInviteLink":
+	{},
+	"norechainonlineServer": "Ní freastalaí Líonra nód Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node é {Server1}. Úsáid {server2} ina ionad?",
+	"@norechainonlineServer":
+	{
 		"type": "text",
-		"placeholders": {
-			"server1": {},
-			"server2": {}
+		"placeholders":
+		{
+			"server1":
+			{},
+			"server2":
+			{}
 		}
 	},
-	"noGoogleServicesWarning": "Is cosúil nach bhfuil aon seirbhísí Google agat ar do ghuthán. Sin cinneadh maith do do phríobháideacht! Chun fógraí faoi bhrú a fháil ón Ardán REChain.Online molaimid https://microg.org/ nó https://unifiedpush.org/ a úsáid.",
-	"@noGoogleServicesWarning": {
+	"noGoogleServicesWarning": "Is cosúil nach bhfuil aon seirbhísí Google agat ar do ghuthán. Sin cinneadh maith do do phríobháideacht! Chun fógraí faoi bhrú a fháil ón Ardán REChain ® 🪐 molaimid https://microg.org/ nó https://unifiedpush.org/ a úsáid.",
+	"@noGoogleServicesWarning":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"noEncryptionForPublicRooms": "Ní féidir leat criptiú a ghníomhachtú ach a luaithe nach bhfuil an seomra inrochtana go poiblí a thuilleadh.",
-	"@noEncryptionForPublicRooms": {
+	"@noEncryptionForPublicRooms":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"noEmotesFound": "Níor aimsíodh aon straoiseoga. 😕",
-	"@noEmotesFound": {
+	"@noEmotesFound":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
-	"noCrossSignBootstrap": "Níl síniú tras-shínithe ar fáil ar Ardán REChain.Online ag an am seo. Cuir ar chumas é laistigh den REChain 🪐 ina ionad.",
-	"@noCrossSignBootstrap": {
+	"noCrossSignBootstrap": "Níl síniú tras-shínithe ar fáil ar Ardán REChain.Online ag an am seo. Cuir ar chumas é laistigh den REChain ® 🪐 ina ionad.",
+	"@noCrossSignBootstrap":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"noConnectionToTheServer": "Gan aon nasc leis an bhfreastalaí",
-	"@noConnectionToTheServer": {
+	"@noConnectionToTheServer":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"newVerificationRequest": "Iarratas fíoraithe nua!",
-	"@newVerificationRequest": {
+	"@newVerificationRequest":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
-	"newMessageInrechainonline": "Teachtaireacht nua ar Ardán REChain.Online!",
-	"@newMessageInrechainonline": {
+	"newMessageInrechainonline": "Teachtaireacht nua ar Ardán REChain ® 🪐!",
+	"@newMessageInrechainonline":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"needPantalaimonWarning": "Bí ar an eolas go dteastaíonn Pantalaimon uait chun criptiú ó cheann go ceann a úsáid anois.",
-	"@needPantalaimonWarning": {
+	"@needPantalaimonWarning":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"moreEvents": "{count,plural, =1{1 imeacht níos mó} other{{count} níos mó imeachtaí}}",
-	"@moreEvents": {
+	"@moreEvents":
+	{
 		"type": "text",
-		"placeholders": {
-			"count": {}
+		"placeholders":
+		{
+			"count":
+			{}
 		}
 	},
 	"messageWillBeRemovedWarning": "Bainfear an teachtaireacht do na rannpháirtithe go léir",
-	"@messageWillBeRemovedWarning": {
+	"@messageWillBeRemovedWarning":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"makeSureTheIdentifierIsValid": "Cinntigh go bhfuil an t-aitheantóir bailí",
-	"@makeSureTheIdentifierIsValid": {
+	"@makeSureTheIdentifierIsValid":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"makeAModerator": "Ceap modhnóir",
-	"@makeAModerator": {
+	"@makeAModerator":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"makeAnAdmin": "Ceap riarachán",
-	"@makeAnAdmin": {
+	"@makeAnAdmin":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"loginWith": "Sínigh isteach le {brand}",
-	"@loginWith": {
+	"@loginWith":
+	{
 		"type": "text",
-		"placeholders": {
-			"brand": {}
+		"placeholders":
+		{
+			"brand":
+			{}
 		}
 	},
 	"logInTo": "Logáil isteach chuig {homeserver}",
-	"@logInTo": {
+	"@logInTo":
+	{
 		"type": "text",
-		"placeholders": {
-			"homeserver": {}
+		"placeholders":
+		{
+			"homeserver":
+			{}
 		}
 	},
 	"locationPermissionDeniedNotice": "Diúltaíodh cead suímh. Deonaigh dóibh le do thoil go mbeidh tú in ann do shuíomh a roinnt.",
-	"@locationPermissionDeniedNotice": {
+	"@locationPermissionDeniedNotice":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"locationDisabledNotice": "Tá seirbhísí suímh díchumasaithe. Cuir ar a gcumas le do thoil a bheith in ann do shuíomh a roinnt.",
-	"@locationDisabledNotice": {
+	"@locationDisabledNotice":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"loadingPleaseWait": "Ag lódáil… Fan, le do thoil.",
-	"@loadingPleaseWait": {
+	"@loadingPleaseWait":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"loadCountMoreParticipants": "Lódáil {count} níos mó rannpháirtithe",
-	"@loadCountMoreParticipants": {
+	"@loadCountMoreParticipants":
+	{
 		"type": "text",
-		"placeholders": {
-			"count": {}
+		"placeholders":
+		{
+			"count":
+			{}
 		}
 	},
 	"leftTheChat": "Fágadh an comhrá",
-	"@leftTheChat": {
+	"@leftTheChat":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"lastSeenLongTimeAgo": "Le feiceáil i bhfad ó shin",
-	"@lastSeenLongTimeAgo": {
+	"@lastSeenLongTimeAgo":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"lastSeenIp": "IP le feiceáil go deireanach",
-	"@lastSeenIp": {
+	"@lastSeenIp":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"lastActiveAgo": "Gníomhach deireanach: {localizedTimeShort}",
-	"@lastActiveAgo": {
+	"@lastActiveAgo":
+	{
 		"type": "text",
-		"placeholders": {
-			"localizedTimeShort": {}
+		"placeholders":
+		{
+			"localizedTimeShort":
+			{}
 		}
 	},
 	"kickFromChat": "Caith é amach as an comhrá",
-	"@kickFromChat": {
+	"@kickFromChat":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"kicked": "Chaith {username} {targetName} amach",
-	"@kicked": {
+	"@kicked":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {},
-			"targetName": {}
+		"placeholders":
+		{
+			"username":
+			{},
+			"targetName":
+			{}
 		}
 	},
 	"kickedAndBanned": "Chaith {username} amach agus chuir cosc ar {targetName} freisin",
-	"@kickedAndBanned": {
+	"@kickedAndBanned":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {},
-			"targetName": {}
+		"placeholders":
+		{
+			"username":
+			{},
+			"targetName":
+			{}
 		}
 	},
 	"keysMissing": "Tá na heochracha ar iarraidh",
-	"@keysMissing": {
+	"@keysMissing":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"keysCached": "Cuirtear eochracha i dtaisce",
-	"@keysCached": {
+	"@keysCached":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"joinedTheChat": "Tháinig {username} isteach sa chomhrá",
-	"@joinedTheChat": {
+	"@joinedTheChat":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"isDeviceKeyCorrect": "An bhfuil an eochair gléis seo a leanas ceart?",
-	"@isDeviceKeyCorrect": {
+	"@isDeviceKeyCorrect":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"invitedUsersOnly": "Úsáideoirí le cuireadh amháin",
-	"@invitedUsersOnly": {
+	"@invitedUsersOnly":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"inviteContactToGroup": "Tabhair cuireadh do theagmháil chuig {groupName}",
-	"@inviteContactToGroup": {
+	"@inviteContactToGroup":
+	{
 		"type": "text",
-		"placeholders": {
-			"groupName": {}
+		"placeholders":
+		{
+			"groupName":
+			{}
 		}
 	},
 	"incorrectPassphraseOrKey": "Pasfhrása nó eochair téarnaimh mícheart",
-	"@incorrectPassphraseOrKey": {
+	"@incorrectPassphraseOrKey":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"iHaveClickedOnLink": "Chliceáil mé ar an nasc",
-	"@iHaveClickedOnLink": {
+	"@iHaveClickedOnLink":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"howOffensiveIsThisContent": "Cé chomh maslach atá an t-ábhar seo?",
-	"@howOffensiveIsThisContent": {
+	"@howOffensiveIsThisContent":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"extremeOffensive": "Fíor-maslach",
-	"@extremeOffensive": {
+	"@extremeOffensive":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"homeserverIsNotCompatible": "Níl an freastalaí baile comhoiriúnach",
-	"@homeserverIsNotCompatible": {
+	"@homeserverIsNotCompatible":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"hasWithdrawnTheInvitationFor": "Tharraing {username} an cuireadh do {targetName} siar",
-	"@hasWithdrawnTheInvitationFor": {
+	"@hasWithdrawnTheInvitationFor":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {},
-			"targetName": {}
+		"placeholders":
+		{
+			"username":
+			{},
+			"targetName":
+			{}
 		}
 	},
 	"goToTheNewRoom": "Téigh go dtí an seomra nua",
-	"@goToTheNewRoom": {
+	"@goToTheNewRoom":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"errorObtainingLocation": "Earráid maidir le suíomh a fháil: {error}",
-	"@errorObtainingLocation": {
+	"@errorObtainingLocation":
+	{
 		"type": "text",
-		"placeholders": {
-			"error": {}
+		"placeholders":
+		{
+			"error":
+			{}
 		}
 	},
 	"enterASpacepName": "Cuir isteach ainm spáis",
-	"@enterASpacepName": {},
+	"@enterASpacepName":
+	{},
 	"enterAnEmailAddress": "Cuir isteach seoladh ríomhphoist",
-	"@enterAnEmailAddress": {
+	"@enterAnEmailAddress":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"enterAGroupName": "Iontráil ainm grúpa",
-	"@enterAGroupName": {
+	"@enterAGroupName":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"endedTheCall": "Chuir {senderName} deireadh leis an nglao",
-	"@endedTheCall": {
+	"@endedTheCall":
+	{
 		"type": "text",
-		"placeholders": {
-			"senderName": {}
+		"placeholders":
+		{
+			"senderName":
+			{}
 		}
 	},
 	"encryptionNotEnabled": "Ní chumasaítear criptiú",
-	"@encryptionNotEnabled": {
+	"@encryptionNotEnabled":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"enableEncryptionWarning": "Ní bheidh in ann an criptiú a dhíchumasú níos mó. An bhfuil tú cinnte?",
-	"@enableEncryptionWarning": {
+	"@enableEncryptionWarning":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"enableEmotesGlobally": "Cumasaigh pacáiste straoiseoige go huilíoch",
-	"@enableEmotesGlobally": {
+	"@enableEmotesGlobally":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"enableChatBackup": "Cumasaigh an cúltaca comhrá chun do chuid comhráite a chailleadh riamh.",
-	"@enableChatBackup": {
+	"@enableChatBackup":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"emoteWarnNeedToPick": "Caithfidh tú gearrchód straoiseoige agus íomhá a roghnú!",
-	"@emoteWarnNeedToPick": {
+	"@emoteWarnNeedToPick":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"emotePacks": "Pacáistí straoiseoige don seomra",
-	"@emotePacks": {
+	"@emotePacks":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"dontAskAgain": "Cealaigh agus ná fiafraigh arís",
-	"@dontAskAgain": {
+	"@dontAskAgain":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"displaynameHasBeenChanged": "Athraíodh an t-ainm taispeána",
-	"@displaynameHasBeenChanged": {
+	"@displaynameHasBeenChanged":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"deviceVerifyDescription": "Níl an criptiú slán ach amháin nuair a fhíoraítear gach gléas.",
-	"@deviceVerifyDescription": {
+	"@deviceVerifyDescription":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"deactivateAccountWarning": "Díghníomhachtaeoidh sé seo do chuntas úsáideora. Ní féidir é seo a chealú! An bhfuil tú cinnte?",
-	"@deactivateAccountWarning": {
+	"@deactivateAccountWarning":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"couldNotSetDisplayname": "Níorbh fhéidir an t-ainm taispeána a shocrú",
-	"@couldNotSetDisplayname": {
+	"@couldNotSetDisplayname":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"couldNotSetAvatar": "Níorbh fhéidir abhatár a shocrú",
-	"@couldNotSetAvatar": {
+	"@couldNotSetAvatar":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"couldNotDecryptMessage": "Níorbh fhéidir teachtaireacht a dhíchriptiú: {error}",
-	"@couldNotDecryptMessage": {
+	"@couldNotDecryptMessage":
+	{
 		"type": "text",
-		"placeholders": {
-			"error": {}
+		"placeholders":
+		{
+			"error":
+			{}
 		}
 	},
 	"contentHasBeenReported": "Tuairiscíodh an t-ábhar do lucht riaracháin an fhreastalaí",
-	"@contentHasBeenReported": {
+	"@contentHasBeenReported":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"commandHint_unban": "Cuir deireadh an cosc den úsáideoir áirithe ón seomra seo",
-	"@commandHint_unban": {
+	"@commandHint_unban":
+	{
 		"type": "text",
 		"description": "Usage hint for the command /unban"
 	},
 	"changedTheGuestAccessRulesTo": "D'athraigh {username} na rialacha maidir le rochtain aoi chuig: {rules}",
-	"@changedTheGuestAccessRulesTo": {
+	"@changedTheGuestAccessRulesTo":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {},
-			"rules": {}
+		"placeholders":
+		{
+			"username":
+			{},
+			"rules":
+			{}
 		}
 	},
 	"changedTheGuestAccessRules": "D'athraigh {username} na rialacha rochtana aoi",
-	"@changedTheGuestAccessRules": {
+	"@changedTheGuestAccessRules":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"badServerVersionsException": "Tá na leaganacha sonraíochta seo ar fáil faoin freastalaí baile:\n{serverVersions}\nAch níl ach na ceann seo ar fáil faoin aip seo {supportedVersions}",
-	"@badServerVersionsException": {
+	"@badServerVersionsException":
+	{
 		"type": "text",
-		"placeholders": {
-			"serverVersions": {},
-			"supportedVersions": {}
+		"placeholders":
+		{
+			"serverVersions":
+			{},
+			"supportedVersions":
+			{}
 		}
 	},
 	"badServerLoginTypesException": "Tá na cineálacha logála isteach seo ar fáil faoin freastalaí baile:\n{serverVersions}\nAch níl ach na ceann seo ar fáil faoin aip seo:\n{supportedVersions}",
-	"@badServerLoginTypesException": {
+	"@badServerLoginTypesException":
+	{
 		"type": "text",
-		"placeholders": {
-			"serverVersions": {},
-			"supportedVersions": {}
+		"placeholders":
+		{
+			"serverVersions":
+			{},
+			"supportedVersions":
+			{}
 		}
 	},
 	"askSSSSVerify": "Cuir isteach do phasfrása stóir sábháilte nó d'eochair téarnaimh chun do sheisiún a fhíorú le do thoil.",
-	"@askSSSSVerify": {
+	"@askSSSSVerify":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"askSSSSSign": "Chun a bheith in ann an duine eile a shíniú, cuir isteach do phasfhrása stóir sábháilte nó d'eochair téarnaimh.",
-	"@askSSSSSign": {
+	"@askSSSSSign":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"yourPublicKey": "D'eochair phoiblí",
-	"@yourPublicKey": {
+	"@yourPublicKey":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"yourOwnUsername": "D'ainm úsáideora féin",
-	"@yourOwnUsername": {
+	"@yourOwnUsername":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"yourChatsAreBeingSynced": "Tá do chuid comhráite á sioncronú…",
-	"@yourChatsAreBeingSynced": {
+	"@yourChatsAreBeingSynced":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"youHaveBeenBannedFromThisChat": "Cuireadh cosc ort ón gcomhrá seo",
-	"@youHaveBeenBannedFromThisChat": {
+	"@youHaveBeenBannedFromThisChat":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"youCannotInviteYourself": "Ní féidir leat cuireadh a thabhairt duit féin",
-	"@youCannotInviteYourself": {
+	"@youCannotInviteYourself":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"youAreNoLongerParticipatingInThisChat": "Níl tú ag glacadh páirte sa chomhrá seo a thuilleadh",
-	"@youAreNoLongerParticipatingInThisChat": {
+	"@youAreNoLongerParticipatingInThisChat":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"youAreInvitedToThisChat": "Tugtar cuireadh duit chuig an gcomhrá seo",
-	"@youAreInvitedToThisChat": {
+	"@youAreInvitedToThisChat":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"writeAMessage": "Scríobh teachtaireacht…",
-	"@writeAMessage": {
+	"@writeAMessage":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"withTheseAddressesRecoveryDescription": "Leis na seoltaí seo is féidir leat do phasfhocal a athshlánú.",
-	"@withTheseAddressesRecoveryDescription": {
+	"@withTheseAddressesRecoveryDescription":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"wipeChatBackup": "Glan do cúltaca comhrá a chruthú eochair slándála nua?",
-	"@wipeChatBackup": {
+	"@wipeChatBackup":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"whyDoYouWantToReportThis": "Cén fáth ar mhaith leat é seo a thuairisciú?",
-	"@whyDoYouWantToReportThis": {
+	"@whyDoYouWantToReportThis":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"whoIsAllowedToJoinThisGroup": "Cé a bhfuil cead aige/aici dul isteach sa ghrúpa seo",
-	"@whoIsAllowedToJoinThisGroup": {
+	"@whoIsAllowedToJoinThisGroup":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"whoCanPerformWhichAction": "Cé atá in ann an gníomh a dhéanamh",
-	"@whoCanPerformWhichAction": {
+	"@whoCanPerformWhichAction":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
-	"welcomeText": "Fáilte go REChain.Online! Todhchaí Príobháideach agus Slán atá tagtha go réidh!",
-	"@welcomeText": {
+	"welcomeText": "Fáilte go REChain ® 🪐! Todhchaí Príobháideach agus Slán atá tagtha go réidh!",
+	"@welcomeText":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"verifySuccess": "D'fhíoraigh tú go rathúil!",
-	"@verifySuccess": {
+	"@verifySuccess":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"verifiedSession": "Fíoraíodh an seisiún go rathúil!",
-	"@verifiedSession": {
+	"@verifiedSession":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"userNotVerified": "Níl an t-úsáideoir fíoraithe",
-	"@userNotVerified": {
+	"@userNotVerified":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"userVerified": "Tá an t-úsáideoir fíoraithe",
-	"@userVerified": {
+	"@userVerified":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"userLeftTheChat": "D'fhág {username} an comhrá",
-	"@userLeftTheChat": {
+	"@userLeftTheChat":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"userAndUserAreTyping": "Tá {username} agus {username2} ag clóscríobh…",
-	"@userAndUserAreTyping": {
+	"@userAndUserAreTyping":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {},
-			"username2": {}
+		"placeholders":
+		{
+			"username":
+			{},
+			"username2":
+			{}
 		}
 	},
 	"userAndOthersAreTyping": "tá {username} agus {count} daoine eile ag clóscríobh…",
-	"@userAndOthersAreTyping": {
+	"@userAndOthersAreTyping":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {},
-			"count": {}
+		"placeholders":
+		{
+			"username":
+			{},
+			"count":
+			{}
 		}
 	},
 	"useAmoledTheme": "Úsáid dathanna comhoiriúnacha le AMOLED?",
-	"@useAmoledTheme": {
+	"@useAmoledTheme":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"unreadMessages": "{unreadEvents, plural, =1{1 teachtaireacht neamhléite} other{{unreadCount} teachtaireachtaí neamhléite}}",
-	"@unreadMessages": {
+	"@unreadMessages":
+	{
 		"type": "text",
-		"placeholders": {
-			"unreadEvents": {}
+		"placeholders":
+		{
+			"unreadEvents":
+			{}
 		}
 	},
 	"unreadChats": "{unreadCount, plural, =1{1 comhrá neamhléite} other{{unreadCount} comhráite neamhléite}}",
-	"@unreadChats": {
+	"@unreadChats":
+	{
 		"type": "text",
-		"placeholders": {
-			"unreadCount": {}
+		"placeholders":
+		{
+			"unreadCount":
+			{}
 		}
 	},
 	"unknownSessionVerify": "Seisiún anaithnid, fíoraigh é le do thoil",
-	"@unknownSessionVerify": {
+	"@unknownSessionVerify":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"unknownEncryptionAlgorithm": "Algartam criptithe anaithnid",
-	"@unknownEncryptionAlgorithm": {
+	"@unknownEncryptionAlgorithm":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"unbannedUser": "Chuir {username} deireadh an cosc {targetName}",
-	"@unbannedUser": {
+	"@unbannedUser":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {},
-			"targetName": {}
+		"placeholders":
+		{
+			"username":
+			{},
+			"targetName":
+			{}
 		}
 	},
 	"tryToSendAgain": "Déan iarracht a sheoladh arís",
-	"@tryToSendAgain": {
+	"@tryToSendAgain":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"transferFromAnotherDevice": "Aistriú ó ghléas eile",
-	"@transferFromAnotherDevice": {
+	"@transferFromAnotherDevice":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"tooManyRequestsWarning": "An iomarca iarratas. Bain triail eile as níos déanaí!",
-	"@tooManyRequestsWarning": {
+	"@tooManyRequestsWarning":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"thisRoomHasBeenArchived": "Tá an seomra seo curtha i gcartlann.",
-	"@thisRoomHasBeenArchived": {
+	"@thisRoomHasBeenArchived":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"theyDontMatch": "Ní raibh siad ag teacht le chéile",
-	"@theyDontMatch": {
+	"@theyDontMatch":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"tapToShowMenu": "Tapáil chun an roghchlár a thaispeáint",
-	"@tapToShowMenu": {
+	"@tapToShowMenu":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"sharedTheLocation": "Roinn {username} an suíomh",
-	"@sharedTheLocation": {
+	"@sharedTheLocation":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"setPermissionsLevel": "Socraigh leibhéal ceadanna",
-	"@setPermissionsLevel": {
+	"@setPermissionsLevel":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"setInvitationLink": "Socraigh nasc cuiridh",
-	"@setInvitationLink": {
+	"@setInvitationLink":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"setGroupDescription": "Socraigh cur síos ar an ngrúpa",
-	"@setGroupDescription": {
+	"@setGroupDescription":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"setCustomEmotes": "Socraigh straoiseoga saincheaptha",
-	"@setCustomEmotes": {
+	"@setCustomEmotes":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"setAsCanonicalAlias": "Socraigh mar phríomh-ailias",
-	"@setAsCanonicalAlias": {
+	"@setAsCanonicalAlias":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"setAProfilePicture": "Socraigh pictiúr próifíle",
-	"@setAProfilePicture": {
+	"@setAProfilePicture":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"sessionVerified": "Tá an seisiún fíoraithe",
-	"@sessionVerified": {
+	"@sessionVerified":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
-	"sentryInfo": "Eolas faoi do phríobháideacht: https://rechain.online/en/privacy.html",
-	"@sentryInfo": {
+	"sentryInfo": "Eolas faoi do phríobháideacht: https://rechain.online/privacy-policy.html",
+	"@sentryInfo":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"sentCallInformations": "Sheol {senderName} faisnéis maidir le glaonna",
-	"@sentCallInformations": {
+	"@sentCallInformations":
+	{
 		"type": "text",
-		"placeholders": {
-			"senderName": {}
+		"placeholders":
+		{
+			"senderName":
+			{}
 		}
 	},
 	"sentAVideo": "Sheol {username} físeán",
-	"@sentAVideo": {
+	"@sentAVideo":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"sentASticker": "Sheol {username} greamán",
-	"@sentASticker": {
+	"@sentASticker":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"sentAPicture": "Sheol {username} pictiúr",
-	"@sentAPicture": {
+	"@sentAPicture":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"seenByUserAndUser": "Le feiceáil ag {username} agus {username2}",
-	"@seenByUserAndUser": {
+	"@seenByUserAndUser":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {},
-			"username2": {}
+		"placeholders":
+		{
+			"username":
+			{},
+			"username2":
+			{}
 		}
 	},
 	"seenByUserAndCountOthers": "{count, plural, other{Le feiceáil ag {username} agus {count} daoine eile}}",
-	"@seenByUserAndCountOthers": {
+	"@seenByUserAndCountOthers":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {},
-			"count": {}
+		"placeholders":
+		{
+			"username":
+			{},
+			"count":
+			{}
 		}
 	},
 	"saveFileToFolder": "Sábháil comhad chuig an bhfillteán seo",
-	"@saveFileToFolder": {
+	"@saveFileToFolder":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"savedFileAs": "Sábháladh comhad mar {filename}",
-	"@savedFileAs": {
+	"@savedFileAs":
+	{
 		"type": "text",
-		"placeholders": {
-			"filename": {}
+		"placeholders":
+		{
+			"filename":
+			{}
 		}
 	},
 	"revokeAllPermissions": "Cúlghair gach cead",
-	"@revokeAllPermissions": {
+	"@revokeAllPermissions":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"requestToReadOlderMessages": "Iarraidh teachtaireachtaí níos sine a léamh",
-	"@requestToReadOlderMessages": {
+	"@requestToReadOlderMessages":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"replaceRoomWithNewerVersion": "Cuir leagan seomra níos nuaí in ionad an tseomra",
-	"@replaceRoomWithNewerVersion": {
+	"@replaceRoomWithNewerVersion":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"renderRichContent": "Taispeáin ábhar teachtaireachta saibhir",
-	"@renderRichContent": {
+	"@renderRichContent":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"removeYourAvatar": "Bain d'abhatár",
-	"@removeYourAvatar": {
+	"@removeYourAvatar":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"unbanFromChat": "Cuir deireadh an cosc ón gcomhrá",
-	"@unbanFromChat": {
+	"@unbanFromChat":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"removedBy": "Bainte de ag {username}",
-	"@removedBy": {
+	"@removedBy":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"removeAllOtherDevices": "Bain gach gléas eile",
-	"@removeAllOtherDevices": {
+	"@removeAllOtherDevices":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"rejectedTheInvitation": "Dhiúltaigh {username} don chuireadh",
-	"@rejectedTheInvitation": {
+	"@rejectedTheInvitation":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"redactedAnEvent": "Rinne {username} imeacht a athdhéanamh",
-	"@redactedAnEvent": {
+	"@redactedAnEvent":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"pleaseFollowInstructionsOnWeb": "Lean na treoracha ar an suíomh gréasáin agus tapáil \"ar aghaidh\".",
-	"@pleaseFollowInstructionsOnWeb": {
+	"@pleaseFollowInstructionsOnWeb":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"pleaseEnterYourUsername": "Cuir isteach d'ainm úsáideora le do thoil",
-	"@pleaseEnterYourUsername": {
+	"@pleaseEnterYourUsername":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"pleaseEnterYourPin": "Cuir isteach d'uimhir PIN le do thoil",
-	"@pleaseEnterYourPin": {
+	"@pleaseEnterYourPin":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"pleaseEnterYourPassword": "Iontráil do phasfhocal le do thoil",
-	"@pleaseEnterYourPassword": {
+	"@pleaseEnterYourPassword":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"pleaseEnterSecurityKey": "Iontráil d'eochair slándála le do thoil:",
-	"@pleaseEnterSecurityKey": {
+	"@pleaseEnterSecurityKey":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
-	"pleaseEnterArechainonlineIdentifier": "Iontráil Aitheantas Líonra nód Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node.",
-	"@pleaseEnterArechainonlineIdentifier": {
+	"pleaseEnterArechainonlineIdentifier": "Iontráil Aitheantas Líonra nód Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node.",
+	"@pleaseEnterArechainonlineIdentifier":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"pleaseEnter4Digits": "Iontráil 4 dhigit le do thoil nó fág folamh chun glas aipe a dhíchumasú.",
-	"@pleaseEnter4Digits": {
+	"@pleaseEnter4Digits":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"pleaseClickOnLink": "Cliceáil ar an nasc sa ríomhphost agus ansin lean ar aghaidh.",
-	"@pleaseClickOnLink": {
+	"@pleaseClickOnLink":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"pleaseChooseAUsername": "Roghnaigh ainm úsáideora le do thoil",
-	"@pleaseChooseAUsername": {
+	"@pleaseChooseAUsername":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"pleaseChooseAPasscode": "Roghnaigh paschód le do thoil",
-	"@pleaseChooseAPasscode": {
+	"@pleaseChooseAPasscode":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"pickImage": "Roghnaigh íomhá",
-	"@pickImage": {
+	"@pickImage":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"passwordHasBeenChanged": "Athraíodh an pasfhocal",
-	"@passwordHasBeenChanged": {
+	"@passwordHasBeenChanged":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"passphraseOrKey": "pasfhrása nó eochair téarnaimh",
-	"@passphraseOrKey": {
+	"@passphraseOrKey":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"participatingUserDevices": "Gléasanna úsáideora rannpháirteacha",
-	"@participatingUserDevices": {
+	"@participatingUserDevices":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"optionalGroupName": "(Optional) Ainm an ghrúpa",
-	"@optionalGroupName": {
+	"@optionalGroupName":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"serverRequiresEmail": "Ní mór don fhreastalaí seo do sheoladh ríomhphoist a bhailíochtú le haghaidh clárúcháin.",
-	"@serverRequiresEmail": {},
+	"@serverRequiresEmail":
+	{},
 	"openInMaps": "Oscail i léarscáileanna",
-	"@openInMaps": {
+	"@openInMaps":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"openAppToReadMessages": "Oscail an aip chun teachtaireachtaí a léamh",
-	"@openAppToReadMessages": {
+	"@openAppToReadMessages":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"oopsSomethingWentWrong": "Úps, chuaigh rud éigin mícheart …",
-	"@oopsSomethingWentWrong": {
+	"@oopsSomethingWentWrong":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"oopsPushError": "Hoips! Ar an drochuair, tharla earráid nuair a bhí na fógraí brú á mbunú.",
-	"@oopsPushError": {
+	"@oopsPushError":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"onlineKeyBackupEnabled": "Tá Cúltaca Eochair Ar Líne cumasaithe",
-	"@onlineKeyBackupEnabled": {
+	"@onlineKeyBackupEnabled":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"onlineKeyBackupDisabled": "Tá Cúltaca Eochair Ar Líne díchumasaithe",
-	"@onlineKeyBackupDisabled": {
+	"@onlineKeyBackupDisabled":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"numUsersTyping": "Tá {count} úsáideoirí ag clóscríobh…",
-	"@numUsersTyping": {
+	"@numUsersTyping":
+	{
 		"type": "text",
-		"placeholders": {
-			"count": {}
+		"placeholders":
+		{
+			"count":
+			{}
 		}
 	},
 	"notSupportedInWeb": "Gan tacaíocht i ngréasán",
-	"@notSupportedInWeb": {
+	"@notSupportedInWeb":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"notificationsEnabledForThisAccount": "Fógraí cumasaithe don chuntas seo",
-	"@notificationsEnabledForThisAccount": {
+	"@notificationsEnabledForThisAccount":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"noStatusesFound": "Níl aon stádas le fáil go dtí seo.",
-	"@noStatusesFound": {
+	"@noStatusesFound":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"noRoomsFound": "Níor aimsíodh aon seomraí…",
-	"@noRoomsFound": {
+	"@noRoomsFound":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"noPublicRoomsFound": "Níor aimsíodh aon seomraí poiblí…",
-	"@noPublicRoomsFound": {
+	"@noPublicRoomsFound":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"noPasswordRecoveryDescription": "Níor chuir tú bealach leis do phasfhocal a aisghabháil fós.",
-	"@noPasswordRecoveryDescription": {
+	"@noPasswordRecoveryDescription":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"newUsernameDescription": "Ansin beidh an fhormáid @ainmúsáideora:ainmfreastalaí ag d'aitheantas úsáideora",
-	"@newUsernameDescription": {},
+	"@newUsernameDescription":
+	{},
 	"newPasswordDescription": "D'fhonn a bheith in ann do phasfhocal a ghnóthú, ba cheart duit seoladh ríomhphoist a chur le do chuntas ina dhiaidh sin.",
-	"@newPasswordDescription": {},
-	"noMegolmBootstrap": "Cas an cúltaca eochair ar líne laistigh den REChain 🪐 ina ionad.",
-	"@noMegolmBootstrap": {
+	"@newPasswordDescription":
+	{},
+	"noMegolmBootstrap": "Cas an cúltaca eochair ar líne laistigh den REChain ® 🪐 ina ionad.",
+	"@noMegolmBootstrap":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"inviteForMe": "Tabhair cuireadh dom",
-	"@inviteForMe": {
+	"@inviteForMe":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"ignoreListDescription": "Is féidir leat neamhaird a dhéanamh d'úsáideoirí atá ag cur isteach ort. Ní bheidh tú in ann aon teachtaireachtaí nó cuireadh seomra a fháil ó na húsáideoirí ar do liosta neamhaird phearsanta.",
-	"@ignoreListDescription": {
+	"@ignoreListDescription":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"weSentYouAnEmail": "Sheolamar ríomhphost chugat",
-	"@weSentYouAnEmail": {
+	"@weSentYouAnEmail":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"warningEncryptionInBeta": "Tá criptiú ó dheireadh go deireadh i mBéite faoi láthair! Úsáid ar do phriacal féin!",
-	"@warningEncryptionInBeta": {
+	"@warningEncryptionInBeta":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"waitingPartnerNumbers": "Ag fanacht le comhpháirtí glacadh leis na huimhreacha …",
-	"@waitingPartnerNumbers": {
+	"@waitingPartnerNumbers":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"waitingPartnerEmoji": "Ag fanacht le comhpháirtí glacadh leis na straoiseoga…",
-	"@waitingPartnerEmoji": {
+	"@waitingPartnerEmoji":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"waitingPartnerAcceptRequest": "Ag fanacht le comhpháirtí glacadh leis an iarratas…",
-	"@waitingPartnerAcceptRequest": {
+	"@waitingPartnerAcceptRequest":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"visibleForEveryone": "Infheicthe do gach duine",
-	"@visibleForEveryone": {
+	"@visibleForEveryone":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"visibleForAllParticipants": "Infheicthe do na rannpháirtithe go léir",
-	"@visibleForAllParticipants": {
+	"@visibleForAllParticipants":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"visibilityOfTheChatHistory": "Infheictheacht stair na comhrá",
-	"@visibilityOfTheChatHistory": {
+	"@visibilityOfTheChatHistory":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"verifyTitle": "Ag fíorú cuntas eile",
-	"@verifyTitle": {
+	"@verifyTitle":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"userUnknownVerification": "Tá stádas fíoraithe anaithnid ag an úsáideoir",
-	"@userUnknownVerification": {
+	"@userUnknownVerification":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"userSentUnknownEvent": "Sheol {username} imeacht {type}",
-	"@userSentUnknownEvent": {
+	"@userSentUnknownEvent":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {},
-			"type": {}
+		"placeholders":
+		{
+			"username":
+			{},
+			"type":
+			{}
 		}
 	},
 	"userIsTyping": "Tá {username} ag clóscríobh…",
-	"@userIsTyping": {
+	"@userIsTyping":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"unlockChatBackup": "Díghlasáil cúltaca comhrá",
-	"@unlockChatBackup": {
+	"@unlockChatBackup":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"unknownEvent": "Imeacht anaithnid '{type}'",
-	"@unknownEvent": {
+	"@unknownEvent":
+	{
 		"type": "text",
-		"placeholders": {
-			"type": {}
+		"placeholders":
+		{
+			"type":
+			{}
 		}
 	},
 	"tapToShowImage": "Tapáil chun íomhá a thaispeáint",
-	"@tapToShowImage": {
+	"@tapToShowImage":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"tapOnDeviceToVerify": "Tapáil ar ghléas le fíorú",
-	"@tapOnDeviceToVerify": {
+	"@tapOnDeviceToVerify":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"synchronizingPleaseWait": "Ag sioncrónú... Fan, le do thoil.",
-	"@synchronizingPleaseWait": {
+	"@synchronizingPleaseWait":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"startYourFirstChat": "Tosaigh do chéad chomhrá anois! 🙂\n- Tapáil ar an gcnaipe teachtaireachta\n- Cuir isteach ainm úsáideora cara\n- Bíodh spraoi agat ag comhrá",
-	"@startYourFirstChat": {
+	"@startYourFirstChat":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"startedACall": "Thosaigh {senderName} glao",
-	"@startedACall": {
+	"@startedACall":
+	{
 		"type": "text",
-		"placeholders": {
-			"senderName": {}
+		"placeholders":
+		{
+			"senderName":
+			{}
 		}
 	},
 	"spaceIsPublic": "Tá an spás poiblí",
-	"@spaceIsPublic": {
+	"@spaceIsPublic":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"soundVibrationLedColor": "Fuaim, tonnchrith LED-dath",
-	"@soundVibrationLedColor": {
+	"@soundVibrationLedColor":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"singlesignon": "Sínigh Aonair ar",
-	"@singlesignon": {
+	"@singlesignon":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"sentAnAudio": "Sheol {username} fuaim",
-	"@sentAnAudio": {
+	"@sentAnAudio":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"sentAFile": "Sheol {username} comhad",
-	"@sentAFile": {
+	"@sentAFile":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
-	"sendBugReports": "Ceadaigh tuairiscí fabhtanna a sheoladh le REChain 🪐",
-	"@sendBugReports": {
+	"sendBugReports": "Ceadaigh tuairiscí fabhtanna a sheoladh le REChain ® 🪐",
+	"@sendBugReports":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"sendAsText": "Seol mar théacs",
-	"@sendAsText": {
+	"@sendAsText":
+	{
 		"type": "text"
 	},
 	"sendAMessage": "Seol teachtaireacht",
-	"@sendAMessage": {
+	"@sendAMessage":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"seenByUser": "Le feiceáil ag {username}",
-	"@seenByUser": {
+	"@seenByUser":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"securityKeyLost": "Ar chaill tú d'eochair slándála?",
-	"@securityKeyLost": {
+	"@securityKeyLost":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"searchForAChat": "Cuardaigh comhrá",
-	"@searchForAChat": {
+	"@searchForAChat":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"roomHasBeenUpgraded": "Uasghrádaíodh an seomra",
-	"@roomHasBeenUpgraded": {
+	"@roomHasBeenUpgraded":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
-	"@bubbleSize": {
-		"placeholders": {},
+	"@bubbleSize":
+	{
+		"placeholders":
+		{},
 		"type": "text"
 	},
-	"@commandHint_clearcache": {
+	"@commandHint_clearcache":
+	{
 		"description": "Usage hint for the command /clearcache",
 		"type": "text"
 	},
-	"@commandHint_create": {
+	"@commandHint_create":
+	{
 		"description": "Usage hint for the command /create",
 		"type": "text"
 	},
-	"@emailOrUsername": {},
-	"@iWroteDownTheKey": {},
-	"@link": {},
-	"@openVideoCamera": {
-		"placeholders": {},
+	"@emailOrUsername":
+	{},
+	"@iWroteDownTheKey":
+	{},
+	"@link":
+	{},
+	"@openVideoCamera":
+	{
+		"placeholders":
+		{},
 		"type": "text"
 	},
-	"@passwordsDoNotMatch": {},
-	"@pleaseChooseAtLeastChars": {
-		"placeholders": {
-			"min": {}
+	"@passwordsDoNotMatch":
+	{},
+	"@pleaseChooseAtLeastChars":
+	{
+		"placeholders":
+		{
+			"min":
+			{}
 		},
 		"type": "text"
 	},
-	"@pleaseEnterValidEmail": {},
-	"@repeatPassword": {},
-	"@setupChatBackup": {},
-	"@videoCallsBetaWarning": {},
-	"@yourChatBackupHasBeenSetUp": {},
-	"@yourUserId": {},
+	"@addChatDescription":
+	{},
+	"@addEmail":
+	{
+		"placeholders":
+		{},
+		"type": "text"
+	},
+	"@addToBundle":
+	{},
+	"@addToSpaceDescription":
+	{},
+	"@addWidget":
+	{},
+	"@allRooms":
+	{
+		"placeholders":
+		{},
+		"type": "text"
+	},
+	"@allSpaces":
+	{},
+	"@appearOnTop":
+	{},
+	"@appearOnTopDetails":
+	{},
+	"@archiveRoomDescription":
+	{},
+	"@banUserDescription":
+	{},
+	"@bundleName":
+	{},
+	"@callingAccount":
+	{},
+	"@callingAccountDetails":
+	{},
+	"@callingPermissions":
+	{},
+	"@chatDescription":
+	{},
+	"@chatDescriptionHasBeenChanged":
+	{},
+	"@chatPermissions":
+	{},
+	"@commandHint_cuddle":
+	{},
+	"@commandHint_discardsession":
+	{
+		"description": "Usage hint for the command /discardsession",
+		"type": "text"
+	},
+	"@commandHint_dm":
+	{
+		"description": "Usage hint for the command /dm",
+		"type": "text"
+	},
+	"@commandHint_googly":
+	{},
+	"@commandHint_hug":
+	{},
+	"@commandHint_markasdm":
+	{},
+	"@commandHint_markasgroup":
+	{},
+	"@confirmEventUnpin":
+	{},
+	"@confirmMatrixId":
+	{},
+	"@countFiles":
+	{
+		"placeholders":
+		{
+			"count":
+			{}
+		}
+	},
+	"@createGroup":
+	{},
+	"@cuddleContent":
+	{
+		"placeholders":
+		{
+			"senderName":
+			{}
+		},
+		"type": "text"
+	},
+	"@custom":
+	{},
+	"@dehydrate":
+	{},
+	"@dehydrateTor":
+	{},
+	"@dehydrateTorLong":
+	{},
+	"@dehydrateWarning":
+	{},
+	"@deviceKeys":
+	{},
+	"@directChat":
+	{},
+	"@disableEncryptionWarning":
+	{},
+	"@dismiss":
+	{},
+	"@doNotShowAgain":
+	{},
+	"@editBundlesForAccount":
+	{},
+	"@emojis":
+	{},
+	"@emoteKeyboardNoRecents":
+	{
+		"placeholders":
+		{},
+		"type": "text"
+	},
+	"@encryptThisChat":
+	{},
+	"@enterRoom":
+	{},
+	"@enterSpace":
+	{},
+	"@errorAddingWidget":
+	{},
+	"@experimentalVideoCalls":
+	{},
+	"@exportEmotePack":
+	{},
+	"@fileHasBeenSavedAt":
+	{
+		"placeholders":
+		{
+			"path":
+			{}
+		},
+		"type": "text"
+	},
+	"@fileIsTooBigForServer":
+	{},
+	"@foregroundServiceRunning":
+	{},
+	"@googlyEyesContent":
+	{
+		"placeholders":
+		{
+			"senderName":
+			{}
+		},
+		"type": "text"
+	},
+	"@hasKnocked":
+	{
+		"placeholders":
+		{
+			"user":
+			{}
+		}
+	},
+	"@hideUnimportantStateEvents":
+	{},
+	"@hugContent":
+	{
+		"placeholders":
+		{
+			"senderName":
+			{}
+		},
+		"type": "text"
+	},
+	"@hydrate":
+	{},
+	"@hydrateTor":
+	{},
+	"@hydrateTorLong":
+	{},
+	"@importEmojis":
+	{},
+	"@importFromZipFile":
+	{},
+	"@importNow":
+	{},
+	"@indexedDbErrorLong":
+	{},
+	"@indexedDbErrorTitle":
+	{},
+	"@invalidInput":
+	{},
+	"@invalidServerName":
+	{},
+	"@invite":
+	{},
+	"@inviteContactToGroupQuestion":
+	{},
+	"@inviteGroupChat":
+	{},
+	"@invitePrivateChat":
+	{},
+	"@inviteText":
+	{
+		"placeholders":
+		{
+			"link":
+			{},
+			"username":
+			{}
+		},
+		"type": "text"
+	},
+	"@jump":
+	{},
+	"@jumpToLastReadMessage":
+	{},
+	"@kickUserDescription":
+	{},
+	"@learnMore":
+	{},
+	"@makeAdminDescription":
+	{},
+	"@markAsRead":
+	{},
+	"@messageInfo":
+	{},
+	"@messagesStyle":
+	{},
+	"@messageType":
+	{},
+	"@newGroup":
+	{},
+	"@newSpace":
+	{},
+	"@newSpaceDescription":
+	{},
+	"@nextAccount":
+	{},
+	"@noBackupWarning":
+	{},
+	"@noChatDescriptionYet":
+	{},
+	"@noKeyForThisMessage":
+	{},
+	"@noOtherDevicesFound":
+	{},
+	"@notAnImage":
+	{},
+	"@numChats":
+	{
+		"placeholders":
+		{
+			"number":
+			{}
+		},
+		"type": "number"
+	},
+	"@oneClientLoggedOut":
+	{},
+	"@openChat":
+	{},
+	"@openGallery":
+	{},
+	"@openLinkInBrowser":
+	{},
+	"@optionalRedactReason":
+	{},
+	"@otherCallingPermissions":
+	{},
+	"@pinMessage":
+	{},
+	"@placeCall":
+	{},
+	"@pleaseEnterANumber":
+	{},
+	"@pleaseEnterRecoveryKey":
+	{},
+	"@pleaseEnterRecoveryKeyDescription":
+	{},
+	"@pleaseTryAgainLaterOrChooseDifferentServer":
+	{},
+	"@previousAccount":
+	{},
+	"@profileNotFound":
+	{},
+	"@publish":
+	{},
+	"@pushNotificationsNotAvailable":
+	{},
+	"@reactedWith":
+	{
+		"placeholders":
+		{
+			"reaction":
+			{},
+			"sender":
+			{}
+		},
+		"type": "text"
+	},
+	"@readUpToHere":
+	{},
+	"@recoveryKey":
+	{},
+	"@recoveryKeyLost":
+	{},
+	"@redactedBy":
+	{
+		"placeholders":
+		{
+			"username":
+			{}
+		},
+		"type": "text"
+	},
+	"@redactedByBecause":
+	{
+		"placeholders":
+		{
+			"reason":
+			{},
+			"username":
+			{}
+		},
+		"type": "text"
+	},
+	"@redactMessageDescription":
+	{},
+	"@removeDevicesDescription":
+	{},
+	"@removeFromBundle":
+	{},
+	"@removeFromSpace":
+	{},
+	"@reopenChat":
+	{},
+	"@replace":
+	{},
+	"@report":
+	{},
+	"@reportErrorDescription":
+	{},
+	"@reportUser":
+	{},
+	"@roomUpgradeDescription":
+	{},
+	"@saveKeyManuallyDescription":
+	{},
+	"@screenSharingDetail":
+	{},
+	"@screenSharingTitle":
+	{},
+	"@sender":
+	{},
+	"@sendTypingNotifications":
+	{},
+	"@separateChatTypes":
+	{
+		"placeholders":
+		{},
+		"type": "text"
+	},
+	"@setChatDescription":
+	{},
+	"@setColorTheme":
+	{},
+	"@setTheme":
+	{},
+	"@shareInviteLink":
+	{},
+	"@signInWith":
+	{
+		"placeholders":
+		{
+			"provider":
+			{}
+		},
+		"type": "text"
+	},
+	"@signInWithPassword":
+	{},
+	"@sorryThatsNotPossible":
+	{},
+	"@start":
+	{},
+	"@startFirstChat":
+	{},
+	"@storeInAndroidKeystore":
+	{},
+	"@storeInAppleKeyChain":
+	{},
+	"@storeInSecureStorageDescription":
+	{},
+	"@storeSecurlyOnThisDevice":
+	{},
+	"@supposedMxid":
+	{
+		"placeholders":
+		{
+			"mxid":
+			{}
+		},
+		"type": "text"
+	},
+	"@switchToAccount":
+	{
+		"placeholders":
+		{
+			"number":
+			{}
+		},
+		"type": "number"
+	},
+	"@time":
+	{},
+	"@tryAgain":
+	{},
+	"@unbanUserDescription":
+	{},
+	"@unlockOldMessages":
+	{},
+	"@unsupportedAndroidVersion":
+	{},
+	"@unsupportedAndroidVersionLong":
+	{},
+	"@unverified":
+	{},
+	"@user":
+	{},
+	"@users":
+	{},
+	"@videoWithSize":
+	{
+		"placeholders":
+		{
+			"size":
+			{}
+		},
+		"type": "text"
+	},
+	"@voiceCall":
+	{},
+	"@wasDirectChatDisplayName":
+	{
+		"placeholders":
+		{
+			"oldDisplayName":
+			{}
+		},
+		"type": "text"
+	},
+	"@whyIsThisMessageEncrypted":
+	{},
+	"@widgetCustom":
+	{},
+	"@widgetEtherpad":
+	{},
+	"@widgetJitsi":
+	{},
+	"@widgetName":
+	{},
+	"@widgetNameError":
+	{},
+	"@widgetUrlError":
+	{},
+	"@widgetVideo":
+	{},
+	"@wrongPinEntered":
+	{
+		"placeholders":
+		{
+			"seconds":
+			{}
+		},
+		"type": "text"
+	},
+	"@youAcceptedTheInvitation":
+	{},
+	"@youBannedUser":
+	{
+		"placeholders":
+		{
+			"user":
+			{}
+		}
+	},
+	"@youHaveWithdrawnTheInvitationFor":
+	{
+		"placeholders":
+		{
+			"user":
+			{}
+		}
+	},
+	"@youInvitedBy":
+	{
+		"placeholders":
+		{
+			"user":
+			{}
+		}
+	},
+	"@youInvitedUser":
+	{
+		"placeholders":
+		{
+			"user":
+			{}
+		}
+	},
+	"@youJoinedTheChat":
+	{},
+	"@youKicked":
+	{
+		"placeholders":
+		{
+			"user":
+			{}
+		}
+	},
+	"@youKickedAndBanned":
+	{
+		"placeholders":
+		{
+			"user":
+			{}
+		}
+	},
+	"@youRejectedTheInvitation":
+	{},
+	"@youUnbannedUser":
+	{
+		"placeholders":
+		{
+			"user":
+			{}
+		}
+	},
+	"addChatDescription": "",
+	"archiveRoomDescription": "",
+	"banUserDescription": "",
+	"chatDescription": "",
+	"chatDescriptionHasBeenChanged": "",
+	"chatPermissions": "",
+	"createGroup": "",
+	"directChat": "",
+	"emoteKeyboardNoRecents": "",
+	"exportEmotePack": "",
+	"exportEmotePack": "",
+	"importEmojis": "",
+	"importFromZipFile": "",
+	"importNow": "",
+	"invalidInput": "",
+	"invalidServerName": "",
+	"invite": "",
+	"inviteContactToGroupQuestion": "",
+	"inviteGroupChat": "",
+	"invitePrivateChat": "",
+	"inviteText": "Thug {username} cuireadh duit chuig REChain ® 🪐.\n1. Suiteáil REChain ® 🪐: https://rechain.online\n2. Cláraigh nó sínigh isteach\n3. Oscail an nasc cuiridh: {link}",
+	"@pleaseEnterValidEmail":
+	{},
+	"kickUserDescription": "",
+	"learnMore": "",
+	"makeAdminDescription": "",
+	"messagesStyle": "",
+	"noChatDescriptionYet": "",
+	"notAnImage": "",
+	"optionalRedactReason": "",
+	"pleaseEnterANumber": "",
+	"profileNotFound": "",
+	"pushNotificationsNotAvailable": "",
+	"redactedBy": "",
+	"redactedByBecause": "",
+	"redactMessageDescription": "",
+	"removeDevicesDescription": "",
+	"replace": "",
+	"roomUpgradeDescription": "",
+	"sendTypingNotifications": "",
+	"setChatDescription": "",
+	"setColorTheme": "",
+	"setTheme": "",
+	"shareInviteLink": "",
+	"signInWith": "",
+	"tryAgain": "",
+	"unbanUserDescription": "",
+	"wrongPinEntered": "",
+	"@repeatPassword":
+	{},
+	"@setupChatBackup":
+	{},
+	"@videoCallsBetaWarning":
+	{},
+	"@yourChatBackupHasBeenSetUp":
+	{},
+	"@yourUserId":
+	{},
 	"bubbleSize": "Méid na mbolgán cainte",
 	"commandHint_clearcache": "Glan an taisce",
 	"commandHint_create": "Cruthaigh comhrá grúpa folamh\nÚsáid --no-encryption chun criptiúchán a dhíchumasú",
@@ -2621,9 +4268,11 @@
 	"yourChatBackupHasBeenSetUp": "Bunaíodh do chúltaca comhrá.",
 	"yourUserId": "D'aitheantas úsáideora:",
 	"addAccount": "Breisigh cuntas",
-	"@addAccount": {},
+	"@addAccount":
+	{},
 	"enableMultiAccounts": "(BÉITE) Cumasaigh cuntais iomadúla ar an gléas seo",
-	"@enableMultiAccounts": {},
+	"@enableMultiAccounts":
+	{},
 	"addDescription": "",
 	"addToBundle": "",
 	"addToSpaceDescription": "",

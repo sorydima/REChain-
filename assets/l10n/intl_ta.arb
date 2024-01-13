@@ -1,21 +1,28 @@
 {
 	"@@last_modified": "2021-08-14 12:41:09.826673",
 	"acceptedTheInvitation": "{username} அழைப்பை ஏற்றுக்கொண்டார்",
-	"@acceptedTheInvitation": {
+	"@acceptedTheInvitation":
+	{
 		"type": "text",
-		"placeholders": {
-			"username": {}
+		"placeholders":
+		{
+			"username":
+			{}
 		}
 	},
 	"accept": "ஏற்றுக்கொள்",
-	"@accept": {
+	"@accept":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"about": "பற்றி",
-	"@about": {
+	"@about":
+	{
 		"type": "text",
-		"placeholders": {}
+		"placeholders":
+		{}
 	},
 	"account": "",
 	"accountInformation": "",

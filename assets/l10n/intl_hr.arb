@@ -344,7 +344,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
 	"@changeTheHomeserver": {
 		"type": "text",
 		"placeholders": {}
@@ -903,7 +903,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
 	"@enterYourHomeserver": {
 		"type": "text",
 		"placeholders": {}
@@ -928,7 +928,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"rechainonline": "REChain.Online",
+	"rechainonline": "REChain ® 🪐",
 	"@rechainonline": {
 		"type": "text",
 		"placeholders": {}
@@ -1128,7 +1128,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"inviteText": "{username} vas je pozvao na REChain.Online platformu! \n1. Instalirajte REChain.Online: https://rechain.online \n2. Registrirajte se ili se prijavite! \n3. Otvorite ovu vezu pozivnice: {link}",
+	"inviteText": "{username} vas je pozvao na REChain ® 🪐 platformu! \n1. Instalirajte REChain ® 🪐: https://rechain.online \n2. Registrirajte se ili se prijavite! \n3. Otvorite ovu vezu pozivnice: {link}",
 	"@inviteText": {
 		"type": "text",
 		"placeholders": {
@@ -1334,7 +1334,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"newMessageInrechainonline": "Nova poruka na REChain.Online platformi!",
+	"newMessageInrechainonline": "Nova poruka na REChain ® 🪐 platformi!",
 	"@newMessageInrechainonline": {
 		"type": "text",
 		"placeholders": {}
@@ -1359,7 +1359,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"noCrossSignBootstrap": "REChain.Online trenutno ne podržava unakrsno potpisivanje. Umjesto toga, omogućite ga unutar REChain 🪐.",
+	"noCrossSignBootstrap": "REChain.Online trenutno ne podržava unakrsno potpisivanje. Umjesto toga, omogućite ga unutar REChain ® 🪐.",
 	"@noCrossSignBootstrap": {
 		"type": "text",
 		"placeholders": {}
@@ -1379,12 +1379,12 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"noGoogleServicesWarning": "Čini se da nemate Googleove usluge na svom telefonu. To je dobra odluka za vašu privatnost! Preporučujemo korištenje https://microg.org/ ili https://unifiedpush.org/ za automatsko primanje push obavijesti s REChain.Online platforme!",
+	"noGoogleServicesWarning": "Čini se da nemate Googleove usluge na svom telefonu. To je dobra odluka za vašu privatnost! Preporučujemo korištenje https://microg.org/ ili https://unifiedpush.org/ za automatsko primanje push obavijesti s REChain ® 🪐 platforme!",
 	"@noGoogleServicesWarning": {
 		"type": "text",
 		"placeholders": {}
 	},
-	"noMegolmBootstrap": "Umjesto toga, uključite online sigurnosnu kopiju ključa unutar REChain 🪐.",
+	"noMegolmBootstrap": "Umjesto toga, uključite online sigurnosnu kopiju ključa unutar REChain ® 🪐.",
 	"@noMegolmBootstrap": {
 		"type": "text",
 		"placeholders": {}
@@ -1595,7 +1595,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"pleaseEnterArechainonlineIdentifier": "Unesite Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network ID.",
+	"pleaseEnterArechainonlineIdentifier": "Unesite Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network ID.",
 	"@pleaseEnterArechainonlineIdentifier": {
 		"type": "text",
 		"placeholders": {}
@@ -1870,7 +1870,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"sendBugReports": "Dozvoli slanje izvještaja o greškama pomoću REChain 🪐",
+	"sendBugReports": "Dozvoli slanje izvještaja o greškama pomoću REChain ® 🪐",
 	"@sendBugReports": {
 		"type": "text",
 		"placeholders": {}
@@ -1947,7 +1947,7 @@
 			"senderName": {}
 		}
 	},
-	"sentryInfo": "Podaci o tvojoj privatnosti: https://rechain.online/en/privacy.html",
+	"sentryInfo": "Podaci o tvojoj privatnosti: https://rechain.online/privacy-policy.html",
 	"@sentryInfo": {
 		"type": "text",
 		"placeholders": {}
@@ -2136,7 +2136,7 @@
 			"suffix": {}
 		}
 	},
-	"title": "REChain.Online",
+	"title": "REChain ® 🪐",
 	"@title": {
 		"description": "Title for the application",
 		"type": "text",
@@ -2409,7 +2409,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"welcomeText": "Dobrodošli u REChain.Online! Privatna i sigurna budućnost koja je već stigla!",
+	"welcomeText": "Dobrodošli u REChain ® 🪐! Privatna i sigurna budućnost koja je već stigla!",
 	"@welcomeText": {
 		"type": "text",
 		"placeholders": {}
@@ -2543,7 +2543,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"norechainonlineServer": "{server1} nije poslužitelj Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network. Želite li umjesto toga koristiti {server2}?",
+	"norechainonlineServer": "{server1} nije poslužitelj Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network. Želite li umjesto toga koristiti {server2}?",
 	"@norechainonlineServer": {
 		"type": "text",
 		"placeholders": {
@@ -2584,7 +2584,7 @@
 	"@typeInInviteLinkManually": {},
 	"shareYourInviteLink": "Dijeli svoju poveznicu za pozivnicu",
 	"@shareYourInviteLink": {},
-	"homeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"homeserver": "Node/Server",
 	"@homeserver": {},
 	"sendOnEnter": "Pošalji pritiskom tipke enter",
 	"@sendOnEnter": {},
@@ -2938,23 +2938,23 @@
 	"signInWithPassword": "Prijavi se s lozinkom",
 	"allSpaces": "Svi prostori",
 	"appearOnTop": "Prikaz ispred drugih",
-	"appearOnTopDetails": "Omogućuje prikaz aplikacije ispred drugih (nije potrebno ako je REChain 🪐 već postavljen kao račun za pozivanje)",
+	"appearOnTopDetails": "Omogućuje prikaz aplikacije ispred drugih (nije potrebno ako je REChain ® 🪐 već postavljen kao račun za pozivanje)",
 	"callingAccount": "Račun za pozivanje",
-	"callingAccountDetails": "Omogućuje REChain 🪐 korištenje izvorne Android aplikacije za pozivanje.",
+	"callingAccountDetails": "Omogućuje REChain ® 🪐 korištenje izvorne Android aplikacije za pozivanje.",
 	"callingPermissions": "Dozvole za pozivanje",
 	"commandHint_cuddle": "Pošalji maženje",
 	"commandHint_googly": "Pošalji kotrljajuće oči",
 	"commandHint_hug": "Pošalji grljenje",
 	"commandHint_markasdm": "Označi kao sobu za izravnu razmjenu poruka",
 	"commandHint_markasgroup": "Označi kao grupu",
-	"confirmMatrixId": "Za brisanje tvog računa potvrdi svoj REChain 🪐 ID.",
+	"confirmMatrixId": "Za brisanje tvog računa potvrdi svoj REChain ® 🪐 ID.",
 	"cuddleContent": "{senderName} te mazi",
 	"deviceKeys": "Ključevi uređaja:",
 	"disableEncryptionWarning": "Iz sigurnosnih razloga ne možeš deaktivirati šifriranje u razgovoru u kojem je prije bilo aktivirano.",
 	"doNotShowAgain": "Nemoj više prikazivati",
 	"encryptThisChat": "Šifiraj ovaj razgovor",
 	"endToEndEncryption": "Obostrano šifriranje",
-	"enterInviteLinkOrMatrixId": "Upiši poveznicu poziva ili REChain 🪐 ID …",
+	"enterInviteLinkOrMatrixId": "Upiši poveznicu poziva ili REChain ® 🪐 ID …",
 	"enterRoom": "Uđi u sobu",
 	"enterSpace": "Uđi u prostor",
 	"fileHasBeenSavedAt": "Datoteka je spremljena u {path}",
@@ -2974,10 +2974,10 @@
 	"noOtherDevicesFound": "Nijedan drugi uređaj nije pronađen",
 	"noSearchResult": "Nema poklapajućih rezultata.",
 	"numChats": "{number} razgovora",
-	"otherCallingPermissions": "Mikrofon, kamera i druge REChain 🪐 dozvole",
+	"otherCallingPermissions": "Mikrofon, kamera i druge REChain ® 🪐 dozvole",
 	"readUpToHere": "Pročitaj do ovdje",
 	"reopenChat": "Ponovo otvori razgovor",
-	"screenSharingDetail": "Dijeliš svoj ekran u REChain 🪐",
+	"screenSharingDetail": "Dijeliš svoj ekran u REChain ® 🪐",
 	"screenSharingTitle": "dijeljenje ekrana",
 	"sorryThatsNotPossible": "Žao nam je … to nije moguće",
 	"startFirstChat": "Započni svoj prvi razgovor",
@@ -2991,7 +2991,7 @@
 	"countFiles": "Broj datoteka: {count}",
 	"custom": "Prilagođeno",
 	"dehydrate": "Izvezi sesiju i izbriši uređaj",
-	"dehydrateShare": "Ovo je tvoj privatni REChain 🪐 izvoz. Osiguraj da ga ne izgubiš i zadrži ga privatnim.",
+	"dehydrateShare": "Ovo je tvoj privatni REChain ® 🪐 izvoz. Osiguraj da ga ne izgubiš i zadrži ga privatnim.",
 	"dehydrateTor": "Korisnici TOR-a: izvezite sesiju",
 	"dehydrateTorLong": "Korisnicima TOR-a preporučuje se izvoz sesije prije zatvaranja prozora.",
 	"dehydrateWarning": "Ovo je nepovratna radnja. Spremi datoteku sigurnosne kopije na sigurno mjeto.",
@@ -3004,10 +3004,10 @@
 	"hydrate": "Obnovi pomoću sigurnosne kopije",
 	"hydrateTor": "Korisnici TOR-a: Uzvezite izvoz sesije",
 	"hydrateTorLong": "Je li zadnji izvoz sesije bio na TOR-u? Brzo ga uvezi i nastavi čavrljati.",
-	"indexedDbErrorLong": "Spremište poruka nažalost nije standarno uključena u privatnom modusu.\nOtvori stranicu\n - about:config\n - postavi dom.indexedDB.privateBrowsing.enabled na true\nREChain 🪐 se inače neće moći pokrenuti.",
+	"indexedDbErrorLong": "Spremište poruka nažalost nije standarno uključena u privatnom modusu.\nOtvori stranicu\n - about:config\n - postavi dom.indexedDB.privateBrowsing.enabled na true\nREChain ® 🪐 se inače neće moći pokrenuti.",
 	"indexedDbErrorTitle": "Problemi u privatnom modusu",
 	"integrationsNotImplemented": "Uređivanje widgeta i integracija još nije moguće.",
-	"matrixWidgets": "REChain 🪐 widgeti",
+	"matrixWidgets": "REChain ® 🪐 widgeti",
 	"noEmailWarning": "Upiši valjanu e-mail adresu. U suprotnom nećeš moći ponovo postaviti lozinku. Ako to ne želiš, ponovo dodirni gumb i nastavi.",
 	"numberRoomMembers": "Broj članova: {number}",
 	"pinMessage": "Prikvači na sobu",
@@ -3029,7 +3029,7 @@
 	"stories": "Priče",
 	"suggestedRooms": "Otkrij grupe u ovom prostoru",
 	"unlockOldMessages": "Otključaj stare poruke",
-	"updateAvailable": "Dostupna je nova REChain 🪐 verzija",
+	"updateAvailable": "Dostupna je nova REChain ® 🪐 verzija",
 	"updateNow": "Pokreni aktuliziranje u pozadini",
 	"user": "Korisnik",
 	"users": "Korisnici",

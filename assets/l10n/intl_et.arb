@@ -164,7 +164,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"badServerLoginTypesException": "See Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node võrguserver toetab Matrixi võrgu sisselogimist: \n {serverVersions} \nKuid see rakendus toetab ainult järgmisi funktsioone: \n {supportedVersions}",
+	"badServerLoginTypesException": "See Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node võrguserver toetab Matrixi võrgu sisselogimist: \n {serverVersions} \nKuid see rakendus toetab ainult järgmisi funktsioone: \n {supportedVersions}",
 	"@badServerLoginTypesException": {
 		"type": "text",
 		"placeholders": {
@@ -172,7 +172,7 @@
 			"supportedVersions": {}
 		}
 	},
-	"badServerVersionsException": "See Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node võrguserver toetab järgmisi Matrixi spetsifikatsiooni versioone: \n {serverVersions} \nKuid see rakendus toetab ainult järgmisi versioone: {supportedVersions}",
+	"badServerVersionsException": "See Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node võrguserver toetab järgmisi Matrixi spetsifikatsiooni versioone: \n {serverVersions} \nKuid see rakendus toetab ainult järgmisi versioone: {supportedVersions}",
 	"@badServerVersionsException": {
 		"type": "text",
 		"placeholders": {
@@ -354,7 +354,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
 	"@changeTheHomeserver": {
 		"type": "text",
 		"placeholders": {}
@@ -913,7 +913,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
 	"@enterYourHomeserver": {
 		"type": "text",
 		"placeholders": {}
@@ -945,7 +945,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"rechainonline": "REChain.Online",
+	"rechainonline": "REChain ® 🪐",
 	"@rechainonline": {
 		"type": "text",
 		"placeholders": {}
@@ -1145,7 +1145,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"inviteText": "{username} kutsus teid platvormile REChain.Online! \n1. Installige REChain.Online: https://rechain.online \n2. Registreeru või logi sisse! \n3. Ava kutse link: {link}",
+	"inviteText": "{username} kutsus teid platvormile REChain ® 🪐! \n1. Installige REChain ® 🪐: https://rechain.online \n2. Registreeru või logi sisse! \n3. Ava kutse link: {link}",
 	"@inviteText": {
 		"type": "text",
 		"placeholders": {
@@ -1354,7 +1354,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"newMessageInrechainonline": "Uus sõnum platvormil REChain.Online!",
+	"newMessageInrechainonline": "Uus sõnum platvormil REChain ® 🪐!",
 	"@newMessageInrechainonline": {
 		"type": "text",
 		"placeholders": {}
@@ -1379,7 +1379,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"noCrossSignBootstrap": "REChain.Online ei toeta praegu ristallkirjastamise tuvastamist. Selle asemel lubage see REChain 🪐.",
+	"noCrossSignBootstrap": "REChain.Online ei toeta praegu ristallkirjastamise tuvastamist. Selle asemel lubage see REChain ® 🪐.",
 	"@noCrossSignBootstrap": {
 		"type": "text",
 		"placeholders": {}
@@ -1399,12 +1399,12 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"noGoogleServicesWarning": "Näib, et teie nutitelefonis pole ühtegi Google'i teenust. Teie privaatsust silmas pidades on see kindlasti hea otsus! Kui soovite näha platvormi REChain.Online tõukemärguandeid, soovitame kasutada https://microg.org või https://unifiedpush.org liidest.",
+	"noGoogleServicesWarning": "Näib, et teie nutitelefonis pole ühtegi Google'i teenust. Teie privaatsust silmas pidades on see kindlasti hea otsus! Kui soovite näha platvormi REChain ® 🪐 tõukemärguandeid, soovitame kasutada https://microg.org või https://unifiedpush.org liidest.",
 	"@noGoogleServicesWarning": {
 		"type": "text",
 		"placeholders": {}
 	},
-	"norechainonlineServer": "{server1} ei ole Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network server, võib-olla peaksime selle asemel kasutama serverit {server2}?",
+	"norechainonlineServer": "{server1} ei ole Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network server, võib-olla peaksime selle asemel kasutama serverit {server2}?",
 	"@norechainonlineServer": {
 		"type": "text",
 		"placeholders": {
@@ -1412,7 +1412,7 @@
 			"server2": {}
 		}
 	},
-	"noMegolmBootstrap": "Lubage selle asemel REChain 🪐 krüptograafiliste võtmete võrgupõhine võrgupõhine varundamine.",
+	"noMegolmBootstrap": "Lubage selle asemel REChain ® 🪐 krüptograafiliste võtmete võrgupõhine võrgupõhine varundamine.",
 	"@noMegolmBootstrap": {
 		"type": "text",
 		"placeholders": {}
@@ -1633,7 +1633,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"pleaseEnterArechainonlineIdentifier": "Sisestage Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node võrgu ID.",
+	"pleaseEnterArechainonlineIdentifier": "Sisestage Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node võrgu ID.",
 	"@pleaseEnterArechainonlineIdentifier": {
 		"type": "text",
 		"placeholders": {}
@@ -1908,7 +1908,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"sendBugReports": "Luba veateadete saatmist REChain 🪐 vahendusel",
+	"sendBugReports": "Luba veateadete saatmist REChain ® 🪐 vahendusel",
 	"@sendBugReports": {
 		"type": "text",
 		"placeholders": {}
@@ -1985,7 +1985,7 @@
 			"senderName": {}
 		}
 	},
-	"sentryInfo": "Teave sinu privaatsuse kohta: https://rechain.online/en/privacy.html",
+	"sentryInfo": "Teave sinu privaatsuse kohta: https://rechain.online/privacy-policy.html",
 	"@sentryInfo": {
 		"type": "text",
 		"placeholders": {}
@@ -2179,7 +2179,7 @@
 			"suffix": {}
 		}
 	},
-	"title": "REChain.Online",
+	"title": "REChain ® 🪐",
 	"@title": {
 		"description": "Title for the application",
 		"type": "text",
@@ -2452,7 +2452,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"welcomeText": "Tere tulemast REChain.Online'i! Privaatne ja turvaline tulevik, mis on juba saabunud!",
+	"welcomeText": "Tere tulemast REChain ® 🪐'i! Privaatne ja turvaline tulevik, mis on juba saabunud!",
 	"@welcomeText": {
 		"type": "text",
 		"placeholders": {}
@@ -2577,7 +2577,7 @@
 	"disableEncryptionWarning": "Kui vestluses on krüptimine kasutusele võetud, siis turvalisuse huvides ei saa seda hiljem välja lülitada.",
 	"encryptThisChat": "Krüpti see vestlus",
 	"endToEndEncryption": "Läbiv krüptimine",
-	"enterInviteLinkOrMatrixId": "Sisesta kutse link või REChain 🪐 ID...",
+	"enterInviteLinkOrMatrixId": "Sisesta kutse link või REChain ® 🪐 ID...",
 	"fileIsTooBigForServer": "Serveri seadistuste alusel on see fail saatmiseks liiga suur.",
 	"letsStart": "Sõidame!",
 	"newSpaceDescription": "Kogukonnad võimaldavad sul koondada erinevaid vestlusi ning korraldada avalikku või privaatset ühistegevust.",
@@ -2601,15 +2601,15 @@
 	"@createNewChatExplaination": {},
 	"sendOnEnter": "Saada sõnum sisestusklahvi vajutusel",
 	"@sendOnEnter": {},
-	"homeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"homeserver": "Node/Server",
 	"@homeserver": {},
 	"serverRequiresEmail": "See koduserver eeldab registreerimisel kasutatava e-postiaadressi kinnitamist.",
 	"@serverRequiresEmail": {},
-	"newUsernameDescription": "Teie Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network kasutajanimi on vormingus @username:Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"newUsernameDescription": "Teie Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network kasutajanimi on vormingus @username:Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
 	"@newUsernameDescription": {},
 	"newPasswordDescription": "Selleks, et saaksid vajadusel oma salasõna taastada, peaksid hiljem lisama oma kasutajakontole e-posti aadressi.",
 	"@newPasswordDescription": {},
-	"enableMultiAccounts": "(EKSPERIMENTAALNE) Selles seadmes on mitu Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network kasutajakontot!",
+	"enableMultiAccounts": "(EKSPERIMENTAALNE) Selles seadmes on mitu Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network kasutajakontot!",
 	"@enableMultiAccounts": {},
 	"bundleName": "Köite nimi",
 	"@bundleName": {},
@@ -2621,7 +2621,7 @@
 	"@editBundlesForAccount": {},
 	"addAccount": "Lisa kasutajakonto",
 	"@addAccount": {},
-	"oneClientLoggedOut": "Üks teie klientrakendustest on Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Networkist välja loginud.",
+	"oneClientLoggedOut": "Üks teie klientrakendustest on Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Networkist välja loginud.",
 	"@oneClientLoggedOut": {},
 	"link": "Link",
 	"@link": {},
@@ -2847,7 +2847,7 @@
 	"countFiles": "{count} faili",
 	"custom": "Kohandatud",
 	"dehydrate": "Ekspordi sessiooni teave ja kustuta nutiseadmest rakenduse andmed",
-	"dehydrateShare": "See on sinu REChain 🪐'i privaatsete andmete eksport. Palun hoia teda turvaliselt ja vaata, et sa seda ei kaotaks.",
+	"dehydrateShare": "See on sinu REChain ® 🪐'i privaatsete andmete eksport. Palun hoia teda turvaliselt ja vaata, et sa seda ei kaotaks.",
 	"dehydrateTor": "TOR'i kasutajad: Ekspordi sessioon",
 	"dehydrateTorLong": "Kui oled TOR'i võrgu kasutaja, siis enne akna sulgemist palun ekspordi viimase sessiooni andmed.",
 	"dehydrateWarning": "Seda tegevust ei saa tagasi pöörata. Palun kontrolli, et sa oled varukoopia turvaliselt salvestanud.",
@@ -2855,7 +2855,7 @@
 	"hydrate": "Taasta varundatud failist",
 	"hydrateTor": "TOR'i kasutajatele: impordi viimati eksporditud sessiooni andmed",
 	"hydrateTorLong": "Kui viimati TOR'i võrku kasutasid, siis kas sa eksportisid oma sessiooni andmed? Kui jah, siis impordi nad mugavasti ja jätka suhtlemist.",
-	"indexedDbErrorLong": "Privaatse akna puhul andmete salvestamine vaikimisi pole kasutusel.\nPalun toimi alljärgnevalt:\n- ava about:config\n- määra dom.indexedDB.privateBrowsing.enabled väärtuseks true\nVastasel juhul sa ei saa REChain 🪐'i kasutada.",
+	"indexedDbErrorLong": "Privaatse akna puhul andmete salvestamine vaikimisi pole kasutusel.\nPalun toimi alljärgnevalt:\n- ava about:config\n- määra dom.indexedDB.privateBrowsing.enabled väärtuseks true\nVastasel juhul sa ei saa REChain ® 🪐'i kasutada.",
 	"indexedDbErrorTitle": "Brauseri privaatse akna kasutamisega seotud asjaolud",
 	"numberRoomMembers": "{number} liiget",
 	"pleaseEnterRecoveryKey": "Palun sisesta oma taastevõti:",
@@ -2871,7 +2871,7 @@
 	"stories": "Jutustused",
 	"suggestedRooms": "Otsi jututube selles kogukonnas",
 	"unlockOldMessages": "Muuda vanad sõnumid loetavaks",
-	"updateAvailable": "On olemas REChain 🪐'i uuendus",
+	"updateAvailable": "On olemas REChain ® 🪐'i uuendus",
 	"updateNow": "Alusta uuendamist taustal",
 	"user": "Kasutaja",
 	"users": "Kasutajad",
@@ -2890,7 +2890,7 @@
 	"integrationsNotImplemented": "Vidinate ja lõimingute muutmine pole veel võimalik.",
 	"iUnderstand": "Ma mõistan",
 	"markAsRead": "Märgi loetuks",
-	"matrixWidgets": "REChain'i 🪐 vidinad",
+	"matrixWidgets": "REChain ® 🪐 vidinad",
 	"nextAccount": "Järgmine kasutajakonto",
 	"openChat": "Ava vestlus",
 	"pinMessage": "Klammerda sõnum jututuppa",
@@ -3017,16 +3017,16 @@
 	"readUpToHere": "Siiamaani on loetud",
 	"allSpaces": "Kõik kogukonnad",
 	"appearOnTop": "Luba pealmise rakendusena",
-	"appearOnTopDetails": "Sellega lubad rakendust avada kõige pealmisena (pole vajalik, kui REChain 🪐 on juba seadistatud toimima helistamiskontoga)",
+	"appearOnTopDetails": "Sellega lubad rakendust avada kõige pealmisena (pole vajalik, kui REChain ® 🪐 on juba seadistatud toimima helistamiskontoga)",
 	"callingAccount": "Helistamiskonto",
-	"callingAccountDetails": "Võimaldab REChain 🪐'il kasutada Androidi helistamisrakendust.",
+	"callingAccountDetails": "Võimaldab REChain ® 🪐'il kasutada Androidi helistamisrakendust.",
 	"callingPermissions": "Helistamise õigused",
 	"commandHint_cuddle": "Saada üks kaisutus",
 	"commandHint_googly": "Saada ühed otsivad silmad",
 	"commandHint_hug": "Saada üks kallistus",
 	"commandHint_markasdm": "Märgi otsevestusluseks",
 	"commandHint_markasgroup": "Märgi vestlusrühmaks",
-	"confirmMatrixId": "Konto kustutamiseks palun kinnitage oma REChain 🪐'i ID.",
+	"confirmMatrixId": "Konto kustutamiseks palun kinnitage oma REChain ® 🪐'i ID.",
 	"cuddleContent": "{senderName} kaisutab sind",
 	"doNotShowAgain": "Ära näita uuesti",
 	"enterRoom": "Ava jututuba",
@@ -3039,8 +3039,8 @@
 	"newSpace": "Uus kogukond",
 	"noKeyForThisMessage": "See võib juhtuda, kui sõnum oli saadetud enne, kui siin seadmes oma kontoga sisse logisid.\n\nSamuti võib juhtuda siis, kui saatja on lugemises selles seadmes blokeerinud või on tekkinud tõrkeid veebiühenduses.\n\nAga mõnes teises seadmes saad seda sõnumit lugeda? Siis sa võid sõnumi sealt üle tõsta. Ava Seadistused -> Seadmed ning kontrolli, et kõik sinu seadmed on omavahel verifitseeritud. Kui avad selle vestluse või jututoa ning mõlemad sessioonid on avatud, siis vajalikud krüptovõtmed saadetakse automaatset.\n\nKas sa soovid vältida krüptovõtmete kadumist väljalogimisel ja seadmete vahetusel? Siis palun kontrolli, et seadistuses on krüptovõtmete varundus sisse lülitatud.",
 	"numChats": "{number} vestlust",
-	"otherCallingPermissions": "Mikrofoni, kaamera ja muud REChain 🪐'i õigused",
-	"screenSharingDetail": "Sa jagad oma ekraani REChain 🪐'i vahendusel",
+	"otherCallingPermissions": "Mikrofoni, kaamera ja muud REChain ® 🪐'i õigused",
+	"screenSharingDetail": "Sa jagad oma ekraani REChain ® 🪐'i vahendusel",
 	"screenSharingTitle": "ekraani jagamine",
 	"supposedMxid": "See peaks olema {mxid}",
 	"wasDirectChatDisplayName": "Sõnumiteta vestlus (vana nimega {oldDisplayName})",

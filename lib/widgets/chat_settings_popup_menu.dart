@@ -64,16 +64,6 @@ class ChatSettingsPopupMenuState extends State<ChatSettingsPopupMenu> {
               ),
             ),
       PopupMenuItem<String>(
-        value: 'todos',
-        child: Row(
-          children: [
-            const Icon(Icons.task_alt_outlined),
-            const SizedBox(width: 12),
-            Text("ToDo Lists!"),
-          ],
-        ),
-      ),
-      PopupMenuItem<String>(
         value: 'leave',
         child: Row(
           children: [
@@ -121,7 +111,7 @@ class ChatSettingsPopupMenuState extends State<ChatSettingsPopupMenu> {
                   title: L10n.of(context)!.areYouSure,
                   okLabel: L10n.of(context)!.ok,
                   cancelLabel: L10n.of(context)!.cancel,
-                  message: "Archive!",
+                  message: L10n.of(context)!.archiveRoomDescription,
                 );
                 if (confirmed == OkCancelResult.ok) {
                   final success = await showFutureLoadingDialog(

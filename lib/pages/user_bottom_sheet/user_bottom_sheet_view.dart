@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_gen/gen_l10n/l10n.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:matrix/matrix.dart';
 
+import 'package:rechainonline/utils/date_time_extension.dart';
 import 'package:rechainonline/utils/rechainonline_share.dart';
+import 'package:rechainonline/utils/url_launcher.dart';
 import 'package:rechainonline/widgets/avatar.dart';
+import 'package:rechainonline/widgets/presence_builder.dart';
 import '../../widgets/matrix.dart';
 import 'user_bottom_sheet.dart';
 
@@ -30,23 +34,69 @@ class UserBottomSheetView extends StatelessWidget {
           leading: CloseButton(
             onPressed: Navigator.of(context, rootNavigator: false).pop,
           ),
-          title: Text(displayname.trim().split(' ').first),
+          centerTitle: false,
+          title: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(displayname),
+              PresenceBuilder(
+                userId: userId,
+                client: client,
+                builder: (context, presence) {
+                  if (presence == null ||
+                      (presence.presence == PresenceType.offline &&
+                          presence.lastActiveTimestamp == null)) {
+                    return const SizedBox.shrink();
+                  }
+
+                  final dotColor = presence.presence.isOnline
+                      ? Colors.green
+                      : presence.presence.isUnavailable
+                          ? Colors.orange
+                          : Colors.grey;
+
+                  final lastActiveTimestamp = presence.lastActiveTimestamp;
+
+                  return Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Container(
+                        width: 8,
+                        height: 8,
+                        margin: const EdgeInsets.only(right: 8),
+                        decoration: BoxDecoration(
+                          color: dotColor,
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                      ),
+                      if (presence.currentlyActive == true)
+                        Text(
+                          L10n.of(context)!.currentlyActive,
+                          overflow: TextOverflow.ellipsis,
+                          style: Theme.of(context).textTheme.bodySmall,
+                        )
+                      else if (lastActiveTimestamp != null)
+                        Text(
+                          L10n.of(context)!.lastActiveAgo(
+                            lastActiveTimestamp.localizedTimeShort(context),
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                          style: Theme.of(context).textTheme.bodySmall,
+                        ),
+                    ],
+                  );
+                },
+              ),
+            ],
+          ),
           actions: [
             if (userId != client.userID &&
                 !client.ignoredUsers.contains(userId))
               Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: OutlinedButton.icon(
-                  label: Text(
-                    L10n.of(context)!.ignore,
-                    style: TextStyle(
-                      color: Theme.of(context).colorScheme.error,
-                    ),
-                  ),
-                  icon: Icon(
-                    Icons.shield_outlined,
-                    color: Theme.of(context).colorScheme.error,
-                  ),
+                padding: const EdgeInsets.only(right: 8.0),
+                child: IconButton(
+                  icon: const Icon(Icons.block_outlined),
+                  tooltip: L10n.of(context)!.block,
                   onPressed: () => controller
                       .participantAction(UserBottomSheetAction.ignore),
                 ),
@@ -141,9 +191,35 @@ class UserBottomSheetView extends StatelessWidget {
                   onPressed: () => controller
                       .participantAction(UserBottomSheetAction.message),
                   icon: const Icon(Icons.forum_outlined),
-                  label: Text(L10n.of(context)!.sendAMessage),
+                  label: Text(
+                    controller.widget.user == null
+                        ? L10n.of(context)!.startConversation
+                        : L10n.of(context)!.sendAMessage,
+                  ),
                 ),
               ),
+            PresenceBuilder(
+              userId: userId,
+              client: client,
+              builder: (context, presence) {
+                final status = presence?.statusMsg;
+                if (status == null || status.isEmpty) {
+                  return const SizedBox.shrink();
+                }
+                return ListTile(
+                  title: SelectableLinkify(
+                    text: status,
+                    style: const TextStyle(fontSize: 16),
+                    options: const LinkifyOptions(humanize: false),
+                    linkStyle: const TextStyle(
+                      color: Colors.blueAccent,
+                      decorationColor: Colors.blueAccent,
+                    ),
+                    onOpen: (url) => UrlLauncher(context, url.url).launchUrl(),
+                  ),
+                );
+              },
+            ),
             if (controller.widget.onMention != null)
               ListTile(
                 leading: const Icon(Icons.alternate_email_outlined),

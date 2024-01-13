@@ -289,7 +289,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
 	"@changeTheHomeserver": {
 		"type": "text",
 		"placeholders": {}
@@ -692,7 +692,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
 	"@enterYourHomeserver": {
 		"type": "text",
 		"placeholders": {}
@@ -707,7 +707,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"rechainonline": "REChain.Online",
+	"rechainonline": "REChain ® 🪐",
 	"@rechainonline": {
 		"type": "text",
 		"placeholders": {}
@@ -867,7 +867,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"inviteText": "{username} us ha convidat a la plataforma REChain.Online! \n1. Instal·leu REChain.Online: https://rechain.online \n2. Registra't o inicia sessió! \n3. Obre l'enllaç d'invitació: {link}",
+	"inviteText": "{username} us ha convidat a la plataforma REChain ® 🪐! \n1. Instal·leu REChain ® 🪐: https://rechain.online \n2. Registra't o inicia sessió! \n3. Obre l'enllaç d'invitació: {link}",
 	"@inviteText": {
 		"type": "text",
 		"placeholders": {
@@ -1066,7 +1066,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"newMessageInrechainonline": "Nou missatge a la plataforma REChain.Online!",
+	"newMessageInrechainonline": "Nou missatge a la plataforma REChain ® 🪐!",
 	"@newMessageInrechainonline": {
 		"type": "text",
 		"placeholders": {}
@@ -1086,7 +1086,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"noCrossSignBootstrap": "REChain.Online actualment no admet l'habilitació de l'autenticació de signatura creuada. Si us plau, activeu-lo dins de REChain 🪐.",
+	"noCrossSignBootstrap": "REChain.Online actualment no admet l'habilitació de l'autenticació de signatura creuada. Si us plau, activeu-lo dins de REChain ® 🪐.",
 	"@noCrossSignBootstrap": {
 		"type": "text",
 		"placeholders": {}
@@ -1096,12 +1096,12 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"noGoogleServicesWarning": "Sembla que no teniu cap servei de Google al vostre telèfon. Aquesta és una bona decisió pel que fa a la vostra privadesa! Per rebre notificacions push de la plataforma REChain.Online, us recomanem que utilitzeu https://microg.org/ o https://unifiedpush.org/.",
+	"noGoogleServicesWarning": "Sembla que no teniu cap servei de Google al vostre telèfon. Aquesta és una bona decisió pel que fa a la vostra privadesa! Per rebre notificacions push de la plataforma REChain ® 🪐, us recomanem que utilitzeu https://microg.org/ o https://unifiedpush.org/.",
 	"@noGoogleServicesWarning": {
 		"type": "text",
 		"placeholders": {}
 	},
-	"noMegolmBootstrap": "REChain.Online actualment no admet la còpia de seguretat de claus en línia a través de la xarxa. Si us plau, activeu-lo dins de REChain 🪐.",
+	"noMegolmBootstrap": "REChain.Online actualment no admet la còpia de seguretat de claus en línia a través de la xarxa. Si us plau, activeu-lo dins de REChain ® 🪐.",
 	"@noMegolmBootstrap": {
 		"type": "text",
 		"placeholders": {}
@@ -1272,7 +1272,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"pleaseEnterArechainonlineIdentifier": "Introduïu l'identificador de xarxa del Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node.",
+	"pleaseEnterArechainonlineIdentifier": "Introduïu l'identificador de xarxa del Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node.",
 	"@pleaseEnterArechainonlineIdentifier": {
 		"type": "text",
 		"placeholders": {}
@@ -1450,7 +1450,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"sendBugReports": "Permet l'enviament d'informes d'error amb REChain 🪐",
+	"sendBugReports": "Permet l'enviament d'informes d'error amb REChain ® 🪐",
 	"@sendBugReports": {
 		"type": "text",
 		"placeholders": {}
@@ -1522,7 +1522,7 @@
 			"senderName": {}
 		}
 	},
-	"sentryInfo": "Informació sobre la vostra privadesa: https://rechain.online/en/privacy.html",
+	"sentryInfo": "Informació sobre la vostra privadesa: https://rechain.online/privacy-policy.html",
 	"@sentryInfo": {
 		"type": "text",
 		"placeholders": {}
@@ -1671,7 +1671,7 @@
 			"suffix": {}
 		}
 	},
-	"title": "REChain.Online",
+	"title": "REChain ® 🪐",
 	"@title": {
 		"description": "Title for the application",
 		"type": "text",
@@ -1899,7 +1899,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"welcomeText": "Benvingut a REChain.Online! Un futur privat i segur que ja ha arribat!",
+	"welcomeText": "Benvingut a REChain ® 🪐! Un futur privat i segur que ja ha arribat!",
 	"@welcomeText": {
 		"type": "text",
 		"placeholders": {}

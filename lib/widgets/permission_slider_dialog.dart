@@ -63,11 +63,11 @@ Future<int?> showPermissionChooser(
             autocorrect: false,
             validator: (text) {
               if (text == null) {
-                return "Please. enter a number!";
+                return L10n.of(context)!.pleaseEnterANumber;
               }
               final level = int.tryParse(text);
               if (level == null || level < 0) {
-                return "Please, enter a number!";
+                return L10n.of(context)!.pleaseEnterANumber;
               }
               return null;
             },

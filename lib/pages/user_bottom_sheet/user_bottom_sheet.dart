@@ -6,6 +6,7 @@ import 'package:future_loading_dialog/future_loading_dialog.dart';
 import 'package:go_router/go_router.dart';
 import 'package:matrix/matrix.dart';
 
+import 'package:rechainonline/config/themes.dart';
 import 'package:rechainonline/widgets/permission_slider_dialog.dart';
 import '../../widgets/matrix.dart';
 import 'user_bottom_sheet_view.dart';
@@ -143,7 +144,7 @@ class UserBottomSheetController extends State<UserBottomSheet> {
         break;
       case UserBottomSheetAction.mention:
         if (user == null) throw ('User must not be null for this action!');
-        Navigator.of(context, rootNavigator: false).pop();
+        Navigator.of(context).pop();
         widget.onMention!();
         break;
       case UserBottomSheetAction.ban:
@@ -154,14 +155,14 @@ class UserBottomSheetController extends State<UserBottomSheet> {
               title: L10n.of(context)!.areYouSure,
               okLabel: L10n.of(context)!.yes,
               cancelLabel: L10n.of(context)!.no,
-              message: "Ban!",
+              message: L10n.of(context)!.banUserDescription,
             ) ==
             OkCancelResult.ok) {
           await showFutureLoadingDialog(
             context: context,
             future: () => user.ban(),
           );
-          Navigator.of(context, rootNavigator: false).pop();
+          Navigator.of(context).pop();
         }
         break;
       case UserBottomSheetAction.unban:
@@ -172,14 +173,14 @@ class UserBottomSheetController extends State<UserBottomSheet> {
               title: L10n.of(context)!.areYouSure,
               okLabel: L10n.of(context)!.yes,
               cancelLabel: L10n.of(context)!.no,
-              message: "UNBan!",
+              message: L10n.of(context)!.unbanUserDescription,
             ) ==
             OkCancelResult.ok) {
           await showFutureLoadingDialog(
             context: context,
             future: () => user.unban(),
           );
-          Navigator.of(context, rootNavigator: false).pop();
+          Navigator.of(context).pop();
         }
         break;
       case UserBottomSheetAction.kick:
@@ -190,14 +191,14 @@ class UserBottomSheetController extends State<UserBottomSheet> {
               title: L10n.of(context)!.areYouSure,
               okLabel: L10n.of(context)!.yes,
               cancelLabel: L10n.of(context)!.no,
-              message: "Kick!",
+              message: L10n.of(context)!.kickUserDescription,
             ) ==
             OkCancelResult.ok) {
           await showFutureLoadingDialog(
             context: context,
             future: () => user.kick(),
           );
-          Navigator.of(context, rootNavigator: false).pop();
+          Navigator.of(context).pop();
         }
         break;
       case UserBottomSheetAction.permission:
@@ -214,32 +215,38 @@ class UserBottomSheetController extends State<UserBottomSheet> {
                     title: L10n.of(context)!.areYouSure,
                     okLabel: L10n.of(context)!.yes,
                     cancelLabel: L10n.of(context)!.no,
-                    message: "-> Admin!",
-                  ) ==
+                    message: L10n.of(context)!.makeAdminDescription,
+                  ) !=
                   OkCancelResult.ok) break;
           await showFutureLoadingDialog(
             context: context,
             future: () => user.setPower(newPermission),
           );
-          Navigator.of(context, rootNavigator: false).pop();
+          Navigator.of(context).pop();
         }
         break;
       case UserBottomSheetAction.message:
+        Navigator.of(context).pop();
+        // Workaround for https://github.com/flutter/flutter/issues/27495
+        await Future.delayed(rechainonlineThemes.animationDuration);
+
         final roomIdResult = await showFutureLoadingDialog(
-          context: context,
+          context: widget.outerContext,
           future: () => Matrix.of(widget.outerContext)
               .client
               .startDirectChat(user?.id ?? widget.profile!.userId),
         );
-        if (roomIdResult.error != null) return;
-        widget.outerContext.go('/rooms/${roomIdResult.result!}');
-        Navigator.of(context, rootNavigator: false)
-          ..pop()
-          ..pop();
-        widget.outerContext.go('/rooms/${roomIdResult.result!}');
+        final roomId = roomIdResult.result;
+        if (roomId == null) return;
+        widget.outerContext.go('/rooms/$roomId');
         break;
       case UserBottomSheetAction.ignore:
-        context.go('/rooms/settings/security/ignorelist');
+        Navigator.of(context).pop();
+        // Workaround for https://github.com/flutter/flutter/issues/27495
+        await Future.delayed(rechainonlineThemes.animationDuration);
+        final userId = user?.id ?? widget.profile?.userId;
+        widget.outerContext
+            .go('/rooms/settings/security/ignorelist', extra: userId);
     }
   }
 

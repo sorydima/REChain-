@@ -129,7 +129,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"inviteText": "{username} telah mengundang Anda ke REChain.Online Platform!\n1. Instal REChain.Online: https://rechain.online\n2. Daftar atau masuk!\n3. Buka tautan undangan ini: {link}",
+	"inviteText": "{username} telah mengundang Anda ke REChain ® 🪐 Platform!\n1. Instal REChain ® 🪐: https://rechain.online\n2. Daftar atau masuk!\n3. Buka tautan undangan ini: {link}",
 	"@inviteText": {
 		"type": "text",
 		"placeholders": {
@@ -207,7 +207,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"homeserverIsNotCompatible": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node tidak kompatibel",
+	"homeserverIsNotCompatible": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node tidak kompatibel",
 	"@homeserverIsNotCompatible": {
 		"type": "text",
 		"placeholders": {}
@@ -292,7 +292,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"rechainonline": "REChain.Online",
+	"rechainonline": "REChain ® 🪐",
 	"@rechainonline": {
 		"type": "text",
 		"placeholders": {}
@@ -312,7 +312,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
 	"@enterYourHomeserver": {
 		"type": "text",
 		"placeholders": {}
@@ -620,7 +620,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
 	"@changeTheHomeserver": {
 		"type": "text",
 		"placeholders": {}
@@ -789,7 +789,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"badServerVersionsException": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node ini mendukung versi Spec ini:\n{serverVersions}\nTetapi aplikasi ini hanya mendukung {supportedVersions}",
+	"badServerVersionsException": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node ini mendukung versi Spec ini:\n{serverVersions}\nTetapi aplikasi ini hanya mendukung {supportedVersions}",
 	"@badServerVersionsException": {
 		"type": "text",
 		"placeholders": {
@@ -799,7 +799,7 @@
 	},
 	"sendOnEnter": "Kirim dengan enter",
 	"@sendOnEnter": {},
-	"badServerLoginTypesException": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node ini mendukung tipe masuk ini:\n{serverVersions}\nTetapi aplikasi ini mendukung:\n{supportedVersions}",
+	"badServerLoginTypesException": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node ini mendukung tipe masuk ini:\n{serverVersions}\nTetapi aplikasi ini mendukung:\n{supportedVersions}",
 	"@badServerLoginTypesException": {
 		"type": "text",
 		"placeholders": {
@@ -1077,12 +1077,12 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"noMegolmBootstrap": "Silakan aktifkan cadangan kunci online di dalam REChain 🪐 sebagai gantinya.",
+	"noMegolmBootstrap": "Silakan aktifkan cadangan kunci online di dalam REChain ® 🪐 sebagai gantinya.",
 	"@noMegolmBootstrap": {
 		"type": "text",
 		"placeholders": {}
 	},
-	"noGoogleServicesWarning": "Sepertinya Anda tidak memiliki layanan Google di ponsel Anda. Keputusan bagus untuk privasi Anda! Untuk menerima pemberitahuan push dari Platform REChain.Online, sebaiknya gunakan https://microg.org/ atau https://unifiedpush.org/.",
+	"noGoogleServicesWarning": "Sepertinya Anda tidak memiliki layanan Google di ponsel Anda. Keputusan bagus untuk privasi Anda! Untuk menerima pemberitahuan push dari Platform REChain ® 🪐, sebaiknya gunakan https://microg.org/ atau https://unifiedpush.org/.",
 	"@noGoogleServicesWarning": {
 		"type": "text",
 		"placeholders": {}
@@ -1107,7 +1107,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"newMessageInrechainonline": "Pesan baru di Platform REChain.Online!",
+	"newMessageInrechainonline": "Pesan baru di Platform REChain ® 🪐!",
 	"@newMessageInrechainonline": {
 		"type": "text",
 		"placeholders": {}
@@ -1415,7 +1415,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"welcomeText": "Selamat datang di REChain.Online! Masa Depan Pribadi dan Aman yang telah tiba!",
+	"welcomeText": "Selamat datang di REChain ® 🪐! Masa Depan Pribadi dan Aman yang telah tiba!",
 	"@welcomeText": {
 		"type": "text",
 		"placeholders": {}
@@ -1665,7 +1665,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"title": "REChain.Online",
+	"title": "REChain ® 🪐",
 	"@title": {
 		"description": "Title for the application",
 		"type": "text",
@@ -1845,7 +1845,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"sentryInfo": "Informasi tentang privasi Anda: https://rechain.online/en/privacy.html",
+	"sentryInfo": "Informasi tentang privasi Anda: https://rechain.online/privacy-policy.html",
 	"@sentryInfo": {
 		"type": "text",
 		"placeholders": {}
@@ -2019,7 +2019,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"pleaseEnterArechainonlineIdentifier": "Masukkan Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network ID.",
+	"pleaseEnterArechainonlineIdentifier": "Masukkan Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network ID.",
 	"@pleaseEnterArechainonlineIdentifier": {
 		"type": "text",
 		"placeholders": {}
@@ -2161,7 +2161,7 @@
 	"@shareYourInviteLink": {},
 	"createNewChatExplaination": "Cukup pindai kode QR atau bagikan tautan undangan Anda jika Anda tidak bersebelahan.",
 	"@createNewChatExplaination": {},
-	"norechainonlineServer": "{server1} bukan server Jaringan Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node, gunakan {server2} sebagai gantinya?",
+	"norechainonlineServer": "{server1} bukan server Jaringan Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node, gunakan {server2} sebagai gantinya?",
 	"@norechainonlineServer": {
 		"type": "text",
 		"placeholders": {
@@ -2174,7 +2174,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"noCrossSignBootstrap": "REChain.Online saat ini tidak mendukung penandatanganan silang. Harap aktifkan di dalam REChain 🪐.",
+	"noCrossSignBootstrap": "REChain.Online saat ini tidak mendukung penandatanganan silang. Harap aktifkan di dalam REChain ® 🪐.",
 	"@noCrossSignBootstrap": {
 		"type": "text",
 		"placeholders": {}
@@ -2270,7 +2270,7 @@
 			"error": {}
 		}
 	},
-	"homeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"homeserver": "Node/Server",
 	"@homeserver": {},
 	"enterASpacepName": "Masukkan nama space",
 	"@enterASpacepName": {},
@@ -2483,7 +2483,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"sendBugReports": "Izinkan mengirim laporan bug dengan REChain 🪐",
+	"sendBugReports": "Izinkan mengirim laporan bug dengan REChain ® 🪐",
 	"@sendBugReports": {
 		"type": "text",
 		"placeholders": {}
@@ -2855,7 +2855,7 @@
 	"disableEncryptionWarning": "Demi keamanan kamu tidak bisa menonaktifkan enkripsi dalam sebuah obrolan di mana sebelumbya sudah diaktifkan.",
 	"encryptThisChat": "Enkripsi obrolan ini",
 	"endToEndEncryption": "Enkripsi ujung ke ujung",
-	"enterInviteLinkOrMatrixId": "Masukkan tautan undangan atau ID REChain 🪐...",
+	"enterInviteLinkOrMatrixId": "Masukkan tautan undangan atau ID REChain ® 🪐...",
 	"fileIsTooBigForServer": "Server melaporkan bahwa file terlalu besar untuk dikirim.",
 	"letsStart": "Mari kita mulai",
 	"newSpaceDescription": "Fitur space bisa membantu untuk memisahkan obrolanmu dan membuat komunitas pribadi atau publik.",
@@ -2870,7 +2870,7 @@
 	"countFiles": "{count} file",
 	"custom": "Kustom",
 	"dehydrate": "Ekspor sesi dan bersihkan perangkat",
-	"dehydrateShare": "Ini adalah ekspor REChain 🪐 privat kamu. Pastikan kamu tidak menghilangkannya dan tetap rahasia.",
+	"dehydrateShare": "Ini adalah ekspor REChain ® 🪐 privat kamu. Pastikan kamu tidak menghilangkannya dan tetap rahasia.",
 	"dehydrateTor": "Pengguna Tor: Ekspor sesi",
 	"dehydrateTorLong": "Pengguna Tor disarankan untuk mengekspor sesi sebelum menutup jendela.",
 	"dehydrateWarning": "Tindakan ini tidak dapat diurungkan. Pastikan kamu telah menyimpan file cadangan dengan aman.",
@@ -2878,7 +2878,7 @@
 	"hydrate": "Pulihkan dari file cadangan",
 	"hydrateTor": "Pengguna Tor: Impor eksporan sesi",
 	"hydrateTorLong": "Apakah kamu mengekspor sesimu terakhir kali di Tor? Impor dengan cepat dan lanjut mengobrol.",
-	"indexedDbErrorLong": "Penyimpanan pesan sayangnya tidak diaktifkan dalam mode privat secara default.\nMohon kunjungi\n- about:config\n- tetapkan dom.indexedDB.privateBrowsing.enabled ke true\nJika tidak ditetapkan, REChain 🪐 tidak akan dapat dijalankan.",
+	"indexedDbErrorLong": "Penyimpanan pesan sayangnya tidak diaktifkan dalam mode privat secara default.\nMohon kunjungi\n- about:config\n- tetapkan dom.indexedDB.privateBrowsing.enabled ke true\nJika tidak ditetapkan, REChain ® 🪐 tidak akan dapat dijalankan.",
 	"indexedDbErrorTitle": "Masalah dengan mode privat",
 	"numberRoomMembers": "{number} anggota",
 	"pleaseEnterRecoveryKey": "Mohon masukkan kunci pemulihanmu:",
@@ -2894,7 +2894,7 @@
 	"stories": "Cerita",
 	"suggestedRooms": "Jelajahi grup di space ini",
 	"unlockOldMessages": "Akses pesan lama",
-	"updateAvailable": "Tersedia pembaruan REChain 🪐",
+	"updateAvailable": "Tersedia pembaruan REChain ® 🪐",
 	"updateNow": "Mulai memperbarui di latar belakang",
 	"user": "Pengguna",
 	"users": "Pengguna",
@@ -2912,7 +2912,7 @@
 	"integrationsNotImplemented": "Mengedit widget dan integrasi belum dapat dilakukan.",
 	"iUnderstand": "Saya mengerti",
 	"markAsRead": "Tandai sebagai dibaca",
-	"matrixWidgets": "Widget REChain 🪐",
+	"matrixWidgets": "Widget REChain ® 🪐",
 	"nextAccount": "Akun berikutnya",
 	"openChat": "Buka Chat",
 	"@allSpaces": {},
@@ -3007,16 +3007,16 @@
 	"readUpToHere": "Baca sampai sini",
 	"allSpaces": "Semua space",
 	"appearOnTop": "Tampilkan di atas",
-	"appearOnTopDetails": "Memperbolehkan aplikasi untuk ditampilkan di atas (tidak dibutuhkan jika kamu memiliki REChain 🪐 ditetapkan sebagai akun pemanggilan)",
+	"appearOnTopDetails": "Memperbolehkan aplikasi untuk ditampilkan di atas (tidak dibutuhkan jika kamu memiliki REChain ® 🪐 ditetapkan sebagai akun pemanggilan)",
 	"callingAccount": "Akun pemanggilan",
-	"callingAccountDetails": "Memperbolehkan REChain 🪐 untuk menggunakan aplikasi penelepon Android bawaan.",
+	"callingAccountDetails": "Memperbolehkan REChain ® 🪐 untuk menggunakan aplikasi penelepon Android bawaan.",
 	"callingPermissions": "Perizinan panggilan",
 	"commandHint_cuddle": "Kirim berpelukan",
 	"commandHint_googly": "Kirim mata googly",
 	"commandHint_hug": "Kirim pelukan",
 	"commandHint_markasdm": "Tandai sebagai ruangan pesan langsung",
 	"commandHint_markasgroup": "Tandai sebagai grup",
-	"confirmMatrixId": "Mohon konfirmasi ID REChain 🪐 Anda untuk menghapus akun Anda.",
+	"confirmMatrixId": "Mohon konfirmasi ID REChain ® 🪐 Anda untuk menghapus akun Anda.",
 	"cuddleContent": "{senderName} berpelukan dengan kamu",
 	"doNotShowAgain": "Jangan tampilkan lagi",
 	"enterRoom": "Masuk ruangan",
@@ -3029,8 +3029,8 @@
 	"newSpace": "Space baru",
 	"noKeyForThisMessage": "Hal ini bisa terjadi jika pesan dikirim sebelum kamu masuk ke akunmu di perangkat ini.\n\nMungkin juga pengirim telah memblokir perangkatmu atau ada yang tidak beres dengan koneksi internet.\n\nApakah kamu bisa membaca pesan pada sesi lain? Maka kamu bisa mentransfer pesan dari sesi tersebut! Buka Pengaturan > Perangkat dan pastikan bahwa perangkat Anda telah ditandatangani secara silang. Ketika kamu membuka ruangan di lain waktu dan kedua sesi berada di latar depan, kunci akan ditransmisikan secara otomatis.\n\nApakah kamu tidak mau kehilangan kunci saat keluar atau berpindah perangkat? Pastikan bahwa kamu telah mengaktifkan cadangan obrolan dalam pengaturan.",
 	"numChats": "{number} obrolan",
-	"otherCallingPermissions": "Mikrofon, kamera dan perizinan REChain 🪐 lainnya",
-	"screenSharingDetail": "Kamu membagikan layarmu di REChain 🪐",
+	"otherCallingPermissions": "Mikrofon, kamera dan perizinan REChain ® 🪐 lainnya",
+	"screenSharingDetail": "Kamu membagikan layarmu di REChain ® 🪐",
 	"screenSharingTitle": "membagikan layar",
 	"supposedMxid": "Ini seharusnya {mxid}",
 	"wasDirectChatDisplayName": "Obrolan kosong (sebelumnya {oldDisplayName})",

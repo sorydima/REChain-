@@ -17,6 +17,7 @@
 		B87CB873285B3EE100B281AC /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = B87CB872285B3EE100B281AC /* Base.lproj */; };
 		B8B40086285B3E230077A552 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B40085285B3E230077A552 /* ShareViewController.swift */; };
 		B8B40089285B3E230077A552 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8B40087285B3E230077A552 /* MainInterface.storyboard */; };
+		C137635E2AD1446100A8F905 /* notification.caf in Resources */ = {isa = PBXBuildFile; fileRef = C137635D2AD1446100A8F905 /* notification.caf */; };
 		C149567C25C7274F00A16396 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C149567B25C7274F00A16396 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		B8B4008A285B3E230077A552 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8B40092285B3E7F0077A552 /* REChain.Online Share.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; name = "REChain.Online Share.entitlements"; path = "../../../Desktop/REChain.Online Share/REChain.Online Share.entitlements"; sourceTree = "<group>"; };
 		B8B40093285B3E8D0077A552 /* REChain.Online Share-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "REChain.Online Share-Bridging-Header.h"; path = "../../../Desktop/REChain.Online Share/REChain.Online Share-Bridging-Header.h"; sourceTree = "<group>"; };
+		C137635D2AD1446100A8F905 /* notification.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = notification.caf; sourceTree = "<group>"; };
 		C149567B25C7274F00A16396 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C149567D25C7276200A16396 /* Runner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Runner.entitlements; sourceTree = "<group>"; };
 		EA246783222E02DD03959891 /* Pods-Runner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				97C147021CF9000F007C117D /* Info.plist */,
 				1498D2321E8E86230040F4C2 /* GeneratedPluginRegistrant.h */,
 				C149567B25C7274F00A16396 /* GoogleService-Info.plist */,
+				C137635D2AD1446100A8F905 /* notification.caf */,
 				1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */,
 				74858FAE1ED2DC5600515810 /* AppDelegate.swift */,
 				74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */,
@@ -173,6 +176,7 @@
 				97C146EA1CF9000F007C117D /* Sources */,
 				97C146EB1CF9000F007C117D /* Frameworks */,
 				97C146EC1CF9000F007C117D /* Resources */,
+				C1005C4D261071B5002F4F32 /* Embed App Extensions */,
 				9705A1C41CF9048500538489 /* Embed Frameworks */,
 				3B06AD1E1E4923F5004D2608 /* Thin Binary */,
 				F9C8EE392B9AB471149C306E /* [CP] Embed Pods Frameworks */,
@@ -249,6 +253,7 @@
 				97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */,
 				3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */,
 				C149567C25C7274F00A16396 /* GoogleService-Info.plist in Resources */,
+				C137635E2AD1446100A8F905 /* notification.caf in Resources */,
 				97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */,
 				97C146FC1CF9000F007C117D /* Main.storyboard in Resources */,
 			);

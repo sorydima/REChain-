@@ -139,13 +139,13 @@ class ChatListController extends State<ChatList>
   bool Function(Room) getRoomFilterByActiveFilter(ActiveFilter activeFilter) {
     switch (activeFilter) {
       case ActiveFilter.allChats:
-        return (room) => !room.isSpace && !room.isStoryRoom;
+        return (room) => !room.isSpace;
       case ActiveFilter.groups:
         return (room) =>
-            !room.isSpace && !room.isDirectChat && !room.isStoryRoom;
+            !room.isSpace && !room.isDirectChat;
       case ActiveFilter.messages:
         return (room) =>
-            !room.isSpace && room.isDirectChat && !room.isStoryRoom;
+            !room.isSpace && room.isDirectChat;
       case ActiveFilter.spaces:
         return (r) => r.isSpace;
     }
@@ -471,7 +471,7 @@ class ChatListController extends State<ChatList>
           title: L10n.of(context)!.areYouSure,
           okLabel: L10n.of(context)!.yes,
           cancelLabel: L10n.of(context)!.cancel,
-          message: "Archive",
+          message: L10n.of(context)!.archiveRoomDescription,
         ) ==
         OkCancelResult.ok;
     if (!confirmed) return;
@@ -698,6 +698,13 @@ class ChatListController extends State<ChatList>
         Matrix.of(context).activeBundle = null;
       });
     });
+  }
+
+  void createNewSpace() async {
+    final spaceId = await context.push<String?>('/rooms/newspace');
+    if (spaceId != null) {
+      setActiveSpace(spaceId);
+    }
   }
 
   @override

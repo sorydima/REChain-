@@ -266,7 +266,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
 	"@changeTheHomeserver": {
 		"type": "text",
 		"placeholders": {}
@@ -594,7 +594,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
 	"@enterYourHomeserver": {
 		"type": "text",
 		"placeholders": {}
@@ -609,7 +609,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"rechainonline": "REChain.Online",
+	"rechainonline": "REChain ® 🪐",
 	"@rechainonline": {
 		"placeholders": {},
 		"type": "text"
@@ -749,7 +749,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"inviteText": "دعاك {username} لاستخدام REChain.Online. \n1. قم بتثبيت REChain.Online: https://rechain.online \n2. سجل أو سجل \n3. افتح رابط الدعوة: {link}",
+	"inviteText": "دعاك {username} لاستخدام REChain ® 🪐. \n1. قم بتثبيت REChain ® 🪐: https://rechain.online \n2. سجل أو سجل \n3. افتح رابط الدعوة: {link}",
 	"@inviteText": {
 		"type": "text",
 		"placeholders": {
@@ -921,7 +921,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"newMessageInrechainonline": "رسالة جديدة في REChain.Online",
+	"newMessageInrechainonline": "رسالة جديدة في REChain ® 🪐",
 	"@newMessageInrechainonline": {
 		"type": "text",
 		"placeholders": {}
@@ -1060,7 +1060,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"pleaseEnterArechainonlineIdentifier": "أدخل معرف شبكة عقدة Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"pleaseEnterArechainonlineIdentifier": "أدخل معرف شبكة عقدة Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
 	"@pleaseEnterArechainonlineIdentifier": {
 		"type": "text",
 		"placeholders": {}
@@ -1224,7 +1224,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"sendBugReports": "اسمح بإرسال تقريرات عن العلل باستخدام REChain 🪐.",
+	"sendBugReports": "اسمح بإرسال تقريرات عن العلل باستخدام REChain ® 🪐.",
 	"@sendBugReports": {
 		"type": "text",
 		"placeholders": {}
@@ -1291,7 +1291,7 @@
 			"senderName": {}
 		}
 	},
-	"sentryInfo": "معلومات عن خصوصيتك: https://rechain.online/en/privacy.html",
+	"sentryInfo": "معلومات عن خصوصيتك: https://rechain.online/privacy-policy.html",
 	"@sentryInfo": {
 		"type": "text",
 		"placeholders": {}
@@ -1638,7 +1638,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"welcomeText": "مرحبا بكم في REChain.Online! مستقبل خاص وآمن وصل بالفعل!",
+	"welcomeText": "مرحبا بكم في REChain ® 🪐! مستقبل خاص وآمن وصل بالفعل!",
 	"@welcomeText": {
 		"type": "text",
 		"placeholders": {}
@@ -1706,7 +1706,7 @@
 	"@shareYourInviteLink": {},
 	"createNewChatExplaination": "اطلب من أصدقائك مسح رمز الاستجابة السريعة أو أرسل لهم رابط الدعوة.",
 	"@createNewChatExplaination": {},
-	"norechainonlineServer": "{server1} ليس خادم Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network ، بدلاً من ذلك تريد استخدام {server2}؟",
+	"norechainonlineServer": "{server1} ليس خادم Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network ، بدلاً من ذلك تريد استخدام {server2}؟",
 	"@norechainonlineServer": {
 		"type": "text",
 		"placeholders": {
@@ -1816,7 +1816,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"homeserver": "Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node",
+	"homeserver": "Node/Server",
 	"@homeserver": {},
 	"enterASpacepName": "أدخل اسم الفضاء",
 	"@enterASpacepName": {},
@@ -2865,16 +2865,16 @@
 	"allRooms": "جميع الدردشات الجماعية",
 	"allSpaces": "كل المساحات",
 	"appearOnTop": "يظهر في الأعلى",
-	"appearOnTopDetails": "يسمح للتطبيق بالظهور في الأعلى (ليست هناك حاجة إذا قمت بالفعل بإعداد REChain 🪐 كحساب اتصال)",
+	"appearOnTopDetails": "يسمح للتطبيق بالظهور في الأعلى (ليست هناك حاجة إذا قمت بالفعل بإعداد REChain ® 🪐 كحساب اتصال)",
 	"callingAccount": "الاتصال بالحساب",
-	"callingAccountDetails": "يسمح لـ REChain 🪐 باستخدام تطبيق Dialer الأصلي.",
+	"callingAccountDetails": "يسمح لـ REChain ® 🪐 باستخدام تطبيق Dialer الأصلي.",
 	"callingPermissions": "أذونات الاتصال",
 	"commandHint_cuddle": "أرسل عناق",
 	"commandHint_googly": "أرسل بعض عيون googly",
 	"commandHint_hug": "إرسال حضن",
 	"commandHint_markasdm": "وضع علامة كغرفة رسائل مباشرة",
 	"commandHint_markasgroup": "وضع علامة كمجموعة",
-	"confirmMatrixId": "يرجى تأكيد معرف REChain 🪐 الخاص بك من أجل حذف حسابك.",
+	"confirmMatrixId": "يرجى تأكيد معرف REChain ® 🪐 الخاص بك من أجل حذف حسابك.",
 	"continueWith": "أكمل ب:",
 	"countFiles": "ملفات {count}",
 	"cuddleContent": "{senderName} يحتضنك",
@@ -2902,7 +2902,7 @@
 	"hydrate": "استعادة من ملف النسخ الاحتياطي",
 	"hydrateTor": "مستخدمو تور: استيراد تصدير الجلسة",
 	"hydrateTorLong": "هل قمت بتصدير جلستك الأخيرة على تور؟ قم باستيراده بسرعة واستمر في الدردشة.",
-	"indexedDbErrorLong": "للأسف ، لم يتم تمكين تخزين الرسائل في الوضع الخاص افتراضيا.\nيرجى زيارة\n - حول:التكوين\n - تعيين dom.indexedDB.privateBrowsing.enabled إلى true\nخلاف ذلك ، لا يمكن تشغيل REChain 🪐.",
+	"indexedDbErrorLong": "للأسف ، لم يتم تمكين تخزين الرسائل في الوضع الخاص افتراضيا.\nيرجى زيارة\n - حول:التكوين\n - تعيين dom.indexedDB.privateBrowsing.enabled إلى true\nخلاف ذلك ، لا يمكن تشغيل REChain ® 🪐.",
 	"indexedDbErrorTitle": "مشاكل الوضع الخاص",
 	"jump": "قفز",
 	"jumpToLastReadMessage": "الانتقال إلى آخر رسالة مقروءة",
@@ -2918,8 +2918,8 @@
 	"noOtherDevicesFound": "لم يتم العثور على أجهزة أخرى",
 	"numChats": "{number} الدردشات",
 	"openLinkInBrowser": "فتح الرابط في المتصفح",
-	"otherCallingPermissions": "الميكروفون والكاميرا وأذونات REChain 🪐 الأخرى",
-	"pleaseEnterAMatrixIdentifier": "أدخل معرف REChain 🪐.",
+	"otherCallingPermissions": "الميكروفون والكاميرا وأذونات REChain ® 🪐 الأخرى",
+	"pleaseEnterAMatrixIdentifier": "أدخل معرف REChain ® 🪐.",
 	"pleaseEnterRecoveryKey": "الرجاء إدخال مفتاح الاسترداد:",
 	"pleaseEnterRecoveryKeyDescription": "لإلغاء قفل رسائلك القديمة ، يرجى إدخال مفتاح الاسترداد الذي تم إنشاؤه في جلسة سابقة. مفتاح الاسترداد ليس كلمة المرور الخاصة بك.",
 	"pleaseTryAgainLaterOrChooseDifferentServer": "رجاء حاول مجددا أو اختر خادما مختلفا.",
@@ -2931,7 +2931,7 @@
 	"report": "تقرير",
 	"reportErrorDescription": "اوه لا. حدث خطأ ما. يرجى إعادة المحاولة لاحقا. إذا كنت ترغب في ذلك ، يمكنك الإبلاغ عن الخطأ للمطورين.",
 	"saveKeyManuallyDescription": "احفظ هذا المفتاح يدويا عن طريق تشغيل مربع حوار مشاركة النظام أو الحافظة.",
-	"screenSharingDetail": "أنت تشارك شاشتك في REChain 🪐",
+	"screenSharingDetail": "أنت تشارك شاشتك في REChain ® 🪐",
 	"screenSharingTitle": "مشاركة الشاشة",
 	"separateChatTypes": "الدردشات المباشرة والمجموعات المنفصلة",
 	"showDirectChatsInSpaces": "عرض الدردشات المباشرة ذات الصلة في المساحات",
@@ -2946,7 +2946,7 @@
 	"supposedMxid": "يجب أن يكون هذا {mxid}",
 	"switchToAccount": "التبديل إلى الحساب {number}",
 	"unlockOldMessages": "إلغاء قفل الرسائل القديمة",
-	"updateAvailable": "يتوفر تحديث REChain 🪐",
+	"updateAvailable": "يتوفر تحديث REChain ® 🪐",
 	"updateNow": "ابدأ التحديث في الخلفية",
 	"user": "مستخدم",
 	"users": "المستخدمون",
