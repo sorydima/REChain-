@@ -46,6 +46,9 @@ extension LocalizedExceptionExtension on Object {
       return L10n.of(context)!.badServerVersionsException(
         serverVersions,
         supportedVersions,
+        serverVersions,
+        supportedVersions,
+        serverVersions,
       );
     }
     if (this is BadServerLoginTypesException) {
@@ -60,6 +63,8 @@ extension LocalizedExceptionExtension on Object {
           .replaceAll('{', '"')
           .replaceAll('}', '"');
       return L10n.of(context)!.badServerLoginTypesException(
+        serverVersions,
+        supportedVersions,
         serverVersions,
         supportedVersions,
       );
