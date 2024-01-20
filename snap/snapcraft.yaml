@@ -1,0 +1,108 @@
+name: rechainonline
+title: REChain ® 🪐
+base: core22
+version: git
+license: GPL-3.0
+summary: REChain ®️ 🪐 Platform encourages collaborative communication through features such as threads, allowing users to organize discussions and streamline conversations.
+description: |
+  REChain ®️ 🪐 is an primarily designed as a security and privacy analysis analogue fully focused on the use of platform moments and messages for communication, built on a source code library, including those developed by us, for those who respect freedom and privacy, as well as the safety and security of personal data. 🌤 Our task was to make a tool pleasant and enjoyable to use, with which each of you can communicate, expand content, create workspaces, organize a workflow. 🌈 We strive to show all the world's giants that it is possible to create cool products that are of great importance for society, for people to interact with each other, without selling advertising, personal data of users, their rights and freedoms! 🦄 It's written in Flutter. Our mission is to create an easy to use instant messenger which is open source and accessible for everyone.
+
+
+  ## Features
+
+📩 Send all kinds of messages, images and files!
+🎙️ Voice messages!
+📍 Location sharing!
+🔔 Push notifications!
+💬 Unlimited private and public group chats!
+📣 Public channels with thousands of participants!
+🛠️ Feature rich group moderation including all Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network features!
+🔍 Discover and join public groups!
+🌙 Dark mode!
+🎨 "Material You" design!
+📟 Hides complexity of the Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network IDs behind simple QR codes!
+😄 Custom emotes and stickers!
+🌌 Spaces!
+🔄 Compatible with Element, Nheko, NeoChat and all other Matrix apps!
+🔐 End-to-end encryption!
+🔒 Encrypted chat backup!
+😀 Emoji verification & cross signing!
+... and much more.
+
+  Donate US! ⌛
+
+  For tea, coffee! For the future of decentralized and distributed internet. We do cool and, in my opinion, useful things for the safety and security of users' personal data. And on a completely non-commercial basis! 😎 Tether - (TRC20) - Tron 🍕: TRZ7jyMBNtRtqokkkJ7g5BJDzFycDv8cBm
+
+  Join the community: https://matrix.to/#/#chatting:matrix.katya.wtf
+  Website: https://rechain.online
+
+grade: stable
+confinement: strict
+
+architectures:
+  - build-on: amd64
+  - build-on: arm64
+
+parts:
+  olm:
+    plugin: cmake
+    cmake-parameters:
+      - -DCMAKE_INSTALL_PREFIX=/usr
+    source: https://gitlab.matrix.org/matrix-org/olm.git
+    source-type: git
+    source-tag: '3.2.14'
+    build-packages:
+      - g++
+
+  zenity-integration:
+    plugin: nil
+    stage-snaps:
+      - zenity-integration
+
+  rechainonline:
+    plugin: flutter
+    source: .
+    override-build: |
+      # Workaround for Flutter build error:
+      rm -rf build
+      craftctl default
+    build-packages:
+      - libjsoncpp-dev
+      - curl
+    stage-packages:
+      - libsecret-1-dev
+      - libjsoncpp-dev
+      - libsqlite3-0
+      - libsqlite3-dev
+
+slots:
+  dbus-svc:
+    interface: dbus
+    bus: session
+    name: com.rechain.online
+
+apps:
+  rechainonline:
+    command: rechainonline
+    extensions: [gnome]
+    plugs:
+      - audio-playback
+      - desktop
+      - desktop-legacy
+      - home
+      - network
+      - network-manager
+      - network-manager-observe
+      - opengl
+      - removable-media
+      - browser-support
+      - password-manager-service
+    slots:
+      - dbus-svc
+    # Workaround for:
+    # https://github.com/flutter-webrtc/flutter-webrtc/issues/1212#issuecomment-1611899344
+    environment:
+      XDG_DATA_HOME: $SNAP_USER_DATA
+      XDG_DATA_DIRS: $SNAP/usr/share
+      GDK_GL: gles
+      LD_LIBRARY_PATH: "$LD_LIBRARY_PATH:$SNAP/lib:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET"
