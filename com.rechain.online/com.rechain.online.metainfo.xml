@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.rechain.online</id>
+  <name>REChain ® 🪐</name>
+  <summary>REChain ®️ 🪐 Platform encourages collaborative communication through features such as threads, allowing users to organize discussions and streamline conversations.</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0</project_license>
+  <recommends>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>touch</control>
+  </recommends>
+  <developer_name>com.rechain</developer_name>
+  <url type="homepage">https://rechain.online</url>
+  <description>
+    <p>REChain ®️ 🪐 is an primarily designed as a security and privacy analysis analogue fully focused on the use of platform moments and messages for communication, built on a source code library, including those developed by us, for those who respect freedom and privacy, as well as the safety and security of personal data. 🌤 Our task was to make a tool pleasant and enjoyable to use, with which each of you can communicate, expand content, create workspaces, organize a workflow. 🌈 We strive to show all the world's giants that it is possible to create cool products that are of great importance for society, for people to interact with each other, without selling advertising, personal data of users, their rights and freedoms! 🦄 It's written in Flutter. Our mission is to create an easy to use instant messenger which is open source and accessible for everyone.</p>
+    <p>Some Features:</p>
+    <ul>
+    <li>📩 Send all kinds of messages, images and files!</li>
+    <li>🎙️ Voice messages!</li>
+    <li>📍 Location sharing!</li>
+    <li>🔔 Push notifications!</li>
+    <li>💬 Unlimited private and public group chats!</li>
+    <li>📣 Public channels with thousands of participants!</li>
+    <li>🛠️ Feature rich group moderation including all Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network features!</li>
+    <li>🔍 Discover and join public groups!</li>
+    <li>🌙 Dark mode!</li>
+    <li>🎨 "Material You" design!</li>
+    <li>📟 Hides complexity of the Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network IDs behind simple QR codes!</li>
+    <li>😄 Custom emotes and stickers!</li>
+    <li>🌌 Spaces!</li>
+    <li>🔄 Compatible with Element, Nheko, NeoChat and all other Matrix apps!</li>
+    <li>🔐 End-to-end encryption!</li>
+    <li>🔒 Encrypted chat backup!</li>
+    <li>😀 Emoji verification & cross signing!</li>
+    </ul>
+    <p>Donate US! ⌛️</p>
+    <p>For tea, coffee! For the future of decentralized and distributed internet. We do cool and, in my opinion, useful things for the safety and security of users' personal data. And on a completely non-commercial basis! 😎</p>
+    <p>Tether - (TRC20) - Tron 🍕: TRZ7jyMBNtRtqokkkJ7g5BJDzFycDv8cBm</p>
+    <p>Smart contract auditing has always been a bottleneck for our startups, REChain ® 🪐 solves this problem in seconds.</p>
+    <p>Join the community: https://matrix.to/#/#chatting:matrix.katya.wtf
+       Website: https://rechain.online</p>
+  </description>
+
+  <screenshots>
+    <screenshot>
+      <image type="source">https://github.com/sorydima/REChain-/blob/main/screenshots/Desktop.png</image>
+      <image type="source">https://github.com/sorydima/REChain-/blob/main/screenshots/showcase1.jpeg</image>
+      <image type="source">https://github.com/sorydima/REChain-/blob/main/screenshots/showcase2.jpeg</image>
+      <image type="source">https://github.com/sorydima/REChain-/blob/main/screenshots/showcase3.jpeg</image>
+      <image type="source">https://github.com/sorydima/REChain-/blob/main/screenshots/showcase4.jpeg</image>
+      <image type="source">https://github.com/sorydima/REChain-/blob/main/screenshots/showcase5.jpeg</image>
+      <image type="source">https://github.com/sorydima/REChain-/blob/main/screenshots/showcase6.jpeg</image>
+      <image type="source">https://github.com/sorydima/REChain-/blob/main/screenshots/showcase7.jpeg</image>
+      <image type="source">https://github.com/sorydima/REChain-/blob/main/screenshots/showcase8.jpeg</image>
+      <image type="source">https://github.com/sorydima/REChain-/blob/main/screenshots/showcase9.jpeg</image>
+      <image type="source">https://github.com/sorydima/REChain-/blob/main/screenshots/showcase10.jpeg</image>
+    </screenshot>
+  </screenshots>
+  <launchable type="desktop-id">com.rechain.online.desktop</launchable>
+  <releases>
+    <release version="3.8.0" date="2024-01-21"/>
+  </releases>
+  <content_rating type="oars-1.1">
+    <content_attribute id="social-chat">intense</content_attribute>
+    <content_attribute id="social-audio">intense</content_attribute>
+    <content_attribute id="social-contacts">intense</content_attribute>
+  </content_rating>
+  <update_contact>support@rechain.email</update_contact>
+</component>
