@@ -1,0 +1,27 @@
+REChain ®️ 🪐 Platform encourages collaborative communication through features such as threads, allowing users to organize discussions and streamline conversations. The inclusion of polls enhances decision-making processes by facilitating quick and efficient feedback gathering. Additionally, the platform supports user-friendly interface & goods!🚀
+
+REChain ®️ 🪐 is an primarily designed as a security and privacy analysis analogue fully focused on the use of platform moments and messages for communication, built on a source code library, including those developed by us, for those who respect freedom and privacy, as well as the safety and security of personal data. 🌤 Our task was to make a tool pleasant and enjoyable to use, with which each of you can communicate, expand content, create workspaces, organize a workflow. 🌈 We strive to show all the world's giants that it is possible to create cool products that are of great importance for society, for people to interact with each other, without selling advertising, personal data of users, their rights and freedoms! 🦄 It's written in Flutter. Our mission is to create an easy to use instant messenger which is open source and accessible for everyone.
+
+Features:
+📩 Send all kinds of messages, images and files!
+🎙️ Voice messages!
+📍 Location sharing!
+🔔 Push notifications!
+💬 Unlimited private and public group chats!
+📣 Public channels with thousands of participants!
+🛠️ Feature rich group moderation including all Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network features!
+🔍 Discover and join public groups!
+🌙 Dark mode!
+🎨 "Material You" design!
+📟 Hides complexity of the Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network IDs behind simple QR codes!
+😄 Custom emotes and stickers!
+🌌 Spaces!
+🔄 Compatible with Element, Nheko, NeoChat and all other Matrix apps!
+🔐 End-to-end encryption!
+🔒 Encrypted chat backup!
+😀 Emoji verification & cross signing!
+... and much more.
+
+Donate US! ⌛️
+For tea, coffee! For the future of decentralized and distributed internet. We do cool and, in my opinion, useful things for the safety and security of users' personal data. And on a completely non-commercial basis! 😎
+Tether - (TRC20) - Tron 🍕: TRZ7jyMBNtRtqokkkJ7g5BJDzFycDv8cBm
