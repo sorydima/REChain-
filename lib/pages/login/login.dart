@@ -121,7 +121,6 @@ class LoginController extends State<Login> {
 
         if (Matrix.of(context).getLoginClient().homeserver == null) {
           Matrix.of(context).getLoginClient().homeserver = oldHomeserver;
-          // okay, the server we checked does not appear to be a matrix server
           Logs().v(
             '$newDomain is not running a homeserver, asking to use $oldHomeserver',
           );
@@ -129,7 +128,7 @@ class LoginController extends State<Login> {
             context: context,
             useRootNavigator: false,
             message:
-                L10n.of(context)!.norechainonlineServer(newDomain, oldHomeserver!, newDomain, oldHomeserver!, newDomain),
+                L10n.of(context)!.noMatrixServer(newDomain, oldHomeserver!),
             okLabel: L10n.of(context)!.ok,
             cancelLabel: L10n.of(context)!.cancel,
           );

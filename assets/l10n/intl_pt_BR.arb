@@ -1,4637 +1,3469 @@
 {
-	"@@last_modified": "2021-08-14 12:41:09.925971",
-	"about": "Sobre",
-	"@about":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"accept": "Aceitar",
-	"@accept":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"acceptedTheInvitation": "{username} aceitou o convite",
-	"@acceptedTheInvitation":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{}
-		}
-	},
-	"account": "Conta",
-	"@account":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"accountInformation": "Dados da conta",
-	"@accountInformation":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"activatedEndToEndEncryption": "{username} ativou a criptografia ponta-a-ponta",
-	"@activatedEndToEndEncryption":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{}
-		}
-	},
-	"addEmail": "Adicionar email",
-	"@addEmail":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"addGroupDescription": "Adicionar uma descrição para o grupo",
-	"@addGroupDescription":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"addNewFriend": "Adicionar novo(a) amigo(a)",
-	"@addNewFriend":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"admin": "Admin",
-	"@admin":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"alias": "cognome",
-	"@alias":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"all": "Todas",
-	"@all":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"allChats": "Todas conversas",
-	"@allChats":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"alreadyHaveAnAccount": "Você já possui uma conta?",
-	"@alreadyHaveAnAccount":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"answeredTheCall": "{senderName} atendeu à chamada",
-	"@answeredTheCall":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"senderName":
-			{}
-		}
-	},
-	"anyoneCanJoin": "Qualquer pessoa pode participar",
-	"@anyoneCanJoin":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"appLock": "Trava do aplicativo",
-	"@appLock":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"archive": "Arquivo",
-	"@archive":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"archivedRoom": "Sala arquivada",
-	"@archivedRoom":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"areGuestsAllowedToJoin": "Usuários convidados podem participar",
-	"@areGuestsAllowedToJoin":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"areYouSure": "Tem certeza?",
-	"@areYouSure":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"areYouSureYouWantToLogout": "Tem certeza que deseja encerrar a sessão?",
-	"@areYouSureYouWantToLogout":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"askSSSSCache": "Por favor, insira sua frase secreta ou chave de recuperação para serem guardadas.",
-	"@askSSSSCache":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"askSSSSSign": "Para poder validar a outra pessoa, por favor, insira sua frase secreta ou chave de recuperação.",
-	"@askSSSSSign":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"askSSSSVerify": "Por favor, insira a frase secreta ou chave de recuperação para verificar sua sessão.",
-	"@askSSSSVerify":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"askVerificationRequest": "Aceitar esta solicitação de verificação de {username}?",
-	"@askVerificationRequest":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{}
-		}
-	},
-	"audioPlayerPause": "Pausar",
-	"@audioPlayerPause":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"audioPlayerPlay": "Tocar",
-	"@audioPlayerPlay":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"authentication": "Autenticação",
-	"@authentication":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"autoplayImages": "Reproduzir automaticamente figurinhas animadas e emojis",
-	"@autoplayImages":
-	{
-		"type": "text",
-		"placeholder":
-		{}
-	},
-	"avatarHasBeenChanged": "Avatar alterado",
-	"@avatarHasBeenChanged":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"badServerLoginTypesException": "O servidor REChain ® 🪐 suporta os tipos de login:\n{serverVersions}\nMas este app suporta apenas:\n{supportedVersions}",
-	"@badServerLoginTypesException":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"serverVersions":
-			{},
-			"supportedVersions":
-			{}
-		}
-	},
-	"badServerVersionsException": "O servidor REChain ® 🪐 suporta as versões Spec:\n{serverVersions}\nMas este app suporta apenas {supportedVersions}",
-	"@badServerVersionsException":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"serverVersions":
-			{},
-			"supportedVersions":
-			{}
-		}
-	},
-	"banFromChat": "Banir da conversa",
-	"@banFromChat":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"banned": "Banido",
-	"@banned":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"bannedUser": "{username} baniu {targetName}",
-	"@bannedUser":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{},
-			"targetName":
-			{}
-		}
-	},
-	"blockDevice": "Bloquear dispositivo",
-	"@blockDevice":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"blocked": "Bloqueado",
-	"@blocked":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"botMessages": "Mensagens de robôs",
-	"@botMessages":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"cachedKeys": "Chaves guardadas",
-	"@cachedKeys":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"cancel": "Cancelar",
-	"@cancel":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"cantOpenUri": "Não foi possível abrir a URI {uri}",
-	"@cantOpenUri":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"uri":
-			{}
-		}
-	},
-	"changeDeviceName": "Alterar o nome do dispositivo",
-	"@changeDeviceName":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"changedTheChatAvatar": "{username} alterou o avatar da conversa",
-	"@changedTheChatAvatar":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{}
-		}
-	},
-	"changedTheChatDescriptionTo": "{username} alterou a descrição da conversa para: '{description}'",
-	"@changedTheChatDescriptionTo":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{},
-			"description":
-			{}
-		}
-	},
-	"changedTheChatNameTo": "{username} alterou o nome da conversa para: '{chatname}'",
-	"@changedTheChatNameTo":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{},
-			"chatname":
-			{}
-		}
-	},
-	"changedTheChatPermissions": "{username} alterou as permissões na conversa",
-	"@changedTheChatPermissions":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{}
-		}
-	},
-	"changedTheDisplaynameTo": "{username} mudou o seu nome de exibição para: '{displayname}'",
-	"@changedTheDisplaynameTo":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{},
-			"displayname":
-			{}
-		}
-	},
-	"changedTheGuestAccessRules": "{username} alterou as regras de acesso dos convidados",
-	"@changedTheGuestAccessRules":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{}
-		}
-	},
-	"changedTheGuestAccessRulesTo": "{username} alterou as regras de acesso dos convidados para: {rules}",
-	"@changedTheGuestAccessRulesTo":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{},
-			"rules":
-			{}
-		}
-	},
-	"changedTheHistoryVisibility": "{username} alterou a visibilidade do histórico",
-	"@changedTheHistoryVisibility":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{}
-		}
-	},
-	"changedTheHistoryVisibilityTo": "{username} alterou a visibilidade do histórico para: {rules}",
-	"@changedTheHistoryVisibilityTo":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{},
-			"rules":
-			{}
-		}
-	},
-	"changedTheJoinRules": "{username} alterou as regras para participação",
-	"@changedTheJoinRules":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{}
-		}
-	},
-	"changedTheJoinRulesTo": "{username} alterou as regras para participação para: {joinRules}",
-	"@changedTheJoinRulesTo":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{},
-			"joinRules":
-			{}
-		}
-	},
-	"changedTheProfileAvatar": "{username} alterou seu avatar",
-	"@changedTheProfileAvatar":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{}
-		}
-	},
-	"changedTheRoomAliases": "{username} alterou os cognomes da sala",
-	"@changedTheRoomAliases":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{}
-		}
-	},
-	"changedTheRoomInvitationLink": "{username} alterou o link de convite",
-	"@changedTheRoomInvitationLink":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{}
-		}
-	},
-	"changelog": "Lista de mudanças",
-	"@changelog":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"changePassword": "Alterar a senha",
-	"@changePassword":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"changesHaveBeenSaved": "Alterações foram salvas",
-	"@changesHaveBeenSaved":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
-	"@changeTheHomeserver":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"changeTheme": "Alterar o tema",
-	"@changeTheme":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"changeTheNameOfTheGroup": "Alterar o nome do grupo",
-	"@changeTheNameOfTheGroup":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"changeTheServer": "Alterar o servidor",
-	"@changeTheServer":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"changeWallpaper": "Alterar o pano de fundo",
-	"@changeWallpaper":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"changeYourAvatar": "Alterar seu avatar",
-	"@changeYourAvatar":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"channelCorruptedDecryptError": "A criptografia foi corrompida",
-	"@channelCorruptedDecryptError":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"chat": "Conversa",
-	"@chat":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"chatBackup": "Backup da conversa",
-	"@chatBackup":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"chatBackupDescription": "O backup da sua conversa é protegido com sua chave de segurança. Por favor, evite perdê-la.",
-	"@chatBackupDescription":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"chatDetails": "Detalhes da conversa",
-	"@chatDetails":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"chats": "Conversas",
-	"@chats":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"chooseAStrongPassword": "Escolha uma senha forte",
-	"@chooseAStrongPassword":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"chooseAUsername": "Escolha um nome de usuário",
-	"@chooseAUsername":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"clearArchive": "Limpar arquivo",
-	"@clearArchive":
-	{},
-	"clearText": "Limpar texto",
-	"@clearText":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"close": "Fechar",
-	"@close":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"commandHint_ban": "Banir um(a) usuário(a) desta sala",
-	"@commandHint_ban":
-	{
-		"type": "text",
-		"description": "Usage hint for the command /ban"
-	},
-	"commandHint_html": "Enviar mensagem formatada em HTML",
-	"@commandHint_html":
-	{
-		"type": "text",
-		"description": "Usage hint for the command /html"
-	},
-	"commandHint_invite": "Convidar um(a) usuário(a) para esta sala",
-	"@commandHint_invite":
-	{
-		"type": "text",
-		"description": "Usage hint for the command /invite"
-	},
-	"commandHint_join": "Entrar numa sala",
-	"@commandHint_join":
-	{
-		"type": "text",
-		"description": "Usage hint for the command /join"
-	},
-	"commandHint_kick": "Remover um(a) usuário(a) desta sala",
-	"@commandHint_kick":
-	{
-		"type": "text",
-		"description": "Usage hint for the command /kick"
-	},
-	"commandHint_leave": "Sair desta sala",
-	"@commandHint_leave":
-	{
-		"type": "text",
-		"description": "Usage hint for the command /leave"
-	},
-	"commandHint_me": "Descrever você mesmo",
-	"@commandHint_me":
-	{
-		"type": "text",
-		"description": "Usage hint for the command /me"
-	},
-	"commandHint_myroomavatar": "Determinar sua imagem para esta sala (via mxc-uri)",
-	"@commandHint_myroomavatar":
-	{
-		"type": "text",
-		"description": "Usage hint for the command /myroomavatar"
-	},
-	"commandHint_myroomnick": "Determinar seu nome de exibição para esta sala",
-	"@commandHint_myroomnick":
-	{
-		"type": "text",
-		"description": "Usage hint for the command /myroomnick"
-	},
-	"commandHint_op": "Determinar o grau de poderes de um(a) usuário(a) (padrão: 50)",
-	"@commandHint_op":
-	{
-		"type": "text",
-		"description": "Usage hint for the command /op"
-	},
-	"commandHint_plain": "Enviar mensagem sem formatação",
-	"@commandHint_plain":
-	{
-		"type": "text",
-		"description": "Usage hint for the command /plain"
-	},
-	"commandHint_react": "Enviar uma resposta como reação",
-	"@commandHint_react":
-	{
-		"type": "text",
-		"description": "Usage hint for the command /react"
-	},
-	"commandHint_send": "Enviar mensagem",
-	"@commandHint_send":
-	{
-		"type": "text",
-		"description": "Usage hint for the command /send"
-	},
-	"commandHint_unban": "Revogar o banimento de um(a) usuário(a) desta sala",
-	"@commandHint_unban":
-	{
-		"type": "text",
-		"description": "Usage hint for the command /unban"
-	},
-	"commandInvalid": "Comando inválido",
-	"@commandInvalid":
-	{
-		"type": "text"
-	},
-	"commandMissing": "{command} não é um comando.",
-	"@commandMissing":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"command":
-			{}
-		},
-		"description": "State that {command} is not a valid /command."
-	},
-	"compareEmojiMatch": "Compare e certifique-se que os seguintes emojis batem com os do outro dispositivo:",
-	"@compareEmojiMatch":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"compareNumbersMatch": "Compare e certifique-se de que os seguintes números batem com os do outro dispositivo:",
-	"@compareNumbersMatch":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"configureChat": "Configurar conversa",
-	"@configureChat":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"confirm": "Confirma",
-	"@confirm":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"connect": "Conectar",
-	"@connect":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"connectionAttemptFailed": "A tentativa de conexão falhou",
-	"@connectionAttemptFailed":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"contactHasBeenInvitedToTheGroup": "O contato foi convidado ao grupo",
-	"@contactHasBeenInvitedToTheGroup":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"containsDisplayName": "Contém nome de exibição",
-	"@containsDisplayName":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"containsUserName": "Contém nome de usuário",
-	"@containsUserName":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"contentHasBeenReported": "O conteúdo foi denunciado para quem administra o servidor",
-	"@contentHasBeenReported":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"contentViewer": "Visualizador de conteúdo",
-	"@contentViewer":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"copiedToClipboard": "Copiado para área de transferência",
-	"@copiedToClipboard":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"copy": "Copiar",
-	"@copy":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"copyToClipboard": "Copiar para a área de transferência",
-	"@copyToClipboard":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"couldNotDecryptMessage": "Não foi possível decriptar a mensagem: {error}",
-	"@couldNotDecryptMessage":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"error":
-			{}
-		}
-	},
-	"couldNotSetAvatar": "Não foi possível fixar o avatar",
-	"@couldNotSetAvatar":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"couldNotSetDisplayname": "Não foi possível fixar o nome de exibição",
-	"@couldNotSetDisplayname":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"countParticipants": "{count} participantes",
-	"@countParticipants":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"count":
-			{}
-		}
-	},
-	"create": "Criar",
-	"@create":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"createAccountNow": "Criar conta agora",
-	"@createAccountNow":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"createdTheChat": "{username} criou a conversa",
-	"@createdTheChat":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{}
-		}
-	},
-	"createNewGroup": "Novo grupo",
-	"@createNewGroup":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"createNewSpace": "Criar novo espaço",
-	"@createNewSpace":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"crossSigningDisabled": "Assinatura cruzada desativada",
-	"@crossSigningDisabled":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"crossSigningEnabled": "Assinatura cruzada ativada",
-	"@crossSigningEnabled":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"currentlyActive": "Ativo",
-	"@currentlyActive":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"darkTheme": "Escuro",
-	"@darkTheme":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"dateAndTimeOfDay": "{date}, {timeOfDay}",
-	"@dateAndTimeOfDay":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"date":
-			{},
-			"timeOfDay":
-			{}
-		}
-	},
-	"dateWithoutYear": "{day}/{month}",
-	"@dateWithoutYear":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"month":
-			{},
-			"day":
-			{}
-		}
-	},
-	"dateWithYear": "{day}/{month}/{year}",
-	"@dateWithYear":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"year":
-			{},
-			"month":
-			{},
-			"day":
-			{}
-		}
-	},
-	"deactivateAccountWarning": "Isto desativará a conta do usuário. É irreversível! Tem certeza?",
-	"@deactivateAccountWarning":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"defaultPermissionLevel": "Nível de permissão padrão",
-	"@defaultPermissionLevel":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"delete": "Apagar",
-	"@delete":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"deleteAccount": "Apagar conta",
-	"@deleteAccount":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"deleteMessage": "Apagar mensagem",
-	"@deleteMessage":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"deny": "Rejeitar",
-	"@deny":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"device": "Dispositivo",
-	"@device":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"deviceId": "ID do dispositivo",
-	"@deviceId":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"devices": "Dispositivos",
-	"@devices":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"deviceVerifyDescription": "A criptografia só é segura quando todos os dispositivos forem verificados.",
-	"@deviceVerifyDescription":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"directChats": "Conversas diretas",
-	"@directChats":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"discardPicture": "Descartar imagem",
-	"@discardPicture":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"discover": "Desvendar",
-	"@discover":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"discoverGroups": "Desvendar grupos",
-	"@discoverGroups":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"displaynameHasBeenChanged": "O nome de exibição foi alterado",
-	"@displaynameHasBeenChanged":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"donate": "Doar",
-	"@donate":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"dontAskAgain": "Cancelar e não perguntar novamente",
-	"@dontAskAgain":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"downloadFile": "Baixar arquivo",
-	"@downloadFile":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"edit": "Editar",
-	"@edit":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"editBlockedServers": "Editar servidores bloqueados",
-	"@editBlockedServers":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"editChatPermissions": "Editar permissões da conversa",
-	"@editChatPermissions":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"editDisplayname": "Editar nome de exibição",
-	"@editDisplayname":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"editJitsiInstance": "Alterar a instância Jitsi",
-	"@editJitsiInstance":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"editRoomAliases": "Editar cognome da sala",
-	"@editRoomAliases":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"editRoomAvatar": "Editar o avatar da sala",
-	"@editRoomAvatar":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"emoteExists": "Emoji já existe!",
-	"@emoteExists":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"emoteInvalid": "Código emoji inválido!",
-	"@emoteInvalid":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"emotePacks": "Pacote de emoji para a sala",
-	"@emotePacks":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"emoteSettings": "Configuração dos Emoji",
-	"@emoteSettings":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"emoteShortcode": "Código Emoji",
-	"@emoteShortcode":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"emoteWarnNeedToPick": "Você tem que escolher um código emoji e uma imagem!",
-	"@emoteWarnNeedToPick":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"emptyChat": "Conversa vazia",
-	"@emptyChat":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"enableChatBackup": "Habilite o backup de conversas para nunca perder acesso a elas.",
-	"@enableChatBackup":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"enableEmotesGlobally": "Habilitar globalmente o pacote de emoji",
-	"@enableEmotesGlobally":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"enableEncryption": "Habilitar criptografia",
-	"@enableEncryption":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"enableEncryptionWarning": "Você não poderá desabilitar a criptografia posteriormente. Tem certeza?",
-	"@enableEncryptionWarning":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"encrypted": "Criptografado",
-	"@encrypted":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"encryption": "Criptografia",
-	"@encryption":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"encryptionAlgorithm": "Algoritmo criptográfico",
-	"@encryptionAlgorithm":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"encryptionNotEnabled": "A criptografia não está habilitada",
-	"@encryptionNotEnabled":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"end2endEncryptionSettings": "Configuração da criptografia ponta-a-ponta",
-	"@end2endEncryptionSettings":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"endedTheCall": "{senderName} finalizou a chamada",
-	"@endedTheCall":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"senderName":
-			{}
-		}
-	},
-	"enterAGroupName": "Insira um nome de grupo",
-	"@enterAGroupName":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"enterAnEmailAddress": "Inserir endereço de e-mail",
-	"@enterAnEmailAddress":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"enterASpacepName": "Insira um nome pro espaço",
-	"@enterASpacepName":
-	{},
-	"enterAUsername": "Insira um nome de usuário",
-	"@enterAUsername":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
-	"@enterYourHomeserver":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"errorObtainingLocation": "Erro ao obter local: {error}",
-	"@errorObtainingLocation":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"error":
-			{}
-		}
-	},
-	"everythingReady": "Tudo pronto!",
-	"@everythingReady":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"extremeOffensive": "Extremamente ofensivo",
-	"@extremeOffensive":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"fileName": "Nome do arquivo",
-	"@fileName":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"fileSize": "Tamanho do arquivo",
-	"@fileSize":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"rechainonline": "REChain ® 🪐",
-	"@rechainonline":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"fontSize": "Tamanho da fonte",
-	"@fontSize":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"forward": "Encaminhar",
-	"@forward":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"friday": "Sexta-feira",
-	"@friday":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"friends": "Amigos",
-	"@friends":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"fromJoining": "Desde que entrou",
-	"@fromJoining":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"fromTheInvitation": "Desde o convite",
-	"@fromTheInvitation":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"goToTheNewRoom": "Ir para a sala nova",
-	"@goToTheNewRoom":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"group": "Grupo",
-	"@group":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"groupDescription": "Descrição do grupo",
-	"@groupDescription":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"groupDescriptionHasBeenChanged": "Descrição do grupo alterada",
-	"@groupDescriptionHasBeenChanged":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"groupIsPublic": "Grupo público",
-	"@groupIsPublic":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"groups": "Grupos",
-	"@groups":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"groupWith": "Grupo com {displayname}",
-	"@groupWith":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"displayname":
-			{}
-		}
-	},
-	"guestsAreForbidden": "Convidados estão proibidos",
-	"@guestsAreForbidden":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"guestsCanJoin": "Convidados podem participar",
-	"@guestsCanJoin":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"hasWithdrawnTheInvitationFor": "{username} revogou o convite para {targetName}",
-	"@hasWithdrawnTheInvitationFor":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{},
-			"targetName":
-			{}
-		}
-	},
-	"help": "Ajuda",
-	"@help":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"hideRedactedEvents": "Ocultar eventos removidos",
-	"@hideRedactedEvents":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"hideUnknownEvents": "Ocultar eventos desconhecidos",
-	"@hideUnknownEvents":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"homeserverIsNotCompatible": "Servidor REChain ® 🪐 não é compatível",
-	"@homeserverIsNotCompatible":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"howOffensiveIsThisContent": "O quão ofensivo é este conteúdo?",
-	"@howOffensiveIsThisContent":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"id": "ID",
-	"@id":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"identity": "Identidade",
-	"@identity":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"ignore": "Ignorar",
-	"@ignore":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"ignoredUsers": "Usuários ignorados",
-	"@ignoredUsers":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"ignoreListDescription": "Você pode ignorar usuários que estão lhe pertubando. Não será possível receber mensagens ou convites de usuários na sua lista pessoal de ignorados.",
-	"@ignoreListDescription":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"ignoreUsername": "Ignorar usuário",
-	"@ignoreUsername":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"iHaveClickedOnLink": "Eu cliquei no link",
-	"@iHaveClickedOnLink":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"incorrectPassphraseOrKey": "Frase secreta ou chave de recuperação incorreta",
-	"@incorrectPassphraseOrKey":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"inoffensive": "Inofensivo",
-	"@inoffensive":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"invalidEmail": "Email inválido",
-	"@invalidEmail":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"inviteContact": "Convidar contato",
-	"@inviteContact":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"inviteContactToGroup": "Convidar contato para {groupName}",
-	"@inviteContactToGroup":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"groupName":
-			{}
-		}
-	},
-	"invited": "Foi convidado",
-	"@invited":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"invitedUser": "{username} convidou {targetName}",
-	"@invitedUser":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{},
-			"targetName":
-			{}
-		}
-	},
-	"invitedUsersOnly": "Apenas usuários convidados",
-	"@invitedUsersOnly":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"inviteForMe": "Convite para mim",
-	"@inviteForMe":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"inviteText": "{username} convidou você para a plataforma REChain ® 🪐! \n1. Instale REChain ® 🪐: https://rechain.online \n2. Entre ou crie uma nova conta! \n3. Abra o link do convite: {link}",
-	"@inviteText":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{},
-			"link":
-			{}
-		}
-	},
-	"isDeviceKeyCorrect": "A seguinte chave de dispositivo está correta?",
-	"@isDeviceKeyCorrect":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"isTyping": "está escrevendo…",
-	"@isTyping":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"joinedTheChat": "{username} entrou na conversa",
-	"@joinedTheChat":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{}
-		}
-	},
-	"joinRoom": "Entrar na sala",
-	"@joinRoom":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"keysCached": "Chaves guardadas",
-	"@keysCached":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"keysMissing": "Chaves faltando",
-	"@keysMissing":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"kicked": "{username} enxotou {targetName}",
-	"@kicked":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{},
-			"targetName":
-			{}
-		}
-	},
-	"kickedAndBanned": "{username} expulsou e baniu {targetName}",
-	"@kickedAndBanned":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{},
-			"targetName":
-			{}
-		}
-	},
-	"kickFromChat": "Expulso da conversa",
-	"@kickFromChat":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"lastActiveAgo": "Última vez ativo: {localizedTimeShort}",
-	"@lastActiveAgo":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"localizedTimeShort":
-			{}
-		}
-	},
-	"lastSeenIp": "Último IP conhecido",
-	"@lastSeenIp":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"lastSeenLongTimeAgo": "Visto há muito tempo atrás",
-	"@lastSeenLongTimeAgo":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"leave": "Sair",
-	"@leave":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"leftTheChat": "Sair da conversa",
-	"@leftTheChat":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"license": "Licença",
-	"@license":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"lightTheme": "Claro",
-	"@lightTheme":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"loadCountMoreParticipants": "Carregue {count} mais participantes",
-	"@loadCountMoreParticipants":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"count":
-			{}
-		}
-	},
-	"loadingPleaseWait": "Carregando... Aguarde.",
-	"@loadingPleaseWait":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"loadMore": "Carregando mais…",
-	"@loadMore":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"locationDisabledNotice": "O serviço de localização está desabilitado. Por favor, habilite-o para compartilhar sua localização.",
-	"@locationDisabledNotice":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"locationPermissionDeniedNotice": "Permissão de localização negada. Conceda as permissões para habilitar o compartilhamento de localização.",
-	"@locationPermissionDeniedNotice":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"login": "Iniciar sessão",
-	"@login":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"logInTo": "Conectar a {homeserver}",
-	"@logInTo":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"homeserver":
-			{}
-		}
-	},
-	"loginWith": "Entrar com {brand}",
-	"@loginWith":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"brand":
-			{}
-		}
-	},
-	"logout": "Encerrar sessão",
-	"@logout":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"makeAModerator": "Atribuir papel de moderador",
-	"@makeAModerator":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"makeAnAdmin": "Atribuir papel de admin",
-	"@makeAnAdmin":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"makeSureTheIdentifierIsValid": "Certifique-se de que a identificação é válida",
-	"@makeSureTheIdentifierIsValid":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"memberChanges": "Alterações de membros",
-	"@memberChanges":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"mention": "Mencionar",
-	"@mention":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"messages": "Mensagens",
-	"@messages":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"messageWillBeRemovedWarning": "Mensagem será removida para todos os participantes",
-	"@messageWillBeRemovedWarning":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"moderator": "Moderador",
-	"@moderator":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"monday": "Segunda-feira",
-	"@monday":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"moreEvents": "{count,plural, =1{Mais 1 evento} other{Mais {count} eventos}}",
-	"@moreEvents":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"count":
-			{}
-		}
-	},
-	"muteChat": "Silenciar",
-	"@muteChat":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"needPantalaimonWarning": "Por favor, observe que, por enquanto, você precisa do Pantalaimon para usar criptografia ponta-a-ponta.",
-	"@needPantalaimonWarning":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"newChat": "Nova conversa",
-	"@newChat":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"newMessageInrechainonline": "Nova mensagem na plataforma REChain ® 🪐!",
-	"@newMessageInrechainonline":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"newVerificationRequest": "Nova solicitação de verificação!",
-	"@newVerificationRequest":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"next": "Próximo",
-	"@next":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"no": "Não",
-	"@no":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"noConnectionToTheServer": "Sem conexão com o servidor",
-	"@noConnectionToTheServer":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"noCrossSignBootstrap": "REChain.Online atualmente não suporta a ativação de assinatura cruzada. Habilite-o no REChain ® 🪐.",
-	"@noCrossSignBootstrap":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"noDescription": "Sem descrição",
-	"@noDescription":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"noEmotesFound": "Nenhum emoji encontrado. 😕",
-	"@noEmotesFound":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"noEncryptionForPublicRooms": "Você só pode ativar criptografia quando a sala não for mais publicamente acessível.",
-	"@noEncryptionForPublicRooms":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"noGoogleServicesWarning": "Parece que você não tem serviços do Google no seu telefone. Boa decisão para sua privacidade! Para receber notificações na plataforma REChain ® 🪐, recomendamos o uso de https://microg.org/ ou https://unifiedpush.org.",
-	"@noGoogleServicesWarning":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"norechainonlineServer": "{server1} não é um servidor Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network, use {server2} em vez disso?",
-	"@norechainonlineServer":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"server1":
-			{},
-			"server2":
-			{}
-		}
-	},
-	"noMegolmBootstrap": "Habilite o backup online da chave no REChain ® 🪐.",
-	"@noMegolmBootstrap":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"none": "Nenhum",
-	"@none":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"noPasswordRecoveryDescription": "Você ainda não adicionou uma forma de recuparar sua senha.",
-	"@noPasswordRecoveryDescription":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"noPermission": "Sem permissão",
-	"@noPermission":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"noPublicRoomsFound": "Não foram encontradas salas públicas…",
-	"@noPublicRoomsFound":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"noRoomsFound": "Nenhuma sala encontrada…",
-	"@noRoomsFound":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"noStatusesFound": "Nenhum status encontrado por enquanto.",
-	"@noStatusesFound":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"notifications": "Notificações",
-	"@notifications":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"notificationsEnabledForThisAccount": "Notificações habilitadas para esta conta",
-	"@notificationsEnabledForThisAccount":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"notSupportedInWeb": "Sem suporte na versão Web",
-	"@notSupportedInWeb":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"numberSelected": "{number} selecionados",
-	"@numberSelected":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"number":
-			{}
-		}
-	},
-	"numUsersTyping": "{count} usuários estão digitando…",
-	"@numUsersTyping":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"count":
-			{}
-		}
-	},
-	"obtainingLocation": "Obtendo localização…",
-	"@obtainingLocation":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"offensive": "Ofensivo",
-	"@offensive":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"offline": "Desconectado",
-	"@offline":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"ok": "OK",
-	"@ok":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"online": "Disponível",
-	"@online":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"onlineKeyBackupDisabled": "Backup de chaves está desabilitado",
-	"@onlineKeyBackupDisabled":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"onlineKeyBackupEnabled": "Backup de chaves está ativado",
-	"@onlineKeyBackupEnabled":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"oopsPushError": "Opa! Infelizmente, um erro ocorreu ao configurar as notificações.",
-	"@oopsPushError":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"oopsSomethingWentWrong": "Opa, algo deu errado…",
-	"@oopsSomethingWentWrong":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"openAppToReadMessages": "Abra o app para ler as mensagens",
-	"@openAppToReadMessages":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"openCamera": "Abra a câmera",
-	"@openCamera":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"openInMaps": "Abrir no mapas",
-	"@openInMaps":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"optionalAddEmail": "(Opcional) Seu endereço de email",
-	"@optionalAddEmail":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"optionalGroupName": "(Opcional) Nome do Grupo",
-	"@optionalGroupName":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"or": "Ou",
-	"@or":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"participant": "Participante",
-	"@participant":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"participatingUserDevices": "Dispositivos dos participantes",
-	"@participatingUserDevices":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"passphraseOrKey": "frase secreta ou chave de recuperação",
-	"@passphraseOrKey":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"password": "Senha",
-	"@password":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"passwordForgotten": "Esqueci a senha",
-	"@passwordForgotten":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"passwordHasBeenChanged": "Senha foi alterada",
-	"@passwordHasBeenChanged":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"passwordRecovery": "Recuperação de senha",
-	"@passwordRecovery":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"people": "Pessoas",
-	"@people":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"pickImage": "Escolha uma imagem",
-	"@pickImage":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"pin": "Alfinetar",
-	"@pin":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"play": "Tocar {fileName}",
-	"@play":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"fileName":
-			{}
-		}
-	},
-	"pleaseChoose": "Por favor, selecione",
-	"@pleaseChoose":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"pleaseChooseAPasscode": "Por favor, escolha um código",
-	"@pleaseChooseAPasscode":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"pleaseChooseAUsername": "Por favor, escolha um nome de usuário",
-	"@pleaseChooseAUsername":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"pleaseClickOnLink": "Por favor, clique a ligação no e-mail para prosseguir.",
-	"@pleaseClickOnLink":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"pleaseEnter4Digits": "Por favor, insira 4 dígitos ou deixe em branco para desativar a trava do aplicativo.",
-	"@pleaseEnter4Digits":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"pleaseEnterArechainonlineIdentifier": "Digite a ID de rede do nó de Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
-	"@pleaseEnterArechainonlineIdentifier":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"pleaseEnterSecurityKey": "Por favor, insira sua chave de segurança:",
-	"@pleaseEnterSecurityKey":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"pleaseEnterYourPassword": "Por favor, insira sua senha",
-	"@pleaseEnterYourPassword":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"pleaseEnterYourPin": "Por favor, insira seu PIN",
-	"@pleaseEnterYourPin":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"pleaseEnterYourUsername": "Por favor, insira seu nome de usuário",
-	"@pleaseEnterYourUsername":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"pleaseFollowInstructionsOnWeb": "Por favor, siga as instruções no site e toque em próximo.",
-	"@pleaseFollowInstructionsOnWeb":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"privacy": "Privacidade",
-	"@privacy":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"publicGroups": "Grupos Públicos",
-	"@publicGroups":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"publicKey": "Chave Pública",
-	"@publicKey":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"publicRooms": "Salas públicas",
-	"@publicRooms":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"publicSpace": "Espaço público",
-	"@publicSpace":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"pushRules": "Regras de notificação",
-	"@pushRules":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"reason": "Motivo",
-	"@reason":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"recording": "Gravando",
-	"@recording":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"redactedAnEvent": "{username} removeu um evento",
-	"@redactedAnEvent":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{}
-		}
-	},
-	"redactMessage": "Retratar mensagem",
-	"@redactMessage":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"register": "Registrar",
-	"@register":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"reject": "Recusar",
-	"@reject":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"rejectedTheInvitation": "{username} recusou o convite",
-	"@rejectedTheInvitation":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{}
-		}
-	},
-	"rejoin": "Retornar",
-	"@rejoin":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"remove": "Remover",
-	"@remove":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"removeAllOtherDevices": "Remover todos os outros dispositivos",
-	"@removeAllOtherDevices":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"removedBy": "Removido por {username}",
-	"@removedBy":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{}
-		}
-	},
-	"removeDevice": "Remover dispositivo",
-	"@removeDevice":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"unbanFromChat": "Revogar banimento",
-	"@unbanFromChat":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"removeMessage": "Remover mensagem",
-	"@removeMessage":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"removeYourAvatar": "Remover seu avatar",
-	"@removeYourAvatar":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"renderRichContent": "Exibir conteúdo formatado",
-	"@renderRichContent":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"replaceRoomWithNewerVersion": "Substituir sala por uma nova versão",
-	"@replaceRoomWithNewerVersion":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"reply": "Responder",
-	"@reply":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"reportMessage": "Denunciar mensagem",
-	"@reportMessage":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"requestPermission": "Solicitar permissão",
-	"@requestPermission":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"requestToReadOlderMessages": "Solicitar leitura de mensagens antigas",
-	"@requestToReadOlderMessages":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"revokeAllPermissions": "Revogar todas permissões",
-	"@revokeAllPermissions":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"roomHasBeenUpgraded": "Sala foi atualizada",
-	"@roomHasBeenUpgraded":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"roomVersion": "Versão da sala",
-	"@roomVersion":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"saturday": "Sábado",
-	"@saturday":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"savedFileAs": "Salvar arquivo como {filename}",
-	"@savedFileAs":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"filename":
-			{}
-		}
-	},
-	"saveFile": "Salvar arquivo",
-	"@saveFile":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"saveFileToFolder": "Salvar arquivo nesta pasta",
-	"@saveFileToFolder":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"search": "Buscar",
-	"@search":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"searchForAChat": "Buscar uma conversa",
-	"@searchForAChat":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"security": "Segurança",
-	"@security":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"securityKey": "Chave de segurança",
-	"@securityKey":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"securityKeyLost": "Chave de segurança perdida?",
-	"@securityKeyLost":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"seenByUser": "Visto por {username}",
-	"@seenByUser":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{}
-		}
-	},
-	"seenByUserAndCountOthers": "{count, plural, other{Visto por {username} e mais {count} pessoas}}",
-	"@seenByUserAndCountOthers":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{},
-			"count":
-			{}
-		}
-	},
-	"seenByUserAndUser": "Visto por {username} e {username2}",
-	"@seenByUserAndUser":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{},
-			"username2":
-			{}
-		}
-	},
-	"send": "Enviar",
-	"@send":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"sendAMessage": "Enviar mensagem",
-	"@sendAMessage":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"sendAsText": "Enviar como texto",
-	"@sendAsText":
-	{
-		"type": "text"
-	},
-	"sendAudio": "Enviar audio",
-	"@sendAudio":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"sendBugReports": "Permitir envio de falhas via REChain ® 🪐",
-	"@sendBugReports":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"sendFile": "Enviar arquivo",
-	"@sendFile":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"sendImage": "Enviar imagem",
-	"@sendImage":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"sendMessages": "Enviar mensagens",
-	"@sendMessages":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"sendOriginal": "Enviar original",
-	"@sendOriginal":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"sendSticker": "Enviar figurinha",
-	"@sendSticker":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"sendVideo": "Enviar vídeo",
-	"@sendVideo":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"sentAFile": "{username} enviou um arquivo",
-	"@sentAFile":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{}
-		}
-	},
-	"sentAnAudio": "{username} enviou um audio",
-	"@sentAnAudio":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{}
-		}
-	},
-	"sentAPicture": "{username} enviou uma imagem",
-	"@sentAPicture":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{}
-		}
-	},
-	"sentASticker": "{username} enviou uma figurinha",
-	"@sentASticker":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{}
-		}
-	},
-	"sentAVideo": "{username} enviou um vídeo",
-	"@sentAVideo":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{}
-		}
-	},
-	"sentCallInformations": "{senderName} enviou informações de chamada",
-	"@sentCallInformations":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"senderName":
-			{}
-		}
-	},
-	"sentryInfo": "Informações sobre a sua privacidade: https://rechain.online/privacy-policy.html",
-	"@sentryInfo":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"sessionVerified": "Sessão verificada",
-	"@sessionVerified":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"setAProfilePicture": "Fixar uma imagem de perfil",
-	"@setAProfilePicture":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"setAsCanonicalAlias": "Fixar como cognome principal",
-	"@setAsCanonicalAlias":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"setCustomEmotes": "Implantar emojis personalizados",
-	"@setCustomEmotes":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"setGroupDescription": "Fixar uma descrição do grupo",
-	"@setGroupDescription":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"setInvitationLink": "Enviar link de convite",
-	"@setInvitationLink":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"setPermissionsLevel": "Determinar níveis de permissão",
-	"@setPermissionsLevel":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"setStatus": "Alterar o status",
-	"@setStatus":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"settings": "Configurações",
-	"@settings":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"share": "Compartilhar",
-	"@share":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"sharedTheLocation": "{username} compartilhou a localização",
-	"@sharedTheLocation":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{}
-		}
-	},
-	"shareLocation": "Compartilhar localização",
-	"@shareLocation":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"showPassword": "Mostrar senha",
-	"@showPassword":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"signUp": "Registrar",
-	"@signUp":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"singlesignon": "Identidade Única",
-	"@singlesignon":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"skip": "Pular",
-	"@skip":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"soundVibrationLedColor": "Som, vibração e cor LED",
-	"@soundVibrationLedColor":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"sourceCode": "Código fonte",
-	"@sourceCode":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"spaceIsPublic": "Espaço é público",
-	"@spaceIsPublic":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"spaceName": "Nome do espaço",
-	"@spaceName":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"startedACall": "{senderName} iniciou uma chamada",
-	"@startedACall":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"senderName":
-			{}
-		}
-	},
-	"startYourFirstChat": "Inicie sua primeira conversa agora mesmo! 🙂\n- Pressione o botão de mensagem\n- Insira o nome de usuário de um amigo(a)\n- Divirta-se conversando",
-	"@startYourFirstChat":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"status": "Status",
-	"@status":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"statusExampleMessage": "Como vai você?",
-	"@statusExampleMessage":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"submit": "Submeter",
-	"@submit":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"sunday": "Domingo",
-	"@sunday":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"synchronizingPleaseWait": "Sincronizando… Por favor, aguarde.",
-	"@synchronizingPleaseWait":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"systemTheme": "Sistema",
-	"@systemTheme":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"tapOnDeviceToVerify": "Toque num dispositivo para verificar",
-	"@tapOnDeviceToVerify":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"tapToShowImage": "Toque para mostrar a imagem",
-	"@tapToShowImage":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"tapToShowMenu": "Toque para mostrar o menu",
-	"@tapToShowMenu":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"theyDontMatch": "Não correspondem",
-	"@theyDontMatch":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"theyMatch": "Correspondem",
-	"@theyMatch":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"thisRoomHasBeenArchived": "Esta sala foi arquivada.",
-	"@thisRoomHasBeenArchived":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"thursday": "Quinta-feira",
-	"@thursday":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"timeOfDay": "{hours24}:{minutes}",
-	"@timeOfDay":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"hours12":
-			{},
-			"hours24":
-			{},
-			"minutes":
-			{},
-			"suffix":
-			{}
-		}
-	},
-	"title": "REChain ® 🪐",
-	"@title":
-	{
-		"description": "Title for the application",
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"toggleFavorite": "Alternar favorito",
-	"@toggleFavorite":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"toggleMuted": "Alternar Silenciado",
-	"@toggleMuted":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"toggleUnread": "Marcar lido/não lido",
-	"@toggleUnread":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"tooManyRequestsWarning": "Demasiadas requisições. Por favor, tente novamente mais tarde!",
-	"@tooManyRequestsWarning":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"transferFromAnotherDevice": "Transferir de outro dispositivo",
-	"@transferFromAnotherDevice":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"tryToSendAgain": "Tente enviar novamente",
-	"@tryToSendAgain":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"tuesday": "Terça-feira",
-	"@tuesday":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"unavailable": "Indisponível",
-	"@unavailable":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"unbannedUser": "{username} revogou o banimento de {targetName}",
-	"@unbannedUser":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{},
-			"targetName":
-			{}
-		}
-	},
-	"unblockDevice": "Desbloquear dispositivo",
-	"@unblockDevice":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"unknownDevice": "Dispositivo desconhecido",
-	"@unknownDevice":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"unknownEncryptionAlgorithm": "Algoritmo de criptografia desconhecido",
-	"@unknownEncryptionAlgorithm":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"unknownEvent": "Evento desconhecido '{type}'",
-	"@unknownEvent":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"type":
-			{}
-		}
-	},
-	"unknownSessionVerify": "Sessão desconhecida, favor verificar",
-	"@unknownSessionVerify":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"unlockChatBackup": "Destrancar o backup da conversa",
-	"@unlockChatBackup":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"unmuteChat": "Cancelar silenciamento",
-	"@unmuteChat":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"unpin": "Desalfinetar",
-	"@unpin":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"unreadChats": "{unreadCount, plural, other{{unreadCount} conversas não lidas}}",
-	"@unreadChats":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"unreadCount":
-			{}
-		}
-	},
-	"unreadMessages": "{unreadEvents, plural, other{{unreadEvents} mensagens não lidas}}",
-	"@unreadMessages":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"unreadEvents":
-			{}
-		}
-	},
-	"useAmoledTheme": "Usar cores compatíveis com AMOLED?",
-	"@useAmoledTheme":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"userAndOthersAreTyping": "{username} e mais {count} pessoas estão digitando…",
-	"@userAndOthersAreTyping":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{},
-			"count":
-			{}
-		}
-	},
-	"userAndUserAreTyping": "{username} e {username2} estão digitando…",
-	"@userAndUserAreTyping":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{},
-			"username2":
-			{}
-		}
-	},
-	"userIsTyping": "{username} está digitando…",
-	"@userIsTyping":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{}
-		}
-	},
-	"userLeftTheChat": "{username} saiu da conversa",
-	"@userLeftTheChat":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{}
-		}
-	},
-	"username": "Nome de usuário",
-	"@username":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"userNotVerified": "Usuário(a) não verificado(a)",
-	"@userNotVerified":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"userSentUnknownEvent": "{username} enviou um evento {type}",
-	"@userSentUnknownEvent":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"username":
-			{},
-			"type":
-			{}
-		}
-	},
-	"userUnknownVerification": "Usuário(a) tem um status de verificação desconhecido",
-	"@userUnknownVerification":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"userVerified": "Usuário(a) verificado(a)",
-	"@userVerified":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"verified": "Verificado",
-	"@verified":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"verifiedSession": "Sessão verificada com sucesso!",
-	"@verifiedSession":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"verify": "Verificar",
-	"@verify":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"verifyManual": "Verificar manualmente",
-	"@verifyManual":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"verifyStart": "Iniciar verificação",
-	"@verifyStart":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"verifySuccess": "Verificação efetivada!",
-	"@verifySuccess":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"verifyTitle": "Verificando outra conta",
-	"@verifyTitle":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"verifyUser": "Verificar usuário",
-	"@verifyUser":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"videoCall": "Vídeochamada",
-	"@videoCall":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"visibilityOfTheChatHistory": "Visibilidade do histórico da conversa",
-	"@visibilityOfTheChatHistory":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"visibleForAllParticipants": "Visível aos participantes",
-	"@visibleForAllParticipants":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"visibleForEveryone": "Visível a qualquer pessoa",
-	"@visibleForEveryone":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"voiceMessage": "Mensagem de voz",
-	"@voiceMessage":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"waitingPartnerAcceptRequest": "Esperando que a outra pessoa aceite a solicitação…",
-	"@waitingPartnerAcceptRequest":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"waitingPartnerEmoji": "Esperando que a outra pessoa aceite os emoji…",
-	"@waitingPartnerEmoji":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"waitingPartnerNumbers": "Aguardando a outra pessoa aceitar os números…",
-	"@waitingPartnerNumbers":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"wallpaper": "Pano de fundo",
-	"@wallpaper":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"warning": "Atenção!",
-	"@warning":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"warningEncryptionInBeta": "Criptografia ponta-a-ponta está em fase beta! Use por sua própria conta e risco!",
-	"@warningEncryptionInBeta":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"wednesday": "Quarta-feira",
-	"@wednesday":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"welcomeText": "Bem-vindo ao REChain ® 🪐! Um futuro privado e seguro que já chegou!",
-	"@welcomeText":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"weSentYouAnEmail": "Enviamos um e-mail para você",
-	"@weSentYouAnEmail":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"whoCanPerformWhichAction": "Quem pode desempenhar quais ações",
-	"@whoCanPerformWhichAction":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"whoIsAllowedToJoinThisGroup": "Quais pessoas são permitidas participar deste grupo",
-	"@whoIsAllowedToJoinThisGroup":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"whyDoYouWantToReportThis": "Por que você quer denunciar isto?",
-	"@whyDoYouWantToReportThis":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"wipeChatBackup": "Limpar o backup da conversa para criar uma nova chave de segurança?",
-	"@wipeChatBackup":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"withTheseAddressesRecoveryDescription": "Você pode recuperar a sua senha com estes endereços.",
-	"@withTheseAddressesRecoveryDescription":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"writeAMessage": "Escreva uma mensagem…",
-	"@writeAMessage":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"yes": "Sim",
-	"@yes":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"you": "Você",
-	"@you":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"youAreInvitedToThisChat": "Você foi convidada(o) a esta conversa",
-	"@youAreInvitedToThisChat":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"youAreNoLongerParticipatingInThisChat": "Você não está mais participando desta conversa",
-	"@youAreNoLongerParticipatingInThisChat":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"youCannotInviteYourself": "Você não pode se autoconvidar",
-	"@youCannotInviteYourself":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"youHaveBeenBannedFromThisChat": "Você foi banido desta conversa",
-	"@youHaveBeenBannedFromThisChat":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"yourChatsAreBeingSynced": "Sua conversas estão sendo sincronizadas…",
-	"@yourChatsAreBeingSynced":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"yourOwnUsername": "Seu próprio nome de usuário",
-	"@yourOwnUsername":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"yourPublicKey": "Sua chave pública",
-	"@yourPublicKey":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"youWillBeConnectedTo": "Você se conectará a {homeserver}",
-	"@youWillBeConnectedTo":
-	{
-		"type": "text",
-		"placeholders":
-		{
-			"homeserver":
-			{}
-		}
-	},
-	"@addAccount":
-	{},
-	"@addDescription":
-	{},
-	"@addToBundle":
-	{},
-	"@addToSpace":
-	{},
-	"@addToSpaceDescription":
-	{},
-	"@addToStory":
-	{},
-	"@addWidget":
-	{},
-	"@bubbleSize":
-	{
-		"placeholders":
-		{},
-		"type": "text"
-	},
-	"@bundleName":
-	{},
-	"@chatHasBeenAddedToThisSpace":
-	{},
-	"@chatHasBeenRemovedFromThisSpace":
-	{
-		"placeholders":
-		{},
-		"type": "text"
-	},
-	"@commandHint_clearcache":
-	{
-		"description": "Usage hint for the command /clearcache",
-		"type": "text"
-	},
-	"@commandHint_create":
-	{
-		"description": "Usage hint for the command /create",
-		"type": "text"
-	},
-	"@commandHint_discardsession":
-	{
-		"description": "Usage hint for the command /discardsession",
-		"type": "text"
-	},
-	"@commandHint_dm":
-	{
-		"description": "Usage hint for the command /dm",
-		"type": "text"
-	},
-	"@confirmEventUnpin":
-	{},
-	"@createNewChatExplaination":
-	{},
-	"@dismiss":
-	{},
-	"@editBundlesForAccount":
-	{},
-	"@editIntegrations":
-	{},
-	"@editWidgets":
-	{},
-	"@emailOrUsername":
-	{},
-	"@emojis":
-	{},
-	"@enableMultiAccounts":
-	{},
-	"@errorAddingWidget":
-	{},
-	"@experimentalVideoCalls":
-	{},
-	"@integrationsNotImplemented":
-	{},
-	"@iUnderstand":
-	{},
-	"@iWroteDownTheKey":
-	{},
-	"@link":
-	{},
-	"@loginWithOneClick":
-	{},
-	"@markAsRead":
-	{},
-	"@matrixWidgets":
-	{},
-	"@messageInfo":
-	{},
-	"@messageType":
-	{},
-	"@newPasswordDescription":
-	{},
-	"@newUsernameDescription":
-	{},
-	"@nextAccount":
-	{},
-	"@oneClientLoggedOut":
-	{},
-	"@openChat":
-	{},
-	"@openGallery":
-	{},
-	"@openVideoCamera":
-	{
-		"placeholders":
-		{},
-		"type": "text"
-	},
-	"@passwordsDoNotMatch":
-	{},
-	"@pinMessage":
-	{},
-	"@pinnedEventsError":
-	{},
-	"@placeCall":
-	{},
-	"@pleaseChooseAtLeastChars":
-	{
-		"placeholders":
-		{
-			"min":
-			{}
-		},
-		"type": "text"
-	},
-	"@pleaseEnterSecurityKeyDescription":
-	{},
-	"@pleaseEnterValidEmail":
-	{},
-	"@previousAccount":
-	{},
-	"@publish":
-	{},
-	"@reactedWith":
-	{
-		"placeholders":
-		{
-			"reaction":
-			{},
-			"sender":
-			{}
-		},
-		"type": "text"
-	},
-	"@removeFromBundle":
-	{},
-	"@removeFromSpace":
-	{},
-	"@removeFromSpaceDescription":
-	{},
-	"@repeatPassword":
-	{},
-	"@replyHasBeenSent":
-	{},
-	"@reportUser":
-	{},
-	"@saveTheSecurityKeyNow":
-	{},
-	"@scanQrCode":
-	{},
-	"@sender":
-	{},
-	"@sendOnEnter":
-	{},
-	"@separateChatTypes":
-	{
-		"placeholders":
-		{},
-		"type": "text"
-	},
-	"@serverRequiresEmail":
-	{},
-	"@setupChatBackup":
-	{},
-	"@setupChatBackupDescription":
-	{},
-	"@setupChatBackupNow":
-	{},
-	"@shareYourInviteLink":
-	{},
-	"@start":
-	{},
-	"@storyFrom":
-	{
-		"placeholders":
-		{
-			"body":
-			{},
-			"date":
-			{}
-		},
-		"type": "text"
-	},
-	"@storyPrivacyWarning":
-	{},
-	"@switchToAccount":
-	{
-		"placeholders":
-		{
-			"number":
-			{}
-		},
-		"type": "number"
-	},
-	"@thisUserHasNotPostedAnythingYet":
-	{},
-	"@time":
-	{},
-	"@typeInInviteLinkManually":
-	{},
-	"@unsubscribeStories":
-	{},
-	"@unsupportedAndroidVersion":
-	{},
-	"@unsupportedAndroidVersionLong":
-	{},
-	"@unverified":
-	{},
-	"@videoCallsBetaWarning":
-	{},
-	"@videoWithSize":
-	{
-		"placeholders":
-		{
-			"size":
-			{}
-		},
-		"type": "text"
-	},
-	"@voiceCall":
-	{},
-	"@whatIsGoingOn":
-	{},
-	"@whoCanSeeMyStories":
-	{},
-	"@whoCanSeeMyStoriesDesc":
-	{},
-	"@widgetCustom":
-	{},
-	"@widgetEtherpad":
-	{},
-	"@widgetJitsi":
-	{},
-	"@widgetName":
-	{},
-	"@widgetNameError":
-	{},
-	"@widgetUrlError":
-	{},
-	"@widgetVideo":
-	{},
-	"@yourChatBackupHasBeenSetUp":
-	{},
-	"@yourStory":
-	{},
-	"@yourUserId":
-	{},
-	"addAccount": "Adicionar conta",
-	"addDescription": "Adicionar descrição",
-	"addToBundle": "Adicionar à coleção",
-	"addToSpace": "Adicionar ao espaço",
-	"addToSpaceDescription": "Selecione um espaço para adicionar esta conversa.",
-	"addToStory": "Adicionar ao painel",
-	"addWidget": "Adicionar ferramenta",
-	"bubbleSize": "Tamanho do balão",
-	"bundleName": "Nome da coleção",
-	"chatHasBeenAddedToThisSpace": "A conversa foi adicionada a este espaço",
-	"chatHasBeenRemovedFromThisSpace": "A conversa foi removida deste espaço",
-	"commandHint_clearcache": "Limpar dados temporários",
-	"commandHint_create": "Criar uma sala vazia.\nUse --no-encryption para desabilitar a criptografia",
-	"commandHint_discardsession": "Descartar sessão",
-	"commandHint_dm": "Iniciar uma conversa direta\nUse --no-encryption para desabilitar a criptografia",
-	"confirmEventUnpin": "Tem certeza que quer desafixar o evento permanentemente?",
-	"createNewChatExplaination": "Apenas escaneie o código QR ou compartilhe o link do convite se estiverem próximos entre si.",
-	"dismiss": "Descartar",
-	"editBundlesForAccount": "Editar coleções para esta conta",
-	"editIntegrations": "Editar ferramentas e integrações",
-	"editWidgets": "Editar ferramentas",
-	"emailOrUsername": "Email ou nome de usuário",
-	"emojis": "Emojis",
-	"enableMultiAccounts": "(BETA) Habilitar múltiplas contas neste dispositivo",
-	"errorAddingWidget": "Erro ao adicionar a ferramenta.",
-	"experimentalVideoCalls": "Vídeo chamadas experimentais",
-	"integrationsNotImplemented": "Ainda não é possível editar ferramentas e integrações.",
-	"iUnderstand": "Eu compreendo",
-	"iWroteDownTheKey": "Eu anotei a chave",
-	"link": "Link",
-	"loginWithOneClick": "Entrar com um clique",
-	"markAsRead": "Marcar como lido",
-	"matrixWidgets": "Ferramentas REChain ® 🪐",
-	"messageInfo": "Informações da mensagem",
-	"messageType": "Tipo da mensagem",
-	"newPasswordDescription": "Para poder recuperar a sua senha, você deve posteriormente cadastrar um email na sua conta.",
-	"newUsernameDescription": "Seu ID de usuário(a) deve ter o formato @usuario:nomedoservidor",
-	"nextAccount": "Próxima conta",
-	"oneClientLoggedOut": "Um dos seus clientes foi desvinculado",
-	"openChat": "Abrir conversa",
-	"openGallery": "Abrir galeria",
-	"openVideoCamera": "Abra a câmera para um vídeo",
-	"passwordsDoNotMatch": "Senhas não batem!",
-	"pinMessage": "Afixar à sala",
-	"pinnedEventsError": "Erro ao carregar mensagens afixadas",
-	"placeCall": "Chamar",
-	"pleaseChooseAtLeastChars": "Por favor, use pelo menos {min} caracteres.",
-	"pleaseEnterSecurityKeyDescription": "Para destravar seu backup de conversas, por favor, insira sua chave de segurança gerada na sessão anterior. Sua chave de segurança NÃO é a sua senha.",
-	"pleaseEnterValidEmail": "Por favor, insira um email válido.",
-	"previousAccount": "Conta anterior",
-	"publish": "Publicar",
-	"reactedWith": "{sender} reagiu com {reaction}",
-	"removeFromBundle": "Remover desta coleção",
-	"removeFromSpace": "Remover do espaço",
-	"removeFromSpaceDescription": "Isto remove esta conversa do atual espaço. Ela continuará visível sob \"Todas conversas\".",
-	"repeatPassword": "Repita a senha",
-	"replyHasBeenSent": "Resposta enviada",
-	"reportUser": "Delatar usuário",
-	"saveTheSecurityKeyNow": "Salvar a chave de segurança agora",
-	"scanQrCode": "Escanear o código QR",
-	"sender": "Remetente",
-	"sendOnEnter": "Enviar ao pressionar enter",
-	"separateChatTypes": "Separar Conversas Diretas, Grupos e Espaços",
-	"serverRequiresEmail": "Este servidor precisa validar seu email para efetuar o registro.",
-	"setupChatBackup": "Configurar backup da conversa",
-	"setupChatBackupDescription": "Para proteger suas mensagens, nós geramos uma chave de segurança para você.\nPor favor, guarde-a num lugar seguro, como um gerenciador de senhas.",
-	"setupChatBackupNow": "Configurar seu backup de conversas agora",
-	"shareYourInviteLink": "Compartilhar o link do convite",
-	"start": "Começar",
-	"storyFrom": "Painel de {date}:\n{body}",
-	"storyPrivacyWarning": "Por favor, note que pessoas podem ver e contactar umas às outras no seu painel. Ele ficará visível por apenas 24 horas, mas não há garantias de que será apagado por todos dispositivos e servidores.",
-	"switchToAccount": "Alternar para a conta {number}",
-	"thisUserHasNotPostedAnythingYet": "Este(a) usuário(a) ainda não postou no seu painel",
-	"time": "Hora",
-	"typeInInviteLinkManually": "Digitar o link do convite manualmente...",
-	"unsubscribeStories": "Desinscrever de painéis",
-	"unsupportedAndroidVersion": "Versão Android não suportada",
-	"unsupportedAndroidVersionLong": "Esta funcionalidade requer uma versão mais nova do Android. Por favor, busque atualizações ou suporte ao Katya ® 👽 Mobile OS.",
-	"unverified": "Não verificado",
-	"videoCallsBetaWarning": "Por favor, note que chamadas de vídeo estão atualmente em teste. Podem não funcionar como esperado ou sequer funcionar em algumas plataformas.",
-	"videoWithSize": "Vídeo ({size})",
-	"voiceCall": "Chamada de voz",
-	"whatIsGoingOn": "O que está acontecendo?",
-	"whoCanSeeMyStories": "Quem pode ver meu painel?",
-	"whoCanSeeMyStoriesDesc": "Por favor, note que pessoas podem ver e contactar umas às outras no seu painel.",
-	"widgetCustom": "Personalizado",
-	"@advanced":
-	{},
-	"@allSpaces":
-	{},
-	"@allSuggestedRoomsJoined":
-	{},
-	"@appearOnTop":
-	{},
-	"@appearOnTopDetails":
-	{},
-	"@callingAccount":
-	{},
-	"@callingAccountDetails":
-	{},
-	"@callingPermissions":
-	{},
-	"@commandHint_cuddle":
-	{},
-	"@commandHint_googly":
-	{},
-	"@commandHint_hug":
-	{},
-	"@commandHint_markasdm":
-	{},
-	"@commandHint_markasgroup":
-	{},
-	"@confirmMatrixId":
-	{},
-	"@countFiles":
-	{
-		"placeholders":
-		{
-			"count":
-			{}
-		}
-	},
-	"@cuddleContent":
-	{
-		"placeholders":
-		{
-			"senderName":
-			{}
-		},
-		"type": "text"
-	},
-	"@custom":
-	{},
-	"@dehydrate":
-	{},
-	"@dehydrateShare":
-	{},
-	"@dehydrateTor":
-	{},
-	"@dehydrateTorLong":
-	{},
-	"@dehydrateWarning":
-	{},
-	"@doNotShowAgain":
-	{},
-	"@enableAutoBackups":
-	{},
-	"@enterRoom":
-	{},
-	"@enterSpace":
-	{},
-	"@foregroundServiceRunning":
-	{},
-	"@googlyEyesContent":
-	{
-		"placeholders":
-		{
-			"senderName":
-			{}
-		},
-		"type": "text"
-	},
-	"@hideUnimportantStateEvents":
-	{},
-	"@hugContent":
-	{
-		"placeholders":
-		{
-			"senderName":
-			{}
-		},
-		"type": "text"
-	},
-	"@hydrate":
-	{},
-	"@hydrateTor":
-	{},
-	"@hydrateTorLong":
-	{},
-	"@indexedDbErrorLong":
-	{},
-	"@indexedDbErrorTitle":
-	{},
-	"@newGroup":
-	{},
-	"@newSpace":
-	{},
-	"@noEmailWarning":
-	{},
-	"@noKeyForThisMessage":
-	{},
-	"@numberRoomMembers":
-	{
-		"placeholders":
-		{
-			"number":
-			{}
-		},
-		"type": "number"
-	},
-	"@numChats":
-	{
-		"placeholders":
-		{
-			"number":
-			{}
-		},
-		"type": "number"
-	},
-	"@otherCallingPermissions":
-	{},
-	"@pleaseEnterRecoveryKey":
-	{},
-	"@pleaseEnterRecoveryKeyDescription":
-	{},
-	"@recoveryKey":
-	{},
-	"@recoveryKeyLost":
-	{},
-	"@saveKeyManuallyDescription":
-	{},
-	"@saveTheRecoveryKeyNow":
-	{},
-	"@screenSharingDetail":
-	{},
-	"@screenSharingTitle":
-	{},
-	"@storeInAndroidKeystore":
-	{},
-	"@storeInAppleKeyChain":
-	{},
-	"@storeInSecureStorageDescription":
-	{},
-	"@storeSecurlyOnThisDevice":
-	{},
-	"@stories":
-	{},
-	"@suggestedRooms":
-	{},
-	"@supposedMxid":
-	{
-		"placeholders":
-		{
-			"mxid":
-			{}
-		},
-		"type": "text"
-	},
-	"@unlockOldMessages":
-	{},
-	"@updateAvailable":
-	{},
-	"@updateNow":
-	{},
-	"@user":
-	{},
-	"@users":
-	{},
-	"@whyIsThisMessageEncrypted":
-	{},
-	"advanced": "Avançado",
-	"allSpaces": "Todos espaços",
-	"allSuggestedRoomsJoined": "Você entrou em todas conversas sugeridas",
-	"appearOnTop": "Aparecer no topo",
-	"appearOnTopDetails": "Permitir que o app apareça no topo (desnecessário caso REChain ® 🪐 já esteja configurado como conta para chamadas)",
-	"callingAccount": "Conta para chamadas",
-	"callingAccountDetails": "Permitir que o REChain ® 🪐 use o app de chamadas nativo do Android.",
-	"callingPermissions": "Permissões de chamada",
-	"commandHint_cuddle": "Enviar um afago",
-	"commandHint_googly": "Enviar olhos arregalados",
-	"commandHint_hug": "Enviar um abraço",
-	"commandHint_markasdm": "Marcar como conversa direta",
-	"commandHint_markasgroup": "Marcar como grupo",
-	"confirmMatrixId": "Por favor, confirme seu ID REChain ® 🪐 para apagar sua conta.",
-	"countFiles": "{count} arquivos",
-	"cuddleContent": "{senderName} afagou você",
-	"custom": "Personalizado",
-	"dehydrate": "Exportar sessão e limpar dispositivo",
-	"dehydrateShare": "Este é seu extrato REChain ® 🪐. Cuidado para não perdê-lo e o mantenha privado.",
-	"dehydrateTor": "Usuários TOR: Exportar sessão",
-	"dehydrateTorLong": "Para usuários TOR, é recomendado exportar a sessão antes de fechar a janela.",
-	"dehydrateWarning": "Esta ação não pode ser desfeita. Certifique-se de que o arquivo backup está guardado e seguro.",
-	"doNotShowAgain": "Não mostrar novamente",
-	"enableAutoBackups": "Habilitar backups automáticos",
-	"enterRoom": "Entrar na conversa",
-	"enterSpace": "Entrar no espaço",
-	"foregroundServiceRunning": "Esta notificação aparece quando um serviço está executando.",
-	"googlyEyesContent": "{senderName} enviou olhos arregalados",
-	"hideUnimportantStateEvents": "Ocultar eventos desimportantes",
-	"hugContent": "{senderName} abraçou você",
-	"hydrate": "Restaurar a partir de arquivo backup",
-	"hydrateTor": "Usuários TOR: Importar sessão",
-	"hydrateTorLong": "Você exportou sua última sessão no TOR? Importe ela rapidamente e continue conversando.",
-	"indexedDbErrorLong": "Infelizmente, o armazenamento de mensagens não é habilitado por padrão no modo privado.\nPor favor, visite\n- about:config\n- atribua \"true\" a \"dom.indexedDB.privateBrowsing.enabled\"\nDe outro modo, não será possível executar o REChain ® 🪐.",
-	"indexedDbErrorTitle": "Problemas no modo privado",
-	"newGroup": "Novo grupo",
-	"newSpace": "Novo espaço",
-	"noEmailWarning": "Por favor, insira um e-mail válido. De outro modo, você não conseguirá recuperar sua senha. Caso prefira assim, toque novamente no botão para continuar.",
-	"noKeyForThisMessage": "Isto pode ocorrer caso a mensagem tenha sido enviada antes da entrada na sua conta com este dispositivo.\n\nTambém é possível que o remetente tenha bloqueado o seu dispositivo ou ocorreu algum problema com a conexão.\n\nVocê consegue ler as mensagens em outra sessão? Então, pode transferir as mensagens de lá! Vá em Configurações > Dispositivos e confira se os dispositivos verificaram um ao outro. Quando abrir a conversa da próxima vez e ambas as sessões estiverem abertas, as chaves serão transmitidas automaticamente.\n\nNão gostaria de perder suas chaves quando sair ou trocar de dispositivos? Certifique-se que o backup de conversas esteja habilitado nas configurações.",
-	"numberRoomMembers": "{number} membros",
-	"numChats": "{number} conversas",
-	"otherCallingPermissions": "Microfone, câmera e outras permissões do REChain ® 🪐",
-	"pleaseEnterRecoveryKey": "Por favor, insira sua chave de recuperação:",
-	"pleaseEnterRecoveryKeyDescription": "Para destrancar suas mensagens antigas, por favor, insira sua chave de recuperação gerada numa sessão prévia. Suas chave de recuperação NÃO é sua senha.",
-	"recoveryKey": "Chave de recuperação",
-	"recoveryKeyLost": "Perdeu a chave de recuperação?",
-	"saveKeyManuallyDescription": "Salvar esta chave manualmente via compartilhamento do sistema ou área de transferência.",
-	"saveTheRecoveryKeyNow": "Salvar a chave de recuperação agora",
-	"screenSharingDetail": "Você está compartilhando sua tela no REChain ® 🪐",
-	"screenSharingTitle": "Compartilhar tela",
-	"storeInAndroidKeystore": "Guardar no cofre do Android",
-	"storeInAppleKeyChain": "Guardar no chaveiro da Apple",
-	"storeInSecureStorageDescription": "Guardar a chave de recuperação no armazenamento seguro deste dispositivo.",
-	"storeSecurlyOnThisDevice": "Guardar de modo seguro neste dispositivo",
-	"stories": "Stories",
-	"suggestedRooms": "Desvendar grupos neste espaço",
-	"supposedMxid": "Isto deveria ser {mxid}",
-	"unlockOldMessages": "Destrancar mensagens antigas",
-	"updateAvailable": "Atualização do REChain ® 🪐 disponível",
-	"updateNow": "Iniciar atualização nos bastidores",
-	"user": "Usuário",
-	"users": "Usuários",
-	"whyIsThisMessageEncrypted": "Por que esta mensagem está ilegível?",
-	"widgetEtherpad": "Anotação",
-	"widgetJitsi": "Jitsi Meet",
-	"widgetName": "Nome",
-	"widgetNameError": "Por favor, forneça um nome de exibição.",
-	"widgetUrlError": "Isto não é uma URL válida.",
-	"widgetVideo": "Vídeo",
-	"yourChatBackupHasBeenSetUp": "Seu backup de conversas foi configurado.",
-	"yourStory": "Seu painel",
-	"yourUserId": "Seu ID de usuário:",
-	"zoomIn": "Ampliar",
-	"@zoomIn":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"@homeserver":
-	{},
-	"@showDirectChatsInSpaces":
-	{
-		"placeholders":
-		{},
-		"type": "text"
-	},
-	"@showSpaces":
-	{},
-	"@youAcceptedTheInvitation":
-	{},
-	"@youBannedUser":
-	{
-		"placeholders":
-		{
-			"user":
-			{}
-		}
-	},
-	"@youHaveWithdrawnTheInvitationFor":
-	{
-		"placeholders":
-		{
-			"user":
-			{}
-		}
-	},
-	"@youInvitedBy":
-	{
-		"placeholders":
-		{
-			"user":
-			{}
-		}
-	},
-	"@youInvitedUser":
-	{
-		"placeholders":
-		{
-			"user":
-			{}
-		}
-	},
-	"@youJoinedTheChat":
-	{},
-	"@youKicked":
-	{
-		"placeholders":
-		{
-			"user":
-			{}
-		}
-	},
-	"@youKickedAndBanned":
-	{
-		"placeholders":
-		{
-			"user":
-			{}
-		}
-	},
-	"@youRejectedTheInvitation":
-	{},
-	"@youUnbannedUser":
-	{
-		"placeholders":
-		{
-			"user":
-			{}
-		}
-	},
-	"@addChatDescription":
-	{},
-	"@addChatOrSubSpace":
-	{},
-	"@allRooms":
-	{
-		"placeholders":
-		{},
-		"type": "text"
-	},
-	"@archiveRoomDescription":
-	{},
-	"@banUserDescription":
-	{},
-	"@block":
-	{},
-	"@blockedUsers":
-	{},
-	"@blockListDescription":
-	{},
-	"@blockUsername":
-	{},
-	"@chatDescription":
-	{},
-	"@chatDescriptionHasBeenChanged":
-	{},
-	"@chatPermissions":
-	{},
-	"@commandHint_sendraw":
-	{},
-	"@createGroup":
-	{},
-	"@createGroupAndInviteUsers":
-	{},
-	"@databaseMigrationBody":
-	{},
-	"@databaseMigrationTitle":
-	{},
-	"@decline":
-	{},
-	"@deviceKeys":
-	{},
-	"@directChat":
-	{},
-	"@disableEncryptionWarning":
-	{},
-	"@emoteKeyboardNoRecents":
-	{
-		"placeholders":
-		{},
-		"type": "text"
-	},
-	"@encryptThisChat":
-	{},
-	"@exportEmotePack":
-	{},
-	"@fileHasBeenSavedAt":
-	{
-		"placeholders":
-		{
-			"path":
-			{}
-		},
-		"type": "text"
-	},
-	"@fileIsTooBigForServer":
-	{},
-	"@groupCanBeFoundViaSearch":
-	{},
-	"@groupName":
-	{},
-	"@hasKnocked":
-	{
-		"placeholders":
-		{
-			"user":
-			{}
-		}
-	},
-	"@importEmojis":
-	{},
-	"@importFromZipFile":
-	{},
-	"@importNow":
-	{},
-	"@invalidInput":
-	{},
-	"@invalidServerName":
-	{},
-	"@invite":
-	{},
-	"@inviteContactToGroupQuestion":
-	{},
-	"@inviteGroupChat":
-	{},
-	"@invitePrivateChat":
-	{},
-	"@joinSpace":
-	{},
-	"@jump":
-	{},
-	"@jumpToLastReadMessage":
-	{},
-	"@kickUserDescription":
-	{},
-	"@learnMore":
-	{},
-	"@leaveEmptyToClearStatus":
-	{},
-	"@makeAdminDescription":
-	{},
-	"@messagesStyle":
-	{},
-	"@newPassword":
-	{},
-	"@newSpaceDescription":
-	{},
-	"@noBackupWarning":
-	{},
-	"@noChatDescriptionYet":
-	{},
-	"@noOtherDevicesFound":
-	{},
-	"@notAnImage":
-	{},
-	"@nothingFound":
-	{},
-	"@noUsersFoundWithQuery":
-	{
-		"placeholders":
-		{
-			"query":
-			{}
-		},
-		"type": "text"
-	},
-	"@openLinkInBrowser":
-	{},
-	"@optionalRedactReason":
-	{},
-	"@passwordIsWrong":
-	{},
-	"@pleaseChooseAStrongPassword":
-	{},
-	"@pleaseEnterANumber":
-	{},
-	"@pleaseEnterYourCurrentPassword":
-	{},
-	"@pleaseTryAgainLaterOrChooseDifferentServer":
-	{},
-	"@profileNotFound":
-	{},
-	"@publicLink":
-	{},
-	"@publicSpaces":
-	{},
-	"@pushNotificationsNotAvailable":
-	{},
-	"@readUpToHere":
-	{},
-	"@redactedBy":
-	{
-		"placeholders":
-		{
-			"username":
-			{}
-		},
-		"type": "text"
-	},
-	"@redactedByBecause":
-	{
-		"placeholders":
-		{
-			"reason":
-			{},
-			"username":
-			{}
-		},
-		"type": "text"
-	},
-	"@redactMessageDescription":
-	{},
-	"@removeDevicesDescription":
-	{},
-	"@reopenChat":
-	{},
-	"@replace":
-	{},
-	"@report":
-	{},
-	"@reportErrorDescription":
-	{},
-	"@roomUpgradeDescription":
-	{},
-	"@searchChatsRooms":
-	{},
-	"@searchForUsers":
-	{},
-	"@select":
-	{},
-	"@sendTypingNotifications":
-	{},
-	"@setChatDescription":
-	{},
-	"@setColorTheme":
-	{},
-	"@setTheme":
-	{},
-	"@shareInviteLink":
-	{},
-	"@signInWith":
-	{
-		"placeholders":
-		{
-			"provider":
-			{}
-		},
-		"type": "text"
-	},
-	"@signInWithPassword":
-	{},
-	"@sorryThatsNotPossible":
-	{},
-	"@startConversation":
-	{},
-	"@startFirstChat":
-	{},
-	"@subspace":
-	{},
-	"@thisDevice":
-	{},
-	"@tryAgain":
-	{},
-	"@unbanUserDescription":
-	{},
-	"@wasDirectChatDisplayName":
-	{
-		"placeholders":
-		{
-			"oldDisplayName":
-			{}
-		},
-		"type": "text"
-	},
-	"@wrongPinEntered":
-	{
-		"placeholders":
-		{
-			"seconds":
-			{}
-		},
-		"type": "text"
-	},
-	"@wrongRecoveryKey":
-	{},
-	"@yourGlobalUserIdIs":
-	{},
-	"addChatDescription": "Inserir descrição da conversa...",
-	"addChatOrSubSpace": "Adicionar conversa ou subespaço",
-	"archiveRoomDescription": "A conversa será movida para o arquivo. Outros usuários verão que você deixou a conversa.",
-	"banUserDescription": "O usuário será banido da conversa e não poderá participar novamente até que isto seja revogado.",
-	"block": "Bloquear",
-	"blockedUsers": "Usuários bloqueados",
-	"blockListDescription": "Você pode bloquear usuários que estejam perturbando. Você não receberá mensagens ou convites de usuários na sua lista pessoal de bloqueios.",
-	"blockUsername": "Ignore usuário",
-	"chatDescription": "Descrição da conversa",
-	"chatDescriptionHasBeenChanged": "Descrição da conversa alterada",
-	"chatPermissions": "Permissões da conversa",
-	"commandHint_sendraw": "Enviar JSON puro",
-	"createGroup": "Criar grupo",
-	"createGroupAndInviteUsers": "Criar um grupo e convidar pessoas",
-	"databaseMigrationBody": "Por favor, espere. Isto pode demorar um pouco.",
-	"databaseMigrationTitle": "Banco de dados otimizado",
-	"decline": "Rejeitar",
-	"directChat": "Conversa direta",
-	"emoteKeyboardNoRecents": "Emotes recentes aparecem aqui...",
-	"exportEmotePack": "Exportar pacote de Emotes como .zip",
-	"groupCanBeFoundViaSearch": "Grupos podem ser encontrados via busca",
-	"groupName": "Nome do grupo",
-	"hasKnocked": "{user} bateu na porta",
-	"importEmojis": "Importar Emojis",
-	"importFromZipFile": "Importar de arquivo .zip",
-	"importNow": "Importar agora",
-	"invalidInput": "Inserção inválida!",
-	"invalidServerName": "Nome de usuário inválido",
-	"invite": "Convidar",
-	"inviteContactToGroupQuestion": "Você quer convidar {contact} para a conversa \"{groupName}\"?",
-	"inviteGroupChat": "📨 Convidar para o grupo",
-	"invitePrivateChat": "📨 Convidar para uma conversa privada",
-	"joinSpace": "Ingressar no espaço",
-	"kickUserDescription": "O usuário foi enxotado da conversa, mas não banido. Em conversas públicas, o usuário pode reingressar a qualquer momento.",
-	"learnMore": "Saiba mais",
-	"leaveEmptyToClearStatus": "Deixe em branco para limpar seu Status.",
-	"makeAdminDescription": "Assim que promover este usuário a administrador, não poderá desfazê-lo e ele terá as mesmas permissões que você.",
-	"messagesStyle": "Mensagens:",
-	"newPassword": "Nova senha",
-	"noChatDescriptionYet": "Nenhuma descrição da conversa disponível.",
-	"notAnImage": "Não é uma imagem.",
-	"nothingFound": "Nada foi encontrado...",
-	"noUsersFoundWithQuery": "Infelizmente, não foi encontrado usuário via \"{query}\". Por favor, verifique se digitou corretamente.",
-	"optionalRedactReason": "(Opcional) Motivo para remover esta mensagem.",
-	"passwordIsWrong": "A senha inserida está incorreta",
-	"pleaseChooseAStrongPassword": "Por favor, escolha uma senha forte",
-	"pleaseEnterANumber": "Por favor, insira um número maior que 0",
-	"pleaseEnterYourCurrentPassword": "Por favor, insira sua senha atual",
-	"profileNotFound": "O usuário não foi encontrado neste servidor. Talvez um problema de conexão ou o usuário não existe.",
-	"publicLink": "Link público",
-	"publicSpaces": "Espaços públicos",
-	"pushNotificationsNotAvailable": "Notificações não estão  disponíveis",
-	"redactedBy": "Removido por {username}",
-	"redactedByBecause": "Removido por {username}, pois: \"{reason}\"",
-	"redactMessageDescription": "A mensagem será removida para todos participantes desta conversa. Isto não poderá ser desfeito.",
-	"removeDevicesDescription": "Você encerrará a sessão neste dispositivo e não poderá mais receber mensagens.",
-	"replace": "Substituir",
-	"roomUpgradeDescription": "A conversa será recriada com a nova versão de sala. Todos participantes será notificados e terão que migrar para a nova sala. Você pode encontrar mais informações sobre versões de sala em https://spec.matrix.org/latest/room/",
-	"searchChatsRooms": "Buscar por #conversas, @usuários...",
-	"searchForUsers": "Buscar por @usuários...",
-	"select": "Selecionar",
-	"sendTypingNotifications": "Enviar notificações de digitação",
-	"setChatDescription": "Inserir descrição da conversa",
-	"setColorTheme": "Aplicar paleta de cor:",
-	"setTheme": "Aplicar tema:",
-	"shareInviteLink": "Compartilhar convite",
-	"signInWith": "Autenticar com {provider}",
-	"startConversation": "Começar uma conversa",
-	"subspace": "Subespaço",
-	"thisDevice": "Este dispositivo:",
-	"tryAgain": "Tente novamente",
-	"unbanUserDescription": "O usuário poderá ingressar novamente na conversa, caso tente.",
-	"wrongPinEntered": "PIN incorreto! Tente novamente em {seconds} segundos...",
-	"wrongRecoveryKey": "Desculpe... esta não parece ser a chave de recuperação correta.",
-	"yourGlobalUserIdIs": "Seu ID global é: ",
-	"homeserver": "Node/Server",
-	"showDirectChatsInSpaces": "Mostrar Conversas Diretas relacionadas nos Espaços",
-	"showSpaces": "Mostrar lista de espaços",
-	"youAcceptedTheInvitation": "Você aceitou o convite",
-	"youBannedUser": "Você baniu {user}",
-	"youHaveWithdrawnTheInvitationFor": "Você revogou o convite para {user}",
-	"youInvitedBy": "Você foi convidado por {user}",
-	"youInvitedUser": "Você convidou {user}",
-	"youJoinedTheChat": "Você entrou na conversa",
-	"youKicked": "Você expulsou {user}",
-	"youKickedAndBanned": "Você expulsou e baniu {user}",
-	"youRejectedTheInvitation": "Você rejeitou o convite",
-	"youUnbannedUser": "Você revogou o banimento de {user}",
-	"zoomOut": "Reduzir",
-	"@zoomOut":
-	{
-		"type": "text",
-		"placeholders":
-		{}
-	},
-	"allRooms": "",
-	"continueWith": "",
-	"deviceKeys": "",
-	"disableEncryptionWarning": "",
-	"encryptThisChat": "",
-	"endToEndEncryption": "",
-	"enterInviteLinkOrMatrixId": "",
-	"fileHasBeenSavedAt": "",
-	"fileIsTooBigForServer": "",
-	"jump": "",
-	"jumpToLastReadMessage": "",
-	"letsStart": "",
-	"newSpaceDescription": "",
-	"noBackupWarning": "",
-	"noMatrixServer": "",
-	"noOtherDevicesFound": "",
-	"noSearchResult": "",
-	"openLinkInBrowser": "",
-	"pleaseEnterAMatrixIdentifier": "",
-	"pleaseTryAgainLaterOrChooseDifferentServer": "",
-	"readUpToHere": "",
-	"reopenChat": "",
-	"report": "",
-	"reportErrorDescription": "",
-	"signInWithPassword": "",
-	"sorryThatsNotPossible": "",
-	"startFirstChat": "",
-	"wasDirectChatDisplayName": ""
+  "@@last_modified": "2021-08-14 12:41:09.925971",
+  "about": "Sobre",
+  "@about": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "accept": "Aceitar",
+  "@accept": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "acceptedTheInvitation": "{username} aceitou o convite",
+  "@acceptedTheInvitation": {
+    "type": "text",
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "account": "Conta",
+  "@account": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "accountInformation": "Dados da conta",
+  "@accountInformation": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "activatedEndToEndEncryption": "{username} ativou a criptografia ponta-a-ponta",
+  "@activatedEndToEndEncryption": {
+    "type": "text",
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "addEmail": "Adicionar email",
+  "@addEmail": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addGroupDescription": "Adicionar uma descrição para o grupo",
+  "@addGroupDescription": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addNewFriend": "Adicionar novo(a) amigo(a)",
+  "@addNewFriend": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "admin": "Admin",
+  "@admin": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "alias": "cognome",
+  "@alias": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "all": "Todas",
+  "@all": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "allChats": "Todas conversas",
+  "@allChats": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "alreadyHaveAnAccount": "Você já possui uma conta?",
+  "@alreadyHaveAnAccount": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "answeredTheCall": "{senderName} atendeu à chamada",
+  "@answeredTheCall": {
+    "type": "text",
+    "placeholders": {
+      "senderName": {}
+    }
+  },
+  "anyoneCanJoin": "Qualquer pessoa pode participar",
+  "@anyoneCanJoin": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "appLock": "Trava do aplicativo",
+  "@appLock": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "archive": "Arquivo",
+  "@archive": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "archivedRoom": "Sala arquivada",
+  "@archivedRoom": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "areGuestsAllowedToJoin": "Usuários convidados podem participar",
+  "@areGuestsAllowedToJoin": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "areYouSure": "Tem certeza?",
+  "@areYouSure": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "areYouSureYouWantToLogout": "Tem certeza que deseja encerrar a sessão?",
+  "@areYouSureYouWantToLogout": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "askSSSSCache": "Por favor, insira sua frase secreta ou chave de recuperação para serem guardadas.",
+  "@askSSSSCache": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "askSSSSSign": "Para poder validar a outra pessoa, por favor, insira sua frase secreta ou chave de recuperação.",
+  "@askSSSSSign": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "askSSSSVerify": "Por favor, insira a frase secreta ou chave de recuperação para verificar sua sessão.",
+  "@askSSSSVerify": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "askVerificationRequest": "Aceitar esta solicitação de verificação de {username}?",
+  "@askVerificationRequest": {
+    "type": "text",
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "audioPlayerPause": "Pausar",
+  "@audioPlayerPause": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "audioPlayerPlay": "Tocar",
+  "@audioPlayerPlay": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "authentication": "Autenticação",
+  "@authentication": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "autoplayImages": "Reproduzir automaticamente figurinhas animadas e emojis",
+  "@autoplayImages": {
+    "type": "text",
+    "placeholder": {}
+  },
+  "avatarHasBeenChanged": "Avatar alterado",
+  "@avatarHasBeenChanged": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "badServerLoginTypesException": "O servidor REChain ® 🪐 suporta os tipos de login:\n{serverVersions}\nMas este app suporta apenas:\n{supportedVersions}",
+  "@badServerLoginTypesException": {
+    "type": "text",
+    "placeholders": {
+      "serverVersions": {},
+      "supportedVersions": {}
+    }
+  },
+  "badServerVersionsException": "O servidor REChain ® 🪐 suporta as versões Spec:\n{serverVersions}\nMas este app suporta apenas {supportedVersions}",
+  "@badServerVersionsException": {
+    "type": "text",
+    "placeholders": {
+      "serverVersions": {},
+      "supportedVersions": {}
+    }
+  },
+  "banFromChat": "Banir da conversa",
+  "@banFromChat": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "banned": "Banido",
+  "@banned": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "bannedUser": "{username} baniu {targetName}",
+  "@bannedUser": {
+    "type": "text",
+    "placeholders": {
+      "username": {},
+      "targetName": {}
+    }
+  },
+  "blockDevice": "Bloquear dispositivo",
+  "@blockDevice": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "blocked": "Bloqueado",
+  "@blocked": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "botMessages": "Mensagens de robôs",
+  "@botMessages": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "cachedKeys": "Chaves guardadas",
+  "@cachedKeys": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "cancel": "Cancelar",
+  "@cancel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "cantOpenUri": "Não foi possível abrir a URI {uri}",
+  "@cantOpenUri": {
+    "type": "text",
+    "placeholders": {
+      "uri": {}
+    }
+  },
+  "changeDeviceName": "Alterar o nome do dispositivo",
+  "@changeDeviceName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "changedTheChatAvatar": "{username} alterou o avatar da conversa",
+  "@changedTheChatAvatar": {
+    "type": "text",
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "changedTheChatDescriptionTo": "{username} alterou a descrição da conversa para: '{description}'",
+  "@changedTheChatDescriptionTo": {
+    "type": "text",
+    "placeholders": {
+      "username": {},
+      "description": {}
+    }
+  },
+  "changedTheChatNameTo": "{username} alterou o nome da conversa para: '{chatname}'",
+  "@changedTheChatNameTo": {
+    "type": "text",
+    "placeholders": {
+      "username": {},
+      "chatname": {}
+    }
+  },
+  "changedTheChatPermissions": "{username} alterou as permissões na conversa",
+  "@changedTheChatPermissions": {
+    "type": "text",
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "changedTheDisplaynameTo": "{username} mudou o seu nome de exibição para: '{displayname}'",
+  "@changedTheDisplaynameTo": {
+    "type": "text",
+    "placeholders": {
+      "username": {},
+      "displayname": {}
+    }
+  },
+  "changedTheGuestAccessRules": "{username} alterou as regras de acesso dos convidados",
+  "@changedTheGuestAccessRules": {
+    "type": "text",
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "changedTheGuestAccessRulesTo": "{username} alterou as regras de acesso dos convidados para: {rules}",
+  "@changedTheGuestAccessRulesTo": {
+    "type": "text",
+    "placeholders": {
+      "username": {},
+      "rules": {}
+    }
+  },
+  "changedTheHistoryVisibility": "{username} alterou a visibilidade do histórico",
+  "@changedTheHistoryVisibility": {
+    "type": "text",
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "changedTheHistoryVisibilityTo": "{username} alterou a visibilidade do histórico para: {rules}",
+  "@changedTheHistoryVisibilityTo": {
+    "type": "text",
+    "placeholders": {
+      "username": {},
+      "rules": {}
+    }
+  },
+  "changedTheJoinRules": "{username} alterou as regras para participação",
+  "@changedTheJoinRules": {
+    "type": "text",
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "changedTheJoinRulesTo": "{username} alterou as regras para participação para: {joinRules}",
+  "@changedTheJoinRulesTo": {
+    "type": "text",
+    "placeholders": {
+      "username": {},
+      "joinRules": {}
+    }
+  },
+  "changedTheProfileAvatar": "{username} alterou seu avatar",
+  "@changedTheProfileAvatar": {
+    "type": "text",
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "changedTheRoomAliases": "{username} alterou os cognomes da sala",
+  "@changedTheRoomAliases": {
+    "type": "text",
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "changedTheRoomInvitationLink": "{username} alterou o link de convite",
+  "@changedTheRoomInvitationLink": {
+    "type": "text",
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "changelog": "Lista de mudanças",
+  "@changelog": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "changePassword": "Alterar a senha",
+  "@changePassword": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "changesHaveBeenSaved": "Alterações foram salvas",
+  "@changesHaveBeenSaved": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
+  "@changeTheHomeserver": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "changeTheme": "Alterar o tema",
+  "@changeTheme": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "changeTheNameOfTheGroup": "Alterar o nome do grupo",
+  "@changeTheNameOfTheGroup": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "changeTheServer": "Alterar o servidor",
+  "@changeTheServer": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "changeWallpaper": "Alterar o pano de fundo",
+  "@changeWallpaper": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "changeYourAvatar": "Alterar seu avatar",
+  "@changeYourAvatar": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "channelCorruptedDecryptError": "A criptografia foi corrompida",
+  "@channelCorruptedDecryptError": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "chat": "Conversa",
+  "@chat": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "chatBackup": "Backup da conversa",
+  "@chatBackup": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "chatBackupDescription": "O backup da sua conversa é protegido com sua chave de segurança. Por favor, evite perdê-la.",
+  "@chatBackupDescription": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "chatDetails": "Detalhes da conversa",
+  "@chatDetails": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "chats": "Conversas",
+  "@chats": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "chooseAStrongPassword": "Escolha uma senha forte",
+  "@chooseAStrongPassword": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "chooseAUsername": "Escolha um nome de usuário",
+  "@chooseAUsername": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "clearArchive": "Limpar arquivo",
+  "@clearArchive": {},
+  "clearText": "Limpar texto",
+  "@clearText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "close": "Fechar",
+  "@close": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "commandHint_ban": "Banir um(a) usuário(a) desta sala",
+  "@commandHint_ban": {
+    "type": "text",
+    "description": "Usage hint for the command /ban"
+  },
+  "commandHint_html": "Enviar mensagem formatada em HTML",
+  "@commandHint_html": {
+    "type": "text",
+    "description": "Usage hint for the command /html"
+  },
+  "commandHint_invite": "Convidar um(a) usuário(a) para esta sala",
+  "@commandHint_invite": {
+    "type": "text",
+    "description": "Usage hint for the command /invite"
+  },
+  "commandHint_join": "Entrar numa sala",
+  "@commandHint_join": {
+    "type": "text",
+    "description": "Usage hint for the command /join"
+  },
+  "commandHint_kick": "Remover um(a) usuário(a) desta sala",
+  "@commandHint_kick": {
+    "type": "text",
+    "description": "Usage hint for the command /kick"
+  },
+  "commandHint_leave": "Sair desta sala",
+  "@commandHint_leave": {
+    "type": "text",
+    "description": "Usage hint for the command /leave"
+  },
+  "commandHint_me": "Descrever você mesmo",
+  "@commandHint_me": {
+    "type": "text",
+    "description": "Usage hint for the command /me"
+  },
+  "commandHint_myroomavatar": "Determinar sua imagem para esta sala (via mxc-uri)",
+  "@commandHint_myroomavatar": {
+    "type": "text",
+    "description": "Usage hint for the command /myroomavatar"
+  },
+  "commandHint_myroomnick": "Determinar seu nome de exibição para esta sala",
+  "@commandHint_myroomnick": {
+    "type": "text",
+    "description": "Usage hint for the command /myroomnick"
+  },
+  "commandHint_op": "Determinar o grau de poderes de um(a) usuário(a) (padrão: 50)",
+  "@commandHint_op": {
+    "type": "text",
+    "description": "Usage hint for the command /op"
+  },
+  "commandHint_plain": "Enviar mensagem sem formatação",
+  "@commandHint_plain": {
+    "type": "text",
+    "description": "Usage hint for the command /plain"
+  },
+  "commandHint_react": "Enviar uma resposta como reação",
+  "@commandHint_react": {
+    "type": "text",
+    "description": "Usage hint for the command /react"
+  },
+  "commandHint_send": "Enviar mensagem",
+  "@commandHint_send": {
+    "type": "text",
+    "description": "Usage hint for the command /send"
+  },
+  "commandHint_unban": "Revogar o banimento de um(a) usuário(a) desta sala",
+  "@commandHint_unban": {
+    "type": "text",
+    "description": "Usage hint for the command /unban"
+  },
+  "commandInvalid": "Comando inválido",
+  "@commandInvalid": {
+    "type": "text"
+  },
+  "commandMissing": "{command} não é um comando.",
+  "@commandMissing": {
+    "type": "text",
+    "placeholders": {
+      "command": {}
+    },
+    "description": "State that {command} is not a valid /command."
+  },
+  "compareEmojiMatch": "Compare e certifique-se que os seguintes emojis batem com os do outro dispositivo:",
+  "@compareEmojiMatch": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "compareNumbersMatch": "Compare e certifique-se de que os seguintes números batem com os do outro dispositivo:",
+  "@compareNumbersMatch": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "configureChat": "Configurar conversa",
+  "@configureChat": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "confirm": "Confirma",
+  "@confirm": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "connect": "Conectar",
+  "@connect": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "connectionAttemptFailed": "A tentativa de conexão falhou",
+  "@connectionAttemptFailed": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "contactHasBeenInvitedToTheGroup": "O contato foi convidado ao grupo",
+  "@contactHasBeenInvitedToTheGroup": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "containsDisplayName": "Contém nome de exibição",
+  "@containsDisplayName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "containsUserName": "Contém nome de usuário",
+  "@containsUserName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "contentHasBeenReported": "O conteúdo foi denunciado para quem administra o servidor",
+  "@contentHasBeenReported": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "contentViewer": "Visualizador de conteúdo",
+  "@contentViewer": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "copiedToClipboard": "Copiado para área de transferência",
+  "@copiedToClipboard": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "copy": "Copiar",
+  "@copy": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "copyToClipboard": "Copiar para a área de transferência",
+  "@copyToClipboard": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "couldNotDecryptMessage": "Não foi possível decriptar a mensagem: {error}",
+  "@couldNotDecryptMessage": {
+    "type": "text",
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "couldNotSetAvatar": "Não foi possível fixar o avatar",
+  "@couldNotSetAvatar": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "couldNotSetDisplayname": "Não foi possível fixar o nome de exibição",
+  "@couldNotSetDisplayname": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "countParticipants": "{count} participantes",
+  "@countParticipants": {
+    "type": "text",
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "create": "Criar",
+  "@create": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "createAccountNow": "Criar conta agora",
+  "@createAccountNow": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "createdTheChat": "{username} criou a conversa",
+  "@createdTheChat": {
+    "type": "text",
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "createNewGroup": "Novo grupo",
+  "@createNewGroup": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "createNewSpace": "Criar novo espaço",
+  "@createNewSpace": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "crossSigningDisabled": "Assinatura cruzada desativada",
+  "@crossSigningDisabled": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "crossSigningEnabled": "Assinatura cruzada ativada",
+  "@crossSigningEnabled": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "currentlyActive": "Ativo",
+  "@currentlyActive": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "darkTheme": "Escuro",
+  "@darkTheme": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "dateAndTimeOfDay": "{date}, {timeOfDay}",
+  "@dateAndTimeOfDay": {
+    "type": "text",
+    "placeholders": {
+      "date": {},
+      "timeOfDay": {}
+    }
+  },
+  "dateWithoutYear": "{day}/{month}",
+  "@dateWithoutYear": {
+    "type": "text",
+    "placeholders": {
+      "month": {},
+      "day": {}
+    }
+  },
+  "dateWithYear": "{day}/{month}/{year}",
+  "@dateWithYear": {
+    "type": "text",
+    "placeholders": {
+      "year": {},
+      "month": {},
+      "day": {}
+    }
+  },
+  "deactivateAccountWarning": "Isto desativará a conta do usuário. É irreversível! Tem certeza?",
+  "@deactivateAccountWarning": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "defaultPermissionLevel": "Nível de permissão padrão",
+  "@defaultPermissionLevel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "delete": "Apagar",
+  "@delete": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "deleteAccount": "Apagar conta",
+  "@deleteAccount": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "deleteMessage": "Apagar mensagem",
+  "@deleteMessage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "deny": "Rejeitar",
+  "@deny": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "device": "Dispositivo",
+  "@device": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "deviceId": "ID do dispositivo",
+  "@deviceId": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "devices": "Dispositivos",
+  "@devices": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "deviceVerifyDescription": "A criptografia só é segura quando todos os dispositivos forem verificados.",
+  "@deviceVerifyDescription": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "directChats": "Conversas diretas",
+  "@directChats": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "discardPicture": "Descartar imagem",
+  "@discardPicture": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "discover": "Desvendar",
+  "@discover": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "discoverGroups": "Desvendar grupos",
+  "@discoverGroups": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "displaynameHasBeenChanged": "O nome de exibição foi alterado",
+  "@displaynameHasBeenChanged": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "donate": "Doar",
+  "@donate": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "dontAskAgain": "Cancelar e não perguntar novamente",
+  "@dontAskAgain": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "downloadFile": "Baixar arquivo",
+  "@downloadFile": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "edit": "Editar",
+  "@edit": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "editBlockedServers": "Editar servidores bloqueados",
+  "@editBlockedServers": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "editChatPermissions": "Editar permissões da conversa",
+  "@editChatPermissions": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "editDisplayname": "Editar nome de exibição",
+  "@editDisplayname": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "editJitsiInstance": "Alterar a instância Jitsi",
+  "@editJitsiInstance": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "editRoomAliases": "Editar cognome da sala",
+  "@editRoomAliases": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "editRoomAvatar": "Editar o avatar da sala",
+  "@editRoomAvatar": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "emoteExists": "Emoji já existe!",
+  "@emoteExists": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "emoteInvalid": "Código emoji inválido!",
+  "@emoteInvalid": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "emotePacks": "Pacote de emoji para a sala",
+  "@emotePacks": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "emoteSettings": "Configuração dos Emoji",
+  "@emoteSettings": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "emoteShortcode": "Código Emoji",
+  "@emoteShortcode": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "emoteWarnNeedToPick": "Você tem que escolher um código emoji e uma imagem!",
+  "@emoteWarnNeedToPick": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "emptyChat": "Conversa vazia",
+  "@emptyChat": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "enableChatBackup": "Habilite o backup de conversas para nunca perder acesso a elas.",
+  "@enableChatBackup": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "enableEmotesGlobally": "Habilitar globalmente o pacote de emoji",
+  "@enableEmotesGlobally": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "enableEncryption": "Habilitar criptografia",
+  "@enableEncryption": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "enableEncryptionWarning": "Você não poderá desabilitar a criptografia posteriormente. Tem certeza?",
+  "@enableEncryptionWarning": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "encrypted": "Criptografado",
+  "@encrypted": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "encryption": "Criptografia",
+  "@encryption": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "encryptionAlgorithm": "Algoritmo criptográfico",
+  "@encryptionAlgorithm": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "encryptionNotEnabled": "A criptografia não está habilitada",
+  "@encryptionNotEnabled": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "end2endEncryptionSettings": "Configuração da criptografia ponta-a-ponta",
+  "@end2endEncryptionSettings": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "endedTheCall": "{senderName} finalizou a chamada",
+  "@endedTheCall": {
+    "type": "text",
+    "placeholders": {
+      "senderName": {}
+    }
+  },
+  "enterAGroupName": "Insira um nome de grupo",
+  "@enterAGroupName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "enterAnEmailAddress": "Inserir endereço de e-mail",
+  "@enterAnEmailAddress": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "enterASpacepName": "Insira um nome pro espaço",
+  "@enterASpacepName": {},
+  "enterAUsername": "Insira um nome de usuário",
+  "@enterAUsername": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
+  "@enterYourHomeserver": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "errorObtainingLocation": "Erro ao obter local: {error}",
+  "@errorObtainingLocation": {
+    "type": "text",
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "everythingReady": "Tudo pronto!",
+  "@everythingReady": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "extremeOffensive": "Extremamente ofensivo",
+  "@extremeOffensive": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "fileName": "Nome do arquivo",
+  "@fileName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "fileSize": "Tamanho do arquivo",
+  "@fileSize": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "rechainonline": "REChain ® 🪐",
+  "@rechainonline": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "fontSize": "Tamanho da fonte",
+  "@fontSize": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "forward": "Encaminhar",
+  "@forward": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "friday": "Sexta-feira",
+  "@friday": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "friends": "Amigos",
+  "@friends": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "fromJoining": "Desde que entrou",
+  "@fromJoining": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "fromTheInvitation": "Desde o convite",
+  "@fromTheInvitation": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "goToTheNewRoom": "Ir para a sala nova",
+  "@goToTheNewRoom": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "group": "Grupo",
+  "@group": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "groupDescription": "Descrição do grupo",
+  "@groupDescription": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "groupDescriptionHasBeenChanged": "Descrição do grupo alterada",
+  "@groupDescriptionHasBeenChanged": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "groupIsPublic": "Grupo público",
+  "@groupIsPublic": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "groups": "Grupos",
+  "@groups": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "groupWith": "Grupo com {displayname}",
+  "@groupWith": {
+    "type": "text",
+    "placeholders": {
+      "displayname": {}
+    }
+  },
+  "guestsAreForbidden": "Convidados estão proibidos",
+  "@guestsAreForbidden": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "guestsCanJoin": "Convidados podem participar",
+  "@guestsCanJoin": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "hasWithdrawnTheInvitationFor": "{username} revogou o convite para {targetName}",
+  "@hasWithdrawnTheInvitationFor": {
+    "type": "text",
+    "placeholders": {
+      "username": {},
+      "targetName": {}
+    }
+  },
+  "help": "Ajuda",
+  "@help": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "hideRedactedEvents": "Ocultar eventos removidos",
+  "@hideRedactedEvents": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "hideUnknownEvents": "Ocultar eventos desconhecidos",
+  "@hideUnknownEvents": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "homeserverIsNotCompatible": "Servidor REChain ® 🪐 não é compatível",
+  "@homeserverIsNotCompatible": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "howOffensiveIsThisContent": "O quão ofensivo é este conteúdo?",
+  "@howOffensiveIsThisContent": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "id": "ID",
+  "@id": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "identity": "Identidade",
+  "@identity": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "ignore": "Ignorar",
+  "@ignore": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "ignoredUsers": "Usuários ignorados",
+  "@ignoredUsers": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "ignoreListDescription": "Você pode ignorar usuários que estão lhe pertubando. Não será possível receber mensagens ou convites de usuários na sua lista pessoal de ignorados.",
+  "@ignoreListDescription": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "ignoreUsername": "Ignorar usuário",
+  "@ignoreUsername": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "iHaveClickedOnLink": "Eu cliquei no link",
+  "@iHaveClickedOnLink": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "incorrectPassphraseOrKey": "Frase secreta ou chave de recuperação incorreta",
+  "@incorrectPassphraseOrKey": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "inoffensive": "Inofensivo",
+  "@inoffensive": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "invalidEmail": "Email inválido",
+  "@invalidEmail": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "inviteContact": "Convidar contato",
+  "@inviteContact": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "inviteContactToGroup": "Convidar contato para {groupName}",
+  "@inviteContactToGroup": {
+    "type": "text",
+    "placeholders": {
+      "groupName": {}
+    }
+  },
+  "invited": "Foi convidado",
+  "@invited": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "invitedUser": "{username} convidou {targetName}",
+  "@invitedUser": {
+    "type": "text",
+    "placeholders": {
+      "username": {},
+      "targetName": {}
+    }
+  },
+  "invitedUsersOnly": "Apenas usuários convidados",
+  "@invitedUsersOnly": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "inviteForMe": "Convite para mim",
+  "@inviteForMe": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "inviteText": "{username} convidou você para a plataforma REChain ® 🪐! \n1. Instale REChain ® 🪐: https://rechain.online \n2. Entre ou crie uma nova conta! \n3. Abra o link do convite: {link}",
+  "@inviteText": {
+    "type": "text",
+    "placeholders": {
+      "username": {},
+      "link": {}
+    }
+  },
+  "isDeviceKeyCorrect": "A seguinte chave de dispositivo está correta?",
+  "@isDeviceKeyCorrect": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "isTyping": "está escrevendo…",
+  "@isTyping": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "joinedTheChat": "{username} entrou na conversa",
+  "@joinedTheChat": {
+    "type": "text",
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "joinRoom": "Entrar na sala",
+  "@joinRoom": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "keysCached": "Chaves guardadas",
+  "@keysCached": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "keysMissing": "Chaves faltando",
+  "@keysMissing": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "kicked": "{username} enxotou {targetName}",
+  "@kicked": {
+    "type": "text",
+    "placeholders": {
+      "username": {},
+      "targetName": {}
+    }
+  },
+  "kickedAndBanned": "{username} expulsou e baniu {targetName}",
+  "@kickedAndBanned": {
+    "type": "text",
+    "placeholders": {
+      "username": {},
+      "targetName": {}
+    }
+  },
+  "kickFromChat": "Expulso da conversa",
+  "@kickFromChat": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "lastActiveAgo": "Última vez ativo: {localizedTimeShort}",
+  "@lastActiveAgo": {
+    "type": "text",
+    "placeholders": {
+      "localizedTimeShort": {}
+    }
+  },
+  "lastSeenIp": "Último IP conhecido",
+  "@lastSeenIp": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "lastSeenLongTimeAgo": "Visto há muito tempo atrás",
+  "@lastSeenLongTimeAgo": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "leave": "Sair",
+  "@leave": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "leftTheChat": "Sair da conversa",
+  "@leftTheChat": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "license": "Licença",
+  "@license": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "lightTheme": "Claro",
+  "@lightTheme": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "loadCountMoreParticipants": "Carregue {count} mais participantes",
+  "@loadCountMoreParticipants": {
+    "type": "text",
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "loadingPleaseWait": "Carregando... Aguarde.",
+  "@loadingPleaseWait": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "loadMore": "Carregando mais…",
+  "@loadMore": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "locationDisabledNotice": "O serviço de localização está desabilitado. Por favor, habilite-o para compartilhar sua localização.",
+  "@locationDisabledNotice": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "locationPermissionDeniedNotice": "Permissão de localização negada. Conceda as permissões para habilitar o compartilhamento de localização.",
+  "@locationPermissionDeniedNotice": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "login": "Iniciar sessão",
+  "@login": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "logInTo": "Conectar a {homeserver}",
+  "@logInTo": {
+    "type": "text",
+    "placeholders": {
+      "homeserver": {}
+    }
+  },
+  "loginWith": "Entrar com {brand}",
+  "@loginWith": {
+    "type": "text",
+    "placeholders": {
+      "brand": {}
+    }
+  },
+  "logout": "Encerrar sessão",
+  "@logout": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "makeAModerator": "Atribuir papel de moderador",
+  "@makeAModerator": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "makeAnAdmin": "Atribuir papel de admin",
+  "@makeAnAdmin": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "makeSureTheIdentifierIsValid": "Certifique-se de que a identificação é válida",
+  "@makeSureTheIdentifierIsValid": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "memberChanges": "Alterações de membros",
+  "@memberChanges": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "mention": "Mencionar",
+  "@mention": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "messages": "Mensagens",
+  "@messages": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "messageWillBeRemovedWarning": "Mensagem será removida para todos os participantes",
+  "@messageWillBeRemovedWarning": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "moderator": "Moderador",
+  "@moderator": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "monday": "Segunda-feira",
+  "@monday": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "moreEvents": "{count,plural, =1{Mais 1 evento} other{Mais {count} eventos}}",
+  "@moreEvents": {
+    "type": "text",
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "muteChat": "Silenciar",
+  "@muteChat": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "needPantalaimonWarning": "Por favor, observe que, por enquanto, você precisa do Pantalaimon para usar criptografia ponta-a-ponta.",
+  "@needPantalaimonWarning": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "newChat": "Nova conversa",
+  "@newChat": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "newMessageInrechainonline": "Nova mensagem na plataforma REChain ® 🪐!",
+  "@newMessageInrechainonline": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "newVerificationRequest": "Nova solicitação de verificação!",
+  "@newVerificationRequest": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "next": "Próximo",
+  "@next": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "no": "Não",
+  "@no": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "noConnectionToTheServer": "Sem conexão com o servidor",
+  "@noConnectionToTheServer": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "noCrossSignBootstrap": "REChain.Online atualmente não suporta a ativação de assinatura cruzada. Habilite-o no REChain ® 🪐.",
+  "@noCrossSignBootstrap": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "noDescription": "Sem descrição",
+  "@noDescription": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "noEmotesFound": "Nenhum emoji encontrado. 😕",
+  "@noEmotesFound": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "noEncryptionForPublicRooms": "Você só pode ativar criptografia quando a sala não for mais publicamente acessível.",
+  "@noEncryptionForPublicRooms": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "noGoogleServicesWarning": "Parece que você não tem serviços do Google no seu telefone. Boa decisão para sua privacidade! Para receber notificações na plataforma REChain ® 🪐, recomendamos o uso de https://microg.org/ ou https://unifiedpush.org.",
+  "@noGoogleServicesWarning": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "norechainonlineServer": "{server1} não é um servidor Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network, use {server2} em vez disso?",
+  "@norechainonlineServer": {
+    "type": "text",
+    "placeholders": {
+      "server1": {},
+      "server2": {}
+    }
+  },
+  "noMegolmBootstrap": "Habilite o backup online da chave no REChain ® 🪐.",
+  "@noMegolmBootstrap": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "none": "Nenhum",
+  "@none": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "noPasswordRecoveryDescription": "Você ainda não adicionou uma forma de recuparar sua senha.",
+  "@noPasswordRecoveryDescription": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "noPermission": "Sem permissão",
+  "@noPermission": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "noPublicRoomsFound": "Não foram encontradas salas públicas…",
+  "@noPublicRoomsFound": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "noRoomsFound": "Nenhuma sala encontrada…",
+  "@noRoomsFound": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "noStatusesFound": "Nenhum status encontrado por enquanto.",
+  "@noStatusesFound": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "notifications": "Notificações",
+  "@notifications": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "notificationsEnabledForThisAccount": "Notificações habilitadas para esta conta",
+  "@notificationsEnabledForThisAccount": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "notSupportedInWeb": "Sem suporte na versão Web",
+  "@notSupportedInWeb": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "numberSelected": "{number} selecionados",
+  "@numberSelected": {
+    "type": "text",
+    "placeholders": {
+      "number": {}
+    }
+  },
+  "numUsersTyping": "{count} usuários estão digitando…",
+  "@numUsersTyping": {
+    "type": "text",
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "obtainingLocation": "Obtendo localização…",
+  "@obtainingLocation": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "offensive": "Ofensivo",
+  "@offensive": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "offline": "Desconectado",
+  "@offline": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "ok": "OK",
+  "@ok": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "online": "Disponível",
+  "@online": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "onlineKeyBackupDisabled": "Backup de chaves está desabilitado",
+  "@onlineKeyBackupDisabled": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "onlineKeyBackupEnabled": "Backup de chaves está ativado",
+  "@onlineKeyBackupEnabled": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "oopsPushError": "Opa! Infelizmente, um erro ocorreu ao configurar as notificações.",
+  "@oopsPushError": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "oopsSomethingWentWrong": "Opa, algo deu errado…",
+  "@oopsSomethingWentWrong": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "openAppToReadMessages": "Abra o app para ler as mensagens",
+  "@openAppToReadMessages": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "openCamera": "Abra a câmera",
+  "@openCamera": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "openInMaps": "Abrir no mapas",
+  "@openInMaps": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "optionalAddEmail": "(Opcional) Seu endereço de email",
+  "@optionalAddEmail": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "optionalGroupName": "(Opcional) Nome do Grupo",
+  "@optionalGroupName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "or": "Ou",
+  "@or": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "participant": "Participante",
+  "@participant": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "participatingUserDevices": "Dispositivos dos participantes",
+  "@participatingUserDevices": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "passphraseOrKey": "frase secreta ou chave de recuperação",
+  "@passphraseOrKey": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "password": "Senha",
+  "@password": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "passwordForgotten": "Esqueci a senha",
+  "@passwordForgotten": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "passwordHasBeenChanged": "Senha foi alterada",
+  "@passwordHasBeenChanged": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "passwordRecovery": "Recuperação de senha",
+  "@passwordRecovery": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "people": "Pessoas",
+  "@people": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "pickImage": "Escolha uma imagem",
+  "@pickImage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "pin": "Alfinetar",
+  "@pin": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "play": "Tocar {fileName}",
+  "@play": {
+    "type": "text",
+    "placeholders": {
+      "fileName": {}
+    }
+  },
+  "pleaseChoose": "Por favor, selecione",
+  "@pleaseChoose": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "pleaseChooseAPasscode": "Por favor, escolha um código",
+  "@pleaseChooseAPasscode": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "pleaseChooseAUsername": "Por favor, escolha um nome de usuário",
+  "@pleaseChooseAUsername": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "pleaseClickOnLink": "Por favor, clique a ligação no e-mail para prosseguir.",
+  "@pleaseClickOnLink": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "pleaseEnter4Digits": "Por favor, insira 4 dígitos ou deixe em branco para desativar a trava do aplicativo.",
+  "@pleaseEnter4Digits": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "pleaseEnterArechainonlineIdentifier": "Digite a ID de rede do nó de Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
+  "@pleaseEnterArechainonlineIdentifier": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "pleaseEnterSecurityKey": "Por favor, insira sua chave de segurança:",
+  "@pleaseEnterSecurityKey": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "pleaseEnterYourPassword": "Por favor, insira sua senha",
+  "@pleaseEnterYourPassword": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "pleaseEnterYourPin": "Por favor, insira seu PIN",
+  "@pleaseEnterYourPin": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "pleaseEnterYourUsername": "Por favor, insira seu nome de usuário",
+  "@pleaseEnterYourUsername": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "pleaseFollowInstructionsOnWeb": "Por favor, siga as instruções no site e toque em próximo.",
+  "@pleaseFollowInstructionsOnWeb": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "privacy": "Privacidade",
+  "@privacy": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "publicGroups": "Grupos Públicos",
+  "@publicGroups": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "publicKey": "Chave Pública",
+  "@publicKey": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "publicRooms": "Salas públicas",
+  "@publicRooms": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "publicSpace": "Espaço público",
+  "@publicSpace": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "pushRules": "Regras de notificação",
+  "@pushRules": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "reason": "Motivo",
+  "@reason": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "recording": "Gravando",
+  "@recording": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "redactedAnEvent": "{username} removeu um evento",
+  "@redactedAnEvent": {
+    "type": "text",
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "redactMessage": "Retratar mensagem",
+  "@redactMessage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "register": "Registrar",
+  "@register": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "reject": "Recusar",
+  "@reject": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "rejectedTheInvitation": "{username} recusou o convite",
+  "@rejectedTheInvitation": {
+    "type": "text",
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "rejoin": "Retornar",
+  "@rejoin": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "remove": "Remover",
+  "@remove": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "removeAllOtherDevices": "Remover todos os outros dispositivos",
+  "@removeAllOtherDevices": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "removedBy": "Removido por {username}",
+  "@removedBy": {
+    "type": "text",
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "removeDevice": "Remover dispositivo",
+  "@removeDevice": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "unbanFromChat": "Revogar banimento",
+  "@unbanFromChat": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "removeMessage": "Remover mensagem",
+  "@removeMessage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "removeYourAvatar": "Remover seu avatar",
+  "@removeYourAvatar": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "renderRichContent": "Exibir conteúdo formatado",
+  "@renderRichContent": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "replaceRoomWithNewerVersion": "Substituir sala por uma nova versão",
+  "@replaceRoomWithNewerVersion": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "reply": "Responder",
+  "@reply": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "reportMessage": "Denunciar mensagem",
+  "@reportMessage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "requestPermission": "Solicitar permissão",
+  "@requestPermission": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "requestToReadOlderMessages": "Solicitar leitura de mensagens antigas",
+  "@requestToReadOlderMessages": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "revokeAllPermissions": "Revogar todas permissões",
+  "@revokeAllPermissions": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "roomHasBeenUpgraded": "Sala foi atualizada",
+  "@roomHasBeenUpgraded": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "roomVersion": "Versão da sala",
+  "@roomVersion": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "saturday": "Sábado",
+  "@saturday": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "savedFileAs": "Salvar arquivo como {filename}",
+  "@savedFileAs": {
+    "type": "text",
+    "placeholders": {
+      "filename": {}
+    }
+  },
+  "saveFile": "Salvar arquivo",
+  "@saveFile": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "saveFileToFolder": "Salvar arquivo nesta pasta",
+  "@saveFileToFolder": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "search": "Buscar",
+  "@search": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "searchForAChat": "Buscar uma conversa",
+  "@searchForAChat": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "security": "Segurança",
+  "@security": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "securityKey": "Chave de segurança",
+  "@securityKey": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "securityKeyLost": "Chave de segurança perdida?",
+  "@securityKeyLost": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "seenByUser": "Visto por {username}",
+  "@seenByUser": {
+    "type": "text",
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "seenByUserAndCountOthers": "{count, plural, other{Visto por {username} e mais {count} pessoas}}",
+  "@seenByUserAndCountOthers": {
+    "type": "text",
+    "placeholders": {
+      "username": {},
+      "count": {}
+    }
+  },
+  "seenByUserAndUser": "Visto por {username} e {username2}",
+  "@seenByUserAndUser": {
+    "type": "text",
+    "placeholders": {
+      "username": {},
+      "username2": {}
+    }
+  },
+  "send": "Enviar",
+  "@send": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sendAMessage": "Enviar mensagem",
+  "@sendAMessage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sendAsText": "Enviar como texto",
+  "@sendAsText": {
+    "type": "text"
+  },
+  "sendAudio": "Enviar audio",
+  "@sendAudio": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sendBugReports": "Permitir envio de falhas via REChain ® 🪐",
+  "@sendBugReports": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sendFile": "Enviar arquivo",
+  "@sendFile": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sendImage": "Enviar imagem",
+  "@sendImage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sendMessages": "Enviar mensagens",
+  "@sendMessages": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sendOriginal": "Enviar original",
+  "@sendOriginal": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sendSticker": "Enviar figurinha",
+  "@sendSticker": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sendVideo": "Enviar vídeo",
+  "@sendVideo": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sentAFile": "{username} enviou um arquivo",
+  "@sentAFile": {
+    "type": "text",
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "sentAnAudio": "{username} enviou um audio",
+  "@sentAnAudio": {
+    "type": "text",
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "sentAPicture": "{username} enviou uma imagem",
+  "@sentAPicture": {
+    "type": "text",
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "sentASticker": "{username} enviou uma figurinha",
+  "@sentASticker": {
+    "type": "text",
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "sentAVideo": "{username} enviou um vídeo",
+  "@sentAVideo": {
+    "type": "text",
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "sentCallInformations": "{senderName} enviou informações de chamada",
+  "@sentCallInformations": {
+    "type": "text",
+    "placeholders": {
+      "senderName": {}
+    }
+  },
+  "sentryInfo": "Informações sobre a sua privacidade: https://rechain.online/privacy-policy.html",
+  "@sentryInfo": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sessionVerified": "Sessão verificada",
+  "@sessionVerified": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "setAProfilePicture": "Fixar uma imagem de perfil",
+  "@setAProfilePicture": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "setAsCanonicalAlias": "Fixar como cognome principal",
+  "@setAsCanonicalAlias": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "setCustomEmotes": "Implantar emojis personalizados",
+  "@setCustomEmotes": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "setGroupDescription": "Fixar uma descrição do grupo",
+  "@setGroupDescription": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "setInvitationLink": "Enviar link de convite",
+  "@setInvitationLink": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "setPermissionsLevel": "Determinar níveis de permissão",
+  "@setPermissionsLevel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "setStatus": "Alterar o status",
+  "@setStatus": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "settings": "Configurações",
+  "@settings": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "share": "Compartilhar",
+  "@share": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sharedTheLocation": "{username} compartilhou a localização",
+  "@sharedTheLocation": {
+    "type": "text",
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "shareLocation": "Compartilhar localização",
+  "@shareLocation": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "showPassword": "Mostrar senha",
+  "@showPassword": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "signUp": "Registrar",
+  "@signUp": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "singlesignon": "Identidade Única",
+  "@singlesignon": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "skip": "Pular",
+  "@skip": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "soundVibrationLedColor": "Som, vibração e cor LED",
+  "@soundVibrationLedColor": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sourceCode": "Código fonte",
+  "@sourceCode": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "spaceIsPublic": "Espaço é público",
+  "@spaceIsPublic": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "spaceName": "Nome do espaço",
+  "@spaceName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "startedACall": "{senderName} iniciou uma chamada",
+  "@startedACall": {
+    "type": "text",
+    "placeholders": {
+      "senderName": {}
+    }
+  },
+  "startYourFirstChat": "Inicie sua primeira conversa agora mesmo! 🙂\n- Pressione o botão de mensagem\n- Insira o nome de usuário de um amigo(a)\n- Divirta-se conversando",
+  "@startYourFirstChat": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "status": "Status",
+  "@status": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "statusExampleMessage": "Como vai você?",
+  "@statusExampleMessage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "submit": "Submeter",
+  "@submit": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sunday": "Domingo",
+  "@sunday": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "synchronizingPleaseWait": "Sincronizando… Por favor, aguarde.",
+  "@synchronizingPleaseWait": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "systemTheme": "Sistema",
+  "@systemTheme": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "tapOnDeviceToVerify": "Toque num dispositivo para verificar",
+  "@tapOnDeviceToVerify": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "tapToShowImage": "Toque para mostrar a imagem",
+  "@tapToShowImage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "tapToShowMenu": "Toque para mostrar o menu",
+  "@tapToShowMenu": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "theyDontMatch": "Não correspondem",
+  "@theyDontMatch": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "theyMatch": "Correspondem",
+  "@theyMatch": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "thisRoomHasBeenArchived": "Esta sala foi arquivada.",
+  "@thisRoomHasBeenArchived": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "thursday": "Quinta-feira",
+  "@thursday": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "timeOfDay": "{hours24}:{minutes}",
+  "@timeOfDay": {
+    "type": "text",
+    "placeholders": {
+      "hours12": {},
+      "hours24": {},
+      "minutes": {},
+      "suffix": {}
+    }
+  },
+  "title": "REChain ® 🪐",
+  "@title": {
+    "description": "Title for the application",
+    "type": "text",
+    "placeholders": {}
+  },
+  "toggleFavorite": "Alternar favorito",
+  "@toggleFavorite": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "toggleMuted": "Alternar Silenciado",
+  "@toggleMuted": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "toggleUnread": "Marcar lido/não lido",
+  "@toggleUnread": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "tooManyRequestsWarning": "Demasiadas requisições. Por favor, tente novamente mais tarde!",
+  "@tooManyRequestsWarning": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "transferFromAnotherDevice": "Transferir de outro dispositivo",
+  "@transferFromAnotherDevice": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "tryToSendAgain": "Tente enviar novamente",
+  "@tryToSendAgain": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "tuesday": "Terça-feira",
+  "@tuesday": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "unavailable": "Indisponível",
+  "@unavailable": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "unbannedUser": "{username} revogou o banimento de {targetName}",
+  "@unbannedUser": {
+    "type": "text",
+    "placeholders": {
+      "username": {},
+      "targetName": {}
+    }
+  },
+  "unblockDevice": "Desbloquear dispositivo",
+  "@unblockDevice": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "unknownDevice": "Dispositivo desconhecido",
+  "@unknownDevice": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "unknownEncryptionAlgorithm": "Algoritmo de criptografia desconhecido",
+  "@unknownEncryptionAlgorithm": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "unknownEvent": "Evento desconhecido '{type}'",
+  "@unknownEvent": {
+    "type": "text",
+    "placeholders": {
+      "type": {}
+    }
+  },
+  "unknownSessionVerify": "Sessão desconhecida, favor verificar",
+  "@unknownSessionVerify": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "unlockChatBackup": "Destrancar o backup da conversa",
+  "@unlockChatBackup": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "unmuteChat": "Cancelar silenciamento",
+  "@unmuteChat": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "unpin": "Desalfinetar",
+  "@unpin": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "unreadChats": "{unreadCount, plural, other{{unreadCount} conversas não lidas}}",
+  "@unreadChats": {
+    "type": "text",
+    "placeholders": {
+      "unreadCount": {}
+    }
+  },
+  "unreadMessages": "{unreadEvents, plural, other{{unreadEvents} mensagens não lidas}}",
+  "@unreadMessages": {
+    "type": "text",
+    "placeholders": {
+      "unreadEvents": {}
+    }
+  },
+  "useAmoledTheme": "Usar cores compatíveis com AMOLED?",
+  "@useAmoledTheme": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "userAndOthersAreTyping": "{username} e mais {count} pessoas estão digitando…",
+  "@userAndOthersAreTyping": {
+    "type": "text",
+    "placeholders": {
+      "username": {},
+      "count": {}
+    }
+  },
+  "userAndUserAreTyping": "{username} e {username2} estão digitando…",
+  "@userAndUserAreTyping": {
+    "type": "text",
+    "placeholders": {
+      "username": {},
+      "username2": {}
+    }
+  },
+  "userIsTyping": "{username} está digitando…",
+  "@userIsTyping": {
+    "type": "text",
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "userLeftTheChat": "{username} saiu da conversa",
+  "@userLeftTheChat": {
+    "type": "text",
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "username": "Nome de usuário",
+  "@username": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "userNotVerified": "Usuário(a) não verificado(a)",
+  "@userNotVerified": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "userSentUnknownEvent": "{username} enviou um evento {type}",
+  "@userSentUnknownEvent": {
+    "type": "text",
+    "placeholders": {
+      "username": {},
+      "type": {}
+    }
+  },
+  "userUnknownVerification": "Usuário(a) tem um status de verificação desconhecido",
+  "@userUnknownVerification": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "userVerified": "Usuário(a) verificado(a)",
+  "@userVerified": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "verified": "Verificado",
+  "@verified": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "verifiedSession": "Sessão verificada com sucesso!",
+  "@verifiedSession": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "verify": "Verificar",
+  "@verify": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "verifyManual": "Verificar manualmente",
+  "@verifyManual": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "verifyStart": "Iniciar verificação",
+  "@verifyStart": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "verifySuccess": "Verificação efetivada!",
+  "@verifySuccess": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "verifyTitle": "Verificando outra conta",
+  "@verifyTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "verifyUser": "Verificar usuário",
+  "@verifyUser": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "videoCall": "Vídeochamada",
+  "@videoCall": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "visibilityOfTheChatHistory": "Visibilidade do histórico da conversa",
+  "@visibilityOfTheChatHistory": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "visibleForAllParticipants": "Visível aos participantes",
+  "@visibleForAllParticipants": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "visibleForEveryone": "Visível a qualquer pessoa",
+  "@visibleForEveryone": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "voiceMessage": "Mensagem de voz",
+  "@voiceMessage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "waitingPartnerAcceptRequest": "Esperando que a outra pessoa aceite a solicitação…",
+  "@waitingPartnerAcceptRequest": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "waitingPartnerEmoji": "Esperando que a outra pessoa aceite os emoji…",
+  "@waitingPartnerEmoji": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "waitingPartnerNumbers": "Aguardando a outra pessoa aceitar os números…",
+  "@waitingPartnerNumbers": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "wallpaper": "Pano de fundo",
+  "@wallpaper": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "warning": "Atenção!",
+  "@warning": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "warningEncryptionInBeta": "Criptografia ponta-a-ponta está em fase beta! Use por sua própria conta e risco!",
+  "@warningEncryptionInBeta": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "wednesday": "Quarta-feira",
+  "@wednesday": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "welcomeText": "Bem-vindo ao REChain ® 🪐! Um futuro privado e seguro que já chegou!",
+  "@welcomeText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "weSentYouAnEmail": "Enviamos um e-mail para você",
+  "@weSentYouAnEmail": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "whoCanPerformWhichAction": "Quem pode desempenhar quais ações",
+  "@whoCanPerformWhichAction": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "whoIsAllowedToJoinThisGroup": "Quais pessoas são permitidas participar deste grupo",
+  "@whoIsAllowedToJoinThisGroup": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "whyDoYouWantToReportThis": "Por que você quer denunciar isto?",
+  "@whyDoYouWantToReportThis": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "wipeChatBackup": "Limpar o backup da conversa para criar uma nova chave de segurança?",
+  "@wipeChatBackup": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "withTheseAddressesRecoveryDescription": "Você pode recuperar a sua senha com estes endereços.",
+  "@withTheseAddressesRecoveryDescription": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "writeAMessage": "Escreva uma mensagem…",
+  "@writeAMessage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "yes": "Sim",
+  "@yes": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "you": "Você",
+  "@you": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "youAreInvitedToThisChat": "Você foi convidada(o) a esta conversa",
+  "@youAreInvitedToThisChat": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "youAreNoLongerParticipatingInThisChat": "Você não está mais participando desta conversa",
+  "@youAreNoLongerParticipatingInThisChat": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "youCannotInviteYourself": "Você não pode se autoconvidar",
+  "@youCannotInviteYourself": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "youHaveBeenBannedFromThisChat": "Você foi banido desta conversa",
+  "@youHaveBeenBannedFromThisChat": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "yourChatsAreBeingSynced": "Sua conversas estão sendo sincronizadas…",
+  "@yourChatsAreBeingSynced": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "yourOwnUsername": "Seu próprio nome de usuário",
+  "@yourOwnUsername": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "yourPublicKey": "Sua chave pública",
+  "@yourPublicKey": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "youWillBeConnectedTo": "Você se conectará a {homeserver}",
+  "@youWillBeConnectedTo": {
+    "type": "text",
+    "placeholders": {
+      "homeserver": {}
+    }
+  },
+  "@addAccount": {},
+  "@addDescription": {},
+  "@addToBundle": {},
+  "@addToSpace": {},
+  "@addToSpaceDescription": {},
+  "@addToStory": {},
+  "@addWidget": {},
+  "@bubbleSize": {
+    "placeholders": {},
+    "type": "text"
+  },
+  "@bundleName": {},
+  "@chatHasBeenAddedToThisSpace": {},
+  "@chatHasBeenRemovedFromThisSpace": {
+    "placeholders": {},
+    "type": "text"
+  },
+  "@commandHint_clearcache": {
+    "description": "Usage hint for the command /clearcache",
+    "type": "text"
+  },
+  "@commandHint_create": {
+    "description": "Usage hint for the command /create",
+    "type": "text"
+  },
+  "@commandHint_discardsession": {
+    "description": "Usage hint for the command /discardsession",
+    "type": "text"
+  },
+  "@commandHint_dm": {
+    "description": "Usage hint for the command /dm",
+    "type": "text"
+  },
+  "@confirmEventUnpin": {},
+  "@createNewChatExplaination": {},
+  "@dismiss": {},
+  "@editBundlesForAccount": {},
+  "@editIntegrations": {},
+  "@editWidgets": {},
+  "@emailOrUsername": {},
+  "@emojis": {},
+  "@enableMultiAccounts": {},
+  "@errorAddingWidget": {},
+  "@experimentalVideoCalls": {},
+  "@integrationsNotImplemented": {},
+  "@iUnderstand": {},
+  "@iWroteDownTheKey": {},
+  "@link": {},
+  "@loginWithOneClick": {},
+  "@markAsRead": {},
+  "@matrixWidgets": {},
+  "@messageInfo": {},
+  "@messageType": {},
+  "@newPasswordDescription": {},
+  "@newUsernameDescription": {},
+  "@nextAccount": {},
+  "@oneClientLoggedOut": {},
+  "@openChat": {},
+  "@openGallery": {},
+  "@openVideoCamera": {
+    "placeholders": {},
+    "type": "text"
+  },
+  "@passwordsDoNotMatch": {},
+  "@pinMessage": {},
+  "@pinnedEventsError": {},
+  "@placeCall": {},
+  "@pleaseChooseAtLeastChars": {
+    "placeholders": {
+      "min": {}
+    },
+    "type": "text"
+  },
+  "@pleaseEnterSecurityKeyDescription": {},
+  "@pleaseEnterValidEmail": {},
+  "@previousAccount": {},
+  "@publish": {},
+  "@reactedWith": {
+    "placeholders": {
+      "reaction": {},
+      "sender": {}
+    },
+    "type": "text"
+  },
+  "@removeFromBundle": {},
+  "@removeFromSpace": {},
+  "@removeFromSpaceDescription": {},
+  "@repeatPassword": {},
+  "@replyHasBeenSent": {},
+  "@reportUser": {},
+  "@saveTheSecurityKeyNow": {},
+  "@scanQrCode": {},
+  "@sender": {},
+  "@sendOnEnter": {},
+  "@separateChatTypes": {
+    "placeholders": {},
+    "type": "text"
+  },
+  "@serverRequiresEmail": {},
+  "@setupChatBackup": {},
+  "@setupChatBackupDescription": {},
+  "@setupChatBackupNow": {},
+  "@shareYourInviteLink": {},
+  "@start": {},
+  "@storyFrom": {
+    "placeholders": {
+      "body": {},
+      "date": {}
+    },
+    "type": "text"
+  },
+  "@storyPrivacyWarning": {},
+  "@switchToAccount": {
+    "placeholders": {
+      "number": {}
+    },
+    "type": "number"
+  },
+  "@thisUserHasNotPostedAnythingYet": {},
+  "@time": {},
+  "@typeInInviteLinkManually": {},
+  "@unsubscribeStories": {},
+  "@unsupportedAndroidVersion": {},
+  "@unsupportedAndroidVersionLong": {},
+  "@unverified": {},
+  "@videoCallsBetaWarning": {},
+  "@videoWithSize": {
+    "placeholders": {
+      "size": {}
+    },
+    "type": "text"
+  },
+  "@voiceCall": {},
+  "@whatIsGoingOn": {},
+  "@whoCanSeeMyStories": {},
+  "@whoCanSeeMyStoriesDesc": {},
+  "@widgetCustom": {},
+  "@widgetEtherpad": {},
+  "@widgetJitsi": {},
+  "@widgetName": {},
+  "@widgetNameError": {},
+  "@widgetUrlError": {},
+  "@widgetVideo": {},
+  "@yourChatBackupHasBeenSetUp": {},
+  "@yourStory": {},
+  "@yourUserId": {},
+  "addAccount": "Adicionar conta",
+  "addDescription": "Adicionar descrição",
+  "addToBundle": "Adicionar à coleção",
+  "addToSpace": "Adicionar ao espaço",
+  "addToSpaceDescription": "Selecione um espaço para adicionar esta conversa.",
+  "addToStory": "Adicionar ao painel",
+  "addWidget": "Adicionar ferramenta",
+  "bubbleSize": "Tamanho do balão",
+  "bundleName": "Nome da coleção",
+  "chatHasBeenAddedToThisSpace": "A conversa foi adicionada a este espaço",
+  "chatHasBeenRemovedFromThisSpace": "A conversa foi removida deste espaço",
+  "commandHint_clearcache": "Limpar dados temporários",
+  "commandHint_create": "Criar uma sala vazia.\nUse --no-encryption para desabilitar a criptografia",
+  "commandHint_discardsession": "Descartar sessão",
+  "commandHint_dm": "Iniciar uma conversa direta\nUse --no-encryption para desabilitar a criptografia",
+  "confirmEventUnpin": "Tem certeza que quer desafixar o evento permanentemente?",
+  "createNewChatExplaination": "Apenas escaneie o código QR ou compartilhe o link do convite se estiverem próximos entre si.",
+  "dismiss": "Descartar",
+  "editBundlesForAccount": "Editar coleções para esta conta",
+  "editIntegrations": "Editar ferramentas e integrações",
+  "editWidgets": "Editar ferramentas",
+  "emailOrUsername": "Email ou nome de usuário",
+  "emojis": "Emojis",
+  "enableMultiAccounts": "(BETA) Habilitar múltiplas contas neste dispositivo",
+  "errorAddingWidget": "Erro ao adicionar a ferramenta.",
+  "experimentalVideoCalls": "Vídeo chamadas experimentais",
+  "integrationsNotImplemented": "Ainda não é possível editar ferramentas e integrações.",
+  "iUnderstand": "Eu compreendo",
+  "iWroteDownTheKey": "Eu anotei a chave",
+  "link": "Link",
+  "loginWithOneClick": "Entrar com um clique",
+  "markAsRead": "Marcar como lido",
+  "matrixWidgets": "Ferramentas REChain ® 🪐",
+  "messageInfo": "Informações da mensagem",
+  "messageType": "Tipo da mensagem",
+  "newPasswordDescription": "Para poder recuperar a sua senha, você deve posteriormente cadastrar um email na sua conta.",
+  "newUsernameDescription": "Seu ID de usuário(a) deve ter o formato @usuario:nomedoservidor",
+  "nextAccount": "Próxima conta",
+  "oneClientLoggedOut": "Um dos seus clientes foi desvinculado",
+  "openChat": "Abrir conversa",
+  "openGallery": "Abrir galeria",
+  "openVideoCamera": "Abra a câmera para um vídeo",
+  "passwordsDoNotMatch": "Senhas não batem!",
+  "pinMessage": "Afixar à sala",
+  "pinnedEventsError": "Erro ao carregar mensagens afixadas",
+  "placeCall": "Chamar",
+  "pleaseChooseAtLeastChars": "Por favor, use pelo menos {min} caracteres.",
+  "pleaseEnterSecurityKeyDescription": "Para destravar seu backup de conversas, por favor, insira sua chave de segurança gerada na sessão anterior. Sua chave de segurança NÃO é a sua senha.",
+  "pleaseEnterValidEmail": "Por favor, insira um email válido.",
+  "previousAccount": "Conta anterior",
+  "publish": "Publicar",
+  "reactedWith": "{sender} reagiu com {reaction}",
+  "removeFromBundle": "Remover desta coleção",
+  "removeFromSpace": "Remover do espaço",
+  "removeFromSpaceDescription": "Isto remove esta conversa do atual espaço. Ela continuará visível sob \"Todas conversas\".",
+  "repeatPassword": "Repita a senha",
+  "replyHasBeenSent": "Resposta enviada",
+  "reportUser": "Delatar usuário",
+  "saveTheSecurityKeyNow": "Salvar a chave de segurança agora",
+  "scanQrCode": "Escanear o código QR",
+  "sender": "Remetente",
+  "sendOnEnter": "Enviar ao pressionar enter",
+  "separateChatTypes": "Separar Conversas Diretas, Grupos e Espaços",
+  "serverRequiresEmail": "Este servidor precisa validar seu email para efetuar o registro.",
+  "setupChatBackup": "Configurar backup da conversa",
+  "setupChatBackupDescription": "Para proteger suas mensagens, nós geramos uma chave de segurança para você.\nPor favor, guarde-a num lugar seguro, como um gerenciador de senhas.",
+  "setupChatBackupNow": "Configurar seu backup de conversas agora",
+  "shareYourInviteLink": "Compartilhar o link do convite",
+  "start": "Começar",
+  "storyFrom": "Painel de {date}:\n{body}",
+  "storyPrivacyWarning": "Por favor, note que pessoas podem ver e contactar umas às outras no seu painel. Ele ficará visível por apenas 24 horas, mas não há garantias de que será apagado por todos dispositivos e servidores.",
+  "switchToAccount": "Alternar para a conta {number}",
+  "thisUserHasNotPostedAnythingYet": "Este(a) usuário(a) ainda não postou no seu painel",
+  "time": "Hora",
+  "typeInInviteLinkManually": "Digitar o link do convite manualmente...",
+  "unsubscribeStories": "Desinscrever de painéis",
+  "unsupportedAndroidVersion": "Versão Android não suportada",
+  "unsupportedAndroidVersionLong": "Esta funcionalidade requer uma versão mais nova do Android. Por favor, busque atualizações ou suporte ao Katya ® 👽 Mobile OS.",
+  "unverified": "Não verificado",
+  "videoCallsBetaWarning": "Por favor, note que chamadas de vídeo estão atualmente em teste. Podem não funcionar como esperado ou sequer funcionar em algumas plataformas.",
+  "videoWithSize": "Vídeo ({size})",
+  "voiceCall": "Chamada de voz",
+  "whatIsGoingOn": "O que está acontecendo?",
+  "whoCanSeeMyStories": "Quem pode ver meu painel?",
+  "whoCanSeeMyStoriesDesc": "Por favor, note que pessoas podem ver e contactar umas às outras no seu painel.",
+  "widgetCustom": "Personalizado",
+  "@advanced": {},
+  "@allSpaces": {},
+  "@allSuggestedRoomsJoined": {},
+  "@appearOnTop": {},
+  "@appearOnTopDetails": {},
+  "@callingAccount": {},
+  "@callingAccountDetails": {},
+  "@callingPermissions": {},
+  "@commandHint_cuddle": {},
+  "@commandHint_googly": {},
+  "@commandHint_hug": {},
+  "@commandHint_markasdm": {},
+  "@commandHint_markasgroup": {},
+  "@confirmMatrixId": {},
+  "@countFiles": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "@cuddleContent": {
+    "placeholders": {
+      "senderName": {}
+    },
+    "type": "text"
+  },
+  "@custom": {},
+  "@dehydrate": {},
+  "@dehydrateShare": {},
+  "@dehydrateTor": {},
+  "@dehydrateTorLong": {},
+  "@dehydrateWarning": {},
+  "@doNotShowAgain": {},
+  "@enableAutoBackups": {},
+  "@enterRoom": {},
+  "@enterSpace": {},
+  "@foregroundServiceRunning": {},
+  "@googlyEyesContent": {
+    "placeholders": {
+      "senderName": {}
+    },
+    "type": "text"
+  },
+  "@hideUnimportantStateEvents": {},
+  "@hugContent": {
+    "placeholders": {
+      "senderName": {}
+    },
+    "type": "text"
+  },
+  "@hydrate": {},
+  "@hydrateTor": {},
+  "@hydrateTorLong": {},
+  "@indexedDbErrorLong": {},
+  "@indexedDbErrorTitle": {},
+  "@newGroup": {},
+  "@newSpace": {},
+  "@noEmailWarning": {},
+  "@noKeyForThisMessage": {},
+  "@numberRoomMembers": {
+    "placeholders": {
+      "number": {}
+    },
+    "type": "number"
+  },
+  "@numChats": {
+    "placeholders": {
+      "number": {}
+    },
+    "type": "number"
+  },
+  "@otherCallingPermissions": {},
+  "@pleaseEnterRecoveryKey": {},
+  "@pleaseEnterRecoveryKeyDescription": {},
+  "@recoveryKey": {},
+  "@recoveryKeyLost": {},
+  "@saveKeyManuallyDescription": {},
+  "@saveTheRecoveryKeyNow": {},
+  "@screenSharingDetail": {},
+  "@screenSharingTitle": {},
+  "@storeInAndroidKeystore": {},
+  "@storeInAppleKeyChain": {},
+  "@storeInSecureStorageDescription": {},
+  "@storeSecurlyOnThisDevice": {},
+  "@stories": {},
+  "@suggestedRooms": {},
+  "@supposedMxid": {
+    "placeholders": {
+      "mxid": {}
+    },
+    "type": "text"
+  },
+  "@unlockOldMessages": {},
+  "@updateAvailable": {},
+  "@updateNow": {},
+  "@user": {},
+  "@users": {},
+  "@whyIsThisMessageEncrypted": {},
+  "advanced": "Avançado",
+  "allSpaces": "Todos espaços",
+  "allSuggestedRoomsJoined": "Você entrou em todas conversas sugeridas",
+  "appearOnTop": "Aparecer no topo",
+  "appearOnTopDetails": "Permitir que o app apareça no topo (desnecessário caso REChain ® 🪐 já esteja configurado como conta para chamadas)",
+  "callingAccount": "Conta para chamadas",
+  "callingAccountDetails": "Permitir que o REChain ® 🪐 use o app de chamadas nativo do Android.",
+  "callingPermissions": "Permissões de chamada",
+  "commandHint_cuddle": "Enviar um afago",
+  "commandHint_googly": "Enviar olhos arregalados",
+  "commandHint_hug": "Enviar um abraço",
+  "commandHint_markasdm": "Marcar como conversa direta",
+  "commandHint_markasgroup": "Marcar como grupo",
+  "confirmMatrixId": "Por favor, confirme seu ID REChain ® 🪐 para apagar sua conta.",
+  "countFiles": "{count} arquivos",
+  "cuddleContent": "{senderName} afagou você",
+  "custom": "Personalizado",
+  "dehydrate": "Exportar sessão e limpar dispositivo",
+  "dehydrateShare": "Este é seu extrato REChain ® 🪐. Cuidado para não perdê-lo e o mantenha privado.",
+  "dehydrateTor": "Usuários TOR: Exportar sessão",
+  "dehydrateTorLong": "Para usuários TOR, é recomendado exportar a sessão antes de fechar a janela.",
+  "dehydrateWarning": "Esta ação não pode ser desfeita. Certifique-se de que o arquivo backup está guardado e seguro.",
+  "doNotShowAgain": "Não mostrar novamente",
+  "enableAutoBackups": "Habilitar backups automáticos",
+  "enterRoom": "Entrar na conversa",
+  "enterSpace": "Entrar no espaço",
+  "foregroundServiceRunning": "Esta notificação aparece quando um serviço está executando.",
+  "googlyEyesContent": "{senderName} enviou olhos arregalados",
+  "hideUnimportantStateEvents": "Ocultar eventos desimportantes",
+  "hugContent": "{senderName} abraçou você",
+  "hydrate": "Restaurar a partir de arquivo backup",
+  "hydrateTor": "Usuários TOR: Importar sessão",
+  "hydrateTorLong": "Você exportou sua última sessão no TOR? Importe ela rapidamente e continue conversando.",
+  "indexedDbErrorLong": "Infelizmente, o armazenamento de mensagens não é habilitado por padrão no modo privado.\nPor favor, visite\n- about:config\n- atribua \"true\" a \"dom.indexedDB.privateBrowsing.enabled\"\nDe outro modo, não será possível executar o REChain ® 🪐.",
+  "indexedDbErrorTitle": "Problemas no modo privado",
+  "newGroup": "Novo grupo",
+  "newSpace": "Novo espaço",
+  "noEmailWarning": "Por favor, insira um e-mail válido. De outro modo, você não conseguirá recuperar sua senha. Caso prefira assim, toque novamente no botão para continuar.",
+  "noKeyForThisMessage": "Isto pode ocorrer caso a mensagem tenha sido enviada antes da entrada na sua conta com este dispositivo.\n\nTambém é possível que o remetente tenha bloqueado o seu dispositivo ou ocorreu algum problema com a conexão.\n\nVocê consegue ler as mensagens em outra sessão? Então, pode transferir as mensagens de lá! Vá em Configurações > Dispositivos e confira se os dispositivos verificaram um ao outro. Quando abrir a conversa da próxima vez e ambas as sessões estiverem abertas, as chaves serão transmitidas automaticamente.\n\nNão gostaria de perder suas chaves quando sair ou trocar de dispositivos? Certifique-se que o backup de conversas esteja habilitado nas configurações.",
+  "numberRoomMembers": "{number} membros",
+  "numChats": "{number} conversas",
+  "otherCallingPermissions": "Microfone, câmera e outras permissões do REChain ® 🪐",
+  "pleaseEnterRecoveryKey": "Por favor, insira sua chave de recuperação:",
+  "pleaseEnterRecoveryKeyDescription": "Para destrancar suas mensagens antigas, por favor, insira sua chave de recuperação gerada numa sessão prévia. Suas chave de recuperação NÃO é sua senha.",
+  "recoveryKey": "Chave de recuperação",
+  "recoveryKeyLost": "Perdeu a chave de recuperação?",
+  "saveKeyManuallyDescription": "Salvar esta chave manualmente via compartilhamento do sistema ou área de transferência.",
+  "saveTheRecoveryKeyNow": "Salvar a chave de recuperação agora",
+  "screenSharingDetail": "Você está compartilhando sua tela no REChain ® 🪐",
+  "screenSharingTitle": "Compartilhar tela",
+  "storeInAndroidKeystore": "Guardar no cofre do Android",
+  "storeInAppleKeyChain": "Guardar no chaveiro da Apple",
+  "storeInSecureStorageDescription": "Guardar a chave de recuperação no armazenamento seguro deste dispositivo.",
+  "storeSecurlyOnThisDevice": "Guardar de modo seguro neste dispositivo",
+  "stories": "Stories",
+  "suggestedRooms": "Desvendar grupos neste espaço",
+  "supposedMxid": "Isto deveria ser {mxid}",
+  "unlockOldMessages": "Destrancar mensagens antigas",
+  "updateAvailable": "Atualização do REChain ® 🪐 disponível",
+  "updateNow": "Iniciar atualização nos bastidores",
+  "user": "Usuário",
+  "users": "Usuários",
+  "whyIsThisMessageEncrypted": "Por que esta mensagem está ilegível?",
+  "widgetEtherpad": "Anotação",
+  "widgetJitsi": "Jitsi Meet",
+  "widgetName": "Nome",
+  "widgetNameError": "Por favor, forneça um nome de exibição.",
+  "widgetUrlError": "Isto não é uma URL válida.",
+  "widgetVideo": "Vídeo",
+  "yourChatBackupHasBeenSetUp": "Seu backup de conversas foi configurado.",
+  "yourStory": "Seu painel",
+  "yourUserId": "Seu ID de usuário:",
+  "zoomIn": "Ampliar",
+  "@zoomIn": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "@homeserver": {},
+  "@showDirectChatsInSpaces": {
+    "placeholders": {},
+    "type": "text"
+  },
+  "@showSpaces": {},
+  "@youAcceptedTheInvitation": {},
+  "@youBannedUser": {
+    "placeholders": {
+      "user": {}
+    }
+  },
+  "@youHaveWithdrawnTheInvitationFor": {
+    "placeholders": {
+      "user": {}
+    }
+  },
+  "@youInvitedBy": {
+    "placeholders": {
+      "user": {}
+    }
+  },
+  "@youInvitedUser": {
+    "placeholders": {
+      "user": {}
+    }
+  },
+  "@youJoinedTheChat": {},
+  "@youKicked": {
+    "placeholders": {
+      "user": {}
+    }
+  },
+  "@youKickedAndBanned": {
+    "placeholders": {
+      "user": {}
+    }
+  },
+  "@youRejectedTheInvitation": {},
+  "@youUnbannedUser": {
+    "placeholders": {
+      "user": {}
+    }
+  },
+  "@addChatDescription": {},
+  "@addChatOrSubSpace": {},
+  "@allRooms": {
+    "placeholders": {},
+    "type": "text"
+  },
+  "@archiveRoomDescription": {},
+  "@banUserDescription": {},
+  "@block": {},
+  "@blockedUsers": {},
+  "@blockListDescription": {},
+  "@blockUsername": {},
+  "@chatDescription": {},
+  "@chatDescriptionHasBeenChanged": {},
+  "@chatPermissions": {},
+  "@commandHint_sendraw": {},
+  "@createGroup": {},
+  "@createGroupAndInviteUsers": {},
+  "@databaseMigrationBody": {},
+  "@databaseMigrationTitle": {},
+  "@decline": {},
+  "@deviceKeys": {},
+  "@directChat": {},
+  "@disableEncryptionWarning": {},
+  "@emoteKeyboardNoRecents": {
+    "placeholders": {},
+    "type": "text"
+  },
+  "@encryptThisChat": {},
+  "@exportEmotePack": {},
+  "@fileHasBeenSavedAt": {
+    "placeholders": {
+      "path": {}
+    },
+    "type": "text"
+  },
+  "@fileIsTooBigForServer": {},
+  "@groupCanBeFoundViaSearch": {},
+  "@groupName": {},
+  "@hasKnocked": {
+    "placeholders": {
+      "user": {}
+    }
+  },
+  "@importEmojis": {},
+  "@importFromZipFile": {},
+  "@importNow": {},
+  "@invalidInput": {},
+  "@invalidServerName": {},
+  "@invite": {},
+  "@inviteContactToGroupQuestion": {},
+  "@inviteGroupChat": {},
+  "@invitePrivateChat": {},
+  "@joinSpace": {},
+  "@jump": {},
+  "@jumpToLastReadMessage": {},
+  "@kickUserDescription": {},
+  "@learnMore": {},
+  "@leaveEmptyToClearStatus": {},
+  "@makeAdminDescription": {},
+  "@messagesStyle": {},
+  "@newPassword": {},
+  "@newSpaceDescription": {},
+  "@noBackupWarning": {},
+  "@noChatDescriptionYet": {},
+  "@noOtherDevicesFound": {},
+  "@notAnImage": {},
+  "@nothingFound": {},
+  "@noUsersFoundWithQuery": {
+    "placeholders": {
+      "query": {}
+    },
+    "type": "text"
+  },
+  "@openLinkInBrowser": {},
+  "@optionalRedactReason": {},
+  "@passwordIsWrong": {},
+  "@pleaseChooseAStrongPassword": {},
+  "@pleaseEnterANumber": {},
+  "@pleaseEnterYourCurrentPassword": {},
+  "@pleaseTryAgainLaterOrChooseDifferentServer": {},
+  "@profileNotFound": {},
+  "@publicLink": {},
+  "@publicSpaces": {},
+  "@pushNotificationsNotAvailable": {},
+  "@readUpToHere": {},
+  "@redactedBy": {
+    "placeholders": {
+      "username": {}
+    },
+    "type": "text"
+  },
+  "@redactedByBecause": {
+    "placeholders": {
+      "reason": {},
+      "username": {}
+    },
+    "type": "text"
+  },
+  "@redactMessageDescription": {},
+  "@removeDevicesDescription": {},
+  "@reopenChat": {},
+  "@replace": {},
+  "@report": {},
+  "@reportErrorDescription": {},
+  "@roomUpgradeDescription": {},
+  "@searchChatsRooms": {},
+  "@searchForUsers": {},
+  "@select": {},
+  "@sendTypingNotifications": {},
+  "@setChatDescription": {},
+  "@setColorTheme": {},
+  "@setTheme": {},
+  "@shareInviteLink": {},
+  "@signInWith": {
+    "placeholders": {
+      "provider": {}
+    },
+    "type": "text"
+  },
+  "@signInWithPassword": {},
+  "@sorryThatsNotPossible": {},
+  "@startConversation": {},
+  "@startFirstChat": {},
+  "@subspace": {},
+  "@thisDevice": {},
+  "@tryAgain": {},
+  "@unbanUserDescription": {},
+  "@wasDirectChatDisplayName": {
+    "placeholders": {
+      "oldDisplayName": {}
+    },
+    "type": "text"
+  },
+  "@wrongPinEntered": {
+    "placeholders": {
+      "seconds": {}
+    },
+    "type": "text"
+  },
+  "@wrongRecoveryKey": {},
+  "@yourGlobalUserIdIs": {},
+  "addChatDescription": "Inserir descrição da conversa...",
+  "addChatOrSubSpace": "Adicionar conversa ou subespaço",
+  "archiveRoomDescription": "A conversa será movida para o arquivo. Outros usuários verão que você deixou a conversa.",
+  "banUserDescription": "O usuário será banido da conversa e não poderá participar novamente até que isto seja revogado.",
+  "block": "Bloquear",
+  "blockedUsers": "Usuários bloqueados",
+  "blockListDescription": "Você pode bloquear usuários que estejam perturbando. Você não receberá mensagens ou convites de usuários na sua lista pessoal de bloqueios.",
+  "blockUsername": "Ignore usuário",
+  "chatDescription": "Descrição da conversa",
+  "chatDescriptionHasBeenChanged": "Descrição da conversa alterada",
+  "chatPermissions": "Permissões da conversa",
+  "commandHint_sendraw": "Enviar JSON puro",
+  "createGroup": "Criar grupo",
+  "createGroupAndInviteUsers": "Criar um grupo e convidar pessoas",
+  "databaseMigrationBody": "Por favor, espere. Isto pode demorar um pouco.",
+  "databaseMigrationTitle": "Banco de dados otimizado",
+  "decline": "Rejeitar",
+  "directChat": "Conversa direta",
+  "emoteKeyboardNoRecents": "Emotes recentes aparecem aqui...",
+  "exportEmotePack": "Exportar pacote de Emotes como .zip",
+  "groupCanBeFoundViaSearch": "Grupos podem ser encontrados via busca",
+  "groupName": "Nome do grupo",
+  "hasKnocked": "{user} bateu na porta",
+  "importEmojis": "Importar Emojis",
+  "importFromZipFile": "Importar de arquivo .zip",
+  "importNow": "Importar agora",
+  "invalidInput": "Inserção inválida!",
+  "invalidServerName": "Nome de usuário inválido",
+  "invite": "Convidar",
+  "inviteContactToGroupQuestion": "Você quer convidar {contact} para a conversa \"{groupName}\"?",
+  "inviteGroupChat": "📨 Convidar para o grupo",
+  "invitePrivateChat": "📨 Convidar para uma conversa privada",
+  "joinSpace": "Ingressar no espaço",
+  "kickUserDescription": "O usuário foi enxotado da conversa, mas não banido. Em conversas públicas, o usuário pode reingressar a qualquer momento.",
+  "learnMore": "Saiba mais",
+  "leaveEmptyToClearStatus": "Deixe em branco para limpar seu Status.",
+  "makeAdminDescription": "Assim que promover este usuário a administrador, não poderá desfazê-lo e ele terá as mesmas permissões que você.",
+  "messagesStyle": "Mensagens:",
+  "newPassword": "Nova senha",
+  "noChatDescriptionYet": "Nenhuma descrição da conversa disponível.",
+  "notAnImage": "Não é uma imagem.",
+  "nothingFound": "Nada foi encontrado...",
+  "noUsersFoundWithQuery": "Infelizmente, não foi encontrado usuário via \"{query}\". Por favor, verifique se digitou corretamente.",
+  "optionalRedactReason": "(Opcional) Motivo para remover esta mensagem.",
+  "passwordIsWrong": "A senha inserida está incorreta",
+  "pleaseChooseAStrongPassword": "Por favor, escolha uma senha forte",
+  "pleaseEnterANumber": "Por favor, insira um número maior que 0",
+  "pleaseEnterYourCurrentPassword": "Por favor, insira sua senha atual",
+  "profileNotFound": "O usuário não foi encontrado neste servidor. Talvez um problema de conexão ou o usuário não existe.",
+  "publicLink": "Link público",
+  "publicSpaces": "Espaços públicos",
+  "pushNotificationsNotAvailable": "Notificações não estão  disponíveis",
+  "redactedBy": "Removido por {username}",
+  "redactedByBecause": "Removido por {username}, pois: \"{reason}\"",
+  "redactMessageDescription": "A mensagem será removida para todos participantes desta conversa. Isto não poderá ser desfeito.",
+  "removeDevicesDescription": "Você encerrará a sessão neste dispositivo e não poderá mais receber mensagens.",
+  "replace": "Substituir",
+  "roomUpgradeDescription": "A conversa será recriada com a nova versão de sala. Todos participantes será notificados e terão que migrar para a nova sala. Você pode encontrar mais informações sobre versões de sala em https://spec.matrix.org/latest/room/",
+  "searchChatsRooms": "Buscar por #conversas, @usuários...",
+  "searchForUsers": "Buscar por @usuários...",
+  "select": "Selecionar",
+  "sendTypingNotifications": "Enviar notificações de digitação",
+  "setChatDescription": "Inserir descrição da conversa",
+  "setColorTheme": "Aplicar paleta de cor:",
+  "setTheme": "Aplicar tema:",
+  "shareInviteLink": "Compartilhar convite",
+  "signInWith": "Autenticar com {provider}",
+  "startConversation": "Começar uma conversa",
+  "subspace": "Subespaço",
+  "thisDevice": "Este dispositivo:",
+  "tryAgain": "Tente novamente",
+  "unbanUserDescription": "O usuário poderá ingressar novamente na conversa, caso tente.",
+  "wrongPinEntered": "PIN incorreto! Tente novamente em {seconds} segundos...",
+  "wrongRecoveryKey": "Desculpe... esta não parece ser a chave de recuperação correta.",
+  "yourGlobalUserIdIs": "Seu ID global é: ",
+  "homeserver": "Node/Server",
+  "showDirectChatsInSpaces": "Mostrar Conversas Diretas relacionadas nos Espaços",
+  "showSpaces": "Mostrar lista de espaços",
+  "youAcceptedTheInvitation": "Você aceitou o convite",
+  "youBannedUser": "Você baniu {user}",
+  "youHaveWithdrawnTheInvitationFor": "Você revogou o convite para {user}",
+  "youInvitedBy": "Você foi convidado por {user}",
+  "youInvitedUser": "Você convidou {user}",
+  "youJoinedTheChat": "Você entrou na conversa",
+  "youKicked": "Você expulsou {user}",
+  "youKickedAndBanned": "Você expulsou e baniu {user}",
+  "youRejectedTheInvitation": "Você rejeitou o convite",
+  "youUnbannedUser": "Você revogou o banimento de {user}",
+  "zoomOut": "Reduzir",
+  "@zoomOut": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "@acceptedKeyVerification": {
+    "placeholders": {
+      "sender": {}
+    },
+    "type": "text"
+  },
+  "@accessAndVisibility": {},
+  "@accessAndVisibilityDescription": {},
+  "@appLockDescription": {},
+  "@calls": {},
+  "@canceledKeyVerification": {
+    "placeholders": {
+      "sender": {}
+    },
+    "type": "text"
+  },
+  "@chatCanBeDiscoveredViaSearchOnServer": {
+    "placeholders": {
+      "server": {}
+    },
+    "type": "text"
+  },
+  "@commandHint_ignore": {},
+  "@commandHint_unignore": {},
+  "@completedKeyVerification": {
+    "placeholders": {
+      "sender": {}
+    },
+    "type": "text"
+  },
+  "@createNewAddress": {},
+  "@customEmojisAndStickers": {},
+  "@customEmojisAndStickersBody": {},
+  "@databaseBuildErrorBody": {
+    "placeholders": {
+      "error": {},
+      "url": {}
+    },
+    "type": "text"
+  },
+  "@discover": {},
+  "@formattedMessages": {},
+  "@formattedMessagesDescription": {},
+  "@forwardMessageTo": {
+    "placeholders": {
+      "roomName": {}
+    },
+    "type": "text"
+  },
+  "@globalChatId": {},
+  "@hideInvalidOrUnknownMessageFormats": {},
+  "@hideMemberChangesInPublicChats": {},
+  "@hideMemberChangesInPublicChatsBody": {},
+  "@hidePresences": {},
+  "@hideRedactedMessages": {},
+  "@hideRedactedMessagesBody": {},
+  "@incomingMessages": {},
+  "@initAppError": {},
+  "@isReadyForKeyVerification": {
+    "placeholders": {
+      "sender": {}
+    },
+    "type": "text"
+  },
+  "@knock": {},
+  "@knocking": {},
+  "@minimumPowerLevel": {
+    "placeholders": {
+      "level": {}
+    },
+    "type": "text"
+  },
+  "@noDatabaseEncryption": {},
+  "@noOneCanJoin": {},
+  "@noPublicLinkHasBeenCreatedYet": {},
+  "@notifyMeFor": {},
+  "@overview": {},
+  "@passwordRecoverySettings": {},
+  "@presencesToggle": {
+    "placeholders": {},
+    "type": "text"
+  },
+  "@presenceStyle": {
+    "placeholders": {},
+    "type": "text"
+  },
+  "@publicChatAddresses": {},
+  "@requestedKeyVerification": {
+    "placeholders": {
+      "sender": {}
+    },
+    "type": "text"
+  },
+  "@restoreSessionBody": {
+    "placeholders": {
+      "error": {},
+      "url": {}
+    },
+    "type": "text"
+  },
+  "@sendReadReceipts": {},
+  "@sendReadReceiptsDescription": {},
+  "@sendTypingNotificationsDescription": {},
+  "@sessionLostBody": {
+    "placeholders": {
+      "error": {},
+      "url": {}
+    },
+    "type": "text"
+  },
+  "@startedKeyVerification": {
+    "placeholders": {
+      "sender": {}
+    },
+    "type": "text"
+  },
+  "@stickers": {},
+  "@thereAreCountUsersBlocked": {
+    "count": {},
+    "type": "text"
+  },
+  "@transparent": {},
+  "@unreadChatsInApp": {
+    "placeholders": {
+      "appname": {},
+      "unread": {}
+    },
+    "type": "text"
+  },
+  "@userRole": {},
+  "@usersMustKnock": {},
+  "@userWouldLikeToChangeTheChat": {
+    "placeholders": {
+      "user": {}
+    }
+  },
+  "@verifyOtherDevice": {},
+  "@verifyOtherDeviceDescription": {},
+  "@verifyOtherUser": {},
+  "@verifyOtherUserDescription": {},
+  "@youInvitedToBy": {
+    "placeholders": {
+      "alias": {}
+    }
+  },
+  "acceptedKeyVerification": "{sender} aceitou sua chave de verificação",
+  "accessAndVisibility": "Acesso e visibilidade",
+  "accessAndVisibilityDescription": "Quem é permitido entrar nesse chat e como pode ser descoberto.",
+  "appLockDescription": "Bloquear o app com um código PIN quando não estiver usando",
+  "calls": "Chamadas",
+  "canceledKeyVerification": "{sender} cancelou sua chave de verificação",
+  "chatCanBeDiscoveredViaSearchOnServer": "O chat pode ser descoberto pela pesquisa em {server}",
+  "commandHint_ignore": "Ignorar o seguinte ID REChain",
+  "commandHint_unignore": "Designorar o seguinte ID REChain",
+  "completedKeyVerification": "{sender} completou a chave de verificação",
+  "createNewAddress": "Criar um novo endereço",
+  "customEmojisAndStickers": "Emojis e stickers customizados",
+  "customEmojisAndStickersBody": "Adicionar ou compartilhar emojis ou stickers customizados que podem ser usados em qualquer chat.",
+  "databaseBuildErrorBody": "Não foi possível construir o banco de dados SQLite. O aplicativo tentará utilizar o banco de dados legado por enquanto. Por favor, reporte este erro aos desenvolvedores em {url}. A mensagem de erro é: {error}",
+  "formattedMessages": "Mensagens formatadas",
+  "formattedMessagesDescription": "Mostrar mensagens ricas com conteúdos tipo negrito usando markdown.",
+  "forwardMessageTo": "Encaminhar mensagem para {roomName}?",
+  "globalChatId": "ID de chat global",
+  "hideInvalidOrUnknownMessageFormats": "Esconder formatos de mensagem inválidos ou desconhecidos",
+  "hideMemberChangesInPublicChats": "Esconder mudanças de membro em chats públicos",
+  "hideMemberChangesInPublicChatsBody": "Não mostre se alguém entrou ou saiu no chat para melhorar a legibilidade.",
+  "hidePresences": "Esconder lista de status?",
+  "hideRedactedMessages": "Esconder mensagens excluídas",
+  "hideRedactedMessagesBody": "Se alguém excluir uma mensagem, esta mensagem não será mais visível no chat.",
+  "incomingMessages": "Mensagens recebidas",
+  "initAppError": "Ocorreu um erro enquanto o aplicativo era iniciado",
+  "isReadyForKeyVerification": "{sender} está pronto para a chave de verificação",
+  "knock": "Bater na porta",
+  "knocking": "Batendo na porta",
+  "minimumPowerLevel": "{level} é o nível mínimo de poder.",
+  "noDatabaseEncryption": "A criptografia do banco de dados não é suportada nesta plataforma",
+  "noOneCanJoin": "Ninguém pode entrar",
+  "noPublicLinkHasBeenCreatedYet": "Nenhum link público foi criado ainda",
+  "notifyMeFor": "Notificar me para",
+  "overview": "Visão geral",
+  "passwordRecoverySettings": "Configurações de recuperação de senha",
+  "presencesToggle": "Mostrar o status das mensagens de outros usuários",
+  "presenceStyle": "Presença:",
+  "publicChatAddresses": "Endereços de chat públicos",
+  "requestedKeyVerification": "{sender} enviou uma chave de verificação",
+  "restoreSessionBody": "O aplicativo tentará agora restaurar sua sessão a partir do backup. Por favor, reporte este ao desenvolvedor em {url}. A mensagem de erro é: {error}",
+  "sendReadReceipts": "Enviar recibos de leitura",
+  "sendReadReceiptsDescription": "Outros participantes neste chat podem ver quando você tiver lido uma mensagem.",
+  "sendTypingNotificationsDescription": "Outros participantes neste chat podem ver quando você está digitando uma nova mensagem.",
+  "sessionLostBody": "Sua sessão foi desconectada. Por favor, reporte este ao desenvolvedor em {url}. A mensagem de erro é: {error}",
+  "startedKeyVerification": "{sender} iniciou a chave de verificação",
+  "stickers": "Stickers",
+  "thereAreCountUsersBlocked": "Nesse momento, há {count} usuários bloqueados.",
+  "transparent": "Transparente",
+  "unreadChatsInApp": "{appname}: {unread} mensagens não lidas",
+  "userRole": "Cargo do usuário",
+  "usersMustKnock": "Usuários devem bater na porta",
+  "userWouldLikeToChangeTheChat": "{user} gostaria de entrar no chat.",
+  "verifyOtherDevice": "🔐 Verificar outro aparelho",
+  "verifyOtherDeviceDescription": "Quando você verifica outro aparelho, estes aparelhos poderão trocar chaves, aumentando sua segurança. 💪\n\nQuando iniciar a verificação, um popup aparecerá no aplicativo em ambos os aparelhos. Então você verá uma série de emojis ou números que você terá que comparar um com o outro.\n\nÉ melhor fazer esse procedimento com ambos os aparelhos em mãos antes de começar a verificação. 🤳",
+  "verifyOtherUser": "🔐 Verificar outro usuário",
+  "verifyOtherUserDescription": "Se você verificar outro usuário, você terá certeza que você conhece com quem está conversando. 💪\n\nQuando iniciar uma verificação, você e o outro usuário receberão um popup no aplicativo. Então vocês receberão uma série de emojis ou números para comparar um com o outro.\n\nA melhor maneira de fazer este procedimento é encontrar pessoalmente ou através de um vídeochamada. 👭",
+  "youInvitedToBy": "Você foi convidado através do link para:\n{alias}",
+  "allRooms": "",
+  "continueWith": "",
+  "deviceKeys": "",
+  "disableEncryptionWarning": "",
+  "encryptThisChat": "",
+  "endToEndEncryption": "",
+  "enterInviteLinkOrMatrixId": "",
+  "fileHasBeenSavedAt": "",
+  "fileIsTooBigForServer": "",
+  "jump": "",
+  "jumpToLastReadMessage": "",
+  "letsStart": "",
+  "newSpaceDescription": "",
+  "noBackupWarning": "",
+  "noMatrixServer": "",
+  "noOtherDevicesFound": "",
+  "noSearchResult": "",
+  "openLinkInBrowser": "",
+  "pleaseEnterAMatrixIdentifier": "",
+  "pleaseTryAgainLaterOrChooseDifferentServer": "",
+  "readUpToHere": "",
+  "reopenChat": "",
+  "report": "",
+  "reportErrorDescription": "",
+  "signInWithPassword": "",
+  "sorryThatsNotPossible": "",
+  "startFirstChat": "",
+  "wasDirectChatDisplayName": ""
 }

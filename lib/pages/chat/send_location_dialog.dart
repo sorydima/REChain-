@@ -98,7 +98,7 @@ class SendLocationDialogState extends State<SendLocationDialog> {
       contentWidget = Text(L10n.of(context)!.locationPermissionDeniedNotice);
     } else if (error != null) {
       contentWidget =
-          Text(L10n.of(context)!.errorObtainingLocation(error.toString(),error.toString()));
+          Text(L10n.of(context)!.errorObtainingLocation(error.toString()));
     } else {
       contentWidget = Row(
         mainAxisSize: MainAxisSize.min,

@@ -164,7 +164,7 @@
 		"type": "text",
 		"placeholders": {}
 	},
-	"badServerLoginTypesException": "See Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node võrguserver toetab Matrixi võrgu sisselogimist: \n {serverVersions} \nKuid see rakendus toetab ainult järgmisi funktsioone: \n {supportedVersions}",
+	"badServerLoginTypesException": "See Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node võrguserver toetab REChain võrgu sisselogimist: \n {serverVersions} \nKuid see rakendus toetab ainult järgmisi funktsioone: \n {supportedVersions}",
 	"@badServerLoginTypesException": {
 		"type": "text",
 		"placeholders": {
@@ -172,7 +172,7 @@
 			"supportedVersions": {}
 		}
 	},
-	"badServerVersionsException": "See Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node võrguserver toetab järgmisi Matrixi spetsifikatsiooni versioone: \n {serverVersions} \nKuid see rakendus toetab ainult järgmisi versioone: {supportedVersions}",
+	"badServerVersionsException": "See Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node võrguserver toetab järgmisi REChain spetsifikatsiooni versioone: \n {serverVersions} \nKuid see rakendus toetab ainult järgmisi versioone: {supportedVersions}",
 	"@badServerVersionsException": {
 		"type": "text",
 		"placeholders": {
@@ -2998,6 +2998,531 @@
 		"placeholders": {},
 		"type": "text"
 	},
+	"@acceptedKeyVerification": {
+        "placeholders": {
+            "sender": {
+            }
+        },
+        "type": "text"
+    },
+    "@accessAndVisibility": {
+    },
+    "@accessAndVisibilityDescription": {
+    },
+    "@addChatDescription": {
+    },
+    "@addChatOrSubSpace": {
+    },
+    "@appLockDescription": {
+    },
+    "@archiveRoomDescription": {
+    },
+    "@banUserDescription": {
+    },
+    "@block": {
+    },
+    "@blockedUsers": {
+    },
+    "@blockListDescription": {
+    },
+    "@blockUsername": {
+    },
+    "@calls": {
+    },
+    "@canceledKeyVerification": {
+        "placeholders": {
+            "sender": {
+            }
+        },
+        "type": "text"
+    },
+    "@chatCanBeDiscoveredViaSearchOnServer": {
+        "placeholders": {
+            "server": {
+            }
+        },
+        "type": "text"
+    },
+    "@chatDescription": {
+    },
+    "@chatDescriptionHasBeenChanged": {
+    },
+    "@chatPermissions": {
+    },
+    "@commandHint_ignore": {
+    },
+    "@commandHint_sendraw": {
+    },
+    "@commandHint_unignore": {
+    },
+    "@completedKeyVerification": {
+        "placeholders": {
+            "sender": {
+            }
+        },
+        "type": "text"
+    },
+    "@createGroup": {
+    },
+    "@createGroupAndInviteUsers": {
+    },
+    "@createNewAddress": {
+    },
+    "@customEmojisAndStickers": {
+    },
+    "@customEmojisAndStickersBody": {
+    },
+    "@databaseBuildErrorBody": {
+        "placeholders": {
+            "error": {
+            },
+            "url": {
+            }
+        },
+        "type": "text"
+    },
+    "@databaseMigrationBody": {
+    },
+    "@databaseMigrationTitle": {
+    },
+    "@decline": {
+    },
+    "@directChat": {
+    },
+    "@discover": {
+    },
+    "@emoteKeyboardNoRecents": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@exportEmotePack": {
+    },
+    "@formattedMessages": {
+    },
+    "@formattedMessagesDescription": {
+    },
+    "@forwardMessageTo": {
+        "placeholders": {
+            "roomName": {
+            }
+        },
+        "type": "text"
+    },
+    "@globalChatId": {
+    },
+    "@groupCanBeFoundViaSearch": {
+    },
+    "@groupName": {
+    },
+    "@hasKnocked": {
+        "placeholders": {
+            "user": {
+            }
+        }
+    },
+    "@hideInvalidOrUnknownMessageFormats": {
+    },
+    "@hideMemberChangesInPublicChats": {
+    },
+    "@hideMemberChangesInPublicChatsBody": {
+    },
+    "@hidePresences": {
+    },
+    "@hideRedactedMessages": {
+    },
+    "@hideRedactedMessagesBody": {
+    },
+    "@importEmojis": {
+    },
+    "@importFromZipFile": {
+    },
+    "@importNow": {
+    },
+    "@incomingMessages": {
+    },
+    "@initAppError": {
+    },
+    "@invalidInput": {
+    },
+    "@invalidServerName": {
+    },
+    "@invite": {
+    },
+    "@inviteContactToGroupQuestion": {
+    },
+    "@inviteGroupChat": {
+    },
+    "@invitePrivateChat": {
+    },
+    "@isReadyForKeyVerification": {
+        "placeholders": {
+            "sender": {
+            }
+        },
+        "type": "text"
+    },
+    "@joinSpace": {
+    },
+    "@kickUserDescription": {
+    },
+    "@knock": {
+    },
+    "@knocking": {
+    },
+    "@learnMore": {
+    },
+    "@leaveEmptyToClearStatus": {
+    },
+    "@makeAdminDescription": {
+    },
+    "@messagesStyle": {
+    },
+    "@minimumPowerLevel": {
+        "placeholders": {
+            "level": {
+            }
+        },
+        "type": "text"
+    },
+    "@newPassword": {
+    },
+    "@noChatDescriptionYet": {
+    },
+    "@noDatabaseEncryption": {
+    },
+    "@noOneCanJoin": {
+    },
+    "@noPublicLinkHasBeenCreatedYet": {
+    },
+    "@notAnImage": {
+    },
+    "@nothingFound": {
+    },
+    "@notifyMeFor": {
+    },
+    "@noUsersFoundWithQuery": {
+        "placeholders": {
+            "query": {
+            }
+        },
+        "type": "text"
+    },
+    "@optionalRedactReason": {
+    },
+    "@overview": {
+    },
+    "@passwordIsWrong": {
+    },
+    "@passwordRecoverySettings": {
+    },
+    "@pleaseChooseAStrongPassword": {
+    },
+    "@pleaseEnterANumber": {
+    },
+    "@pleaseEnterYourCurrentPassword": {
+    },
+    "@presencesToggle": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@presenceStyle": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@profileNotFound": {
+    },
+    "@publicChatAddresses": {
+    },
+    "@publicLink": {
+    },
+    "@publicSpaces": {
+    },
+    "@pushNotificationsNotAvailable": {
+    },
+    "@redactedBy": {
+        "placeholders": {
+            "username": {
+            }
+        },
+        "type": "text"
+    },
+    "@redactedByBecause": {
+        "placeholders": {
+            "reason": {
+            },
+            "username": {
+            }
+        },
+        "type": "text"
+    },
+    "@redactMessageDescription": {
+    },
+    "@removeDevicesDescription": {
+    },
+    "@replace": {
+    },
+    "@requestedKeyVerification": {
+        "placeholders": {
+            "sender": {
+            }
+        },
+        "type": "text"
+    },
+    "@restoreSessionBody": {
+        "placeholders": {
+            "error": {
+            },
+            "url": {
+            }
+        },
+        "type": "text"
+    },
+    "@roomUpgradeDescription": {
+    },
+    "@searchChatsRooms": {
+    },
+    "@searchForUsers": {
+    },
+    "@select": {
+    },
+    "@sendReadReceipts": {
+    },
+    "@sendReadReceiptsDescription": {
+    },
+    "@sendTypingNotifications": {
+    },
+    "@sendTypingNotificationsDescription": {
+    },
+    "@sessionLostBody": {
+        "placeholders": {
+            "error": {
+            },
+            "url": {
+            }
+        },
+        "type": "text"
+    },
+    "@setChatDescription": {
+    },
+    "@setColorTheme": {
+    },
+    "@setTheme": {
+    },
+    "@shareInviteLink": {
+    },
+    "@signInWith": {
+        "placeholders": {
+            "provider": {
+            }
+        },
+        "type": "text"
+    },
+    "@startConversation": {
+    },
+    "@startedKeyVerification": {
+        "placeholders": {
+            "sender": {
+            }
+        },
+        "type": "text"
+    },
+    "@stickers": {
+    },
+    "@subspace": {
+    },
+    "@thereAreCountUsersBlocked": {
+        "count": {
+        },
+        "type": "text"
+    },
+    "@thisDevice": {
+    },
+    "@transparent": {
+    },
+    "@tryAgain": {
+    },
+    "@unbanUserDescription": {
+    },
+    "@unreadChatsInApp": {
+        "placeholders": {
+            "appname": {
+            },
+            "unread": {
+            }
+        },
+        "type": "text"
+    },
+    "@userRole": {
+    },
+    "@usersMustKnock": {
+    },
+    "@userWouldLikeToChangeTheChat": {
+        "placeholders": {
+            "user": {
+            }
+        }
+    },
+    "@verifyOtherDevice": {
+    },
+    "@verifyOtherDeviceDescription": {
+    },
+    "@verifyOtherUser": {
+    },
+    "@verifyOtherUserDescription": {
+    },
+    "@wrongPinEntered": {
+        "placeholders": {
+            "seconds": {
+            }
+        },
+        "type": "text"
+    },
+    "@wrongRecoveryKey": {
+    },
+    "@youInvitedToBy": {
+        "placeholders": {
+            "alias": {
+            }
+        }
+    },
+    "@yourGlobalUserIdIs": {
+    },
+    "acceptedKeyVerification": "{sender} nõustus krüptovõtmete verifitseerimisega",
+    "accessAndVisibility": "Ligipääsetavus ja nähtavus",
+    "accessAndVisibilityDescription": "Kes võib selle vestlusega liituda ja kuidas on võimalik seda vestlust leida.",
+    "addChatDescription": "Lisa vestluse kirjeldus...",
+    "addChatOrSubSpace": "Lisa vestlus või jututuba",
+    "appLockDescription": "Kui sa rakendust parasjagu ei kasuta, siis lukusta ta PIN-koodiga",
+    "archiveRoomDescription": "Selle vestluse tõstame nüüd arhiivi. Muud osalejad näevad, et sa oled vestlusest lahkunud.",
+    "banUserDescription": "Sellele kasutajale on nüüd selles jututoas seatud suhtluskeeld ning ta ei saa vestluses osaleda seni, kuni suhtluskeeld pole eemaldatud.",
+    "block": "Blokeeri",
+    "blockedUsers": "Blokeeritud kasutajad",
+    "blockListDescription": "Sul on võimalik blokeerida neid kasutajaid, kes sind segavad. Oma isiklikku blokerimisloendisse lisatud kasutajad ei saa sulle saata sõnumeid ega kutseid.",
+    "blockUsername": "Eira kasutajanime",
+    "calls": "Kõned",
+    "canceledKeyVerification": "{sender} katkestas krüptovõtmete verifitseerimise",
+    "chatCanBeDiscoveredViaSearchOnServer": "Vestluse või jututoa saad leida otsingust serveris {server}",
+    "chatDescription": "Vestluse kirjeldus",
+    "chatDescriptionHasBeenChanged": "Vestluse kirjeldus on muutunud",
+    "chatPermissions": "Vestluse õigused",
+    "commandHint_ignore": "Eira seda REChain kasutajatunnust",
+    "commandHint_sendraw": "Saada json oma algupärasel kujul",
+    "commandHint_unignore": "Lõpeta selle REChain kasutajatunnuse eiramine",
+    "completedKeyVerification": "{sender} sai valmis krüptovõtmete verifitseerimise",
+    "createGroup": "Loo vestlusrühm",
+    "createGroupAndInviteUsers": "Lisavestlusrühm ja kutsu sinna kasutajaid",
+    "createNewAddress": "Loo uus aadress",
+    "customEmojisAndStickers": "Kohandatud emotikonid ja kleepsud",
+    "customEmojisAndStickersBody": "Lisa või jaga kohandatud emotikone või kleepsupakke, mida võiks kasutada igas vestluses.",
+    "databaseBuildErrorBody": "SQlite andmebaasi loomine ei õnnestu. Seetõttu üritab rakendus kasutada senist andmehoidlat. Palun teata sellest veast arendajatele siin: {url} märkides veateate: {error}",
+    "databaseMigrationBody": "Palun oota üks hetk. Natuke võib kuluda aega.",
+    "databaseMigrationTitle": "Andmebaas on optimeeritud",
+    "decline": "Keeldu",
+    "directChat": "Otsevestlus",
+    "emoteKeyboardNoRecents": "Hiljuti kasutatud emotikonid kuvame siin...",
+    "exportEmotePack": "Ekspordi emotikonide pakk zip-failina",
+    "formattedMessages": "Vormindatud sõnumid",
+    "formattedMessagesDescription": "Kasutades markdown-süntaksit kuva vormindust, nagu rasvases kirjas tekst.",
+    "forwardMessageTo": "Kas edastame sõnumi jututuppa {roomName}?",
+    "globalChatId": "Üldine vestluse tunnus",
+    "groupCanBeFoundViaSearch": "Vestlusrühm on leitav otsinguga",
+    "groupName": "Vestlusrühma nimi",
+    "hasKnocked": "🚪{user} on jututoa uksele koputanud",
+    "hideInvalidOrUnknownMessageFormats": "Peida vigase või tundmatu vorminguga sõnumid",
+    "hideMemberChangesInPublicChats": "Peida avalike vestluste liikmelisuse muutused",
+    "hideMemberChangesInPublicChatsBody": "Parema loetavuse nimel ära näita vestluse ajajoonel avaliku jututoaga liitumisi ja sealt lahkumisi.",
+    "hidePresences": "Peida olekute loend?",
+    "hideRedactedMessages": "Peida muudetud sõnumid",
+    "hideRedactedMessagesBody": "Kui keegi muudab sõnumit, siis teda enam ei kuvataks vestluses.",
+    "importEmojis": "Impordi emojid",
+    "importFromZipFile": "Impordi zip-failist",
+    "importNow": "Impordi kohe",
+    "incomingMessages": "Saabuvad sõnumid",
+    "initAppError": "Rakenduse käivitamisel tekkis viga",
+    "invalidInput": "Vigane sisend!",
+    "invalidServerName": "Vigane serveri nimi",
+    "invite": "Kutsu",
+    "inviteContactToGroupQuestion": "Kas sa soovid kutsuda kasutajat {contact} „{groupName}“ jututuppa?",
+    "inviteGroupChat": "📨 Kutsu vestlusrühma",
+    "invitePrivateChat": "📨 Kutsu omavahelisele vestlusele",
+    "isReadyForKeyVerification": "{sender} on valmis krüptovõtmete verifitseerimiseks",
+    "joinSpace": "Liitu kogukonnaga",
+    "kickUserDescription": "See kasutaja on nüüd jutuoast välja müksatud, kuid talle pole seatud suhtluskeeldu. Avaliku jututoa puhul saab ta alati uuesti liituda.",
+    "knock": "Koputa uksele",
+    "knocking": "Koputus uksele",
+    "learnMore": "Loe lisaks",
+    "leaveEmptyToClearStatus": "Senise oleku eemaldamiseks jäta väärtus tühjaks.",
+    "makeAdminDescription": "Kui annad sellele kasutajale peakasutaja õigused, siis kuna tal on sinuga samad õigused, sa ei saa seda toimingut enam tagasi pöörata.",
+    "messagesStyle": "Sõnumid:",
+    "minimumPowerLevel": "{level} on väikseim võimalik õiguste tase.",
+    "newPassword": "Uus salasõna",
+    "noChatDescriptionYet": "Vestluse kirjeldus on puudu.",
+    "noDatabaseEncryption": "Andmebaasi krüptimine pole sellel platvormil toetatud",
+    "noOneCanJoin": "Mitte keegi ei saa liituda",
+    "noPublicLinkHasBeenCreatedYet": "Avalikult kasutatavat linki pole veel olemas",
+    "notAnImage": "See pole pildifail.",
+    "nothingFound": "Ei leidnud mitte midagi...",
+    "notifyMeFor": "Teavita mind kui",
+    "noUsersFoundWithQuery": "Päringuga „{query}“ ei leidunud kahkus ühtegi kasutajat. Palun kontrolli, et päringus poleks vigu.",
+    "optionalRedactReason": "(Kui soovid lisada) Sõnumi muutmise põhjus...",
+    "overview": "Ülevaade",
+    "passwordIsWrong": "Sinu sisestatud salasõna on vale",
+    "passwordRecoverySettings": "Salasõna taastamise seadistused",
+    "pleaseChooseAStrongPassword": "Palun sisesta korralik salasõna",
+    "pleaseEnterANumber": "Palun sisesta 0'st suurem number",
+    "pleaseEnterYourCurrentPassword": "Palun sisesta oma praegune salasõna",
+    "presencesToggle": "Näita teiste kasutajate olekuteateid",
+    "presenceStyle": "Olekuteated:",
+    "profileNotFound": "Sellist kasutajat serveris ei leidu. Tegemist võib olla kas võrguühenduse probleemiga või sellist kasutajat tõesti pole olemas.",
+    "publicChatAddresses": "Vestluse avalik aadress",
+    "publicLink": "Avalik link",
+    "publicSpaces": "Avalikud kogukonnad",
+    "pushNotificationsNotAvailable": "Tõuketeavitused pole saadaval",
+    "redactedBy": "Muutja: {username}",
+    "redactedByBecause": "Muutja {username} märkis põhjuseks: „{reason}“",
+    "redactMessageDescription": "Sõnumi muudatus kehtib kõikidele vestluses osalejatele. Seda muudatust ei saa tagasi pöörata.",
+    "removeDevicesDescription": "Sind logitakse sellest seadmest välja ja sa enam ei saa sõnumeid.",
+    "replace": "Asenda",
+    "requestedKeyVerification": "{sender} palus krüptovõtmete verifitseerimist",
+    "restoreSessionBody": "Nüüd üritab rakendus taastada sinu sessiooni varukoopiast. Palun teata sellest veast arendajatele siin: {url} märkides veateate: {error}",
+    "roomUpgradeDescription": "See vestlus luuakse nüüd uuesti jututoa uue versioonina. Kõik senised osalejad saavad teate, et nad peavad liituma uue vestlusega. Jututubade versioonide kohta leiad teavet https://spec.matrix.org/latest/rooms/ lehelt",
+    "searchChatsRooms": "Otsi #vestlusi, @kasutajaid...",
+    "searchForUsers": "Otsi kasutajat @kasutajanimi ...",
+    "select": "Vali",
+    "sendReadReceipts": "Saada lugemisteatisi",
+    "sendReadReceiptsDescription": "Muud vestluses osalejad näevad, kas oled sõnumit lugenud.",
+    "sendTypingNotifications": "Saada kirjutamise teavitusi",
+    "sendTypingNotificationsDescription": "Muud vestluses osalejad saavad näha, kui sa oled uut sõnumit kirjutamas.",
+    "sessionLostBody": "Sinu sessioon on kadunud. Palun teata sellest veast arendajatele siin: {url} märkides veateate: {error}",
+    "setChatDescription": "Lisa vestluse kirjeldus",
+    "setColorTheme": "Vali värviteema:",
+    "setTheme": "Vali teema:",
+    "shareInviteLink": "Jaga kutse linki",
+    "signInWith": "Logi sisse kasutades teenusepakkujat {provider}",
+    "startConversation": "Alusta vestlust",
+    "startedKeyVerification": "{sender} alustas krüptovõtmete verifitseerimist",
+    "stickers": "Kleepsud",
+    "subspace": "Jututuba või alamkogukond",
+    "thereAreCountUsersBlocked": "Hetkel on {count} blokeeritud kasutajat.",
+    "thisDevice": "See seade:",
+    "transparent": "Läbipaistev",
+    "tryAgain": "Proovi uuesti",
+    "unbanUserDescription": "Uuesti proovimisel saab see kasutaja nüüd vestlusega liituda.",
+    "unreadChatsInApp": "{appname}: {unread} lugemata vestlust",
+    "userRole": "Kasutaja roll",
+    "usersMustKnock": "Kasutajad peavad uksele koputama",
+    "userWouldLikeToChangeTheChat": "{user} soovib liituda vestlusega.",
+    "verifyOtherDevice": "🔐 Verifitseeri oma muu seade",
+    "verifyOtherDeviceDescription": "Kui sa oled oma muu seadme verifitseerinud, siis need seadmed võivad vahetada krüptovõtmeid ning see parandab üldist turvalisust. 💪 Kui alustad verifitseerimist, siis sinu mõlemas seadmes tekib rakenduses hüpikaken. Seal kuvatakse emotikonide või numbrite jada, mida pead omavahel võrdlema. On oluline, et mõlemad seadmed on verifitseerimise alustamisel sinu kõrval. 🤳",
+    "verifyOtherUser": "🔐 Verifitseeri teine kasutaja",
+    "verifyOtherUserDescription": "Kui sa oled vestluse teise osapoole verifitseerinud, siis saad kindel olla, et tead, kellega suhtled. 💪\n\nKui alustad verifitseerimist, siis sinul ja teisel osapoolel tekib rakenduses hüpikaken. Seal kuvatakse emotikonide või numbrite jada, mida peate omavahel võrdlema.\n\nKõige lihtsam on seda teha kas omavahelise kohtumise ajal või videokõne kestel. 👭",
+    "wrongPinEntered": "Sisestasid vale PIN-koodi! Proovi uuesti {seconds} sekundi pärast...",
+    "wrongRecoveryKey": "Vabandust..., see ei tundu olema korrektne taastevõti.",
+    "youInvitedToBy": "📩 Sa oled lingiga saanud kutse jututuppa:\n{alias}",
+    "yourGlobalUserIdIs": "Sinu üldine kasutajatunnus on: ",
 	"@continueWith": {},
 	"@openLinkInBrowser": {},
 	"@pleaseTryAgainLaterOrChooseDifferentServer": {},

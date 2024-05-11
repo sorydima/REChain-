@@ -5,11 +5,13 @@ import 'package:animations/animations.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:matrix/matrix.dart';
 
+import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/pages/chat_list/chat_list.dart';
 import 'package:rechainonline/pages/chat_list/chat_list_item.dart';
 import 'package:rechainonline/pages/chat_list/search_title.dart';
 import 'package:rechainonline/pages/chat_list/space_view.dart';
 import 'package:rechainonline/pages/chat_list/status_msg_list.dart';
+import 'package:rechainonline/pages/chat_list/utils/on_chat_tap.dart';
 import 'package:rechainonline/pages/user_bottom_sheet/user_bottom_sheet.dart';
 import 'package:rechainonline/utils/adaptive_bottom_sheet.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
@@ -132,8 +134,11 @@ class ChatListViewBody extends StatelessWidget {
                       ],
                       if (!controller.isSearchMode &&
                           controller.activeFilter != ActiveFilter.groups)
-                        StatusMessageList(
-                          onStatusEdit: controller.setStatus,
+                        GestureDetector(
+                          onLongPress: () => controller.dismissStatusList(),
+                          child: StatusMessageList(
+                            onStatusEdit: controller.setStatus,
+                          ),
                         ),
                       const ConnectionStatusHeader(),
                       AnimatedContainer(
@@ -246,6 +251,7 @@ class ChatListViewBody extends StatelessWidget {
                             )) {
                           return const SizedBox.shrink();
                         }
+                        final activeChat = controller.activeChat == rooms[i].id;
                         return ChatListItem(
                           rooms[i],
                           key: Key('chat_list_item_${rooms[i].id}'),
@@ -253,10 +259,10 @@ class ChatListViewBody extends StatelessWidget {
                               controller.selectedRoomIds.contains(rooms[i].id),
                           onTap: controller.selectMode == SelectMode.select
                               ? () => controller.toggleSelection(rooms[i].id)
-                              : null,
+                              : () => onChatTap(rooms[i], context),
                           onLongPress: () =>
                               controller.toggleSelection(rooms[i].id),
-                          activeChat: controller.activeChat == rooms[i].id,
+                          activeChat: activeChat,
                         );
                       },
                       childCount: rooms.length,

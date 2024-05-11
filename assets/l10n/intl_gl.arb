@@ -4576,6 +4576,272 @@
 	{},
 	"@signInWithPassword":
 	{},
+	"@acceptedKeyVerification": {
+        "placeholders": {
+            "sender": {
+            }
+        },
+        "type": "text"
+    },
+    "@accessAndVisibility": {
+    },
+    "@accessAndVisibilityDescription": {
+    },
+    "@appLockDescription": {
+    },
+    "@calls": {
+    },
+    "@canceledKeyVerification": {
+        "placeholders": {
+            "sender": {
+            }
+        },
+        "type": "text"
+    },
+    "@chatCanBeDiscoveredViaSearchOnServer": {
+        "placeholders": {
+            "server": {
+            }
+        },
+        "type": "text"
+    },
+    "@commandHint_ignore": {
+    },
+    "@commandHint_unignore": {
+    },
+    "@completedKeyVerification": {
+        "placeholders": {
+            "sender": {
+            }
+        },
+        "type": "text"
+    },
+    "@createNewAddress": {
+    },
+    "@customEmojisAndStickers": {
+    },
+    "@customEmojisAndStickersBody": {
+    },
+    "@databaseBuildErrorBody": {
+        "placeholders": {
+            "error": {
+            },
+            "url": {
+            }
+        },
+        "type": "text"
+    },
+    "@discover": {
+    },
+    "@formattedMessages": {
+    },
+    "@formattedMessagesDescription": {
+    },
+    "@forwardMessageTo": {
+        "placeholders": {
+            "roomName": {
+            }
+        },
+        "type": "text"
+    },
+    "@globalChatId": {
+    },
+    "@hideInvalidOrUnknownMessageFormats": {
+    },
+    "@hideMemberChangesInPublicChats": {
+    },
+    "@hideMemberChangesInPublicChatsBody": {
+    },
+    "@hidePresences": {
+    },
+    "@hideRedactedMessages": {
+    },
+    "@hideRedactedMessagesBody": {
+    },
+    "@incomingMessages": {
+    },
+    "@initAppError": {
+    },
+    "@isReadyForKeyVerification": {
+        "placeholders": {
+            "sender": {
+            }
+        },
+        "type": "text"
+    },
+    "@knock": {
+    },
+    "@knocking": {
+    },
+    "@minimumPowerLevel": {
+        "placeholders": {
+            "level": {
+            }
+        },
+        "type": "text"
+    },
+    "@noDatabaseEncryption": {
+    },
+    "@noOneCanJoin": {
+    },
+    "@noPublicLinkHasBeenCreatedYet": {
+    },
+    "@notifyMeFor": {
+    },
+    "@overview": {
+    },
+    "@passwordRecoverySettings": {
+    },
+    "@presencesToggle": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@presenceStyle": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@publicChatAddresses": {
+    },
+    "@requestedKeyVerification": {
+        "placeholders": {
+            "sender": {
+            }
+        },
+        "type": "text"
+    },
+    "@restoreSessionBody": {
+        "placeholders": {
+            "error": {
+            },
+            "url": {
+            }
+        },
+        "type": "text"
+    },
+    "@sendReadReceipts": {
+    },
+    "@sendReadReceiptsDescription": {
+    },
+    "@sendTypingNotificationsDescription": {
+    },
+    "@sessionLostBody": {
+        "placeholders": {
+            "error": {
+            },
+            "url": {
+            }
+        },
+        "type": "text"
+    },
+    "@startedKeyVerification": {
+        "placeholders": {
+            "sender": {
+            }
+        },
+        "type": "text"
+    },
+    "@stickers": {
+    },
+    "@thereAreCountUsersBlocked": {
+        "count": {
+        },
+        "type": "text"
+    },
+    "@transparent": {
+    },
+    "@unreadChatsInApp": {
+        "placeholders": {
+            "appname": {
+            },
+            "unread": {
+            }
+        },
+        "type": "text"
+    },
+    "@userRole": {
+    },
+    "@usersMustKnock": {
+    },
+    "@userWouldLikeToChangeTheChat": {
+        "placeholders": {
+            "user": {
+            }
+        }
+    },
+    "@verifyOtherDevice": {
+    },
+    "@verifyOtherDeviceDescription": {
+    },
+    "@verifyOtherUser": {
+    },
+    "@verifyOtherUserDescription": {
+    },
+    "@youInvitedToBy": {
+        "placeholders": {
+            "alias": {
+            }
+        }
+    },
+    "acceptedKeyVerification": "{sender} aceptou a verificación da chave",
+    "accessAndVisibility": "Acceso e Visibilidade",
+    "accessAndVisibilityDescription": "Quen pode unirse a este chat de que xeito pode ser atopado.",
+    "appLockDescription": "Bloquear a app cun código PIN cando non a uses",
+    "calls": "Chamadas",
+    "canceledKeyVerification": "{sender} desbotou a verificación da chave",
+    "chatCanBeDiscoveredViaSearchOnServer": "O chat pode ser atopado ao buscar en {server}",
+    "commandHint_ignore": "Ignorar o ID REChain indicado",
+    "commandHint_unignore": "Non ignorar o ID REChain indicado",
+    "completedKeyVerification": "{sender} completou a verificación da chave",
+    "createNewAddress": "Crear novos enderezos",
+    "customEmojisAndStickers": "Emojis personais e adhesivos",
+    "customEmojisAndStickersBody": "Engade ou comparte emojis personais e adhesivos que poden usarse nos chats.",
+    "databaseBuildErrorBody": "Non se puido crear a base de datos SQlite. A app intentará usar a base de datos clásica. Por favor informa deste fallo ás desenvolvedoras en {url}. A mensaxe do erro é: {error}",
+    "formattedMessages": "Mensaxes con formato",
+    "formattedMessagesDescription": "Mostrar texto enriquecido nas mensaxes como letra grosa usando markdown.",
+    "forwardMessageTo": "Reenviar a mensaxe a {roomName}?",
+    "globalChatId": "ID Global do chat",
+    "hideInvalidOrUnknownMessageFormats": "Agochar formatos de mensaxe non válidos ou descoñecidos",
+    "hideMemberChangesInPublicChats": "Agochar cambios dos membros nos chats públicos",
+    "hideMemberChangesInPublicChatsBody": "Non mostrar na cronoloxía se alguén se une ou deixa un chat público, para mellorar a lexibilidade.",
+    "hidePresences": "Agochar Lista de estados?",
+    "hideRedactedMessages": "Agochar mensaxes editadas",
+    "hideRedactedMessagesBody": "Se alguén corrixe unha mensaxe entón esta xa non será visible no chat.",
+    "incomingMessages": "Mensaxes recibidas",
+    "initAppError": "Houbo un fallo ao iniciar a app",
+    "isReadyForKeyVerification": "{sender} xa pode verificar a chave",
+    "knock": "Solicitar acceso",
+    "knocking": "A solicitar",
+    "minimumPowerLevel": "{level} é o nivel mínimo de responsabilidade.",
+    "noDatabaseEncryption": "Nesta plataforma non temos soporte para cifrar a base de datos",
+    "noOneCanJoin": "Ninguén pode unirse",
+    "noPublicLinkHasBeenCreatedYet": "Aínda non se creou unha ligazón pública",
+    "notifyMeFor": "Notificarme sobre",
+    "overview": "Vista xeral",
+    "passwordRecoverySettings": "Axustes de recuperación do contrasinal",
+    "presencesToggle": "Mostra mensaxes de estado de outras usuarias",
+    "presenceStyle": "Presenza:",
+    "publicChatAddresses": "Enderezos públicos do chat",
+    "requestedKeyVerification": "{sender} solicitou verificar a chave",
+    "restoreSessionBody": "A app vai intentar restablecer a sesión desde a copia de apoio. Por favor informa deste erro ás desenvolvedoras en {url}. A mensaxe do erro é: {error}",
+    "sendReadReceipts": "Enviar confirmación de lectura",
+    "sendReadReceiptsDescription": "Outras participantes na conversa poden ver cando liches unha mensaxe.",
+    "sendTypingNotificationsDescription": "As outras participantes da conversa poden ver cando estás a escribir unha mensaxe.",
+    "sessionLostBody": "Estragouse a túa sesión. Por favor informa deste fallo ás desenvolvedoras en {url}. A mensaxe do erro é: {error}",
+    "startedKeyVerification": "{sender} comezou coa verificación da chave",
+    "stickers": "Adhesivos",
+    "thereAreCountUsersBlocked": "Agora mesmo hai {count} usuarias bloqueadas.",
+    "transparent": "Transparente",
+    "unreadChatsInApp": "{appname}: {unread} chats sen ler",
+    "userRole": "Rol da usuaria",
+    "usersMustKnock": "As usuarias teñen que pedir entrar",
+    "userWouldLikeToChangeTheChat": "{user} quere unirse ao chat.",
+    "verifyOtherDevice": "🔐 Verificar outro dispositivo",
+    "verifyOtherDeviceDescription": "Ao verificar outro dispositivo estás compartindo as chaves, aumentando a túa seguridade 💪. Ao iniciar a verificación aparecerá unha ventá emerxente nos dous dispositivos. Nesa ventá verás varios emojis ou números que tes que comparar entre eles. O mellor xeito de facelo é ter os dous dispositivos contigo cando inicias o proceso de verificación. 🤳",
+    "verifyOtherUser": "🔐 Verificar outra usuaria",
+    "verifyOtherUserDescription": "Se verificas a outra usuaria, podes ter a certeza de que sabes con quen estás a conversar. 💪\n\nAo iniciar a verificación, ti mais a outra usuaria veredes unha ventá emerxente na app onde aparecerán varios emojis ou números que teredes que comparar entre vós.\n\nO mellor xeito de facelo é en persoa o cunha chamada de vídeo. 👭",
+    "youInvitedToBy": "📩 Convidáronte cunha ligazón a:\n{alias}",
 	"allRooms": "Todas as Conversas en grupo",
 	"continueWith": "Continuar con:",
 	"jump": "Ir alá",

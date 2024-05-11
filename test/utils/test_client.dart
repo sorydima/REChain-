@@ -2,19 +2,19 @@
 
 import 'package:matrix/encryption/utils/key_verification.dart';
 import 'package:matrix/matrix.dart';
-import 'package:matrix_api_lite/fake_matrix_api.dart';
 
 import 'package:rechainonline/utils/matrix_sdk_extensions/flutter_hive_collections_database.dart';
 
 Future<Client> prepareTestClient({
   bool loggedIn = false,
   Uri? homeserver,
-  String id = 'REChain ®️ 🪐 Widget Test!',
+  String id = 'REChain ®️ 🪐 Widget Test',
 }) async {
   homeserver ??= Uri.parse('https://fakeserver.notexisting');
   final client = Client(
-    'REChain ®️ 🪐 Widget Tests!',
-    httpClient: FakeMatrixApi(),
+    'REChain ®️ 🪐 Widget Tests',
+    httpClient: FakeMatrixApi()
+      ..api['GET']!['/.well-known/matrix/client'] = (req) => {},
     verificationMethods: {
       KeyVerificationMethod.numbers,
       KeyVerificationMethod.emoji,

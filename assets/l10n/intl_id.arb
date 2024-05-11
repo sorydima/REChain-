@@ -3078,6 +3078,531 @@
 			"size": {}
 		}
 	},
+	"@acceptedKeyVerification": {
+        "placeholders": {
+            "sender": {
+            }
+        },
+        "type": "text"
+    },
+    "@accessAndVisibility": {
+    },
+    "@accessAndVisibilityDescription": {
+    },
+    "@addChatDescription": {
+    },
+    "@addChatOrSubSpace": {
+    },
+    "@appLockDescription": {
+    },
+    "@archiveRoomDescription": {
+    },
+    "@banUserDescription": {
+    },
+    "@block": {
+    },
+    "@blockedUsers": {
+    },
+    "@blockListDescription": {
+    },
+    "@blockUsername": {
+    },
+    "@calls": {
+    },
+    "@canceledKeyVerification": {
+        "placeholders": {
+            "sender": {
+            }
+        },
+        "type": "text"
+    },
+    "@chatCanBeDiscoveredViaSearchOnServer": {
+        "placeholders": {
+            "server": {
+            }
+        },
+        "type": "text"
+    },
+    "@chatDescription": {
+    },
+    "@chatDescriptionHasBeenChanged": {
+    },
+    "@chatPermissions": {
+    },
+    "@commandHint_ignore": {
+    },
+    "@commandHint_sendraw": {
+    },
+    "@commandHint_unignore": {
+    },
+    "@completedKeyVerification": {
+        "placeholders": {
+            "sender": {
+            }
+        },
+        "type": "text"
+    },
+    "@createGroup": {
+    },
+    "@createGroupAndInviteUsers": {
+    },
+    "@createNewAddress": {
+    },
+    "@customEmojisAndStickers": {
+    },
+    "@customEmojisAndStickersBody": {
+    },
+    "@databaseBuildErrorBody": {
+        "placeholders": {
+            "error": {
+            },
+            "url": {
+            }
+        },
+        "type": "text"
+    },
+    "@databaseMigrationBody": {
+    },
+    "@databaseMigrationTitle": {
+    },
+    "@decline": {
+    },
+    "@directChat": {
+    },
+    "@discover": {
+    },
+    "@emoteKeyboardNoRecents": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@exportEmotePack": {
+    },
+    "@formattedMessages": {
+    },
+    "@formattedMessagesDescription": {
+    },
+    "@forwardMessageTo": {
+        "placeholders": {
+            "roomName": {
+            }
+        },
+        "type": "text"
+    },
+    "@globalChatId": {
+    },
+    "@groupCanBeFoundViaSearch": {
+    },
+    "@groupName": {
+    },
+    "@hasKnocked": {
+        "placeholders": {
+            "user": {
+            }
+        }
+    },
+    "@hideInvalidOrUnknownMessageFormats": {
+    },
+    "@hideMemberChangesInPublicChats": {
+    },
+    "@hideMemberChangesInPublicChatsBody": {
+    },
+    "@hidePresences": {
+    },
+    "@hideRedactedMessages": {
+    },
+    "@hideRedactedMessagesBody": {
+    },
+    "@importEmojis": {
+    },
+    "@importFromZipFile": {
+    },
+    "@importNow": {
+    },
+    "@incomingMessages": {
+    },
+    "@initAppError": {
+    },
+    "@invalidInput": {
+    },
+    "@invalidServerName": {
+    },
+    "@invite": {
+    },
+    "@inviteContactToGroupQuestion": {
+    },
+    "@inviteGroupChat": {
+    },
+    "@invitePrivateChat": {
+    },
+    "@isReadyForKeyVerification": {
+        "placeholders": {
+            "sender": {
+            }
+        },
+        "type": "text"
+    },
+    "@joinSpace": {
+    },
+    "@kickUserDescription": {
+    },
+    "@knock": {
+    },
+    "@knocking": {
+    },
+    "@learnMore": {
+    },
+    "@leaveEmptyToClearStatus": {
+    },
+    "@makeAdminDescription": {
+    },
+    "@messagesStyle": {
+    },
+    "@minimumPowerLevel": {
+        "placeholders": {
+            "level": {
+            }
+        },
+        "type": "text"
+    },
+    "@newPassword": {
+    },
+    "@noChatDescriptionYet": {
+    },
+    "@noDatabaseEncryption": {
+    },
+    "@noOneCanJoin": {
+    },
+    "@noPublicLinkHasBeenCreatedYet": {
+    },
+    "@notAnImage": {
+    },
+    "@nothingFound": {
+    },
+    "@notifyMeFor": {
+    },
+    "@noUsersFoundWithQuery": {
+        "placeholders": {
+            "query": {
+            }
+        },
+        "type": "text"
+    },
+    "@optionalRedactReason": {
+    },
+    "@overview": {
+    },
+    "@passwordIsWrong": {
+    },
+    "@passwordRecoverySettings": {
+    },
+    "@pleaseChooseAStrongPassword": {
+    },
+    "@pleaseEnterANumber": {
+    },
+    "@pleaseEnterYourCurrentPassword": {
+    },
+    "@presencesToggle": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@presenceStyle": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@profileNotFound": {
+    },
+    "@publicChatAddresses": {
+    },
+    "@publicLink": {
+    },
+    "@publicSpaces": {
+    },
+    "@pushNotificationsNotAvailable": {
+    },
+    "@redactedBy": {
+        "placeholders": {
+            "username": {
+            }
+        },
+        "type": "text"
+    },
+    "@redactedByBecause": {
+        "placeholders": {
+            "reason": {
+            },
+            "username": {
+            }
+        },
+        "type": "text"
+    },
+    "@redactMessageDescription": {
+    },
+    "@removeDevicesDescription": {
+    },
+    "@replace": {
+    },
+    "@requestedKeyVerification": {
+        "placeholders": {
+            "sender": {
+            }
+        },
+        "type": "text"
+    },
+    "@restoreSessionBody": {
+        "placeholders": {
+            "error": {
+            },
+            "url": {
+            }
+        },
+        "type": "text"
+    },
+    "@roomUpgradeDescription": {
+    },
+    "@searchChatsRooms": {
+    },
+    "@searchForUsers": {
+    },
+    "@select": {
+    },
+    "@sendReadReceipts": {
+    },
+    "@sendReadReceiptsDescription": {
+    },
+    "@sendTypingNotifications": {
+    },
+    "@sendTypingNotificationsDescription": {
+    },
+    "@sessionLostBody": {
+        "placeholders": {
+            "error": {
+            },
+            "url": {
+            }
+        },
+        "type": "text"
+    },
+    "@setChatDescription": {
+    },
+    "@setColorTheme": {
+    },
+    "@setTheme": {
+    },
+    "@shareInviteLink": {
+    },
+    "@signInWith": {
+        "placeholders": {
+            "provider": {
+            }
+        },
+        "type": "text"
+    },
+    "@startConversation": {
+    },
+    "@startedKeyVerification": {
+        "placeholders": {
+            "sender": {
+            }
+        },
+        "type": "text"
+    },
+    "@stickers": {
+    },
+    "@subspace": {
+    },
+    "@thereAreCountUsersBlocked": {
+        "count": {
+        },
+        "type": "text"
+    },
+    "@thisDevice": {
+    },
+    "@transparent": {
+    },
+    "@tryAgain": {
+    },
+    "@unbanUserDescription": {
+    },
+    "@unreadChatsInApp": {
+        "placeholders": {
+            "appname": {
+            },
+            "unread": {
+            }
+        },
+        "type": "text"
+    },
+    "@userRole": {
+    },
+    "@usersMustKnock": {
+    },
+    "@userWouldLikeToChangeTheChat": {
+        "placeholders": {
+            "user": {
+            }
+        }
+    },
+    "@verifyOtherDevice": {
+    },
+    "@verifyOtherDeviceDescription": {
+    },
+    "@verifyOtherUser": {
+    },
+    "@verifyOtherUserDescription": {
+    },
+    "@wrongPinEntered": {
+        "placeholders": {
+            "seconds": {
+            }
+        },
+        "type": "text"
+    },
+    "@wrongRecoveryKey": {
+    },
+    "@youInvitedToBy": {
+        "placeholders": {
+            "alias": {
+            }
+        }
+    },
+    "@yourGlobalUserIdIs": {
+    },
+    "acceptedKeyVerification": "{sender} menerima verifikasi kunci",
+    "accessAndVisibility": "Akses dan keterlihatan",
+    "accessAndVisibilityDescription": "Siapa yang diperbolehkan bergabung ke obrolan ini dan bagaimana obrolannya dapat ditemukan.",
+    "addChatDescription": "Tambahkan deskripsi chat...",
+    "addChatOrSubSpace": "Tambahkan percakapan atau subspace",
+    "appLockDescription": "Kunci aplikasi ketika tidak digunakan dengan kode PIN",
+    "archiveRoomDescription": "Percakapan akan dipindahkan ke arsip. Pengguna lain akan melihat bahwa kamu telah meninggalkan percakapan.",
+    "banUserDescription": "Pengguna akan dicekal dari percakapan dan tidak akan dapat memasuki percakapan lagi sampai dibatalkan cekalannya.",
+    "block": "Blokir",
+    "blockedUsers": "Pengguna yang terblokir",
+    "blockListDescription": "Kamu bisa memblokir pengguna yang sedang menganggumu. Kamu tidak akan mendapatkan pesan atau undangan ruangan dari pengguna dalam daftar blokiran pribadimu.",
+    "blockUsername": "Abaikan nama pengguna",
+    "calls": "Panggilan",
+    "canceledKeyVerification": "{sender} membatalkan verifikasi kunci",
+    "chatCanBeDiscoveredViaSearchOnServer": "Obrolan dapat ditemukan melalui pencarian di {server}",
+    "chatDescription": "Deskripsi chat",
+    "chatDescriptionHasBeenChanged": "Deskripsi chat diubah",
+    "chatPermissions": "Perizinan chat",
+    "commandHint_ignore": "Abaikan ID REChain yang diberikan",
+    "commandHint_sendraw": "Kirim JSON mentah",
+    "commandHint_unignore": "Batalkan pengabaian ID REChain yang diberikan",
+    "completedKeyVerification": "{sender} menyelesaikan verifikasi kunci",
+    "createGroup": "Buat grup",
+    "createGroupAndInviteUsers": "Buat sebuah grup dan undang pengguna",
+    "createNewAddress": "Buat alamat baru",
+    "customEmojisAndStickers": "Emoji dan stiker kustom",
+    "customEmojisAndStickersBody": "Tambakan atau bagikan emoji atau stiker kustom yang dapat digunakan dalam obrolan apa pun.",
+    "databaseBuildErrorBody": "Tidak dapat membangun basis data SQLite. Aplikasi mencoba menggunakan basis data lawas untuk sekarang. Silakan laporkan kesalahan ini kepada pengembang di {url}. Pesan kesalahannya adalah: {error}",
+    "databaseMigrationBody": "Silakan tunggu. Ini dapat membutuhkan beberapa waktu.",
+    "databaseMigrationTitle": "Basis data sudah dioptimalkan",
+    "decline": "Tolak",
+    "directChat": "Chat langsung",
+    "emoteKeyboardNoRecents": "Emote yang telah digunakan akan muncul di sini...",
+    "exportEmotePack": "Ekspor paket Emote sebagai .zip",
+    "formattedMessages": "Pesan yang diformat",
+    "formattedMessagesDescription": "Tampilkan konten pesan kaya seperti teks tebal menggunakan Markdown.",
+    "forwardMessageTo": "Teruskan pesan ke {roomName}?",
+    "globalChatId": "ID obrolan global",
+    "groupCanBeFoundViaSearch": "Grup dapat dicari melalui pencarian",
+    "groupName": "Nama grup",
+    "hasKnocked": "🚪 {user} telah dikeluarkan",
+    "hideInvalidOrUnknownMessageFormats": "Sembunyikan format pesan yang tidak valid atau tidak diketahui",
+    "hideMemberChangesInPublicChats": "Sembunyikan perubahan anggota dalam obrolan publik",
+    "hideMemberChangesInPublicChatsBody": "Jangan tampilkan dalam lini masa obrolan jika seseorang bergabung atau keluar dari obrolan untuk meningkatkan keterlihatan.",
+    "hidePresences": "Sembunyikan Daftar Status?",
+    "hideRedactedMessages": "Sembunyikan pesan yang dihapus",
+    "hideRedactedMessagesBody": "Jika seseorang menghapus pesan, pesannya tidak akan terlihat lagi dalam obrolan.",
+    "importEmojis": "Impor Emoji",
+    "importFromZipFile": "Impor dari berkas .zip",
+    "importNow": "Impor sekarang",
+    "incomingMessages": "Pesan masuk",
+    "initAppError": "Terjadi kesalahan saat init aplikasi",
+    "invalidInput": "Masukan tidak valid!",
+    "invalidServerName": "Nama server tidak valid",
+    "invite": "Undang",
+    "inviteContactToGroupQuestion": "Apakah kamu ingin mengundang {contact} ke chat \"{groupName}\"?",
+    "inviteGroupChat": "📨 Undang percakapan grup",
+    "invitePrivateChat": "📨 Undang percakapan privat",
+    "isReadyForKeyVerification": "{sender} siap untuk verifikasi kunci",
+    "joinSpace": "Bergabung ke space",
+    "kickUserDescription": "Pengguna ini dikeluarkan dari percakapan tetapi tidak dicekal. Dalam percakapan publik, penggunanya dapat bergabung ulang kapan pun.",
+    "knock": "Ketuk",
+    "knocking": "Mengetuk",
+    "learnMore": "Pelajari lebih lanjut",
+    "leaveEmptyToClearStatus": "Tinggalkan kosong untuk menghapus statusmu.",
+    "makeAdminDescription": "Setelah kamu membuat pengguna ini admin, kamu tidak akan dapat mengurungkan ini karena penggunanya akan memiliki perizinan yang sama seperti kamu.",
+    "messagesStyle": "Pesan:",
+    "minimumPowerLevel": "{level} adalah tingkat daya minimum.",
+    "newPassword": "Kata sandi baru",
+    "noChatDescriptionYet": "Deskripsi chat belum dibuat.",
+    "noDatabaseEncryption": "Enkripsi basis data tidak didukung di platform ini",
+    "noOneCanJoin": "Tidak ada siapa pun yang dapat bergabung",
+    "noPublicLinkHasBeenCreatedYet": "Belum ada tautan publik yang dibuat",
+    "notAnImage": "Bukan berkas gambar.",
+    "nothingFound": "Tidak ada yang ditemukan...",
+    "notifyMeFor": "Beri tahu aku untuk",
+    "noUsersFoundWithQuery": "Sayangnya tidak ada pengguna yang dapat ditemukan dengan \"{query}\". Silakan periksa jika ada tipo.",
+    "optionalRedactReason": "(Opsional) Alasan menghilangkan pesan ini...",
+    "overview": "Ikhtisar",
+    "passwordIsWrong": "Kata sandi yang kamu masukkan salah",
+    "passwordRecoverySettings": "Pengaturan pemulihan kata sandi",
+    "pleaseChooseAStrongPassword": "Silakan pilih kata sandi yang kuat",
+    "pleaseEnterANumber": "Silakan masukkan angka lebih dari 0",
+    "pleaseEnterYourCurrentPassword": "Silakan masukkan kata sandimu saat ini",
+    "presencesToggle": "Tampilkan pesan status dari pengguna lain",
+    "presenceStyle": "Presensi:",
+    "profileNotFound": "Pengguna ini tidak dapat ditemukan di server. Mungkin ada masalah koneksi atau penggunanya tidak ada.",
+    "publicChatAddresses": "Alamat obrolan umum",
+    "publicLink": "Tautan publik",
+    "publicSpaces": "Space publik",
+    "pushNotificationsNotAvailable": "Notifikasi dorongan tidak tersedia",
+    "redactedBy": "Dihilangkan oleh {username}",
+    "redactedByBecause": "Dihilangkan oleh {username} karena: \"{reason}\"",
+    "redactMessageDescription": "Pesan akan dihilangkan untuk semua anggota dalam percakapan ini. Ini tidak dapat diurungkan.",
+    "removeDevicesDescription": "Kamu akan dikeluarkan dari perangkat ini dan tidak akan dapat menerima pesan lagi.",
+    "replace": "Ganti",
+    "requestedKeyVerification": "{sender} meminta verifikasi kunci",
+    "restoreSessionBody": "Aplikasi sekarang mencoba memulihkan sesimu dari cadangan. Silakan laporkan kesalahan ini kepada pengembang di {url}. Pesan kesalahannya adalah: {error}",
+    "roomUpgradeDescription": "Percakapannya akan dibuat ulang dengan versi ruangan yang baru. Semua anggota akan diberi tahu bahwa mereka harus ganti ke percakapan yang baru. Kamu bisa mempelajari lebih lanjut tentang versi ruangan di https://spec.matrix.org/latest/rooms/",
+    "searchChatsRooms": "Cari #percakapan, @pengguna...",
+    "searchForUsers": "Cari @pengguna...",
+    "select": "Pilih",
+    "sendReadReceipts": "Kirim laporan dibaca",
+    "sendReadReceiptsDescription": "Anggota lain dalam percakapan dapat melihat ketika kamu membaca sebuah pesan.",
+    "sendTypingNotifications": "Kirim notifikasi pengetikan",
+    "sendTypingNotificationsDescription": "Anggota lain dalam percakapan dapat melihat ketika kamu sedang mengetik sebuah pesan baru.",
+    "sessionLostBody": "Sesimu hilang. Silakan laporkan kesalahan ini kepada pengembang di {url}. Pesan kesalahannya adalah: {error}",
+    "setChatDescription": "Lihat deskripsi chat",
+    "setColorTheme": "Atur tema warna:",
+    "setTheme": "Atur tema:",
+    "shareInviteLink": "Bagikan tautan undangan",
+    "signInWith": "Masuk dengan {provider}",
+    "startConversation": "Mulai percakapan",
+    "startedKeyVerification": "{sender} memulai verifikasi kunci",
+    "stickers": "Stiker",
+    "subspace": "Subspace",
+    "thereAreCountUsersBlocked": "Saat ini ada {count} pengguna yang diblokir.",
+    "thisDevice": "Perangkat ini:",
+    "transparent": "Transparan",
+    "tryAgain": "Coba ulang",
+    "unbanUserDescription": "Pengguna akan dapat memasuki percakapannya lagi jika dicoba.",
+    "unreadChatsInApp": "{appname}: {unread} obrolan belum dibaca",
+    "userRole": "Peran pengguna",
+    "usersMustKnock": "Pengguna harus mengetuk",
+    "userWouldLikeToChangeTheChat": "{user} ingin bergabung dengan obrolan.",
+    "verifyOtherDevice": "🔐 Verifikasi perangkat lain",
+    "verifyOtherDeviceDescription": "Saat kamu memverifikasi perangkat lain, perangkat tersebut dapat bertukar kunci, sehingga meningkatkan keamananmu secara keseluruhan. 💪 Saat Anda memulai verifikasi, sebuah pemberitahuan akan muncul di aplikasi pada kedua perangkat. Di situ kemudian akan melihat serangkaian emoji atau angka yang harus dibandingkan satu sama lain. Sebaiknya siapkan kedua perangkat sebelum kamu memulai verifikasi. 🤳",
+    "verifyOtherUser": "🔐 Verifikasi pengguna lain",
+    "verifyOtherUserDescription": "Jika kamu memverifikasi pengguna lain, kamu bisa yakin bahwa kamu tahu kepada siapa sebenarnya kamu menulis pesan kepadanya. 💪\n\nSaat kamu memulai verifikasi, kamu dan pengguna lain akan melihat pemberitahuan di aplikasi. Di sana kemudian akan melihat serangkaian emoji atau angka yang harus dibandingkan satu sama lain.\n\nCara terbaik untuk melakukannya adalah dengan bertemu secara langsung atau memulai panggilan video. 👭",
+    "wrongPinEntered": "PIN yang dimasukkan salah! Coba lagi dalam {seconds} detik...",
+    "wrongRecoveryKey": "Maaf... ini sepertinya bukan kunci pemulihan yang benar.",
+    "youInvitedToBy": "📩 Kamu telah diundang melalui surel ke:\n{alias}",
+    "yourGlobalUserIdIs": "ID pengguna globalmu adalah: ",
 	"noMatrixServer": "",
 	"optionalAddEmail": "",
 	"pleaseEnterAMatrixIdentifier": ""

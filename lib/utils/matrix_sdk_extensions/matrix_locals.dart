@@ -19,7 +19,7 @@ class MatrixLocals extends MatrixLocalizations {
 
   @override
   String answeredTheCall(String senderName) {
-    return l10n.answeredTheCall(senderName,senderName);
+    return l10n.answeredTheCall(senderName, senderName);
   }
 
   @override
@@ -176,7 +176,7 @@ class MatrixLocals extends MatrixLocalizations {
   }
 
   @override
-  String get needPantalaimonWarning => l10n.needPantalaimonWarning;
+  String get needPantalaimonWarning => l10n.oopsSomethingWentWrong;
 
   @override
   String get noPermission => l10n.noKeyForThisMessage;
@@ -255,7 +255,7 @@ class MatrixLocals extends MatrixLocalizations {
 
   @override
   String unknownEvent(String typeKey) {
-    return l10n.unknownEvent(typeKey,typeKey);
+    return l10n.userSentUnknownEvent('User', typeKey);
   }
 
   @override
@@ -319,5 +319,29 @@ class MatrixLocals extends MatrixLocalizations {
   String get unknownUser => l10n.user;
 
   @override
-  String hasKnocked(String targetName) => l10n.hasKnocked(targetName,targetName);
+  String hasKnocked(String targetName) => l10n.hasKnocked(targetName, targetName);
+
+  @override
+  String acceptedKeyVerification(String senderName) =>
+      l10n.acceptedKeyVerification(senderName);
+
+  @override
+  String canceledKeyVerification(String senderName) =>
+      l10n.canceledKeyVerification(senderName);
+
+  @override
+  String completedKeyVerification(String senderName) =>
+      l10n.completedKeyVerification(senderName);
+
+  @override
+  String isReadyForKeyVerification(String senderName) =>
+      l10n.isReadyForKeyVerification(senderName);
+
+  @override
+  String requestedKeyVerification(String senderName) =>
+      l10n.requestedKeyVerification(senderName);
+
+  @override
+  String startedKeyVerification(String senderName) =>
+      l10n.startedKeyVerification(senderName);
 }

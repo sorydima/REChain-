@@ -11,6 +11,7 @@ import 'package:matrix/matrix.dart';
 import 'package:rechainonline/pages/chat_list/chat_list.dart';
 import 'package:rechainonline/pages/chat_list/chat_list_item.dart';
 import 'package:rechainonline/pages/chat_list/search_title.dart';
+import 'package:rechainonline/pages/chat_list/utils/on_chat_tap.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
 import 'package:rechainonline/widgets/avatar.dart';
 import '../../utils/localized_exception_extension.dart';
@@ -144,7 +145,7 @@ class _SpaceViewState extends State<SpaceView> {
             icon: Icons.send_outlined,
           ),
         if (spaceChild != null &&
-            (activeSpace?.canChangeStateEvent(EventTypes.spaceChild) ?? false))
+            (activeSpace?.canChangeStateEvent(EventTypes.SpaceChild) ?? false))
           SheetAction(
             key: SpaceChildContextAction.removeFromSpace,
             label: L10n.of(context)!.removeFromSpace,
@@ -278,10 +279,17 @@ class _SpaceViewState extends State<SpaceView> {
     if (activeSpaceId == null) {
       final rootSpaces = allSpaces
           .where(
-            (space) => !allSpaces.any(
-              (parentSpace) => parentSpace.spaceChildren
-                  .any((child) => child.roomId == space.id),
-            ),
+            (space) =>
+                !allSpaces.any(
+                  (parentSpace) => parentSpace.spaceChildren
+                      .any((child) => child.roomId == space.id),
+                ) &&
+                space
+                    .getLocalizedDisplayname(MatrixLocals(L10n.of(context)!))
+                    .toLowerCase()
+                    .contains(
+                      widget.controller.searchController.text.toLowerCase(),
+                    ),
           )
           .toList();
 
@@ -346,7 +354,7 @@ class _SpaceViewState extends State<SpaceView> {
         child: CustomScrollView(
           controller: widget.scrollController,
           slivers: [
-            ChatListHeader(controller: widget.controller),
+            ChatListHeader(controller: widget.controller, globalSearch: false),
             SliverAppBar(
               automaticallyImplyLeading: false,
               primary: false,
@@ -429,6 +437,7 @@ class _SpaceViewState extends State<SpaceView> {
                           onLongPress: () =>
                               _onSpaceChildContextMenu(spaceChild, room),
                           activeChat: widget.controller.activeChat == room.id,
+                          onTap: () => onChatTap(room, context),
                         );
                       }
                       final isSpace = spaceChild.roomType == 'm.space';
@@ -465,7 +474,7 @@ class _SpaceViewState extends State<SpaceView> {
                               onTap: () => _onJoinSpaceChild(spaceChild),
                             ),
                             if (activeSpace?.canChangeStateEvent(
-                                  EventTypes.spaceChild,
+                                  EventTypes.SpaceChild,
                                 ) ==
                                 true)
                               Material(
@@ -488,7 +497,8 @@ class _SpaceViewState extends State<SpaceView> {
                           L10n.of(context)!.chat;
                       if (widget.controller.isSearchMode &&
                           !name.toLowerCase().contains(
-                                widget.controller.searchController.text,
+                                widget.controller.searchController.text
+                                    .toLowerCase(),
                               )) {
                         return const SizedBox.shrink();
                       }

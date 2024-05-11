@@ -3332,6 +3332,126 @@
 	{},
 	"@signInWithPassword":
 	{},
+	"@addChatDescription": {
+    },
+    "@archiveRoomDescription": {
+    },
+    "@banUserDescription": {
+    },
+    "@chatDescription": {
+    },
+    "@chatDescriptionHasBeenChanged": {
+    },
+    "@chatPermissions": {
+    },
+    "@createGroup": {
+    },
+    "@directChat": {
+    },
+    "@emoteKeyboardNoRecents": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@exportEmotePack": {
+    },
+    "@hasKnocked": {
+        "placeholders": {
+            "user": {
+            }
+        }
+    },
+    "@importEmojis": {
+    },
+    "@importFromZipFile": {
+    },
+    "@importNow": {
+    },
+    "@invalidInput": {
+    },
+    "@invalidServerName": {
+    },
+    "@invite": {
+    },
+    "@inviteContactToGroupQuestion": {
+    },
+    "@inviteGroupChat": {
+    },
+    "@invitePrivateChat": {
+    },
+    "@kickUserDescription": {
+    },
+    "@learnMore": {
+    },
+    "@makeAdminDescription": {
+    },
+    "@messagesStyle": {
+    },
+    "@noChatDescriptionYet": {
+    },
+    "@notAnImage": {
+    },
+    "@optionalRedactReason": {
+    },
+    "@pleaseEnterANumber": {
+    },
+    "@profileNotFound": {
+    },
+    "@pushNotificationsNotAvailable": {
+    },
+    "@redactedBy": {
+        "placeholders": {
+            "username": {
+            }
+        },
+        "type": "text"
+    },
+    "@redactedByBecause": {
+        "placeholders": {
+            "reason": {
+            },
+            "username": {
+            }
+        },
+        "type": "text"
+    },
+    "@redactMessageDescription": {
+    },
+    "@removeDevicesDescription": {
+    },
+    "@replace": {
+    },
+    "@roomUpgradeDescription": {
+    },
+    "@sendTypingNotifications": {
+    },
+    "@setChatDescription": {
+    },
+    "@setColorTheme": {
+    },
+    "@setTheme": {
+    },
+    "@shareInviteLink": {
+    },
+    "@signInWith": {
+        "placeholders": {
+            "provider": {
+            }
+        },
+        "type": "text"
+    },
+    "@tryAgain": {
+    },
+    "@unbanUserDescription": {
+    },
+    "@wrongPinEntered": {
+        "placeholders": {
+            "seconds": {
+            }
+        },
+        "type": "text"
+    },
+    "notAnImage": "یک فایل تصویری نیست.",
 	"allRooms": "تمام چت‌های گروهی",
 	"continueWith": "ادامه دادن با:",
 	"openLinkInBrowser": "بازکردن پیوند در مرورگر",

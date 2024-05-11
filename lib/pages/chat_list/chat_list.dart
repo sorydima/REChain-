@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 
 import 'package:adaptive_dialog/adaptive_dialog.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
+import 'package:flutter_shortcuts/flutter_shortcuts.dart';
 import 'package:future_loading_dialog/future_loading_dialog.dart';
 import 'package:go_router/go_router.dart';
 import 'package:matrix/matrix.dart';
@@ -16,12 +17,11 @@ import 'package:uni_links/uni_links.dart';
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/config/themes.dart';
 import 'package:rechainonline/pages/chat_list/chat_list_view.dart';
-import 'package:rechainonline/pages/settings_security/settings_security.dart';
 import 'package:rechainonline/utils/localized_exception_extension.dart';
-import 'package:rechainonline/utils/matrix_sdk_extensions/client_stories_extension.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
 import '../../../utils/account_bundles.dart';
+import '../../config/setting_keys.dart';
 import '../../utils/matrix_sdk_extensions/matrix_file_extension.dart';
 import '../../utils/url_launcher.dart';
 import '../../utils/voip/callkeep_manager.dart';
@@ -85,15 +85,24 @@ class ChatListController extends State<ChatList>
 
   void resetActiveSpaceId() {
     setState(() {
+      selectedRoomIds.clear();
       activeSpaceId = null;
     });
   }
 
   void setActiveSpace(String? spaceId) {
     setState(() {
+      selectedRoomIds.clear();
       activeSpaceId = spaceId;
       activeFilter = ActiveFilter.spaces;
     });
+  }
+
+  void createNewSpace() async {
+    final spaceId = await context.push<String?>('/rooms/newspace');
+    if (spaceId != null) {
+      setActiveSpace(spaceId);
+    }
   }
 
   int get selectedIndex {
@@ -128,6 +137,7 @@ class ChatListController extends State<ChatList>
 
   void onDestinationSelected(int? i) {
     setState(() {
+      selectedRoomIds.clear();
       activeFilter = getActiveFilterByDestination(i);
     });
   }
@@ -141,11 +151,9 @@ class ChatListController extends State<ChatList>
       case ActiveFilter.allChats:
         return (room) => !room.isSpace;
       case ActiveFilter.groups:
-        return (room) =>
-            !room.isSpace && !room.isDirectChat;
+        return (room) => !room.isSpace && !room.isDirectChat;
       case ActiveFilter.messages:
-        return (room) =>
-            !room.isSpace && room.isDirectChat;
+        return (room) => !room.isSpace && room.isDirectChat;
       case ActiveFilter.spaces:
         return (r) => r.isSpace;
     }
@@ -208,12 +216,34 @@ class ChatListController extends State<ChatList>
     }
     SearchUserDirectoryResponse? userSearchResult;
     QueryPublicRoomsResponse? roomSearchResult;
+    final searchQuery = searchController.text.trim();
     try {
       roomSearchResult = await client.queryPublicRooms(
         server: searchServer,
-        filter: PublicRoomQueryFilter(genericSearchTerm: searchController.text),
+        filter: PublicRoomQueryFilter(genericSearchTerm: searchQuery),
         limit: 20,
       );
+
+      if (searchQuery.isValidMatrixId &&
+          searchQuery.sigil == '#' &&
+          roomSearchResult.chunk
+                  .any((room) => room.canonicalAlias == searchQuery) ==
+              false) {
+        final response = await client.getRoomIdByAlias(searchQuery);
+        final roomId = response.roomId;
+        if (roomId != null) {
+          roomSearchResult.chunk.add(
+            PublicRoomsChunk(
+              name: searchQuery,
+              guestCanJoin: false,
+              numJoinedMembers: 0,
+              roomId: roomId,
+              worldReadable: false,
+              canonicalAlias: searchQuery,
+            ),
+          );
+        }
+      }
       userSearchResult = await client.searchUserDirectory(
         searchController.text,
         limit: 20,
@@ -236,7 +266,7 @@ class ChatListController extends State<ChatList>
     });
   }
 
-  void onSearchEnter(String text) {
+  void onSearchEnter(String text, {bool globalSearch = true}) {
     if (text.isEmpty) {
       cancelSearch(unfocus: false);
       return;
@@ -246,7 +276,9 @@ class ChatListController extends State<ChatList>
       isSearchMode = true;
     });
     _coolDown?.cancel();
-    _coolDown = Timer(const Duration(milliseconds: 500), _search);
+    if (globalSearch) {
+      _coolDown = Timer(const Duration(milliseconds: 500), _search);
+    }
   }
 
   void startSearch() {
@@ -369,6 +401,16 @@ class ChatListController extends State<ChatList>
       rechainonlineChatApp.gotInitialLink = true;
       getInitialLink().then(_processIncomingUris);
     }
+
+    if (PlatformInfos.isAndroid) {
+      final shortcuts = FlutterShortcuts();
+      shortcuts.initialize().then(
+            (_) => shortcuts.listenAction((action) {
+              if (!mounted) return;
+              UrlLauncher(context, action).launchUrl();
+            }),
+          );
+    }
   }
 
   @override
@@ -482,27 +524,47 @@ class ChatListController extends State<ChatList>
     setState(() {});
   }
 
+  void dismissStatusList() async {
+    final result = await showOkCancelAlertDialog(
+      title: L10n.of(context)!.hidePresences,
+      context: context,
+    );
+    if (result == OkCancelResult.ok) {
+      await Matrix.of(context).store.setBool(SettingKeys.showPresences, false);
+      // AppConfig.showPresences = false;
+      setState(() {});
+    }
+  }
+
   void setStatus() async {
+    final client = Matrix.of(context).client;
+    final currentPresence = await client.fetchCurrentPresence(client.userID!);
     final input = await showTextInputDialog(
       useRootNavigator: false,
       context: context,
       title: L10n.of(context)!.setStatus,
+      message: L10n.of(context)!.leaveEmptyToClearStatus,
       okLabel: L10n.of(context)!.ok,
       cancelLabel: L10n.of(context)!.cancel,
       textFields: [
         DialogTextField(
           hintText: L10n.of(context)!.statusExampleMessage,
+          maxLines: 6,
+          minLines: 1,
+          maxLength: 255,
+          initialText: currentPresence.statusMsg,
         ),
       ],
     );
     if (input == null) return;
+    if (!mounted) return;
     await showFutureLoadingDialog(
       context: context,
-      future: () => Matrix.of(context).client.setPresence(
-            Matrix.of(context).client.userID!,
-            PresenceType.online,
-            statusMsg: input.single,
-          ),
+      future: () => client.setPresence(
+        client.userID!,
+        PresenceType.online,
+        statusMsg: input.single,
+      ),
     );
   }
 
@@ -582,6 +644,7 @@ class ChatListController extends State<ChatList>
     final client = Matrix.of(context).client;
     await client.roomsLoading;
     await client.accountDataLoading;
+    await client.userDeviceKeysLoading;
     if (client.prevBatch == null) {
       await client.onSync.stream.first;
 
@@ -700,13 +763,6 @@ class ChatListController extends State<ChatList>
     });
   }
 
-  void createNewSpace() async {
-    final spaceId = await context.push<String?>('/rooms/newspace');
-    if (spaceId != null) {
-      setActiveSpace(spaceId);
-    }
-  }
-
   @override
   Widget build(BuildContext context) => ChatListView(this);
 
@@ -720,8 +776,7 @@ class ChatListController extends State<ChatList>
     isTorBrowser = isTor;
   }
 
-  Future<void> dehydrate() =>
-      SettingsSecurityController.dehydrateDevice(context);
+  Future<void> dehydrate() => Matrix.of(context).dehydrateAction();
 }
 
 enum EditBundleAction { addToBundle, removeFromBundle }

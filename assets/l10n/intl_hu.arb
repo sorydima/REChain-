@@ -2436,6 +2436,941 @@
 		"type": "text",
 		"placeholders": {}
 	},
+	"@acceptedKeyVerification": {
+        "placeholders": {
+            "sender": {
+            }
+        },
+        "type": "text"
+    },
+    "@accessAndVisibility": {
+    },
+    "@accessAndVisibilityDescription": {
+    },
+    "@addChatDescription": {
+    },
+    "@addChatOrSubSpace": {
+    },
+    "@addToBundle": {
+    },
+    "@addToSpaceDescription": {
+    },
+    "@addWidget": {
+    },
+    "@allRooms": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@allSpaces": {
+    },
+    "@appearOnTop": {
+    },
+    "@appearOnTopDetails": {
+    },
+    "@appLockDescription": {
+    },
+    "@archiveRoomDescription": {
+    },
+    "@banUserDescription": {
+    },
+    "@block": {
+    },
+    "@blockedUsers": {
+    },
+    "@blockListDescription": {
+    },
+    "@blockUsername": {
+    },
+    "@bundleName": {
+    },
+    "@callingAccount": {
+    },
+    "@callingAccountDetails": {
+    },
+    "@callingPermissions": {
+    },
+    "@calls": {
+    },
+    "@canceledKeyVerification": {
+        "placeholders": {
+            "sender": {
+            }
+        },
+        "type": "text"
+    },
+    "@chatCanBeDiscoveredViaSearchOnServer": {
+        "placeholders": {
+            "server": {
+            }
+        },
+        "type": "text"
+    },
+    "@chatDescription": {
+    },
+    "@chatDescriptionHasBeenChanged": {
+    },
+    "@chatPermissions": {
+    },
+    "@commandHint_markasdm": {
+    },
+    "@commandHint_sendraw": {
+    },
+    "@completedKeyVerification": {
+        "placeholders": {
+            "sender": {
+            }
+        },
+        "type": "text"
+    },
+    "@confirmEventUnpin": {
+    },
+    "@countFiles": {
+        "placeholders": {
+            "count": {
+            }
+        }
+    },
+    "@createGroup": {
+    },
+    "@createGroupAndInviteUsers": {
+    },
+    "@createNewAddress": {
+    },
+    "@custom": {
+    },
+    "@customEmojisAndStickers": {
+    },
+    "@customEmojisAndStickersBody": {
+    },
+    "@databaseBuildErrorBody": {
+        "placeholders": {
+            "error": {
+            },
+            "url": {
+            }
+        },
+        "type": "text"
+    },
+    "@databaseMigrationBody": {
+    },
+    "@databaseMigrationTitle": {
+    },
+    "@decline": {
+    },
+    "@deviceKeys": {
+    },
+    "@directChat": {
+    },
+    "@disableEncryptionWarning": {
+    },
+    "@discover": {
+    },
+    "@dismiss": {
+    },
+    "@doNotShowAgain": {
+    },
+    "@editBundlesForAccount": {
+    },
+    "@emailOrUsername": {
+    },
+    "@emojis": {
+    },
+    "@emoteKeyboardNoRecents": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@enableMultiAccounts": {
+    },
+    "@encryptThisChat": {
+    },
+    "@enterRoom": {
+    },
+    "@enterSpace": {
+    },
+    "@errorAddingWidget": {
+    },
+    "@experimentalVideoCalls": {
+    },
+    "@exportEmotePack": {
+    },
+    "@fileHasBeenSavedAt": {
+        "placeholders": {
+            "path": {
+            }
+        },
+        "type": "text"
+    },
+    "@fileIsTooBigForServer": {
+    },
+    "@foregroundServiceRunning": {
+    },
+    "@formattedMessages": {
+    },
+    "@formattedMessagesDescription": {
+    },
+    "@forwardMessageTo": {
+        "placeholders": {
+            "roomName": {
+            }
+        },
+        "type": "text"
+    },
+    "@groupCanBeFoundViaSearch": {
+    },
+    "@groupName": {
+    },
+    "@hasKnocked": {
+        "placeholders": {
+            "user": {
+            }
+        }
+    },
+    "@hideInvalidOrUnknownMessageFormats": {
+    },
+    "@hideMemberChangesInPublicChatsBody": {
+    },
+    "@hidePresences": {
+    },
+    "@hideUnimportantStateEvents": {
+    },
+    "@hugContent": {
+        "placeholders": {
+            "senderName": {
+            }
+        },
+        "type": "text"
+    },
+    "@hydrateTorLong": {
+    },
+    "@importEmojis": {
+    },
+    "@importFromZipFile": {
+    },
+    "@importNow": {
+    },
+    "@incomingMessages": {
+    },
+    "@indexedDbErrorLong": {
+    },
+    "@indexedDbErrorTitle": {
+    },
+    "@initAppError": {
+    },
+    "@invalidInput": {
+    },
+    "@invalidServerName": {
+    },
+    "@invite": {
+    },
+    "@inviteContactToGroupQuestion": {
+    },
+    "@inviteGroupChat": {
+    },
+    "@invitePrivateChat": {
+    },
+    "@isReadyForKeyVerification": {
+        "placeholders": {
+            "sender": {
+            }
+        },
+        "type": "text"
+    },
+    "@joinSpace": {
+    },
+    "@jump": {
+    },
+    "@jumpToLastReadMessage": {
+    },
+    "@kickUserDescription": {
+    },
+    "@learnMore": {
+    },
+    "@leaveEmptyToClearStatus": {
+    },
+    "@makeAdminDescription": {
+    },
+    "@markAsRead": {
+    },
+    "@messageInfo": {
+    },
+    "@messagesStyle": {
+    },
+    "@messageType": {
+    },
+    "@newGroup": {
+    },
+    "@newPassword": {
+    },
+    "@newSpace": {
+    },
+    "@newSpaceDescription": {
+    },
+    "@nextAccount": {
+    },
+    "@noBackupWarning": {
+    },
+    "@noChatDescriptionYet": {
+    },
+    "@noDatabaseEncryption": {
+    },
+    "@noKeyForThisMessage": {
+    },
+    "@noOneCanJoin": {
+    },
+    "@noOtherDevicesFound": {
+    },
+    "@noPublicLinkHasBeenCreatedYet": {
+    },
+    "@notAnImage": {
+    },
+    "@nothingFound": {
+    },
+    "@notifyMeFor": {
+    },
+    "@noUsersFoundWithQuery": {
+        "placeholders": {
+            "query": {
+            }
+        },
+        "type": "text"
+    },
+    "@numChats": {
+        "placeholders": {
+            "number": {
+            }
+        },
+        "type": "number"
+    },
+    "@oneClientLoggedOut": {
+    },
+    "@openChat": {
+    },
+    "@openGallery": {
+    },
+    "@openLinkInBrowser": {
+    },
+    "@optionalRedactReason": {
+    },
+    "@otherCallingPermissions": {
+    },
+    "@overview": {
+    },
+    "@passwordIsWrong": {
+    },
+    "@passwordRecoverySettings": {
+    },
+    "@pinMessage": {
+    },
+    "@placeCall": {
+    },
+    "@pleaseChooseAPasscode": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@pleaseChooseAStrongPassword": {
+    },
+    "@pleaseClickOnLink": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@pleaseEnterANumber": {
+    },
+    "@pleaseEnterRecoveryKey": {
+    },
+    "@pleaseEnterRecoveryKeyDescription": {
+    },
+    "@pleaseEnterYourCurrentPassword": {
+    },
+    "@pleaseFollowInstructionsOnWeb": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@pleaseTryAgainLaterOrChooseDifferentServer": {
+    },
+    "@presencesToggle": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@presenceStyle": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@previousAccount": {
+    },
+    "@profileNotFound": {
+    },
+    "@publicChatAddresses": {
+    },
+    "@publicLink": {
+    },
+    "@publicSpaces": {
+    },
+    "@publish": {
+    },
+    "@pushNotificationsNotAvailable": {
+    },
+    "@pushRules": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@reactedWith": {
+        "placeholders": {
+            "reaction": {
+            },
+            "sender": {
+            }
+        },
+        "type": "text"
+    },
+    "@readUpToHere": {
+    },
+    "@recoveryKey": {
+    },
+    "@recoveryKeyLost": {
+    },
+    "@redactedBy": {
+        "placeholders": {
+            "username": {
+            }
+        },
+        "type": "text"
+    },
+    "@redactedByBecause": {
+        "placeholders": {
+            "reason": {
+            },
+            "username": {
+            }
+        },
+        "type": "text"
+    },
+    "@redactMessageDescription": {
+    },
+    "@removeDevicesDescription": {
+    },
+    "@removeFromBundle": {
+    },
+    "@removeFromSpace": {
+    },
+    "@removeYourAvatar": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@reopenChat": {
+    },
+    "@replace": {
+    },
+    "@replaceRoomWithNewerVersion": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@report": {
+    },
+    "@reportErrorDescription": {
+    },
+    "@reportUser": {
+    },
+    "@requestedKeyVerification": {
+        "placeholders": {
+            "sender": {
+            }
+        },
+        "type": "text"
+    },
+    "@restoreSessionBody": {
+        "placeholders": {
+            "error": {
+            },
+            "url": {
+            }
+        },
+        "type": "text"
+    },
+    "@roomUpgradeDescription": {
+    },
+    "@saveKeyManuallyDescription": {
+    },
+    "@screenSharingDetail": {
+    },
+    "@screenSharingTitle": {
+    },
+    "@searchChatsRooms": {
+    },
+    "@searchForUsers": {
+    },
+    "@select": {
+    },
+    "@sendAsText": {
+        "type": "text"
+    },
+    "@sender": {
+    },
+    "@sendReadReceipts": {
+    },
+    "@sendReadReceiptsDescription": {
+    },
+    "@sendTypingNotifications": {
+    },
+    "@sendTypingNotificationsDescription": {
+    },
+    "@separateChatTypes": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@serverRequiresEmail": {
+    },
+    "@sessionLostBody": {
+        "placeholders": {
+            "error": {
+            },
+            "url": {
+            }
+        },
+        "type": "text"
+    },
+    "@setAsCanonicalAlias": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@setChatDescription": {
+    },
+    "@setColorTheme": {
+    },
+    "@setCustomEmotes": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@setPermissionsLevel": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@setTheme": {
+    },
+    "@shareInviteLink": {
+    },
+    "@shareLocation": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@showPassword": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@signInWith": {
+        "placeholders": {
+            "provider": {
+            }
+        },
+        "type": "text"
+    },
+    "@signInWithPassword": {
+    },
+    "@singlesignon": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@sorryThatsNotPossible": {
+    },
+    "@spaceIsPublic": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@spaceName": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@start": {
+    },
+    "@startConversation": {
+    },
+    "@startedKeyVerification": {
+        "placeholders": {
+            "sender": {
+            }
+        },
+        "type": "text"
+    },
+    "@startFirstChat": {
+    },
+    "@status": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@stickers": {
+    },
+    "@storeInAndroidKeystore": {
+    },
+    "@storeInAppleKeyChain": {
+    },
+    "@storeInSecureStorageDescription": {
+    },
+    "@storeSecurlyOnThisDevice": {
+    },
+    "@subspace": {
+    },
+    "@supposedMxid": {
+        "placeholders": {
+            "mxid": {
+            }
+        },
+        "type": "text"
+    },
+    "@switchToAccount": {
+        "placeholders": {
+            "number": {
+            }
+        },
+        "type": "number"
+    },
+    "@synchronizingPleaseWait": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@thereAreCountUsersBlocked": {
+        "count": {
+        },
+        "type": "text"
+    },
+    "@thisDevice": {
+    },
+    "@time": {
+    },
+    "@toggleFavorite": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@toggleMuted": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@toggleUnread": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@tooManyRequestsWarning": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@transferFromAnotherDevice": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@transparent": {
+    },
+    "@tryAgain": {
+    },
+    "@unbanUserDescription": {
+    },
+    "@unlockOldMessages": {
+    },
+    "@unreadChatsInApp": {
+        "placeholders": {
+            "appname": {
+            },
+            "unread": {
+            }
+        },
+        "type": "text"
+    },
+    "@unsupportedAndroidVersion": {
+    },
+    "@unsupportedAndroidVersionLong": {
+    },
+    "@unverified": {
+    },
+    "@user": {
+    },
+    "@userRole": {
+    },
+    "@users": {
+    },
+    "@userWouldLikeToChangeTheChat": {
+        "placeholders": {
+            "user": {
+            }
+        }
+    },
+    "@verified": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@verifyOtherDevice": {
+    },
+    "@verifyOtherDeviceDescription": {
+    },
+    "@verifyOtherUser": {
+    },
+    "@verifyOtherUserDescription": {
+    },
+    "@videoCallsBetaWarning": {
+    },
+    "@videoWithSize": {
+        "placeholders": {
+            "size": {
+            }
+        },
+        "type": "text"
+    },
+    "@voiceCall": {
+    },
+    "@wasDirectChatDisplayName": {
+        "placeholders": {
+            "oldDisplayName": {
+            }
+        },
+        "type": "text"
+    },
+    "@whoCanPerformWhichAction": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@whyDoYouWantToReportThis": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@whyIsThisMessageEncrypted": {
+    },
+    "@widgetCustom": {
+    },
+    "@widgetEtherpad": {
+    },
+    "@widgetJitsi": {
+    },
+    "@widgetName": {
+    },
+    "@widgetNameError": {
+    },
+    "@widgetUrlError": {
+    },
+    "@widgetVideo": {
+    },
+    "@wipeChatBackup": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@wrongPinEntered": {
+        "placeholders": {
+            "seconds": {
+            }
+        },
+        "type": "text"
+    },
+    "@wrongRecoveryKey": {
+    },
+    "@youAcceptedTheInvitation": {
+    },
+    "@youBannedUser": {
+        "placeholders": {
+            "user": {
+            }
+        }
+    },
+    "@youHaveWithdrawnTheInvitationFor": {
+        "placeholders": {
+            "user": {
+            }
+        }
+    },
+    "@youInvitedBy": {
+        "placeholders": {
+            "user": {
+            }
+        }
+    },
+    "@youInvitedToBy": {
+        "placeholders": {
+            "alias": {
+            }
+        }
+    },
+    "@youInvitedUser": {
+        "placeholders": {
+            "user": {
+            }
+        }
+    },
+    "@youJoinedTheChat": {
+    },
+    "@youKicked": {
+        "placeholders": {
+            "user": {
+            }
+        }
+    },
+    "@youKickedAndBanned": {
+        "placeholders": {
+            "user": {
+            }
+        }
+    },
+    "@youRejectedTheInvitation": {
+    },
+    "@yourGlobalUserIdIs": {
+    },
+    "@yourPublicKey": {
+        "placeholders": {
+        },
+        "type": "text"
+    },
+    "@youUnbannedUser": {
+        "placeholders": {
+            "user": {
+            }
+        }
+    },
+    "acceptedKeyVerification": "{sender} elfogadta a kulcs megerősítést",
+    "accessAndVisibility": "Hozzáférés és láthatóság",
+    "accessAndVisibilityDescription": "Kinek engedélyezett a csevegéshez való csatlakozás és a csevegést hogyan lehet megtalálni.",
+    "addChatDescription": "Chat leírás hozzáadása...",
+    "addChatOrSubSpace": "Csevegés vagy al-tér hozzáadása",
+    "appLockDescription": "Alkalmazás zárolása PIN-kód használat hiányában",
+    "archiveRoomDescription": "A csevegés bekerül az archívumba. Más felhasználók látni fogják, hogy elhagyta a csevegést.",
+    "banUserDescription": "A felhasználó kitiltásra kerül a csevegésből, és nem fog tudni visszajönni egészen a kitiltás feloldásáig.",
+    "block": "blokkolás",
+    "blockedUsers": "Blokkolt felhasználók",
+    "blockListDescription": "Az Önt zavaró felhasználókat blokkolhatja. A blokkolt listán található felhasználóktól nem tud fogadni üzenetet vagy szoba meghívást.",
+    "blockUsername": "Felhasználónév mellőzése",
+    "calls": "Hívások",
+    "canceledKeyVerification": "{sender} nem fogadta el a kulcs megerősítést",
+    "chatCanBeDiscoveredViaSearchOnServer": "Csevegés felfedezhető a {server} szerveren történő kereséssel",
+    "chatDescription": "Csevegés leírás",
+    "chatDescriptionHasBeenChanged": "Csevegés leírás megváltozott",
+    "chatPermissions": "Csevegés engedélyek",
+    "commandHint_sendraw": "Tiszta json küldése",
+    "completedKeyVerification": "{sender} befejezte a kulcs megerősítést",
+    "createGroup": "Csoport létrehozása",
+    "createGroupAndInviteUsers": "Hozzon létre egy csoportot és hívjon meg felhasználókat",
+    "createNewAddress": "Új cím létrehozása",
+    "customEmojisAndStickers": "Egyedi emotikonok és matricák",
+    "customEmojisAndStickersBody": "Egyedi emotikonok és matricák létrehozása, amelyek bármely csevegésben használhatóak.",
+    "databaseBuildErrorBody": "Nem lehetséges az SQlite adatbázis létrehozása. Az app megpróbálja a régi típusú adatbázist használni. Kérem jelentse a hibát a fejlesztőknek a {url} linken. A hiba szövege a következő: {error}",
+    "databaseMigrationBody": "Kérem várjon. Ez igénybe vehet valamennyi időt.",
+    "databaseMigrationTitle": "Adatbázis optimalizálása",
+    "decline": "Elutasítás",
+    "directChat": "Közvetlen csevegés",
+    "emoteKeyboardNoRecents": "Nemrég használt emojik fognak itt megjelenni...",
+    "exportEmotePack": "Emojik exportálása zip-be",
+    "formattedMessages": "Formázott üzenetek",
+    "formattedMessagesDescription": "Formázott szöveg - mint például félkövér - megjelenítése \"markdown\"-al.",
+    "forwardMessageTo": "Üzenet továbbítása a {roomName} szobába?",
+    "groupCanBeFoundViaSearch": "Kereséssel megtalálhatja a kívánt csoportot",
+    "groupName": "Csoport név",
+    "hasKnocked": "{user} kopogott",
+    "hideInvalidOrUnknownMessageFormats": "Érvénytelen vagy ismeretlen üzenetformátum elrejtése",
+    "hideMemberChangesInPublicChatsBody": "Ne mutassa ha valaki be- vagy kilép a csevegésből az olvashatóság javítása végett.",
+    "hidePresences": "El kívánja menteni a státusz listát?",
+    "importEmojis": "Emojik importálása",
+    "importFromZipFile": "Importálás zip fájlból",
+    "importNow": "Importálás most",
+    "incomingMessages": "Bejövő üzenetek",
+    "initAppError": "Hiba lépett fel az app indítása során",
+    "invalidInput": "Hibás bevitel!",
+    "invalidServerName": "Hibás szerver név",
+    "invite": "Meghívás",
+    "inviteContactToGroupQuestion": "Meg kívánja hívni {contact}-ot a \"{groupName}\" csevegő csoportba?",
+    "inviteGroupChat": "📨 Meghívó a csoportba",
+    "invitePrivateChat": "📨 Meghívó csevegéshez",
+    "isReadyForKeyVerification": "{sender} készen áll a kulcs megerősítésre",
+    "joinSpace": "Csatlakozás a térre",
+    "kickUserDescription": "A felhasználó kirúgásra került a csevegésből, de nincs kitiltva. Publikus csevegés esetén a felhasználó bármikor visszatérhet.",
+    "learnMore": "Tudjon meg többet",
+    "leaveEmptyToClearStatus": "Hagyja üresen a státusz kitörléséhez.",
+    "makeAdminDescription": "Miután a felhasználóból admin lesz, nem fogja tudni visszavonni döntését, mivel azonos jogosultsági szinttel fognak rendelkezni.",
+    "messagesStyle": "Üzenetek:",
+    "newPassword": "Új jelszó",
+    "noChatDescriptionYet": "Még nincs csevegő szoba leírás.",
+    "noDatabaseEncryption": "Adatbázis titkosítása nem támogatott ezen a platformon",
+    "noOneCanJoin": "Senki sem csatlakozhat",
+    "noPublicLinkHasBeenCreatedYet": "Még nem lett létrehozva nyilvános link",
+    "notAnImage": "Nem kép fájl.",
+    "nothingFound": "Nincs találat...",
+    "notifyMeFor": "Értesítsen engem",
+    "noUsersFoundWithQuery": "\"{query}\" néven nem található felhasználó. Ellenőrizze nincs e elírás.",
+    "optionalRedactReason": "(Tetszőleges) A szerkesztés oka...",
+    "overview": "Áttekintés",
+    "passwordIsWrong": "A beírt jelszava hibás",
+    "passwordRecoverySettings": "Jelszó-helyreállítási beállítások",
+    "pleaseChooseAStrongPassword": "Kérem válasszon egy erős jelszót",
+    "pleaseEnterANumber": "Adjon meg egy 0-nál nagyobb számot",
+    "pleaseEnterYourCurrentPassword": "Kérem adja meg jelenlegi jelszavát",
+    "presencesToggle": "Mások státusz üzenetének megjelenítése",
+    "presenceStyle": "Jelenlét:",
+    "profileNotFound": "A felhasználó nem található a szerveren. Lehetséges, hogy csatlakozási problémák adódtak, vagy nem létezik a felhasználó.",
+    "publicChatAddresses": "Nyilvános csevegés címek",
+    "publicLink": "Nyilvános hivatkozás",
+    "publicSpaces": "Nyilvános terek",
+    "pushNotificationsNotAvailable": "Push értesítések nem elérhetőek",
+    "redactedBy": "{username} által szerkesztve",
+    "redactedByBecause": "{username} által szerkesztve, mivel: \"{reason}\"",
+    "redactMessageDescription": "A társalgásban összes résztvevője számára módosításra kerül az üzenet. Ez nem visszavonható.",
+    "removeDevicesDescription": "Ki fog jelentkezni a készülékről, és többi nem fog tudni fogadni üzeneteket.",
+    "replace": "Kicserél",
+    "requestedKeyVerification": "{sender} kulcs megerősítést kér",
+    "restoreSessionBody": "Megpróbálkozunk visszaállítani a munkamenetét egy korábbi mentésből. Kérem jelezze a hibát a fejlesztőknek a {url} címen. A hiba szövege a következő: {error}",
+    "roomUpgradeDescription": "A csevegés újra elkészül az új verzióval. Minden résztvevő értesítést kap, hogy át kell állniuk az új csevegésre. További információkért a szoba verziókról látogasson el a https://spec.matrix.org/latest/rooms/ címre",
+    "searchChatsRooms": "Keressen #csevegéseket, @felhasználókat...",
+    "searchForUsers": "Keressen @felhasználókat...",
+    "select": "Kiválaszt",
+    "sendReadReceipts": "Olvasási igazolás küldése",
+    "sendReadReceiptsDescription": "A csevegés többi tagja látja melyik üzenetet látta.",
+    "sendTypingNotifications": "Gépelési infó megjelenítése",
+    "sendTypingNotificationsDescription": "A csevegés többi tagja látja amikor gépel.",
+    "sessionLostBody": "A munkamenete elvesződött. Kérem jelentse ezt a fejlesztőknek a {url} címen. A hiba szövege a következő: {error}",
+    "setChatDescription": "Csevegés leírás beállítása",
+    "setColorTheme": "Szín téma beállítása:",
+    "setTheme": "Téma beállítása:",
+    "shareInviteLink": "Meghívó link megosztása",
+    "signInWith": "Bejelentkezés a következővel: {provider}",
+    "startConversation": "Beszélgetés indítása",
+    "startedKeyVerification": "{sender} elkezdte a kulcs megerősítést",
+    "stickers": "Matrica",
+    "subspace": "Al-tér",
+    "thereAreCountUsersBlocked": "Jelenleg {count} felhasználó van letiltva.",
+    "thisDevice": "Ez az eszköz:",
+    "transparent": "Átlátszó",
+    "tryAgain": "Próbálja újra",
+    "unbanUserDescription": "A felhasználó vissza tud jönni a csevegésbe ha akar.",
+    "unreadChatsInApp": "{appname}: {unread} olvasatlan csevegések",
+    "userRole": "Felhasználói szerep",
+    "userWouldLikeToChangeTheChat": "{user} szeretne csatlakozni a csevegéshez.",
+    "verifyOtherDevice": "🔐 Más eszköz megerősítése",
+    "verifyOtherDeviceDescription": "Amikor egy másik eszközt erősít meg, az eszközök kulcsokat cserélnek egymás között, ezáltal növelve az összbiztonságot. 💪 Amikor megkezdődik a folyamat, mind a két eszközön megjelenik egy felugró üzenet. Emojik és számok sorozata fog megjelenni, amit össze tud hasonlítani a két eszközön. Érdemes tehát mind a két eszközt a közelben tartani. 🤳",
+    "verifyOtherUser": "🔐 Más felhasználók igazolása",
+    "verifyOtherUserDescription": "Ha megerősít egy másik felhasználót, akkor teljesen biztos lehet abban kivel cseveg. 💪\n\nA megerősítési folyamat kezdetekor megjelenik egy felugró ablak mindkettejüknél. Ekkor egy emoji vagy szám sor összehasonlítási folyamat veszi kezdetét.\n\nA legpraktikusabb módja ennek, hogy találkozzanak, vagy videó hívás során beszéljék meg. 👭",
+    "wrongPinEntered": "Hibás pinkód került beírásra. Próbálja újra {seconds} mp múlva...",
+    "wrongRecoveryKey": "Sajnos, úgy tűnik hibásan adta meg a visszaállítási kulcsot.",
+    "youInvitedToBy": "📩 Meghívást kapott linken keresztül a következőhöz:\n{alias}",
+    "yourGlobalUserIdIs": "A globális felhasználó-ID-je: ",
 	"addDescription": "",
 	"addToBundle": "",
 	"addToSpaceDescription": "",

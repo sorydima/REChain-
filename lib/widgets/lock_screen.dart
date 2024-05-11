@@ -4,10 +4,8 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_gen/gen_l10n/l10n.dart';
 
-import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/config/themes.dart';
 import 'package:rechainonline/widgets/app_lock.dart';
-import 'package:rechainonline/widgets/theme_builder.dart';
 
 class LockScreen extends StatefulWidget {
   const LockScreen({super.key});
@@ -62,63 +60,50 @@ class _LockScreenState extends State<LockScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return ThemeBuilder(
-      builder: (context, themeMode, primaryColor) => MaterialApp(
-        title: AppConfig.applicationName,
-        themeMode: themeMode,
-        theme: rechainonlineThemes.buildTheme(context, Brightness.light, primaryColor),
-        darkTheme:
-            rechainonlineThemes.buildTheme(context, Brightness.dark, primaryColor),
-        localizationsDelegates: L10n.localizationsDelegates,
-        supportedLocales: L10n.supportedLocales,
-        home: Builder(
-          builder: (context) => Scaffold(
-            appBar: AppBar(
-              title: Text(L10n.of(context)!.pleaseEnterYourPin),
-              centerTitle: true,
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(L10n.of(context)!.pleaseEnterYourPin),
+        centerTitle: true,
+      ),
+      extendBodyBehindAppBar: true,
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(
+              maxWidth: rechainonlineThemes.columnWidth,
             ),
-            extendBodyBehindAppBar: true,
-            body: Center(
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: ConstrainedBox(
-                  constraints: const BoxConstraints(
-                    maxWidth: rechainonlineThemes.columnWidth,
-                  ),
-                  child: ListView(
-                    shrinkWrap: true,
-                    children: [
-                      Center(
-                        child: Image.asset(
-                          'assets/info-logo.png',
-                          width: 256,
-                        ),
-                      ),
-                      TextField(
-                        controller: _textEditingController,
-                        textInputAction: TextInputAction.done,
-                        keyboardType: TextInputType.number,
-                        obscureText: true,
-                        autofocus: true,
-                        textAlign: TextAlign.center,
-                        readOnly: _inputBlocked,
-                        onChanged: (_) => tryUnlock(context),
-                        onSubmitted: (_) => tryUnlock(context),
-                        style: const TextStyle(fontSize: 40),
-                        decoration: InputDecoration(
-                          errorText: _errorText,
-                          hintText: '****',
-                        ),
-                      ),
-                      if (_inputBlocked)
-                        const Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: LinearProgressIndicator(),
-                        ),
-                    ],
+            child: ListView(
+              shrinkWrap: true,
+              children: [
+                Center(
+                  child: Image.asset(
+                    'assets/info-logo.png',
+                    width: 256,
                   ),
                 ),
-              ),
+                TextField(
+                  controller: _textEditingController,
+                  textInputAction: TextInputAction.done,
+                  keyboardType: TextInputType.number,
+                  obscureText: true,
+                  autofocus: true,
+                  textAlign: TextAlign.center,
+                  readOnly: _inputBlocked,
+                  onChanged: (_) => tryUnlock(context),
+                  onSubmitted: (_) => tryUnlock(context),
+                  style: const TextStyle(fontSize: 40),
+                  decoration: InputDecoration(
+                    errorText: _errorText,
+                    hintText: '****',
+                  ),
+                ),
+                if (_inputBlocked)
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: LinearProgressIndicator(),
+                  ),
+              ],
             ),
           ),
         ),

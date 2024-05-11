@@ -18,7 +18,7 @@ import 'package:rechainonline/utils/custom_image_resizer.dart';
 import 'package:rechainonline/utils/init_with_restore.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/flutter_hive_collections_database.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
-import 'matrix_sdk_extensions/flutter_matrix_sdk_database_builder.dart';
+import 'matrix_sdk_extensions/flutter_matrix_dart_sdk_database/builder.dart';
 
 abstract class ClientManager {
   static const String clientNamespace = 'com.rechain.store.clients';
@@ -159,12 +159,10 @@ abstract class ClientManager {
       body,
       const NotificationDetails(
         android: AndroidNotificationDetails(
-          AppConfig.pushNotificationsChannelId,
-          AppConfig.pushNotificationsChannelName,
-          channelDescription: AppConfig.pushNotificationsChannelDescription,
-          importance: Importance.max,
+          'error_message',
+          'Error Messages',
+          importance: Importance.high,
           priority: Priority.max,
-          fullScreenIntent: true, // To show notification popup
         ),
         iOS: DarwinNotificationDetails(sound: 'notification.caf'),
       ),
