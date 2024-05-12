@@ -1,47 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="17">
-      <module name="android.audio_session" target="17" />
-      <module name="android.callkeep" target="17" />
-      <module name="android.desktop_drop" target="17" />
-      <module name="android.device_info_plus" target="17" />
-      <module name="android.dynamic_color" target="17" />
-      <module name="android.emoji_picker_flutter" target="17" />
-      <module name="android.file_picker" target="17" />
-      <module name="android.flutter_app_badger" target="17" />
-      <module name="android.flutter_foreground_task" target="17" />
-      <module name="android.flutter_keyboard_visibility" target="17" />
-      <module name="android.flutter_local_notifications" target="17" />
-      <module name="android.flutter_native_splash" target="17" />
-      <module name="android.flutter_olm" target="17" />
-      <module name="android.flutter_openssl_crypto" target="17" />
-      <module name="android.flutter_plugin_android_lifecycle" target="17" />
-      <module name="android.flutter_ringtone_player" target="17" />
-      <module name="android.flutter_secure_storage" target="17" />
-      <module name="android.flutter_web_auth_2" target="17" />
-      <module name="android.flutter_webrtc" target="17" />
-      <module name="android.geolocator_android" target="17" />
-      <module name="android.image_picker_android" target="17" />
-      <module name="android.integration_test" target="17" />
-      <module name="android.just_audio" target="17" />
-      <module name="android.native_imaging" target="17" />
-      <module name="android.package_info_plus" target="17" />
-      <module name="android.path_provider_android" target="17" />
-      <module name="android.permission_handler_android" target="17" />
-      <module name="android.qr_code_scanner" target="17" />
-      <module name="android.receive_sharing_intent" target="17" />
-      <module name="android.record" target="17" />
-      <module name="android.share_plus" target="17" />
-      <module name="android.shared_preferences_android" target="17" />
-      <module name="android.sqflite" target="17" />
+    <bytecodeTargetLevel target="1.8">
       <module name="android.sqflite_sqlcipher" target="17" />
-      <module name="android.uni_links" target="17" />
-      <module name="android.url_launcher_android" target="17" />
       <module name="android.vibration" target="17" />
-      <module name="android.video_compress" target="17" />
-      <module name="android.video_player_android" target="17" />
-      <module name="android.wakelock_plus" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>
