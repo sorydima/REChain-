@@ -187,7 +187,7 @@ PODS:
     - Flutter
   - wakelock_plus (0.0.1):
     - Flutter
-  - WebRTC-SDK (114.5735.02)
+  - WebRTC-SDK (114.5735.10)
 
 DEPENDENCIES:
   - audio_session (from `.symlinks/plugins/audio_session/ios`)
