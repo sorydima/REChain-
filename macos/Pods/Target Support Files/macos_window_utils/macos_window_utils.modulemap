@@ -1,6 +1,0 @@
-framework module macos_window_utils {
-  umbrella header "macos_window_utils-umbrella.h"
-
-  export *
-  module * { export * }
-}
