@@ -100,9 +100,9 @@ PODS:
     - Flutter
   - flutter_web_auth_2 (1.1.1):
     - Flutter
-  - flutter_webrtc (0.9.31):
+  - flutter_webrtc (0.9.36):
     - Flutter
-    - WebRTC-SDK (= 114.5735.02)
+    - WebRTC-SDK (= 114.5735.10)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
