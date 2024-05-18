@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "REChain ®️ 🪐"
-#define MyAppVersion "## v3.7.0 (1125)"
+#define MyAppVersion "## v4.0.0 (1132)"
 #define MyAppPublisher "REChain, Inc."
 #define MyAppURL "https://www.rechain.online/"
 #define MyAppExeName "REChain.exe"
@@ -24,15 +24,15 @@ AppUpdatesURL={#MyAppURL}
 DefaultDirName={autopf}\{#MyAppName}
 ChangesAssociations=yes
 DisableProgramGroupPage=yes
-LicenseFile=C:\rechainonline\REChain_EULA.txt
-InfoBeforeFile=C:\rechainonline\CHANGELOG.txt
-InfoAfterFile=C:\rechainonline\CHANGELOG.txt
+LicenseFile=C:\Users\msi\Documents\GitHub\REChain-\REChain_EULA.txt
+InfoBeforeFile=C:\Users\msi\Documents\GitHub\REChain-\CHANGELOG.txt
+InfoAfterFile=C:\Users\msi\Documents\GitHub\REChain-\CHANGELOG.txt
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog
-OutputDir=C:\Users\Администратор\Desktop
+OutputDir=C:\Users\msi\Documents\GitHub\REChain-\windows
 OutputBaseFilename=rechainonline
-SetupIconFile=C:\rechainonline\windows\runner\resources\app_icon.ico
+SetupIconFile=C:\Users\msi\Documents\GitHub\REChain-\windows\runner\resources\app_icon.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -69,8 +69,8 @@ Name: "ukrainian"; MessagesFile: "compiler:Languages\Ukrainian.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\rechainonline\build\windows\runner\Release\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\rechainonline\build\windows\runner\Release\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\msi\Documents\GitHub\REChain-\windows\release\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\msi\Documents\GitHub\REChain-\windows\release\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Registry]

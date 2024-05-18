@@ -1,4 +1,4 @@
-Most people know the REChain ®️ Platform as a secure collaboration and messaging app. They know what it looks like on their phone or laptop, appreciate that it’s end-to-end encrypted, and make increasing use of features like threads, polls and location-sharing!
+Most people know the REChain Platform as a secure collaboration and messaging app. They know what it looks like on their phone or laptop, appreciate that it is end-to-end encrypted, and make increasing use of features like threads, polls and location-sharing!
 
 Dream big! Stay safe! Stay true! Stay private! Stay tuned!
 
@@ -9,8 +9,8 @@ From the REChain dream team!
 Making the world a better place since 2017!
 
 Need help? Email us! A Dmitry Sorokin production.
-All rights reserved. Powered by REChain ®️
-Copyright © 2019-2024 REChain, Inc REChain ® is a registered trademark
+All rights reserved. Powered by REChain
+Copyright 2019-2024 REChain, Inc REChain is a registered trademark
 hr@rechain.email p2p@rechain.email pr@rechain.email 
 sorydima@rechain.email support@rechain.email sip@rechain.email 
 music@rechain.email cfa@rechain.email anti@rechain.email 
@@ -24,7 +24,7 @@ CHANGELOG:
 Design improvements and new advanced UI to manage rooms.
 
 - build: Fix Google Services patch!
-- build: Update Katya ® AI REChain Blockchain Node Network, Matrix, Flutter, Dart & others SDKs!
+- build: Update Katya AI REChain Blockchain Node Network, Matrix, Flutter, Dart & others SDKs!
 - build: Update to Flutter 3.19.6!
 - chore: Let error reporter fill out the bug report!
 - chore: More nicier event source display!
@@ -43,8 +43,8 @@ Design improvements and new advanced UI to manage rooms.
 #shotonkatyamobileos
 
 Need help? Email us! A Dmitry Sorokin production.
-All rights reserved. Powered by REChain ®️
-Copyright © 2019-2024 REChain, Inc REChain ® is a registered trademark
+All rights reserved. Powered by REChain
+Copyright 2019-2024 REChain, Inc REChain is a registered trademark
 hr@rechain.email p2p@rechain.email pr@rechain.email 
 sorydima@rechain.email support@rechain.email sip@rechain.email 
 music@rechain.email cfa@rechain.email anti@rechain.email 
