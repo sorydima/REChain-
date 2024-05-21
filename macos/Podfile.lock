@@ -23,7 +23,7 @@ PODS:
     - FlutterMacOS
   - flutter_webrtc (0.9.36):
     - FlutterMacOS
-    - WebRTC-SDK (= 114.5735.08)
+    - WebRTC-SDK (= 114.5735.10)
   - FlutterMacOS (1.0.0)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
@@ -73,7 +73,7 @@ PODS:
     - FlutterMacOS
   - wakelock_plus (0.0.1):
     - FlutterMacOS
-  - WebRTC-SDK (114.5735.08)
+  - WebRTC-SDK (114.5735.10)
   - window_to_front (0.0.1):
     - FlutterMacOS
 
