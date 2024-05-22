@@ -1,7 +1,7 @@
 name: rechainonline
 description: REChain.Online! - PRIVATE & SECURE FUTURE!
 publish_to: none
-version: 4.0.0+1139
+version: 4.0.0+1141
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
