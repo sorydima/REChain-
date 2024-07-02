@@ -13,21 +13,23 @@ Making the world a better place since 2017! ✅😼
 Need help? 🤔 Email us! 👇 A Dmitry Sorokin production.
 All rights reserved. Powered by REChain ®️ 🪐
 Copyright © 2019-2024 REChain, Inc REChain ® is a registered trademark
-hr@rechain.email p2p@rechain.email pr@rechain.email 
-sorydima@rechain.email support@rechain.email sip@rechain.email 
-music@rechain.email cfa@rechain.email anti@rechain.email 
-mot_cfa@rechain.email 
+hr@rechain.email p2p@rechain.email pr@rechain.email sorydima@rechain.email support@rechain.email sip@rechain.email music@rechain.email cfa@rechain.email anti@rechain.email mot_cfa@rechain.email rechainstore@rechain.email models@rechain.email dex@rechain.email email@rechain.email musicdapp@rechain.email pitomec@rechain.email
 Please allow anywhere from 1 to 5 business days for E-mail responses! 💌
 Our Stats! 👀 At the end of 2023, the number of downloads from the Open-Source Places, Apple AppStore, Google Play Market, and the REChain.Store ✨ exceeded 29 million downloads. 😈 👀
 
 CHANGELOG:
 
-## v@4.0.0 (1132)
+## v@4.0.1 (1140)
+
+We present a new node .city (matrix.tanya.city), which gives you the opportunity to plunge into a completely new world of DAO based on our own network Katya AI REChain Blockchain Node Network, as well as build your own cities, matrix spaces, communities, commodities, create!
+
+You could check: https://tanechca.online for more details and defaults!
+
 Design improvements and new advanced UI to manage rooms.
 
 - build: Fix Google Services patch!
 - build: Update Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network, Matrix, Flutter, Dart & others SDKs!
-- build: Update to Flutter 3.19.6!
+- build: Update to Flutter 3.22.2!
 - chore: Let error reporter fill out the bug report!
 - chore: More nicier event source display!
 - chore: Update 'user has knocked' localization with emoji!
@@ -47,10 +49,7 @@ Design improvements and new advanced UI to manage rooms.
 Need help? 🤔 Email us! 👇 A Dmitry Sorokin production.
 All rights reserved. Powered by REChain ®️ 🪐
 Copyright © 2019-2024 REChain, Inc REChain ® is a registered trademark
-hr@rechain.email p2p@rechain.email pr@rechain.email 
-sorydima@rechain.email support@rechain.email sip@rechain.email 
-music@rechain.email cfa@rechain.email anti@rechain.email 
-mot_cfa@rechain.email 
+hr@rechain.email p2p@rechain.email pr@rechain.email sorydima@rechain.email support@rechain.email sip@rechain.email music@rechain.email cfa@rechain.email anti@rechain.email mot_cfa@rechain.email rechainstore@rechain.email models@rechain.email dex@rechain.email email@rechain.email musicdapp@rechain.email pitomec@rechain.email
 Please allow anywhere from 1 to 5 business days for E-mail responses! 💌
 Our Stats! 👀 At the end of 2023, the number of downloads from the Open-Source Places, Apple AppStore, Google Play Market, and the REChain.Store ✨ exceeded 29 million downloads. 😈 👀
 
