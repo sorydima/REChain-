@@ -106,9 +106,6 @@ REChain.Online sets the `event_id_only` flag at the Katya ® 👽 AI 🧠 REChai
 Need help? 🤔 Email us! 👇 A Dmitry Sorokin production.
 All rights reserved. Powered by REChain ®️ 🪐
 Copyright © 2019-2024 REChain, Inc REChain ® is a registered trademark
-hr@rechain.email p2p@rechain.email pr@rechain.email 
-sorydima@rechain.email support@rechain.email sip@rechain.email 
-music@rechain.email cfa@rechain.email anti@rechain.email 
-mot_cfa@rechain.email 
+hr@rechain.email p2p@rechain.email pr@rechain.email sorydima@rechain.email support@rechain.email sip@rechain.email music@rechain.email cfa@rechain.email anti@rechain.email mot_cfa@rechain.email rechainstore@rechain.email models@rechain.email dex@rechain.email email@rechain.email musicdapp@rechain.email pitomec@rechain.email
 Please allow anywhere from 1 to 5 business days for E-mail responses! 💌
 Our Stats! 👀 At the end of 2023, the number of downloads from the Open-Source Places, Apple AppStore, Google Play Market, and the REChain.Store ✨ exceeded 29 million downloads. 😈 👀
