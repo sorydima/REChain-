@@ -7,7 +7,7 @@
 ### Links:
 
 - 🌍 [[Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network] Join the community!](https://matrix.to/#/#chatting:matrix.katya.wtf)
-- 👀 [[Launch dAPP on CodeMagic!] Launch dAPP on CodeMagic!](https://rechain.codemagic.app)
+- 👀 [[DAPP!] Launch dAPP on CodeMagic!](https://rechain.codemagic.app)
 
 ### Our Goal:
 
