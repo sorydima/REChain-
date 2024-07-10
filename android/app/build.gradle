@@ -87,6 +87,8 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.google.firebase:firebase-messaging:19.0.1'
     implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'com.huawei.agconnect:agconnect-core:1.5.2.300'
 }
 
 apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.huawei.agconnect'
