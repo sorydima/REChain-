@@ -27,6 +27,8 @@ class StickerPickerDialogState extends State<StickerPickerDialog> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     final stickerPacks = widget.room.getImagePacks(ImagePackUsage.sticker);
     final packSlugs = stickerPacks.keys.toList();
 
@@ -100,7 +102,7 @@ class StickerPickerDialogState extends State<StickerPickerDialog> {
     };
 
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.onInverseSurface,
+      backgroundColor: theme.colorScheme.onInverseSurface,
       body: SizedBox(
         width: double.maxFinite,
         child: CustomScrollView(
@@ -134,7 +136,7 @@ class StickerPickerDialogState extends State<StickerPickerDialog> {
                       OutlinedButton.icon(
                         onPressed: () => UrlLauncher(
                           context,
-                          'https://matrix.to/#/#chatting:matrix.katya.wtf',
+                          'https://matrix.to/#/#sticks:matrix.tanya.city',
                         ).launchUrl(),
                         icon: const Icon(Icons.explore_outlined),
                         label: Text(L10n.of(context)!.discover),

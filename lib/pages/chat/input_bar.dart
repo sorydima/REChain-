@@ -9,7 +9,6 @@ import 'package:pasteboard/pasteboard.dart';
 import 'package:slugify/slugify.dart';
 
 import 'package:rechainonline/config/app_config.dart';
-import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_file_extension.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
 import 'package:rechainonline/widgets/mxc_image.dart';
 import '../../widgets/avatar.dart';
@@ -56,7 +55,7 @@ class InputBar extends StatelessWidget {
     }
     final searchText =
         controller!.text.substring(0, controller!.selection.baseOffset);
-    final List<Map<String, String?>> ret = <Map<String, String?>>[];
+    final ret = <Map<String, String?>>[];
     const maxResults = 30;
 
     final commandMatch = RegExp(r'^/(\w*)$').firstMatch(searchText);
@@ -222,6 +221,7 @@ class InputBar extends StatelessWidget {
     Map<String, String?> suggestion,
     Client? client,
   ) {
+    final theme = Theme.of(context);
     const size = 30.0;
     const padding = EdgeInsets.all(4.0);
     if (suggestion['type'] == 'command') {
@@ -243,7 +243,7 @@ class InputBar extends StatelessWidget {
                 hint,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
-                style: Theme.of(context).textTheme.bodySmall,
+                style: theme.textTheme.bodySmall,
               ),
             ],
           ),
@@ -465,8 +465,11 @@ class InputBar extends StatelessWidget {
                   mimeType: content.mimeType,
                   bytes: data,
                   name: content.uri.split('/').last,
-                ).detectFileType;
-                room.sendFileEvent(file, shrinkImageMaxDimension: 1600);
+                );
+                room.sendFileEvent(
+                  file,
+                  shrinkImageMaxDimension: 1600,
+                );
               },
             ),
             minLines: minLines,
@@ -474,6 +477,9 @@ class InputBar extends StatelessWidget {
             keyboardType: keyboardType!,
             textInputAction: textInputAction,
             autofocus: autofocus!,
+            inputFormatters: [
+              LengthLimitingTextInputFormatter((maxPDUSize / 3).floor()),
+            ],
             onSubmitted: (text) {
               // fix for library for now
               // it sets the types for the callback incorrectly

@@ -4,23 +4,34 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:matrix/matrix.dart';
+import 'package:opus_caf_converter_dart/opus_caf_converter_dart.dart';
 import 'package:path_provider/path_provider.dart';
 
+import 'package:rechainonline/config/app_config.dart';
+import 'package:rechainonline/config/themes.dart';
 import 'package:rechainonline/utils/error_reporter.dart';
 import 'package:rechainonline/utils/localized_exception_extension.dart';
+import 'package:rechainonline/utils/url_launcher.dart';
 import '../../../utils/matrix_sdk_extensions/event_extension.dart';
 
 class AudioPlayerWidget extends StatefulWidget {
   final Color color;
+  final double fontSize;
   final Event event;
 
   static String? currentId;
 
   static const int wavesCount = 40;
 
-  const AudioPlayerWidget(this.event, {this.color = Colors.black, super.key});
+  const AudioPlayerWidget(
+    this.event, {
+    this.color = Colors.black,
+    required this.fontSize,
+    super.key,
+  });
 
   @override
   AudioPlayerState createState() => AudioPlayerState();
@@ -38,8 +49,8 @@ class AudioPlayerState extends State<AudioPlayerWidget> {
   StreamSubscription? onPlayerError;
 
   String? statusText;
-  int currentPosition = 0;
-  double maxPosition = 0;
+  double currentPosition = 0;
+  double maxPosition = 1;
 
   MatrixFile? matrixFile;
   File? audioFile;
@@ -57,6 +68,14 @@ class AudioPlayerState extends State<AudioPlayerWidget> {
     super.dispose();
   }
 
+  void _startAction() {
+    if (status == AudioPlayerStatus.downloaded) {
+      _playAction();
+    } else {
+      _downloadAction();
+    }
+  }
+
   Future<void> _downloadAction() async {
     if (status != AudioPlayerStatus.notDownloaded) return;
     setState(() => status = AudioPlayerStatus.downloading);
@@ -70,7 +89,18 @@ class AudioPlayerState extends State<AudioPlayerWidget> {
           widget.event.attachmentOrThumbnailMxcUrl()!.pathSegments.last,
         );
         file = File('${tempDir.path}/${fileName}_${matrixFile.name}');
+
         await file.writeAsBytes(matrixFile.bytes);
+
+        if (Platform.isIOS &&
+            matrixFile.mimeType.toLowerCase() == 'audio/ogg') {
+          Logs().v('Convert ogg audio file for iOS...');
+          final convertedFile = File('${file.path}.caf');
+          if (await convertedFile.exists() == false) {
+            OpusCaf().convertOpusToCaf(file.path, convertedFile.path);
+          }
+          file = convertedFile;
+        }
       }
 
       setState(() {
@@ -113,9 +143,7 @@ class AudioPlayerState extends State<AudioPlayerWidget> {
       setState(() {
         statusText =
             '${state.inMinutes.toString().padLeft(2, '0')}:${(state.inSeconds % 60).toString().padLeft(2, '0')}';
-        currentPosition = ((state.inMilliseconds.toDouble() / maxPosition) *
-                AudioPlayerWidget.wavesCount)
-            .round();
+        currentPosition = state.inMilliseconds.toDouble();
       });
       if (state.inMilliseconds.toDouble() == maxPosition) {
         audioPlayer.stop();
@@ -179,6 +207,9 @@ class AudioPlayerState extends State<AudioPlayerWidget> {
     if (audioPlayer == null) return;
     switch (audioPlayer.speed) {
       case 1.0:
+        await audioPlayer.setSpeed(1.25);
+        break;
+      case 1.25:
         await audioPlayer.setSpeed(1.5);
         break;
       case 1.5:
@@ -203,115 +234,164 @@ class AudioPlayerState extends State<AudioPlayerWidget> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     final statusText = this.statusText ??= _durationString ?? '00:00';
     final audioPlayer = this.audioPlayer;
+
+    final body = widget.event.content.tryGet<String>('body') ??
+        widget.event.content.tryGet<String>('filename');
+    final displayBody = body != null &&
+        body.isNotEmpty &&
+        widget.event.content['org.matrix.msc1767.audio'] == null;
+
+    final wavePosition =
+        (currentPosition / maxPosition) * AudioPlayerWidget.wavesCount;
+
+    final fontSize = 12 * AppConfig.fontSizeFactor;
+
     return Padding(
-      padding: const EdgeInsets.all(16),
-      child: Row(
+      padding: const EdgeInsets.all(12.0),
+      child: Column(
         mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          SizedBox(
-            width: buttonSize,
-            height: buttonSize,
-            child: status == AudioPlayerStatus.downloading
-                ? CircularProgressIndicator(strokeWidth: 2, color: widget.color)
-                : InkWell(
-                    borderRadius: BorderRadius.circular(64),
-                    child: Material(
-                      color: widget.color.withAlpha(64),
-                      borderRadius: BorderRadius.circular(64),
-                      child: Icon(
-                        audioPlayer?.playerState.playing == true
-                            ? Icons.pause_outlined
-                            : Icons.play_arrow_outlined,
-                        color: widget.color,
-                      ),
-                    ),
-                    onLongPress: () => widget.event.saveFile(context),
-                    onTap: () {
-                      if (status == AudioPlayerStatus.downloaded) {
-                        _playAction();
-                      } else {
-                        _downloadAction();
-                      }
-                    },
-                  ),
-          ),
-          const SizedBox(width: 8),
-          Expanded(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ConstrainedBox(
+            constraints:
+                const BoxConstraints(maxWidth: rechainonlineThemes.columnWidth),
             child: Row(
-              children: [
-                for (var i = 0; i < AudioPlayerWidget.wavesCount; i++)
-                  Expanded(
-                    child: GestureDetector(
-                      onTapDown: (_) => audioPlayer?.seek(
-                        Duration(
-                          milliseconds:
-                              (maxPosition / AudioPlayerWidget.wavesCount)
-                                      .round() *
-                                  i,
-                        ),
-                      ),
-                      child: Container(
-                        height: 32,
-                        alignment: Alignment.center,
-                        child: Opacity(
-                          opacity: currentPosition > i ? 1 : 0.5,
-                          child: Container(
-                            margin: const EdgeInsets.symmetric(horizontal: 1),
-                            decoration: BoxDecoration(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                SizedBox(
+                  width: buttonSize,
+                  height: buttonSize,
+                  child: status == AudioPlayerStatus.downloading
+                      ? CircularProgressIndicator(
+                          strokeWidth: 2,
+                          color: widget.color,
+                        )
+                      : InkWell(
+                          borderRadius: BorderRadius.circular(64),
+                          onLongPress: () => widget.event.saveFile(context),
+                          onTap: _startAction,
+                          child: Material(
+                            color: widget.color.withAlpha(64),
+                            borderRadius: BorderRadius.circular(64),
+                            child: Icon(
+                              audioPlayer?.playerState.playing == true
+                                  ? Icons.pause_outlined
+                                  : Icons.play_arrow_outlined,
                               color: widget.color,
-                              borderRadius: BorderRadius.circular(64),
                             ),
-                            height: 32 * (waveform[i] / 1024),
                           ),
                         ),
+                ),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Stack(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                        child: Row(
+                          children: [
+                            for (var i = 0;
+                                i < AudioPlayerWidget.wavesCount;
+                                i++)
+                              Expanded(
+                                child: Container(
+                                  height: 32,
+                                  alignment: Alignment.center,
+                                  child: Container(
+                                    margin: const EdgeInsets.symmetric(
+                                      horizontal: 1,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      color: i < wavePosition
+                                          ? widget.color
+                                          : widget.color.withAlpha(128),
+                                      borderRadius: BorderRadius.circular(64),
+                                    ),
+                                    height: 32 * (waveform[i] / 1024),
+                                  ),
+                                ),
+                              ),
+                          ],
+                        ),
                       ),
+                      SizedBox(
+                        height: 32,
+                        child: Slider(
+                          thumbColor: widget.event.senderId ==
+                                  widget.event.room.client.userID
+                              ? theme.colorScheme.onPrimary
+                              : theme.colorScheme.primary,
+                          activeColor: Colors.transparent,
+                          inactiveColor: Colors.transparent,
+                          max: maxPosition,
+                          value: currentPosition,
+                          onChanged: (position) => audioPlayer == null
+                              ? _startAction()
+                              : audioPlayer.seek(
+                                  Duration(milliseconds: position.round()),
+                                ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(width: 8),
+                SizedBox(
+                  width: 36,
+                  child: Text(
+                    statusText,
+                    style: TextStyle(
+                      color: widget.color,
+                      fontSize: 12,
                     ),
                   ),
-              ],
-            ),
-          ),
-          const SizedBox(width: 8),
-          Container(
-            alignment: Alignment.centerRight,
-            width: 42,
-            child: Text(
-              statusText,
-              style: TextStyle(
-                color: widget.color,
-              ),
-            ),
-          ),
-          const SizedBox(width: 4),
-          Stack(
-            children: [
-              SizedBox(
-                width: buttonSize,
-                height: buttonSize,
-                child: InkWell(
-                  splashColor: widget.color.withAlpha(128),
-                  borderRadius: BorderRadius.circular(64),
-                  onTap: audioPlayer == null ? null : _toggleSpeed,
-                  child: Icon(Icons.mic_none_outlined, color: widget.color),
                 ),
-              ),
-              if (audioPlayer != null)
-                Positioned(
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
-                  child: Text(
-                    '${audioPlayer.speed.toString()}x',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 9.0,
+                const SizedBox(width: 8),
+                Badge(
+                  isLabelVisible: audioPlayer != null,
+                  label: audioPlayer == null
+                      ? null
+                      : Text(
+                          '${audioPlayer.speed.toString()}x',
+                        ),
+                  backgroundColor: theme.colorScheme.secondary,
+                  textColor: theme.colorScheme.onSecondary,
+                  child: InkWell(
+                    splashColor: widget.color.withAlpha(128),
+                    borderRadius: BorderRadius.circular(64),
+                    onTap: audioPlayer == null ? null : _toggleSpeed,
+                    child: Icon(
+                      Icons.mic_none_outlined,
                       color: widget.color,
                     ),
                   ),
                 ),
-            ],
+                const SizedBox(width: 8),
+              ],
+            ),
           ),
+          if (displayBody) ...[
+            const SizedBox(height: 8),
+            Linkify(
+              text: body,
+              style: TextStyle(
+                color: widget.color,
+                fontSize: fontSize,
+              ),
+              options: const LinkifyOptions(humanize: false),
+              linkStyle: TextStyle(
+                color: widget.color.withAlpha(150),
+                fontSize: fontSize,
+                decoration: TextDecoration.underline,
+                decorationColor: widget.color.withAlpha(150),
+              ),
+              onOpen: (url) => UrlLauncher(context, url.url).launchUrl(),
+            ),
+          ],
         ],
       ),
     );

@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+  "description": "REChain prediction markets",
+  "homepage_url": "https://rechain.online",
+  "source_url": "",
+  "field_descriptions": {
+    "define": "Define assets",
+    "to": "Address to send tokens to",
+    "type": "Type of tokens to buy",
+    "claim_profit": "Claim the winnings, set to 1",
+    "add_liquidity": "Add liquidity, set to 1",
+    "yes_amount": "Amount of YES tokens to buy",
+    "no_amount": "Amount of NO tokens to buy",
+    "draw_amount": "Amount of DRAW tokens to buy",
+    "min_expected_amount": "Minimum amount to receive, otherwise revert",
+    "yes_amount_ratio": "The share allocated to YES tokens",
+    "no_amount_ratio": "The share allocated to YES tokens",
+    "commit": "Record the outcome of the event"
+  }
+}

@@ -127,11 +127,12 @@ class UserBottomSheetController extends State<UserBottomSheet> {
           textFields: [DialogTextField(hintText: L10n.of(context)!.reason)],
         );
         if (reason == null || reason.single.isEmpty) return;
+
         final result = await showFutureLoadingDialog(
           context: context,
           future: () => Matrix.of(widget.outerContext).client.reportContent(
-                user.roomId!,
-                user.eventId,
+                user.room.id,
+                user.id,
                 reason: reason.single,
                 score: score,
               ),
@@ -222,6 +223,45 @@ class UserBottomSheetController extends State<UserBottomSheet> {
         final userId = user?.id ?? widget.profile?.userId;
         widget.outerContext
             .go('/rooms/settings/security/ignorelist', extra: userId);
+    }
+  }
+
+  bool isSending = false;
+
+  Object? sendError;
+
+  final TextEditingController sendController = TextEditingController();
+
+  void sendAction([_]) async {
+    final userId = widget.user?.id ?? widget.profile?.userId;
+    final client = Matrix.of(widget.outerContext).client;
+    if (userId == null) throw ('user or profile must not be null!');
+
+    final input = sendController.text.trim();
+    if (input.isEmpty) return;
+
+    setState(() {
+      isSending = true;
+      sendError = null;
+    });
+    try {
+      final roomId = await client.startDirectChat(userId);
+      if (!mounted) return;
+      final room = client.getRoomById(roomId);
+      if (room == null) {
+        throw ('DM Room found or created but room not found in client');
+      }
+      await room.sendTextEvent(input);
+      setState(() {
+        isSending = false;
+        sendController.clear();
+      });
+    } catch (e, s) {
+      Logs().d('Unable to send message', e, s);
+      setState(() {
+        isSending = false;
+        sendError = e;
+      });
     }
   }
 

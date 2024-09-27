@@ -1,7 +1,8 @@
 name: rechainonline
-description: REChain.Online! - PRIVATE & SECURE FUTURE!
+description: REChain v4.1.1 brings a sleek redesign with filter chips, OGG audio support on iOS, and improved security through authenticated media endpoints for Matrix SDK v1.11+.
 publish_to: none
-version: 4.0.1+1140
+# On version bump also increase the build number for F-Droid
+version: 4.1.1+1141
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
@@ -16,42 +17,43 @@ dependencies:
   callkeep: ^0.3.2
   chewie: ^1.8.1
   collection: ^1.18.0
+  cross_file: ^0.3.4+2
   cupertino_icons: any
   desktop_drop: ^0.4.4
   desktop_notifications: ^0.6.3
   device_info_plus: ^10.0.1
   dynamic_color: ^1.7.0
   emoji_picker_flutter: ^2.1.1
-  emoji_proposal: ^0.0.1
   emojis: ^0.9.9
   #fcm_shared_isolate: ^0.1.0
-  file_picker: ^8.0.1
+  file_picker: ^8.1.2
   flutter:
     sdk: flutter
   flutter_app_badger: ^1.5.0
-  flutter_cache_manager: ^3.3.1
+  flutter_cache_manager: ^3.4.1
   flutter_foreground_task: ^6.1.3
   flutter_highlighter: ^0.1.1
   flutter_html: ^3.0.0-beta.2
   flutter_html_table: ^3.0.0-beta.2
   flutter_linkify: ^6.0.0
-  flutter_local_notifications: ^17.0.0
+  flutter_local_notifications: ^17.2.1+1
   flutter_localizations:
     sdk: flutter
   flutter_map: ^6.1.0
   flutter_math_fork: ^0.7.2
-  flutter_olm: 1.3.2 # Keep in sync with scripts/prepare-web.sh ! 1.4.0 does currently not build on Android
+  flutter_olm: 1.3.2
   flutter_openssl_crypto: ^0.3.0
   flutter_ringtone_player: ^4.0.0+2
   flutter_secure_storage: ^9.0.0
   flutter_shortcuts:
-    git: https://github.com/krille-chan/flutter_shortcuts.git
+    git: https://github.com/sorydima/Flutter-ShortCuts.git
   flutter_typeahead: ^5.2.0
   flutter_web_auth_2: ^3.1.1
-  flutter_webrtc: ^0.10.3
+  flutter_webrtc: ^0.11.7
   future_loading_dialog: ^0.3.0
   geolocator: ^7.6.2
   go_router: ^14.0.1
+  handy_window: ^0.4.0
   hive: ^2.2.3
   hive_flutter: ^1.1.0
   html: ^0.15.4
@@ -59,13 +61,15 @@ dependencies:
   image: ^4.1.7
   image_picker: ^1.1.0
   intl: any
-  just_audio: ^0.9.37
+  just_audio: ^0.9.39
   keyboard_shortcuts: ^0.1.4
   latlong2: ^0.9.1
   linkify: ^5.0.0
-  matrix: ^0.28.1
-  native_imaging: ^0.1.0
-  package_info_plus: ^6.0.0
+  matrix: ^0.33.0
+  mime: ^1.0.6
+  native_imaging: ^0.1.1
+  opus_caf_converter_dart: ^1.0.1
+  package_info_plus: ^8.0.2
   pasteboard: ^0.2.0
   path: ^1.9.0
   path_provider: ^2.1.2
@@ -75,9 +79,9 @@ dependencies:
   punycode: ^1.0.0
   qr_code_scanner: ^1.0.1
   receive_sharing_intent: 1.4.5 # Update needs more work
-  record: 4.4.4 # Upgrade to 5 currently breaks playing on iOS
+  record: ^5.1.2
   scroll_to_index: ^3.0.1
-  share_plus: ^9.0.0
+  share_plus: ^10.0.2
   shared_preferences: ^2.2.0 # Pinned because https://github.com/flutter/flutter/issues/118401
   slugify: ^2.0.0
   sqflite_common_ffi: ^2.3.3
@@ -88,7 +92,7 @@ dependencies:
   unifiedpush: ^5.0.1
   universal_html: ^2.2.4
   url_launcher: ^6.2.5
-  video_compress: ^3.1.2
+  video_compress: ^3.1.3
   video_player: ^2.8.5
   wakelock_plus: ^1.2.2
   webrtc_interface: ^1.0.13
@@ -137,7 +141,7 @@ flutter:
 msix_config:
   display_name: REChain
   publisher_display_name: REChain
-  publisher: CN=REChain.Online, O=Need help? Email us! A Dmitry Sorokin production. All rights reserved. Powered by REChain. Copyright © 2019-2024 REChain, Inc REChain ® is a registered trademark hr@rechain.email p2p@rechain.email pr@rechain.email sorydima@rechain.email support@rechain.email sip@rechain.email music@rechain.email Please allow anywhere from 1 to 5 business days for E-mail responses!, L=REChain.Online, S=Internet, C=EU
+  publisher: CN=REChain.Online, O=Need help? Email us! A Dmitry Sorokin production. All rights reserved. Powered by REChain. Copyright © 2019-2024 REChain, Inc REChain ® is a registered trademark  hr@adminmarina.ru p2p@adminmarina.ru pr@adminmarina.ru sorydima@adminmarina.ru support@adminmarina.ru sip@adminmarina.ru music@adminmarina.ru cfa@adminmarina.ru anti@adminmarina.ru mot_cfa@adminmarina.ru rechainstore@adminmarina.ru models@adminmarina.ru dex@adminmarina.ru email@adminmarina.ru musicdapp@adminmarina.ru pitomec@adminmarina.ru delus@adminmarina.ru gateway@adminmarina.ru husco@adminmarina.ru info@adminmarina.ru maring@adminmarina.ru modus@adminmarina.ru rechainnetworkhost@adminmarina.ru tanyacity@adminmarina.ru support@xn--90ao4a.tech Please allow anywhere from 1 to 5 business days for E-mail responses!, L=REChain.Online, S=Internet, C=EU
   identity_name: com.rechain.online
   logo_path: assets\logo.png
   capabilities: internetClient, location, microphone, webcam
@@ -148,15 +152,13 @@ msix_config:
   install_certificate: false
 
 dependency_overrides:
-  # Until https://github.com/mogol/flutter_secure_storage/issues/616 is fixed
   flutter_secure_storage_linux: 1.1.3
   geolocator_android:
     hosted:
       name: geolocator_android
       url: https://hanntech-gmbh.gitlab.io/free2pass/flutter-geolocator-floss
-  # waiting for null safety
-  # Upstream pull request: https://github.com/AntoineMarcel/keyboard_shortcuts/pull/13
   keyboard_shortcuts:
     git:
       url: https://github.com/TheOneWithTheBraid/keyboard_shortcuts.git
       ref: null-safety
+  win32: 5.5.3

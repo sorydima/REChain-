@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +15,6 @@ import 'package:universal_html/html.dart' as html;
 
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/pages/homeserver_picker/homeserver_picker_view.dart';
-import 'package:rechainonline/pages/homeserver_picker/public_homeserver.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
 import 'package:rechainonline/widgets/app_lock.dart';
 import 'package:rechainonline/widgets/matrix.dart';
@@ -26,7 +24,8 @@ import 'package:rechainonline/utils/tor_stub.dart'
     if (dart.library.html) 'package:tor_detector_web/tor_detector_web.dart';
 
 class HomeserverPicker extends StatefulWidget {
-  const HomeserverPicker({super.key});
+  final bool addMultiAccount;
+  const HomeserverPicker({required this.addMultiAccount, super.key});
 
   @override
   HomeserverPickerController createState() => HomeserverPickerController();
@@ -64,6 +63,22 @@ class HomeserverPickerController extends State<HomeserverPicker> {
 
   String? _lastCheckedUrl;
 
+  Timer? _checkHomeserverCooldown;
+
+  tryCheckHomeserverActionWithCooldown([_]) {
+    _checkHomeserverCooldown?.cancel();
+    _checkHomeserverCooldown = Timer(
+      const Duration(milliseconds: 500),
+      checkHomeserverAction,
+    );
+  }
+
+  tryCheckHomeserverActionWithoutCooldown([_]) {
+    _checkHomeserverCooldown?.cancel();
+    _lastCheckedUrl = null;
+    checkHomeserverAction();
+  }
+
   /// Starts an analysis of the given homeserver. It uses the current domain and
   /// makes sure that it is prefixed with https. Then it searches for the
   /// well-known information and forwards to the login page depending on the
@@ -71,10 +86,20 @@ class HomeserverPickerController extends State<HomeserverPicker> {
   Future<void> checkHomeserverAction([_]) async {
     homeserverController.text =
         homeserverController.text.trim().toLowerCase().replaceAll(' ', '-');
-    if (homeserverController.text == _lastCheckedUrl) return;
+
+    if (homeserverController.text.isEmpty) {
+      setState(() {
+        error = loginFlows = null;
+        isLoading = false;
+        Matrix.of(context).getLoginClient().homeserver = null;
+      });
+      return;
+    }
+    if (_lastCheckedUrl == homeserverController.text) return;
+
     _lastCheckedUrl = homeserverController.text;
     setState(() {
-      error = _rawLoginTypes = loginFlows = null;
+      error = loginFlows = null;
       isLoading = true;
     });
 
@@ -86,14 +111,13 @@ class HomeserverPickerController extends State<HomeserverPicker> {
       final client = Matrix.of(context).getLoginClient();
       final (_, _, loginFlows) = await client.checkHomeserver(homeserver);
       this.loginFlows = loginFlows;
-      if (supportsSso) {
-        _rawLoginTypes = await client.request(
-          RequestType.GET,
-          '/client/v3/login',
-        );
-      }
     } catch (e) {
-      setState(() => error = (e).toLocalizedString(context));
+      setState(
+        () => error = (e).toLocalizedString(
+          context,
+          ExceptionContext.checkHomeserver,
+        ),
+      );
     } finally {
       if (mounted) {
         setState(() => isLoading = false);
@@ -113,9 +137,7 @@ class HomeserverPickerController extends State<HomeserverPicker> {
 
   bool get supportsPasswordLogin => _supportsFlow('m.login.password');
 
-  Map<String, dynamic>? _rawLoginTypes;
-
-  void ssoLoginAction(String? id) async {
+  void ssoLoginAction() async {
     final redirectUrl = kIsWeb
         ? Uri.parse(html.window.location.href)
             .resolveUri(
@@ -127,7 +149,7 @@ class HomeserverPickerController extends State<HomeserverPicker> {
             : 'http://localhost:3001//login';
 
     final url = Matrix.of(context).getLoginClient().homeserver!.replace(
-      path: '/_matrix/client/v3/login/sso/redirect${id == null ? '' : '/$id'}',
+      path: '/_matrix/client/v3/login/sso/redirect',
       queryParameters: {'redirectUrl': redirectUrl},
     );
 
@@ -162,39 +184,6 @@ class HomeserverPickerController extends State<HomeserverPicker> {
         });
       }
     }
-  }
-
-  List<IdentityProvider>? get identityProviders {
-    final loginTypes = _rawLoginTypes;
-    if (loginTypes == null) return null;
-    final List? rawProviders =
-        loginTypes.tryGetList('flows')?.singleWhereOrNull(
-                  (flow) => flow['type'] == AuthenticationTypes.sso,
-                )['identity_providers'] ??
-            [
-              {'id': null},
-            ];
-    if (rawProviders == null) return null;
-    final list =
-        rawProviders.map((json) => IdentityProvider.fromJson(json)).toList();
-    if (PlatformInfos.isCupertinoStyle) {
-      list.sort((a, b) => a.brand == 'apple' ? -1 : 1);
-    }
-    return list;
-  }
-
-  List<PublicHomeserver>? cachedHomeservers;
-
-  Future<List<PublicHomeserver>> loadHomeserverList() async {
-    if (cachedHomeservers != null) return cachedHomeservers!;
-    final result = await Matrix.of(context)
-        .getLoginClient()
-        .httpClient
-        .get(AppConfig.homeserverList);
-    final resultJson = jsonDecode(result.body)['public_servers'] as List;
-    final homeserverList =
-        resultJson.map((json) => PublicHomeserver.fromJson(json)).toList();
-    return cachedHomeservers = homeserverList;
   }
 
   void login() => context.push(

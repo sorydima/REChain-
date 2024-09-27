@@ -44,7 +44,7 @@ class AccountBundle {
       };
 }
 
-const accountBundlesType = 'com.rechain.account_bundles';
+const accountBundlesType = 'com.rechainonline.account_bundles';
 
 extension AccountBundlesExtension on Client {
   List<AccountBundle> get accountBundles {

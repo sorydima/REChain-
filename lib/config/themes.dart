@@ -77,9 +77,6 @@ abstract class rechainonlineThemes {
               ? Typography.material2018().black.merge(fallbackTextTheme)
               : Typography.material2018().white.merge(fallbackTextTheme)
           : null,
-      snackBarTheme: const SnackBarThemeData(
-        behavior: SnackBarBehavior.floating,
-      ),
       dividerColor: brightness == Brightness.light
           ? Colors.blueGrey.shade50
           : Colors.blueGrey.shade900,
@@ -89,16 +86,15 @@ abstract class rechainonlineThemes {
         ),
       ),
       textSelectionTheme: TextSelectionThemeData(
-        selectionColor: colorScheme.onBackground.withAlpha(128),
+        selectionColor: colorScheme.onSurface.withAlpha(128),
         selectionHandleColor: colorScheme.secondary,
       ),
       inputDecorationTheme: InputDecorationTheme(
         border: OutlineInputBorder(
-          borderSide: BorderSide.none,
-          borderRadius: BorderRadius.circular(AppConfig.borderRadius / 2),
+          borderRadius: BorderRadius.circular(AppConfig.borderRadius),
         ),
         contentPadding: const EdgeInsets.all(12),
-        filled: true,
+        filled: false,
       ),
       appBarTheme: AppBarTheme(
         toolbarHeight: rechainonlineThemes.isColumnMode(context) ? 72 : 56,
@@ -106,20 +102,15 @@ abstract class rechainonlineThemes {
             ? Colors.grey.withAlpha(64)
             : null,
         surfaceTintColor:
-            rechainonlineThemes.isColumnMode(context) ? colorScheme.background : null,
+            rechainonlineThemes.isColumnMode(context) ? colorScheme.surface : null,
+        backgroundColor:
+            rechainonlineThemes.isColumnMode(context) ? colorScheme.surface : null,
         systemOverlayStyle: SystemUiOverlayStyle(
           statusBarColor: Colors.transparent,
           statusBarIconBrightness: brightness.reversed,
           statusBarBrightness: brightness,
           systemNavigationBarIconBrightness: brightness.reversed,
-          systemNavigationBarColor: colorScheme.background,
-        ),
-      ),
-      textButtonTheme: TextButtonThemeData(
-        style: TextButton.styleFrom(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(AppConfig.borderRadius / 2),
-          ),
+          systemNavigationBarColor: colorScheme.surface,
         ),
       ),
       outlinedButtonTheme: OutlinedButtonThemeData(
@@ -146,9 +137,6 @@ abstract class rechainonlineThemes {
           elevation: 0,
           padding: const EdgeInsets.all(16),
           textStyle: const TextStyle(fontSize: 16),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(AppConfig.borderRadius),
-          ),
         ),
       ),
     );

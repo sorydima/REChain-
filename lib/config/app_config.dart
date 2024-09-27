@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:matrix/matrix.dart';
 
 abstract class AppConfig {
-  static String _applicationName = 'REChain ® 🪐';
+  static String _applicationName = 'REChain ®️ 🪐 ✨';
   static String get applicationName => _applicationName;
   static String? _applicationWelcomeMessage;
   static String? get applicationWelcomeMessage => _applicationWelcomeMessage;
@@ -12,7 +12,7 @@ abstract class AppConfig {
   static double fontSizeFactor = 1;
   static const Color chatColor = primaryColor;
   static Color? colorSchemeSeed = primaryColor;
-  static const double messageFontSize = 15.75;
+  static const double messageFontSize = 16.0;
   static const bool allowOtherHomeservers = true;
   static const bool enableRegistration = true;
   static const Color primaryColor = Color(0xFF5625BA);
@@ -24,17 +24,19 @@ abstract class AppConfig {
   static const String enablePushTutorial =
       'https://github.com/sorydima/REChain-/blob/main/PRIVACY.md';
   static const String encryptionTutorial =
-      'https://github.com/sorydima/REChain-/blob/main/SECURITY.md';
+      'https://github.com/sorydima/REChain-/blob/main/PRIVACY.md';
   static const String startChatTutorial =
-      'https://rechain.online/';
+      'https://matrix.org/docs/chat_basics/matrix-for-im/';
   static const String appId = 'com.rechain.online';
-  static const String appOpenUrlScheme = 'com.rechain';
+  static const String appOpenUrlScheme = 'com.rechainonline';
   static String _webBaseUrl = 'https://rechain.online/web';
   static String get webBaseUrl => _webBaseUrl;
   static const String sourceCodeUrl =
       'https://github.com/sorydima/REChain-.git';
   static const String supportUrl =
-      'https://rechain.online/contact-us.html';
+      'https://github.com/sorydima/REChain-/issues';
+  static const String changelogUrl =
+      'https://github.com/sorydima/REChain-/blob/main/CHANGELOG.md';
   static final Uri newIssueUrl = Uri(
     scheme: 'https',
     host: 'github.com',
@@ -42,25 +44,26 @@ abstract class AppConfig {
   );
   static bool renderHtml = true;
   static bool hideRedactedEvents = false;
-  static bool hideUnknownEvents = false;
-  static bool hideUnimportantStateEvents = false;
-  static bool separateChatTypes = true;
+  static bool hideUnknownEvents = true;
+  static bool hideUnimportantStateEvents = true;
+  static bool separateChatTypes = false;
   static bool autoplayImages = true;
   static bool sendTypingNotifications = true;
+  static bool sendPublicReadReceipts = true;
+  static bool swipeRightToLeftToReply = true;
   static bool? sendOnEnter;
-  static bool experimentalVoip = true;
+  static bool showPresences = true;
+  static bool experimentalVoip = false;
   static const bool hideTypingUsernames = false;
   static const bool hideAllStateEvents = false;
   static const String inviteLinkPrefix = 'https://matrix.to/#/';
-  static const String deepLinkPrefix = 'com.rechain://chat/';
+  static const String deepLinkPrefix = 'com.rechainonline://chat/';
   static const String schemePrefix = 'matrix:';
   static const String pushNotificationsChannelId = 'rechainonline_push';
-  static const String pushNotificationsChannelName = 'REChain ® 🪐 Push Channel!';
-  static const String pushNotificationsChannelDescription =
-      'Push Notifications for the REChain ® 🪐!';
   static const String pushNotificationsAppId = 'com.rechain.online';
+  \\\ We're collabarating with the External Push GateWay with the Matrix SDK, Matrix API and Unified Push for the REChain ..
   static const String pushNotificationsGatewayUrl =
-      'https://matrix-client.matrix.org/_matrix/push/v1/notify';
+      'https://push.fluffychat.im/_matrix/push/v1/notify';
   static const String pushNotificationsPusherFormat = 'event_id_only';
   static const String emojiFontName = 'Noto Emoji';
   static const String emojiFontUrl =
@@ -79,7 +82,7 @@ abstract class AppConfig {
         colorSchemeSeed = Color(json['chat_color']);
       } catch (e) {
         Logs().w(
-          'Invalid color in config.json! Please, make sure to define the color in this format: "0xffdd0000"',
+          'Invalid color in config.json! Please make sure to define the color in this format: "0xffdd0000"',
           e,
         );
       }
@@ -94,10 +97,10 @@ abstract class AppConfig {
       _defaultHomeserver = json['default_homeserver'];
     }
     if (json['privacy_url'] is String) {
-      _webBaseUrl = json['privacy_url'];
+      _privacyUrl = json['privacy_url'];
     }
     if (json['web_base_url'] is String) {
-      _privacyUrl = json['web_base_url'];
+      _webBaseUrl = json['web_base_url'];
     }
     if (json['render_html'] is bool) {
       renderHtml = json['render_html'];

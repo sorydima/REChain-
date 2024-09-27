@@ -1,16 +1,17 @@
+
 workflows:
   android-workflow:
-    name: Android Workflow
+    name: REChain Android Workflow
     instance_type: mac_mini_m1
     max_build_duration: 120
     environment:
       android_signing:
         - keystore_reference
       groups:
-        - google_play # <-- (Includes GCLOUD_SERVICE_ACCOUNT_CREDENTIALS)
+        - google_play
       vars:
-        PACKAGE_NAME: "com.rechain.online" # <-- Put your package name here
-        GOOGLE_PLAY_TRACK: "stable"
+        PACKAGE_NAME: "com.rechain.nodeapp" # Adjusted package name for REChain
+        GOOGLE_PLAY_TRACK: "beta" # Assuming this project is in beta phase
       flutter: stable
     scripts:
       - name: Set up local.properties
@@ -18,20 +19,17 @@ workflows:
           echo "flutter.sdk=$HOME/programs/flutter" > "$CM_BUILD_DIR/android/local.properties"
       - name: Get Flutter packages
         script: |
-          flutter packages pub get
+          flutter pub get
       - name: Flutter analyze
         script: |
           flutter analyze
       - name: Flutter unit tests
         script: |
           flutter test
-        ignore_failure: true
       - name: Build AAB with Flutter
         script: |
-          BUILD_NUMBER=$(($(google-play get-latest-build-number --package-name "$PACKAGE_NAME" --tracks="$GOOGLE_PLAY_TRACK") + 1))      
-          flutter build appbundle --release \
-            --build-name=rechainonline \
-            --build-number=$BUILD_NUMBER
+          BUILD_NUMBER=$(($(google-play get-latest-build-number --package-name "$PACKAGE_NAME" --tracks="$GOOGLE_PLAY_TRACK") + 1))
+          flutter build appbundle --release             --build-name=rechain-node-app             --build-number=$BUILD_NUMBER
     artifacts:
       - build/**/outputs/**/*.aab
       - build/**/outputs/**/mapping.txt
@@ -40,16 +38,13 @@ workflows:
       email:
         recipients:
           - dmitry.justdev@gmail.com
-          - preseed4@gmail.com
-        notify:
-          success: true
-          failure: false
       google_play:
         credentials: $GCLOUD_SERVICE_ACCOUNT_CREDENTIALS
         track: $GOOGLE_PLAY_TRACK
         submit_as_draft: true
+
   ios-workflow:
-    name: iOS Workflow
+    name: REChain iOS Workflow
     instance_type: mac_mini_m1
     max_build_duration: 120
     integrations:
@@ -57,85 +52,53 @@ workflows:
     environment:
       ios_signing:
         distribution_type: app_store
-        bundle_identifier: com.rechain.online
+        bundle_identifier: com.rechain.nodeapp # Adjusted bundle identifier
       vars:
-        APP_ID: 1570644022 # <-- Put your APP ID here
+        APP_ID: 1234567890 # Replace with correct App Store ID
       flutter: stable
-      xcode: latest # <-- set to specific version e.g. 14.3, 15.0 to avoid unexpected updates.
-      cocoapods: default
     scripts:
-      - name: Set up code signing settings on Xcode project
+      - name: Set up local.properties
         script: |
-          xcode-project use-profiles
+          echo "flutter.sdk=$HOME/programs/flutter" > "$CM_BUILD_DIR/ios/local.properties"
       - name: Get Flutter packages
         script: |
-          flutter packages pub get
-      - name: Install pods
-        script: |
-          find . -name "Podfile" -execdir pod install \;
+          flutter pub get
       - name: Flutter analyze
         script: |
           flutter analyze
       - name: Flutter unit tests
         script: |
           flutter test
-        ignore_failure: true
-      - name: Flutter build ipa and automatic versioning
+      - name: Build IPA with Flutter
         script: |
-          flutter build ipa --release \
-            --build-name=rechainonline \
-            --build-number=$(($(app-store-connect get-latest-app-store-build-number "$APP_ID") + 1)) \
-            --export-options-plist=/Users/builder/export_options.plist
+          flutter build ios --release --no-codesign
     artifacts:
       - build/ios/ipa/*.ipa
-      - /tmp/xcodebuild_logs/*.log
-      - flutter_drive.log
     publishing:
-      # See the following link for details about email publishing - https://docs.codemagic.io/publishing-yaml/distribution/#email
       email:
         recipients:
           - dmitry.justdev@gmail.com
-          - preseed4@gmail.com
-        notify:
-          success: true # To receive a notification when a build succeeds
-          failure: false # To not receive a notification when a build fails
-      slack:
-        # See the following link about how to connect your Slack account - https://docs.codemagic.io/publishing-yaml/distribution/#slack
-        channel: "#builds"
-        notify_on_build_start: true # To receive a notification when a build starts
-        notify:
-          success: true # To receive a notification when a build succeeds
-          failure: false # To not receive a notification when a build fails
       app_store_connect:
         auth: integration
-        
-        # Configuration related to TestFlight (optional)
-        # Note: This action is performed during post-processing.
         submit_to_testflight: true
-        beta_groups: # Specify the names of beta tester groups that will get access to the build once it has passed beta review.
-          - group name 1
-          - group name 2
-
-        # Configuration related to App Store (optional)
-        # Note: This action is performed during post-processing.
         submit_to_app_store: true
 
   web-workflow:
-    name: Web app workflow
+    name: REChain Web Workflow
     max_build_duration: 120
     environment:
       flutter: stable
     scripts:
       - name: Get Flutter packages
         script: |
-          flutter packages pub get
+          flutter pub get
       - name: Flutter analyze
         script: |
           flutter analyze
       - name: Flutter unit tests
         script: |
           flutter test
-      - name: Flutter build webapp
+      - name: Build web app
         script: |
           flutter build web --release
           cd build/web
@@ -147,6 +110,3 @@ workflows:
       email:
         recipients:
           - dmitry.justdev@gmail.com
-
-
-

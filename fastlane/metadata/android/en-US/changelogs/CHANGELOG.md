@@ -1,132 +1,67 @@
-Most people know the REChain ®️ 🪐 Platform as a secure collaboration and messaging app. They know what it looks like on their phone or laptop, appreciate that it’s end-to-end encrypted, and make increasing use of features like threads, polls and location-sharing! 🥰 🌈 📡
+## @v4.1.1
 
-🦄
+🚀 REChain® 🪐 v4.1.1 is here with a bold redesign! Say goodbye to the old bottom navigation bar and hello to sleek filter chips, making it easier than ever to organize your spaces. And finally – iOS users rejoice – you can now listen to OGG audio messages seamlessly!
 
-Dream big! Stay safe! Stay true! Stay private! Stay tuned! 😎🌍
+But that's not all. Under the hood, we've introduced authenticated media endpoints, giving you secure media streaming when connected to servers running Matrix SDK v1.11 or those with the new MSC3916 key in their unstable_features. This update is packed with enhancements to give you a smoother, faster, and more secure experience!
 
-And have a great day! ✌️ 😎
+Upgrade now and explore the galaxy of new possibilities 🌌✨.
 
-Sincerely, Yours Mr. Detective Pikachu 🐾
-From the REChain dream team 🤗 👻
-Making the world a better place since 2017 ✅😼
+- build: (deps): Bump docker/build-push-action from 5 to 6 (dependabot[bot]);
+- build(deps): Bump rexml from 3.2.8 to 3.3.3 in /ios (dependabot[bot]);
+- build: Remove permissions for screensharing until it is fixed;
+- build: Update Android target sdk to 34;
+- build: Update dependencies after release;
+- build: Update to latest Flutter;
+- build: Update to Matrix SDK 0.32.0;
+- chore: Bring back add to space feature;
+- chore: Bring back navrail;
+- chore: Bring back separate chat types;
+- chore: Chat permissions page follow up;
+- chore: Do not hide error on file sending;
+- chore: Improved create group and space design;
+- chore: Make VoIP plugin less noisy in logs;
+- chore: Move default PR template to correct dir;
+- chore: Nicer bottom sheets;
+- chore: Nicer empty chat list placeholder;
+- chore: Polish public room bottom sheet;
+- chore: Show short forms of months and week days in UI;
+- chore: Sligthly improve chat permissions page design;
+- design: Add snackbar with link to changelog on new version;
+- docs: Update Privacy-Policy;
+- feat: Support for Matrix auth media endpoints;
+- feat: Convert OPUS to AAC on iOS before playing;
+- feat: New spaces and chat list design;
+- feat: Record voice message with OPUS/OGG if supported;
+- feat: Send voice messages from web;
+- fix: Display only available join rules;
+- fix: Path correct userId to ignore list;
+- fix: Scroll to event missing the position;
+- Fix Web-base URL and Privacy URL configuration processing;
+- refactor: Clean up some widths;
+- refactor: Design polishment and better user viewer;
+- refactor: Migrate Android gradle plugin;
+- refactor: Only initialize FlutterLocalNotificationsPlugin once;
+- refactor: Recording dialog;
+- Refactor: Reduce .of(context) calls theme;
+- refactor: Use cached network image for MXC image URIs!
 
-Need help? 🤔
-Email us! 👇
-A Dmitry Sorokin production. All rights reserved.
-Powered by REChain ® 🪐.
-Copyright © 2019-2024 REChain, Inc
-REChain ® is a registered trademark
-hr@rechain.email
-p2p@rechain.email
-pr@rechain.email
-sorydima@rechain.email
-support@rechain.email
-sip@rechain.email
-music@rechain.email
-Please allow anywhere from 1 to 5 business days for E-mail responses! 💌
+Copyright © 2019-2024 Need help? 🤔 Donate US! ⌛️ For tea, coffee! For the future of decentralized and distributed internet. We do cool and, in my opinion, useful things for the safety and security of users' personal data. And on a completely non-commercial basis! 😎 Email us! 👇 A Dmitry Sorokin production. All rights reserved. Powered by REChain ®️. 🪐 Copyright © 2019-2024 REChain, Inc REChain ® is a registered trademark  hr@adminmarina.ru p2p@adminmarina.ru pr@adminmarina.ru sorydima@adminmarina.ru support@adminmarina.ru sip@adminmarina.ru music@adminmarina.ru cfa@adminmarina.ru anti@adminmarina.ru mot_cfa@adminmarina.ru rechainstore@adminmarina.ru models@adminmarina.ru dex@adminmarina.ru email@adminmarina.ru musicdapp@adminmarina.ru pitomec@adminmarina.ru delus@adminmarina.ru gateway@adminmarina.ru husco@adminmarina.ru info@adminmarina.ru maring@adminmarina.ru modus@adminmarina.ru rechainnetworkhost@adminmarina.ru tanyacity@adminmarina.ru support@xn--90ao4a.tech Please allow anywhere from 1 to 5 business days for E-mail responses! 💌 Our Stats! 👀 At the end of 2023, the number of downloads from the Open-Source Places, Apple AppStore, Google Play Market, and the REChain.Store, namely the Domestic application store from the REChain ®️ brand 🪐, а именно Отечественный магазин приложений от бренда REChain ®️ 🪐 ✨ exceeded 29 million downloads. 😈 👀
 
-CHANGELOG:
+Call to Action
+#NODUROV
+Check Tanya.City & Tanechca.Online - work node - matrix.tanya.city & REChain.Network - work node - matrix.rechain.network 
 
-## v3.8.0 (1130)
+👉 Visit Tree (https://linktr.ee/rechainnetwork) for more our resources and projects!
+Also visit Portfolio Tree https://me.delus.site/rechain - our own node!
 
-Enhancements:
+CEO & Founder: dmitry.wiki
 
-1. Brand Positioning:
+🦄 @sorydima @katya_llc @rechain_inc
 
-Redefined the brand positioning to align with the platform's vision and services.
-Invited new models to redefine user experience, transforming the perception of platform aesthetics and functionality.
+Dream big! Stay safe! Stay true! Stay private! Stay tuned! 😎🌍 And have a great day! ✌️ 😎 Sincerely, Yours Mr. Detective Pikachu! 🐾
 
-2. User Interface and Experience:
+From the REChain dream team! 🤗 👻
 
-Revamped interface design for both mobile and laptop users, ensuring an intuitive and engaging experience.
-Enhanced visual elements and layout to reflect the updated brand positioning and service vision.
-Introduced new themes and color schemes, embracing a vibrant and inclusive design.
+Making the world a better place since 2017! ✅😼 Copyright © 2019-2024 Need help? 🤔 Donate US! ⌛️ For tea, coffee! For the future of decentralized and distributed internet. We do cool and, in my opinion, useful things for the safety and security of users' personal data. And on a completely non-commercial basis! 😎 Email us! 👇 A Dmitry Sorokin production. All rights reserved. Powered by REChain ®️. 🪐 Copyright © 2019-2024 REChain, Inc REChain ® is a registered trademark hr@adminmarina.ru p2p@adminmarina.ru pr@adminmarina.ru sorydima@adminmarina.ru support@adminmarina.ru sip@adminmarina.ru music@adminmarina.ru cfa@adminmarina.ru anti@adminmarina.ru mot_cfa@adminmarina.ru rechainstore@adminmarina.ru models@adminmarina.ru dex@adminmarina.ru email@adminmarina.ru musicdapp@adminmarina.ru pitomec@adminmarina.ru Please allow anywhere from 1 to 5 business days for E-mail responses! 💌
 
-3. Feature Upgrades:
-
-Threads: Improved thread management for clearer and organized conversations.
-Polls: Enhanced polling features for better user engagement and decision-making.
-Location Sharing: Streamlined and secured location-sharing functionality.
-
-4. Security Measures:
-
-Strengthened end-to-end encryption protocols for enhanced data security and user privacy.
-
-5. Performance Optimization:
-
-Optimized app performance for smoother navigation and faster response times.
-Bug fixes and stability improvements for a seamless user experience.
-
-6. Community Engagement:
-
-Introduced interactive elements to foster community engagement and collaboration.
-Encouraged user feedback mechanisms for continuous improvement.
-
-7. Communication Enhancements:
-
-Improved messaging functionalities, including multimedia support and advanced messaging options.
-
-8. Accessibility:
-
-Improved accessibility features to ensure inclusivity for all users.
-
-9. Visionary Roadmap:
-
-Outlined a visionary roadmap for future updates, focusing on groundbreaking features and services that redefine user expectations.
-
-10. Performance Monitoring:
-
-Implemented robust performance monitoring tools for proactive issue identification and resolution.
-
-We're excited about this significant update that not only enhances the platform's functionality but also reshapes its identity, setting a new standard for secure collaboration and messaging. Your feedback and continued support are invaluable as we evolve REChain ® 🪐 to serve you better. Thank you for being part of this journey! 🚀🌟
-
-change: Remove wallpaper feature!
-design: Adjust login page design!
-design: Adjust new chat page design!
-design: Adjust reply design!
-design: New design for login page!
-feat: Add registration buttons for the servers/nodes with the public registration url!
-feat: Animation in new events in timeline!
-feat: Block users who sent invites!
-feat: Display migration notifications!
-feat: Hovermenu for messages for mouse!
-feat: New change password page with server capabilities check!
-feat: Search for public spaces!
-feat: Try out new database engine!
-fix: Add 3-pid email for password reset!
-fix: Audiomessage break app!
-fix: Cannot change send on enter on desktop!
-fix: Darktheme contrast fixes with primary color!
-fix: Join public rooms!
-fix: Make user admin!
-fix: New json url for homeserver list!
-fix: Open notification for invite crashes app!
-fix: Remove web background!
-fix: Some links not clickable in messages!
-fix: Update manual endpoints!
-fix: Web SSO!
-refactor: More stable scroll to event!
-refactor: Reinvite other part instead of reopen DM!
-refactor: Remove todo list feature!
-refactor: Remove unnecessary setState in ChatPage for better performance!
-refactor: Remove unused code!
-refactor: Remove unused localization strings and add CI check!
-refactor: Replace stories feature with presence status msg!
-refactor: Spaces UX improvements!
-
-#shotonkatyamobileos 👽 🤖
-
-Need help? 🤔
-Email us! 👇
-A Dmitry Sorokin production. All rights reserved.
-Powered by REChain ® 🪐.
-Copyright © 2019-2024 REChain, Inc
-REChain ® is a registered trademark
-hr@rechain.email
-p2p@rechain.email
-pr@rechain.email
-sorydima@rechain.email
-support@rechain.email
-sip@rechain.email
-music@rechain.email
-Please allow anywhere from 1 to 5 business days for E-mail responses! 💌
+#REChain #EcoGreen #shotonkatyamobileos

@@ -417,6 +417,10 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
     AppConfig.renderHtml =
         store.getBool(SettingKeys.renderHtml) ?? AppConfig.renderHtml;
 
+    AppConfig.swipeRightToLeftToReply =
+        store.getBool(SettingKeys.swipeRightToLeftToReply) ??
+            AppConfig.swipeRightToLeftToReply;
+
     AppConfig.hideRedactedEvents =
         store.getBool(SettingKeys.hideRedactedEvents) ??
             AppConfig.hideRedactedEvents;
@@ -440,9 +444,9 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
         store.getBool(SettingKeys.sendTypingNotifications) ??
             AppConfig.sendTypingNotifications;
 
-    // AppConfig.sendPublicReadReceipts =
-    //     store.getBool(SettingKeys.sendPublicReadReceipts) ??
-    //         AppConfig.sendPublicReadReceipts;
+    AppConfig.sendPublicReadReceipts =
+        store.getBool(SettingKeys.sendPublicReadReceipts) ??
+            AppConfig.sendPublicReadReceipts;
 
     AppConfig.sendOnEnter =
         store.getBool(SettingKeys.sendOnEnter) ?? AppConfig.sendOnEnter;
@@ -450,8 +454,8 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
     AppConfig.experimentalVoip = store.getBool(SettingKeys.experimentalVoip) ??
         AppConfig.experimentalVoip;
 
-    // AppConfig.showPresences =
-    //     store.getBool(SettingKeys.showPresences) ?? AppConfig.showPresences;
+    AppConfig.showPresences =
+        store.getBool(SettingKeys.showPresences) ?? AppConfig.showPresences;
   }
 
   @override

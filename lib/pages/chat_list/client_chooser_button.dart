@@ -68,7 +68,9 @@ class ClientChooserButton extends StatelessWidget {
           ],
         ),
       ),
-      PopupMenuItem(
+      // Currently disabled because of:
+      // https://github.com/matrix-org/matrix-react-sdk/pull/12286
+      /*PopupMenuItem(
         value: SettingsAction.archive,
         child: Row(
           children: [
@@ -77,7 +79,7 @@ class ClientChooserButton extends StatelessWidget {
             Text(L10n.of(context)!.archive),
           ],
         ),
-      ),
+      ),*/
       PopupMenuItem(
         value: SettingsAction.settings,
         child: Row(
@@ -126,7 +128,6 @@ class ClientChooserButton extends StatelessWidget {
                     name:
                         snapshot.data?.displayName ?? client.userID!.localpart,
                     size: 32,
-                    fontSize: 12,
                   ),
                   const SizedBox(width: 12),
                   Expanded(
@@ -166,7 +167,7 @@ class ClientChooserButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final matrix = Matrix.of(context);
 
-    int clientCount = 0;
+    var clientCount = 0;
     matrix.accountBundles.forEach((key, value) => clientCount += value.length);
     return FutureBuilder<Profile>(
       future: matrix.client.fetchOwnProfile(),
@@ -216,7 +217,6 @@ class ClientChooserButton extends StatelessWidget {
                 name: snapshot.data?.displayName ??
                     matrix.client.userID!.localpart,
                 size: 32,
-                fontSize: 12,
               ),
             ),
           ),
@@ -294,7 +294,7 @@ class ClientChooserButton extends StatelessWidget {
       );
     // beginning from end if negative
     if (index < 0) {
-      int clientCount = 0;
+      var clientCount = 0;
       matrix.accountBundles
           .forEach((key, value) => clientCount += value.length);
       _handleKeyboardShortcut(matrix, clientCount, context);
@@ -314,7 +314,7 @@ class ClientChooserButton extends StatelessWidget {
   }
 
   int? _shortcutIndexOfClient(MatrixState matrix, Client client) {
-    int index = 0;
+    var index = 0;
 
     final bundles = matrix.accountBundles.keys.toList()
       ..sort(

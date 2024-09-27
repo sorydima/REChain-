@@ -14,6 +14,8 @@ class ChatAccessSettingsPageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     final room = controller.room;
     return Scaffold(
       appBar: AppBar(
@@ -22,7 +24,8 @@ class ChatAccessSettingsPageView extends StatelessWidget {
       ),
       body: MaxWidthBody(
         child: StreamBuilder<Object>(
-          stream: room.onUpdate.stream,
+          stream: room.client.onRoomState.stream
+              .where((update) => update.roomId == controller.room.id),
           builder: (context, snapshot) {
             final canonicalAlias = room.canonicalAlias;
             final altAliases = room
@@ -37,7 +40,7 @@ class ChatAccessSettingsPageView extends StatelessWidget {
                   title: Text(
                     L10n.of(context)!.visibilityOfTheChatHistory,
                     style: TextStyle(
-                      color: Theme.of(context).colorScheme.secondary,
+                      color: theme.colorScheme.secondary,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -55,17 +58,17 @@ class ChatAccessSettingsPageView extends StatelessWidget {
                         ? null
                         : controller.setHistoryVisibility,
                   ),
-                Divider(color: Theme.of(context).dividerColor),
+                Divider(color: theme.dividerColor),
                 ListTile(
                   title: Text(
                     L10n.of(context)!.whoIsAllowedToJoinThisGroup,
                     style: TextStyle(
-                      color: Theme.of(context).colorScheme.secondary,
+                      color: theme.colorScheme.secondary,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
-                for (final joinRule in JoinRules.values)
+                for (final joinRule in controller.availableJoinRules)
                   if (joinRule != JoinRules.private)
                     RadioListTile<JoinRules>.adaptive(
                       title: Text(
@@ -78,14 +81,14 @@ class ChatAccessSettingsPageView extends StatelessWidget {
                           ? null
                           : controller.setJoinRule,
                     ),
-                Divider(color: Theme.of(context).dividerColor),
+                Divider(color: theme.dividerColor),
                 if ({JoinRules.public, JoinRules.knock}
                     .contains(room.joinRules)) ...[
                   ListTile(
                     title: Text(
                       L10n.of(context)!.areGuestsAllowedToJoin,
                       style: TextStyle(
-                        color: Theme.of(context).colorScheme.secondary,
+                        color: theme.colorScheme.secondary,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -104,12 +107,12 @@ class ChatAccessSettingsPageView extends StatelessWidget {
                           ? null
                           : controller.setGuestAccess,
                     ),
-                  Divider(color: Theme.of(context).dividerColor),
+                  Divider(color: theme.dividerColor),
                   ListTile(
                     title: Text(
                       L10n.of(context)!.publicChatAddresses,
                       style: TextStyle(
-                        color: Theme.of(context).colorScheme.secondary,
+                        color: theme.colorScheme.secondary,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -162,7 +165,7 @@ class ChatAccessSettingsPageView extends StatelessWidget {
                       );
                     },
                   ),
-                  Divider(color: Theme.of(context).dividerColor),
+                  Divider(color: theme.dividerColor),
                   FutureBuilder(
                     future: room.client.getRoomVisibilityOnDirectory(room.id),
                     builder: (context, snapshot) => SwitchListTile.adaptive(
@@ -224,6 +227,8 @@ class _AliasListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return ListTile(
       leading: isCanonicalAlias
           ? const Icon(Icons.star)
@@ -237,15 +242,15 @@ class _AliasListTile extends StatelessWidget {
           'https://matrix.to/#/$alias',
           style: TextStyle(
             decoration: TextDecoration.underline,
-            decorationColor: Theme.of(context).colorScheme.primary,
-            color: Theme.of(context).colorScheme.primary,
+            decorationColor: theme.colorScheme.primary,
+            color: theme.colorScheme.primary,
             fontSize: 14,
           ),
         ),
       ),
       trailing: onDelete != null
           ? IconButton(
-              color: Theme.of(context).colorScheme.error,
+              color: theme.colorScheme.error,
               icon: const Icon(Icons.delete_outlined),
               onPressed: onDelete,
             )
@@ -265,6 +270,10 @@ extension JoinRulesDisplayString on JoinRules {
         return l10n.usersMustKnock;
       case JoinRules.private:
         return l10n.noOneCanJoin;
+      case JoinRules.restricted:
+        return l10n.restricted;
+      case JoinRules.knockRestricted:
+        return l10n.knockRestricted;
     }
   }
 }

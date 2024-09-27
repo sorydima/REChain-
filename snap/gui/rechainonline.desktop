@@ -1,7 +1,7 @@
 [Desktop Entry]
-Name=REChain ® 🪐
-GenericName=REChain ® 🪐 Platform
-Comment=REChain ®️ 🪐 Platform encourages collaborative communication through features such as threads, allowing users to organize discussions and streamline conversations.
+Name=REChain ®️ 🪐 ✨
+GenericName=REChain ®️ 🪐 ✨ Platform
+Comment=REChain ®️ 🪐 ✨ Platform encourages collaborative communication through features such as threads, allowing users to organize discussions and streamline conversations.
 Exec=REChain
 Icon=${SNAP}/meta/gui/rechainonline.png
 Terminal=false

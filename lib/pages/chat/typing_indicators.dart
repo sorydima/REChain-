@@ -14,80 +14,89 @@ class TypingIndicators extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final typingUsers = controller.room.typingUsers
-      ..removeWhere((u) => u.stateKey == Matrix.of(context).client.userID);
-    const topPadding = 20.0;
-    const bottomPadding = 4.0;
+    final theme = Theme.of(context);
 
-    return Container(
-      width: double.infinity,
-      alignment: Alignment.center,
-      child: AnimatedContainer(
-        constraints:
-            const BoxConstraints(maxWidth: rechainonlineThemes.columnWidth * 2.5),
-        height: typingUsers.isEmpty ? 0 : Avatar.defaultSize + bottomPadding,
-        duration: rechainonlineThemes.animationDuration,
-        curve: rechainonlineThemes.animationCurve,
-        alignment: controller.timeline!.events.isNotEmpty &&
-                controller.timeline!.events.first.senderId ==
-                    Matrix.of(context).client.userID
-            ? Alignment.topRight
-            : Alignment.topLeft,
-        clipBehavior: Clip.hardEdge,
-        decoration: const BoxDecoration(),
-        padding: const EdgeInsets.only(
-          left: 8.0,
-          bottom: bottomPadding,
-        ),
-        child: Row(
-          children: [
-            SizedBox(
-              height: Avatar.defaultSize,
-              width: typingUsers.length < 2
-                  ? Avatar.defaultSize
-                  : Avatar.defaultSize + 16,
-              child: Stack(
-                children: [
-                  if (typingUsers.isNotEmpty)
-                    Avatar(
-                      mxContent: typingUsers.first.avatarUrl,
-                      name: typingUsers.first.calcDisplayname(),
-                    ),
-                  if (typingUsers.length == 2)
-                    Padding(
-                      padding: const EdgeInsets.only(left: 16),
-                      child: Avatar(
-                        mxContent: typingUsers.length == 2
-                            ? typingUsers.last.avatarUrl
-                            : null,
-                        name: typingUsers.length == 2
-                            ? typingUsers.last.calcDisplayname()
-                            : '+${typingUsers.length - 1}',
-                      ),
-                    ),
-                ],
-              ),
-            ),
-            const SizedBox(width: 8),
-            Padding(
-              padding: const EdgeInsets.only(top: topPadding),
-              child: Material(
-                color: Theme.of(context).colorScheme.surfaceVariant,
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(2),
-                  topRight: Radius.circular(AppConfig.borderRadius),
-                  bottomLeft: Radius.circular(AppConfig.borderRadius),
-                  bottomRight: Radius.circular(AppConfig.borderRadius),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                  child: typingUsers.isEmpty ? null : const _TypingDots(),
-                ),
-              ),
-            ),
-          ],
-        ),
+    const avatarSize = Avatar.defaultSize / 2;
+
+    return StreamBuilder<Object>(
+      stream: controller.room.client.onSync.stream.where(
+        (syncUpdate) =>
+            syncUpdate.rooms?.join?[controller.room.id]?.ephemeral
+                ?.any((ephemeral) => ephemeral.type == 'm.typing') ??
+            false,
       ),
+      builder: (context, _) {
+        final typingUsers = controller.room.typingUsers
+          ..removeWhere((u) => u.stateKey == Matrix.of(context).client.userID);
+
+        return Container(
+          width: double.infinity,
+          alignment: Alignment.center,
+          child: AnimatedContainer(
+            constraints:
+                const BoxConstraints(maxWidth: rechainonlineThemes.columnWidth * 2.5),
+            height: typingUsers.isEmpty ? 0 : avatarSize + 8,
+            duration: rechainonlineThemes.animationDuration,
+            curve: rechainonlineThemes.animationCurve,
+            alignment: controller.timeline!.events.isNotEmpty &&
+                    controller.timeline!.events.first.senderId ==
+                        Matrix.of(context).client.userID
+                ? Alignment.topRight
+                : Alignment.topLeft,
+            clipBehavior: Clip.hardEdge,
+            decoration: const BoxDecoration(),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 8.0,
+              vertical: 4.0,
+            ),
+            child: Row(
+              children: [
+                Container(
+                  alignment: Alignment.center,
+                  height: avatarSize,
+                  width: Avatar.defaultSize,
+                  child: Stack(
+                    children: [
+                      if (typingUsers.isNotEmpty)
+                        Avatar(
+                          size: avatarSize,
+                          mxContent: typingUsers.first.avatarUrl,
+                          name: typingUsers.first.calcDisplayname(),
+                        ),
+                      if (typingUsers.length == 2)
+                        Padding(
+                          padding: const EdgeInsets.only(left: 16),
+                          child: Avatar(
+                            size: avatarSize,
+                            mxContent: typingUsers.length == 2
+                                ? typingUsers.last.avatarUrl
+                                : null,
+                            name: typingUsers.length == 2
+                                ? typingUsers.last.calcDisplayname()
+                                : '+${typingUsers.length - 1}',
+                          ),
+                        ),
+                    ],
+                  ),
+                ),
+                const SizedBox(width: 8),
+                Material(
+                  color:
+                      // ignore: deprecated_member_use
+                      theme.colorScheme.surfaceVariant,
+                  borderRadius: const BorderRadius.all(
+                    Radius.circular(AppConfig.borderRadius),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                    child: typingUsers.isEmpty ? null : const _TypingDots(),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 }
@@ -130,6 +139,7 @@ class __TypingDotsState extends State<_TypingDots> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     const size = 8.0;
 
     return Row(
@@ -147,7 +157,7 @@ class __TypingDotsState extends State<_TypingDots> {
             ),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(size * 2),
-              color: Theme.of(context).colorScheme.secondary,
+              color: theme.colorScheme.secondary,
             ),
           ),
       ],

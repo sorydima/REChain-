@@ -128,6 +128,7 @@ class ChatView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     if (controller.room.membership == Membership.invite) {
       showFutureLoadingDialog(
         context: context,
@@ -141,7 +142,7 @@ class ChatView extends StatelessWidget {
 
     return PopScope(
       canPop: controller.selectedEvents.isEmpty && !controller.showEmojiPicker,
-      onPopInvoked: (pop) async {
+      onPopInvokedWithResult: (pop, _) async {
         if (pop) return;
         if (controller.selectedEvents.isNotEmpty) {
           controller.clearSelectedEvents();
@@ -150,41 +151,49 @@ class ChatView extends StatelessWidget {
         }
       },
       child: StreamBuilder(
-        stream: controller.room.onUpdate.stream
+        stream: controller.room.client.onRoomState.stream
+            .where((update) => update.roomId == controller.room.id)
             .rateLimit(const Duration(seconds: 1)),
         builder: (context, snapshot) => FutureBuilder(
           future: controller.loadTimelineFuture,
           builder: (BuildContext context, snapshot) {
             var appbarBottomHeight = 0.0;
             if (controller.room.pinnedEventIds.isNotEmpty) {
-              appbarBottomHeight += 42;
+              appbarBottomHeight += ChatAppBarListTile.fixedHeight;
             }
             if (scrollUpBannerEventId != null) {
-              appbarBottomHeight += 42;
+              appbarBottomHeight += ChatAppBarListTile.fixedHeight;
             }
             final tombstoneEvent =
                 controller.room.getState(EventTypes.RoomTombstone);
             if (tombstoneEvent != null) {
-              appbarBottomHeight += 42;
+              appbarBottomHeight += ChatAppBarListTile.fixedHeight;
             }
             return Scaffold(
               appBar: AppBar(
                 actionsIconTheme: IconThemeData(
                   color: controller.selectedEvents.isEmpty
                       ? null
-                      : Theme.of(context).colorScheme.primary,
+                      : theme.colorScheme.primary,
                 ),
                 leading: controller.selectMode
                     ? IconButton(
                         icon: const Icon(Icons.close),
                         onPressed: controller.clearSelectedEvents,
                         tooltip: L10n.of(context)!.close,
-                        color: Theme.of(context).colorScheme.primary,
+                        color: theme.colorScheme.primary,
                       )
-                    : UnreadRoomsBadge(
-                        filter: (r) => r.id != controller.roomId,
-                        badgePosition: BadgePosition.topEnd(end: 8, top: 4),
-                        child: const Center(child: BackButton()),
+                    : StreamBuilder<Object>(
+                        stream: Matrix.of(context)
+                            .client
+                            .onSync
+                            .stream
+                            .where((syncUpdate) => syncUpdate.hasRoomUpdate),
+                        builder: (context, _) => UnreadRoomsBadge(
+                          filter: (r) => r.id != controller.roomId,
+                          badgePosition: BadgePosition.topEnd(end: 8, top: 4),
+                          child: const Center(child: BackButton()),
+                        ),
                       ),
                 titleSpacing: 0,
                 title: ChatAppBarTitle(controller),
@@ -210,8 +219,7 @@ class ChatView extends StatelessWidget {
                       if (scrollUpBannerEventId != null)
                         ChatAppBarListTile(
                           leading: IconButton(
-                            color:
-                                Theme.of(context).colorScheme.onSurfaceVariant,
+                            color: theme.colorScheme.onSurfaceVariant,
                             icon: const Icon(Icons.close),
                             tooltip: L10n.of(context)!.close,
                             onPressed: () {
@@ -300,8 +308,9 @@ class ChatView extends StatelessWidget {
                               alignment: Alignment.center,
                               child: Material(
                                 clipBehavior: Clip.hardEdge,
-                                color: Theme.of(context)
+                                color: theme
                                     .colorScheme
+                                    // ignore: deprecated_member_use
                                     .surfaceVariant,
                                 borderRadius: const BorderRadius.all(
                                   Radius.circular(24),
@@ -316,9 +325,8 @@ class ChatView extends StatelessWidget {
                                               padding: const EdgeInsets.all(
                                                 16,
                                               ),
-                                              foregroundColor: Theme.of(context)
-                                                  .colorScheme
-                                                  .error,
+                                              foregroundColor:
+                                                  theme.colorScheme.error,
                                             ),
                                             icon: const Icon(
                                               Icons.archive_outlined,
@@ -361,9 +369,7 @@ class ChatView extends StatelessWidget {
                     ),
                     if (controller.dragging)
                       Container(
-                        color: Theme.of(context)
-                            .scaffoldBackgroundColor
-                            .withOpacity(0.9),
+                        color: theme.scaffoldBackgroundColor.withOpacity(0.9),
                         alignment: Alignment.center,
                         child: const Icon(
                           Icons.upload_outlined,

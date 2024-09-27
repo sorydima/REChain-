@@ -86,7 +86,7 @@
                     "only-arches": [
                         "x86_64"
                     ],
-                    "url": "https://github.com/sorydima/REChain-/releases/download/3.8.0/REChain.Online.tar.gz",
+                    "url": "https://github.com/sorydima/REChain-/releases/download/4.1.1/REChain.Online.tar.gz",
                     "dest": "REChain"
                 },
                 {

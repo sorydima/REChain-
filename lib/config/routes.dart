@@ -62,7 +62,7 @@ abstract class AppRoutes {
       pageBuilder: (context, state) => defaultPageBuilder(
         context,
         state,
-        const HomeserverPicker(),
+        const HomeserverPicker(addMultiAccount: false),
       ),
       redirect: loggedInRedirect,
       routes: [
@@ -242,7 +242,7 @@ abstract class AppRoutes {
                       pageBuilder: (context, state) => defaultPageBuilder(
                         context,
                         state,
-                        const HomeserverPicker(),
+                        const HomeserverPicker(addMultiAccount: true),
                       ),
                       routes: [
                         GoRoute(
@@ -445,13 +445,10 @@ abstract class AppRoutes {
     Widget child,
   ) =>
       rechainonlineThemes.isColumnMode(context)
-          ? CustomTransitionPage(
+          ? NoTransitionPage(
               key: state.pageKey,
               restorationId: state.pageKey.value,
               child: child,
-              transitionsBuilder:
-                  (context, animation, secondaryAnimation, child) =>
-                      FadeTransition(opacity: animation, child: child),
             )
           : MaterialPage(
               key: state.pageKey,

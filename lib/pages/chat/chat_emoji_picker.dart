@@ -14,7 +14,7 @@ class ChatEmojiPicker extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ThemeData theme = Theme.of(context);
+    final theme = Theme.of(context);
     return AnimatedContainer(
       duration: rechainonlineThemes.animationDuration,
       curve: rechainonlineThemes.animationCurve,
@@ -43,9 +43,8 @@ class ChatEmojiPicker extends StatelessWidget {
                           config: Config(
                             emojiViewConfig: EmojiViewConfig(
                               noRecents: const NoRecent(),
-                              backgroundColor: Theme.of(context)
-                                  .colorScheme
-                                  .onInverseSurface,
+                              backgroundColor:
+                                  theme.colorScheme.onInverseSurface,
                             ),
                             bottomActionBarConfig: const BottomActionBarConfig(
                               enabled: false,
@@ -59,11 +58,11 @@ class ChatEmojiPicker extends StatelessWidget {
                             ),
                             skinToneConfig: SkinToneConfig(
                               dialogBackgroundColor: Color.lerp(
-                                theme.colorScheme.background,
+                                theme.colorScheme.surface,
                                 theme.colorScheme.primaryContainer,
                                 0.75,
                               )!,
-                              indicatorColor: theme.colorScheme.onBackground,
+                              indicatorColor: theme.colorScheme.onSurface,
                             ),
                           ),
                         ),

@@ -1,10 +1,10 @@
 {
-  "application_name": "REChain ® 🪐",
+  "application_name": "REChain ®️ 🪐",
   "application_welcome_message": null,
-  "default_homeserver": "matrix.katya.wtf",
+  "default_homeserver": "matrix.tanya.city",
   "web_base_url": "https://rechain.online/web",
   "privacy_url": "https://rechain.online/privacy-policy.html",
-  "render_html": true,
+  "render_html": false,
   "hide_redacted_events": false,
   "hide_unknown_events": false
 }

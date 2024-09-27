@@ -20,6 +20,8 @@ class SettingsStyleView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     const colorPickerSize = 32.0;
     final client = Matrix.of(context).client;
     return Scaffold(
@@ -27,7 +29,7 @@ class SettingsStyleView extends StatelessWidget {
         leading: const Center(child: BackButton()),
         title: Text(L10n.of(context)!.changeTheme),
       ),
-      backgroundColor: Theme.of(context).colorScheme.surface,
+      backgroundColor: theme.colorScheme.surface,
       body: MaxWidthBody(
         child: Column(
           children: [
@@ -35,7 +37,7 @@ class SettingsStyleView extends StatelessWidget {
               title: Text(
                 L10n.of(context)!.setColorTheme,
                 style: TextStyle(
-                  color: Theme.of(context).colorScheme.secondary,
+                  color: theme.colorScheme.secondary,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -88,18 +90,16 @@ class SettingsStyleView extends StatelessWidget {
                                                   child: Icon(
                                                     Icons.check,
                                                     size: 16,
-                                                    color: Theme.of(context)
-                                                        .colorScheme
-                                                        .onBackground,
+                                                    color: theme
+                                                        .colorScheme.onSurface,
                                                   ),
                                                 ),
                                               Text(
                                                 L10n.of(context)!.systemTheme,
                                                 textAlign: TextAlign.center,
                                                 style: TextStyle(
-                                                  color: Theme.of(context)
-                                                      .colorScheme
-                                                      .onBackground,
+                                                  color: theme
+                                                      .colorScheme.onSurface,
                                                 ),
                                               ),
                                             ],
@@ -136,14 +136,13 @@ class SettingsStyleView extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             Divider(
-              height: 1,
-              color: Theme.of(context).dividerColor,
+              color: theme.dividerColor,
             ),
             ListTile(
               title: Text(
                 L10n.of(context)!.setTheme,
                 style: TextStyle(
-                  color: Theme.of(context).colorScheme.secondary,
+                  color: theme.colorScheme.secondary,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -167,23 +166,22 @@ class SettingsStyleView extends StatelessWidget {
               onChanged: controller.switchTheme,
             ),
             Divider(
-              height: 1,
-              color: Theme.of(context).dividerColor,
+              color: theme.dividerColor,
             ),
             ListTile(
               title: Text(
                 L10n.of(context)!.overview,
                 style: TextStyle(
-                  color: Theme.of(context).colorScheme.secondary,
+                  color: theme.colorScheme.secondary,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
             SettingsSwitchListTile.adaptive(
               title: L10n.of(context)!.presencesToggle,
-              // onChanged: (b) => AppConfig.showPresences = b,
+              onChanged: (b) => AppConfig.showPresences = b,
               storeKey: SettingKeys.showPresences,
-              // defaultValue: AppConfig.showPresences,
+              defaultValue: AppConfig.showPresences,
             ),
             SettingsSwitchListTile.adaptive(
               title: L10n.of(context)!.separateChatTypes,
@@ -192,23 +190,26 @@ class SettingsStyleView extends StatelessWidget {
               defaultValue: AppConfig.separateChatTypes,
             ),
             Divider(
-              height: 1,
-              color: Theme.of(context).dividerColor,
+              color: theme.dividerColor,
             ),
             ListTile(
               title: Text(
                 L10n.of(context)!.messagesStyle,
                 style: TextStyle(
-                  color: Theme.of(context).colorScheme.secondary,
+                  color: theme.colorScheme.secondary,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
             StreamBuilder(
-              stream: client.onAccountData.stream.where(
-                (data) =>
-                    data.type ==
-                    ApplicationAccountConfigExtension.accountDataKey,
+              stream: client.onSync.stream.where(
+                (syncUpdate) =>
+                    syncUpdate.accountData?.any(
+                      (accountData) =>
+                          accountData.type ==
+                          ApplicationAccountConfigExtension.accountDataKey,
+                    ) ??
+                    false,
               ),
               builder: (context, snapshot) {
                 final accountConfig = client.applicationAccountConfig;
@@ -245,7 +246,7 @@ class SettingsStyleView extends StatelessWidget {
                               bottom: 12,
                             ),
                             child: Material(
-                              color: Theme.of(context).colorScheme.primary,
+                              color: theme.colorScheme.primary,
                               borderRadius: BorderRadius.circular(
                                 AppConfig.borderRadius,
                               ),
@@ -257,8 +258,7 @@ class SettingsStyleView extends StatelessWidget {
                                 child: Text(
                                   'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor',
                                   style: TextStyle(
-                                    color:
-                                        Theme.of(context).colorScheme.onPrimary,
+                                    color: theme.colorScheme.onPrimary,
                                     fontSize: AppConfig.messageFontSize *
                                         AppConfig.fontSizeFactor,
                                   ),
@@ -276,7 +276,7 @@ class SettingsStyleView extends StatelessWidget {
                           ? null
                           : IconButton(
                               icon: const Icon(Icons.delete_outlined),
-                              color: Theme.of(context).colorScheme.error,
+                              color: theme.colorScheme.error,
                               onPressed: controller.deleteChatWallpaper,
                             ),
                       onTap: controller.setWallpaper,

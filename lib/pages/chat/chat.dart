@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:adaptive_dialog/adaptive_dialog.dart';
+import 'package:collection/collection.dart';
 import 'package:desktop_drop/desktop_drop.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
@@ -29,13 +30,13 @@ import 'package:rechainonline/pages/chat/recording_dialog.dart';
 import 'package:rechainonline/pages/chat_details/chat_details.dart';
 import 'package:rechainonline/utils/error_reporter.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/event_extension.dart';
+import 'package:rechainonline/utils/matrix_sdk_extensions/filtered_timeline_extension.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
 import 'package:rechainonline/widgets/app_lock.dart';
 import 'package:rechainonline/widgets/matrix.dart';
 import '../../utils/account_bundles.dart';
 import '../../utils/localized_exception_extension.dart';
-import '../../utils/matrix_sdk_extensions/matrix_file_extension.dart';
 import 'send_file_dialog.dart';
 import 'send_location_dialog.dart';
 
@@ -68,7 +69,7 @@ class ChatPage extends StatelessWidget {
     }
 
     return ChatPageWithRoom(
-      key: Key('chat_page_$roomId'),
+      key: Key('chat_page_${roomId}_$eventId'),
       room: room,
       shareText: shareText,
       eventId: eventId,
@@ -100,7 +101,7 @@ class ChatController extends State<ChatPageWithRoom>
 
   Timeline? timeline;
 
-  String? readMarkerEventId;
+  late final String readMarkerEventId;
 
   String get roomId => widget.room.id;
 
@@ -121,37 +122,13 @@ class ChatController extends State<ChatPageWithRoom>
   void onDragDone(DropDoneDetails details) async {
     setState(() => dragging = false);
     if (details.files.isEmpty) return;
-    final result = await showFutureLoadingDialog(
-      context: context,
-      future: () async {
-        final clientConfig = await room.client.getConfig();
-        final maxUploadSize = clientConfig.mUploadSize ?? 100 * 1024 * 1024;
-        final matrixFiles = await Future.wait(
-          details.files.map(
-            (xfile) async {
-              final length = await xfile.length();
-              if (length > maxUploadSize) {
-                throw FileTooBigMatrixException(length, maxUploadSize);
-              }
-              return MatrixFile(
-                bytes: await xfile.readAsBytes(),
-                name: xfile.name,
-                mimeType: xfile.mimeType,
-              ).detectFileType;
-            },
-          ),
-        );
-        return matrixFiles;
-      },
-    );
-    final matrixFiles = result.result;
-    if (matrixFiles == null || matrixFiles.isEmpty) return;
 
     await showAdaptiveDialog(
       context: context,
       builder: (c) => SendFileDialog(
-        files: matrixFiles,
+        files: details.files,
         room: room,
+        outerContext: context,
       ),
     );
   }
@@ -215,15 +192,13 @@ class ChatController extends State<ChatPageWithRoom>
   EmojiPickerType emojiPickerType = EmojiPickerType.keyboard;
 
   void requestHistory([_]) async {
-    if (!timeline!.canRequestHistory) return;
     Logs().v('Requesting history...');
-    await timeline!.requestHistory(historyCount: _loadHistoryCount);
+    await timeline?.requestHistory(historyCount: _loadHistoryCount);
   }
 
   void requestFuture() async {
     final timeline = this.timeline;
     if (timeline == null) return;
-    if (!timeline.canRequestFuture) return;
     Logs().v('Requesting future...');
     final mostRecentEventId = timeline.events.first.eventId;
     await timeline.requestFuture(historyCount: _loadHistoryCount);
@@ -270,6 +245,7 @@ class ChatController extends State<ChatPageWithRoom>
     );
 
     sendingClient = Matrix.of(context).client;
+    readMarkerEventId = room.hasNewMessages ? room.fullyRead : '';
     WidgetsBinding.instance.addObserver(this);
     _tryLoadTimeline();
     if (kIsWeb) {
@@ -278,22 +254,41 @@ class ChatController extends State<ChatPageWithRoom>
   }
 
   void _tryLoadTimeline() async {
-    readMarkerEventId = widget.eventId;
-    loadTimelineFuture = _getTimeline(eventContextId: readMarkerEventId);
+    final initialEventId = widget.eventId;
+    loadTimelineFuture = _getTimeline();
     try {
       await loadTimelineFuture;
-      final fullyRead = room.fullyRead;
-      if (fullyRead.isEmpty) {
-        setReadMarker();
-        return;
+      if (initialEventId != null) scrollToEventId(initialEventId);
+
+      var readMarkerEventIndex = readMarkerEventId.isEmpty
+          ? -1
+          : timeline!.events
+              .where((e) => e.isVisibleInGui || e.eventId == readMarkerEventId)
+              .toList()
+              .indexWhere((e) => e.eventId == readMarkerEventId);
+
+      // Read marker is existing but not found in first events. Try a single
+      // requestHistory call before opening timeline on event context:
+      if (readMarkerEventId.isNotEmpty && readMarkerEventIndex == -1) {
+        await timeline?.requestHistory(historyCount: _loadHistoryCount);
+        readMarkerEventIndex = timeline!.events
+            .where((e) => e.isVisibleInGui || e.eventId == readMarkerEventId)
+            .toList()
+            .indexWhere((e) => e.eventId == readMarkerEventId);
       }
-      if (timeline!.events.any((event) => event.eventId == fullyRead)) {
-        Logs().v('Scroll up to visible event', fullyRead);
-        setReadMarker();
+
+      if (readMarkerEventIndex > 1) {
+        Logs().v('Scroll up to visible event', readMarkerEventId);
+        scrollToEventId(readMarkerEventId, highlightEvent: false);
         return;
+      } else if (readMarkerEventId.isNotEmpty && readMarkerEventIndex == -1) {
+        _showScrollUpMaterialBanner(readMarkerEventId);
       }
+
+      // Mark room as read on first visit if requirements are fulfilled
+      setReadMarker();
+
       if (!mounted) return;
-      _showScrollUpMaterialBanner(fullyRead);
     } catch (e, s) {
       ErrorReporter(context, 'Unable to load timeline').onErrorCallback(e, s);
       rethrow;
@@ -312,6 +307,7 @@ class ChatController extends State<ChatPageWithRoom>
 
   void updateView() {
     if (!mounted) return;
+    setReadMarker();
     setState(() {});
   }
 
@@ -320,11 +316,6 @@ class ChatController extends State<ChatPageWithRoom>
   int? animateInEventIndex;
 
   void onInsert(int i) {
-    if (timeline?.events[i].status == EventStatus.synced) {
-      final index = timeline!.events.firstIndexWhereNotError;
-      if (i == index) setReadMarker(eventId: timeline?.events[i].eventId);
-    }
-
     // setState will be called by updateView() anyway
     animateInEventIndex = i;
   }
@@ -339,6 +330,7 @@ class ChatController extends State<ChatPageWithRoom>
       eventContextId = null;
     }
     try {
+      timeline?.cancelSubscriptions();
       timeline = await room.getTimeline(
         onUpdate: updateView,
         eventContextId: eventContextId,
@@ -376,6 +368,7 @@ class ChatController extends State<ChatPageWithRoom>
     if (_setReadMarkerFuture != null) return;
     if (_scrolledUp) return;
     if (scrollUpBannerEventId != null) return;
+
     if (eventId == null &&
         !room.hasNewMessages &&
         room.notificationCount == 0) {
@@ -397,7 +390,7 @@ class ChatController extends State<ChatPageWithRoom>
     _setReadMarkerFuture = timeline
         .setReadMarker(
       eventId: eventId,
-      // public: AppConfig.sendPublicReadReceipts,
+      public: AppConfig.sendPublicReadReceipts,
     )
         .then((_) {
       _setReadMarkerFuture = null;
@@ -490,38 +483,29 @@ class ChatController extends State<ChatPageWithRoom>
   void sendFileAction() async {
     final result = await AppLock.of(context).pauseWhile(
       FilePicker.platform.pickFiles(
-        allowMultiple: false,
-        withData: true,
+        compressionQuality: 0,
+        allowMultiple: true,
       ),
     );
     if (result == null || result.files.isEmpty) return;
     await showAdaptiveDialog(
       context: context,
       builder: (c) => SendFileDialog(
-        files: result.files
-            .map(
-              (xfile) => MatrixFile(
-                bytes: xfile.bytes!,
-                name: xfile.name,
-              ).detectFileType,
-            )
-            .toList(),
+        files: result.xFiles,
         room: room,
+        outerContext: context,
       ),
     );
   }
 
   void sendImageFromClipBoard(Uint8List? image) async {
+    if (image == null) return;
     await showAdaptiveDialog(
       context: context,
       builder: (c) => SendFileDialog(
-        files: [
-          MatrixFile(
-            bytes: image!,
-            name: "image from Clipboard",
-          ).detectFileType,
-        ],
+        files: [XFile.fromData(image)],
         room: room,
+        outerContext: context,
       ),
     );
   }
@@ -529,9 +513,9 @@ class ChatController extends State<ChatPageWithRoom>
   void sendImageAction() async {
     final result = await AppLock.of(context).pauseWhile(
       FilePicker.platform.pickFiles(
+        compressionQuality: 0,
         type: FileType.image,
-        withData: true,
-        allowMultiple: false,
+        allowMultiple: true,
       ),
     );
     if (result == null || result.files.isEmpty) return;
@@ -539,15 +523,9 @@ class ChatController extends State<ChatPageWithRoom>
     await showAdaptiveDialog(
       context: context,
       builder: (c) => SendFileDialog(
-        files: result.files
-            .map(
-              (xfile) => MatrixFile(
-                bytes: xfile.bytes!,
-                name: xfile.name,
-              ).detectFileType,
-            )
-            .toList(),
+        files: result.xFiles,
         room: room,
+        outerContext: context,
       ),
     );
   }
@@ -557,17 +535,13 @@ class ChatController extends State<ChatPageWithRoom>
     FocusScope.of(context).requestFocus(FocusNode());
     final file = await ImagePicker().pickImage(source: ImageSource.camera);
     if (file == null) return;
-    final bytes = await file.readAsBytes();
+
     await showAdaptiveDialog(
       context: context,
       builder: (c) => SendFileDialog(
-        files: [
-          MatrixImageFile(
-            bytes: bytes,
-            name: file.path,
-          ),
-        ],
+        files: [file],
         room: room,
+        outerContext: context,
       ),
     );
   }
@@ -580,17 +554,13 @@ class ChatController extends State<ChatPageWithRoom>
       maxDuration: const Duration(minutes: 1),
     );
     if (file == null) return;
-    final bytes = await file.readAsBytes();
+
     await showAdaptiveDialog(
       context: context,
       builder: (c) => SendFileDialog(
-        files: [
-          MatrixVideoFile(
-            bytes: bytes,
-            name: file.path,
-          ),
-        ],
+        files: [file],
         room: room,
+        outerContext: context,
       ),
     );
   }
@@ -610,17 +580,17 @@ class ChatController extends State<ChatPageWithRoom>
       }
     }
 
-    if (await Record().hasPermission() == false) return;
+    if (await AudioRecorder().hasPermission() == false) return;
     final result = await showDialog<RecordingResult>(
       context: context,
       barrierDismissible: false,
       builder: (c) => const RecordingDialog(),
     );
     if (result == null) return;
-    final audioFile = File(result.path);
+    final audioFile = XFile(result.path);
     final file = MatrixAudioFile(
-      bytes: audioFile.readAsBytesSync(),
-      name: audioFile.path,
+      bytes: await audioFile.readAsBytes(),
+      name: result.fileName ?? audioFile.path,
     );
     await room.sendFileEvent(
       file,
@@ -763,7 +733,7 @@ class ChatController extends State<ChatPageWithRoom>
         );
       }
       for (final event in selectedEvents) {
-        await event.remove();
+        await event.cancelSend();
       }
       setState(selectedEvents.clear);
     } catch (e, s) {
@@ -813,7 +783,7 @@ class ChatController extends State<ChatPageWithRoom>
               );
             }
           } else {
-            await event.remove();
+            await event.cancelSend();
           }
         },
       );
@@ -897,8 +867,20 @@ class ChatController extends State<ChatPageWithRoom>
     inputFocus.requestFocus();
   }
 
-  void scrollToEventId(String eventId) async {
-    final eventIndex = timeline!.events.indexWhere((e) => e.eventId == eventId);
+  void scrollToEventId(
+    String eventId, {
+    bool highlightEvent = true,
+  }) async {
+    final foundEvent =
+        timeline!.events.firstWhereOrNull((event) => event.eventId == eventId);
+
+    final eventIndex = foundEvent == null
+        ? -1
+        : timeline!.events
+            .where((event) => event.isVisibleInGui || event.eventId == eventId)
+            .toList()
+            .indexOf(foundEvent);
+
     if (eventIndex == -1) {
       setState(() {
         timeline = null;
@@ -914,11 +896,14 @@ class ChatController extends State<ChatPageWithRoom>
       });
       return;
     }
-    setState(() {
-      scrollToEventIdMarker = eventId;
-    });
+    if (highlightEvent) {
+      setState(() {
+        scrollToEventIdMarker = eventId;
+      });
+    }
     await scrollController.scrollToIndex(
-      eventIndex,
+      eventIndex + 1,
+      duration: rechainonlineThemes.animationDuration,
       preferPosition: AutoScrollPosition.middle,
     );
     _updateScrollController();
@@ -1294,58 +1279,52 @@ class ChatController extends State<ChatPageWithRoom>
   }
 
   @override
-  Widget build(BuildContext context) => Row(
-        children: [
-          Expanded(
-            child: ChatView(this),
-          ),
-          AnimatedSize(
-            duration: rechainonlineThemes.animationDuration,
-            curve: rechainonlineThemes.animationCurve,
-            child: ValueListenableBuilder(
-              valueListenable: _displayChatDetailsColumn,
-              builder: (context, displayChatDetailsColumn, _) {
-                if (!rechainonlineThemes.isThreeColumnMode(context) ||
-                    room.membership != Membership.join ||
-                    !displayChatDetailsColumn) {
-                  return const SizedBox(
-                    height: double.infinity,
-                    width: 0,
-                  );
-                }
-                return Container(
-                  width: rechainonlineThemes.columnWidth,
-                  clipBehavior: Clip.hardEdge,
-                  decoration: BoxDecoration(
-                    border: Border(
-                      left: BorderSide(
-                        width: 1,
-                        color: Theme.of(context).dividerColor,
-                      ),
-                    ),
-                  ),
-                  child: ChatDetails(
-                    roomId: roomId,
-                    embeddedCloseButton: IconButton(
-                      icon: const Icon(Icons.close),
-                      onPressed: toggleDisplayChatDetailsColumn,
-                    ),
-                  ),
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return Row(
+      children: [
+        Expanded(
+          child: ChatView(this),
+        ),
+        AnimatedSize(
+          duration: rechainonlineThemes.animationDuration,
+          curve: rechainonlineThemes.animationCurve,
+          child: ValueListenableBuilder(
+            valueListenable: _displayChatDetailsColumn,
+            builder: (context, displayChatDetailsColumn, _) {
+              if (!rechainonlineThemes.isThreeColumnMode(context) ||
+                  room.membership != Membership.join ||
+                  !displayChatDetailsColumn) {
+                return const SizedBox(
+                  height: double.infinity,
+                  width: 0,
                 );
-              },
-            ),
+              }
+              return Container(
+                width: rechainonlineThemes.columnWidth,
+                clipBehavior: Clip.hardEdge,
+                decoration: BoxDecoration(
+                  border: Border(
+                    left: BorderSide(
+                      width: 1,
+                      color: theme.dividerColor,
+                    ),
+                  ),
+                ),
+                child: ChatDetails(
+                  roomId: roomId,
+                  embeddedCloseButton: IconButton(
+                    icon: const Icon(Icons.close),
+                    onPressed: toggleDisplayChatDetailsColumn,
+                  ),
+                ),
+              );
+            },
           ),
-        ],
-      );
+        ),
+      ],
+    );
+  }
 }
 
 enum EmojiPickerType { reaction, keyboard }
-
-extension on List<Event> {
-  int get firstIndexWhereNotError {
-    if (isEmpty) return 0;
-    final index = indexWhere((event) => !event.status.isError);
-    if (index == -1) return length;
-    return index;
-  }
-}

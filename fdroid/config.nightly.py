@@ -1,8 +1,8 @@
 repo_url = "https://github.com/sorydima/REChain-.git"
-repo_name = "REChain ® 🪐 Nightly Repo"
+repo_name = "REChain ®️ 🪐 ✨ Nightly Repo"
 repo_icon = "fdroid-icon.png"
 repo_description = """
-REChain ® 🪐 Nightly Repo
+REChain ®️ 🪐 ✨ Nightly Repo
 """
 
 archive_older = 0

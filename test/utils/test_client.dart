@@ -8,11 +8,11 @@ import 'package:rechainonline/utils/matrix_sdk_extensions/flutter_hive_collectio
 Future<Client> prepareTestClient({
   bool loggedIn = false,
   Uri? homeserver,
-  String id = 'REChain ®️ 🪐 Widget Test',
+  String id = 'REChain Widget Test',
 }) async {
   homeserver ??= Uri.parse('https://fakeserver.notexisting');
   final client = Client(
-    'REChain ®️ 🪐 Widget Tests',
+    'REChain Widget Tests',
     httpClient: FakeMatrixApi()
       ..api['GET']!['/.well-known/matrix/client'] = (req) => {},
     verificationMethods: {

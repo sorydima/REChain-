@@ -60,13 +60,17 @@ class ImageBubble extends StatelessWidget {
     if (!tapToView) return;
     showDialog(
       context: context,
-      useRootNavigator: false,
-      builder: (_) => ImageViewer(event),
+      builder: (_) => ImageViewer(
+        event,
+        outerContext: context,
+      ),
     );
   }
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     final borderRadius =
         this.borderRadius ?? BorderRadius.circular(AppConfig.borderRadius);
     return Material(
@@ -77,7 +81,7 @@ class ImageBubble extends StatelessWidget {
         side: BorderSide(
           color: event.messageType == MessageTypes.Sticker
               ? Colors.transparent
-              : Theme.of(context).dividerColor,
+              : theme.dividerColor,
         ),
       ),
       child: InkWell(

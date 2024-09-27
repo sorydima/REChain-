@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+  "description": "Factory for REChain prediction markets",
+  "homepage_url": "https://rechain.online",
+  "source_url": "",
+  "field_descriptions": {
+    "oracle": "Oracle address",
+    "comparison": "Comparison operator",
+    "feed_name": "Data feed name",
+    "reserve_asset": "Reserve asset",
+    "allow_draw": "Whether to allow draw, set to 1",
+    "datafeed_value": "Target data feed value",
+    "event_date": "Date of the event",
+    "waiting_period_length": "How long to wait for the oracle to post the result",
+    "quiet_period": "How early before the event to stop trading",
+    "issue_fee": "Issuance fee",
+    "redeem_fee": "Redemption fee",
+    "arb_profit_tax": "Arbitrageur profit tax"
+  }
+}

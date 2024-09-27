@@ -15,6 +15,8 @@ class NewGroupView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     final avatar = controller.avatar;
     final error = controller.error;
     return Scaffold(
@@ -31,59 +33,41 @@ class NewGroupView extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             const SizedBox(height: 16),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Row(
-                children: [
-                  InkWell(
-                    borderRadius: BorderRadius.circular(90),
-                    onTap: controller.loading ? null : controller.selectPhoto,
-                    child: CircleAvatar(
-                      radius: Avatar.defaultSize / 2,
-                      child: avatar == null
-                          ? const Icon(Icons.camera_alt_outlined)
-                          : ClipRRect(
-                              borderRadius: BorderRadius.circular(90),
-                              child: Image.memory(
-                                avatar,
-                                width: Avatar.defaultSize,
-                                height: Avatar.defaultSize,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                    ),
-                  ),
-                  const SizedBox(width: 16),
-                  Expanded(
-                    child: TextField(
-                      controller: controller.nameController,
-                      autocorrect: false,
-                      readOnly: controller.loading,
-                      decoration: InputDecoration(
-                        prefixIcon: const Icon(Icons.people_outlined),
-                        hintText: L10n.of(context)!.groupName,
+            InkWell(
+              borderRadius: BorderRadius.circular(90),
+              onTap: controller.loading ? null : controller.selectPhoto,
+              child: CircleAvatar(
+                radius: Avatar.defaultSize,
+                child: avatar == null
+                    ? const Icon(Icons.add_a_photo_outlined)
+                    : ClipRRect(
+                        borderRadius: BorderRadius.circular(90),
+                        child: Image.memory(
+                          avatar,
+                          width: Avatar.defaultSize,
+                          height: Avatar.defaultSize,
+                          fit: BoxFit.cover,
+                        ),
                       ),
-                    ),
-                  ),
-                ],
               ),
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 32),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: TextField(
-                controller: controller.topicController,
-                minLines: 4,
-                maxLines: 4,
-                maxLength: 255,
+                autofocus: true,
+                controller: controller.nameController,
+                autocorrect: false,
                 readOnly: controller.loading,
                 decoration: InputDecoration(
-                  hintText: L10n.of(context)!.addChatDescription,
+                  prefixIcon: const Icon(Icons.people_outlined),
+                  labelText: L10n.of(context)!.groupName,
                 ),
               ),
             ),
             const SizedBox(height: 16),
             SwitchListTile.adaptive(
+              contentPadding: const EdgeInsets.symmetric(horizontal: 32),
               secondary: const Icon(Icons.public_outlined),
               title: Text(L10n.of(context)!.groupIsPublic),
               value: controller.publicGroup,
@@ -93,6 +77,8 @@ class NewGroupView extends StatelessWidget {
               duration: rechainonlineThemes.animationDuration,
               child: controller.publicGroup
                   ? SwitchListTile.adaptive(
+                      contentPadding:
+                          const EdgeInsets.symmetric(horizontal: 32),
                       secondary: const Icon(Icons.search_outlined),
                       title: Text(L10n.of(context)!.groupCanBeFoundViaSearch),
                       value: controller.groupCanBeFound,
@@ -103,14 +89,15 @@ class NewGroupView extends StatelessWidget {
                   : const SizedBox.shrink(),
             ),
             SwitchListTile.adaptive(
+              contentPadding: const EdgeInsets.symmetric(horizontal: 32),
               secondary: Icon(
                 Icons.lock_outlined,
-                color: Theme.of(context).colorScheme.onBackground,
+                color: theme.colorScheme.onSurface,
               ),
               title: Text(
                 L10n.of(context)!.enableEncryption,
                 style: TextStyle(
-                  color: Theme.of(context).colorScheme.onBackground,
+                  color: theme.colorScheme.onSurface,
                 ),
               ),
               value: !controller.publicGroup,
@@ -121,24 +108,11 @@ class NewGroupView extends StatelessWidget {
               child: SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    foregroundColor: Theme.of(context).colorScheme.onPrimary,
-                    backgroundColor: Theme.of(context).colorScheme.primary,
-                  ),
                   onPressed:
                       controller.loading ? null : controller.submitAction,
                   child: controller.loading
                       ? const LinearProgressIndicator()
-                      : Row(
-                          children: [
-                            Expanded(
-                              child: Text(
-                                L10n.of(context)!.createGroupAndInviteUsers,
-                              ),
-                            ),
-                            Icon(Icons.adaptive.arrow_forward_outlined),
-                          ],
-                        ),
+                      : Text(L10n.of(context)!.createGroupAndInviteUsers),
                 ),
               ),
             ),
@@ -149,12 +123,12 @@ class NewGroupView extends StatelessWidget {
                   : ListTile(
                       leading: Icon(
                         Icons.warning_outlined,
-                        color: Theme.of(context).colorScheme.error,
+                        color: theme.colorScheme.error,
                       ),
                       title: Text(
                         error.toLocalizedString(context),
                         style: TextStyle(
-                          color: Theme.of(context).colorScheme.error,
+                          color: theme.colorScheme.error,
                         ),
                       ),
                     ),

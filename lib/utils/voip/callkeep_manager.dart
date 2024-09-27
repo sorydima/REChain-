@@ -66,7 +66,7 @@ class CallKeepManager {
 
   late FlutterCallkeep _callKeep;
 
-  String get appName => 'REChain ®️ 🪐';
+  String get appName => 'REChain ®️ 🪐 ✨';
 
   Future<bool> get hasPhoneAccountEnabled async =>
       await _callKeep.hasPhoneAccount();
@@ -211,9 +211,9 @@ class CallKeepManager {
     addCall(call.callId, callKeeper);
     await _callKeep.displayIncomingCall(
       call.callId,
-      '${call.room.getLocalizedDisplayname()} (REChain ®️ 🪐)',
+      '${call.room.getLocalizedDisplayname()} (REChain ®️ 🪐 ✨)',
       localizedCallerName:
-          '${call.room.getLocalizedDisplayname()} (REChain ®️ 🪐)',
+          '${call.room.getLocalizedDisplayname()} (REChain ®️ 🪐 ✨)',
       handleType: 'number',
       hasVideo: call.type == CallType.kVideo,
     );
