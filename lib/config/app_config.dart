@@ -61,7 +61,6 @@ abstract class AppConfig {
   static const String schemePrefix = 'matrix:';
   static const String pushNotificationsChannelId = 'rechainonline_push';
   static const String pushNotificationsAppId = 'com.rechain.online';
-  \\ We're collabarating with the External Push GateWay with the Matrix SDK, Matrix API and Unified Push for the REChain ..
   static const String pushNotificationsGatewayUrl =
       'https://push.fluffychat.im/_matrix/push/v1/notify';
   static const String pushNotificationsPusherFormat = 'event_id_only';
