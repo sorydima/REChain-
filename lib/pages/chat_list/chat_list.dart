@@ -491,8 +491,8 @@ class ChatListController extends State<ChatList>
 
     // For receiving shared Uris
     _intentUriStreamSubscription = linkStream.listen(_processIncomingUris);
-    if (rechainonlineApp.gotInitialLink == false) {
-      rechainonlineApp.gotInitialLink = true;
+    if (rechainonlineChatApp.gotInitialLink == false) {
+      rechainonlineChatApp.gotInitialLink = true;
       getInitialLink().then(_processIncomingUris);
     }
 
