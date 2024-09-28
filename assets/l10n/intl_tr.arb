@@ -563,7 +563,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "defaultPermissionLevel": "Öntanımlı izin seviyesi",
+  "defaultPermissionLevel": "Yeni kullanıcılar içi öntanımlı izin seviyesi",
   "@defaultPermissionLevel": {
     "type": "text",
     "placeholders": {}
@@ -742,7 +742,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "rechainonline": " REChain ®️ 🪐",
+  "rechainonline": "REChain ®️ 🪐 ✨",
   "@rechainonline": {
     "type": "text",
     "placeholders": {}
@@ -902,7 +902,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "inviteText": "{username} sizi REChain ®️ 🪐'e davet etti.\n1. rechain.online adresini ziyaret edin ve uygulamayı kurun \n2. Kaydolun veya oturum açın \n3. Davet bağlantısını açın: \n {link}",
+  "inviteText": "{username} sizi REChain ®️ 🪐 ✨'e davet etti.\n1. rechain.online adresini ziyaret edin ve uygulamayı kurun \n2. Kaydolun veya oturum açın \n3. Davet bağlantısını açın: \n {link}",
   "@inviteText": {
     "type": "text",
     "placeholders": {
@@ -1054,7 +1054,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "newMessageInrechainonline": "💬 REChain ®️ 🪐'te yeni mesaj",
+  "newMessageInrechainonline": "💬 REChain ®️ 🪐 ✨'te yeni mesaj",
   "@newMessageInrechainonline": {
     "type": "text",
     "placeholders": {}
@@ -1094,7 +1094,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "norechainonlineServer": "{server1} REChain ®️ 🪐 sunucusu değil, onun yerine {server2} kullanılsın mı?",
+  "norechainonlineServer": "{server1} REChain ®️ 🪐 ✨ sunucusu değil, onun yerine {server2} kullanılsın mı?",
   "@norechainonlineServer": {
     "type": "text",
     "placeholders": {
@@ -1649,7 +1649,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "title": "REChain ®️ 🪐",
+  "title": "REChain ®️ 🪐 ✨",
   "@title": {
     "description": "Title for the application",
     "type": "text",
@@ -2157,13 +2157,13 @@
   "@dehydrateWarning": {},
   "hydrateTorLong": "TOR'da en son oturumunuzu dışa aktardınız mı? Hızlıca içe aktarın ve sohbete devam edin.",
   "@hydrateTorLong": {},
-  "indexedDbErrorLong": "Mesaj saklama özelliği ne yazık ki öntanımlı olarak gizli modda etkin değildir.\nLütfen\n - about:config sayfasına gidin ve\n - dom.indexedDB.privateBrowsing.enabled seçeneğini true olarak ayarlayın\nAksi takdirde REChain ®️ 🪐 çalıştırılamaz.",
+  "indexedDbErrorLong": "Mesaj saklama özelliği ne yazık ki öntanımlı olarak gizli modda etkin değildir.\nLütfen\n - about:config sayfasına gidin ve\n - dom.indexedDB.privateBrowsing.enabled seçeneğini true olarak ayarlayın\nAksi takdirde REChain ®️ 🪐 ✨ çalıştırılamaz.",
   "@indexedDbErrorLong": {},
   "user": "Kullanıcı",
   "@user": {},
   "custom": "Özel",
   "@custom": {},
-  "confirmMatrixId": "Hesabınızı silmek için lütfen REChain ®️ 🪐 kimliğinizi doğrulayın.",
+  "confirmMatrixId": "Hesabınızı silmek için lütfen REChain ®️ 🪐 ✨ kimliğinizi doğrulayın.",
   "@confirmMatrixId": {},
   "supposedMxid": "Bu {mxid} olmalıdır",
   "@supposedMxid": {
@@ -2174,7 +2174,7 @@
   },
   "commandHint_markasgroup": "Grup olarak işaretle",
   "@commandHint_markasgroup": {},
-  "commandHint_markasdm": "Verilen REChain ®️ 🪐 kimliği için doğrudan mesaj odası olarak işaretle",
+  "commandHint_markasdm": "Verilen REChain ®️ 🪐 ✨ kimliği için doğrudan mesaj odası olarak işaretle",
   "@commandHint_markasdm": {},
   "whyIsThisMessageEncrypted": "Bu mesaj neden okunamıyor?",
   "@whyIsThisMessageEncrypted": {},
@@ -2184,7 +2184,7 @@
   "@screenSharingTitle": {},
   "callingPermissions": "Arama izinleri",
   "@callingPermissions": {},
-  "callingAccountDetails": "REChain ®️ 🪐'in yerel android telefon uygulamasını kullanmasına izin verir.",
+  "callingAccountDetails": "REChain ®️ 🪐 ✨'in yerel android telefon uygulamasını kullanmasına izin verir.",
   "@callingAccountDetails": {},
   "appearOnTop": "Üstte görün",
   "@appearOnTop": {},
@@ -2194,19 +2194,19 @@
   "@enterRoom": {},
   "allSpaces": "Tüm alanlar",
   "@allSpaces": {},
-  "otherCallingPermissions": "Mikrofon, kamera ve diğer REChain ®️ 🪐 izinleri",
+  "otherCallingPermissions": "Mikrofon, kamera ve diğer REChain ®️ 🪐 ✨ izinleri",
   "@otherCallingPermissions": {},
   "foregroundServiceRunning": "Bu bildirim, ön plan hizmeti çalışırken görünür.",
   "@foregroundServiceRunning": {},
   "callingAccount": "Arama hesabı",
   "@callingAccount": {},
-  "appearOnTopDetails": "Uygulamanın üstte görünmesine izin verir (REChain ®️ 🪐'ı zaten bir arama hesabı olarak ayarladıysanız gerekli değildir)",
+  "appearOnTopDetails": "Uygulamanın üstte görünmesine izin verir (REChain ®️ 🪐 ✨'ı zaten bir arama hesabı olarak ayarladıysanız gerekli değildir)",
   "@appearOnTopDetails": {},
   "newGroup": "Yeni grup",
   "@newGroup": {},
   "newSpace": "Yeni alan",
   "@newSpace": {},
-  "screenSharingDetail": "Ekranınızı FuffyChat'te paylaşıyorsunuz",
+  "screenSharingDetail": "Ekranınızı REChain ®️ 🪐 ✨'te paylaşıyorsunuz",
   "@screenSharingDetail": {},
   "numChats": "{number} sohbet",
   "@numChats": {
@@ -2515,9 +2515,9 @@
   },
   "searchForUsers": "@kullanıcıları ara...",
   "@searchForUsers": {},
-  "commandHint_ignore": "Verilen REChain ®️ 🪐 kimliğini görmezden gel",
+  "commandHint_ignore": "Verilen REChain ®️ 🪐 ✨ kimliğini görmezden gel",
   "@commandHint_ignore": {},
-  "commandHint_unignore": "Verilen REChain ®️ 🪐 kimliğini görmezden gelmeyi iptal et",
+  "commandHint_unignore": "Verilen REChain ®️ 🪐 ✨ kimliğini görmezden gelmeyi iptal et",
   "@commandHint_unignore": {},
   "appLockDescription": "Kullanılmadığında PIN kodu ile uygulamayı kilitle",
   "@appLockDescription": {},
@@ -2689,5 +2689,119 @@
       "appname": {},
       "unread": {}
     }
-  }
+  },
+  "searchIn": "\"{chat}\" sohbeti içinde ara...",
+  "@searchIn": {
+    "type": "text",
+    "placeholders": {
+      "chat": {}
+    }
+  },
+  "searchMore": "Daha fazla ara...",
+  "@searchMore": {},
+  "gallery": "Galeri",
+  "@gallery": {},
+  "files": "Dosyalar",
+  "@files": {},
+  "knockRestricted": "Tıklatma kısıtlı",
+  "@knockRestricted": {},
+  "restricted": "Kısıtlı",
+  "@restricted": {},
+  "swipeRightToLeftToReply": "Yanıtlamak için sağdan sola kaydır",
+  "@swipeRightToLeftToReply": {},
+  "alwaysUse24HourFormat": "false",
+  "@alwaysUse24HourFormat": {
+    "description": "Set to true to always display time of day in 24 hour format."
+  },
+  "countChatsAndCountParticipants": "{chats} sohbet ve {participants} katılımcı",
+  "@countChatsAndCountParticipants": {
+    "type": "text",
+    "placeholders": {
+      "chats": {},
+      "participants": {}
+    }
+  },
+  "noMoreChatsFound": "Başka sohbet bulunamadı...",
+  "@noMoreChatsFound": {},
+  "goToSpace": "Alana git: {space}",
+  "@goToSpace": {
+    "type": "text",
+    "space": {}
+  },
+  "joinedChats": "Katılınan sohbetler",
+  "@joinedChats": {},
+  "unread": "Okunmadı",
+  "@unread": {},
+  "markAsUnread": "Okunmadı olarak işaretle",
+  "@markAsUnread": {},
+  "space": "Alan",
+  "@space": {},
+  "spaces": "Alanlar",
+  "@spaces": {},
+  "inviteOtherUsers": "Diğer kullanıcıları bu sohbete davet et",
+  "@inviteOtherUsers": {},
+  "changeTheChatPermissions": "Sohbet izinlerini değiştir",
+  "@changeTheChatPermissions": {},
+  "changeTheCanonicalRoomAlias": "Ana herkese açık sohbet adresini değiştir",
+  "@changeTheCanonicalRoomAlias": {},
+  "sendRoomNotifications": "@oda bildirimleri gönder",
+  "@sendRoomNotifications": {},
+  "changeTheDescriptionOfTheGroup": "Sohbetin açıklamasını değiştir",
+  "@changeTheDescriptionOfTheGroup": {},
+  "userLevel": "{level} - Kullanıcı",
+  "@userLevel": {
+    "type": "text",
+    "placeholders": {
+      "level": {}
+    }
+  },
+  "moderatorLevel": "{level} - Moderatör",
+  "@moderatorLevel": {
+    "type": "text",
+    "placeholders": {
+      "level": {}
+    }
+  },
+  "adminLevel": "{level} - Yönetici",
+  "@adminLevel": {
+    "type": "text",
+    "placeholders": {
+      "level": {}
+    }
+  },
+  "changeGeneralChatSettings": "Genel sohbet ayarlarını değiştir",
+  "@changeGeneralChatSettings": {},
+  "changeTheVisibilityOfChatHistory": "Sohbet geçmişinin görünürlüğünü değiştir",
+  "@changeTheVisibilityOfChatHistory": {},
+  "invitedBy": "📩 {user} davet etti",
+  "@invitedBy": {
+    "placeholders": {
+      "user": {}
+    }
+  },
+  "chatPermissionsDescription": "Bu sohbette belirli eylemler için hangi güç düzeyinin gerekli olduğunu tanımlayın. 0, 50 ve 100 güç düzeyleri genellikle kullanıcıları, moderatörleri ve yöneticileri temsil eder, ancak herhangi bir derecelendirme mümkündür.",
+  "@chatPermissionsDescription": {},
+  "changelog": "Değişiklik günlüğü",
+  "@changelog": {},
+  "updateInstalled": "🎉 Güncelleme {version} kuruldu!",
+  "@updateInstalled": {
+    "type": "text",
+    "placeholders": {
+      "version": {}
+    }
+  },
+  "sendCanceled": "Gönderme iptal edildi",
+  "@sendCanceled": {},
+  "noChatsFoundHere": "Burada henüz sohbet bulunamadı. Aşağıdaki düğmeyi kullanarak biriyle yeni bir sohbet başlatın. ⤵️",
+  "@noChatsFoundHere": {},
+  "loginWithMatrixId": "REChain ®️ 🪐 ✨ kimliği ile oturum aç",
+  "@loginWithMatrixId": {},
+  "discoverHomeservers": "Ana sunucuları keşfet",
+  "@discoverHomeservers": {},
+  "whatIsAHomeserver": "Ana sunucu nedir?",
+  "@whatIsAHomeserver": {},
+  "homeserverDescription": "Tüm verileriniz tıpkı bir e-posta sağlayıcısı gibi ana sunucuda saklanır. Hangi ana sunucuyu kullanmak istediğinizi seçebilir ve herkesle iletişim kurmaya devam edebilirsiniz. https://matrix.org adresinden daha fazla bilgi edinin.",
+  "@homeserverDescription": {},
+  "doesNotSeemToBeAValidHomeserver": "Uyumlu bir ana sunucu gibi görünmüyor. Yanlış URL mi?",
+  "@doesNotSeemToBeAValidHomeserver": {}
 }

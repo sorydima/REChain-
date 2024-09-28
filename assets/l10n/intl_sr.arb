@@ -22,11 +22,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "accountInformation": "Подаци о налогу",
-  "@accountInformation": {
-    "type": "text",
-    "placeholders": {}
-  },
   "activatedEndToEndEncryption": "{username} укључи шифровање с краја на крај",
   "@activatedEndToEndEncryption": {
     "type": "text",
@@ -36,16 +31,6 @@
   },
   "addEmail": "Додај е-адресу",
   "@addEmail": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "addGroupDescription": "Додај опис групе",
-  "@addGroupDescription": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "addNewFriend": "Додај новог пријатеља",
-  "@addNewFriend": {
     "type": "text",
     "placeholders": {}
   },
@@ -61,11 +46,6 @@
   },
   "all": "Сви",
   "@all": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "alreadyHaveAnAccount": "Већ имате налог?",
-  "@alreadyHaveAnAccount": {
     "type": "text",
     "placeholders": {}
   },
@@ -91,11 +71,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "archivedRoom": "Архивирана соба",
-  "@archivedRoom": {
-    "type": "text",
-    "placeholders": {}
-  },
   "areGuestsAllowedToJoin": "Да ли је гостима дозвољен приступ",
   "@areGuestsAllowedToJoin": {
     "type": "text",
@@ -111,18 +86,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "askSSSSCache": "Унесите своју безбедносну фразу или кључ за опоравак да кеширате кључеве.",
-  "@askSSSSCache": {
-    "type": "text",
-    "placeholders": {}
-  },
   "askSSSSSign": "Да бисте могли да пријавите другу особу, унесите своју безбедносну фразу или кључ опоравка.",
   "@askSSSSSign": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "askSSSSVerify": "Унесите своју безбедносну фразу или кључ за опоравак да бисте верификовали сесију.",
-  "@askSSSSVerify": {
     "type": "text",
     "placeholders": {}
   },
@@ -132,26 +97,6 @@
     "placeholders": {
       "username": {}
     }
-  },
-  "audioPlayerPause": "Пауза",
-  "@audioPlayerPause": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "audioPlayerPlay": "Пуштање",
-  "@audioPlayerPlay": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "authentication": "Аутентификација",
-  "@authentication": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "avatarHasBeenChanged": "Аватар измењен",
-  "@avatarHasBeenChanged": {
-    "type": "text",
-    "placeholders": {}
   },
   "badServerLoginTypesException": "Домаћи сервер подржава начине пријаве:\n{serverVersions}\nали ова апликација подржава само:\n{supportedVersions}",
   "@badServerLoginTypesException": {
@@ -199,11 +144,6 @@
   },
   "botMessages": "Поруке Бота",
   "@botMessages": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "cachedKeys": "Кључеви кеширани",
-  "@cachedKeys": {
     "type": "text",
     "placeholders": {}
   },
@@ -321,22 +261,12 @@
       "username": {}
     }
   },
-  "changelog": "Дневник измена",
-  "@changelog": {
-    "type": "text",
-    "placeholders": {}
-  },
   "changePassword": "Измени лозинку",
   "@changePassword": {
     "type": "text",
     "placeholders": {}
   },
-  "changesHaveBeenSaved": "Измене су сачуване",
-  "@changesHaveBeenSaved": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
+  "changeTheHomeserver": "Промени домаћи сервер",
   "@changeTheHomeserver": {
     "type": "text",
     "placeholders": {}
@@ -348,16 +278,6 @@
   },
   "changeTheNameOfTheGroup": "Измени назив групе",
   "@changeTheNameOfTheGroup": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "changeTheServer": "Промени сервер",
-  "@changeTheServer": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "changeWallpaper": "Измени тапет",
-  "@changeWallpaper": {
     "type": "text",
     "placeholders": {}
   },
@@ -401,18 +321,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "chooseAUsername": "Изаберите корисничко име",
-  "@chooseAUsername": {
-    "type": "text",
-    "placeholders": {}
-  },
   "clearArchive": "Очисти архиву",
   "@clearArchive": {},
-  "clearText": "Обриши текст",
-  "@clearText": {
-    "type": "text",
-    "placeholders": {}
-  },
   "close": "Затвори",
   "@close": {
     "type": "text",
@@ -508,11 +418,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "connectionAttemptFailed": "Неуспео покушај повезивања",
-  "@connectionAttemptFailed": {
-    "type": "text",
-    "placeholders": {}
-  },
   "contactHasBeenInvitedToTheGroup": "Особа је позвана у групу",
   "@contactHasBeenInvitedToTheGroup": {
     "type": "text",
@@ -530,11 +435,6 @@
   },
   "contentHasBeenReported": "Садржај је пријављен администраторима сервера",
   "@contentHasBeenReported": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "contentViewer": "Прегледач садржаја",
-  "@contentViewer": {
     "type": "text",
     "placeholders": {}
   },
@@ -560,16 +460,6 @@
       "error": {}
     }
   },
-  "couldNotSetAvatar": "Не могу да поставим аватар",
-  "@couldNotSetAvatar": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "couldNotSetDisplayname": "Не могу да поставим име за приказ",
-  "@couldNotSetDisplayname": {
-    "type": "text",
-    "placeholders": {}
-  },
   "countParticipants": "учесника: {count}",
   "@countParticipants": {
     "type": "text",
@@ -582,32 +472,12 @@
     "type": "text",
     "placeholders": {}
   },
-  "createAccountNow": "Направи налог сада",
-  "@createAccountNow": {
-    "type": "text",
-    "placeholders": {}
-  },
   "createdTheChat": "{username} направи ћаскање",
   "@createdTheChat": {
     "type": "text",
     "placeholders": {
       "username": {}
     }
-  },
-  "createNewGroup": "Направи нову групу",
-  "@createNewGroup": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "crossSigningDisabled": "Међу-потписивање искључено",
-  "@crossSigningDisabled": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "crossSigningEnabled": "Међу-потписивање укључено",
-  "@crossSigningEnabled": {
-    "type": "text",
-    "placeholders": {}
   },
   "currentlyActive": "Тренутно активно",
   "@currentlyActive": {
@@ -669,11 +539,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "deny": "Одбиј",
-  "@deny": {
-    "type": "text",
-    "placeholders": {}
-  },
   "device": "Уређај",
   "@device": {
     "type": "text",
@@ -689,38 +554,13 @@
     "type": "text",
     "placeholders": {}
   },
-  "deviceVerifyDescription": "Шифровање је безбедно само када су сви уређаји оверени.",
-  "@deviceVerifyDescription": {
-    "type": "text",
-    "placeholders": {}
-  },
   "directChats": "Директна ћаскања",
   "@directChats": {
     "type": "text",
     "placeholders": {}
   },
-  "discardPicture": "Одбаци слику",
-  "@discardPicture": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "discover": "Истражи",
-  "@discover": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "discoverGroups": "Истражи групе",
-  "@discoverGroups": {
-    "type": "text",
-    "placeholders": {}
-  },
   "displaynameHasBeenChanged": "Име за приказ је измењено",
   "@displaynameHasBeenChanged": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "donate": "Донација",
-  "@donate": {
     "type": "text",
     "placeholders": {}
   },
@@ -739,18 +579,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "editChatPermissions": "Уредите дозволе ћаскања",
-  "@editChatPermissions": {
-    "type": "text",
-    "placeholders": {}
-  },
   "editDisplayname": "Уреди име за приказ",
   "@editDisplayname": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "editJitsiInstance": "Уреди Џитси инстанцу",
-  "@editJitsiInstance": {
     "type": "text",
     "placeholders": {}
   },
@@ -824,18 +654,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "encryptionAlgorithm": "Алгоритам шифровања",
-  "@encryptionAlgorithm": {
-    "type": "text",
-    "placeholders": {}
-  },
   "encryptionNotEnabled": "Шифровање није укључено",
   "@encryptionNotEnabled": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "end2endEncryptionSettings": "Поставке шифровања с краја на крај",
-  "@end2endEncryptionSettings": {
     "type": "text",
     "placeholders": {}
   },
@@ -846,22 +666,12 @@
       "senderName": {}
     }
   },
-  "enterAGroupName": "унесите назив групе",
-  "@enterAGroupName": {
-    "type": "text",
-    "placeholders": {}
-  },
   "enterAnEmailAddress": "Унесите адресу е-поште",
   "@enterAnEmailAddress": {
     "type": "text",
     "placeholders": {}
   },
-  "enterAUsername": "Унесите корисничко име",
-  "@enterAUsername": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
+  "enterYourHomeserver": "Унесите свој домаћи сервер",
   "@enterYourHomeserver": {
     "type": "text",
     "placeholders": {}
@@ -881,12 +691,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "fileSize": "Величина фајла",
-  "@fileSize": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "rechainonline": "REChain ® 🪐",
+  "rechainonline": "REChain ®️ 🪐 ✨",
   "@rechainonline": {
     "type": "text",
     "placeholders": {}
@@ -898,16 +703,6 @@
   },
   "forward": "Напред",
   "@forward": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "friday": "петак",
-  "@friday": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "friends": "Пријатељи",
-  "@friends": {
     "type": "text",
     "placeholders": {}
   },
@@ -928,16 +723,6 @@
   },
   "group": "Група",
   "@group": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "groupDescription": "Опис групе",
-  "@groupDescription": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "groupDescriptionHasBeenChanged": "Опис групе измењен",
-  "@groupDescriptionHasBeenChanged": {
     "type": "text",
     "placeholders": {}
   },
@@ -991,11 +776,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "homeserverIsNotCompatible": "Сервер није компатибилан",
-  "@homeserverIsNotCompatible": {
-    "type": "text",
-    "placeholders": {}
-  },
   "howOffensiveIsThisContent": "Колико је увредљив овај садржај?",
   "@howOffensiveIsThisContent": {
     "type": "text",
@@ -1021,16 +801,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "ignoreListDescription": "Можете игнорисати кориснике који вас нервирају. Нећете примати никакве поруке нити позивнице од корисника са ваше листе за игнорисање.",
-  "@ignoreListDescription": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "ignoreUsername": "Игнориши корисника",
-  "@ignoreUsername": {
-    "type": "text",
-    "placeholders": {}
-  },
   "iHaveClickedOnLink": "Кликнуо сам на везу",
   "@iHaveClickedOnLink": {
     "type": "text",
@@ -1043,11 +813,6 @@
   },
   "inoffensive": "Није увредљив",
   "@inoffensive": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "invalidEmail": "Лоша е-адреса",
-  "@invalidEmail": {
     "type": "text",
     "placeholders": {}
   },
@@ -1086,10 +851,13 @@
     "type": "text",
     "placeholders": {}
   },
-  "isDeviceKeyCorrect": "Да ли је кључ уређаја исправан?",
-  "@isDeviceKeyCorrect": {
+  "inviteText": "{username} вас позива у REChain ®️ 🪐 ✨. \n1. Инсталирајте REChain ®️ 🪐 ✨: https://rechain.online \n2. Региструјте се или пријавите \n3. Отворите везу позивнице: {link}",
+  "@inviteText": {
     "type": "text",
-    "placeholders": {}
+    "placeholders": {
+      "username": {},
+      "link": {}
+    }
   },
   "isTyping": "куца…",
   "@isTyping": {
@@ -1105,16 +873,6 @@
   },
   "joinRoom": "Придружи се соби",
   "@joinRoom": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "keysCached": "Кључеви су кеширани",
-  "@keysCached": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "keysMissing": "Кључеви недостају",
-  "@keysMissing": {
     "type": "text",
     "placeholders": {}
   },
@@ -1145,16 +903,6 @@
     "placeholders": {
       "localizedTimeShort": {}
     }
-  },
-  "lastSeenIp": "Последњи ИП",
-  "@lastSeenIp": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "lastSeenLongTimeAgo": "одавно није на мрежи",
-  "@lastSeenLongTimeAgo": {
-    "type": "text",
-    "placeholders": {}
   },
   "leave": "Напусти",
   "@leave": {
@@ -1205,30 +953,8 @@
       "homeserver": {}
     }
   },
-  "loginWith": "{brand} за пријаву",
-  "@loginWith": {
-    "type": "text",
-    "placeholders": {
-      "brand": {}
-    }
-  },
   "logout": "Одјава",
   "@logout": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "makeAModerator": "Направи модератора",
-  "@makeAModerator": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "makeAnAdmin": "Направи админа",
-  "@makeAnAdmin": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "makeSureTheIdentifierIsValid": "Проверите да је идентификатор исправан",
-  "@makeSureTheIdentifierIsValid": {
     "type": "text",
     "placeholders": {}
   },
@@ -1247,18 +973,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "messageWillBeRemovedWarning": "Поруке ће бити уклоњене за све учеснике",
-  "@messageWillBeRemovedWarning": {
-    "type": "text",
-    "placeholders": {}
-  },
   "moderator": "Модератор",
   "@moderator": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "monday": "понедељак",
-  "@monday": {
     "type": "text",
     "placeholders": {}
   },
@@ -1277,7 +993,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "newMessageInrechainonline": "Нова порука — REChain ® 🪐",
+  "newMessageInrechainonline": "Нова порука — REChain ®️ 🪐 ✨",
   "@newMessageInrechainonline": {
     "type": "text",
     "placeholders": {}
@@ -1302,16 +1018,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "noCrossSignBootstrap": "РЕЦхаин.Онлине тренутно не подржава унакрсно потписивање. Омогућите га у оквиру РЕЦхаин-а 🪐.",
-  "@noCrossSignBootstrap": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "noDescription": "Нема описа",
-  "@noDescription": {
-    "type": "text",
-    "placeholders": {}
-  },
   "noEmotesFound": "Нема емотија. 😕",
   "@noEmotesFound": {
     "type": "text",
@@ -1322,13 +1028,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "noGoogleServicesWarning": "Чини се да немате Гоогле услуге на свом телефону. Ово је добра одлука за вашу приватност! Да бисте омогућили обавештења на РЕЦхаин.Онлине платформи, препоручујемо да користите хттпс://мицрог.орг/ или хттпс://унифиедпусх.орг/",
+  "noGoogleServicesWarning": "Чини се да немате Гугл услуге на телефону. То је добра одлука за вашу приватност! Да би се протурале нотификације у REChain ®️ 🪐 ✨, препоручујемо коришћење https://microg.org/ или https://unifiedpush.org/",
   "@noGoogleServicesWarning": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "noMegolmBootstrap": "Омогућите резервну копију кључа на мрежи преко мреже у оквиру РЕЦхаин-а 🪐.",
-  "@noMegolmBootstrap": {
     "type": "text",
     "placeholders": {}
   },
@@ -1347,18 +1048,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "noPublicRoomsFound": "Нисам нашао јавне собе…",
-  "@noPublicRoomsFound": {
-    "type": "text",
-    "placeholders": {}
-  },
   "noRoomsFound": "Нисам нашао собе…",
   "@noRoomsFound": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "noStatusesFound": "За сад нема стања.",
-  "@noStatusesFound": {
     "type": "text",
     "placeholders": {}
   },
@@ -1371,18 +1062,6 @@
   "@notificationsEnabledForThisAccount": {
     "type": "text",
     "placeholders": {}
-  },
-  "notSupportedInWeb": "Није подржано на вебу",
-  "@notSupportedInWeb": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "numberSelected": "изабрано {number}",
-  "@numberSelected": {
-    "type": "text",
-    "placeholders": {
-      "number": {}
-    }
   },
   "numUsersTyping": "{count} корисника куца…",
   "@numUsersTyping": {
@@ -1411,11 +1090,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "onlineKeyBackupDisabled": "Резерва кључева на мрежи је искључена",
-  "@onlineKeyBackupDisabled": {
-    "type": "text",
-    "placeholders": {}
-  },
   "onlineKeyBackupEnabled": "Резерва кључева на мрежи је укључена",
   "@onlineKeyBackupEnabled": {
     "type": "text",
@@ -1441,16 +1115,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "optionalAddEmail": "(необавезно) ваша е-адреса",
-  "@optionalAddEmail": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "optionalGroupName": "(опционо) назив групе",
-  "@optionalGroupName": {
-    "type": "text",
-    "placeholders": {}
-  },
   "or": "или",
   "@or": {
     "type": "text",
@@ -1458,11 +1122,6 @@
   },
   "participant": "Учесник",
   "@participant": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "participatingUserDevices": "Уређаји који учествују",
-  "@participatingUserDevices": {
     "type": "text",
     "placeholders": {}
   },
@@ -1523,11 +1182,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "pleaseChooseAUsername": "Изаберите корисничко име",
-  "@pleaseChooseAUsername": {
-    "type": "text",
-    "placeholders": {}
-  },
   "pleaseClickOnLink": "Кликните на везу у примљеној е-пошти па наставите.",
   "@pleaseClickOnLink": {
     "type": "text",
@@ -1535,16 +1189,6 @@
   },
   "pleaseEnter4Digits": "Унесите 4 цифре или оставите празно да не закључавате апликацију.",
   "@pleaseEnter4Digits": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "pleaseEnterArechainonlineIdentifier": "Унесите ИД из мреже Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network.",
-  "@pleaseEnterArechainonlineIdentifier": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "pleaseEnterSecurityKey": "Унесите свој сигурносни кључ:",
-  "@pleaseEnterSecurityKey": {
     "type": "text",
     "placeholders": {}
   },
@@ -1570,16 +1214,6 @@
   },
   "privacy": "Приватност",
   "@privacy": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "publicGroups": "Јавне групе",
-  "@publicGroups": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "publicKey": "Јавни кључ",
-  "@publicKey": {
     "type": "text",
     "placeholders": {}
   },
@@ -1664,11 +1298,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "removeMessage": "Уклони поруку",
-  "@removeMessage": {
-    "type": "text",
-    "placeholders": {}
-  },
   "removeYourAvatar": "Уклоните свој аватар",
   "@removeYourAvatar": {
     "type": "text",
@@ -1699,16 +1328,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "requestToReadOlderMessages": "Затражи читање старијих порука",
-  "@requestToReadOlderMessages": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "revokeAllPermissions": "Повуци све дозволе",
-  "@revokeAllPermissions": {
-    "type": "text",
-    "placeholders": {}
-  },
   "roomHasBeenUpgraded": "Соба је надограђена",
   "@roomHasBeenUpgraded": {
     "type": "text",
@@ -1719,18 +1338,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "saturday": "субота",
-  "@saturday": {
-    "type": "text",
-    "placeholders": {}
-  },
   "search": "Претражи",
   "@search": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "searchForAChat": "претражи ћаскања",
-  "@searchForAChat": {
     "type": "text",
     "placeholders": {}
   },
@@ -1739,37 +1348,11 @@
     "type": "text",
     "placeholders": {}
   },
-  "securityKey": "Сигурносни кључ",
-  "@securityKey": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "securityKeyLost": "Изгубљен сигурносни кључ?",
-  "@securityKeyLost": {
-    "type": "text",
-    "placeholders": {}
-  },
   "seenByUser": "{username} прегледа",
   "@seenByUser": {
     "type": "text",
     "placeholders": {
       "username": {}
-    }
-  },
-  "seenByUserAndCountOthers": "{count, plural, other{{username} прегледа и {count} осталих}}",
-  "@seenByUserAndCountOthers": {
-    "type": "text",
-    "placeholders": {
-      "username": {},
-      "count": {}
-    }
-  },
-  "seenByUserAndUser": "Прегледали {username} и {username2}",
-  "@seenByUserAndUser": {
-    "type": "text",
-    "placeholders": {
-      "username": {},
-      "username2": {}
     }
   },
   "send": "Пошаљи",
@@ -1784,11 +1367,6 @@
   },
   "sendAudio": "Пошаљи аудио",
   "@sendAudio": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "sendBugReports": "Дозволи слање извештаја о грешци помоћу REChain ® 🪐",
-  "@sendBugReports": {
     "type": "text",
     "placeholders": {}
   },
@@ -1859,21 +1437,6 @@
       "senderName": {}
     }
   },
-  "sentryInfo": "Информације о вашој приватности: https://rechain.online/privacy-policy.html",
-  "@sentryInfo": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "sessionVerified": "Сесија је верификована",
-  "@sessionVerified": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "setAProfilePicture": "Постави слику профила",
-  "@setAProfilePicture": {
-    "type": "text",
-    "placeholders": {}
-  },
   "setAsCanonicalAlias": "Постави као главни алијас",
   "@setAsCanonicalAlias": {
     "type": "text",
@@ -1881,11 +1444,6 @@
   },
   "setCustomEmotes": "постави посебне емотије",
   "@setCustomEmotes": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "setGroupDescription": "Постави опис групе",
-  "@setGroupDescription": {
     "type": "text",
     "placeholders": {}
   },
@@ -1926,11 +1484,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "signUp": "Регистрација",
-  "@signUp": {
-    "type": "text",
-    "placeholders": {}
-  },
   "singlesignon": "Јединствена пријава",
   "@singlesignon": {
     "type": "text",
@@ -1938,11 +1491,6 @@
   },
   "skip": "Прескочи",
   "@skip": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "soundVibrationLedColor": "Звук, вибрација и ЛЕД боје",
-  "@soundVibrationLedColor": {
     "type": "text",
     "placeholders": {}
   },
@@ -1957,11 +1505,6 @@
     "placeholders": {
       "senderName": {}
     }
-  },
-  "startYourFirstChat": "Покрените своје прво ћаскање! 🙂\n- Тапните на дугме поруке\n- Унесите корисничко име пријатеља\n- Уживајте у ћаскању",
-  "@startYourFirstChat": {
-    "type": "text",
-    "placeholders": {}
   },
   "status": "Стање",
   "@status": {
@@ -1978,23 +1521,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "sunday": "недеља",
-  "@sunday": {
-    "type": "text",
-    "placeholders": {}
-  },
   "systemTheme": "системски",
   "@systemTheme": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "tapOnDeviceToVerify": "Тапните уређај да оверите",
-  "@tapOnDeviceToVerify": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "tapToShowMenu": "Тапните за мени",
-  "@tapToShowMenu": {
     "type": "text",
     "placeholders": {}
   },
@@ -2008,27 +1536,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "thisRoomHasBeenArchived": "Ова соба је архивирана.",
-  "@thisRoomHasBeenArchived": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "thursday": "четвртак",
-  "@thursday": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "timeOfDay": "{hours24}:{minutes}",
-  "@timeOfDay": {
-    "type": "text",
-    "placeholders": {
-      "hours12": {},
-      "hours24": {},
-      "minutes": {},
-      "suffix": {}
-    }
-  },
-  "title": "REChain ® 🪐",
+  "title": "REChain ®️ 🪐 ✨",
   "@title": {
     "description": "Title for the application",
     "type": "text",
@@ -2061,11 +1569,6 @@
   },
   "tryToSendAgain": "Покушај слање поново",
   "@tryToSendAgain": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "tuesday": "уторак",
-  "@tuesday": {
     "type": "text",
     "placeholders": {}
   },
@@ -2104,16 +1607,6 @@
       "type": {}
     }
   },
-  "unknownSessionVerify": "Непозната сесија. Верификујте је",
-  "@unknownSessionVerify": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "unlockChatBackup": "Откључај резерву ћаскања",
-  "@unlockChatBackup": {
-    "type": "text",
-    "placeholders": {}
-  },
   "unmuteChat": "Врати обавештења",
   "@unmuteChat": {
     "type": "text",
@@ -2130,18 +1623,6 @@
     "placeholders": {
       "unreadCount": {}
     }
-  },
-  "unreadMessages": "{unreadEvents, plural, other{непрочитаних порука: {unreadEvents}}}",
-  "@unreadMessages": {
-    "type": "text",
-    "placeholders": {
-      "unreadEvents": {}
-    }
-  },
-  "useAmoledTheme": "Користити боје за АМОЛЕД?",
-  "@useAmoledTheme": {
-    "type": "text",
-    "placeholders": {}
   },
   "userAndOthersAreTyping": "{username} и {count} корисника куцају…",
   "@userAndOthersAreTyping": {
@@ -2178,11 +1659,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "userNotVerified": "Корисник није оверен",
-  "@userNotVerified": {
-    "type": "text",
-    "placeholders": {}
-  },
   "userSentUnknownEvent": "{username} посла {type} догађај",
   "@userSentUnknownEvent": {
     "type": "text",
@@ -2191,33 +1667,13 @@
       "type": {}
     }
   },
-  "userUnknownVerification": "Стање овере није познато",
-  "@userUnknownVerification": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "userVerified": "Корисник је оверен",
-  "@userVerified": {
-    "type": "text",
-    "placeholders": {}
-  },
   "verified": "Оверен",
   "@verified": {
     "type": "text",
     "placeholders": {}
   },
-  "verifiedSession": "Успешно верификована сесија!",
-  "@verifiedSession": {
-    "type": "text",
-    "placeholders": {}
-  },
   "verify": "Верификуј",
   "@verify": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "verifyManual": "Верификуј ручно",
-  "@verifyManual": {
     "type": "text",
     "placeholders": {}
   },
@@ -2233,11 +1689,6 @@
   },
   "verifyTitle": "Верификујем други налог",
   "@verifyTitle": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "verifyUser": "Верификуј корисника",
-  "@verifyUser": {
     "type": "text",
     "placeholders": {}
   },
@@ -2291,21 +1742,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "warningEncryptionInBeta": "Шифровање с краја на крај је тренутно у бета фази! Користите на сопствени ризик!",
-  "@warningEncryptionInBeta": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "wednesday": "среда",
-  "@wednesday": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "welcomeText": "Добродошли у РЕЦхаин.Онлине! Приватна и сигурна будућност која је већ стигла!",
-  "@welcomeText": {
-    "type": "text",
-    "placeholders": {}
-  },
   "weSentYouAnEmail": "Послали смо вам е-пошту",
   "@weSentYouAnEmail": {
     "type": "text",
@@ -2351,18 +1787,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "youAreInvitedToThisChat": "Позвани сте у ово ћаскање",
-  "@youAreInvitedToThisChat": {
-    "type": "text",
-    "placeholders": {}
-  },
   "youAreNoLongerParticipatingInThisChat": "Више не учествујете у овом ћаскању",
   "@youAreNoLongerParticipatingInThisChat": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "youCannotInviteYourself": "Не можете позвати себе",
-  "@youCannotInviteYourself": {
     "type": "text",
     "placeholders": {}
   },
@@ -2371,680 +1797,9 @@
     "type": "text",
     "placeholders": {}
   },
-  "yourOwnUsername": "Ваше корисничко име",
-  "@yourOwnUsername": {
-    "type": "text",
-    "placeholders": {}
-  },
   "yourPublicKey": "Ваш јавни кључ",
   "@yourPublicKey": {
     "type": "text",
     "placeholders": {}
-  },
-  "youWillBeConnectedTo": "Бићете повезани на {homeserver}",
-  "@youWillBeConnectedTo": {
-    "type": "text",
-    "placeholders": {
-      "homeserver": {}
-    }
-  },
-  "zoomIn": "Увећај",
-  "@zoomIn": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "zoomOut": "Умањи",
-  "@zoomOut": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@addAccount": {},
-  "@addChatDescription": {},
-  "@addToBundle": {},
-  "@addToSpace": {},
-  "@addToSpaceDescription": {},
-  "@addWidget": {},
-  "@allChats": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@allRooms": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@allSpaces": {},
-  "@appearOnTop": {},
-  "@appearOnTopDetails": {},
-  "@archiveRoomDescription": {},
-  "@autoplayImages": {
-    "placeholder": {},
-    "type": "text"
-  },
-  "@banUserDescription": {},
-  "@bundleName": {},
-  "@callingAccount": {},
-  "@callingAccountDetails": {},
-  "@callingPermissions": {},
-  "@cantOpenUri": {
-    "placeholders": {
-      "uri": {}
-    },
-    "type": "text"
-  },
-  "@chatDescription": {},
-  "@chatDescriptionHasBeenChanged": {},
-  "@chatHasBeenAddedToThisSpace": {},
-  "@chatPermissions": {},
-  "@commandHint_clearcache": {
-    "description": "Usage hint for the command /clearcache",
-    "type": "text"
-  },
-  "@commandHint_create": {
-    "description": "Usage hint for the command /create",
-    "type": "text"
-  },
-  "@commandHint_cuddle": {},
-  "@commandHint_discardsession": {
-    "description": "Usage hint for the command /discardsession",
-    "type": "text"
-  },
-  "@commandHint_dm": {
-    "description": "Usage hint for the command /dm",
-    "type": "text"
-  },
-  "@commandHint_googly": {},
-  "@commandHint_html": {
-    "description": "Usage hint for the command /html",
-    "type": "text"
-  },
-  "@commandHint_hug": {},
-  "@commandHint_markasdm": {},
-  "@commandHint_markasgroup": {},
-  "@commandHint_myroomavatar": {
-    "description": "Usage hint for the command /myroomavatar",
-    "type": "text"
-  },
-  "@commandInvalid": {
-    "type": "text"
-  },
-  "@commandMissing": {
-    "description": "State that {command} is not a valid /command.",
-    "placeholders": {
-      "command": {}
-    },
-    "type": "text"
-  },
-  "@confirmEventUnpin": {},
-  "@confirmMatrixId": {},
-  "@countFiles": {
-    "placeholders": {
-      "count": {}
-    }
-  },
-  "@createGroup": {},
-  "@createNewSpace": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@cuddleContent": {
-    "placeholders": {
-      "senderName": {}
-    },
-    "type": "text"
-  },
-  "@custom": {},
-  "@dehydrate": {},
-  "@dehydrateTor": {},
-  "@dehydrateTorLong": {},
-  "@dehydrateWarning": {},
-  "@deviceKeys": {},
-  "@directChat": {},
-  "@disableEncryptionWarning": {},
-  "@dismiss": {},
-  "@doNotShowAgain": {},
-  "@editBundlesForAccount": {},
-  "@emailOrUsername": {},
-  "@emojis": {},
-  "@emoteKeyboardNoRecents": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@enableMultiAccounts": {},
-  "@encryptThisChat": {},
-  "@enterRoom": {},
-  "@enterSpace": {},
-  "@errorAddingWidget": {},
-  "@errorObtainingLocation": {
-    "placeholders": {
-      "error": {}
-    },
-    "type": "text"
-  },
-  "@experimentalVideoCalls": {},
-  "@exportEmotePack": {},
-  "@fileHasBeenSavedAt": {
-    "placeholders": {
-      "path": {}
-    },
-    "type": "text"
-  },
-  "@fileIsTooBigForServer": {},
-  "@foregroundServiceRunning": {},
-  "@googlyEyesContent": {
-    "placeholders": {
-      "senderName": {}
-    },
-    "type": "text"
-  },
-  "@hasKnocked": {
-    "placeholders": {
-      "user": {}
-    }
-  },
-  "@hideUnimportantStateEvents": {},
-  "@homeserver": {},
-  "@hugContent": {
-    "placeholders": {
-      "senderName": {}
-    },
-    "type": "text"
-  },
-  "@hydrate": {},
-  "@hydrateTor": {},
-  "@hydrateTorLong": {},
-  "@importEmojis": {},
-  "@importFromZipFile": {},
-  "@importNow": {},
-  "@indexedDbErrorLong": {},
-  "@indexedDbErrorTitle": {},
-  "@invalidInput": {},
-  "@invalidServerName": {},
-  "@invite": {},
-  "@inviteContactToGroupQuestion": {},
-  "@inviteGroupChat": {},
-  "@invitePrivateChat": {},
-  "@inviteText": {
-    "placeholders": {
-      "link": {},
-      "username": {}
-    },
-    "type": "text"
-  },
-  "@jump": {},
-  "@jumpToLastReadMessage": {},
-  "@kickUserDescription": {},
-  "@learnMore": {},
-  "@link": {},
-  "@locationDisabledNotice": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@locationPermissionDeniedNotice": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@makeAdminDescription": {},
-  "@markAsRead": {},
-  "@messageInfo": {},
-  "@messagesStyle": {},
-  "@messageType": {},
-  "@newGroup": {},
-  "@newSpace": {},
-  "@newSpaceDescription": {},
-  "@nextAccount": {},
-  "@noBackupWarning": {},
-  "@noChatDescriptionYet": {},
-  "@noKeyForThisMessage": {},
-  "@noOtherDevicesFound": {},
-  "@notAnImage": {},
-  "@numChats": {
-    "placeholders": {
-      "number": {}
-    },
-    "type": "number"
-  },
-  "@obtainingLocation": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@oneClientLoggedOut": {},
-  "@openChat": {},
-  "@openGallery": {},
-  "@openInMaps": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@openLinkInBrowser": {},
-  "@openVideoCamera": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@optionalRedactReason": {},
-  "@otherCallingPermissions": {},
-  "@pinMessage": {},
-  "@placeCall": {},
-  "@pleaseEnterANumber": {},
-  "@pleaseEnterRecoveryKey": {},
-  "@pleaseEnterRecoveryKeyDescription": {},
-  "@pleaseTryAgainLaterOrChooseDifferentServer": {},
-  "@previousAccount": {},
-  "@profileNotFound": {},
-  "@publish": {},
-  "@pushNotificationsNotAvailable": {},
-  "@reactedWith": {
-    "placeholders": {
-      "reaction": {},
-      "sender": {}
-    },
-    "type": "text"
-  },
-  "@readUpToHere": {},
-  "@recoveryKey": {},
-  "@recoveryKeyLost": {},
-  "@redactedBy": {
-    "placeholders": {
-      "username": {}
-    },
-    "type": "text"
-  },
-  "@redactedByBecause": {
-    "placeholders": {
-      "reason": {},
-      "username": {}
-    },
-    "type": "text"
-  },
-  "@redactMessageDescription": {},
-  "@removeDevicesDescription": {},
-  "@removeFromBundle": {},
-  "@removeFromSpace": {},
-  "@reopenChat": {},
-  "@repeatPassword": {},
-  "@replace": {},
-  "@report": {},
-  "@reportErrorDescription": {},
-  "@reportUser": {},
-  "@roomUpgradeDescription": {},
-  "@saveFile": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@saveKeyManuallyDescription": {},
-  "@scanQrCode": {},
-  "@screenSharingDetail": {},
-  "@screenSharingTitle": {},
-  "@sendAsText": {
-    "type": "text"
-  },
-  "@sender": {},
-  "@sendOnEnter": {},
-  "@sendSticker": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@sendTypingNotifications": {},
-  "@separateChatTypes": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@serverRequiresEmail": {},
-  "@setAsCanonicalAlias": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@setChatDescription": {},
-  "@setColorTheme": {},
-  "@setTheme": {},
-  "@shareInviteLink": {},
-  "@shareLocation": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@signInWith": {
-    "placeholders": {
-      "provider": {}
-    },
-    "type": "text"
-  },
-  "@signInWithPassword": {},
-  "@sorryThatsNotPossible": {},
-  "@spaceIsPublic": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@spaceName": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@start": {},
-  "@startFirstChat": {},
-  "@storeInAndroidKeystore": {},
-  "@storeInAppleKeyChain": {},
-  "@storeInSecureStorageDescription": {},
-  "@storeSecurlyOnThisDevice": {},
-  "@supposedMxid": {
-    "placeholders": {
-      "mxid": {}
-    },
-    "type": "text"
-  },
-  "@switchToAccount": {
-    "placeholders": {
-      "number": {}
-    },
-    "type": "number"
-  },
-  "@synchronizingPleaseWait": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@time": {},
-  "@tryAgain": {},
-  "@unbanUserDescription": {},
-  "@unlockOldMessages": {},
-  "@unsupportedAndroidVersion": {},
-  "@unsupportedAndroidVersionLong": {},
-  "@unverified": {},
-  "@user": {},
-  "@users": {},
-  "@videoCallsBetaWarning": {},
-  "@videoWithSize": {
-    "placeholders": {
-      "size": {}
-    },
-    "type": "text"
-  },
-  "@voiceCall": {},
-  "@wasDirectChatDisplayName": {
-    "placeholders": {
-      "oldDisplayName": {}
-    },
-    "type": "text"
-  },
-  "@whyIsThisMessageEncrypted": {},
-  "@widgetCustom": {},
-  "@widgetEtherpad": {},
-  "@widgetJitsi": {},
-  "@widgetName": {},
-  "@widgetNameError": {},
-  "@widgetUrlError": {},
-  "@widgetVideo": {},
-  "@wrongPinEntered": {
-    "placeholders": {
-      "seconds": {}
-    },
-    "type": "text"
-  },
-  "@youAcceptedTheInvitation": {},
-  "@youBannedUser": {
-    "placeholders": {
-      "user": {}
-    }
-  },
-  "@youHaveWithdrawnTheInvitationFor": {
-    "placeholders": {
-      "user": {}
-    }
-  },
-  "@youInvitedBy": {
-    "placeholders": {
-      "user": {}
-    }
-  },
-  "@youInvitedUser": {
-    "placeholders": {
-      "user": {}
-    }
-  },
-  "@youJoinedTheChat": {},
-  "@youKicked": {
-    "placeholders": {
-      "user": {}
-    }
-  },
-  "@youKickedAndBanned": {
-    "placeholders": {
-      "user": {}
-    }
-  },
-  "@yourChatBackupHasBeenSetUp": {},
-  "@youRejectedTheInvitation": {},
-  "@yourPublicKey": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@youUnbannedUser": {
-    "placeholders": {
-      "user": {}
-    }
-  },
-  "inviteText": "{username} вас позива у REChain ® 🪐. \n1. Инсталирајте REChain ® 🪐: https://rechain.onlline \n2. Региструјте се или пријавите \n3. Отворите везу позивнице: {link}",
-  "addAccount": "",
-  "addDescription": "",
-  "addToBundle": "",
-  "addToSpace": "",
-  "addToSpaceDescription": "",
-  "addToStory": "",
-  "addWidget": "",
-  "advanced": "",
-  "allChats": "",
-  "allRooms": "",
-  "allSpaces": "",
-  "allSuggestedRoomsJoined": "",
-  "appearOnTop": "",
-  "appearOnTopDetails": "",
-  "autoplayImages": "",
-  "bubbleSize": "",
-  "bundleName": "",
-  "callingAccount": "",
-  "callingAccountDetails": "",
-  "callingPermissions": "",
-  "cantOpenUri": "",
-  "chatHasBeenAddedToThisSpace": "",
-  "chatHasBeenRemovedFromThisSpace": "",
-  "commandHint_clearcache": "",
-  "commandHint_create": "",
-  "commandHint_cuddle": "",
-  "commandHint_discardsession": "",
-  "commandHint_dm": "",
-  "commandHint_googly": "",
-  "commandHint_hug": "",
-  "commandHint_markasdm": "",
-  "commandHint_markasgroup": "",
-  "commandHint_myroomavatar": "",
-  "commandInvalid": "",
-  "commandMissing": "",
-  "confirmEventUnpin": "",
-  "confirmMatrixId": "",
-  "continueWith": "",
-  "countFiles": "",
-  "createNewChatExplaination": "",
-  "createNewSpace": "",
-  "cuddleContent": "",
-  "custom": "",
-  "dehydrate": "",
-  "dehydrateShare": "",
-  "dehydrateTor": "",
-  "dehydrateTorLong": "",
-  "dehydrateWarning": "",
-  "deviceKeys": "",
-  "disableEncryptionWarning": "",
-  "dismiss": "",
-  "doNotShowAgain": "",
-  "dontAskAgain": "",
-  "editBundlesForAccount": "",
-  "editIntegrations": "",
-  "editWidgets": "",
-  "emailOrUsername": "",
-  "emojis": "",
-  "enableAutoBackups": "",
-  "enableChatBackup": "",
-  "enableMultiAccounts": "",
-  "encryptThisChat": "",
-  "endToEndEncryption": "",
-  "enterASpacepName": "",
-  "enterInviteLinkOrMatrixId": "",
-  "enterRoom": "",
-  "enterSpace": "",
-  "errorAddingWidget": "",
-  "errorObtainingLocation": "",
-  "experimentalVideoCalls": "",
-  "fileHasBeenSavedAt": "",
-  "fileIsTooBigForServer": "",
-  "foregroundServiceRunning": "",
-  "googlyEyesContent": "",
-  "hideUnimportantStateEvents": "",
-  "homeserver": "",
-  "hugContent": "",
-  "hydrate": "",
-  "hydrateTor": "",
-  "hydrateTorLong": "",
-  "iUnderstand": "",
-  "iWroteDownTheKey": "",
-  "indexedDbErrorLong": "",
-  "indexedDbErrorTitle": "",
-  "integrationsNotImplemented": "",
-  "jump": "",
-  "jumpToLastReadMessage": "",
-  "letsStart": "",
-  "link": "",
-  "locationDisabledNotice": "",
-  "locationPermissionDeniedNotice": "",
-  "loginWithOneClick": "",
-  "markAsRead": "",
-  "matrixWidgets": "",
-  "messageInfo": "",
-  "messageType": "",
-  "moreEvents": "",
-  "newGroup": "",
-  "newPasswordDescription": "",
-  "newSpace": "",
-  "newSpaceDescription": "",
-  "newUsernameDescription": "",
-  "nextAccount": "",
-  "noBackupWarning": "",
-  "noEmailWarning": "",
-  "noKeyForThisMessage": "",
-  "noMatrixServer": "",
-  "noOtherDevicesFound": "",
-  "noSearchResult": "",
-  "norechainonlineServer": "",
-  "numChats": "",
-  "numberRoomMembers": "",
-  "obtainingLocation": "",
-  "oneClientLoggedOut": "",
-  "openChat": "",
-  "openGallery": "",
-  "openInMaps": "",
-  "openLinkInBrowser": "",
-  "openVideoCamera": "",
-  "otherCallingPermissions": "",
-  "passwordsDoNotMatch": "",
-  "pinMessage": "",
-  "pinnedEventsError": "",
-  "placeCall": "",
-  "pleaseChooseAtLeastChars": "",
-  "pleaseEnterAMatrixIdentifier": "",
-  "pleaseEnterRecoveryKey": "",
-  "pleaseEnterRecoveryKeyDescription": "",
-  "pleaseEnterSecurityKeyDescription": "",
-  "pleaseEnterValidEmail": "",
-  "pleaseTryAgainLaterOrChooseDifferentServer": "",
-  "previousAccount": "",
-  "publicSpace": "",
-  "publish": "",
-  "reactedWith": "",
-  "readUpToHere": "",
-  "recoveryKey": "",
-  "recoveryKeyLost": "",
-  "removeFromBundle": "",
-  "removeFromSpace": "",
-  "removeFromSpaceDescription": "",
-  "reopenChat": "",
-  "repeatPassword": "",
-  "replyHasBeenSent": "",
-  "report": "",
-  "reportErrorDescription": "",
-  "reportUser": "",
-  "saveFile": "",
-  "saveFileToFolder": "",
-  "saveKeyManuallyDescription": "",
-  "saveTheRecoveryKeyNow": "",
-  "saveTheSecurityKeyNow": "",
-  "savedFileAs": "",
-  "scanQrCode": "",
-  "screenSharingDetail": "",
-  "screenSharingTitle": "",
-  "sendAsText": "",
-  "sendOnEnter": "",
-  "sendSticker": "",
-  "sender": "",
-  "separateChatTypes": "",
-  "serverRequiresEmail": "",
-  "setupChatBackup": "",
-  "setupChatBackupDescription": "",
-  "setupChatBackupNow": "",
-  "shareLocation": "",
-  "shareYourInviteLink": "",
-  "showDirectChatsInSpaces": "",
-  "showSpaces": "",
-  "signInWithPassword": "",
-  "sorryThatsNotPossible": "",
-  "spaceIsPublic": "",
-  "spaceName": "",
-  "start": "",
-  "startFirstChat": "",
-  "storeInAndroidKeystore": "",
-  "storeInAppleKeyChain": "",
-  "storeInSecureStorageDescription": "",
-  "storeSecurlyOnThisDevice": "",
-  "stories": "",
-  "storyFrom": "",
-  "storyPrivacyWarning": "",
-  "suggestedRooms": "",
-  "supposedMxid": "",
-  "switchToAccount": "",
-  "synchronizingPleaseWait": "",
-  "tapToShowImage": "",
-  "thisUserHasNotPostedAnythingYet": "",
-  "time": "",
-  "typeInInviteLinkManually": "",
-  "unlockOldMessages": "",
-  "unsubscribeStories": "",
-  "unsupportedAndroidVersion": "",
-  "unsupportedAndroidVersionLong": "",
-  "unverified": "",
-  "updateAvailable": "",
-  "updateNow": "",
-  "user": "",
-  "users": "",
-  "videoCallsBetaWarning": "",
-  "videoWithSize": "",
-  "voiceCall": "",
-  "wasDirectChatDisplayName": "",
-  "whatIsGoingOn": "",
-  "whoCanSeeMyStories": "",
-  "whoCanSeeMyStoriesDesc": "",
-  "whyIsThisMessageEncrypted": "",
-  "widgetCustom": "",
-  "widgetEtherpad": "",
-  "widgetJitsi": "",
-  "widgetName": "",
-  "widgetNameError": "",
-  "widgetUrlError": "",
-  "widgetVideo": "",
-  "youAcceptedTheInvitation": "",
-  "youBannedUser": "",
-  "youHaveWithdrawnTheInvitationFor": "",
-  "youInvitedBy": "",
-  "youInvitedUser": "",
-  "youJoinedTheChat": "",
-  "youKicked": "",
-  "youKickedAndBanned": "",
-  "youRejectedTheInvitation": "",
-  "youUnbannedUser": "",
-  "yourChatBackupHasBeenSetUp": "",
-  "yourChatsAreBeingSynced": "",
-  "yourStory": "",
-  "yourUserId": ""
+  }
 }

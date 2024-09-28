@@ -22,22 +22,12 @@
     "type": "text",
     "placeholders": {}
   },
-  "accountInformation": "Kontoinfo",
-  "@accountInformation": {
-    "type": "text",
-    "placeholders": {}
-  },
   "activatedEndToEndEncryption": "{username} skrudde på ende-til-ende -kryptering",
   "@activatedEndToEndEncryption": {
     "type": "text",
     "placeholders": {
       "username": {}
     }
-  },
-  "addGroupDescription": "Legg til gruppebeskrivelse",
-  "@addGroupDescription": {
-    "type": "text",
-    "placeholders": {}
   },
   "admin": "Administrator",
   "@admin": {
@@ -51,11 +41,6 @@
   },
   "all": "Alle",
   "@all": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "alreadyHaveAnAccount": "Har du allerede en konto?",
-  "@alreadyHaveAnAccount": {
     "type": "text",
     "placeholders": {}
   },
@@ -81,11 +66,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "archivedRoom": "Arkivert rom",
-  "@archivedRoom": {
-    "type": "text",
-    "placeholders": {}
-  },
   "areGuestsAllowedToJoin": "Skal gjester tillates å ta del",
   "@areGuestsAllowedToJoin": {
     "type": "text",
@@ -101,18 +81,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "askSSSSCache": "Skriv inn ditt sikre lagerpassord eller gjenopprettingsnøkkel for å hurtiglagre nøklene.",
-  "@askSSSSCache": {
-    "type": "text",
-    "placeholders": {}
-  },
   "askSSSSSign": "For å kunne signere den andre personen, skriv inn ditt sikre lagerpassord eller gjenopprettingsnøkkel.",
   "@askSSSSSign": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "askSSSSVerify": "Skriv inn ditt sikre lagerpassord eller gjenopprettingsnøkkel for å bekrefte økten din.",
-  "@askSSSSVerify": {
     "type": "text",
     "placeholders": {}
   },
@@ -122,26 +92,6 @@
     "placeholders": {
       "username": {}
     }
-  },
-  "audioPlayerPause": "Pause",
-  "@audioPlayerPause": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "audioPlayerPlay": "Spill av",
-  "@audioPlayerPlay": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "authentication": "Identitetsbekreftelse",
-  "@authentication": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "avatarHasBeenChanged": "Avatar endret",
-  "@avatarHasBeenChanged": {
-    "type": "text",
-    "placeholders": {}
   },
   "banFromChat": "Bannlys fra sludring",
   "@banFromChat": {
@@ -168,11 +118,6 @@
   },
   "botMessages": "Bot-meldinger",
   "@botMessages": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "cachedKeys": "Nøkler hurtiglagret",
-  "@cachedKeys": {
     "type": "text",
     "placeholders": {}
   },
@@ -290,22 +235,12 @@
       "username": {}
     }
   },
-  "changelog": "Endringslogg",
-  "@changelog": {
-    "type": "text",
-    "placeholders": {}
-  },
   "changePassword": "Endre passord",
   "@changePassword": {
     "type": "text",
     "placeholders": {}
   },
-  "changesHaveBeenSaved": "Endringer lagret",
-  "@changesHaveBeenSaved": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
+  "changeTheHomeserver": "Endre hjemmetjener",
   "@changeTheHomeserver": {
     "type": "text",
     "placeholders": {}
@@ -317,16 +252,6 @@
   },
   "changeTheNameOfTheGroup": "Endre gruppens navn",
   "@changeTheNameOfTheGroup": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "changeTheServer": "Endre tjeneren",
-  "@changeTheServer": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "changeWallpaper": "Endre bakgrunnsbilde",
-  "@changeWallpaper": {
     "type": "text",
     "placeholders": {}
   },
@@ -360,16 +285,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "chooseAUsername": "Velg et brukernavn",
-  "@chooseAUsername": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "clearText": "Tøm tekst",
-  "@clearText": {
-    "type": "text",
-    "placeholders": {}
-  },
   "close": "Lukk",
   "@close": {
     "type": "text",
@@ -400,11 +315,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "connectionAttemptFailed": "Kunne ikke koble til",
-  "@connectionAttemptFailed": {
-    "type": "text",
-    "placeholders": {}
-  },
   "contactHasBeenInvitedToTheGroup": "Kontakt invitert til gruppen",
   "@contactHasBeenInvitedToTheGroup": {
     "type": "text",
@@ -422,11 +332,6 @@
   },
   "contentHasBeenReported": "Innholdet har blitt rapportert til tjeneradministratorene",
   "@contentHasBeenReported": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "contentViewer": "Innholdsviser",
-  "@contentViewer": {
     "type": "text",
     "placeholders": {}
   },
@@ -452,16 +357,6 @@
       "error": {}
     }
   },
-  "couldNotSetAvatar": "Kunne ikke sette avatar",
-  "@couldNotSetAvatar": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "couldNotSetDisplayname": "Kunne ikke sette visningsnavn",
-  "@couldNotSetDisplayname": {
-    "type": "text",
-    "placeholders": {}
-  },
   "countParticipants": "{count} deltagere",
   "@countParticipants": {
     "type": "text",
@@ -474,32 +369,12 @@
     "type": "text",
     "placeholders": {}
   },
-  "createAccountNow": "Opprett konto nå",
-  "@createAccountNow": {
-    "type": "text",
-    "placeholders": {}
-  },
   "createdTheChat": "{username} opprettet sludringen",
   "@createdTheChat": {
     "type": "text",
     "placeholders": {
       "username": {}
     }
-  },
-  "createNewGroup": "Opprett ny gruppe",
-  "@createNewGroup": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "crossSigningDisabled": "Videreformidling av tillit på",
-  "@crossSigningDisabled": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "crossSigningEnabled": "Videreformidling av tillit på",
-  "@crossSigningEnabled": {
-    "type": "text",
-    "placeholders": {}
   },
   "currentlyActive": "Aktiv nå",
   "@currentlyActive": {
@@ -561,11 +436,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "deny": "Nekt",
-  "@deny": {
-    "type": "text",
-    "placeholders": {}
-  },
   "device": "Enhet",
   "@device": {
     "type": "text",
@@ -586,28 +456,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "discardPicture": "Forkast bilde",
-  "@discardPicture": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "discover": "Oppdag",
-  "@discover": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "discoverGroups": "Oppdag grupper",
-  "@discoverGroups": {
-    "type": "text",
-    "placeholders": {}
-  },
   "displaynameHasBeenChanged": "Visningsnavn endret",
   "@displaynameHasBeenChanged": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "donate": "Doner",
-  "@donate": {
     "type": "text",
     "placeholders": {}
   },
@@ -626,18 +476,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "editChatPermissions": "Rediger sludringstilganger",
-  "@editChatPermissions": {
-    "type": "text",
-    "placeholders": {}
-  },
   "editDisplayname": "Rediger visningsnavn",
   "@editDisplayname": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "editJitsiInstance": "Skriv inn Jitsi-instans",
-  "@editJitsiInstance": {
     "type": "text",
     "placeholders": {}
   },
@@ -706,18 +546,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "encryptionAlgorithm": "Krypteringsalgoritme",
-  "@encryptionAlgorithm": {
-    "type": "text",
-    "placeholders": {}
-  },
   "encryptionNotEnabled": "Kryptering er ikke påskrudd",
   "@encryptionNotEnabled": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "end2endEncryptionSettings": "Ende-til-ende -krypteringsinnstillinger",
-  "@end2endEncryptionSettings": {
     "type": "text",
     "placeholders": {}
   },
@@ -728,22 +558,12 @@
       "senderName": {}
     }
   },
-  "enterAGroupName": "Skriv inn et gruppenavn",
-  "@enterAGroupName": {
-    "type": "text",
-    "placeholders": {}
-  },
   "enterAnEmailAddress": "Skriv inn en e-postadresse",
   "@enterAnEmailAddress": {
     "type": "text",
     "placeholders": {}
   },
-  "enterAUsername": "Skriv inn et brukernavn",
-  "@enterAUsername": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
+  "enterYourHomeserver": "Skriv inn din hjemmetjener",
   "@enterYourHomeserver": {
     "type": "text",
     "placeholders": {}
@@ -763,12 +583,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "fileSize": "Filstørrelse",
-  "@fileSize": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "rechainonline": "REChain ® 🪐",
+  "rechainonline": "REChain ®️ 🪐 ✨",
   "@rechainonline": {
     "type": "text",
     "placeholders": {}
@@ -780,11 +595,6 @@
   },
   "forward": "Videre",
   "@forward": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "friday": "Fredag",
-  "@friday": {
     "type": "text",
     "placeholders": {}
   },
@@ -800,16 +610,6 @@
   },
   "group": "Gruppe",
   "@group": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "groupDescription": "Gruppebeskrivelse",
-  "@groupDescription": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "groupDescriptionHasBeenChanged": "Gruppebeskrivelse endret",
-  "@groupDescriptionHasBeenChanged": {
     "type": "text",
     "placeholders": {}
   },
@@ -863,11 +663,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "homeserverIsNotCompatible": "Hjemmetjener ukompatibel",
-  "@homeserverIsNotCompatible": {
-    "type": "text",
-    "placeholders": {}
-  },
   "howOffensiveIsThisContent": "Hvor støtende er innholdet?",
   "@howOffensiveIsThisContent": {
     "type": "text",
@@ -890,16 +685,6 @@
   },
   "ignoredUsers": "Ignorerte brukere",
   "@ignoredUsers": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "ignoreListDescription": "Du kan ignorere brukere som forstyrrer deg. Du vil ikke lenger kunne motta meldinger eller rominvitasjoner fra brukere på din personlige ignoreringsliste.",
-  "@ignoreListDescription": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "ignoreUsername": "Ignorer brukernavn",
-  "@ignoreUsername": {
     "type": "text",
     "placeholders": {}
   },
@@ -953,18 +738,13 @@
     "type": "text",
     "placeholders": {}
   },
-  "inviteText": "{username} har invitert deg til REChain ® 🪐-plattformen! \n1. Installer REChain ® 🪐: https://rechain.online \n2. Registrer deg eller logg inn! \n3. Åpne invitasjonslenken: {link}",
+  "inviteText": "{username} har invitert deg til REChain ®️ 🪐 ✨. \n1. Installer REChain ®️ 🪐 ✨: https://rechain.online \n2. Registrer deg eller logg inn \n3. Åpne invitasjonslenken: {link}",
   "@inviteText": {
     "type": "text",
     "placeholders": {
       "username": {},
       "link": {}
     }
-  },
-  "isDeviceKeyCorrect": "Er følgende enhetsnøkkel riktig?",
-  "@isDeviceKeyCorrect": {
-    "type": "text",
-    "placeholders": {}
   },
   "isTyping": "skriver…",
   "@isTyping": {
@@ -980,16 +760,6 @@
   },
   "joinRoom": "Ta del i rom",
   "@joinRoom": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "keysCached": "Nøkler hurtiglagret",
-  "@keysCached": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "keysMissing": "Nøkler mangler",
-  "@keysMissing": {
     "type": "text",
     "placeholders": {}
   },
@@ -1020,16 +790,6 @@
     "placeholders": {
       "localizedTimeShort": {}
     }
-  },
-  "lastSeenIp": "Sist kjente IP",
-  "@lastSeenIp": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "lastSeenLongTimeAgo": "Sett for lenge siden",
-  "@lastSeenLongTimeAgo": {
-    "type": "text",
-    "placeholders": {}
   },
   "leave": "Forlat",
   "@leave": {
@@ -1085,21 +845,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "makeAModerator": "Gjør til moderator",
-  "@makeAModerator": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "makeAnAdmin": "Gjør til admin",
-  "@makeAnAdmin": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "makeSureTheIdentifierIsValid": "Forsikre deg om at identifikatoren er gyldig",
-  "@makeSureTheIdentifierIsValid": {
-    "type": "text",
-    "placeholders": {}
-  },
   "memberChanges": "Medlemsendringer",
   "@memberChanges": {
     "type": "text",
@@ -1115,18 +860,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "messageWillBeRemovedWarning": "Meldingen vil bli fjernet for alle deltagere",
-  "@messageWillBeRemovedWarning": {
-    "type": "text",
-    "placeholders": {}
-  },
   "moderator": "Moderator",
   "@moderator": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "monday": "Mandag",
-  "@monday": {
     "type": "text",
     "placeholders": {}
   },
@@ -1145,7 +880,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "newMessageInrechainonline": "Ny melding på REChain ® 🪐-plattformen!",
+  "newMessageInrechainonline": "Ny melding i REChain ®️ 🪐 ✨",
   "@newMessageInrechainonline": {
     "type": "text",
     "placeholders": {}
@@ -1165,28 +900,13 @@
     "type": "text",
     "placeholders": {}
   },
-  "noCrossSignBootstrap": "Slå på spredning av tillit i REChain ® 🪐-i stedet.",
-  "@noCrossSignBootstrap": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "noDescription": "Ingen beskrivelse",
-  "@noDescription": {
-    "type": "text",
-    "placeholders": {}
-  },
   "noEmotesFound": "Fant ingen smilefjes. 😕",
   "@noEmotesFound": {
     "type": "text",
     "placeholders": {}
   },
-  "noGoogleServicesWarning": "Bruk https://microg.org/ for å få Google-tjenester (uten å kompromittere personvernet ditt) for å få push-varsler fra REChain ® 🪐-plattformen!",
+  "noGoogleServicesWarning": "Bruk https://microg.org/ for å få Google-tjenester (uten at det går ut over personvernet) for å få push-merknader i REChain ®️ 🪐 ✨:",
   "@noGoogleServicesWarning": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "noMegolmBootstrap": "Slå på nettbasert sikkerhetskopiering av nettnøkler i REChain ® 🪐-i stedet.",
-  "@noMegolmBootstrap": {
     "type": "text",
     "placeholders": {}
   },
@@ -1210,11 +930,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "noStatusesFound": "Ingen statuser så langt.",
-  "@noStatusesFound": {
-    "type": "text",
-    "placeholders": {}
-  },
   "notifications": "Merknader",
   "@notifications": {
     "type": "text",
@@ -1224,18 +939,6 @@
   "@notificationsEnabledForThisAccount": {
     "type": "text",
     "placeholders": {}
-  },
-  "notSupportedInWeb": "Ikke støttet på vev-versjonen",
-  "@notSupportedInWeb": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "numberSelected": "{number} valgt",
-  "@numberSelected": {
-    "type": "text",
-    "placeholders": {
-      "number": {}
-    }
   },
   "numUsersTyping": "{count} brukere skriver …",
   "@numUsersTyping": {
@@ -1264,11 +967,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "onlineKeyBackupDisabled": "Nettbasert sikkerhetskopiering av nøkler avskrudd",
-  "@onlineKeyBackupDisabled": {
-    "type": "text",
-    "placeholders": {}
-  },
   "onlineKeyBackupEnabled": "Nettbasert sikkerhetskopiering av nøkler på",
   "@onlineKeyBackupEnabled": {
     "type": "text",
@@ -1289,18 +987,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "optionalGroupName": "Gruppenavn (valgfritt)",
-  "@optionalGroupName": {
-    "type": "text",
-    "placeholders": {}
-  },
   "participant": "Deltager",
   "@participant": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "participatingUserDevices": "Deltagende brukerenheter",
-  "@participatingUserDevices": {
     "type": "text",
     "placeholders": {}
   },
@@ -1346,23 +1034,8 @@
       "fileName": {}
     }
   },
-  "pleaseChooseAUsername": "Velg et brukernavn",
-  "@pleaseChooseAUsername": {
-    "type": "text",
-    "placeholders": {}
-  },
   "pleaseClickOnLink": "Klikk på lenken i e-posten og fortsett.",
   "@pleaseClickOnLink": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "pleaseEnterArechainonlineIdentifier": "Skriv inn Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network ID.",
-  "@pleaseEnterArechainonlineIdentifier": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "pleaseEnterSecurityKey": "Skriv inn din sikkerhetsnøkkel:",
-  "@pleaseEnterSecurityKey": {
     "type": "text",
     "placeholders": {}
   },
@@ -1383,11 +1056,6 @@
   },
   "privacy": "Personvern",
   "@privacy": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "publicKey": "Offentlig nøkkel",
-  "@publicKey": {
     "type": "text",
     "placeholders": {}
   },
@@ -1462,11 +1130,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "removeMessage": "Fjern melding",
-  "@removeMessage": {
-    "type": "text",
-    "placeholders": {}
-  },
   "renderRichContent": "Tegn rikt meldingsinnhold",
   "@renderRichContent": {
     "type": "text",
@@ -1492,23 +1155,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "requestToReadOlderMessages": "Forespørsel om å lese eldre meldinger",
-  "@requestToReadOlderMessages": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "revokeAllPermissions": "Trekk tilbake alle tilganger",
-  "@revokeAllPermissions": {
-    "type": "text",
-    "placeholders": {}
-  },
   "roomHasBeenUpgraded": "Rommet har blitt oppgradert",
   "@roomHasBeenUpgraded": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "saturday": "Lørdag",
-  "@saturday": {
     "type": "text",
     "placeholders": {}
   },
@@ -1517,23 +1165,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "searchForAChat": "Søk etter en sludring",
-  "@searchForAChat": {
-    "type": "text",
-    "placeholders": {}
-  },
   "security": "Sikkerhet",
   "@security": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "securityKey": "Sikkerhetsnøkkel",
-  "@securityKey": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "securityKeyLost": "Mistet sikkerhetsnøkkelen?",
-  "@securityKeyLost": {
     "type": "text",
     "placeholders": {}
   },
@@ -1542,22 +1175,6 @@
     "type": "text",
     "placeholders": {
       "username": {}
-    }
-  },
-  "seenByUserAndCountOthers": "{count, plural, other{Sett av {username} og {count} andre}}",
-  "@seenByUserAndCountOthers": {
-    "type": "text",
-    "placeholders": {
-      "username": {},
-      "count": {}
-    }
-  },
-  "seenByUserAndUser": "Sett av {username} og {username2}",
-  "@seenByUserAndUser": {
-    "type": "text",
-    "placeholders": {
-      "username": {},
-      "username2": {}
     }
   },
   "send": "Send",
@@ -1572,11 +1189,6 @@
   },
   "sendAudio": "Send lyd",
   "@sendAudio": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "sendBugReports": "Tillat forsendelse av feilrapporter med REChain ® 🪐",
-  "@sendBugReports": {
     "type": "text",
     "placeholders": {}
   },
@@ -1647,28 +1259,8 @@
       "senderName": {}
     }
   },
-  "sentryInfo": "Personvernsinfo: https://rechain.online/privacy-policy.html",
-  "@sentryInfo": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "sessionVerified": "Økt bekreftet",
-  "@sessionVerified": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "setAProfilePicture": "Sett et profilbilde",
-  "@setAProfilePicture": {
-    "type": "text",
-    "placeholders": {}
-  },
   "setCustomEmotes": "Sett tilpassede smilefjes",
   "@setCustomEmotes": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "setGroupDescription": "Sett gruppebeskrivelse",
-  "@setGroupDescription": {
     "type": "text",
     "placeholders": {}
   },
@@ -1704,18 +1296,8 @@
       "username": {}
     }
   },
-  "signUp": "Registrer deg",
-  "@signUp": {
-    "type": "text",
-    "placeholders": {}
-  },
   "skip": "Hopp over",
   "@skip": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "soundVibrationLedColor": "Lyd, LED-farge for vibrasjon",
-  "@soundVibrationLedColor": {
     "type": "text",
     "placeholders": {}
   },
@@ -1730,11 +1312,6 @@
     "placeholders": {
       "senderName": {}
     }
-  },
-  "startYourFirstChat": "Start din første sludring :-)",
-  "@startYourFirstChat": {
-    "type": "text",
-    "placeholders": {}
   },
   "status": "Status",
   "@status": {
@@ -1751,18 +1328,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "sunday": "Søndag",
-  "@sunday": {
-    "type": "text",
-    "placeholders": {}
-  },
   "systemTheme": "System",
   "@systemTheme": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "tapToShowMenu": "Trykk for å vise meny",
-  "@tapToShowMenu": {
     "type": "text",
     "placeholders": {}
   },
@@ -1776,17 +1343,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "thisRoomHasBeenArchived": "Dette rommet har blitt arkivert.",
-  "@thisRoomHasBeenArchived": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "thursday": "Torsdag",
-  "@thursday": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "title": "REChain ® 🪐",
+  "title": "REChain ®️ 🪐 ✨",
   "@title": {
     "description": "Title for the application",
     "type": "text",
@@ -1804,11 +1361,6 @@
   },
   "tryToSendAgain": "Prøv å sende igjen",
   "@tryToSendAgain": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "tuesday": "Tirsdag",
-  "@tuesday": {
     "type": "text",
     "placeholders": {}
   },
@@ -1847,11 +1399,6 @@
       "type": {}
     }
   },
-  "unknownSessionVerify": "Ukjent økt. Bekreft den",
-  "@unknownSessionVerify": {
-    "type": "text",
-    "placeholders": {}
-  },
   "unmuteChat": "Opphev forstumming av sludring",
   "@unmuteChat": {
     "type": "text",
@@ -1868,18 +1415,6 @@
     "placeholders": {
       "unreadCount": {}
     }
-  },
-  "unreadMessages": "{unreadEvents, plural, other{{unreadEvents} uleste meldinger}}",
-  "@unreadMessages": {
-    "type": "text",
-    "placeholders": {
-      "unreadEvents": {}
-    }
-  },
-  "useAmoledTheme": "Bruk AMOLED-kompatible farger?",
-  "@useAmoledTheme": {
-    "type": "text",
-    "placeholders": {}
   },
   "userAndOthersAreTyping": "{username} og {count} andre skriver…",
   "@userAndOthersAreTyping": {
@@ -1916,11 +1451,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "userNotVerified": "Ubekreftet bruker",
-  "@userNotVerified": {
-    "type": "text",
-    "placeholders": {}
-  },
   "userSentUnknownEvent": "{username} sendte en {type}-hendelse",
   "@userSentUnknownEvent": {
     "type": "text",
@@ -1929,28 +1459,8 @@
       "type": {}
     }
   },
-  "userUnknownVerification": "Bruker har ukjent bekreftelsesstatus",
-  "@userUnknownVerification": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "userVerified": "Bekreftet bruker",
-  "@userVerified": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "verifiedSession": "Økt bekreftet!",
-  "@verifiedSession": {
-    "type": "text",
-    "placeholders": {}
-  },
   "verify": "Bekreft",
   "@verify": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "verifyManual": "Bekreft manuelt",
-  "@verifyManual": {
     "type": "text",
     "placeholders": {}
   },
@@ -1966,11 +1476,6 @@
   },
   "verifyTitle": "Bekrefter annen konto",
   "@verifyTitle": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "verifyUser": "Bekreft bruker",
-  "@verifyUser": {
     "type": "text",
     "placeholders": {}
   },
@@ -2014,21 +1519,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "warningEncryptionInBeta": "Ende-til-ende -kryptering er i beta. Bruk på egen risiko!",
-  "@warningEncryptionInBeta": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "wednesday": "Onsdag",
-  "@wednesday": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "welcomeText": "Velkommen til REChain ® 🪐! En privat og sikker fremtid som allerede har kommet!",
-  "@welcomeText": {
-    "type": "text",
-    "placeholders": {}
-  },
   "weSentYouAnEmail": "Du har fått en e-post",
   "@weSentYouAnEmail": {
     "type": "text",
@@ -2069,18 +1559,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "youAreInvitedToThisChat": "Du er invitert til denne sludringen",
-  "@youAreInvitedToThisChat": {
-    "type": "text",
-    "placeholders": {}
-  },
   "youAreNoLongerParticipatingInThisChat": "Du deltar ikke lenger i denne sludringen",
   "@youAreNoLongerParticipatingInThisChat": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "youCannotInviteYourself": "Du kan ikke invitere deg selv",
-  "@youCannotInviteYourself": {
     "type": "text",
     "placeholders": {}
   },
@@ -2089,22 +1569,10 @@
     "type": "text",
     "placeholders": {}
   },
-  "yourOwnUsername": "Ditt eget brukernavn",
-  "@yourOwnUsername": {
-    "type": "text",
-    "placeholders": {}
-  },
   "yourPublicKey": "Din offentlige nøkkel",
   "@yourPublicKey": {
     "type": "text",
     "placeholders": {}
-  },
-  "youWillBeConnectedTo": "Du vil bli tilknyttet {homeserver}",
-  "@youWillBeConnectedTo": {
-    "type": "text",
-    "placeholders": {
-      "homeserver": {}
-    }
   },
   "toggleUnread": "Marker som lest/ulest",
   "@toggleUnread": {
@@ -2121,44 +1589,18 @@
     "type": "text",
     "placeholders": {}
   },
-  "timeOfDay": "{hours24}:{minutes}",
-  "@timeOfDay": {
-    "type": "text",
-    "placeholders": {
-      "hours12": {},
-      "hours24": {},
-      "minutes": {},
-      "suffix": {}
-    }
-  },
   "noConnectionToTheServer": "Ingen tilkobling til tjeneren",
   "@noConnectionToTheServer": {
     "type": "text",
     "placeholders": {}
   },
-  "pleaseEnterValidEmail": "Skriv inn en gyldig e-postadresse.",
-  "@pleaseEnterValidEmail": {},
   "addEmail": "Legg til e-post",
   "@addEmail": {
     "type": "text",
     "placeholders": {}
   },
-  "pleaseChooseAtLeastChars": "Vennligst velg minst {min} tegn.",
-  "@pleaseChooseAtLeastChars": {
-    "type": "text",
-    "placeholders": {
-      "min": {}
-    }
-  },
   "repeatPassword": "Gjenta passord",
   "@repeatPassword": {},
-  "passwordsDoNotMatch": "Passordet samsvarer ikke!",
-  "@passwordsDoNotMatch": {},
-  "addNewFriend": "Legg til en ny venn",
-  "@addNewFriend": {
-    "type": "text",
-    "placeholders": {}
-  },
   "addToSpace": "Legg til space",
   "@addToSpace": {},
   "allChats": "Alle samtaler",
@@ -2206,797 +1648,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "@addAccount": {},
-  "@addChatDescription": {},
-  "@addToBundle": {},
-  "@addToSpaceDescription": {},
-  "@addWidget": {},
-  "@allRooms": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@allSpaces": {},
-  "@appearOnTop": {},
-  "@appearOnTopDetails": {},
-  "@archiveRoomDescription": {},
-  "@banUserDescription": {},
-  "@bundleName": {},
-  "@callingAccount": {},
-  "@callingAccountDetails": {},
-  "@callingPermissions": {},
-  "@chatDescription": {},
-  "@chatDescriptionHasBeenChanged": {},
-  "@chatHasBeenAddedToThisSpace": {},
-  "@chatPermissions": {},
-  "@chats": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@clearArchive": {},
-  "@commandHint_ban": {
-    "description": "Usage hint for the command /ban",
-    "type": "text"
-  },
-  "@commandHint_clearcache": {
-    "description": "Usage hint for the command /clearcache",
-    "type": "text"
-  },
-  "@commandHint_create": {
-    "description": "Usage hint for the command /create",
-    "type": "text"
-  },
-  "@commandHint_cuddle": {},
-  "@commandHint_discardsession": {
-    "description": "Usage hint for the command /discardsession",
-    "type": "text"
-  },
-  "@commandHint_dm": {
-    "description": "Usage hint for the command /dm",
-    "type": "text"
-  },
-  "@commandHint_googly": {},
-  "@commandHint_html": {
-    "description": "Usage hint for the command /html",
-    "type": "text"
-  },
-  "@commandHint_hug": {},
-  "@commandHint_invite": {
-    "description": "Usage hint for the command /invite",
-    "type": "text"
-  },
-  "@commandHint_join": {
-    "description": "Usage hint for the command /join",
-    "type": "text"
-  },
-  "@commandHint_kick": {
-    "description": "Usage hint for the command /kick",
-    "type": "text"
-  },
-  "@commandHint_leave": {
-    "description": "Usage hint for the command /leave",
-    "type": "text"
-  },
-  "@commandHint_markasdm": {},
-  "@commandHint_markasgroup": {},
-  "@commandHint_me": {
-    "description": "Usage hint for the command /me",
-    "type": "text"
-  },
-  "@commandHint_myroomavatar": {
-    "description": "Usage hint for the command /myroomavatar",
-    "type": "text"
-  },
-  "@commandHint_myroomnick": {
-    "description": "Usage hint for the command /myroomnick",
-    "type": "text"
-  },
-  "@commandHint_op": {
-    "description": "Usage hint for the command /op",
-    "type": "text"
-  },
-  "@commandHint_plain": {
-    "description": "Usage hint for the command /plain",
-    "type": "text"
-  },
-  "@commandHint_react": {
-    "description": "Usage hint for the command /react",
-    "type": "text"
-  },
-  "@commandHint_send": {
-    "description": "Usage hint for the command /send",
-    "type": "text"
-  },
-  "@commandHint_unban": {
-    "description": "Usage hint for the command /unban",
-    "type": "text"
-  },
-  "@commandInvalid": {
-    "type": "text"
-  },
-  "@commandMissing": {
-    "description": "State that {command} is not a valid /command.",
-    "placeholders": {
-      "command": {}
-    },
-    "type": "text"
-  },
-  "@confirmEventUnpin": {},
-  "@confirmMatrixId": {},
-  "@countFiles": {
-    "placeholders": {
-      "count": {}
-    }
-  },
-  "@createGroup": {},
-  "@createNewSpace": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@cuddleContent": {
-    "placeholders": {
-      "senderName": {}
-    },
-    "type": "text"
-  },
-  "@custom": {},
-  "@dehydrate": {},
-  "@dehydrateTor": {},
-  "@dehydrateTorLong": {},
-  "@dehydrateWarning": {},
-  "@deviceKeys": {},
-  "@directChat": {},
-  "@disableEncryptionWarning": {},
-  "@dismiss": {},
-  "@doNotShowAgain": {},
-  "@editBundlesForAccount": {},
-  "@editRoomAliases": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@emailOrUsername": {},
-  "@emojis": {},
-  "@emoteKeyboardNoRecents": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@enableMultiAccounts": {},
-  "@encryptThisChat": {},
-  "@enterRoom": {},
-  "@enterSpace": {},
-  "@errorAddingWidget": {},
-  "@errorObtainingLocation": {
-    "placeholders": {
-      "error": {}
-    },
-    "type": "text"
-  },
-  "@experimentalVideoCalls": {},
-  "@exportEmotePack": {},
-  "@fileHasBeenSavedAt": {
-    "placeholders": {
-      "path": {}
-    },
-    "type": "text"
-  },
-  "@fileIsTooBigForServer": {},
-  "@foregroundServiceRunning": {},
-  "@googlyEyesContent": {
-    "placeholders": {
-      "senderName": {}
-    },
-    "type": "text"
-  },
-  "@goToTheNewRoom": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@hasKnocked": {
-    "placeholders": {
-      "user": {}
-    }
-  },
-  "@hideUnimportantStateEvents": {},
-  "@homeserver": {},
-  "@hugContent": {
-    "placeholders": {
-      "senderName": {}
-    },
-    "type": "text"
-  },
-  "@hydrate": {},
-  "@hydrateTor": {},
-  "@hydrateTorLong": {},
-  "@importEmojis": {},
-  "@importFromZipFile": {},
-  "@importNow": {},
-  "@indexedDbErrorLong": {},
-  "@indexedDbErrorTitle": {},
-  "@invalidInput": {},
-  "@invalidServerName": {},
-  "@invite": {},
-  "@inviteContactToGroupQuestion": {},
-  "@inviteGroupChat": {},
-  "@invitePrivateChat": {},
-  "@jump": {},
-  "@jumpToLastReadMessage": {},
-  "@kickUserDescription": {},
-  "@learnMore": {},
-  "@link": {},
-  "@locationDisabledNotice": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@locationPermissionDeniedNotice": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@makeAdminDescription": {},
-  "@markAsRead": {},
-  "@messageInfo": {},
-  "@messagesStyle": {},
-  "@messageType": {},
-  "@newGroup": {},
-  "@newSpace": {},
-  "@newSpaceDescription": {},
-  "@nextAccount": {},
-  "@noBackupWarning": {},
-  "@noChatDescriptionYet": {},
-  "@noEncryptionForPublicRooms": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@noKeyForThisMessage": {},
-  "@noOtherDevicesFound": {},
-  "@notAnImage": {},
-  "@numChats": {
-    "placeholders": {
-      "number": {}
-    },
-    "type": "number"
-  },
-  "@obtainingLocation": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@oneClientLoggedOut": {},
-  "@oopsPushError": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@openChat": {},
-  "@openGallery": {},
-  "@openInMaps": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@openLinkInBrowser": {},
-  "@openVideoCamera": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@optionalRedactReason": {},
-  "@or": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@otherCallingPermissions": {},
-  "@people": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@pinMessage": {},
-  "@placeCall": {},
-  "@pleaseChoose": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@pleaseChooseAPasscode": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@pleaseEnter4Digits": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@pleaseEnterANumber": {},
-  "@pleaseEnterRecoveryKey": {},
-  "@pleaseEnterRecoveryKeyDescription": {},
-  "@pleaseEnterYourPin": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@pleaseTryAgainLaterOrChooseDifferentServer": {},
-  "@previousAccount": {},
-  "@profileNotFound": {},
-  "@publish": {},
-  "@pushNotificationsNotAvailable": {},
-  "@reactedWith": {
-    "placeholders": {
-      "reaction": {},
-      "sender": {}
-    },
-    "type": "text"
-  },
-  "@readUpToHere": {},
-  "@recoveryKey": {},
-  "@recoveryKeyLost": {},
-  "@redactedBy": {
-    "placeholders": {
-      "username": {}
-    },
-    "type": "text"
-  },
-  "@redactedByBecause": {
-    "placeholders": {
-      "reason": {},
-      "username": {}
-    },
-    "type": "text"
-  },
-  "@redactMessage": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@redactMessageDescription": {},
-  "@register": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@removeDevicesDescription": {},
-  "@removeFromBundle": {},
-  "@removeFromSpace": {},
-  "@removeYourAvatar": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@reopenChat": {},
-  "@replace": {},
-  "@report": {},
-  "@reportErrorDescription": {},
-  "@reportUser": {},
-  "@roomUpgradeDescription": {},
-  "@roomVersion": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@saveFile": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@saveKeyManuallyDescription": {},
-  "@scanQrCode": {},
-  "@screenSharingDetail": {},
-  "@screenSharingTitle": {},
-  "@sendAsText": {
-    "type": "text"
-  },
-  "@sender": {},
-  "@sendSticker": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@sendTypingNotifications": {},
-  "@separateChatTypes": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@serverRequiresEmail": {},
-  "@setAsCanonicalAlias": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@setChatDescription": {},
-  "@setColorTheme": {},
-  "@setTheme": {},
-  "@shareInviteLink": {},
-  "@shareLocation": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@showPassword": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@signInWith": {
-    "placeholders": {
-      "provider": {}
-    },
-    "type": "text"
-  },
-  "@signInWithPassword": {},
-  "@singlesignon": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@sorryThatsNotPossible": {},
-  "@spaceIsPublic": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@spaceName": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@start": {},
-  "@startFirstChat": {},
-  "@storeInAndroidKeystore": {},
-  "@storeInAppleKeyChain": {},
-  "@storeInSecureStorageDescription": {},
-  "@storeSecurlyOnThisDevice": {},
-  "@supposedMxid": {
-    "placeholders": {
-      "mxid": {}
-    },
-    "type": "text"
-  },
-  "@switchToAccount": {
-    "placeholders": {
-      "number": {}
-    },
-    "type": "number"
-  },
-  "@synchronizingPleaseWait": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@time": {},
-  "@tryAgain": {},
-  "@unbanUserDescription": {},
-  "@unlockOldMessages": {},
-  "@unsupportedAndroidVersion": {},
-  "@unsupportedAndroidVersionLong": {},
-  "@unverified": {},
-  "@user": {},
-  "@users": {},
-  "@verified": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@videoCallsBetaWarning": {},
-  "@videoWithSize": {
-    "placeholders": {
-      "size": {}
-    },
-    "type": "text"
-  },
-  "@voiceCall": {},
-  "@waitingPartnerAcceptRequest": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@waitingPartnerEmoji": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@wasDirectChatDisplayName": {
-    "placeholders": {
-      "oldDisplayName": {}
-    },
-    "type": "text"
-  },
-  "@whyIsThisMessageEncrypted": {},
-  "@widgetCustom": {},
-  "@widgetEtherpad": {},
-  "@widgetJitsi": {},
-  "@widgetName": {},
-  "@widgetNameError": {},
-  "@widgetUrlError": {},
-  "@widgetVideo": {},
-  "@wipeChatBackup": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@wrongPinEntered": {
-    "placeholders": {
-      "seconds": {}
-    },
-    "type": "text"
-  },
-  "@youAcceptedTheInvitation": {},
-  "@youBannedUser": {
-    "placeholders": {
-      "user": {}
-    }
-  },
-  "@youHaveWithdrawnTheInvitationFor": {
-    "placeholders": {
-      "user": {}
-    }
-  },
-  "@youInvitedBy": {
-    "placeholders": {
-      "user": {}
-    }
-  },
-  "@youInvitedUser": {
-    "placeholders": {
-      "user": {}
-    }
-  },
-  "@youJoinedTheChat": {},
-  "@youKicked": {
-    "placeholders": {
-      "user": {}
-    }
-  },
-  "@youKickedAndBanned": {
-    "placeholders": {
-      "user": {}
-    }
-  },
-  "@yourChatBackupHasBeenSetUp": {},
-  "@youRejectedTheInvitation": {},
-  "@youUnbannedUser": {
-    "placeholders": {
-      "user": {}
-    }
-  },
   "notAnImage": "Ikke en bildefil.",
-  "yourUserId": "Din bruker ID:",
-  "@yourUserId": {},
-  "addAccount": "",
-  "addDescription": "",
-  "addToBundle": "",
-  "addToSpaceDescription": "",
-  "addToStory": "",
-  "addWidget": "",
-  "advanced": "",
-  "allRooms": "",
-  "allSpaces": "",
-  "allSuggestedRoomsJoined": "",
-  "appearOnTop": "",
-  "appearOnTopDetails": "",
-  "bubbleSize": "",
-  "bundleName": "",
-  "callingAccount": "",
-  "callingAccountDetails": "",
-  "callingPermissions": "",
-  "chatHasBeenAddedToThisSpace": "",
-  "chatHasBeenRemovedFromThisSpace": "",
-  "chats": "",
-  "clearArchive": "",
-  "commandHint_ban": "",
-  "commandHint_clearcache": "",
-  "commandHint_create": "",
-  "commandHint_cuddle": "",
-  "commandHint_discardsession": "",
-  "commandHint_dm": "",
-  "commandHint_googly": "",
-  "commandHint_html": "",
-  "commandHint_hug": "",
-  "commandHint_invite": "",
-  "commandHint_join": "",
-  "commandHint_kick": "",
-  "commandHint_leave": "",
-  "commandHint_markasdm": "",
-  "commandHint_markasgroup": "",
-  "commandHint_me": "",
-  "commandHint_myroomavatar": "",
-  "commandHint_myroomnick": "",
-  "commandHint_op": "",
-  "commandHint_plain": "",
-  "commandHint_react": "",
-  "commandHint_send": "",
-  "commandHint_unban": "",
-  "commandInvalid": "",
-  "commandMissing": "",
-  "confirmEventUnpin": "",
-  "confirmMatrixId": "",
-  "continueWith": "",
-  "countFiles": "",
-  "createNewChatExplaination": "",
-  "createNewSpace": "",
-  "cuddleContent": "",
-  "custom": "",
-  "dehydrate": "",
-  "dehydrateShare": "",
-  "dehydrateTor": "",
-  "dehydrateTorLong": "",
-  "dehydrateWarning": "",
-  "deviceKeys": "",
-  "deviceVerifyDescription": "",
-  "disableEncryptionWarning": "",
-  "dismiss": "",
-  "doNotShowAgain": "",
-  "dontAskAgain": "",
-  "editBundlesForAccount": "",
-  "editIntegrations": "",
-  "editRoomAliases": "",
-  "editWidgets": "",
-  "emailOrUsername": "",
-  "emojis": "",
-  "enableAutoBackups": "",
-  "enableChatBackup": "",
-  "enableMultiAccounts": "",
-  "encryptThisChat": "",
-  "endToEndEncryption": "",
-  "enterASpacepName": "",
-  "enterInviteLinkOrMatrixId": "",
-  "enterRoom": "",
-  "enterSpace": "",
-  "errorAddingWidget": "",
-  "errorObtainingLocation": "",
-  "experimentalVideoCalls": "",
-  "fileHasBeenSavedAt": "",
-  "fileIsTooBigForServer": "",
-  "foregroundServiceRunning": "",
-  "friends": "",
-  "goToTheNewRoom": "",
-  "googlyEyesContent": "",
-  "hideUnimportantStateEvents": "",
-  "homeserver": "",
-  "hugContent": "",
-  "hydrate": "",
-  "hydrateTor": "",
-  "hydrateTorLong": "",
-  "iUnderstand": "",
-  "iWroteDownTheKey": "",
-  "indexedDbErrorLong": "",
-  "indexedDbErrorTitle": "",
-  "integrationsNotImplemented": "",
-  "invalidEmail": "",
-  "jump": "",
-  "jumpToLastReadMessage": "",
-  "letsStart": "",
-  "link": "",
-  "locationDisabledNotice": "",
-  "locationPermissionDeniedNotice": "",
-  "loginWith": "",
-  "loginWithOneClick": "",
-  "markAsRead": "",
-  "matrixWidgets": "",
-  "messageInfo": "",
-  "messageType": "",
-  "moreEvents": "",
-  "newGroup": "",
-  "newPasswordDescription": "",
-  "newSpace": "",
-  "newSpaceDescription": "",
-  "newUsernameDescription": "",
-  "nextAccount": "",
-  "noBackupWarning": "",
-  "noEmailWarning": "",
-  "noEncryptionForPublicRooms": "",
-  "noKeyForThisMessage": "",
-  "noMatrixServer": "",
-  "noOtherDevicesFound": "",
-  "noPublicRoomsFound": "",
-  "noSearchResult": "",
-  "norechainonlineServer": "",
-  "numChats": "",
-  "numberRoomMembers": "",
-  "obtainingLocation": "",
-  "oneClientLoggedOut": "",
-  "oopsPushError": "",
-  "openChat": "",
-  "openGallery": "",
-  "openInMaps": "",
-  "openLinkInBrowser": "",
-  "openVideoCamera": "",
-  "optionalAddEmail": "",
-  "or": "",
-  "otherCallingPermissions": "",
-  "people": "",
-  "pinMessage": "",
-  "pinnedEventsError": "",
-  "placeCall": "",
-  "pleaseChoose": "",
-  "pleaseChooseAPasscode": "",
-  "pleaseEnter4Digits": "",
-  "pleaseEnterAMatrixIdentifier": "",
-  "pleaseEnterRecoveryKey": "",
-  "pleaseEnterRecoveryKeyDescription": "",
-  "pleaseEnterSecurityKeyDescription": "",
-  "pleaseEnterYourPin": "",
-  "pleaseTryAgainLaterOrChooseDifferentServer": "",
-  "previousAccount": "",
-  "publicGroups": "",
-  "publicSpace": "",
-  "publish": "",
-  "reactedWith": "",
-  "readUpToHere": "",
-  "recoveryKey": "",
-  "recoveryKeyLost": "",
-  "redactMessage": "",
-  "register": "",
-  "removeFromBundle": "",
-  "removeFromSpace": "",
-  "removeFromSpaceDescription": "",
-  "removeYourAvatar": "",
-  "reopenChat": "",
-  "replyHasBeenSent": "",
-  "report": "",
-  "reportErrorDescription": "",
-  "reportUser": "",
-  "roomVersion": "",
-  "saveFile": "",
-  "saveFileToFolder": "",
-  "saveKeyManuallyDescription": "",
-  "saveTheRecoveryKeyNow": "",
-  "saveTheSecurityKeyNow": "",
-  "savedFileAs": "",
-  "scanQrCode": "",
-  "screenSharingDetail": "",
-  "screenSharingTitle": "",
-  "sendAsText": "",
-  "sendSticker": "",
-  "sender": "",
-  "separateChatTypes": "",
-  "serverRequiresEmail": "",
-  "setAsCanonicalAlias": "",
-  "setupChatBackup": "",
-  "setupChatBackupDescription": "",
-  "setupChatBackupNow": "",
-  "shareLocation": "",
-  "shareYourInviteLink": "",
-  "showDirectChatsInSpaces": "",
-  "showPassword": "",
-  "showSpaces": "",
-  "signInWithPassword": "",
-  "singlesignon": "",
-  "sorryThatsNotPossible": "",
-  "spaceIsPublic": "",
-  "spaceName": "",
-  "start": "",
-  "startFirstChat": "",
-  "storeInAndroidKeystore": "",
-  "storeInAppleKeyChain": "",
-  "storeInSecureStorageDescription": "",
-  "storeSecurlyOnThisDevice": "",
-  "stories": "",
-  "storyFrom": "",
-  "storyPrivacyWarning": "",
-  "suggestedRooms": "",
-  "supposedMxid": "",
-  "switchToAccount": "",
-  "synchronizingPleaseWait": "",
-  "tapOnDeviceToVerify": "",
-  "tapToShowImage": "",
-  "thisUserHasNotPostedAnythingYet": "",
-  "time": "",
-  "typeInInviteLinkManually": "",
-  "unlockChatBackup": "",
-  "unlockOldMessages": "",
-  "unsubscribeStories": "",
-  "unsupportedAndroidVersion": "",
-  "unsupportedAndroidVersionLong": "",
-  "unverified": "",
-  "updateAvailable": "",
-  "updateNow": "",
-  "user": "",
-  "users": "",
-  "verified": "",
-  "videoCallsBetaWarning": "",
-  "videoWithSize": "",
-  "voiceCall": "",
-  "waitingPartnerAcceptRequest": "",
-  "waitingPartnerEmoji": "",
-  "wasDirectChatDisplayName": "",
-  "whatIsGoingOn": "",
-  "whoCanSeeMyStories": "",
-  "whoCanSeeMyStoriesDesc": "",
-  "whyIsThisMessageEncrypted": "",
-  "widgetCustom": "",
-  "widgetEtherpad": "",
-  "widgetJitsi": "",
-  "widgetName": "",
-  "widgetNameError": "",
-  "widgetUrlError": "",
-  "widgetVideo": "",
-  "wipeChatBackup": "",
-  "youAcceptedTheInvitation": "",
-  "youBannedUser": "",
-  "youHaveWithdrawnTheInvitationFor": "",
-  "youInvitedBy": "",
-  "youInvitedUser": "",
-  "youJoinedTheChat": "",
-  "youKicked": "",
-  "youKickedAndBanned": "",
-  "youRejectedTheInvitation": "",
-  "youUnbannedUser": "",
-  "yourChatBackupHasBeenSetUp": "",
-  "yourChatsAreBeingSynced": "",
-  "yourStory": "",
-  "zoomIn": "",
-  "zoomOut": ""
+  "@notAnImage": {}
 }

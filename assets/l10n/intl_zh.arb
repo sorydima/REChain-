@@ -537,7 +537,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "defaultPermissionLevel": "默认权限级别",
+  "defaultPermissionLevel": "新用户默认权限级别",
   "@defaultPermissionLevel": {
     "type": "text",
     "placeholders": {}
@@ -709,7 +709,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "rechainonline": "REChain ®️ 🪐",
+  "rechainonline": "REChain ®️ 🪐 ✨",
   "@rechainonline": {
     "type": "text",
     "placeholders": {}
@@ -869,7 +869,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "inviteText": "{username} 邀请你使用 REChain ®️ 🪐。 \n1. 安装 REChain ®️ 🪐：https://rechain.online \n2. 注册或登录 \n3. 打开邀请链接：\n {link}",
+  "inviteText": "{username} 邀请你使用 REChain ®️ 🪐 ✨ \n1. 安装 REChain ®️ 🪐 ✨：https://rechain.online \n2. 注册或登录 \n3. 打开邀请链接：\n {link}",
   "@inviteText": {
     "type": "text",
     "placeholders": {
@@ -1011,7 +1011,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "newMessageInrechainonline": "💬 REChain ®️ 🪐 新消息",
+  "newMessageInrechainonline": "💬 REChain ®️ 🪐 ✨ 新消息",
   "@newMessageInrechainonline": {
     "type": "text",
     "placeholders": {}
@@ -1046,7 +1046,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "noGoogleServicesWarning": "看起来你手机上没有 Firebase Cloud Messaging。如果仍希望接收 REChain ®️ 🪐 的推送通知，推荐安装 ntfy。借助 ntfy 或另一个 Unified Push 程序，你可以以一种数据安全的方式接收推送通知。你可以从 PlayStore 或 F-Droid 商店下载 ntfy。",
+  "noGoogleServicesWarning": "看起来你手机上没有 Firebase Cloud Messaging。如果仍希望接收 REChain ®️ 🪐 ✨ 的推送通知，推荐安装 ntfy。借助 ntfy 或另一个 Unified Push 程序，你可以以一种数据安全的方式接收推送通知。你可以从 PlayStore 或 F-Droid 商店下载 ntfy。",
   "@noGoogleServicesWarning": {
     "type": "text",
     "placeholders": {}
@@ -1573,7 +1573,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "title": "REChain ®️ 🪐",
+  "title": "REChain ®️ 🪐 ✨",
   "@title": {
     "description": "Title for the application",
     "type": "text",
@@ -1851,7 +1851,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "norechainonlineServer": "{server1} 不是一个 REChain ®️ 🪐 服务器，试试 {server2}？",
+  "norechainonlineServer": "{server1} 不是一个 REChain ®️ 🪐 ✨ 服务器，试试 {server2}？",
   "@norechainonlineServer": {
     "type": "text",
     "placeholders": {
@@ -2155,7 +2155,7 @@
   "@dehydrateWarning": {},
   "indexedDbErrorTitle": "私有模式问题",
   "@indexedDbErrorTitle": {},
-  "indexedDbErrorLong": "遗憾的是，默认情况下未在私有模式下启用消息存储。\n请访问\n - about:config\n - 将 dom.indexedDB.privateBrowsing.enabled 设置为 true\n否则，无法运行 REChain ®️ 🪐。",
+  "indexedDbErrorLong": "遗憾的是，默认情况下未在私有模式下启用消息存储。\n请访问\n - about:config\n - 将 dom.indexedDB.privateBrowsing.enabled 设置为 true\n否则，无法运行 REChain ®️ 🪐 ✨。",
   "@indexedDbErrorLong": {},
   "hydrateTorLong": "你上次是否导出 TOR 会话？ 快速导入它并继续聊天。",
   "@hydrateTorLong": {},
@@ -2163,7 +2163,7 @@
   "@user": {},
   "custom": "自定义",
   "@custom": {},
-  "confirmMatrixId": "请确认你的 REChain ®️ 🪐 ID 以删除账户。",
+  "confirmMatrixId": "请确认你的 REChain ®️ 🪐 ✨ ID 以删除账户。",
   "@confirmMatrixId": {},
   "supposedMxid": "应为 {mxid}",
   "@supposedMxid": {
@@ -2174,7 +2174,7 @@
   },
   "commandHint_markasgroup": "标记为群组",
   "@commandHint_markasgroup": {},
-  "commandHint_markasdm": "将给定的 REChain ®️ 🪐 ID 标为私信聊天室",
+  "commandHint_markasdm": "将给定的 REChain ®️ 🪐 ✨ ID 标为私信聊天室",
   "@commandHint_markasdm": {},
   "whyIsThisMessageEncrypted": "为什么此消息不可读？",
   "@whyIsThisMessageEncrypted": {},
@@ -2192,13 +2192,13 @@
   "@allSpaces": {},
   "appearOnTop": "显示在其它应用上方",
   "@appearOnTop": {},
-  "appearOnTopDetails": "允许应用显示在顶部（如果你已经将 REChain ®️ 🪐 设置为呼叫账户，则不需要授予此权限）",
+  "appearOnTopDetails": "允许应用显示在顶部（如果你已经将 REChain ®️ 🪐 ✨ 设置为呼叫账户，则不需要授予此权限）",
   "@appearOnTopDetails": {},
-  "otherCallingPermissions": "麦克风、摄像头和其它 REChain ®️ 🪐 权限",
+  "otherCallingPermissions": "麦克风、摄像头和其它 REChain ®️ 🪐 ✨ 权限",
   "@otherCallingPermissions": {},
   "callingPermissions": "呼叫权限",
   "@callingPermissions": {},
-  "callingAccountDetails": "允许 REChain ®️ 🪐 使用本机 android 拨号器应用。",
+  "callingAccountDetails": "允许 REChain ®️ 🪐 ✨ 使用本机 android 拨号器应用。",
   "@callingAccountDetails": {},
   "foregroundServiceRunning": "此通知在前台服务运行时出现。",
   "@foregroundServiceRunning": {},
@@ -2206,7 +2206,7 @@
   "@screenSharingTitle": {},
   "callingAccount": "呼叫账户",
   "@callingAccount": {},
-  "screenSharingDetail": "你正在 REChain ®️ 🪐 中共享屏幕",
+  "screenSharingDetail": "你正在 REChain ®️ 🪐 ✨ 中共享屏幕",
   "@screenSharingDetail": {},
   "numChats": "{number} 个聊天",
   "@numChats": {
@@ -2605,9 +2605,9 @@
   "@stickers": {},
   "discover": "发现",
   "@discover": {},
-  "commandHint_ignore": "忽略给定的 REChain ®️ 🪐 ID",
+  "commandHint_ignore": "忽略给定的 REChain ®️ 🪐 ✨ ID",
   "@commandHint_ignore": {},
-  "commandHint_unignore": "取消忽略给定的 REChain ®️ 🪐 ID",
+  "commandHint_unignore": "取消忽略给定的 REChain ®️ 🪐 ✨ ID",
   "@commandHint_unignore": {},
   "unreadChatsInApp": "{appname}: {unread} 未读聊天",
   "@unreadChatsInApp": {
@@ -2617,7 +2617,7 @@
       "unread": {}
     }
   },
-  "appLockDescription": "用 pin 码在不用 REChain ®️ 🪐 时锁定它",
+  "appLockDescription": "用 pin 码在不用 REChain ®️ 🪐 ✨ 时锁定它",
   "@appLockDescription": {},
   "globalChatId": "全局聊天 ID",
   "@globalChatId": {},
@@ -2689,5 +2689,119 @@
   "publicChatAddresses": "公开聊天的地址",
   "@publicChatAddresses": {},
   "createNewAddress": "新建地址",
-  "@createNewAddress": {}
+  "@createNewAddress": {},
+  "searchMore": "搜索更多…",
+  "@searchMore": {},
+  "gallery": "图库",
+  "@gallery": {},
+  "files": "文件",
+  "@files": {},
+  "searchIn": "在 “{chat}” 聊天中搜索…",
+  "@searchIn": {
+    "type": "text",
+    "placeholders": {
+      "chat": {}
+    }
+  },
+  "knockRestricted": "“请求加入”请求受限",
+  "@knockRestricted": {},
+  "restricted": "受限",
+  "@restricted": {},
+  "swipeRightToLeftToReply": "从右向左滑动进行回复",
+  "@swipeRightToLeftToReply": {},
+  "alwaysUse24HourFormat": "false",
+  "@alwaysUse24HourFormat": {
+    "description": "Set to true to always display time of day in 24 hour format."
+  },
+  "noMoreChatsFound": "找不到更多聊天…",
+  "@noMoreChatsFound": {},
+  "joinedChats": "已加入的聊天",
+  "@joinedChats": {},
+  "space": "空间",
+  "@space": {},
+  "spaces": "空间",
+  "@spaces": {},
+  "goToSpace": "转到空间：{space}",
+  "@goToSpace": {
+    "type": "text",
+    "space": {}
+  },
+  "markAsUnread": "标为未读",
+  "@markAsUnread": {},
+  "countChatsAndCountParticipants": "{chats} 个聊天和 {participants} 名参与者",
+  "@countChatsAndCountParticipants": {
+    "type": "text",
+    "placeholders": {
+      "chats": {},
+      "participants": {}
+    }
+  },
+  "unread": "未读",
+  "@unread": {},
+  "userLevel": "{level} - 用户",
+  "@userLevel": {
+    "type": "text",
+    "placeholders": {
+      "level": {}
+    }
+  },
+  "moderatorLevel": "{level} - 主持人",
+  "@moderatorLevel": {
+    "type": "text",
+    "placeholders": {
+      "level": {}
+    }
+  },
+  "adminLevel": "{level} - 管理员",
+  "@adminLevel": {
+    "type": "text",
+    "placeholders": {
+      "level": {}
+    }
+  },
+  "inviteOtherUsers": "邀请其他用户到这个聊天",
+  "@inviteOtherUsers": {},
+  "changeTheChatPermissions": "更改聊天权限",
+  "@changeTheChatPermissions": {},
+  "changeTheVisibilityOfChatHistory": "更改聊天历史的可见性",
+  "@changeTheVisibilityOfChatHistory": {},
+  "changeTheCanonicalRoomAlias": "更改主公共聊天地址",
+  "@changeTheCanonicalRoomAlias": {},
+  "sendRoomNotifications": "发送通知聊天室所有人的通知",
+  "@sendRoomNotifications": {},
+  "changeTheDescriptionOfTheGroup": "更改聊天描述",
+  "@changeTheDescriptionOfTheGroup": {},
+  "changeGeneralChatSettings": "更改常规聊天设置",
+  "@changeGeneralChatSettings": {},
+  "invitedBy": "📩 邀请人 {user}",
+  "@invitedBy": {
+    "placeholders": {
+      "user": {}
+    }
+  },
+  "chatPermissionsDescription": "定义此聊天中哪个权限等级对特定操作是必需的。权限等级 0、50 和 100 通常代表用户、主持人和管理员，但你可以自定义任何等级。",
+  "@chatPermissionsDescription": {},
+  "changelog": "更新记录",
+  "@changelog": {},
+  "updateInstalled": "🎉 已安装更新 {version} ！",
+  "@updateInstalled": {
+    "type": "text",
+    "placeholders": {
+      "version": {}
+    }
+  },
+  "sendCanceled": "发送被取消",
+  "@sendCanceled": {},
+  "noChatsFoundHere": "此处尚未找到聊天。使用下方按钮 ⤵️ 开始和某人的新聊天",
+  "@noChatsFoundHere": {},
+  "loginWithMatrixId": "使用 REChain ®️ 🪐 ✨ ID 登录",
+  "@loginWithMatrixId": {},
+  "discoverHomeservers": "发现主服务器",
+  "@discoverHomeservers": {},
+  "whatIsAHomeserver": "什么是主服务器？",
+  "@whatIsAHomeserver": {},
+  "homeserverDescription": "主服务器上就像电子邮件提供商，你的所有数据都存储在上面。你可以选择你想使用哪个主服务器。在 https://matrix.org 上了解更多信息。",
+  "@homeserverDescription": {},
+  "doesNotSeemToBeAValidHomeserver": "似乎不是兼容的主服务器。URL 不正确？",
+  "@doesNotSeemToBeAValidHomeserver": {}
 }

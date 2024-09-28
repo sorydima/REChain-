@@ -622,8 +622,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "rechainonline": "REChain ® 🪐",
-  "@rechainonlline": {
+  "rechainonline": "REChain ®️ 🪐 ✨",
+  "@rechainonline": {
     "type": "text",
     "placeholders": {}
   },
@@ -782,7 +782,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "inviteText": "{username}がREChain ® 🪐にあなたを招待しました. \n1. REChain ® 🪐をインストールしてください: https://rechain.online \n2. 新しくアカウントを作成するかサインインしてください\n3. 招待リンクを開いてください: {link}",
+  "inviteText": "{username}がREChain ®️ 🪐 ✨にあなたを招待しました. \n1. REChain ®️ 🪐 ✨をインストールしてください: https://rechain.online \n2. 新しくアカウントを作成するかサインインしてください\n3. 招待リンクを開いてください: {link}",
   "@inviteText": {
     "type": "text",
     "placeholders": {
@@ -924,7 +924,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "newMessageInrechainonline": "💬 REChain ® 🪐に新しいメッセージがあります",
+  "newMessageInrechainonline": "💬 REChain ®️ 🪐 ✨に新しいメッセージがあります",
   "@newMessageInrechainonline": {
     "type": "text",
     "placeholders": {}
@@ -1437,7 +1437,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "title": "REChain ® 🪐",
+  "title": "REChain ®️ 🪐 ✨",
   "@title": {
     "description": "Title for the application",
     "type": "text",
@@ -1759,7 +1759,7 @@
     "type": "text",
     "description": "Usage hint for the command /discardsession"
   },
-  "confirmMatrixId": "アカウントを削除するには、REChain ® 🪐 IDを確認してください。",
+  "confirmMatrixId": "アカウントを削除するには、REChain ®️ 🪐 ✨ IDを確認してください。",
   "@confirmMatrixId": {},
   "commandHint_markasgroup": "グループとしてマーク",
   "@commandHint_markasgroup": {},
@@ -1849,7 +1849,7 @@
   "@users": {},
   "youRejectedTheInvitation": "招待を拒否しました",
   "@youRejectedTheInvitation": {},
-  "screenSharingDetail": "FuffyChatで画面を共有しています",
+  "screenSharingDetail": "REChain ®️ 🪐 ✨で画面を共有しています",
   "@screenSharingDetail": {},
   "homeserver": "ホームサーバー",
   "@homeserver": {},
@@ -1866,8 +1866,8 @@
   "@removeFromBundle": {},
   "bundleName": "バンドル名",
   "@bundleName": {},
-  "noMatrixServer": "{server1} はREChain ® 🪐のサーバーではありません。代わりに {server2} を使用しますか?",
-  "@noMatrixServer": {
+  "norechainonlineServer": "{server1} はREChain ®️ 🪐 ✨のサーバーではありません。代わりに {server2} を使用しますか?",
+  "@norechainonlineServer": {
     "type": "text",
     "placeholders": {
       "server1": {},
@@ -2010,9 +2010,9 @@
   "@storeSecurlyOnThisDevice": {},
   "whyIsThisMessageEncrypted": "このメッセージが読めない理由",
   "@whyIsThisMessageEncrypted": {},
-  "otherCallingPermissions": "マイク、カメラ、その他REChain ® 🪐の権限",
+  "otherCallingPermissions": "マイク、カメラ、その他REChain ®️ 🪐 ✨の権限",
   "@otherCallingPermissions": {},
-  "appearOnTopDetails": "アプリをトップに表示できるようにする（すでに通話アカウントとしてREChain ® 🪐を設定している場合は必要ありません）",
+  "appearOnTopDetails": "アプリをトップに表示できるようにする（すでに通話アカウントとしてREChain ®️ 🪐 ✨を設定している場合は必要ありません）",
   "@appearOnTopDetails": {},
   "dehydrateTorLong": "TOR ユーザーの場合、ウィンドウを閉じる前にセッションをエクスポートすることをお勧めします。",
   "@dehydrateTorLong": {},
@@ -2203,147 +2203,5 @@
     }
   },
   "signInWithPassword": "パスワードでログイン",
-  "@signInWithPassword": {},
-  "@hugContent": {
-    "type": "text",
-    "placeholders": {
-      "senderName": {}
-    }
-  },
-  "@jumpToLastReadMessage": {},
-  "@allRooms": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@commandHint_cuddle": {},
-  "@dismiss": {},
-  "@reportErrorDescription": {},
-  "@indexedDbErrorLong": {},
-  "@setColorTheme": {},
-  "@supposedMxid": {
-    "type": "text",
-    "placeholders": {
-      "mxid": {}
-    }
-  },
-  "@banUserDescription": {},
-  "@widgetEtherpad": {},
-  "@removeDevicesDescription": {},
-  "@separateChatTypes": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@tryAgain": {},
-  "@unbanUserDescription": {},
-  "@messagesStyle": {},
-  "@newSpaceDescription": {},
-  "@chatDescription": {},
-  "@callingAccountDetails": {},
-  "@noKeyForThisMessage": {},
-  "@pushNotificationsNotAvailable": {},
-  "@invalidServerName": {},
-  "@chatPermissions": {},
-  "@makeAdminDescription": {},
-  "@saveKeyManuallyDescription": {},
-  "@setChatDescription": {},
-  "@importFromZipFile": {},
-  "@redactedBy": {
-    "type": "text",
-    "placeholders": {
-      "username": {}
-    }
-  },
-  "@fileIsTooBigForServer": {},
-  "@readUpToHere": {},
-  "@optionalRedactReason": {},
-  "@archiveRoomDescription": {},
-  "@exportEmotePack": {},
-  "@openInMaps": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@inviteContactToGroupQuestion": {},
-  "@redactedByBecause": {
-    "type": "text",
-    "placeholders": {
-      "username": {},
-      "reason": {}
-    }
-  },
-  "@fileHasBeenSavedAt": {
-    "type": "text",
-    "placeholders": {
-      "path": {}
-    }
-  },
-  "@redactMessageDescription": {},
-  "@invalidInput": {},
-  "@report": {},
-  "@googlyEyesContent": {
-    "type": "text",
-    "placeholders": {
-      "senderName": {}
-    }
-  },
-  "@addChatDescription": {},
-  "@hasKnocked": {
-    "placeholders": {
-      "user": {}
-    }
-  },
-  "@openLinkInBrowser": {},
-  "@commandHint_me": {
-    "type": "text",
-    "description": "Usage hint for the command /me"
-  },
-  "@directChat": {},
-  "@wrongPinEntered": {
-    "type": "text",
-    "placeholders": {
-      "seconds": {}
-    }
-  },
-  "@sendTypingNotifications": {},
-  "@inviteGroupChat": {},
-  "@appearOnTop": {},
-  "@invitePrivateChat": {},
-  "@commandHint_kick": {
-    "type": "text",
-    "description": "Usage hint for the command /kick"
-  },
-  "@commandHint_unban": {
-    "type": "text",
-    "description": "Usage hint for the command /unban"
-  },
-  "@importEmojis": {},
-  "@noChatDescriptionYet": {},
-  "@learnMore": {},
-  "@notAnImage": {},
-  "@chatDescriptionHasBeenChanged": {},
-  "@commandHint_op": {
-    "type": "text",
-    "description": "Usage hint for the command /op"
-  },
-  "@roomUpgradeDescription": {},
-  "@pleaseEnterANumber": {},
-  "@profileNotFound": {},
-  "@jump": {},
-  "@shareInviteLink": {},
-  "@cuddleContent": {
-    "type": "text",
-    "placeholders": {
-      "senderName": {}
-    }
-  },
-  "@emoteKeyboardNoRecents": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@setTheme": {},
-  "@replace": {},
-  "@pleaseTryAgainLaterOrChooseDifferentServer": {},
-  "@createGroup": {},
-  "@kickUserDescription": {},
-  "@importNow": {},
-  "@invite": {}
+  "@signInWithPassword": {}
 }

@@ -23,11 +23,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "accountInformation": "Información de la cuenta",
-  "@accountInformation": {
-    "type": "text",
-    "placeholders": {}
-  },
   "activatedEndToEndEncryption": "{username} activó el cifrado de extremo a extremo",
   "@activatedEndToEndEncryption": {
     "type": "text",
@@ -40,11 +35,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "addGroupDescription": "Agregar una descripción al grupo",
-  "@addGroupDescription": {
-    "type": "text",
-    "placeholders": {}
-  },
   "admin": "Administrador",
   "@admin": {
     "type": "text",
@@ -52,11 +42,6 @@
   },
   "alias": "alias",
   "@alias": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "alreadyHaveAnAccount": "¿Ya tienes una cuenta?",
-  "@alreadyHaveAnAccount": {
     "type": "text",
     "placeholders": {}
   },
@@ -77,11 +62,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "archivedRoom": "Sala archivada",
-  "@archivedRoom": {
-    "type": "text",
-    "placeholders": {}
-  },
   "areGuestsAllowedToJoin": "¿Pueden unirse los usuarios visitantes?",
   "@areGuestsAllowedToJoin": {
     "type": "text",
@@ -97,18 +77,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "askSSSSCache": "Ingrese su contraseña de almacenamiento segura (SSSS) o la clave de recuperación para almacenar en caché las claves.",
-  "@askSSSSCache": {
-    "type": "text",
-    "placeholders": {}
-  },
   "askSSSSSign": "Para poder confirmar a la otra persona, ingrese su contraseña de almacenamiento segura o la clave de recuperación.",
   "@askSSSSSign": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "askSSSSVerify": "Por favor, ingrese su contraseña de almacenamiento seguro (SSSS) o la clave de recuperación para verificar su sesión.",
-  "@askSSSSVerify": {
     "type": "text",
     "placeholders": {}
   },
@@ -118,16 +88,6 @@
     "placeholders": {
       "username": {}
     }
-  },
-  "authentication": "Autenticación",
-  "@authentication": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "avatarHasBeenChanged": "Imagen de perfil modificada",
-  "@avatarHasBeenChanged": {
-    "type": "text",
-    "placeholders": {}
   },
   "badServerLoginTypesException": "El servidor soporta los siguientes mecanismos para autenticación:\n{serverVersions}\npero esta aplicación sólo soporta:\n{supportedVersions}",
   "@badServerLoginTypesException": {
@@ -170,11 +130,6 @@
   },
   "blocked": "Bloqueado",
   "@blocked": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "cachedKeys": "Claves almacenadas en caché",
-  "@cachedKeys": {
     "type": "text",
     "placeholders": {}
   },
@@ -292,22 +247,12 @@
       "username": {}
     }
   },
-  "changelog": "Registro de cambios",
-  "@changelog": {
-    "type": "text",
-    "placeholders": {}
-  },
   "changePassword": "Cambiar la contraseña",
   "@changePassword": {
     "type": "text",
     "placeholders": {}
   },
-  "changesHaveBeenSaved": "Los cambios se han guardado",
-  "@changesHaveBeenSaved": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
+  "changeTheHomeserver": "Cambiar el servidor",
   "@changeTheHomeserver": {
     "type": "text",
     "placeholders": {}
@@ -319,16 +264,6 @@
   },
   "changeTheNameOfTheGroup": "Cambiar el nombre del grupo",
   "@changeTheNameOfTheGroup": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "changeTheServer": "Cambiar el servidor",
-  "@changeTheServer": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "changeWallpaper": "Cambiar el fondo de pantalla",
-  "@changeWallpaper": {
     "type": "text",
     "placeholders": {}
   },
@@ -367,11 +302,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "chooseAUsername": "Elija un nombre de usuario",
-  "@chooseAUsername": {
-    "type": "text",
-    "placeholders": {}
-  },
   "clearArchive": "Borrar archivo",
   "@clearArchive": {},
   "close": "Cerrar",
@@ -379,12 +309,12 @@
     "type": "text",
     "placeholders": {}
   },
-  "compareEmojiMatch": "Compare y asegúrese de que los siguientes emoji coincidan con los del otro dispositivo:",
+  "compareEmojiMatch": "Por favor compare los emojis",
   "@compareEmojiMatch": {
     "type": "text",
     "placeholders": {}
   },
-  "compareNumbersMatch": "Compare y asegúrese de que los siguientes números coincidan con los del otro dispositivo:",
+  "compareNumbersMatch": "Por favor compare los números",
   "@compareNumbersMatch": {
     "type": "text",
     "placeholders": {}
@@ -399,18 +329,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "connectionAttemptFailed": "Falló el intento de conexión",
-  "@connectionAttemptFailed": {
-    "type": "text",
-    "placeholders": {}
-  },
   "contactHasBeenInvitedToTheGroup": "El contacto ha sido invitado al grupo",
   "@contactHasBeenInvitedToTheGroup": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "contentViewer": "Visor de contenido",
-  "@contentViewer": {
     "type": "text",
     "placeholders": {}
   },
@@ -436,16 +356,6 @@
       "error": {}
     }
   },
-  "couldNotSetAvatar": "No se pudo establecer la imagen de perfil",
-  "@couldNotSetAvatar": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "couldNotSetDisplayname": "No se pudo establecer el nombre visible",
-  "@couldNotSetDisplayname": {
-    "type": "text",
-    "placeholders": {}
-  },
   "countParticipants": "{count} participantes",
   "@countParticipants": {
     "type": "text",
@@ -458,32 +368,12 @@
     "type": "text",
     "placeholders": {}
   },
-  "createAccountNow": "Crear cuenta ahora",
-  "@createAccountNow": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "createdTheChat": "{username} creó el chat",
+  "createdTheChat": "💬{username} creó el chat",
   "@createdTheChat": {
     "type": "text",
     "placeholders": {
       "username": {}
     }
-  },
-  "createNewGroup": "Crear grupo nuevo",
-  "@createNewGroup": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "crossSigningDisabled": "La confirmación cruzada está deshabilitada",
-  "@crossSigningDisabled": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "crossSigningEnabled": "La confirmación cruzada está habilitada",
-  "@crossSigningEnabled": {
-    "type": "text",
-    "placeholders": {}
   },
   "currentlyActive": "Actualmente activo",
   "@currentlyActive": {
@@ -540,11 +430,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "deny": "Rechazar",
-  "@deny": {
-    "type": "text",
-    "placeholders": {}
-  },
   "device": "Dispositivo",
   "@device": {
     "type": "text",
@@ -555,23 +440,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "deviceVerifyDescription": "El cifrado solo es seguro cuando se han verificado todos los dispositivos.",
-  "@deviceVerifyDescription": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "discardPicture": "Descartar imagen",
-  "@discardPicture": {
-    "type": "text",
-    "placeholders": {}
-  },
   "displaynameHasBeenChanged": "El nombre visible ha cambiado",
   "@displaynameHasBeenChanged": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "donate": "Donar",
-  "@donate": {
     "type": "text",
     "placeholders": {}
   },
@@ -582,11 +452,6 @@
   },
   "editDisplayname": "Editar nombre visible",
   "@editDisplayname": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "editJitsiInstance": "Cambiar la instancia de Jitsi",
-  "@editJitsiInstance": {
     "type": "text",
     "placeholders": {}
   },
@@ -645,18 +510,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "encryptionAlgorithm": "Algoritmo de cifrado",
-  "@encryptionAlgorithm": {
-    "type": "text",
-    "placeholders": {}
-  },
   "encryptionNotEnabled": "El cifrado no está habilitado",
   "@encryptionNotEnabled": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "end2endEncryptionSettings": "Configuración del cifrado de extremo a extremo",
-  "@end2endEncryptionSettings": {
     "type": "text",
     "placeholders": {}
   },
@@ -667,22 +522,12 @@
       "senderName": {}
     }
   },
-  "enterAGroupName": "Ingrese un nombre de grupo",
-  "@enterAGroupName": {
-    "type": "text",
-    "placeholders": {}
-  },
   "enterAnEmailAddress": "Introducir una dirección de correo electrónico",
   "@enterAnEmailAddress": {
     "type": "text",
     "placeholders": {}
   },
-  "enterAUsername": "Ingrese un nombre de usuario",
-  "@enterAUsername": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
+  "enterYourHomeserver": "Ingrese su servidor",
   "@enterYourHomeserver": {
     "type": "text",
     "placeholders": {}
@@ -697,23 +542,13 @@
     "type": "text",
     "placeholders": {}
   },
-  "fileSize": "Tamaño del archivo",
-  "@fileSize": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "rechainonline": "REChain ® 🪐",
+  "rechainonline": "REChain ®️ 🪐 ✨",
   "@rechainonline": {
     "type": "text",
     "placeholders": {}
   },
   "forward": "Reenviar",
   "@forward": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "friday": "Viernes",
-  "@friday": {
     "type": "text",
     "placeholders": {}
   },
@@ -729,16 +564,6 @@
   },
   "group": "Grupo",
   "@group": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "groupDescription": "Descripción del grupo",
-  "@groupDescription": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "groupDescriptionHasBeenChanged": "La descripción del grupo ha sido cambiada",
-  "@groupDescriptionHasBeenChanged": {
     "type": "text",
     "placeholders": {}
   },
@@ -787,11 +612,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "homeserverIsNotCompatible": "El servidor no es compatible",
-  "@homeserverIsNotCompatible": {
-    "type": "text",
-    "placeholders": {}
-  },
   "id": "Identificación",
   "@id": {
     "type": "text",
@@ -804,16 +624,6 @@
   },
   "ignoredUsers": "Usuarios ignorados",
   "@ignoredUsers": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "ignoreListDescription": "Puede ignorar a los usuarios que le molesten. No podrá recibir mensajes ni invitaciones a salas de los usuarios de su lista personal de ignorados.",
-  "@ignoreListDescription": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "ignoreUsername": "Ignorar nombre de usuario",
-  "@ignoreUsername": {
     "type": "text",
     "placeholders": {}
   },
@@ -839,7 +649,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "invitedUser": "{username} invitó a {targetName}",
+  "invitedUser": "📩{username} invitó a {targetName}",
   "@invitedUser": {
     "type": "text",
     "placeholders": {
@@ -852,7 +662,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "inviteText": "¡{username} te ha invitado a la plataforma REChain ® 🪐! \n1. Instale REChain ® 🪐: https://rechain.online \n2. Regístrese o inicie sesión! \n3. Abra el enlace de la invitación: {link}",
+  "inviteText": "{username} te invitó a REChain ®️ 🪐 ✨.\n1. Instale REChain ®️ 🪐 ✨: https://rechain.online\n2. Regístrate o inicia sesión \n3. Abra el enlace de invitación: {link}",
   "@inviteText": {
     "type": "text",
     "placeholders": {
@@ -860,17 +670,12 @@
       "link": {}
     }
   },
-  "isDeviceKeyCorrect": "¿Es correcta la siguiente clave de dispositivo?",
-  "@isDeviceKeyCorrect": {
-    "type": "text",
-    "placeholders": {}
-  },
   "isTyping": "está escribiendo…",
   "@isTyping": {
     "type": "text",
     "placeholders": {}
   },
-  "joinedTheChat": "{username} se unió al chat",
+  "joinedTheChat": "👋{username} se unió al chat",
   "@joinedTheChat": {
     "type": "text",
     "placeholders": {
@@ -882,17 +687,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "keysCached": "Las claves están en caché",
-  "@keysCached": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "keysMissing": "Faltan las claves",
-  "@keysMissing": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "kicked": "{username} echó a {targetName}",
+  "kicked": "👞{username} echó a {targetName}",
   "@kicked": {
     "type": "text",
     "placeholders": {
@@ -900,7 +695,7 @@
       "targetName": {}
     }
   },
-  "kickedAndBanned": "{username} echó y vetó a {targetName}",
+  "kickedAndBanned": "🙅{username} echó y vetó a {targetName}",
   "@kickedAndBanned": {
     "type": "text",
     "placeholders": {
@@ -919,16 +714,6 @@
     "placeholders": {
       "localizedTimeShort": {}
     }
-  },
-  "lastSeenIp": "Última dirección IP vista",
-  "@lastSeenIp": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "lastSeenLongTimeAgo": "Visto hace mucho tiempo",
-  "@lastSeenLongTimeAgo": {
-    "type": "text",
-    "placeholders": {}
   },
   "leave": "Abandonar",
   "@leave": {
@@ -984,28 +769,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "makeAModerator": "Hacer un moderador/a",
-  "@makeAModerator": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "makeAnAdmin": "Hacer un administrador/a",
-  "@makeAnAdmin": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "makeSureTheIdentifierIsValid": "Asegúrese de que el identificador es válido",
-  "@makeSureTheIdentifierIsValid": {
-    "type": "text",
-    "placeholders": {}
-  },
   "mention": "Mencionar",
   "@mention": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "messageWillBeRemovedWarning": "El mensaje será eliminado para todos los participantes",
-  "@messageWillBeRemovedWarning": {
     "type": "text",
     "placeholders": {}
   },
@@ -1013,18 +778,6 @@
   "@moderator": {
     "type": "text",
     "placeholders": {}
-  },
-  "monday": "Lunes",
-  "@monday": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "moreEvents": "{count,plural, =1{1 evento más} other{{count} más eventos}}",
-  "@moreEvents": {
-    "type": "text",
-    "placeholders": {
-      "count": {}
-    }
   },
   "muteChat": "Silenciar chat",
   "@muteChat": {
@@ -1036,7 +789,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "newMessageInrechainonline": "¡Nuevo mensaje en la plataforma REChain ® 🪐!",
+  "newMessageInrechainonline": "Nuevo mensaje en REChain ®️ 🪐 ✨",
   "@newMessageInrechainonline": {
     "type": "text",
     "placeholders": {}
@@ -1056,11 +809,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "noCrossSignBootstrap": "REChain.Online actualmente no admite el cifrado de firmas de firma cruzada. Habilítelo en REChain ® 🪐 en su lugar.",
-  "@noCrossSignBootstrap": {
-    "type": "text",
-    "placeholders": {}
-  },
   "noEmotesFound": "Ningún emote encontrado. 😕",
   "@noEmotesFound": {
     "type": "text",
@@ -1071,13 +819,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "noGoogleServicesWarning": "Parece que no tienes ningún servicio de Google en tu teléfono. ¡Esa es una buena decisión para su privacidad! Para recibir notificaciones push de la plataforma REChain ® 🪐, recomendamos usar microG: https://microg.org/",
+  "noGoogleServicesWarning": "Parece que no tienes servicios de Google en tu teléfono. ¡Esa es una buena decisión para tu privacidad! Para recibir notificaciones instantáneas en REChain ®️ 🪐 ✨, recomendamos usar microG: https://microg.org/",
   "@noGoogleServicesWarning": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "noMegolmBootstrap": "REChain.Online actualmente no admite la copia de seguridad de claves en línea a través de la red. Habilítelo en REChain ® 🪐 en su lugar.",
-  "@noMegolmBootstrap": {
     "type": "text",
     "placeholders": {}
   },
@@ -1091,45 +834,23 @@
     "type": "text",
     "placeholders": {}
   },
-  "noPublicRoomsFound": "Sin salas públicas…",
-  "@noPublicRoomsFound": {
-    "type": "text",
-    "placeholders": {}
-  },
   "noRoomsFound": "Ninguna sala encontrada…",
   "@noRoomsFound": {
     "type": "text",
     "placeholders": {}
-  },
-  "notSupportedInWeb": "No es compatible con la versión web",
-  "@notSupportedInWeb": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "numberSelected": "{number} seleccionado(s)",
-  "@numberSelected": {
-    "type": "text",
-    "placeholders": {
-      "number": {}
-    }
   },
   "offline": "Desconectado",
   "@offline": {
     "type": "text",
     "placeholders": {}
   },
-  "ok": "ok",
+  "ok": "Ok",
   "@ok": {
     "type": "text",
     "placeholders": {}
   },
   "online": "Conectado",
   "@online": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "onlineKeyBackupDisabled": "La copia de seguridad de la clave en línea está deshabilitada",
-  "@onlineKeyBackupDisabled": {
     "type": "text",
     "placeholders": {}
   },
@@ -1150,16 +871,6 @@
   },
   "openCamera": "Abrir cámara",
   "@openCamera": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "optionalGroupName": "(Opcional) Nombre del grupo",
-  "@optionalGroupName": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "participatingUserDevices": "Dispositivos de usuario participantes",
-  "@participatingUserDevices": {
     "type": "text",
     "placeholders": {}
   },
@@ -1200,23 +911,8 @@
       "fileName": {}
     }
   },
-  "pleaseChooseAUsername": "Por favor, elija un nombre de usuario",
-  "@pleaseChooseAUsername": {
-    "type": "text",
-    "placeholders": {}
-  },
   "pleaseClickOnLink": "Haga clic en el enlace del correo electrónico y luego continúe.",
   "@pleaseClickOnLink": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "pleaseEnterArechainonlineIdentifier": "Ingrese el ID de red del nodo Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node.",
-  "@pleaseEnterArechainonlineIdentifier": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "pleaseEnterSecurityKey": "Por favor, introduzca su clave de seguridad:",
-  "@pleaseEnterSecurityKey": {
     "type": "text",
     "placeholders": {}
   },
@@ -1237,11 +933,6 @@
   },
   "privacy": "Privacidad",
   "@privacy": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "publicGroups": "Grupos públicos",
-  "@publicGroups": {
     "type": "text",
     "placeholders": {}
   },
@@ -1306,11 +997,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "removeMessage": "Eliminar mensaje",
-  "@removeMessage": {
-    "type": "text",
-    "placeholders": {}
-  },
   "renderRichContent": "Mostrar el contenido con mensajes enriquecidos",
   "@renderRichContent": {
     "type": "text",
@@ -1326,16 +1012,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "requestToReadOlderMessages": "Solicitar poder leer mensajes antiguos",
-  "@requestToReadOlderMessages": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "revokeAllPermissions": "Revocar todos los permisos",
-  "@revokeAllPermissions": {
-    "type": "text",
-    "placeholders": {}
-  },
   "roomHasBeenUpgraded": "La sala ha subido de categoría",
   "@roomHasBeenUpgraded": {
     "type": "text",
@@ -1346,47 +1022,11 @@
     "type": "text",
     "placeholders": {}
   },
-  "saturday": "Sábado",
-  "@saturday": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "searchForAChat": "Buscar un chat",
-  "@searchForAChat": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "securityKey": "Clave de seguridad",
-  "@securityKey": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "securityKeyLost": "¿Perdiste tu llave de seguridad?",
-  "@securityKeyLost": {
-    "type": "text",
-    "placeholders": {}
-  },
   "seenByUser": "Visto por {username}",
   "@seenByUser": {
     "type": "text",
     "placeholders": {
       "username": {}
-    }
-  },
-  "seenByUserAndCountOthers": "{count, plural, other{Visto por {username} y {count} más}}",
-  "@seenByUserAndCountOthers": {
-    "type": "text",
-    "placeholders": {
-      "username": {},
-      "count": {}
-    }
-  },
-  "seenByUserAndUser": "Visto por {username} y {username2}",
-  "@seenByUserAndUser": {
-    "type": "text",
-    "placeholders": {
-      "username": {},
-      "username2": {}
     }
   },
   "send": "Enviar",
@@ -1401,11 +1041,6 @@
   },
   "sendAudio": "Enviar audio",
   "@sendAudio": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "sendBugReports": "Permite el envió de informes de errores con REChain ® 🪐",
-  "@sendBugReports": {
     "type": "text",
     "placeholders": {}
   },
@@ -1471,28 +1106,8 @@
       "senderName": {}
     }
   },
-  "sentryInfo": "Información sobre tu privacidad: https://rechain.online/privacy-policy.html",
-  "@sentryInfo": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "sessionVerified": "La sesión está verificada",
-  "@sessionVerified": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "setAProfilePicture": "Establecer una foto de perfil",
-  "@setAProfilePicture": {
-    "type": "text",
-    "placeholders": {}
-  },
   "setAsCanonicalAlias": "Fijar alias principal",
   "@setAsCanonicalAlias": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "setGroupDescription": "Establecer descripción del grupo",
-  "@setGroupDescription": {
     "type": "text",
     "placeholders": {}
   },
@@ -1528,11 +1143,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "signUp": "Registrarse",
-  "@signUp": {
-    "type": "text",
-    "placeholders": {}
-  },
   "skip": "Omitir",
   "@skip": {
     "type": "text",
@@ -1550,11 +1160,6 @@
       "senderName": {}
     }
   },
-  "startYourFirstChat": "¡Inicia su primer chat ahora mismo! 🙂\n- toque el botón de mensaje\n- escriba el nombre de usuario de su amigo\n- diviértase chateando",
-  "@startYourFirstChat": {
-    "type": "text",
-    "placeholders": {}
-  },
   "statusExampleMessage": "¿Cómo estás hoy?",
   "@statusExampleMessage": {
     "type": "text",
@@ -1565,23 +1170,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "sunday": "Domingo",
-  "@sunday": {
-    "type": "text",
-    "placeholders": {}
-  },
   "systemTheme": "Sistema",
   "@systemTheme": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "tapOnDeviceToVerify": "Toque en otro dispositivo para verificar",
-  "@tapOnDeviceToVerify": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "tapToShowMenu": "Toca para mostrar el menú",
-  "@tapToShowMenu": {
     "type": "text",
     "placeholders": {}
   },
@@ -1595,27 +1185,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "thisRoomHasBeenArchived": "Esta sala ha sido archivada.",
-  "@thisRoomHasBeenArchived": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "thursday": "Jueves",
-  "@thursday": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "timeOfDay": "{hours24}:{minutes}",
-  "@timeOfDay": {
-    "type": "text",
-    "placeholders": {
-      "hours12": {},
-      "hours24": {},
-      "minutes": {},
-      "suffix": {}
-    }
-  },
-  "title": "REChain ® 🪐",
+  "title": "REChain ®️ 🪐 ✨",
   "@title": {
     "description": "Title for the application",
     "type": "text",
@@ -1628,11 +1198,6 @@
   },
   "tryToSendAgain": "Intentar enviar nuevamente",
   "@tryToSendAgain": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "tuesday": "Martes",
-  "@tuesday": {
     "type": "text",
     "placeholders": {}
   },
@@ -1671,11 +1236,6 @@
       "type": {}
     }
   },
-  "unknownSessionVerify": "Sesión desconocida, por favor verifíquela",
-  "@unknownSessionVerify": {
-    "type": "text",
-    "placeholders": {}
-  },
   "unmuteChat": "Dejar de silenciar el chat",
   "@unmuteChat": {
     "type": "text",
@@ -1692,18 +1252,6 @@
     "placeholders": {
       "unreadCount": {}
     }
-  },
-  "unreadMessages": "{unreadEvents, plural, =1{1 mensaje no leído} other{{unreadEvents} mensajes no leídos}}",
-  "@unreadMessages": {
-    "type": "text",
-    "placeholders": {
-      "unreadEvents": {}
-    }
-  },
-  "useAmoledTheme": "¿Usar colores compatibles con AMOLED?",
-  "@useAmoledTheme": {
-    "type": "text",
-    "placeholders": {}
   },
   "userAndOthersAreTyping": "{username} y {count} más están escribiendo…",
   "@userAndOthersAreTyping": {
@@ -1753,18 +1301,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "verifiedSession": "¡Sesión verificada exitosamente!",
-  "@verifiedSession": {
-    "type": "text",
-    "placeholders": {}
-  },
   "verify": "Verificar",
   "@verify": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "verifyManual": "Verificar manualmente",
-  "@verifyManual": {
     "type": "text",
     "placeholders": {}
   },
@@ -1780,11 +1318,6 @@
   },
   "verifyTitle": "Verificando la otra cuenta",
   "@verifyTitle": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "verifyUser": "Verificar usuario",
-  "@verifyUser": {
     "type": "text",
     "placeholders": {}
   },
@@ -1828,28 +1361,13 @@
     "type": "text",
     "placeholders": {}
   },
-  "wallpaper": "Fondo de pantalla",
+  "wallpaper": "Fondo de pantalla:",
   "@wallpaper": {
     "type": "text",
     "placeholders": {}
   },
   "warning": "¡Advertencia!",
   "@warning": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "warningEncryptionInBeta": "¡El cifrado de extremo a extremo está actualmente en período de prueba! ¡Úselo bajo su propio riesgo!",
-  "@warningEncryptionInBeta": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "wednesday": "Miércoles",
-  "@wednesday": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "welcomeText": "¡Bienvenido a REChain ® 🪐! ¡Un futuro privado y seguro que ya ha llegado!",
-  "@welcomeText": {
     "type": "text",
     "placeholders": {}
   },
@@ -1878,45 +1396,13 @@
     "type": "text",
     "placeholders": {}
   },
-  "youAreInvitedToThisChat": "Estás invitado a este chat",
-  "@youAreInvitedToThisChat": {
-    "type": "text",
-    "placeholders": {}
-  },
   "youAreNoLongerParticipatingInThisChat": "Ya no estás participando en este chat",
   "@youAreNoLongerParticipatingInThisChat": {
     "type": "text",
     "placeholders": {}
   },
-  "youCannotInviteYourself": "No puedes invitarte a tí mismo",
-  "@youCannotInviteYourself": {
-    "type": "text",
-    "placeholders": {}
-  },
   "youHaveBeenBannedFromThisChat": "Has sido vetado de este chat",
   "@youHaveBeenBannedFromThisChat": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "yourOwnUsername": "Tu nombre de usuario",
-  "@yourOwnUsername": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "youWillBeConnectedTo": "Serás conectado a {homeserver}",
-  "@youWillBeConnectedTo": {
-    "type": "text",
-    "placeholders": {
-      "homeserver": {}
-    }
-  },
-  "zoomIn": "Acercar zoom",
-  "@zoomIn": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "zoomOut": "Alejar zoom",
-  "@zoomOut": {
     "type": "text",
     "placeholders": {}
   },
@@ -1939,11 +1425,6 @@
       "uri": {}
     }
   },
-  "addNewFriend": "Agregar nuevo amigo",
-  "@addNewFriend": {
-    "type": "text",
-    "placeholders": {}
-  },
   "all": "Todo",
   "@all": {
     "type": "text",
@@ -1951,16 +1432,6 @@
   },
   "appLock": "Bloqueo de aplicación",
   "@appLock": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "audioPlayerPause": "Pausa",
-  "@audioPlayerPause": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "audioPlayerPlay": "Encender",
-  "@audioPlayerPlay": {
     "type": "text",
     "placeholders": {}
   },
@@ -2014,23 +1485,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "userNotVerified": "El usuario no está verificado",
-  "@userNotVerified": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "userVerified": "El usuario está verificado",
-  "@userVerified": {
-    "type": "text",
-    "placeholders": {}
-  },
   "iHaveClickedOnLink": "He hecho clic en el enlace",
   "@iHaveClickedOnLink": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "clearText": "Borrar texto",
-  "@clearText": {
     "type": "text",
     "placeholders": {}
   },
@@ -2080,11 +1536,6 @@
   },
   "chatHasBeenAddedToThisSpace": "El chat se ha agregado a este espacio",
   "@chatHasBeenAddedToThisSpace": {},
-  "chatHasBeenRemovedFromThisSpace": "El chat se ha eliminado de este espacio",
-  "@chatHasBeenRemovedFromThisSpace": {
-    "type": "text",
-    "placeholders": {}
-  },
   "commandInvalid": "Comando inválido",
   "@commandInvalid": {
     "type": "text"
@@ -2093,13 +1544,6 @@
   "@passwordRecovery": {
     "type": "text",
     "placeholders": {}
-  },
-  "loginWith": "Iniciar sesión con {brand}",
-  "@loginWith": {
-    "type": "text",
-    "placeholders": {
-      "brand": {}
-    }
   },
   "security": "Seguridad",
   "@security": {
@@ -2111,11 +1555,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "publicKey": "Clave pública",
-  "@publicKey": {
-    "type": "text",
-    "placeholders": {}
-  },
   "editBlockedServers": "Editar servidores bloqueado",
   "@editBlockedServers": {
     "type": "text",
@@ -2123,11 +1562,6 @@
   },
   "configureChat": "Configurar chat",
   "@configureChat": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "noDescription": "Sin descripción",
-  "@noDescription": {
     "type": "text",
     "placeholders": {}
   },
@@ -2156,11 +1590,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "soundVibrationLedColor": "Sonido, vibración LED de color",
-  "@soundVibrationLedColor": {
-    "type": "text",
-    "placeholders": {}
-  },
   "memberChanges": "Cambios de miembros",
   "@memberChanges": {
     "type": "text",
@@ -2181,8 +1610,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "enterASpacepName": "Ingrese nombre de espacio",
-  "@enterASpacepName": {},
   "ignore": "Ignorar",
   "@ignore": {
     "type": "text",
@@ -2229,13 +1656,6 @@
   "@reportMessage": {
     "type": "text",
     "placeholders": {}
-  },
-  "savedFileAs": "Archivo guardado como {filename}",
-  "@savedFileAs": {
-    "type": "text",
-    "placeholders": {
-      "filename": {}
-    }
   },
   "search": "Buscar",
   "@search": {
@@ -2291,11 +1711,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "saveFileToFolder": "Guardar archivo en esta carpeta",
-  "@saveFileToFolder": {
-    "type": "text",
-    "placeholders": {}
-  },
   "commandHint_send": "Enviar texto",
   "@commandHint_send": {
     "type": "text",
@@ -2311,11 +1726,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "dontAskAgain": "Cancelar y no volver a preguntar",
-  "@dontAskAgain": {
-    "type": "text",
-    "placeholders": {}
-  },
   "oopsPushError": "¡UPS¡ Desafortunadamente, se produjo un error al configurar las notificaciones push.",
   "@oopsPushError": {
     "type": "text",
@@ -2326,18 +1736,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "discoverGroups": "Descubrir grupos",
-  "@discoverGroups": {
-    "type": "text",
-    "placeholders": {}
-  },
   "enableEncryption": "Habilitar la encriptación",
   "@enableEncryption": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "yourChatsAreBeingSynced": "Tus chats se están sincronizando…",
-  "@yourChatsAreBeingSynced": {
     "type": "text",
     "placeholders": {}
   },
@@ -2369,43 +1769,12 @@
     },
     "description": "State that {command} is not a valid /command."
   },
-  "discover": "Descubrir",
-  "@discover": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "editChatPermissions": "Editar permisos de chat",
-  "@editChatPermissions": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "friends": "Amigos",
-  "@friends": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "createNewChatExplaination": "Simplemente escaneé el código QR o comparta su enlace de invitación si no están uno al lado del otro.",
-  "@createNewChatExplaination": {},
-  "shareYourInviteLink": "Compartir tu enlace de invitación",
-  "@shareYourInviteLink": {},
-  "typeInInviteLinkManually": "Escriba el enlace de invitación manualmente...",
-  "@typeInInviteLinkManually": {},
   "scanQrCode": "Escanear código QR",
   "@scanQrCode": {},
-  "unlockChatBackup": "Desbloquear la copia de seguridad del chat",
-  "@unlockChatBackup": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "homeserver": "Node/Server",
+  "homeserver": "Homeserver",
   "@homeserver": {},
   "newChat": "Nuevo chat",
   "@newChat": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "publicSpace": "Espacio público",
-  "@publicSpace": {
     "type": "text",
     "placeholders": {}
   },
@@ -2476,11 +1845,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "enableChatBackup": "Habilitar la copia de seguridad del chat para no perder nunca el acceso a su chats.",
-  "@enableChatBackup": {
-    "type": "text",
-    "placeholders": {}
-  },
   "editRoomAvatar": "Editar avatar de sala",
   "@editRoomAvatar": {
     "type": "text",
@@ -2501,27 +1865,13 @@
     "type": "text",
     "placeholders": {}
   },
-  "norechainonlineServer": "{server1} no es un servidor Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network, ¿usa {server2} en su lugar?",
+  "norechainonlineServer": "{server1} no es un servidor REChain ®️ 🪐 ✨, usar {server2} en su lugar?",
   "@norechainonlineServer": {
     "type": "text",
     "placeholders": {
       "server1": {},
       "server2": {}
     }
-  },
-  "invalidEmail": "Correo inválido",
-  "@invalidEmail": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "newPasswordDescription": "Para poder recuperar su contraseña más tarde, debe agregar una dirección de correo electrónico",
-  "@newPasswordDescription": {},
-  "newUsernameDescription": "Su ID de usuario tendrá el formato @username:servername",
-  "@newUsernameDescription": {},
-  "noStatusesFound": "Hasta ahora no se han encontrado estados.",
-  "@noStatusesFound": {
-    "type": "text",
-    "placeholders": {}
   },
   "openInMaps": "Abrir en maps",
   "@openInMaps": {
@@ -2564,11 +1914,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "tapToShowImage": "Toque para mostrar la imagen",
-  "@tapToShowImage": {
-    "type": "text",
-    "placeholders": {}
-  },
   "toggleFavorite": "Alternar favorito",
   "@toggleFavorite": {
     "type": "text",
@@ -2576,11 +1921,6 @@
   },
   "toggleUnread": "Marcar como: leído / no leído",
   "@toggleUnread": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "userUnknownVerification": "El usuario tiene un estado de verificación desconocido",
-  "@userUnknownVerification": {
     "type": "text",
     "placeholders": {}
   },
@@ -2599,536 +1939,381 @@
     "type": "text",
     "placeholders": {}
   },
-  "@addDescription": {},
-  "@addToSpaceDescription": {},
+  "yourChatBackupHasBeenSetUp": "Se ha configurado la copia de respaldo del chat.",
+  "@yourChatBackupHasBeenSetUp": {},
+  "unverified": "No verificado",
+  "@unverified": {},
+  "commandHint_clearcache": "Limpiar cache",
   "@commandHint_clearcache": {
-    "description": "Usage hint for the command /clearcache",
-    "type": "text"
+    "type": "text",
+    "description": "Usage hint for the command /clearcache"
   },
-  "@commandHint_discardsession": {
-    "description": "Usage hint for the command /discardsession",
-    "type": "text"
-  },
-  "@loginWithOneClick": {},
+  "messageInfo": "Información del mensaje",
   "@messageInfo": {},
-  "@messageType": {},
-  "@openGallery": {},
-  "@openVideoCamera": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@passwordsDoNotMatch": {},
-  "@pleaseChooseAtLeastChars": {
-    "placeholders": {
-      "min": {}
-    },
-    "type": "text"
-  },
-  "@pleaseEnterSecurityKeyDescription": {},
-  "@pleaseEnterValidEmail": {},
-  "@publish": {},
-  "@removeFromSpace": {},
-  "@repeatPassword": {},
-  "@replyHasBeenSent": {},
-  "@saveTheSecurityKeyNow": {},
-  "@start": {},
+  "time": "Tiempo",
   "@time": {},
+  "openVideoCamera": "Abrir la cámara para un video",
+  "@openVideoCamera": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "repeatPassword": "Repita la contraseña",
+  "@repeatPassword": {},
+  "removeFromSpace": "Eliminar del espacio",
+  "@removeFromSpace": {},
+  "addToSpaceDescription": "Elige un espacio para añadir este chat a el.",
+  "@addToSpaceDescription": {},
+  "openGallery": "Abrir galería",
+  "@openGallery": {},
+  "start": "Iniciar",
+  "@start": {},
+  "commandHint_discardsession": "Descartar sesión",
+  "@commandHint_discardsession": {
+    "type": "text",
+    "description": "Usage hint for the command /discardsession"
+  },
+  "messageType": "Tipo de Mensaje",
+  "@messageType": {},
+  "videoWithSize": "Video ({size})",
   "@videoWithSize": {
+    "type": "text",
     "placeholders": {
       "size": {}
-    },
-    "type": "text"
+    }
   },
-  "@whatIsGoingOn": {},
-  "@allSpaces": {},
-  "@commandHint_markasgroup": {},
-  "@newGroup": {},
+  "publish": "Publicar",
+  "@publish": {},
+  "newSpace": "Nuevo espacio",
   "@newSpace": {},
-  "@nextAccount": {},
-  "@previousAccount": {},
-  "@stories": {},
-  "@users": {},
-  "@whoCanSeeMyStories": {},
-  "@widgetEtherpad": {},
-  "@widgetJitsi": {},
+  "allSpaces": "Todos los espacios",
+  "@allSpaces": {},
+  "widgetUrlError": "Esta no es una URL válida.",
   "@widgetUrlError": {},
-  "@youAcceptedTheInvitation": {},
+  "commandHint_markasgroup": "Marcar como grupo",
+  "@commandHint_markasgroup": {},
+  "nextAccount": "Siguiente cuenta",
+  "@nextAccount": {},
+  "youRejectedTheInvitation": "Rechazaste la invitación",
+  "@youRejectedTheInvitation": {},
+  "newGroup": "Nuevo grupo",
+  "@newGroup": {},
+  "widgetJitsi": "Jitsi Meet",
+  "@widgetJitsi": {},
+  "previousAccount": "Cuenta anterior",
+  "@previousAccount": {},
+  "users": "Usuarios",
+  "@users": {},
+  "youInvitedBy": "📩 Has sido invitado por {user}",
   "@youInvitedBy": {
     "placeholders": {
       "user": {}
     }
   },
-  "@addChatDescription": {},
-  "@addWidget": {},
-  "@allRooms": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@appearOnTop": {},
-  "@appearOnTopDetails": {},
-  "@archiveRoomDescription": {},
-  "@banUserDescription": {},
-  "@callingAccount": {},
-  "@callingAccountDetails": {},
-  "@callingPermissions": {},
-  "@chatDescription": {},
-  "@chatDescriptionHasBeenChanged": {},
-  "@chatPermissions": {},
-  "@commandHint_create": {
-    "description": "Usage hint for the command /create",
-    "type": "text"
-  },
+  "youAcceptedTheInvitation": "👍 Aceptaste la invitación",
+  "@youAcceptedTheInvitation": {},
+  "widgetEtherpad": "Nota de texto",
+  "@widgetEtherpad": {},
+  "commandHint_cuddle": "Mandar una carantoña",
   "@commandHint_cuddle": {},
-  "@commandHint_dm": {
-    "description": "Usage hint for the command /dm",
-    "type": "text"
+  "supposedMxid": "Esto debería ser {mxid}",
+  "@supposedMxid": {
+    "type": "text",
+    "placeholders": {
+      "mxid": {}
+    }
   },
-  "@commandHint_googly": {},
-  "@commandHint_hug": {},
-  "@commandHint_markasdm": {},
-  "@confirmEventUnpin": {},
+  "importFromZipFile": "Importar de un archivo .zip",
+  "@importFromZipFile": {},
+  "exportEmotePack": "Exportar paquete de emotes como .zip",
+  "@exportEmotePack": {},
+  "addChatDescription": "Añadir una descripción del chat",
+  "@addChatDescription": {},
+  "sendTypingNotifications": "Enviar notificaciones \"está escribiendo\"",
+  "@sendTypingNotifications": {},
+  "importEmojis": "Importar emojis",
+  "@importEmojis": {},
+  "confirmMatrixId": "Por favor confirma tu REChain ®️ 🪐 ✨ ID para borrar tu cuenta.",
   "@confirmMatrixId": {},
+  "notAnImage": "El archivo no es una imagen.",
+  "@notAnImage": {},
+  "commandHint_hug": "Mandar un abrazo",
+  "@commandHint_hug": {},
+  "importNow": "Importar ahora",
+  "@importNow": {},
+  "hugContent": "{senderName} te abraza",
+  "@hugContent": {
+    "type": "text",
+    "placeholders": {
+      "senderName": {}
+    }
+  },
+  "otherCallingPermissions": "Micrófono, cámara y otros permisos de REChain ®️ 🪐 ✨",
+  "@otherCallingPermissions": {},
+  "emailOrUsername": "Correo electrónico o nombre de usuario",
+  "@emailOrUsername": {},
+  "countFiles": "{count} archivos",
   "@countFiles": {
     "placeholders": {
       "count": {}
     }
   },
-  "@createGroup": {},
-  "@cuddleContent": {
-    "placeholders": {
-      "senderName": {}
-    },
-    "type": "text"
-  },
-  "@custom": {},
-  "@dehydrate": {},
-  "@dehydrateTor": {},
-  "@dehydrateTorLong": {},
-  "@dehydrateWarning": {},
-  "@deviceKeys": {},
-  "@directChat": {},
-  "@disableEncryptionWarning": {},
-  "@dismiss": {},
-  "@doNotShowAgain": {},
-  "@emailOrUsername": {},
-  "@emojis": {},
-  "@emoteKeyboardNoRecents": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@encryptThisChat": {},
-  "@enterRoom": {},
-  "@enterSpace": {},
-  "@errorAddingWidget": {},
-  "@experimentalVideoCalls": {},
-  "@exportEmotePack": {},
-  "@fileHasBeenSavedAt": {
-    "placeholders": {
-      "path": {}
-    },
-    "type": "text"
-  },
-  "@fileIsTooBigForServer": {},
-  "@foregroundServiceRunning": {},
-  "@googlyEyesContent": {
-    "placeholders": {
-      "senderName": {}
-    },
-    "type": "text"
-  },
-  "@hasKnocked": {
-    "placeholders": {
-      "user": {}
-    }
-  },
-  "@hideUnimportantStateEvents": {},
-  "@hugContent": {
-    "placeholders": {
-      "senderName": {}
-    },
-    "type": "text"
-  },
-  "@hydrate": {},
-  "@hydrateTor": {},
-  "@hydrateTorLong": {},
-  "@importEmojis": {},
-  "@importFromZipFile": {},
-  "@importNow": {},
-  "@indexedDbErrorLong": {},
-  "@indexedDbErrorTitle": {},
-  "@invalidInput": {},
-  "@invalidServerName": {},
-  "@invite": {},
-  "@inviteContactToGroupQuestion": {},
-  "@inviteGroupChat": {},
-  "@invitePrivateChat": {},
-  "@jump": {},
-  "@jumpToLastReadMessage": {},
-  "@kickUserDescription": {},
-  "@learnMore": {},
-  "@makeAdminDescription": {},
-  "@markAsRead": {},
-  "@messagesStyle": {},
-  "@newSpaceDescription": {},
-  "@noBackupWarning": {},
-  "@noChatDescriptionYet": {},
-  "@noKeyForThisMessage": {},
-  "@noOtherDevicesFound": {},
-  "@notAnImage": {},
-  "@numChats": {
-    "placeholders": {
-      "number": {}
-    },
-    "type": "number"
-  },
-  "@openChat": {},
-  "@openLinkInBrowser": {},
-  "@optionalRedactReason": {},
-  "@otherCallingPermissions": {},
-  "@pinMessage": {},
-  "@placeCall": {},
-  "@pleaseEnterANumber": {},
-  "@pleaseEnterRecoveryKey": {},
-  "@pleaseEnterRecoveryKeyDescription": {},
-  "@pleaseTryAgainLaterOrChooseDifferentServer": {},
-  "@profileNotFound": {},
-  "@pushNotificationsNotAvailable": {},
-  "@reactedWith": {
-    "placeholders": {
-      "reaction": {},
-      "sender": {}
-    },
-    "type": "text"
-  },
-  "@readUpToHere": {},
-  "@recoveryKey": {},
-  "@recoveryKeyLost": {},
-  "@redactedBy": {
-    "placeholders": {
-      "username": {}
-    },
-    "type": "text"
-  },
-  "@redactedByBecause": {
-    "placeholders": {
-      "reason": {},
-      "username": {}
-    },
-    "type": "text"
-  },
-  "@redactMessageDescription": {},
-  "@removeDevicesDescription": {},
-  "@reopenChat": {},
-  "@replace": {},
-  "@report": {},
-  "@reportErrorDescription": {},
+  "reportUser": "Reportar usuario",
   "@reportUser": {},
-  "@roomUpgradeDescription": {},
-  "@saveKeyManuallyDescription": {},
-  "@screenSharingDetail": {},
-  "@screenSharingTitle": {},
-  "@sender": {},
-  "@sendTypingNotifications": {},
-  "@separateChatTypes": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@setChatDescription": {},
-  "@setColorTheme": {},
-  "@setTheme": {},
-  "@shareInviteLink": {},
-  "@signInWith": {
-    "placeholders": {
-      "provider": {}
-    },
-    "type": "text"
-  },
-  "@signInWithPassword": {},
-  "@sorryThatsNotPossible": {},
-  "@startFirstChat": {},
-  "@storeInAndroidKeystore": {},
-  "@storeInAppleKeyChain": {},
-  "@storeInSecureStorageDescription": {},
-  "@storeSecurlyOnThisDevice": {},
-  "@supposedMxid": {
-    "placeholders": {
-      "mxid": {}
-    },
-    "type": "text"
-  },
-  "@switchToAccount": {
-    "placeholders": {
-      "number": {}
-    },
-    "type": "number"
-  },
-  "@tryAgain": {},
-  "@unbanUserDescription": {},
-  "@unlockOldMessages": {},
-  "@unsupportedAndroidVersion": {},
-  "@unsupportedAndroidVersionLong": {},
-  "@user": {},
-  "@videoCallsBetaWarning": {},
+  "voiceCall": "Llamada de voz",
   "@voiceCall": {},
-  "@wasDirectChatDisplayName": {
+  "reactedWith": "{sender} reaccionó con {reaction}",
+  "@reactedWith": {
+    "type": "text",
     "placeholders": {
-      "oldDisplayName": {}
-    },
-    "type": "text"
+      "sender": {},
+      "reaction": {}
+    }
   },
-  "@whyIsThisMessageEncrypted": {},
-  "@widgetCustom": {},
+  "markAsRead": "Marcar como leído",
+  "@markAsRead": {},
+  "widgetName": "Nombre",
   "@widgetName": {},
-  "@widgetNameError": {},
+  "replace": "Reemplazar",
+  "@replace": {},
+  "unsupportedAndroidVersionLong": "Esta característica requiere una versión más reciente de Android. Por favor, compruebe las actualizaciones o la compatibilidad de Katya ® 👽 OS.",
+  "@unsupportedAndroidVersionLong": {},
+  "storeSecurlyOnThisDevice": "Almacenar de forma segura en este dispositivo",
+  "@storeSecurlyOnThisDevice": {},
+  "openChat": "Abrir chat",
+  "@openChat": {},
+  "screenSharingDetail": "Usted está compartiendo su pantalla en REChain ®️ 🪐 ✨",
+  "@screenSharingDetail": {},
+  "allRooms": "Todos los chats grupales",
+  "@allRooms": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "widgetVideo": "Vídeo",
   "@widgetVideo": {},
-  "@wrongPinEntered": {
-    "placeholders": {
-      "seconds": {}
-    },
-    "type": "text"
+  "dismiss": "Descartar",
+  "@dismiss": {},
+  "unsupportedAndroidVersion": "Versión de Android no compatible",
+  "@unsupportedAndroidVersion": {},
+  "indexedDbErrorLong": "El almacenamiento de mensajes, por desgracia, no está habilitado en el modo privado por defecto.\nPor favor, visite\n - about:config\n - Establezca dom.indexedDB.privateBrowsing.enabled a true\nDe otra forma, no es posible usar REChain ®️ 🪐 ✨.",
+  "@indexedDbErrorLong": {},
+  "startFirstChat": "Comience su primer chat",
+  "@startFirstChat": {},
+  "commandHint_create": "Crear un chat grupal vacío\nUse --no-encryption para deshabilitar el cifrado",
+  "@commandHint_create": {
+    "type": "text",
+    "description": "Usage hint for the command /create"
   },
-  "@youBannedUser": {
-    "placeholders": {
-      "user": {}
-    }
+  "user": "Usuario",
+  "@user": {},
+  "separateChatTypes": "Separar chats directos de grupos",
+  "@separateChatTypes": {
+    "type": "text",
+    "placeholders": {}
   },
-  "@youHaveWithdrawnTheInvitationFor": {
-    "placeholders": {
-      "user": {}
-    }
-  },
-  "@youInvitedUser": {
-    "placeholders": {
-      "user": {}
-    }
-  },
-  "@youJoinedTheChat": {},
-  "@youKicked": {
-    "placeholders": {
-      "user": {}
-    }
-  },
+  "tryAgain": "Inténtelo de nuevo",
+  "@tryAgain": {},
+  "youKickedAndBanned": "🙅 Usted expulsó y prohibió el acceso a {user}",
   "@youKickedAndBanned": {
     "placeholders": {
       "user": {}
     }
   },
+  "messagesStyle": "Mensajes:",
+  "@messagesStyle": {},
+  "chatDescription": "Descripción del chat",
+  "@chatDescription": {},
+  "callingAccountDetails": "Permite a REChain ®️ 🪐 ✨ utilizar la aplicación de llamadas nativa de Android.",
+  "@callingAccountDetails": {},
+  "enterSpace": "Unirse al espacio",
+  "@enterSpace": {},
+  "pleaseEnterRecoveryKey": "Por favor, introduzca su clave de recuperación:",
+  "@pleaseEnterRecoveryKey": {},
+  "widgetNameError": "Por favor, introduzca un nombre a mostrar.",
+  "@widgetNameError": {},
+  "addWidget": "Añadir widget",
+  "@addWidget": {},
+  "hydrateTor": "TOR: Importar sesión exportada",
+  "@hydrateTor": {},
+  "storeInAppleKeyChain": "Almacenar en la KeyChain de Apple",
+  "@storeInAppleKeyChain": {},
+  "hydrate": "Restaurar desde fichero de copia de seguridad",
+  "@hydrate": {},
+  "invalidServerName": "Nombre del servidor no válido",
+  "@invalidServerName": {},
+  "chatPermissions": "Permisos del chat",
+  "@chatPermissions": {},
+  "sender": "Remitente",
+  "@sender": {},
+  "storeInAndroidKeystore": "Almacenar en la KeyStore de Android",
+  "@storeInAndroidKeystore": {},
+  "saveKeyManuallyDescription": "Compartir esta clave manualmente usando el diálogo de compartir del sistema o el portapapeles.",
+  "@saveKeyManuallyDescription": {},
+  "whyIsThisMessageEncrypted": "¿Por qué no se puede leer este mensaje?",
+  "@whyIsThisMessageEncrypted": {},
+  "setChatDescription": "Establecer descripción del chat",
+  "@setChatDescription": {},
+  "dehydrateWarning": "Esta acción no se puede deshacer. Asegúrese de que ha almacenado de forma segura el fichero de copia de seguridad.",
+  "@dehydrateWarning": {},
+  "redactedBy": "Censurado por {username}",
+  "@redactedBy": {
+    "type": "text",
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "videoCallsBetaWarning": "Tenga en cuenta que las videollamadas están actualmente en fase beta. Es posible que no funcionen como se espera o que no funcionen de ninguna manera en algunas plataformas.",
+  "@videoCallsBetaWarning": {},
+  "callingPermissions": "Permisos de llamadas",
+  "@callingPermissions": {},
+  "unlockOldMessages": "Desbloquear mensajes viejos",
+  "@unlockOldMessages": {},
+  "numChats": "{number} chats",
+  "@numChats": {
+    "type": "number",
+    "placeholders": {
+      "number": {}
+    }
+  },
+  "optionalRedactReason": "(Opcional) Motivo para censurar este mensaje...",
+  "@optionalRedactReason": {},
+  "dehydrate": "Exportar sesión y limpiar dispositivo",
+  "@dehydrate": {},
+  "switchToAccount": "Cambiar a la cuenta {number}",
+  "@switchToAccount": {
+    "type": "number",
+    "placeholders": {
+      "number": {}
+    }
+  },
+  "experimentalVideoCalls": "Videollamadas experimentales",
+  "@experimentalVideoCalls": {},
+  "pleaseEnterRecoveryKeyDescription": "Para desbloquear sus viejos mensajes, introduzca su clave de recuperación que se generó en una sesión anterior. Su clave de recuperación NO es su contraseña.",
+  "@pleaseEnterRecoveryKeyDescription": {},
+  "inviteContactToGroupQuestion": "¿Quieres invitar a {contact} al chat {groupName}?",
+  "@inviteContactToGroupQuestion": {},
+  "redactedByBecause": "Censurado por {username} porque: \"{reason}\"",
+  "@redactedByBecause": {
+    "type": "text",
+    "placeholders": {
+      "username": {},
+      "reason": {}
+    }
+  },
+  "youHaveWithdrawnTheInvitationFor": "Usted retiró la invitación a {user}",
+  "@youHaveWithdrawnTheInvitationFor": {
+    "placeholders": {
+      "user": {}
+    }
+  },
+  "enterRoom": "Unirse a la sala",
+  "@enterRoom": {},
+  "confirmEventUnpin": "¿Seguro que quiere desfijar permanentemente el evento?",
+  "@confirmEventUnpin": {},
+  "youInvitedUser": "📩 Usted invitó a {user}",
+  "@youInvitedUser": {
+    "placeholders": {
+      "user": {}
+    }
+  },
+  "redactMessageDescription": "El mensaje será censurado para todas las personas participantes en la conversación. Esto no se puede deshacer.",
+  "@redactMessageDescription": {},
+  "recoveryKey": "Clave de recuperación",
+  "@recoveryKey": {},
+  "dehydrateTorLong": "Si está usando TOR, es recomendable exportar la sesión antes de cerrar la ventana.",
+  "@dehydrateTorLong": {},
+  "doNotShowAgain": "No mostrar de nuevo",
+  "@doNotShowAgain": {},
+  "hideUnimportantStateEvents": "Ocultar eventos de estado no importantes",
+  "@hideUnimportantStateEvents": {},
+  "screenSharingTitle": "Compartir la pantalla",
+  "@screenSharingTitle": {},
+  "widgetCustom": "Personalizado",
+  "@widgetCustom": {},
+  "youBannedUser": "Usted prohibió el acceso a {user}",
+  "@youBannedUser": {
+    "placeholders": {
+      "user": {}
+    }
+  },
+  "directChat": "Chat directo",
+  "@directChat": {},
+  "appearOnTop": "Aparecer en la cima",
+  "@appearOnTop": {},
+  "foregroundServiceRunning": "Esta notificación aparece cuando el servicio en segundo plano se está ejecutando.",
+  "@foregroundServiceRunning": {},
+  "wasDirectChatDisplayName": "Chat vacío (era {oldDisplayName})",
+  "@wasDirectChatDisplayName": {
+    "type": "text",
+    "placeholders": {
+      "oldDisplayName": {}
+    }
+  },
+  "noChatDescriptionYet": "No se ha creado una descripción del chat aún.",
+  "@noChatDescriptionYet": {},
+  "chatDescriptionHasBeenChanged": "Se ha cambiado la descripción del chat",
+  "@chatDescriptionHasBeenChanged": {},
+  "dehydrateTor": "TOR: Exportar sesión",
+  "@dehydrateTor": {},
+  "youKicked": "👞 Usted expulsó a {user}",
+  "@youKicked": {
+    "placeholders": {
+      "user": {}
+    }
+  },
+  "shareInviteLink": "Compartir enlace de invitación",
+  "@shareInviteLink": {},
+  "commandHint_markasdm": "Marcar como sala de mensajes directos para el ID de REChain ®️ 🪐 ✨",
+  "@commandHint_markasdm": {},
+  "recoveryKeyLost": "¿Perdió su clave de recuperación?",
+  "@recoveryKeyLost": {},
+  "emoteKeyboardNoRecents": "Los emotes usados recientemente aparecerán aquí...",
+  "@emoteKeyboardNoRecents": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "youJoinedTheChat": "Usted se ha unido al chat",
+  "@youJoinedTheChat": {},
+  "errorAddingWidget": "Fallo al añadir el widget.",
+  "@errorAddingWidget": {},
+  "commandHint_dm": "Iniciar un chat directo\nUse --no-encryption para deshabilitar el cifrado",
+  "@commandHint_dm": {
+    "type": "text",
+    "description": "Usage hint for the command /dm"
+  },
+  "youUnbannedUser": "Usted volvió a permitir el acceso a {user}",
   "@youUnbannedUser": {
     "placeholders": {
       "user": {}
     }
   },
-  "addChatDescription": "Añadir una descripción del chat",
-  "chatDescription": "Descripción del chat",
-  "chatDescriptionHasBeenChanged": "Se ha cambiado la descripción del chat",
-  "chatPermissions": "Permisos del chat",
+  "emojis": "Emojis",
+  "@emojis": {},
   "createGroup": "Crear grupo",
-  "directChat": "Chat directo",
-  "emoteKeyboardNoRecents": "Los emotes usados recientemente aparecerán aquí...",
-  "exportEmotePack": "Exportar paquete de emotes como .zip",
-  "importEmojis": "Importar emojis",
-  "importFromZipFile": "Importar de un archivo .zip",
-  "importNow": "Importar ahora",
-  "invalidServerName": "Nombre del servidor no válido",
-  "inviteContactToGroupQuestion": "¿Quieres invitar a {contact} al chat {groupName}?",
-  "messagesStyle": "Mensajes:",
-  "noChatDescriptionYet": "No se ha creado una descripción del chat aún.",
-  "notAnImage": "El archivo no es una imagen.",
-  "optionalRedactReason": "(Opcional) Motivo para censurar este mensaje...",
-  "redactedBy": "Censurado por {username}",
-  "redactedByBecause": "Censurado por {username} porque: \"{reason}\"",
-  "redactMessageDescription": "El mensaje será censurado para todas las personas participantes en la conversación. Esto no se puede deshacer.",
-  "replace": "Reemplazar",
-  "sendTypingNotifications": "Enviar notificaciones \"está escribiendo\"",
-  "setChatDescription": "Establecer descripción del chat",
-  "shareInviteLink": "Compartir enlace de invitación",
-  "tryAgain": "Inténtelo de nuevo",
-  "@youRejectedTheInvitation": {},
-  "@yourStory": {},
-  "allSpaces": "Todos los espacios",
-  "commandHint_markasgroup": "Marcar como grupo",
-  "newGroup": "Nuevo grupo",
-  "newSpace": "Nuevo espacio",
-  "nextAccount": "Siguiente cuenta",
-  "previousAccount": "Cuenta anterior",
-  "stories": "Historias",
-  "users": "Usuarios",
-  "whoCanSeeMyStories": "¿Quién puede ver mis historias?",
-  "widgetEtherpad": "Nota de texto",
-  "widgetJitsi": "Jitsi Meet",
-  "widgetUrlError": "Esta no es una URL válida.",
-  "youAcceptedTheInvitation": "👍 Aceptaste la invitación",
-  "youInvitedBy": "📩 Has sido invitado por {user}",
-  "youRejectedTheInvitation": "Rechazaste la invitación",
-  "yourStory": "Tu historia",
-  "addDescription": "Añadir descripción",
-  "addToSpaceDescription": "Elige un espacio para añadir este chat a el.",
-  "commandHint_clearcache": "Limpiar cache",
-  "commandHint_discardsession": "Descartar sesión",
-  "loginWithOneClick": "Iniciar sesión con un click",
-  "messageInfo": "Información del mensaje",
-  "messageType": "Tipo de Mensaje",
-  "openGallery": "Abrir galería",
-  "openVideoCamera": "Abrir la cámara para un video",
-  "passwordsDoNotMatch": "¡Las contraseñas no coinciden!",
-  "pleaseChooseAtLeastChars": "Por favor elegir al menos {min} carácteres",
-  "pleaseEnterSecurityKeyDescription": "Para desbloquear el respaldo de tu chat, por favor ingresa tu clave de seguridad que ha sido generada en una sesión previa. Tu clave de seguridad NO es tu contraseña.",
-  "pleaseEnterValidEmail": "Por favor ingrese un correo electrónico válido.",
-  "publish": "Publicar",
-  "removeFromSpace": "Eliminar del espacio",
-  "repeatPassword": "Repetir la contraseña",
-  "replyHasBeenSent": "La respuesta se ha enviado",
-  "saveTheSecurityKeyNow": "Guardar la clave de seguridad ahora",
-  "start": "Iniciar",
-  "time": "Tiempo",
-  "videoWithSize": "Video ({size})",
-  "whatIsGoingOn": "¿Qué está pasando?",
-  "iWroteDownTheKey": "He escrito la clave",
-  "@iWroteDownTheKey": {},
-  "yourChatBackupHasBeenSetUp": "Se ha configurado la copia de respaldo del chat.",
-  "@yourChatBackupHasBeenSetUp": {},
-  "unverified": "No verificado",
-  "@unverified": {},
-  "setupChatBackupDescription": "Para proteger sus mensajes, hemos generado una clave de seguridad.\nConsérvela en un sitio seguro, como un gestor de contraseñas.",
-  "@setupChatBackupDescription": {},
-  "yourUserId": "Su id. de usuario:",
-  "@yourUserId": {},
-  "setupChatBackup": "Configurar copia de respaldo de chat",
-  "@setupChatBackup": {},
-  "addToStory": "",
-  "addWidget": "",
-  "advanced": "",
-  "allRooms": "",
-  "allSuggestedRoomsJoined": "",
-  "appearOnTop": "",
-  "appearOnTopDetails": "",
-  "bubbleSize": "",
-  "callingAccount": "",
-  "callingAccountDetails": "",
-  "callingPermissions": "",
-  "commandHint_create": "",
-  "commandHint_cuddle": "",
-  "commandHint_dm": "",
-  "commandHint_googly": "",
-  "commandHint_hug": "",
-  "commandHint_markasdm": "",
-  "confirmEventUnpin": "",
-  "confirmMatrixId": "",
-  "continueWith": "",
-  "countFiles": "",
-  "cuddleContent": "",
-  "custom": "",
-  "dehydrate": "",
-  "dehydrateShare": "",
-  "dehydrateTor": "",
-  "dehydrateTorLong": "",
-  "dehydrateWarning": "",
-  "deviceKeys": "",
-  "disableEncryptionWarning": "",
-  "dismiss": "",
-  "doNotShowAgain": "",
-  "editIntegrations": "",
-  "editWidgets": "",
-  "emailOrUsername": "",
-  "emojis": "",
-  "enableAutoBackups": "",
-  "encryptThisChat": "",
-  "endToEndEncryption": "",
-  "enterInviteLinkOrMatrixId": "",
-  "enterRoom": "",
-  "enterSpace": "",
-  "errorAddingWidget": "",
-  "experimentalVideoCalls": "",
-  "fileHasBeenSavedAt": "",
-  "fileIsTooBigForServer": "",
-  "foregroundServiceRunning": "",
-  "googlyEyesContent": "",
-  "hideUnimportantStateEvents": "",
-  "hugContent": "",
-  "hydrate": "",
-  "hydrateTor": "",
-  "hydrateTorLong": "",
-  "iUnderstand": "",
-  "indexedDbErrorLong": "",
-  "indexedDbErrorTitle": "",
-  "integrationsNotImplemented": "",
-  "jump": "",
-  "jumpToLastReadMessage": "",
-  "letsStart": "",
-  "markAsRead": "",
-  "matrixWidgets": "",
-  "newSpaceDescription": "",
-  "noBackupWarning": "",
-  "noEmailWarning": "",
-  "noKeyForThisMessage": "",
-  "noMatrixServer": "",
-  "noOtherDevicesFound": "",
-  "noSearchResult": "",
-  "numChats": "",
-  "numberRoomMembers": "",
-  "openChat": "",
-  "openLinkInBrowser": "",
-  "optionalAddEmail": "",
-  "otherCallingPermissions": "",
-  "pinMessage": "",
-  "pinnedEventsError": "",
-  "placeCall": "",
-  "pleaseEnterAMatrixIdentifier": "",
-  "pleaseEnterRecoveryKey": "",
-  "pleaseEnterRecoveryKeyDescription": "",
-  "pleaseTryAgainLaterOrChooseDifferentServer": "",
-  "reactedWith": "",
-  "readUpToHere": "",
-  "recoveryKey": "",
-  "recoveryKeyLost": "",
-  "removeFromSpaceDescription": "",
-  "reopenChat": "",
-  "report": "",
-  "reportErrorDescription": "",
-  "reportUser": "",
-  "saveKeyManuallyDescription": "",
-  "saveTheRecoveryKeyNow": "",
-  "screenSharingDetail": "",
-  "screenSharingTitle": "",
-  "sender": "",
-  "separateChatTypes": "",
-  "setupChatBackupNow": "",
-  "showDirectChatsInSpaces": "",
-  "showSpaces": "",
-  "signInWithPassword": "",
-  "sorryThatsNotPossible": "",
-  "startFirstChat": "",
-  "storeInAndroidKeystore": "",
-  "storeInAppleKeyChain": "",
-  "storeInSecureStorageDescription": "",
-  "storeSecurlyOnThisDevice": "",
-  "storyFrom": "",
-  "storyPrivacyWarning": "",
-  "suggestedRooms": "",
-  "supposedMxid": "",
-  "switchToAccount": "",
-  "thisUserHasNotPostedAnythingYet": "",
-  "unlockOldMessages": "",
-  "unsubscribeStories": "",
-  "unsupportedAndroidVersion": "",
-  "unsupportedAndroidVersionLong": "",
-  "updateAvailable": "",
-  "updateNow": "",
-  "user": "",
-  "videoCallsBetaWarning": "",
-  "voiceCall": "",
-  "wasDirectChatDisplayName": "",
-  "whoCanSeeMyStoriesDesc": "",
-  "whyIsThisMessageEncrypted": "",
-  "widgetCustom": "",
-  "widgetName": "",
-  "widgetNameError": "",
-  "widgetVideo": "",
-  "youBannedUser": "",
-  "youHaveWithdrawnTheInvitationFor": "",
-  "youInvitedUser": "",
-  "youJoinedTheChat": "",
-  "youKicked": "",
-  "youKickedAndBanned": "",
-  "youUnbannedUser": ""
+  "@createGroup": {},
+  "hydrateTorLong": "¿Exportó su sesión la última vez que estuvo en TOR? Impórtela rápidamente y continúe chateando.",
+  "@hydrateTorLong": {},
+  "custom": "Personalizado",
+  "@custom": {},
+  "storeInSecureStorageDescription": "Almacenar la clave de recuperación en el almacenamiento seguro de este dispositivo.",
+  "@storeInSecureStorageDescription": {},
+  "pinMessage": "Anclar a la sala",
+  "@pinMessage": {},
+  "indexedDbErrorTitle": "Problemas con el modo privado",
+  "@indexedDbErrorTitle": {},
+  "googlyEyesContent": "{senderName} te manda ojos saltones",
+  "@googlyEyesContent": {
+    "type": "text",
+    "placeholders": {
+      "senderName": {}
+    }
+  },
+  "cuddleContent": "{senderName} se acurruca contigo",
+  "@cuddleContent": {
+    "type": "text",
+    "placeholders": {
+      "senderName": {}
+    }
+  },
+  "commandHint_googly": "Enviar unos ojos saltones",
+  "@commandHint_googly": {}
 }

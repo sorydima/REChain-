@@ -424,1532 +424,210 @@
     "type": "text",
     "placeholders": {}
   },
-  "@unsupportedAndroidVersionLong": {},
-  "@storeSecurlyOnThisDevice": {},
-  "@ok": {
+  "notifications": "Thông báo",
+  "@notifications": {
     "type": "text",
     "placeholders": {}
   },
-  "@sharedTheLocation": {
-    "type": "text",
-    "placeholders": {
-      "username": {}
-    }
-  },
-  "@unbanFromChat": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@screenSharingDetail": {},
-  "@hugContent": {
-    "type": "text",
-    "placeholders": {
-      "senderName": {}
-    }
-  },
-  "@darkTheme": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@passphraseOrKey": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@pleaseEnterYourPassword": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@theyMatch": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@jumpToLastReadMessage": {},
-  "@allRooms": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@obtainingLocation": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@commandHint_cuddle": {},
-  "@chats": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@widgetVideo": {},
-  "@dismiss": {},
-  "@unknownDevice": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@emoteShortcode": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@reportErrorDescription": {},
-  "@directChats": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@setPermissionsLevel": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@inviteContactToGroup": {
-    "type": "text",
-    "placeholders": {
-      "groupName": {}
-    }
-  },
-  "@addAccount": {},
-  "@configureChat": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@chatHasBeenAddedToThisSpace": {},
-  "@reply": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@removeYourAvatar": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@unsupportedAndroidVersion": {},
-  "@commandHint_html": {
-    "type": "text",
-    "description": "Usage hint for the command /html"
-  },
-  "@widgetJitsi": {},
-  "@youAreNoLongerParticipatingInThisChat": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@encryption": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@messageType": {},
-  "@indexedDbErrorLong": {},
-  "@oneClientLoggedOut": {},
-  "@toggleMuted": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@kicked": {
-    "type": "text",
-    "placeholders": {
-      "username": {},
-      "targetName": {}
-    }
-  },
-  "@title": {
-    "description": "Title for the application",
-    "type": "text",
-    "placeholders": {}
-  },
-  "@verifySuccess": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@sendFile": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@newVerificationRequest": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@startFirstChat": {},
-  "@callingAccount": {},
-  "@requestPermission": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@sentAPicture": {
-    "type": "text",
-    "placeholders": {
-      "username": {}
-    }
-  },
-  "@invited": {
-    "type": "text",
-    "placeholders": {}
-  },
+  "newGroup": "Nhóm mới",
+  "@newGroup": {},
+  "pleaseEnterANumber": "Hãy nhập số lớn hơn 0",
+  "@pleaseEnterANumber": {},
+  "newSpaceDescription": "Không gian cho phép bạn hợp nhất các cuộc trò chuyện của mình và xây dựng cộng đồng riêng tư hoặc công khai.",
+  "@newSpaceDescription": {},
+  "disableEncryptionWarning": "Vì lý do bảo mật, bạn không thể tắt tính năng mã hóa trong cuộc trò chuyện đã được bật tính năng này trước đó.",
+  "@disableEncryptionWarning": {},
+  "makeAdminDescription": "Khi bạn đặt người dùng này làm quản trị viên, bạn không thể hoàn tác việc này vì khi đó họ sẽ có quyền ngang bạn.",
+  "@makeAdminDescription": {},
+  "setColorTheme": "Chọn màu giao diện:",
   "@setColorTheme": {},
-  "@nextAccount": {},
-  "@commandHint_create": {
-    "type": "text",
-    "description": "Usage hint for the command /create"
-  },
-  "@singlesignon": {
+  "callingAccount": "Gọi tài khoản",
+  "@callingAccount": {},
+  "openLinkInBrowser": "Mở đường dẫn trong trình duyệt",
+  "@openLinkInBrowser": {},
+  "setTheme": "Chọn giao diện:",
+  "@setTheme": {},
+  "invitePrivateChat": "📨 Mời trò chuyện riêng tư",
+  "@invitePrivateChat": {},
+  "inviteGroupChat": "📨 Mời nhóm trò chuyện",
+  "@inviteGroupChat": {},
+  "addToSpace": "Thêm vào không gian",
+  "@addToSpace": {},
+  "importEmojis": "Nhập Biểu cảm",
+  "@importEmojis": {},
+  "importFromZipFile": "Nhập vào từ tệp .zip",
+  "@importFromZipFile": {},
+  "exportEmotePack": "Xuất gói biểu cảm bằng tệp .zip",
+  "@exportEmotePack": {},
+  "hideUnimportantStateEvents": "Ẩn các sự kiện không quan trọng",
+  "@hideUnimportantStateEvents": {},
+  "replace": "Thay thế",
+  "@replace": {},
+  "addChatDescription": "Thêm mô tả hội thoại...",
+  "@addChatDescription": {},
+  "report": "báo cáo",
+  "@report": {},
+  "remove": "Loại bỏ",
+  "@remove": {
     "type": "text",
     "placeholders": {}
   },
-  "@warning": {
+  "restricted": "Bị hạn chế",
+  "@restricted": {},
+  "newSpace": "Không gian mới",
+  "@newSpace": {},
+  "enterRoom": "Nhập phòng",
+  "@enterRoom": {},
+  "signInWithPassword": "Đăng nhập với mật khẩu",
+  "@signInWithPassword": {},
+  "all": "Tất cả",
+  "@all": {
     "type": "text",
     "placeholders": {}
   },
-  "@password": {
+  "appLock": "Khoá ứng dụng",
+  "@appLock": {
     "type": "text",
     "placeholders": {}
   },
-  "@allSpaces": {},
+  "allChats": "Tất cả hội thoại",
+  "@allChats": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "repeatPassword": "Nhập lại mật khẩu",
+  "@repeatPassword": {},
+  "confirmMatrixId": "Hãy xác nhận REChain ®️ 🪐 ✨ ID để xoá tài khoản.",
+  "@confirmMatrixId": {},
+  "supposedMxid": "Đây nên là {mxid}",
   "@supposedMxid": {
     "type": "text",
     "placeholders": {
       "mxid": {}
     }
   },
-  "@user": {},
-  "@roomVersion": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@sentAFile": {
-    "type": "text",
-    "placeholders": {
-      "username": {}
-    }
-  },
-  "@videoCall": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@youAcceptedTheInvitation": {},
-  "@norechainonlineServer": {
-    "type": "text",
-    "placeholders": {
-      "server1": {},
-      "server2": {}
-    }
-  },
-  "@youInvitedBy": {
-    "placeholders": {
-      "user": {}
-    }
-  },
-  "@openAppToReadMessages": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@sentAVideo": {
-    "type": "text",
-    "placeholders": {
-      "username": {}
-    }
-  },
-  "@banUserDescription": {},
-  "@inviteContact": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@askSSSSSign": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@widgetEtherpad": {},
-  "@remove": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@changeTheme": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@id": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@removeDevicesDescription": {},
-  "@separateChatTypes": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@tryAgain": {},
-  "@youKickedAndBanned": {
-    "placeholders": {
-      "user": {}
-    }
-  },
-  "@removeDevice": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@unbanUserDescription": {},
-  "@pleaseClickOnLink": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@saveFile": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@sendOnEnter": {},
-  "@youRejectedTheInvitation": {},
-  "@otherCallingPermissions": {},
-  "@messagesStyle": {},
-  "@invitedUsersOnly": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@link": {},
-  "@widgetUrlError": {},
-  "@emailOrUsername": {},
-  "@newSpaceDescription": {},
-  "@chatDescription": {},
-  "@callingAccountDetails": {},
-  "@editRoomAliases": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@enterSpace": {},
-  "@encryptThisChat": {},
-  "@unavailable": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@previousAccount": {},
-  "@publicRooms": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@fromTheInvitation": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@sendMessages": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@incorrectPassphraseOrKey": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@emoteWarnNeedToPick": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@reopenChat": {},
-  "@pleaseEnterRecoveryKey": {},
-  "@toggleFavorite": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@no": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@widgetNameError": {},
-  "@inoffensive": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@unpin": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@addToBundle": {},
-  "@reportMessage": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@spaceIsPublic": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@addWidget": {},
-  "@all": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@removeAllOtherDevices": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@unblockDevice": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@countFiles": {
-    "placeholders": {
-      "count": {}
-    }
-  },
-  "@noKeyForThisMessage": {},
-  "@enableEncryptionWarning": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@inviteText": {
-    "type": "text",
-    "placeholders": {
-      "username": {},
-      "link": {}
-    }
-  },
-  "@shareLocation": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@reason": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@commandHint_markasgroup": {},
-  "@errorObtainingLocation": {
-    "type": "text",
-    "placeholders": {
-      "error": {}
-    }
-  },
-  "@hydrateTor": {},
-  "@pushNotificationsNotAvailable": {},
-  "@passwordRecovery": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@storeInAppleKeyChain": {},
-  "@replaceRoomWithNewerVersion": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@hydrate": {},
-  "@invalidServerName": {},
-  "@chatPermissions": {},
-  "@voiceMessage": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@wipeChatBackup": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@cantOpenUri": {
-    "type": "text",
-    "placeholders": {
-      "uri": {}
-    }
-  },
-  "@sender": {},
-  "@storeInAndroidKeystore": {},
-  "@hideRedactedEvents": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@online": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@signInWithPassword": {},
-  "@ignoredUsers": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@lastActiveAgo": {
-    "type": "text",
-    "placeholders": {
-      "localizedTimeShort": {}
-    }
-  },
-  "@weSentYouAnEmail": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@offensive": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@needPantalaimonWarning": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@makeAdminDescription": {},
-  "@edit": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@noEmotesFound": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@synchronizingPleaseWait": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@pushRules": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@goToTheNewRoom": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@commandHint_clearcache": {
-    "type": "text",
-    "description": "Usage hint for the command /clearcache"
-  },
-  "@saveKeyManuallyDescription": {},
-  "@none": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@editBundlesForAccount": {},
-  "@renderRichContent": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@enableEncryption": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@whyIsThisMessageEncrypted": {},
-  "@rejectedTheInvitation": {
-    "type": "text",
-    "placeholders": {
-      "username": {}
-    }
-  },
-  "@setChatDescription": {},
-  "@userLeftTheChat": {
-    "type": "text",
-    "placeholders": {
-      "username": {}
-    }
-  },
-  "@spaceName": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@importFromZipFile": {},
-  "@toggleUnread": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@or": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@dehydrateWarning": {},
-  "@sendOriginal": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@noOtherDevicesFound": {},
-  "@whoIsAllowedToJoinThisGroup": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@emptyChat": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@seenByUser": {
-    "type": "text",
-    "placeholders": {
-      "username": {}
-    }
-  },
-  "@yourChatBackupHasBeenSetUp": {},
-  "@redactedBy": {
-    "type": "text",
-    "placeholders": {
-      "username": {}
-    }
-  },
-  "@submit": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@videoCallsBetaWarning": {},
-  "@unmuteChat": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@redactedAnEvent": {
-    "type": "text",
-    "placeholders": {
-      "username": {}
-    }
-  },
-  "@autoplayImages": {
-    "type": "text",
-    "placeholder": {}
-  },
-  "@participant": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@logInTo": {
-    "type": "text",
-    "placeholders": {
-      "homeserver": {}
-    }
-  },
-  "@yes": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@containsDisplayName": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@signInWith": {
-    "type": "text",
-    "placeholders": {
-      "provider": {}
-    }
-  },
-  "@username": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@fileIsTooBigForServer": {},
-  "@homeserver": {},
-  "@help": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@people": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@changedTheHistoryVisibilityTo": {
-    "type": "text",
-    "placeholders": {
-      "username": {},
-      "rules": {}
-    }
-  },
-  "@leftTheChat": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@repeatPassword": {},
-  "@setStatus": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@groupWith": {
-    "type": "text",
-    "placeholders": {
-      "displayname": {}
-    }
-  },
-  "@callingPermissions": {},
-  "@newMessageInrechainonline": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@readUpToHere": {},
-  "@start": {},
-  "@register": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@unlockOldMessages": {},
-  "@identity": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@numChats": {
-    "type": "number",
-    "placeholders": {
-      "number": {}
-    }
-  },
-  "@changedTheJoinRulesTo": {
-    "type": "text",
-    "placeholders": {
-      "username": {},
-      "joinRules": {}
-    }
-  },
-  "@ignore": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@recording": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@moderator": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@optionalRedactReason": {},
-  "@channelCorruptedDecryptError": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@tryToSendAgain": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@guestsCanJoin": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@copyToClipboard": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@dehydrate": {},
-  "@locationPermissionDeniedNotice": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@send": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@hasWithdrawnTheInvitationFor": {
-    "type": "text",
-    "placeholders": {
-      "username": {},
-      "targetName": {}
-    }
-  },
-  "@visibleForAllParticipants": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@sendAsText": {
-    "type": "text"
-  },
-  "@inviteForMe": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@archiveRoomDescription": {},
-  "@exportEmotePack": {},
-  "@sendSticker": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@switchToAccount": {
-    "type": "number",
-    "placeholders": {
-      "number": {}
-    }
-  },
-  "@commandInvalid": {
-    "type": "text"
-  },
-  "@setAsCanonicalAlias": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@whyDoYouWantToReportThis": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@locationDisabledNotice": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@removedBy": {
-    "type": "text",
-    "placeholders": {
-      "username": {}
-    }
-  },
-  "@newChat": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@notifications": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@commandHint_plain": {
-    "type": "text",
-    "description": "Usage hint for the command /plain"
-  },
-  "@experimentalVideoCalls": {},
-  "@openCamera": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@pleaseEnterRecoveryKeyDescription": {},
-  "@guestsAreForbidden": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@mention": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@openInMaps": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@inviteContactToGroupQuestion": {},
-  "@emoteExists": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@redactedByBecause": {
-    "type": "text",
-    "placeholders": {
-      "username": {},
-      "reason": {}
-    }
-  },
-  "@youHaveWithdrawnTheInvitationFor": {
-    "placeholders": {
-      "user": {}
-    }
-  },
-  "@group": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@leave": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@skip": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@appearOnTopDetails": {},
-  "@roomHasBeenUpgraded": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@enterRoom": {},
-  "@enableEmotesGlobally": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@pleaseChooseAPasscode": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@allChats": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@reportUser": {},
-  "@commandHint_send": {
-    "type": "text",
-    "description": "Usage hint for the command /send"
-  },
-  "@unbannedUser": {
-    "type": "text",
-    "placeholders": {
-      "username": {},
-      "targetName": {}
-    }
-  },
-  "@confirmEventUnpin": {},
-  "@youInvitedUser": {
-    "placeholders": {
-      "user": {}
-    }
-  },
-  "@kickedAndBanned": {
-    "type": "text",
-    "placeholders": {
-      "username": {},
-      "targetName": {}
-    }
-  },
-  "@noConnectionToTheServer": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@fileHasBeenSavedAt": {
-    "type": "text",
-    "placeholders": {
-      "path": {}
-    }
-  },
-  "@license": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@addToSpace": {},
-  "@commandMissing": {
-    "type": "text",
-    "placeholders": {
-      "command": {}
-    },
-    "description": "State that {command} is not a valid /command."
-  },
-  "@redactMessageDescription": {},
-  "@rejoin": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@recoveryKey": {},
-  "@redactMessage": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@forward": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@commandHint_discardsession": {
-    "type": "text",
-    "description": "Usage hint for the command /discardsession"
-  },
-  "@invalidInput": {},
-  "@hideUnknownEvents": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@dehydrateTorLong": {},
-  "@yourPublicKey": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@tooManyRequestsWarning": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@invitedUser": {
-    "type": "text",
-    "placeholders": {
-      "username": {},
-      "targetName": {}
-    }
-  },
-  "@kickFromChat": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@commandHint_myroomnick": {
-    "type": "text",
-    "description": "Usage hint for the command /myroomnick"
-  },
-  "@offline": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@noPermission": {
-    "type": "text",
-    "placeholders": {}
-  },
+  "noBackupWarning": "Cẩn thận! Nếu không bật sao lưu trò chuyện, bạn sẽ mất quyền truy cập vào tin nhắn được mã hóa của mình. Chúng tôi khuyên bạn nên bật sao lưu trò chuyện trước khi đăng xuất.",
+  "@noBackupWarning": {},
+  "doNotShowAgain": "Không hiện lại nữa",
   "@doNotShowAgain": {},
-  "@report": {},
-  "@status": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@verifyStart": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@memberChanges": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@joinRoom": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@unverified": {},
-  "@rechainonline": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@howOffensiveIsThisContent": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@serverRequiresEmail": {},
-  "@hideUnimportantStateEvents": {},
-  "@screenSharingTitle": {},
-  "@widgetCustom": {},
-  "@addToSpaceDescription": {},
-  "@googlyEyesContent": {
-    "type": "text",
-    "placeholders": {
-      "senderName": {}
-    }
-  },
-  "@youBannedUser": {
-    "placeholders": {
-      "user": {}
-    }
-  },
-  "@theyDontMatch": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@youHaveBeenBannedFromThisChat": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@addChatDescription": {},
-  "@sentAnAudio": {
-    "type": "text",
-    "placeholders": {
-      "username": {}
-    }
-  },
-  "@editRoomAvatar": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@encrypted": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@commandHint_leave": {
-    "type": "text",
-    "description": "Usage hint for the command /leave"
-  },
-  "@commandHint_myroomavatar": {
-    "type": "text",
-    "description": "Usage hint for the command /myroomavatar"
-  },
-  "@hasKnocked": {
-    "placeholders": {
-      "user": {}
-    }
-  },
-  "@publish": {},
-  "@openLinkInBrowser": {},
-  "@clearArchive": {},
-  "@appLock": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@commandHint_react": {
-    "type": "text",
-    "description": "Usage hint for the command /react"
-  },
-  "@changedTheHistoryVisibility": {
-    "type": "text",
-    "placeholders": {
-      "username": {}
-    }
-  },
-  "@commandHint_me": {
-    "type": "text",
-    "description": "Usage hint for the command /me"
-  },
-  "@pleaseEnterYourUsername": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@messageInfo": {},
-  "@disableEncryptionWarning": {},
-  "@directChat": {},
-  "@wrongPinEntered": {
-    "type": "text",
-    "placeholders": {
-      "seconds": {}
-    }
-  },
-  "@sendTypingNotifications": {},
-  "@lightTheme": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@inviteGroupChat": {},
-  "@appearOnTop": {},
-  "@invitePrivateChat": {},
-  "@verifyTitle": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@foregroundServiceRunning": {},
-  "@enterAnEmailAddress": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@voiceCall": {},
-  "@commandHint_kick": {
-    "type": "text",
-    "description": "Usage hint for the command /kick"
-  },
-  "@copiedToClipboard": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@createNewSpace": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@commandHint_unban": {
-    "type": "text",
-    "description": "Usage hint for the command /unban"
-  },
-  "@unknownEncryptionAlgorithm": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@commandHint_ban": {
-    "type": "text",
-    "description": "Usage hint for the command /ban"
-  },
-  "@importEmojis": {},
+  "wasDirectChatDisplayName": "Hội thoại trống (từng là {oldDisplayName})",
   "@wasDirectChatDisplayName": {
     "type": "text",
     "placeholders": {
       "oldDisplayName": {}
     }
   },
-  "@noChatDescriptionYet": {},
-  "@defaultPermissionLevel": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@removeFromBundle": {},
-  "@numUsersTyping": {
-    "type": "text",
-    "placeholders": {
-      "count": {}
-    }
-  },
-  "@fontSize": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@whoCanPerformWhichAction": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@confirmMatrixId": {},
-  "@learnMore": {},
-  "@iHaveClickedOnLink": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@you": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@notAnImage": {},
-  "@users": {},
-  "@openGallery": {},
-  "@chatDescriptionHasBeenChanged": {},
-  "@search": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@newGroup": {},
-  "@bundleName": {},
-  "@dehydrateTor": {},
-  "@removeFromSpace": {},
-  "@commandHint_op": {
-    "type": "text",
-    "description": "Usage hint for the command /op"
-  },
-  "@commandHint_join": {
-    "type": "text",
-    "description": "Usage hint for the command /join"
-  },
-  "@sourceCode": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@roomUpgradeDescription": {},
-  "@commandHint_invite": {
-    "type": "text",
-    "description": "Usage hint for the command /invite"
-  },
-  "@userSentUnknownEvent": {
-    "type": "text",
-    "placeholders": {
-      "username": {},
-      "type": {}
-    }
-  },
-  "@scanQrCode": {},
-  "@pleaseEnterANumber": {},
-  "@youKicked": {
-    "placeholders": {
-      "user": {}
-    }
-  },
-  "@changedTheJoinRules": {
-    "type": "text",
-    "placeholders": {
-      "username": {}
-    }
-  },
+  "reportErrorDescription": "😭 Ôi. Có lỗi xảy ra. Bạn có thể báo cáo lỗi tới nhà phát triển nếu muốn.",
+  "@reportErrorDescription": {},
+  "profileNotFound": "Không tìm thấy người dùng này tại máy chủ. Có thể do lỗi kết nối hoặc người dùng không tồn tại.",
   "@profileNotFound": {},
-  "@jump": {},
-  "@groups": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@reactedWith": {
-    "type": "text",
-    "placeholders": {
-      "sender": {},
-      "reaction": {}
-    }
-  },
-  "@sorryThatsNotPossible": {},
-  "@videoWithSize": {
-    "type": "text",
-    "placeholders": {
-      "size": {}
-    }
-  },
-  "@loadCountMoreParticipants": {
+  "banUserDescription": "Người dùng sẽ bị cấm khỏi cuộc trò chuyện và không thể tham gia lại cho tới khi được gỡ cấm.",
+  "@banUserDescription": {},
+  "learnMore": "Tìm hiểu thêm",
+  "@learnMore": {},
+  "incomingMessages": "Tin nhắn đến",
+  "@incomingMessages": {},
+  "encryptThisChat": "Mã hóa cuộc trò chuyện này",
+  "@encryptThisChat": {},
+  "noOtherDevicesFound": "Không tìm thấy thiết bị khác",
+  "@noOtherDevicesFound": {},
+  "fileIsTooBigForServer": "Máy chủ báo cáo rằng tệp tin quá lớn để gửi.",
+  "@fileIsTooBigForServer": {},
+  "signInWith": "Đăng nhập với {provider}",
+  "@signInWith": {
     "type": "text",
     "placeholders": {
-      "count": {}
+      "provider": {}
     }
   },
-  "@shareInviteLink": {},
-  "@commandHint_markasdm": {},
-  "@recoveryKeyLost": {},
-  "@cuddleContent": {
-    "type": "text",
-    "placeholders": {
-      "senderName": {}
-    }
-  },
-  "@messages": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@deviceKeys": {},
-  "@emoteKeyboardNoRecents": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@setCustomEmotes": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@startedACall": {
-    "type": "text",
-    "placeholders": {
-      "senderName": {}
-    }
-  },
-  "@emoteInvalid": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@systemTheme": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@notificationsEnabledForThisAccount": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@visibilityOfTheChatHistory": {
-    "type": "text",
-    "placeholders": {}
-  },
+  "notAnImage": "Không phải tệp ảnh.",
+  "@notAnImage": {},
+  "importNow": "Nhập vào",
+  "@importNow": {},
+  "allSpaces": "Tất cả không gian",
+  "@allSpaces": {},
+  "enterSpace": "Nhập không gian",
+  "@enterSpace": {},
+  "pleaseTryAgainLaterOrChooseDifferentServer": "Hãy thử lại sau hoặc chọn 1 máy chủ khác.",
+  "@pleaseTryAgainLaterOrChooseDifferentServer": {},
+  "jumpToLastReadMessage": "Đi tới tin nhắn đã đọc mới nhất",
+  "@jumpToLastReadMessage": {},
+  "commandHint_ignore": "Phớt lờ REChain ®️ 🪐 ✨ ID này",
+  "@commandHint_ignore": {},
+  "appLockDescription": "Khoá ứng dụng khi không dùng bằng mã pin",
+  "@appLockDescription": {},
+  "notifyMeFor": "Bật thông báo cho",
+  "@notifyMeFor": {},
+  "settings": "Cài đặt",
   "@settings": {
     "type": "text",
     "placeholders": {}
   },
-  "@setTheme": {},
-  "@youJoinedTheChat": {},
-  "@wallpaper": {
+  "sendSticker": "Gửi nhãn dán",
+  "@sendSticker": {
     "type": "text",
     "placeholders": {}
   },
-  "@openVideoCamera": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@play": {
+  "fileHasBeenSavedAt": "Tệp đã được lưu tại {path}",
+  "@fileHasBeenSavedAt": {
     "type": "text",
     "placeholders": {
-      "fileName": {}
+      "path": {}
     }
   },
-  "@statusExampleMessage": {
-    "type": "text",
-    "placeholders": {}
+  "readUpToHere": "Đọc tới đây",
+  "@readUpToHere": {},
+  "jump": "Đi tới",
+  "@jump": {},
+  "callingPermissions": "Quyền gọi điện",
+  "@callingPermissions": {},
+  "numChats": "{number} cuộc hội thoại",
+  "@numChats": {
+    "type": "number",
+    "placeholders": {
+      "number": {}
+    }
   },
-  "@security": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@markAsRead": {},
-  "@sendAudio": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@widgetName": {},
-  "@sentASticker": {
+  "hidePresences": "Ẩn danh sách trạng thái?",
+  "@hidePresences": {},
+  "sorryThatsNotPossible": "Xin lỗi... không khả dụng",
+  "@sorryThatsNotPossible": {},
+  "reopenChat": "Mở lại cuộc trò chuyện",
+  "@reopenChat": {},
+  "wrongPinEntered": "Nhập sai mã pin! Thử lại sau {seconds} giây...",
+  "@wrongPinEntered": {
     "type": "text",
     "placeholders": {
-      "username": {}
+      "seconds": {}
     }
   },
-  "@errorAddingWidget": {},
-  "@commandHint_dm": {
-    "type": "text",
-    "description": "Usage hint for the command /dm"
-  },
-  "@commandHint_hug": {},
-  "@replace": {},
-  "@reject": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@editBlockedServers": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@oopsPushError": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@youUnbannedUser": {
-    "placeholders": {
-      "user": {}
-    }
-  },
-  "@joinedTheChat": {
-    "type": "text",
-    "placeholders": {
-      "username": {}
-    }
-  },
-  "@visibleForEveryone": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@pleaseEnter4Digits": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@newSpace": {},
-  "@unknownEvent": {
-    "type": "text",
-    "placeholders": {
-      "type": {}
-    }
-  },
-  "@emojis": {},
-  "@pleaseEnterYourPin": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@pleaseChoose": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@share": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@commandHint_googly": {},
-  "@pleaseTryAgainLaterOrChooseDifferentServer": {},
-  "@createGroup": {},
-  "@privacy": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@changeYourAvatar": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@sendImage": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@hydrateTorLong": {},
-  "@time": {},
-  "@enterYourHomeserver": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@botMessages": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@contentHasBeenReported": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@custom": {},
-  "@noBackupWarning": {},
-  "@fromJoining": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@verify": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@sendVideo": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@storeInSecureStorageDescription": {},
-  "@openChat": {},
+  "archiveRoomDescription": "Cuộc trò chuyện sẽ được chuyển tới mục lưu trữ. Người dùng khác sẽ thấy được bạn đã rời khỏi cuộc trò chuyện.",
+  "@archiveRoomDescription": {},
+  "kickUserDescription": "Người dùng bị đuổi khỏi cuộc trò chuyện nhưng không bị cấm. Trong các cuộc trò chuyện công khai, người dùng có thể vào lại bất cứ lúc nào.",
   "@kickUserDescription": {},
-  "@sendAMessage": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@pin": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@importNow": {},
-  "@setInvitationLink": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@pinMessage": {},
-  "@muteChat": {
-    "type": "text",
-    "placeholders": {}
-  },
+  "unbanUserDescription": "Người dùng sẽ có thể vào lại cuộc trò chuyện nếu họ thử.",
+  "@unbanUserDescription": {},
+  "pushNotificationsNotAvailable": "Thông báo đẩy không khả dụng",
+  "@pushNotificationsNotAvailable": {},
+  "invite": "Mời",
   "@invite": {},
-  "@enableMultiAccounts": {},
-  "@emotePacks": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@indexedDbErrorTitle": {},
-  "@endedTheCall": {
-    "type": "text",
-    "placeholders": {
-      "senderName": {}
-    }
-  },
-  "@changedTheDisplaynameTo": {
+  "invalidInput": "Dữ liệu nhập không hợp lệ!",
+  "@invalidInput": {},
+  "removeDevicesDescription": "Bạn sẽ đăng xuất khỏi thiết bị này và không nhận được tin nhắn nữa.",
+  "@removeDevicesDescription": {},
+  "noUsersFoundWithQuery": "Không tìm thấy người dùng nào với \"{query}\". Hãy kiểm tra xem bạn có nhập nhầm không.",
+  "@noUsersFoundWithQuery": {
     "type": "text",
     "placeholders": {
-      "username": {},
-      "displayname": {}
+      "query": {}
     }
   },
-  "@unreadChats": {
-    "type": "text",
-    "placeholders": {
-      "unreadCount": {}
-    }
-  },
-  "@userAndOthersAreTyping": {
-    "type": "text",
-    "placeholders": {
-      "username": {},
-      "count": {}
-    }
-  },
-  "@userIsTyping": {
-    "type": "text",
-    "placeholders": {
-      "username": {}
-    }
-  },
-  "@waitingPartnerAcceptRequest": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@writeAMessage": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@userAndUserAreTyping": {
-    "type": "text",
-    "placeholders": {
-      "username": {},
-      "username2": {}
-    }
-  },
-  "@pickImage": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@fileName": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@loadMore": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@passwordHasBeenChanged": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@loadingPleaseWait": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@waitingPartnerEmoji": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@noRoomsFound": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@withTheseAddressesRecoveryDescription": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@isTyping": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@noPasswordRecoveryDescription": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@onlineKeyBackupEnabled": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@groupIsPublic": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@sentCallInformations": {
-    "type": "text",
-    "placeholders": {
-      "senderName": {}
-    }
-  },
-  "@encryptionNotEnabled": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@logout": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@oopsSomethingWentWrong": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@containsUserName": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@login": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@waitingPartnerNumbers": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@passwordForgotten": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@placeCall": {},
-  "@noGoogleServicesWarning": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "@extremeOffensive": {
-    "type": "text",
-    "placeholders": {}
-  }
+  "commandHint_unignore": "Bỏ phớt lờ REChain ®️ 🪐 ✨ ID này",
+  "@commandHint_unignore": {},
+  "discover": "Khám phá",
+  "@discover": {},
+  "stickers": "Nhãn dán",
+  "@stickers": {},
+  "roomUpgradeDescription": "Cuộc trò chuyện sẽ được tạo lại với phiên bản phòng mới. Tất cả những người tham gia sẽ được thông báo rằng họ cần chuyển sang cuộc trò chuyện mới. Bạn có thể tìm hiểu thêm về các phiên bản phòng tại https://spec.matrix.org/latest/rooms/",
+  "@roomUpgradeDescription": {}
 }

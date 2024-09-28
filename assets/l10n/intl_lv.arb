@@ -158,7 +158,7 @@
   },
   "messageType": "Ziņas veids",
   "@messageType": {},
-  "indexedDbErrorLong": "Diemžēl ziņu krātuve pēc noklusējuma nav iespējota privātajā režīmā.\nLūgums apmeklēt\n - about:config\n - iestatīt dom.indexedDB.privateBrowsing.enabled kā true\nPretējā gadījumā nav iespējams palaist REChain ®️ 🪐.",
+  "indexedDbErrorLong": "Diemžēl ziņu krātuve pēc noklusējuma nav iespējota privātajā režīmā.\nLūgums apmeklēt\n - about:config\n - iestatīt dom.indexedDB.privateBrowsing.enabled kā true\nPretējā gadījumā nav iespējams palaist REChain ®️ 🪐 ✨.",
   "@indexedDbErrorLong": {},
   "oneClientLoggedOut": "Viens no klientiem ir atteicies",
   "@oneClientLoggedOut": {},
@@ -177,7 +177,7 @@
       "targetName": {}
     }
   },
-  "title": "REChain ®️ 🪐",
+  "title": "REChain ®️ 🪐 ✨",
   "@title": {
     "description": "Title for the application",
     "type": "text",
@@ -303,7 +303,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "norechainonlineServer": "{server1} nav REChain ®️ 🪐 serveris, tā vietā izmantot {server2}?",
+  "norechainonlineServer": "{server1} nav REChain ®️ 🪐 ✨ serveris, tā vietā izmantot {server2}?",
   "@norechainonlineServer": {
     "type": "text",
     "placeholders": {
@@ -472,7 +472,7 @@
   },
   "youRejectedTheInvitation": "Tu noraidīji uzaicinājumu",
   "@youRejectedTheInvitation": {},
-  "otherCallingPermissions": "Mikrofons, kamera un citas REChain ®️ 🪐 atļaujas",
+  "otherCallingPermissions": "Mikrofons, kamera un citas REChain ®️ 🪐 ✨ atļaujas",
   "@otherCallingPermissions": {},
   "messagesStyle": "Ziņas:",
   "@messagesStyle": {},
@@ -498,7 +498,7 @@
   "@newSpaceDescription": {},
   "chatDescription": "Tērzēšanas apraksts",
   "@chatDescription": {},
-  "callingAccountDetails": "Ļauj REChain ®️ 🪐 izmantot iebūvēto Android zvanīšanas lietotni.",
+  "callingAccountDetails": "Ļauj REChain ®️ 🪐 ✨ izmantot iebūvēto Android zvanīšanas lietotni.",
   "@callingAccountDetails": {},
   "next": "Nākamais",
   "@next": {
@@ -650,7 +650,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "inviteText": "{username} uzaicināja pievienoties REChain ®️ 🪐.\n1. Jāapmeklē rechain.online un jāuzstāda lietotne \n2. Jāizveido konts vai jāpiesakās \n3. Jāatver uzaicinājuma saite: \n {link}",
+  "inviteText": "{username} uzaicināja pievienoties REChain ®️ 🪐 ✨.\n1. Jāapmeklē rechain.online un jāuzstāda lietotne \n2. Jāizveido konts vai jāpiesakās \n3. Jāatver uzaicinājuma saite: \n {link}",
   "@inviteText": {
     "type": "text",
     "placeholders": {
@@ -740,10 +740,6 @@
   },
   "signInWithPassword": "Pieteikties ar paroli",
   "@signInWithPassword": {},
-  "@ignoredUsers": {
-    "type": "text",
-    "placeholders": {}
-  },
   "lastActiveAgo": "Pēdējoreiz redzēts: {localizedTimeShort}",
   "@lastActiveAgo": {
     "type": "text",
@@ -840,10 +836,6 @@
   },
   "editBundlesForAccount": "Labot šī konta komplektus",
   "@editBundlesForAccount": {},
-  "@renderRichContent": {
-    "type": "text",
-    "placeholders": {}
-  },
   "enableEncryption": "Iespējot šifrēšanu",
   "@enableEncryption": {
     "type": "text",
@@ -1068,7 +1060,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "newMessageInrechainonline": "💬 Jauna ziņa REChain ®️ 🪐",
+  "newMessageInrechainonline": "💬 Jauna ziņa REChain ®️ 🪐 ✨",
   "@newMessageInrechainonline": {
     "type": "text",
     "placeholders": {}
@@ -1113,10 +1105,6 @@
       "username": {},
       "joinRules": {}
     }
-  },
-  "@ignore": {
-    "type": "text",
-    "placeholders": {}
   },
   "recording": "Ieraksta",
   "@recording": {
@@ -1377,7 +1365,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "appearOnTopDetails": "Ļauj lietotnei parādīties virspusē (nav nepieciešams, ja REChain ®️ 🪐 jau ir iestatīts kā zvanīšanas konts)",
+  "appearOnTopDetails": "Ļauj lietotnei parādīties virspusē (nav nepieciešams, ja REChain ®️ 🪐 ✨ jau ir iestatīts kā zvanīšanas konts)",
   "@appearOnTopDetails": {},
   "roomHasBeenUpgraded": "Istaba tika atjaunināta",
   "@roomHasBeenUpgraded": {
@@ -1537,10 +1525,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "@hideUnknownEvents": {
-    "type": "text",
-    "placeholders": {}
-  },
   "dehydrateTorLong": "TOR lietotājiem ir ieteicams izgūt sesiju pirms loga aizvēršanas.",
   "@dehydrateTorLong": {},
   "yourPublicKey": "Tava publiskā atslēga",
@@ -1624,7 +1608,7 @@
   },
   "unverified": "Neapliecināta",
   "@unverified": {},
-  "rechainonline": "REChain ®️ 🪐",
+  "rechainonline": "REChain ®️ 🪐 ✨",
   "@rechainonline": {
     "type": "text",
     "placeholders": {}
@@ -1843,7 +1827,7 @@
   },
   "noChatDescriptionYet": "Vēl nav izveidots tērzēšanas apraksts.",
   "@noChatDescriptionYet": {},
-  "defaultPermissionLevel": "Noklusējuma atļauju līmenis",
+  "defaultPermissionLevel": "Noklusējuma atļauju līmenis jauniem lietotājiem",
   "@defaultPermissionLevel": {
     "type": "text",
     "placeholders": {}
@@ -1867,7 +1851,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "confirmMatrixId": "Lūgums apliecināt savu REChain ®️ 🪐 Id, lai varētu izdzēst savu kontu.",
+  "confirmMatrixId": "Lūgums apliecināt savu REChain ®️ 🪐 ✨ Id, lai varētu izdzēst savu kontu.",
   "@confirmMatrixId": {},
   "learnMore": "Uzzināt vairāk",
   "@learnMore": {},
@@ -2020,7 +2004,7 @@
   },
   "shareInviteLink": "Kopīgot uzaicinājuma saiti",
   "@shareInviteLink": {},
-  "commandHint_markasdm": "Atzīmēt kā tiešo ziņu istabu norādītajam REChain ®️ 🪐 Id",
+  "commandHint_markasdm": "Atzīmēt kā tiešo ziņu istabu norādītajam REChain ®️ 🪐 ✨ Id",
   "@commandHint_markasdm": {},
   "recoveryKeyLost": "Pazaudēta atkopšanas atslēga?",
   "@recoveryKeyLost": {},
@@ -2383,7 +2367,7 @@
   },
   "pinMessage": "Piespraust istabai",
   "@pinMessage": {},
-  "screenSharingDetail": "Tu kopīgo savu ekrānu REChain ®️ 🪐",
+  "screenSharingDetail": "Tu kopīgo savu ekrānu REChain ®️ 🪐 ✨",
   "@screenSharingDetail": {},
   "muteChat": "Apklusināt tērzēšanu",
   "@muteChat": {
@@ -2531,9 +2515,9 @@
       "sender": {}
     }
   },
-  "commandHint_unignore": "Atcelt norādītā REChain ®️ 🪐 Id neņemšanu vērā",
+  "commandHint_unignore": "Atcelt norādītā REChain ®️ 🪐 ✨ Id neņemšanu vērā",
   "@commandHint_unignore": {},
-  "commandHint_ignore": "Neņemt vērā norādīto REChain ®️ 🪐 Id",
+  "commandHint_ignore": "Neņemt vērā norādīto REChain ®️ 🪐 ✨ Id",
   "@commandHint_ignore": {},
   "searchChatsRooms": "Meklēt #tērzēšanas, @lietotājus...",
   "@searchChatsRooms": {},
@@ -2683,5 +2667,119 @@
     "count": {}
   },
   "verifyOtherDeviceDescription": "Kad apliecini citu ierīci, šīs ierīces var apmainīt atslēgas, palielinot vispārējo drošību. 💪 Kad uzsāc apliecināšanu, abās ierīcēs lietotnē parādīsies uznirstošais logs. Tajā būs redzamas dažādas emocijzīmes vai skaitļi, kas jāsalīdzina abās ierīcēs. Vislabāk, ja abas ierīces ir pieejams, pirms tiek uzsākta apliecināšana. 🤳",
-  "@verifyOtherDeviceDescription": {}
+  "@verifyOtherDeviceDescription": {},
+  "swipeRightToLeftToReply": "Pavilkt pa labi, lai atbildētu",
+  "@swipeRightToLeftToReply": {},
+  "searchIn": "Meklēt tērzēšanā \"{chat}\"...",
+  "@searchIn": {
+    "type": "text",
+    "placeholders": {
+      "chat": {}
+    }
+  },
+  "searchMore": "Meklēt vairāk...",
+  "@searchMore": {},
+  "gallery": "Galerija",
+  "@gallery": {},
+  "files": "Datnes",
+  "@files": {},
+  "restricted": "Ierobežots",
+  "@restricted": {},
+  "knockRestricted": "Pieklauvēt ierobežotajiem",
+  "@knockRestricted": {},
+  "sendCanceled": "Sūtīšana atcelta",
+  "@sendCanceled": {},
+  "noChatsFoundHere": "Šeit vēl nav tērzēšanu. Jauna saruna ar kādu ir uzsākama ar zemāk esošo pogu. ⤵️",
+  "@noChatsFoundHere": {},
+  "invitedBy": "📩 {user} uzaicināja",
+  "@invitedBy": {
+    "placeholders": {
+      "user": {}
+    }
+  },
+  "moderatorLevel": "{level} - Moderators",
+  "@moderatorLevel": {
+    "type": "text",
+    "placeholders": {
+      "level": {}
+    }
+  },
+  "adminLevel": "{level} - Pārvaldītājs",
+  "@adminLevel": {
+    "type": "text",
+    "placeholders": {
+      "level": {}
+    }
+  },
+  "changeTheVisibilityOfChatHistory": "Mainīt tērzēšanas vēstures redzamību",
+  "@changeTheVisibilityOfChatHistory": {},
+  "changeTheCanonicalRoomAlias": "Mainīt tērzēšanas galveno publisko adresi",
+  "@changeTheCanonicalRoomAlias": {},
+  "sendRoomNotifications": "Sūtīt @istaba paziņojumus",
+  "@sendRoomNotifications": {},
+  "changeTheDescriptionOfTheGroup": "Mainīt tērzēšanas aprakstu",
+  "@changeTheDescriptionOfTheGroup": {},
+  "alwaysUse24HourFormat": "nē",
+  "@alwaysUse24HourFormat": {
+    "description": "Set to true to always display time of day in 24 hour format."
+  },
+  "userLevel": "{level} - Lietotājs",
+  "@userLevel": {
+    "type": "text",
+    "placeholders": {
+      "level": {}
+    }
+  },
+  "goToSpace": "Doties uz vietu: {space}",
+  "@goToSpace": {
+    "type": "text",
+    "space": {}
+  },
+  "changeGeneralChatSettings": "Mainīt vispārējos tērzēšanas iestatījumus",
+  "@changeGeneralChatSettings": {},
+  "inviteOtherUsers": "Uzaicināt šajā tērzēšanā citus lietotājus",
+  "@inviteOtherUsers": {},
+  "changeTheChatPermissions": "Mainīt tērzēšanas atļaujas",
+  "@changeTheChatPermissions": {},
+  "chatPermissionsDescription": "Noteikt, kurš spēka līmenis ir nepieciešams noteiktām darbībām šajā tērzēšanā. Spēka līmeņi 0, 50 un 100 parasti atbilst lietotājiem, moderatoriem un pārvaldītājiem, bet ir iespējams jebkāds iedalījums.",
+  "@chatPermissionsDescription": {},
+  "doesNotSeemToBeAValidHomeserver": "Neizskatās pēc saderīga mājasservera. Nepareizs URL?",
+  "@doesNotSeemToBeAValidHomeserver": {},
+  "loginWithMatrixId": "Pieteikties ar REChain ®️ 🪐 ✨ Id",
+  "@loginWithMatrixId": {},
+  "discoverHomeservers": "Atklāt mājasserverus",
+  "@discoverHomeservers": {},
+  "whatIsAHomeserver": "Kas ir mājasserveris?",
+  "@whatIsAHomeserver": {},
+  "homeserverDescription": "Visi lietotāja dati tiek glabāti mājasserverī, gluži kā ar e-pasta nodrošinātāju. Ir iespējams izvēlēties, kuru mājasserveri izmantot, saglabājot iespēju sazināties ar ikvienu. Vairāk var uzzināt https://matrix.org.",
+  "@homeserverDescription": {},
+  "updateInstalled": "🎉 Atjauninājums {version} uzstādīts.",
+  "@updateInstalled": {
+    "type": "text",
+    "placeholders": {
+      "version": {}
+    }
+  },
+  "changelog": "Izmaiņu žurnāls",
+  "@changelog": {},
+  "countChatsAndCountParticipants": "{chats} tērzēšanas un {participants} dalībnieki",
+  "@countChatsAndCountParticipants": {
+    "type": "text",
+    "placeholders": {
+      "chats": {},
+      "participants": {}
+    }
+  },
+  "noMoreChatsFound": "Vairs nav tērzēšanu...",
+  "@noMoreChatsFound": {},
+  "joinedChats": "Tērzēšanas, kurās piedalos",
+  "@joinedChats": {},
+  "unread": "Nelasītas",
+  "@unread": {},
+  "space": "Vieta",
+  "@space": {},
+  "spaces": "Vietas",
+  "@spaces": {},
+  "markAsUnread": "Atzīmēt kā nelasītu",
+  "@markAsUnread": {}
 }

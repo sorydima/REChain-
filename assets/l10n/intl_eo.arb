@@ -22,11 +22,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "accountInformation": "Informoj pri konto",
-  "@accountInformation": {
-    "type": "text",
-    "placeholders": {}
-  },
   "activatedEndToEndEncryption": "{username} aktivigis tutvojan ĉifradon",
   "@activatedEndToEndEncryption": {
     "type": "text",
@@ -36,16 +31,6 @@
   },
   "addEmail": "Aldoni retpoŝtadreson",
   "@addEmail": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "addGroupDescription": "Aldoni priskribon de grupo",
-  "@addGroupDescription": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "addNewFriend": "Aldoni novan amikon",
-  "@addNewFriend": {
     "type": "text",
     "placeholders": {}
   },
@@ -66,11 +51,6 @@
   },
   "allChats": "Ĉiuj babiloj",
   "@allChats": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "alreadyHaveAnAccount": "Ĉu vi jam havas konton?",
-  "@alreadyHaveAnAccount": {
     "type": "text",
     "placeholders": {}
   },
@@ -96,11 +76,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "archivedRoom": "Arĥivita ĉambro",
-  "@archivedRoom": {
-    "type": "text",
-    "placeholders": {}
-  },
   "areGuestsAllowedToJoin": "Ĉu gastoj rajtas aliĝi",
   "@areGuestsAllowedToJoin": {
     "type": "text",
@@ -116,18 +91,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "askSSSSCache": "Bonvolu enigi pasfrazon de via sekura deponejo aŭ rehavan ŝlosilon por kaŝmemori la ŝlosilojn.",
-  "@askSSSSCache": {
-    "type": "text",
-    "placeholders": {}
-  },
   "askSSSSSign": "Por ke vi povu kontroli (subskribi) la alian personon, bonvolu enigi pasfrazon de via sekreta deponejo aŭ vian rehavan ŝlosilon.",
   "@askSSSSSign": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "askSSSSVerify": "Bonvolu enigi pasfrazon de via sekura deponejo aŭ vian rehavan ŝlosilon por kontroli vian salutaĵon.",
-  "@askSSSSVerify": {
     "type": "text",
     "placeholders": {}
   },
@@ -137,26 +102,6 @@
     "placeholders": {
       "username": {}
     }
-  },
-  "audioPlayerPause": "Paŭzigi",
-  "@audioPlayerPause": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "audioPlayerPlay": "Ludi",
-  "@audioPlayerPlay": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "authentication": "Aŭtentikigo",
-  "@authentication": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "avatarHasBeenChanged": "Profilbildo ŝanĝiĝis",
-  "@avatarHasBeenChanged": {
-    "type": "text",
-    "placeholders": {}
   },
   "badServerLoginTypesException": "La hejmservilo subtenas la jenajn specojn de salutoj:\n{serverVersions}\nSed ĉi tiu aplikaĵo subtenas nur:\n{supportedVersions}",
   "@badServerLoginTypesException": {
@@ -204,11 +149,6 @@
   },
   "botMessages": "Mesaĝoj de robotoj",
   "@botMessages": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "cachedKeys": "Kaŝmemoris ŝlosilojn",
-  "@cachedKeys": {
     "type": "text",
     "placeholders": {}
   },
@@ -333,22 +273,12 @@
       "username": {}
     }
   },
-  "changelog": "Protokolo de ŝanĝoj",
-  "@changelog": {
-    "type": "text",
-    "placeholders": {}
-  },
   "changePassword": "Ŝanĝi pasvorton",
   "@changePassword": {
     "type": "text",
     "placeholders": {}
   },
-  "changesHaveBeenSaved": "Ŝanĝoj konserviĝis",
-  "@changesHaveBeenSaved": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
+  "changeTheHomeserver": "Ŝanĝi hejmservilon",
   "@changeTheHomeserver": {
     "type": "text",
     "placeholders": {}
@@ -360,16 +290,6 @@
   },
   "changeTheNameOfTheGroup": "Ŝanĝi nomon de la grupo",
   "@changeTheNameOfTheGroup": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "changeTheServer": "Ŝanĝi la servilon",
-  "@changeTheServer": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "changeWallpaper": "Ŝanĝi fonbildon",
-  "@changeWallpaper": {
     "type": "text",
     "placeholders": {}
   },
@@ -413,18 +333,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "chooseAUsername": "Elektu uzantonomon",
-  "@chooseAUsername": {
-    "type": "text",
-    "placeholders": {}
-  },
   "clearArchive": "Vakigi arĥivon",
   "@clearArchive": {},
-  "clearText": "Forigi tekston",
-  "@clearText": {
-    "type": "text",
-    "placeholders": {}
-  },
   "close": "Fermi",
   "@close": {
     "type": "text",
@@ -532,11 +442,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "connectionAttemptFailed": "Malsukcesis provo konektiĝi",
-  "@connectionAttemptFailed": {
-    "type": "text",
-    "placeholders": {}
-  },
   "contactHasBeenInvitedToTheGroup": "Kontakto invitiĝis al la grupo",
   "@contactHasBeenInvitedToTheGroup": {
     "type": "text",
@@ -554,11 +459,6 @@
   },
   "contentHasBeenReported": "La enhavo raportiĝis al la administrantoj de la servilo",
   "@contentHasBeenReported": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "contentViewer": "Vidilo de enhavo",
-  "@contentViewer": {
     "type": "text",
     "placeholders": {}
   },
@@ -584,16 +484,6 @@
       "error": {}
     }
   },
-  "couldNotSetAvatar": "Ne povis agordi profilbildon",
-  "@couldNotSetAvatar": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "couldNotSetDisplayname": "Ne povis agordi prezentan nomon",
-  "@couldNotSetDisplayname": {
-    "type": "text",
-    "placeholders": {}
-  },
   "countParticipants": "{count} partoprenantoj",
   "@countParticipants": {
     "type": "text",
@@ -606,11 +496,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "createAccountNow": "Krei konton nun",
-  "@createAccountNow": {
-    "type": "text",
-    "placeholders": {}
-  },
   "createdTheChat": "{username} kreis la babilon",
   "@createdTheChat": {
     "type": "text",
@@ -618,23 +503,8 @@
       "username": {}
     }
   },
-  "createNewGroup": "Krei novan grupon",
-  "@createNewGroup": {
-    "type": "text",
-    "placeholders": {}
-  },
   "createNewSpace": "Nova aro",
   "@createNewSpace": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "crossSigningDisabled": "Delegaj subskriboj estas malŝaltitaj",
-  "@crossSigningDisabled": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "crossSigningEnabled": "Delegaj subskriboj estas ŝaltitaj",
-  "@crossSigningEnabled": {
     "type": "text",
     "placeholders": {}
   },
@@ -698,11 +568,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "deny": "Malakcepti",
-  "@deny": {
-    "type": "text",
-    "placeholders": {}
-  },
   "device": "Aparato",
   "@device": {
     "type": "text",
@@ -718,43 +583,13 @@
     "type": "text",
     "placeholders": {}
   },
-  "deviceVerifyDescription": "Ĉifrado nur sekuras kiam ĉiuj aparatoj kontroliĝis.",
-  "@deviceVerifyDescription": {
-    "type": "text",
-    "placeholders": {}
-  },
   "directChats": "Rektaj babiloj",
   "@directChats": {
     "type": "text",
     "placeholders": {}
   },
-  "discardPicture": "Forĵeti bildon",
-  "@discardPicture": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "discover": "Trovi",
-  "@discover": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "discoverGroups": "Trovu grupojn",
-  "@discoverGroups": {
-    "type": "text",
-    "placeholders": {}
-  },
   "displaynameHasBeenChanged": "Prezenta nomo ŝanĝiĝis",
   "@displaynameHasBeenChanged": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "donate": "Donaci",
-  "@donate": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "dontAskAgain": "Nuligi kaj ne redemandi",
-  "@dontAskAgain": {
     "type": "text",
     "placeholders": {}
   },
@@ -773,18 +608,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "editChatPermissions": "Redakti permesojn de babilo",
-  "@editChatPermissions": {
-    "type": "text",
-    "placeholders": {}
-  },
   "editDisplayname": "Redakti prezentan nomon",
   "@editDisplayname": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "editJitsiInstance": "Redakti provizanton de Jitsi",
-  "@editJitsiInstance": {
     "type": "text",
     "placeholders": {}
   },
@@ -833,11 +658,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "enableChatBackup": "Ŝaltu savkopiadon de babiloj por neniam ree perdi aliron al viaj babiloj.",
-  "@enableChatBackup": {
-    "type": "text",
-    "placeholders": {}
-  },
   "enableEmotesGlobally": "Ŝalti mienetaron ĉie",
   "@enableEmotesGlobally": {
     "type": "text",
@@ -863,18 +683,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "encryptionAlgorithm": "Ĉifra algoritmo",
-  "@encryptionAlgorithm": {
-    "type": "text",
-    "placeholders": {}
-  },
   "encryptionNotEnabled": "Ĉifrado ne estas ŝaltita",
   "@encryptionNotEnabled": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "end2endEncryptionSettings": "Agordoj pri tutvoja ĉifrado",
-  "@end2endEncryptionSettings": {
     "type": "text",
     "placeholders": {}
   },
@@ -885,24 +695,12 @@
       "senderName": {}
     }
   },
-  "enterAGroupName": "Enigu nomon de grupo",
-  "@enterAGroupName": {
-    "type": "text",
-    "placeholders": {}
-  },
   "enterAnEmailAddress": "Enigu retpoŝtadreson",
   "@enterAnEmailAddress": {
     "type": "text",
     "placeholders": {}
   },
-  "enterASpacepName": "Enigi nomon de aro",
-  "@enterASpacepName": {},
-  "enterAUsername": "Enigu uzantonomon",
-  "@enterAUsername": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "enterYourHomeserver": "Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node",
+  "enterYourHomeserver": "Enigu vian hejmservilon",
   "@enterYourHomeserver": {
     "type": "text",
     "placeholders": {}
@@ -929,12 +727,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "fileSize": "Grandeco de dosiero",
-  "@fileSize": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "rechainonline": "REChain ® 🪐",
+  "rechainonline": "REChain ®️ 🪐 ✨",
   "@rechainonline": {
     "type": "text",
     "placeholders": {}
@@ -946,16 +739,6 @@
   },
   "forward": "Plusendi",
   "@forward": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "friday": "Vendredo",
-  "@friday": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "friends": "Amikoj",
-  "@friends": {
     "type": "text",
     "placeholders": {}
   },
@@ -976,16 +759,6 @@
   },
   "group": "Grupo",
   "@group": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "groupDescription": "Priskribo de grupo",
-  "@groupDescription": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "groupDescriptionHasBeenChanged": "Priskribo de grupo ŝanĝiĝis",
-  "@groupDescriptionHasBeenChanged": {
     "type": "text",
     "placeholders": {}
   },
@@ -1039,11 +812,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "homeserverIsNotCompatible": "Hejmservilo ne estas interkonforma",
-  "@homeserverIsNotCompatible": {
-    "type": "text",
-    "placeholders": {}
-  },
   "howOffensiveIsThisContent": "Kiel ofenda estas ĉi tiu enhavo?",
   "@howOffensiveIsThisContent": {
     "type": "text",
@@ -1069,16 +837,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "ignoreListDescription": "Vi povas malatenti uzantojn, kiuj vin ĝenas. Vi ne povos ricevi mesaĝojn nek invitojn al ĉambroj de la uzantoj sur via listo de malatentatoj.",
-  "@ignoreListDescription": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "ignoreUsername": "Malatenti uzantonomon",
-  "@ignoreUsername": {
-    "type": "text",
-    "placeholders": {}
-  },
   "iHaveClickedOnLink": "Mi klakis la ligilon",
   "@iHaveClickedOnLink": {
     "type": "text",
@@ -1091,11 +849,6 @@
   },
   "inoffensive": "Neofenda",
   "@inoffensive": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "invalidEmail": "Nevalida retpoŝtadreso",
-  "@invalidEmail": {
     "type": "text",
     "placeholders": {}
   },
@@ -1134,18 +887,13 @@
     "type": "text",
     "placeholders": {}
   },
-  "inviteText": "{username} invitis vin al la REChain ® 🪐 Platformo! \n1. Instalu REChain ® 🪐: https://rechain.online \n2. Registru aŭ ensalutu! \n3. Malfermu la invitligon: {link}",
+  "inviteText": "{username} invitis vin al REChain ®️ 🪐 ✨. \n1. Instalu la aplikaĵon REChain ®️ 🪐 ✨: https://rechain.online \n2. Registriĝu aŭ salutu \n3. Malfermu la invitan ligilon: {link}",
   "@inviteText": {
     "type": "text",
     "placeholders": {
       "username": {},
       "link": {}
     }
-  },
-  "isDeviceKeyCorrect": "Ĉu la jena identigilo de aparato estas ĝusta?",
-  "@isDeviceKeyCorrect": {
-    "type": "text",
-    "placeholders": {}
   },
   "isTyping": "tajpas…",
   "@isTyping": {
@@ -1161,16 +909,6 @@
   },
   "joinRoom": "Aliĝi al ĉambro",
   "@joinRoom": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "keysCached": "Ŝlosiloj estas kaŝmemoritaj",
-  "@keysCached": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "keysMissing": "Ŝlosiloj mankas",
-  "@keysMissing": {
     "type": "text",
     "placeholders": {}
   },
@@ -1201,16 +939,6 @@
     "placeholders": {
       "localizedTimeShort": {}
     }
-  },
-  "lastSeenIp": "Lastafoje vidita IP-adreso",
-  "@lastSeenIp": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "lastSeenLongTimeAgo": "Vidita antaŭ longe",
-  "@lastSeenLongTimeAgo": {
-    "type": "text",
-    "placeholders": {}
   },
   "leave": "Foriri",
   "@leave": {
@@ -1261,30 +989,8 @@
       "homeserver": {}
     }
   },
-  "loginWith": "Saluti per {brand}",
-  "@loginWith": {
-    "type": "text",
-    "placeholders": {
-      "brand": {}
-    }
-  },
   "logout": "Adiaŭi",
   "@logout": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "makeAModerator": "Igi reguligisto",
-  "@makeAModerator": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "makeAnAdmin": "Igi administranto",
-  "@makeAnAdmin": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "makeSureTheIdentifierIsValid": "Certigu, ke la identigilo estas valida",
-  "@makeSureTheIdentifierIsValid": {
     "type": "text",
     "placeholders": {}
   },
@@ -1303,27 +1009,10 @@
     "type": "text",
     "placeholders": {}
   },
-  "messageWillBeRemovedWarning": "Mesaĝo foriĝos por ĉiuj partoprenantoj",
-  "@messageWillBeRemovedWarning": {
-    "type": "text",
-    "placeholders": {}
-  },
   "moderator": "Reguligisto",
   "@moderator": {
     "type": "text",
     "placeholders": {}
-  },
-  "monday": "Lundo",
-  "@monday": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "moreEvents": "{count,plural, =1{1 plia evento} other{{count} pliaj eventoj}}",
-  "@moreEvents": {
-    "type": "text",
-    "placeholders": {
-      "count": {}
-    }
   },
   "muteChat": "Silentigi babilon",
   "@muteChat": {
@@ -1340,7 +1029,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "newMessageInrechainonline": "Nova mesaĝo sur la REChain ® 🪐 Platformo!",
+  "newMessageInrechainonline": "Nova mesaĝo en REChain ®️ 🪐 ✨",
   "@newMessageInrechainonline": {
     "type": "text",
     "placeholders": {}
@@ -1365,16 +1054,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "noCrossSignBootstrap": "REChain.Online ne subtenas delegitan ensaluti nuntempe. Bonvolu ebligi ĝin ene de la REChain ® 🪐 anstataŭe.",
-  "@noCrossSignBootstrap": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "noDescription": "Sen priskribo",
-  "@noDescription": {
-    "type": "text",
-    "placeholders": {}
-  },
   "noEmotesFound": "Neniuj mienetoj troviĝis. 😕",
   "@noEmotesFound": {
     "type": "text",
@@ -1385,13 +1064,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "noGoogleServicesWarning": "Ŝajnas, ke via aparato ne havas Google-servojn. Tio estas bona decido por via privateco! Por ricevi puŝajn sciigojn de la REChain ® 🪐 Platformo, ni rekomendas, ke vi uzu https://microg.org/ aŭ https://unifiedpush.org/.",
+  "noGoogleServicesWarning": "Ŝajnas, ke via telefono ne havas servojn de Google. Tio estas bona decido por via privateco! Por ricevadi pasivajn sciigojn en REChain ®️ 🪐 ✨, ni rekomendas, ke vi uzu la https://microg.org/ aŭ https://unifiedpush.org/.",
   "@noGoogleServicesWarning": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "noMegolmBootstrap": "REChain.Online ne subtenas la interretan sekurkopion de ŝlosiloj nuntempe. Bonvolu ebligi ĝin ene de la REChain ® 🪐 anstataŭe.",
-  "@noMegolmBootstrap": {
     "type": "text",
     "placeholders": {}
   },
@@ -1410,18 +1084,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "noPublicRoomsFound": "Neniuj publikaj ĉambroj troviĝis…",
-  "@noPublicRoomsFound": {
-    "type": "text",
-    "placeholders": {}
-  },
   "noRoomsFound": "Neniuj ĉambroj troviĝis…",
   "@noRoomsFound": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "noStatusesFound": "Neniuj statoj troviĝis ankoraŭ.",
-  "@noStatusesFound": {
     "type": "text",
     "placeholders": {}
   },
@@ -1434,18 +1098,6 @@
   "@notificationsEnabledForThisAccount": {
     "type": "text",
     "placeholders": {}
-  },
-  "notSupportedInWeb": "Nesubtenata de la TTT-versio",
-  "@notSupportedInWeb": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "numberSelected": "{number} elektitaj",
-  "@numberSelected": {
-    "type": "text",
-    "placeholders": {
-      "number": {}
-    }
   },
   "numUsersTyping": "{count} uzantoj tajpas…",
   "@numUsersTyping": {
@@ -1479,11 +1131,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "onlineKeyBackupDisabled": "Enreta savkopiado de ŝlosiloj estas malŝaltita",
-  "@onlineKeyBackupDisabled": {
-    "type": "text",
-    "placeholders": {}
-  },
   "onlineKeyBackupEnabled": "Enreta savkopiado de ŝlosiloj estas ŝaltita",
   "@onlineKeyBackupEnabled": {
     "type": "text",
@@ -1509,16 +1156,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "optionalAddEmail": "(Malnepre) Via retpoŝtadreso",
-  "@optionalAddEmail": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "optionalGroupName": "(Malnepra) Nomo de grupo",
-  "@optionalGroupName": {
-    "type": "text",
-    "placeholders": {}
-  },
   "or": "Aŭ",
   "@or": {
     "type": "text",
@@ -1526,11 +1163,6 @@
   },
   "participant": "Partoprenanto",
   "@participant": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "participatingUserDevices": "Partoprenantaj aparatoj de uzanto",
-  "@participatingUserDevices": {
     "type": "text",
     "placeholders": {}
   },
@@ -1591,11 +1223,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "pleaseChooseAUsername": "Bonvolu elekti uzantonomon",
-  "@pleaseChooseAUsername": {
-    "type": "text",
-    "placeholders": {}
-  },
   "pleaseClickOnLink": "Bonvolu klaki la ligilon en la retletero kaj pluiĝi.",
   "@pleaseClickOnLink": {
     "type": "text",
@@ -1603,16 +1230,6 @@
   },
   "pleaseEnter4Digits": "Bonvolu enigi 4 ciferojn, aŭ nenion por malŝalti ŝlosadon de la aplikaĵo.",
   "@pleaseEnter4Digits": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "pleaseEnterArechainonlineIdentifier": "Enigu la Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network ID.",
-  "@pleaseEnterArechainonlineIdentifier": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "pleaseEnterSecurityKey": "Bonvolu enigi vian sekurecan ŝlosilon:",
-  "@pleaseEnterSecurityKey": {
     "type": "text",
     "placeholders": {}
   },
@@ -1641,23 +1258,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "publicGroups": "Publikaj grupoj",
-  "@publicGroups": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "publicKey": "Publika ŝlosilo",
-  "@publicKey": {
-    "type": "text",
-    "placeholders": {}
-  },
   "publicRooms": "Publikaj ĉambroj",
   "@publicRooms": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "publicSpace": "Publika aro",
-  "@publicSpace": {
     "type": "text",
     "placeholders": {}
   },
@@ -1737,11 +1339,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "removeMessage": "Forigi mesaĝon",
-  "@removeMessage": {
-    "type": "text",
-    "placeholders": {}
-  },
   "removeYourAvatar": "Forigi vian profilbildon",
   "@removeYourAvatar": {
     "type": "text",
@@ -1772,16 +1369,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "requestToReadOlderMessages": "Peti legi pli malnovajn mesaĝojn",
-  "@requestToReadOlderMessages": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "revokeAllPermissions": "Nuligi ĉiujn permesojn",
-  "@revokeAllPermissions": {
-    "type": "text",
-    "placeholders": {}
-  },
   "roomHasBeenUpgraded": "Ĉambro gradaltiĝis",
   "@roomHasBeenUpgraded": {
     "type": "text",
@@ -1792,25 +1379,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "saturday": "Sabato",
-  "@saturday": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "savedFileAs": "Konservi dosieron kun la nomo: {filename}",
-  "@savedFileAs": {
-    "type": "text",
-    "placeholders": {
-      "filename": {}
-    }
-  },
   "saveFile": "Konservi dosieron",
   "@saveFile": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "saveFileToFolder": "Konservi dosieron al tiu ĉi dosierujo",
-  "@saveFileToFolder": {
     "type": "text",
     "placeholders": {}
   },
@@ -1819,23 +1389,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "searchForAChat": "Serĉi babilon",
-  "@searchForAChat": {
-    "type": "text",
-    "placeholders": {}
-  },
   "security": "Sekureco",
   "@security": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "securityKey": "Sekureca ŝlosilo",
-  "@securityKey": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "securityKeyLost": "Ĉu vi perdis sekurecan ŝlosilon?",
-  "@securityKeyLost": {
     "type": "text",
     "placeholders": {}
   },
@@ -1844,22 +1399,6 @@
     "type": "text",
     "placeholders": {
       "username": {}
-    }
-  },
-  "seenByUserAndCountOthers": "{count, plural, other{Vidita de {username} kaj {count} aliaj}}",
-  "@seenByUserAndCountOthers": {
-    "type": "text",
-    "placeholders": {
-      "username": {},
-      "count": {}
-    }
-  },
-  "seenByUserAndUser": "Vidita de {username} kaj {username2}",
-  "@seenByUserAndUser": {
-    "type": "text",
-    "placeholders": {
-      "username": {},
-      "username2": {}
     }
   },
   "send": "Sendi",
@@ -1874,11 +1413,6 @@
   },
   "sendAudio": "Sendi sondosieron",
   "@sendAudio": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "sendBugReports": "Permesi raportadon de eraroj per REChain ® 🪐",
-  "@sendBugReports": {
     "type": "text",
     "placeholders": {}
   },
@@ -1954,21 +1488,6 @@
       "senderName": {}
     }
   },
-  "sentryInfo": "Informoj pri via privateco: https://rechain.online/privacy-policy.html",
-  "@sentryInfo": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "sessionVerified": "Salutaĵo estas kontrolita",
-  "@sessionVerified": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "setAProfilePicture": "Agordi profilbildon",
-  "@setAProfilePicture": {
-    "type": "text",
-    "placeholders": {}
-  },
   "setAsCanonicalAlias": "Agordi kiel ĉefan kromnomon",
   "@setAsCanonicalAlias": {
     "type": "text",
@@ -1976,11 +1495,6 @@
   },
   "setCustomEmotes": "Agordi proprajn mienetojn",
   "@setCustomEmotes": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "setGroupDescription": "Agordi priskribon de grupo",
-  "@setGroupDescription": {
     "type": "text",
     "placeholders": {}
   },
@@ -2026,11 +1540,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "signUp": "Registriĝi",
-  "@signUp": {
-    "type": "text",
-    "placeholders": {}
-  },
   "singlesignon": "Ununura saluto",
   "@singlesignon": {
     "type": "text",
@@ -2038,11 +1547,6 @@
   },
   "skip": "Preterpasi",
   "@skip": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "soundVibrationLedColor": "Sono, LED-koloro de vibrado",
-  "@soundVibrationLedColor": {
     "type": "text",
     "placeholders": {}
   },
@@ -2068,11 +1572,6 @@
       "senderName": {}
     }
   },
-  "startYourFirstChat": "Komencu nun vian unuan babilon! 🙂\n• Tuŝetu al la butono de mesaĝo\n• Enigu la uzantonomon de amiko\n• Ĝuu babiladon",
-  "@startYourFirstChat": {
-    "type": "text",
-    "placeholders": {}
-  },
   "status": "Stato",
   "@status": {
     "type": "text",
@@ -2088,11 +1587,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "sunday": "Dimanĉo",
-  "@sunday": {
-    "type": "text",
-    "placeholders": {}
-  },
   "synchronizingPleaseWait": "Spegulante… Bonvolu atendi.",
   "@synchronizingPleaseWait": {
     "type": "text",
@@ -2100,21 +1594,6 @@
   },
   "systemTheme": "Sistema",
   "@systemTheme": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "tapOnDeviceToVerify": "Tuŝetu aparaton por kontroli",
-  "@tapOnDeviceToVerify": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "tapToShowImage": "Tuŝetu por montri bildon",
-  "@tapToShowImage": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "tapToShowMenu": "Tuŝetu por montri menuon",
-  "@tapToShowMenu": {
     "type": "text",
     "placeholders": {}
   },
@@ -2128,27 +1607,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "thisRoomHasBeenArchived": "Ĉi tiu ĉambro arĥiviĝis.",
-  "@thisRoomHasBeenArchived": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "thursday": "Ĵaŭdo",
-  "@thursday": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "timeOfDay": "{hours24}:{minutes}",
-  "@timeOfDay": {
-    "type": "text",
-    "placeholders": {
-      "hours12": {},
-      "hours24": {},
-      "minutes": {},
-      "suffix": {}
-    }
-  },
-  "title": "REChain ® 🪐",
+  "title": "REChain ®️ 🪐 ✨",
   "@title": {
     "description": "Title for the application",
     "type": "text",
@@ -2181,11 +1640,6 @@
   },
   "tryToSendAgain": "Reprovi sendi",
   "@tryToSendAgain": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "tuesday": "Mardo",
-  "@tuesday": {
     "type": "text",
     "placeholders": {}
   },
@@ -2224,16 +1678,6 @@
       "type": {}
     }
   },
-  "unknownSessionVerify": "Nekonata salutaĵo; bonvolu kontroli",
-  "@unknownSessionVerify": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "unlockChatBackup": "Malŝlosi savkopion de babilo",
-  "@unlockChatBackup": {
-    "type": "text",
-    "placeholders": {}
-  },
   "unmuteChat": "Malsilentigi babilon",
   "@unmuteChat": {
     "type": "text",
@@ -2250,18 +1694,6 @@
     "placeholders": {
       "unreadCount": {}
     }
-  },
-  "unreadMessages": "{unreadEvents, plural, =1{1 nelegita mesaĝo} other{{unreadEvents} nelegitaj mesaĝoj}}",
-  "@unreadMessages": {
-    "type": "text",
-    "placeholders": {
-      "unreadEvents": {}
-    }
-  },
-  "useAmoledTheme": "Ĉu uzi kolorojn adaptitajn por AMOLED?",
-  "@useAmoledTheme": {
-    "type": "text",
-    "placeholders": {}
   },
   "userAndOthersAreTyping": "{username} kaj {count} aliaj tajpas…",
   "@userAndOthersAreTyping": {
@@ -2298,11 +1730,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "userNotVerified": "Uzanto ne kontroliĝis",
-  "@userNotVerified": {
-    "type": "text",
-    "placeholders": {}
-  },
   "userSentUnknownEvent": "{username} sendis eventon de speco {type}",
   "@userSentUnknownEvent": {
     "type": "text",
@@ -2311,33 +1738,13 @@
       "type": {}
     }
   },
-  "userUnknownVerification": "Uzanto havas nekonatan staton de kontrolo",
-  "@userUnknownVerification": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "userVerified": "Uzanto kontroliĝis",
-  "@userVerified": {
-    "type": "text",
-    "placeholders": {}
-  },
   "verified": "Kontrolita",
   "@verified": {
     "type": "text",
     "placeholders": {}
   },
-  "verifiedSession": "Sukcese kontrolis salutaĵon!",
-  "@verifiedSession": {
-    "type": "text",
-    "placeholders": {}
-  },
   "verify": "Kontroli",
   "@verify": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "verifyManual": "Kontroli permane",
-  "@verifyManual": {
     "type": "text",
     "placeholders": {}
   },
@@ -2353,11 +1760,6 @@
   },
   "verifyTitle": "Kontrolante alian konton",
   "@verifyTitle": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "verifyUser": "Kontroli uzanton",
-  "@verifyUser": {
     "type": "text",
     "placeholders": {}
   },
@@ -2411,21 +1813,6 @@
     "type": "text",
     "placeholders": {}
   },
-  "warningEncryptionInBeta": "Tutvoja ĉifrado estas ankoraŭ beta-versia! Uzu je via propra risko!",
-  "@warningEncryptionInBeta": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "wednesday": "Merkredo",
-  "@wednesday": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "welcomeText": "Bonvenon al REChain ® 🪐! Privata kaj Sekura Estonteco, kiu jam alvenis!",
-  "@welcomeText": {
-    "type": "text",
-    "placeholders": {}
-  },
   "weSentYouAnEmail": "Ni sendis retleteron al vi",
   "@weSentYouAnEmail": {
     "type": "text",
@@ -2471,18 +1858,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "youAreInvitedToThisChat": "Vi estas invitita al ĉi tiu babilo",
-  "@youAreInvitedToThisChat": {
-    "type": "text",
-    "placeholders": {}
-  },
   "youAreNoLongerParticipatingInThisChat": "Vi ne plu partoprenas ĉi tiun babilon",
   "@youAreNoLongerParticipatingInThisChat": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "youCannotInviteYourself": "Vi ne povas inviti vin mem",
-  "@youCannotInviteYourself": {
     "type": "text",
     "placeholders": {}
   },
@@ -2491,35 +1868,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "yourChatsAreBeingSynced": "Viaj babiloj estas spegulataj…",
-  "@yourChatsAreBeingSynced": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "yourOwnUsername": "Via propra uzantonomo",
-  "@yourOwnUsername": {
-    "type": "text",
-    "placeholders": {}
-  },
   "yourPublicKey": "Via publika ŝlosilo",
   "@yourPublicKey": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "youWillBeConnectedTo": "Vi konektiĝos al {homeserver}",
-  "@youWillBeConnectedTo": {
-    "type": "text",
-    "placeholders": {
-      "homeserver": {}
-    }
-  },
-  "zoomIn": "Zomi",
-  "@zoomIn": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "zoomOut": "Malzomi",
-  "@zoomOut": {
     "type": "text",
     "placeholders": {}
   },
@@ -2527,7 +1877,7 @@
   "@sendAsText": {
     "type": "text"
   },
-  "norechainonlineServer": "{servilo1} ne estas servilo Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network, eble ni provu servilon {server2} anstataŭe?",
+  "norechainonlineServer": "{server1} ne estas REChain ®️ 🪐 ✨ servilo, eble provu anstataŭe servilon {server2}?",
   "@norechainonlineServer": {
     "type": "text",
     "placeholders": {
@@ -2540,11 +1890,6 @@
     "type": "text",
     "description": "Usage hint for the command /send"
   },
-  "chatHasBeenRemovedFromThisSpace": "Babilo foriĝis de ĉi tiu aro",
-  "@chatHasBeenRemovedFromThisSpace": {
-    "type": "text",
-    "placeholders": {}
-  },
   "chatHasBeenAddedToThisSpace": "Babilo aldoniĝis al ĉi tiu aro",
   "@chatHasBeenAddedToThisSpace": {},
   "autoplayImages": "Memage ludi movbildajn glumarkojn kaj mienetojn",
@@ -2552,341 +1897,9 @@
     "type": "text",
     "placeholder": {}
   },
-  "@addAccount": {},
-  "@addChatDescription": {},
-  "@addToBundle": {},
-  "@addToSpaceDescription": {},
-  "@addWidget": {},
-  "@allRooms": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@allSpaces": {},
-  "@appearOnTop": {},
-  "@appearOnTopDetails": {},
-  "@archiveRoomDescription": {},
-  "@banUserDescription": {},
-  "@bundleName": {},
-  "@callingAccount": {},
-  "@callingAccountDetails": {},
-  "@callingPermissions": {},
-  "@chatDescription": {},
-  "@chatDescriptionHasBeenChanged": {},
-  "@chatPermissions": {},
-  "@commandHint_clearcache": {
-    "description": "Usage hint for the command /clearcache",
-    "type": "text"
-  },
-  "@commandHint_create": {
-    "description": "Usage hint for the command /create",
-    "type": "text"
-  },
-  "@commandHint_cuddle": {},
-  "@commandHint_discardsession": {
-    "description": "Usage hint for the command /discardsession",
-    "type": "text"
-  },
-  "@commandHint_dm": {
-    "description": "Usage hint for the command /dm",
-    "type": "text"
-  },
-  "@commandHint_googly": {},
-  "@commandHint_html": {
-    "description": "Usage hint for the command /html",
-    "type": "text"
-  },
-  "@commandHint_hug": {},
-  "@commandHint_markasdm": {},
-  "@commandHint_markasgroup": {},
-  "@confirmEventUnpin": {},
-  "@confirmMatrixId": {},
-  "@countFiles": {
-    "placeholders": {
-      "count": {}
-    }
-  },
-  "@createGroup": {},
-  "@cuddleContent": {
-    "placeholders": {
-      "senderName": {}
-    },
-    "type": "text"
-  },
-  "@custom": {},
-  "@dehydrate": {},
-  "@dehydrateTor": {},
-  "@dehydrateTorLong": {},
-  "@dehydrateWarning": {},
-  "@deviceKeys": {},
-  "@directChat": {},
-  "@disableEncryptionWarning": {},
-  "@dismiss": {},
-  "@doNotShowAgain": {},
-  "@editBundlesForAccount": {},
-  "@emailOrUsername": {},
-  "@emojis": {},
-  "@emoteKeyboardNoRecents": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@enableMultiAccounts": {},
-  "@encryptThisChat": {},
-  "@enterRoom": {},
-  "@enterSpace": {},
-  "@errorAddingWidget": {},
-  "@experimentalVideoCalls": {},
-  "@exportEmotePack": {},
-  "@fileHasBeenSavedAt": {
-    "placeholders": {
-      "path": {}
-    },
-    "type": "text"
-  },
-  "@fileIsTooBigForServer": {},
-  "@foregroundServiceRunning": {},
-  "@googlyEyesContent": {
-    "placeholders": {
-      "senderName": {}
-    },
-    "type": "text"
-  },
-  "@hasKnocked": {
-    "placeholders": {
-      "user": {}
-    }
-  },
-  "@hideUnimportantStateEvents": {},
-  "@hugContent": {
-    "placeholders": {
-      "senderName": {}
-    },
-    "type": "text"
-  },
-  "@hydrate": {},
-  "@hydrateTor": {},
-  "@hydrateTorLong": {},
-  "@importEmojis": {},
-  "@importFromZipFile": {},
-  "@importNow": {},
-  "@indexedDbErrorLong": {},
-  "@indexedDbErrorTitle": {},
-  "@invalidInput": {},
-  "@invalidServerName": {},
-  "@invite": {},
-  "@inviteContactToGroupQuestion": {},
-  "@inviteGroupChat": {},
-  "@invitePrivateChat": {},
-  "@jump": {},
-  "@jumpToLastReadMessage": {},
-  "@kickUserDescription": {},
-  "@learnMore": {},
-  "@link": {},
-  "@locationDisabledNotice": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@locationPermissionDeniedNotice": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@makeAdminDescription": {},
-  "@markAsRead": {},
-  "@messageInfo": {},
-  "@messagesStyle": {},
-  "@messageType": {},
-  "@newGroup": {},
-  "@newSpace": {},
-  "@newSpaceDescription": {},
-  "@nextAccount": {},
-  "@noBackupWarning": {},
-  "@noChatDescriptionYet": {},
-  "@noKeyForThisMessage": {},
-  "@noOtherDevicesFound": {},
-  "@notAnImage": {},
-  "@numChats": {
-    "placeholders": {
-      "number": {}
-    },
-    "type": "number"
-  },
-  "@oneClientLoggedOut": {},
-  "@openChat": {},
-  "@openGallery": {},
-  "@openInMaps": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@openLinkInBrowser": {},
-  "@openVideoCamera": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@optionalRedactReason": {},
-  "@otherCallingPermissions": {},
-  "@pinMessage": {},
-  "@placeCall": {},
-  "@pleaseEnterANumber": {},
-  "@pleaseEnterRecoveryKey": {},
-  "@pleaseEnterRecoveryKeyDescription": {},
-  "@pleaseTryAgainLaterOrChooseDifferentServer": {},
-  "@previousAccount": {},
-  "@profileNotFound": {},
-  "@publish": {},
-  "@pushNotificationsNotAvailable": {},
-  "@reactedWith": {
-    "placeholders": {
-      "reaction": {},
-      "sender": {}
-    },
-    "type": "text"
-  },
-  "@readUpToHere": {},
-  "@recoveryKey": {},
-  "@recoveryKeyLost": {},
-  "@redactedBy": {
-    "placeholders": {
-      "username": {}
-    },
-    "type": "text"
-  },
-  "@redactedByBecause": {
-    "placeholders": {
-      "reason": {},
-      "username": {}
-    },
-    "type": "text"
-  },
-  "@redactMessageDescription": {},
-  "@removeDevicesDescription": {},
-  "@removeFromBundle": {},
-  "@removeFromSpace": {},
-  "@reopenChat": {},
-  "@repeatPassword": {},
-  "@replace": {},
-  "@report": {},
-  "@reportErrorDescription": {},
-  "@reportUser": {},
-  "@roomUpgradeDescription": {},
-  "@saveKeyManuallyDescription": {},
-  "@scanQrCode": {},
-  "@screenSharingDetail": {},
-  "@screenSharingTitle": {},
-  "@sender": {},
-  "@sendTypingNotifications": {},
-  "@separateChatTypes": {
-    "placeholders": {},
-    "type": "text"
-  },
-  "@serverRequiresEmail": {},
-  "@setChatDescription": {},
-  "@setColorTheme": {},
-  "@setTheme": {},
-  "@shareInviteLink": {},
-  "@signInWith": {
-    "placeholders": {
-      "provider": {}
-    },
-    "type": "text"
-  },
-  "@signInWithPassword": {},
-  "@sorryThatsNotPossible": {},
-  "@start": {},
-  "@startFirstChat": {},
-  "@storeInAndroidKeystore": {},
-  "@storeInAppleKeyChain": {},
-  "@storeInSecureStorageDescription": {},
-  "@storeSecurlyOnThisDevice": {},
-  "@supposedMxid": {
-    "placeholders": {
-      "mxid": {}
-    },
-    "type": "text"
-  },
-  "@switchToAccount": {
-    "placeholders": {
-      "number": {}
-    },
-    "type": "number"
-  },
-  "@time": {},
-  "@tryAgain": {},
-  "@unbanUserDescription": {},
-  "@unlockOldMessages": {},
-  "@unsupportedAndroidVersion": {},
-  "@unsupportedAndroidVersionLong": {},
-  "@unverified": {},
-  "@user": {},
-  "@users": {},
-  "@videoCallsBetaWarning": {},
-  "@videoWithSize": {
-    "placeholders": {
-      "size": {}
-    },
-    "type": "text"
-  },
-  "@voiceCall": {},
-  "@wasDirectChatDisplayName": {
-    "placeholders": {
-      "oldDisplayName": {}
-    },
-    "type": "text"
-  },
-  "@whyIsThisMessageEncrypted": {},
-  "@widgetCustom": {},
-  "@widgetEtherpad": {},
-  "@widgetJitsi": {},
-  "@widgetName": {},
-  "@widgetNameError": {},
-  "@widgetUrlError": {},
-  "@widgetVideo": {},
-  "@wrongPinEntered": {
-    "placeholders": {
-      "seconds": {}
-    },
-    "type": "text"
-  },
-  "@youAcceptedTheInvitation": {},
-  "@youBannedUser": {
-    "placeholders": {
-      "user": {}
-    }
-  },
-  "@youHaveWithdrawnTheInvitationFor": {
-    "placeholders": {
-      "user": {}
-    }
-  },
-  "@youInvitedBy": {
-    "placeholders": {
-      "user": {}
-    }
-  },
-  "@youInvitedUser": {
-    "placeholders": {
-      "user": {}
-    }
-  },
-  "@youJoinedTheChat": {},
-  "@youKicked": {
-    "placeholders": {
-      "user": {}
-    }
-  },
-  "@youKickedAndBanned": {
-    "placeholders": {
-      "user": {}
-    }
-  },
-  "@yourChatBackupHasBeenSetUp": {},
-  "@youRejectedTheInvitation": {},
-  "@youUnbannedUser": {
-    "placeholders": {
-      "user": {}
-    }
-  },
   "addToSpace": "Aldoni al aro",
   "@addToSpace": {},
-  "homeserver": "Node/Server",
+  "homeserver": "Hejmservilo",
   "@homeserver": {},
   "sendOnEnter": "Sendi per eniga klavo",
   "@sendOnEnter": {}

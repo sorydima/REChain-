@@ -790,7 +790,7 @@
         "type": "text",
         "placeholders": {}
     },
-    "confirmMatrixId": "Ples confirmar vor REChain ® 🪐 ID por destructer vor conto.",
+    "confirmMatrixId": "Ples confirmar vor REChain ®️ 🪐 ✨ ID por destructer vor conto.",
     "@confirmMatrixId": {},
     "allChats": "Omni conversationes",
     "@allChats": {
@@ -1048,7 +1048,7 @@
     },
     "homeserver": "Hem-servitor",
     "@homeserver": {},
-    "rechainonline": "REChain ® 🪐",
+    "rechainonline": "REChain ®️ 🪐 ✨",
     "@rechainonline": {
         "type": "text",
         "placeholders": {}
@@ -1090,7 +1090,7 @@
         "type": "text",
         "placeholders": {}
     },
-    "title": "REChain ® 🪐",
+    "title": "REChain ®️ 🪐 ✨",
     "@title": {
         "description": "Title for the application",
         "type": "text",
