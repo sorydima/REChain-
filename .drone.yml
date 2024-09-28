@@ -1,0 +1,120 @@
+kind: pipeline
+type: docker
+name: flutter-multi-platform
+
+steps:
+  # Clone repository
+  - name: clone
+    image: plugins/git
+    settings:
+      depth: 50
+
+  # Setup environment and install dependencies
+  - name: install-dependencies
+    image: cirrusci/flutter:stable
+    commands:
+      - flutter pub get
+
+  # Build APK for Android
+  - name: build-android
+    image: cirrusci/flutter:stable
+    commands:
+      - flutter build apk --release
+    when:
+      event:
+        - push
+        - pull_request
+      branch:
+        - main
+
+  # Build iOS App
+  - name: build-ios
+    image: cirrusci/flutter:stable
+    commands:
+      - flutter build ios --release --no-codesign
+    when:
+      event:
+        - push
+        - pull_request
+      branch:
+        - main
+
+  # Build for Web (PWA)
+  - name: build-web
+    image: cirrusci/flutter:stable
+    commands:
+      - flutter build web --release
+    when:
+      event:
+        - push
+        - pull_request
+      branch:
+        - main
+
+  # Build for Linux Desktop
+  - name: build-linux
+    image: cirrusci/flutter:stable
+    commands:
+      - flutter build linux --release
+    when:
+      event:
+        - push
+        - pull_request
+      branch:
+        - main
+
+  # Build for macOS Desktop
+  - name: build-macos
+    image: cirrusci/flutter:stable
+    commands:
+      - flutter build macos --release
+    when:
+      event:
+        - push
+        - pull_request
+      branch:
+        - main
+
+  # Build for Windows Desktop
+  - name: build-windows
+    image: cirrusci/flutter:stable
+    commands:
+      - flutter build windows --release
+    when:
+      event:
+        - push
+        - pull_request
+      branch:
+        - main
+
+  # Deploy using SSH (Docker)
+  - name: deploy
+    image: plugins/ssh
+    environment:
+      SSH_KEY:
+        from_secret: ssh_key
+      DOCKER_HOST: tcp://your-docker-host:2376
+      DOCKER_TLS_VERIFY: "1"
+      DOCKER_CERT_PATH: "/path/to/docker/certs"
+    settings:
+      host: your-server.com
+      username: your-username
+      port: 22
+      script:
+        - echo "Deploying Flutter app via SSH"
+        - docker pull your-docker-image:latest
+        - docker stop your-container || true
+        - docker rm your-container || true
+        - docker run -d --name your-container your-docker-image:latest
+    when:
+      event:
+        - push
+      branch:
+        - main
+
+trigger:
+  branch:
+    - main
+  event:
+    - push
+    - pull_request
