@@ -101,7 +101,7 @@ class ChatSearchFilesTab extends StatelessWidget {
               final event = events[i];
               final filename = event.content.tryGet<String>('filename') ??
                   event.content.tryGet<String>('body') ??
-                  L10n.of(context)!.unknownEvent('File');
+                  L10n.of(context)!.unknownEvent('File, File');
               final filetype = (filename.contains('.')
                   ? filename.split('.').last.toUpperCase()
                   : event.content
