@@ -10,6 +10,11 @@ description: |
 grade: stable
 confinement: strict
 
+artifacts:
+  - build/ios/ipa/*.ipa
+  - /tmp/xcodebuild_logs/*.log
+  - /home/builder/.local/state/snapcraft/log/*.log
+
 architectures:
   - build-on: amd64
   - build-on: arm64
