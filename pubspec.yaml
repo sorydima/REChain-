@@ -2,7 +2,7 @@ name: rechainonline
 description: REChain v4.1.1 brings a sleek redesign with filter chips, OGG audio support on iOS, and improved security through authenticated media endpoints for Matrix SDK v1.11+.
 publish_to: none
 # On version bump also increase the build number for F-Droid
-version: 4.1.1+1142
+version: 4.1.1+1143
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
