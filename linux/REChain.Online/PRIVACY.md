@@ -1,36 +1,36 @@
 Privacy!
 =======
 
-*   [REChain ®️ 🪐](#1)
-*   [REChain ®️ 🪐 Reports](#2)
+*   [REChain ®️ 🪐 ✨](#1)
+*   [REChain ®️ 🪐 ✨ Reports](#2)
 *   [Database](#3)
 *   [Encryption](#4)
 *   [App Permissions](#5)
 *   [Push Notifications](#6)
 
-REChain ®️ 🪐!
+REChain ®️ 🪐 ✨!
 -------
 
-REChain.Online uses the REChain ®️ 🪐 protocol. This means that REChain.Online is just a client that can be connected to any compatible Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node. The respective data protection agreement of the Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node selected by the user then applies.
+REChain.Online uses the REChain ®️ 🪐 ✨ protocol. This means that REChain.Online is just a client that can be connected to any compatible Katya ® 👽 AI 🧠 REChain ®️ 🪐 ✨ Blockchain Node. The respective data protection agreement of the Katya ® 👽 AI 🧠 REChain ®️ 🪐 ✨ Blockchain Node selected by the user then applies.
 
-For convenience, one or more Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Nodes are set as default that the REChain.Online developers consider trustworthy. The developers of REChain.Online do not guarantee their trustworthiness. Before the first communication, users are informed which Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node they are connecting to.
+For convenience, one or more Katya ® 👽 AI 🧠 REChain ®️ 🪐 ✨ Blockchain Nodes are set as default that the REChain.Online developers consider trustworthy. The developers of REChain.Online do not guarantee their trustworthiness. Before the first communication, users are informed which Katya ® 👽 AI 🧠 REChain ®️ 🪐 ✨ Blockchain Node they are connecting to.
 
-REChain.Online only communicates with the selected Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node and with REChain ®️ 🪐 if enabled.
+REChain.Online only communicates with the selected Katya ® 👽 AI 🧠 REChain ®️ 🪐 ✨ Blockchain Node and with REChain ®️ 🪐 ✨ if enabled.
 
-REChain ®️ 🪐 Reports!
+REChain ®️ 🪐 ✨ Reports!
 ---------------
 
-REChain.Online uses REChain ®️ 🪐 for crash reports if the user allows it.
+REChain.Online uses REChain ®️ 🪐 ✨ for crash reports if the user allows it.
 
 Database!
 --------
 
-REChain.Online caches some data received from the Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node in a local database on the device of the user.
+REChain.Online caches some data received from the Katya ® 👽 AI 🧠 REChain ®️ 🪐 ✨ Blockchain Node in a local database on the device of the user.
 
 Encryption!
 ----------
 
-All communication of substantive content between REChain.Online and any Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node is done in secure way, using transport encryption to protect it.
+All communication of substantive content between REChain.Online and any Katya ® 👽 AI 🧠 REChain ®️ 🪐 ✨ Blockchain Node is done in secure way, using transport encryption to protect it.
 
 REChain.Online is able to use End-To-End-Encryption.
 
@@ -41,7 +41,7 @@ The permissions are the same on any device or in any web browser but may differ 
 
 #### Internet Access!
 
-REChain.Online needs to have internet access to communicate with the Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node.
+REChain.Online needs to have internet access to communicate with the Katya ® 👽 AI 🧠 REChain ®️ 🪐 ✨ Blockchain Node.
 
 #### Vibrate!
 
@@ -64,7 +64,7 @@ Push Notifications!
 
 REChain.Online uses the Cloud Messaging for push notifications. This takes place in the following steps:
 
-1.  The Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node sends the push notification to the REChain.Online Push Gateway
+1.  The Katya ® 👽 AI 🧠 REChain ®️ 🪐 ✨ Blockchain Node sends the push notification to the REChain.Online Push Gateway
 2.  The REChain.Online Push Gateway forwards the message in a different format to Cloud Messaging
 3.  Cloud Messaging waits until the user’s device is online again
 4.  The device receives the push notification from Cloud Messaging and displays it as a notification
@@ -101,11 +101,6 @@ A typical push notification could look like this:
     }
     
 
-REChain.Online sets the `event_id_only` flag at the Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node. This Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node is then responsible to send the correct data.
+REChain.Online sets the `event_id_only` flag at the Katya ® 👽 AI 🧠 REChain ®️ 🪐 ✨ Blockchain Node. This Katya ® 👽 AI 🧠 REChain ®️ 🪐 ✨ Blockchain Node is then responsible to send the correct data.
 
-Need help? 🤔 Email us! 👇 A Dmitry Sorokin production.
-All rights reserved. Powered by REChain ®️ 🪐
-Copyright © 2019-2024 REChain, Inc REChain ® is a registered trademark
-hr@rechain.email p2p@rechain.email pr@rechain.email sorydima@rechain.email support@rechain.email sip@rechain.email music@rechain.email cfa@rechain.email anti@rechain.email mot_cfa@rechain.email rechainstore@rechain.email models@rechain.email dex@rechain.email email@rechain.email musicdapp@rechain.email pitomec@rechain.email
-Please allow anywhere from 1 to 5 business days for E-mail responses! 💌
-Our Stats! 👀 At the end of 2023, the number of downloads from the Open-Source Places, Apple AppStore, Google Play Market, and the REChain.Store ✨ exceeded 29 million downloads. 😈 👀
+Copyright © 2019-2024 Need help? 🤔 Donate US! ⌛️ For tea, coffee! For the future of decentralized and distributed internet. We do cool and, in my opinion, useful things for the safety and security of users' personal data. And on a completely non-commercial basis! 😎 Email us! 👇 A Dmitry Sorokin production. All rights reserved. Powered by REChain ®️. 🪐 Copyright © 2019-2024 REChain, Inc REChain ® is a registered trademark hr@adminmarina.ru p2p@adminmarina.ru pr@adminmarina.ru sorydima@adminmarina.ru support@adminmarina.ru sip@adminmarina.ru music@adminmarina.ru cfa@adminmarina.ru anti@adminmarina.ru mot_cfa@adminmarina.ru rechainstore@adminmarina.ru models@adminmarina.ru dex@adminmarina.ru email@adminmarina.ru musicdapp@adminmarina.ru pitomec@adminmarina.ru delus@adminmarina.ru gateway@adminmarina.ru husco@adminmarina.ru info@adminmarina.ru maring@adminmarina.ru modus@adminmarina.ru rechainnetworkhost@adminmarina.ru tanyacity@adminmarina.ru support@xn--90ao4a.tech Please allow anywhere from 1 to 5 business days for E-mail responses! 💌 Our Stats! 👀 At the end of 2023, the number of downloads from the Open-Source Places, Apple AppStore, Google Play Market, and the REChain.Store, namely the Domestic application store from the REChain ®️ brand 🪐, а именно Отечественный магазин приложений от бренда REChain ®️ 🪐 ✨ ✨ exceeded 29 million downloads. 😈 👀

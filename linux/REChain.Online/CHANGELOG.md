@@ -1,56 +1,69 @@
-Most people know the REChain ®️ 🪐 Platform as a secure collaboration and messaging app. They know what it looks like on their phone or laptop, appreciate that it’s end-to-end encrypted, and make increasing use of features like threads, polls and location-sharing! 🥰 🌈 📡
+## @v4.1.1
 
-🦄
+🚀 REChain® 🪐 v4.1.1 is here with a bold redesign! Say goodbye to the old bottom navigation bar and hello to sleek filter chips, making it easier than ever to organize your spaces. And finally – iOS users rejoice – you can now listen to OGG audio messages seamlessly!
 
-Dream big! Stay safe! Stay true! Stay private! Stay tuned! 😎🌍
+But that's not all. Under the hood, we've introduced authenticated media endpoints, giving you secure media streaming when connected to servers running Matrix SDK v1.11 or those with the new MSC3916 key in their unstable_features. This update is packed with enhancements to give you a smoother, faster, and more secure experience!
 
-And have a great day! ✌️ 😎
+Upgrade now and explore the galaxy of new possibilities 🌌✨.
 
-Sincerely, Yours Mr. Detective Pikachu! 🐾
+- build: (deps): Bump docker/build-push-action from 5 to 6 (dependabot[bot]);
+- build(deps): Bump rexml from 3.2.8 to 3.3.3 in /ios (dependabot[bot]);
+- build: Remove permissions for screensharing until it is fixed;
+- build: Update Android target sdk to 34;
+- build: Update dependencies after release;
+- build: Update to latest Flutter;
+- build: Update to Matrix SDK 0.32.0;
+- chore: Bring back add to space feature;
+- chore: Bring back navrail;
+- chore: Bring back separate chat types;
+- chore: Chat permissions page follow up;
+- chore: Do not hide error on file sending;
+- chore: Improved create group and space design;
+- chore: Make VoIP plugin less noisy in logs;
+- chore: Move default PR template to correct dir;
+- chore: Nicer bottom sheets;
+- chore: Nicer empty chat list placeholder;
+- chore: Polish public room bottom sheet;
+- chore: Show short forms of months and week days in UI;
+- chore: Sligthly improve chat permissions page design;
+- design: Add snackbar with link to changelog on new version;
+- docs: Update Privacy-Policy;
+- feat: Support for Matrix auth media endpoints;
+- feat: Convert OPUS to AAC on iOS before playing;
+- feat: New spaces and chat list design;
+- feat: Record voice message with OPUS/OGG if supported;
+- feat: Send voice messages from web;
+- fix: Display only available join rules;
+- fix: Path correct userId to ignore list;
+- fix: Scroll to event missing the position;
+- Fix Web-base URL and Privacy URL configuration processing;
+- refactor: Clean up some widths;
+- refactor: Design polishment and better user viewer;
+- refactor: Migrate Android gradle plugin;
+- refactor: Only initialize FlutterLocalNotificationsPlugin once;
+- refactor: Recording dialog;
+- Refactor: Reduce .of(context) calls theme;
+- refactor: Use cached network image for MXC image URIs!
+
+Copyright © 2019-2024 Need help? 🤔 Donate US! ⌛️ For tea, coffee! For the future of decentralized and distributed internet. We do cool and, in my opinion, useful things for the safety and security of users' personal data. And on a completely non-commercial basis! 😎 Email us! 👇 A Dmitry Sorokin production. All rights reserved. Powered by REChain ®️. 🪐 Copyright © 2019-2024 REChain, Inc REChain ® is a registered trademark  hr@adminmarina.ru p2p@adminmarina.ru pr@adminmarina.ru sorydima@adminmarina.ru support@adminmarina.ru sip@adminmarina.ru music@adminmarina.ru cfa@adminmarina.ru anti@adminmarina.ru mot_cfa@adminmarina.ru rechainstore@adminmarina.ru models@adminmarina.ru dex@adminmarina.ru email@adminmarina.ru musicdapp@adminmarina.ru pitomec@adminmarina.ru delus@adminmarina.ru gateway@adminmarina.ru husco@adminmarina.ru info@adminmarina.ru maring@adminmarina.ru modus@adminmarina.ru rechainnetworkhost@adminmarina.ru tanyacity@adminmarina.ru support@xn--90ao4a.tech Please allow anywhere from 1 to 5 business days for E-mail responses! 💌 Our Stats! 👀 At the end of 2023, the number of downloads from the Open-Source Places, Apple AppStore, Google Play Market, and the REChain.Store, namely the Domestic application store from the REChain ®️ brand 🪐, а именно Отечественный магазин приложений от бренда REChain ®️ 🪐 ✨ exceeded 29 million downloads. 😈 👀
+
+Call to Action
+#NODUROV
+Check Tanya.City & Tanechca.Online - work node - matrix.tanya.city & REChain.Network - work node - matrix.rechain.network 
+
+👉 Visit Tree (https://linktr.ee/rechainnetwork) for more our resources and projects!
+Also visit Portfolio Tree https://me.delus.site/rechain - our own node!
+
+CEO & Founder: dmitry.wiki
+
+🦄 @sorydima @katya_llc @rechain_inc
+
+Dream big! Stay safe! Stay true! Stay private! Stay tuned! 😎🌍 And have a great day! ✌️ 😎 Sincerely, Yours Mr. Detective Pikachu! 🐾
+
 From the REChain dream team! 🤗 👻
-Making the world a better place since 2017! ✅😼
 
-Need help? 🤔 Email us! 👇 A Dmitry Sorokin production.
-All rights reserved. Powered by REChain ®️ 🪐
-Copyright © 2019-2024 REChain, Inc REChain ® is a registered trademark
-hr@rechain.email p2p@rechain.email pr@rechain.email sorydima@rechain.email support@rechain.email sip@rechain.email music@rechain.email cfa@rechain.email anti@rechain.email mot_cfa@rechain.email rechainstore@rechain.email models@rechain.email dex@rechain.email email@rechain.email musicdapp@rechain.email pitomec@rechain.email
-Please allow anywhere from 1 to 5 business days for E-mail responses! 💌
-Our Stats! 👀 At the end of 2023, the number of downloads from the Open-Source Places, Apple AppStore, Google Play Market, and the REChain.Store ✨ exceeded 29 million downloads. 😈 👀
+Making the world a better place since 2017! ✅😼 
 
-CHANGELOG:
+Copyright © 2019-2024 Need help? 🤔 Donate US! ⌛️ For tea, coffee! For the future of decentralized and distributed internet. We do cool and, in my opinion, useful things for the safety and security of users' personal data. And on a completely non-commercial basis! 😎 Email us! 👇 A Dmitry Sorokin production. All rights reserved. Powered by REChain ®️. 🪐 Copyright © 2019-2024 REChain, Inc REChain ® is a registered trademark  hr@adminmarina.ru p2p@adminmarina.ru pr@adminmarina.ru sorydima@adminmarina.ru support@adminmarina.ru sip@adminmarina.ru music@adminmarina.ru cfa@adminmarina.ru anti@adminmarina.ru mot_cfa@adminmarina.ru rechainstore@adminmarina.ru models@adminmarina.ru dex@adminmarina.ru email@adminmarina.ru musicdapp@adminmarina.ru pitomec@adminmarina.ru delus@adminmarina.ru gateway@adminmarina.ru husco@adminmarina.ru info@adminmarina.ru maring@adminmarina.ru modus@adminmarina.ru rechainnetworkhost@adminmarina.ru tanyacity@adminmarina.ru support@xn--90ao4a.tech Please allow anywhere from 1 to 5 business days for E-mail responses! 💌 Our Stats! 👀 At the end of 2023, the number of downloads from the Open-Source Places, Apple AppStore, Google Play Market, and the REChain.Store, namely the Domestic application store from the REChain ®️ brand 🪐, а именно Отечественный магазин приложений от бренда REChain ®️ 🪐 ✨ exceeded 29 million downloads. 😈 👀
 
-## v@4.0.1 (1140)
-
-We present a new node .city (matrix.tanya.city), which gives you the opportunity to plunge into a completely new world of DAO based on our own network Katya AI REChain Blockchain Node Network, as well as build your own cities, matrix spaces, communities, commodities, create!
-
-You could check: https://tanechca.online for more details and defaults!
-
-Design improvements and new advanced UI to manage rooms.
-
-- build: Fix Google Services patch!
-- build: Update Katya ® 👽 AI 🧠 REChain 🪐 Blockchain Node Network, Matrix, Flutter, Dart & others SDKs!
-- build: Update to Flutter 3.22.2!
-- chore: Let error reporter fill out the bug report!
-- chore: More nicier event source display!
-- chore: Update 'user has knocked' localization with emoji!
-- design: Adjust chat settings design!
-- design: Adjust settings design!
-- design: Fix color of invite button!
-- design: Follow up chat settings design!
-- design: Follow up settings design!
-- design: Improve user permission settings!
-- design: New chat access settings!
-- design: Redesign permissions settings with dropdownbuttons!
-- design: Remake UX of selecting messages and chats!
-- refactor: Download on Android and iOS with file_picker!
-
-#shotonkatyamobileos 👽 🤖
-
-Need help? 🤔 Email us! 👇 A Dmitry Sorokin production.
-All rights reserved. Powered by REChain ®️ 🪐
-Copyright © 2019-2024 REChain, Inc REChain ® is a registered trademark
-hr@rechain.email p2p@rechain.email pr@rechain.email sorydima@rechain.email support@rechain.email sip@rechain.email music@rechain.email cfa@rechain.email anti@rechain.email mot_cfa@rechain.email rechainstore@rechain.email models@rechain.email dex@rechain.email email@rechain.email musicdapp@rechain.email pitomec@rechain.email
-Please allow anywhere from 1 to 5 business days for E-mail responses! 💌
-Our Stats! 👀 At the end of 2023, the number of downloads from the Open-Source Places, Apple AppStore, Google Play Market, and the REChain.Store ✨ exceeded 29 million downloads. 😈 👀
-
-This CHANGELOG.md was generated with [**Changelog for Dart**](https://pub.dartlang.org/packages/changelog)
+#REChain #EcoGreen #shotonkatyamobileos
