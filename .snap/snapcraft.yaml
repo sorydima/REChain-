@@ -29,6 +29,7 @@ parts:
     source-tag: '3.2.14'
     build-packages:
       - g++
+    flutter-target: lib/main.dart # The main entry-point file of the application
 
   zenity-integration:
     plugin: nil
