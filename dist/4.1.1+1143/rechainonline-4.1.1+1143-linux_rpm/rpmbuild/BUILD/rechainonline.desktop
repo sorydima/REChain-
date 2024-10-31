@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=4.1.1+1143
+Name=REChain.Online
+GenericName=REChain Client
+Icon=rechainonline
+Exec=rechainonline %U
+Categories=Development;Utility;
+Keywords=REChain;REChain Client;
+StartupNotify=true
