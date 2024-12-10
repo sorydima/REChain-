@@ -83,8 +83,11 @@ flutter {
 
 dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'com.huawei.agconnect:agconnect-core:1.5.2.300'
 }
 
 configurations.all {
     exclude group: 'com.google.android.gms'
 }
+
+apply plugin: 'com.huawei.agconnect'

@@ -1,67 +1,135 @@
-## @v4.1.1
 
-🚀 REChain® 🪐 v4.1.1 is here with a bold redesign! Say goodbye to the old bottom navigation bar and hello to sleek filter chips, making it easier than ever to organize your spaces. And finally – iOS users rejoice – you can now listen to OGG audio messages seamlessly!
+# Release Notes and Changelog for REChain ®️ 🪐 v4.1.2
 
-But that's not all. Under the hood, we've introduced authenticated media endpoints, giving you secure media streaming when connected to servers running Matrix SDK v1.11 or those with the new MSC3916 key in their unstable_features. This update is packed with enhancements to give you a smoother, faster, and more secure experience!
+---
 
-Upgrade now and explore the galaxy of new possibilities 🌌✨.
+## **New Features**  
+- **Enhanced User Interface**:  
+  - New login design for an improved first impression.  
+  - Highlight emoji-only messages for better readability in conversations.  
+  - Added markdown context actions for text input, making formatting more accessible.  
+  - Introduced a new "About Server" page for detailed server information.  
 
-- build: (deps): Bump docker/build-push-action from 5 to 6 (dependabot[bot]);
-- build(deps): Bump rexml from 3.2.8 to 3.3.3 in /ios (dependabot[bot]);
-- build: Remove permissions for screensharing until it is fixed;
-- build: Update Android target sdk to 34;
-- build: Update dependencies after release;
-- build: Update to latest Flutter;
-- build: Update to Matrix SDK 0.32.0;
-- chore: Bring back add to space feature;
-- chore: Bring back navrail;
-- chore: Bring back separate chat types;
-- chore: Chat permissions page follow up;
-- chore: Do not hide error on file sending;
-- chore: Improved create group and space design;
-- chore: Make VoIP plugin less noisy in logs;
-- chore: Move default PR template to correct dir;
-- chore: Nicer bottom sheets;
-- chore: Nicer empty chat list placeholder;
-- chore: Polish public room bottom sheet;
-- chore: Show short forms of months and week days in UI;
-- chore: Sligthly improve chat permissions page design;
-- design: Add snackbar with link to changelog on new version;
-- docs: Update Privacy-Policy;
-- feat: Support for Matrix auth media endpoints;
-- feat: Convert OPUS to AAC on iOS before playing;
-- feat: New spaces and chat list design;
-- feat: Record voice message with OPUS/OGG if supported;
-- feat: Send voice messages from web;
-- fix: Display only available join rules;
-- fix: Path correct userId to ignore list;
-- fix: Scroll to event missing the position;
-- Fix Web-base URL and Privacy URL configuration processing;
-- refactor: Clean up some widths;
-- refactor: Design polishment and better user viewer;
-- refactor: Migrate Android gradle plugin;
-- refactor: Only initialize FlutterLocalNotificationsPlugin once;
-- refactor: Recording dialog;
-- Refactor: Reduce .of(context) calls theme;
-- refactor: Use cached network image for MXC image URIs!
+- **Customizations & Visual Improvements**:  
+  - Added default chat wallpaper for a personalized feel.  
+  - Better wallpapers now include blur and opacity sliders.  
+  - Revamped audio message design with displayed body content.  
 
-Copyright © 2019-2024 Need help? 🤔 Donate US! ⌛️ For tea, coffee! For the future of decentralized and distributed internet. We do cool and, in my opinion, useful things for the safety and security of users' personal data. And on a completely non-commercial basis! 😎 Email us! 👇 A Dmitry Sorokin production. All rights reserved. Powered by REChain ®️. 🪐 Copyright © 2019-2024 REChain, Inc REChain ® is a registered trademark  hr@adminmarina.ru p2p@adminmarina.ru pr@adminmarina.ru sorydima@adminmarina.ru support@adminmarina.ru sip@adminmarina.ru music@adminmarina.ru cfa@adminmarina.ru anti@adminmarina.ru mot_cfa@adminmarina.ru rechainstore@adminmarina.ru models@adminmarina.ru dex@adminmarina.ru email@adminmarina.ru musicdapp@adminmarina.ru pitomec@adminmarina.ru delus@adminmarina.ru gateway@adminmarina.ru husco@adminmarina.ru info@adminmarina.ru maring@adminmarina.ru modus@adminmarina.ru rechainnetworkhost@adminmarina.ru tanyacity@adminmarina.ru support@xn--90ao4a.tech Please allow anywhere from 1 to 5 business days for E-mail responses! 💌 Our Stats! 👀 At the end of 2023, the number of downloads from the Open-Source Places, Apple AppStore, Google Play Market, and the REChain.Store, namely the Domestic application store from the REChain ®️ brand 🪐, а именно Отечественный магазин приложений от бренда REChain ®️ 🪐 ✨ exceeded 29 million downloads. 😈 👀
+- **Advanced Functionality**:  
+  - Enabled sending multiple files at once, boosting productivity.  
+  - Swipe-to-archive feature for easier room management.  
 
-Call to Action
-#NODUROV
-Check Tanya.City & Tanechca.Online - work node - matrix.tanya.city & REChain.Network - work node - matrix.rechain.network 
+- **Improved User Experience**:  
+  - Display warning banners on unverified devices for security awareness.  
+  - Redesigned room creation UI for simplicity and style.  
+  - Added new styles and animations for a polished look and feel.  
 
-👉 Visit Tree (https://linktr.ee/rechainnetwork) for more our resources and projects!
-Also visit Portfolio Tree https://me.delus.site/rechain - our own node!
+---
 
-CEO & Founder: dmitry.wiki
+## **Bug Fixes**  
+- **File Handling**:  
+  - Bypass image compression when using `flutter_file_picker`.  
+  - Fixed a crash caused by loading file bytes prematurely.  
 
-🦄 @sorydima @katya_llc @rechain_inc
+- **Room Management**:  
+  - Corrected visibility of public rooms when settings are toggled.  
+  - Resolved issues with room invites not displaying immediately.  
 
-Dream big! Stay safe! Stay true! Stay private! Stay tuned! 😎🌍 And have a great day! ✌️ 😎 Sincerely, Yours Mr. Detective Pikachu! 🐾
+- **UI and Notifications**:  
+  - Improved performance of avatar widgets.  
+  - Prevented emoticons from using low-quality thumbnails.  
 
-From the REChain dream team! 🤗 👻
+---
 
-Making the world a better place since 2017! ✅😼 Copyright © 2019-2024 Need help? 🤔 Donate US! ⌛️ For tea, coffee! For the future of decentralized and distributed internet. We do cool and, in my opinion, useful things for the safety and security of users' personal data. And on a completely non-commercial basis! 😎 Email us! 👇 A Dmitry Sorokin production. All rights reserved. Powered by REChain ®️. 🪐 Copyright © 2019-2024 REChain, Inc REChain ® is a registered trademark hr@adminmarina.ru p2p@adminmarina.ru pr@adminmarina.ru sorydima@adminmarina.ru support@adminmarina.ru sip@adminmarina.ru music@adminmarina.ru cfa@adminmarina.ru anti@adminmarina.ru mot_cfa@adminmarina.ru rechainstore@adminmarina.ru models@adminmarina.ru dex@adminmarina.ru email@adminmarina.ru musicdapp@adminmarina.ru pitomec@adminmarina.ru Please allow anywhere from 1 to 5 business days for E-mail responses! 💌
+## **Refinements and Optimizations**  
+- **Performance**:  
+  - Moved to a newer geolocator package for smoother functionality.  
+  - Optimized future loading dialog to avoid flickering.  
+  - Lazy-loaded components for faster startup times.  
 
-#REChain #EcoGreen #shotonkatyamobileos
+- **Code Maintenance**:  
+  - Removed duplicated navigational elements.  
+  - Simplified keyboard shortcuts and improved related packages.  
+
+- **UX Refinements**:  
+  - Enhanced delete-device UX for a streamlined experience.  
+  - Improved adaptive dialogs for better platform-specific interactions.  
+
+---
+
+## **Reverts**  
+- Reverted default chat wallpaper implementation to ensure compatibility.  
+- Rolled back avatar widget performance changes due to conflicts.  
+
+---
+
+## **Localization Updates**  
+- Expanded language support with translations into:  
+  - **Arabic, Basque, Catalan, Chinese (Simplified), Czech, Estonian, Finnish, Galician, German, Hungarian, Indonesian, Irish, Italian, Korean, Latvian, Russian, Spanish, Turkish, and Ukrainian.**  
+  - Special thanks to contributors for enriching global accessibility!  
+
+---
+
+Stay tuned for more updates and improvements in future versions. 🚀
+
+## v.4.1.2
+- design: Highlight emoji only messages (Krille)
+- design: New login design (Krille)
+- docs: fix snapstore badge on website (Krille)
+- feat: Add about server page (Krille)
+- feat: Add default chat wallpaper (Krille)
+- feat: Add markdown context actions for text input (krille-chan)
+- feat: Better wallpapers with blur and opacity sliders and improved styles page (krille-chan)
+- feat: Display warning banner on unverified devices (krille-chan)
+- feat: New audio message design with displayed body (krille-chan)
+- feat: Nicer room creation UI (krille-chan)
+- feat: Open account manage url when using MAS (krille-chan)
+- feat: Sending multiple files at once (krille-chan)
+- feat: Swipe to archive rooms (Krille)
+- fix: Bypass image compression in flutter_file_picker (q234rty)
+- fix: dont use thumbnails for emoticons (Marek Vospěl)
+- fix: Public rooms always publicly visible even when turned off on creation (krille-chan)
+- fix: Wait for room invite before open in pushhelper (krille-chan)
+- refactor: Better future loading dialog without flickering (krille-chan)
+- refactor: Display two lines on new messages (krille-chan)
+- refactor: Improve delete device UX flow (krille-chan)
+- refactor: Load bytes from sending files later to not let app crash (krille-chan)
+- refactor: Migrate to newer keyboard shortcuts package (Krille)
+- refactor: Move to upstream geolocator (Krille)
+- refactor: Performance boost for avatar widget (Krille)
+- refactor: Remove duplicated navigator workaround (krille-chan)
+- refactor: Remove keyboard shortcuts (Krille)
+- refactor: Remove unnecessary builder widget (krille-chan)
+- refactor: Reuse flutter local notifications object (krille-chan)
+- refactor: Use adaptive dialog action (Krille)
+- refactor: Use file selector on linux (krille-chan)
+- refactor: Use non nullable localizations builder and lazy load on web (krille-chan)
+- Revert "chore: Follow up new chat design" (Krille)
+- Revert "feat: Add default chat wallpaper" (Krille)
+- Revert "refactor: Performance boost for avatar widget" (krille-chan)
+- Translated using Weblate (Arabic) (Rex_sa)
+- Translated using Weblate (Basque) (xabirequejo)
+- Translated using Weblate (Catalan) (fadelkon)
+- Translated using Weblate (Chinese (Simplified Han script)) (大王叫我来巡山)
+- Translated using Weblate (Czech) (Michal Bedáň)
+- Translated using Weblate (Estonian) (Priit Jõerüüt)
+- Translated using Weblate (Finnish) (Priit Jõerüüt)
+- Translated using Weblate (Galician) (josé m)
+- Translated using Weblate (German) (Christian)
+- Translated using Weblate (German) (Ettore Atalan)
+- Translated using Weblate (German) (Peter Wallerius)
+- Translated using Weblate (Hungarian) (Zentropivity)
+- Translated using Weblate (Indonesian) (Linerly)
+- Translated using Weblate (Irish) (Aindriú Mac Giolla Eoin)
+- Translated using Weblate (Irish) (Christian)
+- Translated using Weblate (Italian) (Angelo Schirinzi)
+- Translated using Weblate (Korean) (Bruno Roh)
+- Translated using Weblate (Korean) (kdh8219)
+- Translated using Weblate (Latvian) (Edgars Andersons)
+- Translated using Weblate (Latvian) (GGLVXD)
+- Translated using Weblate (Russian) (Pavel Kozhukhov)
+- Translated using Weblate (Russian) (v1s7)
+- Translated using Weblate (Spanish) (Kimby)
+- Translated using Weblate (Turkish) (Oğuz Ersen)
+- Translated using Weblate (Ukrainian) (Bezruchenko Simon)
+- Translated using Weblate (Ukrainian) (Ihor Hordiichuk)
