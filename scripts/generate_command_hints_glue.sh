@@ -7,10 +7,6 @@
 # - Run this script to regenerate the glue code
 # - Run flutter test to see if you did everything right
 
-# Looking to add descriptions for a new command, but don't know what it does?
-# It is likely defined here (in registerDefaultCommands()):
-# https://gitlab.com/famedly/company/frontend/famedlysdk/-/blob/main/lib/src/utils/commands_extension.dart
-
 echo "\
 // This file is auto-generated using scripts/generate_command_hints_glue.sh.
 
