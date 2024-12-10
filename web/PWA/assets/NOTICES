@@ -8334,7 +8334,7 @@ enhanced_enum
 
 MIT License
 
-Copyright (C) 2021 Famedly GmbH
+Copyright (C) 2021 REChain, Inc
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -12245,7 +12245,7 @@ future_loading_dialog
 
 MIT License
 
-Copyright (c) 2020 Famedly
+Copyright (c) 2020 REChain, Inc
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -36533,8 +36533,8 @@ to attach them to the start of each source file to most effectively
 state the exclusion of warranty; and each file should have at least
 the "copyright" line and a pointer to where the full notice is found.
 
-    famedlySDK
-    Copyright (C) 2019  famedly
+    Katya SDK
+    Copyright (C) 2019  REChain, Inc
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as published

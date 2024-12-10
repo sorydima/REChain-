@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=4.1.2
+Name=REChain
+Comment=REChain Client. Chat with your friends
+Exec=AppRun
+Icon=rechain
+Terminal=false
+Categories=Network;Chat;InstantMessaging;X-Matrix;

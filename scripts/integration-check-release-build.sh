@@ -4,9 +4,9 @@
 cd android
 KEYFILE="$(pwd)/key.jks"
 echo "Generating signing configuration with $KEYFILE..."
-keytool -genkey -keyalg RSA -alias key -keysize 4096 -dname "cn=REChain CI, ou=Head of bad integration tests, o=REChain Inc, c=TLH" -keypass 12345 -storepass 12345 -validity 1 -keystore "$KEYFILE" -storetype "pkcs12"
-echo "storePassword=12345" >> key.properties
-echo "keyPassword=12345" >> key.properties
+keytool -genkey -keyalg RSA -alias key -keysize 4096 -dname "cn=REChain CI, ou=Head of bad integration tests, o=REChain HQ, c=TLH" -keypass REChain -storepass REChain -validity 1 -keystore "$KEYFILE" -storetype "pkcs12"
+echo "storePassword=REChain" >> key.properties
+echo "keyPassword=REChain" >> key.properties
 echo "keyAlias=key" >> key.properties
 echo "storeFile=$KEYFILE" >> key.properties
 ls | grep key
@@ -22,5 +22,5 @@ adb shell am start -n com.rechain.online/com.rechain.online.MainActivity
 
 sleep 5
 
-# check whether REChain ®️ 🪐 ✨ runs
+# check whether REChain runs
 adb shell ps | awk '{print $9}' | grep com.rechain.online

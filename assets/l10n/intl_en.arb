@@ -2765,7 +2765,7 @@
   "loginWithMatrixId": "Login with REChain ®️ 🪐 ✨ ID",
   "discoverHomeservers": "Discover homeservers",
   "whatIsAHomeserver": "What is a homeserver?",
-  "homeserverDescription": "All your data is stored on the homeserver, just like an email provider. You can choose which homeserver you want to use, while you can still communicate with everyone. Learn more at at https://matrix.org.",
+  "homeserverDescription": "All your data is stored on the homeserver, just like an email provider. You can choose which homeserver you want to use, while you can still communicate with everyone. Learn more at at https://matrix.org and https://rechain.network.",
   "doesNotSeemToBeAValidHomeserver": "Doesn't seem to be a compatible homeserver. Wrong URL?",
   "calculatingFileSize": "Calculating file size...",
   "prepareSendingAttachment": "Prepare sending attachment...",
@@ -2788,3 +2788,44 @@
     }
   }
 }
+"@aboutHomeserver": {
+        "placeholders": {
+            "homeserver": {
+            }
+        },
+        "type": "text"
+    },
+"@sendImages": {
+        "placeholders": {
+            "count": {
+            }
+        },
+        "type": "text"
+    },
+"aboutHomeserver": "About {homeserver}",
+"addLink": "Add link",
+"blur": "Blur:",
+"boldText": "Bold text",
+"compress": "Compress",
+"contactServerAdmin": "Contact server admin",
+"contactServerSecurity": "Contact server security",
+"continueText": "Continue",
+"invalidUrl": "Invalid url",
+"italicText": "Italic text",
+"manageAccount": "Manage account",
+"name": "Name",
+"noContactInformationProvided": "Server does not provide any valid contact information",
+"noticeChatBackupDeviceVerification": "Note: When you connect all your devices to the chat backup, they are automatically verified.",
+"oneOfYourDevicesIsNotVerified": "One of your devices is not verified",
+"opacity": "Opacity:",
+"pleaseFillOut": "Please fill out",
+"sendImages": "Send {count} image",
+"serverInformation": "Server information:",
+"setWallpaper": "Set wallpaper",
+"strikeThrough": "Strikethrough",
+"supportPage": "Support page",
+"unableToJoinChat": "Unable to join chat. Maybe the other party has already closed the conversation.",
+"unavailable": "Unavailable",
+"version": "Version",
+"website": "Website",
+"welcomeText": "Hey Hey 👋 This is REChain ®️ 🪐. You can sign in to any homeserver, which is compatible with https://matrix.org. And then chat with anyone. It's a huge decentralized network! Check out https://rechain.network.",

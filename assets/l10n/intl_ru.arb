@@ -2762,3 +2762,186 @@
     "space": {}
   }
 }
+"@aboutHomeserver": {
+        "placeholders": {
+            "homeserver": {
+            }
+        },
+        "type": "text"
+    },
+"@addLink": {
+    },
+"@alwaysUse24HourFormat": {
+        "description": "Set to true to always display time of day in 24 hour format."
+    },
+"@blur": {
+    },
+    "@boldText": {
+    },
+"@calculatingFileSize": {
+    },
+"@changelog": {
+    },
+"@changeTheCanonicalRoomAlias": {
+    },
+"@chatPermissionsDescription": {
+    },
+"@compress": {
+    },
+    "@compressVideo": {
+    },
+"@contactServerAdmin": {
+    },
+    "@contactServerSecurity": {
+    },
+"@continueText": {
+    },
+"@discoverHomeservers": {
+    },
+"@doesNotSeemToBeAValidHomeserver": {
+    },
+"@generatingVideoThumbnail": {
+    },
+"@homeserverDescription": {
+    },
+"@invalidUrl": {
+    },
+"@invitedBy": {
+        "placeholders": {
+            "user": {
+            }
+        }
+    },
+"@italicText": {
+    },
+    "@joinedChats": {
+    },
+"@loginWithMatrixId": {
+    },
+"@manageAccount": {
+    },
+"@name": {
+    },
+"@noChatsFoundHere": {
+    },
+"@noContactInformationProvided": {
+    },
+"@noMoreChatsFound": {
+    },
+"@noticeChatBackupDeviceVerification": {
+    },
+"@oneOfYourDevicesIsNotVerified": {
+    },
+"@opacity": {
+    },
+"@pleaseFillOut": {
+    },
+"@prepareSendingAttachment": {
+    },
+"@sendCanceled": {
+    },
+"@sendImages": {
+        "placeholders": {
+            "count": {
+            }
+        },
+        "type": "text"
+    },
+    "@sendingAttachment": {
+    },
+    "@sendingAttachmentCountOfCount": {
+        "placeholders": {
+            "index": {
+            },
+            "length": {
+            }
+        },
+        "type": "integer"
+    },
+"@sendRoomNotifications": {
+    },
+"@sendUncompressed": {
+    },
+"@serverInformation": {
+    },
+    "@serverLimitReached": {
+        "placeholders": {
+            "seconds": {
+            }
+        },
+        "type": "integer"
+    },
+"@setWallpaper": {
+    },
+"@strikeThrough": {
+    },
+"@supportPage": {
+    },
+"@unableToJoinChat": {
+    },
+"@updateInstalled": {
+        "placeholders": {
+            "version": {
+            }
+        },
+        "type": "text"
+    },
+"@version": {
+    },
+"@website": {
+    },
+    "@welcomeText": {
+    },
+"@whatIsAHomeserver": {
+    },
+"aboutHomeserver": "О сервере {homeserver}",
+"addLink": "Добавить ссылку",
+"alwaysUse24HourFormat": "нет",
+"blur": "Размытие:",
+"boldText": "Жирный шрифт",
+"calculatingFileSize": "Вычисление размера файла...",
+"changelog": "Список изменений",
+"changeTheCanonicalRoomAlias": "Изменить основной общедоступный адрес чата",
+"chatPermissionsDescription": "Задайте уровень власти, необходимый для совершения определённых действий в этом чате. Уровни власти 0, 50 и 100 обычно означают пользователей, модераторов и администраторов соответственно, но любая градация также возможна.",
+"compress": "Сжатие",
+"compressVideo": "Сжатие видео...",
+"contactServerAdmin": "Админ сервера",
+"contactServerSecurity": "Безопасность контактов сервера",
+"continueText": "Продолжить",
+"discoverHomeservers": "Список домашних серверов",
+"doesNotSeemToBeAValidHomeserver": "Этот домашний сервер выглядит несовместимым. Нет ли в ссылке опечаток?",
+"generatingVideoThumbnail": "Создание превью видео...",
+"homeserverDescription": "Все ваши данные хранятся на домашнем сервере, прямо как у вашего провайдера электронной почты. Вы можете выбрать, какому серверу вы их доверите, при этом сохраняя возможность общаться со всеми. Узнайте больше на https://matrix.org и https://rechain.network.",
+"invalidUrl": "Не верный URL",
+"invitedBy": "📩 Приглашен(а) {user}",
+"italicText": "Italic",
+"joinedChats": "Вступленные чаты",
+"loginWithMatrixId": "Войти через REChain ®️ 🪐 ID",
+"manageAccount": "Управление аккаунтом",
+"name": "Имя",
+"noChatsFoundHere": "Не было найдено ни одного чата. Начать с кем-нибудь новый чат можно, нажав кнопку ниже. ⤵️",
+"noContactInformationProvided": "Сервер не предоставляет никакой правдивой контактной информации",
+"noMoreChatsFound": "Больше чатов не обнаружено...",
+"noticeChatBackupDeviceVerification": "Примечание: Если вы подключите все свои устройства к резервному копированию чатов, то они автоматически станут подтверждёнными.",
+"notifications": "Уведомления",
+"oneOfYourDevicesIsNotVerified": "Одно из ваших устройств не подтверждено",
+"opacity": "Прозрачность:",
+"pleaseFillOut": "Пожалуйста, заполните",
+"prepareSendingAttachment": "Подготовка к отправке вложения...",
+"sendCanceled": "Отправка отменена",
+"sendImages": "Отправить {count} изображений",
+"sendingAttachment": "Отправка вложения...",
+"sendingAttachmentCountOfCount": "Отправляю... {index} {length}...",
+"sendRoomNotifications": "Упоминать @room",
+"sendUncompressed": "Отправлять без зжатия",
+"serverInformation": "Информация о сервере:",
+"serverLimitReached": "Ограничения сервера. Ожидайте{seconds} секунд...",
+"setWallpaper": "Установить обои",
+"strikeThrough": "Перечёркнутый",
+"supportPage": "Поддержка",
+"unableToJoinChat": "Невозможно присоединиться к чату. Возможно, другая сторона уже закончила разговор.",
+"updateInstalled": "🎉 Обновление {version} успешно установлено!",
+"version": "Версия",
+"website": "Сайт",
+"welcomeText": "Привет. Это REChain ®️ 🪐. Вы можете подписаться на любой сервер, который совместим с https://matrix.org. А потом поболтать с кем-нибудь. Это огромная децентрализованная сеть! Подробнее на https://rechain.network.",
+"whatIsAHomeserver": "Для чего нужен домашний сервер?",

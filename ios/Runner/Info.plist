@@ -9,7 +9,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>REChain 🪐</string>
+	<string>REChain</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -33,14 +33,14 @@
 			<string>com.rechain.online.uris</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>ShareMedia</string>
+				<string>ShareMedia-$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 				<string>com.rechain</string>
 				<string>matrix</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>$(FLUTTER_BUILD_NUMBER)</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
@@ -50,27 +50,29 @@
 	<key>NSBluetoothAlwaysUsageDescription</key>
 	<string>Play audio and voice messages via bluetooth devices.</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>Play audio and voice messages on bluetooth devices.</string>
+	<string>Play audio and voice messages on bluetooth devices</string>
 	<key>NSCalendarsUsageDescription</key>
-	<string>Share calendar dates with your contacts in REChain 🪐.</string>
+	<string>Share calendar dates with your contacts in REChain.</string>
 	<key>NSCameraUsageDescription</key>
-	<string>Open the camera and take a picture to share them with your contacts on REChain 🪐.</string>
+	<string>Open the camera and take a picture to share them with your contacts on REChain.</string>
 	<key>NSContactsUsageDescription</key>
-	<string>Share contacts with your contacts in REChain 🪐.</string>
+	<string>Share contacts with your contacts in REChain.</string>
 	<key>NSFaceIDUsageDescription</key>
-	<string>REChain 🪐 uses an app lock for an additional security level.</string>
+	<string>REChain uses an app lock for an additional security level</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Share your location with your contacts in REChain 🪐.</string>
+	<string>Share your location with your contacts in REChain.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Share your location with your contacts in REChain 🪐.</string>
+	<string>Share your location with your contacts in REChain.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Share your location with your contacts in REChain.</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Record voice message and share them with your contacts on REChain 🪐.</string>
+	<string>Record voice message and share them with your contacts on REChain.</string>
 	<key>NSMotionUsageDescription</key>
-	<string>Share motions with your contacts in REChain 🪐.</string>
+	<string>Share motions with your contacts in REChain.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Open photos from your gallery and share them with your contacts on REChain 🪐.</string>
+	<string>Open photos from your gallery and share them with your contacts on REChain.</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>Share data with your contacts in REChain 🪐.</string>
+	<string>Share data with your contacts in REChain.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>

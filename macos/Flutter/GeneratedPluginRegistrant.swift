@@ -27,7 +27,7 @@ import path_provider_foundation
 import record_darwin
 import share_plus
 import shared_preferences_foundation
-import sqflite_darwin
+import sqflite
 import sqlcipher_flutter_libs
 import url_launcher_macos
 import video_compress

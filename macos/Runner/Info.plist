@@ -12,66 +12,14 @@
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
-	<key>CFBundleLocalizations</key>
-	<array>
-		<string>ar</string>
-		<string>bn</string>
-		<string>bo</string>
-		<string>ca</string>
-		<string>cs</string>
-		<string>de</string>
-		<string>en</string>
-		<string>eo</string>
-		<string>es</string>
-		<string>et</string>
-		<string>eu</string>
-		<string>fa</string>
-		<string>fi</string>
-		<string>fr</string>
-		<string>ga</string>
-		<string>gl</string>
-		<string>he</string>
-		<string>hi</string>
-		<string>hr</string>
-		<string>hu</string>
-		<string>hy</string>
-		<string>id</string>
-		<string>ie</string>
-		<string>it</string>
-		<string>ja</string>
-		<string>ko</string>
-		<string>lt</string>
-		<string>nb</string>
-		<string>nl</string>
-		<string>pl</string>
-		<string>pt_BR</string>
-		<string>pt_PT</string>
-		<string>pt</string>
-		<string>ro</string>
-		<string>ru</string>
-		<string>si</string>
-		<string>sk</string>
-		<string>sl</string>
-		<string>sr</string>
-		<string>sv</string>
-		<string>ta</string>
-		<string>th</string>
-		<string>tr</string>
-		<string>uk</string>
-		<string>vi</string>
-		<string>zh_Hant</string>
-		<string>zh</string>
-	</array>
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>$(MARKETING_VERSION)</string>
+	<string>$(FLUTTER_BUILD_NAME)</string>
 	<key>CFBundleVersion</key>
-	<string>$(CURRENT_PROJECT_VERSION)</string>
-	<key>LSApplicationCategoryType</key>
-	<string>public.app-category.social-networking</string>
+	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>NSHumanReadableCopyright</key>
@@ -80,7 +28,5 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
-        <key>ITSAppUsesNonExemptEncryption</key>
-        <false/>
 </dict>
 </plist>

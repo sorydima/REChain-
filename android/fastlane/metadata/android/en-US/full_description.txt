@@ -1,0 +1,32 @@
+REChain ®️ 🪐 ✨ is an primarily designed as a security and privacy analysis analogue fully focused on the use of platform moments and messages for communication, built on a source code library, including those developed by us, for those who respect freedom and privacy, as well as the safety and security of personal data. 🌤 Our task was to make a tool pleasant and enjoyable to use, with which each of you can communicate, expand content, create workspaces, organize a workflow. 🌈 We strive to show all the world's giants that it is possible to create cool products that are of great importance for society, for people to interact with each other, without selling advertising, personal data of users, their rights and freedoms! 🦄 It's written in Flutter. Our mission is to create an easy to use instant messenger which is open source and accessible for everyone.
+
+Open
+Opensource and open development where everyone can join.
+
+Nonprofit
+REChain is donation funded.
+
+Cute ♥
+Cute design and many theme settings including a dark mode. 
+
+One-to-one and group chats
+Unlimited groups and direct chats.
+
+Easy
+REChain is made as simple to use as possible.
+
+Free
+Free to use for everyone without ads.
+
+Decentralized
+There is no "REChain server" you are forced to use. Use the server you find trustworthy or host your own.
+
+Compatible
+Compatible with Element, Fractal, Nheko and all Matrix_bASED messengers.
+
+
+REChain comes with a dream
+
+Imagine a world where everyone can choose the messenger they like and is still able to chat with all of their friends.
+A world where there are no companies spying on you when you send selfies to friends and your loved.
+And a world where apps are made for love and not for profit. ♥

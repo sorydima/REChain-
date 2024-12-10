@@ -1,0 +1,7 @@
+REChain supports end-to-end encryption. You can enable it per chat. Once enabled it cannot be disabled anymore for security reasons. You can not enable encryption for public rooms as this makes no sense when anyone can join and leave the room anyway. Once you have enabled encryption, the server is no longer able to read the content of your messages. It will encrypt all text messages and files.
+
+To be safe from man-in-the-middle attacks, you should take a look at the device list. You can do this in the encryption settings of a chat. Is there a suspicious device which you or your chat partner don't know? Then you can block it by moving the toggle to the left.
+
+The color of the toggle shows you the security state. Orange means, that this device is not verified. Grey means that it is blocked and won't receive the encryption keys. This means that this device won't be able to read your messages anymore! Green means that this device is verified.
+
+To verify the devices of another user, start the verification in a direct chat. For this you have a "Start verification" button in the encryption settings of a direct chat. Be sure that you are standing next to this person or you are connected via phone or any other secure channel. When you have started the verification, you will both see a set of emojis on your device. Compare them and tap on "They match". Wait a little bit and then you should see that all devices become green.
