@@ -2787,13 +2787,6 @@
       "seconds": {}
     }
   },
-"@aboutHomeserver": {
-        "placeholders": {
-            "homeserver": {
-            }
-        },
-        "type": "text"
-    },
 "@sendImages": {
         "placeholders": {
             "count": {
@@ -2828,5 +2821,4 @@
 "version": "Version",
 "website": "Website",
 "welcomeText": "Hey Hey 👋 This is REChain ®️ 🪐. You can sign in to any homeserver, which is compatible with https://matrix.org. And then chat with anyone. It's a huge decentralized network! Check out https://rechain.network."
-}
 }
