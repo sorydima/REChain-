@@ -20,8 +20,8 @@ As the global demand for renewable energy continues to rise, the role of blockch
 
 ### Links:
 
-- 🌍 [[Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network] Join the community!](https://matrix.to/#/%23workdao:matrix.tanya.city)
-- 👀 [[DAPP!] Launch dAPP on CodeMagic!](https://rechain.codemagic.app)
+- 🌍 [[Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network] Join the community!](https://matrix.to/#/#chatting:matrix.katya.wtf)
+- 👀 [[DAPP!] Launch dAPP on CodeMagic!](https://rechainonline.codemagic.app)
 
 ### Our Goal:
 
@@ -61,7 +61,7 @@ Please, visit the website for the installation instructions 🪐:
 
 ### For tea, coffee! For the future of decentralized and distributed internet. We do cool and, in my opinion, useful things for the safety and security of users' personal data. And on a completely non-commercial basis! 😎
 
-## Tether - (TRC20) - Tron 🍕: TRZ7jyMBNtRtqokkkJ7g5BJDzFycDv8cBm
+## Tether - (USDT) - 🍕: TRZ7jyMBNtRtqokkkJ7g5BJDzFycDv8cBm
 
 ![QR for Donation!](https://dmitry.wiki/QR.jpg)
 
@@ -73,7 +73,7 @@ Please, visit the website for the installation instructions 🪐:
 
 * <a href="https://facebook.com/rechainINC">Facebook</a>
 
-* <a href="https://matrix.to/#/%23workdao:matrix.tanya.city">Matrix</a>
+* <a href="https://matrix.to/#/#chatting:matrix.katya.wtf">Matrix</a>
 
 * <a href="https://t.me/rechainchat">Telegram</a>
 
