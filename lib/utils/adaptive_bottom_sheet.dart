@@ -1,6 +1,7 @@
+import 'package:flutter/material.dart';
+
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/config/themes.dart';
-import 'package:flutter/material.dart';
 
 Future<T?> showAdaptiveBottomSheet<T>({
   required BuildContext context,
@@ -35,7 +36,6 @@ Future<T?> showAdaptiveBottomSheet<T>({
       maxWidth: rechainonlineThemes.columnWidth * 1.25,
     ),
     backgroundColor: Colors.transparent,
-    showDragHandle: !dialogMode,
     clipBehavior: Clip.hardEdge,
   );
 }
