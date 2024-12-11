@@ -44,9 +44,6 @@ extension LocalizedExceptionExtension on Object {
         case MatrixError.M_LIMIT_EXCEEDED:
           return L10n.of(context).tooManyRequestsWarning;
         default:
-          if (exceptionContext == ExceptionContext.joinRoom) {
-            return L10n.of(context).unableToJoinChat;
-          }
           return (this as MatrixException).errorMessage;
       }
     }

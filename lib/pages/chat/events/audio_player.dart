@@ -179,12 +179,12 @@ class AudioPlayerState extends State<AudioPlayerWidget> {
     return '${duration.inMinutes.toString().padLeft(2, '0')}:${(duration.inSeconds % 60).toString().padLeft(2, '0')}';
   }
 
-  List<int>? _getWaveform() {
+  List<int> _getWaveform() {
     final eventWaveForm = widget.event.content
         .tryGetMap<String, dynamic>('org.matrix.msc1767.audio')
         ?.tryGetList<int>('waveform');
     if (eventWaveForm == null || eventWaveForm.isEmpty) {
-      return null;
+      return List<int>.filled(AudioPlayerWidget.wavesCount, 500);
     }
     while (eventWaveForm.length < AudioPlayerWidget.wavesCount) {
       for (var i = 0; i < eventWaveForm.length; i = i + 2) {
@@ -200,7 +200,7 @@ class AudioPlayerState extends State<AudioPlayerWidget> {
     return eventWaveForm.map((i) => i > 1024 ? 1024 : i).toList();
   }
 
-  late final List<int>? _waveform;
+  late final List<int> waveform;
 
   void _toggleSpeed() async {
     final audioPlayer = this.audioPlayer;
@@ -229,13 +229,12 @@ class AudioPlayerState extends State<AudioPlayerWidget> {
   @override
   void initState() {
     super.initState();
-    _waveform = _getWaveform();
+    waveform = _getWaveform();
   }
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final waveform = _waveform;
 
     final statusText = this.statusText ??= _durationString ?? '00:00';
     final audioPlayer = this.audioPlayer;
@@ -291,35 +290,34 @@ class AudioPlayerState extends State<AudioPlayerWidget> {
                 Expanded(
                   child: Stack(
                     children: [
-                      if (waveform != null)
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                          child: Row(
-                            children: [
-                              for (var i = 0;
-                                  i < AudioPlayerWidget.wavesCount;
-                                  i++)
-                                Expanded(
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                        child: Row(
+                          children: [
+                            for (var i = 0;
+                                i < AudioPlayerWidget.wavesCount;
+                                i++)
+                              Expanded(
+                                child: Container(
+                                  height: 32,
+                                  alignment: Alignment.center,
                                   child: Container(
-                                    height: 32,
-                                    alignment: Alignment.center,
-                                    child: Container(
-                                      margin: const EdgeInsets.symmetric(
-                                        horizontal: 1,
-                                      ),
-                                      decoration: BoxDecoration(
-                                        color: i < wavePosition
-                                            ? widget.color
-                                            : widget.color.withAlpha(128),
-                                        borderRadius: BorderRadius.circular(64),
-                                      ),
-                                      height: 32 * (waveform[i] / 1024),
+                                    margin: const EdgeInsets.symmetric(
+                                      horizontal: 1,
                                     ),
+                                    decoration: BoxDecoration(
+                                      color: i < wavePosition
+                                          ? widget.color
+                                          : widget.color.withAlpha(128),
+                                      borderRadius: BorderRadius.circular(64),
+                                    ),
+                                    height: 32 * (waveform[i] / 1024),
                                   ),
                                 ),
-                            ],
-                          ),
+                              ),
+                          ],
                         ),
+                      ),
                       SizedBox(
                         height: 32,
                         child: Slider(
@@ -327,12 +325,8 @@ class AudioPlayerState extends State<AudioPlayerWidget> {
                                   widget.event.room.client.userID
                               ? theme.colorScheme.onPrimary
                               : theme.colorScheme.primary,
-                          activeColor: waveform == null
-                              ? widget.color
-                              : Colors.transparent,
-                          inactiveColor: waveform == null
-                              ? widget.color.withAlpha(128)
-                              : Colors.transparent,
+                          activeColor: Colors.transparent,
+                          inactiveColor: Colors.transparent,
                           max: maxPosition,
                           value: currentPosition,
                           onChanged: (position) => audioPlayer == null

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
+import 'package:go_router/go_router.dart';
 import 'package:matrix/matrix.dart';
 
 import 'package:rechainonline/pages/image_viewer/image_viewer_view.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
-import 'package:rechainonline/utils/show_scaffold_dialog.dart';
-import 'package:rechainonline/widgets/share_scaffold_dialog.dart';
+import 'package:rechainonline/widgets/matrix.dart';
 import '../../utils/matrix_sdk_extensions/event_extension.dart';
 
 class ImageViewer extends StatefulWidget {
@@ -20,12 +20,11 @@ class ImageViewer extends StatefulWidget {
 
 class ImageViewerController extends State<ImageViewer> {
   /// Forward this image to another room.
-  void forwardAction() => showScaffoldDialog(
-        context: context,
-        builder: (context) => ShareScaffoldDialog(
-          items: [ContentShareItem(widget.event.content)],
-        ),
-      );
+  void forwardAction() {
+    Matrix.of(widget.outerContext).shareContent = widget.event.content;
+    Navigator.of(context).pop();
+    widget.outerContext.go('/rooms');
+  }
 
   /// Save this file with a system call.
   void saveFileAction(BuildContext context) => widget.event.saveFile(context);

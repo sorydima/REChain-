@@ -32,10 +32,8 @@ import 'package:rechainonline/utils/matrix_sdk_extensions/event_extension.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/filtered_timeline_extension.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
-import 'package:rechainonline/utils/show_scaffold_dialog.dart';
 import 'package:rechainonline/widgets/future_loading_dialog.dart';
 import 'package:rechainonline/widgets/matrix.dart';
-import 'package:rechainonline/widgets/share_scaffold_dialog.dart';
 import '../../utils/account_bundles.dart';
 import '../../utils/localized_exception_extension.dart';
 import 'send_file_dialog.dart';
@@ -43,14 +41,14 @@ import 'send_location_dialog.dart';
 
 class ChatPage extends StatelessWidget {
   final String roomId;
-  final List<ShareItem>? shareItems;
+  final String? shareText;
   final String? eventId;
 
   const ChatPage({
     super.key,
     required this.roomId,
     this.eventId,
-    this.shareItems,
+    this.shareText,
   });
 
   @override
@@ -71,7 +69,7 @@ class ChatPage extends StatelessWidget {
     return ChatPageWithRoom(
       key: Key('chat_page_${roomId}_$eventId'),
       room: room,
-      shareItems: shareItems,
+      shareText: shareText,
       eventId: eventId,
     );
   }
@@ -79,13 +77,13 @@ class ChatPage extends StatelessWidget {
 
 class ChatPageWithRoom extends StatefulWidget {
   final Room room;
-  final List<ShareItem>? shareItems;
+  final String? shareText;
   final String? eventId;
 
   const ChatPageWithRoom({
     super.key,
     required this.room,
-    this.shareItems,
+    this.shareText,
     this.eventId,
   });
 
@@ -226,33 +224,10 @@ class ChatController extends State<ChatPageWithRoom>
 
   void _loadDraft() async {
     final prefs = await SharedPreferences.getInstance();
-    final draft = prefs.getString('draft_$roomId');
+    final draft = widget.shareText ?? prefs.getString('draft_$roomId');
     if (draft != null && draft.isNotEmpty) {
       sendController.text = draft;
     }
-  }
-
-  void _shareItems([_]) {
-    final shareItems = widget.shareItems;
-    if (shareItems == null || shareItems.isEmpty) return;
-    for (final item in shareItems) {
-      if (item is FileShareItem) continue;
-      if (item is TextShareItem) room.sendTextEvent(item.value);
-      if (item is ContentShareItem) room.sendEvent(item.value);
-    }
-    final files = shareItems
-        .whereType<FileShareItem>()
-        .map((item) => item.value)
-        .toList();
-    if (files.isEmpty) return;
-    showAdaptiveDialog(
-      context: context,
-      builder: (c) => SendFileDialog(
-        files: files,
-        room: room,
-        outerContext: context,
-      ),
-    );
   }
 
   @override
@@ -261,7 +236,6 @@ class ChatController extends State<ChatPageWithRoom>
     inputFocus.addListener(_inputFocusListener);
 
     _loadDraft();
-    WidgetsBinding.instance.addPostFrameCallback(_shareItems);
     super.initState();
     _displayChatDetailsColumn = ValueNotifier(
       Matrix.of(context).store.getBool(SettingKeys.displayChatDetailsColumn) ??
@@ -847,17 +821,17 @@ class ChatController extends State<ChatPageWithRoom>
   }
 
   void forwardEventsAction() async {
-    if (selectedEvents.isEmpty) return;
-    await showScaffoldDialog(
-      context: context,
-      builder: (context) => ShareScaffoldDialog(
-        items: selectedEvents
-            .map((event) => ContentShareItem(event.content))
-            .toList(),
-      ),
-    );
-    if (!mounted) return;
+    if (selectedEvents.length == 1) {
+      Matrix.of(context).shareContent =
+          selectedEvents.first.getDisplayEvent(timeline!).content;
+    } else {
+      Matrix.of(context).shareContent = {
+        'msgtype': 'm.text',
+        'body': _getSelectedEventString(),
+      };
+    }
     setState(() => selectedEvents.clear());
+    context.go('/rooms');
   }
 
   void sendAgainAction() {

@@ -43,7 +43,7 @@ class ChatAccessSettingsController extends State<ChatAccessSettings> {
       joinRules.remove(JoinRules.knock);
     }
 
-    // Not yet supported in REChain:
+    // Not yet supported in REChain.Online:
     joinRules.remove(JoinRules.restricted);
     joinRules.remove(JoinRules.knockRestricted);
 
