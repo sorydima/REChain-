@@ -15,14 +15,15 @@ import 'package:receive_sharing_intent/receive_sharing_intent.dart';
 import 'package:uni_links/uni_links.dart';
 
 import 'package:rechainonline/config/app_config.dart';
-import 'package:rechainonline/pages/chat/send_file_dialog.dart';
 import 'package:rechainonline/pages/chat_list/chat_list_view.dart';
 import 'package:rechainonline/utils/localized_exception_extension.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
+import 'package:rechainonline/utils/show_scaffold_dialog.dart';
 import 'package:rechainonline/utils/show_update_snackbar.dart';
 import 'package:rechainonline/widgets/avatar.dart';
 import 'package:rechainonline/widgets/future_loading_dialog.dart';
+import 'package:rechainonline/widgets/share_scaffold_dialog.dart';
 import '../../../utils/account_bundles.dart';
 import '../../config/setting_keys.dart';
 import '../../utils/url_launcher.dart';
@@ -33,11 +34,6 @@ import '../bootstrap/bootstrap_dialog.dart';
 
 import 'package:rechainonline/utils/tor_stub.dart'
     if (dart.library.html) 'package:tor_detector_web/tor_detector_web.dart';
-
-enum SelectMode {
-  normal,
-  share,
-}
 
 enum PopupMenuAction {
   settings,
@@ -117,47 +113,6 @@ class ChatListController extends State<ChatList>
 
   void onChatTap(Room room) async {
     if (room.membership == Membership.invite) {
-      final inviterId =
-          room.getState(EventTypes.RoomMember, room.client.userID!)?.senderId;
-      final inviteAction = await showModalActionSheet<InviteActions>(
-        context: context,
-        message: room.isDirectChat
-            ? L10n.of(context).invitePrivateChat
-            : L10n.of(context).inviteGroupChat,
-        title: room.getLocalizedDisplayname(MatrixLocals(L10n.of(context))),
-        actions: [
-          SheetAction(
-            key: InviteActions.accept,
-            label: L10n.of(context).accept,
-            icon: Icons.check_outlined,
-            isDefaultAction: true,
-          ),
-          SheetAction(
-            key: InviteActions.decline,
-            label: L10n.of(context).decline,
-            icon: Icons.close_outlined,
-            isDestructiveAction: true,
-          ),
-          SheetAction(
-            key: InviteActions.block,
-            label: L10n.of(context).block,
-            icon: Icons.block_outlined,
-            isDestructiveAction: true,
-          ),
-        ],
-      );
-      if (inviteAction == null) return;
-      if (inviteAction == InviteActions.block) {
-        context.go('/rooms/settings/security/ignorelist', extra: inviterId);
-        return;
-      }
-      if (inviteAction == InviteActions.decline) {
-        await showFutureLoadingDialog(
-          context: context,
-          future: room.leave,
-        );
-        return;
-      }
       final joinResult = await showFutureLoadingDialog(
         context: context,
         future: () async {
@@ -190,42 +145,6 @@ class ChatListController extends State<ChatList>
     if (room.isSpace) {
       setActiveSpace(room.id);
       return;
-    }
-    // Share content into this room
-    final shareContent = Matrix.of(context).shareContent;
-    if (shareContent != null) {
-      final shareFile = shareContent.tryGet<XFile>('file');
-      if (shareContent.tryGet<String>('msgtype') == 'com.rechain.shared_file' &&
-          shareFile != null) {
-        await showDialog(
-          context: context,
-          useRootNavigator: false,
-          builder: (c) => SendFileDialog(
-            files: [shareFile],
-            room: room,
-            outerContext: context,
-          ),
-        );
-        Matrix.of(context).shareContent = null;
-      } else {
-        final consent = await showOkCancelAlertDialog(
-          context: context,
-          title: L10n.of(context).forward,
-          message: L10n.of(context).forwardMessageTo(
-            room.getLocalizedDisplayname(MatrixLocals(L10n.of(context))),
-          ),
-          okLabel: L10n.of(context).forward,
-          cancelLabel: L10n.of(context).cancel,
-        );
-        if (consent == OkCancelResult.cancel) {
-          Matrix.of(context).shareContent = null;
-          return;
-        }
-        if (consent == OkCancelResult.ok) {
-          room.sendEvent(shareContent);
-          Matrix.of(context).shareContent = null;
-        }
-      }
     }
 
     context.go('/rooms/${room.id}');
@@ -420,53 +339,30 @@ class ChatListController extends State<ChatList>
 
   String? get activeChat => widget.activeChat;
 
-  SelectMode get selectMode => Matrix.of(context).shareContent != null
-      ? SelectMode.share
-      : SelectMode.normal;
-
   void _processIncomingSharedMedia(List<SharedMediaFile> files) {
     if (files.isEmpty) return;
 
-    if (files.length > 1) {
-      Logs().w(
-        'Received ${files.length} incoming shared media but app can only handle the first one',
-      );
-    }
-
-    // We only handle the first file currently
-    final sharedMedia = files.first;
-
-    // Handle URIs and Texts, which are also passed in path
-    if (sharedMedia.type case SharedMediaType.text || SharedMediaType.url) {
-      return _processIncomingSharedText(sharedMedia.path);
-    }
-
-    final file = XFile(
-      sharedMedia.path.replaceFirst('file://', ''),
-      mimeType: sharedMedia.mimeType,
+    showScaffoldDialog(
+      context: context,
+      builder: (context) => ShareScaffoldDialog(
+        items: files.map(
+          (file) {
+            if ({
+              SharedMediaType.text,
+              SharedMediaType.url,
+            }.contains(file.type)) {
+              return TextShareItem(file.path);
+            }
+            return FileShareItem(
+              XFile(
+                file.path.replaceFirst('file://', ''),
+                mimeType: file.mimeType,
+              ),
+            );
+          },
+        ).toList(),
+      ),
     );
-
-    Matrix.of(context).shareContent = {
-      'msgtype': 'com.rechain.shared_file',
-      'file': file,
-      if (sharedMedia.message != null) 'body': sharedMedia.message,
-    };
-    context.go('/rooms');
-  }
-
-  void _processIncomingSharedText(String? text) {
-    if (text == null) return;
-    if (text.toLowerCase().startsWith(AppConfig.deepLinkPrefix) ||
-        text.toLowerCase().startsWith(AppConfig.inviteLinkPrefix) ||
-        (text.toLowerCase().startsWith(AppConfig.schemePrefix) &&
-            !RegExp(r'\s').hasMatch(text))) {
-      return _processIncomingUris(text);
-    }
-    Matrix.of(context).shareContent = {
-      'msgtype': 'm.text',
-      'body': text,
-    };
-    context.go('/rooms');
   }
 
   void _processIncomingUris(String? text) async {
@@ -549,10 +445,6 @@ class ChatListController extends State<ChatList>
     BuildContext posContext, [
     Room? space,
   ]) async {
-    if (room.membership == Membership.invite) {
-      return onChatTap(room);
-    }
-
     final overlay =
         Overlay.of(posContext).context.findRenderObject() as RenderBox;
 
@@ -625,68 +517,90 @@ class ChatListController extends State<ChatList>
               ],
             ),
           ),
-        PopupMenuItem(
-          value: ChatContextAction.mute,
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(
-                room.pushRuleState == PushRuleState.notify
-                    ? Icons.notifications_off_outlined
-                    : Icons.notifications_off,
-              ),
-              const SizedBox(width: 12),
-              Text(
-                room.pushRuleState == PushRuleState.notify
-                    ? L10n.of(context).muteChat
-                    : L10n.of(context).unmuteChat,
-              ),
-            ],
-          ),
-        ),
-        PopupMenuItem(
-          value: ChatContextAction.markUnread,
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(
-                room.markedUnread
-                    ? Icons.mark_as_unread
-                    : Icons.mark_as_unread_outlined,
-              ),
-              const SizedBox(width: 12),
-              Text(
-                room.markedUnread
-                    ? L10n.of(context).markAsRead
-                    : L10n.of(context).markAsUnread,
-              ),
-            ],
-          ),
-        ),
-        PopupMenuItem(
-          value: ChatContextAction.favorite,
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(room.isFavourite ? Icons.push_pin : Icons.push_pin_outlined),
-              const SizedBox(width: 12),
-              Text(
-                room.isFavourite
-                    ? L10n.of(context).unpin
-                    : L10n.of(context).pin,
-              ),
-            ],
-          ),
-        ),
-        if (spacesWithPowerLevels.isNotEmpty)
+        if (room.membership == Membership.join) ...[
           PopupMenuItem(
-            value: ChatContextAction.addToSpace,
+            value: ChatContextAction.mute,
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                const Icon(Icons.group_work_outlined),
+                Icon(
+                  room.pushRuleState == PushRuleState.notify
+                      ? Icons.notifications_off_outlined
+                      : Icons.notifications_off,
+                ),
                 const SizedBox(width: 12),
-                Text(L10n.of(context).addToSpace),
+                Text(
+                  room.pushRuleState == PushRuleState.notify
+                      ? L10n.of(context).muteChat
+                      : L10n.of(context).unmuteChat,
+                ),
+              ],
+            ),
+          ),
+          PopupMenuItem(
+            value: ChatContextAction.markUnread,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(
+                  room.markedUnread
+                      ? Icons.mark_as_unread
+                      : Icons.mark_as_unread_outlined,
+                ),
+                const SizedBox(width: 12),
+                Text(
+                  room.markedUnread
+                      ? L10n.of(context).markAsRead
+                      : L10n.of(context).markAsUnread,
+                ),
+              ],
+            ),
+          ),
+          PopupMenuItem(
+            value: ChatContextAction.favorite,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(
+                  room.isFavourite ? Icons.push_pin : Icons.push_pin_outlined,
+                ),
+                const SizedBox(width: 12),
+                Text(
+                  room.isFavourite
+                      ? L10n.of(context).unpin
+                      : L10n.of(context).pin,
+                ),
+              ],
+            ),
+          ),
+          if (spacesWithPowerLevels.isNotEmpty)
+            PopupMenuItem(
+              value: ChatContextAction.addToSpace,
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const Icon(Icons.group_work_outlined),
+                  const SizedBox(width: 12),
+                  Text(L10n.of(context).addToSpace),
+                ],
+              ),
+            ),
+        ],
+        if (room.membership == Membership.invite)
+          PopupMenuItem(
+            value: ChatContextAction.block,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(
+                  Icons.block_outlined,
+                  color: Theme.of(context).colorScheme.error,
+                ),
+                const SizedBox(width: 12),
+                Text(
+                  L10n.of(context).block,
+                  style: TextStyle(color: Theme.of(context).colorScheme.error),
+                ),
               ],
             ),
           ),
@@ -695,9 +609,19 @@ class ChatListController extends State<ChatList>
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Icon(Icons.delete_outlined),
+              Icon(
+                Icons.delete_outlined,
+                color: Theme.of(context).colorScheme.onErrorContainer,
+              ),
               const SizedBox(width: 12),
-              Text(L10n.of(context).leave),
+              Text(
+                room.membership == Membership.invite
+                    ? L10n.of(context).delete
+                    : L10n.of(context).leave,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onErrorContainer,
+                ),
+              ),
             ],
           ),
         ),
@@ -741,9 +665,9 @@ class ChatListController extends State<ChatList>
           useRootNavigator: false,
           context: context,
           title: L10n.of(context).areYouSure,
-          okLabel: L10n.of(context).leave,
-          cancelLabel: L10n.of(context).no,
           message: L10n.of(context).archiveRoomDescription,
+          okLabel: L10n.of(context).leave,
+          cancelLabel: L10n.of(context).cancel,
           isDestructiveAction: true,
         );
         if (confirmed == OkCancelResult.cancel) return;
@@ -771,6 +695,10 @@ class ChatListController extends State<ChatList>
           context: context,
           future: () => space.setSpaceChild(room.id),
         );
+      case ChatContextAction.block:
+        final userId =
+            room.getState(EventTypes.RoomMember, room.client.userID!)?.senderId;
+        context.go('/rooms/settings/security/ignorelist', extra: userId);
     }
   }
 
@@ -868,12 +796,6 @@ class ChatListController extends State<ChatList>
           ),
         ),
       );
-    }
-  }
-
-  void cancelAction() {
-    if (selectMode == SelectMode.share) {
-      setState(() => Matrix.of(context).shareContent = null);
     }
   }
 
@@ -1004,4 +926,5 @@ enum ChatContextAction {
   mute,
   leave,
   addToSpace,
+  block
 }

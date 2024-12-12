@@ -14,6 +14,14 @@ packages:
     description: dart
     source: sdk
     version: "0.3.2"
+  adaptive_dialog:
+    dependency: "direct main"
+    description:
+      name: adaptive_dialog
+      sha256: a87f9e13fdbe0b11d353733a90796129ee79fc0654a27855fa2c9c0a3633a362
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.3.0"
   analyzer:
     dependency: transitive
     description:
@@ -38,6 +46,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.3"
+  appkit_ui_element_colors:
+    dependency: transitive
+    description:
+      name: appkit_ui_element_colors
+      sha256: c3e50f900aae314d339de489535736238627071457c4a4a2dbbb1545b4f04f22
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.0"
   archive:
     dependency: "direct main"
     description:
@@ -326,6 +342,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.2.4"
+  equatable:
+    dependency: transitive
+    description:
+      name: equatable
+      sha256: "567c64b3cb4cf82397aac55f4f0cbd3ca20d77c6c03bedbc4ceaddc08904aef7"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.7"
   fake_async:
     dependency: transitive
     description:
@@ -769,10 +793,10 @@ packages:
     dependency: "direct main"
     description:
       name: geolocator
-      sha256: "0ec58b731776bc43097fcf751f79681b6a8f6d3bc737c94779fe9f1ad73c1a81"
+      sha256: d2ec66329cab29cb297d51d96c067d457ca519dca8589665fa0b82ebacb7dbe4
       url: "https://pub.dev"
     source: hosted
-    version: "13.0.1"
+    version: "13.0.2"
   geolocator_android:
     dependency: transitive
     description:
@@ -785,10 +809,10 @@ packages:
     dependency: transitive
     description:
       name: geolocator_apple
-      sha256: bc2aca02423ad429cb0556121f56e60360a2b7d694c8570301d06ea0c00732fd
+      sha256: "6154ea2682563f69fc0125762ed7e91e7ed85d0b9776595653be33918e064807"
       url: "https://pub.dev"
     source: hosted
-    version: "2.3.7"
+    version: "2.3.8+1"
   geolocator_platform_interface:
     dependency: transitive
     description:
@@ -837,6 +861,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "14.3.0"
+  gradient_borders:
+    dependency: transitive
+    description:
+      name: gradient_borders
+      sha256: b1cd969552c83f458ff755aa68e13a0327d09f06c3f42f471b423b01427f21f8
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.1"
   handy_window:
     dependency: "direct main"
     description:
@@ -994,6 +1026,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  intersperse:
+    dependency: transitive
+    description:
+      name: intersperse
+      sha256: "2f8a905c96f6cbba978644a3d5b31b8d86ddc44917662df7d27a61f3df66a576"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
   intl:
     dependency: "direct main"
     description:
@@ -1138,6 +1178,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
+  macos_ui:
+    dependency: transitive
+    description:
+      name: macos_ui
+      sha256: "80f6539aba5a3a1182d5225a6c27969a780bcb1d2d8135b4ffb708570cf0c854"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.9"
+  macos_window_utils:
+    dependency: transitive
+    description:
+      name: macos_window_utils
+      sha256: "3534f2af024f2f24112ca28789a44e6750083f8c0065414546c6593ee48a5009"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.6.1"
   macros:
     dependency: transitive
     description:

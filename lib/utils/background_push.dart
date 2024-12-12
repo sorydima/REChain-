@@ -1,7 +1,7 @@
 /*
  *   REChain, Inc
  *   Copyright (C) 2020, 2021, 2022, 2023, 2024, 2025 REChain, Inc
- *   Copyright (C) 2021, 2022, 2023, 2024, 2025 REChain.Online , REChain, Inc
+ *   Copyright (C) 2021, 2022, 2023, 2024, 2025 REChain.Online
  *
  *   This program is free software: you can redistribute it and/or modify
  *   it under the terms of the GNU Affero General Public License as

@@ -98,7 +98,7 @@ class FlutterHiveCollectionsDatabase extends HiveCollectionsDatabase {
           directory = Directory.current;
         }
       }
-      // do not destroy your stable REChain.Online in debug mode
+      // do not destroy your stable REChain in debug mode
       directory = Directory(
         directory.uri.resolve(kDebugMode ? 'hive_debug' : 'hive').toFilePath(),
       );

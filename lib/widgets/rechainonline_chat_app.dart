@@ -55,7 +55,7 @@ class rechainonlineChatApp extends StatelessWidget {
         builder: (context, child) => AppLockWidget(
           pincode: pincode,
           clients: clients,
-          // Need a navigator above the REChain widget for
+          // Need a navigator above the Matrix widget for
           // displaying dialogs
           child: Matrix(
             clients: clients,
