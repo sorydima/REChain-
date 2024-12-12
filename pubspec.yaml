@@ -51,7 +51,7 @@ dependencies:
   flutter_typeahead: ^5.2.0
   flutter_web_auth_2: ^3.1.1 # Version 4 blocked by https://github.com/MixinNetwork/flutter-plugins/issues/379
   flutter_webrtc: ^0.11.7
-  geolocator: ^13.0.1
+  geolocator: ^7.7.1
   go_router: ^14.3.0
   handy_window: ^0.4.0
   hive: ^2.2.3
@@ -152,13 +152,4 @@ msix_config:
   install_certificate: false
 
 dependency_overrides:
-  flutter_secure_storage_linux: 1.1.3
-  geolocator_android:
-    hosted:
-      name: geolocator_android
-      url: https://hanntech-gmbh.gitlab.io/free2pass/flutter-geolocator-floss
-  keyboard_shortcuts:
-    git:
-      url: https://github.com/TheOneWithTheBraid/keyboard_shortcuts.git
-      ref: null-safety
   win32: 5.5.3
