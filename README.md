@@ -6,6 +6,8 @@
 
 REChain Network Solutions is contributing significantly to the modernization of the energy sector. By utilizing blockchain, the company helps in reducing operational costs, increasing the speed and security of transactions, and promoting the adoption of renewable energy sources. Its solutions are particularly relevant in regions where there is a push towards decentralization of the energy grid and increased reliance on renewable energy.
 
+![Screenshot](https://github.com/sorydima/REChain-/blob/main/assets/Desktop.png)
+
 # Strategic Partnerships:
 
 To enhance its offerings, REChain collaborates with various stakeholders in the energy sector, including renewable energy producers, grid operators, and government agencies. These partnerships are crucial for integrating its technology into existing energy infrastructures and for scaling its solutions across different markets.
