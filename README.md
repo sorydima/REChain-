@@ -2,8 +2,6 @@
 
 [REChain ®️ 🪐 ✨](https://rechain.online/) is an primarily designed as a security and privacy analysis analogue fully focused on the use of platform moments and messages for communication, built on a source code library, including those developed by us, for those who respect freedom and privacy, as well as the safety and security of personal data. 🌤 Our task was to make a tool pleasant and enjoyable to use, with which each of you can communicate, expand content, create workspaces, organize a workflow. 🌈 We strive to show all the world's giants that it is possible to create cool products that are of great importance for society, for people to interact with each other, without selling advertising, personal data of users, their rights and freedoms! 🦄 It's written in [Flutter](https://flutter.dev). Our mission is to create an easy to use instant messenger which is open source and accessible for everyone.
 
-![Screenshot](https://github.com/sorydima/REChain-/blob/main/assets/Desktop.png)
-
 # Industry Impact:
 
 REChain Network Solutions is contributing significantly to the modernization of the energy sector. By utilizing blockchain, the company helps in reducing operational costs, increasing the speed and security of transactions, and promoting the adoption of renewable energy sources. Its solutions are particularly relevant in regions where there is a push towards decentralization of the energy grid and increased reliance on renewable energy.
