@@ -9,11 +9,11 @@ allprojects {
 buildscript{
     repositories {
         // Add the Maven address.
-        maven { url 'https://developer.huawei.com/repo/' }
+        //maven { url 'https://developer.huawei.com/repo/' }
     }
     dependencies {
         // Add dependencies.
-        classpath 'com.huawei.agconnect:agcp:1.5.2.300'
+        //classpath 'com.huawei.agconnect:agcp:1.5.2.300'
     }
 }
 
