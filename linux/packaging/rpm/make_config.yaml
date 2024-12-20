@@ -1,12 +1,12 @@
-display_name: REChain.Online
+display_name: REChain
 icon: assets/logo.png
 summary:  The inclusion of polls enhances decision-making processes by facilitating quick and efficient feedback gathering. Additionally, the platform supports user-friendly interface & goods!
 group: Applications/Development Tools
-vendor: Sorokin Dmitry Olegovich
+vendor: REChain Network Solutions
 packager: Sorokin Dmitry Olegovich
-packagerEmail: sorydima@gmail.com
-license: AGPL 2.0
-url: https://github.com/sorydima/REChain-
+packagerEmail: dmitry.justdev@gmail.com
+license: AGPL-3.0
+url: https://github.com/sorydima/REChain-.git
 
 #build_arch: aarch64
 
