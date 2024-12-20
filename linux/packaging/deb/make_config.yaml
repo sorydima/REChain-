@@ -1,0 +1,33 @@
+display_name: REChain
+package_name: rechain
+maintainer:
+  name: Sorokin Dmitry Olegovich
+  email: dmitry.justdev@gmail.com
+priority: optional
+section: x11
+installed_size: 660400
+essential: false
+icon: assets/logo.png
+
+postinstall_scripts:
+  - echo "Installed my awesome REChain app!"
+postuninstall_scripts:
+  - echo "Surprised Pickachu face with REChain!"
+
+keywords:
+  - REChain
+  - Matrix
+  - Katya
+  - Application
+
+generic_name: REChain Application
+
+categories:
+  - Utility
+  - Media
+
+startup_notify: true
+
+# You can also specify [metainfo](https://freedesktop.org/software/appstream/docs/chap-Quickstart.html) file
+# which contains metadata of the app.
+# metainfo: linux/packaging/myappid.appdata.xml

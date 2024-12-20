@@ -2,8 +2,11 @@
 Type=Application
 Version=4.1.2
 Name=REChain
-Comment=REChain Client. Chat with your friends
-Exec=AppRun
-Icon=rechain
+Comment=REChain Client. Chat with your friends with dAPP.
+Icon=com.rechain.online
+Exec=REChain
 Terminal=false
-Categories=Network;Chat;InstantMessaging;X-Matrix;
+Categories=Utility;
+Keywords=blocklist;social-network;
+StartupNotify=true
+StartupWMClass=rechain
