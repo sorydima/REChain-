@@ -2,6 +2,7 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 
+import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:go_router/go_router.dart';
 import 'package:matrix/matrix.dart' as sdk;
 import 'package:matrix/matrix.dart';
@@ -25,7 +26,7 @@ class NewGroupController extends State<NewGroup> {
   TextEditingController nameController = TextEditingController();
 
   bool publicGroup = false;
-  bool groupCanBeFound = true;
+  bool groupCanBeFound = false;
 
   Uint8List? avatar;
 
@@ -43,7 +44,8 @@ class NewGroupController extends State<NewGroup> {
   void setCreateGroupType(Set<CreateGroupType> b) =>
       setState(() => _createGroupType = b.single);
 
-  void setPublicGroup(bool b) => setState(() => publicGroup = b);
+  void setPublicGroup(bool b) =>
+      setState(() => publicGroup = groupCanBeFound = b);
 
   void setGroupCanBeFound(bool b) => setState(() => groupCanBeFound = b);
 
@@ -111,6 +113,12 @@ class NewGroupController extends State<NewGroup> {
     final client = Matrix.of(context).client;
 
     try {
+      if (nameController.text.trim().isEmpty &&
+          createGroupType == CreateGroupType.space) {
+        setState(() => error = L10n.of(context).pleaseFillOut);
+        return;
+      }
+
       setState(() {
         loading = true;
         error = null;

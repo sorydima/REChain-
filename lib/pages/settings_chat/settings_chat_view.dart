@@ -5,8 +5,8 @@ import 'package:go_router/go_router.dart';
 
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/config/setting_keys.dart';
+import 'package:rechainonline/config/themes.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
-import 'package:rechainonline/utils/voip/callkeep_manager.dart';
 import 'package:rechainonline/widgets/layouts/max_width_body.dart';
 import 'package:rechainonline/widgets/matrix.dart';
 import 'package:rechainonline/widgets/settings_switch_list_tile.dart';
@@ -21,7 +21,11 @@ class SettingsChatView extends StatelessWidget {
     final theme = Theme.of(context);
 
     return Scaffold(
-      appBar: AppBar(title: Text(L10n.of(context).chat)),
+      appBar: AppBar(
+        title: Text(L10n.of(context).chat),
+        automaticallyImplyLeading: !rechainonlineThemes.isColumnMode(context),
+        centerTitle: rechainonlineThemes.isColumnMode(context),
+      ),
       body: ListTileTheme(
         iconColor: theme.textTheme.bodyLarge!.color,
         child: MaxWidthBody(
@@ -112,16 +116,6 @@ class SettingsChatView extends StatelessWidget {
                 storeKey: SettingKeys.experimentalVoip,
                 defaultValue: AppConfig.experimentalVoip,
               ),
-              if (PlatformInfos.isMobile)
-                ListTile(
-                  title: Text(L10n.of(context).callingPermissions),
-                  onTap: () =>
-                      CallKeepManager().checkoutPhoneAccountSetting(context),
-                  trailing: const Padding(
-                    padding: EdgeInsets.all(16.0),
-                    child: Icon(Icons.call),
-                  ),
-                ),
             ],
           ),
         ),

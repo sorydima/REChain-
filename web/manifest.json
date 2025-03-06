@@ -1,11 +1,11 @@
 {
-    "name": "REChain ®️. 🪐",
-    "short_name": "REChain ®️. 🪐",
+    "name": "REChain",
+    "short_name": "REChain",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "REChain.Online! - PRIVATE & SECURE!",
+    "description": "The inclusion of polls enhances decision-making processes by facilitating quick and efficient feedback gathering.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

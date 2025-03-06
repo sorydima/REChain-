@@ -5,13 +5,11 @@ import 'package:rechainonline/config/themes.dart';
 class TwoColumnLayout extends StatelessWidget {
   final Widget mainView;
   final Widget sideView;
-  final bool displayNavigationRail;
 
   const TwoColumnLayout({
     super.key,
     required this.mainView,
     required this.sideView,
-    required this.displayNavigationRail,
   });
   @override
   Widget build(BuildContext context) {
@@ -24,8 +22,7 @@ class TwoColumnLayout extends StatelessWidget {
             Container(
               clipBehavior: Clip.antiAlias,
               decoration: const BoxDecoration(),
-              width: rechainonlineThemes.columnWidth +
-                  (displayNavigationRail ? rechainonlineThemes.navRailWidth : 0),
+              width: rechainonlineThemes.columnWidth + rechainonlineThemes.navRailWidth,
               child: mainView,
             ),
             Container(

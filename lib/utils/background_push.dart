@@ -1,22 +1,3 @@
-/*
- *   REChain, Inc
- *   Copyright (C) 2020, 2021, 2022, 2023, 2024, 2025 REChain, Inc
- *   Copyright (C) 2021, 2022, 2023, 2024, 2025 REChain.Online
- *
- *   This program is free software: you can redistribute it and/or modify
- *   it under the terms of the GNU Affero General Public License as
- *   published by the Free Software Foundation, either version 3 of the
- *   License, or (at your option) any later version.
- *
- *   This program is distributed in the hope that it will be useful,
- *   but WITHOUT ANY WARRANTY; without even the implied warranty of
- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- *   GNU Affero General Public License for more details.
- *
- *   You should have received a copy of the GNU Affero General Public License
- *   along with this program.  If not, see <https://www.gnu.org/licenses/>.
- */
-
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
@@ -24,9 +5,9 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import 'package:flutter_app_badger/flutter_app_badger.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:flutter_new_badger/flutter_new_badger.dart';
 import 'package:http/http.dart' as http;
 import 'package:matrix/matrix.dart';
 import 'package:unifiedpush/unifiedpush.dart';
@@ -133,9 +114,9 @@ class BackgroundPush {
           .where((room) => room.isUnreadOrInvited && room.id != roomId)
           .length;
       if (unreadCount == 0) {
-        FlutterAppBadger.removeBadge();
+        FlutterNewBadger.removeBadge();
       } else {
-        FlutterAppBadger.updateBadgeCount(unreadCount);
+        FlutterNewBadger.setBadge(unreadCount);
       }
       return;
     }
@@ -149,7 +130,8 @@ class BackgroundPush {
   }) async {
     if (PlatformInfos.isIOS) {
       await firebase?.requestPermission();
-    } else if (PlatformInfos.isAndroid) {
+    }
+    if (PlatformInfos.isAndroid) {
       _flutterLocalNotificationsPlugin
           .resolvePlatformSpecificImplementation<
               AndroidFlutterLocalNotificationsPlugin>()

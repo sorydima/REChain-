@@ -7,7 +7,7 @@ abstract class AppConfig {
   static String get applicationName => _applicationName;
   static String? _applicationWelcomeMessage;
   static String? get applicationWelcomeMessage => _applicationWelcomeMessage;
-  static String _defaultHomeserver = 'matrix.tanya.city';
+  static String _defaultHomeserver = 'node.marinchik.ink';
   static String get defaultHomeserver => _defaultHomeserver;
   static double fontSizeFactor = 1;
   static const Color chatColor = primaryColor;
@@ -19,18 +19,18 @@ abstract class AppConfig {
   static const Color primaryColorLight = Color(0xFFCCBDEA);
   static const Color secondaryColor = Color(0xFF41a2bc);
   static String _privacyUrl =
-      'https://rechain.online/privacy-policy.html';
+      'https://online.rechain.network/privacy-policy.html';
   static String get privacyUrl => _privacyUrl;
-  static const String website = 'https://rechain.online';
+  static const String website = 'https://online.rechain.network';
   static const String enablePushTutorial =
-      'https://github.com/sorydima/REChain-/blob/main/REChain_wiki/Push-Notifications-without-Google-Services.md';
+      'https://online.rechain.network/privacy-policy.html';
   static const String encryptionTutorial =
-      'https://github.com/sorydima/REChain-/blob/main/REChain_wiki/How-to-use-end-to-end-encryption-in-REChain.md';
+      'https://store.rechain.network/REChain_EULA.txt';
   static const String startChatTutorial =
-      'https://github.com/sorydima/REChain-/blob/main/REChain_wiki/%F0%9F%94%8D-How-to-Find-Users-in-REChain.md';
+      'https://github.com/sorydima/REChain-/wiki';
   static const String appId = 'com.rechain.online';
   static const String appOpenUrlScheme = 'com.rechain';
-  static String _webBaseUrl = 'https://rechainonline.codemagic.io/';
+  static String _webBaseUrl = 'https://onchain.codemagic.app';
   static String get webBaseUrl => _webBaseUrl;
   static const String sourceCodeUrl =
       'https://github.com/sorydima/REChain-.git';
@@ -58,16 +58,13 @@ abstract class AppConfig {
   static const bool hideTypingUsernames = false;
   static const bool hideAllStateEvents = false;
   static const String inviteLinkPrefix = 'https://matrix.to/#/';
-  static const String deepLinkPrefix = 'com.rechain://online/';
+  static const String deepLinkPrefix = 'com.rechain://chat/';
   static const String schemePrefix = 'matrix:';
-  static const String pushNotificationsChannelId = 'fluffychat_push';
-  static const String pushNotificationsAppId = 'chat.fluffy.fluffychat';
+  static const String pushNotificationsChannelId = 'rechainonline_push';
+  static const String pushNotificationsAppId = 'com.rechain.online';
   static const String pushNotificationsGatewayUrl =
-      'https://push.fluffychat.im/_matrix/push/v1/notify';
+      'https://matrix-client.matrix.org/_matrix/push/v1/notify';
   static const String pushNotificationsPusherFormat = 'event_id_only';
-  static const String emojiFontName = 'Noto Emoji';
-  static const String emojiFontUrl =
-      'https://github.com/googlefonts/noto-emoji/';
   static const double borderRadius = 18.0;
   static const double columnWidth = 360.0;
   static final Uri homeserverList = Uri(

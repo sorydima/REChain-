@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 git apply ./scripts/enable-android-google-services.patch
-REChain_ORIG_GROUP="com.rechain"
-REChain_ORIG_TEAM=""
-#REChain_NEW_GROUP="com.example.rechainonline"
-#REChain_NEW_TEAM="ABCDE12345"
+RECHAIN_ORIG_GROUP="com.rechain"
+RECHAIN_ORIG_TEAM="ABCDE12345"
+#RECHAIN_NEW_GROUP="com.rechain.online"
+#RECHAIN_NEW_TEAM="ABCDE12345"
 
 # In some cases (ie: running beta XCode releases) some pods haven't updated their minimum version
 # but XCode will reject the package for using too old of a minimum version. 
@@ -11,21 +11,21 @@ REChain_ORIG_TEAM=""
 # export I_PROMISE_IM_REALLY_SMART=1
 
 # If you want to automatically install the app
-# export REChain_INSTALL_IPA=1
+# export RECHAIN_INSTALL_IPA=1
 
 ### Rotate IDs ###
-[ -n "${REChain_NEW_GROUP}" ] && {
+[ -n "${RECHAIN_NEW_GROUP}" ] && {
 	# App group IDs
-	sed -i "" "s/group.${REChain_ORIG_GROUP}.app/group.${REChain_NEW_GROUP}.app/g" "ios/REChain Share/REChain Share.entitlements"
-	sed -i "" "s/group.${REChain_ORIG_GROUP}.app/group.${REChain_NEW_GROUP}.app/g" "ios/Runner/Runner.entitlements"
-	sed -i "" "s/group.${REChain_ORIG_GROUP}.app/group.${REChain_NEW_GROUP}.app/g" "ios/Runner.xcodeproj/project.pbxproj"
+	sed -i "" "s/group.${RECHAIN_ORIG_GROUP}.app/group.${RECHAIN_NEW_GROUP}.app/g" "ios/REChain.Online Share/REChain.Online Share.entitlements"
+	sed -i "" "s/group.${RECHAIN_ORIG_GROUP}.app/group.${RECHAIN_NEW_GROUP}.app/g" "ios/Runner/Runner.entitlements"
+	sed -i "" "s/group.${RECHAIN_ORIG_GROUP}.app/group.${RECHAIN_NEW_GROUP}.app/g" "ios/Runner.xcodeproj/project.pbxproj"
 	# Bundle identifiers
-	sed -i "" "s/${REChain_ORIG_GROUP}.app/${REChain_NEW_GROUP}.app/g" "ios/Runner.xcodeproj/project.pbxproj"
+	sed -i "" "s/${RECHAIN_ORIG_GROUP}.app/${RECHAIN_NEW_GROUP}.app/g" "ios/Runner.xcodeproj/project.pbxproj"
 }
 
-[ -n "${REChain_NEW_TEAM}" ] && {
+[ -n "${RECHAIN_NEW_TEAM}" ] && {
 	# Code signing team
-	sed -i "" "s/${REChain_ORIG_TEAM}/${REChain_NEW_TEAM}/g" "ios/Runner.xcodeproj/project.pbxproj"
+	sed -i "" "s/${RECHAIN_ORIG_TEAM}/${RECHAIN_NEW_TEAM}/g" "ios/Runner.xcodeproj/project.pbxproj"
 }
 cat << EOHELP
 If something later in the build explodes, and looks possibly related to App IDs:
@@ -67,7 +67,7 @@ rm -f apple_please_fix_your_coreutils
 flutter build ipa --release
 
 ### [optional] Install release build ###
-[ -n "${REChain_INSTALL_IPA}" ] && {
+[ -n "${RECHAIN_INSTALL_IPA}" ] && {
   TMPDIR=$(mktemp -d)
   # 1. Turn the xcarchive that flutter created into a dev-signed IPA
   echo '{"compileBitcode":false,"method":"development"}' | plutil -convert xml1 -o "${TMPDIR}/options.plist" -

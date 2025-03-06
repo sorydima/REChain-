@@ -1,135 +1,62 @@
+## REChain 4.1.4 - Changelog
 
-# Release Notes and Changelog for REChain ®️ 🪐 v4.1.2
+### Features
+- **Space Hierarchy**: Introduced a new space hierarchy system for better organization and navigation.
+- **Session Dump**: Added session dump functionality to capture and review session data efficiently.
 
----
+### Improvements
+- **Drawer on Chat List Page**: The drawer feature on the chat list page has been restored for improved user experience and accessibility.
+- **Code Base Simplification**: Refactored and simplified the code base for improved performance, maintainability, and clarity.
 
-## **New Features**
-- **Enhanced User Interface**:
-  - New login design for an improved first impression.
-  - Highlight emoji-only messages for better readability in conversations.
-  - Added markdown context actions for text input, making formatting more accessible.
-  - Introduced a new "About Server" page for detailed server information.
+### Bug Fixes
+- Multiple bug fixes and optimizations to enhance overall platform stability and performance.
 
-- **Customizations & Visual Improvements**:
-  - Added default chat wallpaper for a personalized feel.
-  - Better wallpapers now include blur and opacity sliders.
-  - Revamped audio message design with displayed body content.
+- feat: Added monochrome entry for themed icon support in Android 13;
+- feat: Display timeline of messages in Android notification;
+- feat: Emoji related fixes;
+- feat: Implement deleting pushers in app;
+- feat: New material 3 design;
+- feat: Redesign bootstrap and offer secure storage support;
+- feat: Send multiple images at once;
+- feat: implement session dump;
+- feat: implement space hierarchy;
+- feat: introduce extended integration tests;
+- feat: libhandy integration;
+- fix: Clearing push triggered when only one room got seen;
+- fix: Don't display loading dialog when adding reaction;
+- fix: Follow up for spaces hierarchy;
+- fix: Missing null checks in chat details view;
+- fix: Non FCM Android builds crash on start;
+- fix: Permission chooser dialog on iOS;
+- fix: Set avatar on only single action available;
+- fix: Sharing on iOS and iPad OS;
+- fix: Unread bubble is invisible in dark mode;
+- fix: Appimage builds;
+- fix: Only use custom http client on Android;
+- fix: Pass ISRG Cert to http client;
+- refactor: Chat view;
+- refactor: Encryption button;
+- refactor: Remove duplicated imports;
+- refactor: Remove legacy store;
+- refactor: Remove presence status feature;
+- refactor: Simplify MxcImage and replace CachedNetworkImage;
+- refactor: Switch to Hive Collections DB;
+- refactor: Move start chat FAB to implementation file;
+- chore: Add border to avatars;
+- chore: Add fancy hero animations;
+- chore: Adjust appbar design;
+- chore: Adjust design;
+- chore: Adjust search bar design;
+- chore: Always display header elevation in chat;
+- chore: Design follow up fixes;
+- chore: Disable integration tests without runners;
+- chore: Enhance invitiation UX;
+- chore: Make push helper more fail safe;
+- chore: Make push helper more stable;
+- chore: Minor design improvements;
+- chore: Pinned events design;
+- chore: Remove permission handler dependency and increase compileSdkVersion;
+- chore: Update SDK;
+- chore: remove snapping sheet.
 
-- **Advanced Functionality**:
-  - Enabled sending multiple files at once, boosting productivity.
-  - Swipe-to-archive feature for easier room management.
-
-- **Improved User Experience**:
-  - Display warning banners on unverified devices for security awareness.
-  - Redesigned room creation UI for simplicity and style.
-  - Added new styles and animations for a polished look and feel.
-
----
-
-## **Bug Fixes**
-- **File Handling**:
-  - Bypass image compression when using `flutter_file_picker`.
-  - Fixed a crash caused by loading file bytes prematurely.
-
-- **Room Management**:
-  - Corrected visibility of public rooms when settings are toggled.
-  - Resolved issues with room invites not displaying immediately.
-
-- **UI and Notifications**:
-  - Improved performance of avatar widgets.
-  - Prevented emoticons from using low-quality thumbnails.
-
----
-
-## **Refinements and Optimizations**
-- **Performance**:
-  - Moved to a newer geolocator package for smoother functionality.
-  - Optimized future loading dialog to avoid flickering.
-  - Lazy-loaded components for faster startup times.
-
-- **Code Maintenance**:
-  - Removed duplicated navigational elements.
-  - Simplified keyboard shortcuts and improved related packages.
-
-- **UX Refinements**:
-  - Enhanced delete-device UX for a streamlined experience.
-  - Improved adaptive dialogs for better platform-specific interactions.
-
----
-
-## **Reverts**
-- Reverted default chat wallpaper implementation to ensure compatibility.
-- Rolled back avatar widget performance changes due to conflicts.
-
----
-
-## **Localization Updates**
-- Expanded language support with translations into:
-  - **Arabic, Basque, Catalan, Chinese (Simplified), Czech, Estonian, Finnish, Galician, German, Hungarian, Indonesian, Irish, Italian, Korean, Latvian, Russian, Spanish, Turkish, and Ukrainian.**
-  - Special thanks to contributors for enriching global accessibility!
-
----
-
-Stay tuned for more updates and improvements in future versions. 🚀
-
-## v.4.1.2
-- design: Highlight emoji only messages (Krille)
-- design: New login design (Krille)
-- docs: fix snapstore badge on website (Krille)
-- feat: Add about server page (Krille)
-- feat: Add default chat wallpaper (Krille)
-- feat: Add markdown context actions for text input (krille-chan)
-- feat: Better wallpapers with blur and opacity sliders and improved styles page (krille-chan)
-- feat: Display warning banner on unverified devices (krille-chan)
-- feat: New audio message design with displayed body (krille-chan)
-- feat: Nicer room creation UI (krille-chan)
-- feat: Open account manage url when using MAS (krille-chan)
-- feat: Sending multiple files at once (krille-chan)
-- feat: Swipe to archive rooms (Krille)
-- fix: Bypass image compression in flutter_file_picker (q234rty)
-- fix: dont use thumbnails for emoticons (Marek Vospěl)
-- fix: Public rooms always publicly visible even when turned off on creation (krille-chan)
-- fix: Wait for room invite before open in pushhelper (krille-chan)
-- refactor: Better future loading dialog without flickering (krille-chan)
-- refactor: Display two lines on new messages (krille-chan)
-- refactor: Improve delete device UX flow (krille-chan)
-- refactor: Load bytes from sending files later to not let app crash (krille-chan)
-- refactor: Migrate to newer keyboard shortcuts package (Krille)
-- refactor: Move to upstream geolocator (Krille)
-- refactor: Performance boost for avatar widget (Krille)
-- refactor: Remove duplicated navigator workaround (krille-chan)
-- refactor: Remove keyboard shortcuts (Krille)
-- refactor: Remove unnecessary builder widget (krille-chan)
-- refactor: Reuse flutter local notifications object (krille-chan)
-- refactor: Use adaptive dialog action (Krille)
-- refactor: Use file selector on linux (krille-chan)
-- refactor: Use non nullable localizations builder and lazy load on web (krille-chan)
-- Revert "chore: Follow up new chat design" (Krille)
-- Revert "feat: Add default chat wallpaper" (Krille)
-- Revert "refactor: Performance boost for avatar widget" (krille-chan)
-- Translated using Weblate (Arabic) (Rex_sa)
-- Translated using Weblate (Basque) (xabirequejo)
-- Translated using Weblate (Catalan) (fadelkon)
-- Translated using Weblate (Chinese (Simplified Han script)) (大王叫我来巡山)
-- Translated using Weblate (Czech) (Michal Bedáň)
-- Translated using Weblate (Estonian) (Priit Jõerüüt)
-- Translated using Weblate (Finnish) (Priit Jõerüüt)
-- Translated using Weblate (Galician) (josé m)
-- Translated using Weblate (German) (Christian)
-- Translated using Weblate (German) (Ettore Atalan)
-- Translated using Weblate (German) (Peter Wallerius)
-- Translated using Weblate (Hungarian) (Zentropivity)
-- Translated using Weblate (Indonesian) (Linerly)
-- Translated using Weblate (Irish) (Aindriú Mac Giolla Eoin)
-- Translated using Weblate (Irish) (Christian)
-- Translated using Weblate (Italian) (Angelo Schirinzi)
-- Translated using Weblate (Korean) (Bruno Roh)
-- Translated using Weblate (Korean) (kdh8219)
-- Translated using Weblate (Latvian) (Edgars Andersons)
-- Translated using Weblate (Latvian) (GGLVXD)
-- Translated using Weblate (Russian) (Pavel Kozhukhov)
-- Translated using Weblate (Russian) (v1s7)
-- Translated using Weblate (Spanish) (Kimby)
-- Translated using Weblate (Turkish) (Oğuz Ersen)
-- Translated using Weblate (Ukrainian) (Bezruchenko Simon)
-- Translated using Weblate (Ukrainian) (Ihor Hordiichuk)
+Copyright © 2019-2025 Need help? 🤔 Donate US! ⌛️ For tea, coffee! For the future of decentralized and distributed internet. We do cool and, in my opinion, useful things for the safety and security of users' personal data. And on a completely non-commercial basis! 😎 Email us! 👇 A Dmitry Sorokin production. All rights reserved. Powered by REChain ®️. 🪐 Copyright © 2019-2025 REChain, Inc REChain ® is a registered trademark support@rechain.network Please allow anywhere from 1 to 5 business days for E-mail responses! 💌 Our Stats! 👀 At the end of 2023, the number of downloads from the Open-Source Places, Apple AppStore, Google Play Market, and the REChain.Store, namely the Domestic application store from the REChain ®️ brand 🪐, а именно Отечественный магазин приложений от бренда REChain ®️ 🪐 ✨ exceeded 29 million downloads. 😈 👀

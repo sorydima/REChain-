@@ -1,3 +1,5 @@
+import 'dart:ui' as ui;
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -8,6 +10,7 @@ import 'package:swipe_to_action/swipe_to_action.dart';
 import 'package:rechainonline/config/themes.dart';
 import 'package:rechainonline/pages/chat/events/room_creation_state_event.dart';
 import 'package:rechainonline/utils/date_time_extension.dart';
+import 'package:rechainonline/utils/file_description.dart';
 import 'package:rechainonline/utils/string_color.dart';
 import 'package:rechainonline/widgets/avatar.dart';
 import 'package:rechainonline/widgets/matrix.dart';
@@ -35,6 +38,8 @@ class Message extends StatelessWidget {
   final bool animateIn;
   final void Function()? resetAnimateIn;
   final bool wallpaperMode;
+  final ScrollController scrollController;
+  final List<Color> colors;
 
   const Message(
     this.event, {
@@ -53,6 +58,8 @@ class Message extends StatelessWidget {
     this.animateIn = false,
     this.resetAnimateIn,
     this.wallpaperMode = false,
+    required this.scrollController,
+    required this.colors,
     super.key,
   });
 
@@ -107,7 +114,14 @@ class Message extends StatelessWidget {
         previousEvent!.originServerTs.sameEnvironment(event.originServerTs);
 
     final textColor =
-        ownMessage ? theme.colorScheme.onPrimary : theme.colorScheme.onSurface;
+        ownMessage ? theme.onBubbleColor : theme.colorScheme.onSurface;
+
+    final linkColor = ownMessage
+        ? theme.brightness == Brightness.light
+            ? theme.colorScheme.primaryFixed
+            : theme.colorScheme.onTertiaryContainer
+        : theme.colorScheme.primary;
+
     final rowMainAxisAlignment =
         ownMessage ? MainAxisAlignment.end : MainAxisAlignment.start;
 
@@ -127,6 +141,7 @@ class Message extends StatelessWidget {
               MessageTypes.Image,
               MessageTypes.Sticker,
             }.contains(event.messageType) &&
+            event.fileDescription == null &&
             !event.redacted) ||
         (event.messageType == MessageTypes.Text &&
             event.relationshipType == null &&
@@ -139,9 +154,8 @@ class Message extends StatelessWidget {
     }.contains(event.messageType);
 
     if (ownMessage) {
-      color = displayEvent.status.isError
-          ? Colors.redAccent
-          : theme.colorScheme.primary;
+      color =
+          displayEvent.status.isError ? Colors.redAccent : theme.bubbleColor;
     }
 
     final resetAnimateIn = this.resetAnimateIn;
@@ -177,13 +191,10 @@ class Message extends StatelessWidget {
                         child: Material(
                           borderRadius:
                               BorderRadius.circular(AppConfig.borderRadius / 2),
-                          color: selected
+                          color: selected || highlightMarker
                               ? theme.colorScheme.secondaryContainer
-                                  .withAlpha(100)
-                              : highlightMarker
-                                  ? theme.colorScheme.tertiaryContainer
-                                      .withAlpha(100)
-                                  : Colors.transparent,
+                                  .withAlpha(128)
+                              : Colors.transparent,
                         ),
                       ),
                     ),
@@ -312,116 +323,126 @@ class Message extends StatelessWidget {
                                         borderRadius: borderRadius,
                                       ),
                                       clipBehavior: Clip.antiAlias,
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(
-                                            AppConfig.borderRadius,
+                                      child: BubbleBackground(
+                                        colors: colors,
+                                        ignore: noBubble || !ownMessage,
+                                        scrollController: scrollController,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.circular(
+                                              AppConfig.borderRadius,
+                                            ),
                                           ),
-                                        ),
-                                        padding: noBubble || noPadding
-                                            ? EdgeInsets.zero
-                                            : const EdgeInsets.symmetric(
-                                                horizontal: 16,
-                                                vertical: 8,
-                                              ),
-                                        constraints: const BoxConstraints(
-                                          maxWidth:
-                                              rechainonlineThemes.columnWidth * 1.5,
-                                        ),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.min,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: <Widget>[
-                                            if (event.relationshipType ==
-                                                RelationshipTypes.reply)
-                                              FutureBuilder<Event?>(
-                                                future: event
-                                                    .getReplyEvent(timeline),
-                                                builder: (
-                                                  BuildContext context,
-                                                  snapshot,
-                                                ) {
-                                                  final replyEvent = snapshot
-                                                          .hasData
-                                                      ? snapshot.data!
-                                                      : Event(
-                                                          eventId: event
-                                                              .relationshipEventId!,
-                                                          content: {
-                                                            'msgtype': 'm.text',
-                                                            'body': '...',
-                                                          },
-                                                          senderId:
-                                                              event.senderId,
-                                                          type:
-                                                              'm.room.message',
-                                                          room: event.room,
-                                                          status:
-                                                              EventStatus.sent,
-                                                          originServerTs:
-                                                              DateTime.now(),
-                                                        );
-                                                  return Padding(
-                                                    padding:
-                                                        const EdgeInsets.only(
-                                                      bottom: 4.0,
-                                                    ),
-                                                    child: InkWell(
-                                                      borderRadius: ReplyContent
-                                                          .borderRadius,
-                                                      onTap: () =>
-                                                          scrollToEventId(
-                                                        replyEvent.eventId,
+                                          padding: noBubble || noPadding
+                                              ? EdgeInsets.zero
+                                              : const EdgeInsets.symmetric(
+                                                  horizontal: 16,
+                                                  vertical: 8,
+                                                ),
+                                          constraints: const BoxConstraints(
+                                            maxWidth:
+                                                rechainonlineThemes.columnWidth * 1.5,
+                                          ),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.min,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: <Widget>[
+                                              if (event.relationshipType ==
+                                                  RelationshipTypes.reply)
+                                                FutureBuilder<Event?>(
+                                                  future: event
+                                                      .getReplyEvent(timeline),
+                                                  builder: (
+                                                    BuildContext context,
+                                                    snapshot,
+                                                  ) {
+                                                    final replyEvent = snapshot
+                                                            .hasData
+                                                        ? snapshot.data!
+                                                        : Event(
+                                                            eventId: event
+                                                                .relationshipEventId!,
+                                                            content: {
+                                                              'msgtype':
+                                                                  'm.text',
+                                                              'body': '...',
+                                                            },
+                                                            senderId:
+                                                                event.senderId,
+                                                            type:
+                                                                'm.room.message',
+                                                            room: event.room,
+                                                            status: EventStatus
+                                                                .sent,
+                                                            originServerTs:
+                                                                DateTime.now(),
+                                                          );
+                                                    return Padding(
+                                                      padding:
+                                                          const EdgeInsets.only(
+                                                        bottom: 4.0,
                                                       ),
-                                                      child: AbsorbPointer(
-                                                        child: ReplyContent(
-                                                          replyEvent,
-                                                          ownMessage:
-                                                              ownMessage,
-                                                          timeline: timeline,
+                                                      child: InkWell(
+                                                        borderRadius:
+                                                            ReplyContent
+                                                                .borderRadius,
+                                                        onTap: () =>
+                                                            scrollToEventId(
+                                                          replyEvent.eventId,
+                                                        ),
+                                                        child: AbsorbPointer(
+                                                          child: ReplyContent(
+                                                            replyEvent,
+                                                            ownMessage:
+                                                                ownMessage,
+                                                            timeline: timeline,
+                                                          ),
                                                         ),
                                                       ),
-                                                    ),
-                                                  );
-                                                },
-                                              ),
-                                            MessageContent(
-                                              displayEvent,
-                                              textColor: textColor,
-                                              onInfoTab: onInfoTab,
-                                              borderRadius: borderRadius,
-                                            ),
-                                            if (event.hasAggregatedEvents(
-                                              timeline,
-                                              RelationshipTypes.edit,
-                                            ))
-                                              Padding(
-                                                padding: const EdgeInsets.only(
-                                                  top: 4.0,
+                                                    );
+                                                  },
                                                 ),
-                                                child: Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.min,
-                                                  children: [
-                                                    Icon(
-                                                      Icons.edit_outlined,
-                                                      color: textColor
-                                                          .withAlpha(164),
-                                                      size: 14,
-                                                    ),
-                                                    Text(
-                                                      ' - ${displayEvent.originServerTs.localizedTimeShort(context)}',
-                                                      style: TextStyle(
+                                              MessageContent(
+                                                displayEvent,
+                                                textColor: textColor,
+                                                linkColor: linkColor,
+                                                onInfoTab: onInfoTab,
+                                                borderRadius: borderRadius,
+                                                timeline: timeline,
+                                              ),
+                                              if (event.hasAggregatedEvents(
+                                                timeline,
+                                                RelationshipTypes.edit,
+                                              ))
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                    top: 4.0,
+                                                  ),
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.min,
+                                                    children: [
+                                                      Icon(
+                                                        Icons.edit_outlined,
                                                         color: textColor
                                                             .withAlpha(164),
-                                                        fontSize: 12,
+                                                        size: 14,
                                                       ),
-                                                    ),
-                                                  ],
+                                                      Text(
+                                                        ' - ${displayEvent.originServerTs.localizedTimeShort(context)}',
+                                                        style: TextStyle(
+                                                          color: textColor
+                                                              .withAlpha(164),
+                                                          fontSize: 12,
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
                                                 ),
-                                              ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -559,5 +580,74 @@ class Message extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class BubbleBackground extends StatelessWidget {
+  const BubbleBackground({
+    super.key,
+    required this.scrollController,
+    required this.colors,
+    required this.ignore,
+    required this.child,
+  });
+
+  final ScrollController scrollController;
+  final List<Color> colors;
+  final bool ignore;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    if (ignore) return child;
+    return CustomPaint(
+      painter: BubblePainter(
+        repaint: scrollController,
+        colors: colors,
+        context: context,
+      ),
+      child: child,
+    );
+  }
+}
+
+class BubblePainter extends CustomPainter {
+  BubblePainter({
+    required this.context,
+    required this.colors,
+    required super.repaint,
+  });
+
+  final BuildContext context;
+  final List<Color> colors;
+  ScrollableState? _scrollable;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final scrollable = _scrollable ??= Scrollable.of(context);
+    final scrollableBox = scrollable.context.findRenderObject() as RenderBox;
+    final scrollableRect = Offset.zero & scrollableBox.size;
+    final bubbleBox = context.findRenderObject() as RenderBox;
+
+    final origin =
+        bubbleBox.localToGlobal(Offset.zero, ancestor: scrollableBox);
+    final paint = Paint()
+      ..shader = ui.Gradient.linear(
+        scrollableRect.topCenter,
+        scrollableRect.bottomCenter,
+        colors,
+        [0.0, 1.0],
+        TileMode.clamp,
+        Matrix4.translationValues(-origin.dx, -origin.dy, 0.0).storage,
+      );
+    canvas.drawRect(Offset.zero & size, paint);
+  }
+
+  @override
+  bool shouldRepaint(BubblePainter oldDelegate) {
+    final scrollable = Scrollable.of(context);
+    final oldScrollable = _scrollable;
+    _scrollable = scrollable;
+    return scrollable.position != oldScrollable?.position;
   }
 }

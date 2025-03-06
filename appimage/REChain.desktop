@@ -1,12 +1,9 @@
 [Desktop Entry]
 Type=Application
-Version=4.1.2
+Version=4.1.4
 Name=REChain
-Comment=REChain Client. Chat with your friends with dAPP.
-Icon=com.rechain.online
-Exec=REChain
+Comment=The inclusion of polls enhances decision-making processes by facilitating quick and efficient feedback gathering.
+Exec=AppRun
+Icon=REChain
 Terminal=false
-Categories=Utility;
-Keywords=blocklist;social-network;
-StartupNotify=true
-StartupWMClass=rechain
+Categories=Network;Chat;InstantMessaging;X-Matrix;

@@ -2,11 +2,11 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import 'package:adaptive_dialog/adaptive_dialog.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:go_router/go_router.dart';
 import 'package:matrix/matrix.dart';
 
+import 'package:rechainonline/widgets/adaptive_dialogs/show_ok_cancel_alert_dialog.dart';
 import 'package:rechainonline/widgets/future_loading_dialog.dart';
 import 'matrix.dart';
 
@@ -56,13 +56,12 @@ class ChatSettingsPopupMenuState extends State<ChatSettingsPopupMenu> {
             switch (choice) {
               case ChatPopupMenuActions.leave:
                 final confirmed = await showOkCancelAlertDialog(
-                  useRootNavigator: false,
                   context: context,
                   title: L10n.of(context).areYouSure,
-                  okLabel: L10n.of(context).ok,
-                  cancelLabel: L10n.of(context).cancel,
                   message: L10n.of(context).archiveRoomDescription,
-                  isDestructiveAction: true,
+                  okLabel: L10n.of(context).leave,
+                  cancelLabel: L10n.of(context).cancel,
+                  isDestructive: true,
                 );
                 if (confirmed == OkCancelResult.ok) {
                   final success = await showFutureLoadingDialog(

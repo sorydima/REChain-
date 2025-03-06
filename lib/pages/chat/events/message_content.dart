@@ -26,14 +26,18 @@ import 'message_download_content.dart';
 class MessageContent extends StatelessWidget {
   final Event event;
   final Color textColor;
+  final Color linkColor;
   final void Function(Event)? onInfoTab;
   final BorderRadius borderRadius;
+  final Timeline timeline;
 
   const MessageContent(
     this.event, {
     this.onInfoTab,
     super.key,
+    required this.timeline,
     required this.textColor,
+    required this.linkColor,
     required this.borderRadius,
   });
 
@@ -137,6 +141,8 @@ class MessageContent extends StatelessWidget {
               height: height,
               fit: fit,
               borderRadius: borderRadius,
+              timeline: timeline,
+              textColor: textColor,
             );
           case CuteEventContent.eventType:
             return CuteContent(event);
@@ -151,14 +157,23 @@ class MessageContent extends StatelessWidget {
               return AudioPlayerWidget(
                 event,
                 color: textColor,
+                linkColor: linkColor,
                 fontSize: fontSize,
               );
             }
-            return MessageDownloadContent(event, textColor);
+            return MessageDownloadContent(
+              event,
+              textColor: textColor,
+              linkColor: linkColor,
+            );
           case MessageTypes.Video:
-            return EventVideoPlayer(event);
+            return EventVideoPlayer(event, textColor: textColor);
           case MessageTypes.File:
-            return MessageDownloadContent(event, textColor);
+            return MessageDownloadContent(
+              event,
+              textColor: textColor,
+              linkColor: linkColor,
+            );
 
           case MessageTypes.Text:
           case MessageTypes.Notice:
@@ -174,6 +189,15 @@ class MessageContent extends StatelessWidget {
                 html: html,
                 textColor: textColor,
                 room: event.room,
+                fontSize: AppConfig.fontSizeFactor * AppConfig.messageFontSize,
+                linkStyle: TextStyle(
+                  color: linkColor,
+                  fontSize:
+                      AppConfig.fontSizeFactor * AppConfig.messageFontSize,
+                  decoration: TextDecoration.underline,
+                  decorationColor: linkColor,
+                ),
+                onOpen: (url) => UrlLauncher(context, url.url).launchUrl(),
               );
             }
             // else we fall through to the normal message rendering
@@ -264,10 +288,10 @@ class MessageContent extends StatelessWidget {
               ),
               options: const LinkifyOptions(humanize: false),
               linkStyle: TextStyle(
-                color: textColor.withAlpha(150),
+                color: linkColor,
                 fontSize: fontSize,
                 decoration: TextDecoration.underline,
-                decorationColor: textColor.withAlpha(150),
+                decorationColor: linkColor,
               ),
               onOpen: (url) => UrlLauncher(context, url.url).launchUrl(),
             );

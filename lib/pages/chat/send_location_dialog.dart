@@ -8,7 +8,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:matrix/matrix.dart';
 
 import 'package:rechainonline/pages/chat/events/map_bubble.dart';
-import 'package:rechainonline/widgets/adaptive_dialog_action.dart';
+import 'package:rechainonline/widgets/adaptive_dialogs/adaptive_dialog_action.dart';
 import 'package:rechainonline/widgets/future_loading_dialog.dart';
 
 class SendLocationDialog extends StatefulWidget {

@@ -10,6 +10,7 @@ import 'package:rechainonline/utils/url_launcher.dart';
 import 'package:rechainonline/widgets/avatar.dart';
 import 'package:rechainonline/widgets/future_loading_dialog.dart';
 import 'package:rechainonline/widgets/matrix.dart';
+import 'package:rechainonline/widgets/qr_code_viewer.dart';
 
 class PublicRoomBottomSheet extends StatelessWidget {
   final String? roomAlias;
@@ -97,18 +98,20 @@ class PublicRoomBottomSheet extends StatelessWidget {
               onPressed: Navigator.of(context, rootNavigator: false).pop,
             ),
           ),
-          actions: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: IconButton(
-                icon: Icon(Icons.adaptive.share_outlined),
-                onPressed: () => rechainonlineShare.share(
-                  'https://matrix.to/#/${roomAlias ?? chunk?.roomId}',
-                  context,
-                ),
-              ),
-            ),
-          ],
+          actions: roomAlias == null
+              ? null
+              : [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: IconButton(
+                      icon: const Icon(Icons.qr_code_rounded),
+                      onPressed: () => showQrCodeViewer(
+                        context,
+                        roomAlias,
+                      ),
+                    ),
+                  ),
+                ],
         ),
         body: FutureBuilder<PublicRoomsChunk>(
           future: _search(),
@@ -153,6 +156,7 @@ class PublicRoomBottomSheet extends StatelessWidget {
                             ),
                             style: TextButton.styleFrom(
                               foregroundColor: theme.colorScheme.onSurface,
+                              iconColor: theme.colorScheme.onSurface,
                             ),
                             label: Text(
                               roomLink ?? '...',
@@ -168,6 +172,7 @@ class PublicRoomBottomSheet extends StatelessWidget {
                             ),
                             style: TextButton.styleFrom(
                               foregroundColor: theme.colorScheme.onSurface,
+                              iconColor: theme.colorScheme.onSurface,
                             ),
                             label: Text(
                               L10n.of(context).countParticipants(
@@ -205,9 +210,9 @@ class PublicRoomBottomSheet extends StatelessWidget {
                   ListTile(
                     subtitle: SelectableLinkify(
                       text: profile!.topic!,
-                      linkStyle: const TextStyle(
-                        color: Colors.blueAccent,
-                        decorationColor: Colors.blueAccent,
+                      linkStyle: TextStyle(
+                        color: theme.colorScheme.primary,
+                        decorationColor: theme.colorScheme.primary,
                       ),
                       style: TextStyle(
                         fontSize: 14,

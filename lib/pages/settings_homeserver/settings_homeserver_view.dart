@@ -8,6 +8,7 @@ import 'package:matrix/matrix.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 import 'package:rechainonline/config/app_config.dart';
+import 'package:rechainonline/config/themes.dart';
 import 'package:rechainonline/utils/localized_exception_extension.dart';
 import 'package:rechainonline/widgets/layouts/max_width_body.dart';
 import '../../widgets/matrix.dart';
@@ -26,14 +27,15 @@ class SettingsHomeserverView extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        leading: const Center(child: BackButton()),
+        automaticallyImplyLeading: !rechainonlineThemes.isColumnMode(context),
+        centerTitle: rechainonlineThemes.isColumnMode(context),
         title: Text(
           L10n.of(context)
               .aboutHomeserver(client.userID?.domain ?? 'Homeserver'),
         ),
       ),
       body: MaxWidthBody(
-        withScrolling: false,
+        withScrolling: true,
         child: SelectionArea(
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -88,7 +90,7 @@ class SettingsHomeserverView extends StatelessWidget {
                       if (supportPage != null)
                         ListTile(
                           title: Text(L10n.of(context).supportPage),
-                          subtitle: Text(supportPage),
+                          subtitle: Text(supportPage.toString()),
                         ),
                       if (contacts != null)
                         ...contacts.map(

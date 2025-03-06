@@ -6,7 +6,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 import 'package:rechainonline/config/app_config.dart';
-import 'package:rechainonline/widgets/adaptive_dialog_action.dart';
+import 'package:rechainonline/widgets/adaptive_dialogs/adaptive_dialog_action.dart';
 import 'package:rechainonline/widgets/layouts/login_scaffold.dart';
 import 'package:rechainonline/widgets/matrix.dart';
 import '../../config/themes.dart';
@@ -38,13 +38,13 @@ class HomeserverPickerView extends StatelessWidget {
             onSelected: controller.onMoreAction,
             itemBuilder: (_) => [
               PopupMenuItem(
-                value: MoreLoginActions.passwordLogin,
+                value: MoreLoginActions.importBackup,
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const Icon(Icons.login_outlined),
+                    const Icon(Icons.import_export_outlined),
                     const SizedBox(width: 12),
-                    Text(L10n.of(context).loginWithMatrixId),
+                    Text(L10n.of(context).hydrate),
                   ],
                 ),
               ),
@@ -121,11 +121,7 @@ class HomeserverPickerView extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 32.0),
                       child: SelectableLinkify(
-                        text: L10n.of(context).welcomeText,
-                        style: TextStyle(
-                          color: theme.colorScheme.onSecondaryContainer,
-                          fontWeight: FontWeight.w500,
-                        ),
+                        text: L10n.of(context).appIntroduction,
                         textAlign: TextAlign.center,
                         linkStyle: TextStyle(
                           color: theme.colorScheme.secondary,
@@ -142,30 +138,13 @@ class HomeserverPickerView extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           TextField(
-                            onChanged:
-                                controller.tryCheckHomeserverActionWithCooldown,
-                            onSubmitted: controller.onSubmitted,
-                            onTap:
-                                controller.tryCheckHomeserverActionWithCooldown,
+                            onSubmitted: (_) =>
+                                controller.checkHomeserverAction(),
                             controller: controller.homeserverController,
                             autocorrect: false,
                             keyboardType: TextInputType.url,
                             decoration: InputDecoration(
-                              prefixIcon: controller.isLoading
-                                  ? Container(
-                                      width: 16,
-                                      height: 16,
-                                      alignment: Alignment.center,
-                                      child: const SizedBox(
-                                        width: 16,
-                                        height: 16,
-                                        child:
-                                            CircularProgressIndicator.adaptive(
-                                          strokeWidth: 2,
-                                        ),
-                                      ),
-                                    )
-                                  : const Icon(Icons.search_outlined),
+                              prefixIcon: const Icon(Icons.search_outlined),
                               filled: false,
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(
@@ -219,26 +198,24 @@ class HomeserverPickerView extends StatelessWidget {
                               backgroundColor: theme.colorScheme.primary,
                               foregroundColor: theme.colorScheme.onPrimary,
                             ),
-                            onPressed:
-                                controller.isLoggingIn || controller.isLoading
-                                    ? null
-                                    : controller.supportsSso
-                                        ? controller.ssoLoginAction
-                                        : controller.supportsPasswordLogin
-                                            ? controller.login
-                                            : null,
-                            child: Text(L10n.of(context).continueText),
+                            onPressed: controller.isLoading
+                                ? null
+                                : controller.checkHomeserverAction,
+                            child: controller.isLoading
+                                ? const LinearProgressIndicator()
+                                : Text(L10n.of(context).continueText),
                           ),
                           TextButton(
                             style: TextButton.styleFrom(
                               foregroundColor: theme.colorScheme.secondary,
                               textStyle: theme.textTheme.labelMedium,
                             ),
-                            onPressed:
-                                controller.isLoggingIn || controller.isLoading
-                                    ? null
-                                    : controller.restoreBackup,
-                            child: Text(L10n.of(context).hydrate),
+                            onPressed: controller.isLoading
+                                ? null
+                                : () => controller.checkHomeserverAction(
+                                      legacyPasswordLogin: true,
+                                    ),
+                            child: Text(L10n.of(context).loginWithMatrixId),
                           ),
                         ],
                       ),

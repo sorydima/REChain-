@@ -34,4 +34,5 @@ abstract class SettingKeys {
       'com.rechain.display_chat_details_column';
   static const String noEncryptionWarningShown =
       'com.rechain.no_encryption_warning_shown';
+  static const String shareKeysWith = 'com.rechain.share_keys_with';
 }

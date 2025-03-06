@@ -7,7 +7,7 @@
 # The version of the configuration file.
 version: 2
 
-# Global REChain configuration. This configuration applies to all components.
+# Global Matrix configuration. This configuration applies to all components.
 global:
   # The domain name of this homeserver.
   server_name: localhost
@@ -68,13 +68,10 @@ global:
   # party identifiers such as phone numbers and email addresses.
   trusted_third_party_id_servers:
     - matrix.org
-    - matrix.katya.wtf
-    - matrix.rechain.online
-    - matrix.marina.rodeo
     - vector.im
 
   # Disables federation. Dendrite will not be able to communicate with other servers
-  # in the REChain Matrix federation and the federation API will not be exposed.
+  # in the Matrix federation and the federation API will not be exposed.
   disable_federation: false
 
   # Configures the handling of presence events. Inbound controls whether we receive

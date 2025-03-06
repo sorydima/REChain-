@@ -1,20 +1,19 @@
 name: rechainonline
-description: REChain v4.1.2.
+description: The inclusion of polls enhances decision-making processes by facilitating quick and efficient feedback gathering.
 publish_to: none
 # On version bump also increase the build number for F-Droid
-version: 4.1.2+1145
+version: 4.1.4+1147
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
-  adaptive_dialog: ^2.1.0
   animations: ^2.0.11
+  app_links: ^6.3.3
   archive: ^3.4.10
   async: ^2.11.0
   badges: ^3.1.2
   blurhash_dart: ^1.2.1
-  callkeep: ^0.3.2
   chewie: ^1.8.1
   collection: ^1.18.0
   cross_file: ^0.3.4+2
@@ -25,32 +24,27 @@ dependencies:
   dynamic_color: ^1.7.0
   emoji_picker_flutter: ^3.1.0
   emojis: ^0.9.9
-  #fcm_shared_isolate: ^0.1.0
+  #fcm_shared_isolate: ^0.2.0
   file_picker: ^8.1.2
   file_selector: ^1.0.3
   flutter:
     sdk: flutter
-  flutter_app_badger: ^1.5.0
   flutter_cache_manager: ^3.4.1
   flutter_foreground_task: ^6.1.3
   flutter_highlighter: ^0.1.1
-  flutter_html: ^3.0.0-beta.2
-  flutter_html_table: ^3.0.0-beta.2
   flutter_linkify: ^6.0.0
   flutter_local_notifications: ^17.2.3
   flutter_localizations:
     sdk: flutter
   flutter_map: ^6.1.0
-  flutter_math_fork: ^0.7.2
-  flutter_olm: 1.3.2 # Keep in sync with scripts/prepare-web.sh ! 1.4.0 does currently not build on Android
+  flutter_new_badger: ^1.1.1
+  flutter_olm: 2.0.0
   flutter_openssl_crypto: ^0.3.0
-  flutter_ringtone_player: ^4.0.0+2
   flutter_secure_storage: ^9.2.2
-  flutter_shortcuts:
-    git: https://github.com/krille-chan/flutter_shortcuts.git
+  flutter_shortcuts_new: ^2.0.0
   flutter_typeahead: ^5.2.0
   flutter_web_auth_2: ^3.1.1 # Version 4 blocked by https://github.com/MixinNetwork/flutter-plugins/issues/379
-  flutter_webrtc: ^0.11.7
+  flutter_webrtc: ^0.12.9
   geolocator: ^13.0.1
   go_router: ^14.3.0
   handy_window: ^0.4.0
@@ -64,9 +58,9 @@ dependencies:
   just_audio: ^0.9.39
   latlong2: ^0.9.1
   linkify: ^5.0.0
-  matrix: ^0.35.0
+  matrix: ^0.38.0
   mime: ^1.0.6
-  native_imaging: ^0.1.1
+  native_imaging: ^0.2.0
   opus_caf_converter_dart: ^1.0.1
   package_info_plus: ^8.0.2
   pasteboard: ^0.2.0
@@ -76,7 +70,8 @@ dependencies:
   pretty_qr_code: ^3.2.1
   provider: ^6.0.2
   punycode: ^1.0.0
-  qr_code_scanner: ^1.0.1
+  qr_code_scanner_plus: ^2.0.10+1
+  qr_image: ^1.0.0
   receive_sharing_intent: ^1.8.1
   record: ^5.1.2
   scroll_to_index: ^3.0.1
@@ -85,15 +80,14 @@ dependencies:
   slugify: ^2.0.0
   sqflite_common_ffi: ^2.3.3
   sqlcipher_flutter_libs: ^0.6.1
-  swipe_to_action: ^0.2.0
+  swipe_to_action: ^0.3.0
   tor_detector_web: ^1.1.0
-  uni_links: ^0.5.1
   unifiedpush: ^5.0.1
   unifiedpush_ui: ^0.1.0
   universal_html: ^2.2.4
   url_launcher: ^6.2.5
-  video_compress: ^3.1.3
-  video_player: ^2.8.5
+  video_compress: ^3.1.4
+  video_player: ^2.9.2
   wakelock_plus: ^1.2.2
   webrtc_interface: ^1.0.13
 
@@ -123,25 +117,10 @@ flutter:
     - assets/js/
     - assets/js/package/
 
-  fonts:
-    - family: Roboto
-      fonts:
-        - asset: fonts/Roboto/Roboto-Regular.ttf
-        - asset: fonts/Roboto/Roboto-Italic.ttf
-          style: italic
-        - asset: fonts/Roboto/Roboto-Bold.ttf
-          weight: 700
-    - family: RobotoMono
-      fonts:
-        - asset: fonts/Roboto/RobotoMono-Regular.ttf
-    - family: NotoEmoji
-      fonts:
-        - asset: fonts/NotoEmoji/NotoColorEmoji.ttf
-
 msix_config:
   display_name: REChain
   publisher_display_name: REChain
-  publisher: CN=REChain.Online, O=Need help? Email us! A Dmitry Sorokin production. All rights reserved. Powered by REChain. Copyright © 2019-2024 REChain, Inc REChain ® is a registered trademark support@rechain.network Please allow anywhere from 1 to 5 business days for E-mail responses!, L=REChain.Online, S=Internet, C=EU
+  publisher: CN=REChain.Online, O=Need help? Email us! A Dmitry Sorokin production. All rights reserved. Powered by REChain. Copyright © 2019-2025 REChain, Inc REChain ® is a registered trademark support@rechain.network Please allow anywhere from 1 to 5 business days for E-mail responses!, L=REChain.Online, S=Internet, C=EU
   identity_name: com.rechain.online
   logo_path: assets\logo.png
   capabilities: internetClient, location, microphone, webcam
@@ -152,4 +131,9 @@ msix_config:
   install_certificate: false
 
 dependency_overrides:
+  flutter_web_auth_2:
+    git:
+      url: https://github.com/ThexXTURBOXx/flutter_web_auth_2.git
+      ref: 3.x-without-v1
+      path: flutter_web_auth_2
   win32: 5.5.3

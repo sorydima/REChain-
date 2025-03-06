@@ -1,6 +1,6 @@
 # REChain AppImage
 
-REChain is provided as AppImage too. To Download, visit rechain.online 
+REChain is provided as AppImage too. To Download, visit online.rechain.network
 
 ## Building
 
@@ -16,7 +16,7 @@ cd appimage
 # prepare AppImage files
 cp REChain.desktop REChain.AppDir/
 mkdir -p REChain.AppDir/usr/share/icons
-cp ../assets/logo.svg REChain.AppDir/rechain.svg
+cp ../assets/logo.svg REChain.AppDir/REChain.svg
 cp AppRun REChain.AppDir
 
 # build the AppImage

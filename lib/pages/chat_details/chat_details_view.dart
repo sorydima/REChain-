@@ -5,7 +5,6 @@ import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:go_router/go_router.dart';
 import 'package:matrix/matrix.dart';
 
-import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/pages/chat_details/chat_details.dart';
 import 'package:rechainonline/pages/chat_details/participant_list_item.dart';
 import 'package:rechainonline/utils/rechainonline_share.dart';
@@ -15,6 +14,7 @@ import 'package:rechainonline/widgets/chat_settings_popup_menu.dart';
 import 'package:rechainonline/widgets/layouts/max_width_body.dart';
 import 'package:rechainonline/widgets/matrix.dart';
 import '../../utils/url_launcher.dart';
+import '../../widgets/qr_code_viewer.dart';
 
 class ChatDetailsView extends StatelessWidget {
   final ChatDetailsController controller;
@@ -57,15 +57,16 @@ class ChatDetailsView extends StatelessWidget {
                 const Center(child: BackButton()),
             elevation: theme.appBarTheme.elevation,
             actions: <Widget>[
-              if (room.canonicalAlias.isNotEmpty)
+              if (room.canonicalAlias.isNotEmpty) ...[
                 IconButton(
                   tooltip: L10n.of(context).share,
-                  icon: Icon(Icons.adaptive.share_outlined),
-                  onPressed: () => rechainonlineShare.share(
-                    AppConfig.inviteLinkPrefix + room.canonicalAlias,
+                  icon: const Icon(Icons.qr_code_rounded),
+                  onPressed: () => showQrCodeViewer(
                     context,
+                    room.canonicalAlias,
                   ),
                 ),
+              ],
               if (controller.widget.embeddedCloseButton == null)
                 ChatSettingsPopupMenu(room, false),
             ],
@@ -147,6 +148,7 @@ class ChatDetailsView extends StatelessWidget {
                                     style: TextButton.styleFrom(
                                       foregroundColor:
                                           theme.colorScheme.onSurface,
+                                      iconColor: theme.colorScheme.onSurface,
                                     ),
                                     label: Text(
                                       room.isDirectChat
@@ -170,6 +172,7 @@ class ChatDetailsView extends StatelessWidget {
                                     style: TextButton.styleFrom(
                                       foregroundColor:
                                           theme.colorScheme.secondary,
+                                      iconColor: theme.colorScheme.secondary,
                                     ),
                                     label: Text(
                                       L10n.of(context).countParticipants(
@@ -204,6 +207,8 @@ class ChatDetailsView extends StatelessWidget {
                               label: Text(L10n.of(context).setChatDescription),
                               icon: const Icon(Icons.edit_outlined),
                               style: TextButton.styleFrom(
+                                iconColor:
+                                    theme.colorScheme.onSecondaryContainer,
                                 backgroundColor:
                                     theme.colorScheme.secondaryContainer,
                                 foregroundColor:
@@ -290,7 +295,7 @@ class ChatDetailsView extends StatelessWidget {
                         ListTile(
                           title: Text(
                             L10n.of(context).countParticipants(
-                              actualMembersCount.toString(),
+                              actualMembersCount,
                             ),
                             style: TextStyle(
                               color: theme.colorScheme.secondary,
@@ -319,7 +324,7 @@ class ChatDetailsView extends StatelessWidget {
                       : ListTile(
                           title: Text(
                             L10n.of(context).loadCountMoreParticipants(
-                              (actualMembersCount - members.length).toString(),
+                              (actualMembersCount - members.length),
                             ),
                           ),
                           leading: CircleAvatar(

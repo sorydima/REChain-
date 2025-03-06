@@ -32,6 +32,13 @@ class ChatEventList extends StatelessWidget {
       );
     }
 
+    final theme = Theme.of(context);
+
+    final colors = [
+      theme.secondaryBubbleColor,
+      theme.bubbleColor,
+    ];
+
     final horizontalPadding = rechainonlineThemes.isColumnMode(context) ? 8.0 : 0.0;
 
     final events = timeline.events.filterByVisibleInGui();
@@ -152,6 +159,8 @@ class ChatEventList extends StatelessWidget {
                 nextEvent: i + 1 < events.length ? events[i + 1] : null,
                 previousEvent: i > 0 ? events[i - 1] : null,
                 wallpaperMode: hasWallpaper,
+                scrollController: controller.scrollController,
+                colors: colors,
               ),
             );
           },

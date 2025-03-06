@@ -1,15 +1,18 @@
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/config/themes.dart';
-import 'package:flutter/material.dart';
 
 Future<T?> showAdaptiveBottomSheet<T>({
   required BuildContext context,
   required Widget Function(BuildContext) builder,
   bool isDismissible = true,
   bool isScrollControlled = true,
-  double maxHeight = 600,
   bool useRootNavigator = true,
 }) {
+  final maxHeight = min(MediaQuery.of(context).size.height - 32, 600);
   final dialogMode = rechainonlineThemes.isColumnMode(context);
   return showModalBottomSheet(
     context: context,
@@ -35,7 +38,6 @@ Future<T?> showAdaptiveBottomSheet<T>({
       maxWidth: rechainonlineThemes.columnWidth * 1.25,
     ),
     backgroundColor: Colors.transparent,
-    showDragHandle: !dialogMode,
     clipBehavior: Clip.hardEdge,
   );
 }
