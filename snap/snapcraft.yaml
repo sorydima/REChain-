@@ -10,14 +10,11 @@ description: |
 grade: stable
 confinement: strict
 
-# artifacts:
-#   - build/ios/ipa/*.ipa
-#   - /tmp/xcodebuild_logs/*.log
-#   - /home/builder/.local/state/snapcraft/log/*.log
-
-architectures:
-  - build-on: amd64
-  - build-on: arm64
+platforms:
+  amd64:
+    build-on: amd64
+  arm64:
+    build-on: arm64
 
 parts:
   olm:
@@ -29,30 +26,45 @@ parts:
     source-tag: '3.2.14'
     build-packages:
       - g++
-    # flutter-target: lib/main.dart # The main entry-point file of the application
 
-  zenity-integration:
+  flutter-git:
+    source: https://github.com/flutter/flutter.git
+    source-tag: 3.27.3
     plugin: nil
-    stage-snaps:
-      - zenity-integration
+    override-build: |
+      set -eux
+      mkdir -p $CRAFT_PART_INSTALL/usr/bin
+      mkdir -p $CRAFT_PART_INSTALL/usr/libexec
+      cp -r $CRAFT_PART_SRC $CRAFT_PART_INSTALL/usr/libexec/flutter
+      ln -sf $CRAFT_PART_INSTALL/usr/libexec/flutter/bin/flutter $CRAFT_PART_INSTALL/usr/bin/flutter
+      export PATH="$CRAFT_PART_INSTALL/usr/bin:$PATH"
+      flutter doctor
+    build-packages:
+      - clang
+      - cmake
+      - curl
+      - ninja-build
+      - unzip
+    override-prime: ''
 
   rechainonline:
-    plugin: flutter
+    after: [ flutter-git ]
+    plugin: nil
     source: .
     override-build: |
-      # Workaround for Flutter build error:
-      rm -rf build
-      craftctl default
+      flutter pub get || true
+      flutter build linux --release -v
+      mkdir -p $CRAFT_PART_INSTALL/bin
+      cp -r build/linux/*/release/bundle/* $CRAFT_PART_INSTALL/bin/
     build-packages:
       - libsecret-1-dev
       - libjsoncpp-dev
       - libssl-dev
       - curl
+      - jq
     stage-packages:
-      - libsecret-1-dev
-      - libjsoncpp-dev
-      - libsqlite3-0
-      - libsqlite3-dev
+      - libsecret-1-0
+      - libjsoncpp25
 
 slots:
   dbus-svc:
@@ -62,8 +74,8 @@ slots:
 
 apps:
   rechainonline:
-    command: rechainonline
-    extensions: [gnome]
+    command: bin/rechainonline
+    extensions: [ gnome ]
     plugs:
       - audio-playback
       - desktop
