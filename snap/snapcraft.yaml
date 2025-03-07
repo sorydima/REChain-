@@ -1,6 +1,6 @@
 name: rechainonline
 title: REChain ®️ 🪐 ✨
-base: core22
+base: core24
 version: git
 license: GPL-3.0
 summary: REChain ®️🪐✨ Platform encourages collaborative communication through features
@@ -10,7 +10,7 @@ description: |
 grade: stable
 confinement: strict
 
-architectures:
+platforms:
   amd64:
     build-on: amd64
   arm64:
