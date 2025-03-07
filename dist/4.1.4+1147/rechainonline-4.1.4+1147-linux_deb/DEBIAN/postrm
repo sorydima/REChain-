@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+rm /usr/bin/rechainonline
+echo "Surprised Pickachu face with REChain!"
+exit 0

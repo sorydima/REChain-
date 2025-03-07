@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+ln -s /usr/share/rechainonline/rechainonline /usr/bin/rechainonline
+chmod +x /usr/bin/rechainonline
+echo "Installed my awesome REChain app!"
+exit 0

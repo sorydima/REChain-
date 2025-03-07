@@ -16,14 +16,14 @@ public final class GeneratedPluginRegistrant {
   private static final String TAG = "GeneratedPluginRegistrant";
   public static void registerWith(@NonNull FlutterEngine flutterEngine) {
     try {
+      flutterEngine.getPlugins().add(new com.llfbandit.app_links.AppLinksPlugin());
+    } catch (Exception e) {
+      Log.e(TAG, "Error registering plugin app_links, com.llfbandit.app_links.AppLinksPlugin", e);
+    }
+    try {
       flutterEngine.getPlugins().add(new com.ryanheise.audio_session.AudioSessionPlugin());
     } catch (Exception e) {
       Log.e(TAG, "Error registering plugin audio_session, com.ryanheise.audio_session.AudioSessionPlugin", e);
-    }
-    try {
-      flutterEngine.getPlugins().add(new com.github.cloudwebrtc.flutter_callkeep.FlutterCallkeepPlugin());
-    } catch (Exception e) {
-      Log.e(TAG, "Error registering plugin callkeep, com.github.cloudwebrtc.flutter_callkeep.FlutterCallkeepPlugin", e);
     }
     try {
       flutterEngine.getPlugins().add(new one.mixin.desktop.drop.DesktopDropPlugin());
@@ -56,11 +56,6 @@ public final class GeneratedPluginRegistrant {
       Log.e(TAG, "Error registering plugin file_selector_android, dev.flutter.packages.file_selector_android.FileSelectorAndroidPlugin", e);
     }
     try {
-      flutterEngine.getPlugins().add(new fr.g123k.flutterappbadger.FlutterAppBadgerPlugin());
-    } catch (Exception e) {
-      Log.e(TAG, "Error registering plugin flutter_app_badger, fr.g123k.flutterappbadger.FlutterAppBadgerPlugin", e);
-    }
-    try {
       flutterEngine.getPlugins().add(new com.pravera.flutter_foreground_task.FlutterForegroundTaskPlugin());
     } catch (Exception e) {
       Log.e(TAG, "Error registering plugin flutter_foreground_task, com.pravera.flutter_foreground_task.FlutterForegroundTaskPlugin", e);
@@ -81,6 +76,11 @@ public final class GeneratedPluginRegistrant {
       Log.e(TAG, "Error registering plugin flutter_native_splash, net.jonhanson.flutter_native_splash.FlutterNativeSplashPlugin", e);
     }
     try {
+      flutterEngine.getPlugins().add(new ch.simonbraillard.flutter_new_badger.FlutterNewBadgerPlugin());
+    } catch (Exception e) {
+      Log.e(TAG, "Error registering plugin flutter_new_badger, ch.simonbraillard.flutter_new_badger.FlutterNewBadgerPlugin", e);
+    }
+    try {
       flutterEngine.getPlugins().add(new com.famedly.flutter_olm.FlutterOlmPlugin());
     } catch (Exception e) {
       Log.e(TAG, "Error registering plugin flutter_olm, com.famedly.flutter_olm.FlutterOlmPlugin", e);
@@ -96,19 +96,14 @@ public final class GeneratedPluginRegistrant {
       Log.e(TAG, "Error registering plugin flutter_plugin_android_lifecycle, io.flutter.plugins.flutter_plugin_android_lifecycle.FlutterAndroidLifecyclePlugin", e);
     }
     try {
-      flutterEngine.getPlugins().add(new io.inway.ringtone.player.FlutterRingtonePlayerPlugin());
-    } catch (Exception e) {
-      Log.e(TAG, "Error registering plugin flutter_ringtone_player, io.inway.ringtone.player.FlutterRingtonePlayerPlugin", e);
-    }
-    try {
       flutterEngine.getPlugins().add(new com.it_nomads.fluttersecurestorage.FlutterSecureStoragePlugin());
     } catch (Exception e) {
       Log.e(TAG, "Error registering plugin flutter_secure_storage, com.it_nomads.fluttersecurestorage.FlutterSecureStoragePlugin", e);
     }
     try {
-      flutterEngine.getPlugins().add(new com.divyanshushekhar.flutter_shortcuts.FlutterShortcutsPlugin());
+      flutterEngine.getPlugins().add(new im.fluffychat.flutter_shortcuts_new.FlutterShortcutsPlugin());
     } catch (Exception e) {
-      Log.e(TAG, "Error registering plugin flutter_shortcuts, com.divyanshushekhar.flutter_shortcuts.FlutterShortcutsPlugin", e);
+      Log.e(TAG, "Error registering plugin flutter_shortcuts_new, im.fluffychat.flutter_shortcuts_new.FlutterShortcutsPlugin", e);
     }
     try {
       flutterEngine.getPlugins().add(new com.linusu.flutter_web_auth_2.FlutterWebAuth2Plugin());
@@ -161,9 +156,9 @@ public final class GeneratedPluginRegistrant {
       Log.e(TAG, "Error registering plugin permission_handler_android, com.baseflow.permissionhandler.PermissionHandlerPlugin", e);
     }
     try {
-      flutterEngine.getPlugins().add(new net.touchcapture.qr.flutterqr.FlutterQrPlugin());
+      flutterEngine.getPlugins().add(new net.touchcapture.qr.flutterqrplus.FlutterQrPlusPlugin());
     } catch (Exception e) {
-      Log.e(TAG, "Error registering plugin qr_code_scanner, net.touchcapture.qr.flutterqr.FlutterQrPlugin", e);
+      Log.e(TAG, "Error registering plugin qr_code_scanner_plus, net.touchcapture.qr.flutterqrplus.FlutterQrPlusPlugin", e);
     }
     try {
       flutterEngine.getPlugins().add(new com.kasem.receive_sharing_intent.ReceiveSharingIntentPlugin());
@@ -194,11 +189,6 @@ public final class GeneratedPluginRegistrant {
       flutterEngine.getPlugins().add(new eu.simonbinder.sqlite3_flutter_libs.Sqlite3FlutterLibsPlugin());
     } catch (Exception e) {
       Log.e(TAG, "Error registering plugin sqlcipher_flutter_libs, eu.simonbinder.sqlite3_flutter_libs.Sqlite3FlutterLibsPlugin", e);
-    }
-    try {
-      flutterEngine.getPlugins().add(new name.avioli.unilinks.UniLinksPlugin());
-    } catch (Exception e) {
-      Log.e(TAG, "Error registering plugin uni_links, name.avioli.unilinks.UniLinksPlugin", e);
     }
     try {
       flutterEngine.getPlugins().add(new org.unifiedpush.flutter.connector.Plugin());

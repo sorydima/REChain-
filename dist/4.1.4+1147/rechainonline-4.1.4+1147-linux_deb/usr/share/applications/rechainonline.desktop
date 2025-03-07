@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=4.1.4+1147
+Name=REChain
+GenericName=REChain Application
+Icon=rechainonline
+Exec=rechainonline %U
+Categories=Utility;Media;
+Keywords=REChain;Matrix;Katya;Application;
+StartupNotify=true

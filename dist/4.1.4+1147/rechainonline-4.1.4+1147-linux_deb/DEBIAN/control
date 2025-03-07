@@ -1,0 +1,9 @@
+Maintainer: Sorokin Dmitry Olegovich <dmitry.justdev@gmail.com>
+Package: rechain
+Version: 4.1.4+1147
+Section: x11
+Priority: optional
+Architecture: amd64
+Essential: no
+Installed-Size: 660400
+Description: The inclusion of polls enhances decision-making processes by facilitating quick and efficient feedback gathering.
