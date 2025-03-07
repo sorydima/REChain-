@@ -10,7 +10,7 @@ description: |
 grade: stable
 confinement: strict
 
-platforms:
+architectures:
   amd64:
     build-on: amd64
   arm64:
