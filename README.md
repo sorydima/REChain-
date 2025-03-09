@@ -27,8 +27,6 @@ As the global demand for renewable energy continues to rise, the role of blockch
 
 ### Our Goal:
 
-![Screenshot](https://github.com/sorydima/REChain-/blob/main/assets/login_wallpaper.png)
-
 # Features:
 
 Here's the expanded version with your additions:
