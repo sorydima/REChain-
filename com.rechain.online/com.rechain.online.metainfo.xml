@@ -11,7 +11,7 @@
     <control>touch</control>
   </recommends>
   <developer_name>com.rechain</developer_name>
-  <url type="homepage">https://rechain.online</url>
+  <url type="homepage">https://online.rechain.network</url>
   <description>
     <p>REChain ®️ 🪐 ✨ is an primarily designed as a security and privacy analysis analogue fully focused on the use of platform moments and messages for communication, built on a source code library, including those developed by us, for those who respect freedom and privacy, as well as the safety and security of personal data. 🌤 Our task was to make a tool pleasant and enjoyable to use, with which each of you can communicate, expand content, create workspaces, organize a workflow. 🌈 We strive to show all the world's giants that it is possible to create cool products that are of great importance for society, for people to interact with each other, without selling advertising, personal data of users, their rights and freedoms! 🦄 It's written in Flutter. Our mission is to create an easy to use instant messenger which is open source and accessible for everyone.</p>
     <p>Some Features:</p>
@@ -36,10 +36,10 @@
     </ul>
     <p>Donate US! ⌛️</p>
     <p>For tea, coffee! For the future of decentralized and distributed internet. We do cool and, in my opinion, useful things for the safety and security of users' personal data. And on a completely non-commercial basis! 😎</p>
-    <p>Tether - (TRC20) - Tron 🍕: TRZ7jyMBNtRtqokkkJ7g5BJDzFycDv8cBm</p>
+    <p>Tether - (USDT) - TRZ7jyMBNtRtqokkkJ7g5BJDzFycDv8cBm</p>
     <p>Smart contract auditing has always been a bottleneck for our startups, REChain ®️ 🪐 ✨ solves this problem in seconds.</p>
     <p>Join the community: https://matrix.to/#/#chatting:matrix.katya.wtf
-       Website: https://rechain.online</p>
+       Website: https://online.rechain.network</p>
   </description>
 
   <screenshots>
@@ -59,12 +59,12 @@
   </screenshots>
   <launchable type="desktop-id">com.rechain.online.desktop</launchable>
   <releases>
-    <release version="4.1.1" date="2024-09-27"/>
+    <release version="4.1.4" date="2025-03-10"/>
   </releases>
   <content_rating type="oars-1.1">
     <content_attribute id="social-chat">intense</content_attribute>
     <content_attribute id="social-audio">intense</content_attribute>
     <content_attribute id="social-contacts">intense</content_attribute>
   </content_rating>
-  <update_contact>support@adminmarina.ru</update_contact>
+  <update_contact>support@rechain.network</update_contact>
 </component>
