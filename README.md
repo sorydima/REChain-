@@ -4,7 +4,7 @@
 
 [![Codemagic build status](https://api.codemagic.io/apps/67c9699cafcf4725ff136c53/67c9699cafcf4725ff136c52/status_badge.svg)](https://codemagic.io/app/67c9699cafcf4725ff136c53/67c9699cafcf4725ff136c52/latest_build)
 
-[REChain ®️ 🪐 ✨](https://rechain.online/) is an primarily designed as a security and privacy analysis analogue fully focused on the use of platform moments and messages for communication, built on a source code library, including those developed by us, for those who respect freedom and privacy, as well as the safety and security of personal data. 🌤 Our task was to make a tool pleasant and enjoyable to use, with which each of you can communicate, expand content, create workspaces, organize a workflow. 🌈 We strive to show all the world's giants that it is possible to create cool products that are of great importance for society, for people to interact with each other, without selling advertising, personal data of users, their rights and freedoms! 🦄 It's written in [Flutter](https://flutter.dev). Our mission is to create an easy to use instant messenger which is open source and accessible for everyone.
+[REChain ®️ 🪐 ✨](https://online.rechain.network/) is an primarily designed as a security and privacy analysis analogue fully focused on the use of platform moments and messages for communication, built on a source code library, including those developed by us, for those who respect freedom and privacy, as well as the safety and security of personal data. 🌤 Our task was to make a tool pleasant and enjoyable to use, with which each of you can communicate, expand content, create workspaces, organize a workflow. 🌈 We strive to show all the world's giants that it is possible to create cool products that are of great importance for society, for people to interact with each other, without selling advertising, personal data of users, their rights and freedoms! 🦄 It's written in [Flutter](https://flutter.dev). Our mission is to create an easy to use instant messenger which is open source and accessible for everyone.
 
 # Industry Impact:
 
@@ -23,7 +23,7 @@ As the global demand for renewable energy continues to rise, the role of blockch
 ### Links:
 
 - 🌍 [[Katya ® 👽 AI 🧠 REChain ® 🪐 Blockchain Node Network] Join the community!](https://matrix.to/#/#chatting:matrix.katya.wtf)
-- 👀 [[DAPP!] Launch dAPP on CodeMagic!](https://rechainonline.codemagic.app)
+- 👀 [[DAPP!] Launch dAPP on CodeMagic!](https://onchain.codemagic.app)
 
 ### Our Goal:
 
@@ -55,7 +55,7 @@ Here's the expanded version with your additions:
 
 Please, visit the website for the installation instructions 🪐:
 
-- https://rechain.online
+- https://online.rechain.network 
 
 # Donate US! ⌛️ 
 
@@ -87,6 +87,7 @@ Please, visit the website for the installation instructions 🪐:
 
 # HowTO - Building!
 
-Please, send US an E-Mail to support@adminmarina.ru for the build instructions! 👻
+Please, send US an E-Mail to support@rechain.network for the build instructions! 👻
 
-Copyright © 2019-2024 Need help? 🤔 Donate US! ⌛️ For tea, coffee! For the future of decentralized and distributed internet. We do cool and, in my opinion, useful things for the safety and security of users' personal data. And on a completely non-commercial basis! 😎 Email us! 👇 A Dmitry Sorokin production. All rights reserved. Powered by REChain ®️. 🪐 Copyright © 2019-2024 REChain, Inc REChain ® is a registered trademark support@rechain.network Please allow anywhere from 1 to 5 business days for E-mail responses! 💌 Our Stats! 👀 At the end of 2023, the number of downloads from the Open-Source Places, Apple AppStore, Google Play Market, and the REChain.Store, namely the Domestic application store from the REChain ®️ brand 🪐, а именно Отечественный магазин приложений от бренда REChain ®️ 🪐 ✨ exceeded 29 million downloads. 😈 👀
+Copyright © 2019-2025 Need help? 🤔 Donate US! ⌛️ For tea, coffee! For the future of decentralized and distributed internet. We do cool and, in my opinion, useful things for the safety and security of users' personal data. And on a completely non-commercial basis! 😎 Email us! 👇 A Dmitry Sorokin production. All rights reserved. Powered by REChain ®️. 🪐 Copyright © 2019-2025 REChain, Inc REChain ® is a registered trademark support@rechain.network Please allow anywhere from 1 to 5 business days for E-mail responses! 💌 Our Stats! 👀 At the end of 2023, the number of downloads from the Open-Source Places, Apple AppStore, Google Play Market, and the REChain.Store, namely the Domestic application store from the REChain ®️ brand 🪐, а именно Отечественный магазин приложений от бренда REChain ®️ 🪐 ✨ exceeded 29 million downloads. 😈 👀
+
