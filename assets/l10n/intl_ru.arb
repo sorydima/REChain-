@@ -35,6 +35,15 @@
 "type": "text",
 "placeholders": {}
 },
+"@aboutHomeserver": {
+"placeholders": {
+"homeserver": {
+"type": "String"
+}
+},
+"type": "String"
+},
+
 "admin": "Администратор",
 "@admin": {
 "type": "text",

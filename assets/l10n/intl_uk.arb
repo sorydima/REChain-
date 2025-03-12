@@ -35,6 +35,113 @@
 "type": "text",
 "placeholders": {}
 },
+"@aboutHomeserver": {
+"placeholders": {
+"homeserver": {
+"type": "String"
+}
+},
+"type": "String"
+},
+"@allDevices": {
+},
+"@appIntroduction": {
+},
+"@appWantsToUseForLogin": {
+"placeholders": {
+"server": {
+"type": "String"
+}
+},
+"type": "String"
+},
+"@appWantsToUseForLoginDescription": {
+},
+"@contentNotificationSettings": {
+},
+"@crossVerifiedDevices": {
+},
+"@crossVerifiedDevicesIfEnabled": {
+},
+"@generalNotificationSettings": {
+},
+"@newChatRequest": {
+},
+"@notificationRuleContainsUserName": {
+},
+"@notificationRuleContainsUserNameDescription": {
+},
+"@notificationRuleInviteForMe": {
+},
+"@notificationRuleInviteForMeDescription": {
+},
+"@notificationRuleMaster": {
+},
+"@notificationRuleMasterDescription": {
+},
+"@notificationRuleMemberEvent": {
+},
+"@notificationRuleMemberEventDescription": {
+},
+"@notificationRuleSuppressNotices": {
+},
+"@notificationRuleSuppressNoticesDescription": {
+},
+"@open": {
+},
+"@otherNotificationSettings": {
+},
+"@otherPartyNotLoggedIn": {
+},
+"@previous": {
+},
+"@roomNotificationSettings": {
+},
+"@shareKeysWithDescription": {
+},
+"@synchronizingPleaseWaitCounter": {
+"placeholders": {
+"percentage": {
+"type": "String"
+}
+},
+"type": "String"
+},
+"@userSpecificNotificationSettings": {
+},
+"@verifiedDevicesOnly": {
+},
+"@waitingForServer": {
+},
+"allDevices": "Усім пристроям",
+"appIntroduction": "REChain дає змогу спілкуватися з друзями у різних месенджерах. Дізнайтеся більше на https://matrix.org або просто натисніть *Продовжити*.",
+"appWantsToUseForLogin": "Використати '{server}', щоб увійти",
+"appWantsToUseForLoginDescription": "Цим ви дозволяєте застосунку та вебсайту ділитися інформацією про вас.",
+"contentNotificationSettings": "Налаштування сповіщень про вміст",
+"crossVerifiedDevices": "З перехресною верифікацією пристроїв",
+"crossVerifiedDevicesIfEnabled": "З перехресною верифікацією пристроїв, якщо ввімкнено",
+"generalNotificationSettings": "Загальні налаштування сповіщень",
+"newChatRequest": "📩 Новий запит на спілкування",
+"notificationRuleContainsUserName": "Містить ім'я користувача",
+"notificationRuleContainsUserNameDescription": "Сповіщає користувача, коли повідомлення містить його ім'я користувача.",
+"notificationRuleInviteForMe": "Запрошення мене",
+"notificationRuleInviteForMeDescription": "Сповіщає користувача, коли його запрошують до кімнати.",
+"notificationRuleMaster": "Вимкнути всі сповіщення",
+"notificationRuleMasterDescription": "Перевизначає всі інші правила і вимикає всі сповіщення.",
+"notificationRuleMemberEvent": "Події участі",
+"notificationRuleMemberEventDescription": "Забороняє сповіщення про події учасників.",
+"notificationRuleSuppressNotices": "Заборонити автоматичні повідомлення",
+"notificationRuleSuppressNoticesDescription": "Забороняє сповіщення від автоматизованих клієнтів, таких як боти.",
+"open": "Відкрити",
+"otherNotificationSettings": "Інші налаштування сповіщень",
+"otherPartyNotLoggedIn": "Інша сторона наразі не увійшла в систему, тому не може отримувати повідомлення!",
+"previous": "Попередній",
+"roomNotificationSettings": "Налаштування сповіщень кімнати",
+"shareKeysWithDescription": "Яким пристроям довіряти, щоб вони могли читати ваші повідомлення в зашифрованих бесідах?",
+"synchronizingPleaseWaitCounter": " Синхронізація… ({percentage}%)",
+"userSpecificNotificationSettings": "Налаштування сповіщень для користувача",
+"verifiedDevicesOnly": "Лише верифіковані пристрої",
+"waitingForServer": "Очікування сервера...",
 "alias": "псевдонім",
 "@alias": {
 "type": "text",

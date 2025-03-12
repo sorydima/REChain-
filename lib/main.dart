@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:collection/collection.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:flutter_telegram_miniapp/flutter_telegram_miniapp.dart';
 import 'package:matrix/matrix.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
