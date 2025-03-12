@@ -8,7 +8,7 @@
 
 # Industry Impact:
 
-https://github.com/sorydima/REChain-/blob/main/assets/Desktop.png
+[![Intro Promo](https://github.com/sorydima/REChain-/blob/main/assets/Desktop.png)]
 
 REChain Network Solutions is contributing significantly to the modernization of the energy sector. By utilizing blockchain, the company helps in reducing operational costs, increasing the speed and security of transactions, and promoting the adoption of renewable energy sources. Its solutions are particularly relevant in regions where there is a push towards decentralization of the energy grid and increased reliance on renewable energy.
 
