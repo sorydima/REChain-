@@ -64,7 +64,7 @@ parts:
       - jq
     stage-packages:
       - libsecret-1-0
-      - libjsoncpp25
+      # - libjsoncpp25
 
 slots:
   dbus-svc:
