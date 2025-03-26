@@ -121,7 +121,7 @@ flutter:
 msix_config:
   display_name: REChain
   publisher_display_name: REChain
-  publisher: CN=REChain.Online, O=Need help? Email us! A Dmitry Sorokin production. All rights reserved. Powered by REChain. Copyright © 2019-2025 REChain, Inc REChain ® is a registered trademark support@rechain.network Please allow anywhere from 1 to 5 business days for E-mail responses!, L=REChain.Online, S=Internet, C=EU
+  publisher: CN=REChain.Online, O=Need help Email us A Dmitry Sorokin production All rights reserved Powered by REChain Copyright © 2019-2025 REChain Inc REChain ® is a registered trademark support@rechain.network Please allow anywhere from 1 to 5 business days for E-mail responses, L=REChain.Online, S=Internet, C=EU
   identity_name: com.rechain.online
   logo_path: assets\logo.png
   capabilities: internetClient, location, microphone, webcam
