@@ -6,6 +6,10 @@
 
 ## 🔹 **Key Features**  
 
+![termius-logo-1444-black](https://github.com/user-attachments/assets/3480ec66-4b3a-40e8-8241-69c4aa37f383)
+
+![termius-icon-1024](https://github.com/user-attachments/assets/29871120-f7ce-4d98-a2ba-087917d2769a)
+
 ### **1. Fully Decentralized Architecture**  
 - No central servers – all messages are transmitted through a distributed network.  
 - Users can deploy their own nodes, ensuring network resilience.  
