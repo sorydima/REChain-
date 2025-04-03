@@ -7,6 +7,6 @@ Exec=/usr/bin/com.rechain.rechainonline
 X-Nemo-Application-Type=silica-qt5
 
 [X-Application]
-Permissions=Audio;AuthService;Call;Camera;DeviceInfo;Documents;Downloads;Internet;Location;LogSecurityEvents;MediaIndexing;Microphone;Music;NFC;Pictures;PublicDir;PushNotifications;RemovableMedia;ScreenCapture;SecureStorage;Videos;VPN;WebView;
+Permissions=Audio;Call;Camera;DeviceInfo;Documents;Downloads;Internet;Location;MediaIndexing;Microphone;Music;NFC;Pictures;PublicDir;PushNotifications;RemovableMedia;ScreenCapture;SecureStorage;Videos;WebView;
 OrganizationName=com.rechain
-ApplicationName=REChain
+ApplicationName=rechain
