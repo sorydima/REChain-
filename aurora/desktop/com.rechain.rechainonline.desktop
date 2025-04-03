@@ -9,4 +9,4 @@ X-Nemo-Application-Type=silica-qt5
 [X-Application]
 Permissions=Audio;AuthService;Call;Camera;DeviceInfo;Documents;Downloads;Internet;Location;LogSecurityEvents;MediaIndexing;Microphone;Music;NFC;Pictures;PublicDir;PushNotifications;RemovableMedia;ScreenCapture;SecureStorage;Videos;VPN;WebView;
 OrganizationName=com.rechain
-ApplicationName=rechainonline
+ApplicationName=REChain
