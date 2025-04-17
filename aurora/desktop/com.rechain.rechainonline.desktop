@@ -2,11 +2,11 @@
 Type=Application
 Name=REChain
 Comment=The inclusion of polls enhances decision-making processes by facilitating quick and efficient feedback gathering. Additionally, the platform supports user-friendly interface & goods!
-Icon=com.rechain.rechainonline
-Exec=/usr/bin/com.rechain.rechainonline
+Icon=com.rechain.online
+Exec=/usr/bin/com.rechain.online
 X-Nemo-Application-Type=silica-qt5
 
 [X-Application]
 Permissions=Audio;Call;Camera;DeviceInfo;Documents;Downloads;Internet;Location;MediaIndexing;Microphone;Music;NFC;Pictures;PublicDir;PushNotifications;RemovableMedia;ScreenCapture;SecureStorage;Videos;WebView;
 OrganizationName=com.rechain
-ApplicationName=rechain
+ApplicationName=online
