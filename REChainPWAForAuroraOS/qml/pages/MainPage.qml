@@ -8,7 +8,7 @@ Page {
     WebView {
         id: webView
 
-        property string currentUrl: "https://https://onchain.codemagic.app"
+        property string currentUrl: "https://onchain.codemagic.app"
 
         objectName: "webView"
         anchors {

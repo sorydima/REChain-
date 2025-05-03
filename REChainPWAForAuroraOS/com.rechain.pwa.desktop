@@ -3,8 +3,8 @@ Type=Application
 X-Nemo-Application-Type=silica-qt5
 Icon=com.rechain.pwa
 Exec=/usr/bin/com.rechain.pwa
-Name=REChain
-Name[ru]=Речейн
+Name=REChainPWA
+Name[ru]=РечейнРУС
 
 [X-Application]
 Permissions=Audio;Camera;Documents;Downloads;Internet;Location;MediaIndexing;Microphone;Music;NFC;Pictures;PublicDir;PushNotifications;RemovableMedia;ScreenCapture;Videos;WebView
