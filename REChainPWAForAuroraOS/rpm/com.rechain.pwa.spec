@@ -36,6 +36,6 @@ REChain Messenger is a decentralized messaging app.
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
-* Tue May 03 2025 Dmitry Sorokin <dim15168250@yandex.ru>
+* Sat May 03 2025 Dmitry Sorokin <dim15168250@yandex.ru>
 - Version 1.0.1
 - Initial release For Aurora OS
