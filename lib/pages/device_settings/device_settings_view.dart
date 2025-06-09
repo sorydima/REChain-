@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_gen/gen_l10n/l10n.dart';
-
 import 'package:rechainonline/config/themes.dart';
+import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/pages/device_settings/device_settings.dart';
 import 'package:rechainonline/widgets/layouts/max_width_body.dart';
 import 'user_device_list_item.dart';

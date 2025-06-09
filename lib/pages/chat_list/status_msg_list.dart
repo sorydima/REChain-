@@ -4,15 +4,15 @@ import 'package:matrix/matrix.dart';
 
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/config/themes.dart';
-import 'package:rechainonline/pages/user_bottom_sheet/user_bottom_sheet.dart';
-import 'package:rechainonline/utils/adaptive_bottom_sheet.dart';
 import 'package:rechainonline/utils/stream_extension.dart';
 import 'package:rechainonline/widgets/avatar.dart';
 import 'package:rechainonline/widgets/hover_builder.dart';
 import 'package:rechainonline/widgets/matrix.dart';
+import '../../widgets/adaptive_dialogs/user_dialog.dart';
 
 class StatusMessageList extends StatelessWidget {
   final void Function() onStatusEdit;
+
   const StatusMessageList({
     required this.onStatusEdit,
     super.key,
@@ -24,12 +24,9 @@ class StatusMessageList extends StatelessWidget {
     final client = Matrix.of(context).client;
     if (profile.userId == client.userID) return onStatusEdit();
 
-    showAdaptiveBottomSheet(
+    UserDialog.show(
       context: context,
-      builder: (c) => UserBottomSheet(
-        profile: profile,
-        outerContext: context,
-      ),
+      profile: profile,
     );
     return;
   }
@@ -290,6 +287,7 @@ extension on CachedPresence {
       (currentlyActive == true
           ? DateTime.now()
           : DateTime.fromMillisecondsSinceEpoch(0));
+
   LinearGradient get gradient => presence.isOnline == true
       ? LinearGradient(
           colors: [

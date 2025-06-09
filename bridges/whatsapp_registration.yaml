@@ -1,0 +1,10 @@
+# whatsapp registration.yaml
+id: whatsapp
+url: http://whatsapp:29328
+as_token: __CHANGE_ME__
+hs_token: __CHANGE_ME__
+sender_localpart: whatsapp-bot
+namespaces:
+  users: []
+  aliases: []
+  rooms: []

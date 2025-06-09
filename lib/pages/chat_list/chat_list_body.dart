@@ -1,23 +1,21 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:matrix/matrix.dart';
 
 import 'package:rechainonline/config/app_config.dart';
+import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/pages/chat_list/chat_list.dart';
 import 'package:rechainonline/pages/chat_list/chat_list_item.dart';
 import 'package:rechainonline/pages/chat_list/dummy_chat_list_item.dart';
 import 'package:rechainonline/pages/chat_list/search_title.dart';
 import 'package:rechainonline/pages/chat_list/space_view.dart';
 import 'package:rechainonline/pages/chat_list/status_msg_list.dart';
-import 'package:rechainonline/pages/user_bottom_sheet/user_bottom_sheet.dart';
-import 'package:rechainonline/utils/adaptive_bottom_sheet.dart';
 import 'package:rechainonline/utils/stream_extension.dart';
+import 'package:rechainonline/widgets/adaptive_dialogs/public_room_dialog.dart';
 import 'package:rechainonline/widgets/avatar.dart';
-import 'package:rechainonline/widgets/hover_builder.dart';
-import 'package:rechainonline/widgets/public_room_bottom_sheet.dart';
 import '../../config/themes.dart';
+import '../../widgets/adaptive_dialogs/user_dialog.dart';
 import '../../widgets/matrix.dart';
 import 'chat_list_header.dart';
 
@@ -117,12 +115,9 @@ class ChatListViewBody extends StatelessWidget {
                                               .results[i].userId.localpart ??
                                           L10n.of(context).unknownDevice,
                                   avatar: userSearchResult.results[i].avatarUrl,
-                                  onPressed: () => showAdaptiveBottomSheet(
+                                  onPressed: () => UserDialog.show(
                                     context: context,
-                                    builder: (c) => UserBottomSheet(
-                                      profile: userSearchResult.results[i],
-                                      outerContext: context,
-                                    ),
+                                    profile: userSearchResult.results[i],
                                   ),
                                 ),
                               ),
@@ -158,7 +153,7 @@ class ChatListViewBody extends StatelessWidget {
                         child: ListView(
                           padding: const EdgeInsets.symmetric(
                             horizontal: 12.0,
-                            vertical: 16.0,
+                            vertical: 12.0,
                           ),
                           shrinkWrap: true,
                           scrollDirection: Axis.horizontal,
@@ -170,58 +165,21 @@ class ChatListViewBody extends StatelessWidget {
                             ActiveFilter.groups,
                             ActiveFilter.unread,
                             if (spaceDelegateCandidates.isNotEmpty &&
-                                !controller.widget.displayNavigationRail)
+                                !AppConfig.displayNavigationRail &&
+                                !rechainonlineThemes.isColumnMode(context))
                               ActiveFilter.spaces,
                           ]
                               .map(
                                 (filter) => Padding(
-                                  padding:
-                                      const EdgeInsets.symmetric(horizontal: 4),
-                                  child: HoverBuilder(
-                                    builder: (context, hovered) =>
-                                        AnimatedScale(
-                                      duration: rechainonlineThemes.animationDuration,
-                                      curve: rechainonlineThemes.animationCurve,
-                                      scale: hovered ? 1.1 : 1.0,
-                                      child: InkWell(
-                                        borderRadius: BorderRadius.circular(
-                                          AppConfig.borderRadius,
-                                        ),
-                                        onTap: () =>
-                                            controller.setActiveFilter(filter),
-                                        child: Container(
-                                          padding: const EdgeInsets.symmetric(
-                                            horizontal: 12,
-                                            vertical: 6,
-                                          ),
-                                          decoration: BoxDecoration(
-                                            color: filter ==
-                                                    controller.activeFilter
-                                                ? theme.colorScheme.primary
-                                                : theme.colorScheme
-                                                    .secondaryContainer,
-                                            borderRadius: BorderRadius.circular(
-                                              AppConfig.borderRadius,
-                                            ),
-                                          ),
-                                          alignment: Alignment.center,
-                                          child: Text(
-                                            filter.toLocalizedString(context),
-                                            style: TextStyle(
-                                              fontWeight: filter ==
-                                                      controller.activeFilter
-                                                  ? FontWeight.w500
-                                                  : FontWeight.normal,
-                                              color: filter ==
-                                                      controller.activeFilter
-                                                  ? theme.colorScheme.onPrimary
-                                                  : theme.colorScheme
-                                                      .onSecondaryContainer,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 4.0,
+                                  ),
+                                  child: FilterChip(
+                                    selected: filter == controller.activeFilter,
+                                    onSelected: (_) =>
+                                        controller.setActiveFilter(filter),
+                                    label:
+                                        Text(filter.toLocalizedString(context)),
                                   ),
                                 ),
                               )
@@ -344,12 +302,11 @@ class PublicRoomsHorizontalList extends StatelessWidget {
                     publicRooms[i].canonicalAlias?.localpart ??
                     L10n.of(context).group,
                 avatar: publicRooms[i].avatarUrl,
-                onPressed: () => showAdaptiveBottomSheet(
+                onPressed: () => showAdaptiveDialog(
                   context: context,
-                  builder: (c) => PublicRoomBottomSheet(
+                  builder: (c) => PublicRoomDialog(
                     roomAlias:
                         publicRooms[i].canonicalAlias ?? publicRooms[i].roomId,
-                    outerContext: context,
                     chunk: publicRooms[i],
                   ),
                 ),

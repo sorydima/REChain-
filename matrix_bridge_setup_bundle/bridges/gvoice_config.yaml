@@ -1,0 +1,6 @@
+# gvoice config.yaml
+homeserver:
+  address: http://synapse:8008
+  domain: your.domain.tld
+appservice:
+  database: appservice.db

@@ -11,9 +11,6 @@
 
 # Server admins can expand Synapse's functionality with external modules.
 #
-# See https://matrix-org.github.io/synapse/latest/modules/index.html for more
-# documentation on how to configure or create custom modules for Synapse.
-#
 modules:
   #- module: my_super_module.MySuperClass
   #  config:
@@ -30,18 +27,6 @@ modules:
 # created on this server. For example if the server_name was example.com,
 # usernames on this server would be in the format @user:example.com
 #
-# In most cases you should avoid using a matrix specific subdomain such as
-# matrix.example.com or synapse.example.com as the server_name for the same
-# reasons you wouldn't use user@email.example.com as your email address.
-# See https://matrix-org.github.io/synapse/latest/delegate.html
-# for information on how to host Synapse on a subdomain while preserving
-# a clean server_name.
-#
-# The server_name cannot be changed later so it is important to
-# configure this correctly before you start Synapse. It should be all
-# lowercase and may contain an explicit port.
-# Examples: matrix.org, localhost:8080
-#
 server_name: "localhost"
 
 # When running as a daemon, the file to store the pid in
@@ -51,13 +36,6 @@ pid_file: /data/homeserver.pid
 # The absolute URL to the web client which / will redirect to.
 #
 #web_client_location: https://riot.example.com/
-
-# The public-facing base URL that clients use to access this Homeserver (not
-# including _matrix/...). This is the same URL a user might enter into the
-# 'Custom Homeserver URL' field on their client. If you use Synapse with a
-# reverse proxy, this should be the URL to reach Synapse via the proxy.
-# Otherwise, it should be the URL to reach Synapse's client HTTP listener (see
-# 'listeners' below).
 #
 # Defaults to 'https://<server_name>/'.
 #
@@ -68,14 +46,6 @@ pid_file: /data/homeserver.pid
 #
 # By default, other servers will try to reach our server on port 8448, which can
 # be inconvenient in some environments.
-#
-# Provided 'https://<server_name>/' on port 443 is routed to Synapse, this
-# option configures Synapse to serve a file at
-# 'https://<server_name>/.well-known/matrix/server'. This will tell other
-# servers to send traffic to port 443 instead.
-#
-# See https://matrix-org.github.io/synapse/latest/delegate.html for more
-# information.
 #
 # Defaults to 'false'.
 #
@@ -130,9 +100,6 @@ presence:
 #allow_public_rooms_over_federation: true
 
 # The default room version for newly created rooms.
-#
-# Known room versions are listed here:
-# https://spec.matrix.org/latest/rooms/#complete-list-of-room-versions
 #
 # For example, for room version 1, default_room_version should be set
 # to "1".
@@ -229,11 +196,6 @@ presence:
 #   bind_addresses: a list of local addresses to listen on. The default is
 #       'all local interfaces'.
 #
-#   type: the type of listener. Normally 'http', but other valid options are:
-#       'manhole' (see https://matrix-org.github.io/synapse/latest/manhole.html),
-#       'metrics' (see https://matrix-org.github.io/synapse/latest/metrics-howto.html),
-#       'replication' (see https://matrix-org.github.io/synapse/latest/workers.html).
-#
 #   tls: set to true to enable TLS for this listener. Will use the TLS
 #       key/cert specified in tls_private_key_path / tls_certificate_path.
 #
@@ -252,34 +214,9 @@ presence:
 #   additional_resources: Only valid for an 'http' listener. A map of
 #        additional endpoints which should be loaded via dynamic modules.
 #
-# Valid resource names are:
-#
-#   client: the client-server API (/_matrix/client), and the synapse admin
-#       API (/_synapse/admin). Also implies 'media' and 'static'.
-#
-#   consent: user consent forms (/_matrix/consent).
-#       See https://matrix-org.github.io/synapse/latest/consent_tracking.html.
-#
-#   federation: the server-server API (/_matrix/federation). Also implies
-#       'media', 'keys', 'openid'
-#
-#   keys: the key discovery API (/_matrix/keys).
-#
-#   media: the media API (/_matrix/media).
-#
-#   metrics: the metrics interface.
-#       See https://matrix-org.github.io/synapse/latest/metrics-howto.html.
-#
-#   openid: OpenID authentication.
-#
-#   replication: the HTTP replication API (/_synapse/replication).
-#       See https://matrix-org.github.io/synapse/latest/workers.html.
-#
-#   static: static resources under synapse/static (/_matrix/static). (Mostly
-#       useful for 'fallback authentication'.)
 #
 listeners:
-  # TLS-enabled listener: for when matrix traffic is sent directly to synapse.
+  # TLS-enabled listener: for when REChain traffic is sent directly to synapse.
   #
   # Disabled by default. To enable it, uncomment the following. (Note that you
   # will also need to give Synapse a TLS key and certificate: see the TLS section
@@ -291,11 +228,8 @@ listeners:
   #  resources:
   #    - names: [client, federation]
 
-  # Unsecure HTTP listener: for when matrix traffic passes through a reverse proxy
+  # Unsecure HTTP listener: for when REChain traffic passes through a reverse proxy
   # that unwraps TLS.
-  #
-  # If you plan to use a reverse proxy, please see
-  # https://matrix-org.github.io/synapse/latest/reverse_proxy.html.
   #
   - port: 80
     tls: false
@@ -323,7 +257,7 @@ listeners:
 # Connection settings for the manhole
 #
 manhole_settings:
-  # The username for the manhole. This defaults to 'matrix'.
+  # The username for the manhole. This defaults to 'REChain'.
   #
   #username: manhole
 
@@ -337,13 +271,6 @@ manhole_settings:
   #
   #ssh_priv_key_path: /data/id_rsa
   #ssh_pub_key_path: /data/id_rsa.pub
-
-# Forward extremities can build up in a room due to networking delays between
-# homeservers. Once this happens in a large room, calculation of the state of
-# that room can become quite expensive. To mitigate this, once the number of
-# forward extremities reaches a given threshold, Synapse will send an
-# org.matrix.dummy_event event, which will reduce the forward extremities
-# in the room.
 #
 # This setting defines the threshold (i.e. number of forward extremities in the
 # room) at which dummy events are sent. The default value is 10.
@@ -504,7 +431,7 @@ limit_remote_rooms:
 # allowed. Setting this value to an empty list will instead disallow
 # all domains.
 #
-#next_link_domain_whitelist: ["matrix.org"]
+#next_link_domain_whitelist: ["node.marinchik.ink"]
 
 # Templates to use when generating email or HTML page contents.
 #
@@ -513,10 +440,6 @@ templates:
   # email or HTML page contents.
   # If not set, or a file is not found within the template directory, a default
   # template from within the Synapse package will be used.
-  #
-  # See https://matrix-org.github.io/synapse/latest/templates.html for more
-  # information about using custom templates.
-  #
   #custom_template_directory: /path/to/custom/templates/
 
 # List of rooms to exclude from sync responses. This is useful for server
@@ -626,7 +549,7 @@ retention:
 #
 # Defaults to `1`. Configurable to `1`, `1.1`, `1.2`, or `1.3`. Note
 # that setting this value higher than `1.2` will prevent federation to most
-# of the public Matrix network: only configure it to `1.3` if you have an
+# of the public REChain network: only configure it to `1.3` if you have an
 # entirely private federation setup and you can ensure TLS 1.3 support.
 #
 #federation_client_minimum_tls_version: 1.2
@@ -680,7 +603,8 @@ retention:
 # By default, no domains are monitored in this way.
 #
 #federation_metrics_domains:
-#  - matrix.org
+#  - node.marinchik.ink
+   - matrix.tanya.city
 #  - example.com
 
 # Uncomment to disable profile lookup over federation. By default, the
@@ -774,16 +698,13 @@ caches:
 #
 # 'allow_unsafe_locale' is an option specific to Postgres. Under the default behavior, Synapse will refuse to
 # start if the postgres db is set to a non-C locale. You can override this behavior (which is *not* recommended)
-# by setting 'allow_unsafe_locale' to true. Note that doing so may corrupt your database. You can find more information
-# here: https://matrix-org.github.io/synapse/latest/postgres.html#fixing-incorrect-collate-or-ctype and here:
-# https://wiki.postgresql.org/wiki/Locale_data_changes
+# by setting 'allow_unsafe_locale' to true. Note that doing so may corrupt your database.
 #
 # 'args' gives options which are passed through to the database engine,
 # except for options starting 'cp_', which are used to configure the Twisted
 # connection pool. For a reference to valid arguments, see:
 #   * for sqlite: https://docs.python.org/3/library/sqlite3.html#sqlite3.connect
 #   * for postgres: https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-PARAMKEYWORDS
-#   * for the connection pool: https://twistedmatrix.com/documents/current/api/twisted.enterprise.adbapi.ConnectionPool.html#__init__
 #
 #
 # Example SQLite configuration:
@@ -807,9 +728,6 @@ caches:
 #    port: 5432
 #    cp_min: 5
 #    cp_max: 10
-#
-# For more information on using Synapse with Postgres,
-# see https://matrix-org.github.io/synapse/latest/postgres.html.
 #
 database:
   name: sqlite3
@@ -973,10 +891,6 @@ media_store_path: "/data/media_store"
 
 # The largest allowed upload size in bytes
 #
-# If you are using a reverse proxy you may also need to set this value in
-# your reverse proxy's config. Notably Nginx has a small max body size by default.
-# See https://matrix-org.github.io/synapse/latest/reverse_proxy.html.
-#
 #max_upload_size: 50M
 
 # Maximum number of pixels that will be thumbnailed
@@ -1021,7 +935,7 @@ media_store_path: "/data/media_store"
 # from accessing.  There are no defaults: you must explicitly
 # specify a list for URL previewing to work.  You should specify any
 # internal services in your network that you do not want synapse to try
-# to connect to, otherwise anyone in any Matrix room could cause your
+# to connect to, otherwise anyone in any REChain room could cause your
 # synapse to issue arbitrary GET requests to your internal services,
 # causing serious security issues.
 #
@@ -1295,12 +1209,7 @@ enable_registration_without_verification: true
 #enable_3pid_lookup: true
 
 # Require users to submit a token during registration.
-# Tokens can be managed using the admin API:
-# https://matrix-org.github.io/synapse/latest/usage/administration/admin_api/registration_tokens.html
-# Note that `enable_registration` must be set to `true`.
-# Disabling this option will not delete any tokens previously generated.
-# Defaults to false. Uncomment the following to require tokens:
-#
+# Tokens can be managed using the admin API
 #registration_requires_token: true
 
 # Allow users to submit a token during registration to bypass any required 3pid
@@ -1334,7 +1243,7 @@ registration_shared_secret: "*_854H=YMj.QsE;~~3S,+785vsc#f9f=~nw8aa0Da&~Ye=24=l"
 # (By default, no suggestion is made, so it is left up to the client.
 # This setting is ignored unless public_baseurl is also explicitly set.)
 #
-#default_identity_server: https://matrix.org
+#default_identity_server: https://node.marinchik.ink
 
 # Handle threepid (email/phone etc) registration and password resets through a set of
 # *trusted* identity servers. Note that this allows the configured identity server to
@@ -1354,8 +1263,7 @@ registration_shared_secret: "*_854H=YMj.QsE;~~3S,+785vsc#f9f=~nw8aa0Da&~Ye=24=l"
 # examples below.
 #
 # Servers handling the these requests must answer the `/requestToken` endpoints defined
-# by the Matrix Identity Service API specification:
-# https://matrix.org/docs/spec/identity_service/latest
+# by the REChain Identity Service API specification.
 #
 account_threepid_delegates:
     #email: https://example.com     # Delegate email sending to example.com
@@ -1505,7 +1413,6 @@ metrics_flags:
 report_stats: false
 
 # The endpoint to report the anonymized homeserver usage statistics to.
-# Defaults to https://matrix.org/report-usage-stats/push
 #
 #report_stats_endpoint: https://example.com/report-usage-stats/push
 
@@ -1619,7 +1526,7 @@ old_signing_keys:
 # This setting supercedes an older setting named `perspectives`. The old format
 # is still supported for backwards-compatibility, but it is deprecated.
 #
-# 'trusted_key_servers' defaults to matrix.org, but using it will generate a
+# 'trusted_key_servers' defaults to node.marinchik.ink, but using it will generate a
 # warning on start-up. To suppress this warning, set
 # 'suppress_key_server_warning' to true.
 #
@@ -1648,10 +1555,10 @@ old_signing_keys:
 #  - server_name: "my_other_trusted_server.example.com"
 #
 trusted_key_servers:
-  - server_name: "matrix.org"
+  - server_name: "node.marinchik.ink"
 
 # Uncomment the following to disable the warning that is emitted when the
-# trusted_key_servers include 'matrix.org'. See above.
+# trusted_key_servers include 'node.marinchik.ink'. See above.
 #
 #suppress_key_server_warning: true
 
@@ -1741,7 +1648,7 @@ saml2_config:
     #      text: "https://example.com/privacy-policy"
     #  keywords:
     #    - lang: en
-    #      text: ["Matrix", "Element"]
+    #      text: ["REChain", "Katya"]
     #  logo:
     #    - lang: en
     #      text: "https://example.com/logo.svg"
@@ -1772,7 +1679,7 @@ saml2_config:
   #saml_session_lifetime: 5m
 
   # An external module can be provided here as a custom solution to
-  # mapping attributes returned from a saml provider onto a matrix user.
+  # mapping attributes returned from a saml provider onto a REChain user.
   #
   user_mapping_provider:
     # The custom module's class. Uncomment to use a custom module.
@@ -1786,7 +1693,7 @@ saml2_config:
     #
     config:
       # The SAML attribute (after mapping via the attribute maps) to use
-      # to derive the Matrix ID from. 'uid' by default.
+      # to derive the REChain ID from. 'uid' by default.
       #
       # Note: This used to be configured by the
       # saml2_config.mxid_source_attribute option. If that is still
@@ -1795,7 +1702,7 @@ saml2_config:
       #mxid_source_attribute: displayName
 
       # The mapping system to use for mapping the saml attribute onto a
-      # matrix ID.
+      # REChain ID.
       #
       # Options include:
       #  * 'hexencode' (which maps unpermitted characters to '=xx')
@@ -1936,13 +1843,11 @@ saml2_config:
 #       switching from password logins to OIDC. Defaults to false.
 #
 #   user_mapping_provider: Configuration for how attributes returned from a OIDC
-#       provider are mapped onto a matrix user. This setting has the following
+#       provider are mapped onto a REChain user. This setting has the following
 #       sub-properties:
 #
 #       module: The class name of a custom mapping module. Default is
 #           'synapse.handlers.oidc.JinjaOidcMappingProvider'.
-#           See https://matrix-org.github.io/synapse/latest/sso_mapping_providers.html#openid-mapping-providers
-#           for information on implementing a custom mapping provider.
 #
 #       config: Configuration for the mapping provider module. This section will
 #           be passed as a Python dictionary to the user mapping provider
@@ -1998,8 +1903,6 @@ saml2_config:
 #     - attribute: groups
 #       value: "admin"
 #
-# See https://matrix-org.github.io/synapse/latest/openid.html
-# for information on how to configure these options.
 #
 # For backwards compatibility, it is also possible to configure a single OIDC
 # provider via an 'oidc_config' setting. This is now deprecated and admins are
@@ -2067,8 +1970,6 @@ cas_config:
 # Additional settings to use with single-sign on systems such as OpenID Connect,
 # SAML2 and CAS.
 #
-# Server admins can configure custom templates for pages related to SSO. See
-# https://matrix-org.github.io/synapse/latest/templates.html for more information.
 #
 sso:
     # A list of client URLs which are whitelisted so that the user does not
@@ -2114,9 +2015,6 @@ sso:
 #
 # Note that this is a non-standard login type and client support is
 # expected to be non-existent.
-#
-# See https://matrix-org.github.io/synapse/latest/jwt.html.
-#
 #jwt_config:
     # Uncomment the following to enable authorization using JSON web
     # tokens. Defaults to false.
@@ -2237,9 +2135,6 @@ ui_auth:
 
 # Configuration for sending emails from Synapse.
 #
-# Server admins can configure custom templates for email content. See
-# https://matrix-org.github.io/synapse/latest/templates.html for more information.
-#
 email:
   # The hostname of the outgoing SMTP server to use. Defaults to 'localhost'.
   #
@@ -2273,19 +2168,15 @@ email:
   # notif_from defines the "From" address to use when sending emails.
   # It must be set if email sending is enabled.
   #
-  # The placeholder '%(app)s' will be replaced by the application name,
-  # which is normally 'app_name' (below), but may be overridden by the
-  # Matrix client application.
-  #
   # Note that the placeholder must be written '%(app)s', including the
   # trailing 's'.
   #
   #notif_from: "Your Friendly %(app)s homeserver <noreply@example.com>"
 
   # app_name defines the default value for '%(app)s' in notif_from and email
-  # subjects. It defaults to 'Matrix'.
+  # subjects. It defaults to 'REChain'.
   #
-  #app_name: my_branded_matrix_server
+  #app_name: my_branded_rechain_server
 
   # Uncomment the following to enable sending emails for messages that the user
   # has missed. Disabled by default.
@@ -2309,17 +2200,13 @@ email:
   # Defaults to 1h.
   #
   #validation_token_lifetime: 15m
-
-  # The web client location to direct users to during an invite. This is passed
-  # to the identity server as the org.matrix.web_client_location key. Defaults
-  # to unset, giving no guidance to the identity server.
   #
   #invite_client_location: https://app.element.io
 
   # Subjects to use when sending emails from Synapse.
   #
   # The placeholder '%(app)s' will be replaced with the value of the 'app_name'
-  # setting above, or by a value dictated by the Matrix client application.
+  # setting above, or by a value dictated by the REChain client application.
   #
   # If a subject isn't overridden in this configuration file, the value used as
   # its example will be used.
@@ -2465,9 +2352,6 @@ user_directory:
     # NB. If you set this to true, and the last time the user_directory search
     # indexes were (re)built was before Synapse 1.44, you'll have to
     # rebuild the indexes in order to search through all known users.
-    # These indexes are built the first time Synapse starts; admins can
-    # manually trigger a rebuild via API following the instructions at
-    #     https://matrix-org.github.io/synapse/latest/usage/administration/admin_api/background_updates.html#run
     #
     # Uncomment to return search results containing all known users, even if that
     # user does not share a room with the requester.
@@ -2485,9 +2369,6 @@ user_directory:
 
 
 # User Consent configuration
-#
-# for detailed instructions, see
-# https://matrix-org.github.io/synapse/latest/consent_tracking.html
 #
 # Parts of this section are required if enabling the 'consent' resource under
 # 'listeners', in particular 'template_dir' and 'version'.
@@ -2535,10 +2416,6 @@ user_directory:
 #
 
 
-
-# Settings for local room and user statistics collection. See
-# https://matrix-org.github.io/synapse/latest/room_and_user_statistics.html.
-#
 stats:
   # Uncomment the following to disable room and user statistics. Note that doing
   # so may cause certain features (such as the room directory) not to work
@@ -2645,9 +2522,6 @@ opentracing:
     #
     #enabled: true
 
-    # The list of homeservers we wish to send and receive span contexts and span baggage.
-    # See https://matrix-org.github.io/synapse/latest/opentracing.html.
-    #
     # This is a list of regexes which are matched against the server_name of the
     # homeserver.
     #
@@ -2656,7 +2530,7 @@ opentracing:
     #homeserver_whitelist:
     #  - ".*"
 
-    # A list of the matrix IDs of users whose requests will always be traced,
+    # A list of the REChain IDs of users whose requests will always be traced,
     # even if the tracing system would otherwise drop the traces due to
     # probabilistic sampling.
     #

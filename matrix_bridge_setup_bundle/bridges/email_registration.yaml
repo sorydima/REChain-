@@ -1,0 +1,10 @@
+# email registration.yaml
+id: email
+url: http://email:29328
+as_token: __CHANGE_ME__
+hs_token: __CHANGE_ME__
+sender_localpart: email-bot
+namespaces:
+  users: []
+  aliases: []
+  rooms: []

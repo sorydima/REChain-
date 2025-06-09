@@ -1,0 +1,10 @@
+# googlechat registration.yaml
+id: googlechat
+url: http://googlechat:29328
+as_token: __CHANGE_ME__
+hs_token: __CHANGE_ME__
+sender_localpart: googlechat-bot
+namespaces:
+  users: []
+  aliases: []
+  rooms: []

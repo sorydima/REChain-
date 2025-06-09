@@ -2,10 +2,10 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 
-import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:go_router/go_router.dart';
 import 'package:matrix/matrix.dart';
 
+import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/pages/chat_permissions_settings/chat_permissions_settings_view.dart';
 import 'package:rechainonline/widgets/future_loading_dialog.dart';
 import 'package:rechainonline/widgets/matrix.dart';

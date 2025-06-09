@@ -1,0 +1,10 @@
+# xmpp registration.yaml
+id: xmpp
+url: http://xmpp:29328
+as_token: __CHANGE_ME__
+hs_token: __CHANGE_ME__
+sender_localpart: xmpp-bot
+namespaces:
+  users: []
+  aliases: []
+  rooms: []

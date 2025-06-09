@@ -1,6 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'package:matrix/matrix.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
 import 'package:rechainonline/config/themes.dart';
@@ -8,14 +8,13 @@ import 'package:rechainonline/pages/chat/chat.dart';
 import 'package:rechainonline/pages/chat/events/message.dart';
 import 'package:rechainonline/pages/chat/seen_by_row.dart';
 import 'package:rechainonline/pages/chat/typing_indicators.dart';
-import 'package:rechainonline/pages/user_bottom_sheet/user_bottom_sheet.dart';
 import 'package:rechainonline/utils/account_config.dart';
-import 'package:rechainonline/utils/adaptive_bottom_sheet.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/filtered_timeline_extension.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
 
 class ChatEventList extends StatelessWidget {
   final ChatController controller;
+
   const ChatEventList({
     super.key,
     required this.controller,
@@ -24,14 +23,10 @@ class ChatEventList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final timeline = controller.timeline;
-    if (timeline == null) {
-      return const Center(
-        child: CircularProgressIndicator.adaptive(
-          strokeWidth: 2,
-        ),
-      );
-    }
 
+    if (timeline == null) {
+      return const Center(child: CupertinoActivityIndicator());
+    }
     final theme = Theme.of(context);
 
     final colors = [
@@ -136,15 +131,8 @@ class ChatEventList extends StatelessWidget {
                 },
                 onSwipe: () => controller.replyAction(replyTo: event),
                 onInfoTab: controller.showEventInfo,
-                onAvatarTab: (Event event) => showAdaptiveBottomSheet(
-                  context: context,
-                  builder: (c) => UserBottomSheet(
-                    user: event.senderFromMemoryOrFallback,
-                    outerContext: context,
-                    onMention: () => controller.sendController.text +=
-                        '${event.senderFromMemoryOrFallback.mention} ',
-                  ),
-                ),
+                onMention: () => controller.sendController.text +=
+                    '${event.senderFromMemoryOrFallback.mention} ',
                 highlightMarker:
                     controller.scrollToEventIdMarker == event.eventId,
                 onSelect: controller.onSelectMessage,

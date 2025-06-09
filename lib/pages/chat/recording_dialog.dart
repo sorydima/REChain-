@@ -4,14 +4,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:path/path.dart' as path_lib;
 import 'package:path_provider/path_provider.dart';
 import 'package:record/record.dart';
 import 'package:wakelock_plus/wakelock_plus.dart';
 
 import 'package:rechainonline/config/app_config.dart';
+import 'package:rechainonline/config/setting_keys.dart';
+import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
+import 'package:rechainonline/widgets/matrix.dart';
 import 'events/audio_player.dart';
 
 class RecordingDialog extends StatefulWidget {
@@ -34,10 +36,8 @@ class RecordingDialogState extends State<RecordingDialog> {
 
   String? fileName;
 
-  static const int bitRate = 64000;
-  static const int samplingRate = 44100;
-
   Future<void> startRecording() async {
+    final store = Matrix.of(context).store;
     try {
       final codec = kIsWeb
           // Web seems to create webm instead of ogg when using opus encoder
@@ -64,12 +64,12 @@ class RecordingDialogState extends State<RecordingDialog> {
 
       await _audioRecorder.start(
         RecordConfig(
-          bitRate: bitRate,
-          sampleRate: samplingRate,
-          numChannels: 1,
-          autoGain: true,
-          echoCancel: true,
-          noiseSuppress: true,
+          bitRate: AppSettings.audioRecordingBitRate.getItem(store),
+          sampleRate: AppSettings.audioRecordingSamplingRate.getItem(store),
+          numChannels: AppSettings.audioRecordingNumChannels.getItem(store),
+          autoGain: AppSettings.audioRecordingAutoGain.getItem(store),
+          echoCancel: AppSettings.audioRecordingEchoCancel.getItem(store),
+          noiseSuppress: AppSettings.audioRecordingNoiseSuppress.getItem(store),
           encoder: codec,
         ),
         path: path ?? '',

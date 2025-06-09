@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:matrix/matrix.dart';
 
 import 'package:rechainonline/config/themes.dart';
+import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/pages/settings_notifications/push_rule_extensions.dart';
 import 'package:rechainonline/widgets/layouts/max_width_body.dart';
 import '../../utils/localized_exception_extension.dart';

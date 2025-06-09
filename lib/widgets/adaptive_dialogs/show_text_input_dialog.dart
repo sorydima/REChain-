@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
 
+import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/utils/url_launcher.dart';
 import 'package:rechainonline/widgets/adaptive_dialogs/adaptive_dialog_action.dart';
 import 'package:rechainonline/widgets/adaptive_dialogs/dialog_text_field.dart';
@@ -28,11 +28,11 @@ Future<String?> showTextInputDialog({
   int? maxLength,
   bool autocorrect = true,
 }) {
+  final controller = TextEditingController(text: initialText);
   return showAdaptiveDialog<String>(
     context: context,
     useRootNavigator: useRootNavigator,
     builder: (context) {
-      final controller = TextEditingController(text: initialText);
       final error = ValueNotifier<String?>(null);
       return ConstrainedBox(
         constraints: const BoxConstraints(maxWidth: 512),
@@ -49,6 +49,7 @@ Future<String?> showTextInputDialog({
                 if (message != null)
                   SelectableLinkify(
                     text: message,
+                    textScaleFactor: MediaQuery.textScalerOf(context).scale(1),
                     linkStyle: TextStyle(
                       color: Theme.of(context).colorScheme.primary,
                       decorationColor: Theme.of(context).colorScheme.primary,

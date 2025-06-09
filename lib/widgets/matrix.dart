@@ -3,13 +3,14 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:logging/logging.dart';
 
 import 'package:collection/collection.dart';
 import 'package:desktop_notifications/desktop_notifications.dart';
-import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:http/http.dart' as http;
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
+import 'package:just_audio/just_audio.dart';
 import 'package:matrix/encryption.dart';
 import 'package:matrix/matrix.dart';
 import 'package:provider/provider.dart';
@@ -17,12 +18,14 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:universal_html/html.dart' as html;
 import 'package:url_launcher/url_launcher_string.dart';
 
+import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/utils/client_manager.dart';
 import 'package:rechainonline/utils/init_with_restore.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_file_extension.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
 import 'package:rechainonline/utils/uia_request_manager.dart';
 import 'package:rechainonline/utils/voip_plugin.dart';
+import 'package:rechainonline/utils/services_manager.dart';
 import 'package:rechainonline/widgets/adaptive_dialogs/show_ok_cancel_alert_dialog.dart';
 import 'package:rechainonline/widgets/rechainonline_chat_app.dart';
 import 'package:rechainonline/widgets/future_loading_dialog.dart';
@@ -31,6 +34,7 @@ import '../config/setting_keys.dart';
 import '../pages/key_verification/key_verification_dialog.dart';
 import '../utils/account_bundles.dart';
 import '../utils/background_push.dart';
+import '../utils/matrix_extension.dart';
 import 'local_notifications_extension.dart';
 
 // import 'package:flutter_secure_storage/flutter_secure_storage.dart';
@@ -73,9 +77,6 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
   BackgroundPush? backgroundPush;
 
   Client get client {
-    if (widget.clients.isEmpty) {
-      widget.clients.add(getLoginClient());
-    }
     if (_activeClient < 0 || _activeClient >= widget.clients.length) {
       return currentBundle!.first!;
     }
@@ -83,8 +84,10 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
   }
 
   VoipPlugin? voipPlugin;
+  ServicesManager? servicesManager;
 
   bool get isMultiAccount => widget.clients.length > 1;
+  bool get hasServices => servicesManager != null;
 
   int getClientIndexByMatrixId(String matrixId) =>
       widget.clients.indexWhere((client) => client.userID == matrixId);
@@ -148,29 +151,34 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
 
   Client? _loginClientCandidate;
 
-  Client getLoginClient() {
+  AudioPlayer? audioPlayer;
+  final ValueNotifier<String?> voiceMessageEventId = ValueNotifier(null);
+
+  Future<Client> getLoginClient() async {
     if (widget.clients.isNotEmpty && !client.isLogged()) {
       return client;
     }
-    final candidate = _loginClientCandidate ??= ClientManager.createClient(
+    final candidate =
+        _loginClientCandidate ??= await ClientManager.createClient(
       '${AppConfig.applicationName}-${DateTime.now().millisecondsSinceEpoch}',
       store,
-    )..onLoginStateChanged
-          .stream
-          .where((l) => l == LoginState.loggedIn)
-          .first
-          .then((_) {
-        if (!widget.clients.contains(_loginClientCandidate)) {
-          widget.clients.add(_loginClientCandidate!);
-        }
-        ClientManager.addClientNameToStore(
-          _loginClientCandidate!.clientName,
-          store,
-        );
-        _registerSubs(_loginClientCandidate!.clientName);
-        _loginClientCandidate = null;
-        rechainonlineChatApp.router.go('/rooms');
-      });
+    )
+          ..onLoginStateChanged
+              .stream
+              .where((l) => l == LoginState.loggedIn)
+              .first
+              .then((_) {
+            if (!widget.clients.contains(_loginClientCandidate)) {
+              widget.clients.add(_loginClientCandidate!);
+            }
+            ClientManager.addClientNameToStore(
+              _loginClientCandidate!.clientName,
+              store,
+            );
+            _registerSubs(_loginClientCandidate!.clientName);
+            _loginClientCandidate = null;
+            rechainonlineChatApp.router.go('/rooms');
+          });
     return candidate;
   }
 
@@ -218,9 +226,10 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
     WidgetsBinding.instance.addObserver(this);
     initMatrix();
     if (PlatformInfos.isWeb) {
-      initConfig().then((_) => initSettings());
+      initConfig().then((_) => initSettings()).then((_) => initServices());
     } else {
       initSettings();
+      initServices();
     }
   }
 
@@ -363,6 +372,20 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
     createVoipPlugin();
   }
 
+  Future<void> initServices() async {
+    if (!hasServices && widget.clients.isNotEmpty) {
+      servicesManager = ServicesManager(
+        client: client,
+        store: store,
+      );
+    }
+  }
+  
+  Future<void> disposeServices() async {
+    await servicesManager?.dispose();
+    servicesManager = null;
+  }
+
   void createVoipPlugin() async {
     if (store.getBool(SettingKeys.experimentalVoip) == false) {
       voipPlugin = null;
@@ -432,6 +455,10 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
 
     AppConfig.showPresences =
         store.getBool(SettingKeys.showPresences) ?? AppConfig.showPresences;
+
+    AppConfig.displayNavigationRail =
+        store.getBool(SettingKeys.displayNavigationRail) ??
+            AppConfig.displayNavigationRail;
   }
 
   @override
@@ -447,6 +474,9 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
     onBlurSub?.cancel();
 
     linuxNotifications?.close();
+    
+    // Dispose services
+    disposeServices();
 
     super.dispose();
   }

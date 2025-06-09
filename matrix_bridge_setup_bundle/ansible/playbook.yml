@@ -1,0 +1,25 @@
+- name: Deploy Matrix bridges
+  hosts: matrix
+  become: true
+  vars_files:
+    - vars/bridge_tokens.yml
+  tasks:
+    - name: Ensure bridge config directory exists
+      file:
+        path: /opt/matrix/bridges
+        state: directory
+
+    - name: Upload config and registration files
+      copy:
+        src: bridges/
+        dest: /opt/matrix/bridges/
+        owner: matrix
+        group: matrix
+        mode: '0644'
+
+    - name: Link registration files to Synapse
+      file:
+        src: "/opt/matrix/bridges/{{ item }}"
+        dest: "/opt/matrix/synapse/registration/{{ item }}"
+        state: link
+      loop: "{{ lookup('fileglob', 'bridges/*_registration.yaml', wantlist=True) | map('basename') | list }}"

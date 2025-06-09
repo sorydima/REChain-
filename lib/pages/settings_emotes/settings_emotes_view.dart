@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:matrix/matrix.dart';
 
+import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
 import 'package:rechainonline/widgets/layouts/max_width_body.dart';
 import 'package:rechainonline/widgets/mxc_image.dart';
@@ -29,6 +29,7 @@ class EmotesSettingsView extends StatelessWidget {
         title: Text(L10n.of(context).customEmojisAndStickers),
         actions: [
           PopupMenuButton<PopupMenuEmojiActions>(
+            useRootNavigator: true,
             onSelected: (value) {
               switch (value) {
                 case PopupMenuEmojiActions.export:

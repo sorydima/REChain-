@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import 'package:async/async.dart';
-import 'package:flutter_gen/gen_l10n/l10n.dart';
 
+import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/utils/localized_exception_extension.dart';
 import 'package:rechainonline/widgets/adaptive_dialogs/adaptive_dialog_action.dart';
 
@@ -20,6 +20,7 @@ Future<Result<T>> showFutureLoadingDialog<T>({
   bool barrierDismissible = false,
   bool delay = true,
   ExceptionContext? exceptionContext,
+  bool ignoreError = false,
 }) async {
   final futureExec = future();
   final resultFuture = ResultFuture(futureExec);
@@ -67,6 +68,7 @@ class LoadingDialog<T> extends StatefulWidget {
     this.backLabel,
     this.exceptionContext,
   });
+
   @override
   LoadingDialogState<T> createState() => LoadingDialogState<T>();
 }

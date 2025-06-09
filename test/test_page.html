@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REChain Services Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .test-result {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 3px;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 3px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>REChain Services Test Dashboard</h1>
+    
+    <div class="test-section">
+        <h2>Message Scheduling Test</h2>
+        <input type="text" id="roomId" placeholder="Room ID" value="test_room">
+        <textarea id="messageContent" placeholder="Message content">Hello from scheduled message!</textarea>
+        <select id="messageType">
+            <option value="text">Text</option>
+            <option value="notice">Notice</option>
+            <option value="emote">Emote</option>
+            <option value="file">File</option>
+            <option value="image">Image</option>
+            <option value="video">Video</option>
+            <option value="audio">Audio</option>
+        </select>
+        <input type="datetime-local" id="scheduledTime">
+        <button onclick="scheduleMessage()">Schedule Message</button>
+        <button onclick="getScheduledMessages()">Get Scheduled Messages</button>
+        <div id="scheduleResult" class="test-result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Translation Test</h2>
+        <textarea id="translateText" placeholder="Text to translate">Hello, how are you?</textarea>
+        <select id="sourceLanguage">
+            <option value="">Auto-detect</option>
+            <option value="en">English</option>
+            <option value="es">Spanish</option>
+            <option value="fr">French</option>
+            <option value="de">German</option>
+        </select>
+        <select id="targetLanguage">
+            <option value="es">Spanish</option>
+            <option value="en">English</option>
+            <option value="fr">French</option>
+            <option value="de">German</option>
+        </select>
+        <button onclick="translateText()">Translate</button>
+        <div id="translateResult" class="test-result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Security Audit Test</h2>
+        <button onclick="runSecurityAudit()">Run Security Audit</button>
+        <div id="auditResult" class="test-result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test Results Summary</h2>
+        <div id="testSummary" class="test-result"></div>
+    </div>
+
+    <script>
+        let testResults = {
+            scheduling: false,
+            translation: false,
+            security: false
+        };
+
+        // Set default scheduled time to 1 minute from now
+        const now = new Date();
+        now.setMinutes(now.getMinutes() + 1);
+        document.getElementById('scheduledTime').value = now.toISOString().slice(0, 16);
+
+        async function scheduleMessage() {
+            const roomId = document.getElementById('roomId').value;
+            const content = document.getElementById('messageContent').value;
+            const messageType = document.getElementById('messageType').value;
+            const scheduledTime = document.getElementById('scheduledTime').value;
+
+            try {
+                const response = await fetch('http://localhost:3000/api/schedule', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        roomId,
+                        content,
+                        messageType,
+                        scheduledTime: new Date(scheduledTime).toISOString()
+                    })
+                });
+
+                const result = await response.json();
+                const resultDiv = document.getElementById('scheduleResult');
+                
+                if (response.ok) {
+                    resultDiv.className = 'test-result success';
+                    resultDiv.innerHTML = `✅ Message scheduled successfully! ID: ${result.messageId}`;
+                    testResults.scheduling = true;
+                } else {
+                    resultDiv.className = 'test-result error';
+                    resultDiv.innerHTML = `❌ Error: ${result.error}`;
+                }
+            } catch (error) {
+                const resultDiv = document.getElementById('scheduleResult');
+                resultDiv.className = 'test-result error';
+                resultDiv.innerHTML = `❌ Network error: ${error.message}`;
+            }
+            updateTestSummary();
+        }
+
+        async function getScheduledMessages() {
+            const roomId = document.getElementById('roomId').value;
+
+            try {
+            const response = await fetch(`http://localhost:3000/api/schedule/${roomId}`);
+                const result = await response.json();
+                const resultDiv = document.getElementById('scheduleResult');
+                
+                if (response.ok) {
+                    resultDiv.className = 'test-result success';
+                    resultDiv.innerHTML = `✅ Found ${result.messages.length} scheduled messages:<br>` +
+                        result.messages.map(m => `- ${m.content} (${m.status})`).join('<br>');
+                } else {
+                    resultDiv.className = 'test-result error';
+                    resultDiv.innerHTML = `❌ Error: ${result.error}`;
+                }
+            } catch (error) {
+                const resultDiv = document.getElementById('scheduleResult');
+                resultDiv.className = 'test-result error';
+                resultDiv.innerHTML = `❌ Network error: ${error.message}`;
+            }
+        }
+
+        async function translateText() {
+            const text = document.getElementById('translateText').value;
+            const sourceLanguage = document.getElementById('sourceLanguage').value;
+            const targetLanguage = document.getElementById('targetLanguage').value;
+
+            try {
+                const response = await fetch('http://localhost:3000/api/translate', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        text,
+                        sourceLanguage: sourceLanguage || null,
+                        targetLanguage
+                    })
+                });
+
+                const result = await response.json();
+                const resultDiv = document.getElementById('translateResult');
+                
+                if (response.ok) {
+                    resultDiv.className = 'test-result success';
+                    resultDiv.innerHTML = `✅ Translation successful!<br>
+                        Original: ${result.originalText}<br>
+                        Translated: ${result.translatedText}<br>
+                        Source: ${result.sourceLanguage} → Target: ${result.targetLanguage}`;
+                    testResults.translation = true;
+                } else {
+                    resultDiv.className = 'test-result error';
+                    resultDiv.innerHTML = `❌ Error: ${result.error}`;
+                }
+            } catch (error) {
+                const resultDiv = document.getElementById('translateResult');
+                resultDiv.className = 'test-result error';
+                resultDiv.innerHTML = `❌ Network error: ${error.message}`;
+            }
+            updateTestSummary();
+        }
+
+        async function runSecurityAudit() {
+            try {
+                const response = await fetch('http://localhost:3000/api/security/audit');
+                const result = await response.json();
+                const resultDiv = document.getElementById('auditResult');
+                
+                if (response.ok) {
+                    resultDiv.className = 'test-result success';
+                    resultDiv.innerHTML = `✅ Security audit completed successfully!`;
+                    testResults.security = true;
+                } else {
+                    resultDiv.className = 'test-result error';
+                    resultDiv.innerHTML = `❌ Error: ${result.error}`;
+                }
+            } catch (error) {
+                const resultDiv = document.getElementById('auditResult');
+                resultDiv.className = 'test-result error';
+                resultDiv.innerHTML = `❌ Network error: ${error.message}`;
+            }
+            updateTestSummary();
+        }
+
+        function updateTestSummary() {
+            const summaryDiv = document.getElementById('testSummary');
+            const passedTests = Object.values(testResults).filter(Boolean).length;
+            const totalTests = Object.keys(testResults).length;
+            
+            if (passedTests === totalTests) {
+                summaryDiv.className = 'test-result success';
+                summaryDiv.innerHTML = `🎉 All tests passed! (${passedTests}/${totalTests})`;
+            } else {
+                summaryDiv.className = 'test-result';
+                summaryDiv.innerHTML = `📊 Tests passed: ${passedTests}/${totalTests}<br>
+                    Scheduling: ${testResults.scheduling ? '✅' : '❌'}<br>
+                    Translation: ${testResults.translation ? '✅' : '❌'}<br>
+                    Security: ${testResults.security ? '✅' : '❌'}`;
+            }
+        }
+
+        // Initialize summary
+        updateTestSummary();
+    </script>
+</body>
+</html>

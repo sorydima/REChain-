@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:matrix/matrix.dart';
 
 import 'package:rechainonline/config/app_config.dart';
+import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/utils/url_launcher.dart';
 import 'package:rechainonline/widgets/mxc_image.dart';
 import '../../widgets/avatar.dart';
@@ -137,7 +137,7 @@ class StickerPickerDialogState extends State<StickerPickerDialog> {
                       OutlinedButton.icon(
                         onPressed: () => UrlLauncher(
                           context,
-                          'https://matrix.to/#/#stickers_derideal:squirrel.rocks',
+                          'https://matrix.to/#/#stickers:squirrel.rocks',
                         ).launchUrl(),
                         icon: const Icon(Icons.explore_outlined),
                         label: Text(L10n.of(context).discover),

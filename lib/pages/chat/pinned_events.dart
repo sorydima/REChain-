@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:matrix/matrix.dart';
 
+import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/pages/chat/chat.dart';
 import 'package:rechainonline/pages/chat/chat_app_bar_list_tile.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';

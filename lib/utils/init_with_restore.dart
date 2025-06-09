@@ -1,11 +1,11 @@
 import 'dart:convert';
 import 'dart:ui';
 
-import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:matrix/matrix.dart';
 
 import 'package:rechainonline/config/app_config.dart';
+import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/utils/client_manager.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
 

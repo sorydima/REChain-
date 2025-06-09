@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:go_router/go_router.dart';
 import 'package:matrix/matrix.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/config/themes.dart';
+import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/utils/rechainonline_share.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
 import 'package:rechainonline/widgets/avatar.dart';
 import 'package:rechainonline/widgets/matrix.dart';
 import 'package:rechainonline/widgets/navigation_rail.dart';
+import '../../widgets/mxc_image_viewer.dart';
 import 'settings.dart';
 
 class SettingsView extends StatelessWidget {
@@ -65,6 +66,7 @@ class SettingsView extends StatelessWidget {
                     future: controller.profileFuture,
                     builder: (context, snapshot) {
                       final profile = snapshot.data;
+                      final avatar = profile?.avatarUrl;
                       final mxid = Matrix.of(context).client.userID ??
                           L10n.of(context).user;
                       final displayname =
@@ -76,9 +78,16 @@ class SettingsView extends StatelessWidget {
                             child: Stack(
                               children: [
                                 Avatar(
-                                  mxContent: profile?.avatarUrl,
+                                  mxContent: avatar,
                                   name: displayname,
                                   size: Avatar.defaultSize * 2.5,
+                                  onTap: avatar != null
+                                      ? () => showDialog(
+                                            context: context,
+                                            builder: (_) =>
+                                                MxcImageViewer(avatar),
+                                          )
+                                      : null,
                                 ),
                                 if (profile != null)
                                   Positioned(

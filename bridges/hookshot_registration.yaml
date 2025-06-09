@@ -1,0 +1,10 @@
+# hookshot registration.yaml
+id: hookshot
+url: http://hookshot:29328
+as_token: __CHANGE_ME__
+hs_token: __CHANGE_ME__
+sender_localpart: hookshot-bot
+namespaces:
+  users: []
+  aliases: []
+  rooms: []

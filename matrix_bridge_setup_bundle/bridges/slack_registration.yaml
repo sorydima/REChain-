@@ -1,0 +1,10 @@
+# slack registration.yaml
+id: slack
+url: http://slack:29328
+as_token: __CHANGE_ME__
+hs_token: __CHANGE_ME__
+sender_localpart: slack-bot
+namespaces:
+  users: []
+  aliases: []
+  rooms: []

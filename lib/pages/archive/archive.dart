@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:matrix/matrix.dart';
 
+import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/pages/archive/archive_view.dart';
 import 'package:rechainonline/widgets/adaptive_dialogs/show_ok_cancel_alert_dialog.dart';
 import 'package:rechainonline/widgets/future_loading_dialog.dart';

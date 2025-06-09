@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
+import 'package:matrix/matrix.dart';
 
 import 'package:rechainonline/config/themes.dart';
 import 'package:rechainonline/pages/archive/archive.dart';
@@ -31,6 +32,7 @@ import 'package:rechainonline/pages/settings_notifications/settings_notification
 import 'package:rechainonline/pages/settings_password/settings_password.dart';
 import 'package:rechainonline/pages/settings_security/settings_security.dart';
 import 'package:rechainonline/pages/settings_style/settings_style.dart';
+import 'package:rechainonline/widgets/config_viewer.dart';
 import 'package:rechainonline/widgets/layouts/empty_page.dart';
 import 'package:rechainonline/widgets/layouts/two_column_layout.dart';
 import 'package:rechainonline/widgets/log_view.dart';
@@ -72,7 +74,7 @@ abstract class AppRoutes {
           pageBuilder: (context, state) => defaultPageBuilder(
             context,
             state,
-            const Login(),
+            Login(client: state.extra as Client),
           ),
           redirect: loggedInRedirect,
         ),
@@ -84,6 +86,14 @@ abstract class AppRoutes {
         context,
         state,
         const LogViewer(),
+      ),
+    ),
+    GoRoute(
+      path: '/configs',
+      pageBuilder: (context, state) => defaultPageBuilder(
+        context,
+        state,
+        const ConfigViewer(),
       ),
     ),
     ShellRoute(
@@ -251,7 +261,7 @@ abstract class AppRoutes {
                           pageBuilder: (context, state) => defaultPageBuilder(
                             context,
                             state,
-                            const Login(),
+                            Login(client: state.extra as Client),
                           ),
                           redirect: loggedOutRedirect,
                         ),

@@ -1,0 +1,10 @@
+# gmessages registration.yaml
+id: gmessages
+url: http://gmessages:29328
+as_token: __CHANGE_ME__
+hs_token: __CHANGE_ME__
+sender_localpart: gmessages-bot
+namespaces:
+  users: []
+  aliases: []
+  rooms: []

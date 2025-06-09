@@ -1,0 +1,83 @@
+# Application Service Registration for TON Bridge
+id: "ton_bridge"
+url: "http://ton_bridge:8080"
+as_token: "CHANGE_ME_TON_BRIDGE_AS_TOKEN"  # Change this to a secure random string
+hs_token: "CHANGE_ME_TON_BRIDGE_HS_TOKEN"  # Change this to a secure random string
+sender_localpart: "tonbridge"
+namespaces:
+  users:
+    - exclusive: true
+      regex: "@ton_.*:your.domain.tld"
+  aliases:
+    - exclusive: true
+      regex: "#ton_.*:your.domain.tld"
+  rooms:
+    - exclusive: true
+      regex: "!ton_.*:your.domain.tld"
+
+# Rate limiting configuration
+rate_limited: false
+push_ephemeral: true
+
+# Protocol configuration
+protocols:
+  - "ton"
+
+# Bridge-specific configuration
+de_puppet_timeout: 60
+mxid_template: "ton_{{address}}"
+room_template: "ton_{{type}}_{{id}}"
+
+# Bridge bot configuration
+bot:
+  username: "tonbridge"
+  display_name: "TON Bridge"
+  avatar_mxc: "mxc://your.domain.tld/TONBridgeAvatar"
+
+# Bridge features
+features:
+  - wallet_management
+  - nft_support
+  - investment_tracking
+  - transaction_notifications
+  - market_updates
+
+# Supported message types
+push_actions:
+  - "m.room.message"
+  - "m.room.encrypted"
+  - "m.reaction"
+  - "m.room.member"
+
+# Bridge permissions
+permissions:
+  "*": "relay"
+  "your.domain.tld": "puppeting"
+
+# Database configuration
+db:
+  engine: "sqlite3"
+  database: "ton_bridge.db"
+
+# Logging configuration
+logging:
+  level: "INFO"
+  handlers:
+    - type: "file"
+      filename: "ton_bridge.log"
+      max_bytes: 10485760
+      backup_count: 5
+    - type: "console"
+      format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+# Metrics and monitoring
+metrics:
+  enabled: true
+  listen_port: 9090
+
+# Error reporting
+error_reporting:
+  enabled: true
+  report_channel: "#ton_bridge_errors:your.domain.tld"
+  admin_users:
+    - "@admin:your.domain.tld"

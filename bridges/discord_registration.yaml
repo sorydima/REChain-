@@ -1,0 +1,10 @@
+# discord registration.yaml
+id: discord
+url: http://discord:29328
+as_token: __CHANGE_ME__
+hs_token: __CHANGE_ME__
+sender_localpart: discord-bot
+namespaces:
+  users: []
+  aliases: []
+  rooms: []

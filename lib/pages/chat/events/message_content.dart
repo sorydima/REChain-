@@ -2,10 +2,9 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-import 'package:flutter_gen/gen_l10n/l10n.dart';
-import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:matrix/matrix.dart';
 
+import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/pages/chat/events/video_player.dart';
 import 'package:rechainonline/utils/adaptive_bottom_sheet.dart';
 import 'package:rechainonline/utils/date_time_extension.dart';
@@ -13,6 +12,7 @@ import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
 import 'package:rechainonline/widgets/avatar.dart';
 import 'package:rechainonline/widgets/matrix.dart';
 import '../../../config/app_config.dart';
+import '../../../utils/event_checkbox_extension.dart';
 import '../../../utils/platform_infos.dart';
 import '../../../utils/url_launcher.dart';
 import '../../bootstrap/bootstrap_dialog.dart';
@@ -30,6 +30,7 @@ class MessageContent extends StatelessWidget {
   final void Function(Event)? onInfoTab;
   final BorderRadius borderRadius;
   final Timeline timeline;
+  final bool selected;
 
   const MessageContent(
     this.event, {
@@ -39,6 +40,7 @@ class MessageContent extends StatelessWidget {
     required this.textColor,
     required this.linkColor,
     required this.borderRadius,
+    required this.selected,
   });
 
   void _verifyOrRequestKey(BuildContext context) async {
@@ -167,41 +169,18 @@ class MessageContent extends StatelessWidget {
               linkColor: linkColor,
             );
           case MessageTypes.Video:
-            return EventVideoPlayer(event, textColor: textColor);
+            return EventVideoPlayer(
+              event,
+              textColor: textColor,
+              linkColor: linkColor,
+              timeline: timeline,
+            );
           case MessageTypes.File:
             return MessageDownloadContent(
               event,
               textColor: textColor,
               linkColor: linkColor,
             );
-
-          case MessageTypes.Text:
-          case MessageTypes.Notice:
-          case MessageTypes.Emote:
-            if (AppConfig.renderHtml &&
-                !event.redacted &&
-                event.isRichMessage) {
-              var html = event.formattedText;
-              if (event.messageType == MessageTypes.Emote) {
-                html = '* $html';
-              }
-              return HtmlMessage(
-                html: html,
-                textColor: textColor,
-                room: event.room,
-                fontSize: AppConfig.fontSizeFactor * AppConfig.messageFontSize,
-                linkStyle: TextStyle(
-                  color: linkColor,
-                  fontSize:
-                      AppConfig.fontSizeFactor * AppConfig.messageFontSize,
-                  decoration: TextDecoration.underline,
-                  decorationColor: linkColor,
-                ),
-                onOpen: (url) => UrlLauncher(context, url.url).launchUrl(),
-              );
-            }
-            // else we fall through to the normal message rendering
-            continue textmessage;
           case MessageTypes.BadEncrypted:
           case EventTypes.Encrypted:
             return _ButtonContent(
@@ -246,6 +225,9 @@ class MessageContent extends StatelessWidget {
               }
             }
             continue textmessage;
+          case MessageTypes.Text:
+          case MessageTypes.Notice:
+          case MessageTypes.Emote:
           case MessageTypes.None:
           textmessage:
           default:
@@ -273,27 +255,43 @@ class MessageContent extends StatelessWidget {
                 },
               );
             }
+            var html = AppConfig.renderHtml && event.isRichMessage
+                ? event.formattedText
+                : event.body;
+            if (event.messageType == MessageTypes.Emote) {
+              html = '* $html';
+            }
+
             final bigEmotes = event.onlyEmotes &&
                 event.numberEmotes > 0 &&
                 event.numberEmotes <= 3;
-            return Linkify(
-              text: event.calcLocalizedBodyFallback(
-                MatrixLocals(L10n.of(context)),
-                hideReply: true,
+            return Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 16,
+                vertical: 8,
               ),
-              style: TextStyle(
-                color: textColor,
-                fontSize: bigEmotes ? fontSize * 5 : fontSize,
-                decoration: event.redacted ? TextDecoration.lineThrough : null,
+              child: HtmlMessage(
+                html: html,
+                textColor: textColor,
+                room: event.room,
+                fontSize: AppConfig.fontSizeFactor *
+                    AppConfig.messageFontSize *
+                    (bigEmotes ? 5 : 1),
+                limitHeight: !selected,
+                linkStyle: TextStyle(
+                  color: linkColor,
+                  fontSize:
+                      AppConfig.fontSizeFactor * AppConfig.messageFontSize,
+                  decoration: TextDecoration.underline,
+                  decorationColor: linkColor,
+                ),
+                onOpen: (url) => UrlLauncher(context, url.url).launchUrl(),
+                eventId: event.eventId,
+                checkboxCheckedEvents: event.aggregatedEvents(
+                  timeline,
+                  EventCheckboxRoomExtension.relationshipType,
+                ),
               ),
-              options: const LinkifyOptions(humanize: false),
-              linkStyle: TextStyle(
-                color: linkColor,
-                fontSize: fontSize,
-                decoration: TextDecoration.underline,
-                decorationColor: linkColor,
-              ),
-              onOpen: (url) => UrlLauncher(context, url.url).launchUrl(),
             );
         }
       case EventTypes.CallInvite:
@@ -350,13 +348,19 @@ class _ButtonContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onPressed,
-      child: Text(
-        '$icon  $label',
-        style: TextStyle(
-          color: textColor,
-          fontSize: fontSize,
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 16,
+        vertical: 8,
+      ),
+      child: InkWell(
+        onTap: onPressed,
+        child: Text(
+          '$icon  $label',
+          style: TextStyle(
+            color: textColor,
+            fontSize: fontSize,
+          ),
         ),
       ),
     );

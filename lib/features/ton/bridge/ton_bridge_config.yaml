@@ -1,0 +1,169 @@
+# TON Bridge Configuration
+
+# Bridge service configuration
+bridge_service:
+  name: ton_bridge
+  description: Bridge service for TON blockchain integration
+  version: 1.0.0
+  enabled: true
+
+# Matrix homeserver configuration
+homeserver:
+  address: http://synapse:8008
+  domain: your.domain.tld
+
+# Bridge-specific settings
+bridge:
+  # Bridge bot configuration
+  bot:
+    username: tonbridge
+    display_name: TON Bridge
+    avatar_url: mxc://your.domain.tld/TONBridgeAvatar
+
+  # Database configuration
+  database:
+    engine: sqlite3
+    filename: ton_bridge.db
+
+  # Logging configuration
+  logging:
+    level: INFO
+    file: ton_bridge.log
+    max_files: 10
+
+  # TON network configuration
+  ton:
+    network: mainnet  # or testnet
+    endpoints:
+      - https://toncenter.com/api/v2/jsonRPC
+      - https://tonapi.io/v2
+    api_keys:
+      toncenter: ${TON_CENTER_API_KEY}
+      tonapi: ${TON_API_KEY}
+
+  # Feature configuration
+  features:
+    wallet:
+      enabled: true
+      auto_create: true
+      min_balance_alert: 1.0
+    
+    nft:
+      enabled: true
+      marketplace_integration: true
+      collection_updates: true
+    
+    investments:
+      enabled: true
+      risk_warnings: true
+      auto_compound: false
+    
+    notifications:
+      transaction_alerts: true
+      price_alerts: true
+      investment_updates: true
+      nft_activity: true
+
+  # Command configuration
+  commands:
+    prefix: "!"
+    enabled:
+      - wallet
+      - balance
+      - send
+      - receive
+      - nft
+      - invest
+      - stake
+      - help
+    
+    aliases:
+      bal: balance
+      tx: send
+      inv: invest
+      hlp: help
+
+  # Permission configuration
+  permissions:
+    # Admin commands
+    admin_commands:
+      - bridge_status
+      - config
+      - restart
+    
+    # User commands
+    user_commands:
+      - wallet
+      - balance
+      - send
+      - receive
+      - nft
+      - invest
+      - stake
+      - help
+
+  # Rate limiting
+  rate_limit:
+    commands:
+      window: 60  # seconds
+      max_requests: 30
+    
+    transactions:
+      window: 3600  # 1 hour
+      max_requests: 100
+
+  # Security settings
+  security:
+    encryption_enabled: true
+    require_2fa: false
+    max_transaction_amount: 1000.0
+    suspicious_activity_detection: true
+
+  # Integration settings
+  integrations:
+    telegram:
+      enabled: true
+      bot_token: ${TELEGRAM_BOT_TOKEN}
+    
+    discord:
+      enabled: false
+      bot_token: ${DISCORD_BOT_TOKEN}
+
+  # Monitoring and metrics
+  monitoring:
+    enabled: true
+    metrics_port: 9090
+    health_check_interval: 60
+
+  # Backup configuration
+  backup:
+    enabled: true
+    interval: 86400  # 24 hours
+    keep_days: 7
+    path: /data/backups
+
+# Bridge registration
+registration:
+  as_token: ${BRIDGE_AS_TOKEN}  # Application service token
+  hs_token: ${BRIDGE_HS_TOKEN}  # Homeserver token
+  sender_localpart: tonbridge
+  rate_limited: false
+  push_ephemeral: true
+  de_puppet_timeout: 60
+  namespaces:
+    users:
+      - exclusive: true
+        regex: "@ton_.*"
+    aliases:
+      - exclusive: true
+        regex: "#ton_.*"
+    rooms:
+      - exclusive: true
+        regex: "!ton_.*"
+
+# Error handling
+error_handling:
+  max_retries: 3
+  retry_delay: 5000  # milliseconds
+  notify_on_error: true
+  error_channel: "#ton_bridge_errors:your.domain.tld"

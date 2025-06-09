@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 
 import 'package:file_picker/file_picker.dart';
 import 'package:file_selector/file_selector.dart';
-import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:matrix/matrix.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:universal_html/html.dart' as html;
 
+import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
 import 'package:rechainonline/utils/size_string.dart';
 import 'package:rechainonline/widgets/future_loading_dialog.dart';

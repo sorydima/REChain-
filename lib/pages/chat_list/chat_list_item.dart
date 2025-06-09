@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:matrix/matrix.dart';
 
 import 'package:rechainonline/config/app_config.dart';
+import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
 import 'package:rechainonline/utils/room_status_extension.dart';
 import 'package:rechainonline/widgets/adaptive_dialogs/show_ok_cancel_alert_dialog.dart';

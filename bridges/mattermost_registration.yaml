@@ -1,0 +1,10 @@
+# mattermost registration.yaml
+id: mattermost
+url: http://mattermost:29328
+as_token: __CHANGE_ME__
+hs_token: __CHANGE_ME__
+sender_localpart: mattermost-bot
+namespaces:
+  users: []
+  aliases: []
+  rooms: []

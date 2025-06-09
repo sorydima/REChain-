@@ -74,7 +74,14 @@ abstract class rechainonlineThemes {
           borderRadius: BorderRadius.circular(AppConfig.borderRadius),
         ),
         contentPadding: const EdgeInsets.all(12),
-        filled: false,
+      ),
+      chipTheme: ChipThemeData(
+        showCheckmark: false,
+        backgroundColor: colorScheme.surfaceContainer,
+        side: BorderSide.none,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppConfig.borderRadius),
+        ),
       ),
       appBarTheme: AppBarTheme(
         toolbarHeight: isColumnMode ? 72 : 56,
@@ -130,6 +137,7 @@ extension BubbleColorTheme on ThemeData {
   Color get bubbleColor => brightness == Brightness.light
       ? colorScheme.primary
       : colorScheme.primaryContainer;
+
   Color get onBubbleColor => brightness == Brightness.light
       ? colorScheme.onPrimary
       : colorScheme.onPrimaryContainer;

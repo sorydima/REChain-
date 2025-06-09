@@ -1,0 +1,10 @@
+# instagram registration.yaml
+id: instagram
+url: http://instagram:29328
+as_token: __CHANGE_ME__
+hs_token: __CHANGE_ME__
+sender_localpart: instagram-bot
+namespaces:
+  users: []
+  aliases: []
+  rooms: []

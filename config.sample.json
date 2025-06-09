@@ -2,7 +2,7 @@
   "application_name": "REChain",
   "application_welcome_message": null,
   "default_homeserver": "node.marinchik.ink",
-  "web_base_url": "https://onchain.codemagic.app",
+  "web_base_url": "",
   "privacy_url": "https://online.rechain.network/privacy-policy.html",
   "render_html": false,
   "hide_redacted_events": false,

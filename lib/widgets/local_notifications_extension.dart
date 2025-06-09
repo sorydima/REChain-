@@ -4,12 +4,12 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'package:desktop_notifications/desktop_notifications.dart';
-import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:go_router/go_router.dart';
 import 'package:matrix/matrix.dart';
 import 'package:universal_html/html.dart' as html;
 
 import 'package:rechainonline/config/app_config.dart';
+import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/utils/client_download_content_extension.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
@@ -81,7 +81,7 @@ extension LocalNotificationsExtension on MatrixState {
         body: body,
         replacesId: linuxNotificationIds[roomId] ?? 0,
         appName: AppConfig.applicationName,
-        appIcon: 'rechainonline',
+        appIcon: 'REChain',
         actions: [
           NotificationAction(
             DesktopNotificationActions.openChat.name,

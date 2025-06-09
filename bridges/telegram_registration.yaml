@@ -1,0 +1,10 @@
+# telegram registration.yaml
+id: telegram
+url: http://telegram:29328
+as_token: __CHANGE_ME__
+hs_token: __CHANGE_ME__
+sender_localpart: telegram-bot
+namespaces:
+  users: []
+  aliases: []
+  rooms: []

@@ -1,0 +1,10 @@
+# signal registration.yaml
+id: signal
+url: http://signal:29328
+as_token: __CHANGE_ME__
+hs_token: __CHANGE_ME__
+sender_localpart: signal-bot
+namespaces:
+  users: []
+  aliases: []
+  rooms: []

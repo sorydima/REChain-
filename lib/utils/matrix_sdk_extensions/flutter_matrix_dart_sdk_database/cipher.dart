@@ -4,12 +4,12 @@ import 'dart:math';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
-import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:matrix/matrix.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:rechainonline/config/setting_keys.dart';
+import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/utils/client_manager.dart';
 
 const _passwordStorageKey = 'database_password';
@@ -53,7 +53,7 @@ Future<String?> getDatabaseCipher() async {
 
 void _sendNoEncryptionWarning(Object exception) async {
   final store = await SharedPreferences.getInstance();
-  final isStored = store.getBool(SettingKeys.noEncryptionWarningShown);
+  final isStored = AppSettings.noEncryptionWarningShown.getItem(store);
 
   if (isStored == true) return;
 
@@ -63,5 +63,5 @@ void _sendNoEncryptionWarning(Object exception) async {
     exception.toString(),
   );
 
-  await store.setBool(SettingKeys.noEncryptionWarningShown, true);
+  await AppSettings.noEncryptionWarningShown.setItem(store, true);
 }

@@ -1,20 +1,23 @@
+import 'dart:convert';
 import 'dart:ui';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'package:collection/collection.dart';
-import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_shortcuts_new/flutter_shortcuts_new.dart';
 import 'package:matrix/matrix.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:rechainonline/config/app_config.dart';
+import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/utils/client_download_content_extension.dart';
 import 'package:rechainonline/utils/client_manager.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
+
+const notificationAvatarDimension = 128;
 
 Future<void> pushHelper(
   PushNotification notification, {
@@ -86,7 +89,7 @@ Future<void> _tryPushHelper(
       .first;
   final event = await client.getEventByPushNotification(
     notification,
-    storeInDatabase: isBackgroundMessage,
+    storeInDatabase: false,
   );
 
   if (event == null) {
@@ -163,11 +166,12 @@ Future<void> _tryPushHelper(
         : await client
             .downloadMxcCached(
               avatar,
-              thumbnailMethod: ThumbnailMethod.scale,
-              width: 256,
-              height: 256,
+              thumbnailMethod: ThumbnailMethod.crop,
+              width: notificationAvatarDimension,
+              height: notificationAvatarDimension,
               animated: false,
               isThumbnail: true,
+              rounded: true,
             )
             .timeout(const Duration(seconds: 3));
   } catch (e, s) {
@@ -181,11 +185,12 @@ Future<void> _tryPushHelper(
             : await client
                 .downloadMxcCached(
                   senderAvatar,
-                  thumbnailMethod: ThumbnailMethod.scale,
-                  width: 256,
-                  height: 256,
+                  thumbnailMethod: ThumbnailMethod.crop,
+                  width: notificationAvatarDimension,
+                  height: notificationAvatarDimension,
                   animated: false,
                   isThumbnail: true,
+                  rounded: true,
                 )
                 .timeout(const Duration(seconds: 3));
   } catch (e, s) {
@@ -312,9 +317,7 @@ Future<void> _setShortcut(
       action: AppConfig.inviteLinkPrefix + event.room.id,
       shortLabel: title,
       conversationShortcut: true,
-      icon: avatarFile == null
-          ? null
-          : ShortcutMemoryIcon(jpegImage: avatarFile).toString(),
+      icon: avatarFile == null ? null : base64Encode(avatarFile),
       shortcutIconAsset: avatarFile == null
           ? ShortcutIconAsset.androidAsset
           : ShortcutIconAsset.memoryAsset,

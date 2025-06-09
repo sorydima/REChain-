@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_gen/gen_l10n/l10n.dart';
-
+import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/widgets/layouts/login_scaffold.dart';
 import 'package:rechainonline/widgets/matrix.dart';
 import 'login.dart';
@@ -15,9 +14,7 @@ class LoginView extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-    final homeserver = Matrix.of(context)
-        .getLoginClient()
-        .homeserver
+    final homeserver = controller.widget.client.homeserver
         .toString()
         .replaceFirst('https://', '');
     final title = L10n.of(context).logInTo(homeserver);
@@ -55,7 +52,7 @@ class LoginView extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 24.0),
                   child: TextField(
                     readOnly: controller.loading,
                     autocorrect: false,
@@ -77,7 +74,7 @@ class LoginView extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 24.0),
                   child: TextField(
                     readOnly: controller.loading,
                     autocorrect: false,
@@ -107,7 +104,7 @@ class LoginView extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 24.0),
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: theme.colorScheme.primary,
@@ -121,7 +118,7 @@ class LoginView extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 24.0),
                   child: TextButton(
                     onPressed: controller.loading
                         ? () {}

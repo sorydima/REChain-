@@ -1,25 +1,24 @@
 import 'package:flutter/material.dart';
 
 import 'package:collection/collection.dart';
-import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:go_router/go_router.dart';
 import 'package:matrix/matrix.dart' as sdk;
 import 'package:matrix/matrix.dart';
 
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/config/themes.dart';
+import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/pages/chat_list/chat_list_item.dart';
 import 'package:rechainonline/pages/chat_list/search_title.dart';
-import 'package:rechainonline/utils/adaptive_bottom_sheet.dart';
 import 'package:rechainonline/utils/localized_exception_extension.dart';
 import 'package:rechainonline/utils/stream_extension.dart';
+import 'package:rechainonline/widgets/adaptive_dialogs/public_room_dialog.dart';
 import 'package:rechainonline/widgets/adaptive_dialogs/show_modal_action_popup.dart';
 import 'package:rechainonline/widgets/adaptive_dialogs/show_ok_cancel_alert_dialog.dart';
 import 'package:rechainonline/widgets/adaptive_dialogs/show_text_input_dialog.dart';
 import 'package:rechainonline/widgets/avatar.dart';
 import 'package:rechainonline/widgets/future_loading_dialog.dart';
 import 'package:rechainonline/widgets/matrix.dart';
-import 'package:rechainonline/widgets/public_room_bottom_sheet.dart';
 
 enum AddRoomType { chat, subspace }
 
@@ -100,10 +99,9 @@ class _SpaceViewState extends State<SpaceView> {
     final client = Matrix.of(context).client;
     final space = client.getRoomById(widget.spaceId);
 
-    final joined = await showAdaptiveBottomSheet<bool>(
+    final joined = await showAdaptiveDialog<bool>(
       context: context,
-      builder: (_) => PublicRoomBottomSheet(
-        outerContext: context,
+      builder: (_) => PublicRoomDialog(
         chunk: item,
         via: space?.spaceChildren
             .firstWhereOrNull(
@@ -267,6 +265,7 @@ class _SpaceViewState extends State<SpaceView> {
         ),
         actions: [
           PopupMenuButton<SpaceActions>(
+            useRootNavigator: true,
             onSelected: _onSpaceAction,
             itemBuilder: (context) => [
               PopupMenuItem(

@@ -1,0 +1,10 @@
+# wechat registration.yaml
+id: wechat
+url: http://wechat:29328
+as_token: __CHANGE_ME__
+hs_token: __CHANGE_ME__
+sender_localpart: wechat-bot
+namespaces:
+  users: []
+  aliases: []
+  rooms: []

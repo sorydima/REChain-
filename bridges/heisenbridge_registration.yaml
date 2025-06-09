@@ -1,0 +1,10 @@
+# heisenbridge registration.yaml
+id: heisenbridge
+url: http://heisenbridge:29328
+as_token: __CHANGE_ME__
+hs_token: __CHANGE_ME__
+sender_localpart: heisenbridge-bot
+namespaces:
+  users: []
+  aliases: []
+  rooms: []

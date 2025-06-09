@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_gen/gen_l10n/l10n.dart';
-
 import 'package:rechainonline/config/themes.dart';
+import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/pages/chat_search/chat_search_files_tab.dart';
 import 'package:rechainonline/pages/chat_search/chat_search_images_tab.dart';
 import 'package:rechainonline/pages/chat_search/chat_search_message_tab.dart';

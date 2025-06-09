@@ -34,10 +34,11 @@
         android:requestLegacyExternalStorage="true"
         android:allowBackup="false"
         android:fullBackupContent="false"
+        android:localeConfig="@xml/locale_config"
     >
         <activity
             android:name=".MainActivity"
-            android:launchMode="singleTask"
+            android:launchMode="singleInstance"
             android:theme="@style/LaunchTheme"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"
@@ -79,7 +80,7 @@
                <action android:name="android.intent.action.VIEW" />
                <category android:name="android.intent.category.DEFAULT" />
                <category android:name="android.intent.category.BROWSABLE" />
-               <data android:scheme="com.rechain" android:host="chat" />
+               <data android:scheme="com.rechain" android:host="online" />
             </intent-filter>
 
             <!-- App can receive shared text -->

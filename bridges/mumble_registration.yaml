@@ -1,0 +1,10 @@
+# mumble registration.yaml
+id: mumble
+url: http://mumble:29328
+as_token: __CHANGE_ME__
+hs_token: __CHANGE_ME__
+sender_localpart: mumble-bot
+namespaces:
+  users: []
+  aliases: []
+  rooms: []

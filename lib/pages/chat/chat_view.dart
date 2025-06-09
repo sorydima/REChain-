@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 
 import 'package:badges/badges.dart';
 import 'package:desktop_drop/desktop_drop.dart';
-import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:matrix/matrix.dart';
 
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/config/themes.dart';
+import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/pages/chat/chat.dart';
 import 'package:rechainonline/pages/chat/chat_app_bar_list_tile.dart';
 import 'package:rechainonline/pages/chat/chat_app_bar_title.dart';
@@ -72,6 +72,7 @@ class ChatView extends StatelessWidget {
           ),
         if (controller.selectedEvents.length == 1)
           PopupMenuButton<_EventContextAction>(
+            useRootNavigator: true,
             onSelected: (action) {
               switch (action) {
                 case _EventContextAction.info:
@@ -169,11 +170,6 @@ class ChatView extends StatelessWidget {
             if (scrollUpBannerEventId != null) {
               appbarBottomHeight += ChatAppBarListTile.fixedHeight;
             }
-            final tombstoneEvent =
-                controller.room.getState(EventTypes.RoomTombstone);
-            if (tombstoneEvent != null) {
-              appbarBottomHeight += ChatAppBarListTile.fixedHeight;
-            }
             return Scaffold(
               appBar: AppBar(
                 actionsIconTheme: IconThemeData(
@@ -212,18 +208,6 @@ class ChatView extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       PinnedEvents(controller),
-                      if (tombstoneEvent != null)
-                        ChatAppBarListTile(
-                          title: tombstoneEvent.parsedTombstoneContent.body,
-                          leading: const Padding(
-                            padding: EdgeInsets.all(8.0),
-                            child: Icon(Icons.upgrade_outlined),
-                          ),
-                          trailing: TextButton(
-                            onPressed: controller.goToNewRoomAction,
-                            child: Text(L10n.of(context).goToTheNewRoom),
-                          ),
-                        ),
                       if (scrollUpBannerEventId != null)
                         ChatAppBarListTile(
                           leading: IconButton(
@@ -300,14 +284,25 @@ class ChatView extends StatelessWidget {
                               child: ChatEventList(controller: controller),
                             ),
                           ),
-                          if (controller.room.canSendDefaultMessages &&
+                          if (controller.showScrollDownButton)
+                            Divider(
+                              height: 1,
+                              color: theme.dividerColor,
+                            ),
+                          if (controller.room.isExtinct)
+                            Container(
+                              margin: EdgeInsets.all(bottomSheetPadding),
+                              width: double.infinity,
+                              child: ElevatedButton.icon(
+                                icon: const Icon(Icons.chevron_right),
+                                label: Text(L10n.of(context).enterNewChat),
+                                onPressed: controller.goToNewRoomAction,
+                              ),
+                            )
+                          else if (controller.room.canSendDefaultMessages &&
                               controller.room.membership == Membership.join)
                             Container(
-                              margin: EdgeInsets.only(
-                                bottom: bottomSheetPadding,
-                                left: bottomSheetPadding,
-                                right: bottomSheetPadding,
-                              ),
+                              margin: EdgeInsets.all(bottomSheetPadding),
                               constraints: const BoxConstraints(
                                 maxWidth: rechainonlineThemes.columnWidth * 2.5,
                               ),

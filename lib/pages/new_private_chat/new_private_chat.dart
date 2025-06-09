@@ -4,17 +4,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:device_info_plus/device_info_plus.dart';
-import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:matrix/matrix.dart';
 
+import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/pages/new_private_chat/new_private_chat_view.dart';
 import 'package:rechainonline/pages/new_private_chat/qr_scanner_modal.dart';
-import 'package:rechainonline/pages/user_bottom_sheet/user_bottom_sheet.dart';
 import 'package:rechainonline/utils/adaptive_bottom_sheet.dart';
 import 'package:rechainonline/utils/rechainonline_share.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
 import 'package:rechainonline/utils/url_launcher.dart';
 import 'package:rechainonline/widgets/matrix.dart';
+import '../../widgets/adaptive_dialogs/user_dialog.dart';
 
 class NewPrivateChat extends StatefulWidget {
   const NewPrivateChat({super.key});
@@ -98,12 +98,9 @@ class NewPrivateChatController extends State<NewPrivateChat> {
     );
   }
 
-  void openUserModal(Profile profile) => showAdaptiveBottomSheet(
+  void openUserModal(Profile profile) => UserDialog.show(
         context: context,
-        builder: (c) => UserBottomSheet(
-          profile: profile,
-          outerContext: context,
-        ),
+        profile: profile,
       );
 
   @override

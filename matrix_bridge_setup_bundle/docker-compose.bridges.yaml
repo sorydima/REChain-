@@ -1,0 +1,244 @@
+version: '3.8'
+services:
+  bridge_telegram:
+    image: mautrix/telegram
+    container_name: bridge_telegram
+    restart: unless-stopped
+    volumes:
+    - ./bridges/telegram_config.yaml:/config.yaml:ro
+    - ./bridges/telegram_registration.yaml:/registration.yaml:ro
+    environment:
+    - TZ=UTC
+    ports:
+    - 29328:29328
+  bridge_signal:
+    image: mautrix/signal
+    container_name: bridge_signal
+    restart: unless-stopped
+    volumes:
+    - ./bridges/signal_config.yaml:/config.yaml:ro
+    - ./bridges/signal_registration.yaml:/registration.yaml:ro
+    environment:
+    - TZ=UTC
+    ports:
+    - 29329:29329
+  bridge_whatsapp:
+    image: mautrix/whatsapp
+    container_name: bridge_whatsapp
+    restart: unless-stopped
+    volumes:
+    - ./bridges/whatsapp_config.yaml:/config.yaml:ro
+    - ./bridges/whatsapp_registration.yaml:/registration.yaml:ro
+    environment:
+    - TZ=UTC
+    ports:
+    - 29330:29330
+  bridge_discord:
+    image: mautrix/discord
+    container_name: bridge_discord
+    restart: unless-stopped
+    volumes:
+    - ./bridges/discord_config.yaml:/config.yaml:ro
+    - ./bridges/discord_registration.yaml:/registration.yaml:ro
+    environment:
+    - TZ=UTC
+    ports:
+    - 29331:29331
+  bridge_facebook:
+    image: mautrix/facebook
+    container_name: bridge_facebook
+    restart: unless-stopped
+    volumes:
+    - ./bridges/facebook_config.yaml:/config.yaml:ro
+    - ./bridges/facebook_registration.yaml:/registration.yaml:ro
+    environment:
+    - TZ=UTC
+    ports:
+    - 29332:29332
+  bridge_instagram:
+    image: mautrix/instagram
+    container_name: bridge_instagram
+    restart: unless-stopped
+    volumes:
+    - ./bridges/instagram_config.yaml:/config.yaml:ro
+    - ./bridges/instagram_registration.yaml:/registration.yaml:ro
+    environment:
+    - TZ=UTC
+    ports:
+    - 29333:29333
+  bridge_googlechat:
+    image: mautrix/googlechat
+    container_name: bridge_googlechat
+    restart: unless-stopped
+    volumes:
+    - ./bridges/googlechat_config.yaml:/config.yaml:ro
+    - ./bridges/googlechat_registration.yaml:/registration.yaml:ro
+    environment:
+    - TZ=UTC
+    ports:
+    - 29334:29334
+  bridge_slack:
+    image: mautrix/slack
+    container_name: bridge_slack
+    restart: unless-stopped
+    volumes:
+    - ./bridges/slack_config.yaml:/config.yaml:ro
+    - ./bridges/slack_registration.yaml:/registration.yaml:ro
+    environment:
+    - TZ=UTC
+    ports:
+    - 29335:29335
+  bridge_twitter:
+    image: mautrix/twitter
+    container_name: bridge_twitter
+    restart: unless-stopped
+    volumes:
+    - ./bridges/twitter_config.yaml:/config.yaml:ro
+    - ./bridges/twitter_registration.yaml:/registration.yaml:ro
+    environment:
+    - TZ=UTC
+    ports:
+    - 29336:29336
+  bridge_bluesky:
+    image: mautrix/bluesky
+    container_name: bridge_bluesky
+    restart: unless-stopped
+    volumes:
+    - ./bridges/bluesky_config.yaml:/config.yaml:ro
+    - ./bridges/bluesky_registration.yaml:/registration.yaml:ro
+    environment:
+    - TZ=UTC
+    ports:
+    - 29337:29337
+  bridge_gmessages:
+    image: mautrix/gmessages
+    container_name: bridge_gmessages
+    restart: unless-stopped
+    volumes:
+    - ./bridges/gmessages_config.yaml:/config.yaml:ro
+    - ./bridges/gmessages_registration.yaml:/registration.yaml:ro
+    environment:
+    - TZ=UTC
+    ports:
+    - 29338:29338
+  bridge_email:
+    image: mautrix/email
+    container_name: bridge_email
+    restart: unless-stopped
+    volumes:
+    - ./bridges/email_config.yaml:/config.yaml:ro
+    - ./bridges/email_registration.yaml:/registration.yaml:ro
+    environment:
+    - TZ=UTC
+    ports:
+    - 29339:29339
+  bridge_hookshot:
+    image: mautrix/hookshot
+    container_name: bridge_hookshot
+    restart: unless-stopped
+    volumes:
+    - ./bridges/hookshot_config.yaml:/config.yaml:ro
+    - ./bridges/hookshot_registration.yaml:/registration.yaml:ro
+    environment:
+    - TZ=UTC
+    ports:
+    - 29340:29340
+  bridge_gvoice:
+    image: mautrix/gvoice
+    container_name: bridge_gvoice
+    restart: unless-stopped
+    volumes:
+    - ./bridges/gvoice_config.yaml:/config.yaml:ro
+    - ./bridges/gvoice_registration.yaml:/registration.yaml:ro
+    environment:
+    - TZ=UTC
+    ports:
+    - 29341:29341
+  bridge_gitter:
+    image: mautrix/gitter
+    container_name: bridge_gitter
+    restart: unless-stopped
+    volumes:
+    - ./bridges/gitter_config.yaml:/config.yaml:ro
+    - ./bridges/gitter_registration.yaml:/registration.yaml:ro
+    environment:
+    - TZ=UTC
+    ports:
+    - 29342:29342
+  bridge_xmpp:
+    image: mautrix/xmpp
+    container_name: bridge_xmpp
+    restart: unless-stopped
+    volumes:
+    - ./bridges/xmpp_config.yaml:/config.yaml:ro
+    - ./bridges/xmpp_registration.yaml:/registration.yaml:ro
+    environment:
+    - TZ=UTC
+    ports:
+    - 29343:29343
+  bridge_mattermost:
+    image: mautrix/mattermost
+    container_name: bridge_mattermost
+    restart: unless-stopped
+    volumes:
+    - ./bridges/mattermost_config.yaml:/config.yaml:ro
+    - ./bridges/mattermost_registration.yaml:/registration.yaml:ro
+    environment:
+    - TZ=UTC
+    ports:
+    - 29344:29344
+  bridge_mumble:
+    image: mautrix/mumble
+    container_name: bridge_mumble
+    restart: unless-stopped
+    volumes:
+    - ./bridges/mumble_config.yaml:/config.yaml:ro
+    - ./bridges/mumble_registration.yaml:/registration.yaml:ro
+    environment:
+    - TZ=UTC
+    ports:
+    - 29345:29345
+  bridge_wechat:
+    image: mautrix/wechat
+    container_name: bridge_wechat
+    restart: unless-stopped
+    volumes:
+    - ./bridges/wechat_config.yaml:/config.yaml:ro
+    - ./bridges/wechat_registration.yaml:/registration.yaml:ro
+    environment:
+    - TZ=UTC
+    ports:
+    - 29346:29346
+  bridge_kakaotalk:
+    image: mautrix/kakaotalk
+    container_name: bridge_kakaotalk
+    restart: unless-stopped
+    volumes:
+    - ./bridges/kakaotalk_config.yaml:/config.yaml:ro
+    - ./bridges/kakaotalk_registration.yaml:/registration.yaml:ro
+    environment:
+    - TZ=UTC
+    ports:
+    - 29347:29347
+  bridge_qq:
+    image: mautrix/qq
+    container_name: bridge_qq
+    restart: unless-stopped
+    volumes:
+    - ./bridges/qq_config.yaml:/config.yaml:ro
+    - ./bridges/qq_registration.yaml:/registration.yaml:ro
+    environment:
+    - TZ=UTC
+    ports:
+    - 29348:29348
+  bridge_heisenbridge:
+    image: mautrix/heisenbridge
+    container_name: bridge_heisenbridge
+    restart: unless-stopped
+    volumes:
+    - ./bridges/heisenbridge_config.yaml:/config.yaml:ro
+    - ./bridges/heisenbridge_registration.yaml:/registration.yaml:ro
+    environment:
+    - TZ=UTC
+    ports:
+    - 29349:29349

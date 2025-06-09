@@ -4,7 +4,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'package:collection/collection.dart';
-import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:flutter_web_auth_2/flutter_web_auth_2.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -13,6 +12,7 @@ import 'package:universal_html/html.dart' as html;
 import 'package:url_launcher/url_launcher_string.dart';
 
 import 'package:rechainonline/config/app_config.dart';
+import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/pages/homeserver_picker/homeserver_picker_view.dart';
 import 'package:rechainonline/utils/file_selector.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
@@ -69,10 +69,11 @@ class HomeserverPickerController extends State<HomeserverPicker> {
         homeserverController.text.trim().toLowerCase().replaceAll(' ', '-');
 
     if (homeserverInput.isEmpty) {
+      final client = await Matrix.of(context).getLoginClient();
       setState(() {
         error = loginFlows = null;
         isLoading = false;
-        Matrix.of(context).getLoginClient().homeserver = null;
+        client.homeserver = null;
       });
       return;
     }
@@ -88,7 +89,7 @@ class HomeserverPickerController extends State<HomeserverPicker> {
       if (homeserver.scheme.isEmpty) {
         homeserver = Uri.https(homeserverInput, '');
       }
-      final client = Matrix.of(context).getLoginClient();
+      final client = await Matrix.of(context).getLoginClient();
       final (_, _, loginFlows) = await client.checkHomeserver(homeserver);
       this.loginFlows = loginFlows;
       if (supportsSso && !legacyPasswordLogin) {
@@ -105,6 +106,7 @@ class HomeserverPickerController extends State<HomeserverPicker> {
       }
       context.push(
         '${GoRouter.of(context).routeInformationProvider.value.uri.path}/login',
+        extra: client,
       );
     } catch (e) {
       setState(
@@ -142,8 +144,8 @@ class HomeserverPickerController extends State<HomeserverPicker> {
         : isDefaultPlatform
             ? '${AppConfig.appOpenUrlScheme.toLowerCase()}://login'
             : 'http://localhost:3001//login';
-
-    final url = Matrix.of(context).getLoginClient().homeserver!.replace(
+    final client = await Matrix.of(context).getLoginClient();
+    final url = client.homeserver!.replace(
       path: '/_matrix/client/v3/login/sso/redirect',
       queryParameters: {'redirectUrl': redirectUrl},
     );
@@ -164,11 +166,12 @@ class HomeserverPickerController extends State<HomeserverPicker> {
       isLoading = true;
     });
     try {
-      await Matrix.of(context).getLoginClient().login(
-            LoginType.mLoginToken,
-            token: token,
-            initialDeviceDisplayName: PlatformInfos.clientName,
-          );
+      final client = await Matrix.of(context).getLoginClient();
+      client.login(
+        LoginType.mLoginToken,
+        token: token,
+        initialDeviceDisplayName: PlatformInfos.clientName,
+      );
     } catch (e) {
       setState(() {
         error = e.toLocalizedString(context);
@@ -200,7 +203,7 @@ class HomeserverPickerController extends State<HomeserverPicker> {
       isLoading = true;
     });
     try {
-      final client = Matrix.of(context).getLoginClient();
+      final client = await Matrix.of(context).getLoginClient();
       await client.importDump(String.fromCharCodes(await file.readAsBytes()));
       Matrix.of(context).initMatrix();
     } catch (e) {

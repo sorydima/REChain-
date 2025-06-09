@@ -1,70 +1,73 @@
 name: rechainonline
-title: REChain ®️ 🪐 ✨
-base: core22
+title: REChain
+base: core24
 version: git
-license: GPL-3.0
+license: AGPL-3.0
 summary: REChain ®️🪐✨ Platform encourages collaborative communication through features
 description: |
-  REChain ®️ 🪐 ✨ is an primarily designed as a security and privacy analysis analogue fully focused on the use of platform moments and messages for communication, built on a source code library, including those developed by us, for those who respect freedom and privacy, as well as the safety and security of personal data. 🌤 Our task was to make a tool pleasant and enjoyable to use, with which each of you can communicate, expand content, create workspaces, organize a workflow. 🌈 We strive to show all the world's giants that it is possible to create cool products that are of great importance for society, for people to interact with each other, without selling advertising, personal data of users, their rights and freedoms! 🦄 It's written in Flutter. Our mission is to create an easy to use instant messenger which is open source and accessible for everyone. Donate US! ⌛ For tea, coffee! For the future of decentralized and distributed internet. We do cool and, in my opinion, useful things for the safety and security of users' personal data. And on a completely non-commercial basis! 😎 Tether - (TRC20) - Tron 🍕: TRZ7jyMBNtRtqokkkJ7g5BJDzFycDv8cBm - Join the community: https://matrix.to/#/#chatting:matrix.katya.wtf Website: https://rechain.online
+  REChain ®️ 🪐 ✨ is an primarily designed as a security and privacy analysis analogue fully focused on the use of platform moments and messages for communication, built on a source code library, including those developed by us, for those who respect freedom and privacy, as well as the safety and security of personal data. 🌤 Our task was to make a tool pleasant and enjoyable to use, with which each of you can communicate, expand content, create workspaces, organize a workflow. 🌈 We strive to show all the world's giants that it is possible to create cool products that are of great importance for society, for people to interact with each other, without selling advertising, personal data of users, their rights and freedoms! 🦄 It's written in Flutter. Our mission is to create an easy to use instant messenger which is open source and accessible for everyone. Donate US! ⌛ For tea, coffee! For the future of decentralized and distributed internet. We do cool and, in my opinion, useful things for the safety and security of users' personal data. And on a completely non-commercial basis! 😎 Join the community: https://matrix.to/#/#chatting:matrix.katya.wtf Website: https://online.rechain.network
+
+
+  ## Features
+
+  - Send all kinds of messages, images and files
+  - Voice messages
+  - Location sharing
+  - Push notifications
+  - Unlimited private and public group chats
+  - Public channels with thousands of participants
+  - Feature rich group moderation including all REChain features
+  - Discover and join public groups
+  - Dark mode
+  - Hides complexity of REChain IDs behind simple QR codes
+  - Custom emotes and stickers
+  - Video calls via sharing links to Jitsi
+  - Spaces
+  - Compatible with Element, Nheko, NeoChat and all other REChain apps
+  - End to end encryption
+  - Emoji verification & cross signing
+  - And much more...
+
+
+  ## REChain comes with a dream
+
+  Imagine a world where everyone can choose the messenger they like and is still able to chat with all of their friends.
+
+  A world where there are no companies spying on you when you send selfies to friends and lovers.
+
+  Join the community: https://matrix.to/#/#chatting:matrix.katya.wtf
+  Website: http://online.rechain.network
+  Microblog: https://instagram.com/rechain_inc
 
 grade: stable
 confinement: strict
 
-architectures:
-  - build-on: [amd64]
-    build-for: [amd64]
-  - build-on: [arm64]
-    build-for: [arm64]
+platforms:
+  amd64:
+    build-on: amd64
+  arm64:
+    build-on: arm64
 
 parts:
-  olm:
-    plugin: cmake
-    cmake-parameters:
-      - -DCMAKE_INSTALL_PREFIX=/usr
-    source: https://gitlab.matrix.org/matrix-org/olm.git
-    source-type: git
-    source-tag: '3.2.14'
-    build-packages:
-      - g++
-
-  flutter-git:
-    source: https://github.com/flutter/flutter.git
-    source-tag: 3.27.3
-    plugin: nil
-    override-build: |
-      set -eux
-      mkdir -p $CRAFT_PART_INSTALL/usr/bin
-      mkdir -p $CRAFT_PART_INSTALL/usr/libexec
-      cp -r $CRAFT_PART_SRC $CRAFT_PART_INSTALL/usr/libexec/flutter
-      ln -sf $CRAFT_PART_INSTALL/usr/libexec/flutter/bin/flutter $CRAFT_PART_INSTALL/usr/bin/flutter
-      export PATH="$CRAFT_PART_INSTALL/usr/bin:$PATH"
-      flutter doctor
-    build-packages:
-      - clang
-      - cmake
-      - curl
-      - ninja-build
-      - unzip
-    override-prime: ''
-
   rechainonline:
-    after: [ flutter-git ]
-    plugin: nil
+    plugin: flutter
     source: .
     override-build: |
-      flutter pub get || true
-      flutter build linux --release -v
-      mkdir -p $CRAFT_PART_INSTALL/bin
-      cp -r build/linux/*/release/bundle/* $CRAFT_PART_INSTALL/bin/
+      # Workaround for Flutter build error:
+      rm -rf build
+      craftctl default
     build-packages:
       - libsecret-1-dev
       - libjsoncpp-dev
       - libssl-dev
       - curl
-      - jq
+      - libpciaccess-dev
+      - cargo
+      - rustc
     stage-packages:
       - libsecret-1-0
-      # - libjsoncpp25
+      - libjsoncpp25
+      - libpciaccess0
 
 slots:
   dbus-svc:
@@ -74,8 +77,8 @@ slots:
 
 apps:
   rechainonline:
-    command: bin/rechainonline
-    # extensions: [ gnome ]
+    command: rechainonline
+    extensions: [ gnome ]
     plugs:
       - audio-playback
       - desktop
@@ -90,8 +93,6 @@ apps:
       - password-manager-service
     slots:
       - dbus-svc
-    # Workaround for:
-    # https://github.com/flutter-webrtc/flutter-webrtc/issues/1212#issuecomment-1611899344
     environment:
       XDG_DATA_HOME: $SNAP_USER_DATA
       XDG_DATA_DIRS: $SNAP/usr/share

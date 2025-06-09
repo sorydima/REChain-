@@ -1,0 +1,10 @@
+# kakaotalk registration.yaml
+id: kakaotalk
+url: http://kakaotalk:29328
+as_token: __CHANGE_ME__
+hs_token: __CHANGE_ME__
+sender_localpart: kakaotalk-bot
+namespaces:
+  users: []
+  aliases: []
+  rooms: []

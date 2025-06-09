@@ -1,0 +1,53 @@
+server_name: "your.domain.tld"
+pid_file: /data/homeserver.pid
+public_baseurl: "https://your.domain.tld/"
+
+listeners:
+  - port: 8008
+    type: http
+    tls: false
+    bind_addresses: ['0.0.0.0']
+    x_forwarded: true
+    resources:
+      - names: [client, federation]
+        compress: false
+
+database:
+  name: psycopg2
+  args:
+    user: synapse
+    password: synapsepassword
+    database: synapse
+    host: db
+    cp_min: 5
+    cp_max: 10
+
+log_config: "/data/log.config"
+media_store_path: "/data/media_store"
+
+registration_shared_secret: "generate_a_secure_token"
+report_stats: true
+
+app_service_config_files:
+  - /data/bridges/telegram_registration.yaml
+  - /data/bridges/signal_registration.yaml
+  - /data/bridges/whatsapp_registration.yaml
+  - /data/bridges/discord_registration.yaml
+  - /data/bridges/facebook_registration.yaml
+  - /data/bridges/instagram_registration.yaml
+  - /data/bridges/googlechat_registration.yaml
+  - /data/bridges/slack_registration.yaml
+  - /data/bridges/twitter_registration.yaml
+  - /data/bridges/bluesky_registration.yaml
+  - /data/bridges/gmessages_registration.yaml
+  - /data/bridges/email_registration.yaml
+  - /data/bridges/hookshot_registration.yaml
+  - /data/bridges/gvoice_registration.yaml
+  - /data/bridges/gitter_registration.yaml
+  - /data/bridges/xmpp_registration.yaml
+  - /data/bridges/mattermost_registration.yaml
+  - /data/bridges/mumble_registration.yaml
+  - /data/bridges/wechat_registration.yaml
+  - /data/bridges/kakaotalk_registration.yaml
+  - /data/bridges/qq_registration.yaml
+  - /data/bridges/heisenbridge_registration.yaml

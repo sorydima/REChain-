@@ -1,0 +1,10 @@
+# twitter registration.yaml
+id: twitter
+url: http://twitter:29328
+as_token: __CHANGE_ME__
+hs_token: __CHANGE_ME__
+sender_localpart: twitter-bot
+namespaces:
+  users: []
+  aliases: []
+  rooms: []

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/config/setting_keys.dart';
 import 'package:rechainonline/config/themes.dart';
+import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
 import 'package:rechainonline/widgets/layouts/max_width_body.dart';
 import 'package:rechainonline/widgets/matrix.dart';

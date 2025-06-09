@@ -2,16 +2,18 @@ import 'package:flutter/material.dart';
 
 import 'package:collection/collection.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:flutter_vodozemac/flutter_vodozemac.dart' as vod;
 import 'package:matrix/matrix.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/utils/client_manager.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
-import 'package:rechainonline/widgets/error_widget.dart';
 import 'config/setting_keys.dart';
 import 'utils/background_push.dart';
 import 'widgets/rechainonline_chat_app.dart';
+
+import 'features/blockchain/api/blockchain_service_manager.dart';
 
 void main() async {
   Logs().i('Welcome to ${AppConfig.applicationName} <3');
@@ -21,9 +23,15 @@ void main() async {
   // widget bindings are initialized already.
   WidgetsFlutterBinding.ensureInitialized();
 
+  await vod.init();
+
   Logs().nativeColors = !PlatformInfos.isIOS;
   final store = await SharedPreferences.getInstance();
   final clients = await ClientManager.getClients(store: store);
+
+  // Initialize blockchain services
+  final blockchainServiceManager = BlockchainServiceManager();
+  blockchainServiceManager.initialize();
 
   // If the app starts in detached mode, we assume that it is in
   // background fetch mode for processing push notifications. This is
@@ -72,7 +80,6 @@ Future<void> startGui(List<Client> clients, SharedPreferences store) async {
   await firstClient?.roomsLoading;
   await firstClient?.accountDataLoading;
 
-  ErrorWidget.builder = (details) => rechainonlineChatErrorWidget(details);
   runApp(rechainonlineChatApp(clients: clients, pincode: pin, store: store));
 }
 
