@@ -1,0 +1,231 @@
+[http.routers]
+  [http.routers.synapse]
+    rule = "Host(`matrix.your.domain.tld`)"
+    entryPoints = ["websecure"]
+    service = "synapse"
+    [http.routers.synapse.tls]
+
+  [http.routers.bridge_telegram]
+    rule = "Host(`telegram.your.domain.tld`)"
+    entryPoints = ["websecure"]
+    service = "bridge_telegram"
+    [http.routers.bridge_telegram.tls]
+
+  [http.routers.bridge_signal]
+    rule = "Host(`signal.your.domain.tld`)"
+    entryPoints = ["websecure"]
+    service = "bridge_signal"
+    [http.routers.bridge_signal.tls]
+
+  [http.routers.bridge_whatsapp]
+    rule = "Host(`whatsapp.your.domain.tld`)"
+    entryPoints = ["websecure"]
+    service = "bridge_whatsapp"
+    [http.routers.bridge_whatsapp.tls]
+
+  [http.routers.bridge_discord]
+    rule = "Host(`discord.your.domain.tld`)"
+    entryPoints = ["websecure"]
+    service = "bridge_discord"
+    [http.routers.bridge_discord.tls]
+
+  [http.routers.bridge_facebook]
+    rule = "Host(`facebook.your.domain.tld`)"
+    entryPoints = ["websecure"]
+    service = "bridge_facebook"
+    [http.routers.bridge_facebook.tls]
+
+  [http.routers.bridge_instagram]
+    rule = "Host(`instagram.your.domain.tld`)"
+    entryPoints = ["websecure"]
+    service = "bridge_instagram"
+    [http.routers.bridge_instagram.tls]
+
+  [http.routers.bridge_googlechat]
+    rule = "Host(`googlechat.your.domain.tld`)"
+    entryPoints = ["websecure"]
+    service = "bridge_googlechat"
+    [http.routers.bridge_googlechat.tls]
+
+  [http.routers.bridge_slack]
+    rule = "Host(`slack.your.domain.tld`)"
+    entryPoints = ["websecure"]
+    service = "bridge_slack"
+    [http.routers.bridge_slack.tls]
+
+  [http.routers.bridge_twitter]
+    rule = "Host(`twitter.your.domain.tld`)"
+    entryPoints = ["websecure"]
+    service = "bridge_twitter"
+    [http.routers.bridge_twitter.tls]
+
+  [http.routers.bridge_bluesky]
+    rule = "Host(`bluesky.your.domain.tld`)"
+    entryPoints = ["websecure"]
+    service = "bridge_bluesky"
+    [http.routers.bridge_bluesky.tls]
+
+  [http.routers.bridge_gmessages]
+    rule = "Host(`gmessages.your.domain.tld`)"
+    entryPoints = ["websecure"]
+    service = "bridge_gmessages"
+    [http.routers.bridge_gmessages.tls]
+
+  [http.routers.bridge_email]
+    rule = "Host(`email.your.domain.tld`)"
+    entryPoints = ["websecure"]
+    service = "bridge_email"
+    [http.routers.bridge_email.tls]
+
+  [http.routers.bridge_hookshot]
+    rule = "Host(`hookshot.your.domain.tld`)"
+    entryPoints = ["websecure"]
+    service = "bridge_hookshot"
+    [http.routers.bridge_hookshot.tls]
+
+  [http.routers.bridge_gvoice]
+    rule = "Host(`gvoice.your.domain.tld`)"
+    entryPoints = ["websecure"]
+    service = "bridge_gvoice"
+    [http.routers.bridge_gvoice.tls]
+
+  [http.routers.bridge_gitter]
+    rule = "Host(`gitter.your.domain.tld`)"
+    entryPoints = ["websecure"]
+    service = "bridge_gitter"
+    [http.routers.bridge_gitter.tls]
+
+  [http.routers.bridge_xmpp]
+    rule = "Host(`xmpp.your.domain.tld`)"
+    entryPoints = ["websecure"]
+    service = "bridge_xmpp"
+    [http.routers.bridge_xmpp.tls]
+
+  [http.routers.bridge_mattermost]
+    rule = "Host(`mattermost.your.domain.tld`)"
+    entryPoints = ["websecure"]
+    service = "bridge_mattermost"
+    [http.routers.bridge_mattermost.tls]
+
+  [http.routers.bridge_mumble]
+    rule = "Host(`mumble.your.domain.tld`)"
+    entryPoints = ["websecure"]
+    service = "bridge_mumble"
+    [http.routers.bridge_mumble.tls]
+
+  [http.routers.bridge_wechat]
+    rule = "Host(`wechat.your.domain.tld`)"
+    entryPoints = ["websecure"]
+    service = "bridge_wechat"
+    [http.routers.bridge_wechat.tls]
+
+  [http.routers.bridge_kakaotalk]
+    rule = "Host(`kakaotalk.your.domain.tld`)"
+    entryPoints = ["websecure"]
+    service = "bridge_kakaotalk"
+    [http.routers.bridge_kakaotalk.tls]
+
+  [http.routers.bridge_qq]
+    rule = "Host(`qq.your.domain.tld`)"
+    entryPoints = ["websecure"]
+    service = "bridge_qq"
+    [http.routers.bridge_qq.tls]
+
+  [http.routers.bridge_heisenbridge]
+    rule = "Host(`heisenbridge.your.domain.tld`)"
+    entryPoints = ["websecure"]
+    service = "bridge_heisenbridge"
+    [http.routers.bridge_heisenbridge.tls]
+
+[http.services]
+  [http.services.synapse.loadBalancer]
+    [[http.services.synapse.loadBalancer.servers]]
+      url = "http://synapse:8008"
+
+  [http.services.bridge_telegram.loadBalancer]
+    [[http.services.bridge_telegram.loadBalancer.servers]]
+      url = "http://bridge_telegram:29328"
+
+  [http.services.bridge_signal.loadBalancer]
+    [[http.services.bridge_signal.loadBalancer.servers]]
+      url = "http://bridge_signal:29329"
+
+  [http.services.bridge_whatsapp.loadBalancer]
+    [[http.services.bridge_whatsapp.loadBalancer.servers]]
+      url = "http://bridge_whatsapp:29330"
+
+  [http.services.bridge_discord.loadBalancer]
+    [[http.services.bridge_discord.loadBalancer.servers]]
+      url = "http://bridge_discord:29331"
+
+  [http.services.bridge_facebook.loadBalancer]
+    [[http.services.bridge_facebook.loadBalancer.servers]]
+      url = "http://bridge_facebook:29332"
+
+  [http.services.bridge_instagram.loadBalancer]
+    [[http.services.bridge_instagram.loadBalancer.servers]]
+      url = "http://bridge_instagram:29333"
+
+  [http.services.bridge_googlechat.loadBalancer]
+    [[http.services.bridge_googlechat.loadBalancer.servers]]
+      url = "http://bridge_googlechat:29334"
+
+  [http.services.bridge_slack.loadBalancer]
+    [[http.services.bridge_slack.loadBalancer.servers]]
+      url = "http://bridge_slack:29335"
+
+  [http.services.bridge_twitter.loadBalancer]
+    [[http.services.bridge_twitter.loadBalancer.servers]]
+      url = "http://bridge_twitter:29336"
+
+  [http.services.bridge_bluesky.loadBalancer]
+    [[http.services.bridge_bluesky.loadBalancer.servers]]
+      url = "http://bridge_bluesky:29337"
+
+  [http.services.bridge_gmessages.loadBalancer]
+    [[http.services.bridge_gmessages.loadBalancer.servers]]
+      url = "http://bridge_gmessages:29338"
+
+  [http.services.bridge_email.loadBalancer]
+    [[http.services.bridge_email.loadBalancer.servers]]
+      url = "http://bridge_email:29339"
+
+  [http.services.bridge_hookshot.loadBalancer]
+    [[http.services.bridge_hookshot.loadBalancer.servers]]
+      url = "http://bridge_hookshot:29340"
+
+  [http.services.bridge_gvoice.loadBalancer]
+    [[http.services.bridge_gvoice.loadBalancer.servers]]
+      url = "http://bridge_gvoice:29341"
+
+  [http.services.bridge_gitter.loadBalancer]
+    [[http.services.bridge_gitter.loadBalancer.servers]]
+      url = "http://bridge_gitter:29342"
+
+  [http.services.bridge_xmpp.loadBalancer]
+    [[http.services.bridge_xmpp.loadBalancer.servers]]
+      url = "http://bridge_xmpp:29343"
+
+  [http.services.bridge_mattermost.loadBalancer]
+    [[http.services.bridge_mattermost.loadBalancer.servers]]
+      url = "http://bridge_mattermost:29344"
+
+  [http.services.bridge_mumble.loadBalancer]
+    [[http.services.bridge_mumble.loadBalancer.servers]]
+      url = "http://bridge_mumble:29345"
+
+  [http.services.bridge_wechat.loadBalancer]
+    [[http.services.bridge_wechat.loadBalancer.servers]]
+      url = "http://bridge_wechat:29346"
+
+  [http.services.bridge_kakaotalk.loadBalancer]
+    [[http.services.bridge_kakaotalk.loadBalancer.servers]]
+      url = "http://bridge_kakaotalk:29347"
+
+  [http.services.bridge_qq.loadBalancer]
+    [[http.services.bridge_qq.loadBalancer.servers]]
+      url = "http://bridge_qq:29348"
+
+  [http.services.bridge_heisenbridge.loadBalancer]
+    [[http.services.bridge_heisenbridge.loadBalancer.servers]]
+      url = "http://bridge_heisenbridge:29349"
