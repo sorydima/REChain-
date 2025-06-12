@@ -2,6 +2,10 @@
 
 ### **REChain Messenger** 🪐🔒  
 
+https://api.codemagic.io/apps/6849dcd1411f3e1270f933cd/6849dcd1411f3e1270f933cc/status_badge.svg
+
+[![Codemagic build status](https://api.codemagic.io/apps/6849dcd1411f3e1270f933cd/6849dcd1411f3e1270f933cc/status_badge.svg)](https://codemagic.io/app/6849dcd1411f3e1270f933cd/6849dcd1411f3e1270f933cc/latest_build)
+
 **REChain Messenger** is a decentralized messaging app focused on privacy, security, and unrestricted communication. It operates without centralized servers, eliminating censorship, data leaks, and third-party surveillance.  
 
 ## 🔹 **Key Features**  
