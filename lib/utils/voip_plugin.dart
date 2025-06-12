@@ -1,18 +1,17 @@
 import 'dart:core';
 
-import 'package:flutter/foundation.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 
 import 'package:flutter_foreground_task/flutter_foreground_task.dart';
-import 'package:flutter/foundation.dart'
-    show kIsWeb;
 import 'flutter_webrtc_stub.dart'
     if (dart.library.html) 'flutter_webrtc_stub.dart'
-    if (!dart.library.html) 'package:flutter_webrtc/flutter_webrtc.dart' as webrtc_impl;
+    else 'package:flutter_webrtc/flutter_webrtc.dart' as webrtc_impl;
 import 'package:matrix/matrix.dart';
 import 'package:webrtc_interface/webrtc_interface.dart' hide Navigator;
 
 import 'package:rechainonline/pages/chat_list/chat_list.dart';
+
 import 'package:rechainonline/pages/dialer/dialer.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
 import '../../utils/voip/user_media_manager.dart';
