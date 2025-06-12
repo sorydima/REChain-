@@ -2,7 +2,10 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import 'package:flutter_webrtc/flutter_webrtc.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
+import 'flutter_webrtc_stub.dart'
+    if (dart.library.html) 'flutter_webrtc_stub.dart'
+    if (!dart.library.html) 'package:flutter_webrtc/flutter_webrtc.dart';
 import 'package:matrix/matrix.dart';
 
 class VideoRenderer extends StatefulWidget {

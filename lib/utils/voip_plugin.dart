@@ -4,7 +4,11 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_foreground_task/flutter_foreground_task.dart';
-import 'package:flutter_webrtc/flutter_webrtc.dart' as webrtc_impl;
+import 'package:flutter/foundation.dart'
+    show kIsWeb;
+import 'flutter_webrtc_stub.dart'
+    if (dart.library.html) 'flutter_webrtc_stub.dart'
+    if (!dart.library.html) 'package:flutter_webrtc/flutter_webrtc.dart' as webrtc_impl;
 import 'package:matrix/matrix.dart';
 import 'package:webrtc_interface/webrtc_interface.dart' hide Navigator;
 
