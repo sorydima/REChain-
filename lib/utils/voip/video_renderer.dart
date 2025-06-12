@@ -8,6 +8,8 @@ import 'flutter_webrtc_stub.dart'
     if (!dart.library.html) 'package:flutter_webrtc/flutter_webrtc.dart';
 import 'package:matrix/matrix.dart';
 
+import 'flutter_webrtc_stub.dart' show RTCVideoViewObjectFit;
+
 class VideoRenderer extends StatefulWidget {
   final WrappedMediaStream? stream;
   final bool mirror;
