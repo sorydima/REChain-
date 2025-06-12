@@ -46,6 +46,7 @@ dependencies:
      ref: main
   flutter_vodozemac: ^0.2.1
   flutter_web_auth_2: ^3.1.1
+  flutter_webrtc: ^0.9.21
   geolocator: ^13.0.1
   go_router: ^15.1.2
   handy_window: ^0.4.0
