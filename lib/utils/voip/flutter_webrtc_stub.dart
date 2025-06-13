@@ -1,29 +1,34 @@
-import 'dart:async';
+import 'package:flutter/widgets.dart';
 
-class MediaDevices {
-  Future<List<String>> getUserMedia([Map<String, dynamic>? constraints]) async {
-    return [];
-  }
+enum RTCVideoViewObjectFit {
+  RTCVideoViewObjectFitContain,
+  RTCVideoViewObjectFitCover,
 }
 
 class RTCVideoRenderer {
-  Future<void> initialize() async {}
-  set srcObject(dynamic stream) {}
-  void dispose() {}
+  dynamic srcObject;
+
+  Future<void> initialize() async {
+    // Stub implementation
+  }
+
+  void dispose() {
+    // Stub implementation
+  }
 }
 
 class RTCVideoView extends StatelessWidget {
   final RTCVideoRenderer renderer;
   final bool mirror;
-  final Object? filterQuality;
-  final Object? objectFit;
+  final FilterQuality filterQuality;
+  final RTCVideoViewObjectFit objectFit;
   final Widget Function(BuildContext)? placeholderBuilder;
 
   const RTCVideoView(
     this.renderer, {
     this.mirror = false,
-    this.filterQuality,
-    this.objectFit,
+    this.filterQuality = FilterQuality.low,
+    this.objectFit = RTCVideoViewObjectFit.RTCVideoViewObjectFitContain,
     this.placeholderBuilder,
     Key? key,
   }) : super(key: key);
@@ -33,12 +38,3 @@ class RTCVideoView extends StatelessWidget {
     return Container(); // Empty container for web stub
   }
 }
-
-Future<dynamic> createPeerConnection(
-    Map<String, dynamic> configuration, [
-    Map<String, dynamic> constraints = const {},
-  ]) async {
-  return null;
-}
-
-final MediaDevices navigator = MediaDevices();

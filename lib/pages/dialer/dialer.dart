@@ -9,7 +9,7 @@ import 'package:flutter_foreground_task/flutter_foreground_task.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'flutter_webrtc_stub.dart'
     if (dart.library.html) 'flutter_webrtc_stub.dart'
-    if (!dart.library.html) 'package:flutter_webrtc/flutter_webrtc.dart' hide VideoRenderer;
+    else 'package:flutter_webrtc/flutter_webrtc.dart' hide VideoRenderer;
 import 'package:just_audio/just_audio.dart';
 import 'package:matrix/matrix.dart';
 import 'package:wakelock_plus/wakelock_plus.dart';
