@@ -6,13 +6,13 @@ services:
     volumes:
     - ./data/synapse:/data
     environment:
-    - SYNAPSE_SERVER_NAME=your.domain.tld
+    - SYNAPSE_SERVER_NAME=node.marinchik.ink
     - SYNAPSE_REPORT_STATS=yes
     networks:
     - matrix
     labels:
     - traefik.enable=true
-    - traefik.http.routers.synapse.rule=Host(`matrix.your.domain.tld`)
+    - traefik.http.routers.synapse.rule=Host(`matrix.node.marinchik.ink`)
     - traefik.http.routers.synapse.entrypoints=websecure
     - traefik.http.routers.synapse.tls=true
   traefik:
@@ -50,7 +50,7 @@ services:
     - matrix
     labels:
     - traefik.enable=true
-    - traefik.http.routers.bridge_telegram.rule=Host(`telegram.your.domain.tld`)
+    - traefik.http.routers.bridge_telegram.rule=Host(`telegram.node.marinchik.ink`)
     - traefik.http.routers.bridge_telegram.entrypoints=websecure
     - traefik.http.routers.bridge_telegram.tls=true
   bridge_signal:
@@ -62,7 +62,7 @@ services:
     - matrix
     labels:
     - traefik.enable=true
-    - traefik.http.routers.bridge_signal.rule=Host(`signal.your.domain.tld`)
+    - traefik.http.routers.bridge_signal.rule=Host(`signal.node.marinchik.ink`)
     - traefik.http.routers.bridge_signal.entrypoints=websecure
     - traefik.http.routers.bridge_signal.tls=true
   bridge_whatsapp:
@@ -74,7 +74,7 @@ services:
     - matrix
     labels:
     - traefik.enable=true
-    - traefik.http.routers.bridge_whatsapp.rule=Host(`whatsapp.your.domain.tld`)
+    - traefik.http.routers.bridge_whatsapp.rule=Host(`whatsapp.node.marinchik.ink`)
     - traefik.http.routers.bridge_whatsapp.entrypoints=websecure
     - traefik.http.routers.bridge_whatsapp.tls=true
   bridge_discord:
@@ -86,7 +86,7 @@ services:
     - matrix
     labels:
     - traefik.enable=true
-    - traefik.http.routers.bridge_discord.rule=Host(`discord.your.domain.tld`)
+    - traefik.http.routers.bridge_discord.rule=Host(`discord.node.marinchik.ink`)
     - traefik.http.routers.bridge_discord.entrypoints=websecure
     - traefik.http.routers.bridge_discord.tls=true
   bridge_facebook:
@@ -98,7 +98,7 @@ services:
     - matrix
     labels:
     - traefik.enable=true
-    - traefik.http.routers.bridge_facebook.rule=Host(`facebook.your.domain.tld`)
+    - traefik.http.routers.bridge_facebook.rule=Host(`facebook.node.marinchik.ink`)
     - traefik.http.routers.bridge_facebook.entrypoints=websecure
     - traefik.http.routers.bridge_facebook.tls=true
   bridge_instagram:
@@ -110,7 +110,7 @@ services:
     - matrix
     labels:
     - traefik.enable=true
-    - traefik.http.routers.bridge_instagram.rule=Host(`instagram.your.domain.tld`)
+    - traefik.http.routers.bridge_instagram.rule=Host(`instagram.node.marinchik.ink`)
     - traefik.http.routers.bridge_instagram.entrypoints=websecure
     - traefik.http.routers.bridge_instagram.tls=true
   bridge_googlechat:
@@ -122,7 +122,7 @@ services:
     - matrix
     labels:
     - traefik.enable=true
-    - traefik.http.routers.bridge_googlechat.rule=Host(`googlechat.your.domain.tld`)
+    - traefik.http.routers.bridge_googlechat.rule=Host(`googlechat.node.marinchik.ink`)
     - traefik.http.routers.bridge_googlechat.entrypoints=websecure
     - traefik.http.routers.bridge_googlechat.tls=true
   bridge_slack:
@@ -134,7 +134,7 @@ services:
     - matrix
     labels:
     - traefik.enable=true
-    - traefik.http.routers.bridge_slack.rule=Host(`slack.your.domain.tld`)
+    - traefik.http.routers.bridge_slack.rule=Host(`slack.node.marinchik.ink`)
     - traefik.http.routers.bridge_slack.entrypoints=websecure
     - traefik.http.routers.bridge_slack.tls=true
   bridge_twitter:
@@ -146,7 +146,7 @@ services:
     - matrix
     labels:
     - traefik.enable=true
-    - traefik.http.routers.bridge_twitter.rule=Host(`twitter.your.domain.tld`)
+    - traefik.http.routers.bridge_twitter.rule=Host(`twitter.node.marinchik.ink`)
     - traefik.http.routers.bridge_twitter.entrypoints=websecure
     - traefik.http.routers.bridge_twitter.tls=true
   bridge_bluesky:
@@ -158,7 +158,7 @@ services:
     - matrix
     labels:
     - traefik.enable=true
-    - traefik.http.routers.bridge_bluesky.rule=Host(`bluesky.your.domain.tld`)
+    - traefik.http.routers.bridge_bluesky.rule=Host(`bluesky.node.marinchik.ink`)
     - traefik.http.routers.bridge_bluesky.entrypoints=websecure
     - traefik.http.routers.bridge_bluesky.tls=true
   bridge_gmessages:
@@ -170,7 +170,7 @@ services:
     - matrix
     labels:
     - traefik.enable=true
-    - traefik.http.routers.bridge_gmessages.rule=Host(`gmessages.your.domain.tld`)
+    - traefik.http.routers.bridge_gmessages.rule=Host(`gmessages.node.marinchik.ink`)
     - traefik.http.routers.bridge_gmessages.entrypoints=websecure
     - traefik.http.routers.bridge_gmessages.tls=true
   bridge_email:
@@ -182,7 +182,7 @@ services:
     - matrix
     labels:
     - traefik.enable=true
-    - traefik.http.routers.bridge_email.rule=Host(`email.your.domain.tld`)
+    - traefik.http.routers.bridge_email.rule=Host(`email.node.marinchik.ink`)
     - traefik.http.routers.bridge_email.entrypoints=websecure
     - traefik.http.routers.bridge_email.tls=true
   bridge_hookshot:
@@ -194,7 +194,7 @@ services:
     - matrix
     labels:
     - traefik.enable=true
-    - traefik.http.routers.bridge_hookshot.rule=Host(`hookshot.your.domain.tld`)
+    - traefik.http.routers.bridge_hookshot.rule=Host(`hookshot.node.marinchik.ink`)
     - traefik.http.routers.bridge_hookshot.entrypoints=websecure
     - traefik.http.routers.bridge_hookshot.tls=true
   bridge_gvoice:
@@ -206,7 +206,7 @@ services:
     - matrix
     labels:
     - traefik.enable=true
-    - traefik.http.routers.bridge_gvoice.rule=Host(`gvoice.your.domain.tld`)
+    - traefik.http.routers.bridge_gvoice.rule=Host(`gvoice.node.marinchik.ink`)
     - traefik.http.routers.bridge_gvoice.entrypoints=websecure
     - traefik.http.routers.bridge_gvoice.tls=true
   bridge_gitter:
@@ -218,7 +218,7 @@ services:
     - matrix
     labels:
     - traefik.enable=true
-    - traefik.http.routers.bridge_gitter.rule=Host(`gitter.your.domain.tld`)
+    - traefik.http.routers.bridge_gitter.rule=Host(`gitter.node.marinchik.ink`)
     - traefik.http.routers.bridge_gitter.entrypoints=websecure
     - traefik.http.routers.bridge_gitter.tls=true
   bridge_xmpp:
@@ -230,7 +230,7 @@ services:
     - matrix
     labels:
     - traefik.enable=true
-    - traefik.http.routers.bridge_xmpp.rule=Host(`xmpp.your.domain.tld`)
+    - traefik.http.routers.bridge_xmpp.rule=Host(`xmpp.node.marinchik.ink`)
     - traefik.http.routers.bridge_xmpp.entrypoints=websecure
     - traefik.http.routers.bridge_xmpp.tls=true
   bridge_mattermost:
@@ -242,7 +242,7 @@ services:
     - matrix
     labels:
     - traefik.enable=true
-    - traefik.http.routers.bridge_mattermost.rule=Host(`mattermost.your.domain.tld`)
+    - traefik.http.routers.bridge_mattermost.rule=Host(`mattermost.node.marinchik.ink`)
     - traefik.http.routers.bridge_mattermost.entrypoints=websecure
     - traefik.http.routers.bridge_mattermost.tls=true
   bridge_mumble:
@@ -254,7 +254,7 @@ services:
     - matrix
     labels:
     - traefik.enable=true
-    - traefik.http.routers.bridge_mumble.rule=Host(`mumble.your.domain.tld`)
+    - traefik.http.routers.bridge_mumble.rule=Host(`mumble.node.marinchik.ink`)
     - traefik.http.routers.bridge_mumble.entrypoints=websecure
     - traefik.http.routers.bridge_mumble.tls=true
   bridge_wechat:
@@ -266,7 +266,7 @@ services:
     - matrix
     labels:
     - traefik.enable=true
-    - traefik.http.routers.bridge_wechat.rule=Host(`wechat.your.domain.tld`)
+    - traefik.http.routers.bridge_wechat.rule=Host(`wechat.node.marinchik.ink`)
     - traefik.http.routers.bridge_wechat.entrypoints=websecure
     - traefik.http.routers.bridge_wechat.tls=true
   bridge_kakaotalk:
@@ -278,7 +278,7 @@ services:
     - matrix
     labels:
     - traefik.enable=true
-    - traefik.http.routers.bridge_kakaotalk.rule=Host(`kakaotalk.your.domain.tld`)
+    - traefik.http.routers.bridge_kakaotalk.rule=Host(`kakaotalk.node.marinchik.ink`)
     - traefik.http.routers.bridge_kakaotalk.entrypoints=websecure
     - traefik.http.routers.bridge_kakaotalk.tls=true
   bridge_qq:
@@ -290,7 +290,7 @@ services:
     - matrix
     labels:
     - traefik.enable=true
-    - traefik.http.routers.bridge_qq.rule=Host(`qq.your.domain.tld`)
+    - traefik.http.routers.bridge_qq.rule=Host(`qq.node.marinchik.ink`)
     - traefik.http.routers.bridge_qq.entrypoints=websecure
     - traefik.http.routers.bridge_qq.tls=true
   bridge_heisenbridge:
@@ -302,7 +302,7 @@ services:
     - matrix
     labels:
     - traefik.enable=true
-    - traefik.http.routers.bridge_heisenbridge.rule=Host(`heisenbridge.your.domain.tld`)
+    - traefik.http.routers.bridge_heisenbridge.rule=Host(`heisenbridge.node.marinchik.ink`)
     - traefik.http.routers.bridge_heisenbridge.entrypoints=websecure
     - traefik.http.routers.bridge_heisenbridge.tls=true
 networks:
