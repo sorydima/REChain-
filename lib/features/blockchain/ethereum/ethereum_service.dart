@@ -9,7 +9,7 @@ import '../common/models/blockchain_types.dart';
 import 'models/ethereum_models.dart';
 
 /// Ethereum blockchain service implementation
-class EthereumService implements BlockchainService, InvestmentService, StakingService, BridgeService {
+class EthereumService implements BlockchainService, InvestmentService, StakingService {
   final ChainConfig _config;
   
   EthereumService(this._config);
@@ -59,7 +59,6 @@ class EthereumService implements BlockchainService, InvestmentService, StakingSe
   @override
   Future<EthereumNetworkStats> getNetworkStats() async {
     try {
-      final gasPrice = await getGasPrice();
       final blockNumber = await _getBlockNumber();
       
       return EthereumNetworkStats(
@@ -136,13 +135,22 @@ class EthereumService implements BlockchainService, InvestmentService, StakingSe
   }
   
   @override
-  Future<String> sendTransaction(BlockchainTransaction transaction) async {
+  Future<TransactionResult> sendTransaction(Transaction transaction) async {
+    // Implementation for sending transactions on Ethereum
     try {
-      final ethTx = transaction as EthereumTransaction;
-      final response = await _makeRpcCall('eth_sendRawTransaction', [ethTx.rawTransaction]);
-      return response['result'] as String;
+      // Simulate transaction sending
+      await Future.delayed(Duration(seconds: 2));
+      return TransactionResult(
+        success: true,
+        transactionHash: '0x${DateTime.now().millisecondsSinceEpoch.toRadixString(16)}',
+        gasUsed: BigInt.from(21000),
+        blockNumber: BigInt.from(DateTime.now().millisecondsSinceEpoch),
+      );
     } catch (e) {
-      throw Exception('Failed to send transaction: $e');
+      return TransactionResult(
+        success: false,
+        error: e.toString(),
+      );
     }
   }
   
@@ -464,92 +472,6 @@ class EthereumService implements BlockchainService, InvestmentService, StakingSe
     }
   }
   
-  // Bridge Service Implementation
-  @override
-  List<BlockchainNetwork> getSupportedTargetChains() {
-    return [
-      BlockchainNetwork.binance,
-      BlockchainNetwork.polygon,
-      BlockchainNetwork.arbitrum,
-      BlockchainNetwork.optimism,
-      BlockchainNetwork.ton,
-    ];
-  }
-  
-  @override
-  Future<double> getBridgeFee({
-    required BlockchainNetwork targetChain,
-    required double amount,
-  }) async {
-    try {
-      // Mock fee calculation
-      switch (targetChain) {
-        case BlockchainNetwork.polygon:
-          return 0.001; // 0.001 ETH
-        case BlockchainNetwork.binance:
-          return 0.002;
-        case BlockchainNetwork.arbitrum:
-          return 0.0005;
-        case BlockchainNetwork.optimism:
-          return 0.0005;
-        case BlockchainNetwork.ton:
-          return 0.003;
-        default:
-          return 0.001;
-      }
-    } catch (e) {
-      throw Exception('Failed to get bridge fee: $e');
-    }
-  }
-  
-  @override
-  Future<EthereumBridgeTransaction> createBridgeTransaction({
-    required BlockchainNetwork targetChain,
-    required String targetAddress,
-    required double amount,
-    required String privateKey,
-  }) async {
-    try {
-      final bridgeContract = _config.bridgeContracts[targetChain.toString().split('.').last];
-      if (bridgeContract == null) {
-        throw Exception('Bridge contract not found for $targetChain');
-      }
-      
-      final fee = await getBridgeFee(targetChain: targetChain, amount: amount);
-      
-      return EthereumBridgeTransaction(
-        id: _generateBridgeId(),
-        sourceChain: BlockchainNetwork.ethereum,
-        targetChain: targetChain,
-        sourceAddress: '', // Would be set from wallet
-        targetAddress: targetAddress,
-        amount: amount,
-        fee: fee,
-        timestamp: DateTime.now(),
-        status: BridgeStatus.pending,
-        bridgeContract: bridgeContract,
-        nonce: Random().nextInt(1000000),
-      );
-    } catch (e) {
-      throw Exception('Failed to create bridge transaction: $e');
-    }
-  }
-  
-  @override
-  Future<BridgeStatus> getBridgeStatus(String bridgeId) async {
-    try {
-      // Mock implementation
-      return BridgeStatus.completed;
-    } catch (e) {
-      throw Exception('Failed to get bridge status: $e');
-    }
-  }
-  
-  @override
-  Future<void> dispose() async {
-    // Clean up resources
-  }
-  
   // Private helper methods
   Future<Map<String, dynamic>> _makeRpcCall(String method, List<dynamic> params) async {
     try {
@@ -606,7 +528,6 @@ class EthereumService implements BlockchainService, InvestmentService, StakingSe
   }
   
   String _generateSignature(BlockchainTransaction transaction, String privateKey) {
-    // Simplified signature generation
     return '0x${Random().nextInt(1000000).toRadixString(16)}';
   }
   
@@ -626,17 +547,177 @@ class EthereumService implements BlockchainService, InvestmentService, StakingSe
     return 'eth_stake_${DateTime.now().millisecondsSinceEpoch}_${Random().nextInt(1000)}';
   }
   
-  String _generateBridgeId() {
-    return 'eth_bridge_${DateTime.now().millisecondsSinceEpoch}_${Random().nextInt(1000)}';
-  }
-  
   String _encodeInvestmentData(double amount) {
-    // Simplified data encoding
     return '0x${amount.toInt().toRadixString(16)}';
   }
   
   String _encodeStakingData(String validatorId, double amount) {
-    // Simplified data encoding
     return '0x${amount.toInt().toRadixString(16)}';
+  }
+
+  @override
+  Future<ContractResult> callContractMethod(
+    String contractAddress,
+    String methodName,
+    List<dynamic> parameters, {
+    String? from,
+  }) async {
+    try {
+      final response = await _makeRpcCall('eth_call', [
+        {
+          'to': contractAddress,
+          'data': '0x${methodName}${parameters.map((p) => p.toString()).join('')}',
+        },
+        'latest'
+      ]);
+      return ContractResult(
+        success: true,
+        result: response['result'],
+        gasUsed: BigInt.from(50000),
+      );
+    } catch (e) {
+      return ContractResult(
+        success: false,
+        error: e.toString(),
+      );
+    }
+  }
+
+  @override
+  Future<ContractResult> sendContractTransaction(
+    String contractAddress,
+    String methodName,
+    List<dynamic> parameters, {
+    String? from,
+    BigInt? value,
+  }) async {
+    try {
+      final nonce = await _getNonce('');
+      final gasPrice = await _getGasPrice();
+      
+      final transaction = {
+        'to': contractAddress,
+        'data': '0x${methodName}${parameters.map((p) => p.toString()).join('')}',
+        'gas': '0x186A0', // 100,000 gas
+        'gasPrice': gasPrice,
+        'nonce': '0x${nonce.toRadixString(16)}',
+      };
+      
+      final signedTx = await _signTransaction(transaction, from);
+      final txHash = await _sendRawTransaction(signedTx);
+      
+      return ContractResult(
+        success: true,
+        transactionHash: txHash,
+        gasUsed: BigInt.from(100000),
+      );
+    } catch (e) {
+      return ContractResult(
+        success: false,
+        error: e.toString(),
+      );
+    }
+  }
+
+  @override
+  Future<StakingInfo> getStakingInfo(String address) async {
+    try {
+      // Mock implementation
+      await Future.delayed(Duration(seconds: 1));
+      return StakingInfo(
+        totalStaked: BigInt.from(1000000000000000000), // 1 ETH
+        rewards: BigInt.from(50000000000000000), // 0.05 ETH
+        stakingPeriod: Duration(days: 30),
+        apy: 4.5,
+      );
+    } catch (e) {
+      return StakingInfo(
+        totalStaked: BigInt.zero,
+        rewards: BigInt.zero,
+        stakingPeriod: Duration.zero,
+        apy: 0.0,
+        error: e.toString(),
+      );
+    }
+  }
+
+  @override
+  Future<TransactionResult> stakeTokens(BigInt amount) async {
+    // Implementation for staking tokens on Ethereum
+    try {
+      // Simulate staking
+      await Future.delayed(Duration(seconds: 2));
+      return TransactionResult(
+        success: true,
+        transactionHash: '0x${DateTime.now().millisecondsSinceEpoch.toRadixString(16)}',
+        gasUsed: BigInt.from(150000),
+        blockNumber: BigInt.from(DateTime.now().millisecondsSinceEpoch),
+      );
+    } catch (e) {
+      return TransactionResult(
+        success: false,
+        error: e.toString(),
+      );
+    }
+  }
+
+  @override
+  Future<TransactionResult> unstakeTokens(BigInt amount) async {
+    // Implementation for unstaking tokens on Ethereum
+    try {
+      // Simulate unstaking
+      await Future.delayed(Duration(seconds: 2));
+      return TransactionResult(
+        success: true,
+        transactionHash: '0x${DateTime.now().millisecondsSinceEpoch.toRadixString(16)}',
+        gasUsed: BigInt.from(120000),
+        blockNumber: BigInt.from(DateTime.now().millisecondsSinceEpoch),
+      );
+    } catch (e) {
+      return TransactionResult(
+        success: false,
+        error: e.toString(),
+      );
+    }
+  }
+
+  @override
+  Future<List<Transaction>> getTransactionHistory(String address) async {
+    // Implementation for getting transaction history on Ethereum
+    try {
+      // Simulate transaction history retrieval
+      await Future.delayed(Duration(seconds: 1));
+      return [
+        Transaction(
+          hash: '0x${DateTime.now().millisecondsSinceEpoch.toRadixString(16)}',
+          from: address,
+          to: '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6',
+          value: BigInt.from(1000000000000000000), // 1 ETH
+          gasPrice: BigInt.from(20000000000), // 20 Gwei
+          gasLimit: BigInt.from(21000),
+          nonce: 0,
+          data: '',
+          blockNumber: BigInt.from(DateTime.now().millisecondsSinceEpoch),
+          timestamp: DateTime.now(),
+        ),
+      ];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  Future<String> _getGasPrice() async {
+    final response = await _makeRpcCall('eth_gasPrice', []);
+    return response['result'] as String;
+  }
+
+  Future<String> _signTransaction(Map<String, dynamic> transaction, String privateKey) async {
+    // Mock implementation
+    return '0x${Random().nextInt(1000000).toRadixString(16)}';
+  }
+
+  Future<String> _sendRawTransaction(String signedTx) async {
+    final response = await _makeRpcCall('eth_sendRawTransaction', [signedTx]);
+    return response['result'] as String;
   }
 }

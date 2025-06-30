@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Super TMA Dashboard Widget</title>
+  <style>
+    body { font-family: sans-serif; }
+    .status { font-weight: bold; }
+    #chart { max-width: 400px; }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h2 id="title">Super TMA Bridge Status</h2>
+  <select id="lang" onchange="setLang()">
+    <option value="en">English</option>
+    <option value="ru">Русский</option>
+  </select>
+  <div id="status">Loading...</div>
+  <h3 id="metrics_title">Metrics</h3>
+  <pre id="metrics">Loading...</pre>
+  <canvas id="chart"></canvas>
+  <script>
+    const i18n = {
+      en: {
+        title: 'Super TMA Bridge Status',
+        metrics: 'Metrics',
+        loading: 'Loading...'
+      },
+      ru: {
+        title: 'Статус моста Super TMA',
+        metrics: 'Метрики',
+        loading: 'Загрузка...'
+      }
+    };
+    let lang = 'en';
+    function setLang() {
+      lang = document.getElementById('lang').value;
+      document.getElementById('title').textContent = i18n[lang].title;
+      document.getElementById('metrics_title').textContent = i18n[lang].metrics;
+      document.getElementById('status').textContent = i18n[lang].loading;
+      document.getElementById('metrics').textContent = i18n[lang].loading;
+      fetchStatus();
+      fetchMetrics();
+    }
+    async function fetchStatus() {
+      const res = await fetch('/health');
+      const data = await res.json();
+      document.getElementById('status').textContent = data.status + ' (' + data.bridge + ')';
+    }
+    let chart;
+    async function fetchMetrics() {
+      const res = await fetch('/metrics');
+      const data = await res.json();
+      document.getElementById('metrics').textContent = JSON.stringify(data, null, 2);
+      if (!chart) {
+        const ctx = document.getElementById('chart').getContext('2d');
+        chart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['TG→Matrix', 'Matrix→TG', 'Errors'],
+            datasets: [{
+              label: 'Messages',
+              data: [data.messages_tg_to_matrix, data.messages_matrix_to_tg, data.errors],
+              backgroundColor: ['#36a2eb', '#4bc0c0', '#ff6384']
+            }]
+          },
+          options: {responsive: true, plugins: {legend: {display: false}}}
+        });
+      } else {
+        chart.data.datasets[0].data = [data.messages_tg_to_matrix, data.messages_matrix_to_tg, data.errors];
+        chart.update();
+      }
+    }
+    setLang();
+    setInterval(fetchStatus, 5000);
+    setInterval(fetchMetrics, 5000);
+  </script>
+</body>
+</html> 

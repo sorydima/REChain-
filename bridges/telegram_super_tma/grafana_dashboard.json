@@ -1,0 +1,34 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "Super TMA Bridge Metrics",
+    "panels": [
+      {
+        "type": "graph",
+        "title": "Messages Telegram→Matrix",
+        "targets": [{"expr": "bridge_messages_tg_to_matrix", "legendFormat": "TG→Matrix"}],
+        "id": 1
+      },
+      {
+        "type": "graph",
+        "title": "Messages Matrix→Telegram",
+        "targets": [{"expr": "bridge_messages_matrix_to_tg", "legendFormat": "Matrix→TG"}],
+        "id": 2
+      },
+      {
+        "type": "graph",
+        "title": "Errors",
+        "targets": [{"expr": "bridge_errors", "legendFormat": "Errors"}],
+        "id": 3
+      },
+      {
+        "type": "stat",
+        "title": "Uptime (s)",
+        "targets": [{"expr": "bridge_uptime_seconds", "legendFormat": "Uptime"}],
+        "id": 4
+      }
+    ],
+    "schemaVersion": 30,
+    "version": 1
+  }
+} 

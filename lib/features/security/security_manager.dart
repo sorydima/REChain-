@@ -332,6 +332,53 @@ class SecurityManager {
   Map<String, EncryptionSettings> get encryptionSettings => 
       Map.unmodifiable(_encryptionSettings);
   
+  /// Perform a comprehensive security audit
+  Future<SecurityAuditReport> performSecurityAudit() async {
+    final report = SecurityAuditReport(
+      timestamp: DateTime.now(),
+      clientId: _client.clientName,
+      userId: _client.userID ?? 'unknown',
+    );
+    
+    try {
+      // Count encrypted vs unencrypted rooms
+      for (final room in _client.rooms) {
+        if (room.encrypted) {
+          report.encryptedRooms++;
+        } else {
+          report.unencryptedRooms++;
+        }
+        
+        // Check for retention policies
+        if (_retentionPolicies.containsKey(room.id)) {
+          report.roomsWithRetentionPolicies++;
+        }
+      }
+      
+      // Count verified vs unverified devices
+      final devices = await _client.getDevices();
+      if (devices != null) {
+        for (final device in devices) {
+          if (device.verified == true) {
+            report.verifiedDevices++;
+          } else {
+            report.unverifiedDevices++;
+          }
+        }
+      }
+      
+      // Check for recovery phrase
+      final recoveryPhrase = await getRecoveryPhrase();
+      report.hasRecoveryPhrase = recoveryPhrase != null;
+      
+      Logs().i('Security audit completed: ${report.overallSecurityScore}% overall score');
+      return report;
+    } catch (e) {
+      Logs().e('Security audit failed: $e');
+      rethrow;
+    }
+  }
+  
   void dispose() {
     _cleanupTimer?.cancel();
     _retentionController.close();

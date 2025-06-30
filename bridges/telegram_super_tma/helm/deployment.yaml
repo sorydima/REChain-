@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "supertma.fullname" . }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "supertma.name" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "supertma.name" . }}
+    spec:
+      containers:
+        - name: supertma
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          env:
+            - name: USE_REDIS
+              value: "true"
+            - name: REDIS_HOST
+              value: {{ .Values.redis.host | quote }}
+            - name: REDIS_PORT
+              value: {{ .Values.redis.port | quote }}
+          ports:
+            - containerPort: {{ .Values.service.port }} 

@@ -1,0 +1,12 @@
+replicaCount: 2
+image:
+  repository: supertma
+  tag: latest
+  pullPolicy: IfNotPresent
+service:
+  type: ClusterIP
+  port: 8080
+redis:
+  enabled: true
+  host: redis
+  port: 6379 

@@ -1,3 +1,39 @@
+## [Unreleased] - 2025-06-30
+
+### Major Features & Integrations
+- Integrated Matrix (advanced backend, bridges, federation, encryption, bots)
+- Integrated Telegram via Super TMA bridge (two-way sync, admin, analytics, AI moderation, plugin system)
+- Added blockchain support (TON, Ethereum, Bitget, Web3)
+- Implemented multi-provider IPFS with analytics and encryption
+- Integrated AI services (moderation, translation, analytics)
+
+### Developer Experience & Extensibility
+- Built dynamic plugin system (hot-reload, web UI, enable/disable)
+- Added admin tools: RBAC UI, SSO/OAuth2, audit log
+- Unified API (REST, WebSocket, OpenAPI)
+- Persistent logging, Prometheus metrics, Sentry, Grafana dashboards, Alertmanager
+- Redis-based scaling, Docker, docker-compose, systemd, Kubernetes, Helm, HPA
+- Automated backup/restore, E2EE stubs, multi-language/i18n
+- Advanced dashboard widgets (real-time charts, log viewer, plugin controls)
+
+### Testing & CI/CD
+- Added unit, integration, and E2E Selenium tests (bot, dashboard, RBAC UI)
+- GitHub Actions workflows for CI/CD and E2E
+
+### REChain Service Integrations
+- Created stubs and plugins for REChain identity and payments
+
+### Documentation & Onboarding
+- Upgraded README.md with overview, architecture, feature matrix, quickstart, and links
+- Expanded `docs/` and wiki: architecture, API, onboarding, integration, security, scaling, plugin dev, end-user how-tos
+- Added doc comments and code samples to Dart files; prepared for dartdoc
+
+### Operational Excellence
+- Guides/scripts for HA/multi-region deployment, disaster recovery, backup verification, scaling
+- Documented all features, workflows, and best practices
+
+---
+
 ## [v4.1.6 + 1149] - 2025-06-08
 
 ### ✨ Features

@@ -1,0 +1,4 @@
+apiVersion: v2
+name: supertma
+version: 0.1.0
+description: A scalable Telegram-Matrix bridge with plugins, analytics, and dashboard 

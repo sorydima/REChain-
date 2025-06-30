@@ -3,8 +3,8 @@ import '../../common/models/blockchain_types.dart';
 
 /// Polygon-specific network statistics
 class PolygonNetworkStats extends NetworkStats {
-  final int checkpointInterval;
-  final int heimdallHeight;
+  final int checkpointNumber;
+  final Duration checkpointInterval;
 
   const PolygonNetworkStats({
     required super.averageGasPrice,
@@ -14,8 +14,8 @@ class PolygonNetworkStats extends NetworkStats {
     required super.totalStaked,
     required super.marketCap,
     required super.tvl,
+    required this.checkpointNumber,
     required this.checkpointInterval,
-    required this.heimdallHeight,
   });
 }
 
@@ -23,6 +23,7 @@ class PolygonNetworkStats extends NetworkStats {
 class PolygonTransaction extends BlockchainTransaction {
   final int nonce;
   final String? rawTransaction;
+  final int checkpointNumber;
 
   const PolygonTransaction({
     required super.id,
@@ -37,6 +38,7 @@ class PolygonTransaction extends BlockchainTransaction {
     required super.status,
     required this.nonce,
     this.rawTransaction,
+    required this.checkpointNumber,
   });
 
   @override
@@ -53,6 +55,7 @@ class PolygonTransaction extends BlockchainTransaction {
     'status': status.toString(),
     'nonce': nonce,
     'rawTransaction': rawTransaction,
+    'checkpointNumber': checkpointNumber,
   };
 
   factory PolygonTransaction.fromJson(Map<String, dynamic> json) {
@@ -62,13 +65,14 @@ class PolygonTransaction extends BlockchainTransaction {
       toAddress: json['to'] ?? '',
       amount: (int.parse(json['value'] ?? '0', radix: 16) / 1e18),
       gasPrice: (int.parse(json['gasPrice'] ?? '0', radix: 16) / 1e9),
-      gasLimit: int.parse(json['gas'] ?? '0', radix: 16).toDouble(),
+      gasLimit: int.parse(json['gas'] ?? '0', radix: 16),
       data: json['input'],
       type: TransactionType.transfer,
       timestamp: DateTime.now(),
       status: TransactionStatus.pending,
       nonce: int.parse(json['nonce'] ?? '0', radix: 16),
       rawTransaction: json['raw'],
+      checkpointNumber: int.parse(json['checkpointNumber'] ?? '0', radix: 16),
     );
   }
 }
@@ -209,7 +213,7 @@ class PolygonBlock extends Block {
       miner: json['miner'] ?? '',
       size: int.parse(json['size'] ?? '0', radix: 16),
       gasUsed: int.parse(json['gasUsed'] ?? '0', radix: 16),
-      gasLimit: int.parse(json['gasLimit'] ?? '0', radix: 16),
+      gasLimit: int.parse(json['gas'] ?? '0', radix: 16),
       isCheckpoint: (int.parse(json['number'] ?? '0', radix: 16) % 256) == 0,
     );
   }
@@ -217,17 +221,15 @@ class PolygonBlock extends Block {
 
 /// Polygon event
 class PolygonEvent extends TransactionEvent {
-  final String address;
   final List<String> topics;
-  final int logIndex;
   final bool removed;
 
   const PolygonEvent({
     required super.name,
     required super.data,
-    required this.address,
+    required super.address,
+    required super.logIndex,
     required this.topics,
-    required this.logIndex,
     required this.removed,
   });
 
@@ -236,8 +238,8 @@ class PolygonEvent extends TransactionEvent {
     'name': name,
     'data': data,
     'address': address,
-    'topics': topics,
     'logIndex': logIndex,
+    'topics': topics,
     'removed': removed,
   };
 
@@ -246,8 +248,8 @@ class PolygonEvent extends TransactionEvent {
       name: 'event',
       data: {'data': json['data']},
       address: json['address'] ?? '',
-      topics: (json['topics'] as List? ?? []).cast<String>(),
       logIndex: int.parse(json['logIndex'] ?? '0', radix: 16),
+      topics: (json['topics'] as List? ?? []).cast<String>(),
       removed: json['removed'] ?? false,
     );
   }
@@ -286,15 +288,11 @@ class PolygonValidator extends Validator {
 
 /// Polygon investment pool
 class PolygonInvestmentPool extends InvestmentPool {
-  final String contractAddress;
-  final String protocol;
-  final String asset;
-
   const PolygonInvestmentPool({
     required super.id,
     required super.name,
     required super.description,
-    required this.contractAddress,
+    required super.contractAddress,
     required super.minInvestment,
     required super.maxInvestment,
     required super.expectedApr,
@@ -302,8 +300,8 @@ class PolygonInvestmentPool extends InvestmentPool {
     required super.totalValueLocked,
     required super.participantCount,
     required super.isActive,
-    required this.protocol,
-    required this.asset,
+    required super.protocol,
+    required super.asset,
   });
 
   @override
@@ -425,27 +423,22 @@ class PolygonBridgeTransaction extends BridgeTransaction {
 }
 
 /// Polygon investment statistics
-class PolygonInvestmentStats {
-  final double totalInvested;
-  final double totalReturns;
-  final double pendingRewards;
-  final int activeInvestments;
-  final double averageAPR;
-  final Duration averageLockPeriod;
+class PolygonInvestmentStats extends InvestmentStats {
   final double totalGasFees;
   final List<String> protocolsUsed;
 
   const PolygonInvestmentStats({
-    required this.totalInvested,
-    required this.totalReturns,
-    required this.pendingRewards,
-    required this.activeInvestments,
-    required this.averageAPR,
-    required this.averageLockPeriod,
+    required super.totalInvested,
+    required super.totalReturns,
+    required super.pendingRewards,
+    required super.activeInvestments,
+    required super.averageAPR,
+    required super.averageLockPeriod,
     required this.totalGasFees,
     required this.protocolsUsed,
   });
 
+  @override
   Map<String, dynamic> toJson() => {
     'totalInvested': totalInvested,
     'totalReturns': totalReturns,
@@ -459,27 +452,22 @@ class PolygonInvestmentStats {
 }
 
 /// Polygon staking statistics
-class PolygonStakingStats {
-  final double totalStaked;
-  final double totalRewards;
-  final int activePositions;
-  final double averageAPR;
-  final int totalValidators;
-  final int slashingEvents;
+class PolygonStakingStats extends StakingStats {
   final double checkpointRewards;
   final Duration unbondingPeriod;
 
   const PolygonStakingStats({
-    required this.totalStaked,
-    required this.totalRewards,
-    required this.activePositions,
-    required this.averageAPR,
-    required this.totalValidators,
-    required this.slashingEvents,
+    required super.totalStaked,
+    required super.totalRewards,
+    required super.activePositions,
+    required super.averageAPR,
+    required super.totalValidators,
+    required super.slashingEvents,
     required this.checkpointRewards,
     required this.unbondingPeriod,
   });
 
+  @override
   Map<String, dynamic> toJson() => {
     'totalStaked': totalStaked,
     'totalRewards': totalRewards,

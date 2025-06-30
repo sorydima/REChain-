@@ -14,6 +14,8 @@ import 'utils/background_push.dart';
 import 'widgets/rechainonline_chat_app.dart';
 
 import 'features/blockchain/api/blockchain_service_manager.dart';
+import 'features/ai/ai_service_manager.dart';
+import 'config/ai_services_config.dart';
 
 void main() async {
   Logs().i('Welcome to ${AppConfig.applicationName} <3');
@@ -32,6 +34,9 @@ void main() async {
   // Initialize blockchain services
   final blockchainServiceManager = BlockchainServiceManager();
   blockchainServiceManager.initialize();
+
+  // Initialize AI services
+  await _initializeAIServices();
 
   // If the app starts in detached mode, we assume that it is in
   // background fetch mode for processing push notifications. This is
@@ -60,6 +65,24 @@ void main() async {
     '${AppConfig.applicationName} started in foreground mode. Rendering GUI...',
   );
   await startGui(clients, store);
+}
+
+/// Initialize AI services
+Future<void> _initializeAIServices() async {
+  try {
+    // Initialize AI services configuration
+    await AIServicesConfig.instance.initialize();
+    
+    // Get configurations
+    final configurations = AIServicesConfig.instance.configurations;
+    
+    // Initialize AI service manager
+    await AIServiceManager.instance.initialize(configurations);
+    
+    Logs().i('AI services initialized successfully');
+  } catch (e) {
+    Logs().e('Failed to initialize AI services', e);
+  }
 }
 
 /// Fetch the pincode for the applock and start the flutter engine.

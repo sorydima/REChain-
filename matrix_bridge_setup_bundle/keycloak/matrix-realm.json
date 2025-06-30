@@ -1,0 +1,30 @@
+
+{
+  "realm": "matrix",
+  "enabled": true,
+  "clients": [
+    {
+      "clientId": "synapse",
+      "redirectUris": ["https://your.domain.com/_synapse/client/*"],
+      "protocol": "openid-connect",
+      "publicClient": true,
+      "standardFlowEnabled": true
+    }
+  ],
+  "users": [
+    {
+      "username": "admin",
+      "enabled": true,
+      "emailVerified": true,
+      "firstName": "Matrix",
+      "lastName": "Admin",
+      "email": "admin@your.domain.com",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "adminpassword"
+        }
+      ]
+    }
+  ]
+}

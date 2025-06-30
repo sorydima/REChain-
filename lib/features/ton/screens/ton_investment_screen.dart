@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../hyip/ton_investment_service.dart';
 import '../wallet/ton_wallet_service.dart';
+import '../models/ton_models.dart';
 
 class TonInvestmentScreen extends StatefulWidget {
   final TonInvestmentPool pool;
@@ -449,6 +450,7 @@ class _TonInvestmentScreenState extends State<TonInvestmentScreen> {
       case InvestmentRiskLevel.extreme:
         return 'This is an extremely high-risk investment. You could lose your entire investment. Only experienced investors should consider this option.';
     }
+    return 'Investment risk warning'; // Default fallback
   }
   
   @override

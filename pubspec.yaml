@@ -92,6 +92,7 @@ dependencies:
   video_player: ^2.9.5
   wakelock_plus: ^1.2.2
   webrtc_interface: ^1.0.13
+  fl_chart: ^0.66.2
 
 dev_dependencies:
   flutter_lints: ^3.0.0

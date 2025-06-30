@@ -45,6 +45,35 @@ abstract class BlockchainService {
   /// Subscribe to address transactions
   Stream<BlockchainTransaction> subscribeToAddress(String address);
 
+  /// Get transaction history for an address
+  Future<List<BlockchainTransaction>> getTransactionHistory(String address);
+
+  /// Call a smart contract method
+  Future<dynamic> callContractMethod(String contractAddress, String methodName, List<dynamic> params);
+
+  /// Send a contract transaction
+  Future<String> sendContractTransaction(String contractAddress, String methodName, List<dynamic> params, String privateKey);
+
+  /// Get staking information
+  Future<StakingStats> getStakingInfo(String walletAddress);
+
+  /// Stake tokens
+  Future<String> stakeTokens(String walletAddress, double amount, String privateKey);
+
+  /// Unstake tokens
+  Future<String> unstakeTokens(String walletAddress, double amount, String privateKey);
+
+  /// Get supported target chains for bridging
+  List<BlockchainNetwork> getSupportedTargetChains();
+
+  /// Create a bridge transaction
+  Future<String> createBridgeTransaction({
+    required BlockchainNetwork targetChain,
+    required String targetAddress,
+    required double amount,
+    required String privateKey,
+  });
+
   /// Dispose resources
   Future<void> dispose();
 }
@@ -131,7 +160,7 @@ abstract class BlockchainTransaction {
   final String toAddress;
   final double amount;
   final double gasPrice;
-  final double gasLimit;
+  final int gasLimit;
   final String? data;
   final TransactionType type;
   final DateTime timestamp;
@@ -208,158 +237,4 @@ abstract class Block {
   });
 
   Map<String, dynamic> toJson();
-}
-
-/// Base class for transaction events
-abstract class TransactionEvent {
-  final String name;
-  final Map<String, dynamic> data;
-
-  const TransactionEvent({
-    required this.name,
-    required this.data,
-  });
-
-  Map<String, dynamic> toJson();
-}
-
-/// Transaction status enum
-enum TransactionStatus {
-  pending,
-  confirmed,
-  failed,
-  cancelled
-}
-
-/// Bridge transaction status
-enum BridgeStatus {
-  pending,
-  processing,
-  completed,
-  failed
-}
-
-/// Base class for validators
-abstract class Validator {
-  final String id;
-  final String name;
-  final String address;
-  final double commission;
-  final double totalStaked;
-  final int delegators;
-  final bool active;
-
-  const Validator({
-    required this.id,
-    required this.name,
-    required this.address,
-    required this.commission,
-    required this.totalStaked,
-    required this.delegators,
-    required this.active,
-  });
-
-  Map<String, dynamic> toJson();
-}
-
-/// Base class for investment pools
-abstract class InvestmentPool {
-  final String id;
-  final String name;
-  final String description;
-  final double minInvestment;
-  final double maxInvestment;
-  final double expectedApr;
-  final Duration lockPeriod;
-  final double totalValueLocked;
-  final int participantCount;
-  final bool isActive;
-
-  const InvestmentPool({
-    required this.id,
-    required this.name,
-    required this.description,
-    required this.minInvestment,
-    required this.maxInvestment,
-    required this.expectedApr,
-    required this.lockPeriod,
-    required this.totalValueLocked,
-    required this.participantCount,
-    required this.isActive,
-  });
-
-  Map<String, dynamic> toJson();
-}
-
-/// Base class for investments
-abstract class Investment {
-  final String id;
-  final String poolId;
-  final String walletAddress;
-  final double amount;
-  final double expectedReturn;
-  final DateTime createdAt;
-  final DateTime maturityDate;
-
-  const Investment({
-    required this.id,
-    required this.poolId,
-    required this.walletAddress,
-    required this.amount,
-    required this.expectedReturn,
-    required this.createdAt,
-    required this.maturityDate,
-  });
-
-  Map<String, dynamic> toJson();
-}
-
-/// Base class for staking positions
-abstract class StakingPosition {
-  final String id;
-  final String validatorId;
-  final String walletAddress;
-  final double amount;
-  final double rewards;
-  final DateTime createdAt;
-  final DateTime lastRewardClaim;
-
-  const StakingPosition({
-    required this.id,
-    required this.validatorId,
-    required this.walletAddress,
-    required this.amount,
-    required this.rewards,
-    required this.createdAt,
-    required this.lastRewardClaim,
-  });
-
-  Map<String, dynamic> toJson();
-}
-
-/// Base class for bridge transactions
-abstract class BridgeTransaction {
-  final String id;
-  final BlockchainNetwork sourceChain;
-  final BlockchainNetwork targetChain;
-  final String sourceAddress;
-  final String targetAddress;
-  final double amount;
-  final double fee;
-  final DateTime timestamp;
-  final BridgeStatus status;
-
-  const BridgeTransaction({
-    required this.id,
-    required this.sourceChain,
-    required this.targetChain,
-    required this.sourceAddress,
-    required this.targetAddress,
-    required this.amount,
-    required this.fee,
-    required this.timestamp,
-    required this.status,
-  });
-
-  Map<String, dynamic> toJson();
-}
+} 

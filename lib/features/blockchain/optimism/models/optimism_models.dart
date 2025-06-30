@@ -4,8 +4,8 @@ import '../../common/models/blockchain_types.dart';
 /// Optimism-specific network statistics
 class OptimismNetworkStats extends NetworkStats {
   final double l1GasPrice;
-  final double sequencerUptime;
-  final Duration batchSubmissionInterval;
+  final int l1BlockNumber;
+  final double l1GasSaved;
 
   const OptimismNetworkStats({
     required super.averageGasPrice,
@@ -16,8 +16,8 @@ class OptimismNetworkStats extends NetworkStats {
     required super.marketCap,
     required super.tvl,
     required this.l1GasPrice,
-    required this.sequencerUptime,
-    required this.batchSubmissionInterval,
+    required this.l1BlockNumber,
+    required this.l1GasSaved,
   });
 }
 
@@ -25,7 +25,7 @@ class OptimismNetworkStats extends NetworkStats {
 class OptimismTransaction extends BlockchainTransaction {
   final int nonce;
   final String? rawTransaction;
-  final double l1GasPrice;
+  final int l1BatchNumber;
 
   const OptimismTransaction({
     required super.id,
@@ -40,7 +40,7 @@ class OptimismTransaction extends BlockchainTransaction {
     required super.status,
     required this.nonce,
     this.rawTransaction,
-    required this.l1GasPrice,
+    required this.l1BatchNumber,
   });
 
   @override
@@ -57,7 +57,7 @@ class OptimismTransaction extends BlockchainTransaction {
     'status': status.toString(),
     'nonce': nonce,
     'rawTransaction': rawTransaction,
-    'l1GasPrice': l1GasPrice,
+    'l1BatchNumber': l1BatchNumber,
   };
 
   factory OptimismTransaction.fromJson(Map<String, dynamic> json) {
@@ -67,33 +67,27 @@ class OptimismTransaction extends BlockchainTransaction {
       toAddress: json['to'] ?? '',
       amount: (int.parse(json['value'] ?? '0', radix: 16) / 1e18),
       gasPrice: (int.parse(json['gasPrice'] ?? '0', radix: 16) / 1e9),
-      gasLimit: int.parse(json['gas'] ?? '0', radix: 16).toDouble(),
+      gasLimit: int.parse(json['gas'] ?? '0', radix: 16),
       data: json['input'],
       type: TransactionType.transfer,
       timestamp: DateTime.now(),
       status: TransactionStatus.pending,
       nonce: int.parse(json['nonce'] ?? '0', radix: 16),
-      rawTransaction: json['raw'],
-      l1GasPrice: (int.parse(json['l1GasPrice'] ?? '0', radix: 16) / 1e9),
+      rawTransaction: json['rawTransaction'],
+      l1BatchNumber: int.parse(json['l1BatchNumber'] ?? '0', radix: 16),
     );
   }
 }
 
 /// Optimism signed transaction
 class OptimismSignedTransaction extends SignedTransaction {
-  final int v;
-  final BigInt r;
-  final BigInt s;
-  final double l1DataFee;
+  final String l1Signature;
 
   const OptimismSignedTransaction({
     required super.transaction,
     required super.signature,
     required super.hash,
-    required this.v,
-    required this.r,
-    required this.s,
-    required this.l1DataFee,
+    required this.l1Signature,
   });
 
   @override
@@ -101,19 +95,14 @@ class OptimismSignedTransaction extends SignedTransaction {
     'transaction': transaction.toJson(),
     'signature': signature,
     'hash': hash,
-    'v': v,
-    'r': r.toString(),
-    's': s.toString(),
-    'l1DataFee': l1DataFee,
+    'l1Signature': l1Signature,
   };
 }
 
 /// Optimism transaction receipt
 class OptimismTransactionReceipt extends TransactionReceipt {
-  final String contractAddress;
-  final int cumulativeGasUsed;
-  final String logsBloom;
-  final String l1BatchHash;
+  final int l1BlockNumber;
+  final int l2BlockNumber;
 
   const OptimismTransactionReceipt({
     required super.transactionHash,
@@ -123,10 +112,8 @@ class OptimismTransactionReceipt extends TransactionReceipt {
     required super.status,
     required super.gasUsed,
     required super.events,
-    required this.contractAddress,
-    required this.cumulativeGasUsed,
-    required this.logsBloom,
-    required this.l1BatchHash,
+    required this.l1BlockNumber,
+    required this.l2BlockNumber,
   });
 
   @override
@@ -138,10 +125,8 @@ class OptimismTransactionReceipt extends TransactionReceipt {
     'status': status,
     'gasUsed': gasUsed,
     'events': events.map((e) => e.toJson()).toList(),
-    'contractAddress': contractAddress,
-    'cumulativeGasUsed': cumulativeGasUsed,
-    'logsBloom': logsBloom,
-    'l1BatchHash': l1BatchHash,
+    'l1BlockNumber': l1BlockNumber,
+    'l2BlockNumber': l2BlockNumber,
   };
 
   factory OptimismTransactionReceipt.fromJson(Map<String, dynamic> json) {
@@ -155,10 +140,8 @@ class OptimismTransactionReceipt extends TransactionReceipt {
       events: (json['logs'] as List? ?? [])
           .map((log) => OptimismEvent.fromJson(log))
           .toList(),
-      contractAddress: json['contractAddress'] ?? '',
-      cumulativeGasUsed: int.parse(json['cumulativeGasUsed'] ?? '0', radix: 16),
-      logsBloom: json['logsBloom'] ?? '',
-      l1BatchHash: json['l1BatchHash'] ?? '',
+      l1BlockNumber: int.parse(json['l1BlockNumber'] ?? '0', radix: 16),
+      l2BlockNumber: int.parse(json['l2BlockNumber'] ?? '0', radix: 16),
     );
   }
 }
@@ -230,18 +213,16 @@ class OptimismBlock extends Block {
 
 /// Optimism event
 class OptimismEvent extends TransactionEvent {
-  final String address;
   final List<String> topics;
-  final int logIndex;
   final bool removed;
   final String l1BatchNumber;
 
   const OptimismEvent({
     required super.name,
     required super.data,
-    required this.address,
+    required super.address,
+    required super.logIndex,
     required this.topics,
-    required this.logIndex,
     required this.removed,
     required this.l1BatchNumber,
   });
@@ -251,8 +232,8 @@ class OptimismEvent extends TransactionEvent {
     'name': name,
     'data': data,
     'address': address,
-    'topics': topics,
     'logIndex': logIndex,
+    'topics': topics,
     'removed': removed,
     'l1BatchNumber': l1BatchNumber,
   };
@@ -262,8 +243,8 @@ class OptimismEvent extends TransactionEvent {
       name: 'event',
       data: {'data': json['data']},
       address: json['address'] ?? '',
-      topics: (json['topics'] as List? ?? []).cast<String>(),
       logIndex: int.parse(json['logIndex'] ?? '0', radix: 16),
+      topics: (json['topics'] as List? ?? []).cast<String>(),
       removed: json['removed'] ?? false,
       l1BatchNumber: json['l1BatchNumber'] ?? '0',
     );
@@ -273,7 +254,7 @@ class OptimismEvent extends TransactionEvent {
 /// Optimism validator
 class OptimismValidator extends Validator {
   final String l1Address;
-  final double batchSubmissionRate;
+  final Duration disputeGameWindow;
 
   const OptimismValidator({
     required super.id,
@@ -284,7 +265,7 @@ class OptimismValidator extends Validator {
     required super.delegators,
     required super.active,
     required this.l1Address,
-    required this.batchSubmissionRate,
+    required this.disputeGameWindow,
   });
 
   @override
@@ -297,22 +278,19 @@ class OptimismValidator extends Validator {
     'delegators': delegators,
     'active': active,
     'l1Address': l1Address,
-    'batchSubmissionRate': batchSubmissionRate,
+    'disputeGameWindow': disputeGameWindow.inSeconds,
   };
 }
 
 /// Optimism investment pool
 class OptimismInvestmentPool extends InvestmentPool {
-  final String contractAddress;
-  final String protocol;
-  final String asset;
-  final String l1Address;
+  final double l1GasSaved;
 
   const OptimismInvestmentPool({
     required super.id,
     required super.name,
     required super.description,
-    required this.contractAddress,
+    required super.contractAddress,
     required super.minInvestment,
     required super.maxInvestment,
     required super.expectedApr,
@@ -320,9 +298,9 @@ class OptimismInvestmentPool extends InvestmentPool {
     required super.totalValueLocked,
     required super.participantCount,
     required super.isActive,
-    required this.protocol,
-    required this.asset,
-    required this.l1Address,
+    required super.protocol,
+    required super.asset,
+    required this.l1GasSaved,
   });
 
   @override
@@ -340,7 +318,7 @@ class OptimismInvestmentPool extends InvestmentPool {
     'isActive': isActive,
     'protocol': protocol,
     'asset': asset,
-    'l1Address': l1Address,
+    'l1GasSaved': l1GasSaved,
   };
 }
 
@@ -348,7 +326,7 @@ class OptimismInvestmentPool extends InvestmentPool {
 class OptimismInvestment extends Investment {
   final String transactionHash;
   final String contractAddress;
-  final String l1BatchHash;
+  final int l1BatchNumber;
 
   const OptimismInvestment({
     required super.id,
@@ -360,7 +338,7 @@ class OptimismInvestment extends Investment {
     required super.maturityDate,
     required this.transactionHash,
     required this.contractAddress,
-    required this.l1BatchHash,
+    required this.l1BatchNumber,
   });
 
   @override
@@ -374,7 +352,7 @@ class OptimismInvestment extends Investment {
     'maturityDate': maturityDate.toIso8601String(),
     'transactionHash': transactionHash,
     'contractAddress': contractAddress,
-    'l1BatchHash': l1BatchHash,
+    'l1BatchNumber': l1BatchNumber,
   };
 }
 
@@ -448,29 +426,24 @@ class OptimismBridgeTransaction extends BridgeTransaction {
 }
 
 /// Optimism investment statistics
-class OptimismInvestmentStats {
-  final double totalInvested;
-  final double totalReturns;
-  final double pendingRewards;
-  final int activeInvestments;
-  final double averageAPR;
-  final Duration averageLockPeriod;
+class OptimismInvestmentStats extends InvestmentStats {
   final double totalGasFees;
   final List<String> protocolsUsed;
   final double l1GasSaved;
 
   const OptimismInvestmentStats({
-    required this.totalInvested,
-    required this.totalReturns,
-    required this.pendingRewards,
-    required this.activeInvestments,
-    required this.averageAPR,
-    required this.averageLockPeriod,
+    required super.totalInvested,
+    required super.totalReturns,
+    required super.pendingRewards,
+    required super.activeInvestments,
+    required super.averageAPR,
+    required super.averageLockPeriod,
     required this.totalGasFees,
     required this.protocolsUsed,
     required this.l1GasSaved,
   });
 
+  @override
   Map<String, dynamic> toJson() => {
     'totalInvested': totalInvested,
     'totalReturns': totalReturns,
@@ -485,27 +458,22 @@ class OptimismInvestmentStats {
 }
 
 /// Optimism staking statistics
-class OptimismStakingStats {
-  final double totalStaked;
-  final double totalRewards;
-  final int activePositions;
-  final double averageAPR;
-  final int totalValidators;
-  final int slashingEvents;
+class OptimismStakingStats extends StakingStats {
   final String l1SecurityLevel;
   final Duration disputeGameWindow;
 
   const OptimismStakingStats({
-    required this.totalStaked,
-    required this.totalRewards,
-    required this.activePositions,
-    required this.averageAPR,
-    required this.totalValidators,
-    required this.slashingEvents,
+    required super.totalStaked,
+    required super.totalRewards,
+    required super.activePositions,
+    required super.averageAPR,
+    required super.totalValidators,
+    required super.slashingEvents,
     required this.l1SecurityLevel,
     required this.disputeGameWindow,
   });
 
+  @override
   Map<String, dynamic> toJson() => {
     'totalStaked': totalStaked,
     'totalRewards': totalRewards,

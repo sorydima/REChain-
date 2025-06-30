@@ -1,0 +1,85 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: supertma
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: supertma
+  template:
+    metadata:
+      labels:
+        app: supertma
+    spec:
+      containers:
+        - name: supertma
+          image: supertma:latest
+          env:
+            - name: USE_REDIS
+              value: "True"
+          volumeMounts:
+            - name: logs
+              mountPath: /app/bridge.log
+              subPath: bridge.log
+          ports:
+            - containerPort: 8080
+      volumes:
+        - name: logs
+          persistentVolumeClaim:
+            claimName: supertma-logs-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: supertma
+spec:
+  selector:
+    app: supertma
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: supertma-logs-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis
+  template:
+    metadata:
+      labels:
+        app: redis
+    spec:
+      containers:
+        - name: redis
+          image: redis:7
+          ports:
+            - containerPort: 6379
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis
+spec:
+  selector:
+    app: redis
+  ports:
+    - protocol: TCP
+      port: 6379
+      targetPort: 6379 

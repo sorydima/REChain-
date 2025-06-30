@@ -1,0 +1,24 @@
+
+version: '3.9'
+services:
+  dimension:
+    image: turt2live/matrix-dimension
+    container_name: dimension
+    ports:
+      - "8184:8184"
+    volumes:
+      - ./dimension:/data
+
+  registration:
+    image: zeratax/matrix-registration
+    container_name: registration
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./registration:/data
+
+  synapse-admin:
+    image: awesometechnologies/synapse-admin
+    container_name: synapse_admin
+    ports:
+      - "8080:80"

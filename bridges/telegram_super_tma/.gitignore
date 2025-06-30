@@ -1,0 +1,4 @@
+# Ignore secrets and venv
+secrets.yaml
+venv/
+__pycache__/ 

@@ -53,9 +53,9 @@ class TonWalletService {
       await _loadActiveWallet();
       _startBalanceUpdates();
       
-      Logs().i('TON Wallet Service initialized');
+      Logs.i('TON Wallet Service initialized');
     } catch (e) {
-      Logs().e('Failed to initialize TON Wallet Service: $e');
+      Logs.e('Failed to initialize TON Wallet Service: $e');
       rethrow;
     }
   }
@@ -76,7 +76,7 @@ class TonWalletService {
         _walletsController.add(_wallets);
       }
     } catch (e) {
-      Logs().e('Failed to load wallets: $e');
+      Logs.e('Failed to load wallets: $e');
     }
   }
   
@@ -92,7 +92,7 @@ class TonWalletService {
         _activeWalletController.add(_activeWallet);
       }
     } catch (e) {
-      Logs().e('Failed to load active wallet: $e');
+      Logs.e('Failed to load active wallet: $e');
     }
   }
   
@@ -103,7 +103,7 @@ class TonWalletService {
       await _prefs?.setString(_walletsKey, walletsJson);
       _walletsController.add(_wallets);
     } catch (e) {
-      Logs().e('Failed to save wallets: $e');
+      Logs.e('Failed to save wallets: $e');
     }
   }
   
@@ -154,10 +154,10 @@ class TonWalletService {
       
       await _saveWallets();
       
-      Logs().i('Created new TON wallet: ${wallet.name}');
+      Logs.i('Created new TON wallet: ${wallet.name}');
       return wallet;
     } catch (e) {
-      Logs().e('Failed to create wallet: $e');
+      Logs.e('Failed to create wallet: $e');
       rethrow;
     }
   }
@@ -217,10 +217,10 @@ class TonWalletService {
       
       await _saveWallets();
       
-      Logs().i('Imported TON wallet: ${wallet.name}');
+      Logs.i('Imported TON wallet: ${wallet.name}');
       return wallet;
     } catch (e) {
-      Logs().e('Failed to import wallet: $e');
+      Logs.e('Failed to import wallet: $e');
       rethrow;
     }
   }
@@ -244,33 +244,48 @@ class TonWalletService {
       // Update balance for new active wallet
       await updateBalance();
       
-      Logs().i('Set active wallet: ${wallet.name}');
+      Logs.i('Set active wallet: ${wallet.name}');
     } catch (e) {
-      Logs().e('Failed to set active wallet: $e');
+      Logs.e('Failed to set active wallet: $e');
       rethrow;
+    }
+  }
+  
+  /// Find wallet by ID
+  TonWallet? findWallet(String walletId) {
+    try {
+      return _wallets.firstWhere((w) => w.id == walletId);
+    } catch (e) {
+      return null;
     }
   }
   
   /// Update wallet balance
   Future<void> updateBalance([String? walletId]) async {
     try {
-      final wallet = walletId != null 
-          ? _wallets.firstWhere((w) => w.id == walletId)
+      final targetWallet = walletId != null 
+          ? findWallet(walletId) 
           : _activeWallet;
       
-      if (wallet == null) return;
+      if (targetWallet == null) return;
       
-      final balance = await TonClient.instance.getBalance(wallet.address);
-      wallet.balance = balance;
-      wallet.lastUpdated = DateTime.now();
+      // Get balance from TON network
+      final balance = await TonClient.instance.getBalance(targetWallet.address);
+      
+      // Update wallet balance
+      targetWallet.balance = balance;
+      targetWallet.lastUpdated = DateTime.now();
+      
+      // Update active wallet if this is the active one
+      if (targetWallet.id == _activeWallet?.id) {
+        _balanceController.add(balance);
+      }
       
       await _saveWallets();
       
-      if (wallet == _activeWallet) {
-        _balanceController.add(balance);
-      }
+      Logs.i('Updated balance for wallet ${targetWallet.name}: $balance TON');
     } catch (e) {
-      Logs().e('Failed to update balance: $e');
+      Logs.e('Failed to update balance: $e');
     }
   }
   
@@ -326,10 +341,10 @@ class TonWalletService {
       // Update balance after transaction
       await updateBalance(wallet.id);
       
-      Logs().i('Sent transaction: $txHash');
+      Logs.i('Sent transaction: $txHash');
       return txHash;
     } catch (e) {
-      Logs().e('Failed to send transaction: $e');
+      Logs.e('Failed to send transaction: $e');
       rethrow;
     }
   }
@@ -348,7 +363,7 @@ class TonWalletService {
         limit: TonConfig.transactionHistoryLimit,
       );
     } catch (e) {
-      Logs().e('Failed to get transaction history: $e');
+      Logs.e('Failed to get transaction history: $e');
       return [];
     }
   }
@@ -366,7 +381,7 @@ class TonWalletService {
       
       return seedPhrase.split(' ');
     } catch (e) {
-      Logs().e('Failed to get seed phrase: $e');
+      Logs.e('Failed to get seed phrase: $e');
       rethrow;
     }
   }
@@ -393,9 +408,9 @@ class TonWalletService {
       
       await _saveWallets();
       
-      Logs().i('Deleted wallet: $walletId');
+      Logs.i('Deleted wallet: $walletId');
     } catch (e) {
-      Logs().e('Failed to delete wallet: $e');
+      Logs.e('Failed to delete wallet: $e');
       rethrow;
     }
   }

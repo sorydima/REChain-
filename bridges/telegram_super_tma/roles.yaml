@@ -1,0 +1,20 @@
+# Sample roles config for RBAC
+users:
+  123456789: admin
+  987654321: moderator
+  555555555: user
+roles:
+  admin:
+    - bridge_add
+    - bridge_remove
+    - bridge_list
+    - reload_plugins
+    - stats
+    - mod
+    - echo
+  moderator:
+    - bridge_list
+    - stats
+    - mod
+  user:
+    - echo 

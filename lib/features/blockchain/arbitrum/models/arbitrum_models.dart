@@ -4,8 +4,8 @@ import '../../common/models/blockchain_types.dart';
 /// Arbitrum-specific network statistics
 class ArbitrumNetworkStats extends NetworkStats {
   final double l1GasPrice;
-  final double sequencerLatency;
-  final Duration challengePeriod;
+  final int l1BlockNumber;
+  final double l1GasSaved;
 
   const ArbitrumNetworkStats({
     required super.averageGasPrice,
@@ -16,8 +16,8 @@ class ArbitrumNetworkStats extends NetworkStats {
     required super.marketCap,
     required super.tvl,
     required this.l1GasPrice,
-    required this.sequencerLatency,
-    required this.challengePeriod,
+    required this.l1BlockNumber,
+    required this.l1GasSaved,
   });
 }
 
@@ -25,7 +25,7 @@ class ArbitrumNetworkStats extends NetworkStats {
 class ArbitrumTransaction extends BlockchainTransaction {
   final int nonce;
   final String? rawTransaction;
-  final double l1GasPrice;
+  final int l1ConfirmationBlock;
 
   const ArbitrumTransaction({
     required super.id,
@@ -40,7 +40,7 @@ class ArbitrumTransaction extends BlockchainTransaction {
     required super.status,
     required this.nonce,
     this.rawTransaction,
-    required this.l1GasPrice,
+    required this.l1ConfirmationBlock,
   });
 
   @override
@@ -57,7 +57,7 @@ class ArbitrumTransaction extends BlockchainTransaction {
     'status': status.toString(),
     'nonce': nonce,
     'rawTransaction': rawTransaction,
-    'l1GasPrice': l1GasPrice,
+    'l1ConfirmationBlock': l1ConfirmationBlock,
   };
 
   factory ArbitrumTransaction.fromJson(Map<String, dynamic> json) {
@@ -67,14 +67,14 @@ class ArbitrumTransaction extends BlockchainTransaction {
       toAddress: json['to'] ?? '',
       amount: (int.parse(json['value'] ?? '0', radix: 16) / 1e18),
       gasPrice: (int.parse(json['gasPrice'] ?? '0', radix: 16) / 1e9),
-      gasLimit: int.parse(json['gas'] ?? '0', radix: 16).toDouble(),
+      gasLimit: int.parse(json['gas'] ?? '0', radix: 16),
       data: json['input'],
       type: TransactionType.transfer,
       timestamp: DateTime.now(),
       status: TransactionStatus.pending,
       nonce: int.parse(json['nonce'] ?? '0', radix: 16),
       rawTransaction: json['raw'],
-      l1GasPrice: (int.parse(json['l1GasPrice'] ?? '0', radix: 16) / 1e9),
+      l1ConfirmationBlock: int.parse(json['l1ConfirmationBlock'] ?? '0', radix: 16),
     );
   }
 }
@@ -222,7 +222,7 @@ class ArbitrumBlock extends Block {
       sequencer: json['miner'] ?? '',
       size: int.parse(json['size'] ?? '0', radix: 16),
       gasUsed: int.parse(json['gasUsed'] ?? '0', radix: 16),
-      gasLimit: int.parse(json['gasLimit'] ?? '0', radix: 16),
+      gasLimit: int.parse(json['gas'] ?? '0', radix: 16),
       l1BlockNumber: json['l1BlockNumber'] ?? '0',
     );
   }
@@ -230,18 +230,16 @@ class ArbitrumBlock extends Block {
 
 /// Arbitrum event
 class ArbitrumEvent extends TransactionEvent {
-  final String address;
   final List<String> topics;
-  final int logIndex;
   final bool removed;
   final String l1BlockNumber;
 
   const ArbitrumEvent({
     required super.name,
     required super.data,
-    required this.address,
+    required super.address,
+    required super.logIndex,
     required this.topics,
-    required this.logIndex,
     required this.removed,
     required this.l1BlockNumber,
   });
@@ -251,8 +249,8 @@ class ArbitrumEvent extends TransactionEvent {
     'name': name,
     'data': data,
     'address': address,
-    'topics': topics,
     'logIndex': logIndex,
+    'topics': topics,
     'removed': removed,
     'l1BlockNumber': l1BlockNumber,
   };
@@ -262,8 +260,8 @@ class ArbitrumEvent extends TransactionEvent {
       name: 'event',
       data: {'data': json['data']},
       address: json['address'] ?? '',
-      topics: (json['topics'] as List? ?? []).cast<String>(),
       logIndex: int.parse(json['logIndex'] ?? '0', radix: 16),
+      topics: (json['topics'] as List? ?? []).cast<String>(),
       removed: json['removed'] ?? false,
       l1BlockNumber: json['l1BlockNumber'] ?? '0',
     );
@@ -303,16 +301,13 @@ class ArbitrumValidator extends Validator {
 
 /// Arbitrum investment pool
 class ArbitrumInvestmentPool extends InvestmentPool {
-  final String contractAddress;
-  final String protocol;
-  final String asset;
-  final String l1Address;
+  final double l1GasSaved;
 
   const ArbitrumInvestmentPool({
     required super.id,
     required super.name,
     required super.description,
-    required this.contractAddress,
+    required super.contractAddress,
     required super.minInvestment,
     required super.maxInvestment,
     required super.expectedApr,
@@ -320,9 +315,9 @@ class ArbitrumInvestmentPool extends InvestmentPool {
     required super.totalValueLocked,
     required super.participantCount,
     required super.isActive,
-    required this.protocol,
-    required this.asset,
-    required this.l1Address,
+    required super.protocol,
+    required super.asset,
+    required this.l1GasSaved,
   });
 
   @override
@@ -340,7 +335,7 @@ class ArbitrumInvestmentPool extends InvestmentPool {
     'isActive': isActive,
     'protocol': protocol,
     'asset': asset,
-    'l1Address': l1Address,
+    'l1GasSaved': l1GasSaved,
   };
 }
 
@@ -348,7 +343,7 @@ class ArbitrumInvestmentPool extends InvestmentPool {
 class ArbitrumInvestment extends Investment {
   final String transactionHash;
   final String contractAddress;
-  final String l1ConfirmationHash;
+  final int l1ConfirmationBlock;
 
   const ArbitrumInvestment({
     required super.id,
@@ -360,7 +355,7 @@ class ArbitrumInvestment extends Investment {
     required super.maturityDate,
     required this.transactionHash,
     required this.contractAddress,
-    required this.l1ConfirmationHash,
+    required this.l1ConfirmationBlock,
   });
 
   @override
@@ -374,7 +369,7 @@ class ArbitrumInvestment extends Investment {
     'maturityDate': maturityDate.toIso8601String(),
     'transactionHash': transactionHash,
     'contractAddress': contractAddress,
-    'l1ConfirmationHash': l1ConfirmationHash,
+    'l1ConfirmationBlock': l1ConfirmationBlock,
   };
 }
 
@@ -448,29 +443,24 @@ class ArbitrumBridgeTransaction extends BridgeTransaction {
 }
 
 /// Arbitrum investment statistics
-class ArbitrumInvestmentStats {
-  final double totalInvested;
-  final double totalReturns;
-  final double pendingRewards;
-  final int activeInvestments;
-  final double averageAPR;
-  final Duration averageLockPeriod;
+class ArbitrumInvestmentStats extends InvestmentStats {
   final double totalGasFees;
   final List<String> protocolsUsed;
   final double l1GasSaved;
 
   const ArbitrumInvestmentStats({
-    required this.totalInvested,
-    required this.totalReturns,
-    required this.pendingRewards,
-    required this.activeInvestments,
-    required this.averageAPR,
-    required this.averageLockPeriod,
+    required super.totalInvested,
+    required super.totalReturns,
+    required super.pendingRewards,
+    required super.activeInvestments,
+    required super.averageAPR,
+    required super.averageLockPeriod,
     required this.totalGasFees,
     required this.protocolsUsed,
     required this.l1GasSaved,
   });
 
+  @override
   Map<String, dynamic> toJson() => {
     'totalInvested': totalInvested,
     'totalReturns': totalReturns,
@@ -485,27 +475,22 @@ class ArbitrumInvestmentStats {
 }
 
 /// Arbitrum staking statistics
-class ArbitrumStakingStats {
-  final double totalStaked;
-  final double totalRewards;
-  final int activePositions;
-  final double averageAPR;
-  final int totalValidators;
-  final int slashingEvents;
+class ArbitrumStakingStats extends StakingStats {
   final String l1SecurityLevel;
   final Duration fraudProofWindow;
 
   const ArbitrumStakingStats({
-    required this.totalStaked,
-    required this.totalRewards,
-    required this.activePositions,
-    required this.averageAPR,
-    required this.totalValidators,
-    required this.slashingEvents,
+    required super.totalStaked,
+    required super.totalRewards,
+    required super.activePositions,
+    required super.averageAPR,
+    required super.totalValidators,
+    required super.slashingEvents,
     required this.l1SecurityLevel,
     required this.fraudProofWindow,
   });
 
+  @override
   Map<String, dynamic> toJson() => {
     'totalStaked': totalStaked,
     'totalRewards': totalRewards,

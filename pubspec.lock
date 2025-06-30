@@ -446,6 +446,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.2.4"
+  equatable:
+    dependency: transitive
+    description:
+      name: equatable
+      sha256: "567c64b3cb4cf82397aac55f4f0cbd3ca20d77c6c03bedbc4ceaddc08904aef7"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.7"
   fake_async:
     dependency: transitive
     description:
@@ -454,6 +462,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.3"
+  fcm_shared_isolate:
+    dependency: "direct main"
+    description:
+      name: fcm_shared_isolate
+      sha256: "18dc57d9ce7fa6b250f857ef8c823b3f7f1d1b428584557c1e9f2064e9227f6b"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.0"
   ffi:
     dependency: transitive
     description:
@@ -542,6 +558,30 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.9.3+4"
+  firebase_core:
+    dependency: transitive
+    description:
+      name: firebase_core
+      sha256: "26de145bb9688a90962faec6f838247377b0b0d32cc0abecd9a4e43525fc856c"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.32.0"
+  firebase_core_platform_interface:
+    dependency: transitive
+    description:
+      name: firebase_core_platform_interface
+      sha256: d7253d255ff10f85cfd2adaba9ac17bae878fa3ba577462451163bd9f1d1f0bf
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.4.0"
+  firebase_core_web:
+    dependency: transitive
+    description:
+      name: firebase_core_web
+      sha256: ddd72baa6f727e5b23f32d9af23d7d453d67946f380bd9c21daf474ee0f7326e
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.23.0"
   fixnum:
     dependency: transitive
     description:
@@ -550,6 +590,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.1.1"
+  fl_chart:
+    dependency: "direct main"
+    description:
+      name: fl_chart
+      sha256: "00b74ae680df6b1135bdbea00a7d1fc072a9180b7c3f3702e4b19a9943f5ed7d"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.66.2"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -807,12 +855,11 @@ packages:
   flutter_web_auth_2:
     dependency: "direct main"
     description:
-      path: flutter_web_auth_2
-      ref: "3.x-without-v1"
-      resolved-ref: "48682f19576001e50104a602d891343850adb67f"
-      url: "https://github.com/ThexXTURBOXx/flutter_web_auth_2.git"
-    source: git
-    version: "3.1.2-without-v1"
+      name: flutter_web_auth_2
+      sha256: "4d3d2fd3d26bf1a26b3beafd4b4b899c0ffe10dc99af25abc58ffe24e991133c"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.1.2"
   flutter_web_auth_2_platform_interface:
     dependency: transitive
     description:
@@ -830,10 +877,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_webrtc
-      sha256: b832dc76c0d1577f14aaf35e9c38d4ed7667cbc89c492b7bf4505d8d5f62e08b
+      sha256: "2f17fb96e0c9c6ff75f6b1c36d94755461fc7f36a5c28386f5ee5a18b98688c8"
       url: "https://pub.dev"
     source: hosted
-    version: "0.12.12+hotfix.1"
+    version: "0.9.48+hotfix.1"
   frontend_server_client:
     dependency: transitive
     description:
@@ -1263,12 +1310,11 @@ packages:
   matrix:
     dependency: "direct main"
     description:
-      path: "."
-      ref: "krille/vodozemac"
-      resolved-ref: "81ab30dd5948408964507a04bfc53f42045ee0a3"
-      url: "https://github.com/famedly/matrix-dart-sdk.git"
-    source: git
-    version: "0.40.0"
+      name: matrix
+      sha256: "996e3b1560959afaa3118ec2b5a06734ad29acf64f9c3c09a605c3ddef22039f"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.1"
   meta:
     dependency: transitive
     description:

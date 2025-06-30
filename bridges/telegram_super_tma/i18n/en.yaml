@@ -1,0 +1,6 @@
+start: "Hello! I am the REChain Super TMA bot."
+bridge_status: "Bridge is running. Telegram and Matrix connections are active."
+bridge_help: "Available commands:\n/start - Greet the bot\n/bridge_status - Show bridge health\n/bridge_help - Show this help message\n/bridge_add <tg_chat_id> <mx_room_id> - Add mapping (admin)\n/bridge_remove <tg_chat_id> - Remove mapping (admin)\n/bridge_list - List all mappings (admin)\n"
+not_authorized: "Not authorized."
+rate_limited: "Rate limited. Try again later."
+message_blocked: "Message blocked by AI moderation." 

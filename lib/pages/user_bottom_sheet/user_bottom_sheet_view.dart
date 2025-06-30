@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:matrix/matrix.dart';
 
@@ -73,8 +72,7 @@ class UserBottomSheetView extends StatelessWidget {
                       title: Padding(
                         padding: const EdgeInsets.only(bottom: 12.0),
                         child: Text(
-                          L10n.of(context)
-                              .userWouldLikeToChangeTheChat(displayname),
+                          'Would you like to change the chat with $displayname?',
                         ),
                       ),
                       subtitle: Row(
@@ -87,7 +85,7 @@ class UserBottomSheetView extends StatelessWidget {
                             ),
                             onPressed: controller.knockAccept,
                             icon: const Icon(Icons.check_outlined),
-                            label: Text(L10n.of(context).accept),
+                            label: Text('Accept'),
                           ),
                           const SizedBox(width: 12),
                           TextButton.icon(
@@ -99,7 +97,7 @@ class UserBottomSheetView extends StatelessWidget {
                             ),
                             onPressed: controller.knockDecline,
                             icon: const Icon(Icons.cancel_outlined),
-                            label: Text(L10n.of(context).decline),
+                            label: Text('Cancel'),
                           ),
                         ],
                       ),
@@ -176,16 +174,13 @@ class UserBottomSheetView extends StatelessWidget {
                                 const SizedBox(width: 12),
                                 if (presence.currentlyActive == true)
                                   Text(
-                                    L10n.of(context).currentlyActive,
+                                    'Currently Active',
                                     overflow: TextOverflow.ellipsis,
                                     style: theme.textTheme.bodySmall,
                                   )
                                 else if (lastActiveTimestamp != null)
                                   Text(
-                                    L10n.of(context).lastActiveAgo(
-                                      lastActiveTimestamp
-                                          .localizedTimeShort(context),
-                                    ),
+                                    'Last Active ${lastActiveTimestamp.localizedTimeShort(context)} ago',
                                     overflow: TextOverflow.ellipsis,
                                     style: theme.textTheme.bodySmall,
                                   ),
@@ -234,22 +229,22 @@ class UserBottomSheetView extends StatelessWidget {
                     icon: const Icon(Icons.forum_outlined),
                     label: Text(
                       dmRoomId == null
-                          ? L10n.of(context).startConversation
-                          : L10n.of(context).sendAMessage,
+                          ? 'Start Conversation'
+                          : 'Send a Message',
                     ),
                   ),
                 ),
               if (controller.widget.onMention != null)
                 ListTile(
                   leading: const Icon(Icons.alternate_email_outlined),
-                  title: Text(L10n.of(context).mention),
+                  title: Text('Mention'),
                   onTap: () => controller
                       .participantAction(UserBottomSheetAction.mention),
                 ),
               if (user != null) ...[
                 Divider(color: theme.dividerColor),
                 ListTile(
-                  title: Text(L10n.of(context).userRole),
+                  title: Text('User Role'),
                   leading: const Icon(Icons.admin_panel_settings_outlined),
                   trailing: Material(
                     borderRadius:
@@ -272,32 +267,24 @@ class UserBottomSheetView extends StatelessWidget {
                         DropdownMenuItem(
                           value: 0,
                           child: Text(
-                            L10n.of(context).userLevel(
-                              user.powerLevel < 50 ? user.powerLevel : 0,
-                            ),
+                            'Level ${user.powerLevel < 50 ? user.powerLevel : 0}',
                           ),
                         ),
                         DropdownMenuItem(
                           value: 50,
                           child: Text(
-                            L10n.of(context).moderatorLevel(
-                              user.powerLevel >= 50 && user.powerLevel < 100
-                                  ? user.powerLevel
-                                  : 50,
-                            ),
+                            'Moderator Level ${user.powerLevel >= 50 && user.powerLevel < 100 ? user.powerLevel : 50}',
                           ),
                         ),
                         DropdownMenuItem(
                           value: 100,
                           child: Text(
-                            L10n.of(context).adminLevel(
-                              user.powerLevel >= 100 ? user.powerLevel : 100,
-                            ),
+                            'Admin Level ${user.powerLevel >= 100 ? user.powerLevel : 100}',
                           ),
                         ),
                         DropdownMenuItem(
                           value: null,
-                          child: Text(L10n.of(context).custom),
+                          child: Text('Custom'),
                         ),
                       ],
                     ),
@@ -309,7 +296,7 @@ class UserBottomSheetView extends StatelessWidget {
                 ListTile(
                   textColor: theme.colorScheme.error,
                   iconColor: theme.colorScheme.error,
-                  title: Text(L10n.of(context).kickFromChat),
+                  title: Text('Kick from Chat'),
                   leading: const Icon(Icons.exit_to_app_outlined),
                   onTap: () =>
                       controller.participantAction(UserBottomSheetAction.kick),
@@ -320,7 +307,7 @@ class UserBottomSheetView extends StatelessWidget {
                 ListTile(
                   textColor: theme.colorScheme.onErrorContainer,
                   iconColor: theme.colorScheme.onErrorContainer,
-                  title: Text(L10n.of(context).banFromChat),
+                  title: Text('Ban from Chat'),
                   leading: const Icon(Icons.warning_sharp),
                   onTap: () =>
                       controller.participantAction(UserBottomSheetAction.ban),
@@ -329,7 +316,7 @@ class UserBottomSheetView extends StatelessWidget {
                   user.canBan &&
                   user.membership == Membership.ban)
                 ListTile(
-                  title: Text(L10n.of(context).unbanFromChat),
+                  title: Text('Unban from Chat'),
                   leading: const Icon(Icons.warning_outlined),
                   onTap: () =>
                       controller.participantAction(UserBottomSheetAction.unban),
@@ -338,7 +325,7 @@ class UserBottomSheetView extends StatelessWidget {
                 ListTile(
                   textColor: theme.colorScheme.onErrorContainer,
                   iconColor: theme.colorScheme.onErrorContainer,
-                  title: Text(L10n.of(context).reportUser),
+                  title: Text('Report User'),
                   leading: const Icon(Icons.gavel_outlined),
                   onTap: () => controller
                       .participantAction(UserBottomSheetAction.report),
@@ -350,7 +337,7 @@ class UserBottomSheetView extends StatelessWidget {
                     color: Colors.orange,
                   ),
                   subtitle: Text(
-                    L10n.of(context).profileNotFound,
+                    'Profile not found',
                     style: const TextStyle(color: Colors.orange),
                   ),
                 ),
@@ -360,7 +347,7 @@ class UserBottomSheetView extends StatelessWidget {
                   textColor: theme.colorScheme.onErrorContainer,
                   iconColor: theme.colorScheme.onErrorContainer,
                   leading: const Icon(Icons.block_outlined),
-                  title: Text(L10n.of(context).block),
+                  title: Text('Block'),
                   onTap: () => controller
                       .participantAction(UserBottomSheetAction.ignore),
                 ),

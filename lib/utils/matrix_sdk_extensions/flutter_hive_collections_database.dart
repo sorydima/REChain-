@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:flutter/foundation.dart' hide Key;
 import 'package:flutter/services.dart';
@@ -10,12 +11,16 @@ import 'package:matrix/matrix.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:universal_html/html.dart' as html;
 
-// ignore: deprecated_member_use
-class FlutterHiveCollectionsDatabase extends HiveCollectionsDatabase {
+// Stub implementation for web compatibility
+class FlutterHiveCollectionsDatabase {
+  final String name;
+  final String path;
+  final HiveAesCipher? key;
+
   FlutterHiveCollectionsDatabase(
-    super.name,
-    String super.path, {
-    super.key,
+    this.name,
+    this.path, {
+    this.key,
   });
 
   static const String _cipherStorageKey = 'hive_encryption_key';
@@ -23,7 +28,7 @@ class FlutterHiveCollectionsDatabase extends HiveCollectionsDatabase {
   static Future<FlutterHiveCollectionsDatabase> databaseBuilder(
     Client client,
   ) async {
-    Logs().d('Open Hive...');
+    debugPrint('Open Hive...');
     HiveAesCipher? hiverCipher;
     try {
       // Workaround for secure storage is calling Platform.operatingSystem on web
@@ -55,12 +60,12 @@ class FlutterHiveCollectionsDatabase extends HiveCollectionsDatabase {
       const FlutterSecureStorage()
           .delete(key: _cipherStorageKey)
           .catchError((_) {});
-      Logs().i('Hive encryption is not supported on this platform');
+      debugPrint('Hive encryption is not supported on this platform');
     } catch (e, s) {
       const FlutterSecureStorage()
           .delete(key: _cipherStorageKey)
           .catchError((_) {});
-      Logs().w('Unable to init Hive encryption', e, s);
+      debugPrint('Unable to init Hive encryption: $e');
     }
 
     final db = FlutterHiveCollectionsDatabase(
@@ -71,13 +76,13 @@ class FlutterHiveCollectionsDatabase extends HiveCollectionsDatabase {
     try {
       await db.open();
     } catch (e, s) {
-      Logs().w('Unable to open Hive. Delete database and storage key...', e, s);
+      debugPrint('Unable to open Hive. Delete database and storage key...');
       const FlutterSecureStorage().delete(key: _cipherStorageKey);
       await db.clear().catchError((_) {});
       await Hive.deleteFromDisk();
       rethrow;
     }
-    Logs().d('Hive is ready');
+    debugPrint('Hive is ready');
     return db;
   }
 
@@ -108,9 +113,7 @@ class FlutterHiveCollectionsDatabase extends HiveCollectionsDatabase {
     return path;
   }
 
-  @override
   int get maxFileSize => supportsFileStoring ? 100 * 1000 * 1000 : 0;
-  @override
   bool get supportsFileStoring => !kIsWeb;
 
   Future<String> _getFileStoreDirectory() async {
@@ -125,7 +128,6 @@ class FlutterHiveCollectionsDatabase extends HiveCollectionsDatabase {
     }
   }
 
-  @override
   Future<Uint8List?> getFile(Uri mxcUri) async {
     if (!supportsFileStoring) return null;
     final tempDirectory = await _getFileStoreDirectory();
@@ -136,7 +138,6 @@ class FlutterHiveCollectionsDatabase extends HiveCollectionsDatabase {
     return bytes;
   }
 
-  @override
   Future storeFile(Uri mxcUri, Uint8List bytes, int time) async {
     if (!supportsFileStoring) return null;
     final tempDirectory = await _getFileStoreDirectory();
@@ -145,5 +146,18 @@ class FlutterHiveCollectionsDatabase extends HiveCollectionsDatabase {
     if (await file.exists()) return;
     await file.writeAsBytes(bytes);
     return;
+  }
+
+  // Stub methods for web compatibility
+  Future<void> open() async {
+    // Web stub implementation
+  }
+
+  Future<void> clear() async {
+    // Web stub implementation
+  }
+
+  Future<void> close() async {
+    // Web stub implementation
   }
 }

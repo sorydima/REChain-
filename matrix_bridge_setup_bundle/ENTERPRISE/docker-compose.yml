@@ -1,0 +1,31 @@
+version: '3.9'
+services:
+  synapse:
+    image: matrixdotorg/synapse:latest
+    container_name: synapse
+    volumes:
+      - ./data/synapse:/data
+    ports:
+      - "8008:8008"
+      - "8448:8448"
+    restart: unless-stopped
+
+  element:
+    image: vectorim/element-web:latest
+    container_name: element
+    ports:
+      - "9000:80"
+    volumes:
+      - ./element/config.json:/app/config.json
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:13
+    container_name: postgres
+    environment:
+      POSTGRES_DB: synapse
+      POSTGRES_USER: synapse
+      POSTGRES_PASSWORD: yourpassword
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    restart: unless-stopped

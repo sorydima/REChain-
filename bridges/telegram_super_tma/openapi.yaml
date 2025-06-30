@@ -1,0 +1,134 @@
+openapi: 3.0.0
+info:
+  title: Super TMA Unified API
+  version: 1.0.0
+servers:
+  - url: http://localhost:8082
+paths:
+  /api/health:
+    get:
+      summary: Bridge health
+      responses:
+        '200': {description: OK}
+  /api/metrics:
+    get:
+      summary: Metrics
+      responses:
+        '200': {description: OK}
+  /api/logs:
+    get:
+      summary: Last 100 lines of logs
+      responses:
+        '200': {description: OK}
+  /api/mappings:
+    get:
+      summary: Get all mappings
+      responses:
+        '200': {description: OK}
+  /api/mappings/add:
+    post:
+      summary: Add a mapping
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tg_chat_id: {type: string}
+                mx_room_id: {type: string}
+      responses:
+        '200': {description: OK}
+  /api/mappings/remove:
+    post:
+      summary: Remove a mapping
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tg_chat_id: {type: string}
+      responses:
+        '200': {description: OK}
+  /api/plugins:
+    get:
+      summary: List plugins
+      responses:
+        '200': {description: OK}
+  /api/users:
+    get:
+      summary: List users
+      responses:
+        '200': {description: OK}
+  /api/roles:
+    get:
+      summary: List roles
+      responses:
+        '200': {description: OK}
+  /api/audit:
+    get:
+      summary: Audit log
+      responses:
+        '200': {description: OK}
+  /api/backup:
+    post:
+      summary: Trigger backup
+      responses:
+        '200': {description: OK}
+  /api/restore:
+    post:
+      summary: Restore from backup
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                backup_dir: {type: string}
+      responses:
+        '200': {description: OK}
+  /api/config:
+    get:
+      summary: Get config
+      responses:
+        '200': {description: OK}
+  /api/identity/verify:
+    post:
+      summary: Verify user identity
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id: {type: string}
+      responses:
+        '200': {description: OK}
+  /api/payments/process:
+    post:
+      summary: Process payment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id: {type: string}
+                amount: {type: number}
+      responses:
+        '200': {description: OK}
+  /api/dashboard/user_stats:
+    get:
+      summary: Per-user stats
+      responses:
+        '200': {description: OK}
+  /api/dashboard/room_stats:
+    get:
+      summary: Per-room stats
+      responses:
+        '200': {description: OK} 

@@ -1,0 +1,13 @@
+[Unit]
+Description=Super TMA Telegram-Matrix Bridge
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/supertma
+ExecStart=/usr/bin/python3 /opt/supertma/bot.py
+Restart=always
+User=supertma
+
+[Install]
+WantedBy=multi-user.target 

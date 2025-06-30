@@ -1,3 +1,25 @@
+# REChain Ecosystem
+
+A next-generation, open-source, modular ecosystem for decentralized communication, blockchain, AI, and Web3 integrations. Built with Flutter, Dart, and modern cloud-native technologies.
+
+---
+
+## 🚀 Overview
+REChain is a comprehensive platform that unifies Matrix protocol, blockchain, IPFS, AI, and external services into a seamless, extensible, and developer-friendly ecosystem. It empowers users and developers to build, scale, and secure decentralized apps, bots, and integrations for the future of the internet.
+
+---
+
+## ✨ Key Features
+- **Matrix Protocol**: Multi-client, multi-server, bridges, bots, federation, and advanced Matrix integrations
+- **Blockchain**: TON, Ethereum, Bitget, Web3, smart contracts, token/NFT support, on-chain identity
+- **IPFS**: Multi-provider decentralized storage, file manager, encryption, quotas, analytics, REST/gRPC API
+- **AI & Analytics**: GPT, moderation, translation, code analysis, monitoring, dashboards
+- **Serverless & API**: REST, GraphQL, gRPC, WebSocket, serverless hooks, monitoring
+- **Security**: Encryption, quotas, advanced logging, best practices
+- **Modern UI/UX**: Flutter-based, responsive, accessible, beautiful dashboards and tools
+
+---
+
 ![Screenshot](https://github.com/sorydima/REChain-/blob/main/assets/banner.png)
 
 ### **REChain Messenger** 🪐🔒  
@@ -134,4 +156,101 @@ Please, visit the website for the installation instructions 🪐:
 Please, send US an E-Mail to support@rechain.network for the build instructions! 👻
 
 Copyright © 2019-2025 Need help? 🤔 Donate US! ⌛️ For tea, coffee! For the future of decentralized and distributed internet. We do cool and, in my opinion, useful things for the safety and security of users' personal data. And on a completely non-commercial basis! 😎 Email us! 👇 A Dmitry Sorokin production. All rights reserved. Powered by REChain ®️. 🪐 Copyright © 2019-2025 REChain, Inc REChain ® is a registered trademark support@rechain.network Please allow anywhere from 1 to 5 business days for E-mail responses! 💌 Our Stats! 👀 At the end of 2023, the number of downloads from the Open-Source Places, Apple AppStore, Google Play Market, and the REChain.Store, namely the Domestic application store from the REChain ®️ brand 🪐, а именно Отечественный магазин приложений от бренда REChain ®️ 🪐 ✨ exceeded 29 million downloads. 😈 👀
+
+## ⚡ Quickstart
+
+### 1. **Clone the repo**
+```sh
+git clone https://github.com/sorydima/REChain-.git
+cd REChain-
+```
+
+### 2. **Install dependencies**
+```sh
+flutter pub get
+```
+
+### 3. **Run the app**
+```sh
+flutter run
+```
+
+### 4. **Test**
+```sh
+flutter test
+```
+
+---
+
+## 🔗 Integrations & Usage
+- **Matrix**: Use the Matrix dashboard for client/server/bridge/bot management
+- **Blockchain**: Manage wallets, smart contracts, and on-chain assets in the Blockchain dashboard
+- **IPFS**: Upload, share, encrypt, and manage files in the IPFS dashboard; REST/gRPC API for backend/serverless
+- **AI**: Access GPT, moderation, translation, and analytics in the AI dashboard
+- **Serverless/API**: Expose and consume REST/gRPC endpoints for all major services
+
+See [docs/](docs/) and the [wiki](https://github.com/sorydima/REChain-/wiki) for full guides, API reference, and code samples.
+
+---
+
+## 🤝 Contributing
+We welcome contributions from the community!
+- See [CONTRIBUTING.md](docs/CONTRIBUTING.md) for guidelines
+- Open issues and pull requests for features, bugs, and docs
+- Join discussions in the [wiki](https://github.com/sorydima/REChain-/wiki)
+
+---
+
+## 📚 Documentation
+- [docs/](docs/): In-depth guides, API reference, architecture, security, and more
+- [wiki/](https://github.com/sorydima/REChain-/wiki): How-tos, troubleshooting, best practices, community
+
+---
+
+## 🛡️ License
+[MIT License](LICENSE)
+
+---
+
+## 🌐 Links
+- [Project Home](https://github.com/sorydima/REChain-)
+- [Docs](docs/)
+- [Wiki](https://github.com/sorydima/REChain-/wiki)
+- [Contributing](docs/CONTRIBUTING.md)
+- [Security](docs/SECURITY.md)
+
+---
+
+*Build the future of decentralized, secure, and intelligent communication with REChain.*
+
+## 🦄 Aurora OS (Sailfish/Aurora) Support
+
+REChain supports Aurora OS via the [flutter-aurora](https://github.com/auroraos/flutaurora) toolchain.
+
+### Prerequisites
+- Install [flutter-aurora](https://github.com/auroraos/flutaurora) and add it to your PATH
+- Install Git Bash (Windows) or use a Linux/macOS shell
+
+### Build for Aurora OS
+```sh
+# Fetch dependencies using flutter-aurora
+git clone https://github.com/auroraos/flutaurora.git
+cd flutaurora
+./setup.sh
+export PATH="$PWD/bin:$PATH" # Or add to your shell profile
+cd /path/to/REChain-
+flutter-aurora pub get
+flutter-aurora build aurora
+```
+
+### Project Structure for Aurora OS
+- `aurora/` — CMake, main.cpp, icons, desktop files, RPM spec
+- `REChainPWAForAuroraOS/` — PWA and QML integration (if needed)
+
+### Notes
+- Some plugins may require extra permissions or tweaks for Aurora OS.
+- Test on a real device or emulator for best results.
+- For packaging, see `aurora/rpm/com.rechain.online.spec`.
+
+For more, see [docs/](docs/) and the [wiki](https://github.com/sorydima/REChain-/wiki).
 

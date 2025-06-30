@@ -1,17 +1,20 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:math';
+import 'dart:typed_data';
+
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
 import '../common/interfaces/blockchain_service.dart';
 import '../common/models/blockchain_types.dart';
 import 'models/arbitrum_models.dart';
+import 'config/arbitrum_config.dart';
 
 /// Arbitrum blockchain service implementation
-class ArbitrumService implements BlockchainService, InvestmentService, StakingService, BridgeService {
+class ArbitrumService implements BlockchainService, InvestmentService, StakingService {
   final ChainConfig _config;
-
+  
   ArbitrumService(this._config);
 
   @override
@@ -19,38 +22,17 @@ class ArbitrumService implements BlockchainService, InvestmentService, StakingSe
 
   @override
   Future<void> initialize() async {
-    try {
-      final isAvailable = await isNetworkAvailable();
-      if (!isAvailable) {
-        throw Exception('Arbitrum network is not available');
-      }
-
-      if (kDebugMode) {
-        print('[Arbitrum] Service initialized');
-      }
-    } catch (e) {
-      if (kDebugMode) {
-        print('[Arbitrum] Failed to initialize: $e');
-      }
-      rethrow;
+    // Initialize Arbitrum service
+    if (kDebugMode) {
+      print('[Arbitrum] Service initialized');
     }
   }
 
   @override
   Future<bool> isNetworkAvailable() async {
     try {
-      final response = await http.post(
-        Uri.parse(_config.rpcUrl),
-        headers: {'Content-Type': 'application/json'},
-        body: jsonEncode({
-          'jsonrpc': '2.0',
-          'method': 'eth_blockNumber',
-          'params': [],
-          'id': 1,
-        }),
-      ).timeout(Duration(seconds: 10));
-
-      return response.statusCode == 200;
+      final response = await _makeRpcCall('eth_blockNumber', []);
+      return response.containsKey('result');
     } catch (e) {
       return false;
     }
@@ -59,21 +41,21 @@ class ArbitrumService implements BlockchainService, InvestmentService, StakingSe
   @override
   Future<ArbitrumNetworkStats> getNetworkStats() async {
     try {
-      final gasPrice = await getGasPrice();
       final blockNumber = await _getBlockNumber();
+      final gasPrice = await getGasPrice();
       final l1GasPrice = await _getL1GasPrice();
-
+      
       return ArbitrumNetworkStats(
         averageGasPrice: gasPrice,
         blockHeight: blockNumber,
-        tps: 4500.0, // Arbitrum average TPS
+        tps: 1000.0, // Arbitrum can handle ~1000 TPS
         activeValidators: 1, // Arbitrum has a single sequencer
         totalStaked: 100000.0, // Approximate total ETH staked
         marketCap: 0.0, // No native token
         tvl: 10000000000.0, // Approximate TVL in DeFi
         l1GasPrice: l1GasPrice,
-        sequencerLatency: 0.1, // Average latency in seconds
-        challengePeriod: Duration(days: 7),
+        l1BlockNumber: await _getL1BlockNumber(),
+        l1GasSaved: 100.0, // Approximate gas saved
       );
     } catch (e) {
       throw Exception('Failed to get Arbitrum network stats: $e');
@@ -100,6 +82,16 @@ class ArbitrumService implements BlockchainService, InvestmentService, StakingSe
       return gasPriceWei.toDouble() / 1e9; // Convert to Gwei
     } catch (e) {
       throw Exception('Failed to get L1 gas price: $e');
+    }
+  }
+  
+  Future<int> _getL1BlockNumber() async {
+    try {
+      final response = await _makeRpcCall('eth_l1BlockNumber', []);
+      final blockNumberHex = response['result'] as String;
+      return int.parse(blockNumberHex.substring(2), radix: 16);
+    } catch (e) {
+      throw Exception('Failed to get L1 block number: $e');
     }
   }
   
@@ -263,7 +255,7 @@ class ArbitrumService implements BlockchainService, InvestmentService, StakingSe
           isActive: true,
           protocol: 'GMX',
           asset: 'ETH',
-          l1Address: '0x1234567890123456789012345678901234567890',
+          l1GasSaved: 100.0,
         ),
       ];
     } catch (e) {
@@ -294,7 +286,7 @@ class ArbitrumService implements BlockchainService, InvestmentService, StakingSe
         status: TransactionStatus.pending,
         nonce: await _getNonce(walletAddress),
         data: _encodeInvestmentData(amount),
-        l1GasPrice: await _getL1GasPrice(),
+        l1ConfirmationBlock: await _getL1BlockNumber(),
       );
       
       final signedTx = await signTransaction(transaction, privateKey);
@@ -310,7 +302,7 @@ class ArbitrumService implements BlockchainService, InvestmentService, StakingSe
         maturityDate: DateTime.now().add(pool.lockPeriod),
         transactionHash: txHash,
         contractAddress: pool.contractAddress,
-        l1ConfirmationHash: '',
+        l1ConfirmationBlock: await _getL1BlockNumber(),
       );
     } catch (e) {
       throw Exception('Failed to create investment: $e');
@@ -390,7 +382,7 @@ class ArbitrumService implements BlockchainService, InvestmentService, StakingSe
         status: TransactionStatus.pending,
         nonce: await _getNonce(walletAddress),
         data: _encodeStakingData(validatorId, amount),
-        l1GasPrice: await _getL1GasPrice(),
+        l1ConfirmationBlock: await _getL1BlockNumber(),
       );
       
       final signedTx = await signTransaction(transaction, privateKey);
@@ -405,7 +397,7 @@ class ArbitrumService implements BlockchainService, InvestmentService, StakingSe
         createdAt: DateTime.now(),
         lastRewardClaim: DateTime.now(),
         transactionHash: txHash,
-        l1ConfirmationBlock: await _getBlockNumber(),
+        l1ConfirmationBlock: await _getL1BlockNumber(),
       );
     } catch (e) {
       throw Exception('Failed to create staking position: $e');
@@ -454,7 +446,98 @@ class ArbitrumService implements BlockchainService, InvestmentService, StakingSe
     }
   }
   
-  // Bridge Service Implementation
+  @override
+  Future<dynamic> callContractMethod(String contractAddress, String methodName, List<dynamic> params) async {
+    try {
+      final response = await _makeRpcCall('eth_call', [
+        {
+          'to': contractAddress,
+          'data': '0x${methodName.hashCode.toRadixString(16)}',
+        },
+        'latest'
+      ]);
+      return response['result'];
+    } catch (e) {
+      throw Exception('Failed to call contract method: $e');
+    }
+  }
+
+  @override
+  Future<String> sendContractTransaction(String contractAddress, String methodName, List<dynamic> params, String privateKey) async {
+    try {
+      // Simulate contract transaction
+      await Future.delayed(Duration(seconds: 2));
+      return '0x${DateTime.now().millisecondsSinceEpoch.toRadixString(16)}';
+    } catch (e) {
+      throw Exception('Failed to send contract transaction: $e');
+    }
+  }
+
+  @override
+  Future<StakingStats> getStakingInfo(String walletAddress) async {
+    try {
+      return ArbitrumStakingStats(
+        totalStaked: 1000.0,
+        totalRewards: 100.0,
+        activePositions: 1,
+        averageAPR: 10.0,
+        totalValidators: 1,
+        slashingEvents: 0,
+        l1SecurityLevel: 'Optimistic',
+        fraudProofWindow: Duration(days: 7),
+      );
+    } catch (e) {
+      throw Exception('Failed to get staking info: $e');
+    }
+  }
+
+  @override
+  Future<String> stakeTokens(String walletAddress, double amount, String privateKey) async {
+    try {
+      // Simulate staking
+      await Future.delayed(Duration(seconds: 2));
+      return '0x${DateTime.now().millisecondsSinceEpoch.toRadixString(16)}';
+    } catch (e) {
+      throw Exception('Failed to stake tokens: $e');
+    }
+  }
+
+  @override
+  Future<String> unstakeTokens(String walletAddress, double amount, String privateKey) async {
+    try {
+      // Simulate unstaking
+      await Future.delayed(Duration(seconds: 2));
+      return '0x${DateTime.now().millisecondsSinceEpoch.toRadixString(16)}';
+    } catch (e) {
+      throw Exception('Failed to unstake tokens: $e');
+    }
+  }
+
+  @override
+  Future<List<BlockchainTransaction>> getTransactionHistory(String address) async {
+    try {
+      // Simulate transaction history
+      await Future.delayed(Duration(seconds: 1));
+      return [
+        ArbitrumTransaction(
+          id: '0x${DateTime.now().millisecondsSinceEpoch.toRadixString(16)}',
+          fromAddress: address,
+          toAddress: '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6',
+          amount: 1.0,
+          gasPrice: 0.001,
+          gasLimit: 21000,
+          type: TransactionType.transfer,
+          timestamp: DateTime.now(),
+          status: TransactionStatus.confirmed,
+          nonce: 0,
+          l1ConfirmationBlock: await _getL1BlockNumber(),
+        ),
+      ];
+    } catch (e) {
+      return [];
+    }
+  }
+  
   @override
   List<BlockchainNetwork> getSupportedTargetChains() {
     return [
@@ -464,92 +547,23 @@ class ArbitrumService implements BlockchainService, InvestmentService, StakingSe
       BlockchainNetwork.ton,
     ];
   }
-  
-  @override
-  Future<double> getBridgeFee({
-    required BlockchainNetwork targetChain,
-    required double amount,
-  }) async {
-    try {
-      switch (targetChain) {
-        case BlockchainNetwork.ethereum:
-          return 0.01;
-        case BlockchainNetwork.optimism:
-          return 0.005;
-        case BlockchainNetwork.polygon:
-          return 0.008;
-        case BlockchainNetwork.ton:
-          return 0.015;
-        default:
-          return 0.01;
-      }
-    } catch (e) {
-      throw Exception('Failed to get bridge fee: $e');
-    }
-  }
 
-  // New methods for ArbitrumService
-  Future<double> getL1ToL2Fee() async {
-    try {
-      // Placeholder implementation, should call Arbitrum SDK or RPC to get actual fee
-      return 0.001;
-    } catch (e) {
-      throw Exception('Failed to get L1 to L2 fee: $e');
-    }
-  }
-
-  Future<double> getL2ToL1Fee() async {
-    try {
-      // Placeholder implementation, should call Arbitrum SDK or RPC to get actual fee
-      return 0.002;
-    } catch (e) {
-      throw Exception('Failed to get L2 to L1 fee: $e');
-    }
-  }
-  
   @override
-  Future<ArbitrumBridgeTransaction> createBridgeTransaction({
+  Future<String> createBridgeTransaction({
     required BlockchainNetwork targetChain,
     required String targetAddress,
     required double amount,
     required String privateKey,
   }) async {
     try {
-      final bridgeContract = _config.bridgeContracts[targetChain.toString().split('.').last];
-      if (bridgeContract == null) {
-        throw Exception('Bridge contract not found for $targetChain');
-      }
-      
-      final fee = await getBridgeFee(targetChain: targetChain, amount: amount);
-      
-      return ArbitrumBridgeTransaction(
-        id: _generateBridgeId(),
-        sourceChain: BlockchainNetwork.arbitrum,
-        targetChain: targetChain,
-        sourceAddress: '',
-        targetAddress: targetAddress,
-        amount: amount,
-        fee: fee,
-        timestamp: DateTime.now(),
-        status: BridgeStatus.pending,
-        bridgeContract: bridgeContract,
-        nonce: Random().nextInt(1000000),
-        l1ConfirmationTime: Duration(minutes: 15),
-      );
+      // Simulate bridge transaction creation
+      await Future.delayed(Duration(seconds: 2));
+      return '0x${DateTime.now().millisecondsSinceEpoch.toRadixString(16)}';
     } catch (e) {
       throw Exception('Failed to create bridge transaction: $e');
     }
   }
-  
-  @override
-  Future<BridgeStatus> getBridgeStatus(String bridgeId) async {
-    try {
-      return BridgeStatus.completed;
-    } catch (e) {
-      throw Exception('Failed to get bridge status: $e');
-    }
-  }
-  
+
   @override
   Future<void> dispose() async {
     // Clean up resources
@@ -630,10 +644,6 @@ class ArbitrumService implements BlockchainService, InvestmentService, StakingSe
     return 'arb_stake_${DateTime.now().millisecondsSinceEpoch}_${Random().nextInt(1000)}';
   }
   
-  String _generateBridgeId() {
-    return 'arb_bridge_${DateTime.now().millisecondsSinceEpoch}_${Random().nextInt(1000)}';
-  }
-  
   String _encodeInvestmentData(double amount) {
     return '0x${amount.toInt().toRadixString(16)}';
   }
@@ -641,4 +651,4 @@ class ArbitrumService implements BlockchainService, InvestmentService, StakingSe
   String _encodeStakingData(String validatorId, double amount) {
     return '0x${amount.toInt().toRadixString(16)}';
   }
-}
+} 

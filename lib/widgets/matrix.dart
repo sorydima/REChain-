@@ -391,7 +391,7 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
       voipPlugin = null;
       return;
     }
-    voipPlugin = VoipPlugin(this);
+    voipPlugin = VoipPlugin.instance;
   }
 
   @override

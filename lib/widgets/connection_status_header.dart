@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:matrix/matrix.dart';
 
 import '../config/themes.dart';
@@ -79,7 +78,7 @@ extension on SyncStatusUpdate {
   String toLocalizedString(BuildContext context) {
     switch (status) {
       case SyncStatus.waitingForResponse:
-        return L10n.of(context).loadingPleaseWait;
+        return 'Loading Please Wait';
       case SyncStatus.error:
         return ((error?.exception ?? Object()) as Object)
             .toLocalizedString(context);
@@ -87,7 +86,7 @@ extension on SyncStatusUpdate {
       case SyncStatus.cleaningUp:
       case SyncStatus.finished:
       default:
-        return L10n.of(context).synchronizingPleaseWait;
+        return 'Synchronizing Please Wait';
     }
   }
 }

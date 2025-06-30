@@ -10,10 +10,12 @@ import 'hyip/ton_investment_service.dart';
 
 /// Central service manager for all TON-related services
 class TonServiceManager {
-  static TonServiceManager? _instance;
-  static TonServiceManager get instance => _instance ??= TonServiceManager._();
+  static final TonServiceManager _instance = TonServiceManager._internal();
+  factory TonServiceManager() => _instance;
+  TonServiceManager._internal();
   
-  TonServiceManager._();
+  // Add instance getter for compatibility
+  static TonServiceManager get instance => _instance;
   
   bool _isInitialized = false;
   bool _isInitializing = false;
@@ -33,7 +35,7 @@ class TonServiceManager {
       _isInitializing = true;
       _initializationController.add(false);
       
-      Logs().i('Initializing TON Service Manager...');
+      Logs.i('Initializing TON Service Manager...');
       
       // Initialize TON client first
       await TonClient.instance.initialize();
@@ -48,9 +50,9 @@ class TonServiceManager {
       _isInitialized = true;
       _initializationController.add(true);
       
-      Logs().i('TON Service Manager initialized successfully');
+      Logs.i('TON Service Manager initialized successfully');
     } catch (e) {
-      Logs().e('Failed to initialize TON Service Manager: $e');
+      Logs.e('Failed to initialize TON Service Manager: $e');
       _initializationController.addError(e);
       rethrow;
     } finally {
@@ -88,7 +90,7 @@ class TonServiceManager {
   /// Restart all services
   Future<void> restart() async {
     try {
-      Logs().i('Restarting TON services...');
+      Logs.i('Restarting TON services...');
       
       // Dispose current services
       await dispose();
@@ -97,9 +99,9 @@ class TonServiceManager {
       _isInitialized = false;
       await initialize();
       
-      Logs().i('TON services restarted successfully');
+      Logs.i('TON services restarted successfully');
     } catch (e) {
-      Logs().e('Failed to restart TON services: $e');
+      Logs.e('Failed to restart TON services: $e');
       rethrow;
     }
   }
@@ -114,7 +116,7 @@ class TonServiceManager {
         await TonWalletService.instance.updateBalance(wallet.id);
       }
     } catch (e) {
-      Logs().e('Failed to update wallet balances: $e');
+      Logs.e('Failed to update wallet balances: $e');
     }
   }
   
@@ -129,7 +131,7 @@ class TonServiceManager {
         await TonNftService.instance.getNftsForAddress(activeWallet.address);
       }
     } catch (e) {
-      Logs().e('Failed to refresh NFT data: $e');
+      Logs.e('Failed to refresh NFT data: $e');
     }
   }
   
@@ -145,7 +147,7 @@ class TonServiceManager {
         await TonInvestmentService.instance.getInvestmentStats(activeWallet.address);
       }
     } catch (e) {
-      Logs().e('Failed to update investment data: $e');
+      Logs.e('Failed to update investment data: $e');
     }
   }
   
@@ -253,7 +255,7 @@ class TonServiceManager {
           'total_invested': investmentStats.totalInvested,
           'total_returns': investmentStats.totalReturns,
           'active_investments': investmentStats.activeInvestments,
-          'average_apr': investmentStats.averageApr,
+          'average_apr': investmentStats.averageAPR,
         };
       }
       
@@ -274,7 +276,7 @@ class TonServiceManager {
   /// Dispose all services
   Future<void> dispose() async {
     try {
-      Logs().i('Disposing TON services...');
+      Logs.i('Disposing TON services...');
       
       // Dispose services
       TonWalletService.instance.dispose();
@@ -285,9 +287,9 @@ class TonServiceManager {
       _isInitialized = false;
       _initializationController.close();
       
-      Logs().i('TON services disposed');
+      Logs.i('TON services disposed');
     } catch (e) {
-      Logs().e('Error disposing TON services: $e');
+      Logs.e('Error disposing TON services: $e');
     }
   }
 }

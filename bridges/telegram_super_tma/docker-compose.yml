@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+  supertma:
+    build: .
+    environment:
+      - USE_REDIS=True
+    depends_on:
+      - redis
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app 

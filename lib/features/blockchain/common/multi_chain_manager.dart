@@ -345,6 +345,12 @@ class MultiChainManager {
         case BlockchainNetwork.avalanche:
           service = AvalancheService(config);
           break;
+        case BlockchainNetwork.fantom:
+          // TODO: Implement FantomService
+          break;
+        case BlockchainNetwork.cosmos:
+          // TODO: Implement CosmosService
+          break;
         case BlockchainNetwork.ton:
           service = TonService(config);
           break;
@@ -439,6 +445,12 @@ class MultiChainManager {
             break;
           case BlockchainNetwork.avalanche:
             service = AvalancheService(config);
+            break;
+          case BlockchainNetwork.fantom:
+            // TODO: Implement FantomService
+            break;
+          case BlockchainNetwork.cosmos:
+            // TODO: Implement CosmosService
             break;
           case BlockchainNetwork.ton:
             service = TonService(config);

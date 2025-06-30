@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:matrix/matrix.dart';
 
 import '../../../config/app_config.dart';
@@ -58,10 +57,10 @@ class VerificationRequestContent extends StatelessWidget {
                 canceled
                     ? 'Error ${cancel.first.content.tryGet<String>('code')}: ${cancel.first.content.tryGet<String>('reason')}'
                     : (fullyDone
-                        ? L10n.of(context).verifySuccess
+                        ? 'Verify Success'
                         : (started
-                            ? L10n.of(context).loadingPleaseWait
-                            : L10n.of(context).newVerificationRequest)),
+                            ? 'Loading Please Wait'
+                            : 'New Verification Request')),
               ),
             ],
           ),

@@ -1,0 +1,13 @@
+
+oidc_providers:
+  - idp_id: keycloak
+    idp_name: "Keycloak Login"
+    issuer: "http://keycloak:8080/realms/matrix"
+    client_id: "synapse"
+    client_secret: "yourclientsecret"
+    scopes: ["openid", "profile", "email"]
+    user_mapping_provider:
+      config:
+        subject_claim: "sub"
+        localpart_template: "{{ user.preferred_username }}"
+        display_name_template: "{{ user.name }}"

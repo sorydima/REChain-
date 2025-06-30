@@ -1,0 +1,19 @@
+groups:
+  - name: supertma-alerts
+    rules:
+      - alert: SuperTMAHighErrorRate
+        expr: increase(bridge_errors[5m]) > 5
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Super TMA bridge has a high error rate"
+          description: "More than 5 errors in 5 minutes."
+      - alert: SuperTMADown
+        expr: bridge_uptime_seconds < 60
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Super TMA bridge may be down"
+          description: "Uptime dropped below 60 seconds." 

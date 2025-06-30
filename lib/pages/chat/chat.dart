@@ -1322,7 +1322,7 @@ class ChatController extends State<ChatPageWithRoom>
 
     final voipPlugin = Matrix.of(context).voipPlugin;
     try {
-      await voipPlugin!.voip.inviteToCall(room, callType);
+      await voipPlugin!.startCall(room.id, room.client.userID ?? '');
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(e.toLocalizedString(context))),

@@ -3,8 +3,8 @@ import '../../common/models/blockchain_types.dart';
 
 /// Ethereum-specific network statistics
 class EthereumNetworkStats extends NetworkStats {
-  final int gasLimit;
-  final BigInt difficulty;
+  final int pendingTransactions;
+  final double baseFee;
 
   const EthereumNetworkStats({
     required super.averageGasPrice,
@@ -14,8 +14,8 @@ class EthereumNetworkStats extends NetworkStats {
     required super.totalStaked,
     required super.marketCap,
     required super.tvl,
-    required this.gasLimit,
-    required this.difficulty,
+    required this.pendingTransactions,
+    required this.baseFee,
   });
 }
 
@@ -62,7 +62,7 @@ class EthereumTransaction extends BlockchainTransaction {
       toAddress: json['to'] ?? '',
       amount: (int.parse(json['value'] ?? '0', radix: 16) / 1e18),
       gasPrice: (int.parse(json['gasPrice'] ?? '0', radix: 16) / 1e9),
-      gasLimit: int.parse(json['gas'] ?? '0', radix: 16).toDouble(),
+      gasLimit: int.parse(json['gas'] ?? '0', radix: 16),
       data: json['input'],
       type: TransactionType.transfer, // Default type
       timestamp: DateTime.now(), // Would be parsed from block timestamp
@@ -224,7 +224,7 @@ class EthereumBlock extends Block {
       extraData: json['extraData'] ?? '',
       size: int.parse(json['size'] ?? '0', radix: 16),
       gasUsed: int.parse(json['gasUsed'] ?? '0', radix: 16),
-      gasLimit: int.parse(json['gasLimit'] ?? '0', radix: 16),
+      gasLimit: int.parse(json['gas'] ?? '0', radix: 16),
       nonce: json['nonce'] ?? '',
       mixHash: json['mixHash'] ?? '',
     );
@@ -233,17 +233,15 @@ class EthereumBlock extends Block {
 
 /// Ethereum event
 class EthereumEvent extends TransactionEvent {
-  final String address;
   final List<String> topics;
-  final int logIndex;
   final bool removed;
 
   const EthereumEvent({
     required super.name,
     required super.data,
-    required this.address,
+    required super.address,
+    required super.logIndex,
     required this.topics,
-    required this.logIndex,
     required this.removed,
   });
 
@@ -252,8 +250,8 @@ class EthereumEvent extends TransactionEvent {
     'name': name,
     'data': data,
     'address': address,
-    'topics': topics,
     'logIndex': logIndex,
+    'topics': topics,
     'removed': removed,
   };
 
@@ -262,8 +260,8 @@ class EthereumEvent extends TransactionEvent {
       name: 'event', // Would be decoded from ABI
       data: {'data': json['data']},
       address: json['address'] ?? '',
-      topics: (json['topics'] as List? ?? []).cast<String>(),
       logIndex: int.parse(json['logIndex'] ?? '0', radix: 16),
+      topics: (json['topics'] as List? ?? []).cast<String>(),
       removed: json['removed'] ?? false,
     );
   }
@@ -302,15 +300,11 @@ class EthereumValidator extends Validator {
 
 /// Ethereum investment pool
 class EthereumInvestmentPool extends InvestmentPool {
-  final String contractAddress;
-  final String protocol;
-  final String asset;
-
   const EthereumInvestmentPool({
     required super.id,
     required super.name,
     required super.description,
-    required this.contractAddress,
+    required super.contractAddress,
     required super.minInvestment,
     required super.maxInvestment,
     required super.expectedApr,
@@ -318,8 +312,8 @@ class EthereumInvestmentPool extends InvestmentPool {
     required super.totalValueLocked,
     required super.participantCount,
     required super.isActive,
-    required this.protocol,
-    required this.asset,
+    required super.protocol,
+    required super.asset,
   });
 
   @override
@@ -438,27 +432,22 @@ class EthereumBridgeTransaction extends BridgeTransaction {
 }
 
 /// Ethereum investment statistics
-class EthereumInvestmentStats {
-  final double totalInvested;
-  final double totalReturns;
-  final double pendingRewards;
-  final int activeInvestments;
-  final double averageAPR;
-  final Duration averageLockPeriod;
+class EthereumInvestmentStats extends InvestmentStats {
   final double totalGasFees;
   final List<String> protocolsUsed;
 
   const EthereumInvestmentStats({
-    required this.totalInvested,
-    required this.totalReturns,
-    required this.pendingRewards,
-    required this.activeInvestments,
-    required this.averageAPR,
-    required this.averageLockPeriod,
+    required super.totalInvested,
+    required super.totalReturns,
+    required super.pendingRewards,
+    required super.activeInvestments,
+    required super.averageAPR,
+    required super.averageLockPeriod,
     required this.totalGasFees,
     required this.protocolsUsed,
   });
 
+  @override
   Map<String, dynamic> toJson() => {
     'totalInvested': totalInvested,
     'totalReturns': totalReturns,
@@ -472,23 +461,17 @@ class EthereumInvestmentStats {
 }
 
 /// Ethereum staking statistics
-class EthereumStakingStats {
-  final double totalStaked;
-  final double totalRewards;
-  final int activePositions;
-  final double averageAPR;
-  final int totalValidators;
-  final int slashingEvents;
-
+class EthereumStakingStats extends StakingStats {
   const EthereumStakingStats({
-    required this.totalStaked,
-    required this.totalRewards,
-    required this.activePositions,
-    required this.averageAPR,
-    required this.totalValidators,
-    required this.slashingEvents,
+    required super.totalStaked,
+    required super.totalRewards,
+    required super.activePositions,
+    required super.averageAPR,
+    required super.totalValidators,
+    required super.slashingEvents,
   });
 
+  @override
   Map<String, dynamic> toJson() => {
     'totalStaked': totalStaked,
     'totalRewards': totalRewards,

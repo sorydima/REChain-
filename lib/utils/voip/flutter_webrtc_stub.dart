@@ -5,6 +5,17 @@ enum RTCVideoViewObjectFit {
   RTCVideoViewObjectFitCover,
 }
 
+class MediaStream {
+  final String id;
+  final List<dynamic> tracks;
+  
+  MediaStream({required this.id, required this.tracks});
+  
+  void dispose() {
+    // Stub implementation
+  }
+}
+
 class RTCVideoRenderer {
   dynamic srcObject;
 
@@ -13,6 +24,11 @@ class RTCVideoRenderer {
   }
 
   void dispose() {
+    // Stub implementation
+  }
+  
+  Future<void> setSrcObject(MediaStream? stream) async {
+    srcObject = stream;
     // Stub implementation
   }
 }

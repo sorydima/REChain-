@@ -62,7 +62,7 @@ class BinanceTransaction extends BlockchainTransaction {
       toAddress: json['to'] ?? '',
       amount: (int.parse(json['value'] ?? '0', radix: 16) / 1e18),
       gasPrice: (int.parse(json['gasPrice'] ?? '0', radix: 16) / 1e9),
-      gasLimit: int.parse(json['gas'] ?? '0', radix: 16).toDouble(),
+      gasLimit: int.parse(json['gas'] ?? '0', radix: 16),
       data: json['input'],
       type: TransactionType.transfer,
       timestamp: DateTime.now(),
@@ -221,17 +221,15 @@ class BinanceBlock extends Block {
 
 /// Binance event
 class BinanceEvent extends TransactionEvent {
-  final String address;
   final List<String> topics;
-  final int logIndex;
   final bool removed;
 
   const BinanceEvent({
     required super.name,
     required super.data,
-    required this.address,
+    required super.address,
+    required super.logIndex,
     required this.topics,
-    required this.logIndex,
     required this.removed,
   });
 
@@ -240,8 +238,8 @@ class BinanceEvent extends TransactionEvent {
     'name': name,
     'data': data,
     'address': address,
-    'topics': topics,
     'logIndex': logIndex,
+    'topics': topics,
     'removed': removed,
   };
 
@@ -250,8 +248,8 @@ class BinanceEvent extends TransactionEvent {
       name: 'event',
       data: {'data': json['data']},
       address: json['address'] ?? '',
-      topics: (json['topics'] as List? ?? []).cast<String>(),
       logIndex: int.parse(json['logIndex'] ?? '0', radix: 16),
+      topics: (json['topics'] as List? ?? []).cast<String>(),
       removed: json['removed'] ?? false,
     );
   }
@@ -290,15 +288,11 @@ class BinanceValidator extends Validator {
 
 /// Binance investment pool
 class BinanceInvestmentPool extends InvestmentPool {
-  final String contractAddress;
-  final String protocol;
-  final String asset;
-
   const BinanceInvestmentPool({
     required super.id,
     required super.name,
     required super.description,
-    required this.contractAddress,
+    required super.contractAddress,
     required super.minInvestment,
     required super.maxInvestment,
     required super.expectedApr,
@@ -306,8 +300,8 @@ class BinanceInvestmentPool extends InvestmentPool {
     required super.totalValueLocked,
     required super.participantCount,
     required super.isActive,
-    required this.protocol,
-    required this.asset,
+    required super.protocol,
+    required super.asset,
   });
 
   @override
@@ -429,27 +423,22 @@ class BinanceBridgeTransaction extends BridgeTransaction {
 }
 
 /// Binance investment statistics
-class BinanceInvestmentStats {
-  final double totalInvested;
-  final double totalReturns;
-  final double pendingRewards;
-  final int activeInvestments;
-  final double averageAPR;
-  final Duration averageLockPeriod;
+class BinanceInvestmentStats extends InvestmentStats {
   final double totalGasFees;
   final List<String> protocolsUsed;
 
   const BinanceInvestmentStats({
-    required this.totalInvested,
-    required this.totalReturns,
-    required this.pendingRewards,
-    required this.activeInvestments,
-    required this.averageAPR,
-    required this.averageLockPeriod,
+    required super.totalInvested,
+    required super.totalReturns,
+    required super.pendingRewards,
+    required super.activeInvestments,
+    required super.averageAPR,
+    required super.averageLockPeriod,
     required this.totalGasFees,
     required this.protocolsUsed,
   });
 
+  @override
   Map<String, dynamic> toJson() => {
     'totalInvested': totalInvested,
     'totalReturns': totalReturns,
@@ -463,27 +452,22 @@ class BinanceInvestmentStats {
 }
 
 /// Binance staking statistics
-class BinanceStakingStats {
-  final double totalStaked;
-  final double totalRewards;
-  final int activePositions;
-  final double averageAPR;
-  final int totalValidators;
-  final int slashingEvents;
+class BinanceStakingStats extends StakingStats {
   final double epochRewards;
   final Duration timeUntilNextEpoch;
 
   const BinanceStakingStats({
-    required this.totalStaked,
-    required this.totalRewards,
-    required this.activePositions,
-    required this.averageAPR,
-    required this.totalValidators,
-    required this.slashingEvents,
+    required super.totalStaked,
+    required super.totalRewards,
+    required super.activePositions,
+    required super.averageAPR,
+    required super.totalValidators,
+    required super.slashingEvents,
     required this.epochRewards,
     required this.timeUntilNextEpoch,
   });
 
+  @override
   Map<String, dynamic> toJson() => {
     'totalStaked': totalStaked,
     'totalRewards': totalRewards,

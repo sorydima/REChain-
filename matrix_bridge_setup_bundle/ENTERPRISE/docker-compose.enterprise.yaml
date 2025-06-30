@@ -1,0 +1,59 @@
+
+version: '3.9'
+services:
+  element-call:
+    image: vectorim/element-call:latest
+    container_name: element_call
+    ports:
+      - "4444:4444"
+
+  e2ee-search:
+    image: ghcr.io/matrix-org/e2ee-search-proxy:latest
+    container_name: e2ee_search
+    ports:
+      - "8100:8100"
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:latest
+    container_name: keycloak
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=changeme
+    command: start-dev
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./keycloak:/opt/keycloak/data
+
+  redis:
+    image: redis:alpine
+    container_name: redis
+    ports:
+      - "6379:6379"
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  jitsi-web:
+    image: jitsi/web
+    container_name: jitsi_web
+    ports:
+      - "8001:80"
+
+  jitsi-prosody:
+    image: jitsi/prosody
+    container_name: jitsi_prosody
+
+  jitsi-jicofo:
+    image: jitsi/jicofo
+    container_name: jitsi_jicofo
+
+  jitsi-jvb:
+    image: jitsi/jvb
+    container_name: jitsi_jvb
+    ports:
+      - "10000:10000/udp"

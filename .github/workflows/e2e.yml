@@ -1,0 +1,26 @@
+name: E2E Dashboard Widget Test
+
+on:
+  push:
+    paths:
+      - 'bridges/telegram_super_tma/dashboard_widget.html'
+      - 'bridges/telegram_super_tma/test_e2e.py'
+      - '.github/workflows/e2e.yml'
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install Selenium and Chrome
+        run: |
+          pip install selenium
+          sudo apt-get update
+          sudo apt-get install -y chromium-browser
+      - name: Run E2E test
+        run: |
+          python bridges/telegram_super_tma/test_e2e.py 

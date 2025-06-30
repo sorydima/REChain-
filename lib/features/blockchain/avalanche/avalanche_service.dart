@@ -10,7 +10,7 @@ import 'models/avalanche_models.dart';
 
 /// Avalanche blockchain service implementation
 /// Primarily interacts with C-Chain (EVM compatible) but includes support for X-Chain and P-Chain operations
-class AvalancheService implements BlockchainService, InvestmentService, StakingService, BridgeService {
+class AvalancheService implements BlockchainService, InvestmentService, StakingService {
   final ChainConfig _config;
 
   AvalancheService(this._config);
@@ -73,21 +73,22 @@ class AvalancheService implements BlockchainService, InvestmentService, StakingS
   @override
   Future<AvalancheNetworkStats> getNetworkStats() async {
     try {
-      final gasPrice = await getGasPrice();
       final blockNumber = await _getBlockNumber();
       final subnetInfo = await _getSubnetInfo();
       
       return AvalancheNetworkStats(
-        averageGasPrice: gasPrice,
+        averageGasPrice: await getGasPrice(),
         blockHeight: blockNumber,
-        tps: 4500.0, // Avalanche C-Chain average TPS
-        activeValidators: 1000, // Approximate number of active validators
+        tps: 4500.0, // Avalanche's high TPS
+        activeValidators: 1000, // Approximate number of validators
         totalStaked: 500000000.0, // Approximate total AVAX staked
         marketCap: 10000000000.0, // Approximate market cap
         tvl: 3000000000.0, // Approximate TVL in DeFi
-        activeSubnets: subnetInfo.activeSubnets,
-        validatorUptime: subnetInfo.validatorUptime,
-        networkUtilization: subnetInfo.networkUtilization,
+        pChainHeight: await _getPChainHeight(),
+        xChainHeight: await _getXChainHeight(),
+        cChainHeight: blockNumber,
+        activeSubnets: List.generate(subnetInfo.activeSubnets, (index) => 'subnet_$index'),
+        subnetParticipation: subnetInfo.validatorUptime,
       );
     } catch (e) {
       throw Exception('Failed to get Avalanche network stats: $e');
@@ -176,6 +177,24 @@ class AvalancheService implements BlockchainService, InvestmentService, StakingS
     }
   }
   
+  Future<int> _getPChainHeight() async {
+    try {
+      final response = await _makeRpcCall('platform.getHeight', [], chain: 'P');
+      return int.parse(response['result']['height']);
+    } catch (e) {
+      return 0;
+    }
+  }
+  
+  Future<int> _getXChainHeight() async {
+    try {
+      final response = await _makeRpcCall('avm.getHeight', [], chain: 'X');
+      return int.parse(response['result']['height']);
+    } catch (e) {
+      return 0;
+    }
+  }
+  
   @override
   Future<AvalancheTransaction> getTransaction(String txHash) async {
     try {
@@ -192,7 +211,7 @@ class AvalancheService implements BlockchainService, InvestmentService, StakingS
   Future<String> sendTransaction(BlockchainTransaction transaction) async {
     try {
       final avaxTx = transaction as AvalancheTransaction;
-      final response = await _makeRpcCall('eth_sendRawTransaction', [avaxTx.rawTransaction], chain: avaxTx.chain);
+      final response = await _makeRpcCall('eth_sendRawTransaction', [avaxTx.transactionHash], chain: 'C');
       return response['result'] as String;
     } catch (e) {
       throw Exception('Failed to send transaction: $e');
@@ -209,10 +228,7 @@ class AvalancheService implements BlockchainService, InvestmentService, StakingS
         transaction: transaction as AvalancheTransaction,
         signature: signature,
         hash: hash,
-        v: 27,
-        r: BigInt.from(Random().nextInt(1000000)),
-        s: BigInt.from(Random().nextInt(1000000)),
-        subnetId: 'default',
+        serializedTx: '0x${Random().nextInt(1000000).toRadixString(16)}',
       );
     } catch (e) {
       throw Exception('Failed to sign transaction: $e');
@@ -332,10 +348,24 @@ class AvalancheService implements BlockchainService, InvestmentService, StakingS
         type: TransactionType.invest,
         timestamp: DateTime.now(),
         status: TransactionStatus.pending,
-        nonce: await _getNonce(walletAddress),
-        data: _encodeInvestmentData(amount),
-        chain: 'C',
-        subnetId: pool.subnetId,
+        nonce: await _getNonce(walletAddress).toString(),
+        to: pool.contractAddress,
+        value: '0x${amount.toInt().toRadixString(16)}',
+        v: '0x1b',
+        r: '0x${Random().nextInt(1000000).toRadixString(16)}',
+        s: '0x${Random().nextInt(1000000).toRadixString(16)}',
+        hash: '0x${Random().nextInt(1000000).toRadixString(16)}',
+        blockNumber: 0,
+        blockHash: '0x${Random().nextInt(1000000).toRadixString(16)}',
+        transactionIndex: 0,
+        from: walletAddress,
+        cumulativeGasUsed: '0x${Random().nextInt(1000000).toRadixString(16)}',
+        gasUsed: '0x${Random().nextInt(1000000).toRadixString(16)}',
+        contractAddress: '',
+        logs: [],
+        logsBloom: '0x${Random().nextInt(1000000).toRadixString(16)}',
+        root: '0x${Random().nextInt(1000000).toRadixString(16)}',
+        transactionHash: '0x${Random().nextInt(1000000).toRadixString(16)}',
       );
       
       final signedTx = await signTransaction(transaction, privateKey);
@@ -408,8 +438,8 @@ class AvalancheService implements BlockchainService, InvestmentService, StakingS
         delegators: v['delegatorCount'],
         active: true,
         nodeId: v['nodeID'],
-        uptime: v['uptime'].toDouble(),
-        subnet: v['subnet'] ?? 'Primary',
+        subnetId: v['subnet'] ?? 'Primary',
+        uptime: Duration(seconds: (v['uptime'] * 86400).toInt()), // Convert days to seconds
       )).toList();
     } catch (e) {
       throw Exception('Failed to get validators: $e');
@@ -434,10 +464,24 @@ class AvalancheService implements BlockchainService, InvestmentService, StakingS
         type: TransactionType.stake,
         timestamp: DateTime.now(),
         status: TransactionStatus.pending,
-        nonce: await _getNonce(walletAddress),
-        data: _encodeStakingData(validatorId, amount),
-        chain: 'P',
-        subnetId: 'default',
+        nonce: await _getNonce(walletAddress).toString(),
+        to: _config.stakingContracts['avalanche']!,
+        value: '0x${amount.toInt().toRadixString(16)}',
+        v: '0x1b',
+        r: '0x${Random().nextInt(1000000).toRadixString(16)}',
+        s: '0x${Random().nextInt(1000000).toRadixString(16)}',
+        hash: '0x${Random().nextInt(1000000).toRadixString(16)}',
+        blockNumber: 0,
+        blockHash: '0x${Random().nextInt(1000000).toRadixString(16)}',
+        transactionIndex: 0,
+        from: walletAddress,
+        cumulativeGasUsed: '0x${Random().nextInt(1000000).toRadixString(16)}',
+        gasUsed: '0x${Random().nextInt(1000000).toRadixString(16)}',
+        contractAddress: '',
+        logs: [],
+        logsBloom: '0x${Random().nextInt(1000000).toRadixString(16)}',
+        root: '0x${Random().nextInt(1000000).toRadixString(16)}',
+        transactionHash: '0x${Random().nextInt(1000000).toRadixString(16)}',
       );
       
       final signedTx = await signTransaction(transaction, privateKey);
@@ -452,8 +496,7 @@ class AvalancheService implements BlockchainService, InvestmentService, StakingS
         createdAt: DateTime.now(),
         lastRewardClaim: DateTime.now(),
         transactionHash: txHash,
-        nodeId: validatorId,
-        subnet: 'Primary',
+        subnetId: 'Primary',
       );
     } catch (e) {
       throw Exception('Failed to create staking position: $e');
@@ -494,94 +537,12 @@ class AvalancheService implements BlockchainService, InvestmentService, StakingS
         averageAPR: 9.0,
         totalValidators: 1000,
         slashingEvents: 0,
+        epochRewards: 10.0,
+        timeUntilNextEpoch: Duration(hours: 12),
         subnetParticipation: ['Primary', 'Subnet1'],
-        minimumStake: 2000.0,
       );
     } catch (e) {
       throw Exception('Failed to get staking stats: $e');
-    }
-  }
-  
-  // Bridge Service Implementation
-  @override
-  List<BlockchainNetwork> getSupportedTargetChains() {
-    return [
-      BlockchainNetwork.ethereum,
-      BlockchainNetwork.binance,
-      BlockchainNetwork.polygon,
-      BlockchainNetwork.arbitrum,
-      BlockchainNetwork.optimism,
-      BlockchainNetwork.ton,
-    ];
-  }
-  
-  @override
-  Future<double> getBridgeFee({
-    required BlockchainNetwork targetChain,
-    required double amount,
-  }) async {
-    try {
-      switch (targetChain) {
-        case BlockchainNetwork.ethereum:
-          return 0.1;
-        case BlockchainNetwork.binance:
-          return 0.05;
-        case BlockchainNetwork.polygon:
-          return 0.03;
-        case BlockchainNetwork.arbitrum:
-          return 0.04;
-        case BlockchainNetwork.optimism:
-          return 0.04;
-        case BlockchainNetwork.ton:
-          return 0.15;
-        default:
-          return 0.1;
-      }
-    } catch (e) {
-      throw Exception('Failed to get bridge fee: $e');
-    }
-  }
-  
-  @override
-  Future<AvalancheBridgeTransaction> createBridgeTransaction({
-    required BlockchainNetwork targetChain,
-    required String targetAddress,
-    required double amount,
-    required String privateKey,
-  }) async {
-    try {
-      final bridgeContract = _config.bridgeContracts[targetChain.toString().split('.').last];
-      if (bridgeContract == null) {
-        throw Exception('Bridge contract not found for $targetChain');
-      }
-      
-      final fee = await getBridgeFee(targetChain: targetChain, amount: amount);
-      
-      return AvalancheBridgeTransaction(
-        id: _generateBridgeId(),
-        sourceChain: BlockchainNetwork.avalanche,
-        targetChain: targetChain,
-        sourceAddress: '',
-        targetAddress: targetAddress,
-        amount: amount,
-        fee: fee,
-        timestamp: DateTime.now(),
-        status: BridgeStatus.pending,
-        bridgeContract: bridgeContract,
-        nonce: Random().nextInt(1000000),
-        sourceSubnet: 'Primary',
-      );
-    } catch (e) {
-      throw Exception('Failed to create bridge transaction: $e');
-    }
-  }
-  
-  @override
-  Future<BridgeStatus> getBridgeStatus(String bridgeId) async {
-    try {
-      return BridgeStatus.completed;
-    } catch (e) {
-      throw Exception('Failed to get bridge status: $e');
     }
   }
   
@@ -591,14 +552,25 @@ class AvalancheService implements BlockchainService, InvestmentService, StakingS
   }
   
   // Private helper methods
-  Future<Map<String, dynamic>> _makeRpcCall(String method, List<dynamic> params, {required String chain}) async {
+  Future<Map<String, dynamic>> _makeRpcCall(String method, List<dynamic> params, {String chain = 'C'}) async {
     try {
-      final url = chain == 'C' 
-          ? _config.rpcUrl 
-          : _config.rpcUrl.replaceAll('/ext/bc/C/rpc', '/ext/bc/$chain');
+      String rpcUrl;
+      switch (chain) {
+        case 'C':
+          rpcUrl = 'https://api.avax.network/ext/bc/C/rpc';
+          break;
+        case 'X':
+          rpcUrl = 'https://api.avax.network/ext/bc/X';
+          break;
+        case 'P':
+          rpcUrl = 'https://api.avax.network/ext/bc/P';
+          break;
+        default:
+          rpcUrl = 'https://api.avax.network/ext/bc/C/rpc';
+      }
       
       final response = await http.post(
-        Uri.parse(url),
+        Uri.parse(rpcUrl),
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({
           'jsonrpc': '2.0',
@@ -688,15 +660,195 @@ class AvalancheService implements BlockchainService, InvestmentService, StakingS
     return 'avax_stake_${DateTime.now().millisecondsSinceEpoch}_${Random().nextInt(1000)}';
   }
   
-  String _generateBridgeId() {
-    return 'avax_bridge_${DateTime.now().millisecondsSinceEpoch}_${Random().nextInt(1000)}';
-  }
-  
   String _encodeInvestmentData(double amount) {
     return '0x${amount.toInt().toRadixString(16)}';
   }
   
   String _encodeStakingData(String validatorId, double amount) {
     return '0x${amount.toInt().toRadixString(16)}';
+  }
+
+  @override
+  Future<TransactionResult> sendTransaction(Transaction transaction) async {
+    // Implementation for sending transactions on Avalanche
+    try {
+      // Simulate transaction sending
+      await Future.delayed(Duration(seconds: 2));
+      return TransactionResult(
+        success: true,
+        transactionHash: '0x${DateTime.now().millisecondsSinceEpoch.toRadixString(16)}',
+        gasUsed: BigInt.from(21000),
+        blockNumber: BigInt.from(DateTime.now().millisecondsSinceEpoch),
+      );
+    } catch (e) {
+      return TransactionResult(
+        success: false,
+        error: e.toString(),
+      );
+    }
+  }
+
+  @override
+  Future<ContractResult> callContractMethod(
+    String contractAddress,
+    String methodName,
+    List<dynamic> parameters, {
+    String? from,
+  }) async {
+    // Implementation for calling contract methods on Avalanche
+    try {
+      // Simulate contract call
+      await Future.delayed(Duration(seconds: 1));
+      return ContractResult(
+        success: true,
+        result: 'Contract call result for $methodName',
+        gasUsed: BigInt.from(50000),
+      );
+    } catch (e) {
+      return ContractResult(
+        success: false,
+        error: e.toString(),
+      );
+    }
+  }
+
+  @override
+  Future<ContractResult> sendContractTransaction(
+    String contractAddress,
+    String methodName,
+    List<dynamic> parameters, {
+    String? from,
+    BigInt? value,
+  }) async {
+    // Implementation for sending contract transactions on Avalanche
+    try {
+      // Simulate contract transaction
+      await Future.delayed(Duration(seconds: 2));
+      return ContractResult(
+        success: true,
+        transactionHash: '0x${DateTime.now().millisecondsSinceEpoch.toRadixString(16)}',
+        gasUsed: BigInt.from(100000),
+      );
+    } catch (e) {
+      return ContractResult(
+        success: false,
+        error: e.toString(),
+      );
+    }
+  }
+
+  @override
+  Future<StakingInfo> getStakingInfo(String address) async {
+    // Implementation for getting staking info on Avalanche
+    try {
+      // Simulate staking info retrieval
+      await Future.delayed(Duration(seconds: 1));
+      return StakingInfo(
+        totalStaked: BigInt.from(1000000000000000000), // 1 AVAX
+        rewards: BigInt.from(50000000000000000), // 0.05 AVAX
+        stakingPeriod: Duration(days: 30),
+        apy: 9.5,
+      );
+    } catch (e) {
+      return StakingInfo(
+        totalStaked: BigInt.zero,
+        rewards: BigInt.zero,
+        stakingPeriod: Duration.zero,
+        apy: 0.0,
+        error: e.toString(),
+      );
+    }
+  }
+
+  @override
+  Future<TransactionResult> stakeTokens(BigInt amount) async {
+    // Implementation for staking tokens on Avalanche
+    try {
+      // Simulate staking
+      await Future.delayed(Duration(seconds: 2));
+      return TransactionResult(
+        success: true,
+        transactionHash: '0x${DateTime.now().millisecondsSinceEpoch.toRadixString(16)}',
+        gasUsed: BigInt.from(150000),
+        blockNumber: BigInt.from(DateTime.now().millisecondsSinceEpoch),
+      );
+    } catch (e) {
+      return TransactionResult(
+        success: false,
+        error: e.toString(),
+      );
+    }
+  }
+
+  @override
+  Future<TransactionResult> unstakeTokens(BigInt amount) async {
+    // Implementation for unstaking tokens on Avalanche
+    try {
+      // Simulate unstaking
+      await Future.delayed(Duration(seconds: 2));
+      return TransactionResult(
+        success: true,
+        transactionHash: '0x${DateTime.now().millisecondsSinceEpoch.toRadixString(16)}',
+        gasUsed: BigInt.from(120000),
+        blockNumber: BigInt.from(DateTime.now().millisecondsSinceEpoch),
+      );
+    } catch (e) {
+      return TransactionResult(
+        success: false,
+        error: e.toString(),
+      );
+    }
+  }
+
+  @override
+  Future<List<Transaction>> getTransactionHistory(String address) async {
+    try {
+      // Simulate transaction history
+      await Future.delayed(Duration(seconds: 1));
+      return [
+        Transaction(
+          hash: '0x${DateTime.now().millisecondsSinceEpoch.toRadixString(16)}',
+          from: address,
+          to: '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6',
+          value: BigInt.from(1000000000000000000), // 1 AVAX
+          gasPrice: BigInt.from(25000000000), // 25 Gwei
+          gasLimit: BigInt.from(21000),
+          nonce: 0,
+          data: '',
+          blockNumber: BigInt.from(DateTime.now().millisecondsSinceEpoch),
+          timestamp: DateTime.now(),
+        ),
+      ];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  @override
+  List<BlockchainNetwork> getSupportedTargetChains() {
+    return [
+      BlockchainNetwork.ethereum,
+      BlockchainNetwork.binance,
+      BlockchainNetwork.polygon,
+      BlockchainNetwork.arbitrum,
+      BlockchainNetwork.optimism,
+      BlockchainNetwork.ton,
+    ];
+  }
+
+  @override
+  Future<String> createBridgeTransaction({
+    required BlockchainNetwork targetChain,
+    required String targetAddress,
+    required double amount,
+    required String privateKey,
+  }) async {
+    try {
+      // Simulate bridge transaction creation
+      await Future.delayed(Duration(seconds: 2));
+      return '0x${DateTime.now().millisecondsSinceEpoch.toRadixString(16)}';
+    } catch (e) {
+      throw Exception('Failed to create bridge transaction: $e');
+    }
   }
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:go_router/go_router.dart';
 import 'package:matrix/matrix.dart';
@@ -39,7 +38,7 @@ class PublicRoomBottomSheet extends StatelessWidget {
           return chunk.roomId;
         }
         final roomId = chunk != null && knock
-            ? await client.knockRoom(chunk.roomId, serverName: via)
+            ? await client.knockRoom(chunk.roomId)
             : await client.joinRoom(
                 roomAlias ?? chunk!.roomId,
                 serverName: via,
@@ -77,7 +76,7 @@ class PublicRoomBottomSheet extends StatelessWidget {
           ),
         );
     if (!query.chunk.any(_testRoom)) {
-      throw (L10n.of(outerContext).noRoomsFound);
+      throw ('No rooms found');
     }
     return query.chunk.firstWhere(_testRoom);
   }
@@ -175,9 +174,7 @@ class PublicRoomBottomSheet extends StatelessWidget {
                               iconColor: theme.colorScheme.onSurface,
                             ),
                             label: Text(
-                              L10n.of(context).countParticipants(
-                                profile?.numJoinedMembers ?? 0,
-                              ),
+                              '${profile?.numJoinedMembers ?? 0} participants',
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                             ),
@@ -197,10 +194,10 @@ class PublicRoomBottomSheet extends StatelessWidget {
                                       .client
                                       .getRoomById(chunk!.roomId) ==
                                   null
-                          ? L10n.of(context).knock
+                          ? 'Knock'
                           : chunk?.roomType == 'm.space'
-                              ? L10n.of(context).joinSpace
-                              : L10n.of(context).joinRoom,
+                              ? 'Join Space'
+                              : 'Join Room',
                     ),
                     icon: const Icon(Icons.navigate_next),
                   ),

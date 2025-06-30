@@ -172,6 +172,8 @@ class BridgeManager {
       final bridgeConfig = BridgeConfig(
         type: bridgeType,
         name: bridgeInfo.name,
+        apiKey: config['api_key'] ?? '',
+        settings: config,
         enabled: true,
         configuration: config,
         port: bridgeInfo.port,

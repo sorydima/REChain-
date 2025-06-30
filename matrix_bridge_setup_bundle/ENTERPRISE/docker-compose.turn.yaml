@@ -1,0 +1,17 @@
+version: '3.9'
+services:
+  coturn:
+    image: instrumentisto/coturn
+    container_name: coturn
+    ports:
+      - "3478:3478/udp"
+      - "3478:3478/tcp"
+      - "5349:5349/udp"
+      - "5349:5349/tcp"
+      - "50000-51000:50000-51000/udp"
+    volumes:
+      - ./coturn/turnserver.conf:/etc/coturn/turnserver.conf
+    environment:
+      - REALM=node.marinchik.ink
+      - LISTENING_PORT=3478
+      - TURNS_PORT=5349

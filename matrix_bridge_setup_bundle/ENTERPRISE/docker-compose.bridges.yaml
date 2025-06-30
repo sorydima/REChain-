@@ -1,0 +1,25 @@
+version: '3.9'
+services:
+  mautrix-telegram:
+    image: dock.mau.dev/mautrix/telegram:latest
+    container_name: bridge_telegram
+    ports:
+      - "29318:29318"
+    volumes:
+      - ./bridges/telegram:/data
+
+  mautrix-signal:
+    image: dock.mau.dev/mautrix/signal:latest
+    container_name: bridge_signal
+    ports:
+      - "29319:29319"
+    volumes:
+      - ./bridges/signal:/data
+
+  mautrix-imessage:
+    image: dock.mau.dev/mautrix/imessage:latest
+    container_name: bridge_imessage
+    ports:
+      - "29320:29320"
+    volumes:
+      - ./bridges/imessage:/data

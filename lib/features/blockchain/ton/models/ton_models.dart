@@ -3,9 +3,8 @@ import '../../common/models/blockchain_types.dart';
 
 /// TON-specific network statistics
 class TonNetworkStats extends NetworkStats {
-  final int activeShards;
-  final int workchains;
-  final double averageBlockTime;
+  final int workchain;
+  final double shardId;
 
   const TonNetworkStats({
     required super.averageGasPrice,
@@ -15,9 +14,8 @@ class TonNetworkStats extends NetworkStats {
     required super.totalStaked,
     required super.marketCap,
     required super.tvl,
-    required this.activeShards,
-    required this.workchains,
-    required this.averageBlockTime,
+    required this.workchain,
+    required this.shardId,
   });
 }
 
@@ -67,7 +65,7 @@ class TonTransaction extends BlockchainTransaction {
       toAddress: json['in_msg']['destination'] ?? '',
       amount: double.parse(json['in_msg']['value'] ?? '0') / 1e9,
       gasPrice: double.parse(json['fee'] ?? '0') / 1e9,
-      gasLimit: 1000000.0,
+      gasLimit: 1000000,
       data: json['in_msg']['msg_data'],
       type: TransactionType.transfer,
       timestamp: DateTime.fromMillisecondsSinceEpoch(
@@ -220,6 +218,8 @@ class TonEvent extends TransactionEvent {
   const TonEvent({
     required super.name,
     required super.data,
+    required super.address,
+    required super.logIndex,
     required this.source,
     required this.destination,
     required this.value,
@@ -230,6 +230,8 @@ class TonEvent extends TransactionEvent {
   Map<String, dynamic> toJson() => {
     'name': name,
     'data': data,
+    'address': address,
+    'logIndex': logIndex,
     'source': source,
     'destination': destination,
     'value': value,
@@ -240,6 +242,8 @@ class TonEvent extends TransactionEvent {
     return TonEvent(
       name: 'message',
       data: {'msg_data': json['msg_data']},
+      address: json['source'] ?? '',
+      logIndex: 0,
       source: json['source'] ?? '',
       destination: json['destination'] ?? '',
       value: json['value'] ?? '0',
@@ -284,16 +288,13 @@ class TonValidator extends Validator {
 
 /// TON investment pool
 class TonInvestmentPool extends InvestmentPool {
-  final String contractAddress;
-  final String protocol;
-  final String asset;
   final int workchain;
 
   const TonInvestmentPool({
     required super.id,
     required super.name,
     required super.description,
-    required this.contractAddress,
+    required super.contractAddress,
     required super.minInvestment,
     required super.maxInvestment,
     required super.expectedApr,
@@ -301,8 +302,8 @@ class TonInvestmentPool extends InvestmentPool {
     required super.totalValueLocked,
     required super.participantCount,
     required super.isActive,
-    required this.protocol,
-    required this.asset,
+    required super.protocol,
+    required super.asset,
     required this.workchain,
   });
 
@@ -432,29 +433,24 @@ class TonBridgeTransaction extends BridgeTransaction {
 }
 
 /// TON investment statistics
-class TonInvestmentStats {
-  final double totalInvested;
-  final double totalReturns;
-  final double pendingRewards;
-  final int activeInvestments;
-  final double averageAPR;
-  final Duration averageLockPeriod;
+class TonInvestmentStats extends InvestmentStats {
   final double totalGasFees;
   final List<String> protocolsUsed;
   final Map<int, double> workchainDistribution;
 
   const TonInvestmentStats({
-    required this.totalInvested,
-    required this.totalReturns,
-    required this.pendingRewards,
-    required this.activeInvestments,
-    required this.averageAPR,
-    required this.averageLockPeriod,
+    required super.totalInvested,
+    required super.totalReturns,
+    required super.pendingRewards,
+    required super.activeInvestments,
+    required super.averageAPR,
+    required super.averageLockPeriod,
     required this.totalGasFees,
     required this.protocolsUsed,
     required this.workchainDistribution,
   });
 
+  @override
   Map<String, dynamic> toJson() => {
     'totalInvested': totalInvested,
     'totalReturns': totalReturns,
@@ -469,27 +465,22 @@ class TonInvestmentStats {
 }
 
 /// TON staking statistics
-class TonStakingStats {
-  final double totalStaked;
-  final double totalRewards;
-  final int activePositions;
-  final double averageAPR;
-  final int totalValidators;
-  final int slashingEvents;
-  final int validationCycles;
-  final double minimumStake;
+class TonStakingStats extends StakingStats {
+  final double epochRewards;
+  final Duration timeUntilNextEpoch;
 
   const TonStakingStats({
-    required this.totalStaked,
-    required this.totalRewards,
-    required this.activePositions,
-    required this.averageAPR,
-    required this.totalValidators,
-    required this.slashingEvents,
-    required this.validationCycles,
-    required this.minimumStake,
+    required super.totalStaked,
+    required super.totalRewards,
+    required super.activePositions,
+    required super.averageAPR,
+    required super.totalValidators,
+    required super.slashingEvents,
+    required this.epochRewards,
+    required this.timeUntilNextEpoch,
   });
 
+  @override
   Map<String, dynamic> toJson() => {
     'totalStaked': totalStaked,
     'totalRewards': totalRewards,
@@ -497,7 +488,7 @@ class TonStakingStats {
     'averageAPR': averageAPR,
     'totalValidators': totalValidators,
     'slashingEvents': slashingEvents,
-    'validationCycles': validationCycles,
-    'minimumStake': minimumStake,
+    'epochRewards': epochRewards,
+    'timeUntilNextEpoch': timeUntilNextEpoch.inSeconds,
   };
 }

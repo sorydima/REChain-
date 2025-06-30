@@ -54,17 +54,15 @@ class SolanaService implements BlockchainService, InvestmentService, StakingServ
       final supply = await _makeRpcCall('getSupply', []);
       
       return SolanaNetworkStats(
-        averageGasPrice: 0.000005, // Solana has fixed transaction costs
-        blockHeight: epochInfo['result']['absoluteSlot'],
-        tps: 65000.0, // Theoretical max TPS
+        averageGasPrice: await getGasPrice(),
+        blockHeight: epochInfo['result']['slotHeight'],
+        tps: 65000.0, // Solana's high TPS
         activeValidators: 1000, // Approximate number of active validators
         totalStaked: supply['result']['total'] * (inflation['result']['staked'] / 100),
         marketCap: 20000000000.0, // Approximate market cap
         tvl: 5000000000.0, // Approximate TVL in DeFi
-        currentEpoch: epochInfo['result']['epoch'],
-        slotsInEpoch: epochInfo['result']['slotsInEpoch'],
-        slotHeight: epochInfo['result']['slotHeight'],
-        currentInflation: inflation['result']['total'],
+        slot: epochInfo['result']['slotHeight'],
+        slotTime: 0.4, // Solana slot time in seconds
       );
     } catch (e) {
       throw Exception('Failed to get Solana network stats: $e');
@@ -277,15 +275,16 @@ class SolanaService implements BlockchainService, InvestmentService, StakingServ
       final transaction = SolanaTransaction(
         id: _generateTransactionId(),
         fromAddress: walletAddress,
-        toAddress: pool.programId,
+        toAddress: pool.contractAddress,
         amount: amount,
         gasPrice: await getGasPrice(),
         gasLimit: 0.000005 * instructions.length,
         type: TransactionType.invest,
         timestamp: DateTime.now(),
         status: TransactionStatus.pending,
-        instructions: instructions,
-        serializedMessage: _serializeInstructions(instructions),
+        signature: '',
+        programId: pool.programId,
+        slot: await _getLatestSlot(),
       );
       
       final signedTx = await signTransaction(transaction, privateKey);
@@ -387,8 +386,9 @@ class SolanaService implements BlockchainService, InvestmentService, StakingServ
         type: TransactionType.stake,
         timestamp: DateTime.now(),
         status: TransactionStatus.pending,
-        instructions: instructions,
-        serializedMessage: _serializeInstructions(instructions),
+        signature: '',
+        programId: validatorId,
+        slot: await _getLatestSlot(),
       );
       
       final signedTx = await signTransaction(transaction, privateKey);
@@ -445,9 +445,8 @@ class SolanaService implements BlockchainService, InvestmentService, StakingServ
         averageAPR: 6.5,
         totalValidators: 1000,
         slashingEvents: 0,
-        currentEpoch: await _getCurrentEpoch(),
-        warmupPeriod: Duration(days: 1),
-        cooldownPeriod: Duration(days: 2),
+        epochRewards: 0.5,
+        timeUntilNextEpoch: Duration(hours: 1),
       );
     } catch (e) {
       throw Exception('Failed to get staking stats: $e');
@@ -633,7 +632,7 @@ class SolanaService implements BlockchainService, InvestmentService, StakingServ
           {'pubkey': walletAddress, 'isSigner': true, 'isWritable': true},
           {'pubkey': programId, 'isSigner': false, 'isWritable': true},
         ],
-        'data': [0, ...BigInt.from(amount * 1e9).toBytes()],
+        'data': [0, ..._bigIntToBytes(BigInt.from(amount * 1e9))],
       }
     ];
   }
@@ -650,14 +649,96 @@ class SolanaService implements BlockchainService, InvestmentService, StakingServ
           {'pubkey': walletAddress, 'isSigner': true, 'isWritable': true},
           {'pubkey': validatorId, 'isSigner': false, 'isWritable': true},
         ],
-        'data': [1, ...BigInt.from(amount * 1e9).toBytes()],
+        'data': [1, ..._bigIntToBytes(BigInt.from(amount * 1e9))],
       }
     ];
+  }
+  
+  // Helper function to convert BigInt to bytes
+  List<int> _bigIntToBytes(BigInt value) {
+    if (value == BigInt.zero) return [0];
+    
+    final bytes = <int>[];
+    var temp = value;
+    
+    while (temp > BigInt.zero) {
+      bytes.insert(0, (temp % BigInt.from(256)).toInt());
+      temp = temp ~/ BigInt.from(256);
+    }
+    
+    return bytes;
   }
   
   String _serializeInstructions(List<Map<String, dynamic>> instructions) {
     // This is a simplified implementation
     // In a real implementation, you would properly serialize the instructions
     return base64Encode(utf8.encode(jsonEncode(instructions)));
+  }
+
+  @override
+  Future<dynamic> callContractMethod(String contractAddress, String methodName, List<dynamic> params) async {
+    try {
+      // Mock implementation for Solana
+      return 'contract_call_result';
+    } catch (e) {
+      throw Exception('Failed to call contract method: $e');
+    }
+  }
+
+  @override
+  Future<String> sendContractTransaction(String contractAddress, String methodName, List<dynamic> params, String privateKey) async {
+    try {
+      // Mock implementation for Solana
+      return '0x${Random().nextInt(1000000).toRadixString(16)}';
+    } catch (e) {
+      throw Exception('Failed to send contract transaction: $e');
+    }
+  }
+
+  @override
+  Future<List<BlockchainTransaction>> getTransactionHistory(String address) async {
+    try {
+      // Mock implementation for Solana
+      return [];
+    } catch (e) {
+      throw Exception('Failed to get transaction history: $e');
+    }
+  }
+
+  @override
+  Future<StakingStats> getStakingInfo(String walletAddress) async {
+    try {
+      // Mock implementation
+      return StakingStats(
+        totalStaked: 100.0,
+        rewardsEarned: 5.0,
+        stakingPeriod: Duration(days: 30),
+        apr: 0.05,
+        validatorCount: 1,
+        isActive: true,
+      );
+    } catch (e) {
+      throw Exception('Failed to get staking info: $e');
+    }
+  }
+
+  @override
+  Future<String> stakeTokens(String walletAddress, double amount, String privateKey) async {
+    try {
+      // Mock implementation for Solana
+      return '0x${Random().nextInt(1000000).toRadixString(16)}';
+    } catch (e) {
+      throw Exception('Failed to stake tokens: $e');
+    }
+  }
+
+  @override
+  Future<String> unstakeTokens(String walletAddress, double amount, String privateKey) async {
+    try {
+      // Mock implementation for Solana
+      return '0x${Random().nextInt(1000000).toRadixString(16)}';
+    } catch (e) {
+      throw Exception('Failed to unstake tokens: $e');
+    }
   }
 }

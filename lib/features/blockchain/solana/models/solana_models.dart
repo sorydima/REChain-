@@ -3,10 +3,8 @@ import '../../common/models/blockchain_types.dart';
 
 /// Solana-specific network statistics
 class SolanaNetworkStats extends NetworkStats {
-  final int currentEpoch;
-  final int slotsInEpoch;
-  final int slotHeight;
-  final double currentInflation;
+  final int slot;
+  final double slotTime;
 
   const SolanaNetworkStats({
     required super.averageGasPrice,
@@ -16,17 +14,16 @@ class SolanaNetworkStats extends NetworkStats {
     required super.totalStaked,
     required super.marketCap,
     required super.tvl,
-    required this.currentEpoch,
-    required this.slotsInEpoch,
-    required this.slotHeight,
-    required this.currentInflation,
+    required this.slot,
+    required this.slotTime,
   });
 }
 
 /// Solana transaction
 class SolanaTransaction extends BlockchainTransaction {
-  final List<Map<String, dynamic>> instructions;
-  final String serializedMessage;
+  final String signature;
+  final String programId;
+  final int slot;
 
   const SolanaTransaction({
     required super.id,
@@ -39,8 +36,9 @@ class SolanaTransaction extends BlockchainTransaction {
     required super.type,
     required super.timestamp,
     required super.status,
-    required this.instructions,
-    required this.serializedMessage,
+    required this.signature,
+    required this.programId,
+    required this.slot,
   });
 
   @override
@@ -55,30 +53,10 @@ class SolanaTransaction extends BlockchainTransaction {
     'type': type.toString(),
     'timestamp': timestamp.toIso8601String(),
     'status': status.toString(),
-    'instructions': instructions,
-    'serializedMessage': serializedMessage,
+    'signature': signature,
+    'programId': programId,
+    'slot': slot,
   };
-
-  factory SolanaTransaction.fromJson(Map<String, dynamic> json) {
-    return SolanaTransaction(
-      id: json['signature'] ?? '',
-      fromAddress: json['message']['accountKeys'][0] ?? '',
-      toAddress: json['message']['accountKeys'][1] ?? '',
-      amount: (json['meta']?['postBalances'][1] ?? 0) / 1e9,
-      gasPrice: 0.000005,
-      gasLimit: 0.000005,
-      type: TransactionType.transfer,
-      timestamp: DateTime.fromMillisecondsSinceEpoch(
-        (json['blockTime'] ?? 0) * 1000,
-      ),
-      status: json['meta']?['err'] == null
-          ? TransactionStatus.confirmed
-          : TransactionStatus.failed,
-      instructions: (json['message']['instructions'] as List? ?? [])
-          .cast<Map<String, dynamic>>(),
-      serializedMessage: json['message']?['serializedMessage'] ?? '',
-    );
-  }
 }
 
 /// Solana signed transaction
@@ -146,9 +124,11 @@ class SolanaTransactionReceipt extends TransactionReceipt {
           .map((log) => SolanaEvent(
             name: 'log',
             data: {'message': log},
+            address: '',
+            logIndex: 0,
             programId: '',
             slot: json['slot'] ?? 0,
-          ))
+          ) as TransactionEvent)
           .toList(),
       slot: json['slot'].toString(),
       rewards: (json['meta']?['rewards'] as List? ?? [])
@@ -228,6 +208,8 @@ class SolanaEvent extends TransactionEvent {
   const SolanaEvent({
     required super.name,
     required super.data,
+    required super.address,
+    required super.logIndex,
     required this.programId,
     required this.slot,
   });
@@ -236,6 +218,8 @@ class SolanaEvent extends TransactionEvent {
   Map<String, dynamic> toJson() => {
     'name': name,
     'data': data,
+    'address': address,
+    'logIndex': logIndex,
     'programId': programId,
     'slot': slot,
   };
@@ -277,16 +261,13 @@ class SolanaValidator extends Validator {
 
 /// Solana investment pool
 class SolanaInvestmentPool extends InvestmentPool {
-  final String programId;
-  final String protocol;
-  final String asset;
   final String rewardToken;
 
   const SolanaInvestmentPool({
     required super.id,
     required super.name,
     required super.description,
-    required this.programId,
+    required super.contractAddress,
     required super.minInvestment,
     required super.maxInvestment,
     required super.expectedApr,
@@ -294,8 +275,8 @@ class SolanaInvestmentPool extends InvestmentPool {
     required super.totalValueLocked,
     required super.participantCount,
     required super.isActive,
-    required this.protocol,
-    required this.asset,
+    required super.protocol,
+    required super.asset,
     required this.rewardToken,
   });
 
@@ -304,7 +285,7 @@ class SolanaInvestmentPool extends InvestmentPool {
     'id': id,
     'name': name,
     'description': description,
-    'programId': programId,
+    'contractAddress': contractAddress,
     'minInvestment': minInvestment,
     'maxInvestment': maxInvestment,
     'expectedApr': expectedApr,
@@ -425,29 +406,24 @@ class SolanaBridgeTransaction extends BridgeTransaction {
 }
 
 /// Solana investment statistics
-class SolanaInvestmentStats {
-  final double totalInvested;
-  final double totalReturns;
-  final double pendingRewards;
-  final int activeInvestments;
-  final double averageAPR;
-  final Duration averageLockPeriod;
+class SolanaInvestmentStats extends InvestmentStats {
   final double totalFees;
   final List<String> protocolsUsed;
   final List<String> rewardTokens;
 
   const SolanaInvestmentStats({
-    required this.totalInvested,
-    required this.totalReturns,
-    required this.pendingRewards,
-    required this.activeInvestments,
-    required this.averageAPR,
-    required this.averageLockPeriod,
+    required super.totalInvested,
+    required super.totalReturns,
+    required super.pendingRewards,
+    required super.activeInvestments,
+    required super.averageAPR,
+    required super.averageLockPeriod,
     required this.totalFees,
     required this.protocolsUsed,
     required this.rewardTokens,
   });
 
+  @override
   Map<String, dynamic> toJson() => {
     'totalInvested': totalInvested,
     'totalReturns': totalReturns,
@@ -462,29 +438,22 @@ class SolanaInvestmentStats {
 }
 
 /// Solana staking statistics
-class SolanaStakingStats {
-  final double totalStaked;
-  final double totalRewards;
-  final int activePositions;
-  final double averageAPR;
-  final int totalValidators;
-  final int slashingEvents;
-  final int currentEpoch;
-  final Duration warmupPeriod;
-  final Duration cooldownPeriod;
+class SolanaStakingStats extends StakingStats {
+  final double epochRewards;
+  final Duration timeUntilNextEpoch;
 
   const SolanaStakingStats({
-    required this.totalStaked,
-    required this.totalRewards,
-    required this.activePositions,
-    required this.averageAPR,
-    required this.totalValidators,
-    required this.slashingEvents,
-    required this.currentEpoch,
-    required this.warmupPeriod,
-    required this.cooldownPeriod,
+    required super.totalStaked,
+    required super.totalRewards,
+    required super.activePositions,
+    required super.averageAPR,
+    required super.totalValidators,
+    required super.slashingEvents,
+    required this.epochRewards,
+    required this.timeUntilNextEpoch,
   });
 
+  @override
   Map<String, dynamic> toJson() => {
     'totalStaked': totalStaked,
     'totalRewards': totalRewards,
@@ -492,8 +461,7 @@ class SolanaStakingStats {
     'averageAPR': averageAPR,
     'totalValidators': totalValidators,
     'slashingEvents': slashingEvents,
-    'currentEpoch': currentEpoch,
-    'warmupPeriod': warmupPeriod.inSeconds,
-    'cooldownPeriod': cooldownPeriod.inSeconds,
+    'epochRewards': epochRewards,
+    'timeUntilNextEpoch': timeUntilNextEpoch.inSeconds,
   };
 }
