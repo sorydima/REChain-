@@ -1,0 +1,19 @@
+
+name: matrix-ultimate
+base: core22
+version: '1.0'
+summary: Matrix Ultimate Bundle
+description: |
+  Full self-hosted Matrix server bundle with bridges and Element.
+
+confinement: strict
+
+apps:
+  matrix:
+    command: docker-compose -f $SNAP/opt/matrix/docker-compose.yml up
+    plugs: [network, network-bind]
+
+parts:
+  matrix:
+    plugin: dump
+    source: .

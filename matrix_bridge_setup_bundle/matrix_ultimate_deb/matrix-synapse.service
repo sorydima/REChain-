@@ -1,0 +1,13 @@
+
+[Unit]
+Description=Matrix Synapse Service
+After=docker.service
+Requires=docker.service
+
+[Service]
+Restart=always
+ExecStart=/usr/local/bin/docker-compose -f /opt/matrix/docker-compose.yml up
+ExecStop=/usr/local/bin/docker-compose -f /opt/matrix/docker-compose.yml down
+
+[Install]
+WantedBy=multi-user.target

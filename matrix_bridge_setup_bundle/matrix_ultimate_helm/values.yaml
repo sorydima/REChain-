@@ -1,0 +1,17 @@
+
+synapse:
+  image: matrixdotorg/synapse:latest
+  domain: "your.domain.com"
+
+bridges:
+  telegram: true
+  signal: true
+
+monitoring:
+  enabled: true
+
+turn:
+  enabled: true
+
+keycloak:
+  enabled: true

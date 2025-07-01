@@ -1,0 +1,7 @@
+
+apiVersion: v2
+name: matrix-ultimate
+description: A Helm chart for Matrix Ultimate Setup
+type: application
+version: 0.1.0
+appVersion: "1.0"
