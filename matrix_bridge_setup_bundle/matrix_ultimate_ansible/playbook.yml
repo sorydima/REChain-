@@ -1,0 +1,17 @@
+
+- name: Setup Matrix Ultimate
+  hosts: matrix
+  become: yes
+  tasks:
+    - name: Install Docker
+      apt:
+        name: docker.io
+        state: present
+
+    - name: Clone matrix setup
+      git:
+        repo: https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle
+        dest: /opt/matrix
+
+    - name: Start matrix
+      shell: docker-compose -f /opt/matrix/docker-compose.yml up -d

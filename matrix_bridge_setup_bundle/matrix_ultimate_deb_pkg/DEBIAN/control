@@ -1,0 +1,9 @@
+
+Package: matrix-ultimate
+Version: 1.0
+Section: net
+Priority: optional
+Architecture: all
+Depends: docker.io, docker-compose
+Maintainer: REChain Network Solutions <team@rechain.network>
+Description: Matrix Ultimate self-hosted stack with bridges, SSO, monitoring and media support.
