@@ -1,0 +1,10 @@
+
+client_id: matrixos-client
+client_secret: secret123
+auth_url: https://id.rechain.network/auth
+token_url: https://id.rechain.network/token
+redirect_uri: https://matrixos.local/auth/callback
+scopes:
+  - openid
+  - profile
+  - email
