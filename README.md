@@ -129,8 +129,6 @@ Please, visit the website for the installation instructions 🪐:
 
 ## Tether - (USDT) - 🍕: TRZ7jyMBNtRtqokkkJ7g5BJDzFycDv8cBm
 
-![QR for Donation!](https://dmitry.wiki/QR.jpg)
-
 # Socials! 🦄
 
 * <a href="https://twitter.com/rechain_inc">Twitter/X.com</a>
