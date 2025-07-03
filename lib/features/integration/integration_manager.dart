@@ -24,10 +24,6 @@ import 'feature_integration.dart';
 import 'git_github_integration.dart';
 import 'etke_integration.dart';
 import 'element_integration.dart';
-import 'synapse_integration.dart';
-import 'dendrite_integration.dart';
-import 'serverless_services_integration.dart';
-import 'api_integration.dart';
 import 'matrix_protocol_extensions.dart';
 import 'matrix_bridges_integration.dart';
 import 'matrix_federation_integration.dart';
@@ -76,7 +72,6 @@ class IntegrationManager {
   NeoChatIntegration? _neochatIntegration;
 
   // Matrix Server Integrations
-  SynapseIntegration? _synapseIntegration;
   DendriteIntegration? _dendriteIntegration;
 
   // Matrix Backend Integrations
@@ -182,8 +177,8 @@ class IntegrationManager {
       _neochatIntegration = NeoChatIntegration();
 
       // Initialize Matrix Server Integrations
-      _synapseIntegration = SynapseIntegration();
-      _dendriteIntegration = DendriteIntegration();
+      // _synapseIntegration = SynapseIntegration();
+      // _dendriteIntegration = DendriteIntegration();
 
       // Initialize Matrix Backend Integrations
       _matrixProtocolExtensions = MatrixProtocolExtensions(
@@ -441,27 +436,27 @@ class IntegrationManager {
     }
 
     // Matrix Server Status
-    if (_synapseIntegration != null) {
-      try {
-        final synapseStatus = await _synapseIntegration!.getServerStatus();
-        status['synapse'] = synapseStatus;
-        _serviceStatus['synapse'] = synapseStatus['isOnline'] ?? false;
-      } catch (e) {
-        status['synapse'] = {'error': e.toString(), 'isOnline': false};
-        _serviceStatus['synapse'] = false;
-      }
-    }
+    // if (_synapseIntegration != null) {
+    //   try {
+    //     final synapseStatus = await _synapseIntegration!.getServerStatus();
+    //     status['synapse'] = synapseStatus;
+    //     _serviceStatus['synapse'] = synapseStatus['isOnline'] ?? false;
+    //   } catch (e) {
+    //     status['synapse'] = {'error': e.toString(), 'isOnline': false};
+    //     _serviceStatus['synapse'] = false;
+    //   }
+    // }
 
-    if (_dendriteIntegration != null) {
-      try {
-        final dendriteStatus = await _dendriteIntegration!.getServerStatus();
-        status['dendrite'] = dendriteStatus;
-        _serviceStatus['dendrite'] = dendriteStatus['isOnline'] ?? false;
-      } catch (e) {
-        status['dendrite'] = {'error': e.toString(), 'isOnline': false};
-        _serviceStatus['dendrite'] = false;
-      }
-    }
+    // if (_dendriteIntegration != null) {
+    //   try {
+    //     final dendriteStatus = await _dendriteIntegration!.getServerStatus();
+    //     status['dendrite'] = dendriteStatus;
+    //     _serviceStatus['dendrite'] = dendriteStatus['isOnline'] ?? false;
+    //   } catch (e) {
+    //     status['dendrite'] = {'error': e.toString(), 'isOnline': false};
+    //     _serviceStatus['dendrite'] = false;
+    //   }
+    // }
 
     // Matrix Backend Services Status
     if (_matrixProtocolExtensions != null) {
@@ -586,12 +581,12 @@ class IntegrationManager {
     final data = <String, dynamic>{};
 
     // Get status for all Matrix servers
-    if (_synapseIntegration != null) {
-      data['synapse'] = await _synapseIntegration!.getServerStatus();
-    }
-    if (_dendriteIntegration != null) {
-      data['dendrite'] = await _dendriteIntegration!.getServerStatus();
-    }
+    // if (_synapseIntegration != null) {
+    //   data['synapse'] = await _synapseIntegration!.getServerStatus();
+    // }
+    // if (_dendriteIntegration != null) {
+    //   data['dendrite'] = await _dendriteIntegration!.getServerStatus();
+    // }
 
     return data;
   }

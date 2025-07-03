@@ -1,0 +1,4 @@
+#!/bin/bash
+HERE="$(dirname "$(readlink -f "${0}")")"
+cd "$HERE/opt/matrix"
+docker-compose up -d

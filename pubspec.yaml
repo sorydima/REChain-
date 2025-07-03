@@ -93,6 +93,8 @@ dependencies:
   wakelock_plus: ^1.2.2
   webrtc_interface: ^1.0.13
   fl_chart: ^0.66.2
+  audioplayers: ^6.5.0
+  encrypt: ^5.0.1
 
 dev_dependencies:
   flutter_lints: ^3.0.0
@@ -103,8 +105,6 @@ dev_dependencies:
   integration_test:
     sdk: flutter
   license_checker: ^1.6.0
-  msix: ^3.6.2
-  translations_cleaner: ^0.0.5
   mockito: ^5.4.0
   build_runner: ^2.4.6
 

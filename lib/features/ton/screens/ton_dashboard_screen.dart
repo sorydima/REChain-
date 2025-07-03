@@ -4,6 +4,7 @@ import '../core/ton_config.dart';
 import '../wallet/ton_wallet_service.dart';
 import '../nft/ton_nft_service.dart';
 import '../hyip/ton_investment_service.dart';
+import '../models/ton_models.dart';
 
 class TonDashboardScreen extends StatefulWidget {
   const TonDashboardScreen({Key? key}) : super(key: key);
@@ -648,6 +649,7 @@ class _InvestmentPoolCard extends StatelessWidget {
       case InvestmentRiskLevel.extreme:
         return Colors.purple;
     }
+    return Colors.grey; // default color to avoid missing return
   }
 }
 

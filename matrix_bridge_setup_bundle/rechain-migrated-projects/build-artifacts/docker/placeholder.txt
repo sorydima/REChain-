@@ -1,0 +1,3 @@
+This is a placeholder file for `build-artifacts/docker/placeholder.txt`.
+
+Due to file-size limitations in the ChatGPT interface, the full refactored codebase cannot be attached here. Please coordinate with me to receive the complete archive via an external transfer method (e.g., GitHub branch, cloud storage link, or split archives).

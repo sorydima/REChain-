@@ -1,0 +1,13 @@
+
+{
+  "id": "matrixos.rechain.network",
+  "name": "MatrixOS",
+  "summary": "Self-hosted communication and bridge platform",
+  "description": "MatrixOS is a secure and modular platform for messaging, VoIP, SSO and federated networking.",
+  "developer_name": "REChain Network Solutions",
+  "categories": ["Network", "Chat", "Productivity"],
+  "icons": { "64x64": "icon.png" },
+  "screenshots": [ { "src": "screenshot1.png" }, { "src": "screenshot2.png" } ],
+  "project_license": "MIT",
+  "launchable": { "desktop-id": "matrixos.desktop" }
+}

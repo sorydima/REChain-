@@ -1,0 +1,9 @@
+
+{
+  "theme_color": "#00ffcc",
+  "logo": "matrixos-logo.svg",
+  "splash": "splash-screen.png",
+  "fonts": ["Inter", "Fira Code"],
+  "os_name": "MatrixOS",
+  "default_wallpaper": "matrixos-wallpaper.jpg"
+}

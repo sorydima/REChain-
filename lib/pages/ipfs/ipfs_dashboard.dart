@@ -151,7 +151,7 @@ class _IpfsDashboardState extends State<IpfsDashboard> with TickerProviderStateM
     final used = _status!.storageUsed;
     final limit = _status!.storageLimit;
     final fileCount = _files.length;
-    final avgSize = fileCount > 0 ? (_files.map((f) => f.size ?? 0).reduce((a, b) => a + b) ~/ fileCount : 0;
+    final avgSize = fileCount > 0 ? (_files.map((f) => f.size ?? 0).reduce((a, b) => a + b)) ~/ fileCount : 0;
     final largest = _files.isNotEmpty ? _files.map((f) => f.size ?? 0).reduce((a, b) => a > b ? a : b) : 0;
     return Card(
       margin: const EdgeInsets.all(12),

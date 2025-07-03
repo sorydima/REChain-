@@ -1,0 +1,23 @@
+
+{
+  "app-id": "org.matrixos.Matrix",
+  "runtime": "org.freedesktop.Platform",
+  "runtime-version": "22.08",
+  "sdk": "org.freedesktop.Sdk",
+  "command": "matrix-launcher",
+  "modules": [
+    {
+      "name": "matrix-launcher",
+      "buildsystem": "simple",
+      "build-commands": [
+        "install -Dm755 launcher.sh /app/bin/matrix-launcher"
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "path": "launcher.sh"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+
+[Desktop Entry]
+Name=MatrixOS Launcher
+Exec=AppRun
+Icon=matrixos
+Type=Application
+Categories=Network;

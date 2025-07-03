@@ -437,6 +437,7 @@ class _TonInvestmentScreenState extends State<TonInvestmentScreen> {
       case InvestmentRiskLevel.extreme:
         return Colors.purple;
     }
+    return Colors.grey; // default color to avoid missing return
   }
   
   String _getRiskWarningText() {
