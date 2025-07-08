@@ -76,7 +76,7 @@ class L10nFa extends L10n {
   String get addEmail => 'افزودن ایمیل';
 
   @override
-  String get confirmrechainonlineId =>
+  String get confirmMatrixId =>
       'برای حذف حسابتان، لطفا هویت ماتریکستان را تایید کنید.';
 
   @override
@@ -681,7 +681,7 @@ class L10nFa extends L10n {
   String get fileName => 'نام فایل';
 
   @override
-  String get rechain => 'فلافی‌چت';
+  String get rechainonline => 'فلافی‌چت';
 
   @override
   String get fontSize => 'اندازه قلم';
@@ -824,7 +824,7 @@ class L10nFa extends L10n {
 
   @override
   String inviteText(String username, String link) {
-    return '$username شما را به فلافی‌چت دعوت کرد.\n۱. به https://online.rechain.network مراجعه کرده و کاره را نصب کنید\n۲. ثبت نام کنید یا وارد شوید.\n۳. لینک دعوت را باز کنید:\n $link';
+    return '$username شما را به فلافی‌چت دعوت کرد.\n۱. به online.rechain.network مراجعه کرده و کاره را نصب کنید\n۲. ثبت نام کنید یا وارد شوید.\n۳. لینک دعوت را باز کنید:\n $link';
   }
 
   @override
@@ -1675,7 +1675,7 @@ class L10nFa extends L10n {
 
   @override
   String get unsupportedAndroidVersionLong =>
-      'این ویژگی به نسخه تازه‌تری از اندروید نیاز دارد. لطفا به‌روزرسانی یا پشتیبانی لینیج‌اواس(Katya ® 👽OS) را بررسی کنید.';
+      'این ویژگی به نسخه تازه‌تری از اندروید نیاز دارد. لطفا به‌روزرسانی یا پشتیبانی لینیج‌اواس(Mobile KatyaOS) را بررسی کنید.';
 
   @override
   String get videoCallsBetaWarning =>
@@ -2021,7 +2021,7 @@ class L10nFa extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      'The chat will then be recreated with the new room version. All participants will be notified that they need to switch to the new chat. You can find out more about room versions at https://online.rechain.network';
+      'The chat will then be recreated with the new room version. All participants will be notified that they need to switch to the new chat. You can find out more about room versions at https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle';
 
   @override
   String get removeDevicesDescription =>
@@ -2269,10 +2269,10 @@ class L10nFa extends L10n {
   String get discover => 'Discover';
 
   @override
-  String get commandHint_ignore => 'Ignore the given rechain ID';
+  String get commandHint_ignore => 'Ignore the given REChain ID';
 
   @override
-  String get commandHint_unignore => 'Unignore the given rechain ID';
+  String get commandHint_unignore => 'Unignore the given REChain ID';
 
   @override
   String unreadChatsInApp(String appname, String unread) {
@@ -2357,7 +2357,7 @@ class L10nFa extends L10n {
   String get sendCanceled => 'Sending canceled';
 
   @override
-  String get loginWithrechainonlineId => 'Login with rechain ID';
+  String get loginWithMatrixId => 'Login with REChain-ID';
 
   @override
   String get discoverHomeservers => 'Discover homeservers';
@@ -2367,7 +2367,7 @@ class L10nFa extends L10n {
 
   @override
   String get homeserverDescription =>
-      'All your data is stored on the homeserver, just like an email provider. You can choose which homeserver you want to use, while you can still communicate with everyone. Learn more at at https://online.rechain.network.';
+      'All your data is stored on the homeserver, just like an email provider. You can choose which homeserver you want to use, while you can still communicate with everyone. Learn more at at https://rechain.network.';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
@@ -2411,7 +2411,7 @@ class L10nFa extends L10n {
 
   @override
   String get welcomeText =>
-      'Hey Hey 👋 This is rechain. You can sign in to any homeserver, which is compatible with https://online.rechain.network. And then chat with anyone. It\'s a huge decentralized messaging network!';
+      'Hey Hey 👋 This is REChain. You can sign in to any homeserver, which is compatible with https://rechain.network. And then chat with anyone. It\'s a huge decentralized messaging network!';
 
   @override
   String get blur => 'Blur:';
@@ -2499,7 +2499,7 @@ class L10nFa extends L10n {
 
   @override
   String get appIntroduction =>
-      'rechain lets you chat with your friends across different messengers. Learn more at https://online.rechain.network or just tap *Continue*.';
+      'REChain lets you chat with your friends across different messengers. Learn more at https://rechain.network or just tap *Continue*.';
 
   @override
   String get newChatRequest => '📩 New chat request';
@@ -2731,4 +2731,10 @@ class L10nFa extends L10n {
 
   @override
   String get displayNavigationRail => 'Show navigation rail on mobile';
+
+  @override
+  String get customReaction => 'Custom reaction';
+
+  @override
+  String get moreEvents => 'More events';
 }

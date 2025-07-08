@@ -18,23 +18,23 @@ class L10nNb extends L10n {
   String get notAnImage => 'Ikke en bildefil.';
 
   @override
-  String get setCustomPermissionLevel => 'Set custom permission level';
+  String get setCustomPermissionLevel => 'Angi egendefinert tillatelsesnivå';
 
   @override
   String get setPermissionsLevelDescription =>
       'Please choose a predefined role below or enter a custom permission level between 0 and 100.';
 
   @override
-  String get ignoreUser => 'Ignore user';
+  String get ignoreUser => 'Ignorer bruker';
 
   @override
-  String get normalUser => 'Normal user';
+  String get normalUser => 'Vanlig bruker';
 
   @override
   String get remove => 'Fjern';
 
   @override
-  String get importNow => 'Import now';
+  String get importNow => 'Importer nå';
 
   @override
   String get importEmojis => 'Import Emojis';
@@ -46,14 +46,14 @@ class L10nNb extends L10n {
   String get exportEmotePack => 'Export Emote pack as .zip';
 
   @override
-  String get replace => 'Replace';
+  String get replace => 'Erstatt';
 
   @override
   String get about => 'Om';
 
   @override
   String aboutHomeserver(String homeserver) {
-    return 'About $homeserver';
+    return 'Om $homeserver';
   }
 
   @override
@@ -76,8 +76,8 @@ class L10nNb extends L10n {
   String get addEmail => 'Legg til e-post';
 
   @override
-  String get confirmrechainonlineId =>
-      'Please confirm your rechain ID in order to delete your account.';
+  String get confirmMatrixId =>
+      'Vennligst bekreft din REChain-ID for å slette kontoen din.';
 
   @override
   String supposedMxid(String mxid) {
@@ -113,7 +113,7 @@ class L10nNb extends L10n {
   String get commandHint_cuddle => 'Send a cuddle';
 
   @override
-  String get commandHint_hug => 'Send a hug';
+  String get commandHint_hug => 'Send en klem';
 
   @override
   String googlyEyesContent(String senderName) {
@@ -122,12 +122,12 @@ class L10nNb extends L10n {
 
   @override
   String cuddleContent(String senderName) {
-    return '$senderName cuddles you';
+    return '$senderName koser med deg';
   }
 
   @override
   String hugContent(String senderName) {
-    return '$senderName hugs you';
+    return '$senderName klemmer deg';
   }
 
   @override
@@ -143,7 +143,7 @@ class L10nNb extends L10n {
 
   @override
   String get appLockDescription =>
-      'Lock the app when not using with a pin code';
+      'Lås appen med en PIN-kode når den ikke er i bruk';
 
   @override
   String get archive => 'Arkiv';
@@ -201,7 +201,7 @@ class L10nNb extends L10n {
   }
 
   @override
-  String get noMoreChatsFound => 'No more chats found...';
+  String get noMoreChatsFound => 'Ingen flere chatter funnet ...';
 
   @override
   String get noChatsFoundHere =>
@@ -211,13 +211,13 @@ class L10nNb extends L10n {
   String get joinedChats => 'Joined chats';
 
   @override
-  String get unread => 'Unread';
+  String get unread => '';
 
   @override
-  String get space => 'Space';
+  String get space => 'Område';
 
   @override
-  String get spaces => 'Spaces';
+  String get spaces => 'Områder';
 
   @override
   String get banFromChat => 'Bannlys fra sludring';
@@ -371,7 +371,7 @@ class L10nNb extends L10n {
 
   @override
   String get commandHint_markasdm =>
-      'Mark as direct message room for the giving rechain ID';
+      'Mark as direct message room for the giving REChain ID';
 
   @override
   String get commandHint_markasgroup => 'Mark as group';
@@ -684,7 +684,7 @@ class L10nNb extends L10n {
   String get fileName => 'Filnavn';
 
   @override
-  String get rechain => 'rechain';
+  String get rechainonline => 'rechainonline';
 
   @override
   String get fontSize => 'Skriftstørrelse';
@@ -827,7 +827,7 @@ class L10nNb extends L10n {
 
   @override
   String inviteText(String username, String link) {
-    return '$username har invitert deg til rechain. \n1. Installer rechain: https://https://online.rechain.network \n2. Registrer deg eller logg inn \n3. Åpne invitasjonslenken: $link';
+    return '$username har invitert deg til REChain. \n1. Installer REChain: https://online.rechain.network \n2. Registrer deg eller logg inn \n3. Åpne invitasjonslenken: $link';
   }
 
   @override
@@ -951,7 +951,7 @@ class L10nNb extends L10n {
   String get newChat => 'Ny sludring';
 
   @override
-  String get newMessageInrechainonline => 'Ny melding i rechain';
+  String get newMessageInrechainonline => 'Ny melding i rechainonline';
 
   @override
   String get newVerificationRequest => 'Ny bekreftelsesforespørsel!';
@@ -974,11 +974,11 @@ class L10nNb extends L10n {
 
   @override
   String get noGoogleServicesWarning =>
-      'Bruk https://microg.org/ for å få Google-tjenester (uten at det går ut over personvernet) for å få push-merknader i rechain:';
+      'Bruk https://microg.org/ for å få Google-tjenester (uten at det går ut over personvernet) for å få push-merknader i REChain:';
 
   @override
   String norechainonlineServer(String server1, String server2) {
-    return '$server1 is no rechain server, use $server2 instead?';
+    return '$server1 is no REChain server, use $server2 instead?';
   }
 
   @override
@@ -1424,7 +1424,7 @@ class L10nNb extends L10n {
   String get theyMatch => 'Samsvarer';
 
   @override
-  String get title => 'rechain';
+  String get title => 'rechainonline';
 
   @override
   String get toggleFavorite => 'Veksle favorittmerking';
@@ -1677,7 +1677,7 @@ class L10nNb extends L10n {
 
   @override
   String get unsupportedAndroidVersionLong =>
-      'This feature requires a newer Android version. Please check for updates or Katya ® 👽 OS support.';
+      'This feature requires a newer Android version. Please check for updates or Mobile Katya OS support.';
 
   @override
   String get videoCallsBetaWarning =>
@@ -1694,7 +1694,7 @@ class L10nNb extends L10n {
 
   @override
   String get indexedDbErrorLong =>
-      'The message storage is unfortunately not enabled in private mode by default.\nPlease visit\n - about:config\n - set dom.indexedDB.privateBrowsing.enabled to true\nOtherwise, it is not possible to run rechain.';
+      'The message storage is unfortunately not enabled in private mode by default.\nPlease visit\n - about:config\n - set dom.indexedDB.privateBrowsing.enabled to true\nOtherwise, it is not possible to run REChain.';
 
   @override
   String switchToAccount(String number) {
@@ -1863,18 +1863,18 @@ class L10nNb extends L10n {
 
   @override
   String get callingAccountDetails =>
-      'Allows rechain to use the native android dialer app.';
+      'Allows REChain to use the native android dialer app.';
 
   @override
   String get appearOnTop => 'Appear on top';
 
   @override
   String get appearOnTopDetails =>
-      'Allows the app to appear on top (not needed if you already have rechain setup as a calling account)';
+      'Allows the app to appear on top (not needed if you already have REChain setup as a calling account)';
 
   @override
   String get otherCallingPermissions =>
-      'Microphone, camera and other rechain permissions';
+      'Microphone, camera and other REChain permissions';
 
   @override
   String get whyIsThisMessageEncrypted => 'Why is this message unreadable?';
@@ -2021,7 +2021,7 @@ class L10nNb extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      'The chat will then be recreated with the new room version. All participants will be notified that they need to switch to the new chat. You can find out more about room versions at https://online.rechain.network';
+      'The chat will then be recreated with the new room version. All participants will be notified that they need to switch to the new chat. You can find out more about room versions at https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle';
 
   @override
   String get removeDevicesDescription =>
@@ -2269,10 +2269,10 @@ class L10nNb extends L10n {
   String get discover => 'Discover';
 
   @override
-  String get commandHint_ignore => 'Ignore the given rechain ID';
+  String get commandHint_ignore => 'Ignore the given REChain ID';
 
   @override
-  String get commandHint_unignore => 'Unignore the given rechain ID';
+  String get commandHint_unignore => 'Unignore the given REChain ID';
 
   @override
   String unreadChatsInApp(String appname, String unread) {
@@ -2357,7 +2357,7 @@ class L10nNb extends L10n {
   String get sendCanceled => 'Sending canceled';
 
   @override
-  String get loginWithrechainonlineId => 'Login with rechain ID';
+  String get loginWithMatrixId => 'Login with REChain-ID';
 
   @override
   String get discoverHomeservers => 'Discover homeservers';
@@ -2367,7 +2367,7 @@ class L10nNb extends L10n {
 
   @override
   String get homeserverDescription =>
-      'All your data is stored on the homeserver, just like an email provider. You can choose which homeserver you want to use, while you can still communicate with everyone. Learn more at at https://online.rechain.network.';
+      'All your data is stored on the homeserver, just like an email provider. You can choose which homeserver you want to use, while you can still communicate with everyone. Learn more at at https://rechain.network.';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
@@ -2411,7 +2411,7 @@ class L10nNb extends L10n {
 
   @override
   String get welcomeText =>
-      'Hey Hey 👋 This is rechain. You can sign in to any homeserver, which is compatible with https://online.rechain.network. And then chat with anyone. It\'s a huge decentralized messaging network!';
+      'Hey Hey 👋 This is REChain. You can sign in to any homeserver, which is compatible with https://rechain.network. And then chat with anyone. It\'s a huge decentralized messaging network!';
 
   @override
   String get blur => 'Blur:';
@@ -2499,7 +2499,7 @@ class L10nNb extends L10n {
 
   @override
   String get appIntroduction =>
-      'rechain lets you chat with your friends across different messengers. Learn more at https://online.rechain.network or just tap *Continue*.';
+      'REChain lets you chat with your friends across different messengers. Learn more at https://rechain.network or just tap *Continue*.';
 
   @override
   String get newChatRequest => '📩 New chat request';
@@ -2731,4 +2731,10 @@ class L10nNb extends L10n {
 
   @override
   String get displayNavigationRail => 'Show navigation rail on mobile';
+
+  @override
+  String get customReaction => 'Custom reaction';
+
+  @override
+  String get moreEvents => 'More events';
 }

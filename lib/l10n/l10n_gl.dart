@@ -77,8 +77,8 @@ class L10nGl extends L10n {
   String get addEmail => 'Engadir email';
 
   @override
-  String get confirmrechainonlineId =>
-      'Confirma o teu ID rechain para poder eliminar a conta.';
+  String get confirmMatrixId =>
+      'Confirma o teu ID REChain para poder eliminar a conta.';
 
   @override
   String supposedMxid(String mxid) {
@@ -374,7 +374,7 @@ class L10nGl extends L10n {
 
   @override
   String get commandHint_markasdm =>
-      'Marcar como sala de mensaxe directa para o ID rechain indicado';
+      'Marcar como sala de mensaxe directa para o ID REChain indicado';
 
   @override
   String get commandHint_markasgroup => 'Marcar como grupo';
@@ -686,7 +686,7 @@ class L10nGl extends L10n {
   String get fileName => 'Nome do ficheiro';
 
   @override
-  String get rechain => 'rechain';
+  String get rechainonline => 'rechainonline';
 
   @override
   String get fontSize => 'Tamaño da letra';
@@ -831,7 +831,7 @@ class L10nGl extends L10n {
 
   @override
   String inviteText(String username, String link) {
-    return '$username convidoute a rechain.\n1. Visita https://online.rechain.network e instala a app\n2. Crea unha conta ou Accede\n3. Abre a ligazón do convite: \n $link';
+    return '$username convidoute a REChain.\n1. Visita online.rechain.network e instala a app\n2. Crea unha conta ou Accede\n3. Abre a ligazón do convite: \n $link';
   }
 
   @override
@@ -955,7 +955,7 @@ class L10nGl extends L10n {
   String get newChat => 'Nova conversa';
 
   @override
-  String get newMessageInrechainonline => '💬 Nova mensaxe en rechain';
+  String get newMessageInrechainonline => '💬 Nova mensaxe en rechainonline';
 
   @override
   String get newVerificationRequest => 'Nova solicitude de verificación!';
@@ -982,7 +982,7 @@ class L10nGl extends L10n {
 
   @override
   String norechainonlineServer(String server1, String server2) {
-    return '$server1 non é un servidor rechain, usar $server2 no seu lugar?';
+    return '$server1 non é un servidor REChain, usar $server2 no seu lugar?';
   }
 
   @override
@@ -1430,7 +1430,7 @@ class L10nGl extends L10n {
   String get theyMatch => 'Concordan';
 
   @override
-  String get title => 'rechain';
+  String get title => 'rechainonline';
 
   @override
   String get toggleFavorite => 'Marcar Favorito';
@@ -1684,7 +1684,7 @@ class L10nGl extends L10n {
 
   @override
   String get unsupportedAndroidVersionLong =>
-      'Esta característica require unha vesión máis recente de Android. Mira se hai actualizacións ou soporte de Katya ® 👽OS.';
+      'Esta característica require unha vesión máis recente de Android. Mira se hai actualizacións ou soporte de Mobile KatyaOS.';
 
   @override
   String get videoCallsBetaWarning =>
@@ -1701,7 +1701,7 @@ class L10nGl extends L10n {
 
   @override
   String get indexedDbErrorLong =>
-      'A almacenaxe de mensaxes non está activada por defecto no modo privado.\nMira en\n- about:config\n- establece dom.indexedDB.privateBrowsing.enabled como true\nSe non, non é posible executar rechain.';
+      'A almacenaxe de mensaxes non está activada por defecto no modo privado.\nMira en\n- about:config\n- establece dom.indexedDB.privateBrowsing.enabled como true\nSe non, non é posible executar REChain.';
 
   @override
   String switchToAccount(String number) {
@@ -1862,7 +1862,7 @@ class L10nGl extends L10n {
 
   @override
   String get screenSharingDetail =>
-      'Estás a compartir a túa pantalla en rechain';
+      'Estás a compartir a túa pantalla en rechainonline';
 
   @override
   String get callingPermissions => 'Permisos de chamada';
@@ -1872,18 +1872,18 @@ class L10nGl extends L10n {
 
   @override
   String get callingAccountDetails =>
-      'Permítelle a rechain usar a app de telefonía nativa de android.';
+      'Permítelle a REChain usar a app de telefonía nativa de android.';
 
   @override
   String get appearOnTop => 'Aparecer arriba';
 
   @override
   String get appearOnTopDetails =>
-      'Permítelle á app aparecer por enriba (non é preciso se xa configuraches rechain como unha conta para chamadas)';
+      'Permítelle á app aparecer por enriba (non é preciso se xa configuraches REChain como unha conta para chamadas)';
 
   @override
   String get otherCallingPermissions =>
-      'Micrófono, cámara e outros permisos para rechain';
+      'Micrófono, cámara e outros permisos para rechainonline';
 
   @override
   String get whyIsThisMessageEncrypted => 'Por que non podo ler esta mensaxe?';
@@ -2031,7 +2031,7 @@ class L10nGl extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      'Vaise recrear a charla coa nova versión da sala. Todas as participantes recibirán unha notificación para que cambien á nova charla. Podes ler máis información acerca das versións das salas en https://online.rechain.network';
+      'Vaise recrear a charla coa nova versión da sala. Todas as participantes recibirán unha notificación para que cambien á nova charla. Podes ler máis información acerca das versións das salas en https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle';
 
   @override
   String get removeDevicesDescription =>
@@ -2279,10 +2279,10 @@ class L10nGl extends L10n {
   String get discover => 'Descubrir';
 
   @override
-  String get commandHint_ignore => 'Ignorar o ID rechain indicado';
+  String get commandHint_ignore => 'Ignorar o ID REChain indicado';
 
   @override
-  String get commandHint_unignore => 'Non ignorar o ID rechain indicado';
+  String get commandHint_unignore => 'Non ignorar o ID REChain indicado';
 
   @override
   String unreadChatsInApp(String appname, String unread) {
@@ -2366,7 +2366,7 @@ class L10nGl extends L10n {
   String get sendCanceled => 'Cancelouse o envío';
 
   @override
-  String get loginWithrechainonlineId => 'Acceder co ID-rechain';
+  String get loginWithMatrixId => 'Acceder co ID-REChain';
 
   @override
   String get discoverHomeservers => 'Atopar servidores';
@@ -2376,7 +2376,7 @@ class L10nGl extends L10n {
 
   @override
   String get homeserverDescription =>
-      'Todos os teus datos quedan gardados no servidor de inicio, igual que co teu provedor de correo electrónico. Podes elexir o servidor que queres usar e poderás comunicarte con todos os demais. Aprende máis en https://online.rechain.network.';
+      'Todos os teus datos quedan gardados no servidor de inicio, igual que co teu provedor de correo electrónico. Podes elexir o servidor que queres usar e poderás comunicarte con todos os demais. Aprende máis en https://rechain.network.';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
@@ -2420,7 +2420,7 @@ class L10nGl extends L10n {
 
   @override
   String get welcomeText =>
-      'Ola! 👋 Isto é rechain. Podes iniciar sesión en calquera servidor compatible con https://online.rechain.network. Poderás conversar con calquera. Unha enorme rede de mensaxería descentralizada!';
+      'Ola! 👋 Isto é REChain. Podes iniciar sesión en calquera servidor compatible con https://rechain.network. Poderás conversar con calquera. Unha enorme rede de mensaxería descentralizada!';
 
   @override
   String get blur => 'Néboa:';
@@ -2508,7 +2508,7 @@ class L10nGl extends L10n {
 
   @override
   String get appIntroduction =>
-      'rechain permíteche laretar coas túas amizades entre diferentes mensaxerías. Coñece máis en https://online.rechain.network ou toca en *Continuar*.';
+      'REChain permíteche laretar coas túas amizades entre diferentes mensaxerías. Coñece máis en https://rechain.network ou toca en *Continuar*.';
 
   @override
   String get newChatRequest => '📩 Nova solicitude de conversa';
@@ -2679,7 +2679,7 @@ class L10nGl extends L10n {
 
   @override
   String sentVoiceMessage(String sender, String duration) {
-    return '🎙️ $duration - $sender';
+    return '🎙️ $duration - Mensaxe de voz de  $sender';
   }
 
   @override
@@ -2735,11 +2735,18 @@ class L10nGl extends L10n {
       'Agora agarda a que alguén da sala te convide a entrar.';
 
   @override
-  String get commandHint_logout => 'Logout your current device';
+  String get commandHint_logout => 'Fechar a sesión no dispositivo actual';
 
   @override
-  String get commandHint_logoutall => 'Logout all active devices';
+  String get commandHint_logoutall =>
+      'Fechar a sesión en todos os dispositivos activos';
 
   @override
   String get displayNavigationRail => 'Show navigation rail on mobile';
+
+  @override
+  String get customReaction => 'Reacción personalizada';
+
+  @override
+  String get moreEvents => 'Máis eventos';
 }

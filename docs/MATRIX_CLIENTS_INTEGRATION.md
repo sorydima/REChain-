@@ -62,7 +62,7 @@ FluffyChat is a modern, cross-platform Matrix client that provides:
    // In your configuration file
    const fluffychatConfig = {
      'api_key': 'your_fluffychat_api_key_here',
-     'base_url': 'https://api.fluffychat.im',
+     'base_url': 'https://api.online.rechain.network',
    };
    ```
 
@@ -70,7 +70,7 @@ FluffyChat is a modern, cross-platform Matrix client that provides:
    ```dart
    final fluffyChatIntegration = FluffyChatIntegration(
      apiKey: 'your_api_key',
-     baseUrl: 'https://api.fluffychat.im',
+     baseUrl: 'https://api.online.rechain.network',
    );
    
    await fluffyChatIntegration.initialize();
@@ -301,7 +301,7 @@ final result = await krilleChanIntegration.applyUITheme(
 ```bash
 # FluffyChat Configuration
 FLUFFYCHAT_API_KEY=your_fluffychat_api_key
-FLUFFYCHAT_BASE_URL=https://api.fluffychat.im
+FLUFFYCHAT_BASE_URL=https://api.online.rechain.network
 FLUFFYCHAT_TIMEOUT=30000
 
 # Krille-chan Configuration
@@ -317,7 +317,7 @@ KRILLE_CHAN_TIMEOUT=15000
 class MatrixClientsConfig {
   static const Map<String, dynamic> fluffychatConfig = {
     'api_key': 'your_fluffychat_api_key_here',
-    'base_url': 'https://api.fluffychat.im',
+    'base_url': 'https://api.online.rechain.network',
     'timeout': 30000,
     'retry_attempts': 3,
     // ... additional configuration

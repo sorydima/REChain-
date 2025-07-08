@@ -3,7 +3,6 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:logging/logging.dart';
 
 import 'package:collection/collection.dart';
 import 'package:desktop_notifications/desktop_notifications.dart';
@@ -25,7 +24,6 @@ import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_file_extension.
 import 'package:rechainonline/utils/platform_infos.dart';
 import 'package:rechainonline/utils/uia_request_manager.dart';
 import 'package:rechainonline/utils/voip_plugin.dart';
-import 'package:rechainonline/utils/services_manager.dart';
 import 'package:rechainonline/widgets/adaptive_dialogs/show_ok_cancel_alert_dialog.dart';
 import 'package:rechainonline/widgets/rechainonline_chat_app.dart';
 import 'package:rechainonline/widgets/future_loading_dialog.dart';
@@ -34,7 +32,6 @@ import '../config/setting_keys.dart';
 import '../pages/key_verification/key_verification_dialog.dart';
 import '../utils/account_bundles.dart';
 import '../utils/background_push.dart';
-import '../utils/matrix_extension.dart';
 import 'local_notifications_extension.dart';
 
 // import 'package:flutter_secure_storage/flutter_secure_storage.dart';
@@ -84,10 +81,8 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
   }
 
   VoipPlugin? voipPlugin;
-  ServicesManager? servicesManager;
 
   bool get isMultiAccount => widget.clients.length > 1;
-  bool get hasServices => servicesManager != null;
 
   int getClientIndexByMatrixId(String matrixId) =>
       widget.clients.indexWhere((client) => client.userID == matrixId);
@@ -179,6 +174,7 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
             _loginClientCandidate = null;
             rechainonlineChatApp.router.go('/rooms');
           });
+    if (widget.clients.isEmpty) widget.clients.add(candidate);
     return candidate;
   }
 
@@ -226,10 +222,9 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
     WidgetsBinding.instance.addObserver(this);
     initMatrix();
     if (PlatformInfos.isWeb) {
-      initConfig().then((_) => initSettings()).then((_) => initServices());
+      initConfig().then((_) => initSettings());
     } else {
       initSettings();
-      initServices();
     }
   }
 
@@ -288,12 +283,12 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
     onLoginStateChanged[name] ??= c.onLoginStateChanged.stream.listen((state) {
       final loggedInWithMultipleClients = widget.clients.length > 1;
       if (state == LoginState.loggedOut) {
-        InitWithRestoreExtension.deleteSessionBackup(name);
-      }
-      if (loggedInWithMultipleClients && state != LoginState.loggedIn) {
         _cancelSubs(c.clientName);
         widget.clients.remove(c);
         ClientManager.removeClientNameFromStore(c.clientName, store);
+        InitWithRestoreExtension.deleteSessionBackup(name);
+      }
+      if (loggedInWithMultipleClients && state != LoginState.loggedIn) {
         ScaffoldMessenger.of(
           rechainonlineChatApp.router.routerDelegate.navigatorKey.currentContext ??
               context,
@@ -372,39 +367,26 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
     createVoipPlugin();
   }
 
-  Future<void> initServices() async {
-    if (!hasServices && widget.clients.isNotEmpty) {
-      servicesManager = ServicesManager(
-        client: client,
-        store: store,
-      );
-    }
-  }
-  
-  Future<void> disposeServices() async {
-    await servicesManager?.dispose();
-    servicesManager = null;
-  }
-
   void createVoipPlugin() async {
     if (store.getBool(SettingKeys.experimentalVoip) == false) {
       voipPlugin = null;
       return;
     }
-    voipPlugin = VoipPlugin.instance;
+    voipPlugin = VoipPlugin(this);
   }
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    Logs().v('AppLifecycleState = $state');
     final foreground = state != AppLifecycleState.inactive &&
         state != AppLifecycleState.paused;
-    client.syncPresence =
-        state == AppLifecycleState.resumed ? null : PresenceType.unavailable;
-    if (PlatformInfos.isMobile) {
-      client.backgroundSync = foreground;
-      client.requestHistoryOnLimitedTimeline = !foreground;
-      Logs().v('Set background sync to', foreground);
+    for (final client in widget.clients) {
+      client.syncPresence =
+          state == AppLifecycleState.resumed ? null : PresenceType.unavailable;
+      if (PlatformInfos.isMobile) {
+        client.backgroundSync = foreground;
+        client.requestHistoryOnLimitedTimeline = !foreground;
+        Logs().v('Set background sync to', foreground);
+      }
     }
   }
 
@@ -427,10 +409,6 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
     AppConfig.hideUnknownEvents =
         store.getBool(SettingKeys.hideUnknownEvents) ??
             AppConfig.hideUnknownEvents;
-
-    AppConfig.hideUnimportantStateEvents =
-        store.getBool(SettingKeys.hideUnimportantStateEvents) ??
-            AppConfig.hideUnimportantStateEvents;
 
     AppConfig.separateChatTypes =
         store.getBool(SettingKeys.separateChatTypes) ??
@@ -474,9 +452,6 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
     onBlurSub?.cancel();
 
     linuxNotifications?.close();
-    
-    // Dispose services
-    disposeServices();
 
     super.dispose();
   }

@@ -25,7 +25,8 @@ class HomeserverPickerView extends StatelessWidget {
     final theme = Theme.of(context);
 
     return LoginScaffold(
-      enforceMobileMode: Matrix.of(context).client.isLogged(),
+      enforceMobileMode:
+          Matrix.of(context).widget.clients.any((client) => client.isLogged()),
       appBar: AppBar(
         centerTitle: true,
         title: Text(
@@ -231,7 +232,7 @@ class HomeserverPickerView extends StatelessWidget {
                                 : () => controller.checkHomeserverAction(
                                       legacyPasswordLogin: true,
                                     ),
-                            child: Text(L10n.of(context).loginWithrechainonlineId),
+                            child: Text(L10n.of(context).loginWithMatrixId),
                           ),
                         ],
                       ),

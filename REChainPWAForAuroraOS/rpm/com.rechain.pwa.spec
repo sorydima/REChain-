@@ -1,10 +1,10 @@
 Name:       com.rechain.pwa
 Summary:    REChainPWA
-Version:    1.0.1
-Release:    11
+Version:    1.0.2
+Release:    12
 Group:      Qt/Qt
 License:    BSD-3-Clause
-URL:        https://onchain.codemagic.app
+URL:        https://chainapp.codemagic.app
 Source0:    %{name}-%{version}.tar.bz2
 Requires:   sailfishsilica-qt5 >= 0.10.9
 BuildRequires:  pkgconfig(aurorawebview)
@@ -36,6 +36,6 @@ REChain Messenger is a decentralized messaging app.
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
-* Sat May 03 2025 Dmitry Sorokin <dim15168250@yandex.ru>
-- Version 1.0.1
-- Initial release For Aurora OS
+* Tue Jul 08 2025 Dmitry Sorokin <dim15168250@yandex.ru>
+- Version 1.0.2
+- Some new stuff ..

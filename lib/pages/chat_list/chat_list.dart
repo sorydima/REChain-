@@ -550,17 +550,21 @@ class ChatListController extends State<ChatList>
           value: ChatContextAction.open,
           child: Row(
             mainAxisSize: MainAxisSize.min,
+            spacing: 12.0,
             children: [
               Avatar(
                 mxContent: room.avatar,
-                size: Avatar.defaultSize / 2,
                 name: displayname,
               ),
-              const SizedBox(width: 12),
-              Text(
-                displayname,
-                style:
-                    TextStyle(color: Theme.of(context).colorScheme.onSurface),
+              ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 128),
+                child: Text(
+                  displayname,
+                  style:
+                      TextStyle(color: Theme.of(context).colorScheme.onSurface),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
               ),
             ],
           ),
@@ -797,7 +801,13 @@ class ChatListController extends State<ChatList>
     await client.accountDataLoading;
     await client.userDeviceKeysLoading;
     if (client.prevBatch == null) {
-      await client.onSync.stream.first;
+      await client.onSyncStatus.stream
+          .firstWhere((status) => status.status == SyncStatus.finished);
+
+      if (!mounted) return;
+      setState(() {
+        waitForFirstSync = true;
+      });
 
       // Display first login bootstrap if enabled
       if (client.encryption?.keyManager.enabled == true) {

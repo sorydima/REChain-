@@ -76,7 +76,7 @@ class L10nKo extends L10n {
   String get addEmail => '이메일 추가';
 
   @override
-  String get confirmrechainonlineId => '계정을 삭제하려면 rechain ID를 입력해 주세요.';
+  String get confirmMatrixId => '계정을 삭제하려면 REChain ID를 입력해 주세요.';
 
   @override
   String supposedMxid(String mxid) {
@@ -366,7 +366,7 @@ class L10nKo extends L10n {
   String get close => '닫기';
 
   @override
-  String get commandHint_markasdm => 'rechain ID를 위한 다이렉트 메시지 방으로 표시';
+  String get commandHint_markasdm => 'REChain ID를 위한 다이렉트 메시지 방으로 표시';
 
   @override
   String get commandHint_markasgroup => '그룹 채팅으로 만들기';
@@ -669,7 +669,7 @@ class L10nKo extends L10n {
   String get fileName => '파일 이름';
 
   @override
-  String get rechain => 'rechain';
+  String get rechainonline => 'rechainonline';
 
   @override
   String get fontSize => '폰트 크기';
@@ -808,7 +808,7 @@ class L10nKo extends L10n {
 
   @override
   String inviteText(String username, String link) {
-    return '$username님이 당신을 rechain에 초대했습니다.\n1. rechain 설치: https://https://online.rechain.network \n2. 가입하거나 로그인 \n3. 초대 링크 열기: \n $link';
+    return '$username님이 당신을 REChain에 초대했습니다.\n1. REChain 설치: https://online.rechain.network \n2. 가입하거나 로그인 \n3. 초대 링크 열기: \n $link';
   }
 
   @override
@@ -928,7 +928,7 @@ class L10nKo extends L10n {
   String get newChat => '새 채팅';
 
   @override
-  String get newMessageInrechainonline => '💬 rechain에서 새로운 메시지';
+  String get newMessageInrechainonline => '💬 REChain에서 새로운 메시지';
 
   @override
   String get newVerificationRequest => '새로운 확인 요청!';
@@ -951,11 +951,11 @@ class L10nKo extends L10n {
 
   @override
   String get noGoogleServicesWarning =>
-      '이 휴대폰에 Firebase Cloud Messaging 서비스가 없는 것 같습니다. rechain에서 푸시 알림을 받으려면 ntfy 사용을 추천합니다. ntfy 혹은 다른 푸시 알림 제공자를 사용하면 알림을 보안적인 방법으로 받을 수 있습니다. ntfy는 PlayStore와 F-Droid에서 설치 가능합니다.';
+      '이 휴대폰에 Firebase Cloud Messaging 서비스가 없는 것 같습니다. REChain에서 푸시 알림을 받으려면 ntfy 사용을 추천합니다. ntfy 혹은 다른 푸시 알림 제공자를 사용하면 알림을 보안적인 방법으로 받을 수 있습니다. ntfy는 PlayStore와 F-Droid에서 설치 가능합니다.';
 
   @override
   String norechainonlineServer(String server1, String server2) {
-    return '$server1은 rechain 서버가 아닙니다, $server2를 대신 사용할까요?';
+    return '$server1은 REChain 서버가 아닙니다, $server2를 대신 사용할까요?';
   }
 
   @override
@@ -1392,7 +1392,7 @@ class L10nKo extends L10n {
   String get theyMatch => '일치합니다';
 
   @override
-  String get title => 'rechain';
+  String get title => 'rechainonline';
 
   @override
   String get toggleFavorite => '즐겨찾기 토글';
@@ -1638,7 +1638,7 @@ class L10nKo extends L10n {
 
   @override
   String get unsupportedAndroidVersionLong =>
-      '이 기능은 새로운 안드로이드 버전을 요구합니다. Katya ® 👽 OS 지원이나 업데이트를 확인해주세요.';
+      '이 기능은 새로운 안드로이드 버전을 요구합니다. Mobile Katya OS 지원이나 업데이트를 확인해주세요.';
 
   @override
   String get videoCallsBetaWarning =>
@@ -1655,7 +1655,7 @@ class L10nKo extends L10n {
 
   @override
   String get indexedDbErrorLong =>
-      '메시지 저장은 기본적으로 사생활 보호 모드에서 사용할 수 없습니다.\n- about:config 로 이동\n- dom.indexedDB.privateBrowsing.enabled 를 true로 설정\n그렇지 않으면 rechain을 실행할 수 없습니다.';
+      '메시지 저장은 기본적으로 사생활 보호 모드에서 사용할 수 없습니다.\n- about:config 로 이동\n- dom.indexedDB.privateBrowsing.enabled 를 true로 설정\n그렇지 않으면 REChain을 실행할 수 없습니다.';
 
   @override
   String switchToAccount(String number) {
@@ -1810,7 +1810,7 @@ class L10nKo extends L10n {
   String get screenSharingTitle => '화면 공유';
 
   @override
-  String get screenSharingDetail => 'rechain에 당신의 화면을 공유하는중';
+  String get screenSharingDetail => 'REChain에 당신의 화면을 공유하는중';
 
   @override
   String get callingPermissions => '통화 권한';
@@ -1819,17 +1819,17 @@ class L10nKo extends L10n {
   String get callingAccount => '통화 계정';
 
   @override
-  String get callingAccountDetails => 'rechain이 android 전화앱을 사용 할 수 있도록 허가.';
+  String get callingAccountDetails => 'REChain이 android 전화앱을 사용 할 수 있도록 허가.';
 
   @override
   String get appearOnTop => '상단에 표시';
 
   @override
   String get appearOnTopDetails =>
-      '앱이 상단에 표시되도록 허용 (이미 rechain을 통화 계정으로 설정한 경우에는 필요하지 않음)';
+      '앱이 상단에 표시되도록 허용 (이미 REChain을 통화 계정으로 설정한 경우에는 필요하지 않음)';
 
   @override
-  String get otherCallingPermissions => '마이크, 카메라 그리고 다름 rechain 권한';
+  String get otherCallingPermissions => '마이크, 카메라 그리고 다름 REChain 권한';
 
   @override
   String get whyIsThisMessageEncrypted => '왜 이 메시지를 읽을 수 없나요?';
@@ -1976,7 +1976,7 @@ class L10nKo extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      '채팅이 새로운 방 버전으로 다시 생성됩니다. 모든 참가자는 새로운 채팅으로 전환해야합니다. https://online.rechain.network 에서 방 버전에 대해 자세히 알아볼 수 있습니다.';
+      '채팅이 새로운 방 버전으로 다시 생성됩니다. 모든 참가자는 새로운 채팅으로 전환해야합니다. https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle 에서 방 버전에 대해 자세히 알아볼 수 있습니다.';
 
   @override
   String get removeDevicesDescription => '이 기기에서 로그아웃되며 더 이상 메시지를 받을 수 없습니다.';
@@ -2218,10 +2218,10 @@ class L10nKo extends L10n {
   String get discover => '탐색';
 
   @override
-  String get commandHint_ignore => '주어진 rechain ID를 무시';
+  String get commandHint_ignore => '주어진 REChain ID를 무시';
 
   @override
-  String get commandHint_unignore => '주어진 rechain ID 무시 해제';
+  String get commandHint_unignore => '주어진 REChain ID 무시 해제';
 
   @override
   String unreadChatsInApp(String appname, String unread) {
@@ -2302,7 +2302,7 @@ class L10nKo extends L10n {
   String get sendCanceled => '전송 최소됨';
 
   @override
-  String get loginWithrechainonlineId => 'rechain ID로 로그인';
+  String get loginWithMatrixId => 'REChain-ID로 로그인';
 
   @override
   String get discoverHomeservers => '홈서버 찾아보기';
@@ -2312,7 +2312,7 @@ class L10nKo extends L10n {
 
   @override
   String get homeserverDescription =>
-      '당신의 모든 데이터는 이메일과 흡사하게 당신의 홈서버에 저장됩니다. 당신이 소통하고 싶은 사람들과 다른 서버를 사용해도 무관하니 당신이 원하는 홈서버를 선택해도 됩니다. https://online.rechain.network에서 자세히 알아보세요.';
+      '당신의 모든 데이터는 이메일과 흡사하게 당신의 홈서버에 저장됩니다. 당신이 소통하고 싶은 사람들과 다른 서버를 사용해도 무관하니 당신이 원하는 홈서버를 선택해도 됩니다. https://rechain.network에서 자세히 알아보세요.';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
@@ -2355,7 +2355,7 @@ class L10nKo extends L10n {
 
   @override
   String get welcomeText =>
-      '안녕하세요 👋 rechain이에요. 당신은 htpps://online.rechain.network와 호환되는 모든 홈서버를 사용할 수 있어요. 그리고 모두와 대화해보세요. 거대한 분산 대화망이니까요!';
+      '안녕하세요 👋 REChain이에요. 당신은 https://online.rechain.network와 호환되는 모든 홈서버를 사용할 수 있어요. 그리고 모두와 대화해보세요. 거대한 분산 대화망이니까요!';
 
   @override
   String get blur => '블러:';
@@ -2439,7 +2439,7 @@ class L10nKo extends L10n {
 
   @override
   String get appIntroduction =>
-      'rechain는 다른 메신저들을 사용하는 친구들과도 채팅할 수 있습니다. https://online.rechain.network에 방문하거나 *계속*을 눌러 자세한 정보를 확인하세요.';
+      'REChain는 다른 메신저들을 사용하는 친구들과도 채팅할 수 있습니다. https://rechain.network에 방문하거나 *계속*을 눌러 자세한 정보를 확인하세요.';
 
   @override
   String get newChatRequest => '📩 새 채팅 요청';
@@ -2666,4 +2666,10 @@ class L10nKo extends L10n {
 
   @override
   String get displayNavigationRail => 'Show navigation rail on mobile';
+
+  @override
+  String get customReaction => 'Custom reaction';
+
+  @override
+  String get moreEvents => 'More events';
 }
