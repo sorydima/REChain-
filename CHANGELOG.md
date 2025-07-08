@@ -1,4 +1,4 @@
-## [Unreleased] - 2025-06-30
+## [v4.1.6+1149] - 2025-07-08
 
 ### Major Features & Integrations
 - Integrated Matrix (advanced backend, bridges, federation, encryption, bots)
@@ -66,6 +66,7 @@
 - Upgrade to Flutter `3.32.1`  
 - Update Android packages: record, shared_preferences  
 - Apply workaround for Flutter Secure Storage on Linux  
+- Added script: `scripts/update-dependencies.sh` for dependency upgrades
 
 ### 🧹 Chore
 - Crop and cache shortcut file on Android  
@@ -108,77 +109,4 @@
 - Polish  
 - Portuguese (Brazil)  
 - Russian  
-- Ukrainian  
-
-## @@v4.1.6 + 1149
-- feat: Add confirmation dialog before accepting invite 
-- feat: Add feature flag for refresh tokens 
-- feat: add setting for whether to show space navigation rail on mobile 
-- feat: Background audio player 
-- feat: Check markdown checkboxes in messages 
-- feat: Create lists with checkboxes via + menu 
-- feat: Limit height of text messages and expand if selected 
-- feat: Move videoplayer into multi image viewer 
-- feat: Show all supported image-/video-files when sending images or videos 
-- feat: Show WebM-videos when choosing video-files for sending 
-- fix: Add missing mounted check to mxcImage 
-- fix: App crash on page navigation with open popup menu 
-- fix: App crashes on window resize in chat 
-- fix: Change `PNGs` to `PNG` for consistency in file-selector 
-- fix: Crash when going to settings in desktop mode 
-- Fix: Fix jagged avatar edges Use anti-alias Clipping allowing for round Avatar circles
-- fix: Join new room after room upgrade 
-- fix: Keep state of text input dialogs 
-- fix: Localizations 
-- fix: No crash on logging out in client chooser button 
-- fix: Show WebP-images with a file-extension written in lower-case 
-- build: Update sdk to 0.40.2 
-- build: Update record package 
-- build: Update shared preferences android 
-- build: Upgrade to flutter 3.32.1 
-- build: Use workaround for flutter secure storage on linux 
-- chore: Crop shortcut file on android and cache it 
-- chore: Display loading dialog when preparing voice message 
-- chore: Format lib/utils/file_selector.dart 
-- chore: Let users decide for the title in error reporter 
-- chore: make space nav bar narrower on mobile and ensure space nav bar matches user's theme 
-- chore: Nicer checkboxes 
-- chore: Preload server file config before upload files 
-- chore: Remove custom errorwidgetbuilder 
-- chore: Remove unused translations 
-- chore: Simplify voiceMessage getter 
-- chore: Update voice message localization 
-- refactor: Always use HtmlMessage 
-- refactor: Reduce notification avatar size to 128 
-- Added translation using Weblate (Cantonese (Traditional Han script))
-- Added translation using Weblate (Danish) 
-- Added translation using Weblate (Yue (yue_HK))
-- Translated using Weblate (Arabic)
-- Translated using Weblate (Basque) 
-- Translated using Weblate (Cantonese (Traditional Han script))
-- Translated using Weblate (Catalan) 
-- Translated using Weblate (Chinese (Simplified Han script)) 
-- Translated using Weblate (Chinese (Simplified Han script))
-- Translated using Weblate (Chinese (Traditional Han script))
-- Translated using Weblate (Chinese (Traditional Han script))
-- Translated using Weblate (Danish) 
-- Translated using Weblate (Dutch) 
-- Translated using Weblate (Estonian) 
-- Translated using Weblate (Finnish) 
-- Translated using Weblate (Galician) 
-- Translated using Weblate (German) 
-- Translated using Weblate (German) 
-- Translated using Weblate (German) 
-- Translated using Weblate (Hebrew) 
-- Translated using Weblate (Hungarian)
-- Translated using Weblate (Indonesian)
-- Translated using Weblate (Irish)
-- Translated using Weblate (Italian)
-- Translated using Weblate (Latvian)
-- Translated using Weblate (Latvian) 
-- Translated using Weblate (Polish) 
-- Translated using Weblate (Portuguese (Brazil))
-- Translated using Weblate (Russian)
-- Translated using Weblate (Ukrainian) 
-- Translated using Weblate (Ukrainian)
-
+- Ukrainian

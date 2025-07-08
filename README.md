@@ -303,6 +303,16 @@ We welcome contributions from the community!
 
 REChain supports Aurora OS via the [flutter-aurora](https://github.com/auroraos/flutaurora) toolchain.
 
+---
+
+## 📢 Release v4.1.6+1149 - 2025-07-08
+
+We are excited to announce the release of REChain version 4.1.6+1149! This release brings major integrations including Matrix, Telegram, blockchain, IPFS, and AI services, along with a dynamic plugin system, unified APIs, and enhanced developer and user experiences.
+
+For detailed information, please see the [CHANGELOG](./CHANGELOG.md) and [RELEASE NOTES](./RELEASE_NOTES.md).
+
+Thank you for your continued support and contributions to the REChain ecosystem!
+
 ### Prerequisites
 - Install [flutter-aurora](https://github.com/auroraos/flutaurora) and add it to your PATH
 - Install Git Bash (Windows) or use a Linux/macOS shell

@@ -1,4 +1,3 @@
-
 # Contributing to REChain
 
 We welcome contributions in both the backend (Rust) and frontend (Flutter/Dart). Here are the steps for contributing:
@@ -21,7 +20,10 @@ We welcome contributions in both the backend (Rust) and frontend (Flutter/Dart).
 
 3. Make your changes and submit a pull request (PR).
 
+## Updated for Version 4.1.6+1149
+
+Please note that this document is current as of REChain version 4.1.6+1149 (2025-07-08). Contributions should align with the new features and architecture introduced in this release, including Matrix, Telegram, blockchain, IPFS, AI integrations, and the dynamic plugin system.
+
 Please follow our coding standards outlined in the [CONTRIBUTING.md](https://github.com/sorydima/REChain-/blob/main/CONTRIBUTING.md).
 
 ---
-

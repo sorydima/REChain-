@@ -4,6 +4,12 @@
 
 As contributors and maintainers of the REChain project, we are committed to fostering a welcoming and inclusive environment for everyone. We pledge to treat all individuals with respect and dignity, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual identity and orientation.
 
+---
+
+## Document Version
+
+This Code of Conduct document is current as of REChain version 4.1.6+1149 (2025-07-08).
+
 ## Our Standards
 
 We strive to create a positive and constructive community. Examples of behavior that contribute to a welcoming environment include:

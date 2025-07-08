@@ -1,62 +1,113 @@
-## REChain 4.1.4 - Changelog
+[v4.1.6+1149] - 2025-07-08
 
-### Features
-- **Space Hierarchy**: Introduced a new space hierarchy system for better organization and navigation.
-- **Session Dump**: Added session dump functionality to capture and review session data efficiently.
+Major Features & Integrations
+- Integrated Matrix (advanced backend, bridges, federation, encryption, bots)
+- Integrated Telegram via Super TMA bridge (two-way sync, admin, analytics, AI moderation, plugin system)
+- Added blockchain support (TON, Ethereum, Bitget, Web3)
+- Implemented multi-provider IPFS with analytics and encryption
+- Integrated AI services (moderation, translation, analytics)
 
-### Improvements
-- **Drawer on Chat List Page**: The drawer feature on the chat list page has been restored for improved user experience and accessibility.
-- **Code Base Simplification**: Refactored and simplified the code base for improved performance, maintainability, and clarity.
+Developer Experience & Extensibility
+- Built dynamic plugin system (hot-reload, web UI, enable/disable)
+- Added admin tools:
 
-### Bug Fixes
-- Multiple bug fixes and optimizations to enhance overall platform stability and performance.
+- Unified API (REST, WebSocket, OpenAPI)
+- Persistent logging, Prometheus metrics, Sentry, Grafana dashboards, Alertmanager
+- Redis-based scaling, Docker, docker-compose, systemd, Kubernetes, Helm, HPA
+- Automated backup/restore, E2EE stubs, multi-language/i18n
+- Advanced dashboard widgets (real-time charts, log viewer, plugin controls)
 
-- feat: Added monochrome entry for themed icon support in Android 13;
-- feat: Display timeline of messages in Android notification;
-- feat: Emoji related fixes;
-- feat: Implement deleting pushers in app;
-- feat: New material 3 design;
-- feat: Redesign bootstrap and offer secure storage support;
-- feat: Send multiple images at once;
-- feat: implement session dump;
-- feat: implement space hierarchy;
-- feat: introduce extended integration tests;
-- feat: libhandy integration;
-- fix: Clearing push triggered when only one room got seen;
-- fix: Don't display loading dialog when adding reaction;
-- fix: Follow up for spaces hierarchy;
-- fix: Missing null checks in chat details view;
-- fix: Non FCM Android builds crash on start;
-- fix: Permission chooser dialog on iOS;
-- fix: Set avatar on only single action available;
-- fix: Sharing on iOS and iPad OS;
-- fix: Unread bubble is invisible in dark mode;
-- fix: Appimage builds;
-- fix: Only use custom http client on Android;
-- fix: Pass ISRG Cert to http client;
-- refactor: Chat view;
-- refactor: Encryption button;
-- refactor: Remove duplicated imports;
-- refactor: Remove legacy store;
-- refactor: Remove presence status feature;
-- refactor: Simplify MxcImage and replace CachedNetworkImage;
-- refactor: Switch to Hive Collections DB;
-- refactor: Move start chat FAB to implementation file;
-- chore: Add border to avatars;
-- chore: Add fancy hero animations;
-- chore: Adjust appbar design;
-- chore: Adjust design;
-- chore: Adjust search bar design;
-- chore: Always display header elevation in chat;
-- chore: Design follow up fixes;
-- chore: Disable integration tests without runners;
-- chore: Enhance invitiation UX;
-- chore: Make push helper more fail safe;
-- chore: Make push helper more stable;
-- chore: Minor design improvements;
-- chore: Pinned events design;
-- chore: Remove permission handler dependency and increase compileSdkVersion;
-- chore: Update SDK;
-- chore: remove snapping sheet.
+Testing & CI/CD
+- Added unit, integration, and E2E Selenium tests (bot, dashboard, RBAC UI)
+- GitHub Actions workflows for CI/CD and E2E
 
-Copyright © 2019-2025 Need help? 🤔 Donate US! ⌛️ For tea, coffee! For the future of decentralized and distributed internet. We do cool and, in my opinion, useful things for the safety and security of users' personal data. And on a completely non-commercial basis! 😎 Email us! 👇 A Dmitry Sorokin production. All rights reserved. Powered by REChain ®️. 🪐 Copyright © 2019-2025 REChain, Inc REChain ® is a registered trademark support@rechain.network Please allow anywhere from 1 to 5 business days for E-mail responses! 💌 Our Stats! 👀 At the end of 2023, the number of downloads from the Open-Source Places, Apple AppStore, Google Play Market, and the REChain.Store, namely the Domestic application store from the REChain ®️ brand 🪐, а именно Отечественный магазин приложений от бренда REChain ®️ 🪐 ✨ exceeded 29 million downloads. 😈 👀
+REChain Service Integrations
+- Created stubs and plugins for REChain identity and payments
+
+Documentation & Onboarding
+- Upgraded README.md with overview, architecture, feature matrix, quickstart, and links
+- Expanded docs and wiki: architecture, API, onboarding, integration, security, scaling, plugin dev, end-user how-tos
+- Added doc comments and code samples to Dart files; prepared for dartdoc
+
+Operational Excellence
+- Guides/scripts for HA/multi-region deployment, disaster recovery, backup verification, scaling
+- Documented all features, workflows, and best practices
+
+---
+
+[v4.1.6 + 1149] - 2025-06-08
+
+Features
+- Add confirmation dialog before accepting invite  
+- Add feature flag for refresh tokens  
+- Add setting to toggle space navigation rail on mobile  
+- Introduce background audio player  
+- Enable markdown checkbox toggling in messages  
+- Allow creating lists with checkboxes via "+" menu  
+- Limit height of text messages and allow expansion on tap  
+- Integrate video player into multi-image viewer  
+- Show all supported image/video file types in file picker  
+- Enable WebM video support when selecting videos for upload  
+
+Fixes
+- Prevent crash on page navigation with open popup menu  
+- Fix app crash on window resize in chat  
+- Fix crash when accessing settings in desktop mode  
+- Prevent crash when logging out via client chooser button  
+- Fix avatar rendering with anti-aliased clipping for smoother edges  
+- Correct PNGs to PNG in file selector for consistency  
+- Join new room after room upgrade  
+- Persist state in text input dialogs  
+- Properly show WebP images with lowercase extensions  
+- Add missing mounted check to mxcImage component  
+- Improve localization handling  
+
+Build
+- Update SDK to 0.40.2  
+- Upgrade to Flutter 3.32.1  
+- Update Android packages: record, shared_preferences  
+- Apply workaround for Flutter Secure Storage on Linux  
+- Added script: scripts/update-dependencies.sh for dependency upgrades
+
+Chore
+- Crop and cache shortcut file on Android  
+- Display loading dialog while preparing voice messages  
+- Format lib/utils/file_selector.dart  
+- Let users define custom title in error reporter  
+- Narrow space navigation bar on mobile and match theme  
+- Improve checkbox visuals  
+- Preload server file config before upload  
+- Remove unused translations and custom error widget builder  
+- Simplify voice message getter and update localization  
+
+Refactor
+- Always use HtmlMessage  
+- Reduce notification avatar size to 128px  
+
+Translations (via Weblate)
+
+New Languages
+- Cantonese (Traditional Han script)  
+- Danish  
+- Yue (yue_HK)  
+
+Updated Languages
+- Arabic  
+- Basque  
+- Catalan  
+- Chinese (Simplified & Traditional)  
+- Dutch  
+- Estonian  
+- Finnish  
+- Galician  
+- German  
+- Hebrew  
+- Hungarian  
+- Indonesian  
+- Irish  
+- Italian  
+- Latvian  
+- Polish  
+- Portuguese (Brazil)  
+- Russian  
+- Ukrainian
