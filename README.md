@@ -1,3 +1,77 @@
+
+## 🐦 Shorebird Integration (Code Push Updates)
+
+This project uses **[Shorebird](https://shorebird.dev/)** for code push updates in Flutter apps.
+
+### ⚙️ How to Install Shorebird CLI:
+```bash
+curl https://get.shorebird.dev | bash
+export PATH="$HOME/.shorebird/bin:$PATH"
+shorebird --version
+```
+
+### 🚀 Initialize Shorebird in This Project:
+```bash
+shorebird init
+```
+
+This command will:
+- Set up Shorebird in the project.
+- Add the required `shorebird_code_push` package.
+- Configure native projects (`android`, `ios`, etc).
+
+---
+
+### 📲 Running the App with Shorebird:
+In `lib/main.dart`:
+```dart
+import 'package:shorebird_code_push/shorebird_code_push.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await ShorebirdCodePush.instance.ensureInitialized();
+  runApp(const MyApp());
+}
+```
+
+---
+
+### 🏗️ Building with Shorebird:
+```bash
+shorebird build apk
+shorebird build ios
+shorebird build appbundle
+```
+
+---
+
+### ⚡️ Manual Update Control (Optional):
+To manually control updates, edit `.shorebird/shorebird.yaml`:
+```yaml
+auto_update: false
+```
+
+Then, in your app:
+```dart
+final update = await ShorebirdCodePush.instance.checkForUpdate();
+if (update != null) {
+  await update.downloadAndInstall();
+}
+```
+
+---
+
+### 📦 Releasing Patches:
+```bash
+shorebird patch android
+```
+
+---
+
+### 📝 Docs:
+- [Shorebird Documentation](https://docs.shorebird.dev/)
+- [Shorebird Code Push Package](https://pub.dev/packages/shorebird_code_push)
+
 https://api.codemagic.io/apps/686d1ae5ebec9edd213662a9/686d1ae5ebec9edd213662a8/status_badge.svg
 
 [![Codemagic build status](https://api.codemagic.io/apps/686d1ae5ebec9edd213662a9/686d1ae5ebec9edd213662a8/status_badge.svg)](https://codemagic.io/app/686d1ae5ebec9edd213662a9/686d1ae5ebec9edd213662a8/latest_build)
