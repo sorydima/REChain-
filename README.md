@@ -1,3 +1,7 @@
+https://api.codemagic.io/apps/686d1ae5ebec9edd213662a9/686d1ae5ebec9edd213662a8/status_badge.svg
+
+[![Codemagic build status](https://api.codemagic.io/apps/686d1ae5ebec9edd213662a9/686d1ae5ebec9edd213662a8/status_badge.svg)](https://codemagic.io/app/686d1ae5ebec9edd213662a9/686d1ae5ebec9edd213662a8/latest_build)
+
 # REChain Ecosystem
 
 A next-generation, open-source, modular ecosystem for decentralized communication, blockchain, AI, and Web3 integrations. Built with Flutter, Dart, and modern cloud-native technologies.
