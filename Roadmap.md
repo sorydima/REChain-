@@ -1,12 +1,19 @@
+# REChain Roadmap
 
-# REChain Project Roadmap
+## Upcoming Features
 
-Here is the future roadmap for REChain:
+- Katya AI Expansion
+- DAO Node (.city) integrations
+- Advanced Shorebird OTA updates
 
-- **Q4 2024**: Launch the beta version of REChain decentralized nodes.
-- **Q1 2025**: Full integration of privacy-enhanced communication protocols.
-- **Q2 2025**: Implement spam-resistant messaging systems on the REChain platform.
-- **Q3 2025**: Expand the platform to support decentralized applications (dApps) and blockchain-based services.
+## Long-Term Goals
 
----
+- Enhanced dApp ecosystem.
+- Stronger multi-chain integration.
+- Privacy-focused messaging advancements.
 
+## Communication
+
+Stay updated via:
+- Twitter: [@rechain_inc](https://x.com/rechain_inc)
+- Telegram: [@rechainchat](https://t.me/rechainchat)
