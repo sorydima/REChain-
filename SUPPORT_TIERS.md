@@ -14,6 +14,57 @@ Please specify your support tier and version number (4.1.6+1149) when requesting
 
 ---
 
+## Socials and Community Links
+
+### Matrix Channels
+
+- #lab:matrix.tanya.city
+- #workdao:matrix.tanya.city
+- #ai:hackliberty.org
+- #foodies:devture.com
+- #FreeCodeCamp_linux:gitter.im
+- #design:gossip.land
+- #basketball:gossip.land
+- #books:gossip.land
+- #cats:gossip.land
+- #dogs:gossip.land
+- #film:gossip.land
+- #football:gossip.land
+- #oslo:gossip.land
+- #music:gossip.land
+- #news:gossip.land
+- #science:gossip.land
+- #sports:gossip.land
+- #technology:gossip.land
+- #rechain:matrix.tanya.city
+- #chatting:matrix.katya.wtf
+- #bitspace:matrix.katya.wtf
+- #bit:matrix.katya.wtf
+- #bitthebot:matrix.org
+- #marinamoda:matrix.org
+- #marinamodaru:matrix.org
+- #marinamodaen:matrix.org
+- #toncity:matrix.org
+- #marinamodacity:matrix.org
+- #marinadao:matrix.org
+- #durovshater:matrix.org
+- #slackware:matrix.org
+- #altlinux-ru:matrix.org
+- #stickers:squirrel.rocks
+- #space:alt-gnome.ru
+- #chat:alt-gnome.ru
+
+### Telegram Groups
+
+- Community for the Lab Venture Builder & Incubator 💡👀💭: https://t.me/+aNI7CzqG3OAxZDdi
+- Dmitry's Space 🤳: https://t.me/durovshaterspace
+- DAO by Marina.Moda ®: https://t.me/marinamodadao
+- Marina.Moda ® 💖: https://t.me/marinamodachat
+- 🎨 Катерина - Профессионал. 🙆 ЦФА и УЦП. 🪙: https://t.me/bitbotchain
+- REChain ®️. 🪐: https://t.me/rechainchat
+
+---
+
 Thank you for choosing REChain!
 
 ---

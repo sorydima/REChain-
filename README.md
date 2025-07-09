@@ -215,9 +215,53 @@ Please, visit the website for the installation instructions 🪐:
 
 * <a href="https://facebook.com/rechainINC">Facebook</a>
 
-* <a href="https://matrix.to/#/#chatting:matrix.katya.wtf">Matrix</a>
+* <a href="https://matrix.to/#/#lab:matrix.tanya.city">#lab:matrix.tanya.city</a>  
+* <a href="https://matrix.to/#/#workdao:matrix.tanya.city">#workdao:matrix.tanya.city</a>  
+* <a href="https://matrix.to/#/#ai:hackliberty.org">#ai:hackliberty.org</a>  
+* <a href="https://matrix.to/#/#foodies:devture.com">#foodies:devture.com</a>  
+* <a href="https://matrix.to/#/#FreeCodeCamp_linux:gitter.im">#FreeCodeCamp_linux:gitter.im</a>  
+* <a href="https://matrix.to/#/#design:gossip.land">#design:gossip.land</a>  
+* <a href="https://matrix.to/#/#basketball:gossip.land">#basketball:gossip.land</a>  
+* <a href="https://matrix.to/#/#books:gossip.land">#books:gossip.land</a>  
+* <a href="https://matrix.to/#/#cats:gossip.land">#cats:gossip.land</a>  
+* <a href="https://matrix.to/#/#dogs:gossip.land">#dogs:gossip.land</a>  
+* <a href="https://matrix.to/#/#film:gossip.land">#film:gossip.land</a>  
+* <a href="https://matrix.to/#/#football:gossip.land">#football:gossip.land</a>  
+* <a href="https://matrix.to/#/#oslo:gossip.land">#oslo:gossip.land</a>  
+* <a href="https://matrix.to/#/#music:gossip.land">#music:gossip.land</a>  
+* <a href="https://matrix.to/#/#news:gossip.land">#news:gossip.land</a>  
+* <a href="https://matrix.to/#/#science:gossip.land">#science:gossip.land</a>  
+* <a href="https://matrix.to/#/#sports:gossip.land">#sports:gossip.land</a>  
+* <a href="https://matrix.to/#/#technology:gossip.land">#technology:gossip.land</a>  
+* <a href="https://matrix.to/#/#rechain:matrix.tanya.city">#rechain:matrix.tanya.city</a>  
+* <a href="https://matrix.to/#/#chatting:matrix.katya.wtf">#chatting:matrix.katya.wtf</a>  
+* <a href="https://matrix.to/#/#bitspace:matrix.katya.wtf">#bitspace:matrix.katya.wtf</a>  
+* <a href="https://matrix.to/#/#bit:matrix.katya.wtf">#bit:matrix.katya.wtf</a>  
+* <a href="https://matrix.to/#/#bitthebot:matrix.org">#bitthebot:matrix.org</a>  
+* <a href="https://matrix.to/#/#marinamoda:matrix.org">#marinamoda:matrix.org</a>  
+* <a href="https://matrix.to/#/#marinamodaru:matrix.org">#marinamodaru:matrix.org</a>  
+* <a href="https://matrix.to/#/#marinamodaen:matrix.org">#marinamodaen:matrix.org</a>  
+* <a href="https://matrix.to/#/#toncity:matrix.org">#toncity:matrix.org</a>  
+* <a href="https://matrix.to/#/#marinamodacity:matrix.org">#marinamodacity:matrix.org</a>  
+* <a href="https://matrix.to/#/#marinadao:matrix.org">#marinadao:matrix.org</a>  
+* <a href="https://matrix.to/#/#durovshater:matrix.org">#durovshater:matrix.org</a>  
+* <a href="https://matrix.to/#/#slackware:matrix.org">#slackware:matrix.org</a>  
+* <a href="https://matrix.to/#/#altlinux-ru:matrix.org">#altlinux-ru:matrix.org</a>  
+* <a href="https://matrix.to/#/#stickers:squirrel.rocks">#stickers:squirrel.rocks</a>  
+* <a href="https://matrix.to/#/#space:alt-gnome.ru">#space:alt-gnome.ru</a>  
+* <a href="https://matrix.to/#/#chat:alt-gnome.ru">#chat:alt-gnome.ru</a>
 
-* <a href="https://t.me/rechainchat">Telegram</a>
+* <a href="https://t.me/+aNI7CzqG3OAxZDdi">Community for the Lab Venture Builder & Incubator 💡👀💭</a>
+
+* <a href="https://t.me/durovshaterspace">Dmitry's Space 🤳</a>
+
+* <a href="https://t.me/marinamodadao">DAO by Marina.Moda ®</a>
+
+* <a href="https://t.me/marinamodachat">Marina.Moda ® 💖</a>
+
+* <a href="https://t.me/bitbotchain">🎨 Катерина - Профессионал. 🙆 ЦФА и УЦП. 🪙</a>
+
+* <a href="https://t.me/rechainchat">REChain ®️. 🪐</a>
 
 # Special thanks!
 
