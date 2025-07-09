@@ -32,8 +32,8 @@
         android:label="REChain"
         android:icon="@mipmap/ic_launcher"
         android:requestLegacyExternalStorage="true"
-        android:allowBackup="false"
-        android:fullBackupContent="false"
+        android:allowBackup="true"
+        android:fullBackupContent="true"
         android:localeConfig="@xml/locale_config"
     >
         <activity
@@ -80,7 +80,7 @@
                <action android:name="android.intent.action.VIEW" />
                <category android:name="android.intent.category.DEFAULT" />
                <category android:name="android.intent.category.BROWSABLE" />
-               <data android:scheme="com.rechain" android:host="online" />
+               <data android:scheme="com.rechain" android:host="chat" />
             </intent-filter>
 
             <!-- App can receive shared text -->
@@ -115,7 +115,7 @@
         </activity>
 
         <service android:name=".FcmPushService"
-          android:exported="false">
+          android:exported="true">
           <intent-filter>
             <action android:name="com.google.firebase.MESSAGING_EVENT"/>
           </intent-filter>
@@ -137,7 +137,7 @@
 
         <receiver android:name="org.unifiedpush.flutter.connector.UnifiedPushReceiver"
             tools:replace="android:enabled"
-            android:enabled="false">
+            android:enabled="true">
         </receiver>
 
         <receiver android:exported="false"  android:enabled="true"  android:name=".UnifiedPushReceiver">
