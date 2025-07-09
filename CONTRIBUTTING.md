@@ -35,6 +35,10 @@ There are many ways to contribute, including:
 
 Thank you for contributing to REChain! We look forward to your contributions!
 
-Please, send US an E-Mail to support@adminmarina.ru for the build instructions! 👻
+---
 
-Copyright © 2019-2024 Need help? 🤔 Donate US! ⌛️ For tea, coffee! For the future of decentralized and distributed internet. We do cool and, in my opinion, useful things for the safety and security of users' personal data. And on a completely non-commercial basis! 😎 Email us! 👇 A Dmitry Sorokin production. All rights reserved. Powered by REChain ®️. 🪐 Copyright © 2019-2024 REChain, Inc REChain ® is a registered trademark hr@adminmarina.ru p2p@adminmarina.ru pr@adminmarina.ru sorydima@adminmarina.ru support@adminmarina.ru sip@adminmarina.ru music@adminmarina.ru cfa@adminmarina.ru anti@adminmarina.ru mot_cfa@adminmarina.ru rechainstore@adminmarina.ru models@adminmarina.ru dex@adminmarina.ru email@adminmarina.ru musicdapp@adminmarina.ru pitomec@adminmarina.ru delus@adminmarina.ru gateway@adminmarina.ru husco@adminmarina.ru info@adminmarina.ru maring@adminmarina.ru modus@adminmarina.ru rechainnetworkhost@adminmarina.ru tanyacity@adminmarina.ru support@xn--90ao4a.tech Please allow anywhere from 1 to 5 business days for E-mail responses! 💌 Our Stats! 👀 At the end of 2023, the number of downloads from the Open-Source Places, Apple AppStore, Google Play Market, and the REChain.Store, namely the Domestic application store from the REChain ®️ brand 🪐, а именно Отечественный магазин приложений от бренда REChain ®️ 🪐 ✨ exceeded 29 million downloads. 😈 👀
+## Latest Release: v4.1.6+1149
+
+REChain has evolved into a truly modular, production-ready ecosystem! This release integrates Matrix, Telegram, blockchain, IPFS, and AI, introduces a dynamic plugin system, unifies APIs, and delivers world-class docs and onboarding for developers and users. REChain is now ready for enterprise and community adoption!
+
+For full details, see the [Release Notes](RELEASE_NOTES.md).
