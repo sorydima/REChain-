@@ -1,3 +1,4 @@
+# Updated for REChain version 4.1.6+1149 - 2025-07-08
 arb-dir: lib/l10n
 template-arb-file: intl_en.arb
 output-localization-file: l10n.dart

@@ -1,5 +1,17 @@
 # REChain Demo/Walkthrough Script
 
+---
+
+## Latest Release Information
+
+This demo script is updated for REChain version 4.1.6+1149, released on 2025-07-08.
+
+Refer to [RELEASE_NOTES.md](./RELEASE_NOTES.md) for detailed release information.
+
+---
+
+## Demo Steps
+
 1. **Intro:**
    "Welcome to REChain! Today, I'll show you our new modular ecosystem in action."
 
@@ -28,4 +40,4 @@
    - Point to the README, wiki, and code samples.
 
 10. **Outro:**
-    "REChain is ready for your ideas—join us and build the future of decentralized communication!" 
+    "REChain is ready for your ideas—join us and build the future of decentralized communication!"

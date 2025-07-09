@@ -1,3 +1,5 @@
+# Drone CI/CD pipeline configuration for REChain version 4.1.6+1149 - 2025-07-08
+
 kind: pipeline
 type: docker
 name: flutter-multi-platform

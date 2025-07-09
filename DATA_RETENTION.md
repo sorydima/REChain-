@@ -1,32 +1,49 @@
 # Data Retention Policy
 
-This document outlines how REChain handles and retains user data to ensure compliance with legal requirements and best practices.
+---
 
-## Retention Principles
+## Latest Release Information
 
-- Retain data only as long as necessary for the purposes it was collected.
-- Regularly review data retention periods and policies.
-- Securely delete or anonymize data that is no longer needed.
+This data retention policy is updated for REChain version 4.1.6+1149, released on 2025-07-08.
 
-## Types of Data and Retention Periods
-
-| Data Type           | Retention Period          | Purpose                          |
-|---------------------|--------------------------|---------------------------------|
-| User account data   | Duration of account active | Account management and support  |
-| Transaction records | 7 years                  | Legal compliance and auditing   |
-| Logs and analytics  | 1 year                   | Performance monitoring          |
-| Backup data         | 30 days                  | Disaster recovery               |
-
-## Data Deletion
-
-- Provide users with options to delete their data where applicable.
-- Ensure complete removal from active systems and backups within retention limits.
-
-## Compliance
-
-- Comply with relevant data protection regulations.
-- Document retention policies and procedures.
+Refer to [RELEASE_NOTES.md](./RELEASE_NOTES.md) for detailed release information.
 
 ---
 
-Responsible data retention protects user privacy and supports operational needs.
+## Purpose
+
+This document outlines how REChain handles and retains user data to ensure compliance with legal requirements and best practices.
+
+---
+
+## Retention Principles
+
+- Data minimization and purpose limitation.
+- Retain data only as long as necessary.
+- Secure storage and access controls.
+- Regular audits and data purging.
+
+---
+
+## Retention Periods
+
+| Data Type           | Retention Period | Notes                          |
+|---------------------|------------------|--------------------------------|
+| User Account Data    | 7 years          | For compliance and support     |
+| Messaging Data       | 1 year           | Encrypted and anonymized       |
+| Transaction Records  | 5 years          | Financial and legal reasons    |
+| Logs and Analytics   | 90 days          | For monitoring and debugging   |
+
+---
+
+## Data Deletion
+
+- Users can request data deletion in accordance with privacy laws.
+- Automated deletion processes are in place.
+- Exceptions apply for legal holds.
+
+---
+
+## Support
+
+For questions regarding data retention, contact support@rechain.network.

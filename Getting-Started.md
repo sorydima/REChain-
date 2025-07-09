@@ -1,6 +1,14 @@
 
 # Getting Started with REChain
 
+## Latest Release Information
+
+This guide is updated for REChain version 4.1.6+1149, released on 2025-07-08.
+
+Refer to [RELEASE_NOTES.md](./RELEASE_NOTES.md) for detailed release information.
+
+---
+
 ## Prerequisites
 Ensure the following tools and dependencies are installed on your system:
 - **Rust** (for node software development): [Install Rust](https://www.rust-lang.org/learn/get-started)
