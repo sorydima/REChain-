@@ -4,7 +4,7 @@
 
 ## Latest Release Information
 
-This document is updated for REChain version 4.1.6+1149, released on 2025-07-08.
+This document is updated for REChain version 4.1.7+1150, released on 2025-07-08.
 
 ---
 
@@ -86,4 +86,4 @@ Thank you for your interest in contributing to REChain! This guide provides info
 
 ---
 
-*This contributing guide is part of the REChain v4.1.6+1149 release documentation.*
+*This contributing guide is part of the REChain v4.1.7+1150 release documentation.*

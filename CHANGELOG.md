@@ -1,4 +1,4 @@
-## [v4.1.6+1149] - 2025-07-08
+## [v4.1.7+1150] - 2025-07-08
 
 ### Major Features & Integrations
 - Integrated Matrix (advanced backend, bridges, federation, encryption, bots)
@@ -34,7 +34,7 @@
 
 ---
 
-## [v4.1.6 + 1149] - 2025-06-08
+## [v4.1.7 + 1150] - 2025-06-08
 
 ### ✨ Features
 - Add confirmation dialog before accepting invite  

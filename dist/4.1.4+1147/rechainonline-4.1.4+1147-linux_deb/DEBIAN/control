@@ -1,6 +1,6 @@
 Maintainer: Sorokin Dmitry Olegovich <dmitry.justdev@gmail.com>
 Package: rechain
-Version: 4.1.4+1147
+Version: 4.1.7+1150
 Section: x11
 Priority: optional
 Architecture: amd64

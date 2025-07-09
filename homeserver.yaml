@@ -1,4 +1,4 @@
-# Updated for REChain version 4.1.6+1149 - 2025-07-08
+# Updated for REChain version 4.1.7+1150 - 2025-07-08
 server_name: "your.domain.tld"
 pid_file: /data/homeserver.pid
 public_baseurl: "https://your.domain.tld/"

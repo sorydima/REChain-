@@ -4,7 +4,7 @@
 
 ## Latest Release Information
 
-This guide is updated for REChain version 4.1.6+1149, released on 2025-07-08.
+This guide is updated for REChain version 4.1.7+1150, released on 2025-07-08.
 
 ---
 

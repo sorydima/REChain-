@@ -4,7 +4,7 @@
 
 ## Latest Release Information
 
-This conventions document is updated for REChain version 4.1.6+1149, released on 2025-07-08.
+This conventions document is updated for REChain version 4.1.7+1150, released on 2025-07-08.
 
 Refer to [RELEASE_NOTES.md](./RELEASE_NOTES.md) for detailed release information.
 

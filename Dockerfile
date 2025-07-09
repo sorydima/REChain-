@@ -1,4 +1,4 @@
-# Dockerfile for REChain version 4.1.6+1149 - latest release as of 2025-07-08
+# Dockerfile for REChain version 4.1.7+1150 - latest release as of 2025-07-08
 
 # Use Cirrus CI Flutter image as builder
 FROM ghcr.io/cirruslabs/flutter as builder

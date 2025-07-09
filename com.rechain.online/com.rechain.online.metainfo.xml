@@ -59,7 +59,7 @@
   </screenshots>
   <launchable type="desktop-id">com.rechain.online.desktop</launchable>
   <releases>
-    <release version="4.1.4" date="2025-03-10"/>
+    <release version="4.1.7" date="2025-03-10"/>
   </releases>
   <content_rating type="oars-1.1">
     <content_attribute id="social-chat">intense</content_attribute>

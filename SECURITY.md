@@ -12,9 +12,9 @@ currently being supported with security updates.
 | 4.1.x   | :white_check_mark: |
 | < 4.1   | :x:                |
 
-## Updated for Version 4.1.6+1149
+## Updated for Version 4.1.7+1150
 
-This document is current as of REChain version 4.1.6+1149 (2025-07-08). Security updates and patches apply to this and later versions.
+This document is current as of REChain version 4.1.7+1150 (2025-07-08). Security updates and patches apply to this and later versions.
 
 
 ## Reporting a Vulnerability
@@ -32,7 +32,7 @@ Thank you for helping us keep REChain secure.
 
 ---
 
-## Latest Release: v4.1.6+1149
+## Latest Release: v4.1.7+1150
 
 REChain has evolved into a truly modular, production-ready ecosystem! This release integrates Matrix, Telegram, blockchain, IPFS, and AI, introduces a dynamic plugin system, unifies APIs, and delivers world-class docs and onboarding for developers and users. REChain is now ready for enterprise and community adoption!
 
