@@ -1,3 +1,95 @@
-description: This file stores settings for Dart & Flutter DevTools.
-documentation: https://docs.flutter.dev/tools/devtools/extensions#configure-extension-enablement-states
-extensions:
+# Devtools Options for REChain
+
+---
+
+# Latest Release Information
+# This configuration is updated for REChain version 4.1.6+1149, released on 2025-07-08.
+
+---
+
+# Build Scenes and Platform Configurations
+
+build:
+  android:
+    enabled: true
+    build_type: release
+    min_sdk_version: 21
+    target_sdk_version: 33
+    signing_config: release
+    proguard_enabled: true
+    multi_dex_enabled: true
+
+  ios:
+    enabled: true
+    build_type: release
+    deployment_target: 13.0
+    code_sign_identity: "iPhone Developer"
+    provisioning_profile: "REChain_Provisioning_Profile"
+
+  macos:
+    enabled: true
+    build_type: release
+    deployment_target: 10.15
+
+  linux:
+    enabled: true
+    build_type: release
+    target_architecture: x64
+
+  windows:
+    enabled: true
+    build_type: release
+    target_architecture: x64
+
+  web:
+    enabled: true
+    build_type: release
+    dart_define:
+      FLUTTER_WEB_CANVASKIT_URL: "canvaskit/"
+
+---
+
+# Debugging Options
+
+debug:
+  enable_hot_reload: true
+  enable_hot_restart: true
+  verbose_logging: false
+
+---
+
+# Testing Options
+
+test:
+  run_unit_tests: true
+  run_integration_tests: true
+  run_e2e_tests: false
+
+---
+
+# Performance and Profiling
+
+performance:
+  enable_profiling: false
+  enable_memory_tracking: false
+
+---
+
+# Additional Settings
+
+settings:
+  enable_analytics: true
+  enable_crash_reporting: true
+  enable_shorebird_code_push: true
+
+---
+
+# Notes
+
+# Adjust these options as needed for different build environments or CI/CD pipelines.
+
+# For more information, refer to the REChain documentation and release notes.
+
+---
+
+# End of devtools_options.yaml

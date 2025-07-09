@@ -52,3 +52,5 @@ dart_code_metrics:
   anti-patterns:
     - long-method
     - long-parameter-list
+
+# Updated for REChain v4.1.6+1149 release on 2025-07-08

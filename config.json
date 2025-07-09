@@ -1,9 +1,9 @@
 {
   "application_name": "REChain ®️ 🪐 ✨",
-  "application_welcome_message": null,
-  "default_homeserver": "matrix.tanya.city",
-  "web_base_url": "https://rechain.online/web",
-  "privacy_url": "https://rechain.online/privacy-policy.html",
+  "application_welcome_message": "Welcome to REChain version 4.1.6+1149 released on 2025-07-08!",
+  "default_homeserver": "node.marinchik.ink",
+  "web_base_url": "https://chainapp.codemagic.app",
+  "privacy_url": "https://online.rechain.network/privacy-policy.html",
   "render_html": true,
   "hide_redacted_events": false,
   "hide_unknown_events": false

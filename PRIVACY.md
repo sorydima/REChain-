@@ -1,3 +1,89 @@
+# Privacy Policy for REChain
+
+---
+
+## Latest Release Information
+
+This document is updated for REChain version 4.1.6+1149, released on 2025-07-08.
+
+---
+
+## Introduction
+
+REChain is committed to protecting the privacy and security of its users. This Privacy Policy outlines how we collect, use, and safeguard your personal information when you use our services.
+
+---
+
+## Information We Collect
+
+- **Personal Information**: Information you provide directly, such as account details, contact information, and preferences.
+- **Usage Data**: Information about how you interact with REChain services, including logs, analytics, and device information.
+- **Communication Data**: Messages and content transmitted through REChain, subject to end-to-end encryption where applicable.
+
+---
+
+## How We Use Your Information
+
+- To provide and maintain our services.
+- To improve user experience and service quality.
+- To communicate updates, security alerts, and support.
+- To comply with legal obligations and protect against fraud.
+
+---
+
+## Data Security
+
+- We implement industry-standard security measures to protect your data.
+- End-to-end encryption is used for messaging to ensure confidentiality.
+- Access to personal data is restricted to authorized personnel only.
+
+---
+
+## Data Sharing and Disclosure
+
+- We do not sell or rent your personal information.
+- Data may be shared with trusted third-party service providers under strict confidentiality agreements.
+- We may disclose information to comply with legal requests or protect rights and safety.
+
+---
+
+## User Rights
+
+- Access, correction, or deletion of your personal data.
+- Control over communication preferences.
+- Rights to data portability and restriction of processing where applicable.
+
+---
+
+## Cookies and Tracking Technologies
+
+- Use of cookies and similar technologies to enhance service functionality.
+- Options to manage cookie preferences through your browser settings.
+
+---
+
+## International Data Transfers
+
+- Data may be processed in countries outside your residence.
+- We ensure appropriate safeguards are in place for international transfers.
+
+---
+
+## Changes to This Privacy Policy
+
+- We may update this policy periodically.
+- Users will be notified of significant changes through official channels.
+
+---
+
+## Contact Us
+
+For questions or concerns about this Privacy Policy, please contact privacy@rechain.network.
+
+---
+
+*This Privacy Policy is part of the REChain v4.1.6+1149 release documentation.*
+
 Privacy!
 =======
 

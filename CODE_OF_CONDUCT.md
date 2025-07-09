@@ -1,49 +1,69 @@
-# Code of Conduct for the REChain Project
-
-## Introduction
-
-As contributors and maintainers of the REChain project, we are committed to fostering a welcoming and inclusive environment for everyone. We pledge to treat all individuals with respect and dignity, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual identity and orientation.
+# Code of Conduct for REChain
 
 ---
 
-## Document Version
+## Latest Release Information
 
-This Code of Conduct document is current as of REChain version 4.1.6+1149 (2025-07-08).
+This document is updated for REChain version 4.1.6+1149, released on 2025-07-08.
+
+---
+
+## Our Pledge
+
+In the interest of fostering an open and welcoming environment, we as contributors and maintainers pledge to make participation in REChain a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual identity and orientation.
+
+---
 
 ## Our Standards
 
-We strive to create a positive and constructive community. Examples of behavior that contribute to a welcoming environment include:
+Examples of behavior that contributes to creating a positive environment include:
 
-- Using inclusive and supportive language.
-- Being respectful of differing opinions and perspectives.
-- Accepting constructive feedback gracefully.
-- Prioritizing the needs of the community over personal interests.
-- Demonstrating empathy towards fellow community members.
+- Using welcoming and inclusive language
+- Being respectful of differing viewpoints and experiences
+- Gracefully accepting constructive criticism
+- Focusing on what is best for the community
+- Showing empathy towards other community members
 
 Examples of unacceptable behavior by participants include:
 
-- Engaging in sexualized language or imagery and unwelcome sexual advances.
-- Trolling, insulting, or derogatory comments, and personal attacks.
-- Public or private harassment.
-- Disclosing others' private information, such as addresses or contact information, without consent.
-- Any conduct that could be considered inappropriate in a professional environment.
+- The use of sexualized language or imagery and unwelcome sexual attention or advances
+- Trolling, insulting/derogatory comments, and personal or political attacks
+- Public or private harassment
+- Publishing others’ private information, such as physical or electronic addresses, without explicit permission
+- Other conduct which could reasonably be considered inappropriate in a professional setting
+
+---
 
 ## Enforcement Responsibilities
 
-Project maintainers are tasked with clarifying and enforcing the standards of acceptable behavior. They have the authority to take appropriate and fair action in response to any instances of unacceptable behavior.
+Project maintainers are responsible for clarifying the standards of acceptable behavior and are expected to take appropriate and fair corrective action in response to any instances of unacceptable behavior.
 
-Project maintainers reserve the right to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that do not align with this Code of Conduct. They may also temporarily or permanently ban any contributor for behavior deemed inappropriate, threatening, offensive, or harmful.
+---
+
+## Reporting Guidelines
+
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the project team at support@rechain.network. All complaints will be reviewed and investigated promptly and fairly.
+
+---
 
 ## Scope
 
-This Code of Conduct applies within project spaces and public spaces when individuals represent the project or its community. Representation includes using official project communication channels, posting through official social media accounts, or acting as a designated representative at any event. Specific representation definitions may be outlined by project maintainers.
+This Code of Conduct applies both within project spaces and in public spaces when an individual is representing the project or its community.
 
-## Enforcement
+---
 
-If you experience or witness any behavior that violates this Code of Conduct, please report it to the project maintainers at support@adminmarina.ru. All reports will be reviewed and investigated, and appropriate actions will be taken based on the circumstances. Maintainers are committed to maintaining confidentiality regarding the reporter of an incident.
+## Enforcement Process
+
+- Reports will be handled confidentially to the extent possible.
+- The project team will determine the appropriate course of action, which may include warnings, temporary bans, or permanent removal from the community.
+- Appeals can be made by contacting the project team.
+
+---
 
 ## Attribution
 
-This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org), version 1.4, which can be found at https://www.contributor-covenant.org/version/1/4/code_of_conduct.md.
+This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org), version 2.1, available at https://www.contributor-covenant.org/version/2/1/code_of_conduct.html.
 
-For more information and answers to frequently asked questions about this code of conduct, please refer to the [Contributor Covenant FAQ](https://www.contributor-covenant.org/faq).
+---
+
+*This Code of Conduct is part of the REChain v4.1.6+1149 release documentation.*

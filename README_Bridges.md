@@ -1,3 +1,87 @@
+# REChain Bridges Overview
+
+---
+
+## Latest Release Information
+
+This document is updated for REChain version 4.1.6+1149, released on 2025-07-08.
+
+---
+
+## Introduction
+
+REChain Bridges enable seamless integration and communication between the REChain ecosystem and various external messaging platforms and services. These bridges facilitate interoperability, allowing users to connect across different networks effortlessly.
+
+---
+
+## Supported Bridges
+
+- **Matrix**: Advanced backend, federation, bots, and client integrations.
+- **Telegram**: Two-way synchronization, admin controls, analytics, AI moderation, and plugin support.
+- **Signal**: Secure messaging bridge with end-to-end encryption.
+- **WhatsApp**: Integration for messaging and media sharing.
+- **Discord**: Community and server bridging with moderation tools.
+- **Facebook Messenger**: Chat integration and notifications.
+- **Instagram**: Messaging bridge with media support.
+- **Google Chat**: Enterprise chat integration.
+- **Slack**: Team collaboration bridge.
+- **Twitter**: Social media integration.
+- **Bluesky**: Decentralized social networking bridge.
+- **GMessages**: SMS and messaging bridge.
+- **Email**: Email integration for notifications and messaging.
+- **Hookshot**: Webhook and automation bridge.
+- **GVoice**: Google Voice integration.
+- **Gitter**: Developer chat bridge.
+- **XMPP**: Extensible Messaging and Presence Protocol support.
+- **Mattermost**: Open-source team communication.
+- **Mumble**: Voice chat integration.
+- **WeChat**: Popular messaging platform bridge.
+- **KakaoTalk**: Korean messaging app integration.
+- **QQ**: Chinese messaging platform bridge.
+- **Heisenbridge**: Secure bridge for encrypted messaging.
+
+---
+
+## Features
+
+- **Two-Way Synchronization**: Messages and events are synchronized in real-time between REChain and external platforms.
+- **Admin Controls**: Manage bridge settings, permissions, and user access.
+- **Analytics and Monitoring**: Track bridge usage, message flow, and performance.
+- **AI Moderation**: Automated content moderation using AI tools.
+- **Plugin System**: Extend bridge functionality with custom plugins.
+- **Security**: End-to-end encryption and secure authentication mechanisms.
+- **Scalability**: Designed to handle large volumes of messages and users.
+
+---
+
+## Installation and Configuration
+
+Refer to the [REChain Deployment Guide](https://github.com/sorydima/REChain-/wiki/Deployment-Guide) for detailed instructions on installing and configuring bridges.
+
+---
+
+## Usage
+
+- Bridges can be managed via the REChain Matrix dashboard.
+- Configure bridge-specific settings in the respective YAML configuration files located in the `bridges/` directory.
+- Monitor bridge status and logs for troubleshooting.
+
+---
+
+## Contribution
+
+Contributions to bridge development and improvements are welcome. Please see the [CONTRIBUTING.md](docs/CONTRIBUTING.md) for guidelines.
+
+---
+
+## Support
+
+For support and questions, contact support@rechain.network or join the REChain community channels.
+
+---
+
+*This document is part of the REChain v4.1.6+1149 release documentation.*
+
 # Matrix Synapse + Bridges Full Setup
 
 Этот проект настраивает полноценный Matrix-сервер Synapse с набором всех доступных мостов к популярным мессенджерам и соцсетям, используя Docker Compose, Traefik и Certbot.
