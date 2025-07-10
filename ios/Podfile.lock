@@ -64,14 +64,14 @@ PODS:
     - nanopb (< 2.30910.0, >= 2.30908.0)
   - FirebaseCoreInternal (10.0):
     - "GoogleUtilities/NSData+zlib (~> 7.7)"
-  - FirebaseInstallations (9.6.0):
+  - FirebaseInstallations (10.0):
     - FirebaseCore (~> 10.25.0)
     - GoogleUtilities/Environment (~> 7.12)
     - GoogleUtilities/UserDefaults (~> 7.7)
     - PromisesObjC (~> 2.1)
   - FirebaseMessaging (10.25.0):
     - FirebaseCore (~> 10.25.0)
-    - FirebaseInstallations (~> 9.0)
+    - FirebaseInstallations (~> 10.0)
     - GoogleDataTransport (< 10.0.0, >= 9.1.4)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.7)
     - GoogleUtilities/Environment (~> 7.12)
