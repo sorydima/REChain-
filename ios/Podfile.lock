@@ -69,7 +69,7 @@ PODS:
     - GoogleUtilities/Environment (~> 7.12)
     - GoogleUtilities/UserDefaults (~> 7.7)
     - PromisesObjC (~> 2.1)
-  - FirebaseMessaging (9.6.0):
+  - FirebaseMessaging (10.25.0):
     - FirebaseCore (~> 10.25.0)
     - FirebaseInstallations (~> 9.0)
     - GoogleDataTransport (< 10.0.0, >= 9.1.4)
