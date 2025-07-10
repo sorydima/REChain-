@@ -1,135 +1,112 @@
+## [v4.1.7+1150] - 2025-07-08
 
-# Release Notes and Changelog for REChain ®️ 🪐 v4.1.2
+### Major Features & Integrations
+- Integrated Matrix (advanced backend, bridges, federation, encryption, bots)
+- Integrated Telegram via Super TMA bridge (two-way sync, admin, analytics, AI moderation, plugin system)
+- Added blockchain support (TON, Ethereum, Bitget, Web3)
+- Implemented multi-provider IPFS with analytics and encryption
+- Integrated AI services (moderation, translation, analytics)
 
----
+### Developer Experience & Extensibility
+- Built dynamic plugin system (hot-reload, web UI, enable/disable)
+- Added admin tools: RBAC UI, SSO/OAuth2, audit log
+- Unified API (REST, WebSocket, OpenAPI)
+- Persistent logging, Prometheus metrics, Sentry, Grafana dashboards, Alertmanager
+- Redis-based scaling, Docker, docker-compose, systemd, Kubernetes, Helm, HPA
+- Automated backup/restore, E2EE stubs, multi-language/i18n
+- Advanced dashboard widgets (real-time charts, log viewer, plugin controls)
 
-## **New Features**  
-- **Enhanced User Interface**:  
-  - New login design for an improved first impression.  
-  - Highlight emoji-only messages for better readability in conversations.  
-  - Added markdown context actions for text input, making formatting more accessible.  
-  - Introduced a new "About Server" page for detailed server information.  
+### Testing & CI/CD
+- Added unit, integration, and E2E Selenium tests (bot, dashboard, RBAC UI)
+- GitHub Actions workflows for CI/CD and E2E
 
-- **Customizations & Visual Improvements**:  
-  - Added default chat wallpaper for a personalized feel.  
-  - Better wallpapers now include blur and opacity sliders.  
-  - Revamped audio message design with displayed body content.  
+### REChain Service Integrations
+- Created stubs and plugins for REChain identity and payments
 
-- **Advanced Functionality**:  
-  - Enabled sending multiple files at once, boosting productivity.  
-  - Swipe-to-archive feature for easier room management.  
+### Documentation & Onboarding
+- Upgraded README.md with overview, architecture, feature matrix, quickstart, and links
+- Expanded `docs/` and wiki: architecture, API, onboarding, integration, security, scaling, plugin dev, end-user how-tos
+- Added doc comments and code samples to Dart files; prepared for dartdoc
 
-- **Improved User Experience**:  
-  - Display warning banners on unverified devices for security awareness.  
-  - Redesigned room creation UI for simplicity and style.  
-  - Added new styles and animations for a polished look and feel.  
-
----
-
-## **Bug Fixes**  
-- **File Handling**:  
-  - Bypass image compression when using `flutter_file_picker`.  
-  - Fixed a crash caused by loading file bytes prematurely.  
-
-- **Room Management**:  
-  - Corrected visibility of public rooms when settings are toggled.  
-  - Resolved issues with room invites not displaying immediately.  
-
-- **UI and Notifications**:  
-  - Improved performance of avatar widgets.  
-  - Prevented emoticons from using low-quality thumbnails.  
+### Operational Excellence
+- Guides/scripts for HA/multi-region deployment, disaster recovery, backup verification, scaling
+- Documented all features, workflows, and best practices
 
 ---
 
-## **Refinements and Optimizations**  
-- **Performance**:  
-  - Moved to a newer geolocator package for smoother functionality.  
-  - Optimized future loading dialog to avoid flickering.  
-  - Lazy-loaded components for faster startup times.  
+## [v4.1.7 + 1150] - 2025-06-08
 
-- **Code Maintenance**:  
-  - Removed duplicated navigational elements.  
-  - Simplified keyboard shortcuts and improved related packages.  
+### ✨ Features
+- Add confirmation dialog before accepting invite  
+- Add feature flag for refresh tokens  
+- Add setting to toggle space navigation rail on mobile  
+- Introduce background audio player  
+- Enable markdown checkbox toggling in messages  
+- Allow creating lists with checkboxes via "+" menu  
+- Limit height of text messages and allow expansion on tap  
+- Integrate video player into multi-image viewer  
+- Show all supported image/video file types in file picker  
+- Enable WebM video support when selecting videos for upload  
 
-- **UX Refinements**:  
-  - Enhanced delete-device UX for a streamlined experience.  
-  - Improved adaptive dialogs for better platform-specific interactions.  
+### 🐛 Fixes
+- Prevent crash on page navigation with open popup menu  
+- Fix app crash on window resize in chat  
+- Fix crash when accessing settings in desktop mode  
+- Prevent crash when logging out via client chooser button  
+- Fix avatar rendering with anti-aliased clipping for smoother edges  
+- Correct `PNGs` to `PNG` in file selector for consistency  
+- Join new room after room upgrade  
+- Persist state in text input dialogs  
+- Properly show WebP images with lowercase extensions  
+- Add missing mounted check to `mxcImage` component  
+- Improve localization handling  
 
----
+### 🛠 Build
+- Update SDK to `0.40.2`  
+- Upgrade to Flutter `3.32.1`  
+- Update Android packages: record, shared_preferences  
+- Apply workaround for Flutter Secure Storage on Linux  
+- Added script: `scripts/update-dependencies.sh` for dependency upgrades
 
-## **Reverts**  
-- Reverted default chat wallpaper implementation to ensure compatibility.  
-- Rolled back avatar widget performance changes due to conflicts.  
+### 🧹 Chore
+- Crop and cache shortcut file on Android  
+- Display loading dialog while preparing voice messages  
+- Format `lib/utils/file_selector.dart`  
+- Let users define custom title in error reporter  
+- Narrow space navigation bar on mobile and match theme  
+- Improve checkbox visuals  
+- Preload server file config before upload  
+- Remove unused translations and custom error widget builder  
+- Simplify voice message getter and update localization  
 
----
+### 🧼 Refactor
+- Always use `HtmlMessage`  
+- Reduce notification avatar size to 128px  
 
-## **Localization Updates**  
-- Expanded language support with translations into:  
-  - **Arabic, Basque, Catalan, Chinese (Simplified), Czech, Estonian, Finnish, Galician, German, Hungarian, Indonesian, Irish, Italian, Korean, Latvian, Russian, Spanish, Turkish, and Ukrainian.**  
-  - Special thanks to contributors for enriching global accessibility!  
+### 🌐 Translations (via Weblate)
 
----
+**New Languages**
+- Cantonese (Traditional Han script)  
+- Danish  
+- Yue (yue_HK)  
 
-Stay tuned for more updates and improvements in future versions. 🚀
-
-## v.4.1.2
-- design: Highlight emoji only messages (Krille)
-- design: New login design (Krille)
-- docs: fix snapstore badge on website (Krille)
-- feat: Add about server page (Krille)
-- feat: Add default chat wallpaper (Krille)
-- feat: Add markdown context actions for text input (krille-chan)
-- feat: Better wallpapers with blur and opacity sliders and improved styles page (krille-chan)
-- feat: Display warning banner on unverified devices (krille-chan)
-- feat: New audio message design with displayed body (krille-chan)
-- feat: Nicer room creation UI (krille-chan)
-- feat: Open account manage url when using MAS (krille-chan)
-- feat: Sending multiple files at once (krille-chan)
-- feat: Swipe to archive rooms (Krille)
-- fix: Bypass image compression in flutter_file_picker (q234rty)
-- fix: dont use thumbnails for emoticons (Marek Vospěl)
-- fix: Public rooms always publicly visible even when turned off on creation (krille-chan)
-- fix: Wait for room invite before open in pushhelper (krille-chan)
-- refactor: Better future loading dialog without flickering (krille-chan)
-- refactor: Display two lines on new messages (krille-chan)
-- refactor: Improve delete device UX flow (krille-chan)
-- refactor: Load bytes from sending files later to not let app crash (krille-chan)
-- refactor: Migrate to newer keyboard shortcuts package (Krille)
-- refactor: Move to upstream geolocator (Krille)
-- refactor: Performance boost for avatar widget (Krille)
-- refactor: Remove duplicated navigator workaround (krille-chan)
-- refactor: Remove keyboard shortcuts (Krille)
-- refactor: Remove unnecessary builder widget (krille-chan)
-- refactor: Reuse flutter local notifications object (krille-chan)
-- refactor: Use adaptive dialog action (Krille)
-- refactor: Use file selector on linux (krille-chan)
-- refactor: Use non nullable localizations builder and lazy load on web (krille-chan)
-- Revert "chore: Follow up new chat design" (Krille)
-- Revert "feat: Add default chat wallpaper" (Krille)
-- Revert "refactor: Performance boost for avatar widget" (krille-chan)
-- Translated using Weblate (Arabic) (Rex_sa)
-- Translated using Weblate (Basque) (xabirequejo)
-- Translated using Weblate (Catalan) (fadelkon)
-- Translated using Weblate (Chinese (Simplified Han script)) (大王叫我来巡山)
-- Translated using Weblate (Czech) (Michal Bedáň)
-- Translated using Weblate (Estonian) (Priit Jõerüüt)
-- Translated using Weblate (Finnish) (Priit Jõerüüt)
-- Translated using Weblate (Galician) (josé m)
-- Translated using Weblate (German) (Christian)
-- Translated using Weblate (German) (Ettore Atalan)
-- Translated using Weblate (German) (Peter Wallerius)
-- Translated using Weblate (Hungarian) (Zentropivity)
-- Translated using Weblate (Indonesian) (Linerly)
-- Translated using Weblate (Irish) (Aindriú Mac Giolla Eoin)
-- Translated using Weblate (Irish) (Christian)
-- Translated using Weblate (Italian) (Angelo Schirinzi)
-- Translated using Weblate (Korean) (Bruno Roh)
-- Translated using Weblate (Korean) (kdh8219)
-- Translated using Weblate (Latvian) (Edgars Andersons)
-- Translated using Weblate (Latvian) (GGLVXD)
-- Translated using Weblate (Russian) (Pavel Kozhukhov)
-- Translated using Weblate (Russian) (v1s7)
-- Translated using Weblate (Spanish) (Kimby)
-- Translated using Weblate (Turkish) (Oğuz Ersen)
-- Translated using Weblate (Ukrainian) (Bezruchenko Simon)
-- Translated using Weblate (Ukrainian) (Ihor Hordiichuk)
+**Updated Languages**
+- Arabic  
+- Basque  
+- Catalan  
+- Chinese (Simplified & Traditional)  
+- Dutch  
+- Estonian  
+- Finnish  
+- Galician  
+- German  
+- Hebrew  
+- Hungarian  
+- Indonesian  
+- Irish  
+- Italian  
+- Latvian  
+- Polish  
+- Portuguese (Brazil)  
+- Russian  
+- Ukrainian

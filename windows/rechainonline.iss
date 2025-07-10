@@ -2,9 +2,9 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "REChain ®️ 🪐 ✨"
-#define MyAppVersion "## @v4.1.2 (1145)"
+#define MyAppVersion "## @v4.1.7 (1150)"
 #define MyAppPublisher "REChain, Inc."
-#define MyAppURL "https://www.rechain.online/"
+#define MyAppURL "https://online.rechain.network/"
 #define MyAppExeName "REChain.exe"
 #define MyAppAssocName MyAppName + " File"
 #define MyAppAssocExt ".rechain"

@@ -4,7 +4,7 @@
 
 If you discover a security vulnerability in REChain, please report it responsibly:
 
-- **Email:** security@sorydima.com
+- **Email:** support@rechain.network
 - **Do not** open public issues for security vulnerabilities.
 - We will respond as quickly as possible and coordinate a fix.
 

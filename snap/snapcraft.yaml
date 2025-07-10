@@ -1,39 +1,48 @@
 name: rechainonline
 title: REChain
 base: core24
-version: git
+version: 4.1.7
 license: AGPL-3.0
-summary: REChain ®️🪐✨ Platform encourages collaborative communication through features
+summary: The inclusion of polls enhances decision-making processes by facilitating quick and efficient feedback gathering.
 description: |
-  REChain ®️ 🪐 ✨ is an primarily designed as a security and privacy analysis analogue fully focused on the use of platform moments and messages for communication, built on a source code library, including those developed by us, for those who respect freedom and privacy, as well as the safety and security of personal data. 🌤 Our task was to make a tool pleasant and enjoyable to use, with which each of you can communicate, expand content, create workspaces, organize a workflow. 🌈 We strive to show all the world's giants that it is possible to create cool products that are of great importance for society, for people to interact with each other, without selling advertising, personal data of users, their rights and freedoms! 🦄 It's written in Flutter. Our mission is to create an easy to use instant messenger which is open source and accessible for everyone. Donate US! ⌛ For tea, coffee! For the future of decentralized and distributed internet. We do cool and, in my opinion, useful things for the safety and security of users' personal data. And on a completely non-commercial basis! 😎 Join the community: https://matrix.to/#/#chatting:matrix.katya.wtf Website: https://online.rechain.network
+  REChain is a comprehensive platform that unifies Matrix protocol, blockchain, IPFS, AI, and external services into a seamless, extensible, and developer-friendly ecosystem. It empowers users and developers to build, scale, and secure decentralized apps, bots, and integrations for the future of the internet.
 
 
   ## Features
 
+  - Matrix Protocol: Multi-client, multi-server, bridges, bots, federation, and advanced Matrix integrations
+  - Blockchain: TON, Ethereum, Bitget, Web3, smart contracts, token/NFT support, on-chain identity
+  - IPFS: Multi-provider decentralized storage, file manager, encryption, quotas, analytics, REST/gRPC API
+  - AI & Analytics: GPT, moderation, translation, code analysis, monitoring, dashboards
+  - Serverless & API: REST, GraphQL, gRPC, WebSocket, serverless hooks, monitoring
+  - Security: Encryption, quotas, advanced logging, best practices
+  - Modern UI/UX: Flutter-based, responsive, accessible, beautiful dashboards and tools
   - Send all kinds of messages, images and files
   - Voice messages
   - Location sharing
   - Push notifications
   - Unlimited private and public group chats
   - Public channels with thousands of participants
-  - Feature rich group moderation including all REChain features
+  - Feature rich group moderation including all matrix features
   - Discover and join public groups
   - Dark mode
-  - Hides complexity of REChain IDs behind simple QR codes
+  - Hides complexity of Matrix IDs behind simple QR codes
   - Custom emotes and stickers
   - Video calls via sharing links to Jitsi
   - Spaces
-  - Compatible with Element, Nheko, NeoChat and all other REChain apps
+  - Compatible with Element, Nheko, NeoChat and all other Matrix apps
   - End to end encryption
   - Emoji verification & cross signing
   - And much more...
 
 
-  ## REChain comes with a dream
+  ## REChain.Online comes with a dream!
 
   Imagine a world where everyone can choose the messenger they like and is still able to chat with all of their friends.
 
   A world where there are no companies spying on you when you send selfies to friends and lovers.
+
+  And a world where apps are made for awesomeness and not for profit. ♥
 
   Join the community: https://matrix.to/#/#chatting:matrix.katya.wtf
   Website: http://online.rechain.network
@@ -49,21 +58,48 @@ platforms:
     build-on: arm64
 
 parts:
+  flutter-git:
+    source: https://github.com/flutter/flutter.git
+    source-tag: 3.32.5
+    source-depth: 1
+    plugin: nil
+    override-build: |
+      mkdir -p $CRAFT_PART_INSTALL/usr/bin
+      mkdir -p $CRAFT_PART_INSTALL/usr/libexec
+      cp -r $CRAFT_PART_SRC $CRAFT_PART_INSTALL/usr/libexec/flutter
+      ln -s $CRAFT_PART_INSTALL/usr/libexec/flutter/bin/flutter $CRAFT_PART_INSTALL/usr/bin/flutter
+      ln -s $SNAPCRAFT_PART_INSTALL/usr/libexec/flutter/bin/dart $SNAPCRAFT_PART_INSTALL/usr/bin/dart
+      $CRAFT_PART_INSTALL/usr/bin/flutter doctor
+    build-packages:
+      - clang
+      - cmake
+      - curl
+      - libgtk-3-dev
+      - ninja-build
+      - unzip
+      - xz-utils
+      - zip
+    override-prime: ''
+
   rechainonline:
-    plugin: flutter
+    after: [flutter-git]
+    plugin: nil
     source: .
     override-build: |
       # Workaround for Flutter build error:
       rm -rf build
-      craftctl default
+
+      flutter build linux --release -v
+      mkdir -p $CRAFT_PART_INSTALL/bin/
+      cp -r build/linux/*/release/bundle/* $CRAFT_PART_INSTALL/bin/
     build-packages:
       - libsecret-1-dev
       - libjsoncpp-dev
       - libssl-dev
       - curl
       - libpciaccess-dev
-      - cargo
-      - rustc
+    build-snaps:
+      - rustup
     stage-packages:
       - libsecret-1-0
       - libjsoncpp25
@@ -77,7 +113,7 @@ slots:
 
 apps:
   rechainonline:
-    command: rechainonline
+    command: bin/rechainonline
     extensions: [ gnome ]
     plugs:
       - audio-playback
@@ -93,6 +129,8 @@ apps:
       - password-manager-service
     slots:
       - dbus-svc
+    # Workaround for:
+    # https://github.com/flutter-webrtc/flutter-webrtc/issues/1212#issuecomment-1611899344
     environment:
       XDG_DATA_HOME: $SNAP_USER_DATA
       XDG_DATA_DIRS: $SNAP/usr/share

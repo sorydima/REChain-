@@ -5,9 +5,9 @@
 - Check the FAQ and documentation
 
 ## Contact
-- Email: support@rechain.online
-- Telegram: @rechain_support
-- Matrix: #support:rechain.online
+- Email: support@rechain.network
+- Telegram: @rechainchat
+- Matrix: #chatting:matrix.katya.wtf
 
 ## Bug Reports & Feature Requests
 - Open an issue on GitHub: https://github.com/sorydima/REChain-/issues

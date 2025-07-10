@@ -399,7 +399,7 @@ To contribute to the integration system:
 REChain supports Aurora OS (Sailfish/Aurora) via the flutter-aurora toolchain.
 
 ### Toolchain Setup
-- Clone and set up flutter-aurora: https://github.com/auroraos/flutaurora
+- Clone and set up flutter-aurora: https://gitlab.com/omprussia/flutter/flutter.git
 - Add flutter-aurora's bin directory to your PATH
 
 ### Building for Aurora OS

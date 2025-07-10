@@ -10,7 +10,7 @@
 
   <Properties>
     <DisplayName>@SHORT_NAME@</DisplayName>
-    <PublisherDisplayName>CMake Test Cert</PublisherDisplayName>
+    <PublisherDisplayName>Sorokin Dmitry Olegovich (@sorydima)</PublisherDisplayName>
     <Logo>Assets/StoreLogo.png</Logo>
   </Properties>
 
