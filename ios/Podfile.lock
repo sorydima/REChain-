@@ -58,7 +58,7 @@ PODS:
     - GoogleUtilities/Environment (~> 7.12)
     - GoogleUtilities/Logger (~> 7.12)
   - FirebaseCoreDiagnostics (9.6.0):
-    - GoogleDataTransport (< 10.0.0, >= 9.1.4)
+    - GoogleDataTransport (9.3)
     - GoogleUtilities/Environment (~> 7.12)
     - GoogleUtilities/Logger (~> 7.12)
     - nanopb (< 2.30910.0, >= 2.30908.0)
@@ -72,7 +72,7 @@ PODS:
   - FirebaseMessaging (10.25.0):
     - FirebaseCore (~> 10.25.0)
     - FirebaseInstallations (~> 10.0)
-    - GoogleDataTransport (< 10.0.0, >= 9.1.4)
+    - GoogleDataTransport (9.3)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.7)
     - GoogleUtilities/Environment (~> 7.12)
     - GoogleUtilities/Reachability (~> 7.7)
@@ -108,7 +108,7 @@ PODS:
   - FMDB/standard (2.7.5)
   - geolocator_apple (1.2.0):
     - Flutter
-  - GoogleDataTransport (9.2.0):
+  - GoogleDataTransport (9.3):
     - GoogleUtilities/Environment (~> 7.12)
     - nanopb (< 2.30910.0, >= 2.30908.0)
     - PromisesObjC (< 3.0, >= 1.2)
