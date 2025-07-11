@@ -114,7 +114,7 @@ slots:
 apps:
   rechainonline:
     command: bin/rechainonline
-    extensions: [ gnome ]
+    # extensions: [ gnome ]
     plugs:
       - audio-playback
       - desktop
