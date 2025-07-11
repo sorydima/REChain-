@@ -3,7 +3,7 @@ title: REChain
 base: core24
 version: 4.1.7
 license: AGPL-3.0
-summary: The inclusion of polls enhances decision-making processes by facilitating quick and efficient feedback.
+summary: The inclusion of polls enhances decision-making processes.
 description: |
   REChain is a comprehensive platform that unifies Matrix protocol, blockchain, IPFS, AI, and external services into a seamless, extensible, and developer-friendly ecosystem. It empowers users and developers to build, scale, and secure decentralized apps, bots, and integrations for the future of the internet.
 
