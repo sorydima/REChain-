@@ -21,7 +21,11 @@ void main() async {
   // widget bindings are initialized already.
   WidgetsFlutterBinding.ensureInitialized();
 
-  await vod.init(wasmPath: './assets/vodozemac/');
+  try {
+    await vod.init(wasmPath: './assets/vodozemac/');
+  } catch (e, s) {
+    Logs().e('Failed to initialize flutter_vodozemac', e, s);
+  }
 
   Logs().nativeColors = !PlatformInfos.isIOS;
   final store = await SharedPreferences.getInstance();
