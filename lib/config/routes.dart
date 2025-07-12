@@ -63,7 +63,7 @@ abstract class AppRoutes {
       path: '/',
       redirect: (context, state) {
         // Handle Telegram WebApp deep link with tgWebAppData query parameter
-        if (state.queryParameters.containsKey('tgWebAppData')) {
+        if (state.uri.queryParameters.containsKey('tgWebAppData')) {
           // You can parse tgWebAppData here if needed
           // For now, redirect to home or a specific route
           return '/home';
