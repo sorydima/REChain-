@@ -84,6 +84,7 @@ dependencies:
   sqflite_common_ffi: ^2.3.3
   sqlcipher_flutter_libs: ^0.6.1
   swipe_to_action: ^0.3.0
+  telegram_web_app: ^0.3.3
   tor_detector_web: ^1.1.0
   unifiedpush: ^5.0.1
   unifiedpush_ui: ^0.1.0
