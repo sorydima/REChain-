@@ -509,7 +509,6 @@ abstract class AppRoutes {
           ],
         ),
       ],
-     ),
     ),
     GoRoute(
       path: '/logs',
