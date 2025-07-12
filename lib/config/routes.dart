@@ -32,6 +32,7 @@ import 'package:rechainonline/pages/settings_notifications/settings_notification
 import 'package:rechainonline/pages/settings_password/settings_password.dart';
 import 'package:rechainonline/pages/settings_security/settings_security.dart';
 import 'package:rechainonline/pages/settings_style/settings_style.dart';
+import 'package:rechainonline/pages/telegram_webapp_init/telegram_webapp_init_page.dart';
 import 'package:rechainonline/widgets/config_viewer.dart';
 import 'package:rechainonline/widgets/layouts/empty_page.dart';
 import 'package:rechainonline/widgets/layouts/two_column_layout.dart';
@@ -64,13 +65,23 @@ abstract class AppRoutes {
       redirect: (context, state) {
         // Handle Telegram WebApp deep link with tgWebAppData query parameter
         if (state.uri.queryParameters.containsKey('tgWebAppData')) {
-          // You can parse tgWebAppData here if needed
-          // For now, redirect to home or a specific route
-          return '/home';
+          // Redirect to Telegram WebApp init page with query parameters
+          return '/telegram_webapp_init';
         }
         return Matrix.of(context).widget.clients.any((client) => client.isLogged())
             ? '/rooms'
             : '/home';
+      },
+    ),
+    GoRoute(
+      path: '/telegram_webapp_init',
+      pageBuilder: (context, state) {
+        final tgWebAppData = state.uri.queryParameters['tgWebAppData'];
+        return defaultPageBuilder(
+          context,
+          state,
+          TelegramWebAppInitPage(tgWebAppData: tgWebAppData),
+        );
       },
     ),
     GoRoute(
