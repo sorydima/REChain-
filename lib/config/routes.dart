@@ -61,10 +61,17 @@ abstract class AppRoutes {
   static final List<RouteBase> routes = [
     GoRoute(
       path: '/',
-      redirect: (context, state) =>
-          Matrix.of(context).widget.clients.any((client) => client.isLogged())
-              ? '/rooms'
-              : '/home',
+      redirect: (context, state) {
+        // Handle Telegram WebApp deep link with tgWebAppData query parameter
+        if (state.queryParameters.containsKey('tgWebAppData')) {
+          // You can parse tgWebAppData here if needed
+          // For now, redirect to home or a specific route
+          return '/home';
+        }
+        return Matrix.of(context).widget.clients.any((client) => client.isLogged())
+            ? '/rooms'
+            : '/home';
+      },
     ),
     GoRoute(
       path: '/home',
