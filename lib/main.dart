@@ -82,6 +82,11 @@ class MainScreen extends StatelessWidget {
 }
 
 void main() async {
+  // Add Flutter framework error handler
+  FlutterError.onError = (FlutterErrorDetails details) {
+    Logs().e('Flutter framework error', details.exception, details.stack);
+  };
+
   Logs().i('Welcome to ${AppConfig.applicationName} <3');
 
   // Our background push shared isolate accesses flutter-internal things very early in the startup proccess
@@ -125,7 +130,12 @@ void main() async {
   Logs().i(
     '${AppConfig.applicationName} started in foreground mode. Rendering GUI...',
   );
-  await startGui(clients, store);
+  try {
+    await startGui(clients, store);
+  } catch (e, s) {
+    Logs().e('Error during startGui', e, s);
+    rethrow;
+  }
 }
 
 /// Fetch the pincode for the applock and start the flutter engine.
@@ -146,7 +156,12 @@ Future<void> startGui(List<Client> clients, SharedPreferences store) async {
   await firstClient?.roomsLoading;
   await firstClient?.accountDataLoading;
 
-  runApp(rechainonlineChatApp(clients: clients, pincode: pin, store: store));
+  try {
+    runApp(rechainonlineChatApp(clients: clients, pincode: pin, store: store));
+  } catch (e, s) {
+    Logs().e('Error during runApp', e, s);
+    rethrow;
+  }
 }
 
 /// Watches the lifecycle changes to start the application when it
