@@ -81,8 +81,6 @@ class MainScreen extends StatelessWidget {
   }
 }
 
-import 'dart:async';
-
 void main() {
   // Add Flutter framework error handler
   FlutterError.onError = (FlutterErrorDetails details) {
