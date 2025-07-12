@@ -83,15 +83,10 @@ class MainScreen extends StatelessWidget {
 
 import 'dart:async';
 
-void main() async {
+void main() {
   // Add Flutter framework error handler
   FlutterError.onError = (FlutterErrorDetails details) {
     Logs().e('Flutter framework error', details.exception, details.stack);
-  };
-
-  // Override FlutterError.dumpErrorToConsole to log errors to console
-  FlutterError.dumpErrorToConsole = (FlutterErrorDetails details) {
-    Logs().e('Flutter error to console', details.exception, details.stack);
   };
 
   // Run app inside a Zone to catch all uncaught async errors
