@@ -14,8 +14,7 @@ import 'package:rechainonline/utils/platform_infos.dart';
 import '../../utils/voip/user_media_manager.dart';
 import '../widgets/matrix.dart';
 
-// Conditional import for WebRTC
-import 'flutter_webrtc_stub.dart' if (dart.library.html) 'flutter_webrtc_stub.dart' as webrtc_impl;
+import 'flutter_webrtc_stub.dart' if (dart.library.html) 'flutter_webrtc_stub.dart' if (dart.library.io) 'flutter_webrtc_mobile.dart' as webrtc_impl;
 
 // Conditional import for VOIP plugin
 // ignore: unused_import

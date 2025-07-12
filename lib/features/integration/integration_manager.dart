@@ -42,7 +42,7 @@ import '../ipfs/ipfs_service.dart';
 import '../ipfs/ipfs_provider_registry.dart';
 
 /// Integration Manager for coordinating external services
-class IntegrationManager {
+class IntegrationManager extends ChangeNotifier {
   final PrometheusService? _prometheusService;
   final GrafanaService? _grafanaService;
   final GigachatService? _gigachatService;
@@ -56,9 +56,6 @@ class IntegrationManager {
   final ElementCallIntegration? _elementCallIntegration;
   final ElementBridgeIntegration? _elementBridgeIntegration;
   final FluffyChatIntegration? _fluffyChatIntegration;
-  final KrilleChanIntegration? _krilleChanIntegration;
-  final NhekoIntegration? _nhekoIntegration;
-  final CinnyIntegration? _cinnyIntegration;
   final NeoChatIntegration? _neoChatIntegration;
   final GitGitHubIntegration? _gitGitHubService;
 
@@ -130,15 +127,15 @@ class IntegrationManager {
     ElementCallIntegration? elementCallIntegration,
     ElementBridgeIntegration? elementBridgeIntegration,
     FluffyChatIntegration? fluffyChatIntegration,
+    TONAuthService? tonAuthService,
+    TelegramAuthService? telegramAuthService,
+    BitgetAuthService? bitgetAuthService,
+    Web3AuthService? web3AuthService,
     KrilleChanIntegration? krilleChanIntegration,
     NhekoIntegration? nhekoIntegration,
     CinnyIntegration? cinnyIntegration,
     NeoChatIntegration? neoChatIntegration,
     GitGitHubIntegration? gitGitHubService,
-    TONAuthService? tonAuthService,
-    TelegramAuthService? telegramAuthService,
-    BitgetAuthService? bitgetAuthService,
-    Web3AuthService? web3AuthService,
   })  : _prometheusService = prometheusService,
         _grafanaService = grafanaService,
         _gigachatService = gigachatService,
@@ -162,388 +159,23 @@ class IntegrationManager {
         _bitgetAuthService = bitgetAuthService,
         _web3AuthService = web3AuthService;
 
-  /// Initialize all integrations
-  Future<void> initialize() async {
-    try {
-      _log('Initializing Integration Manager...', 'info');
-
-      // Initialize Matrix Client Integrations
-      _etkeIntegration = EtkeIntegration();
-      _elementIntegration = ElementIntegration();
-      _fluffychatIntegration = FluffyChatIntegration();
-      _krilleChanIntegration = KrilleChanIntegration();
-      _nhekoIntegration = NhekoIntegration();
-      _cinnyIntegration = CinnyIntegration();
-      _neochatIntegration = NeoChatIntegration();
-
-      // Initialize Matrix Server Integrations
-      // _synapseIntegration = SynapseIntegration();
-      // _dendriteIntegration = DendriteIntegration();
-
-      // Initialize Matrix Backend Integrations
-      _matrixProtocolExtensions = MatrixProtocolExtensions(
-        apiKey: 'your-matrix-protocol-api-key',
-      );
-      _matrixBridgesIntegration = MatrixBridgesIntegration(
-        apiKey: 'your-matrix-bridges-api-key',
-      );
-      _matrixFederationIntegration = MatrixFederationIntegration(
-        apiKey: 'your-matrix-federation-api-key',
-      );
-      _matrixAppServicesIntegration = MatrixAppServicesIntegration(
-        apiKey: 'your-matrix-appservices-api-key',
-      );
-
-      // Initialize Advanced Matrix Integrations
-      _matrixAIIntegration = MatrixAIIntegration(
-        apiKey: 'your-matrix-ai-api-key',
-      );
-      _matrixBlockchainIntegration = MatrixBlockchainIntegration(
-        apiKey: 'your-matrix-blockchain-api-key',
-      );
-      _matrixIoTIntegration = MatrixIoTIntegration(
-        apiKey: 'your-matrix-iot-api-key',
-      );
-
-      // Initialize Git/GitHub Integration
-      _gitGitHubService = GitGitHubIntegration();
-
-      // Initialize Serverless Services Integration
-      _serverlessServicesIntegration = ServerlessServicesIntegration();
-
-      // Initialize API Integration
-      _apiIntegration = ApiIntegration();
-
-      // Initialize Auth Services
-      _tonAuthService ??= TONAuthService(apiKey: _config['ton_api_key'] ?? 'your_ton_api_key');
-      await _tonAuthService!.initialize();
-      _telegramAuthService ??= TelegramAuthService(apiKey: _config['telegram_api_key'] ?? 'your_telegram_api_key', botToken: _config['telegram_bot_token'] ?? 'your_bot_token');
-      await _telegramAuthService!.initialize();
-      _bitgetAuthService ??= BitgetAuthService(apiKey: _config['bitget_api_key'] ?? 'your_bitget_api_key', secretKey: _config['bitget_secret_key'] ?? 'your_bitget_secret_key', passphrase: _config['bitget_passphrase'] ?? 'your_bitget_passphrase');
-      await _bitgetAuthService!.initialize();
-      _web3AuthService ??= Web3AuthService(apiKey: _config['web3_api_key'] ?? 'your_web3_api_key');
-      await _web3AuthService!.initialize();
-
-      _log('Integration Manager initialized successfully', 'success');
-      notifyListeners();
-    } catch (e) {
-      _log('Error initializing Integration Manager: $e', 'error');
-    }
-  }
-
-  /// Initialize all integration services
-  Future<void> initializeAllServices() async {
-    try {
-      if (kDebugMode) {
-        print('[IntegrationManager] Initializing all integration services...');
-      }
-
-      // Initialize existing services
-      await _initializeMatrixClients();
-      await _initializeMatrixServers();
-      await _initializeServerlessServices();
-      await _initializeApiIntegration();
-      await _initializeMatrixProtocolExtensions();
-      await _initializeMatrixBridges();
-      await _initializeMatrixFederation();
-      await _initializeMatrixApplicationServices();
-      await _initializeMatrixAI();
-      await _initializeMatrixBlockchain();
-      await _initializeMatrixIoT();
-
-      // Initialize new services
-      await _initializeMatrixGaming();
-      await _initializeMatrixEducation();
-      await _initializeMatrixEnterprise();
-
-      if (kDebugMode) {
-        print('[IntegrationManager] All integration services initialized successfully');
-      }
-    } catch (e) {
-      if (kDebugMode) {
-        print('[IntegrationManager] Failed to initialize all services: $e');
-      }
-      rethrow;
-    }
-  }
-
-  /// Initialize Matrix Gaming Integration
-  Future<void> _initializeMatrixGaming() async {
-    try {
-      _matrixGamingIntegration = MatrixGamingIntegration(
-        apiKey: _config['matrix_gaming_api_key'] ?? '',
-        matrixClient: _matrixClient,
-        baseUrl: _config['matrix_gaming_base_url'] ?? 'https://api.matrix-gaming.org',
-      );
-      await _matrixGamingIntegration!.initialize();
-    } catch (e) {
-      if (kDebugMode) {
-        print('[IntegrationManager] Matrix Gaming initialization failed: $e');
-      }
-    }
-  }
-
-  /// Initialize Matrix Education Integration
-  Future<void> _initializeMatrixEducation() async {
-    try {
-      _matrixEducationIntegration = MatrixEducationIntegration(
-        apiKey: _config['matrix_education_api_key'] ?? '',
-        matrixClient: _matrixClient,
-        baseUrl: _config['matrix_education_base_url'] ?? 'https://api.matrix-education.org',
-      );
-      await _matrixEducationIntegration!.initialize();
-    } catch (e) {
-      if (kDebugMode) {
-        print('[IntegrationManager] Matrix Education initialization failed: $e');
-      }
-    }
-  }
-
-  /// Initialize Matrix Enterprise Integration
-  Future<void> _initializeMatrixEnterprise() async {
-    try {
-      _matrixEnterpriseIntegration = MatrixEnterpriseIntegration(
-        apiKey: _config['matrix_enterprise_api_key'] ?? '',
-        matrixClient: _matrixClient,
-        baseUrl: _config['matrix_enterprise_base_url'] ?? 'https://api.matrix-enterprise.org',
-      );
-      await _matrixEnterpriseIntegration!.initialize();
-    } catch (e) {
-      if (kDebugMode) {
-        print('[IntegrationManager] Matrix Enterprise initialization failed: $e');
-      }
-    }
-  }
-
-  /// Get all available services
-  Map<String, dynamic> getAvailableServices() {
-    return {
-      // Matrix Clients
-      'etke': _etkeIntegration != null,
-      'element': _elementIntegration != null,
-      'fluffychat': _fluffyChatIntegration != null,
-      'krilleChan': _krilleChanIntegration != null,
-      'nheko': _nhekoIntegration != null,
-      'cinny': _cinnyIntegration != null,
-      'neochat': _neoChatIntegration != null,
-      
-      // Matrix Servers
-      'synapse': _synapseIntegration != null,
-      'dendrite': _dendriteIntegration != null,
-      
-      // Matrix Backend Services
-      'matrixProtocolExtensions': _matrixProtocolExtensions != null,
-      'matrixBridges': _matrixBridgesIntegration != null,
-      'matrixFederation': _matrixFederationIntegration != null,
-      'matrixAppServices': _matrixAppServicesIntegration != null,
-      
-      // Advanced Matrix Services
-      'matrixAI': _matrixAIIntegration != null,
-      'matrixBlockchain': _matrixBlockchainIntegration != null,
-      'matrixIoT': _matrixIoTIntegration != null,
-      
-      // Git/GitHub
-      'gitGitHub': _gitGitHubService != null,
-      
-      // Serverless Services
-      'serverless': _serverlessServicesIntegration != null,
-      
-      // API Integration
-      'api': _apiIntegration != null,
-    };
-  }
-
-  /// Get service status
-  Future<Map<String, dynamic>> getServiceStatus() async {
-    final status = <String, dynamic>{};
-
-    // Matrix Client Status
-    if (_etkeIntegration != null) {
-      try {
-        final etkeStatus = await _etkeIntegration!.getServiceStatus();
-        status['etke'] = etkeStatus;
-        _serviceStatus['etke'] = etkeStatus['isOnline'] ?? false;
-      } catch (e) {
-        status['etke'] = {'error': e.toString(), 'isOnline': false};
-        _serviceStatus['etke'] = false;
-      }
-    }
-
-    if (_elementIntegration != null) {
-      try {
-        final elementStatus = await _elementIntegration!.getServiceStatus();
-        status['element'] = elementStatus;
-        _serviceStatus['element'] = elementStatus['isOnline'] ?? false;
-      } catch (e) {
-        status['element'] = {'error': e.toString(), 'isOnline': false};
-        _serviceStatus['element'] = false;
-      }
-    }
-
-    if (_fluffyChatIntegration != null) {
-      try {
-        final fluffyStatus = await _fluffyChatIntegration!.getServiceStatus();
-        status['fluffychat'] = fluffyStatus;
-        _serviceStatus['fluffychat'] = fluffyStatus['isOnline'] ?? false;
-      } catch (e) {
-        status['fluffychat'] = {'error': e.toString(), 'isOnline': false};
-        _serviceStatus['fluffychat'] = false;
-      }
-    }
-
-    if (_krilleChanIntegration != null) {
-      try {
-        final krilleStatus = await _krilleChanIntegration!.getServiceStatus();
-        status['krilleChan'] = krilleStatus;
-        _serviceStatus['krilleChan'] = krilleStatus['isOnline'] ?? false;
-      } catch (e) {
-        status['krilleChan'] = {'error': e.toString(), 'isOnline': false};
-        _serviceStatus['krilleChan'] = false;
-      }
-    }
-
-    if (_nhekoIntegration != null) {
-      try {
-        final nhekoStatus = await _nhekoIntegration!.getServiceStatus();
-        status['nheko'] = nhekoStatus;
-        _serviceStatus['nheko'] = nhekoStatus['isOnline'] ?? false;
-      } catch (e) {
-        status['nheko'] = {'error': e.toString(), 'isOnline': false};
-        _serviceStatus['nheko'] = false;
-      }
-    }
-
-    if (_cinnyIntegration != null) {
-      try {
-        final cinnyStatus = await _cinnyIntegration!.getServiceStatus();
-        status['cinny'] = cinnyStatus;
-        _serviceStatus['cinny'] = cinnyStatus['isOnline'] ?? false;
-      } catch (e) {
-        status['cinny'] = {'error': e.toString(), 'isOnline': false};
-        _serviceStatus['cinny'] = false;
-      }
-    }
-
-    if (_neoChatIntegration != null) {
-      try {
-        final neochatStatus = await _neoChatIntegration!.getServiceStatus();
-        status['neochat'] = neochatStatus;
-        _serviceStatus['neochat'] = neochatStatus['isOnline'] ?? false;
-      } catch (e) {
-        status['neochat'] = {'error': e.toString(), 'isOnline': false};
-        _serviceStatus['neochat'] = false;
-      }
-    }
-
-    // Matrix Server Status
-    // if (_synapseIntegration != null) {
-    //   try {
-    //     final synapseStatus = await _synapseIntegration!.getServerStatus();
-    //     status['synapse'] = synapseStatus;
-    //     _serviceStatus['synapse'] = synapseStatus['isOnline'] ?? false;
-    //   } catch (e) {
-    //     status['synapse'] = {'error': e.toString(), 'isOnline': false};
-    //     _serviceStatus['synapse'] = false;
-    //   }
-    // }
-
-    // if (_dendriteIntegration != null) {
-    //   try {
-    //     final dendriteStatus = await _dendriteIntegration!.getServerStatus();
-    //     status['dendrite'] = dendriteStatus;
-    //     _serviceStatus['dendrite'] = dendriteStatus['isOnline'] ?? false;
-    //   } catch (e) {
-    //     status['dendrite'] = {'error': e.toString(), 'isOnline': false};
-    //     _serviceStatus['dendrite'] = false;
-    //   }
-    // }
-
-    // Matrix Backend Services Status
-    if (_matrixProtocolExtensions != null) {
-      try {
-        final protocolExtensionsStatus = await _matrixProtocolExtensions!.getHealthStatus();
-        status['matrixProtocolExtensions'] = protocolExtensionsStatus;
-        _serviceStatus['matrixProtocolExtensions'] = protocolExtensionsStatus['isOnline'] ?? false;
-      } catch (e) {
-        status['matrixProtocolExtensions'] = {'error': e.toString(), 'isOnline': false};
-        _serviceStatus['matrixProtocolExtensions'] = false;
-      }
-    }
-
-    if (_matrixBridgesIntegration != null) {
-      try {
-        final bridgesStatus = await _matrixBridgesIntegration!.getHealthStatus();
-        status['matrixBridges'] = bridgesStatus;
-        _serviceStatus['matrixBridges'] = bridgesStatus['isOnline'] ?? false;
-      } catch (e) {
-        status['matrixBridges'] = {'error': e.toString(), 'isOnline': false};
-        _serviceStatus['matrixBridges'] = false;
-      }
-    }
-
-    if (_matrixFederationIntegration != null) {
-      try {
-        final federationStatus = await _matrixFederationIntegration!.getFederationStatus();
-        status['matrixFederation'] = federationStatus;
-        _serviceStatus['matrixFederation'] = federationStatus['isOnline'] ?? false;
-      } catch (e) {
-        status['matrixFederation'] = {'error': e.toString(), 'isOnline': false};
-        _serviceStatus['matrixFederation'] = false;
-      }
-    }
-
-    if (_matrixAppServicesIntegration != null) {
-      try {
-        final appServicesStatus = await _matrixAppServicesIntegration!.getHealthStatus();
-        status['matrixAppServices'] = appServicesStatus;
-        _serviceStatus['matrixAppServices'] = appServicesStatus['isOnline'] ?? false;
-      } catch (e) {
-        status['matrixAppServices'] = {'error': e.toString(), 'isOnline': false};
-        _serviceStatus['matrixAppServices'] = false;
-      }
-    }
-
-    // Git/GitHub Status
-    if (_gitGitHubService != null) {
-      try {
-        final gitStatus = await _gitGitHubService!.getServiceStatus();
-        status['gitGitHub'] = gitStatus;
-        _serviceStatus['gitGitHub'] = gitStatus['isConnected'] ?? false;
-      } catch (e) {
-        status['gitGitHub'] = {'error': e.toString(), 'isConnected': false};
-        _serviceStatus['gitGitHub'] = false;
-      }
-    }
-
-    // Serverless Services Status
-    if (_serverlessServicesIntegration != null) {
-      try {
-        final serverlessStatus = await _serverlessServicesIntegration!.getServiceStatus();
-        status['serverless'] = serverlessStatus;
-        _serviceStatus['serverless'] = serverlessStatus.isNotEmpty;
-      } catch (e) {
-        status['serverless'] = {'error': e.toString()};
-        _serviceStatus['serverless'] = false;
-      }
-    }
-
-    // API Integration Status
-    if (_apiIntegration != null) {
-      try {
-        final apiMetrics = _apiIntegration!.getApiMetrics();
-        status['api'] = {
-          'totalCalls': apiMetrics['totalCalls'],
-          'callCounts': apiMetrics['callCounts'],
-          'isAvailable': true,
-        };
-        _serviceStatus['api'] = true;
-      } catch (e) {
-        status['api'] = {'error': e.toString(), 'isAvailable': false};
-        _serviceStatus['api'] = false;
-      }
-    }
-
-    return status;
+  @override
+  void dispose() {
+    _etkeIntegration?.dispose();
+    _elementIntegration?.dispose();
+    _fluffyChatIntegration?.dispose();
+    _krilleChanIntegration?.dispose();
+    _nhekoIntegration?.dispose();
+    _cinnyIntegration?.dispose();
+    _neoChatIntegration?.dispose();
+    _synapseIntegration?.dispose();
+    _dendriteIntegration?.dispose();
+    _gitGitHubService?.dispose();
+    _serverlessServicesIntegration?.dispose();
+    _apiIntegration?.dispose();
+    
+    _eventController.close();
+    super.dispose();
   }
 
   /// Get Matrix Clients Dashboard Data
