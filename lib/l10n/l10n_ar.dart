@@ -9,7 +9,7 @@ class L10nAr extends L10n {
   L10nAr([String locale = 'ar']) : super(locale);
 
   @override
-  String get alwaysUse24HourFormat => '';
+  String get alwaysUse24HourFormat => 'خطأ';
 
   @override
   String get repeatPassword => 'كرّر كلمة السر';
@@ -76,8 +76,8 @@ class L10nAr extends L10n {
   String get addEmail => 'أضف بريدًا إلكترونيًا';
 
   @override
-  String get confirmMatrixId =>
-      'يرجى تأكيد معرف REChain الخاص بك من أجل حذف حسابك.';
+  String get confirmrechainonlineId =>
+      'يرجى تأكيد معرف rechain الخاص بك من أجل حذف حسابك.';
 
   @override
   String supposedMxid(String mxid) {
@@ -677,7 +677,7 @@ class L10nAr extends L10n {
   String get fileName => 'اسم الملف';
 
   @override
-  String get rechainonline => 'فلافي-شات';
+  String get rechain => 'فلافي-شات';
 
   @override
   String get fontSize => 'حجم الخط';
@@ -818,7 +818,7 @@ class L10nAr extends L10n {
 
   @override
   String inviteText(String username, String link) {
-    return 'دعاك $username إلى REChain.\n1. قم بزيارة موقع online.rechain.network وقم بتثبيت التطبيق\n2. قم بإنشاءحساب أو تسجيل الدخول\n3. افتح رابط الدعوة:\n $link';
+    return 'دعاك $username إلى rechain.\n1. قم بزيارة موقع https://online.rechain.network وقم بتثبيت التطبيق\n2. قم بإنشاءحساب أو تسجيل الدخول\n3. افتح رابط الدعوة:\n $link';
   }
 
   @override
@@ -942,7 +942,7 @@ class L10nAr extends L10n {
   String get newChat => 'محادثة جديدة';
 
   @override
-  String get newMessageInrechainonline => '💬 رسالة جديدة في rechainonline';
+  String get newMessageInrechainonline => '💬 رسالة جديدة في rechain';
 
   @override
   String get newVerificationRequest => 'طلب تحقق جديد!';
@@ -1661,7 +1661,7 @@ class L10nAr extends L10n {
 
   @override
   String get unsupportedAndroidVersionLong =>
-      'تتطلب هذه الميزة إصدار Android أحدث. يرجى التحقق من وجود تحديثات أو دعم Mobile Katya OS.';
+      'تتطلب هذه الميزة إصدار Android أحدث. يرجى التحقق من وجود تحديثات أو دعم Katya ® 👽 OS.';
 
   @override
   String get videoCallsBetaWarning =>
@@ -1678,7 +1678,7 @@ class L10nAr extends L10n {
 
   @override
   String get indexedDbErrorLong =>
-      'للأسف ، لم يتم تمكين تخزين الرسائل في الوضع الخاص افتراضيا.\nيرجى زيارة\n - حول:التكوين\n - تعيين dom.indexedDB.privateBrowsing.enabled إلى true\nخلاف ذلك ، لا يمكن تشغيل REChain.';
+      'للأسف ، لم يتم تمكين تخزين الرسائل في الوضع الخاص افتراضيا.\nيرجى زيارة\n - حول:التكوين\n - تعيين dom.indexedDB.privateBrowsing.enabled إلى true\nخلاف ذلك ، لا يمكن تشغيل rechain.';
 
   @override
   String switchToAccount(String number) {
@@ -1846,18 +1846,18 @@ class L10nAr extends L10n {
 
   @override
   String get callingAccountDetails =>
-      'يسمح لـ REChain باستخدام تطبيق android Dialer الأصلي.';
+      'يسمح لـ rechain باستخدام تطبيق android Dialer الأصلي.';
 
   @override
   String get appearOnTop => 'يظهر في الأعلى';
 
   @override
   String get appearOnTopDetails =>
-      'يسمح للتطبيق بالظهور في الأعلى (ليست هناك حاجة إذا قمت بالفعل بإعداد REChain كحساب اتصال)';
+      'يسمح للتطبيق بالظهور في الأعلى (ليست هناك حاجة إذا قمت بالفعل بإعداد rechain كحساب اتصال)';
 
   @override
   String get otherCallingPermissions =>
-      'الميكروفون والكاميرا وأذونات REChain الأخرى';
+      'الميكروفون والكاميرا وأذونات rechain الأخرى';
 
   @override
   String get whyIsThisMessageEncrypted =>
@@ -2005,7 +2005,7 @@ class L10nAr extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      'سيتم بعد ذلك إعادة إنشاء المحادثة باستخدام إصدار الغرفة الجديد. سيتم إخطار جميع المشاركين بأنهم بحاجة إلى التبديل إلى المحادثة الجديدة. يمكنك معرفة المزيد حول إصدارات الغرف على https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle';
+      'سيتم بعد ذلك إعادة إنشاء المحادثة باستخدام إصدار الغرفة الجديد. سيتم إخطار جميع المشاركين بأنهم بحاجة إلى التبديل إلى المحادثة الجديدة. يمكنك معرفة المزيد حول إصدارات الغرف على https://online.rechain.network';
 
   @override
   String get removeDevicesDescription =>
@@ -2337,7 +2337,7 @@ class L10nAr extends L10n {
   String get sendCanceled => 'تم إلغاء الإرسال';
 
   @override
-  String get loginWithMatrixId => 'تسجيل الدخول باستخدام معرف ماتريكس';
+  String get loginWithrechainonlineId => 'تسجيل الدخول باستخدام معرف ماتريكس';
 
   @override
   String get discoverHomeservers => 'اكتشف الخوادم المنزلية';
@@ -2347,7 +2347,7 @@ class L10nAr extends L10n {
 
   @override
   String get homeserverDescription =>
-      'يتم تخزين جميع بياناتك على خادم المنزل، تمامًا مثل مزود خدمة البريد الإلكتروني. يمكنك اختيار خادم البيت الذي تريد استخدامه، بينما لا يزال بإمكانك التواصل مع الجميع. اعرف المزيد على https://rechain.network.';
+      'يتم تخزين جميع بياناتك على خادم المنزل، تمامًا مثل مزود خدمة البريد الإلكتروني. يمكنك اختيار خادم البيت الذي تريد استخدامه، بينما لا يزال بإمكانك التواصل مع الجميع. اعرف المزيد على https://online.rechain.network.';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
@@ -2390,7 +2390,7 @@ class L10nAr extends L10n {
 
   @override
   String get welcomeText =>
-      'مرحبًا، 👋 معك REChain. يمكنك تسجيل الدخول إلى أي خادم منزلي، وهو متوافق مع https://rechain.network. ثم دردش مع أي شخص. إنها شبكة مراسلة لا مركزية ضخمة!';
+      'مرحبًا، 👋 معك rechain. يمكنك تسجيل الدخول إلى أي خادم منزلي، وهو متوافق مع https://online.rechain.network. ثم دردش مع أي شخص. إنها شبكة مراسلة لا مركزية ضخمة!';
 
   @override
   String get blur => 'الضبابية:';
@@ -2478,7 +2478,7 @@ class L10nAr extends L10n {
 
   @override
   String get appIntroduction =>
-      'REChain lets you chat with your friends across different messengers. Learn more at https://rechain.network or just tap *Continue*.';
+      'rechain lets you chat with your friends across different messengers. Learn more at https://online.rechain.network or just tap *Continue*.';
 
   @override
   String get newChatRequest => '📩 New chat request';
@@ -2710,10 +2710,4 @@ class L10nAr extends L10n {
 
   @override
   String get displayNavigationRail => 'Show navigation rail on mobile';
-
-  @override
-  String get customReaction => 'Custom reaction';
-
-  @override
-  String get moreEvents => 'More events';
 }

@@ -9,7 +9,7 @@ class L10nGa extends L10n {
   L10nGa([String locale = 'ga']) : super(locale);
 
   @override
-  String get alwaysUse24HourFormat => '';
+  String get alwaysUse24HourFormat => 'bréagach';
 
   @override
   String get repeatPassword => 'Scríobh an pasfhocal arís';
@@ -77,7 +77,7 @@ class L10nGa extends L10n {
   String get addEmail => 'Cuir ríomhphoist';
 
   @override
-  String get confirmMatrixId =>
+  String get confirmrechainonlineId =>
       'Deimhnigh d’ID Maitrís chun do chuntas a scriosadh.';
 
   @override
@@ -461,7 +461,7 @@ class L10nGa extends L10n {
   String get configureChat => 'Cumraigh comhrá';
 
   @override
-  String get confirm => 'Dearbhaigh';
+  String get confirm => 'Deimhnigh';
 
   @override
   String get connect => 'Ceangail';
@@ -693,7 +693,7 @@ class L10nGa extends L10n {
   String get fileName => 'Ainm an chomhaid';
 
   @override
-  String get rechainonline => 'rechainonline';
+  String get rechain => 'rechain';
 
   @override
   String get fontSize => 'Méid cló';
@@ -839,7 +839,7 @@ class L10nGa extends L10n {
 
   @override
   String inviteText(String username, String link) {
-    return 'Thug $username cuireadh duit chuig REChain.\n1. Tabhair cuairt ar online.rechain.network agus a shuiteáil an app\n2. Cláraigh nó sínigh isteach\n3. Oscail an nasc cuirí:\n $link';
+    return 'Thug $username cuireadh duit chuig rechain.\n1. Tabhair cuairt ar https://online.rechain.network agus a shuiteáil an app\n2. Cláraigh nó sínigh isteach\n3. Oscail an nasc cuirí:\n $link';
   }
 
   @override
@@ -963,8 +963,7 @@ class L10nGa extends L10n {
   String get newChat => 'Comhrá nua';
 
   @override
-  String get newMessageInrechainonline =>
-      '💬 Teachtaireacht nua in rechainonline';
+  String get newMessageInrechainonline => '💬 Teachtaireacht nua in rechain';
 
   @override
   String get newVerificationRequest => 'Iarratas fíoraithe nua!';
@@ -991,7 +990,7 @@ class L10nGa extends L10n {
 
   @override
   String norechainonlineServer(String server1, String server2) {
-    return 'Níl $server1 freastalaí Matrix. Úsáid $server2 ina áit sin?';
+    return 'Níl $server1 freastalaí rechain. Úsáid $server2 ina áit sin?';
   }
 
   @override
@@ -1442,7 +1441,7 @@ class L10nGa extends L10n {
   String get theyMatch => 'Tá siad céanna';
 
   @override
-  String get title => 'rechainonline';
+  String get title => 'rechain';
 
   @override
   String get toggleFavorite => 'Scoránaigh mar ceann is fearr leat';
@@ -1699,7 +1698,7 @@ class L10nGa extends L10n {
 
   @override
   String get unsupportedAndroidVersionLong =>
-      'Éilíonn an ghné seo leagan Android níos nuaí. Seiceáil le haghaidh nuashonruithe nó tacaíocht Mobile Katya OS.';
+      'Éilíonn an ghné seo leagan Android níos nuaí. Seiceáil le haghaidh nuashonruithe nó tacaíocht Katya ® 👽 OS.';
 
   @override
   String get videoCallsBetaWarning =>
@@ -1716,7 +1715,7 @@ class L10nGa extends L10n {
 
   @override
   String get indexedDbErrorLong =>
-      'Ar an drochuair níl an stóráil teachtaireachta cumasaithe sa mhód príobháideach de réir réamhshocraithe.\nTabhair cuairt le do thoil\n - faoi: config\n - socraithe dom.indexedDB.privateBrowsing.enabled go fíor\nSeachas sin, ní féidir REChain a rith.';
+      'Ar an drochuair níl an stóráil teachtaireachta cumasaithe sa mhód príobháideach de réir réamhshocraithe.\nTabhair cuairt le do thoil\n - faoi: config\n - socraithe dom.indexedDB.privateBrowsing.enabled go fíor\nSeachas sin, ní féidir rechain a rith.';
 
   @override
   String switchToAccount(String number) {
@@ -1885,18 +1884,18 @@ class L10nGa extends L10n {
 
   @override
   String get callingAccountDetails =>
-      'Ceadaíonn REChain an aip dhiailiú android dúchais a úsáid.';
+      'Ceadaíonn rechain an aip dhiailiú android dúchais a úsáid.';
 
   @override
   String get appearOnTop => 'Le feiceáil ar an mbarr';
 
   @override
   String get appearOnTopDetails =>
-      'Ceadaíonn sé don aip a bheith ar bharr (ní gá má tá socrú REChain agat cheana féin mar chuntas glao)';
+      'Ceadaíonn sé don aip a bheith ar bharr (ní gá má tá socrú rechain agat cheana féin mar chuntas glao)';
 
   @override
   String get otherCallingPermissions =>
-      'Micreafón, ceamara agus ceadanna REChain eile';
+      'Micreafón, ceamara agus ceadanna rechain eile';
 
   @override
   String get whyIsThisMessageEncrypted =>
@@ -2046,7 +2045,7 @@ class L10nGa extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      'Déanfar an comhrá a athchruthú ansin leis an leagan seomra nua. Cuirfear in iúl do gach rannpháirtí go gcaithfidh siad aistriú chuig an gcomhrá nua. Is féidir leat tuilleadh eolais a fháil faoi leaganacha seomra ag https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle';
+      'Déanfar an comhrá a athchruthú ansin leis an leagan seomra nua. Cuirfear in iúl do gach rannpháirtí go gcaithfidh siad aistriú chuig an gcomhrá nua. Is féidir leat tuilleadh eolais a fháil faoi leaganacha seomra ag https://online.rechain.network';
 
   @override
   String get removeDevicesDescription =>
@@ -2387,7 +2386,7 @@ class L10nGa extends L10n {
   String get sendCanceled => 'Cealaíodh seoladh';
 
   @override
-  String get loginWithMatrixId => 'Logáil isteach le REChain-ID';
+  String get loginWithrechainonlineId => 'Logáil isteach le rechain ID';
 
   @override
   String get discoverHomeservers => 'Faigh amach faoi fhreastalaithe baile';
@@ -2397,7 +2396,7 @@ class L10nGa extends L10n {
 
   @override
   String get homeserverDescription =>
-      'Stóráiltear do chuid sonraí go léir ar an bhfreastalaí baile, díreach cosúil le soláthraí ríomhphoist. Is féidir leat an freastalaí baile is mian leat a úsáid a roghnú, agus is féidir leat cumarsáid a dhéanamh le gach duine fós. Foghlaim níos mó ag https://rechain.network.';
+      'Stóráiltear do chuid sonraí go léir ar an bhfreastalaí baile, díreach cosúil le soláthraí ríomhphoist. Is féidir leat an freastalaí baile is mian leat a úsáid a roghnú, agus is féidir leat cumarsáid a dhéanamh le gach duine fós. Foghlaim níos mó ag https://online.rechain.network.';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
@@ -2441,7 +2440,7 @@ class L10nGa extends L10n {
 
   @override
   String get welcomeText =>
-      'Hey Hey 👋 Is é seo REChain. Is féidir leat síniú isteach in aon fhreastalaí baile, atá comhoiriúnach leis https://rechain.network. Agus ansin comhrá a dhéanamh le duine ar bith. Is líonra teachtaireachtaí díláraithe ollmhór é!';
+      'Hey Hey 👋 Is é seo rechain. Is féidir leat síniú isteach in aon fhreastalaí baile, atá comhoiriúnach leis https://online.rechain.network. Agus ansin comhrá a dhéanamh le duine ar bith. Is líonra teachtaireachtaí díláraithe ollmhór é!';
 
   @override
   String get blur => 'Doiléirigh:';
@@ -2530,7 +2529,7 @@ class L10nGa extends L10n {
 
   @override
   String get appIntroduction =>
-      'Ligeann REChain duit comhrá a dhéanamh le do chairde thar theachtairí éagsúla. Foghlaim tuilleadh ag https://rechain.network nó tapáil *Ar aghaidh*.';
+      'Ligeann rechain duit comhrá a dhéanamh le do chairde thar theachtairí éagsúla. Foghlaim tuilleadh ag https://online.rechain.network nó tapáil *Ar aghaidh*.';
 
   @override
   String get newChatRequest => '📩 Iarratas comhrá nua';
@@ -2700,7 +2699,7 @@ class L10nGa extends L10n {
 
   @override
   String sentVoiceMessage(String sender, String duration) {
-    return '🎙️ $duration - Teachtaireacht ghutha ó $sender';
+    return '🎙️ $duration - $sender';
   }
 
   @override
@@ -2756,18 +2755,11 @@ class L10nGa extends L10n {
       'Fan anois, le do thoil, go dtí go dtabharfaidh duine éigin ón seomra cuireadh duit.';
 
   @override
-  String get commandHint_logout => 'Logáil amach as do ghléas reatha';
+  String get commandHint_logout => 'Logout your current device';
 
   @override
-  String get commandHint_logoutall => 'Logáil amach gach gléas gníomhach';
+  String get commandHint_logoutall => 'Logout all active devices';
 
   @override
-  String get displayNavigationRail =>
-      'Taispeáin ráille nascleanúna ar fhóin phóca';
-
-  @override
-  String get customReaction => 'Custom reaction';
-
-  @override
-  String get moreEvents => 'More events';
+  String get displayNavigationRail => 'Show navigation rail on mobile';
 }

@@ -76,8 +76,8 @@ class L10nSv extends L10n {
   String get addEmail => 'Lägg till e-post';
 
   @override
-  String get confirmMatrixId =>
-      'Bekräfta ditt REChain-ID för att radera ditt konto.';
+  String get confirmrechainonlineId =>
+      'Bekräfta ditt rechain ID för att radera ditt konto.';
 
   @override
   String supposedMxid(String mxid) {
@@ -374,7 +374,7 @@ class L10nSv extends L10n {
 
   @override
   String get commandHint_markasdm =>
-      'Märk som rum för direktmeddelanden för det givante REChain ID';
+      'Märk som rum för direktmeddelanden för det givante rechain ID';
 
   @override
   String get commandHint_markasgroup => 'Märk som grupp';
@@ -683,7 +683,7 @@ class L10nSv extends L10n {
   String get fileName => 'Filnamn';
 
   @override
-  String get rechainonline => 'rechainonline';
+  String get rechain => 'rechain';
 
   @override
   String get fontSize => 'Textstorlek';
@@ -826,7 +826,7 @@ class L10nSv extends L10n {
 
   @override
   String inviteText(String username, String link) {
-    return '$username bjöd in dig till REChain.\n1. Besök online.rechain.network och installera appen\n2. Registrera dig eller logga in\n3. Öppna inbjudningslänk:\n $link';
+    return '$username bjöd in dig till rechain.\n1. Besök https://online.rechain.network och installera appen\n2. Registrera dig eller logga in\n3. Öppna inbjudningslänk:\n $link';
   }
 
   @override
@@ -951,7 +951,7 @@ class L10nSv extends L10n {
   String get newChat => 'Ny chatt';
 
   @override
-  String get newMessageInrechainonline => '💬 Nya meddelanden i rechainonline';
+  String get newMessageInrechainonline => '💬 Nya meddelanden i rechain';
 
   @override
   String get newVerificationRequest => 'Ny verifikationsbegäran!';
@@ -974,11 +974,11 @@ class L10nSv extends L10n {
 
   @override
   String get noGoogleServicesWarning =>
-      'De ser ut som att du inte har google-tjänster på din telefon. Det är ett bra beslut för din integritet! För att få aviseringar i REChain rekommenderar vi att använda https://microg.org/ eller https://unifiedpush.org/ .';
+      'De ser ut som att du inte har google-tjänster på din telefon. Det är ett bra beslut för din integritet! För att få aviseringar i rechain rekommenderar vi att använda https://microg.org/ eller https://unifiedpush.org/ .';
 
   @override
   String norechainonlineServer(String server1, String server2) {
-    return '$server1 är inte en REChain server, använd $server2 istället?';
+    return '$server1 är inte en rechain server, använd $server2 istället?';
   }
 
   @override
@@ -1423,7 +1423,7 @@ class L10nSv extends L10n {
   String get theyMatch => 'Dom Matchar';
 
   @override
-  String get title => 'rechainonline';
+  String get title => 'rechain';
 
   @override
   String get toggleFavorite => 'Växla favorit';
@@ -1696,7 +1696,7 @@ class L10nSv extends L10n {
 
   @override
   String get indexedDbErrorLong =>
-      'Meddelandelagring är tyvärr inte aktiverat i privat läge som standard.\nGå till\n - about:config\n - sätt dom.indexedDB.privateBrowsing.enabled till true\nAnnars går det inte att använda REChain.';
+      'Meddelandelagring är tyvärr inte aktiverat i privat läge som standard.\nGå till\n - about:config\n - sätt dom.indexedDB.privateBrowsing.enabled till true\nAnnars går det inte att använda rechain.';
 
   @override
   String switchToAccount(String number) {
@@ -1857,7 +1857,7 @@ class L10nSv extends L10n {
   String get screenSharingTitle => 'skärmdelning';
 
   @override
-  String get screenSharingDetail => 'Du delar din skärm i rechainonline';
+  String get screenSharingDetail => 'Du delar din skärm i rechain';
 
   @override
   String get callingPermissions => 'Samtalsbehörighet';
@@ -1867,18 +1867,18 @@ class L10nSv extends L10n {
 
   @override
   String get callingAccountDetails =>
-      'Tillåt REChain att använda Androids ring-app.';
+      'Tillåt rechain att använda Androids ring-app.';
 
   @override
   String get appearOnTop => 'Visa ovanpå';
 
   @override
   String get appearOnTopDetails =>
-      'Tillåt att appen visas ovanpå (behövs inte om du redan har REChain konfigurerat som ett samtalskonto)';
+      'Tillåt att appen visas ovanpå (behövs inte om du redan har rechain konfigurerat som ett samtalskonto)';
 
   @override
   String get otherCallingPermissions =>
-      'Mikrofon, kamera och andra behörigheter för rechainonline';
+      'Mikrofon, kamera och andra behörigheter för rechain';
 
   @override
   String get whyIsThisMessageEncrypted =>
@@ -2026,7 +2026,7 @@ class L10nSv extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      'Chatten kommer då att återskapas med den nya rumversionen. Alla medlemmar kommer bli påminda om att de måste byta till den nya chatten. Du kan läsa mer om rumversioner på https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle';
+      'Chatten kommer då att återskapas med den nya rumversionen. Alla medlemmar kommer bli påminda om att de måste byta till den nya chatten. Du kan läsa mer om rumversioner på https://online.rechain.network';
 
   @override
   String get removeDevicesDescription =>
@@ -2276,10 +2276,10 @@ class L10nSv extends L10n {
   String get discover => 'Upptäck';
 
   @override
-  String get commandHint_ignore => 'Ignore the given REChain ID';
+  String get commandHint_ignore => 'Ignore the given rechain ID';
 
   @override
-  String get commandHint_unignore => 'Unignore the given REChain ID';
+  String get commandHint_unignore => 'Unignore the given rechain ID';
 
   @override
   String unreadChatsInApp(String appname, String unread) {
@@ -2364,7 +2364,7 @@ class L10nSv extends L10n {
   String get sendCanceled => 'Sending canceled';
 
   @override
-  String get loginWithMatrixId => 'Login with REChain-ID';
+  String get loginWithrechainonlineId => 'Login with rechain ID';
 
   @override
   String get discoverHomeservers => 'Discover homeservers';
@@ -2374,7 +2374,7 @@ class L10nSv extends L10n {
 
   @override
   String get homeserverDescription =>
-      'All your data is stored on the homeserver, just like an email provider. You can choose which homeserver you want to use, while you can still communicate with everyone. Learn more at at https://rechain.network.';
+      'All your data is stored on the homeserver, just like an email provider. You can choose which homeserver you want to use, while you can still communicate with everyone. Learn more at at https://online.rechain.network.';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
@@ -2418,7 +2418,7 @@ class L10nSv extends L10n {
 
   @override
   String get welcomeText =>
-      'Hey Hey 👋 This is REChain. You can sign in to any homeserver, which is compatible with https://rechain.network. And then chat with anyone. It\'s a huge decentralized messaging network!';
+      'Hey Hey 👋 This is rechain. You can sign in to any homeserver, which is compatible with https://online.rechain.network. And then chat with anyone. It\'s a huge decentralized messaging network!';
 
   @override
   String get blur => 'Blur:';
@@ -2506,7 +2506,7 @@ class L10nSv extends L10n {
 
   @override
   String get appIntroduction =>
-      'REChain lets you chat with your friends across different messengers. Learn more at https://rechain.network or just tap *Continue*.';
+      'rechain lets you chat with your friends across different messengers. Learn more at https://online.rechain.network or just tap *Continue*.';
 
   @override
   String get newChatRequest => '📩 New chat request';
@@ -2738,10 +2738,4 @@ class L10nSv extends L10n {
 
   @override
   String get displayNavigationRail => 'Show navigation rail on mobile';
-
-  @override
-  String get customReaction => 'Custom reaction';
-
-  @override
-  String get moreEvents => 'More events';
 }

@@ -56,7 +56,6 @@ class ChatSettingsPopupMenuState extends State<ChatSettingsPopupMenu> {
           onSelected: (choice) async {
             switch (choice) {
               case ChatPopupMenuActions.leave:
-                final router = GoRouter.of(context);
                 final confirmed = await showOkCancelAlertDialog(
                   context: context,
                   title: L10n.of(context).areYouSure,
@@ -65,15 +64,15 @@ class ChatSettingsPopupMenuState extends State<ChatSettingsPopupMenu> {
                   cancelLabel: L10n.of(context).cancel,
                   isDestructive: true,
                 );
-                if (confirmed != OkCancelResult.ok) return;
-                final result = await showFutureLoadingDialog(
-                  context: context,
-                  future: () => widget.room.leave(),
-                );
-                if (result.error == null) {
-                  router.go('/rooms');
+                if (confirmed == OkCancelResult.ok) {
+                  final success = await showFutureLoadingDialog(
+                    context: context,
+                    future: () => widget.room.leave(),
+                  );
+                  if (success.error == null) {
+                    context.go('/rooms');
+                  }
                 }
-
                 break;
               case ChatPopupMenuActions.mute:
                 await showFutureLoadingDialog(

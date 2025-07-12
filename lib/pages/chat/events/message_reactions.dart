@@ -4,6 +4,7 @@ import 'package:collection/collection.dart' show IterableExtension;
 import 'package:matrix/matrix.dart';
 
 import 'package:rechainonline/config/app_config.dart';
+import 'package:rechainonline/config/themes.dart';
 import 'package:rechainonline/widgets/avatar.dart';
 import 'package:rechainonline/widgets/future_loading_dialog.dart';
 import 'package:rechainonline/widgets/matrix.dart';
@@ -109,7 +110,11 @@ class _Reaction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-
+    final textColor =
+        theme.brightness == Brightness.dark ? Colors.white : Colors.black;
+    final color = reacted == true
+        ? theme.bubbleColor
+        : theme.colorScheme.surfaceContainerHigh;
     Widget content;
     if (reactionKey.startsWith('mxc://')) {
       content = Row(
@@ -126,9 +131,8 @@ class _Reaction extends StatelessWidget {
             const SizedBox(width: 4),
             Text(
               count.toString(),
-              textAlign: TextAlign.center,
               style: TextStyle(
-                color: theme.colorScheme.onSurface,
+                color: textColor,
                 fontSize: DefaultTextStyle.of(context).style.fontSize,
               ),
             ),
@@ -143,7 +147,7 @@ class _Reaction extends StatelessWidget {
       content = Text(
         renderKey.toString() + (count > 1 ? ' $count' : ''),
         style: TextStyle(
-          color: theme.colorScheme.onSurface,
+          color: reacted == true ? theme.onBubbleColor : textColor,
           fontSize: DefaultTextStyle.of(context).style.fontSize,
         ),
       );
@@ -154,15 +158,7 @@ class _Reaction extends StatelessWidget {
       borderRadius: BorderRadius.circular(AppConfig.borderRadius / 2),
       child: Container(
         decoration: BoxDecoration(
-          color: reacted == true
-              ? theme.colorScheme.primaryContainer
-              : theme.colorScheme.surfaceContainerHigh,
-          border: Border.all(
-            color: reacted == true
-                ? theme.colorScheme.primary
-                : theme.colorScheme.surfaceContainerHigh,
-            width: 1,
-          ),
+          color: color,
           borderRadius: BorderRadius.circular(AppConfig.borderRadius / 2),
         ),
         padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),

@@ -64,7 +64,7 @@ class SettingsSecurityController extends State<SettingsSecurity> {
     final mxid = await showTextInputDialog(
       useRootNavigator: false,
       context: context,
-      title: L10n.of(context).confirmMatrixId,
+      title: L10n.of(context).confirmrechainonlineId,
       validator: (text) => text == supposedMxid
           ? null
           : L10n.of(context).supposedMxid(supposedMxid),

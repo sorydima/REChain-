@@ -76,8 +76,8 @@ class L10nId extends L10n {
   String get addEmail => 'Tambah email';
 
   @override
-  String get confirmMatrixId =>
-      'Mohon konfirmasi ID REChain Anda untuk menghapus akun Anda.';
+  String get confirmrechainonlineId =>
+      'Mohon konfirmasi ID rechain Anda untuk menghapus akun Anda.';
 
   @override
   String supposedMxid(String mxid) {
@@ -375,7 +375,7 @@ class L10nId extends L10n {
 
   @override
   String get commandHint_markasdm =>
-      'Tandai sebagai ruangan pesan langsung untuk ID REChain yang ditentukan';
+      'Tandai sebagai ruangan pesan langsung untuk ID rechain yang ditentukan';
 
   @override
   String get commandHint_markasgroup => 'Tandai sebagai grup';
@@ -690,7 +690,7 @@ class L10nId extends L10n {
   String get fileName => 'Nama file';
 
   @override
-  String get rechainonline => 'rechainonline';
+  String get rechain => 'rechain';
 
   @override
   String get fontSize => 'Ukuran font';
@@ -833,7 +833,7 @@ class L10nId extends L10n {
 
   @override
   String inviteText(String username, String link) {
-    return '$username mengundang kamu ke REChain. \n1. Kunjungi online.rechain.network dan instal aplikasi\n2. Daftar atau masuk \n3. Buka tautan undangan: \n $link';
+    return '$username mengundang kamu ke rechain. \n1. Kunjungi https://online.rechain.network dan instal aplikasi\n2. Daftar atau masuk \n3. Buka tautan undangan: \n $link';
   }
 
   @override
@@ -957,7 +957,7 @@ class L10nId extends L10n {
   String get newChat => 'Chat baru';
 
   @override
-  String get newMessageInrechainonline => '💬 Pesan baru di rechainonline';
+  String get newMessageInrechainonline => '💬 Pesan baru di rechain';
 
   @override
   String get newVerificationRequest => 'Permintaan verifikasi baru!';
@@ -984,7 +984,7 @@ class L10nId extends L10n {
 
   @override
   String norechainonlineServer(String server1, String server2) {
-    return '$server1 itu bukan server REChain, gunakan $server2 saja?';
+    return '$server1 itu bukan server rechain, gunakan $server2 saja?';
   }
 
   @override
@@ -1430,7 +1430,7 @@ class L10nId extends L10n {
   String get theyMatch => 'Cocok';
 
   @override
-  String get title => 'rechainonline';
+  String get title => 'rechain';
 
   @override
   String get toggleFavorite => 'Beralih Favorit';
@@ -1684,7 +1684,7 @@ class L10nId extends L10n {
 
   @override
   String get unsupportedAndroidVersionLong =>
-      'Fitur ini memerlukan versi Android yang baru. Mohon periksa untuk pembaruan atau dukungan Mobile KatyaOS.';
+      'Fitur ini memerlukan versi Android yang baru. Mohon periksa untuk pembaruan atau dukungan Katya ® 👽OS.';
 
   @override
   String get videoCallsBetaWarning =>
@@ -1701,7 +1701,7 @@ class L10nId extends L10n {
 
   @override
   String get indexedDbErrorLong =>
-      'Penyimpanan pesan sayangnya tidak diaktifkan dalam mode privat secara default.\nMohon kunjungi\n- about:config\n- tetapkan dom.indexedDB.privateBrowsing.enabled ke true\nJika tidak ditetapkan, REChain tidak akan dapat dijalankan.';
+      'Penyimpanan pesan sayangnya tidak diaktifkan dalam mode privat secara default.\nMohon kunjungi\n- about:config\n- tetapkan dom.indexedDB.privateBrowsing.enabled ke true\nJika tidak ditetapkan, rechain tidak akan dapat dijalankan.';
 
   @override
   String switchToAccount(String number) {
@@ -1860,7 +1860,7 @@ class L10nId extends L10n {
   String get screenSharingTitle => 'membagikan layar';
 
   @override
-  String get screenSharingDetail => 'Kamu membagikan layarmu di rechainonline';
+  String get screenSharingDetail => 'Kamu membagikan layarmu di rechain';
 
   @override
   String get callingPermissions => 'Perizinan panggilan';
@@ -1870,18 +1870,18 @@ class L10nId extends L10n {
 
   @override
   String get callingAccountDetails =>
-      'Memperbolehkan REChain untuk menggunakan aplikasi penelepon Android bawaan.';
+      'Memperbolehkan rechain untuk menggunakan aplikasi penelepon Android bawaan.';
 
   @override
   String get appearOnTop => 'Tampilkan di atas';
 
   @override
   String get appearOnTopDetails =>
-      'Memperbolehkan aplikasi untuk ditampilkan di atas (tidak dibutuhkan jika kamu memiliki REChain ditetapkan sebagai akun pemanggilan)';
+      'Memperbolehkan aplikasi untuk ditampilkan di atas (tidak dibutuhkan jika kamu memiliki rechain ditetapkan sebagai akun pemanggilan)';
 
   @override
   String get otherCallingPermissions =>
-      'Mikrofon, kamera dan perizinan REChain lainnya';
+      'Mikrofon, kamera dan perizinan rechain lainnya';
 
   @override
   String get whyIsThisMessageEncrypted =>
@@ -2030,7 +2030,7 @@ class L10nId extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      'Percakapannya akan dibuat ulang dengan versi ruangan yang baru. Semua anggota akan diberi tahu bahwa mereka harus ganti ke percakapan yang baru. Kamu bisa mempelajari lebih lanjut tentang versi ruangan di https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle';
+      'Percakapannya akan dibuat ulang dengan versi ruangan yang baru. Semua anggota akan diberi tahu bahwa mereka harus ganti ke percakapan yang baru. Kamu bisa mempelajari lebih lanjut tentang versi ruangan di https://online.rechain.network';
 
   @override
   String get removeDevicesDescription =>
@@ -2282,11 +2282,11 @@ class L10nId extends L10n {
   String get discover => 'Jelajahi';
 
   @override
-  String get commandHint_ignore => 'Abaikan ID REChain yang diberikan';
+  String get commandHint_ignore => 'Abaikan ID rechain yang diberikan';
 
   @override
   String get commandHint_unignore =>
-      'Batalkan pengabaian ID REChain yang diberikan';
+      'Batalkan pengabaian ID rechain yang diberikan';
 
   @override
   String unreadChatsInApp(String appname, String unread) {
@@ -2369,7 +2369,7 @@ class L10nId extends L10n {
   String get sendCanceled => 'Pengiriman dibatalkan';
 
   @override
-  String get loginWithMatrixId => 'Masuk dengan ID REChain';
+  String get loginWithrechainonlineId => 'Masuk dengan ID rechain';
 
   @override
   String get discoverHomeservers => 'Jelajahi homeserver';
@@ -2379,7 +2379,7 @@ class L10nId extends L10n {
 
   @override
   String get homeserverDescription =>
-      'Semua data Anda disimpan di dalam server, seperti halnya penyedia email. Anda dapat memilih homeserver mana yang ingin Anda gunakan, sementara Anda masih dapat berkomunikasi dengan semua orang. Pelajari lebih lanjut di https://rechain.network.';
+      'Semua data Anda disimpan di dalam server, seperti halnya penyedia email. Anda dapat memilih homeserver mana yang ingin Anda gunakan, sementara Anda masih dapat berkomunikasi dengan semua orang. Pelajari lebih lanjut di https://online.rechain.network.';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
@@ -2423,7 +2423,7 @@ class L10nId extends L10n {
 
   @override
   String get welcomeText =>
-      'Halo 👋 Ini REChain. Kamu bisa masuk ke homeserver mana pun, yang kompatibel dengan https://rechain.network. Lalu, chat dengan siapa pun. Ini merupakan jaringan perpesanan besar yang terdesentralisasi!';
+      'Halo 👋 Ini rechain. Kamu bisa masuk ke homeserver mana pun, yang kompatibel dengan https://online.rechain.network. Lalu, chat dengan siapa pun. Ini merupakan jaringan perpesanan besar yang terdesentralisasi!';
 
   @override
   String get blur => 'Buram:';
@@ -2511,7 +2511,7 @@ class L10nId extends L10n {
 
   @override
   String get appIntroduction =>
-      'REChain memungkinkanmu untuk mengobrol dengan teman-temanmu di berbagai perpesanan. Pelajari lebih lanjut di https://rechain.network atau ketuk *Lanjutkan* saja.';
+      'rechain memungkinkanmu untuk mengobrol dengan teman-temanmu di berbagai perpesanan. Pelajari lebih lanjut di https://online.rechain.network atau ketuk *Lanjutkan* saja.';
 
   @override
   String get newChatRequest => '📩 Permintaan pesan baru';
@@ -2680,7 +2680,7 @@ class L10nId extends L10n {
 
   @override
   String sentVoiceMessage(String sender, String duration) {
-    return '🎙️ $duration - Pesan suara dari $sender';
+    return '🎙️ $duration - $sender';
   }
 
   @override
@@ -2736,17 +2736,11 @@ class L10nId extends L10n {
       'Silakan menunggu sampai seseorang dari ruangan mengundang Anda.';
 
   @override
-  String get commandHint_logout => 'Keluar dari perangkatmu saat ini';
+  String get commandHint_logout => 'Logout your current device';
 
   @override
-  String get commandHint_logoutall => 'Keluarkan semua perangkat aktif';
+  String get commandHint_logoutall => 'Logout all active devices';
 
   @override
-  String get displayNavigationRail => 'Tampilkan jalur navigasi pada ponsel';
-
-  @override
-  String get customReaction => 'Custom reaction';
-
-  @override
-  String get moreEvents => 'More events';
+  String get displayNavigationRail => 'Show navigation rail on mobile';
 }

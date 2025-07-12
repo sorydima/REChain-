@@ -9,7 +9,7 @@ class L10nHu extends L10n {
   L10nHu([String locale = 'hu']) : super(locale);
 
   @override
-  String get alwaysUse24HourFormat => '';
+  String get alwaysUse24HourFormat => 'hamis';
 
   @override
   String get repeatPassword => 'Jelszó ismétlése';
@@ -76,8 +76,8 @@ class L10nHu extends L10n {
   String get addEmail => 'E-mail-cím hozzáadása';
 
   @override
-  String get confirmMatrixId =>
-      'Kérem, igazolja vissza REChain ID-jét a fiók törléséhez.';
+  String get confirmrechainonlineId =>
+      'Kérem, igazolja vissza rechain ID-jét a fiók törléséhez.';
 
   @override
   String supposedMxid(String mxid) {
@@ -173,7 +173,7 @@ class L10nHu extends L10n {
   @override
   String badServerLoginTypesException(String serverVersions,
       String supportedVersions, Object suportedVersions) {
-    return 'A REChain-kiszolgáló a következő bejelentkezéseket támogatja:\n$serverVersions\nDe ez az alkalmazást csak ezeket támogatja:\n$supportedVersions';
+    return 'A rechain-kiszolgáló a következő bejelentkezéseket támogatja:\n$serverVersions\nDe ez az alkalmazást csak ezeket támogatja:\n$supportedVersions';
   }
 
   @override
@@ -192,7 +192,7 @@ class L10nHu extends L10n {
       Object serverVerions,
       Object supoortedVersions,
       Object suportedVersions) {
-    return 'A REChain-kiszolgáló ezeket a specifikált verziókat támogatja:\n$serverVersions\nAzonban ez az app csak a következőket: $supportedVersions';
+    return 'A rechain-kiszolgáló ezeket a specifikált verziókat támogatja:\n$serverVersions\nAzonban ez az app csak a következőket: $supportedVersions';
   }
 
   @override
@@ -324,7 +324,7 @@ class L10nHu extends L10n {
   String get changePassword => 'Jelszó módosítása';
 
   @override
-  String get changeTheHomeserver => 'REChain-kiszolgáló váltás';
+  String get changeTheHomeserver => 'rechain-kiszolgáló váltás';
 
   @override
   String get changeTheme => 'Stílusának módosítása';
@@ -372,7 +372,7 @@ class L10nHu extends L10n {
 
   @override
   String get commandHint_markasdm =>
-      'Szoba megjelölése mint közvetlen csevegő szoba az adott REChain ID-nél';
+      'Szoba megjelölése mint közvetlen csevegő szoba az adott rechain ID-nél';
 
   @override
   String get commandHint_markasgroup => 'Jelölés csoportnak';
@@ -667,10 +667,10 @@ class L10nHu extends L10n {
   String get enterAnEmailAddress => 'Adjon meg egy email címet';
 
   @override
-  String get homeserver => 'REChain-kiszolgáló';
+  String get homeserver => 'rechain-kiszolgáló';
 
   @override
-  String get enterYourHomeserver => 'Adja meg a REChain-kiszolgálóját';
+  String get enterYourHomeserver => 'Adja meg a rechain-kiszolgálóját';
 
   @override
   String errorObtainingLocation(String error) {
@@ -687,7 +687,7 @@ class L10nHu extends L10n {
   String get fileName => 'Fájlnév';
 
   @override
-  String get rechainonline => 'rechainonline';
+  String get rechain => 'rechain';
 
   @override
   String get fontSize => 'Betűméret';
@@ -829,7 +829,7 @@ class L10nHu extends L10n {
 
   @override
   String inviteText(String username, String link) {
-    return '$username meghívta a REChain-be.\n1. Keresse fel a online.rechain.network oldalt, és telepítse az alkalmazást \n2. Regisztráljon vagy jelentkezzen be \n3. Nyissa meg a meghívó linket: \n $link';
+    return '$username meghívta a rechain-be.\n1. Keresse fel a https://online.rechain.network oldalt, és telepítse az alkalmazást \n2. Regisztráljon vagy jelentkezzen be \n3. Nyissa meg a meghívó linket: \n $link';
   }
 
   @override
@@ -921,7 +921,7 @@ class L10nHu extends L10n {
 
   @override
   String logInTo(String homeserver) {
-    return 'Bejelentkezés a(z) $homeserver REChain-kiszolgálóra';
+    return 'Bejelentkezés a(z) $homeserver rechain-kiszolgálóra';
   }
 
   @override
@@ -953,7 +953,7 @@ class L10nHu extends L10n {
   String get newChat => 'Új csevegés';
 
   @override
-  String get newMessageInrechainonline => '💬 Új REChain üzenet';
+  String get newMessageInrechainonline => '💬 Új rechain üzenet';
 
   @override
   String get newVerificationRequest => 'Új hitelesítési kérelem!';
@@ -980,7 +980,7 @@ class L10nHu extends L10n {
 
   @override
   String norechainonlineServer(String server1, String server2) {
-    return '$server1 nem egy REChain szerver, akarja használja a $server2 szervert inkább?';
+    return '$server1 nem egy rechain szerver, akarja használja a $server2 szervert inkább?';
   }
 
   @override
@@ -1429,7 +1429,7 @@ class L10nHu extends L10n {
   String get theyMatch => 'Egyezőek';
 
   @override
-  String get title => 'rechainonline';
+  String get title => 'rechain';
 
   @override
   String get toggleFavorite => 'Kedvencek megjelenítése';
@@ -1682,7 +1682,7 @@ class L10nHu extends L10n {
 
   @override
   String get unsupportedAndroidVersionLong =>
-      'Ehhez a funkcióhoz egy újabb Android verzió kell. Kérem ellenőrizze be van e frissítve teljesen készüléke, esetlegesen van e Mobile KatyaOS támogatás hozzá.';
+      'Ehhez a funkcióhoz egy újabb Android verzió kell. Kérem ellenőrizze be van e frissítve teljesen készüléke, esetlegesen van e Katya ® 👽OS támogatás hozzá.';
 
   @override
   String get videoCallsBetaWarning =>
@@ -1699,7 +1699,7 @@ class L10nHu extends L10n {
 
   @override
   String get indexedDbErrorLong =>
-      'Sajnos az üzenet mentés alapból nincs bekapcsolva privát módban.\nKeresse meg a\n - about:config\n - állítsa a dom.indexedDB.privateBrowsing.enabled \"true\"-ra\nMáskülönben nem lehetséges a REChain futtatása.';
+      'Sajnos az üzenet mentés alapból nincs bekapcsolva privát módban.\nKeresse meg a\n - about:config\n - állítsa a dom.indexedDB.privateBrowsing.enabled \"true\"-ra\nMáskülönben nem lehetséges a rechain futtatása.';
 
   @override
   String switchToAccount(String number) {
@@ -1858,7 +1858,7 @@ class L10nHu extends L10n {
   String get screenSharingTitle => 'képernyő megosztás';
 
   @override
-  String get screenSharingDetail => 'Megosztja a képernyőjét a REChain-ben';
+  String get screenSharingDetail => 'Megosztja a képernyőjét a rechain-ben';
 
   @override
   String get callingPermissions => 'Hívási engedélyek';
@@ -1868,18 +1868,18 @@ class L10nHu extends L10n {
 
   @override
   String get callingAccountDetails =>
-      'Engedélyezés a REChain számára hogy használja a natív android hívás applikációt.';
+      'Engedélyezés a rechain számára hogy használja a natív android hívás applikációt.';
 
   @override
   String get appearOnTop => 'Megjelenés legfelül';
 
   @override
   String get appearOnTopDetails =>
-      'Engedélyezi az app számára, hogy mindig legfelül jelenjen meg (nem szükséges, ha a REChain hívó fiókként lett beállítva)';
+      'Engedélyezi az app számára, hogy mindig legfelül jelenjen meg (nem szükséges, ha a rechain hívó fiókként lett beállítva)';
 
   @override
   String get otherCallingPermissions =>
-      'Mikrofon, kamera, és más egyéb REChain engedélyek';
+      'Mikrofon, kamera, és más egyéb rechain engedélyek';
 
   @override
   String get whyIsThisMessageEncrypted => 'Miért olvashatatlan ez az üzenet?';
@@ -2027,7 +2027,7 @@ class L10nHu extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      'A csevegés újra elkészül az új szoba verzióval. Minden résztvevő értesítést kap, hogy át kell állniuk az új csevegésre. További információkért a szoba verziókról látogasson el a https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle címre';
+      'A csevegés újra elkészül az új szoba verzióval. Minden résztvevő értesítést kap, hogy át kell állniuk az új csevegésre. További információkért a szoba verziókról látogasson el a https://online.rechain.network címre';
 
   @override
   String get removeDevicesDescription =>
@@ -2277,10 +2277,10 @@ class L10nHu extends L10n {
   String get discover => 'Felfedezés';
 
   @override
-  String get commandHint_ignore => 'Adott REChain ID figyelmen kívül hagyása';
+  String get commandHint_ignore => 'Adott rechain ID figyelmen kívül hagyása';
 
   @override
-  String get commandHint_unignore => 'Adott REChain ID figyelembe vétele';
+  String get commandHint_unignore => 'Adott rechain ID figyelembe vétele';
 
   @override
   String unreadChatsInApp(String appname, String unread) {
@@ -2366,17 +2366,17 @@ class L10nHu extends L10n {
   String get sendCanceled => 'Küldés visszavonva';
 
   @override
-  String get loginWithMatrixId => 'Bejelentkezés REChain-ID-vel';
+  String get loginWithrechainonlineId => 'Bejelentkezés rechain ID-vel';
 
   @override
-  String get discoverHomeservers => 'REChain-kiszolgálók felfedezése';
+  String get discoverHomeservers => 'rechain-kiszolgálók felfedezése';
 
   @override
-  String get whatIsAHomeserver => 'Mi az a REChain-kiszolgáló?';
+  String get whatIsAHomeserver => 'Mi az a rechain-kiszolgáló?';
 
   @override
   String get homeserverDescription =>
-      'Az összes adata a Mátrix-kiszolgálón tárolódik, pont mint egy e-mail kiszolgálón. Kiválaszthatja melyik REChain-kiszolgálót akarja használni, miközben tud kommunikálni mindenkivel. Tudjon meg többet a https://rechain.network címen.';
+      'Az összes adata a Mátrix-kiszolgálón tárolódik, pont mint egy e-mail kiszolgálón. Kiválaszthatja melyik rechain-kiszolgálót akarja használni, miközben tud kommunikálni mindenkivel. Tudjon meg többet a https://online.rechain.network címen.';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
@@ -2420,7 +2420,7 @@ class L10nHu extends L10n {
 
   @override
   String get welcomeText =>
-      'Üdv 👋 Ez a REChain. Bejelentkezhet bármely REChain-kiszolgálóhoz amely kompatibilis a https://rechain.network címmel. Ezután cseveghet bárkivel. Így képez egy óriási decentralizált üzenetküldő hálózatot!';
+      'Üdv 👋 Ez a rechain. Bejelentkezhet bármely rechain-kiszolgálóhoz amely kompatibilis a https://online.rechain.network címmel. Ezután cseveghet bárkivel. Így képez egy óriási decentralizált üzenetküldő hálózatot!';
 
   @override
   String get blur => 'Homályosít:';
@@ -2509,7 +2509,7 @@ class L10nHu extends L10n {
 
   @override
   String get appIntroduction =>
-      'A REChain segítségével cseveghet barátaival, akár más üzenetküldő alkalmazásokon keresztül is. Tudjon meg erről többet a https://rechain.network oldalon, vagy nyomjon a \"Folytatás\" gombra.';
+      'A rechain segítségével cseveghet barátaival, akár más üzenetküldő alkalmazásokon keresztül is. Tudjon meg erről többet a https://online.rechain.network oldalon, vagy nyomjon a \"Folytatás\" gombra.';
 
   @override
   String get newChatRequest => '📩 Új csevegés kérelem';
@@ -2743,10 +2743,4 @@ class L10nHu extends L10n {
 
   @override
   String get displayNavigationRail => 'Show navigation rail on mobile';
-
-  @override
-  String get customReaction => 'Custom reaction';
-
-  @override
-  String get moreEvents => 'More events';
 }

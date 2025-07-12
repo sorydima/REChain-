@@ -7,22 +7,18 @@ import 'package:rechainonline/config/setting_keys.dart';
 import 'package:rechainonline/widgets/adaptive_dialogs/show_text_input_dialog.dart';
 import 'package:rechainonline/widgets/matrix.dart';
 
-class ConfigViewer extends StatefulWidget {
+class ConfigViewer extends StatelessWidget {
   const ConfigViewer({super.key});
 
-  @override
-  State<ConfigViewer> createState() => _ConfigViewerState();
-}
-
-class _ConfigViewerState extends State<ConfigViewer> {
   void _changeSetting(
+    BuildContext context,
     AppSettings appSetting,
     SharedPreferences store,
+    Function setState,
     String initialValue,
   ) async {
     if (appSetting is AppSettings<bool>) {
-      await appSetting.setItem(store, !(initialValue == 'true'));
-      setState(() {});
+      appSetting.setItem(store, !(initialValue == 'true'));
       return;
     }
 
@@ -35,13 +31,13 @@ class _ConfigViewerState extends State<ConfigViewer> {
     if (value == null) return;
 
     if (appSetting is AppSettings<String>) {
-      await appSetting.setItem(store, value);
+      appSetting.setItem(store, value);
     }
     if (appSetting is AppSettings<int>) {
-      await appSetting.setItem(store, int.parse(value));
+      appSetting.setItem(store, int.parse(value));
     }
     if (appSetting is AppSettings<double>) {
-      await appSetting.setItem(store, double.parse(value));
+      appSetting.setItem(store, double.parse(value));
     }
 
     setState(() {});
@@ -71,28 +67,38 @@ class _ConfigViewerState extends State<ConfigViewer> {
             ),
           ),
           Expanded(
-            child: ListView.builder(
-              itemCount: AppSettings.values.length,
-              itemBuilder: (context, i) {
-                final store = Matrix.of(context).store;
-                final appSetting = AppSettings.values[i];
-                var value = '';
-                if (appSetting is AppSettings<String>) {
-                  value = appSetting.getItem(store);
-                }
-                if (appSetting is AppSettings<int>) {
-                  value = appSetting.getItem(store).toString();
-                }
-                if (appSetting is AppSettings<bool>) {
-                  value = appSetting.getItem(store).toString();
-                }
-                if (appSetting is AppSettings<double>) {
-                  value = appSetting.getItem(store).toString();
-                }
-                return ListTile(
-                  title: Text(appSetting.name),
-                  subtitle: Text(value),
-                  onTap: () => _changeSetting(appSetting, store, value),
+            child: StatefulBuilder(
+              builder: (context, setState) {
+                return ListView.builder(
+                  itemCount: AppSettings.values.length,
+                  itemBuilder: (context, i) {
+                    final store = Matrix.of(context).store;
+                    final appSetting = AppSettings.values[i];
+                    var value = '';
+                    if (appSetting is AppSettings<String>) {
+                      value = appSetting.getItem(store);
+                    }
+                    if (appSetting is AppSettings<int>) {
+                      value = appSetting.getItem(store).toString();
+                    }
+                    if (appSetting is AppSettings<bool>) {
+                      value = appSetting.getItem(store).toString();
+                    }
+                    if (appSetting is AppSettings<double>) {
+                      value = appSetting.getItem(store).toString();
+                    }
+                    return ListTile(
+                      title: Text(appSetting.name),
+                      subtitle: Text(value),
+                      onTap: () => _changeSetting(
+                        context,
+                        appSetting,
+                        store,
+                        setState,
+                        value,
+                      ),
+                    );
+                  },
                 );
               },
             ),

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/config/themes.dart';
 
-Future<T?> showScaffoldDialog<T>({
+Future<void> showScaffoldDialog({
   required BuildContext context,
   Color? barrierColor,
   Color? containerColor,
@@ -11,7 +11,7 @@ Future<T?> showScaffoldDialog<T>({
   double maxHeight = 720,
   required Widget Function(BuildContext context) builder,
 }) =>
-    showDialog<T>(
+    showDialog(
       context: context,
       useSafeArea: false,
       builder: rechainonlineThemes.isColumnMode(context)

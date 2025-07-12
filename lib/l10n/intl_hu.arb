@@ -273,7 +273,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "changeTheHomeserver": "REChain-kiszolgáló váltás",
+  "changeTheHomeserver": "rechain-kiszolgáló váltás",
   "@changeTheHomeserver": {
     "type": "String",
     "placeholders": {}
@@ -538,7 +538,7 @@
       }
     }
   },
-  "enterYourHomeserver": "Adja meg a REChain-kiszolgálóját",
+  "enterYourHomeserver": "Adja meg a rechain-kiszolgálóját",
   "@enterYourHomeserver": {
     "type": "String",
     "placeholders": {}
@@ -548,8 +548,8 @@
     "type": "String",
     "placeholders": {}
   },
-  "rechainonline": "rechainonline",
-  "@rechainonline": {
+  "rechain": "rechain",
+  "@rechain": {
     "type": "String",
     "placeholders": {}
   },
@@ -680,7 +680,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "inviteText": "{username} meghívta a REChain-be.\n1. Keresse fel a online.rechain.network oldalt, és telepítse az alkalmazást \n2. Regisztráljon vagy jelentkezzen be \n3. Nyissa meg a meghívó linket: \n {link}",
+  "inviteText": "{username} meghívta a rechain-be.\n1. Keresse fel a https://online.rechain.network oldalt, és telepítse az alkalmazást \n2. Regisztráljon vagy jelentkezzen be \n3. Nyissa meg a meghívó linket: \n {link}",
   "@inviteText": {
     "type": "String",
     "placeholders": {
@@ -793,7 +793,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "logInTo": "Bejelentkezés a(z) {homeserver} REChain-kiszolgálóra",
+  "logInTo": "Bejelentkezés a(z) {homeserver} rechain-kiszolgálóra",
   "@logInTo": {
     "type": "String",
     "placeholders": {
@@ -827,7 +827,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "newMessageInrechainonline": "💬 Új REChain üzenet",
+  "newMessageInrechainonline": "💬 Új rechain üzenet",
   "@newMessageInrechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1204,7 +1204,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "title": "rechainonline",
+  "title": "rechain",
   "@title": {
     "description": "Title for the application",
     "type": "String",
@@ -1539,7 +1539,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "badServerLoginTypesException": "A REChain-kiszolgáló a következő bejelentkezéseket támogatja:\n{serverVersions}\nDe ez az alkalmazást csak ezeket támogatja:\n{supportedVersions}",
+  "badServerLoginTypesException": "A rechain-kiszolgáló a következő bejelentkezéseket támogatja:\n{serverVersions}\nDe ez az alkalmazást csak ezeket támogatja:\n{supportedVersions}",
   "@badServerLoginTypesException": {
     "type": "String",
     "placeholders": {
@@ -1678,7 +1678,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "homeserver": "REChain-kiszolgáló",
+  "homeserver": "rechain-kiszolgáló",
   "@homeserver": {},
   "chatBackup": "Csevegés biztonsági mentés",
   "@chatBackup": {
@@ -1824,7 +1824,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "norechainonlineServer": "{server1} nem egy REChain szerver, akarja használja a {server2} szervert inkább?",
+  "norechainonlineServer": "{server1} nem egy rechain szerver, akarja használja a {server2} szervert inkább?",
   "@norechainonlineServer": {
     "type": "String",
     "placeholders": {
@@ -1860,7 +1860,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "badServerVersionsException": "A REChain-kiszolgáló ezeket a specifikált verziókat támogatja:\n{serverVersions}\nAzonban ez az app csak a következőket: {supportedVersions}",
+  "badServerVersionsException": "A rechain-kiszolgáló ezeket a specifikált verziókat támogatja:\n{serverVersions}\nAzonban ez az app csak a következőket: {supportedVersions}",
   "@badServerVersionsException": {
     "type": "String",
     "placeholders": {
@@ -1978,8 +1978,8 @@
     "type": "String",
     "placeholders": {}
   },
-  "confirmMatrixId": "Kérem, igazolja vissza REChain ID-jét a fiók törléséhez.",
-  "@confirmMatrixId": {},
+  "confirmrechainonlineId": "Kérem, igazolja vissza rechain ID-jét a fiók törléséhez.",
+  "@confirmrechainonlineId": {},
   "or": "Vagy",
   "@or": {
     "type": "String",
@@ -2076,7 +2076,7 @@
   "@widgetJitsi": {},
   "messageType": "Üzenet típus",
   "@messageType": {},
-  "indexedDbErrorLong": "Sajnos az üzenet mentés alapból nincs bekapcsolva privát módban.\nKeresse meg a\n - about:config\n - állítsa a dom.indexedDB.privateBrowsing.enabled \"true\"-ra\nMáskülönben nem lehetséges a REChain futtatása.",
+  "indexedDbErrorLong": "Sajnos az üzenet mentés alapból nincs bekapcsolva privát módban.\nKeresse meg a\n - about:config\n - állítsa a dom.indexedDB.privateBrowsing.enabled \"true\"-ra\nMáskülönben nem lehetséges a rechain futtatása.",
   "@indexedDbErrorLong": {},
   "oneClientLoggedOut": "Az egyik kliense kijelentkezett",
   "@oneClientLoggedOut": {},
@@ -2151,7 +2151,7 @@
   },
   "youRejectedTheInvitation": "Visszautasította a meghívást",
   "@youRejectedTheInvitation": {},
-  "otherCallingPermissions": "Mikrofon, kamera, és más egyéb REChain engedélyek",
+  "otherCallingPermissions": "Mikrofon, kamera, és más egyéb rechain engedélyek",
   "@otherCallingPermissions": {},
   "messagesStyle": "Üzenetek:",
   "@messagesStyle": {},
@@ -2163,7 +2163,7 @@
   "@newSpaceDescription": {},
   "chatDescription": "Csevegés leírás",
   "@chatDescription": {},
-  "callingAccountDetails": "Engedélyezés a REChain számára hogy használja a natív android hívás applikációt.",
+  "callingAccountDetails": "Engedélyezés a rechain számára hogy használja a natív android hívás applikációt.",
   "@callingAccountDetails": {},
   "pleaseFollowInstructionsOnWeb": "Kérem, kövesse az instrukciókat az oldalon, és nyomjon a tovább gombra.",
   "@pleaseFollowInstructionsOnWeb": {
@@ -2373,7 +2373,7 @@
       }
     }
   },
-  "appearOnTopDetails": "Engedélyezi az app számára, hogy mindig legfelül jelenjen meg (nem szükséges, ha a REChain hívó fiókként lett beállítva)",
+  "appearOnTopDetails": "Engedélyezi az app számára, hogy mindig legfelül jelenjen meg (nem szükséges, ha a rechain hívó fiókként lett beállítva)",
   "@appearOnTopDetails": {},
   "enterRoom": "Belépés a szobába",
   "@enterRoom": {},
@@ -2523,7 +2523,7 @@
   "@bundleName": {},
   "removeFromSpace": "Eltávolítás a térről",
   "@removeFromSpace": {},
-  "roomUpgradeDescription": "A csevegés újra elkészül az új szoba verzióval. Minden résztvevő értesítést kap, hogy át kell állniuk az új csevegésre. További információkért a szoba verziókról látogasson el a https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle címre",
+  "roomUpgradeDescription": "A csevegés újra elkészül az új szoba verzióval. Minden résztvevő értesítést kap, hogy át kell állniuk az új csevegésre. További információkért a szoba verziókról látogasson el a https://online.rechain.network címre",
   "@roomUpgradeDescription": {},
   "pleaseEnterANumber": "Adjon meg egy 0-nál nagyobb számot",
   "@pleaseEnterANumber": {},
@@ -2564,7 +2564,7 @@
   },
   "shareInviteLink": "Meghívó link megosztása",
   "@shareInviteLink": {},
-  "commandHint_markasdm": "Szoba megjelölése mint közvetlen csevegő szoba az adott REChain ID-nél",
+  "commandHint_markasdm": "Szoba megjelölése mint közvetlen csevegő szoba az adott rechain ID-nél",
   "@commandHint_markasdm": {},
   "recoveryKeyLost": "Elveszett visszaállító kulcs?",
   "@recoveryKeyLost": {},
@@ -2632,11 +2632,11 @@
   "@enableMultiAccounts": {},
   "indexedDbErrorTitle": "Privát mód problémák",
   "@indexedDbErrorTitle": {},
-  "unsupportedAndroidVersionLong": "Ehhez a funkcióhoz egy újabb Android verzió kell. Kérem ellenőrizze be van e frissítve teljesen készüléke, esetlegesen van e Mobile KatyaOS támogatás hozzá.",
+  "unsupportedAndroidVersionLong": "Ehhez a funkcióhoz egy újabb Android verzió kell. Kérem ellenőrizze be van e frissítve teljesen készüléke, esetlegesen van e Katya ® 👽OS támogatás hozzá.",
   "@unsupportedAndroidVersionLong": {},
   "storeSecurlyOnThisDevice": "Biztonságos tárolás az eszközön",
   "@storeSecurlyOnThisDevice": {},
-  "screenSharingDetail": "Megosztja a képernyőjét a REChain-ben",
+  "screenSharingDetail": "Megosztja a képernyőjét a rechain-ben",
   "@screenSharingDetail": {},
   "placeCall": "Tér hívás",
   "@placeCall": {},
@@ -2935,7 +2935,7 @@
   },
   "files": "Fájlok",
   "@files": {},
-  "commandHint_unignore": "Adott REChain ID figyelembe vétele",
+  "commandHint_unignore": "Adott rechain ID figyelembe vétele",
   "@commandHint_unignore": {},
   "restricted": "Korlátozott",
   "@restricted": {},
@@ -2968,7 +2968,7 @@
   "@searchMore": {},
   "gallery": "Galéria",
   "@gallery": {},
-  "commandHint_ignore": "Adott REChain ID figyelmen kívül hagyása",
+  "commandHint_ignore": "Adott rechain ID figyelmen kívül hagyása",
   "@commandHint_ignore": {},
   "unread": "Olvasatlan",
   "@unread": {},
@@ -3021,9 +3021,9 @@
   "@changeTheCanonicalRoomAlias": {},
   "chatPermissionsDescription": "Adja meg milyen erősségi szint kell egyes csevegési művelethez. A 0, 50 és 100-as szintek általában felhasználókat, moderátorokat és adminisztrátorokat jelölnek de bármilyen szintezés lehetséges.",
   "@chatPermissionsDescription": {},
-  "whatIsAHomeserver": "Mi az a REChain-kiszolgáló?",
+  "whatIsAHomeserver": "Mi az a rechain-kiszolgáló?",
   "@whatIsAHomeserver": {},
-  "homeserverDescription": "Az összes adata a Mátrix-kiszolgálón tárolódik, pont mint egy e-mail kiszolgálón. Kiválaszthatja melyik REChain-kiszolgálót akarja használni, miközben tud kommunikálni mindenkivel. Tudjon meg többet a https://rechain.network címen.",
+  "homeserverDescription": "Az összes adata a Mátrix-kiszolgálón tárolódik, pont mint egy e-mail kiszolgálón. Kiválaszthatja melyik rechain-kiszolgálót akarja használni, miközben tud kommunikálni mindenkivel. Tudjon meg többet a https://online.rechain.network címen.",
   "@homeserverDescription": {},
   "userLevel": "{level} - Felhasználó",
   "@userLevel": {
@@ -3055,13 +3055,13 @@
   "@changeTheDescriptionOfTheGroup": {},
   "swipeRightToLeftToReply": "Húzza balra a válaszoláshoz",
   "@swipeRightToLeftToReply": {},
-  "alwaysUse24HourFormat": "",
+  "alwaysUse24HourFormat": "hamis",
   "@alwaysUse24HourFormat": {
     "description": "Set to true to always display time of day in 24 hour format."
   },
-  "loginWithMatrixId": "Bejelentkezés REChain-ID-vel",
-  "@loginWithMatrixId": {},
-  "discoverHomeservers": "REChain-kiszolgálók felfedezése",
+  "loginWithrechainonlineId": "Bejelentkezés rechain ID-vel",
+  "@loginWithrechainonlineId": {},
+  "discoverHomeservers": "rechain-kiszolgálók felfedezése",
   "@discoverHomeservers": {},
   "doesNotSeemToBeAValidHomeserver": "Nem tűnik kompatibilisnek a Mátrix-kiszolgálónak. Hibás a hivatkozás?",
   "@doesNotSeemToBeAValidHomeserver": {},
@@ -3226,7 +3226,7 @@
   "@appWantsToUseForLoginDescription": {},
   "waitingForServer": "Várakozás a szerverre...",
   "@waitingForServer": {},
-  "appIntroduction": "A REChain segítségével cseveghet barátaival, akár más üzenetküldő alkalmazásokon keresztül is. Tudjon meg erről többet a https://rechain.network oldalon, vagy nyomjon a \"Folytatás\" gombra.",
+  "appIntroduction": "A rechain segítségével cseveghet barátaival, akár más üzenetküldő alkalmazásokon keresztül is. Tudjon meg erről többet a https://online.rechain.network oldalon, vagy nyomjon a \"Folytatás\" gombra.",
   "@appIntroduction": {},
   "open": "Megnyitás",
   "@open": {},
@@ -3314,7 +3314,7 @@
   "@continueText": {},
   "opacity": "Átlátszóság:",
   "@opacity": {},
-  "welcomeText": "Üdv 👋 Ez a REChain. Bejelentkezhet bármely REChain-kiszolgálóhoz amely kompatibilis a https://rechain.network címmel. Ezután cseveghet bárkivel. Így képez egy óriási decentralizált üzenetküldő hálózatot!",
+  "welcomeText": "Üdv 👋 Ez a rechain. Bejelentkezhet bármely rechain-kiszolgálóhoz amely kompatibilis a https://online.rechain.network címmel. Ezután cseveghet bárkivel. Így képez egy óriási decentralizált üzenetküldő hálózatot!",
   "@welcomeText": {},
   "addLink": "Hivatkozás hozzáadása",
   "@addLink": {},

@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 import 'package:flutter_linkify/flutter_linkify.dart';
@@ -38,14 +36,11 @@ class EventVideoPlayer extends StatelessWidget {
             .tryGet<String>('xyz.amorgan.blurhash') ??
         fallbackBlurHash;
     final fileDescription = event.fileDescription;
-    const maxDimension = 300.0;
     final infoMap = event.content.tryGetMap<String, Object?>('info');
-    final videoWidth = infoMap?.tryGet<int>('w') ?? maxDimension;
-    final videoHeight = infoMap?.tryGet<int>('h') ?? maxDimension;
-
-    final modifier = max(videoWidth, videoHeight) / maxDimension;
-    final width = videoWidth / modifier;
-    final height = videoHeight / modifier;
+    final videoWidth = infoMap?.tryGet<int>('w') ?? 400;
+    final videoHeight = infoMap?.tryGet<int>('h') ?? 300;
+    const height = 300.0;
+    final width = videoWidth * (height / videoHeight);
 
     final durationInt = infoMap?.tryGet<int>('duration');
     final duration =

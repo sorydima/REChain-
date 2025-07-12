@@ -60,7 +60,7 @@ class ChatListHeader extends StatelessWidget implements PreferredSizeWidget {
                   : status.calcLocalizedString(context),
               hintStyle: TextStyle(
                 color: status.error != null
-                    ? Colors.orange
+                    ? theme.colorScheme.error
                     : theme.colorScheme.onPrimaryContainer,
                 fontWeight: FontWeight.normal,
               ),
@@ -88,8 +88,8 @@ class ChatListHeader extends StatelessWidget implements PreferredSizeWidget {
                           strokeWidth: 2,
                           value: status.progress,
                           valueColor: status.error != null
-                              ? const AlwaysStoppedAnimation<Color>(
-                                  Colors.orange,
+                              ? AlwaysStoppedAnimation<Color>(
+                                  theme.colorScheme.error,
                                 )
                               : null,
                         ),

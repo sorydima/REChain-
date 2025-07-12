@@ -70,7 +70,7 @@ class LoginController extends State<Login> {
         identifier = AuthenticationUserIdentifier(user: username);
       }
       final client = await matrix.getLoginClient();
-      await client.login(
+      client.login(
         LoginType.mLoginPassword,
         identifier: identifier,
         // To stay compatible with older server versions

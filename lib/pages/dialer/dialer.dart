@@ -1,609 +1,263 @@
-import 'dart:async';
-import 'dart:math';
-
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-
-import 'package:flutter_foreground_task/flutter_foreground_task.dart';
-import 'package:flutter_webrtc/flutter_webrtc.dart' hide VideoRenderer;
-import 'package:just_audio/just_audio.dart';
 import 'package:matrix/matrix.dart';
-import 'package:wakelock_plus/wakelock_plus.dart';
 
-import 'package:rechainonline/l10n/l10n.dart';
-import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
-import 'package:rechainonline/utils/platform_infos.dart';
-import 'package:rechainonline/utils/voip/video_renderer.dart';
-import 'package:rechainonline/widgets/avatar.dart';
-import 'pip/pip_view.dart';
+import '../../utils/voip/video_renderer.dart';
+import '../../utils/voip/flutter_webrtc_stub.dart' show RTCVideoRenderer, RTCVideoViewObjectFit;
 
-class _StreamView extends StatelessWidget {
-  const _StreamView(
-    this.wrappedStream, {
-    this.mainView = false,
-    required this.matrixClient,
-  });
-
-  final WrappedMediaStream wrappedStream;
-  final Client matrixClient;
-
-  final bool mainView;
-
-  Uri? get avatarUrl => wrappedStream.getUser().avatarUrl;
-
-  String? get displayName => wrappedStream.displayName;
-
-  String get avatarName => wrappedStream.avatarName;
-
-  bool get isLocal => wrappedStream.isLocal();
-
-  bool get mirrored =>
-      wrappedStream.isLocal() &&
-      wrappedStream.purpose == SDPStreamMetadataPurpose.Usermedia;
-
-  bool get audioMuted => wrappedStream.audioMuted;
-
-  bool get videoMuted => wrappedStream.videoMuted;
-
-  bool get isScreenSharing =>
-      wrappedStream.purpose == SDPStreamMetadataPurpose.Screenshare;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        color: Colors.black54,
-      ),
-      child: Stack(
-        alignment: Alignment.center,
-        children: <Widget>[
-          VideoRenderer(
-            wrappedStream,
-            mirror: mirrored,
-            fit: RTCVideoViewObjectFit.RTCVideoViewObjectFitContain,
-          ),
-          if (videoMuted) ...[
-            Container(color: Colors.black54),
-            Positioned(
-              child: Avatar(
-                mxContent: avatarUrl,
-                name: displayName,
-                size: mainView ? 96 : 48,
-                client: matrixClient,
-                // textSize: mainView ? 36 : 24,
-                // matrixClient: matrixClient,
-              ),
-            ),
-          ],
-          if (!isScreenSharing)
-            Positioned(
-              left: 4.0,
-              bottom: 4.0,
-              child: Icon(
-                audioMuted ? Icons.mic_off : Icons.mic,
-                color: Colors.white,
-                size: 18.0,
-              ),
-            ),
-        ],
-      ),
-    );
-  }
-}
-
-class Calling extends StatefulWidget {
-  final VoidCallback? onClear;
-  final BuildContext context;
-  final String callId;
+class Dialer extends StatefulWidget {
   final CallSession call;
-  final Client client;
 
-  const Calling({
-    required this.context,
-    required this.call,
-    required this.client,
-    required this.callId,
-    this.onClear,
+  const Dialer({
     super.key,
+    required this.call,
   });
 
   @override
-  MyCallingPage createState() => MyCallingPage();
+  State<Dialer> createState() => _DialerState();
 }
 
-class MyCallingPage extends State<Calling> {
-  Room? get room => call.room;
-
-  String get displayName => call.room.getLocalizedDisplayname(
-        MatrixLocals(L10n.of(widget.context)),
-      );
-
-  String get callId => widget.callId;
-
-  CallSession get call => widget.call;
-
-  MediaStream? get localStream {
-    if (call.localUserMediaStream != null) {
-      return call.localUserMediaStream!.stream!;
-    }
-    return null;
-  }
-
-  MediaStream? get remoteStream {
-    if (call.getRemoteStreams.isNotEmpty) {
-      return call.getRemoteStreams[0].stream!;
-    }
-    return null;
-  }
-
-  bool get isMicrophoneMuted => call.isMicrophoneMuted;
-
-  bool get isLocalVideoMuted => call.isLocalVideoMuted;
-
-  bool get isScreensharingEnabled => call.screensharingEnabled;
-
-  bool get isRemoteOnHold => call.remoteOnHold;
-
-  bool get voiceonly => call.type == CallType.kVoice;
-
-  bool get connecting => call.state == CallState.kConnecting;
-
-  bool get connected => call.state == CallState.kConnected;
-
-  double? _localVideoHeight;
-  double? _localVideoWidth;
-  EdgeInsetsGeometry? _localVideoMargin;
-  CallState? _state;
-
-  void _playCallSound() async {
-    const path = 'assets/sounds/call.ogg';
-    if (kIsWeb || PlatformInfos.isMobile || PlatformInfos.isMacOS) {
-      final player = AudioPlayer();
-      await player.setAsset(path);
-      player.play();
-    } else {
-      Logs().w('Playing sound not implemented for this platform!');
-    }
-  }
+class _DialerState extends State<Dialer> {
+  late CallSession call;
+  bool _isMuted = false;
+  RTCVideoRenderer? _localRenderer;
+  RTCVideoRenderer? _remoteRenderer;
 
   @override
   void initState() {
     super.initState();
-    initialize();
-    _playCallSound();
+    call = widget.call;
+    _initializeRenderers();
   }
 
-  void initialize() async {
-    final call = this.call;
-    call.onCallStateChanged.stream.listen(_handleCallState);
-    call.onCallEventChanged.stream.listen((event) {
-      if (event == CallStateChange.kFeedsChanged) {
-        setState(() {
-          call.tryRemoveStopedStreams();
-        });
-      } else if (event == CallStateChange.kLocalHoldUnhold ||
-          event == CallStateChange.kRemoteHoldUnhold) {
-        setState(() {});
-        Logs().i(
-          'Call hold event: local ${call.localHold}, remote ${call.remoteOnHold}',
-        );
-      }
-    });
-    _state = call.state;
-
-    if (call.type == CallType.kVideo) {
-      try {
-        // Enable wakelock (keep screen on)
-        unawaited(WakelockPlus.enable());
-      } catch (_) {}
-    }
-  }
-
-  void cleanUp() {
-    Timer(
-      const Duration(seconds: 2),
-      () => widget.onClear?.call(),
-    );
-    if (call.type == CallType.kVideo) {
-      try {
-        unawaited(WakelockPlus.disable());
-      } catch (_) {}
-    }
+  Future<void> _initializeRenderers() async {
+    _localRenderer = RTCVideoRenderer();
+    _remoteRenderer = RTCVideoRenderer();
+    
+    await _localRenderer?.initialize();
+    await _remoteRenderer?.initialize();
+    
+    setState(() {});
   }
 
   @override
   void dispose() {
+    _localRenderer?.dispose();
+    _remoteRenderer?.dispose();
     super.dispose();
-    call.cleanUp.call();
   }
 
-  void _resizeLocalVideo(Orientation orientation) {
-    final shortSide = min(
-      MediaQuery.of(widget.context).size.width,
-      MediaQuery.of(widget.context).size.height,
-    );
-    _localVideoMargin = remoteStream != null
-        ? const EdgeInsets.only(top: 20.0, right: 20.0)
-        : EdgeInsets.zero;
-    _localVideoWidth = remoteStream != null
-        ? shortSide / 3
-        : MediaQuery.of(widget.context).size.width;
-    _localVideoHeight = remoteStream != null
-        ? shortSide / 4
-        : MediaQuery.of(widget.context).size.height;
-  }
-
-  void _handleCallState(CallState state) {
-    Logs().v('CallingPage::handleCallState: ${state.toString()}');
-    if ({CallState.kConnected, CallState.kEnded}.contains(state)) {
-      HapticFeedback.heavyImpact();
+  Future<void> _switchCamera() async {
+    try {
+      // TODO: Implement camera switching
+      print('Camera switching not implemented yet');
+    } catch (e) {
+      print('Failed to switch camera: $e');
     }
-
-    if (mounted) {
-      setState(() {
-        _state = state;
-        if (_state == CallState.kEnded) cleanUp();
-      });
-    }
-  }
-
-  void _answerCall() {
-    setState(() {
-      call.answer();
-    });
-  }
-
-  void _hangUp() {
-    setState(() {
-      if (call.isRinging) {
-        call.reject();
-      } else {
-        call.hangup(reason: CallErrorCode.userHangup);
-      }
-    });
-  }
-
-  void _muteMic() {
-    setState(() {
-      call.setMicrophoneMuted(!call.isMicrophoneMuted);
-    });
-  }
-
-  void _screenSharing() async {
-    if (PlatformInfos.isAndroid) {
-      if (!call.screensharingEnabled) {
-        FlutterForegroundTask.init(
-          androidNotificationOptions: AndroidNotificationOptions(
-            channelId: 'notification_channel_id',
-            channelName: 'Foreground Notification',
-            channelDescription:
-                L10n.of(widget.context).foregroundServiceRunning,
-          ),
-          iosNotificationOptions: const IOSNotificationOptions(),
-          foregroundTaskOptions: const ForegroundTaskOptions(),
-        );
-        FlutterForegroundTask.startService(
-          notificationTitle: L10n.of(widget.context).screenSharingTitle,
-          notificationText: L10n.of(widget.context).screenSharingDetail,
-        );
-      } else {
-        FlutterForegroundTask.stopService();
-      }
-    }
-
-    setState(() {
-      call.setScreensharingEnabled(!call.screensharingEnabled);
-    });
-  }
-
-  void _remoteOnHold() {
-    setState(() {
-      call.setRemoteOnHold(!call.remoteOnHold);
-    });
-  }
-
-  void _muteCamera() {
-    setState(() {
-      call.setLocalVideoMuted(!call.isLocalVideoMuted);
-    });
-  }
-
-  void _switchCamera() async {
-    if (call.localUserMediaStream != null) {
-      await Helper.switchCamera(
-        call.localUserMediaStream!.stream!.getVideoTracks()[0],
-      );
-    }
-    setState(() {});
-  }
-
-  /*
-  void _switchSpeaker() {
-    setState(() {
-      session.setSpeakerOn();
-    });
-  }
-  */
-
-  List<Widget> _buildActionButtons(bool isFloating) {
-    if (isFloating) {
-      return [];
-    }
-
-    final switchCameraButton = FloatingActionButton(
-      heroTag: 'switchCamera',
-      onPressed: _switchCamera,
-      backgroundColor: Colors.black45,
-      child: const Icon(Icons.switch_camera),
-    );
-    /*
-    var switchSpeakerButton = FloatingActionButton(
-      heroTag: 'switchSpeaker',
-      child: Icon(_speakerOn ? Icons.volume_up : Icons.volume_off),
-      onPressed: _switchSpeaker,
-      foregroundColor: Colors.black54,
-      backgroundColor: Theme.of(widget.context).backgroundColor,
-    );
-    */
-    final hangupButton = FloatingActionButton(
-      heroTag: 'hangup',
-      onPressed: _hangUp,
-      tooltip: 'Hangup',
-      backgroundColor: _state == CallState.kEnded ? Colors.black45 : Colors.red,
-      child: const Icon(Icons.call_end),
-    );
-
-    final answerButton = FloatingActionButton(
-      heroTag: 'answer',
-      onPressed: _answerCall,
-      tooltip: 'Answer',
-      backgroundColor: Colors.green,
-      child: const Icon(Icons.phone),
-    );
-
-    final muteMicButton = FloatingActionButton(
-      heroTag: 'muteMic',
-      onPressed: _muteMic,
-      foregroundColor: isMicrophoneMuted ? Colors.black26 : Colors.white,
-      backgroundColor: isMicrophoneMuted ? Colors.white : Colors.black45,
-      child: Icon(isMicrophoneMuted ? Icons.mic_off : Icons.mic),
-    );
-
-    final screenSharingButton = FloatingActionButton(
-      heroTag: 'screenSharing',
-      onPressed: _screenSharing,
-      foregroundColor: isScreensharingEnabled ? Colors.black26 : Colors.white,
-      backgroundColor: isScreensharingEnabled ? Colors.white : Colors.black45,
-      child: const Icon(Icons.desktop_mac),
-    );
-
-    final holdButton = FloatingActionButton(
-      heroTag: 'hold',
-      onPressed: _remoteOnHold,
-      foregroundColor: isRemoteOnHold ? Colors.black26 : Colors.white,
-      backgroundColor: isRemoteOnHold ? Colors.white : Colors.black45,
-      child: const Icon(Icons.pause),
-    );
-
-    final muteCameraButton = FloatingActionButton(
-      heroTag: 'muteCam',
-      onPressed: _muteCamera,
-      foregroundColor: isLocalVideoMuted ? Colors.black26 : Colors.white,
-      backgroundColor: isLocalVideoMuted ? Colors.white : Colors.black45,
-      child: Icon(isLocalVideoMuted ? Icons.videocam_off : Icons.videocam),
-    );
-
-    switch (_state) {
-      case CallState.kRinging:
-      case CallState.kInviteSent:
-      case CallState.kCreateAnswer:
-      case CallState.kConnecting:
-        return call.isOutgoing
-            ? <Widget>[hangupButton]
-            : <Widget>[answerButton, hangupButton];
-      case CallState.kConnected:
-        return <Widget>[
-          muteMicButton,
-          //switchSpeakerButton,
-          if (!voiceonly && !kIsWeb) switchCameraButton,
-          if (!voiceonly) muteCameraButton,
-          if (PlatformInfos.isMobile || PlatformInfos.isWeb)
-            screenSharingButton,
-          holdButton,
-          hangupButton,
-        ];
-      case CallState.kEnded:
-        return <Widget>[
-          hangupButton,
-        ];
-      case CallState.kFledgling:
-      case CallState.kWaitLocalMedia:
-      case CallState.kCreateOffer:
-      case CallState.kEnding:
-      case null:
-        break;
-    }
-    return <Widget>[];
-  }
-
-  List<Widget> _buildContent(Orientation orientation, bool isFloating) {
-    final stackWidgets = <Widget>[];
-
-    final call = this.call;
-    if (call.callHasEnded) {
-      return stackWidgets;
-    }
-
-    if (call.localHold || call.remoteOnHold) {
-      var title = '';
-      if (call.localHold) {
-        title = '${call.room.getLocalizedDisplayname(
-          MatrixLocals(L10n.of(widget.context)),
-        )} held the call.';
-      } else if (call.remoteOnHold) {
-        title = 'You held the call.';
-      }
-      stackWidgets.add(
-        Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Icon(
-                Icons.pause,
-                size: 48.0,
-                color: Colors.white,
-              ),
-              Text(
-                title,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 24.0,
-                ),
-              ),
-            ],
-          ),
-        ),
-      );
-      return stackWidgets;
-    }
-
-    var primaryStream = call.remoteScreenSharingStream ??
-        call.localScreenSharingStream ??
-        call.remoteUserMediaStream ??
-        call.localUserMediaStream;
-
-    if (!connected) {
-      primaryStream = call.localUserMediaStream;
-    }
-
-    if (primaryStream != null) {
-      stackWidgets.add(
-        Center(
-          child: _StreamView(
-            primaryStream,
-            mainView: true,
-            matrixClient: widget.client,
-          ),
-        ),
-      );
-    }
-
-    if (isFloating || !connected) {
-      return stackWidgets;
-    }
-
-    _resizeLocalVideo(orientation);
-
-    if (call.getRemoteStreams.isEmpty) {
-      return stackWidgets;
-    }
-
-    final secondaryStreamViews = <Widget>[];
-
-    if (call.remoteScreenSharingStream != null) {
-      final remoteUserMediaStream = call.remoteUserMediaStream;
-      secondaryStreamViews.add(
-        SizedBox(
-          width: _localVideoWidth,
-          height: _localVideoHeight,
-          child:
-              _StreamView(remoteUserMediaStream!, matrixClient: widget.client),
-        ),
-      );
-      secondaryStreamViews.add(const SizedBox(height: 10));
-    }
-
-    final localStream =
-        call.localUserMediaStream ?? call.localScreenSharingStream;
-    if (localStream != null && !isFloating) {
-      secondaryStreamViews.add(
-        SizedBox(
-          width: _localVideoWidth,
-          height: _localVideoHeight,
-          child: _StreamView(localStream, matrixClient: widget.client),
-        ),
-      );
-      secondaryStreamViews.add(const SizedBox(height: 10));
-    }
-
-    if (call.localScreenSharingStream != null && !isFloating) {
-      secondaryStreamViews.add(
-        SizedBox(
-          width: _localVideoWidth,
-          height: _localVideoHeight,
-          child: _StreamView(
-            call.remoteUserMediaStream!,
-            matrixClient: widget.client,
-          ),
-        ),
-      );
-      secondaryStreamViews.add(const SizedBox(height: 10));
-    }
-
-    if (secondaryStreamViews.isNotEmpty) {
-      stackWidgets.add(
-        Container(
-          padding: const EdgeInsets.fromLTRB(0, 20, 0, 120),
-          alignment: Alignment.bottomRight,
-          child: Container(
-            width: _localVideoWidth,
-            margin: _localVideoMargin,
-            child: Column(
-              children: secondaryStreamViews,
-            ),
-          ),
-        ),
-      );
-    }
-
-    return stackWidgets;
   }
 
   @override
   Widget build(BuildContext context) {
-    return PIPView(
-      builder: (context, isFloating) {
-        return Scaffold(
-          resizeToAvoidBottomInset: !isFloating,
-          floatingActionButtonLocation:
-              FloatingActionButtonLocation.centerFloat,
-          floatingActionButton: SizedBox(
-            width: 320.0,
-            height: 150.0,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: _buildActionButtons(isFloating),
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: SafeArea(
+        child: Column(
+          children: [
+            // Header
+            _buildHeader(),
+            
+            // Video views
+            Expanded(
+              child: Row(
+                children: [
+                  // Local video
+                  Expanded(
+                    flex: 1,
+                    child: Container(
+                      margin: const EdgeInsets.all(8.0),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.white24),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: _localRenderer != null
+                            ? VideoRenderer(
+                                renderer: _localRenderer!,
+                                mirror: true,
+                                objectFit: RTCVideoViewObjectFit.RTCVideoViewObjectFitCover,
+                                placeholderBuilder: (context) => Container(
+                                  color: Colors.black54,
+                                  child: const Center(
+                                    child: Icon(
+                                      Icons.videocam_off,
+                                      color: Colors.white54,
+                                      size: 32,
+                                    ),
+                                  ),
+                                ),
+                              )
+                            : Container(
+                                color: Colors.black54,
+                                child: const Center(
+                                  child: Icon(
+                                    Icons.videocam_off,
+                                    color: Colors.white54,
+                                    size: 32,
+                                  ),
+                                ),
+                              ),
+                      ),
+                    ),
+                  ),
+                  
+                  // Remote video
+                  Expanded(
+                    flex: 2,
+                    child: Container(
+                      margin: const EdgeInsets.all(8.0),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.white24),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: _remoteRenderer != null
+                            ? VideoRenderer(
+                                renderer: _remoteRenderer!,
+                                objectFit: RTCVideoViewObjectFit.RTCVideoViewObjectFitCover,
+                                placeholderBuilder: (context) => Container(
+                                  color: Colors.black54,
+                                  child: const Center(
+                                    child: Icon(
+                                      Icons.videocam_off,
+                                      color: Colors.white54,
+                                      size: 48,
+                                    ),
+                                  ),
+                                ),
+                              )
+                            : Container(
+                                color: Colors.black54,
+                                child: const Center(
+                                  child: Icon(
+                                    Icons.videocam_off,
+                                    color: Colors.white54,
+                                    size: 48,
+                                  ),
+                                ),
+                              ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            
+            // Controls
+            _buildControls(),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildHeader() {
+    return Container(
+      padding: const EdgeInsets.all(16.0),
+      child: Row(
+        children: [
+          IconButton(
+            icon: const Icon(Icons.arrow_back, color: Colors.white),
+            onPressed: () => Navigator.of(context).pop(),
+          ),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  call.room.id,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  call.state.toString(),
+                  style: const TextStyle(
+                    color: Colors.white70,
+                    fontSize: 14,
+                  ),
+                ),
+              ],
             ),
           ),
-          body: OrientationBuilder(
-            builder: (BuildContext context, Orientation orientation) {
-              return Container(
-                decoration: const BoxDecoration(
-                  color: Colors.black87,
-                ),
-                child: Stack(
-                  children: [
-                    ..._buildContent(orientation, isFloating),
-                    if (!isFloating)
-                      Positioned(
-                        top: 24.0,
-                        left: 24.0,
-                        child: IconButton(
-                          color: Colors.black45,
-                          icon: const Icon(Icons.arrow_back),
-                          onPressed: () {
-                            PIPView.of(context)?.setFloating(true);
-                          },
-                        ),
-                      ),
-                  ],
-                ),
-              );
-            },
-          ),
-        );
-      },
+        ],
+      ),
     );
+  }
+
+  Widget _buildControls() {
+    return Container(
+      padding: const EdgeInsets.all(24.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          // Mute button
+          _buildControlButton(
+            icon: _isMuted ? Icons.mic_off : Icons.mic,
+            onPressed: _toggleMute,
+            backgroundColor: _isMuted ? Colors.red : Colors.white24,
+          ),
+          
+          // End call button
+          _buildControlButton(
+            icon: Icons.call_end,
+            onPressed: _endCall,
+            backgroundColor: Colors.red,
+            size: 64,
+          ),
+          
+          // Switch camera button
+          _buildControlButton(
+            icon: Icons.switch_camera,
+            onPressed: _switchCamera,
+            backgroundColor: Colors.white24,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildControlButton({
+    required IconData icon,
+    required VoidCallback onPressed,
+    required Color backgroundColor,
+    double size = 48,
+  }) {
+    return Container(
+      width: size,
+      height: size,
+      decoration: BoxDecoration(
+        color: backgroundColor,
+        shape: BoxShape.circle,
+      ),
+      child: IconButton(
+        icon: Icon(icon, color: Colors.white),
+        onPressed: onPressed,
+      ),
+    );
+  }
+
+  void _toggleMute() {
+    setState(() {
+      _isMuted = !_isMuted;
+    });
+    // TODO: Implement actual mute functionality
+  }
+
+  void _endCall() {
+    // TODO: Implement actual end call functionality
+    Navigator.of(context).pop();
   }
 }

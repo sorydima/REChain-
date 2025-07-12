@@ -629,8 +629,8 @@
     "type": "String",
     "placeholders": {}
   },
-  "rechainonline": "rechainonline",
-  "@rechainonline": {
+  "rechain": "rechain",
+  "@rechain": {
     "type": "String",
     "placeholders": {}
   },
@@ -735,7 +735,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "inviteText": "{username} הזמין אותך ל-REChain.\n1. התקן את REChain: https://online.rechain.network\n2. הירשם או היכנס\n3. פתח את קישור ההזמנה: {link}",
+  "inviteText": "{username} הזמין אותך ל-rechain.\n1. התקן את rechain: https://https://online.rechain.network\n2. הירשם או היכנס\n3. פתח את קישור ההזמנה: {link}",
   "@inviteText": {
     "type": "String",
     "placeholders": {
@@ -1308,12 +1308,12 @@
     "type": "String",
     "placeholders": {}
   },
-  "newMessageInrechainonline": "הודעה חדשה ב-rechainonline",
+  "newMessageInrechainonline": "הודעה חדשה ב-rechain",
   "@newMessageInrechainonline": {
     "type": "String",
     "placeholders": {}
   },
-  "noGoogleServicesWarning": "נראה שאין לך שירותי גוגל בטלפון שלך. זו החלטה טובה לפרטיות שלך! כדי לקבל התרעות ב- REChain אנו ממליצים להשתמש https://microg.org/ או https://unifiedpush.org/.",
+  "noGoogleServicesWarning": "נראה שאין לך שירותי גוגל בטלפון שלך. זו החלטה טובה לפרטיות שלך! כדי לקבל התרעות ב- rechain אנו ממליצים להשתמש https://microg.org/ או https://unifiedpush.org/.",
   "@noGoogleServicesWarning": {
     "type": "String",
     "placeholders": {}
@@ -1428,7 +1428,7 @@
   },
   "notAnImage": "הקובץ אינו תמונה.",
   "@notAnImage": {},
-  "alwaysUse24HourFormat": "",
+  "alwaysUse24HourFormat": "שגוי",
   "@alwaysUse24HourFormat": {
     "description": "Set to true to always display time of day in 24 hour format."
   }

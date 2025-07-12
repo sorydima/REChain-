@@ -825,8 +825,8 @@
     "type": "String",
     "placeholders": {}
   },
-  "rechainonline": "rechainonline",
-  "@rechainonline": {
+  "rechain": "rechain",
+  "@rechain": {
     "type": "String",
     "placeholders": {}
   },
@@ -997,7 +997,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "inviteText": "{username} hat Dich zu REChain eingeladen. \n1. Gehe auf online.rechain.network und installiere die App \n2. Melde Dich in der App an \n3. Öffne den Einladungslink: \n {link}",
+  "inviteText": "{username} hat Dich zu rechain eingeladen. \n1. Gehe auf https://online.rechain.network und installiere die App \n2. Melde Dich in der App an \n3. Öffne den Einladungslink: \n {link}",
   "@inviteText": {
     "type": "String",
     "placeholders": {
@@ -1169,7 +1169,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "newMessageInrechainonline": "💬 Neue Nachricht in rechainonline",
+  "newMessageInrechainonline": "💬 Neue Nachricht in rechain",
   "@newMessageInrechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1779,7 +1779,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "title": "rechainonline",
+  "title": "rechain",
   "@title": {
     "description": "Title for the application",
     "type": "String",
@@ -2069,7 +2069,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "norechainonlineServer": "{server1} ist kein REChain-Server, stattdessen {server2} benutzen?",
+  "norechainonlineServer": "{server1} ist kein rechain-Server, stattdessen {server2} benutzen?",
   "@norechainonlineServer": {
     "type": "String",
     "placeholders": {
@@ -2186,7 +2186,7 @@
   "@videoCallsBetaWarning": {},
   "emailOrUsername": "E-Mail oder Benutzername",
   "@emailOrUsername": {},
-  "unsupportedAndroidVersionLong": "Diese Funktion erfordert eine neuere Android-Version. Bitte suche nach Updates oder prüfe die Mobile Katya-OS-Unterstützung.",
+  "unsupportedAndroidVersionLong": "Diese Funktion erfordert eine neuere Android-Version. Bitte suche nach Updates oder prüfe die Katya ® 👽-OS-Unterstützung.",
   "@unsupportedAndroidVersionLong": {},
   "experimentalVideoCalls": "Experimentelle Videoanrufe",
   "@experimentalVideoCalls": {},
@@ -2360,10 +2360,10 @@
   "@storeInSecureStorageDescription": {},
   "storeInAppleKeyChain": "Im Apple KeyChain speichern",
   "@storeInAppleKeyChain": {},
-  "indexedDbErrorLong": "Die Nachrichtenspeicherung ist im privaten Modus standardmäßig leider nicht aktiviert.\nBitte besuche\n- about:config\n- Setze dom.indexedDB.privateBrowsing.enabled auf true\nAndernfalls ist es nicht möglich, REChain auszuführen.",
+  "indexedDbErrorLong": "Die Nachrichtenspeicherung ist im privaten Modus standardmäßig leider nicht aktiviert.\nBitte besuche\n- about:config\n- Setze dom.indexedDB.privateBrowsing.enabled auf true\nAndernfalls ist es nicht möglich, rechain auszuführen.",
   "@indexedDbErrorLong": {},
-  "confirmMatrixId": "Bitte bestätigen deine REChain-ID, um dein Konto zu löschen.",
-  "@confirmMatrixId": {},
+  "confirmrechainonlineId": "Bitte bestätigen deine rechain ID, um dein Konto zu löschen.",
+  "@confirmrechainonlineId": {},
   "supposedMxid": "das sollte sein {mxid}",
   "@supposedMxid": {
     "type": "String",
@@ -2373,7 +2373,7 @@
       }
     }
   },
-  "commandHint_markasdm": "Als Direktnachrichtenraum für die angegebene REChain-ID markieren",
+  "commandHint_markasdm": "Als Direktnachrichtenraum für die angegebene rechain ID markieren",
   "@commandHint_markasdm": {},
   "commandHint_markasgroup": "Als Gruppe markieren",
   "@commandHint_markasgroup": {},
@@ -2381,7 +2381,7 @@
   "@hideUnimportantStateEvents": {},
   "doNotShowAgain": "Nicht mehr anzeigen",
   "@doNotShowAgain": {},
-  "appearOnTopDetails": "Ermöglicht, dass die App oben angezeigt wird (nicht erforderlich, wenn du REChain bereits als Anrufkonto eingerichtet haben)",
+  "appearOnTopDetails": "Ermöglicht, dass die App oben angezeigt wird (nicht erforderlich, wenn du rechain bereits als Anrufkonto eingerichtet haben)",
   "@appearOnTopDetails": {},
   "noKeyForThisMessage": "Dies kann passieren, wenn die Nachricht gesendet wurde, bevor du dich auf diesem Gerät bei deinem Konto angemeldet hast.\n\nEs ist auch möglich, dass der Absender dein Gerät blockiert hat oder etwas mit der Internetverbindung schief gelaufen ist.\n\nKannst du die Nachricht in einer anderen Sitzung lesen? Dann kannst du die Nachricht davon übertragen! Gehe zu den Einstellungen > Geräte und vergewissere dich, dass sich deine Geräte gegenseitig verifiziert haben. Wenn du den Raum das nächste Mal öffnest und beide Sitzungen im Vordergrund sind, werden die Schlüssel automatisch übertragen.\n\nDu möchtest die Schlüssel beim Abmelden oder Gerätewechsel nicht verlieren? Stelle sicher, dass du das Chat-Backup in den Einstellungen aktiviert hast.",
   "@noKeyForThisMessage": {},
@@ -2393,11 +2393,11 @@
   "@callingPermissions": {},
   "callingAccount": "Anrufkonto",
   "@callingAccount": {},
-  "callingAccountDetails": "Ermöglicht REChain, die native Android-Dialer-App zu verwenden.",
+  "callingAccountDetails": "Ermöglicht rechain, die native Android-Dialer-App zu verwenden.",
   "@callingAccountDetails": {},
   "appearOnTop": "Oben erscheinen",
   "@appearOnTop": {},
-  "otherCallingPermissions": "Mikrofon, Kamera und andere REChain-Berechtigungen",
+  "otherCallingPermissions": "Mikrofon, Kamera und andere rechain-Berechtigungen",
   "@otherCallingPermissions": {},
   "whyIsThisMessageEncrypted": "Warum ist diese Nachricht nicht lesbar?",
   "@whyIsThisMessageEncrypted": {},
@@ -2638,7 +2638,7 @@
   "@archiveRoomDescription": {},
   "learnMore": "Erfahre mehr",
   "@learnMore": {},
-  "roomUpgradeDescription": "Der Chat wird dann mit der neuen Raumversion neu erstellt. Alle Teilnehmer werden benachrichtigt, dass sie zum neuen Chat wechseln müssen. Mehr über Raumversionen erfährst du unter https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle",
+  "roomUpgradeDescription": "Der Chat wird dann mit der neuen Raumversion neu erstellt. Alle Teilnehmer werden benachrichtigt, dass sie zum neuen Chat wechseln müssen. Mehr über Raumversionen erfährst du unter https://online.rechain.network",
   "@roomUpgradeDescription": {},
   "kickUserDescription": "Der Benutzer wird aus dem Chat geworfen, aber nicht gebannt. In öffentlichen Chats kann der Benutzer jederzeit wieder beitreten.",
   "@kickUserDescription": {},
@@ -2852,9 +2852,9 @@
   },
   "incomingMessages": "Eingehende Nachrichten",
   "@incomingMessages": {},
-  "commandHint_unignore": "Angegebene REChain-ID nicht mehr ignorieren",
+  "commandHint_unignore": "Angegebene rechain ID nicht mehr ignorieren",
   "@commandHint_unignore": {},
-  "commandHint_ignore": "Angegebene REChain-ID ignorieren",
+  "commandHint_ignore": "Angegebene rechain ID ignorieren",
   "@commandHint_ignore": {},
   "noDatabaseEncryption": "Datenbankverschlüsselung wird auf dieser Plattform nicht unterstützt",
   "@noDatabaseEncryption": {},
@@ -3073,11 +3073,11 @@
   "@whatIsAHomeserver": {},
   "doesNotSeemToBeAValidHomeserver": "Scheint kein kompatibler Homeserver zu sein. Falsche URL?",
   "@doesNotSeemToBeAValidHomeserver": {},
-  "loginWithMatrixId": "Mit REChain-ID anmelden",
-  "@loginWithMatrixId": {},
+  "loginWithrechainonlineId": "Mit rechain ID anmelden",
+  "@loginWithrechainonlineId": {},
   "discoverHomeservers": "Server suchen",
   "@discoverHomeservers": {},
-  "homeserverDescription": "Alle deine Daten werden auf einem Homeserver gespeichert, so wie bei einem E-Mail Anbieter. Du kannst aussuchen, welchen Homeserver du benutzen willst und kannst trotzdem mit allen kommunizieren. Erfahre mehr auf https://rechain.network.",
+  "homeserverDescription": "Alle deine Daten werden auf einem Homeserver gespeichert, so wie bei einem E-Mail Anbieter. Du kannst aussuchen, welchen Homeserver du benutzen willst und kannst trotzdem mit allen kommunizieren. Erfahre mehr auf https://online.rechain.network.",
   "@homeserverDescription": {},
   "sendingAttachment": "Anhang wird gesendet ...",
   "@sendingAttachment": {},
@@ -3127,7 +3127,7 @@
   "@setWallpaper": {},
   "opacity": "Deckkraft:",
   "@opacity": {},
-  "welcomeText": "Hey Hey 👋 Das ist REChain. Du kannst sich bei jedem Homeserver anmelden, der mit https://rechain.network kompatibel ist. Und dann mit jedem chatten. Das hier ist ein riesiges dezentrales Nachrichtennetzwerk!",
+  "welcomeText": "Hey Hey 👋 Das ist rechain. Du kannst sich bei jedem Homeserver anmelden, der mit https://online.rechain.network kompatibel ist. Und dann mit jedem chatten. Das hier ist ein riesiges dezentrales Nachrichtennetzwerk!",
   "@welcomeText": {},
   "blur": "Verwischen:",
   "@blur": {},
@@ -3185,7 +3185,7 @@
   "@supportPage": {},
   "serverInformation": "Server-Informationen:",
   "@serverInformation": {},
-  "appIntroduction": "Mit REChain kannst du über verschiedene Messenger hinweg mit deinen Freunden chatten. Erfahre mehr dazu auf https://rechain.network oder tippe einfach auf *Fortfahren*.",
+  "appIntroduction": "Mit rechain kannst du über verschiedene Messenger hinweg mit deinen Freunden chatten. Erfahre mehr dazu auf https://online.rechain.network oder tippe einfach auf *Fortfahren*.",
   "@appIntroduction": {},
   "newChatRequest": "📩 Neue Chat-Anfrage",
   "@newChatRequest": {},
@@ -3355,7 +3355,7 @@
   "@notificationRuleServerAcl": {},
   "notificationRuleMemberEventDescription": "Unterdrückt Benachrichtigungen zu Mitgliedschaftsereignissen.",
   "@notificationRuleMemberEventDescription": {},
-  "sentVoiceMessage": "🎙️ {duration} - Sprachnachricht von {sender}",
+  "sentVoiceMessage": "🎙️ {duration} - {sender}",
   "@sentVoiceMessage": {
     "type": "String",
     "placeholders": {
@@ -3380,15 +3380,5 @@
   "pleaseWaitUntilInvited": "Bitte warte nun, bis dich jemand aus dem Raum auffordert.",
   "@pleaseWaitUntilInvited": {},
   "notificationRuleTombstone": "Tombstone",
-  "@notificationRuleTombstone": {},
-  "commandHint_logout": "Aktuelles Gerät abmelden",
-  "@commandHint_logout": {},
-  "commandHint_logoutall": "Alle aktiven Geräte abmelden",
-  "@commandHint_logoutall": {},
-  "displayNavigationRail": "Navigationsleiste auf dem Smartphone anzeigen",
-  "@displayNavigationRail": {},
-  "customReaction": "Benutzerdefinierte Reaktion",
-  "@customReaction": {},
-  "moreEvents": "Weitere Ereignisse",
-  "@moreEvents": {}
+  "@notificationRuleTombstone": {}
 }
