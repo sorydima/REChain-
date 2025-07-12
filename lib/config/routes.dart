@@ -108,7 +108,7 @@ abstract class AppRoutes {
     GoRoute(
       path: '/error',
       pageBuilder: (context, state) {
-        final location = state.location;
+        final location = state.uri.toString();
         String? tgWebAppData;
         final uri = Uri.tryParse(location);
         if (uri != null) {
