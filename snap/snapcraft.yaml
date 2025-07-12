@@ -1,9 +1,9 @@
 name: rechainonline
 title: REChain
-base: core24
+base: core20
 version: 4.1.7
 license: AGPL-3.0
-summary: The inclusion of polls enhances decision-making processes by facilitating quick and efficient feedback gathering.
+summary: The inclusion of polls enhances decision-making processes.
 description: |
   REChain is a comprehensive platform that unifies Matrix protocol, blockchain, IPFS, AI, and external services into a seamless, extensible, and developer-friendly ecosystem. It empowers users and developers to build, scale, and secure decentralized apps, bots, and integrations for the future of the internet.
 
@@ -51,11 +51,11 @@ description: |
 grade: stable
 confinement: strict
 
-platforms:
-  amd64:
-    build-on: amd64
-  arm64:
-    build-on: arm64
+# platforms:
+#   amd64:
+#     build-on: amd64
+#   arm64:
+#     build-on: arm64
 
 parts:
   flutter-git:
@@ -114,7 +114,7 @@ slots:
 apps:
   rechainonline:
     command: bin/rechainonline
-    extensions: [ gnome ]
+    # extensions: [ gnome ]
     plugs:
       - audio-playback
       - desktop
