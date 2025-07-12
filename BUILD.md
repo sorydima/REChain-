@@ -1,11 +1,33 @@
-# Build Instructions
+# Building Flutter App for Aurora OS
 
-How to build the REChain project locally.
+## Prerequisites
+- Flutter SDK installed and configured.
+- Aurora OS SDK and toolchain installed.
+- Access to Aurora OS device or emulator for testing.
 
----
+## Build Steps
 
-## Latest Release: v4.1.7+1150
+1. Configure Flutter for Linux target (Aurora OS is Linux-based):
+   ```bash
+   flutter config --enable-linux-desktop
+   ```
 
-REChain has evolved into a truly modular, production-ready ecosystem! This release integrates Matrix, Telegram, blockchain, IPFS, and AI, introduces a dynamic plugin system, unifies APIs, and delivers world-class docs and onboarding for developers and users. REChain is now ready for enterprise and community adoption!
+2. Build the Flutter app for Linux:
+   ```bash
+   flutter build linux
+   ```
 
-For full details, see the [Release Notes](RELEASE_NOTES.md).
+3. Package the app for Aurora OS:
+   - Use Aurora OS packaging tools to create an installable package.
+   - Refer to Aurora OS documentation for packaging guidelines.
+
+4. Deploy and test on Aurora OS device or emulator.
+
+## Notes
+- Ensure platform-specific code (input handling, plugins) is properly integrated.
+- Use conditional imports to separate Aurora OS and other platform code.
+- Test thoroughly on Aurora OS to verify input and plugin functionality.
+
+## References
+- Aurora OS Flutter GitLab: https://gitlab.com/omprussia/flutter
+- Aurora OS Packaging Documentation: [Add link if available]

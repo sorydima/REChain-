@@ -104,6 +104,37 @@ abstract class AppRoutes {
         ),
       ],
     ),
+    // Add error page route to catch unknown routes and parse tgWebAppData manually
+    GoRoute(
+      path: '/error',
+      pageBuilder: (context, state) {
+        final location = state.location;
+        String? tgWebAppData;
+        final uri = Uri.tryParse(location);
+        if (uri != null) {
+          tgWebAppData = uri.queryParameters['tgWebAppData'];
+        }
+        return defaultPageBuilder(
+          context,
+          state,
+          TelegramWebAppInitPage(tgWebAppData: tgWebAppData),
+        );
+      },
+    ),
+  ];
+
+  static final GoRouter router = GoRouter(
+    routes: routes,
+    errorPageBuilder: (context, state) {
+      // On error, redirect to /error route to handle unknown routes
+      return MaterialPage(
+        key: state.pageKey,
+        child: TelegramWebAppInitPage(
+          tgWebAppData: Uri.tryParse(state.location)?.queryParameters['tgWebAppData'],
+        ),
+      );
+    },
+  );
     GoRoute(
       path: '/logs',
       pageBuilder: (context, state) => defaultPageBuilder(
