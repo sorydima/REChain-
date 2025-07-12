@@ -81,66 +81,56 @@ class MainScreen extends StatelessWidget {
   }
 }
 
-void main() {
+void main() async {
   // Add Flutter framework error handler
   FlutterError.onError = (FlutterErrorDetails details) {
     Logs().e('Flutter framework error', details.exception, details.stack);
   };
 
-  // Run app inside a Zone to catch all uncaught async errors
-  runZonedGuarded(() async {
-    Logs().i('Welcome to ${AppConfig.applicationName} <3');
+  Logs().i('Welcome to ${AppConfig.applicationName} <3');
 
-    // Our background push shared isolate accesses flutter-internal things very early in the startup proccess
-    // To make sure that the parts of flutter needed are started up already, we need to ensure that the
-    // widget bindings are initialized already.
-    WidgetsFlutterBinding.ensureInitialized();
+  // Our background push shared isolate accesses flutter-internal things very early in the startup proccess
+  // To make sure that the parts of flutter needed are started up already, we need to ensure that the
+  // widget bindings are initialized already.
+  WidgetsFlutterBinding.ensureInitialized();
 
-    try {
-      await vod.init(wasmPath: './assets/vodozemac/');
-    } catch (e, s) {
-      Logs().e('Failed to initialize flutter_vodozemac', e, s);
+  try {
+    await vod.init(wasmPath: './assets/vodozemac/');
+  } catch (e, s) {
+    Logs().e('Failed to initialize flutter_vodozemac', e, s);
+  }
+
+  Logs().nativeColors = !PlatformInfos.isIOS;
+  final store = await SharedPreferences.getInstance();
+  final clients = await ClientManager.getClients(store: store);
+
+  // If the app starts in detached mode, we assume that it is in
+  // background fetch mode for processing push notifications. This is
+  // currently only supported on Android.
+  if (PlatformInfos.isAndroid &&
+      AppLifecycleState.detached == WidgetsBinding.instance.lifecycleState) {
+    // Do not send online presences when app is in background fetch mode.
+    for (final client in clients) {
+      client.backgroundSync = false;
+      client.syncPresence = PresenceType.offline;
     }
 
-    Logs().nativeColors = !PlatformInfos.isIOS;
-    final store = await SharedPreferences.getInstance();
-    final clients = await ClientManager.getClients(store: store);
-
-    // If the app starts in detached mode, we assume that it is in
-    // background fetch mode for processing push notifications. This is
-    // currently only supported on Android.
-    if (PlatformInfos.isAndroid &&
-        AppLifecycleState.detached == WidgetsBinding.instance.lifecycleState) {
-      // Do not send online presences when app is in background fetch mode.
-      for (final client in clients) {
-        client.backgroundSync = false;
-        client.syncPresence = PresenceType.offline;
-      }
-
-      // In the background fetch mode we do not want to waste ressources with
-      // starting the Flutter engine but process incoming push notifications.
-      BackgroundPush.clientOnly(clients.first);
-      // To start the flutter engine afterwards we add an custom observer.
-      WidgetsBinding.instance.addObserver(AppStarter(clients, store));
-      Logs().i(
-        '${AppConfig.applicationName} started in background-fetch mode. No GUI will be created unless the app is no longer detached.',
-      );
-      return;
-    }
-
-    // Started in foreground mode.
+    // In the background fetch mode we do not want to waste ressources with
+    // starting the Flutter engine but process incoming push notifications.
+    BackgroundPush.clientOnly(clients.first);
+    // To start the flutter engine afterwards we add an custom observer.
+    WidgetsBinding.instance.addObserver(AppStarter(clients, store));
     Logs().i(
-      '${AppConfig.applicationName} started in foreground mode. Rendering GUI...',
+      '${AppConfig.applicationName} started in background-fetch mode. No GUI will be created unless the app is no longer detached.',
     );
-    try {
-      await startGui(clients, store);
-    } catch (e, s) {
-      Logs().e('Error during startGui', e, s);
-      rethrow;
-    }
-  }, (error, stack) {
-    Logs().e('Uncaught async error', error, stack);
-  });
+    return;
+  }
+
+  // Started in foreground mode.
+  Logs().i(
+    '${AppConfig.applicationName} started in foreground mode. Rendering GUI...',
+  );
+  await startGui(clients, store);
 }
 
 /// Fetch the pincode for the applock and start the flutter engine.
