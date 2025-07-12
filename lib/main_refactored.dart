@@ -15,76 +15,21 @@ import 'widgets/rechainonline_chat_app.dart';
 import 'package:telegram_web_app/telegram_web_app.dart';
 import 'widgets/missing_widgets.dart';
 
-
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Telegram REChain App',
-      theme: TelegramThemeUtil.getTheme(TelegramWebApp.instance),
-      home: const MainScreen(),
-    );
-  }
-}
-
-class MainScreen extends StatelessWidget {
-  const MainScreen({super.key});
-
-  double get safeAreaTop => 0.0;
-
-  @override
-  Widget build(BuildContext context) {
-    final TelegramWebApp telegram = TelegramWebApp.instance;
-    return Scaffold(
-      backgroundColor: telegram.backgroundColor ?? Colors.grey,
-      appBar: TeleAppbar(title: 'REChain App', top: safeAreaTop),
-      body: ListView(
-        padding: const EdgeInsets.all(8),
-        children: [
-          ListButton('Expand', onPress: telegram.expand),
-          InfoExpandableTile(
-            'Init Data',
-            telegram.initData.toString(),
-          ),
-          InfoExpandableTile(
-            'Init Data Unsafe',
-            telegram.initDataUnsafe?.toReadableString() ?? 'null',
-          ),
-          InfoExpandableTile(
-            'isVerticalSwipesEnabled',
-            telegram.isVerticalSwipesEnabled.toString(),
-          ),
-          ListButton('enableVerticalSwipes', onPress: telegram.enableVerticalSwipes),
-          ListButton('disableVerticalSwipes', onPress: telegram.disableVerticalSwipes),
-          InfoExpandableTile('Version', telegram.version),
-          InfoExpandableTile('Platform', telegram.platform),
-          InfoExpandableTile('Color Scheme', telegram.colorScheme.name),
-          ThemeParamsWidget(telegram.themeParams),
-          InfoExpandableTile('isActive', telegram.isActive.toString()),
-          InfoExpandableTile('isExpanded', telegram.isExpanded.toString()),
-          InfoExpandableTile('viewportHeight', telegram.viewportHeight.toString()),
-          InfoExpandableTile('viewportStableHeight', telegram.viewportStableHeight.toString()),
-          InfoExpandableTile('safeAreaInset', telegram.safeAreaInset.toString()),
-          InfoExpandableTile('contentSafeAreaInset', telegram.contentSafeAreaInset.toString()),
-          OneColorExpandableTile('headerColor', telegram.headerColor),
-          OneColorExpandableTile('backgroundColor', telegram.backgroundColor),
-          OneColorExpandableTile('bottomBarColor', telegram.bottomBarColor),
-        ],
-      ),
-    );
-  }
-}
-
 void main() async {
-  Logs().i('Welcome to ${AppConfig.applicationName} <3');
-
-  // Our background push shared isolate accesses flutter-internal things very early in the startup proccess
-  // To make sure that the parts of flutter needed are started up already, we need to ensure that the
-  // widget bindings are initialized already.
   WidgetsFlutterBinding.ensureInitialized();
+
+  try {
+    if (TelegramWebApp.instance.isSupported) {
+      TelegramWebApp.instance.ready();
+      Future.delayed(const Duration(seconds: 1), TelegramWebApp.instance.expand);
+    }
+  } catch (e) {
+    print("Error happened in Flutter while loading Telegram $e");
+    // add delay for 'Telegram not loading sometimes' bug
+    await Future.delayed(const Duration(milliseconds: 200));
+    main();
+    return;
+  }
 
   try {
     await vod.init(wasmPath: './assets/vodozemac/');
@@ -171,5 +116,66 @@ class AppStarter with WidgetsBindingObserver {
     startGui(clients, store);
     // We must make sure that the GUI is only started once.
     guiStarted = true;
+  }
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Telegram REChain App',
+      theme: TelegramThemeUtil.getTheme(TelegramWebApp.instance),
+      home: const MainScreen(),
+    );
+  }
+}
+
+class MainScreen extends StatelessWidget {
+  const MainScreen({super.key});
+
+  double get safeAreaTop => 0.0;
+
+  @override
+  Widget build(BuildContext context) {
+    final TelegramWebApp telegram = TelegramWebApp.instance;
+    return Scaffold(
+      backgroundColor: telegram.backgroundColor ?? Colors.grey,
+      appBar: TeleAppbar(title: 'REChain App', top: safeAreaTop),
+      body: ListView(
+        padding: const EdgeInsets.all(8),
+        children: [
+          ListButton('Expand', onPress: telegram.expand),
+          InfoExpandableTile(
+            'Init Data',
+            telegram.initData.toString(),
+          ),
+          InfoExpandableTile(
+            'Init Data Unsafe',
+            telegram.initDataUnsafe?.toReadableString() ?? 'null',
+          ),
+          InfoExpandableTile(
+            'isVerticalSwipesEnabled',
+            telegram.isVerticalSwipesEnabled.toString(),
+          ),
+          ListButton('enableVerticalSwipes', onPress: telegram.enableVerticalSwipes),
+          ListButton('disableVerticalSwipes', onPress: telegram.disableVerticalSwipes),
+          InfoExpandableTile('Version', telegram.version),
+          InfoExpandableTile('Platform', telegram.platform),
+          InfoExpandableTile('Color Scheme', telegram.colorScheme.name),
+          ThemeParamsWidget(telegram.themeParams),
+          InfoExpandableTile('isActive', telegram.isActive.toString()),
+          InfoExpandableTile('isExpanded', telegram.isExpanded.toString()),
+          InfoExpandableTile('viewportHeight', telegram.viewportHeight.toString()),
+          InfoExpandableTile('viewportStableHeight', telegram.viewportStableHeight.toString()),
+          InfoExpandableTile('safeAreaInset', telegram.safeAreaInset.toString()),
+          InfoExpandableTile('contentSafeAreaInset', telegram.contentSafeAreaInset.toString()),
+          OneColorExpandableTile('headerColor', telegram.headerColor),
+          OneColorExpandableTile('backgroundColor', telegram.backgroundColor),
+          OneColorExpandableTile('bottomBarColor', telegram.bottomBarColor),
+        ],
+      ),
+    );
   }
 }
