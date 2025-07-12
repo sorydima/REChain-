@@ -12,7 +12,10 @@ import 'package:rechainonline/utils/platform_infos.dart';
 import 'config/setting_keys.dart';
 import 'utils/background_push.dart';
 import 'widgets/rechainonline_chat_app.dart';
-import 'package:telegram_web_app/telegram_web_app.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
+
+import 'telegram_web_app_stub.dart'
+    if (dart.library.js) 'package:telegram_web_app/telegram_web_app.dart';
 import 'widgets/missing_widgets.dart';
 
 
