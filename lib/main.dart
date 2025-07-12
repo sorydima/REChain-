@@ -42,7 +42,7 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final TelegramWebApp telegram = TelegramWebApp.instance;
     return Scaffold(
-      backgroundColor: telegram.backgroundColor ?? Colors.grey,
+      backgroundColor: (telegram.backgroundColor as Color?) ?? Colors.grey,
       appBar: TeleAppbar(title: 'REChain App', top: safeAreaTop),
       body: ListView(
         padding: const EdgeInsets.all(8),
@@ -62,9 +62,9 @@ class MainScreen extends StatelessWidget {
           ),
           ListButton('enableVerticalSwipes', onPress: telegram.enableVerticalSwipes),
           ListButton('disableVerticalSwipes', onPress: telegram.disableVerticalSwipes),
-          InfoExpandableTile('Version', telegram.version),
-          InfoExpandableTile('Platform', telegram.platform),
-          InfoExpandableTile('Color Scheme', telegram.colorScheme.name),
+          InfoExpandableTile('Version', telegram.version ?? ''),
+          InfoExpandableTile('Platform', telegram.platform ?? ''),
+          InfoExpandableTile('Color Scheme', telegram.colorScheme?.name ?? ''),
           ThemeParamsWidget(telegram.themeParams),
           InfoExpandableTile('isActive', telegram.isActive.toString()),
           InfoExpandableTile('isExpanded', telegram.isExpanded.toString()),
@@ -73,7 +73,7 @@ class MainScreen extends StatelessWidget {
           InfoExpandableTile('safeAreaInset', telegram.safeAreaInset.toString()),
           InfoExpandableTile('contentSafeAreaInset', telegram.contentSafeAreaInset.toString()),
           OneColorExpandableTile('headerColor', telegram.headerColor),
-          OneColorExpandableTile('backgroundColor', telegram.backgroundColor),
+          OneColorExpandableTile('backgroundColor', telegram.backgroundColor as Color?),
           OneColorExpandableTile('bottomBarColor', telegram.bottomBarColor),
         ],
       ),
