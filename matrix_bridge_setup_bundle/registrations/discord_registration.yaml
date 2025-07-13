@@ -1,0 +1,14 @@
+id: discord
+url: http://localhost:9996
+as_token: 4ee3a49fb9b7257fdeaef8dc156fb737
+hs_token: 0f5cb92ed9980763c8900af44b56f4ec
+sender_localpart: discordbot
+namespaces:
+  users:
+  - regex: '@discord_.*:node.marinchik.ink'
+    exclusive: true
+  aliases:
+  - regex: '#discord_.*:node.marinchik.ink'
+    exclusive: true
+  rooms: []
+rate_limited: false

@@ -1,0 +1,14 @@
+id: gitter
+url: http://localhost:10002
+as_token: d57980b2191ef2ccea343fb9fd2048da
+hs_token: f2157eebcbc8e2d514f2c07f274cb811
+sender_localpart: gitterbot
+namespaces:
+  users:
+  - regex: '@gitter_.*:node.marinchik.ink'
+    exclusive: true
+  aliases:
+  - regex: '#gitter_.*:node.marinchik.ink'
+    exclusive: true
+  rooms: []
+rate_limited: false

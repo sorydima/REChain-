@@ -1,0 +1,6 @@
+homeserver:
+  url: https://node.marinchik.ink
+  domain: node.marinchik.ink
+bridge:
+  token: YOUR_GITTER_TOKEN
+  port: 10002

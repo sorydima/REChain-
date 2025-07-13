@@ -1,0 +1,14 @@
+id: instagram
+url: http://localhost:10001
+as_token: 80fc093aa2abbb62380ee0e913139706
+hs_token: e2b0521086eb5982f4d5266bb2d4da56
+sender_localpart: instagrambot
+namespaces:
+  users:
+  - regex: '@instagram_.*:node.marinchik.ink'
+    exclusive: true
+  aliases:
+  - regex: '#instagram_.*:node.marinchik.ink'
+    exclusive: true
+  rooms: []
+rate_limited: false

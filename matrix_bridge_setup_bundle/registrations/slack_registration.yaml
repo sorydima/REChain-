@@ -1,0 +1,14 @@
+id: slack
+url: http://localhost:9997
+as_token: 84802c07a3efb16f83f267e2fb92b903
+hs_token: 72b3021051c39a8ebe9d5197189a9029
+sender_localpart: slackbot
+namespaces:
+  users:
+  - regex: '@slack_.*:node.marinchik.ink'
+    exclusive: true
+  aliases:
+  - regex: '#slack_.*:node.marinchik.ink'
+    exclusive: true
+  rooms: []
+rate_limited: false

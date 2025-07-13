@@ -1,0 +1,6 @@
+homeserver:
+  url: https://node.marinchik.ink
+  domain: node.marinchik.ink
+bridge:
+  token: YOUR_FACEBOOK_TOKEN
+  port: 10000

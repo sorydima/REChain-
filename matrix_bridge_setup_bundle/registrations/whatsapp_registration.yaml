@@ -1,0 +1,14 @@
+id: whatsapp
+url: http://localhost:9998
+as_token: 2257ba3a6aabc99157f88ec3535c18ed
+hs_token: aa76ec1ce8664352bcdb102baa789efe
+sender_localpart: whatsappbot
+namespaces:
+  users:
+  - regex: '@whatsapp_.*:node.marinchik.ink'
+    exclusive: true
+  aliases:
+  - regex: '#whatsapp_.*:node.marinchik.ink'
+    exclusive: true
+  rooms: []
+rate_limited: false

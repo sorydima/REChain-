@@ -1,0 +1,14 @@
+id: facebook
+url: http://localhost:10000
+as_token: aee2b00d7587fa211eb095172b313253
+hs_token: 319127a75ab9699cd0f53960844ff7b1
+sender_localpart: facebookbot
+namespaces:
+  users:
+  - regex: '@facebook_.*:node.marinchik.ink'
+    exclusive: true
+  aliases:
+  - regex: '#facebook_.*:node.marinchik.ink'
+    exclusive: true
+  rooms: []
+rate_limited: false

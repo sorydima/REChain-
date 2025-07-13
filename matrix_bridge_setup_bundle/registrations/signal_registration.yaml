@@ -1,0 +1,14 @@
+id: signal
+url: http://localhost:9999
+as_token: 67441abb2530822cd285a89a2d324af3
+hs_token: 42e578249db7fb9bccb26895d4648142
+sender_localpart: signalbot
+namespaces:
+  users:
+  - regex: '@signal_.*:node.marinchik.ink'
+    exclusive: true
+  aliases:
+  - regex: '#signal_.*:node.marinchik.ink'
+    exclusive: true
+  rooms: []
+rate_limited: false

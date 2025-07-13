@@ -1,0 +1,14 @@
+id: telegram
+url: http://localhost:9995
+as_token: cb7d3b286247836589252499becd2839
+hs_token: dfa0e7aa9d6b56eed05f06b444be7c2b
+sender_localpart: telegrambot
+namespaces:
+  users:
+  - regex: '@telegram_.*:node.marinchik.ink'
+    exclusive: true
+  aliases:
+  - regex: '#telegram_.*:node.marinchik.ink'
+    exclusive: true
+  rooms: []
+rate_limited: false
