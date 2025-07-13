@@ -15,11 +15,14 @@ RECHAIN_WEB_URL="https://chainapp.codemagic.app"
 # === UPDATE AND INSTALL CORE ===
 echo "[1/8] Updating system and installing core packages..."
 apt update && apt upgrade -y
-apt install -y sudo curl gnupg2 git wget lsb-release software-properties-common apt-transport-https     ca-certificates build-essential python3 python3-pip python3-venv postgresql     nodejs npm nginx certbot python3-certbot-nginx unzip ufw coturn
+apt install -y sudo curl gnupg2 git wget lsb-release software-properties-common apt-transport-https     ca-certificates build-essential python3 python3-pip python3-venv postgresql     nginx certbot python3-certbot-nginx unzip ufw coturn
 
-# === ADD NODE 18+ ===
-curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
-apt install -y nodejs
+# === FIX NODEJS/NPM INSTALLATION ===
+echo "[1.1] Installing Node.js 20 via Nodesource..."
+apt purge -y nodejs npm || true
+apt autoremove -y || true
+curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+apt install -y nodejs  # DO NOT install npm separately
 
 # === FIREWALL ===
 ufw allow OpenSSH
@@ -37,7 +40,7 @@ EOF
 # === INSTALL SYNAPSE ===
 echo "[3/8] Installing Synapse..."
 pip install --upgrade pip virtualenv
-useradd -m -r -d ${SYNAPSE_HOME} -s /bin/false synapse
+useradd -m -r -d ${SYNAPSE_HOME} -s /bin/false synapse || true
 mkdir -p ${SYNAPSE_HOME}
 cd ${SYNAPSE_HOME}
 python3 -m venv env
