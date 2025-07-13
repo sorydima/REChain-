@@ -1,146 +1,109 @@
 #!/bin/bash
-
 set -e
 
-# === BASIC VARIABLES ===
-DOMAIN="node.marinchik.ink"
-IP="87.228.80.4"
-EMAIL="admin@${DOMAIN}"
-SYNAPSE_HOME="/opt/matrix/synapse"
-BRIDGES_HOME="/opt/matrix/bridges"
-WEBAPP_DIR="/opt/matrix/webapp"
-RECHAIN_REPO="https://github.com/sorydima/REChain-.git"
-RECHAIN_WEB_URL="https://chainapp.codemagic.app"
+# Configuration
+SERVER_NAME="your.domain.com"  # Replace with your actual domain
+DB_PASSWORD="strong_password"  # Replace with your secure password
+SYNAPSE_HOME="/opt/synapse"
+SYNAPSE_USER="synapse"
+POSTGRES_USER="synapse_user"
+POSTGRES_DB="synapse"
 
-# === UPDATE AND INSTALL CORE ===
-echo "[1/8] Updating system and installing core packages..."
-apt update && apt upgrade -y
-apt install -y sudo curl gnupg2 git wget lsb-release software-properties-common apt-transport-https     ca-certificates build-essential python3 python3-pip python3-venv postgresql     nginx certbot python3-certbot-nginx unzip ufw coturn
+# Install dependencies
+echo "[1/8] Installing dependencies..."
+apt update
+apt install -y nginx postgresql postgresql-client coturn python3 python3-venv python3-dev python3-pip libpq-dev
 
-# === FIX NODEJS/NPM INSTALLATION ===
-echo "[1.1] Installing Node.js 20 via Nodesource..."
-apt purge -y nodejs npm || true
-apt autoremove -y || true
-curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
-apt install -y nodejs  # DO NOT install npm separately
+# Configure PostgreSQL
+echo "[2/8] Configuring PostgreSQL..."
+sudo -u postgres psql -c "CREATE USER $POSTGRES_USER WITH PASSWORD '$DB_PASSWORD';" >/dev/null 2>&1 || true
+sudo -u postgres psql -c "CREATE DATABASE $POSTGRES_DB ENCODING 'UTF8' LC_COLLATE 'C' LC_CTYPE 'C' TEMPLATE template0 OWNER $POSTGRES_USER;" >/dev/null 2>&1 || true
 
-# === FIREWALL ===
-ufw allow OpenSSH
-ufw allow 80,443,8448,5349/tcp
-ufw allow 5349/udp
-ufw --force enable
-
-# === SETUP POSTGRES FOR SYNAPSE ===
-echo "[2/8] Configuring PostgreSQL for Synapse..."
-sudo -u postgres psql <<EOF
-CREATE USER synapse_user WITH PASSWORD 'synapse_pass';
-CREATE DATABASE synapse ENCODING 'UTF8' LC_COLLATE='C' LC_CTYPE='C' template=template0 OWNER synapse_user;
-EOF
-
-# === INSTALL SYNAPSE ===
-echo "[3/8] Installing Synapse..."
-pip install --upgrade pip virtualenv
-useradd -m -r -d ${SYNAPSE_HOME} -s /bin/false synapse || true
-mkdir -p ${SYNAPSE_HOME}
-cd ${SYNAPSE_HOME}
-python3 -m venv env
-source env/bin/activate
-pip install matrix-synapse psycopg2
-deactivate
-
-cat <<EOF > ${SYNAPSE_HOME}/homeserver.yaml
-server_name: "${DOMAIN}"
-pid_file: ${SYNAPSE_HOME}/homeserver.pid
-listeners:
-  - port: 8448
-    type: http
-    tls: true
-    resources:
-      - names: [client, federation]
-        compress: false
-tls_certificate_path: ${SYNAPSE_HOME}/tls/fullchain.pem
-tls_private_key_path: ${SYNAPSE_HOME}/tls/privkey.pem
-database:
-  name: psycopg2
-  args:
-    user: synapse_user
-    password: synapse_pass
-    database: synapse
-    host: 127.0.0.1
-    cp_min: 5
-    cp_max: 10
-log_config: ${SYNAPSE_HOME}/log.yaml
-EOF
-
-mkdir -p ${SYNAPSE_HOME}/tls
-mkdir -p ${SYNAPSE_HOME}/registration
-
-# === SSL ===
-echo "[4/8] Obtaining SSL certificate..."
-certbot certonly --standalone -d ${DOMAIN} --non-interactive --agree-tos -m ${EMAIL}
-cp /etc/letsencrypt/live/${DOMAIN}/fullchain.pem ${SYNAPSE_HOME}/tls/
-cp /etc/letsencrypt/live/${DOMAIN}/privkey.pem ${SYNAPSE_HOME}/tls/
-
-# === TURN SERVER ===
-echo "[5/8] Configuring coturn..."
-cat <<EOF > /etc/turnserver.conf
-listening-port=5349
+# Setup TURN server
+echo "[3/8] Configuring TURN server..."
+cat > /etc/turnserver.conf <<EOF
+listening-port=3478
 tls-listening-port=5349
-use-auth-secret
-static-auth-secret=RECHAINTURNSECRET
-realm=${DOMAIN}
-cert=/etc/letsencrypt/live/${DOMAIN}/fullchain.pem
-pkey=/etc/letsencrypt/live/${DOMAIN}/privkey.pem
-no-multicast-peers
+external-ip=$(hostname -I | awk '{print $1}')
+realm=$SERVER_NAME
+server-name=$SERVER_NAME
+lt-cred-mech
+userdb=/var/lib/turn/turndb
+# Uncomment for production:
+#no-tcp-relay
+#no-cli
 EOF
-systemctl enable coturn
-systemctl restart coturn
 
-# === NGINX ===
-echo "[6/8] Configuring Nginx reverse proxy..."
-cat <<EOF > /etc/nginx/sites-available/matrix
+# Create system user for Synapse
+echo "[4/8] Creating system user..."
+if ! id "$SYNAPSE_USER" &>/dev/null; then
+    adduser --system --group --home "$SYNAPSE_HOME" "$SYNAPSE_USER"
+fi
+
+# Create virtual environment
+echo "[5/8] Setting up virtual environment..."
+mkdir -p "$SYNAPSE_HOME"
+chown -R "$SYNAPSE_USER":"$SYNAPSE_USER" "$SYNAPSE_HOME"
+sudo -u "$SYNAPSE_USER" python3 -m venv "$SYNAPSE_HOME/env"
+sudo -u "$SYNAPSE_USER" "$SYNAPSE_HOME/env/bin/pip" install --upgrade pip
+sudo -u "$SYNAPSE_USER" "$SYNAPSE_HOME/env/bin/pip" install matrix-synapse
+
+# Generate Synapse config
+echo "[6/8] Configuring Synapse..."
+sudo -u "$SYNAPSE_USER" "$SYNAPSE_HOME/env/bin/python" -m synapse.app.homeserver \
+    --server-name "$SERVER_NAME" \
+    --config-path "$SYNAPSE_HOME/homeserver.yaml" \
+    --generate-config \
+    --report-stats=no
+
+# Configure database settings
+sed -i "s|#  database: sqlite3:///.*|  database: postgresql://$POSTGRES_USER:$DB_PASSWORD@localhost/$POSTGRES_DB|g" "$SYNAPSE_HOME/homeserver.yaml"
+sed -i "s|#  args:|  args:|g" "$SYNAPSE_HOME/homeserver.yaml"
+
+# Create systemd service
+echo "[7/8] Creating systemd service..."
+cat > /etc/systemd/system/matrix-synapse.service <<EOF
+[Unit]
+Description=Matrix Synapse
+After=network.target postgresql.service
+
+[Service]
+User=$SYNAPSE_USER
+Group=$SYNAPSE_USER
+WorkingDirectory=$SYNAPSE_HOME
+ExecStart=$SYNAPSE_HOME/env/bin/python -m synapse.app.homeserver -c $SYNAPSE_HOME/homeserver.yaml
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+# Configure Nginx
+echo "[8/8] Configuring Nginx..."
+cat > /etc/nginx/sites-available/$SERVER_NAME <<EOF
 server {
     listen 80;
-    server_name ${DOMAIN};
-    return 301 https://$host$request_uri;
-}
-
-server {
-    listen 443 ssl;
-    server_name ${DOMAIN};
-
-    ssl_certificate /etc/letsencrypt/live/${DOMAIN}/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/${DOMAIN}/privkey.pem;
-
-    location /_matrix {
-        proxy_pass http://localhost:8448;
-        proxy_set_header Host \$host;
-        proxy_set_header X-Forwarded-For \$remote_addr;
-    }
+    server_name $SERVER_NAME;
 
     location / {
-        root ${WEBAPP_DIR}/build/web;
-        index index.html;
-        try_files \$uri \$uri/ /index.html;
+        proxy_pass http://localhost:8008;
+        proxy_set_header X-Forwarded-For \$remote_addr;
     }
 }
 EOF
-ln -s /etc/nginx/sites-available/matrix /etc/nginx/sites-enabled/matrix
+
+ln -s /etc/nginx/sites-available/$SERVER_NAME /etc/nginx/sites-enabled/ 2>/dev/null || true
 nginx -t && systemctl reload nginx
 
-# === RECHAIN UI ===
-echo "[7/8] Installing REChain web client..."
-git clone ${RECHAIN_REPO} ${WEBAPP_DIR}
-cd ${WEBAPP_DIR}
-flutter upgrade
-flutter config --enable-web
-flutter build web
+# Enable services
+systemctl daemon-reload
+systemctl enable matrix-synapse coturn
+systemctl start matrix-synapse coturn
 
-# === DONE ===
-echo "[8/8] Base system setup complete. Synapse, coturn, REChain UI and TLS are configured."
-
+echo "Installation complete!"
+echo "Matrix server: $SERVER_NAME"
+echo "PostgreSQL user: $POSTGRES_USER"
+echo "Database: $POSTGRES_DB"
 echo "Next steps:"
-echo "  - Place bridge configs and registration.yaml files into ${SYNAPSE_HOME}/registration"
-echo "  - Run bridges separately or generate full bridge install script"
-
-exit 0
+echo "1. Set up SSL for Nginx (e.g., Certbot)"
+echo "2. Test Synapse: curl http://localhost:8008/_matrix/client/versions"
