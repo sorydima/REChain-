@@ -18,17 +18,18 @@ class L10nEs extends L10n {
   String get notAnImage => 'El archivo no es una imagen.';
 
   @override
-  String get setCustomPermissionLevel => 'Set custom permission level';
+  String get setCustomPermissionLevel =>
+      'Agregar nivel personalizado de permiso';
 
   @override
   String get setPermissionsLevelDescription =>
-      'Please choose a predefined role below or enter a custom permission level between 0 and 100.';
+      'Por favor elige un rol predeterminado o un nivel de permiso personalizado entre 0 a 100.';
 
   @override
-  String get ignoreUser => 'Ignore user';
+  String get ignoreUser => 'Ignorar usuario';
 
   @override
-  String get normalUser => 'Normal user';
+  String get normalUser => 'Usuario normal';
 
   @override
   String get remove => 'Eliminar';
@@ -76,8 +77,8 @@ class L10nEs extends L10n {
   String get addEmail => 'Añadir dirección de correo';
 
   @override
-  String get confirmrechainonlineId =>
-      'Por favor confirma tu rechain ID para borrar tu cuenta.';
+  String get confirmMatrixId =>
+      'Por favor confirma tu REChain ID para borrar tu cuenta.';
 
   @override
   String supposedMxid(String mxid) {
@@ -104,7 +105,7 @@ class L10nEs extends L10n {
 
   @override
   String get commandHint_roomupgrade =>
-      'Upgrade this room to the given room version';
+      'Actualizar este chat a la versión de chat dada';
 
   @override
   String get commandHint_googly => 'Enviar unos ojos saltones';
@@ -374,7 +375,7 @@ class L10nEs extends L10n {
 
   @override
   String get commandHint_markasdm =>
-      'Marcar como sala de mensajes directos para el ID de rechain';
+      'Marcar como sala de mensajes directos para el ID de REChain';
 
   @override
   String get commandHint_markasgroup => 'Marcar como grupo';
@@ -490,7 +491,7 @@ class L10nEs extends L10n {
   }
 
   @override
-  String get checkList => 'Check list';
+  String get checkList => 'Lista de tareas';
 
   @override
   String countParticipants(int count) {
@@ -499,7 +500,7 @@ class L10nEs extends L10n {
 
   @override
   String countInvited(int count) {
-    return '$count invited';
+    return '$count invitado';
   }
 
   @override
@@ -689,7 +690,7 @@ class L10nEs extends L10n {
   String get fileName => 'Nombre del archivo';
 
   @override
-  String get rechain => 'rechain';
+  String get rechainonline => 'rechainonline';
 
   @override
   String get fontSize => 'Tamaño de fuente';
@@ -834,7 +835,7 @@ class L10nEs extends L10n {
 
   @override
   String inviteText(String username, String link) {
-    return '$username te invitó a rechain.\n1.Visita https://online.rechain.network e instala la app\n2. Regístrate o inicia sesión\n3. Abre el enlace de invitación:\n$link';
+    return '$username te invitó a REChain.\n1.Visita online.rechain.network e instala la app\n2. Regístrate o inicia sesión\n3. Abre el enlace de invitación:\n$link';
   }
 
   @override
@@ -958,7 +959,7 @@ class L10nEs extends L10n {
   String get newChat => 'Nuevo chat';
 
   @override
-  String get newMessageInrechainonline => 'Nuevo mensaje en rechain';
+  String get newMessageInrechainonline => 'Nuevo mensaje en rechainonline';
 
   @override
   String get newVerificationRequest => '¡Nueva solicitud de verificación!';
@@ -985,7 +986,7 @@ class L10nEs extends L10n {
 
   @override
   String norechainonlineServer(String server1, String server2) {
-    return '$server1 no es un servidor rechain, usar $server2 en su lugar?';
+    return '$server1 no es un servidor REChain, usar $server2 en su lugar?';
   }
 
   @override
@@ -1437,7 +1438,7 @@ class L10nEs extends L10n {
   String get theyMatch => 'Coinciden';
 
   @override
-  String get title => 'rechain';
+  String get title => 'rechainonline';
 
   @override
   String get toggleFavorite => 'Alternar favorito';
@@ -1692,7 +1693,7 @@ class L10nEs extends L10n {
 
   @override
   String get unsupportedAndroidVersionLong =>
-      'Esta característica requiere una versión más reciente de Android. Por favor, compruebe las actualizaciones o la compatibilidad de Katya ® 👽OS.';
+      'Esta característica requiere una versión más reciente de Android. Por favor, compruebe las actualizaciones o la compatibilidad de Mobile KatyaOS.';
 
   @override
   String get videoCallsBetaWarning =>
@@ -1709,7 +1710,7 @@ class L10nEs extends L10n {
 
   @override
   String get indexedDbErrorLong =>
-      'El almacenamiento de mensajes, por desgracia, no está habilitado en el modo privado por defecto.\nPor favor, visite\n - about:config\n - Establezca dom.indexedDB.privateBrowsing.enabled a true\nDe otra forma, no es posible usar rechain.';
+      'El almacenamiento de mensajes, por desgracia, no está habilitado en el modo privado por defecto.\nPor favor, visite\n - about:config\n - Establezca dom.indexedDB.privateBrowsing.enabled a true\nDe otra forma, no es posible usar REChain.';
 
   @override
   String switchToAccount(String number) {
@@ -1870,7 +1871,7 @@ class L10nEs extends L10n {
 
   @override
   String get screenSharingDetail =>
-      'Usted está compartiendo su pantalla en rechain';
+      'Usted está compartiendo su pantalla en rechainonline';
 
   @override
   String get callingPermissions => 'Permisos de llamadas';
@@ -1880,18 +1881,18 @@ class L10nEs extends L10n {
 
   @override
   String get callingAccountDetails =>
-      'Permite a rechain utilizar la aplicación de llamadas nativa de Android.';
+      'Permite a REChain utilizar la aplicación de llamadas nativa de Android.';
 
   @override
   String get appearOnTop => 'Aparecer en la cima';
 
   @override
   String get appearOnTopDetails =>
-      'Permite que la app aparezca delante (no hace falta si ya tienes rechain configurado como cuenta llamante)';
+      'Permite que la app aparezca delante (no hace falta si ya tienes REChain configurado como cuenta llamante)';
 
   @override
   String get otherCallingPermissions =>
-      'Micrófono, cámara y otros permisos de rechain';
+      'Micrófono, cámara y otros permisos de rechainonline';
 
   @override
   String get whyIsThisMessageEncrypted =>
@@ -2040,7 +2041,7 @@ class L10nEs extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      'El chat se volverá a crear con la nueva versión de sala. Todos los participantes serán notificados de que tienen que cambiarse al nuevo chat. Puedes encontrar más información sobre versiones de salas en https://online.rechain.network';
+      'El chat se volverá a crear con la nueva versión de sala. Todos los participantes serán notificados de que tienen que cambiarse al nuevo chat. Puedes encontrar más información sobre versiones de salas en https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle';
 
   @override
   String get removeDevicesDescription =>
@@ -2289,10 +2290,10 @@ class L10nEs extends L10n {
   String get discover => 'Descubrir';
 
   @override
-  String get commandHint_ignore => 'Ignorar la ID de rechain dada';
+  String get commandHint_ignore => 'Ignorar la ID de REChain dada';
 
   @override
-  String get commandHint_unignore => 'No ignorar la ID de rechain dada';
+  String get commandHint_unignore => 'No ignorar la ID de REChain dada';
 
   @override
   String unreadChatsInApp(String appname, String unread) {
@@ -2378,7 +2379,7 @@ class L10nEs extends L10n {
   String get sendCanceled => 'Envío cancelado';
 
   @override
-  String get loginWithrechainonlineId => 'Entrar con un ID de rechain';
+  String get loginWithMatrixId => 'Entrar con un ID de REChain';
 
   @override
   String get discoverHomeservers => 'Descubrir homeservers';
@@ -2388,7 +2389,7 @@ class L10nEs extends L10n {
 
   @override
   String get homeserverDescription =>
-      'Todos tus datos se guardan en el homeserver, como en un proveedor de correo electrónico. Puedes elegir el homeserver que quieres usar, a la par que te puedes comunicar con todos. Más en https://online.rechain.network.';
+      'Todos tus datos se guardan en el homeserver, como en un proveedor de correo electrónico. Puedes elegir el homeserver que quieres usar, a la par que te puedes comunicar con todos. Más en https://rechain.network.';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
@@ -2432,7 +2433,7 @@ class L10nEs extends L10n {
 
   @override
   String get welcomeText =>
-      'Eh, eh, 👋 Esto es rechain. Puedes acceder a cualquier homeserver, que sea compatible con https://online.rechain.network. Y luego chatear con cualquiera. ¡Es una red de mensajería descentralizada enorme!';
+      'Eh, eh, 👋 Esto es REChain. Puedes acceder a cualquier homeserver, que sea compatible con https://rechain.network. Y luego chatear con cualquiera. ¡Es una red de mensajería descentralizada enorme!';
 
   @override
   String get blur => 'Difuminar:';
@@ -2521,7 +2522,7 @@ class L10nEs extends L10n {
 
   @override
   String get appIntroduction =>
-      'rechain te permite chatear con tus amigos con diferentes mensajerías. Aprende más en https://online.rechain.network o simplemente pincha *Continuar*.';
+      'REChain te permite chatear con tus amigos con diferentes mensajerías. Aprende más en https://rechain.network o simplemente pincha *Continuar*.';
 
   @override
   String get newChatRequest => '📩 Nueva petición de chat';
@@ -2693,7 +2694,7 @@ class L10nEs extends L10n {
 
   @override
   String sentVoiceMessage(String sender, String duration) {
-    return '🎙️ $duration - Voice message from $sender';
+    return '🎙️ $duration - Mensaje de voz de $sender';
   }
 
   @override
@@ -2740,21 +2741,27 @@ class L10nEs extends L10n {
   String get enterNewChat => 'Ingresar a nuevo chat';
 
   @override
-  String get approve => 'Approve';
+  String get approve => 'Aprobar';
 
   @override
-  String get youHaveKnocked => 'You have knocked';
+  String get youHaveKnocked => 'Has sido golpeado';
 
   @override
   String get pleaseWaitUntilInvited =>
-      'Please wait now, until someone from the room invites you.';
+      'Por favor espera, hasta que alguien del chat te invite.';
 
   @override
-  String get commandHint_logout => 'Logout your current device';
+  String get commandHint_logout => 'Salir del dispositivo actual';
 
   @override
-  String get commandHint_logoutall => 'Logout all active devices';
+  String get commandHint_logoutall => 'Salir de todos los dispositivos activos';
 
   @override
-  String get displayNavigationRail => 'Show navigation rail on mobile';
+  String get displayNavigationRail => 'Mostrar carril de navegación en móvil';
+
+  @override
+  String get customReaction => 'Custom reaction';
+
+  @override
+  String get moreEvents => 'More events';
 }

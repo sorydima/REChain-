@@ -34,7 +34,7 @@ class TypingIndicators extends StatelessWidget {
           alignment: Alignment.center,
           child: AnimatedContainer(
             constraints:
-                const BoxConstraints(maxWidth: rechainonlineThemes.columnWidth * 2.5),
+                const BoxConstraints(maxWidth: rechainonlineThemes.maxTimelineWidth),
             height: typingUsers.isEmpty ? 0 : avatarSize + 8,
             duration: rechainonlineThemes.animationDuration,
             curve: rechainonlineThemes.animationCurve,

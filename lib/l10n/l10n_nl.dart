@@ -76,8 +76,8 @@ class L10nNl extends L10n {
   String get addEmail => 'Email toevoegen';
 
   @override
-  String get confirmrechainonlineId =>
-      'Bevestig jouw rechain ID om je account te verwijderen.';
+  String get confirmMatrixId =>
+      'Bevestig jouw REChain-ID om je account te verwijderen.';
 
   @override
   String supposedMxid(String mxid) {
@@ -373,7 +373,7 @@ class L10nNl extends L10n {
 
   @override
   String get commandHint_markasdm =>
-      'Markeer als privéberichtenkamer voor rechain ID';
+      'Markeer als privéberichtenkamer voor REChain ID';
 
   @override
   String get commandHint_markasgroup => 'Markeer als groep';
@@ -685,7 +685,7 @@ class L10nNl extends L10n {
   String get fileName => 'Bestandsnaam';
 
   @override
-  String get rechain => 'rechain';
+  String get rechainonline => 'rechainonline';
 
   @override
   String get fontSize => 'Lettergrootte';
@@ -828,7 +828,7 @@ class L10nNl extends L10n {
 
   @override
   String inviteText(String username, String link) {
-    return '$username heeft je uitgenodigd voor rechain.\n1. Bezoek https://https://online.rechain.network en installeer de app\n2. Registreer of log in\n3. Open deze uitnodigingslink:\n$link';
+    return '$username heeft je uitgenodigd voor REChain.\n1. Bezoek https://online.rechain.network en installeer de app\n2. Registreer of log in\n3. Open deze uitnodigingslink:\n$link';
   }
 
   @override
@@ -952,7 +952,7 @@ class L10nNl extends L10n {
   String get newChat => 'Nieuwe chat';
 
   @override
-  String get newMessageInrechainonline => '💬 Nieuw bericht in rechain';
+  String get newMessageInrechainonline => '💬 Nieuw bericht in rechainonline';
 
   @override
   String get newVerificationRequest => 'Nieuw verificatieverzoek!';
@@ -975,11 +975,11 @@ class L10nNl extends L10n {
 
   @override
   String get noGoogleServicesWarning =>
-      'Firebase Cloud Messaging lijkt niet beschikbaar op je apparaat. Om nog steeds pushmeldingen te krijgen, adviseren we om ntfy te installeren. Met ntfy of een andere Unified Push provider kun je pushmeldingen ontvangen op een veilige manier. Je kunt ntfy downloaden van de PlayStore of van F-Droid.';
+      'Firebase Cloud Messaging lijkt niet beschikbaar op je apparaat. Om pushmeldingen te krijgen, adviseren we om ntfy te installeren. Met ntfy of een andere Unified Push-provider kun je pushmeldingen ontvangen op een veilige manier. Je kunt ntfy downloaden in de PlayStore of F-Droid.';
 
   @override
   String norechainonlineServer(String server1, String server2) {
-    return '$server1 is geen rechain-server, wil je $server2 gebruiken?';
+    return '$server1 is geen REChain-server, wil je $server2 gebruiken?';
   }
 
   @override
@@ -1425,7 +1425,7 @@ class L10nNl extends L10n {
   String get theyMatch => 'Ze komen overeen';
 
   @override
-  String get title => 'rechain';
+  String get title => 'rechainonline';
 
   @override
   String get toggleFavorite => 'Favoriet in- of uitschakelen';
@@ -1678,7 +1678,7 @@ class L10nNl extends L10n {
 
   @override
   String get unsupportedAndroidVersionLong =>
-      'Voor deze functie is een nieuwere Android-versie vereist. Controleer op updates of Katya ® 👽 OS-ondersteuning.';
+      'Voor deze functie is een nieuwe Android-versie verplicht. Controleer je updates of Mobile Katya OS-ondersteuning.';
 
   @override
   String get videoCallsBetaWarning =>
@@ -1695,7 +1695,7 @@ class L10nNl extends L10n {
 
   @override
   String get indexedDbErrorLong =>
-      'Het opslaan van berichten is helaas niet standaard ingeschakeld in de privémodus.\nBezoek alsjeblieft\n - about:config\n - stel dom.indexedDB.privateBrowsing.enabled in op true\nAnders is het niet mogelijk om rechain op te starten.';
+      'Het opslaan van berichten is helaas niet standaard ingeschakeld in de privémodus.\nBezoek alsjeblieft\n - about:config\n - stel dom.indexedDB.privateBrowsing.enabled in op true\nAnders is het niet mogelijk om REChain op te starten.';
 
   @override
   String switchToAccount(String number) {
@@ -1865,18 +1865,18 @@ class L10nNl extends L10n {
 
   @override
   String get callingAccountDetails =>
-      'Hiermee kan rechain de Android telefoon-app gebruiken.';
+      'Hiermee kan REChain de Android telefoon-app gebruiken.';
 
   @override
   String get appearOnTop => 'Bovenaan verschijnen';
 
   @override
   String get appearOnTopDetails =>
-      'Laat de app bovenaan verschijnen (niet nodig als je rechain al hebt ingesteld als een belaccount)';
+      'Laat de app bovenaan verschijnen (niet nodig als je REChain al hebt ingesteld als een bel-account)';
 
   @override
   String get otherCallingPermissions =>
-      'Microfoon, camera en andere rechain-rechten';
+      'Microfoon, camera en andere REChain-rechten';
 
   @override
   String get whyIsThisMessageEncrypted => 'Waarom is dit bericht onleesbaar?';
@@ -2024,7 +2024,7 @@ class L10nNl extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      'De chat zal dan opnieuw gemaakt worden met de nieuwe kamerversie. Alle deelnemers worden geïnformeerd dat ze moeten overstappen naar de nieuwe chat. Je kan meer lezen over kamerversies op https://online.rechain.network';
+      'De chat zal dan opnieuw gemaakt worden met de nieuwe kamerversie. Alle deelnemers worden geïnformeerd dat ze moeten overstappen naar de nieuwe chat. Je kan meer lezen over kamerversies op https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle';
 
   @override
   String get removeDevicesDescription =>
@@ -2054,7 +2054,7 @@ class L10nNl extends L10n {
   String get learnMore => 'Lees meer';
 
   @override
-  String get yourGlobalUserIdIs => 'Je rechain ID is: ';
+  String get yourGlobalUserIdIs => 'Je REChain ID is: ';
 
   @override
   String noUsersFoundWithQuery(String query) {
@@ -2272,10 +2272,10 @@ class L10nNl extends L10n {
   String get discover => 'Ontdek';
 
   @override
-  String get commandHint_ignore => 'Negeer de gegeven rechain ID';
+  String get commandHint_ignore => 'Negeer de gegeven REChain ID';
 
   @override
-  String get commandHint_unignore => 'Herstel de negeerde rechain ID';
+  String get commandHint_unignore => 'Herstel de negeerde REChain ID';
 
   @override
   String unreadChatsInApp(String appname, String unread) {
@@ -2359,7 +2359,7 @@ class L10nNl extends L10n {
   String get sendCanceled => 'Versturen geannuleerd';
 
   @override
-  String get loginWithrechainonlineId => 'Inloggen met rechain ID';
+  String get loginWithMatrixId => 'Inloggen met REChain ID';
 
   @override
   String get discoverHomeservers => 'Ontdek servers';
@@ -2369,7 +2369,7 @@ class L10nNl extends L10n {
 
   @override
   String get homeserverDescription =>
-      'Al je data is opgeslagen op de server, net als bij een email-leverancier. Je kan kiezen welke server je gebruikt en toch communiceren met iedereen. Lees meer op https://online.rechain.network.';
+      'Al je data is opgeslagen op de server, net als bij een email-leverancier. Je kan kiezen welke server je gebruikt en toch communiceren met iedereen. Lees meer op https://rechain.network.';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
@@ -2413,7 +2413,7 @@ class L10nNl extends L10n {
 
   @override
   String get welcomeText =>
-      'Hallo hallo 👋 Dit is rechain. Je kan inloggen op elke server die werkt met https://online.rechain.network. En dan chat je met iedereen. Het is een groot decentraal chat-netwerk!';
+      'Hallo hallo 👋 Dit is REChain. Je kan inloggen op elke server die werkt met https://rechain.network. En dan chat je met iedereen. Het is een groot decentraal chat-netwerk!';
 
   @override
   String get blur => 'Vervaag:';
@@ -2501,7 +2501,7 @@ class L10nNl extends L10n {
 
   @override
   String get appIntroduction =>
-      'rechain laat je chatten met je vrienden tussen verschillende chat-netwerken. Lees meer op https://online.rechain.network of tik *Continue*.';
+      'REChain laat je chatten met je vrienden tussen verschillende chat-netwerken. Lees meer op https://rechain.network of tik *Continue*.';
 
   @override
   String get newChatRequest => '📩 Nieuw chat verzoek';
@@ -2672,7 +2672,7 @@ class L10nNl extends L10n {
 
   @override
   String sentVoiceMessage(String sender, String duration) {
-    return '🎙️ $duration - $sender';
+    return '🎙️ $duration - Spraakbericht van $sender';
   }
 
   @override
@@ -2728,11 +2728,17 @@ class L10nNl extends L10n {
       'Wacht even alsjeblieft tot iemand van de kamer je uitnodigt.';
 
   @override
-  String get commandHint_logout => 'Logout your current device';
+  String get commandHint_logout => 'Uw huidige apparaat uitloggen';
 
   @override
-  String get commandHint_logoutall => 'Logout all active devices';
+  String get commandHint_logoutall => 'Alle actieve apparaten uitloggen';
 
   @override
-  String get displayNavigationRail => 'Show navigation rail on mobile';
+  String get displayNavigationRail => 'Navigatiebalk op mobiel tonen';
+
+  @override
+  String get customReaction => 'Aangepaste reactie';
+
+  @override
+  String get moreEvents => 'Meer gebeurtenissen';
 }

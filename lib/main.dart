@@ -12,12 +12,81 @@ import 'package:rechainonline/utils/platform_infos.dart';
 import 'config/setting_keys.dart';
 import 'utils/background_push.dart';
 import 'widgets/rechainonline_chat_app.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
-import 'features/blockchain/api/blockchain_service_manager.dart';
-import 'features/ai/ai_service_manager.dart';
-import 'config/ai_services_config.dart';
+import 'telegram_web_app_stub.dart'
+    if (dart.library.js) 'package:telegram_web_app/telegram_web_app.dart';
+import 'widgets/missing_widgets.dart';
+
+
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Telegram REChain App',
+      theme: TelegramThemeUtil.getTheme(TelegramWebApp.instance),
+      home: const MainScreen(),
+    );
+  }
+}
+
+class MainScreen extends StatelessWidget {
+  const MainScreen({super.key});
+
+  double get safeAreaTop => 0.0;
+
+  @override
+  Widget build(BuildContext context) {
+    final TelegramWebApp telegram = TelegramWebApp.instance;
+    return Scaffold(
+      backgroundColor: (telegram.backgroundColor as Color?) ?? Colors.grey,
+      appBar: TeleAppbar(title: 'REChain App', top: safeAreaTop),
+      body: ListView(
+        padding: const EdgeInsets.all(8),
+        children: [
+          ListButton('Expand', onPress: telegram.expand),
+          InfoExpandableTile(
+            'Init Data',
+            telegram.initData.toString(),
+          ),
+          InfoExpandableTile(
+            'Init Data Unsafe',
+            telegram.initDataUnsafe?.toReadableString() ?? 'null',
+          ),
+          InfoExpandableTile(
+            'isVerticalSwipesEnabled',
+            telegram.isVerticalSwipesEnabled.toString(),
+          ),
+          ListButton('enableVerticalSwipes', onPress: telegram.enableVerticalSwipes),
+          ListButton('disableVerticalSwipes', onPress: telegram.disableVerticalSwipes),
+          InfoExpandableTile('Version', telegram.version ?? ''),
+          InfoExpandableTile('Platform', telegram.platform ?? ''),
+          InfoExpandableTile('Color Scheme', telegram.colorScheme?.name ?? ''),
+          ThemeParamsWidget(telegram.themeParams),
+          InfoExpandableTile('isActive', telegram.isActive.toString()),
+          InfoExpandableTile('isExpanded', telegram.isExpanded.toString()),
+          InfoExpandableTile('viewportHeight', telegram.viewportHeight.toString()),
+          InfoExpandableTile('viewportStableHeight', telegram.viewportStableHeight.toString()),
+          InfoExpandableTile('safeAreaInset', telegram.safeAreaInset.toString()),
+          InfoExpandableTile('contentSafeAreaInset', telegram.contentSafeAreaInset.toString()),
+          OneColorExpandableTile('headerColor', telegram.headerColor),
+          OneColorExpandableTile('backgroundColor', telegram.backgroundColor as Color?),
+          OneColorExpandableTile('bottomBarColor', telegram.bottomBarColor),
+        ],
+      ),
+    );
+  }
+}
 
 void main() async {
+  // Add Flutter framework error handler
+  FlutterError.onError = (FlutterErrorDetails details) {
+    Logs().e('Flutter framework error', details.exception, details.stack);
+  };
+
   Logs().i('Welcome to ${AppConfig.applicationName} <3');
 
   // Our background push shared isolate accesses flutter-internal things very early in the startup proccess
@@ -25,18 +94,15 @@ void main() async {
   // widget bindings are initialized already.
   WidgetsFlutterBinding.ensureInitialized();
 
-  await vod.init();
+  try {
+    await vod.init(wasmPath: './assets/vodozemac/');
+  } catch (e, s) {
+    Logs().e('Failed to initialize flutter_vodozemac', e, s);
+  }
 
   Logs().nativeColors = !PlatformInfos.isIOS;
   final store = await SharedPreferences.getInstance();
   final clients = await ClientManager.getClients(store: store);
-
-  // Initialize blockchain services
-  final blockchainServiceManager = BlockchainServiceManager();
-  blockchainServiceManager.initialize();
-
-  // Initialize AI services
-  await _initializeAIServices();
 
   // If the app starts in detached mode, we assume that it is in
   // background fetch mode for processing push notifications. This is
@@ -67,24 +133,6 @@ void main() async {
   await startGui(clients, store);
 }
 
-/// Initialize AI services
-Future<void> _initializeAIServices() async {
-  try {
-    // Initialize AI services configuration
-    await AIServicesConfig.instance.initialize();
-    
-    // Get configurations
-    final configurations = AIServicesConfig.instance.configurations;
-    
-    // Initialize AI service manager
-    await AIServiceManager.instance.initialize(configurations);
-    
-    Logs().i('AI services initialized successfully');
-  } catch (e) {
-    Logs().e('Failed to initialize AI services', e);
-  }
-}
-
 /// Fetch the pincode for the applock and start the flutter engine.
 Future<void> startGui(List<Client> clients, SharedPreferences store) async {
   // Fetch the pin for the applock if existing for mobile applications.
@@ -103,7 +151,12 @@ Future<void> startGui(List<Client> clients, SharedPreferences store) async {
   await firstClient?.roomsLoading;
   await firstClient?.accountDataLoading;
 
-  runApp(rechainonlineChatApp(clients: clients, pincode: pin, store: store));
+  try {
+    runApp(rechainonlineChatApp(clients: clients, pincode: pin, store: store));
+  } catch (e, s) {
+    Logs().e('Error during runApp', e, s);
+    rethrow;
+  }
 }
 
 /// Watches the lifecycle changes to start the application when it

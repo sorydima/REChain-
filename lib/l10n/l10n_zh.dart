@@ -76,7 +76,7 @@ class L10nZh extends L10n {
   String get addEmail => '添加电子邮件';
 
   @override
-  String get confirmrechainonlineId => '请确认你的 rechain ID 以删除账户。';
+  String get confirmMatrixId => '请确认你的 REChain ID 以删除账户。';
 
   @override
   String supposedMxid(String mxid) {
@@ -140,7 +140,7 @@ class L10nZh extends L10n {
   String get appLock => '应用锁';
 
   @override
-  String get appLockDescription => '用 pin 码在不用 rechain 时锁定它';
+  String get appLockDescription => '用 pin 码在不用 REChain 时锁定它';
 
   @override
   String get archive => '存档';
@@ -363,7 +363,7 @@ class L10nZh extends L10n {
   String get close => '关闭';
 
   @override
-  String get commandHint_markasdm => '将给定的 rechain ID 标为私信聊天室';
+  String get commandHint_markasdm => '将给定的 REChain ID 标为私信聊天室';
 
   @override
   String get commandHint_markasgroup => '标记为群组';
@@ -662,7 +662,7 @@ class L10nZh extends L10n {
   String get fileName => '文件名';
 
   @override
-  String get rechain => 'rechain';
+  String get rechainonline => 'rechainonline';
 
   @override
   String get fontSize => '字体大小';
@@ -799,7 +799,7 @@ class L10nZh extends L10n {
 
   @override
   String inviteText(String username, String link) {
-    return '$username 邀请你使用 rechain。 \n1. 安装 rechain：https://https://online.rechain.network \n2. 注册或登录 \n3. 打开邀请链接：\n $link';
+    return '$username 邀请你使用 REChain。 \n1. 安装 REChain：https://online.rechain.network \n2. 注册或登录 \n3. 打开邀请链接：\n $link';
   }
 
   @override
@@ -917,7 +917,7 @@ class L10nZh extends L10n {
   String get newChat => '新的聊天';
 
   @override
-  String get newMessageInrechainonline => '💬 rechain 新消息';
+  String get newMessageInrechainonline => '💬 REChain 新消息';
 
   @override
   String get newVerificationRequest => '新的验证请求！';
@@ -939,11 +939,11 @@ class L10nZh extends L10n {
 
   @override
   String get noGoogleServicesWarning =>
-      '看起来你手机上没有 Firebase Cloud Messaging。如果仍希望接收 rechain 的推送通知，推荐安装 ntfy。借助 ntfy 或另一个 Unified Push 程序，你可以以一种数据安全的方式接收推送通知。你可以从 PlayStore 或 F-Droid 商店下载 ntfy。';
+      '看起来你手机上没有 Firebase Cloud Messaging。如果仍希望接收 REChain 的推送通知，推荐安装 ntfy。借助 ntfy 或另一个 Unified Push 程序，你可以以一种数据安全的方式接收推送通知。你可以从 PlayStore 或 F-Droid 商店下载 ntfy。';
 
   @override
   String norechainonlineServer(String server1, String server2) {
-    return '$server1 不是一个 rechain 服务器，试试 $server2？';
+    return '$server1 不是一个 REChain 服务器，试试 $server2？';
   }
 
   @override
@@ -1380,7 +1380,7 @@ class L10nZh extends L10n {
   String get theyMatch => '它们匹配';
 
   @override
-  String get title => 'rechain';
+  String get title => 'rechainonline';
 
   @override
   String get toggleFavorite => '切换收藏';
@@ -1624,7 +1624,7 @@ class L10nZh extends L10n {
 
   @override
   String get unsupportedAndroidVersionLong =>
-      '这个功能需要较新版本的 Android 系统。请检查更新或 Katya ® 👽 OS 支持。';
+      '这个功能需要较新版本的 Android 系统。请检查更新或 Mobile Katya OS 支持。';
 
   @override
   String get videoCallsBetaWarning =>
@@ -1641,7 +1641,7 @@ class L10nZh extends L10n {
 
   @override
   String get indexedDbErrorLong =>
-      '遗憾的是，默认情况下未在私有模式下启用消息存储。\n请访问\n - about:config\n - 将 dom.indexedDB.privateBrowsing.enabled 设置为 true\n否则，无法运行 rechain。';
+      '遗憾的是，默认情况下未在私有模式下启用消息存储。\n请访问\n - about:config\n - 将 dom.indexedDB.privateBrowsing.enabled 设置为 true\n否则，无法运行 REChain。';
 
   @override
   String switchToAccount(String number) {
@@ -1796,7 +1796,7 @@ class L10nZh extends L10n {
   String get screenSharingTitle => '屏幕共享';
 
   @override
-  String get screenSharingDetail => '你正在 rechain 中共享屏幕';
+  String get screenSharingDetail => '你正在 REChain 中共享屏幕';
 
   @override
   String get callingPermissions => '呼叫权限';
@@ -1805,17 +1805,17 @@ class L10nZh extends L10n {
   String get callingAccount => '呼叫账户';
 
   @override
-  String get callingAccountDetails => '允许 rechain 使用本机 android 拨号器应用。';
+  String get callingAccountDetails => '允许 REChain 使用本机 android 拨号器应用。';
 
   @override
   String get appearOnTop => '显示在其它应用上方';
 
   @override
   String get appearOnTopDetails =>
-      '允许应用显示在顶部（如果你已经将 rechain 设置为呼叫账户，则不需要授予此权限）';
+      '允许应用显示在顶部（如果你已经将 REChain 设置为呼叫账户，则不需要授予此权限）';
 
   @override
-  String get otherCallingPermissions => '麦克风、摄像头和其它 rechain 权限';
+  String get otherCallingPermissions => '麦克风、摄像头和其它 REChain 权限';
 
   @override
   String get whyIsThisMessageEncrypted => '为什么此消息不可读？';
@@ -1955,7 +1955,7 @@ class L10nZh extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      '将使用新版聊天室来重新创建当前聊天室。所有参与者都会收到通知以切换到新的聊天室。有关聊天室版本的更多信息，请访问 https://online.rechain.network';
+      '将使用新版聊天室来重新创建当前聊天室。所有参与者都会收到通知以切换到新的聊天室。有关聊天室版本的更多信息，请访问 https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle';
 
   @override
   String get removeDevicesDescription => '你将从此设备登出，无法再接收消息。';
@@ -2192,10 +2192,10 @@ class L10nZh extends L10n {
   String get discover => '发现';
 
   @override
-  String get commandHint_ignore => '忽略给定的 rechain ID';
+  String get commandHint_ignore => '忽略给定的 REChain ID';
 
   @override
-  String get commandHint_unignore => '取消忽略给定的 rechain ID';
+  String get commandHint_unignore => '取消忽略给定的 REChain ID';
 
   @override
   String unreadChatsInApp(String appname, String unread) {
@@ -2276,7 +2276,7 @@ class L10nZh extends L10n {
   String get sendCanceled => '发送被取消';
 
   @override
-  String get loginWithrechainonlineId => '使用 rechain ID 登录';
+  String get loginWithMatrixId => '使用 REChain-ID 登录';
 
   @override
   String get discoverHomeservers => '发现主服务器';
@@ -2286,7 +2286,7 @@ class L10nZh extends L10n {
 
   @override
   String get homeserverDescription =>
-      '主服务器上就像电子邮件提供商，你的所有数据都存储在上面。你可以选择你想使用哪个主服务器。在 https://online.rechain.network 上了解更多信息。';
+      '主服务器上就像电子邮件提供商，你的所有数据都存储在上面。你可以选择你想使用哪个主服务器。在 https://rechain.network 上了解更多信息。';
 
   @override
   String get doesNotSeemToBeAValidHomeserver => '似乎不是兼容的主服务器。URL 不正确？';
@@ -2328,7 +2328,7 @@ class L10nZh extends L10n {
 
   @override
   String get welcomeText =>
-      '你好呀 👋 欢迎来到 rechain。你可以登录任意兼容 https://online.rechain.network 的 homeserver，然后和任何人聊天。这是个巨大的去中心化消息网络！';
+      '你好呀 👋 欢迎来到 REChain。你可以登录任意兼容 https://rechain.network 的 homeserver，然后和任何人聊天。这是个巨大的去中心化消息网络！';
 
   @override
   String get blur => '模糊：';
@@ -2412,7 +2412,7 @@ class L10nZh extends L10n {
 
   @override
   String get appIntroduction =>
-      'rechain 让使用不同即时通信工具的你和你的好友得以聊天。 访问 https://online.rechain.network 了解详情或轻按 *继续*。';
+      'REChain 让使用不同即时通信工具的你和你的好友得以聊天。 访问 https://rechain.network 了解详情或轻按 *继续*。';
 
   @override
   String get newChatRequest => '📩 新的聊天请求';
@@ -2565,7 +2565,7 @@ class L10nZh extends L10n {
 
   @override
   String sentVoiceMessage(String sender, String duration) {
-    return '🎙️ $duration - $sender';
+    return '🎙️ $duration - 来自 $sender 的语音消息';
   }
 
   @override
@@ -2617,13 +2617,19 @@ class L10nZh extends L10n {
   String get pleaseWaitUntilInvited => '在来自该聊天室的某人邀请你之前请等待。';
 
   @override
-  String get commandHint_logout => 'Logout your current device';
+  String get commandHint_logout => '注销当前设备';
 
   @override
-  String get commandHint_logoutall => 'Logout all active devices';
+  String get commandHint_logoutall => '注销所有活动设备';
 
   @override
-  String get displayNavigationRail => 'Show navigation rail on mobile';
+  String get displayNavigationRail => '在移动设备上显示导航栏';
+
+  @override
+  String get customReaction => '自定义回应';
+
+  @override
+  String get moreEvents => '更多事件';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -2698,7 +2704,7 @@ class L10nZhHant extends L10nZh {
   String get addEmail => '新增電子郵件';
 
   @override
-  String get confirmrechainonlineId => '如需刪除你的帳戶，請確認你的 rechain ID。';
+  String get confirmMatrixId => '如需刪除你的帳戶，請確認你的 REChain ID。';
 
   @override
   String supposedMxid(String mxid) {
@@ -2985,7 +2991,7 @@ class L10nZhHant extends L10nZh {
   String get close => '關閉';
 
   @override
-  String get commandHint_markasdm => '將給定的 rechain ID 標示為直接訊息房間';
+  String get commandHint_markasdm => '將給定的 REChain ID 標示為直接訊息房間';
 
   @override
   String get commandHint_markasgroup => '標示為群組';
@@ -3276,7 +3282,7 @@ class L10nZhHant extends L10nZh {
   String get fileName => '檔案名稱';
 
   @override
-  String get rechain => 'rechain';
+  String get rechainonline => 'rechainonline';
 
   @override
   String get fontSize => '字體大小';
@@ -3413,7 +3419,7 @@ class L10nZhHant extends L10nZh {
 
   @override
   String inviteText(String username, String link) {
-    return '$username 邀請您使用 rechain\n1. 安裝 rechain：https://https://online.rechain.network\n2. 登入或註冊\n3. 打開該邀請網址：\n$link';
+    return '$username 邀請您使用 REChain\n1. 安裝 REChain：https://online.rechain.network\n2. 登入或註冊\n3. 打開該邀請網址：\n$link';
   }
 
   @override
@@ -3531,7 +3537,7 @@ class L10nZhHant extends L10nZh {
   String get newChat => '新聊天';
 
   @override
-  String get newMessageInrechainonline => '💬 來自 rechain 的新訊息';
+  String get newMessageInrechainonline => '💬 來自 REChain 的新訊息';
 
   @override
   String get newVerificationRequest => '新的驗證請求！';
@@ -3553,11 +3559,11 @@ class L10nZhHant extends L10nZh {
 
   @override
   String get noGoogleServicesWarning =>
-      '您手機上沒有安裝 Google 服務框架。這或許對於保護您的隱私而言是個好事！但為了收到 rechain 的推播通知，我們建議您使用 https://microg.org 或 https://unifiedpush.org。';
+      '未能在你的裝置找到 Firebase Cloud Messaging(FCM). 如果想要收到通知消息的推送，我們建議安裝 ntfy。在有 ntfy 或其他 Unified Push 應用，便能在資料安全的情況下收到通知的推送。你可以在 Play store 或 F-Droid 下載並安裝 ntfy。';
 
   @override
   String norechainonlineServer(String server1, String server2) {
-    return '$server1 不是 rechain 服務器，改用 $server2 嗎？';
+    return '$server1 不是 REChain 服務器，改用 $server2 嗎？';
   }
 
   @override
@@ -3994,7 +4000,7 @@ class L10nZhHant extends L10nZh {
   String get theyMatch => '它們相符';
 
   @override
-  String get title => 'rechain';
+  String get title => 'rechainonline';
 
   @override
   String get toggleFavorite => '切換收藏夾';
@@ -4238,7 +4244,7 @@ class L10nZhHant extends L10nZh {
 
   @override
   String get unsupportedAndroidVersionLong =>
-      '此功能需要較新的 Android 版本。請檢查更新或 Katya ® 👽 OS 支持。';
+      '此功能需要較新的 Android 版本。請檢查更新或 Mobile Katya OS 支持。';
 
   @override
   String get videoCallsBetaWarning =>
@@ -4255,7 +4261,7 @@ class L10nZhHant extends L10nZh {
 
   @override
   String get indexedDbErrorLong =>
-      '預設情況下，私密模式不啟用消息存儲。\n請訪問\n - about:config\n - 將 dom.indexedDB.privateBrowsing.enabled 設定為 true\n否則，無法運行 rechain。';
+      '預設情況下，私密模式不啟用消息存儲。\n請訪問\n - about:config\n - 將 dom.indexedDB.privateBrowsing.enabled 設定為 true\n否則，無法運行 REChain。';
 
   @override
   String switchToAccount(String number) {
@@ -4419,16 +4425,16 @@ class L10nZhHant extends L10nZh {
   String get callingAccount => '通話帳戶';
 
   @override
-  String get callingAccountDetails => '允許 rechain 使用原生 Android 撥號應用程式。';
+  String get callingAccountDetails => '允許 REChain 使用原生 Android 撥號應用程式。';
 
   @override
   String get appearOnTop => '顯示在最上層';
 
   @override
-  String get appearOnTopDetails => '允許應用程式顯示在最上層（如果您已將 rechain 設定為通話帳戶則不需要）';
+  String get appearOnTopDetails => '允許應用程式顯示在最上層（如果您已將 REChain 設定為通話帳戶則不需要）';
 
   @override
-  String get otherCallingPermissions => '麥克風、相機和其他 rechain 權限';
+  String get otherCallingPermissions => '麥克風、相機和其他 REChain 權限';
 
   @override
   String get whyIsThisMessageEncrypted => '為什麼這條訊息無法讀取？';
@@ -4568,7 +4574,7 @@ class L10nZhHant extends L10nZh {
 
   @override
   String get roomUpgradeDescription =>
-      '將使用新版本聊天室來重新建立聊天室。所有本聊天室的參與者都會收到通知，他們都需要換到新的聊天室裡。若您想知道有關新版本的更多資訊，請前往 https://online.rechain.network';
+      '將使用新版本聊天室來重新建立聊天室。所有本聊天室的參與者都會收到通知，他們都需要換到新的聊天室裡。若您想知道有關新版本的更多資訊，請前往 https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle';
 
   @override
   String get removeDevicesDescription => '您將從這個裝置登出，並將不再能夠接收消息。';
@@ -4806,10 +4812,10 @@ class L10nZhHant extends L10nZh {
   String get discover => '發現';
 
   @override
-  String get commandHint_ignore => '無視已提供的 rechain ID';
+  String get commandHint_ignore => '無視已提供的 REChain ID';
 
   @override
-  String get commandHint_unignore => '取消無視已提供的 rechain ID';
+  String get commandHint_unignore => '取消無視已提供的 REChain ID';
 
   @override
   String unreadChatsInApp(String appname, String unread) {
@@ -4890,7 +4896,7 @@ class L10nZhHant extends L10nZh {
   String get sendCanceled => '傳送取消';
 
   @override
-  String get loginWithrechainonlineId => '以rechain ID登入';
+  String get loginWithMatrixId => '以REChain-ID登入';
 
   @override
   String get discoverHomeservers => '探索歸屬伺服器';
@@ -4900,7 +4906,7 @@ class L10nZhHant extends L10nZh {
 
   @override
   String get homeserverDescription =>
-      '您的所有資料都儲存在歸屬伺服器上，就像電子郵件提供商一樣。 您可以選擇要使用的歸屬伺服器，同時您仍然可以與每個人溝通。 請訪問https://online.rechain.network瞭解更多資訊。';
+      '您的所有資料都儲存在歸屬伺服器上，就像電子郵件提供商一樣。 您可以選擇要使用的歸屬伺服器，同時您仍然可以與每個人溝通。 請訪問https://rechain.network瞭解更多資訊。';
 
   @override
   String get doesNotSeemToBeAValidHomeserver => '似乎不是能匹配的歸屬伺服器。伺服器域名打錯了嗎？';
@@ -4942,7 +4948,7 @@ class L10nZhHant extends L10nZh {
 
   @override
   String get welcomeText =>
-      '嘿，嘿👋這是rechain。 您可以登入任何與https://online.rechain.network相容的歸屬伺服器後和任何人聊天。 這是一個巨大的去中心化訊息網路！';
+      '嘿，嘿👋這是REChain。 您可以登入任何與https://rechain.network相容的歸屬伺服器後和任何人聊天。 這是一個巨大的去中心化訊息網路！';
 
   @override
   String get blur => '模糊:';
@@ -5012,7 +5018,7 @@ class L10nZhHant extends L10nZh {
 
   @override
   String appWantsToUseForLogin(String server) {
-    return '使用伺服器「$server 」登入';
+    return '使用「$server 」伺服器登入';
   }
 
   @override
@@ -5026,7 +5032,7 @@ class L10nZhHant extends L10nZh {
 
   @override
   String get appIntroduction =>
-      'rechain 讓你和你的朋友跨越工具聊天。在 https://online.rechain.network 了解更多或*繼續*。';
+      'REChain 讓你和你的朋友跨越工具聊天。在 https://rechain.network 了解更多或*繼續*。';
 
   @override
   String get newChatRequest => '📩 新的聊天邀請';

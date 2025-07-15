@@ -76,8 +76,8 @@ class L10nEt extends L10n {
   String get addEmail => 'Lisa e-posti aadress';
 
   @override
-  String get confirmrechainonlineId =>
-      'Konto kustutamiseks palun kinnitage oma rechain\'i ID.';
+  String get confirmMatrixId =>
+      'Konto kustutamiseks palun kinnitage oma REChain\'i ID.';
 
   @override
   String supposedMxid(String mxid) {
@@ -174,7 +174,7 @@ class L10nEt extends L10n {
   @override
   String badServerLoginTypesException(String serverVersions,
       String supportedVersions, Object suportedVersions) {
-    return 'See koduserver toetab rechaini võrku sisselogimiseks:\n$serverVersions\nAga see rakendus toetab vaid järgmisi võimalusi:\n$supportedVersions';
+    return 'See koduserver toetab Matrixi võrku sisselogimiseks:\n$serverVersions\nAga see rakendus toetab vaid järgmisi võimalusi:\n$supportedVersions';
   }
 
   @override
@@ -193,7 +193,7 @@ class L10nEt extends L10n {
       Object serverVerions,
       Object supoortedVersions,
       Object suportedVersions) {
-    return 'See koduserver toetab rechaini spetsifikatsioonist järgmisi versioone:\n$serverVersions\nAga see rakendus toetab vaid järgmisi versioone: $supportedVersions';
+    return 'See koduserver toetab Matrixi spetsifikatsioonist järgmisi versioone:\n$serverVersions\nAga see rakendus toetab vaid järgmisi versioone: $supportedVersions';
   }
 
   @override
@@ -263,7 +263,7 @@ class L10nEt extends L10n {
 
   @override
   String changedTheChatNameTo(String username, String chatname) {
-    return '$username muutis oma uueks vestlusnimeks \'$chatname\'';
+    return '$username muutis vestluse uueks nimeks \'$chatname\'';
   }
 
   @override
@@ -373,7 +373,7 @@ class L10nEt extends L10n {
 
   @override
   String get commandHint_markasdm =>
-      'Märgi otsevestusluseks antud rechaini ID jaoks';
+      'Märgi otsevestusluseks antud Matrixi ID jaoks';
 
   @override
   String get commandHint_markasgroup => 'Märgi vestlusrühmaks';
@@ -686,7 +686,7 @@ class L10nEt extends L10n {
   String get fileName => 'Faili nimi';
 
   @override
-  String get rechain => 'rechain';
+  String get rechainonline => 'rechainonline';
 
   @override
   String get fontSize => 'Fondi suurus';
@@ -828,7 +828,7 @@ class L10nEt extends L10n {
 
   @override
   String inviteText(String username, String link) {
-    return '$username kutsus sind kasutama rechain\'i-põhist suhtlusrakendust rechain. \n1. Ava https://online.rechain.network ja paigalda rechain\'i rakendus \n2. Liitu kasutajaks või logi sisse olemasoleva rechain\'i kasutajakontoga\n3. Ava kutse link: \n $link';
+    return '$username kutsus sind kasutama REChain\'i-põhist suhtlusrakendust REChain. \n1. Ava online.rechain.network ja paigalda REChain\'i rakendus \n2. Liitu kasutajaks või logi sisse olemasoleva REChain\'i kasutajakontoga\n3. Ava kutse link: \n $link';
   }
 
   @override
@@ -954,7 +954,7 @@ class L10nEt extends L10n {
   String get newChat => 'Uus vestlus';
 
   @override
-  String get newMessageInrechainonline => '💬 Uus sõnum rechain\'i vahendusel';
+  String get newMessageInrechainonline => '💬 Uus sõnum REChain\'i vahendusel';
 
   @override
   String get newVerificationRequest => 'Uus verifitseerimispäring!';
@@ -977,11 +977,11 @@ class L10nEt extends L10n {
 
   @override
   String get noGoogleServicesWarning =>
-      'Tundub, et sinu nutiseadmes pole Firebase Cloud Messaging teenuseid. Sinu privaatsuse mõttes on see kindlasti hea otsus! Kui sa soovid rechainis näha tõuketeavitusi, siis soovitame, et selle jaoks kasutad ntfy liidestust. Kasutades ntfyd või mõnda muud Unified Push standardil põhinevat liidestust saad tõuketeavitusi turvalisel moel. Ntfy rakendus on saadaval nii PlayStore kui F-Droidi rakendusepoodides.';
+      'Tundub, et sinu nutiseadmes pole Firebase Cloud Messaging teenuseid. Sinu privaatsuse mõttes on see kindlasti hea otsus! Kui sa soovid REChainis näha tõuketeavitusi, siis soovitame, et selle jaoks kasutad ntfy liidestust. Kasutades ntfyd või mõnda muud Unified Push standardil põhinevat liidestust saad tõuketeavitusi turvalisel moel. Ntfy rakendus on saadaval nii PlayStore kui F-Droidi rakendusepoodides.';
 
   @override
   String norechainonlineServer(String server1, String server2) {
-    return '$server1 pole rechain\'i server, kas kasutame selle asemel $server2 serverit?';
+    return '$server1 pole REChain\'i server, kas kasutame selle asemel $server2 serverit?';
   }
 
   @override
@@ -1052,7 +1052,7 @@ class L10nEt extends L10n {
 
   @override
   String get oneClientLoggedOut =>
-      'Üks sinu klientrakendustest on rechain\'i võrgust välja loginud';
+      'Üks sinu klientrakendustest on REChain\'i võrgust välja loginud';
 
   @override
   String get addAccount => 'Lisa kasutajakonto';
@@ -1071,7 +1071,7 @@ class L10nEt extends L10n {
 
   @override
   String get enableMultiAccounts =>
-      '(KATSELINE) Pruugi selles seadmes mitut rechain\'i kasutajakontot';
+      '(KATSELINE) Pruugi selles seadmes mitut REChain\'i kasutajakontot';
 
   @override
   String get openInMaps => 'Ava kaardirakendusega';
@@ -1430,7 +1430,7 @@ class L10nEt extends L10n {
   String get theyMatch => 'Nad klapivad omavahel';
 
   @override
-  String get title => 'rechain';
+  String get title => 'rechainonline';
 
   @override
   String get toggleFavorite => 'Muuda olekut lemmikuna';
@@ -1687,7 +1687,7 @@ class L10nEt extends L10n {
 
   @override
   String get unsupportedAndroidVersionLong =>
-      'See funktsionaalsus eeldab uuemat Androidi versiooni. Palun kontrolli, kas sinu nutiseadmele leidub süsteemiuuendusi või saaks seal Katya ® 👽 OSi kasutada.';
+      'See funktsionaalsus eeldab uuemat Androidi versiooni. Palun kontrolli, kas sinu nutiseadmele leidub süsteemiuuendusi või saaks seal Mobile Katya OSi kasutada.';
 
   @override
   String get videoCallsBetaWarning =>
@@ -1705,7 +1705,7 @@ class L10nEt extends L10n {
 
   @override
   String get indexedDbErrorLong =>
-      'Privaatse akna puhul andmete salvestamine vaikimisi pole kasutusel.\nPalun toimi alljärgnevalt:\n- ava about:config\n- määra dom.indexedDB.privateBrowsing.enabled väärtuseks true\nVastasel juhul sa ei saa rechain\'i kasutada.';
+      'Privaatse akna puhul andmete salvestamine vaikimisi pole kasutusel.\nPalun toimi alljärgnevalt:\n- ava about:config\n- määra dom.indexedDB.privateBrowsing.enabled väärtuseks true\nVastasel juhul sa ei saa REChain\'i kasutada.';
 
   @override
   String switchToAccount(String number) {
@@ -1875,18 +1875,18 @@ class L10nEt extends L10n {
 
   @override
   String get callingAccountDetails =>
-      'Võimaldab rechain\'il kasutada Androidi helistamisrakendust.';
+      'Võimaldab REChain\'il kasutada Androidi helistamisrakendust.';
 
   @override
   String get appearOnTop => 'Luba pealmise rakendusena';
 
   @override
   String get appearOnTopDetails =>
-      'Sellega lubad rakendust avada kõige pealmisena (pole vajalik, kui rechain on juba seadistatud toimima helistamiskontoga)';
+      'Sellega lubad rakendust avada kõige pealmisena (pole vajalik, kui REChain on juba seadistatud toimima helistamiskontoga)';
 
   @override
   String get otherCallingPermissions =>
-      'Mikrofoni, kaamera ja muud rechain\'i õigused';
+      'Mikrofoni, kaamera ja muud REChain\'i õigused';
 
   @override
   String get whyIsThisMessageEncrypted => 'Miks see sõnum pole loetav?';
@@ -2033,7 +2033,7 @@ class L10nEt extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      'See vestlus luuakse nüüd uuesti jututoa uue versioonina. Kõik senised osalejad saavad teate, et nad peavad liituma uue vestlusega. Jututubade versioonide kohta leiad teavet https://online.rechain.network lehelt';
+      'See vestlus luuakse nüüd uuesti jututoa uue versioonina. Kõik senised osalejad saavad teate, et nad peavad liituma uue vestlusega. Jututubade versioonide kohta leiad teavet https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle lehelt';
 
   @override
   String get removeDevicesDescription =>
@@ -2283,11 +2283,11 @@ class L10nEt extends L10n {
   String get discover => 'Otsi ja leia';
 
   @override
-  String get commandHint_ignore => 'Eira seda rechaini kasutajatunnust';
+  String get commandHint_ignore => 'Eira seda Matrixi kasutajatunnust';
 
   @override
   String get commandHint_unignore =>
-      'Lõpeta selle rechaini kasutajatunnuse eiramine';
+      'Lõpeta selle Matrixi kasutajatunnuse eiramine';
 
   @override
   String unreadChatsInApp(String appname, String unread) {
@@ -2371,7 +2371,7 @@ class L10nEt extends L10n {
   String get sendCanceled => 'Saatmine on katkestatud';
 
   @override
-  String get loginWithrechainonlineId => 'Logi sisse rechain ID alusel';
+  String get loginWithMatrixId => 'Logi sisse REChain-ID alusel';
 
   @override
   String get discoverHomeservers => 'Leia koduservereid';
@@ -2381,7 +2381,7 @@ class L10nEt extends L10n {
 
   @override
   String get homeserverDescription =>
-      'Sarnaselt e-postiteenuse pakkujale on kõik sinu sõnumid salvestatud koduserveris. Sa võid valida sellise koduserveri, nagu sulle meeldib ja nad kõik suudavad teiste koduserveritega suhelda. Lisateavet leiad veebisaidist https://online.rechain.network.';
+      'Sarnaselt e-postiteenuse pakkujale on kõik sinu sõnumid salvestatud koduserveris. Sa võid valida sellise koduserveri, nagu sulle meeldib ja nad kõik suudavad teiste koduserveritega suhelda. Lisateavet leiad veebisaidist https://rechain.network.';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
@@ -2425,7 +2425,7 @@ class L10nEt extends L10n {
 
   @override
   String get welcomeText =>
-      'Tere, tere 👋 See on rechain. Sa võid sisse logida igasse koduserverisse, mis ühildub https://online.rechain.network serveriga. Ja seejärel saad suhelda kõigiga. Tegemist on ikka väga suure detsentraliseeritud sõnumivõrguga!';
+      'Tere, tere 👋 See on REChain. Sa võid sisse logida igasse koduserverisse, mis ühildub https://rechain.network serveriga. Ja seejärel saad suhelda kõigiga. Tegemist on ikka väga suure detsentraliseeritud sõnumivõrguga!';
 
   @override
   String get blur => 'Hägusus:';
@@ -2514,7 +2514,7 @@ class L10nEt extends L10n {
 
   @override
   String get appIntroduction =>
-      'rechain võimaldab sul suhelda sõprade ja tuttavatega, kes kasutavad erinevaid sõnumikliente. Lisateavet leiad https://online.rechain.network saidist või lihtsalt klõpsi „Jätka“.';
+      'REChain võimaldab sul suhelda sõprade ja tuttavatega, kes kasutavad erinevaid sõnumikliente. Lisateavet leiad https://rechain.network saidist või lihtsalt klõpsi „Jätka“.';
 
   @override
   String get newChatRequest => '📩 Uus vestluskutse';
@@ -2688,7 +2688,7 @@ class L10nEt extends L10n {
 
   @override
   String sentVoiceMessage(String sender, String duration) {
-    return '🎙️ $duration - $sender';
+    return '🎙️ $duration - Häälsõnum kasutajalt $sender';
   }
 
   @override
@@ -2744,11 +2744,18 @@ class L10nEt extends L10n {
       'Palun oota seni, kuni keegi jututoast saadab sulle kutse.';
 
   @override
-  String get commandHint_logout => 'Logout your current device';
+  String get commandHint_logout => 'Logi oma praegusest seadmest välja';
 
   @override
-  String get commandHint_logoutall => 'Logout all active devices';
+  String get commandHint_logoutall =>
+      'Logi kõikidest aktiivsetest seadmetest välja';
 
   @override
-  String get displayNavigationRail => 'Show navigation rail on mobile';
+  String get displayNavigationRail => 'Näita mobiilis külgmist tööriistariba';
+
+  @override
+  String get customReaction => 'Kohandatud reaktsioon';
+
+  @override
+  String get moreEvents => 'Veel sündmusi';
 }

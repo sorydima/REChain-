@@ -317,11 +317,11 @@ abstract class L10n {
   /// **'Add email'**
   String get addEmail;
 
-  /// No description provided for @confirmrechainonlineId.
+  /// No description provided for @confirmMatrixId.
   ///
   /// In en, this message translates to:
-  /// **'Please confirm your rechain ID in order to delete your account.'**
-  String get confirmrechainonlineId;
+  /// **'Please confirm your REChain ID in order to delete your account.'**
+  String get confirmMatrixId;
 
   /// No description provided for @supposedMxid.
   ///
@@ -788,7 +788,7 @@ abstract class L10n {
   /// No description provided for @commandHint_markasdm.
   ///
   /// In en, this message translates to:
-  /// **'Mark as direct message room for the giving rechain ID'**
+  /// **'Mark as direct message room for the giving REChain ID'**
   String get commandHint_markasdm;
 
   /// No description provided for @commandHint_markasgroup.
@@ -1343,11 +1343,11 @@ abstract class L10n {
   /// **'File name'**
   String get fileName;
 
-  /// No description provided for @rechain.
+  /// No description provided for @rechainonline.
   ///
   /// In en, this message translates to:
-  /// **'rechain'**
-  String get rechain;
+  /// **'rechainonline'**
+  String get rechainonline;
 
   /// No description provided for @fontSize.
   ///
@@ -1598,7 +1598,7 @@ abstract class L10n {
   /// No description provided for @inviteText.
   ///
   /// In en, this message translates to:
-  /// **'{username} invited you to rechain.\n1. Visit https://online.rechain.network and install the app \n2. Sign up or sign in \n3. Open the invite link: \n {link}'**
+  /// **'{username} invited you to REChain.\n1. Visit online.rechain.network and install the app \n2. Sign up or sign in \n3. Open the invite link: \n {link}'**
   String inviteText(String username, String link);
 
   /// No description provided for @isTyping.
@@ -1808,7 +1808,7 @@ abstract class L10n {
   /// No description provided for @newMessageInrechainonline.
   ///
   /// In en, this message translates to:
-  /// **'💬 New message in rechain'**
+  /// **'💬 New message in rechainonline'**
   String get newMessageInrechainonline;
 
   /// No description provided for @newVerificationRequest.
@@ -1856,7 +1856,7 @@ abstract class L10n {
   /// No description provided for @norechainonlineServer.
   ///
   /// In en, this message translates to:
-  /// **'{server1} is no rechain server, use {server2} instead?'**
+  /// **'{server1} is no REChain server, use {server2} instead?'**
   String norechainonlineServer(String server1, String server2);
 
   /// No description provided for @shareInviteLink.
@@ -2654,7 +2654,7 @@ abstract class L10n {
   /// Title for the application
   ///
   /// In en, this message translates to:
-  /// **'rechain'**
+  /// **'rechainonline'**
   String get title;
 
   /// No description provided for @toggleFavorite.
@@ -3086,7 +3086,7 @@ abstract class L10n {
   /// No description provided for @unsupportedAndroidVersionLong.
   ///
   /// In en, this message translates to:
-  /// **'This feature requires a newer Android version. Please check for updates or Katya ® 👽 OS support.'**
+  /// **'This feature requires a newer Android version. Please check for updates or Mobile Katya OS support.'**
   String get unsupportedAndroidVersionLong;
 
   /// No description provided for @videoCallsBetaWarning.
@@ -3116,7 +3116,7 @@ abstract class L10n {
   /// No description provided for @indexedDbErrorLong.
   ///
   /// In en, this message translates to:
-  /// **'The message storage is unfortunately not enabled in private mode by default.\nPlease visit\n - about:config\n - set dom.indexedDB.privateBrowsing.enabled to true\nOtherwise, it is not possible to run rechain.'**
+  /// **'The message storage is unfortunately not enabled in private mode by default.\nPlease visit\n - about:config\n - set dom.indexedDB.privateBrowsing.enabled to true\nOtherwise, it is not possible to run REChain.'**
   String get indexedDbErrorLong;
 
   /// No description provided for @switchToAccount.
@@ -3392,7 +3392,7 @@ abstract class L10n {
   /// No description provided for @callingAccountDetails.
   ///
   /// In en, this message translates to:
-  /// **'Allows rechain to use the native android dialer app.'**
+  /// **'Allows REChain to use the native android dialer app.'**
   String get callingAccountDetails;
 
   /// No description provided for @appearOnTop.
@@ -3404,13 +3404,13 @@ abstract class L10n {
   /// No description provided for @appearOnTopDetails.
   ///
   /// In en, this message translates to:
-  /// **'Allows the app to appear on top (not needed if you already have rechain setup as a calling account)'**
+  /// **'Allows the app to appear on top (not needed if you already have REChain setup as a calling account)'**
   String get appearOnTopDetails;
 
   /// No description provided for @otherCallingPermissions.
   ///
   /// In en, this message translates to:
-  /// **'Microphone, camera and other rechain permissions'**
+  /// **'Microphone, camera and other REChain permissions'**
   String get otherCallingPermissions;
 
   /// No description provided for @whyIsThisMessageEncrypted.
@@ -3662,7 +3662,7 @@ abstract class L10n {
   /// No description provided for @roomUpgradeDescription.
   ///
   /// In en, this message translates to:
-  /// **'The chat will then be recreated with the new room version. All participants will be notified that they need to switch to the new chat. You can find out more about room versions at https://online.rechain.network'**
+  /// **'The chat will then be recreated with the new room version. All participants will be notified that they need to switch to the new chat. You can find out more about room versions at https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle'**
   String get roomUpgradeDescription;
 
   /// No description provided for @removeDevicesDescription.
@@ -4076,13 +4076,13 @@ abstract class L10n {
   /// No description provided for @commandHint_ignore.
   ///
   /// In en, this message translates to:
-  /// **'Ignore the given rechain ID'**
+  /// **'Ignore the given REChain ID'**
   String get commandHint_ignore;
 
   /// No description provided for @commandHint_unignore.
   ///
   /// In en, this message translates to:
-  /// **'Unignore the given rechain ID'**
+  /// **'Unignore the given REChain ID'**
   String get commandHint_unignore;
 
   /// No description provided for @unreadChatsInApp.
@@ -4211,11 +4211,11 @@ abstract class L10n {
   /// **'Sending canceled'**
   String get sendCanceled;
 
-  /// No description provided for @loginWithrechainonlineId.
+  /// No description provided for @loginWithMatrixId.
   ///
   /// In en, this message translates to:
-  /// **'Login with rechain ID'**
-  String get loginWithrechainonlineId;
+  /// **'Login with REChain-ID'**
+  String get loginWithMatrixId;
 
   /// No description provided for @discoverHomeservers.
   ///
@@ -4232,7 +4232,7 @@ abstract class L10n {
   /// No description provided for @homeserverDescription.
   ///
   /// In en, this message translates to:
-  /// **'All your data is stored on the homeserver, just like an email provider. You can choose which homeserver you want to use, while you can still communicate with everyone. Learn more at at https://online.rechain.network.'**
+  /// **'All your data is stored on the homeserver, just like an email provider. You can choose which homeserver you want to use, while you can still communicate with everyone. Learn more at at https://rechain.network.'**
   String get homeserverDescription;
 
   /// No description provided for @doesNotSeemToBeAValidHomeserver.
@@ -4304,7 +4304,7 @@ abstract class L10n {
   /// No description provided for @welcomeText.
   ///
   /// In en, this message translates to:
-  /// **'Hey Hey 👋 This is rechain. You can sign in to any homeserver, which is compatible with https://online.rechain.network. And then chat with anyone. It\'s a huge decentralized messaging network!'**
+  /// **'Hey Hey 👋 This is REChain. You can sign in to any homeserver, which is compatible with https://rechain.network. And then chat with anyone. It\'s a huge decentralized messaging network!'**
   String get welcomeText;
 
   /// No description provided for @blur.
@@ -4466,7 +4466,7 @@ abstract class L10n {
   /// No description provided for @appIntroduction.
   ///
   /// In en, this message translates to:
-  /// **'rechain lets you chat with your friends across different messengers. Learn more at https://online.rechain.network or just tap *Continue*.'**
+  /// **'REChain lets you chat with your friends across different messengers. Learn more at https://rechain.network or just tap *Continue*.'**
   String get appIntroduction;
 
   /// No description provided for @newChatRequest.
@@ -4870,6 +4870,18 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'Show navigation rail on mobile'**
   String get displayNavigationRail;
+
+  /// No description provided for @customReaction.
+  ///
+  /// In en, this message translates to:
+  /// **'Custom reaction'**
+  String get customReaction;
+
+  /// No description provided for @moreEvents.
+  ///
+  /// In en, this message translates to:
+  /// **'More events'**
+  String get moreEvents;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {

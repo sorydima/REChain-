@@ -11,9 +11,6 @@ import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
 import 'package:rechainonline/utils/stream_extension.dart';
 import 'package:rechainonline/widgets/avatar.dart';
 import 'package:rechainonline/widgets/matrix.dart';
-import 'package:rechainonline/features/auth/navigation/auth_navigation.dart';
-import 'package:rechainonline/pages/auth/auth_dashboard.dart';
-import 'package:rechainonline/pages/ipfs/ipfs_dashboard.dart';
 
 class SpacesNavigationRail extends StatelessWidget {
   final String? activeSpaceId;
@@ -122,44 +119,6 @@ class SpacesNavigationRail extends StatelessWidget {
                         );
                       },
                     ),
-                  ),
-                  NaviRailItem(
-                    isSelected: false,
-                    onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => IpfsDashboard(
-                          integrationManager: Matrix.of(context).integrationManager,
-                        ),
-                      ),
-                    ),
-                    icon: const Padding(
-                      padding: EdgeInsets.all(10.0),
-                      child: Icon(Icons.cloud_upload_outlined),
-                    ),
-                    selectedIcon: const Padding(
-                      padding: EdgeInsets.all(10.0),
-                      child: Icon(Icons.cloud_upload),
-                    ),
-                    toolTip: 'IPFS',
-                  ),
-                  NaviRailItem(
-                    isSelected: false,
-                    onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const AuthDashboard(),
-                      ),
-                    ),
-                    icon: const Padding(
-                      padding: EdgeInsets.all(10.0),
-                      child: Icon(Icons.security_outlined),
-                    ),
-                    selectedIcon: const Padding(
-                      padding: EdgeInsets.all(10.0),
-                      child: Icon(Icons.security),
-                    ),
-                    toolTip: 'Authentication',
                   ),
                   NaviRailItem(
                     isSelected: isSettings,

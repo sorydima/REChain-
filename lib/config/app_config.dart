@@ -9,7 +9,7 @@ abstract class AppConfig {
   static String? _applicationWelcomeMessage;
 
   static String? get applicationWelcomeMessage => _applicationWelcomeMessage;
-  static String _defaultHomeserver = 'node.marinchik.ink';
+  static String _defaultHomeserver = 'https://node.marinchik.ink';
 
   static String get defaultHomeserver => _defaultHomeserver;
   static double fontSizeFactor = 1;
@@ -24,6 +24,8 @@ abstract class AppConfig {
   static String _privacyUrl =
       'https://online.rechain.network/privacy-policy.html';
 
+  static const Set<String> defaultReactions = {'👍', '❤️', '😂', '😮', '😢'};
+
   static String get privacyUrl => _privacyUrl;
   static const String website = 'https://online.rechain.network';
   static const String enablePushTutorial =
@@ -31,10 +33,10 @@ abstract class AppConfig {
   static const String encryptionTutorial =
       'https://github.com/sorydima/REChain-/wiki#2-disable-end-to-end-encryption';
   static const String startChatTutorial =
-      'https://github.com/sorydima/REChain-/wiki#basics';
+      'https://github.com/sorydima/REChain-/wiki#code-analyzis';
   static const String appId = 'com.rechain.online';
   static const String appOpenUrlScheme = 'com.rechain';
-  static String _webBaseUrl = '';
+  static String _webBaseUrl = 'https://chainapp.codemagic.app';
 
   static String get webBaseUrl => _webBaseUrl;
   static const String sourceCodeUrl =
@@ -42,7 +44,7 @@ abstract class AppConfig {
   static const String supportUrl =
       'https://github.com/sorydima/REChain-/issues';
   static const String changelogUrl =
-      'https://raw.githubusercontent.com/sorydima/REChain-/refs/heads/main/CHANGELOG.md';
+      'https://github.com/sorydima/REChain-/blob/main/CHANGELOG.md';
   static final Uri newIssueUrl = Uri(
     scheme: 'https',
     host: 'github.com',
@@ -51,7 +53,6 @@ abstract class AppConfig {
   static bool renderHtml = true;
   static bool hideRedactedEvents = false;
   static bool hideUnknownEvents = false;
-  static bool hideUnimportantStateEvents = false;
   static bool separateChatTypes = true;
   static bool autoplayImages = true;
   static bool sendTypingNotifications = true;
@@ -62,11 +63,10 @@ abstract class AppConfig {
   static bool displayNavigationRail = true;
   static bool experimentalVoip = true;
   static const bool hideTypingUsernames = false;
-  static const bool hideAllStateEvents = false;
   static const String inviteLinkPrefix = 'https://matrix.to/#/';
   static const String deepLinkPrefix = 'com.rechain://online/';
   static const String schemePrefix = 'matrix:';
-  static const String pushNotificationsChannelId = 'REChainOnline_Push';
+  static const String pushNotificationsChannelId = 'rechainonline_push';
   static const String pushNotificationsAppId = 'com.rechain.online';
   static const double borderRadius = 18.0;
   static const double columnWidth = 360.0;
