@@ -46,6 +46,18 @@ class StakingInfo {
   });
 }
 
+
+enum TransactionType {
+  transfer,
+  staking,
+  swap,
+  contract,
+  mint,
+  burn,
+  invest,
+  stake,
+}
+
 class BlockchainTransaction {
   final String id;
   final String fromAddress;
@@ -54,6 +66,7 @@ class BlockchainTransaction {
   final double gasPrice;
   final int gasLimit;
   final String? data;
+  final TransactionType type;
 
   BlockchainTransaction({
     required this.id,
@@ -63,6 +76,7 @@ class BlockchainTransaction {
     required this.gasPrice,
     required this.gasLimit,
     this.data,
+    required this.type,
   });
 }
 

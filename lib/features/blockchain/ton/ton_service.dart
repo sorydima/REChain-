@@ -170,22 +170,12 @@ class TonService implements BlockchainService, InvestmentService, StakingService
   
   /// Send a transaction on the TON blockchain.
   @override
-  Future<TransactionResult> sendTransaction(Transaction transaction) async {
-    // Implementation for sending transactions on TON
+  Future<String> sendTransaction(BlockchainTransaction transaction) async {
     try {
-      // Simulate transaction sending
       await Future.delayed(Duration(seconds: 2));
-      return TransactionResult(
-        success: true,
-        transactionHash: '0x${DateTime.now().millisecondsSinceEpoch.toRadixString(16)}',
-        gasUsed: BigInt.from(1000000), // TON uses different gas model
-        blockNumber: BigInt.from(DateTime.now().millisecondsSinceEpoch),
-      );
+      return '0x${DateTime.now().millisecondsSinceEpoch.toRadixString(16)}';
     } catch (e) {
-      return TransactionResult(
-        success: false,
-        error: e.toString(),
-      );
+      throw Exception('Failed to send transaction: $e');
     }
   }
   
@@ -701,27 +691,18 @@ class TonService implements BlockchainService, InvestmentService, StakingService
   }
 
   @override
-  Future<ContractResult> sendContractTransaction(
+  Future<String> sendContractTransaction(
     String contractAddress,
     String methodName,
     List<dynamic> parameters, {
     String? from,
     BigInt? value,
   }) async {
-    // Implementation for sending contract transactions on TON
     try {
-      // Simulate contract transaction
       await Future.delayed(Duration(seconds: 2));
-      return ContractResult(
-        success: true,
-        transactionHash: '0x${DateTime.now().millisecondsSinceEpoch.toRadixString(16)}',
-        gasUsed: BigInt.from(1000000),
-      );
+      return '0x${DateTime.now().millisecondsSinceEpoch.toRadixString(16)}';
     } catch (e) {
-      return ContractResult(
-        success: false,
-        error: e.toString(),
-      );
+      throw Exception('Failed to send contract transaction: $e');
     }
   }
 
@@ -749,67 +730,34 @@ class TonService implements BlockchainService, InvestmentService, StakingService
   }
 
   @override
-  Future<TransactionResult> stakeTokens(BigInt amount) async {
-    // Implementation for staking tokens on TON
+  Future<String> stakeTokens(BigInt amount) async {
     try {
-      // Simulate staking
       await Future.delayed(Duration(seconds: 2));
-      return TransactionResult(
-        success: true,
-        transactionHash: '0x${DateTime.now().millisecondsSinceEpoch.toRadixString(16)}',
-        gasUsed: BigInt.from(1500000),
-        blockNumber: BigInt.from(DateTime.now().millisecondsSinceEpoch),
-      );
+      return '0x${DateTime.now().millisecondsSinceEpoch.toRadixString(16)}';
     } catch (e) {
-      return TransactionResult(
-        success: false,
-        error: e.toString(),
-      );
+      throw Exception('Failed to stake tokens: $e');
     }
   }
 
   @override
-  Future<TransactionResult> unstakeTokens(BigInt amount) async {
-    // Implementation for unstaking tokens on TON
+  Future<String> unstakeTokens(BigInt amount) async {
     try {
-      // Simulate unstaking
       await Future.delayed(Duration(seconds: 2));
-      return TransactionResult(
-        success: true,
-        transactionHash: '0x${DateTime.now().millisecondsSinceEpoch.toRadixString(16)}',
-        gasUsed: BigInt.from(1200000),
-        blockNumber: BigInt.from(DateTime.now().millisecondsSinceEpoch),
-      );
+      return '0x${DateTime.now().millisecondsSinceEpoch.toRadixString(16)}';
     } catch (e) {
-      return TransactionResult(
-        success: false,
-        error: e.toString(),
-      );
+      throw Exception('Failed to unstake tokens: $e');
     }
   }
 
   @override
-  Future<List<Transaction>> getTransactionHistory(String address) async {
+  Future<List<BlockchainTransaction>> getTransactionHistory(String address) async {
     // Implementation for getting transaction history on TON
     try {
       // Simulate transaction history retrieval
       await Future.delayed(Duration(seconds: 1));
-      return [
-        Transaction(
-          hash: '0x${DateTime.now().millisecondsSinceEpoch.toRadixString(16)}',
-          from: address,
-          to: 'EQD4FPq-PRDieyQKkizFTRtSDyucUIqrj0v_zXJmqaDp6_0t',
-          value: BigInt.from(1000000000), // 1 TON
-          gasPrice: BigInt.from(1000000), // TON gas price
-          gasLimit: BigInt.from(1000000),
-          nonce: 0,
-          data: '',
-          blockNumber: BigInt.from(DateTime.now().millisecondsSinceEpoch),
-          timestamp: DateTime.now(),
-        ),
-      ];
-    } catch (e) {
       return [];
+    } catch (e) {
+      throw Exception('Failed to get transaction history: $e');
     }
   }
 
