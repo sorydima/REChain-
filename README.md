@@ -349,9 +349,34 @@ REChain supports Aurora OS via the [flutter-aurora](https://github.com/auroraos/
 
 ---
 
+## 🐉 Harmony OS Support
+
+We have added support for building REChain for Harmony OS as a new product flavor in the Android build configuration.
+
+### Building for Harmony OS
+
+To build the app for Harmony OS, use the following commands:
+
+```bash
+./gradlew assembleHarmonyosRelease
+```
+
+or from Flutter:
+
+```bash
+flutter build apk --flavor harmonyos
+```
+
+### Assets
+
+Harmony OS specific assets should be placed in `android/app/src/harmonyos/res/` directories.
+
+---
+
 ## 📢 Release v4.1.7+1150 - 2025-07-08
 
 We are excited to announce the release of REChain version 4.1.7+1150! This release brings major integrations including Matrix, Telegram, blockchain, IPFS, and AI services, along with a dynamic plugin system, unified APIs, and enhanced developer and user experiences.
+
 
 For detailed information, please see the [CHANGELOG](./CHANGELOG.md) and [RELEASE NOTES](./RELEASE_NOTES.md).
 
