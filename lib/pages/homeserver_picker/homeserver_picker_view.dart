@@ -9,6 +9,7 @@ import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/widgets/adaptive_dialogs/adaptive_dialog_action.dart';
 import 'package:rechainonline/widgets/layouts/login_scaffold.dart';
 import 'package:rechainonline/widgets/matrix.dart';
+import 'package:rechainonline/widgets/debugger_panel.dart';
 import '../../config/themes.dart';
 import 'homeserver_picker.dart';
 
