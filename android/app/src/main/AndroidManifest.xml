@@ -32,8 +32,8 @@
         android:label="REChain"
         android:icon="@mipmap/ic_launcher"
         android:requestLegacyExternalStorage="true"
-        android:allowBackup="true"
-        android:fullBackupContent="true"
+        android:allowBackup="false"
+        android:fullBackupContent="false"
         android:localeConfig="@xml/locale_config"
     >
         <activity
@@ -115,7 +115,7 @@
         </activity>
 
         <service android:name=".FcmPushService"
-          android:exported="true">
+          android:exported="false">
           <intent-filter>
             <action android:name="com.google.firebase.MESSAGING_EVENT"/>
           </intent-filter>
@@ -137,7 +137,7 @@
 
         <receiver android:name="org.unifiedpush.flutter.connector.UnifiedPushReceiver"
             tools:replace="android:enabled"
-            android:enabled="true">
+            android:enabled="false">
         </receiver>
 
         <receiver android:exported="false"  android:enabled="true"  android:name=".UnifiedPushReceiver">
