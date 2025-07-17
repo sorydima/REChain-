@@ -42,6 +42,14 @@ class HomeserverPickerController extends State<HomeserverPicker> {
 
   bool isTorBrowser = false;
 
+  bool showDebuggerPanel = false;
+
+  void toggleDebuggerPanel() {
+    setState(() {
+      showDebuggerPanel = !showDebuggerPanel;
+    });
+  }
+
   Future<void> _checkTorBrowser() async {
     if (!kIsWeb) return;
 
