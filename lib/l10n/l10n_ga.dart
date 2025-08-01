@@ -9,7 +9,7 @@ class L10nGa extends L10n {
   L10nGa([String locale = 'ga']) : super(locale);
 
   @override
-  String get alwaysUse24HourFormat => '';
+  String get alwaysUse24HourFormat => 'bréagach';
 
   @override
   String get repeatPassword => 'Scríobh an pasfhocal arís';
@@ -77,7 +77,7 @@ class L10nGa extends L10n {
   String get addEmail => 'Cuir ríomhphoist';
 
   @override
-  String get confirmMatrixId =>
+  String get confirmREChainId =>
       'Deimhnigh d’ID Maitrís chun do chuntas a scriosadh.';
 
   @override
@@ -174,8 +174,11 @@ class L10nGa extends L10n {
       'Seinn greamáin agus straoiseog beoite go huathoibríoch';
 
   @override
-  String badServerLoginTypesException(String serverVersions,
-      String supportedVersions, Object suportedVersions) {
+  String badServerLoginTypesException(
+    String serverVersions,
+    String supportedVersions,
+    Object suportedVersions,
+  ) {
     return 'Tá na cineálacha logála isteach seo ar fáil faoin freastalaí baile:\n$serverVersions\nAch níl ach na ceann seo ar fáil faoin aip seo:\n$supportedVersions';
   }
 
@@ -191,11 +194,12 @@ class L10nGa extends L10n {
 
   @override
   String badServerVersionsException(
-      String serverVersions,
-      String supportedVersions,
-      Object serverVerions,
-      Object supoortedVersions,
-      Object suportedVersions) {
+    String serverVersions,
+    String supportedVersions,
+    Object serverVerions,
+    Object supoortedVersions,
+    Object suportedVersions,
+  ) {
     return 'Tá na leaganacha sonraíochta seo ar fáil faoin freastalaí baile:\n$serverVersions\nAch níl ach na ceann seo ar fáil faoin aip seo $supportedVersions';
   }
 
@@ -693,7 +697,7 @@ class L10nGa extends L10n {
   String get fileName => 'Ainm an chomhaid';
 
   @override
-  String get rechainonline => 'rechainonline';
+  String get rechainonline => 'REChain';
 
   @override
   String get fontSize => 'Méid cló';
@@ -963,8 +967,7 @@ class L10nGa extends L10n {
   String get newChat => 'Comhrá nua';
 
   @override
-  String get newMessageInrechainonline =>
-      '💬 Teachtaireacht nua in rechainonline';
+  String get newMessageInrechainonline => '💬 Teachtaireacht nua in REChain';
 
   @override
   String get newVerificationRequest => 'Iarratas fíoraithe nua!';
@@ -991,7 +994,7 @@ class L10nGa extends L10n {
 
   @override
   String norechainonlineServer(String server1, String server2) {
-    return 'Níl $server1 freastalaí Matrix. Úsáid $server2 ina áit sin?';
+    return 'Níl $server1 freastalaí Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network. Úsáid $server2 ina áit sin?';
   }
 
   @override
@@ -1442,7 +1445,7 @@ class L10nGa extends L10n {
   String get theyMatch => 'Tá siad céanna';
 
   @override
-  String get title => 'rechainonline';
+  String get title => 'REChain';
 
   @override
   String get toggleFavorite => 'Scoránaigh mar ceann is fearr leat';
@@ -2024,10 +2027,10 @@ class L10nGa extends L10n {
   String get invite => 'Tabhair cuireadh';
 
   @override
-  String get inviteGroupChat => '📨 Tabhair cuireadh comhrá grúpa';
+  String get inviteGroupChat => '📨 Cuireadh chuig comhrá grúpa';
 
   @override
-  String get invitePrivateChat => '📨 Tabhair cuireadh comhrá príobháideach';
+  String get invitePrivateChat => '📨 Cuireadh chuig comhrá príobháideach';
 
   @override
   String get invalidInput => 'Ionchur neamhbhailí!';
@@ -2046,7 +2049,7 @@ class L10nGa extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      'Déanfar an comhrá a athchruthú ansin leis an leagan seomra nua. Cuirfear in iúl do gach rannpháirtí go gcaithfidh siad aistriú chuig an gcomhrá nua. Is féidir leat tuilleadh eolais a fháil faoi leaganacha seomra ag https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle';
+      'Déanfar an comhrá a athchruthú ansin leis an leagan seomra nua. Cuirfear in iúl do gach rannpháirtí go gcaithfidh siad aistriú chuig an gcomhrá nua. Is féidir leat tuilleadh eolais a fháil faoi leaganacha seomra ag https://spec.online.rechain.network/latest/rooms/';
 
   @override
   String get removeDevicesDescription =>
@@ -2387,7 +2390,7 @@ class L10nGa extends L10n {
   String get sendCanceled => 'Cealaíodh seoladh';
 
   @override
-  String get loginWithMatrixId => 'Logáil isteach le REChain-ID';
+  String get loginWithREChainId => 'Logáil isteach le REChain ID';
 
   @override
   String get discoverHomeservers => 'Faigh amach faoi fhreastalaithe baile';
@@ -2397,7 +2400,7 @@ class L10nGa extends L10n {
 
   @override
   String get homeserverDescription =>
-      'Stóráiltear do chuid sonraí go léir ar an bhfreastalaí baile, díreach cosúil le soláthraí ríomhphoist. Is féidir leat an freastalaí baile is mian leat a úsáid a roghnú, agus is féidir leat cumarsáid a dhéanamh le gach duine fós. Foghlaim níos mó ag https://rechain.network.';
+      'Stóráiltear do chuid sonraí go léir ar an bhfreastalaí baile, díreach cosúil le soláthraí ríomhphoist. Is féidir leat an freastalaí baile is mian leat a úsáid a roghnú, agus is féidir leat cumarsáid a dhéanamh le gach duine fós. Foghlaim níos mó ag https://online.rechain.network.';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
@@ -2441,7 +2444,7 @@ class L10nGa extends L10n {
 
   @override
   String get welcomeText =>
-      'Hey Hey 👋 Is é seo REChain. Is féidir leat síniú isteach in aon fhreastalaí baile, atá comhoiriúnach leis https://rechain.network. Agus ansin comhrá a dhéanamh le duine ar bith. Is líonra teachtaireachtaí díláraithe ollmhór é!';
+      'Hey Hey 👋 Is é seo REChain. Is féidir leat síniú isteach in aon fhreastalaí baile, atá comhoiriúnach leis https://online.rechain.network. Agus ansin comhrá a dhéanamh le duine ar bith. Is líonra teachtaireachtaí díláraithe ollmhór é!';
 
   @override
   String get blur => 'Doiléirigh:';
@@ -2530,7 +2533,7 @@ class L10nGa extends L10n {
 
   @override
   String get appIntroduction =>
-      'Ligeann REChain duit comhrá a dhéanamh le do chairde thar theachtairí éagsúla. Foghlaim tuilleadh ag https://rechain.network nó tapáil *Ar aghaidh*.';
+      'Ligeann REChain duit comhrá a dhéanamh le do chairde thar theachtairí éagsúla. Foghlaim tuilleadh ag https://online.rechain.network nó tapáil *Ar aghaidh*.';
 
   @override
   String get newChatRequest => '📩 Iarratas comhrá nua';
@@ -2766,8 +2769,11 @@ class L10nGa extends L10n {
       'Taispeáin ráille nascleanúna ar fhóin phóca';
 
   @override
-  String get customReaction => 'Custom reaction';
+  String get customReaction => 'Imoibriú saincheaptha';
 
   @override
-  String get moreEvents => 'More events';
+  String get moreEvents => 'Tuilleadh imeachtaí';
+
+  @override
+  String get declineInvitation => 'Diúltaigh don chuireadh';
 }

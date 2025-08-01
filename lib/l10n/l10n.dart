@@ -111,7 +111,7 @@ import 'l10n_zh.dart' deferred as l10n_zh;
 /// property.
 abstract class L10n {
   L10n(String locale)
-      : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+    : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
@@ -133,11 +133,11 @@ abstract class L10n {
   /// of delegates is preferred or required.
   static const List<LocalizationsDelegate<dynamic>> localizationsDelegates =
       <LocalizationsDelegate<dynamic>>[
-    delegate,
-    GlobalMaterialLocalizations.delegate,
-    GlobalCupertinoLocalizations.delegate,
-    GlobalWidgetsLocalizations.delegate,
-  ];
+        delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ];
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
@@ -194,7 +194,7 @@ abstract class L10n {
     Locale('vi'),
     Locale('yue'),
     Locale('zh'),
-    Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant')
+    Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant'),
   ];
 
   /// Set to true to always display time of day in 24 hour format.
@@ -317,11 +317,11 @@ abstract class L10n {
   /// **'Add email'**
   String get addEmail;
 
-  /// No description provided for @confirmMatrixId.
+  /// No description provided for @confirmREChainId.
   ///
   /// In en, this message translates to:
   /// **'Please confirm your REChain ID in order to delete your account.'**
-  String get confirmMatrixId;
+  String get confirmREChainId;
 
   /// No description provided for @supposedMxid.
   ///
@@ -478,7 +478,10 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'The homeserver supports the login types:\n{serverVersions}\nBut this app supports only:\n{supportedVersions}'**
   String badServerLoginTypesException(
-      String serverVersions, String supportedVersions, Object suportedVersions);
+    String serverVersions,
+    String supportedVersions,
+    Object suportedVersions,
+  );
 
   /// No description provided for @sendTypingNotifications.
   ///
@@ -503,11 +506,12 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'The homeserver supports the Spec versions:\n{serverVersions}\nBut this app supports only {supportedVersions}'**
   String badServerVersionsException(
-      String serverVersions,
-      String supportedVersions,
-      Object serverVerions,
-      Object supoortedVersions,
-      Object suportedVersions);
+    String serverVersions,
+    String supportedVersions,
+    Object serverVerions,
+    Object supoortedVersions,
+    Object suportedVersions,
+  );
 
   /// No description provided for @countChatsAndCountParticipants.
   ///
@@ -1346,7 +1350,7 @@ abstract class L10n {
   /// No description provided for @rechainonline.
   ///
   /// In en, this message translates to:
-  /// **'rechainonline'**
+  /// **'REChain'**
   String get rechainonline;
 
   /// No description provided for @fontSize.
@@ -1808,7 +1812,7 @@ abstract class L10n {
   /// No description provided for @newMessageInrechainonline.
   ///
   /// In en, this message translates to:
-  /// **'💬 New message in rechainonline'**
+  /// **'💬 New message in REChain'**
   String get newMessageInrechainonline;
 
   /// No description provided for @newVerificationRequest.
@@ -1856,7 +1860,7 @@ abstract class L10n {
   /// No description provided for @norechainonlineServer.
   ///
   /// In en, this message translates to:
-  /// **'{server1} is no REChain server, use {server2} instead?'**
+  /// **'{server1} is no Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network server, use {server2} instead?'**
   String norechainonlineServer(String server1, String server2);
 
   /// No description provided for @shareInviteLink.
@@ -2654,7 +2658,7 @@ abstract class L10n {
   /// Title for the application
   ///
   /// In en, this message translates to:
-  /// **'rechainonline'**
+  /// **'REChain'**
   String get title;
 
   /// No description provided for @toggleFavorite.
@@ -3626,13 +3630,13 @@ abstract class L10n {
   /// No description provided for @inviteGroupChat.
   ///
   /// In en, this message translates to:
-  /// **'📨 Invite group chat'**
+  /// **'📨 Group chat invite'**
   String get inviteGroupChat;
 
   /// No description provided for @invitePrivateChat.
   ///
   /// In en, this message translates to:
-  /// **'📨 Invite private chat'**
+  /// **'📨 Private chat invite'**
   String get invitePrivateChat;
 
   /// No description provided for @invalidInput.
@@ -3662,7 +3666,7 @@ abstract class L10n {
   /// No description provided for @roomUpgradeDescription.
   ///
   /// In en, this message translates to:
-  /// **'The chat will then be recreated with the new room version. All participants will be notified that they need to switch to the new chat. You can find out more about room versions at https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle'**
+  /// **'The chat will then be recreated with the new room version. All participants will be notified that they need to switch to the new chat. You can find out more about room versions at https://spec.online.rechain.network/latest/rooms/'**
   String get roomUpgradeDescription;
 
   /// No description provided for @removeDevicesDescription.
@@ -4211,11 +4215,11 @@ abstract class L10n {
   /// **'Sending canceled'**
   String get sendCanceled;
 
-  /// No description provided for @loginWithMatrixId.
+  /// No description provided for @loginWithREChainId.
   ///
   /// In en, this message translates to:
-  /// **'Login with REChain-ID'**
-  String get loginWithMatrixId;
+  /// **'Login with REChain ID'**
+  String get loginWithREChainId;
 
   /// No description provided for @discoverHomeservers.
   ///
@@ -4232,7 +4236,7 @@ abstract class L10n {
   /// No description provided for @homeserverDescription.
   ///
   /// In en, this message translates to:
-  /// **'All your data is stored on the homeserver, just like an email provider. You can choose which homeserver you want to use, while you can still communicate with everyone. Learn more at at https://rechain.network.'**
+  /// **'All your data is stored on the homeserver, just like an email provider. You can choose which homeserver you want to use, while you can still communicate with everyone. Learn more at at https://online.rechain.network.'**
   String get homeserverDescription;
 
   /// No description provided for @doesNotSeemToBeAValidHomeserver.
@@ -4304,7 +4308,7 @@ abstract class L10n {
   /// No description provided for @welcomeText.
   ///
   /// In en, this message translates to:
-  /// **'Hey Hey 👋 This is REChain. You can sign in to any homeserver, which is compatible with https://rechain.network. And then chat with anyone. It\'s a huge decentralized messaging network!'**
+  /// **'Hey Hey 👋 This is REChain. You can sign in to any homeserver, which is compatible with https://online.rechain.network. And then chat with anyone. It\'s a huge decentralized messaging network!'**
   String get welcomeText;
 
   /// No description provided for @blur.
@@ -4466,7 +4470,7 @@ abstract class L10n {
   /// No description provided for @appIntroduction.
   ///
   /// In en, this message translates to:
-  /// **'REChain lets you chat with your friends across different messengers. Learn more at https://rechain.network or just tap *Continue*.'**
+  /// **'REChain lets you chat with your friends across different messengers. Learn more at https://online.rechain.network or just tap *Continue*.'**
   String get appIntroduction;
 
   /// No description provided for @newChatRequest.
@@ -4882,6 +4886,12 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'More events'**
   String get moreEvents;
+
+  /// No description provided for @declineInvitation.
+  ///
+  /// In en, this message translates to:
+  /// **'Decline invitation'**
+  String get declineInvitation;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {
@@ -4894,58 +4904,58 @@ class _L10nDelegate extends LocalizationsDelegate<L10n> {
 
   @override
   bool isSupported(Locale locale) => <String>[
-        'ar',
-        'be',
-        'bn',
-        'bo',
-        'ca',
-        'cs',
-        'da',
-        'de',
-        'el',
-        'en',
-        'eo',
-        'es',
-        'et',
-        'eu',
-        'fa',
-        'fi',
-        'fil',
-        'fr',
-        'ga',
-        'gl',
-        'he',
-        'hi',
-        'hr',
-        'hu',
-        'ia',
-        'id',
-        'ie',
-        'it',
-        'ja',
-        'ka',
-        'ko',
-        'lt',
-        'lv',
-        'nb',
-        'nl',
-        'pl',
-        'pt',
-        'ro',
-        'ru',
-        'sk',
-        'sl',
-        'sr',
-        'sv',
-        'ta',
-        'te',
-        'th',
-        'tr',
-        'uk',
-        'vi',
-        'yue',
-        'zh'
-      ].contains(locale.languageCode);
+    'ar',
+    'be',
+    'bn',
+    'bo',
+    'ca',
+    'cs',
+    'da',
+    'de',
+    'el',
+    'en',
+    'eo',
+    'es',
+    'et',
+    'eu',
+    'fa',
+    'fi',
+    'fil',
+    'fr',
+    'ga',
+    'gl',
+    'he',
+    'hi',
+    'hr',
+    'hu',
+    'ia',
+    'id',
+    'ie',
+    'it',
+    'ja',
+    'ka',
+    'ko',
+    'lt',
+    'lv',
+    'nb',
+    'nl',
+    'pl',
+    'pt',
+    'ro',
+    'ru',
+    'sk',
+    'sl',
+    'sr',
+    'sv',
+    'ta',
+    'te',
+    'th',
+    'tr',
+    'uk',
+    'vi',
+    'yue',
+    'zh',
+  ].contains(locale.languageCode);
 
   @override
   bool shouldReload(_L10nDelegate old) => false;
@@ -4958,9 +4968,9 @@ Future<L10n> lookupL10n(Locale locale) {
       {
         switch (locale.scriptCode) {
           case 'Hant':
-            return l10n_zh
-                .loadLibrary()
-                .then((dynamic _) => l10n_zh.L10nZhHant());
+            return l10n_zh.loadLibrary().then(
+              (dynamic _) => l10n_zh.L10nZhHant(),
+            );
         }
         break;
       }
@@ -4972,13 +4982,13 @@ Future<L10n> lookupL10n(Locale locale) {
       {
         switch (locale.countryCode) {
           case 'BR':
-            return l10n_pt
-                .loadLibrary()
-                .then((dynamic _) => l10n_pt.L10nPtBr());
+            return l10n_pt.loadLibrary().then(
+              (dynamic _) => l10n_pt.L10nPtBr(),
+            );
           case 'PT':
-            return l10n_pt
-                .loadLibrary()
-                .then((dynamic _) => l10n_pt.L10nPtPt());
+            return l10n_pt.loadLibrary().then(
+              (dynamic _) => l10n_pt.L10nPtPt(),
+            );
         }
         break;
       }
@@ -5091,8 +5101,9 @@ Future<L10n> lookupL10n(Locale locale) {
   }
 
   throw FlutterError(
-      'L10n.delegate failed to load unsupported locale "$locale". This is likely '
-      'an issue with the localizations generation tool. Please file an issue '
-      'on GitHub with a reproducible sample app and the gen-l10n configuration '
-      'that was used.');
+    'L10n.delegate failed to load unsupported locale "$locale". This is likely '
+    'an issue with the localizations generation tool. Please file an issue '
+    'on GitHub with a reproducible sample app and the gen-l10n configuration '
+    'that was used.',
+  );
 }

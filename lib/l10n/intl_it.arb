@@ -696,7 +696,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "rechainonline": "rechainonline",
+  "rechainonline": "REChain",
   "@rechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1030,7 +1030,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "newMessageInrechainonline": "💬 Nuovo messaggio in rechainonline",
+  "newMessageInrechainonline": "💬 Nuovo messaggio in REChain",
   "@newMessageInrechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1556,7 +1556,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "title": "rechainonline",
+  "title": "REChain",
   "@title": {
     "description": "Title for the application",
     "type": "String",
@@ -2060,7 +2060,7 @@
   "@user": {},
   "youAcceptedTheInvitation": "👍 Hai accettato l'invito",
   "@youAcceptedTheInvitation": {},
-  "norechainonlineServer": "{server1} non è un server REChain, vuoi invece usare {server2}?",
+  "norechainonlineServer": "{server1} non è un server Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network, vuoi invece usare {server2}?",
   "@norechainonlineServer": {
     "type": "String",
     "placeholders": {
@@ -2107,7 +2107,7 @@
   "@sendOnEnter": {},
   "youRejectedTheInvitation": "Hai rifiutato l'invito",
   "@youRejectedTheInvitation": {},
-  "otherCallingPermissions": "Microfono, fotocamera e altri permessi di rechainonline",
+  "otherCallingPermissions": "Microfono, fotocamera e altri permessi di REChain",
   "@otherCallingPermissions": {},
   "messagesStyle": "Messaggi:",
   "@messagesStyle": {},
@@ -2469,8 +2469,8 @@
   "@noChatDescriptionYet": {},
   "removeFromBundle": "Rimuovi da questo bundle",
   "@removeFromBundle": {},
-  "confirmMatrixId": "Per eliminare il tuo account, conferma il tuo REChain ID.",
-  "@confirmMatrixId": {},
+  "confirmREChainId": "Per eliminare il tuo account, conferma il tuo REChain ID.",
+  "@confirmREChainId": {},
   "learnMore": "Scopri di più",
   "@learnMore": {},
   "notAnImage": "Non è un file immagine.",
@@ -2499,7 +2499,7 @@
     "type": "String",
     "description": "Usage hint for the command /join"
   },
-  "roomUpgradeDescription": "Questa chat sarà ricreata con la nuova versione della stanza. Tutti i partecipanti saranno avvertiti che devono passare alla nuova chat. Puoi leggere di più riguardo le versioni delle stanze su https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle",
+  "roomUpgradeDescription": "Questa chat sarà ricreata con la nuova versione della stanza. Tutti i partecipanti saranno avvertiti che devono passare alla nuova chat. Puoi leggere di più riguardo le versioni delle stanze su https://spec.online.rechain.network/latest/rooms/",
   "@roomUpgradeDescription": {},
   "commandHint_invite": "Invia l utente fornito in questa stanza",
   "@commandHint_invite": {
@@ -2805,7 +2805,7 @@
   "@noOneCanJoin": {},
   "usersMustKnock": "Gli utenti devono bussare",
   "@usersMustKnock": {},
-  "alwaysUse24HourFormat": "",
+  "alwaysUse24HourFormat": "disattivato",
   "@alwaysUse24HourFormat": {
     "description": "Set to true to always display time of day in 24 hour format."
   },
@@ -3096,9 +3096,9 @@
   },
   "changeGeneralChatSettings": "Modifica le impostazioni generali della chat",
   "@changeGeneralChatSettings": {},
-  "loginWithMatrixId": "Accedi con il REChain ID",
-  "@loginWithMatrixId": {},
-  "homeserverDescription": "Tutti i tuoi dati sono archiviati sull'homeserver, proprio come un provider di posta elettronica. Puoi scegliere quale homeserver vuoi usare, mentre puoi comunque comunicare con tutti. Scopri di più su https://rechain.network.",
+  "loginWithREChainId": "Accedi con il REChain ID",
+  "@loginWithREChainId": {},
+  "homeserverDescription": "Tutti i tuoi dati sono archiviati sull'homeserver, proprio come un provider di posta elettronica. Puoi scegliere quale homeserver vuoi usare, mentre puoi comunque comunicare con tutti. Scopri di più su https://online.rechain.network.",
   "@homeserverDescription": {},
   "discoverHomeservers": "Scopri gli homeserver",
   "@discoverHomeservers": {},
@@ -3126,7 +3126,7 @@
   },
   "continueText": "Continua",
   "@continueText": {},
-  "welcomeText": "Hey Hey 👋 Questa è REChain. Puoi accedere a qualsiasi homeserver compatibile con https://rechain.network. E poi chattare con chiunque. È un'enorme rete di messaggistica decentralizzata!",
+  "welcomeText": "Hey Hey 👋 Questa è REChain. Puoi accedere a qualsiasi homeserver compatibile con https://online.rechain.network. E poi chattare con chiunque. È un'enorme rete di messaggistica decentralizzata!",
   "@welcomeText": {},
   "blur": "Sfocatura:",
   "@blur": {},
@@ -3297,7 +3297,7 @@
   "@open": {},
   "appWantsToUseForLoginDescription": "Con la presente consenti all'app e al sito web di condividere informazioni su di te.",
   "@appWantsToUseForLoginDescription": {},
-  "appIntroduction": "REChain ti consente di chattare con i tuoi amici attraverso diverse app di messaggistica. Ulteriori informazioni su https://rechain.network o semplicemente tocca *Continua*.",
+  "appIntroduction": "REChain ti consente di chattare con i tuoi amici attraverso diverse app di messaggistica. Ulteriori informazioni su https://online.rechain.network o semplicemente tocca *Continua*.",
   "@appIntroduction": {},
   "waitingForServer": "In attesa del server...",
   "@waitingForServer": {},
@@ -3349,5 +3349,38 @@
   "youHaveKnocked": "Hai bussato",
   "@youHaveKnocked": {},
   "pleaseWaitUntilInvited": "Ora attendi, finché qualcuno dalla stanza non ti invita.",
-  "@pleaseWaitUntilInvited": {}
+  "@pleaseWaitUntilInvited": {},
+  "checkList": "Checklist",
+  "@checkList": {},
+  "countInvited": "{count} invitati",
+  "@countInvited": {
+    "type": "String",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "sentVoiceMessage": "🎙️ {duration} - Messaggio vocale da {sender}",
+  "@sentVoiceMessage": {
+    "type": "String",
+    "placeholders": {
+      "sender": {
+        "type": "String"
+      },
+      "duration": {
+        "type": "String"
+      }
+    }
+  },
+  "commandHint_logout": "Disconnetti questo dispositivo",
+  "@commandHint_logout": {},
+  "commandHint_logoutall": "Disconnetti tutti i dispositivi attivi",
+  "@commandHint_logoutall": {},
+  "displayNavigationRail": "Mostra barra di navigazione su mobile",
+  "@displayNavigationRail": {},
+  "customReaction": "Reazione personalizzata",
+  "@customReaction": {},
+  "moreEvents": "Altri eventi",
+  "@moreEvents": {}
 }

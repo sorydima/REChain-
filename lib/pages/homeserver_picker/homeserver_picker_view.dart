@@ -9,7 +9,6 @@ import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/widgets/adaptive_dialogs/adaptive_dialog_action.dart';
 import 'package:rechainonline/widgets/layouts/login_scaffold.dart';
 import 'package:rechainonline/widgets/matrix.dart';
-import 'package:rechainonline/widgets/debugger_panel.dart';
 import '../../config/themes.dart';
 import 'homeserver_picker.dart';
 
@@ -36,11 +35,6 @@ class HomeserverPickerView extends StatelessWidget {
               : L10n.of(context).login,
         ),
         actions: [
-          IconButton(
-            icon: const Icon(Icons.bug_report_outlined),
-            tooltip: 'Toggle Debugger',
-            onPressed: controller.toggleDebuggerPanel,
-          ),
           PopupMenuButton<MoreLoginActions>(
             useRootNavigator: true,
             onSelected: controller.onMoreAction,
@@ -84,348 +78,170 @@ class HomeserverPickerView extends StatelessWidget {
       ),
       body: LayoutBuilder(
         builder: (context, constraints) {
-          if (controller.showDebuggerPanel) {
-            return Row(
-              children: [
-                Expanded(
-                  flex: 1,
-                  child: SingleChildScrollView(
-                    child: ConstrainedBox(
-                      constraints: BoxConstraints(minHeight: constraints.maxHeight),
-                      child: IntrinsicHeight(
-                        child: Column(
-                          children: [
-                            // display a prominent banner to import session for TOR browser
-                            // users. This feature is just some UX sugar as TOR users are
-                            // usually forced to logout as TOR browser is non-persistent
-                            AnimatedContainer(
-                              height: controller.isTorBrowser ? 64 : 0,
-                              duration: rechainonlineThemes.animationDuration,
-                              curve: rechainonlineThemes.animationCurve,
-                              clipBehavior: Clip.hardEdge,
-                              decoration: const BoxDecoration(),
-                              child: Material(
-                                clipBehavior: Clip.hardEdge,
-                                borderRadius: const BorderRadius.vertical(
-                                  bottom: Radius.circular(8),
-                                ),
-                                color: theme.colorScheme.surface,
-                                child: ListTile(
-                                  leading: const Icon(Icons.vpn_key),
-                                  title: Text(L10n.of(context).hydrateTor),
-                                  subtitle: Text(L10n.of(context).hydrateTorLong),
-                                  trailing: const Icon(Icons.chevron_right_outlined),
-                                  onTap: controller.restoreBackup,
-                                ),
-                              ),
-                            ),
-                            Container(
-                              alignment: Alignment.center,
-                              padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                              child: Hero(
-                                tag: 'info-logo',
-                                child: Image.asset(
-                                  './assets/banner_transparent.png',
-                                  fit: BoxFit.fitWidth,
-                                ),
-                              ),
-                            ),
-                            const SizedBox(height: 32),
-                            Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 32.0),
-                              child: SelectableLinkify(
-                                text: L10n.of(context).appIntroduction,
-                                textScaleFactor:
-                                    MediaQuery.textScalerOf(context).scale(1),
-                                textAlign: TextAlign.center,
-                                linkStyle: TextStyle(
-                                  color: theme.colorScheme.secondary,
-                                  decorationColor: theme.colorScheme.secondary,
-                                ),
-                                onOpen: (link) => launchUrlString(link.url),
-                              ),
-                            ),
-                            const Spacer(),
-                            Padding(
-                              padding: const EdgeInsets.all(32.0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                crossAxisAlignment: CrossAxisAlignment.stretch,
-                                children: [
-                                  TextField(
-                                    onSubmitted: (_) =>
-                                        controller.checkHomeserverAction(),
-                                    controller: controller.homeserverController,
-                                    autocorrect: false,
-                                    keyboardType: TextInputType.url,
-                                    decoration: InputDecoration(
-                                      prefixIcon: const Icon(Icons.search_outlined),
-                                      filled: false,
-                                      border: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(
-                                          AppConfig.borderRadius,
-                                        ),
-                                      ),
-                                      hintText: AppConfig.defaultHomeserver,
-                                      hintStyle: TextStyle(
-                                        color: theme.colorScheme.surfaceTint,
-                                      ),
-                                      labelText: 'Sign in with:',
-                                      errorText: controller.error,
-                                      errorMaxLines: 4,
-                                      suffixIcon: IconButton(
-                                        onPressed: () {
-                                          showDialog(
-                                            context: context,
-                                            builder: (context) => AlertDialog.adaptive(
-                                              title: Text(
-                                                L10n.of(context).whatIsAHomeserver,
-                                              ),
-                                              content: Linkify(
-                                                text: L10n.of(context)
-                                                    .homeserverDescription,
-                                                textScaleFactor:
-                                                    MediaQuery.textScalerOf(context)
-                                                        .scale(1),
-                                                options: const LinkifyOptions(
-                                                  humanize: false,
-                                                ),
-                                                linkStyle: TextStyle(
-                                                  color: theme.colorScheme.primary,
-                                                  decorationColor:
-                                                      theme.colorScheme.primary,
-                                                ),
-                                                onOpen: (link) =>
-                                                    launchUrlString(link.url),
-                                              ),
-                                              actions: [
-                                                AdaptiveDialogAction(
-                                                  onPressed: () => launchUrl(
-                                                    Uri.https('servers.joinmatrix.org'),
-                                                  ),
-                                                  child: Text(
-                                                    L10n.of(context)
-                                                        .discoverHomeservers,
-                                                  ),
-                                                ),
-                                                AdaptiveDialogAction(
-                                                  onPressed: Navigator.of(context).pop,
-                                                  child: Text(L10n.of(context).close),
-                                                ),
-                                              ],
-                                            ),
-                                          );
-                                        },
-                                        icon: const Icon(Icons.info_outlined),
-                                      ),
-                                    ),
-                                  ),
-                                  const SizedBox(height: 32),
-                                  ElevatedButton(
-                                    style: ElevatedButton.styleFrom(
-                                      backgroundColor: theme.colorScheme.primary,
-                                      foregroundColor: theme.colorScheme.onPrimary,
-                                    ),
-                                    onPressed: controller.isLoading
-                                        ? null
-                                        : controller.checkHomeserverAction,
-                                    child: controller.isLoading
-                                        ? const LinearProgressIndicator()
-                                        : Text(L10n.of(context).continueText),
-                                  ),
-                                  TextButton(
-                                    style: TextButton.styleFrom(
-                                      foregroundColor: theme.colorScheme.secondary,
-                                      textStyle: theme.textTheme.labelMedium,
-                                    ),
-                                    onPressed: controller.isLoading
-                                        ? null
-                                        : () => controller.checkHomeserverAction(
-                                              legacyPasswordLogin: true,
-                                            ),
-                                    child: Text(L10n.of(context).loginWithMatrixId),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
+          return SingleChildScrollView(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(minHeight: constraints.maxHeight),
+              child: IntrinsicHeight(
+                child: Column(
+                  children: [
+                    // display a prominent banner to import session for TOR browser
+                    // users. This feature is just some UX sugar as TOR users are
+                    // usually forced to logout as TOR browser is non-persistent
+                    AnimatedContainer(
+                      height: controller.isTorBrowser ? 64 : 0,
+                      duration: rechainonlineThemes.animationDuration,
+                      curve: rechainonlineThemes.animationCurve,
+                      clipBehavior: Clip.hardEdge,
+                      decoration: const BoxDecoration(),
+                      child: Material(
+                        clipBehavior: Clip.hardEdge,
+                        borderRadius: const BorderRadius.vertical(
+                          bottom: Radius.circular(8),
+                        ),
+                        color: theme.colorScheme.surface,
+                        child: ListTile(
+                          leading: const Icon(Icons.vpn_key),
+                          title: Text(L10n.of(context).hydrateTor),
+                          subtitle: Text(L10n.of(context).hydrateTorLong),
+                          trailing: const Icon(Icons.chevron_right_outlined),
+                          onTap: controller.restoreBackup,
                         ),
                       ),
                     ),
-                  ),
-                ),
-                Expanded(
-                  flex: 1,
-                  child: DebuggerPanel(),
-                ),
-              ],
-            );
-          } else {
-            return SingleChildScrollView(
-              child: ConstrainedBox(
-                constraints: BoxConstraints(minHeight: constraints.maxHeight),
-                child: IntrinsicHeight(
-                  child: Column(
-                    children: [
-                      // display a prominent banner to import session for TOR browser
-                      // users. This feature is just some UX sugar as TOR users are
-                      // usually forced to logout as TOR browser is non-persistent
-                      AnimatedContainer(
-                        height: controller.isTorBrowser ? 64 : 0,
-                        duration: rechainonlineThemes.animationDuration,
-                        curve: rechainonlineThemes.animationCurve,
-                        clipBehavior: Clip.hardEdge,
-                        decoration: const BoxDecoration(),
-                        child: Material(
-                          clipBehavior: Clip.hardEdge,
-                          borderRadius: const BorderRadius.vertical(
-                            bottom: Radius.circular(8),
-                          ),
-                          color: theme.colorScheme.surface,
-                          child: ListTile(
-                            leading: const Icon(Icons.vpn_key),
-                            title: Text(L10n.of(context).hydrateTor),
-                            subtitle: Text(L10n.of(context).hydrateTorLong),
-                            trailing: const Icon(Icons.chevron_right_outlined),
-                            onTap: controller.restoreBackup,
-                          ),
+                    Container(
+                      alignment: Alignment.center,
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: Hero(
+                        tag: 'info-logo',
+                        child: Image.asset(
+                          './assets/banner_transparent.png',
+                          fit: BoxFit.fitWidth,
                         ),
                       ),
-                      Container(
-                        alignment: Alignment.center,
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                        child: Hero(
-                          tag: 'info-logo',
-                          child: Image.asset(
-                            './assets/banner_transparent.png',
-                            fit: BoxFit.fitWidth,
-                          ),
+                    ),
+                    const SizedBox(height: 32),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 32.0),
+                      child: SelectableLinkify(
+                        text: L10n.of(context).appIntroduction,
+                        textScaleFactor:
+                            MediaQuery.textScalerOf(context).scale(1),
+                        textAlign: TextAlign.center,
+                        linkStyle: TextStyle(
+                          color: theme.colorScheme.secondary,
+                          decorationColor: theme.colorScheme.secondary,
                         ),
+                        onOpen: (link) => launchUrlString(link.url),
                       ),
-                      const SizedBox(height: 32),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 32.0),
-                        child: SelectableLinkify(
-                          text: L10n.of(context).appIntroduction,
-                          textScaleFactor:
-                              MediaQuery.textScalerOf(context).scale(1),
-                          textAlign: TextAlign.center,
-                          linkStyle: TextStyle(
-                            color: theme.colorScheme.secondary,
-                            decorationColor: theme.colorScheme.secondary,
-                          ),
-                          onOpen: (link) => launchUrlString(link.url),
-                        ),
-                      ),
-                      const Spacer(),
-                      Padding(
-                        padding: const EdgeInsets.all(32.0),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: [
-                            TextField(
-                              onSubmitted: (_) =>
-                                  controller.checkHomeserverAction(),
-                              controller: controller.homeserverController,
-                              autocorrect: false,
-                              keyboardType: TextInputType.url,
-                              decoration: InputDecoration(
-                                prefixIcon: const Icon(Icons.search_outlined),
-                                filled: false,
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(
-                                    AppConfig.borderRadius,
-                                  ),
+                    ),
+                    const Spacer(),
+                    Padding(
+                      padding: const EdgeInsets.all(32.0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          TextField(
+                            onSubmitted: (_) =>
+                                controller.checkHomeserverAction(),
+                            controller: controller.homeserverController,
+                            autocorrect: false,
+                            keyboardType: TextInputType.url,
+                            decoration: InputDecoration(
+                              prefixIcon: const Icon(Icons.search_outlined),
+                              filled: false,
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(
+                                  AppConfig.borderRadius,
                                 ),
-                                hintText: AppConfig.defaultHomeserver,
-                                hintStyle: TextStyle(
-                                  color: theme.colorScheme.surfaceTint,
-                                ),
-                                labelText: 'Sign in with:',
-                                errorText: controller.error,
-                                errorMaxLines: 4,
-                                suffixIcon: IconButton(
-                                  onPressed: () {
-                                    showDialog(
-                                      context: context,
-                                      builder: (context) => AlertDialog.adaptive(
-                                        title: Text(
-                                          L10n.of(context).whatIsAHomeserver,
-                                        ),
-                                        content: Linkify(
-                                          text: L10n.of(context)
-                                              .homeserverDescription,
-                                          textScaleFactor:
-                                              MediaQuery.textScalerOf(context)
-                                                  .scale(1),
-                                          options: const LinkifyOptions(
-                                            humanize: false,
-                                          ),
-                                          linkStyle: TextStyle(
-                                            color: theme.colorScheme.primary,
-                                            decorationColor:
-                                                theme.colorScheme.primary,
-                                          ),
-                                          onOpen: (link) =>
-                                              launchUrlString(link.url),
-                                        ),
-                                        actions: [
-                                          AdaptiveDialogAction(
-                                            onPressed: () => launchUrl(
-                                              Uri.https('servers.joinmatrix.org'),
-                                            ),
-                                            child: Text(
-                                              L10n.of(context)
-                                                  .discoverHomeservers,
-                                            ),
-                                          ),
-                                          AdaptiveDialogAction(
-                                            onPressed: Navigator.of(context).pop,
-                                            child: Text(L10n.of(context).close),
-                                          ),
-                                        ],
+                              ),
+                              hintText: AppConfig.defaultHomeserver,
+                              hintStyle: TextStyle(
+                                color: theme.colorScheme.surfaceTint,
+                              ),
+                              labelText: 'Sign in with:',
+                              errorText: controller.error,
+                              errorMaxLines: 4,
+                              suffixIcon: IconButton(
+                                onPressed: () {
+                                  showDialog(
+                                    context: context,
+                                    builder: (context) => AlertDialog.adaptive(
+                                      title: Text(
+                                        L10n.of(context).whatIsAHomeserver,
                                       ),
-                                    );
-                                  },
-                                  icon: const Icon(Icons.info_outlined),
-                                ),
-                              ),
-                            ),
-                            const SizedBox(height: 32),
-                            ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: theme.colorScheme.primary,
-                                foregroundColor: theme.colorScheme.onPrimary,
-                              ),
-                              onPressed: controller.isLoading
-                                  ? null
-                                  : controller.checkHomeserverAction,
-                              child: controller.isLoading
-                                  ? const LinearProgressIndicator()
-                                  : Text(L10n.of(context).continueText),
-                            ),
-                            TextButton(
-                              style: TextButton.styleFrom(
-                                foregroundColor: theme.colorScheme.secondary,
-                                textStyle: theme.textTheme.labelMedium,
-                              ),
-                              onPressed: controller.isLoading
-                                  ? null
-                                  : () => controller.checkHomeserverAction(
-                                        legacyPasswordLogin: true,
+                                      content: Linkify(
+                                        text: L10n.of(context)
+                                            .homeserverDescription,
+                                        textScaleFactor:
+                                            MediaQuery.textScalerOf(context)
+                                                .scale(1),
+                                        options: const LinkifyOptions(
+                                          humanize: false,
+                                        ),
+                                        linkStyle: TextStyle(
+                                          color: theme.colorScheme.primary,
+                                          decorationColor:
+                                              theme.colorScheme.primary,
+                                        ),
+                                        onOpen: (link) =>
+                                            launchUrlString(link.url),
                                       ),
-                              child: Text(L10n.of(context).loginWithMatrixId),
+                                      actions: [
+                                        AdaptiveDialogAction(
+                                          onPressed: () => launchUrl(
+                                            Uri.https('servers.joinonline.rechain.network'),
+                                          ),
+                                          child: Text(
+                                            L10n.of(context)
+                                                .discoverHomeservers,
+                                          ),
+                                        ),
+                                        AdaptiveDialogAction(
+                                          onPressed: Navigator.of(context).pop,
+                                          child: Text(L10n.of(context).close),
+                                        ),
+                                      ],
+                                    ),
+                                  );
+                                },
+                                icon: const Icon(Icons.info_outlined),
+                              ),
                             ),
-                          ],
-                        ),
+                          ),
+                          const SizedBox(height: 32),
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: theme.colorScheme.primary,
+                              foregroundColor: theme.colorScheme.onPrimary,
+                            ),
+                            onPressed: controller.isLoading
+                                ? null
+                                : controller.checkHomeserverAction,
+                            child: controller.isLoading
+                                ? const LinearProgressIndicator()
+                                : Text(L10n.of(context).continueText),
+                          ),
+                          TextButton(
+                            style: TextButton.styleFrom(
+                              foregroundColor: theme.colorScheme.secondary,
+                              textStyle: theme.textTheme.labelMedium,
+                            ),
+                            onPressed: controller.isLoading
+                                ? null
+                                : () => controller.checkHomeserverAction(
+                                      legacyPasswordLogin: true,
+                                    ),
+                            child: Text(L10n.of(context).loginWithREChainId),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
-            );
-          }
+            ),
+          );
         },
       ),
     );

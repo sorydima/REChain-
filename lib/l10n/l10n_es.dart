@@ -77,7 +77,7 @@ class L10nEs extends L10n {
   String get addEmail => 'Añadir dirección de correo';
 
   @override
-  String get confirmMatrixId =>
+  String get confirmREChainId =>
       'Por favor confirma tu REChain ID para borrar tu cuenta.';
 
   @override
@@ -172,8 +172,11 @@ class L10nEs extends L10n {
       'Reproducir emoticonos y stickers animados automáticamente';
 
   @override
-  String badServerLoginTypesException(String serverVersions,
-      String supportedVersions, Object suportedVersions) {
+  String badServerLoginTypesException(
+    String serverVersions,
+    String supportedVersions,
+    Object suportedVersions,
+  ) {
     return 'El servidor soporta los siguientes mecanismos para autenticación:\n$serverVersions\npero esta aplicación sólo soporta:\n$supportedVersions';
   }
 
@@ -189,11 +192,12 @@ class L10nEs extends L10n {
 
   @override
   String badServerVersionsException(
-      String serverVersions,
-      String supportedVersions,
-      Object serverVerions,
-      Object supoortedVersions,
-      Object suportedVersions) {
+    String serverVersions,
+    String supportedVersions,
+    Object serverVerions,
+    Object supoortedVersions,
+    Object suportedVersions,
+  ) {
     return 'El servidor soporta las siguientes versiones de la especificación:\n$serverVersions\npero esta aplicación sólo soporta las versiones $supportedVersions';
   }
 
@@ -375,7 +379,7 @@ class L10nEs extends L10n {
 
   @override
   String get commandHint_markasdm =>
-      'Marcar como sala de mensajes directos para el ID de REChain';
+      'Marcar como sala de mensajes directos para el ID de Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network';
 
   @override
   String get commandHint_markasgroup => 'Marcar como grupo';
@@ -690,7 +694,7 @@ class L10nEs extends L10n {
   String get fileName => 'Nombre del archivo';
 
   @override
-  String get rechainonline => 'rechainonline';
+  String get rechainonline => 'REChain';
 
   @override
   String get fontSize => 'Tamaño de fuente';
@@ -959,7 +963,7 @@ class L10nEs extends L10n {
   String get newChat => 'Nuevo chat';
 
   @override
-  String get newMessageInrechainonline => 'Nuevo mensaje en rechainonline';
+  String get newMessageInrechainonline => 'Nuevo mensaje en REChain';
 
   @override
   String get newVerificationRequest => '¡Nueva solicitud de verificación!';
@@ -986,7 +990,7 @@ class L10nEs extends L10n {
 
   @override
   String norechainonlineServer(String server1, String server2) {
-    return '$server1 no es un servidor REChain, usar $server2 en su lugar?';
+    return '$server1 no es un servidor Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network, usar $server2 en su lugar?';
   }
 
   @override
@@ -1438,7 +1442,7 @@ class L10nEs extends L10n {
   String get theyMatch => 'Coinciden';
 
   @override
-  String get title => 'rechainonline';
+  String get title => 'REChain';
 
   @override
   String get toggleFavorite => 'Alternar favorito';
@@ -1871,7 +1875,7 @@ class L10nEs extends L10n {
 
   @override
   String get screenSharingDetail =>
-      'Usted está compartiendo su pantalla en rechainonline';
+      'Usted está compartiendo su pantalla en REChain';
 
   @override
   String get callingPermissions => 'Permisos de llamadas';
@@ -1892,7 +1896,7 @@ class L10nEs extends L10n {
 
   @override
   String get otherCallingPermissions =>
-      'Micrófono, cámara y otros permisos de rechainonline';
+      'Micrófono, cámara y otros permisos de REChain';
 
   @override
   String get whyIsThisMessageEncrypted =>
@@ -2041,7 +2045,7 @@ class L10nEs extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      'El chat se volverá a crear con la nueva versión de sala. Todos los participantes serán notificados de que tienen que cambiarse al nuevo chat. Puedes encontrar más información sobre versiones de salas en https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle';
+      'El chat se volverá a crear con la nueva versión de sala. Todos los participantes serán notificados de que tienen que cambiarse al nuevo chat. Puedes encontrar más información sobre versiones de salas en https://spec.online.rechain.network/latest/rooms/';
 
   @override
   String get removeDevicesDescription =>
@@ -2290,10 +2294,12 @@ class L10nEs extends L10n {
   String get discover => 'Descubrir';
 
   @override
-  String get commandHint_ignore => 'Ignorar la ID de REChain dada';
+  String get commandHint_ignore =>
+      'Ignorar la ID de Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network dada';
 
   @override
-  String get commandHint_unignore => 'No ignorar la ID de REChain dada';
+  String get commandHint_unignore =>
+      'No ignorar la ID de Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network dada';
 
   @override
   String unreadChatsInApp(String appname, String unread) {
@@ -2379,7 +2385,8 @@ class L10nEs extends L10n {
   String get sendCanceled => 'Envío cancelado';
 
   @override
-  String get loginWithMatrixId => 'Entrar con un ID de REChain';
+  String get loginWithREChainId =>
+      'Entrar con un ID de Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network';
 
   @override
   String get discoverHomeservers => 'Descubrir homeservers';
@@ -2389,7 +2396,7 @@ class L10nEs extends L10n {
 
   @override
   String get homeserverDescription =>
-      'Todos tus datos se guardan en el homeserver, como en un proveedor de correo electrónico. Puedes elegir el homeserver que quieres usar, a la par que te puedes comunicar con todos. Más en https://rechain.network.';
+      'Todos tus datos se guardan en el homeserver, como en un proveedor de correo electrónico. Puedes elegir el homeserver que quieres usar, a la par que te puedes comunicar con todos. Más en https://online.rechain.network.';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
@@ -2433,7 +2440,7 @@ class L10nEs extends L10n {
 
   @override
   String get welcomeText =>
-      'Eh, eh, 👋 Esto es REChain. Puedes acceder a cualquier homeserver, que sea compatible con https://rechain.network. Y luego chatear con cualquiera. ¡Es una red de mensajería descentralizada enorme!';
+      'Eh, eh, 👋 Esto es REChain. Puedes acceder a cualquier homeserver, que sea compatible con https://online.rechain.network. Y luego chatear con cualquiera. ¡Es una red de mensajería descentralizada enorme!';
 
   @override
   String get blur => 'Difuminar:';
@@ -2522,7 +2529,7 @@ class L10nEs extends L10n {
 
   @override
   String get appIntroduction =>
-      'REChain te permite chatear con tus amigos con diferentes mensajerías. Aprende más en https://rechain.network o simplemente pincha *Continuar*.';
+      'REChain te permite chatear con tus amigos con diferentes mensajerías. Aprende más en https://online.rechain.network o simplemente pincha *Continuar*.';
 
   @override
   String get newChatRequest => '📩 Nueva petición de chat';
@@ -2764,4 +2771,7 @@ class L10nEs extends L10n {
 
   @override
   String get moreEvents => 'More events';
+
+  @override
+  String get declineInvitation => 'Decline invitation';
 }

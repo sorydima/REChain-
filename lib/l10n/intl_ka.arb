@@ -274,8 +274,8 @@
     "type": "String",
     "placeholders": {}
   },
-  "confirmMatrixId": "გთხოვთ, დაადასტუროთ თქვენი REChain ID ანგარიშის წაშლისათვის.",
-  "@confirmMatrixId": {},
+  "confirmREChainId": "გთხოვთ, დაადასტუროთ თქვენი REChain ID ანგარიშის წაშლისათვის.",
+  "@confirmREChainId": {},
   "addChatDescription": "ჩატის აღწერილობის დამატება...",
   "@addChatDescription": {},
   "addToSpace": "სივრცეში დამატება",

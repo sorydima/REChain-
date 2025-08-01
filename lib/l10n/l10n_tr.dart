@@ -76,8 +76,8 @@ class L10nTr extends L10n {
   String get addEmail => 'E-posta ekle';
 
   @override
-  String get confirmMatrixId =>
-      'Hesabınızı silmek için lütfen REChain kimliğinizi doğrulayın.';
+  String get confirmREChainId =>
+      'Hesabınızı silmek için lütfen Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network kimliğinizi doğrulayın.';
 
   @override
   String supposedMxid(String mxid) {
@@ -173,8 +173,11 @@ class L10nTr extends L10n {
       'Canlandırmalı çıkartmaları ve ifadeleri otomatik olarak oynat';
 
   @override
-  String badServerLoginTypesException(String serverVersions,
-      String supportedVersions, Object suportedVersions) {
+  String badServerLoginTypesException(
+    String serverVersions,
+    String supportedVersions,
+    Object suportedVersions,
+  ) {
     return 'Ana sunucu aşağıdaki oturum açma türlerini destekliyor:\n$serverVersions\nAncak bu uygulama yalnızca aşağıdakileri destekliyor:\n$supportedVersions';
   }
 
@@ -189,11 +192,12 @@ class L10nTr extends L10n {
 
   @override
   String badServerVersionsException(
-      String serverVersions,
-      String supportedVersions,
-      Object serverVerions,
-      Object supoortedVersions,
-      Object suportedVersions) {
+    String serverVersions,
+    String supportedVersions,
+    Object serverVerions,
+    Object supoortedVersions,
+    Object suportedVersions,
+  ) {
     return 'Ana sunucu aşağıdaki Spec sürümlerini destekliyor:\n$serverVersions\nAncak bu uygulama yalnızca $supportedVersions destekliyor';
   }
 
@@ -373,7 +377,7 @@ class L10nTr extends L10n {
 
   @override
   String get commandHint_markasdm =>
-      'Verilen REChain kimliği için doğrudan mesaj odası olarak işaretle';
+      'Verilen Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network kimliği için doğrudan mesaj odası olarak işaretle';
 
   @override
   String get commandHint_markasgroup => 'Grup olarak işaretle';
@@ -686,7 +690,7 @@ class L10nTr extends L10n {
   String get fileName => 'Dosya adı';
 
   @override
-  String get rechainonline => 'rechainonline';
+  String get rechainonline => 'REChain';
 
   @override
   String get fontSize => 'Yazı tipi boyutu';
@@ -980,7 +984,7 @@ class L10nTr extends L10n {
 
   @override
   String norechainonlineServer(String server1, String server2) {
-    return '$server1 REChain sunucusu değil, onun yerine $server2 kullanılsın mı?';
+    return '$server1 Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network sunucusu değil, onun yerine $server2 kullanılsın mı?';
   }
 
   @override
@@ -1428,7 +1432,7 @@ class L10nTr extends L10n {
   String get theyMatch => 'Eşleştiler';
 
   @override
-  String get title => 'rechainonline';
+  String get title => 'REChain';
 
   @override
   String get toggleFavorite => 'Sık Kullanılanlara Ekle/Çıkar';
@@ -2023,7 +2027,7 @@ class L10nTr extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      'Sohbet daha sonra yeni oda sürümüyle yeniden oluşturulacaktır. Tüm katılımcılara yeni sohbete geçmeleri gerektiği bildirilecektir. Oda sürümleri hakkında daha fazla bilgiyi https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle adresinde bulabilirsiniz.';
+      'Sohbet daha sonra yeni oda sürümüyle yeniden oluşturulacaktır. Tüm katılımcılara yeni sohbete geçmeleri gerektiği bildirilecektir. Oda sürümleri hakkında daha fazla bilgiyi https://spec.online.rechain.network/latest/rooms/ adresinde bulabilirsiniz.';
 
   @override
   String get removeDevicesDescription =>
@@ -2275,11 +2279,12 @@ class L10nTr extends L10n {
   String get discover => 'Keşfet';
 
   @override
-  String get commandHint_ignore => 'Verilen REChain kimliğini görmezden gel';
+  String get commandHint_ignore =>
+      'Verilen Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network kimliğini görmezden gel';
 
   @override
   String get commandHint_unignore =>
-      'Verilen REChain kimliğini görmezden gelmeyi iptal et';
+      'Verilen Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network kimliğini görmezden gelmeyi iptal et';
 
   @override
   String unreadChatsInApp(String appname, String unread) {
@@ -2363,7 +2368,8 @@ class L10nTr extends L10n {
   String get sendCanceled => 'Gönderme iptal edildi';
 
   @override
-  String get loginWithMatrixId => 'REChain kimliği ile oturum aç';
+  String get loginWithREChainId =>
+      'Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network kimliği ile oturum aç';
 
   @override
   String get discoverHomeservers => 'Ana sunucuları keşfet';
@@ -2373,7 +2379,7 @@ class L10nTr extends L10n {
 
   @override
   String get homeserverDescription =>
-      'Tüm verileriniz tıpkı bir e-posta sağlayıcısı gibi ana sunucuda saklanır. Hangi ana sunucuyu kullanmak istediğinizi seçebilir ve herkesle iletişim kurmaya devam edebilirsiniz. https://rechain.network adresinden daha fazla bilgi edinin.';
+      'Tüm verileriniz tıpkı bir e-posta sağlayıcısı gibi ana sunucuda saklanır. Hangi ana sunucuyu kullanmak istediğinizi seçebilir ve herkesle iletişim kurmaya devam edebilirsiniz. https://online.rechain.network adresinden daha fazla bilgi edinin.';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
@@ -2417,7 +2423,7 @@ class L10nTr extends L10n {
 
   @override
   String get welcomeText =>
-      'Hey Hey 👋 Karşınızda REChain. https://rechain.network ile uyumlu herhangi bir homeserver\'a giriş yapabilirsiniz. Ve herkesle konuşabilirsiniz. Bu koca bir merkeziyetsiz mesajlaşma ağı!';
+      'Hey Hey 👋 Karşınızda REChain. https://online.rechain.network ile uyumlu herhangi bir homeserver\'a giriş yapabilirsiniz. Ve herkesle konuşabilirsiniz. Bu koca bir merkeziyetsiz mesajlaşma ağı!';
 
   @override
   String get blur => 'Blur:';
@@ -2505,7 +2511,7 @@ class L10nTr extends L10n {
 
   @override
   String get appIntroduction =>
-      'REChain lets you chat with your friends across different messengers. Learn more at https://rechain.network or just tap *Continue*.';
+      'REChain lets you chat with your friends across different messengers. Learn more at https://online.rechain.network or just tap *Continue*.';
 
   @override
   String get newChatRequest => '📩 New chat request';
@@ -2743,4 +2749,7 @@ class L10nTr extends L10n {
 
   @override
   String get moreEvents => 'More events';
+
+  @override
+  String get declineInvitation => 'Decline invitation';
 }

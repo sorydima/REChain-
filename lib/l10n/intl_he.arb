@@ -629,7 +629,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "rechainonline": "rechainonline",
+  "rechainonline": "REChain",
   "@rechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1308,7 +1308,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "newMessageInrechainonline": "הודעה חדשה ב-rechainonline",
+  "newMessageInrechainonline": "הודעה חדשה ב-REChain",
   "@newMessageInrechainonline": {
     "type": "String",
     "placeholders": {}

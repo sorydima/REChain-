@@ -624,7 +624,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "rechainonline": "rechainonline",
+  "rechainonline": "REChain",
   "@rechainonline": {
     "type": "String",
     "placeholders": {}
@@ -903,7 +903,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "newMessageInrechainonline": "Nuevo mensaje en rechainonline",
+  "newMessageInrechainonline": "Nuevo mensaje en REChain",
   "@newMessageInrechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1320,7 +1320,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "title": "rechainonline",
+  "title": "REChain",
   "@title": {
     "description": "Title for the application",
     "type": "String",
@@ -2032,7 +2032,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "norechainonlineServer": "{server1} no es un servidor REChain, usar {server2} en su lugar?",
+  "norechainonlineServer": "{server1} no es un servidor Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network, usar {server2} en su lugar?",
   "@norechainonlineServer": {
     "type": "String",
     "placeholders": {
@@ -2209,8 +2209,8 @@
   "@sendTypingNotifications": {},
   "importEmojis": "Importar emojis",
   "@importEmojis": {},
-  "confirmMatrixId": "Por favor confirma tu REChain ID para borrar tu cuenta.",
-  "@confirmMatrixId": {},
+  "confirmREChainId": "Por favor confirma tu REChain ID para borrar tu cuenta.",
+  "@confirmREChainId": {},
   "notAnImage": "El archivo no es una imagen.",
   "@notAnImage": {},
   "commandHint_hug": "Mandar un abrazo",
@@ -2226,7 +2226,7 @@
       }
     }
   },
-  "otherCallingPermissions": "Micrófono, cámara y otros permisos de rechainonline",
+  "otherCallingPermissions": "Micrófono, cámara y otros permisos de REChain",
   "@otherCallingPermissions": {},
   "emailOrUsername": "Correo electrónico o nombre de usuario",
   "@emailOrUsername": {},
@@ -2266,7 +2266,7 @@
   "@storeSecurlyOnThisDevice": {},
   "openChat": "Abrir chat",
   "@openChat": {},
-  "screenSharingDetail": "Usted está compartiendo su pantalla en rechainonline",
+  "screenSharingDetail": "Usted está compartiendo su pantalla en REChain",
   "@screenSharingDetail": {},
   "allRooms": "Todos los chats grupales",
   "@allRooms": {
@@ -2469,7 +2469,7 @@
   },
   "shareInviteLink": "Compartir enlace de invitación",
   "@shareInviteLink": {},
-  "commandHint_markasdm": "Marcar como sala de mensajes directos para el ID de REChain",
+  "commandHint_markasdm": "Marcar como sala de mensajes directos para el ID de Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network",
   "@commandHint_markasdm": {},
   "recoveryKeyLost": "¿Perdió su clave de recuperación?",
   "@recoveryKeyLost": {},
@@ -2922,7 +2922,7 @@
   "@newChatRequest": {},
   "unbanUserDescription": "El usuario podrá entrar al chat de nuevo si lo intenta.",
   "@unbanUserDescription": {},
-  "roomUpgradeDescription": "El chat se volverá a crear con la nueva versión de sala. Todos los participantes serán notificados de que tienen que cambiarse al nuevo chat. Puedes encontrar más información sobre versiones de salas en https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle",
+  "roomUpgradeDescription": "El chat se volverá a crear con la nueva versión de sala. Todos los participantes serán notificados de que tienen que cambiarse al nuevo chat. Puedes encontrar más información sobre versiones de salas en https://spec.online.rechain.network/latest/rooms/",
   "@roomUpgradeDescription": {},
   "makeAdminDescription": "Una vez hagas que este usuario sea admin, puede que no puedas deshacerlo porque tendrá los mismos permisos que tú.",
   "@makeAdminDescription": {},
@@ -3027,7 +3027,7 @@
   "@blur": {},
   "continueText": "Continuar",
   "@continueText": {},
-  "welcomeText": "Eh, eh, 👋 Esto es REChain. Puedes acceder a cualquier homeserver, que sea compatible con https://rechain.network. Y luego chatear con cualquiera. ¡Es una red de mensajería descentralizada enorme!",
+  "welcomeText": "Eh, eh, 👋 Esto es REChain. Puedes acceder a cualquier homeserver, que sea compatible con https://online.rechain.network. Y luego chatear con cualquiera. ¡Es una red de mensajería descentralizada enorme!",
   "@welcomeText": {},
   "opacity": "Opacidad:",
   "@opacity": {},
@@ -3131,7 +3131,7 @@
       }
     }
   },
-  "commandHint_unignore": "No ignorar la ID de REChain dada",
+  "commandHint_unignore": "No ignorar la ID de Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network dada",
   "@commandHint_unignore": {},
   "noDatabaseEncryption": "En esta plataforma no hay cifrado de base de datos",
   "@noDatabaseEncryption": {},
@@ -3151,7 +3151,7 @@
     "type": "String",
     "count": {}
   },
-  "commandHint_ignore": "Ignorar la ID de REChain dada",
+  "commandHint_ignore": "Ignorar la ID de Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network dada",
   "@commandHint_ignore": {},
   "jump": "Saltar",
   "@jump": {},
@@ -3283,8 +3283,8 @@
   "@invitePrivateChat": {},
   "banUserDescription": "Se expulsará al usuario del chat y no podrá volver a entrar hasta que se le permita.",
   "@banUserDescription": {},
-  "loginWithMatrixId": "Entrar con un ID de REChain",
-  "@loginWithMatrixId": {},
+  "loginWithREChainId": "Entrar con un ID de Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network",
+  "@loginWithREChainId": {},
   "changeTheCanonicalRoomAlias": "Cambiar la dirección pública principal de chat",
   "@changeTheCanonicalRoomAlias": {},
   "noContactInformationProvided": "El servidor no suministra ninguna información de contacto válida",
@@ -3311,13 +3311,13 @@
       }
     }
   },
-  "homeserverDescription": "Todos tus datos se guardan en el homeserver, como en un proveedor de correo electrónico. Puedes elegir el homeserver que quieres usar, a la par que te puedes comunicar con todos. Más en https://rechain.network.",
+  "homeserverDescription": "Todos tus datos se guardan en el homeserver, como en un proveedor de correo electrónico. Puedes elegir el homeserver que quieres usar, a la par que te puedes comunicar con todos. Más en https://online.rechain.network.",
   "@homeserverDescription": {},
   "whatIsAHomeserver": "¿Qué es un homeserver?",
   "@whatIsAHomeserver": {},
   "open": "Abrir",
   "@open": {},
-  "appIntroduction": "REChain te permite chatear con tus amigos con diferentes mensajerías. Aprende más en https://rechain.network o simplemente pincha *Continuar*.",
+  "appIntroduction": "REChain te permite chatear con tus amigos con diferentes mensajerías. Aprende más en https://online.rechain.network o simplemente pincha *Continuar*.",
   "@appIntroduction": {},
   "forwardMessageTo": "¿Reenviar mensaje a {roomName}?",
   "@forwardMessageTo": {

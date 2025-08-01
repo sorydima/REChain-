@@ -830,7 +830,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "rechainonline": "rechainonline",
+  "rechainonline": "REChain",
   "@rechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1174,7 +1174,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "newMessageInrechainonline": "💬 Nouveau message dans rechainonline",
+  "newMessageInrechainonline": "💬 Nouveau message dans REChain",
   "@newMessageInrechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1214,7 +1214,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "norechainonlineServer": "{server1} n'est pas un serveur REChain, souhaitez-vous utiliser {server2} à la place ?",
+  "norechainonlineServer": "{server1} n'est pas un serveur Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network, souhaitez-vous utiliser {server2} à la place ?",
   "@norechainonlineServer": {
     "type": "String",
     "placeholders": {
@@ -1796,7 +1796,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "title": "rechainonline",
+  "title": "REChain",
   "@title": {
     "description": "Title for the application",
     "type": "String",
@@ -2364,12 +2364,12 @@
   "@enterRoom": {},
   "allSpaces": "Tous les espaces",
   "@allSpaces": {},
-  "commandHint_markasdm": "Marquer comme salon de messages directs pour l'identifiant REChain indiqué",
+  "commandHint_markasdm": "Marquer comme salon de messages directs pour l'identifiant Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network indiqué",
   "@commandHint_markasdm": {},
   "commandHint_markasgroup": "Marquer comme groupe",
   "@commandHint_markasgroup": {},
-  "confirmMatrixId": "Veuillez confirmer votre identifiant REChain afin de supprimer votre compte.",
-  "@confirmMatrixId": {},
+  "confirmREChainId": "Veuillez confirmer votre identifiant Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network afin de supprimer votre compte.",
+  "@confirmREChainId": {},
   "supposedMxid": "Cela devrait être {mxid}",
   "@supposedMxid": {
     "type": "String",
@@ -2397,7 +2397,7 @@
   "@appearOnTop": {},
   "appearOnTopDetails": "Permet à l'application d'apparaître en haut de l'écran (non nécessaire si vous avez déjà configuré REChain comme compte d'appel)",
   "@appearOnTopDetails": {},
-  "otherCallingPermissions": "Microphone, caméra et autres autorisations de rechainonline",
+  "otherCallingPermissions": "Microphone, caméra et autres autorisations de REChain",
   "@otherCallingPermissions": {},
   "newGroup": "Nouveau groupe",
   "@newGroup": {},
@@ -2834,9 +2834,9 @@
   "@stickers": {},
   "noDatabaseEncryption": "Le chiffrement de la base de données n'est pas supporté sur cette plateforme",
   "@noDatabaseEncryption": {},
-  "commandHint_ignore": "Ignorer l'identifiant REChain indiqué",
+  "commandHint_ignore": "Ignorer l'identifiant Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network indiqué",
   "@commandHint_ignore": {},
-  "commandHint_unignore": "Ne plus ignorer l'identifiant REChain indiqué",
+  "commandHint_unignore": "Ne plus ignorer l'identifiant Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network indiqué",
   "@commandHint_unignore": {},
   "thereAreCountUsersBlocked": "Actuellement, il y a {count} utilisateurs/trices bloqués.",
   "@thereAreCountUsersBlocked": {
@@ -2967,7 +2967,7 @@
   "@invite": {},
   "pleaseEnterANumber": "Veuillez saisir un nombre supérieur à 0",
   "@pleaseEnterANumber": {},
-  "roomUpgradeDescription": "La discussion sera alors recréé avec la nouvelle version de salon. Tous les participants seront informés qu'ils doivent passer à la nouvelle discussion. Pour en savoir plus sur les versions des salons, consultez le site https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle",
+  "roomUpgradeDescription": "La discussion sera alors recréé avec la nouvelle version de salon. Tous les participants seront informés qu'ils doivent passer à la nouvelle discussion. Pour en savoir plus sur les versions des salons, consultez le site https://spec.online.rechain.network/latest/rooms/",
   "@roomUpgradeDescription": {},
   "learnMore": "En savoir plus",
   "@learnMore": {},
@@ -3087,6 +3087,6 @@
       }
     }
   },
-  "loginWithMatrixId": "Connexion avec l'identifiant REChain",
-  "@loginWithMatrixId": {}
+  "loginWithREChainId": "Connexion avec l'identifiant Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network",
+  "@loginWithREChainId": {}
 }

@@ -1,8 +1,7 @@
 plugins {
     id "com.android.application"
     id "kotlin-android"
-    // Temporarily comment out flutter gradle plugin to fix build
-    // id "dev.flutter.flutter-gradle-plugin"
+    id "dev.flutter.flutter-gradle-plugin"
     //id "com.google.gms.google-services"
 }
 
@@ -31,7 +30,7 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    compileSdk = 35
+    compileSdkVersion 35
     namespace = "com.rechain.online"
 
     sourceSets {
@@ -68,65 +67,28 @@ android {
             versionNameSuffix "-debug"
         }
         release {
-            minifyEnabled false
-            shrinkResources false
             signingConfig signingConfigs.release
         }
     }
-
-    flavorDimensions "platform"
-    productFlavors {
-        android {
-            dimension "platform"
-            applicationIdSuffix ".android"
-            sourceSets {
-                main {
-                    java.srcDirs += 'src/main/kotlin'
-                    res.srcDirs += 'src/main/res'
-                }
-            }
-        }
-        harmonyos {
-            dimension "platform"
-            applicationIdSuffix ".harmonyos"
-            sourceSets {
-                main {
-                    java.srcDirs += 'src/harmonyos/kotlin'
-                    res.srcDirs += 'src/harmonyos/res'
-                }
-            }
-        }
-    }
-
     packagingOptions {
         pickFirst 'lib/x86/libc++_shared.so'
         pickFirst 'lib/x86_64/libc++_shared.so'
         pickFirst 'lib/armeabi-v7a/libc++_shared.so'
         pickFirst 'lib/arm64-v8a/libc++_shared.so'
     }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
-        coreLibraryDesugaringEnabled true
-    }
-
-    kotlinOptions {
-        jvmTarget = "17"
-    }
 }
-
 
 flutter {
     source '../..'
 }
 
 dependencies {
-    //implementation 'com.google.firebase:firebase-messaging:19.0.1'
     implementation 'androidx.multidex:multidex:2.0.1'
-    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
+    // implementation 'com.huawei.agconnect:agconnect-core:1.5.2.300'
 }
 
 configurations.all {
     exclude group: 'com.google.android.gms'
 }
+
+// apply plugin: 'com.huawei.agconnect'

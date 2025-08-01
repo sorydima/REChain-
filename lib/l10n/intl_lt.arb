@@ -34,7 +34,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "rechainonline": "rechainonline",
+  "rechainonline": "REChain",
   "@rechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1275,7 +1275,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "title": "rechainonline",
+  "title": "REChain",
   "@title": {
     "description": "Title for the application",
     "type": "String",
@@ -2203,7 +2203,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "norechainonlineServer": "{server1} nėra REChain serveris, ar vietoj jo naudoti {server2}?",
+  "norechainonlineServer": "{server1} nėra Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network serveris, ar vietoj jo naudoti {server2}?",
   "@norechainonlineServer": {
     "type": "String",
     "placeholders": {
@@ -2338,8 +2338,8 @@
   "@user": {},
   "custom": "Pasirinktinis",
   "@custom": {},
-  "confirmMatrixId": "Norėdami ištrinti savo paskyrą, patvirtinkite savo REChain ID.",
-  "@confirmMatrixId": {},
+  "confirmREChainId": "Norėdami ištrinti savo paskyrą, patvirtinkite savo REChain ID.",
+  "@confirmREChainId": {},
   "supposedMxid": "Tai turėtų būti {mxid}",
   "@supposedMxid": {
     "type": "String",

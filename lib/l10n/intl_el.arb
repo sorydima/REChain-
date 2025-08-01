@@ -1675,8 +1675,8 @@
     "type": "String",
     "placeholders": {}
   },
-  "confirmMatrixId": "Παρακαλούμε επιβεβαιώστε το REChain ID σας για να διαγράψετε τον λογαριασμό σας.",
-  "@confirmMatrixId": {},
+  "confirmREChainId": "Παρακαλούμε επιβεβαιώστε το REChain ID σας για να διαγράψετε τον λογαριασμό σας.",
+  "@confirmREChainId": {},
   "@learnMore": {},
   "@iHaveClickedOnLink": {
     "type": "String",

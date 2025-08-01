@@ -12,13 +12,13 @@ String commandExample(String command) {
     case 'ignore':
     case 'unignore':
     case 'invite':
-      return '/$command <matrix-id>';
+      return '/$command <REChain ID>';
     case 'html':
     case 'sendraw':
     case 'plain':
       return '/$command <message>';
     case 'op':
-      return '/$command <matrix-id> <power-level>';
+      return '/$command <REChain ID> <power-level>';
     default:
       return '/$command';
   }

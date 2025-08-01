@@ -768,7 +768,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "rechainonline": "rechainonline",
+  "rechainonline": "REChain",
   "@rechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1102,7 +1102,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "newMessageInrechainonline": "Nova mensagem no rechainonline",
+  "newMessageInrechainonline": "Nova mensagem no REChain",
   "@newMessageInrechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1142,7 +1142,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "norechainonlineServer": "{server1} não é um servidor REChain, usar {server2}?",
+  "norechainonlineServer": "{server1} não é um servidor Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network, usar {server2}?",
   "@norechainonlineServer": {
     "type": "String",
     "placeholders": {

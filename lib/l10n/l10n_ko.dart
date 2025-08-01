@@ -76,7 +76,7 @@ class L10nKo extends L10n {
   String get addEmail => '이메일 추가';
 
   @override
-  String get confirmMatrixId => '계정을 삭제하려면 REChain ID를 입력해 주세요.';
+  String get confirmREChainId => '계정을 삭제하려면 REChain ID를 입력해 주세요.';
 
   @override
   String supposedMxid(String mxid) {
@@ -167,8 +167,11 @@ class L10nKo extends L10n {
   String get autoplayImages => '자동으로 움직이는 스티커와 이모트 재생';
 
   @override
-  String badServerLoginTypesException(String serverVersions,
-      String supportedVersions, Object suportedVersions) {
+  String badServerLoginTypesException(
+    String serverVersions,
+    String supportedVersions,
+    Object suportedVersions,
+  ) {
     return '홈서버가 지원하는 로그인 유형:\n$serverVersions\n하지만 이 앱에서 지원하는 것은:\n$supportedVersions';
   }
 
@@ -183,11 +186,12 @@ class L10nKo extends L10n {
 
   @override
   String badServerVersionsException(
-      String serverVersions,
-      String supportedVersions,
-      Object serverVerions,
-      Object supoortedVersions,
-      Object suportedVersions) {
+    String serverVersions,
+    String supportedVersions,
+    Object serverVerions,
+    Object supoortedVersions,
+    Object suportedVersions,
+  ) {
     return '이 홈서버가 지원하는 Spec 버전:\n$serverVersions\n하지만 이 앱은 $supportedVersions만 지원합니다';
   }
 
@@ -669,7 +673,7 @@ class L10nKo extends L10n {
   String get fileName => '파일 이름';
 
   @override
-  String get rechainonline => 'rechainonline';
+  String get rechainonline => 'REChain';
 
   @override
   String get fontSize => '폰트 크기';
@@ -955,7 +959,7 @@ class L10nKo extends L10n {
 
   @override
   String norechainonlineServer(String server1, String server2) {
-    return '$server1은 REChain 서버가 아닙니다, $server2를 대신 사용할까요?';
+    return '$server1은 Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network 서버가 아닙니다, $server2를 대신 사용할까요?';
   }
 
   @override
@@ -1392,7 +1396,7 @@ class L10nKo extends L10n {
   String get theyMatch => '일치합니다';
 
   @override
-  String get title => 'rechainonline';
+  String get title => 'REChain';
 
   @override
   String get toggleFavorite => '즐겨찾기 토글';
@@ -1976,7 +1980,7 @@ class L10nKo extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      '채팅이 새로운 방 버전으로 다시 생성됩니다. 모든 참가자는 새로운 채팅으로 전환해야합니다. https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle 에서 방 버전에 대해 자세히 알아볼 수 있습니다.';
+      '채팅이 새로운 방 버전으로 다시 생성됩니다. 모든 참가자는 새로운 채팅으로 전환해야합니다. https://spec.online.rechain.network/latest/rooms/ 에서 방 버전에 대해 자세히 알아볼 수 있습니다.';
 
   @override
   String get removeDevicesDescription => '이 기기에서 로그아웃되며 더 이상 메시지를 받을 수 없습니다.';
@@ -2302,7 +2306,7 @@ class L10nKo extends L10n {
   String get sendCanceled => '전송 최소됨';
 
   @override
-  String get loginWithMatrixId => 'REChain-ID로 로그인';
+  String get loginWithREChainId => 'REChain ID로 로그인';
 
   @override
   String get discoverHomeservers => '홈서버 찾아보기';
@@ -2312,7 +2316,7 @@ class L10nKo extends L10n {
 
   @override
   String get homeserverDescription =>
-      '당신의 모든 데이터는 이메일과 흡사하게 당신의 홈서버에 저장됩니다. 당신이 소통하고 싶은 사람들과 다른 서버를 사용해도 무관하니 당신이 원하는 홈서버를 선택해도 됩니다. https://rechain.network에서 자세히 알아보세요.';
+      '당신의 모든 데이터는 이메일과 흡사하게 당신의 홈서버에 저장됩니다. 당신이 소통하고 싶은 사람들과 다른 서버를 사용해도 무관하니 당신이 원하는 홈서버를 선택해도 됩니다. https://online.rechain.network에서 자세히 알아보세요.';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
@@ -2355,7 +2359,7 @@ class L10nKo extends L10n {
 
   @override
   String get welcomeText =>
-      '안녕하세요 👋 REChain이에요. 당신은 https://online.rechain.network와 호환되는 모든 홈서버를 사용할 수 있어요. 그리고 모두와 대화해보세요. 거대한 분산 대화망이니까요!';
+      '안녕하세요 👋 REChain이에요. 당신은 htpps://online.rechain.network와 호환되는 모든 홈서버를 사용할 수 있어요. 그리고 모두와 대화해보세요. 거대한 분산 대화망이니까요!';
 
   @override
   String get blur => '블러:';
@@ -2439,7 +2443,7 @@ class L10nKo extends L10n {
 
   @override
   String get appIntroduction =>
-      'REChain는 다른 메신저들을 사용하는 친구들과도 채팅할 수 있습니다. https://rechain.network에 방문하거나 *계속*을 눌러 자세한 정보를 확인하세요.';
+      'REChain는 다른 메신저들을 사용하는 친구들과도 채팅할 수 있습니다. https://online.rechain.network에 방문하거나 *계속*을 눌러 자세한 정보를 확인하세요.';
 
   @override
   String get newChatRequest => '📩 새 채팅 요청';
@@ -2672,4 +2676,7 @@ class L10nKo extends L10n {
 
   @override
   String get moreEvents => 'More events';
+
+  @override
+  String get declineInvitation => 'Decline invitation';
 }

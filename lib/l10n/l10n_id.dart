@@ -76,7 +76,7 @@ class L10nId extends L10n {
   String get addEmail => 'Tambah email';
 
   @override
-  String get confirmMatrixId =>
+  String get confirmREChainId =>
       'Mohon konfirmasi ID REChain Anda untuk menghapus akun Anda.';
 
   @override
@@ -172,8 +172,11 @@ class L10nId extends L10n {
       'Mainkan stiker beranimasi dan emote secara otomatis';
 
   @override
-  String badServerLoginTypesException(String serverVersions,
-      String supportedVersions, Object suportedVersions) {
+  String badServerLoginTypesException(
+    String serverVersions,
+    String supportedVersions,
+    Object suportedVersions,
+  ) {
     return 'Homeserver ini mendukung tipe masuk ini:\n$serverVersions\nTetapi aplikasi ini mendukung:\n$supportedVersions';
   }
 
@@ -189,11 +192,12 @@ class L10nId extends L10n {
 
   @override
   String badServerVersionsException(
-      String serverVersions,
-      String supportedVersions,
-      Object serverVerions,
-      Object supoortedVersions,
-      Object suportedVersions) {
+    String serverVersions,
+    String supportedVersions,
+    Object serverVerions,
+    Object supoortedVersions,
+    Object suportedVersions,
+  ) {
     return 'Homeserver ini mendukung versi Spec ini:\n$serverVersions\nTetapi aplikasi ini hanya mendukung $supportedVersions';
   }
 
@@ -690,7 +694,7 @@ class L10nId extends L10n {
   String get fileName => 'Nama file';
 
   @override
-  String get rechainonline => 'rechainonline';
+  String get rechainonline => 'REChain';
 
   @override
   String get fontSize => 'Ukuran font';
@@ -957,7 +961,7 @@ class L10nId extends L10n {
   String get newChat => 'Chat baru';
 
   @override
-  String get newMessageInrechainonline => '💬 Pesan baru di rechainonline';
+  String get newMessageInrechainonline => '💬 Pesan baru di REChain';
 
   @override
   String get newVerificationRequest => 'Permintaan verifikasi baru!';
@@ -984,7 +988,7 @@ class L10nId extends L10n {
 
   @override
   String norechainonlineServer(String server1, String server2) {
-    return '$server1 itu bukan server REChain, gunakan $server2 saja?';
+    return '$server1 itu bukan server Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network, gunakan $server2 saja?';
   }
 
   @override
@@ -1430,7 +1434,7 @@ class L10nId extends L10n {
   String get theyMatch => 'Cocok';
 
   @override
-  String get title => 'rechainonline';
+  String get title => 'REChain';
 
   @override
   String get toggleFavorite => 'Beralih Favorit';
@@ -1860,7 +1864,7 @@ class L10nId extends L10n {
   String get screenSharingTitle => 'membagikan layar';
 
   @override
-  String get screenSharingDetail => 'Kamu membagikan layarmu di rechainonline';
+  String get screenSharingDetail => 'Kamu membagikan layarmu di REChain';
 
   @override
   String get callingPermissions => 'Perizinan panggilan';
@@ -2030,7 +2034,7 @@ class L10nId extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      'Percakapannya akan dibuat ulang dengan versi ruangan yang baru. Semua anggota akan diberi tahu bahwa mereka harus ganti ke percakapan yang baru. Kamu bisa mempelajari lebih lanjut tentang versi ruangan di https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle';
+      'Percakapannya akan dibuat ulang dengan versi ruangan yang baru. Semua anggota akan diberi tahu bahwa mereka harus ganti ke percakapan yang baru. Kamu bisa mempelajari lebih lanjut tentang versi ruangan di https://spec.online.rechain.network/latest/rooms/';
 
   @override
   String get removeDevicesDescription =>
@@ -2369,7 +2373,7 @@ class L10nId extends L10n {
   String get sendCanceled => 'Pengiriman dibatalkan';
 
   @override
-  String get loginWithMatrixId => 'Masuk dengan ID REChain';
+  String get loginWithREChainId => 'Masuk dengan ID REChain';
 
   @override
   String get discoverHomeservers => 'Jelajahi homeserver';
@@ -2379,7 +2383,7 @@ class L10nId extends L10n {
 
   @override
   String get homeserverDescription =>
-      'Semua data Anda disimpan di dalam server, seperti halnya penyedia email. Anda dapat memilih homeserver mana yang ingin Anda gunakan, sementara Anda masih dapat berkomunikasi dengan semua orang. Pelajari lebih lanjut di https://rechain.network.';
+      'Semua data Anda disimpan di dalam server, seperti halnya penyedia email. Anda dapat memilih homeserver mana yang ingin Anda gunakan, sementara Anda masih dapat berkomunikasi dengan semua orang. Pelajari lebih lanjut di https://online.rechain.network.';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
@@ -2423,7 +2427,7 @@ class L10nId extends L10n {
 
   @override
   String get welcomeText =>
-      'Halo 👋 Ini REChain. Kamu bisa masuk ke homeserver mana pun, yang kompatibel dengan https://rechain.network. Lalu, chat dengan siapa pun. Ini merupakan jaringan perpesanan besar yang terdesentralisasi!';
+      'Halo 👋 Ini REChain. Kamu bisa masuk ke homeserver mana pun, yang kompatibel dengan https://online.rechain.network. Lalu, chat dengan siapa pun. Ini merupakan jaringan perpesanan besar yang terdesentralisasi!';
 
   @override
   String get blur => 'Buram:';
@@ -2511,7 +2515,7 @@ class L10nId extends L10n {
 
   @override
   String get appIntroduction =>
-      'REChain memungkinkanmu untuk mengobrol dengan teman-temanmu di berbagai perpesanan. Pelajari lebih lanjut di https://rechain.network atau ketuk *Lanjutkan* saja.';
+      'REChain memungkinkanmu untuk mengobrol dengan teman-temanmu di berbagai perpesanan. Pelajari lebih lanjut di https://online.rechain.network atau ketuk *Lanjutkan* saja.';
 
   @override
   String get newChatRequest => '📩 Permintaan pesan baru';
@@ -2745,8 +2749,11 @@ class L10nId extends L10n {
   String get displayNavigationRail => 'Tampilkan jalur navigasi pada ponsel';
 
   @override
-  String get customReaction => 'Custom reaction';
+  String get customReaction => 'Reaksi khusus';
 
   @override
-  String get moreEvents => 'More events';
+  String get moreEvents => 'Peristiwa tambahan';
+
+  @override
+  String get declineInvitation => 'Decline invitation';
 }

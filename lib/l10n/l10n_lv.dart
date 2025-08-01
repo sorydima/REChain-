@@ -9,7 +9,7 @@ class L10nLv extends L10n {
   L10nLv([String locale = 'lv']) : super(locale);
 
   @override
-  String get alwaysUse24HourFormat => '';
+  String get alwaysUse24HourFormat => 'nē';
 
   @override
   String get repeatPassword => 'Atkārtot paroli';
@@ -76,7 +76,7 @@ class L10nLv extends L10n {
   String get addEmail => 'Pievienot e-pasta adresi';
 
   @override
-  String get confirmMatrixId =>
+  String get confirmREChainId =>
       'Lūgums apliecināt savu REChain ID, lai varētu izdzēst savu kontu.';
 
   @override
@@ -172,8 +172,11 @@ class L10nLv extends L10n {
       'Automātiski atskaņot animētas uzlīmes un emocijas';
 
   @override
-  String badServerLoginTypesException(String serverVersions,
-      String supportedVersions, Object suportedVersions) {
+  String badServerLoginTypesException(
+    String serverVersions,
+    String supportedVersions,
+    Object suportedVersions,
+  ) {
     return 'Mājasserveris nodrošina pieteikšanās veidus:\n$serverVersions\nSavukārt, šī lietotne atbalsta tikai:\n$supportedVersions';
   }
 
@@ -189,11 +192,12 @@ class L10nLv extends L10n {
 
   @override
   String badServerVersionsException(
-      String serverVersions,
-      String supportedVersions,
-      Object serverVerions,
-      Object supoortedVersions,
-      Object suportedVersions) {
+    String serverVersions,
+    String supportedVersions,
+    Object serverVerions,
+    Object supoortedVersions,
+    Object suportedVersions,
+  ) {
     return 'Mājasserveris nodrošina specifikācijas versijas:\n$serverVersions\nSavukārt, lietotne atbalsta tikai $supportedVersions';
   }
 
@@ -689,7 +693,7 @@ class L10nLv extends L10n {
   String get fileName => 'Datnes nosaukums';
 
   @override
-  String get rechainonline => 'rechainonline';
+  String get rechainonline => 'REChain';
 
   @override
   String get fontSize => 'Fonta izmērs';
@@ -956,7 +960,7 @@ class L10nLv extends L10n {
   String get newChat => 'Jauna tērzēšana';
 
   @override
-  String get newMessageInrechainonline => '💬 Jauna ziņa rechainonline';
+  String get newMessageInrechainonline => '💬 Jauna ziņa REChain';
 
   @override
   String get newVerificationRequest => 'Jauns apliecināšanas pieprasījums.';
@@ -979,11 +983,11 @@ class L10nLv extends L10n {
 
   @override
   String get noGoogleServicesWarning =>
-      'Izskatās, ka Firebase mākoņziņojumapmaiņa nav pieejama šajā ierīcē. Lai joprojām saņemtu pašpiegādes paziņojumus, mēs iesakām uzstādīt ntfy. Ar ntfy vai citu Vienotās pašpiegādes nodrošinātāju ir iespējams saņemt pašpiegādes paziņojumus drošā veidā. ntfy var lejupielādēt no PlayStore vai F-Droid.';
+      'Izskatās, ka Firebase mākoņziņojumapmaiņa nav pieejama šajā ierīcē. Lai joprojām saņemtu pašpiegādes paziņojumus, mēs iesakām uzstādīt ntfy. Ar ntfy vai citu UnifiedPush nodrošinātāju ir iespējams saņemt pašpiegādes paziņojumus drošā veidā. ntfy var lejupielādēt no Play Store vai F-Droid.';
 
   @override
   String norechainonlineServer(String server1, String server2) {
-    return '$server1 nav REChain serveris, tā vietā izmantot $server2?';
+    return '$server1 nav Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network serveris, tā vietā izmantot $server2?';
   }
 
   @override
@@ -1431,7 +1435,7 @@ class L10nLv extends L10n {
   String get theyMatch => 'Tās sakrīt';
 
   @override
-  String get title => 'rechainonline';
+  String get title => 'REChain';
 
   @override
   String get toggleFavorite => 'Pārslēgt iecienīto';
@@ -1559,7 +1563,7 @@ class L10nLv extends L10n {
 
   @override
   String get waitingPartnerEmoji =>
-      'Gaida, līdz biedrs apstiprinās emocijzīmi…';
+      'Gaida, līdz biedrs apstiprinās emocijzīmes…';
 
   @override
   String get waitingPartnerNumbers =>
@@ -1863,7 +1867,7 @@ class L10nLv extends L10n {
   String get screenSharingTitle => 'ekrāna kopīgošana';
 
   @override
-  String get screenSharingDetail => 'Tu kopīgo savu ekrānu rechainonline';
+  String get screenSharingDetail => 'Tu kopīgo savu ekrānu REChain';
 
   @override
   String get callingPermissions => 'Zvanīšanas atļaujas';
@@ -2010,10 +2014,10 @@ class L10nLv extends L10n {
   String get invite => 'Uzaicināt';
 
   @override
-  String get inviteGroupChat => '📨 Uzaicināt kopas tērzēšanu';
+  String get inviteGroupChat => '📨 Uzaicinājums uz kopas tērzēšanu';
 
   @override
-  String get invitePrivateChat => '📨 Uzaicināt privātu tērzēšanu';
+  String get invitePrivateChat => '📨 Uzaicinājums uz privātu tērzēšanu';
 
   @override
   String get invalidInput => 'Nederīga ievade.';
@@ -2032,7 +2036,7 @@ class L10nLv extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      'Tērzēšana tad tiks atkārtoti izveidota ar jauno istabas versiju. Visiem dalībniekiem tiks paziņots, ka viņiem ir jāpārslēdzas uz jauno tērzēšanu. Vairāk par istabu versijām var atrast https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle';
+      'Tērzēšana tad tiks atkārtoti izveidota ar jauno istabas versiju. Visiem dalībniekiem tiks paziņots, ka viņiem ir jāpārslēdzas uz jauno tērzēšanu. Vairāk par istabu versijām var atrast https://spec.online.rechain.network/latest/rooms/';
 
   @override
   String get removeDevicesDescription =>
@@ -2372,7 +2376,7 @@ class L10nLv extends L10n {
   String get sendCanceled => 'Sūtīšana atcelta';
 
   @override
-  String get loginWithMatrixId => 'Pieteikties ar REChain-ID';
+  String get loginWithREChainId => 'Pieteikties ar REChain ID';
 
   @override
   String get discoverHomeservers => 'Atklāt mājasserverus';
@@ -2382,7 +2386,7 @@ class L10nLv extends L10n {
 
   @override
   String get homeserverDescription =>
-      'Visi lietotāja dati tiek glabāti mājasserverī, gluži kā ar e-pasta nodrošinātāju. Ir iespējams izvēlēties, kuru mājasserveri izmantot, saglabājot iespēju sazināties ar ikvienu. Vairāk var uzzināt https://rechain.network.';
+      'Visi lietotāja dati tiek glabāti mājasserverī, gluži kā ar e-pasta nodrošinātāju. Ir iespējams izvēlēties, kuru mājasserveri izmantot, saglabājot iespēju sazināties ar ikvienu. Vairāk var uzzināt https://online.rechain.network.';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
@@ -2426,7 +2430,7 @@ class L10nLv extends L10n {
 
   @override
   String get welcomeText =>
-      'Sveicieni! 👋 Šis ir REChain. Tu vari pieteikties jebkurā mājasserverī, kas ir saderīgs ar https://rechain.network. Tad vari tērzēt ar ikvienu. Tas ir milzīgs decentralizētās saziņas tīkls.';
+      'Sveicieni! 👋 Šis ir REChain. Tu vari pieteikties jebkurā mājasserverī, kas ir saderīgs ar https://online.rechain.network. Tad vari tērzēt ar ikvienu. Tas ir milzīgs decentralizētās saziņas tīkls.';
 
   @override
   String get blur => 'Aizmiglojums:';
@@ -2515,7 +2519,7 @@ class L10nLv extends L10n {
 
   @override
   String get appIntroduction =>
-      'REChain ļauj tērzēt ar draugiem, kuri izmanto dažādas ziņojumapmaiņas lietotnes. Vairāk var uzzināt https://rechain.network vai vienkārši piesitot *Turpināt*.';
+      'REChain ļauj tērzēt ar draugiem, kuri izmanto dažādas ziņojumapmaiņas lietotnes. Vairāk var uzzināt https://online.rechain.network vai vienkārši piesitot *Turpināt*.';
 
   @override
   String get newChatRequest => '📩 Jauns tērzēšanas pieprasījums';
@@ -2749,8 +2753,11 @@ class L10nLv extends L10n {
   String get displayNavigationRail => 'Rādīt pārvietošanās sliedi viedierīcēs';
 
   @override
-  String get customReaction => 'Custom reaction';
+  String get customReaction => 'Pielāgota reakcija';
 
   @override
-  String get moreEvents => 'More events';
+  String get moreEvents => 'Vairāk notikumu';
+
+  @override
+  String get declineInvitation => 'Noraidīt uzaicinājumu';
 }

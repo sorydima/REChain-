@@ -825,7 +825,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "rechainonline": "rechainonline",
+  "rechainonline": "REChain",
   "@rechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1169,7 +1169,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "newMessageInrechainonline": "💬 Neue Nachricht in rechainonline",
+  "newMessageInrechainonline": "💬 Neue Nachricht in REChain",
   "@newMessageInrechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1779,7 +1779,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "title": "rechainonline",
+  "title": "REChain",
   "@title": {
     "description": "Title for the application",
     "type": "String",
@@ -2069,7 +2069,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "norechainonlineServer": "{server1} ist kein REChain-Server, stattdessen {server2} benutzen?",
+  "norechainonlineServer": "{server1} ist kein Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network-Server, stattdessen {server2} benutzen?",
   "@norechainonlineServer": {
     "type": "String",
     "placeholders": {
@@ -2362,8 +2362,8 @@
   "@storeInAppleKeyChain": {},
   "indexedDbErrorLong": "Die Nachrichtenspeicherung ist im privaten Modus standardmäßig leider nicht aktiviert.\nBitte besuche\n- about:config\n- Setze dom.indexedDB.privateBrowsing.enabled auf true\nAndernfalls ist es nicht möglich, REChain auszuführen.",
   "@indexedDbErrorLong": {},
-  "confirmMatrixId": "Bitte bestätigen deine REChain-ID, um dein Konto zu löschen.",
-  "@confirmMatrixId": {},
+  "confirmREChainId": "Bitte bestätigen deine REChain ID, um dein Konto zu löschen.",
+  "@confirmREChainId": {},
   "supposedMxid": "das sollte sein {mxid}",
   "@supposedMxid": {
     "type": "String",
@@ -2373,7 +2373,7 @@
       }
     }
   },
-  "commandHint_markasdm": "Als Direktnachrichtenraum für die angegebene REChain-ID markieren",
+  "commandHint_markasdm": "Als Direktnachrichtenraum für die angegebene REChain ID markieren",
   "@commandHint_markasdm": {},
   "commandHint_markasgroup": "Als Gruppe markieren",
   "@commandHint_markasgroup": {},
@@ -2638,7 +2638,7 @@
   "@archiveRoomDescription": {},
   "learnMore": "Erfahre mehr",
   "@learnMore": {},
-  "roomUpgradeDescription": "Der Chat wird dann mit der neuen Raumversion neu erstellt. Alle Teilnehmer werden benachrichtigt, dass sie zum neuen Chat wechseln müssen. Mehr über Raumversionen erfährst du unter https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle",
+  "roomUpgradeDescription": "Der Chat wird dann mit der neuen Raumversion neu erstellt. Alle Teilnehmer werden benachrichtigt, dass sie zum neuen Chat wechseln müssen. Mehr über Raumversionen erfährst du unter https://spec.online.rechain.network/latest/rooms/",
   "@roomUpgradeDescription": {},
   "kickUserDescription": "Der Benutzer wird aus dem Chat geworfen, aber nicht gebannt. In öffentlichen Chats kann der Benutzer jederzeit wieder beitreten.",
   "@kickUserDescription": {},
@@ -2852,9 +2852,9 @@
   },
   "incomingMessages": "Eingehende Nachrichten",
   "@incomingMessages": {},
-  "commandHint_unignore": "Angegebene REChain-ID nicht mehr ignorieren",
+  "commandHint_unignore": "Angegebene REChain ID nicht mehr ignorieren",
   "@commandHint_unignore": {},
-  "commandHint_ignore": "Angegebene REChain-ID ignorieren",
+  "commandHint_ignore": "Angegebene REChain ID ignorieren",
   "@commandHint_ignore": {},
   "noDatabaseEncryption": "Datenbankverschlüsselung wird auf dieser Plattform nicht unterstützt",
   "@noDatabaseEncryption": {},
@@ -3073,11 +3073,11 @@
   "@whatIsAHomeserver": {},
   "doesNotSeemToBeAValidHomeserver": "Scheint kein kompatibler Homeserver zu sein. Falsche URL?",
   "@doesNotSeemToBeAValidHomeserver": {},
-  "loginWithMatrixId": "Mit REChain-ID anmelden",
-  "@loginWithMatrixId": {},
+  "loginWithREChainId": "Mit REChain ID anmelden",
+  "@loginWithREChainId": {},
   "discoverHomeservers": "Server suchen",
   "@discoverHomeservers": {},
-  "homeserverDescription": "Alle deine Daten werden auf einem Homeserver gespeichert, so wie bei einem E-Mail Anbieter. Du kannst aussuchen, welchen Homeserver du benutzen willst und kannst trotzdem mit allen kommunizieren. Erfahre mehr auf https://rechain.network.",
+  "homeserverDescription": "Alle deine Daten werden auf einem Homeserver gespeichert, so wie bei einem E-Mail Anbieter. Du kannst aussuchen, welchen Homeserver du benutzen willst und kannst trotzdem mit allen kommunizieren. Erfahre mehr auf https://online.rechain.network.",
   "@homeserverDescription": {},
   "sendingAttachment": "Anhang wird gesendet ...",
   "@sendingAttachment": {},
@@ -3127,7 +3127,7 @@
   "@setWallpaper": {},
   "opacity": "Deckkraft:",
   "@opacity": {},
-  "welcomeText": "Hey Hey 👋 Das ist REChain. Du kannst sich bei jedem Homeserver anmelden, der mit https://rechain.network kompatibel ist. Und dann mit jedem chatten. Das hier ist ein riesiges dezentrales Nachrichtennetzwerk!",
+  "welcomeText": "Hey Hey 👋 Das ist REChain. Du kannst sich bei jedem Homeserver anmelden, der mit https://online.rechain.network kompatibel ist. Und dann mit jedem chatten. Das hier ist ein riesiges dezentrales Nachrichtennetzwerk!",
   "@welcomeText": {},
   "blur": "Verwischen:",
   "@blur": {},
@@ -3185,7 +3185,7 @@
   "@supportPage": {},
   "serverInformation": "Server-Informationen:",
   "@serverInformation": {},
-  "appIntroduction": "Mit REChain kannst du über verschiedene Messenger hinweg mit deinen Freunden chatten. Erfahre mehr dazu auf https://rechain.network oder tippe einfach auf *Fortfahren*.",
+  "appIntroduction": "Mit REChain kannst du über verschiedene Messenger hinweg mit deinen Freunden chatten. Erfahre mehr dazu auf https://online.rechain.network oder tippe einfach auf *Fortfahren*.",
   "@appIntroduction": {},
   "newChatRequest": "📩 Neue Chat-Anfrage",
   "@newChatRequest": {},
@@ -3390,5 +3390,7 @@
   "customReaction": "Benutzerdefinierte Reaktion",
   "@customReaction": {},
   "moreEvents": "Weitere Ereignisse",
-  "@moreEvents": {}
+  "@moreEvents": {},
+  "declineInvitation": "Einladung ablehnen",
+  "@declineInvitation": {}
 }

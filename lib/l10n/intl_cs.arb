@@ -826,7 +826,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "rechainonline": "rechainonline",
+  "rechainonline": "REChain",
   "@rechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1170,7 +1170,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "newMessageInrechainonline": "Nová zpráva ve REChainu",
+  "newMessageInrechainonline": "Nová zpráva ve REChain",
   "@newMessageInrechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1210,7 +1210,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "norechainonlineServer": "{server1} není matrixový server, použít místo toho server {server2}?",
+  "norechainonlineServer": "{server1} není Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Networkový server, použít místo toho server {server2}?",
   "@norechainonlineServer": {
     "type": "String",
     "placeholders": {
@@ -1792,7 +1792,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "title": "rechainonline",
+  "title": "REChain",
   "@title": {
     "description": "Title for the application",
     "type": "String",
@@ -2308,8 +2308,8 @@
   "@errorAddingWidget": {},
   "disableEncryptionWarning": "Z bezpečnostních důvodů nemůžete vypnout šifrování v chatu, kde již bylo dříve zapnuto.",
   "@disableEncryptionWarning": {},
-  "confirmMatrixId": "Prosím, potvrďte vaše REChain ID, abyste mohli smazat váš účet.",
-  "@confirmMatrixId": {},
+  "confirmREChainId": "Prosím, potvrďte vaše REChain ID, abyste mohli smazat váš účet.",
+  "@confirmREChainId": {},
   "commandHint_googly": "Poslat kroutící se očička",
   "@commandHint_googly": {},
   "commandHint_cuddle": "Poslat mazlení",
@@ -2491,13 +2491,13 @@
   "@unlockOldMessages": {},
   "foregroundServiceRunning": "Toto oznámení se zobrazuje když běží služba na pozadí.",
   "@foregroundServiceRunning": {},
-  "screenSharingDetail": "Sdílíte svou obrazovku přes rechainonline",
+  "screenSharingDetail": "Sdílíte svou obrazovku přes REChain",
   "@screenSharingDetail": {},
   "callingAccountDetails": "Opravňuje REChain používat Android systémovou aplikaci pro vytáčení.",
   "@callingAccountDetails": {},
   "appearOnTop": "Zobrazovat nahoře",
   "@appearOnTop": {},
-  "otherCallingPermissions": "Mikrofon, kamera a ostatní oprávnění rechainonline",
+  "otherCallingPermissions": "Mikrofon, kamera a ostatní oprávnění REChain",
   "@otherCallingPermissions": {},
   "encryptThisChat": "Zašifrovat tuto konverzaci",
   "@encryptThisChat": {},

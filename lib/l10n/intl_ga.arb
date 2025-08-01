@@ -44,7 +44,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "title": "rechainonline",
+  "title": "REChain",
   "@title": {
     "description": "Title for the application",
     "type": "String",
@@ -324,7 +324,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "rechainonline": "rechainonline",
+  "rechainonline": "REChain",
   "@rechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1300,7 +1300,7 @@
       }
     }
   },
-  "norechainonlineServer": "Níl {server1} freastalaí Matrix. Úsáid {server2} ina áit sin?",
+  "norechainonlineServer": "Níl {server1} freastalaí Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network. Úsáid {server2} ina áit sin?",
   "@norechainonlineServer": {
     "type": "String",
     "placeholders": {
@@ -1337,7 +1337,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "newMessageInrechainonline": "💬 Teachtaireacht nua in rechainonline",
+  "newMessageInrechainonline": "💬 Teachtaireacht nua in REChain",
   "@newMessageInrechainonline": {
     "type": "String",
     "placeholders": {}
@@ -2146,7 +2146,7 @@
   "@noOtherDevicesFound": {},
   "profileNotFound": "Níorbh fhéidir an t-úsáideoir a aimsiú ar an bhfreastalaí. B'fhéidir go bhfuil fadhb nasctha ann nó nach bhfuil an t-úsáideoir ann.",
   "@profileNotFound": {},
-  "inviteGroupChat": "📨 Tabhair cuireadh comhrá grúpa",
+  "inviteGroupChat": "📨 Cuireadh chuig comhrá grúpa",
   "@inviteGroupChat": {},
   "knocking": "Cnagadh",
   "@knocking": {},
@@ -2337,8 +2337,8 @@
   "@newGroup": {},
   "newSpace": "Spás nua",
   "@newSpace": {},
-  "confirmMatrixId": "Deimhnigh d’ID Maitrís chun do chuntas a scriosadh.",
-  "@confirmMatrixId": {},
+  "confirmREChainId": "Deimhnigh d’ID Maitrís chun do chuntas a scriosadh.",
+  "@confirmREChainId": {},
   "hideMemberChangesInPublicChats": "Cuir athruithe ball i gcomhráite poiblí i bhfolach",
   "@hideMemberChangesInPublicChats": {},
   "confirmEventUnpin": "An bhfuil tú cinnte an t-imeacht a dhíphionnáil go buan?",
@@ -2491,7 +2491,7 @@
       }
     }
   },
-  "invitePrivateChat": "📨 Tabhair cuireadh comhrá príobháideach",
+  "invitePrivateChat": "📨 Cuireadh chuig comhrá príobháideach",
   "@invitePrivateChat": {},
   "wrongPinEntered": "Tháinig biorán mícheart isteach! Bain triail eile as i {seconds} soicind...",
   "@wrongPinEntered": {
@@ -2506,7 +2506,7 @@
   "@archiveRoomDescription": {},
   "removeDevicesDescription": "Beidh tú logáilte amach as an ngléas seo agus ní bheidh tú in ann teachtaireachtaí a fháil a thuilleadh.",
   "@removeDevicesDescription": {},
-  "roomUpgradeDescription": "Déanfar an comhrá a athchruthú ansin leis an leagan seomra nua. Cuirfear in iúl do gach rannpháirtí go gcaithfidh siad aistriú chuig an gcomhrá nua. Is féidir leat tuilleadh eolais a fháil faoi leaganacha seomra ag https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle",
+  "roomUpgradeDescription": "Déanfar an comhrá a athchruthú ansin leis an leagan seomra nua. Cuirfear in iúl do gach rannpháirtí go gcaithfidh siad aistriú chuig an gcomhrá nua. Is féidir leat tuilleadh eolais a fháil faoi leaganacha seomra ag https://spec.online.rechain.network/latest/rooms/",
   "@roomUpgradeDescription": {},
   "banUserDescription": "Beidh cosc ar an úsáideoir ón gcomhrá agus ní bheidh sé in ann dul isteach sa chomhrá arís go dtí go mbeidh siad gan chosc.",
   "@banUserDescription": {},
@@ -2653,13 +2653,13 @@
   "@changelog": {},
   "sendCanceled": "Cealaíodh seoladh",
   "@sendCanceled": {},
-  "loginWithMatrixId": "Logáil isteach le REChain-ID",
-  "@loginWithMatrixId": {},
+  "loginWithREChainId": "Logáil isteach le REChain ID",
+  "@loginWithREChainId": {},
   "discoverHomeservers": "Faigh amach faoi fhreastalaithe baile",
   "@discoverHomeservers": {},
   "whatIsAHomeserver": "Cad is freastalaí baile ann?",
   "@whatIsAHomeserver": {},
-  "homeserverDescription": "Stóráiltear do chuid sonraí go léir ar an bhfreastalaí baile, díreach cosúil le soláthraí ríomhphoist. Is féidir leat an freastalaí baile is mian leat a úsáid a roghnú, agus is féidir leat cumarsáid a dhéanamh le gach duine fós. Foghlaim níos mó ag https://rechain.network.",
+  "homeserverDescription": "Stóráiltear do chuid sonraí go léir ar an bhfreastalaí baile, díreach cosúil le soláthraí ríomhphoist. Is féidir leat an freastalaí baile is mian leat a úsáid a roghnú, agus is féidir leat cumarsáid a dhéanamh le gach duine fós. Foghlaim níos mó ag https://online.rechain.network.",
   "@homeserverDescription": {},
   "calculatingFileSize": "Méid an chomhaid á ríomh...",
   "@calculatingFileSize": {},
@@ -2698,7 +2698,7 @@
   "@noticeChatBackupDeviceVerification": {},
   "continueText": "Lean ar aghaidh",
   "@continueText": {},
-  "welcomeText": "Hey Hey 👋 Is é seo REChain. Is féidir leat síniú isteach in aon fhreastalaí baile, atá comhoiriúnach leis https://rechain.network. Agus ansin comhrá a dhéanamh le duine ar bith. Is líonra teachtaireachtaí díláraithe ollmhór é!",
+  "welcomeText": "Hey Hey 👋 Is é seo REChain. Is féidir leat síniú isteach in aon fhreastalaí baile, atá comhoiriúnach leis https://online.rechain.network. Agus ansin comhrá a dhéanamh le duine ar bith. Is líonra teachtaireachtaí díláraithe ollmhór é!",
   "@welcomeText": {},
   "blur": "Doiléirigh:",
   "@blur": {},
@@ -3018,7 +3018,7 @@
   "@searchMore": {},
   "gallery": "Gailearaí",
   "@gallery": {},
-  "alwaysUse24HourFormat": "",
+  "alwaysUse24HourFormat": "bréagach",
   "@alwaysUse24HourFormat": {
     "description": "Set to true to always display time of day in 24 hour format."
   },
@@ -3183,7 +3183,7 @@
       }
     }
   },
-  "appIntroduction": "Ligeann REChain duit comhrá a dhéanamh le do chairde thar theachtairí éagsúla. Foghlaim tuilleadh ag https://rechain.network nó tapáil *Ar aghaidh*.",
+  "appIntroduction": "Ligeann REChain duit comhrá a dhéanamh le do chairde thar theachtairí éagsúla. Foghlaim tuilleadh ag https://online.rechain.network nó tapáil *Ar aghaidh*.",
   "@appIntroduction": {},
   "appWantsToUseForLoginDescription": "Ligeann tú leis seo don aip agus don suíomh Gréasáin faisnéis a roinnt fút.",
   "@appWantsToUseForLoginDescription": {},
@@ -3384,5 +3384,11 @@
   "commandHint_logout": "Logáil amach as do ghléas reatha",
   "@commandHint_logout": {},
   "commandHint_logoutall": "Logáil amach gach gléas gníomhach",
-  "@commandHint_logoutall": {}
+  "@commandHint_logoutall": {},
+  "customReaction": "Imoibriú saincheaptha",
+  "@customReaction": {},
+  "moreEvents": "Tuilleadh imeachtaí",
+  "@moreEvents": {},
+  "declineInvitation": "Diúltaigh don chuireadh",
+  "@declineInvitation": {}
 }

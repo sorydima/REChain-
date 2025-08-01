@@ -27,8 +27,8 @@
     "type": "String",
     "placeholders": {}
   },
-  "confirmMatrixId": "Paki-kumpirma ang iyong REChain ID para burahin ang iyong account.",
-  "@confirmMatrixId": {},
+  "confirmREChainId": "Paki-kumpirma ang iyong REChain ID para burahin ang iyong account.",
+  "@confirmREChainId": {},
   "addChatDescription": "Magdagdag ng deskripsyon ng chat...",
   "@addChatDescription": {},
   "admin": "Admin",
@@ -953,7 +953,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "rechainonline": "rechainonline",
+  "rechainonline": "REChain",
   "@rechainonline": {
     "type": "String",
     "placeholders": {}

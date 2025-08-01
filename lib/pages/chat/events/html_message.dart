@@ -39,7 +39,7 @@ class HtmlMessage extends StatelessWidget {
     this.limitHeight = true,
   });
 
-  /// Keep in sync with: https://spec.matrix.org/latest/client-server-api/#mroommessage-msgtypes
+  /// Keep in sync with: https://spec.online.rechain.network/latest/client-server-api/#mroommessage-msgtypes
   static const Set<String> allowedHtmlTags = {
     'font',
     'del',

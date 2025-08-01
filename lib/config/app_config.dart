@@ -9,7 +9,7 @@ abstract class AppConfig {
   static String? _applicationWelcomeMessage;
 
   static String? get applicationWelcomeMessage => _applicationWelcomeMessage;
-  static String _defaultHomeserver = 'https://node.marinchik.ink';
+  static String _defaultHomeserver = 'node.marinchik.ink';
 
   static String get defaultHomeserver => _defaultHomeserver;
   static double fontSizeFactor = 1;
@@ -31,7 +31,7 @@ abstract class AppConfig {
   static const String enablePushTutorial =
       'https://github.com/sorydima/REChain-/wiki#-how-to-set-up-push-notifications-in-rechain-without-google-services';
   static const String encryptionTutorial =
-      'https://github.com/sorydima/REChain-/wiki#2-disable-end-to-end-encryption';
+      'https://github.com/sorydima/REChain-/wiki#intermediate';
   static const String startChatTutorial =
       'https://github.com/sorydima/REChain-/wiki#code-analyzis';
   static const String appId = 'com.rechain.online';
@@ -72,7 +72,7 @@ abstract class AppConfig {
   static const double columnWidth = 360.0;
   static final Uri homeserverList = Uri(
     scheme: 'https',
-    host: 'servers.joinmatrix.org',
+    host: 'servers.joinonline.rechain.network',
     path: 'servers.json',
   );
 

@@ -76,7 +76,7 @@ class L10nHu extends L10n {
   String get addEmail => 'E-mail-cím hozzáadása';
 
   @override
-  String get confirmMatrixId =>
+  String get confirmREChainId =>
       'Kérem, igazolja vissza REChain ID-jét a fiók törléséhez.';
 
   @override
@@ -171,9 +171,12 @@ class L10nHu extends L10n {
       'Animált matricák és hangulatjelek automatikus lejátszása';
 
   @override
-  String badServerLoginTypesException(String serverVersions,
-      String supportedVersions, Object suportedVersions) {
-    return 'A REChain-kiszolgáló a következő bejelentkezéseket támogatja:\n$serverVersions\nDe ez az alkalmazást csak ezeket támogatja:\n$supportedVersions';
+  String badServerLoginTypesException(
+    String serverVersions,
+    String supportedVersions,
+    Object suportedVersions,
+  ) {
+    return 'A Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network-kiszolgáló a következő bejelentkezéseket támogatja:\n$serverVersions\nDe ez az alkalmazást csak ezeket támogatja:\n$supportedVersions';
   }
 
   @override
@@ -187,12 +190,13 @@ class L10nHu extends L10n {
 
   @override
   String badServerVersionsException(
-      String serverVersions,
-      String supportedVersions,
-      Object serverVerions,
-      Object supoortedVersions,
-      Object suportedVersions) {
-    return 'A REChain-kiszolgáló ezeket a specifikált verziókat támogatja:\n$serverVersions\nAzonban ez az app csak a következőket: $supportedVersions';
+    String serverVersions,
+    String supportedVersions,
+    Object serverVerions,
+    Object supoortedVersions,
+    Object suportedVersions,
+  ) {
+    return 'A Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network-kiszolgáló ezeket a specifikált verziókat támogatja:\n$serverVersions\nAzonban ez az app csak a következőket: $supportedVersions';
   }
 
   @override
@@ -324,7 +328,8 @@ class L10nHu extends L10n {
   String get changePassword => 'Jelszó módosítása';
 
   @override
-  String get changeTheHomeserver => 'REChain-kiszolgáló váltás';
+  String get changeTheHomeserver =>
+      'Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network-kiszolgáló váltás';
 
   @override
   String get changeTheme => 'Stílusának módosítása';
@@ -667,10 +672,12 @@ class L10nHu extends L10n {
   String get enterAnEmailAddress => 'Adjon meg egy email címet';
 
   @override
-  String get homeserver => 'REChain-kiszolgáló';
+  String get homeserver =>
+      'Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network-kiszolgáló';
 
   @override
-  String get enterYourHomeserver => 'Adja meg a REChain-kiszolgálóját';
+  String get enterYourHomeserver =>
+      'Adja meg a Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network-kiszolgálóját';
 
   @override
   String errorObtainingLocation(String error) {
@@ -687,7 +694,7 @@ class L10nHu extends L10n {
   String get fileName => 'Fájlnév';
 
   @override
-  String get rechainonline => 'rechainonline';
+  String get rechainonline => 'REChain';
 
   @override
   String get fontSize => 'Betűméret';
@@ -921,7 +928,7 @@ class L10nHu extends L10n {
 
   @override
   String logInTo(String homeserver) {
-    return 'Bejelentkezés a(z) $homeserver REChain-kiszolgálóra';
+    return 'Bejelentkezés a(z) $homeserver Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network-kiszolgálóra';
   }
 
   @override
@@ -980,7 +987,7 @@ class L10nHu extends L10n {
 
   @override
   String norechainonlineServer(String server1, String server2) {
-    return '$server1 nem egy REChain szerver, akarja használja a $server2 szervert inkább?';
+    return '$server1 nem egy Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network szerver, akarja használja a $server2 szervert inkább?';
   }
 
   @override
@@ -1429,7 +1436,7 @@ class L10nHu extends L10n {
   String get theyMatch => 'Egyezőek';
 
   @override
-  String get title => 'rechainonline';
+  String get title => 'REChain';
 
   @override
   String get toggleFavorite => 'Kedvencek megjelenítése';
@@ -2027,7 +2034,7 @@ class L10nHu extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      'A csevegés újra elkészül az új szoba verzióval. Minden résztvevő értesítést kap, hogy át kell állniuk az új csevegésre. További információkért a szoba verziókról látogasson el a https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle címre';
+      'A csevegés újra elkészül az új szoba verzióval. Minden résztvevő értesítést kap, hogy át kell állniuk az új csevegésre. További információkért a szoba verziókról látogasson el a https://spec.online.rechain.network/latest/rooms/ címre';
 
   @override
   String get removeDevicesDescription =>
@@ -2366,17 +2373,19 @@ class L10nHu extends L10n {
   String get sendCanceled => 'Küldés visszavonva';
 
   @override
-  String get loginWithMatrixId => 'Bejelentkezés REChain-ID-vel';
+  String get loginWithREChainId => 'Bejelentkezés REChain ID-vel';
 
   @override
-  String get discoverHomeservers => 'REChain-kiszolgálók felfedezése';
+  String get discoverHomeservers =>
+      'Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network-kiszolgálók felfedezése';
 
   @override
-  String get whatIsAHomeserver => 'Mi az a REChain-kiszolgáló?';
+  String get whatIsAHomeserver =>
+      'Mi az a Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network-kiszolgáló?';
 
   @override
   String get homeserverDescription =>
-      'Az összes adata a Mátrix-kiszolgálón tárolódik, pont mint egy e-mail kiszolgálón. Kiválaszthatja melyik REChain-kiszolgálót akarja használni, miközben tud kommunikálni mindenkivel. Tudjon meg többet a https://rechain.network címen.';
+      'Az összes adata a Mátrix-kiszolgálón tárolódik, pont mint egy e-mail kiszolgálón. Kiválaszthatja melyik Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network-kiszolgálót akarja használni, miközben tud kommunikálni mindenkivel. Tudjon meg többet a https://online.rechain.network címen.';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
@@ -2420,7 +2429,7 @@ class L10nHu extends L10n {
 
   @override
   String get welcomeText =>
-      'Üdv 👋 Ez a REChain. Bejelentkezhet bármely REChain-kiszolgálóhoz amely kompatibilis a https://rechain.network címmel. Ezután cseveghet bárkivel. Így képez egy óriási decentralizált üzenetküldő hálózatot!';
+      'Üdv 👋 Ez a REChain. Bejelentkezhet bármely Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network-kiszolgálóhoz amely kompatibilis a https://online.rechain.network címmel. Ezután cseveghet bárkivel. Így képez egy óriási decentralizált üzenetküldő hálózatot!';
 
   @override
   String get blur => 'Homályosít:';
@@ -2509,7 +2518,7 @@ class L10nHu extends L10n {
 
   @override
   String get appIntroduction =>
-      'A REChain segítségével cseveghet barátaival, akár más üzenetküldő alkalmazásokon keresztül is. Tudjon meg erről többet a https://rechain.network oldalon, vagy nyomjon a \"Folytatás\" gombra.';
+      'A REChain segítségével cseveghet barátaival, akár más üzenetküldő alkalmazásokon keresztül is. Tudjon meg erről többet a https://online.rechain.network oldalon, vagy nyomjon a \"Folytatás\" gombra.';
 
   @override
   String get newChatRequest => '📩 Új csevegés kérelem';
@@ -2749,4 +2758,7 @@ class L10nHu extends L10n {
 
   @override
   String get moreEvents => 'More events';
+
+  @override
+  String get declineInvitation => 'Decline invitation';
 }

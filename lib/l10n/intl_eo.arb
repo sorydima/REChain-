@@ -815,7 +815,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "rechainonline": "rechainonline",
+  "rechainonline": "REChain",
   "@rechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1149,7 +1149,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "newMessageInrechainonline": "Nova mesaĝo en rechainonline",
+  "newMessageInrechainonline": "Nova mesaĝo en REChain",
   "@newMessageInrechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1750,7 +1750,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "title": "rechainonline",
+  "title": "REChain",
   "@title": {
     "description": "Title for the application",
     "type": "String",

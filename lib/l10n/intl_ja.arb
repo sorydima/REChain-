@@ -704,7 +704,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "rechainonline": "rechainonline",
+  "rechainonline": "REChain",
   "@rechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1574,7 +1574,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "title": "rechainonline",
+  "title": "REChain",
   "@title": {
     "description": "Title for the application",
     "type": "String",
@@ -1922,8 +1922,8 @@
     "type": "String",
     "description": "Usage hint for the command /discardsession"
   },
-  "confirmMatrixId": "アカウントを削除するには、REChain IDを確認してください。",
-  "@confirmMatrixId": {},
+  "confirmREChainId": "アカウントを削除するには、REChain IDを確認してください。",
+  "@confirmREChainId": {},
   "commandHint_markasgroup": "グループとしてマーク",
   "@commandHint_markasgroup": {},
   "commandHint_join": "指定した部屋に参加",
@@ -2035,7 +2035,7 @@
   "@removeFromBundle": {},
   "bundleName": "バンドル名",
   "@bundleName": {},
-  "norechainonlineServer": "{server1} はMatrixのサーバーではありません。代わりに {server2} を使用しますか?",
+  "norechainonlineServer": "{server1} はKatya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Networkのサーバーではありません。代わりに {server2} を使用しますか?",
   "@norechainonlineServer": {
     "type": "String",
     "placeholders": {
