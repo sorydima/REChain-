@@ -30,6 +30,15 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+
+        // Включаем core library desugaring
+        coreLibraryDesugaringEnabled true
+    }
+
     compileSdkVersion 35
     ndkVersion = "28.0.13004108"
     namespace = "com.rechain.online"
@@ -93,6 +102,7 @@ flutter {
 
 dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.4'
     // implementation 'com.huawei.agconnect:agconnect-core:1.5.2.300'
 }
 
