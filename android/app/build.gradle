@@ -34,6 +34,10 @@ android {
     ndkVersion = "28.0.13004108"
     namespace = "com.rechain.online"
 
+    kotlinOptions {
+            jvmTarget = '1.8' // Or '11' or higher, depending on your project needs
+        }
+    
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
