@@ -37,6 +37,10 @@ android {
     kotlinOptions {
             jvmTarget = '1.8' // Or '11' or higher, depending on your project needs
         }
+
+    kotlin {
+        jvmToolchain(18)
+    }
     
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
