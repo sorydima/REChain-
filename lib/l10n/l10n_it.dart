@@ -172,11 +172,8 @@ class L10nIt extends L10n {
       'Riproduci automaticamente adesivi ed emote animati';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return 'L\'homeserver supporta i tipi di accesso:\n$serverVersions\nMa questa applicazione supporta solo:\n$supportedVersions';
   }
 
@@ -192,12 +189,11 @@ class L10nIt extends L10n {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return 'L\'homeserver supporta le versioni Spec:\n$serverVersions\nMa questa applicazione supporta solo $supportedVersions';
   }
 

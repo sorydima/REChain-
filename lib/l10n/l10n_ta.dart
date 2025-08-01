@@ -173,11 +173,8 @@ class L10nTa extends L10n {
       'அனிமேசன் செய்யப்பட்ட ச்டிக்கர்கள் மற்றும் உணர்ச்சிகளை தானாக இயக்கவும்';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return 'உள்நாட்டு வகைகளை ஓம்சர்வர் ஆதரிக்கிறது:\n $serverVersions\n ஆனால் இந்த பயன்பாடு மட்டுமே ஆதரிக்கிறது:\n $supportedVersions';
   }
 
@@ -193,12 +190,11 @@ class L10nTa extends L10n {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return 'ஓம்சர்வர் ச்பெக் பதிப்புகளை ஆதரிக்கிறது:\n $serverVersions\n ஆனால் இந்த பயன்பாடு $supportedVersions மட்டுமே ஆதரிக்கிறது';
   }
 

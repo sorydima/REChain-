@@ -169,11 +169,8 @@ class L10nAr extends L10n {
   String get autoplayImages => 'شغِّل الملصقات والوجوه المتحركة تلقائيا';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return 'يدعم الخادم المستخدم أنواع تسجيل الدخول التالية:\n$serverVersions\nلكن هذا التطبيق يدعم فقط:\n$supportedVersions';
   }
 
@@ -188,12 +185,11 @@ class L10nAr extends L10n {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return 'يدعم الخادم الرئيسي المستخدم إصدارات المواصفات:\n$serverVersions\nلكن هذا التطبيق يدعم فقط:\n$supportedVersions';
   }
 

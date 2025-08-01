@@ -172,11 +172,8 @@ class L10nUk extends L10n {
       'Автоматично відтворювати анімовані наліпки та емоджі';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return 'Домашній сервер підтримує такі типи входу:\n$serverVersions\nАле цей застосунок підтримує лише:\n$supportedVersions';
   }
 
@@ -192,12 +189,11 @@ class L10nUk extends L10n {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return 'Домашній сервер підтримує такі версії специфікацій:\n$serverVersions\nАле цей застосунок підтримує лише $supportedVersions';
   }
 

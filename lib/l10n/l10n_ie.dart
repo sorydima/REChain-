@@ -170,11 +170,8 @@ class L10nIe extends L10n {
   String get autoplayImages => 'Automaticmen reproducter animat images';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return 'Li hem-servitor supporta ti tipes de autentication:\n$serverVersions\nMa ti-ci application supporta solmen:\n$supportedVersions';
   }
 
@@ -189,12 +186,11 @@ class L10nIe extends L10n {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return 'Li hem-servitor supporta ti versiones de specification:\n$serverVersions\nMa ti-ci application supporta solmen $supportedVersions';
   }
 

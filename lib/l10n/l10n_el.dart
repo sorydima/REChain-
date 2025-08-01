@@ -172,11 +172,8 @@ class L10nEl extends L10n {
       'Αυτόματη αναπαραγωγή κινούμενων αυτοκόλλητων και emotes';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return 'Ο homeserver υποστηρίζει τους τύπους σύνδεσης:\n$serverVersions\nΑλλά αυτή η εφαρμογή υποστηρίζει μόνο:\n$supportedVersions';
   }
 
@@ -191,12 +188,11 @@ class L10nEl extends L10n {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return 'Ο homeserver υποστηρίζει τις εκδόσεις Spec:\n$serverVersions\nΑλλά αυτή η εφαρμογή υποστηρίζει μόνο τις $supportedVersions';
   }
 

@@ -170,11 +170,8 @@ class L10nHe extends L10n {
   String get autoplayImages => 'הפעל אוטומטית מדבקות ואנימציות מונפשים';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return 'שרת הבית תומך בסוגי הכניסה:\n$serverVersions\nאבל אפליקציה זו תומכת רק ב:\n$supportedVersions';
   }
 
@@ -189,12 +186,11 @@ class L10nHe extends L10n {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return 'שרת הבית תומך בגרסאות:\n$serverVersions\nאבל האפליקציה הזו תומכת רק ב-$supportedVersions';
   }
 

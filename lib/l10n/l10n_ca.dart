@@ -172,11 +172,8 @@ class L10nCa extends L10n {
       'Reprodueix automàticament enganxines i emoticones animades';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return 'El servidor admet els inicis de sessió:\n$serverVersions\nPerò l\'aplicació només admet:\n$supportedVersions';
   }
 
@@ -192,12 +189,11 @@ class L10nCa extends L10n {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return 'Aquest servidor suporta aquestes versions de Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network:\n$serverVersions\nPerò aquesta aplicación només és compatible amb $supportedVersions';
   }
 

@@ -172,11 +172,8 @@ class L10nId extends L10n {
       'Mainkan stiker beranimasi dan emote secara otomatis';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return 'Homeserver ini mendukung tipe masuk ini:\n$serverVersions\nTetapi aplikasi ini mendukung:\n$supportedVersions';
   }
 
@@ -192,12 +189,11 @@ class L10nId extends L10n {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return 'Homeserver ini mendukung versi Spec ini:\n$serverVersions\nTetapi aplikasi ini hanya mendukung $supportedVersions';
   }
 

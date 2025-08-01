@@ -168,11 +168,8 @@ class L10nJa extends L10n {
   String get autoplayImages => 'GIFを自動的に再生する';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return 'ホームサーバーでサポートされているログインタイプ：\n$serverVersions\nアプリがサポートしているログインタイプ：\n$supportedVersions';
   }
 
@@ -187,12 +184,11 @@ class L10nJa extends L10n {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return 'ホームサーバーでサポートされているバージョン：\n$serverVersions\nアプリでは$supportedVersionsしかサポートされていません';
   }
 

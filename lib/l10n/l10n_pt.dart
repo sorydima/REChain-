@@ -172,11 +172,8 @@ class L10nPt extends L10n {
       'Automatically play animated stickers and emotes';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return 'The homeserver supports the login types:\n$serverVersions\nBut this app supports only:\n$supportedVersions';
   }
 
@@ -191,12 +188,11 @@ class L10nPt extends L10n {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return 'The homeserver supports the Spec versions:\n$serverVersions\nBut this app supports only $supportedVersions';
   }
 
@@ -2913,11 +2909,8 @@ class L10nPtBr extends L10nPt {
       'Reproduzir automaticamente figurinhas animadas e emojis';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return 'O servidor suporta os tipos de entrada/login:\n$serverVersions\nMas este app suporta apenas:\n$supportedVersions';
   }
 
@@ -2933,12 +2926,11 @@ class L10nPtBr extends L10nPt {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return 'O servidor suporta as versões de especificação:\n$serverVersions\nMas este app suporta apenas $supportedVersions';
   }
 
@@ -5599,11 +5591,8 @@ class L10nPtPt extends L10nPt {
       'Automaticamente reproduzir autocolantes e emotes animados';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return 'O servidor suporta os tipos de início de sessão:\n$serverVersions\nMas esta aplicação apenas suporta:\n$suportedVersions';
   }
 
@@ -5612,12 +5601,11 @@ class L10nPtPt extends L10nPt {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return 'O servidor suporta as versões Spec:\n$serverVersions\nMas esta aplicação apenas suporta $suportedVersions';
   }
 

@@ -171,11 +171,8 @@ class L10nGl extends L10n {
   String get autoplayImages => 'Reproducir automáticamente adhesivos e emotes';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return 'O servidor soporta as seguintes formas de conexión:\n$serverVersions\nPero esta app só soporta:\n$supportedVersions';
   }
 
@@ -191,12 +188,11 @@ class L10nGl extends L10n {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return 'O servidor soporta as seguintes características:\n$serverVersions\nPero esta app só soporta $supportedVersions';
   }
 

@@ -172,11 +172,8 @@ class L10nLv extends L10n {
       'Automātiski atskaņot animētas uzlīmes un emocijas';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return 'Mājasserveris nodrošina pieteikšanās veidus:\n$serverVersions\nSavukārt, šī lietotne atbalsta tikai:\n$supportedVersions';
   }
 
@@ -192,12 +189,11 @@ class L10nLv extends L10n {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return 'Mājasserveris nodrošina specifikācijas versijas:\n$serverVersions\nSavukārt, lietotne atbalsta tikai $supportedVersions';
   }
 

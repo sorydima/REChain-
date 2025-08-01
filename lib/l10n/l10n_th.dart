@@ -173,11 +173,8 @@ class L10nTh extends L10n {
       'เล่นสติ๊กเกอร์และอิโมจิแบบเคลื่อนไหวโดยอัตโนมัติ';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return 'โฮมเซิร์ฟเวอร์รองรับประเภทการเข้าสู่ระบบ:\n$serverVersions\nแต่แอปนี้รองรับเฉพาะ:\n$supportedVersions';
   }
 
@@ -192,12 +189,11 @@ class L10nTh extends L10n {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return 'The homeserver supports the Spec versions:\n$serverVersions\nBut this app supports only $supportedVersions';
   }
 

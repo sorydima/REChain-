@@ -171,11 +171,8 @@ class L10nBo extends L10n {
       'Automatically play animated stickers and emotes';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return 'The homeserver supports the login types:\n$serverVersions\nBut this app supports only:\n$supportedVersions';
   }
 
@@ -190,12 +187,11 @@ class L10nBo extends L10n {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return 'The homeserver supports the Spec versions:\n$serverVersions\nBut this app supports only $supportedVersions';
   }
 

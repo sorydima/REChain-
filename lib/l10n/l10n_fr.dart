@@ -172,11 +172,8 @@ class L10nFr extends L10n {
       'Lire automatiquement les autocollants et les émojis animés';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return 'Le serveur d\'accueil prend en charge les types de connexion :\n$serverVersions\nMais cette application ne prend en charge que :\n$supportedVersions';
   }
 
@@ -192,12 +189,11 @@ class L10nFr extends L10n {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return 'Le serveur d\'accueil prend en charge les versions des spécifications :\n$serverVersions\nMais cette application ne prend en charge que $supportedVersions';
   }
 

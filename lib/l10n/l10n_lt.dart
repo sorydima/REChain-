@@ -171,11 +171,8 @@ class L10nLt extends L10n {
       'Automatiškai leisti animuotus lipdukus ir jaustukus';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return 'Namų serveris palaiko šiuos prisijungimo tipus:\n$serverVersions\nTačiau ši programa palaiko tik:\n$supportedVersions';
   }
 
@@ -190,12 +187,11 @@ class L10nLt extends L10n {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return 'Namų serveris palaiko spec. versijas:\n$serverVersions\nTačiau ši programa palaiko tik $supportedVersions';
   }
 

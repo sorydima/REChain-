@@ -171,11 +171,8 @@ class L10nCs extends L10n {
       'Automaticky přehrajte animované nálepky a emoce';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return 'Homeserver podporuje přihlášení typu:\n$serverVersions\nAle tato aplikace podporuje pouze:\n$supportedVersions';
   }
 
@@ -190,12 +187,11 @@ class L10nCs extends L10n {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return 'Homeserver podporuje specifikaci verzí:\n$serverVersions\nAle tato aplikace podporuje pouze verze $supportedVersions';
   }
 

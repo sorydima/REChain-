@@ -172,11 +172,8 @@ class L10nEt extends L10n {
       'Esita liikuvad kleepse ja emotikone automaatselt';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return 'See koduserver toetab Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Networki võrku sisselogimiseks:\n$serverVersions\nAga see rakendus toetab vaid järgmisi võimalusi:\n$supportedVersions';
   }
 
@@ -191,12 +188,11 @@ class L10nEt extends L10n {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return 'See koduserver toetab Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Networki spetsifikatsioonist järgmisi versioone:\n$serverVersions\nAga see rakendus toetab vaid järgmisi versioone: $supportedVersions';
   }
 

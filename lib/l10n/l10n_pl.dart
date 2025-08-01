@@ -171,11 +171,8 @@ class L10nPl extends L10n {
       'Automatycznie odtwarzaj animowane naklejki i emotikony';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return 'Serwer obsługuje typy logowania:\n$serverVersions\nAle ta aplikacja obsługuje tylko:\n$supportedVersions';
   }
 
@@ -190,12 +187,11 @@ class L10nPl extends L10n {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return 'Serwer obsługuje wersje Spec:\n$serverVersions\nAle aplikacja obsługuje tylko $supportedVersions';
   }
 

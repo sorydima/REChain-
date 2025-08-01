@@ -173,11 +173,8 @@ class L10nKa extends L10n {
       'ანიმირებული სტიკერებისა და ემოჯების ავტომატური ჩართვა';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return 'ამ სერვერს აქვს შესვლის მეთოდების მხარდაჭერა:\n$serverVersions\nმაგრამ ამ აპლიკაციას აქვს მხარდაჭერა მხოლოდ:\n$supportedVersions';
   }
 
@@ -192,12 +189,11 @@ class L10nKa extends L10n {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return 'The homeserver supports the Spec versions:\n$serverVersions\nBut this app supports only $supportedVersions';
   }
 

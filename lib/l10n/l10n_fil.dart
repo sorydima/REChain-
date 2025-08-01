@@ -172,11 +172,8 @@ class L10nFil extends L10n {
       'Awtomatikong i-play ang mga gumagalaw na sticker at emote';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return 'Ang homeserver ay sinusuportahan ang sumusunod na uri ng login:\n$serverVersions\nNgunit sinusuportahan lang ng app ang:\n$supportedVersions';
   }
 
@@ -192,12 +189,11 @@ class L10nFil extends L10n {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return 'Ang homeserver ay sinusuportahan ang mga Spec bersyon:\n$serverVersions\nNgunit sinusuportahan lang ng app ang $supportedVersions';
   }
 

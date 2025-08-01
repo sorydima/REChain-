@@ -170,11 +170,8 @@ class L10nVi extends L10n {
       'Automatically play animated stickers and emotes';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return 'Máy chủ nhà hỗ trợ kiểu đăng nhập:\n$serverVersions\nNhưng ứng dụng này chỉ hỗ trợ:\n$supportedVersions';
   }
 
@@ -189,12 +186,11 @@ class L10nVi extends L10n {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return 'Máy chủ nhà hỗ trợ Spec phiên bản:\n$serverVerions\nNhưng ứng dụng này chỉ hỗ trợ $supportedVersions';
   }
 

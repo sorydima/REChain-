@@ -173,11 +173,8 @@ class L10nTr extends L10n {
       'Canlandırmalı çıkartmaları ve ifadeleri otomatik olarak oynat';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return 'Ana sunucu aşağıdaki oturum açma türlerini destekliyor:\n$serverVersions\nAncak bu uygulama yalnızca aşağıdakileri destekliyor:\n$supportedVersions';
   }
 
@@ -192,12 +189,11 @@ class L10nTr extends L10n {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return 'Ana sunucu aşağıdaki Spec sürümlerini destekliyor:\n$serverVersions\nAncak bu uygulama yalnızca $supportedVersions destekliyor';
   }
 

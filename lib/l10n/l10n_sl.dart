@@ -173,11 +173,8 @@ class L10nSl extends L10n {
       'Samodejno predvajajte animirane nalepke in čustva';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return 'Domači strežnik podpira vrste prijave:\n$serverVersions\nToda ta aplikacija podpira samo:\n$supportedVersions';
   }
 
@@ -192,12 +189,11 @@ class L10nSl extends L10n {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return 'Domači strežnik podpira različice Spec:\n$serverVersions\nToda ta aplikacija podpira samo $supportedVersions';
   }
 

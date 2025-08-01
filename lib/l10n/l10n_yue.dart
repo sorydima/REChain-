@@ -166,11 +166,8 @@ class L10nYue extends L10n {
   String get autoplayImages => '自動播放動畫貼紙同表情';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return '呢個 Homeserver 支持嘅登錄類型有：\n$serverVersions\n但係呢個 App 淨係支援：\n$supportedVersions';
   }
 
@@ -185,12 +182,11 @@ class L10nYue extends L10n {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return '呢個 Homeserver 支持以下 Spec 版本：\n$serverVersions\n但係個 App 淨係支持 $supoortedVersions 版本';
   }
 

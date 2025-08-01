@@ -171,11 +171,8 @@ class L10nEo extends L10n {
       'Memage ludi movbildajn glumarkojn kaj mienetojn';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return 'La hejmservilo subtenas la jenajn specojn de salutoj:\n$serverVersions\nSed ĉi tiu aplikaĵo subtenas nur:\n$supportedVersions';
   }
 
@@ -190,12 +187,11 @@ class L10nEo extends L10n {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return 'La hejmservilo subtenas la jenajn version de la specifaĵo:\n$serverVersions\nSed ĉi tiu aplikaĵo subtenas nur $supportedVersions';
   }
 

@@ -171,11 +171,8 @@ class L10nRo extends L10n {
   String get autoplayImages => 'Anima automatic stickere și emote animate';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return 'Homeserver-ul suportă următoarele feluri de login:\n$serverVersions\nDar această aplicație suportă numai:\n$supportedVersions';
   }
 
@@ -190,12 +187,11 @@ class L10nRo extends L10n {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return 'Homeserver-ul suportă versiunele de Spec următoare:\n$serverVersions\nDar această aplicație suportă numai $supportedVersions';
   }
 

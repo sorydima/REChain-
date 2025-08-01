@@ -171,11 +171,8 @@ class L10nSk extends L10n {
       'Automatically play animated stickers and emotes';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return 'Server podporuje tieto typy prihlásenia:\n$serverVersions\nAle táto aplikácia podporuje iba:\n$supportedVersions';
   }
 
@@ -190,12 +187,11 @@ class L10nSk extends L10n {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return 'Domovský server podporuje verzie špecifikácie:\n$serverVersions\nAle táto aplikácie podporuje iba $supportedVersions';
   }
 

@@ -171,11 +171,8 @@ class L10nSr extends L10n {
       'Automatically play animated stickers and emotes';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return 'Домаћи сервер подржава начине пријаве:\n$serverVersions\nали ова апликација подржава само:\n$supportedVersions';
   }
 
@@ -190,12 +187,11 @@ class L10nSr extends L10n {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return 'Домаћи сервер подржава верзије:\n$serverVersions\nали ова апликација подржава само $supportedVersions';
   }
 

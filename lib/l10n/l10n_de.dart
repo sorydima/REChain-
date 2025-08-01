@@ -172,11 +172,8 @@ class L10nDe extends L10n {
       'Animierte Sticker und Emotes automatisch abspielen';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return 'Der Homeserver unterstützt diese Anmelde-Typen:\n$serverVersions\nAber diese App unterstützt nur:\n$supportedVersions';
   }
 
@@ -192,12 +189,11 @@ class L10nDe extends L10n {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return 'Der Homeserver unterstützt die Spec-Versionen:\n$serverVersions\nAber diese App unterstützt nur:\n$supportedVersions';
   }
 

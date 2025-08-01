@@ -166,11 +166,8 @@ class L10nZh extends L10n {
   String get autoplayImages => '自动播放动态贴纸和表情';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return '主服务器支持的登录方式：\n$serverVersions\n但此应用仅支持：\n$supportedVersions';
   }
 
@@ -185,12 +182,11 @@ class L10nZh extends L10n {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return '主服务器支持的 Spec 版本：\n$serverVersions\n但此应用仅支持 $supportedVersions 版本';
   }
 
@@ -2801,11 +2797,8 @@ class L10nZhHant extends L10nZh {
   String get autoplayImages => '自動播放動態貼圖和表情';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return '目前伺服器支援的登入類型：\n$serverVersions\n但本應用程式僅支援：\n$supportedVersions';
   }
 
@@ -2820,12 +2813,11 @@ class L10nZhHant extends L10nZh {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return '目前伺服器支援的協議版本：\n$serverVersions\n但本應用程式僅支援 $supportedVersions';
   }
 

@@ -169,11 +169,8 @@ class L10nFa extends L10n {
   String get autoplayImages => 'پخش خودکار شکلک‌ها و برچسب‌های متحرک';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return 'سرور از این نوع ورود پشتیبانی می‌کند:\n$serverVersions\nاما برنامه تنها از این‌ها پشتیبانی می‌کند:\n$supportedVersions';
   }
 
@@ -188,12 +185,11 @@ class L10nFa extends L10n {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return 'سرور از این نسخه‌های مشخصات پشتیبانی می‌کند:\n$serverVersions\nاما برنامه تنها از این‌ها پشتیبانی می‌کند:\n$supportedVersions';
   }
 

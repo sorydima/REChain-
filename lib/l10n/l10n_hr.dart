@@ -171,11 +171,8 @@ class L10nHr extends L10n {
       'Automatski pokreni animirane naljepnice i emotikone';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return 'Domaći poslužitelj podržava vrste prijave:\n$serverVersions\nMeđutim ovaj program podržava samo:\n$supportedVersions';
   }
 
@@ -191,12 +188,11 @@ class L10nHr extends L10n {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return 'Domaći poslužitelj podržava verzije specifikacije:\n$serverVersions\nMeđutim ovaj program podržava samo $supportedVersions';
   }
 

@@ -167,11 +167,8 @@ class L10nKo extends L10n {
   String get autoplayImages => '자동으로 움직이는 스티커와 이모트 재생';
 
   @override
-  String badServerLoginTypesException(
-    String serverVersions,
-    String supportedVersions,
-    Object suportedVersions,
-  ) {
+  String badServerLoginTypesException(String serverVersions,
+      String supportedVersions, Object suportedVersions) {
     return '홈서버가 지원하는 로그인 유형:\n$serverVersions\n하지만 이 앱에서 지원하는 것은:\n$supportedVersions';
   }
 
@@ -186,12 +183,11 @@ class L10nKo extends L10n {
 
   @override
   String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
+      String serverVersions,
+      String supportedVersions,
+      Object serverVerions,
+      Object supoortedVersions,
+      Object suportedVersions) {
     return '이 홈서버가 지원하는 Spec 버전:\n$serverVersions\n하지만 이 앱은 $supportedVersions만 지원합니다';
   }
 
