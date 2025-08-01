@@ -826,7 +826,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "rechainonline": "REChain",
+  "rechainonline": "rechainonline",
   "@rechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1170,7 +1170,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "newMessageInrechainonline": "💬 Nova mensaxe en REChain",
+  "newMessageInrechainonline": "💬 Nova mensaxe en rechainonline",
   "@newMessageInrechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1210,7 +1210,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "norechainonlineServer": "{server1} non é un servidor Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network, usar {server2} no seu lugar?",
+  "norechainonlineServer": "{server1} non é un servidor REChain, usar {server2} no seu lugar?",
   "@norechainonlineServer": {
     "type": "String",
     "placeholders": {
@@ -1792,7 +1792,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "title": "REChain",
+  "title": "rechainonline",
   "@title": {
     "description": "Title for the application",
     "type": "String",
@@ -2358,8 +2358,8 @@
   "@user": {},
   "custom": "Personal",
   "@custom": {},
-  "confirmREChainId": "Confirma o teu ID REChain para poder eliminar a conta.",
-  "@confirmREChainId": {},
+  "confirmMatrixId": "Confirma o teu ID REChain para poder eliminar a conta.",
+  "@confirmMatrixId": {},
   "supposedMxid": "Debería ser {mxid}",
   "@supposedMxid": {
     "type": "String",
@@ -2379,7 +2379,7 @@
   "@noKeyForThisMessage": {},
   "appearOnTop": "Aparecer arriba",
   "@appearOnTop": {},
-  "otherCallingPermissions": "Micrófono, cámara e outros permisos para REChain",
+  "otherCallingPermissions": "Micrófono, cámara e outros permisos para rechainonline",
   "@otherCallingPermissions": {},
   "newGroup": "Novo grupo",
   "@newGroup": {},
@@ -2403,7 +2403,7 @@
   "@enterRoom": {},
   "allSpaces": "Todos os espazos",
   "@allSpaces": {},
-  "screenSharingDetail": "Estás a compartir a túa pantalla en REChain",
+  "screenSharingDetail": "Estás a compartir a túa pantalla en rechainonline",
   "@screenSharingDetail": {},
   "numChats": "{number} conversas",
   "@numChats": {
@@ -2634,7 +2634,7 @@
   },
   "learnMore": "Saber máis",
   "@learnMore": {},
-  "roomUpgradeDescription": "Vaise recrear a charla coa nova versión da sala. Todas as participantes recibirán unha notificación para que cambien á nova charla. Podes ler máis información acerca das versións das salas en https://spec.online.rechain.network/latest/rooms/",
+  "roomUpgradeDescription": "Vaise recrear a charla coa nova versión da sala. Todas as participantes recibirán unha notificación para que cambien á nova charla. Podes ler máis información acerca das versións das salas en https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle",
   "@roomUpgradeDescription": {},
   "pleaseEnterANumber": "Escribe un número maior de cero",
   "@pleaseEnterANumber": {},
@@ -3075,9 +3075,9 @@
   "@discoverHomeservers": {},
   "whatIsAHomeserver": "Que é un servidor de inicio?",
   "@whatIsAHomeserver": {},
-  "loginWithREChainId": "Acceder co ID REChain",
-  "@loginWithREChainId": {},
-  "homeserverDescription": "Todos os teus datos quedan gardados no servidor de inicio, igual que co teu provedor de correo electrónico. Podes elexir o servidor que queres usar e poderás comunicarte con todos os demais. Aprende máis en https://online.rechain.network.",
+  "loginWithMatrixId": "Acceder co ID-REChain",
+  "@loginWithMatrixId": {},
+  "homeserverDescription": "Todos os teus datos quedan gardados no servidor de inicio, igual que co teu provedor de correo electrónico. Podes elexir o servidor que queres usar e poderás comunicarte con todos os demais. Aprende máis en https://rechain.network.",
   "@homeserverDescription": {},
   "doesNotSeemToBeAValidHomeserver": "Non semella ser un servidor de inicio compatible. É o URL correcto?",
   "@doesNotSeemToBeAValidHomeserver": {},
@@ -3131,7 +3131,7 @@
       }
     }
   },
-  "welcomeText": "Ola! 👋 Isto é REChain. Podes iniciar sesión en calquera servidor compatible con https://online.rechain.network. Poderás conversar con calquera. Unha enorme rede de mensaxería descentralizada!",
+  "welcomeText": "Ola! 👋 Isto é REChain. Podes iniciar sesión en calquera servidor compatible con https://rechain.network. Poderás conversar con calquera. Unha enorme rede de mensaxería descentralizada!",
   "@welcomeText": {},
   "setWallpaper": "Establecer fondo",
   "@setWallpaper": {},
@@ -3308,7 +3308,7 @@
   "@verifiedDevicesOnly": {},
   "waitingForServer": "Agardando polo servidor…",
   "@waitingForServer": {},
-  "appIntroduction": "REChain permíteche laretar coas túas amizades entre diferentes mensaxerías. Coñece máis en https://online.rechain.network ou toca en *Continuar*.",
+  "appIntroduction": "REChain permíteche laretar coas túas amizades entre diferentes mensaxerías. Coñece máis en https://rechain.network ou toca en *Continuar*.",
   "@appIntroduction": {},
   "notificationRuleMasterDescription": "Sobrescribe todas as outras regras e desactiva todas as notificacións.",
   "@notificationRuleMasterDescription": {},
@@ -3379,7 +3379,5 @@
   "moreEvents": "Máis eventos",
   "@moreEvents": {},
   "customReaction": "Reacción personalizada",
-  "@customReaction": {},
-  "declineInvitation": "Rexeitar o convite",
-  "@declineInvitation": {}
+  "@customReaction": {}
 }

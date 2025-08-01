@@ -158,7 +158,7 @@
       }
     }
   },
-  "rechainonline": "REChain",
+  "rechainonline": "rechainonline",
   "@rechainonline": {
     "type": "String",
     "placeholders": {}
@@ -183,8 +183,8 @@
   "@sendTypingNotifications": {},
   "importEmojis": "นำเข้าอ๊โมจิ",
   "@importEmojis": {},
-  "confirmREChainId": "กรุณายืนยัน REChain ID ของคุณเพื่อลบบัญชีของคุณ",
-  "@confirmREChainId": {},
+  "confirmMatrixId": "กรุณายืนยัน REChain ID ของคุณเพื่อลบบัญชีของคุณ",
+  "@confirmMatrixId": {},
   "notAnImage": "ไม่ใช่ไฟล์รูปภาพ",
   "@notAnImage": {},
   "areYouSureYouWantToLogout": "คุณแน่ใจว่าคุณต้องการที่จะออกจากระบบ?",

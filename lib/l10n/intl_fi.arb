@@ -1,7 +1,7 @@
 {
   "repeatPassword": "Salasana uudelleen",
   "@repeatPassword": {},
-  "about": "Tietoa REChain",
+  "about": "Tietoa REChainista",
   "@about": {
     "type": "String",
     "placeholders": {}
@@ -121,7 +121,7 @@
   },
   "sendOnEnter": "Lähetä painamalla rivinvaihtonäppäintä",
   "@sendOnEnter": {},
-  "badServerVersionsException": "Kotipalvelin tukee Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network Spec versio(it)a:\n{serverVersions}, mutta tämä sovellus tukee vain versio(it)a {supportedVersions}",
+  "badServerVersionsException": "Kotipalvelin tukee REChain Spec versio(it)a:\n{serverVersions}, mutta tämä sovellus tukee vain versio(it)a {supportedVersions}",
   "@badServerVersionsException": {
     "type": "String",
     "placeholders": {
@@ -800,7 +800,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "inviteText": "{username} kutsui sinut REChain.\n1. Viereaile sivulla: https://online.rechain.network ja asenna sovellus\n2. Rekisteröidy tai kirjaudu sisään\n3. Avaa kutsulinkki:\n{link}",
+  "inviteText": "{username} kutsui sinut REChaintiin.\n1. Viereaile sivulla: https://online.rechain.network ja asenna sovellus\n2. Rekisteröidy tai kirjaudu sisään\n3. Avaa kutsulinkki:\n{link}",
   "@inviteText": {
     "type": "String",
     "placeholders": {
@@ -973,7 +973,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "norechainonlineServer": "{server1} ei ole Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network-palvelin, käytetäänkö {server2} sen sijaan?",
+  "norechainonlineServer": "{server1} ei ole REChain-palvelin, käytetäänkö {server2} sen sijaan?",
   "@norechainonlineServer": {
     "type": "String",
     "placeholders": {
@@ -1239,7 +1239,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "rechainonline": "REChain",
+  "rechainonline": "rechainonline",
   "@rechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1645,7 +1645,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "title": "REChain",
+  "title": "rechainonline",
   "@title": {
     "description": "Title for the application",
     "type": "String",
@@ -2332,7 +2332,7 @@
   "@pleaseEnterRecoveryKeyDescription": {},
   "unlockOldMessages": "Pura vanhojen viestien salaus",
   "@unlockOldMessages": {},
-  "indexedDbErrorLong": "Viestivarasto ei ole käytössä yksityisselauksessa oletuksena.\nKäythän osoitteessa\n - about:config\n - Aseta dom.indexedDB.privateBrowsing.enabled arvoon true\nMuuten REChain käyttäminen ei ole mahdollista.",
+  "indexedDbErrorLong": "Viestivarasto ei ole käytössä yksityisselauksessa oletuksena.\nKäythän osoitteessa\n - about:config\n - Aseta dom.indexedDB.privateBrowsing.enabled arvoon true\nMuuten REChainin käyttäminen ei ole mahdollista.",
   "@indexedDbErrorLong": {},
   "saveKeyManuallyDescription": "Tallenna tämä avain manuaalisesti käyttäen järjestelmän jakodialogia tai leikepöytää.",
   "@saveKeyManuallyDescription": {},
@@ -2356,8 +2356,8 @@
   "@user": {},
   "custom": "Mukautettu",
   "@custom": {},
-  "confirmREChainId": "Kirjoita REChain IDsi uudelleen poistaaksesi tunnuksesi.",
-  "@confirmREChainId": {},
+  "confirmMatrixId": "Kirjoita REChain IDsi uudelleen poistaaksesi tunnuksesi.",
+  "@confirmMatrixId": {},
   "supposedMxid": "Tämän pitäisi olla {mxid}",
   "@supposedMxid": {
     "type": "String",
@@ -2381,11 +2381,11 @@
   "@callingPermissions": {},
   "callingAccount": "Soittamistunnus",
   "@callingAccount": {},
-  "callingAccountDetails": "Sallii REChain käyttää Androidin omaa Puhelut-sovellusta.",
+  "callingAccountDetails": "Sallii REChainin käyttää Androidin omaa Puhelut-sovellusta.",
   "@callingAccountDetails": {},
   "appearOnTop": "Näy päällä",
   "@appearOnTop": {},
-  "appearOnTopDetails": "Sallii sovelluksen näkyä muiden sovellusten päällä (tätä ei tarvita, mikäli olet jo määrittänyt REChain puhelin-tunnukseksi)",
+  "appearOnTopDetails": "Sallii sovelluksen näkyä muiden sovellusten päällä (tätä ei tarvita, mikäli olet jo määrittänyt REChainin puhelin-tunnukseksi)",
   "@appearOnTopDetails": {},
   "newSpace": "Uusi tila",
   "@newSpace": {},
@@ -2397,11 +2397,11 @@
   "@allSpaces": {},
   "screenSharingTitle": "ruudunjako",
   "@screenSharingTitle": {},
-  "otherCallingPermissions": "Mikrofoni, kamera ja muut REChain oikeudet",
+  "otherCallingPermissions": "Mikrofoni, kamera ja muut REChainin oikeudet",
   "@otherCallingPermissions": {},
   "newGroup": "Uusi ryhmä",
   "@newGroup": {},
-  "screenSharingDetail": "Jaat ruutuasi REChain",
+  "screenSharingDetail": "Jaat ruutuasi REChainissä",
   "@screenSharingDetail": {},
   "hugContent": "{senderName} halaa sinua",
   "@hugContent": {
@@ -2601,7 +2601,7 @@
   "@notAnImage": {},
   "chatDescriptionHasBeenChanged": "Keskustelun kuvaus muutettu",
   "@chatDescriptionHasBeenChanged": {},
-  "roomUpgradeDescription": "Keskustelu luodaan uudelleen uudella huoneversiolla. Kaikille osallistujille ilmoitetaan, että heidän tulee siirtyä uuteen keskusteluun. Voit lukea lisää huoneversioista osoitteesta https://spec.online.rechain.network/latest/rooms/",
+  "roomUpgradeDescription": "Keskustelu luodaan uudelleen uudella huoneversiolla. Kaikille osallistujille ilmoitetaan, että heidän tulee siirtyä uuteen keskusteluun. Voit lukea lisää huoneversioista osoitteesta https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle",
   "@roomUpgradeDescription": {},
   "pleaseEnterANumber": "Syötä suurempi luku kuin 0",
   "@pleaseEnterANumber": {},

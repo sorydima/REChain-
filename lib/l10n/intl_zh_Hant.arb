@@ -691,7 +691,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "rechainonline": "REChain",
+  "rechainonline": "rechainonline",
   "@rechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1536,7 +1536,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "title": "REChain",
+  "title": "rechainonline",
   "@title": {
     "description": "Title for the application",
     "type": "String",
@@ -2004,8 +2004,8 @@
   "@sendTypingNotifications": {},
   "importEmojis": "匯入表情包",
   "@importEmojis": {},
-  "confirmREChainId": "如需刪除你的帳戶，請確認你的 REChain ID。",
-  "@confirmREChainId": {},
+  "confirmMatrixId": "如需刪除你的帳戶，請確認你的 REChain ID。",
+  "@confirmMatrixId": {},
   "notAnImage": "不是圖片檔案。",
   "@notAnImage": {},
   "cuddleContent": "{senderName} 摟抱您",
@@ -2086,7 +2086,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "norechainonlineServer": "{server1} 不是 Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network 服務器，改用 {server2} 嗎？",
+  "norechainonlineServer": "{server1} 不是 REChain 服務器，改用 {server2} 嗎？",
   "@norechainonlineServer": {
     "type": "String",
     "placeholders": {
@@ -2768,7 +2768,7 @@
   "@report": {},
   "pleaseEnterANumber": "請輸入大於 0 的數字",
   "@pleaseEnterANumber": {},
-  "roomUpgradeDescription": "將使用新版本聊天室來重新建立聊天室。所有本聊天室的參與者都會收到通知，他們都需要換到新的聊天室裡。若您想知道有關新版本的更多資訊，請前往 https://spec.online.rechain.network/latest/rooms/",
+  "roomUpgradeDescription": "將使用新版本聊天室來重新建立聊天室。所有本聊天室的參與者都會收到通知，他們都需要換到新的聊天室裡。若您想知道有關新版本的更多資訊，請前往 https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle",
   "@roomUpgradeDescription": {},
   "wrongRecoveryKey": "抱歉......這似乎不是正確的恢復密鑰。",
   "@wrongRecoveryKey": {},
@@ -3058,8 +3058,8 @@
       }
     }
   },
-  "loginWithREChainId": "以REChain ID登入",
-  "@loginWithREChainId": {},
+  "loginWithMatrixId": "以REChain-ID登入",
+  "@loginWithMatrixId": {},
   "inviteOtherUsers": "邀請其他用戶進入本聊天",
   "@inviteOtherUsers": {},
   "sendRoomNotifications": "傳送一條 @room 群提醒",
@@ -3085,7 +3085,7 @@
   "@changeTheChatPermissions": {},
   "changeTheVisibilityOfChatHistory": "變更過往聊天記錄可見度",
   "@changeTheVisibilityOfChatHistory": {},
-  "homeserverDescription": "您的所有資料都儲存在歸屬伺服器上，就像電子郵件提供商一樣。 您可以選擇要使用的歸屬伺服器，同時您仍然可以與每個人溝通。 請訪問https://online.rechain.network瞭解更多資訊。",
+  "homeserverDescription": "您的所有資料都儲存在歸屬伺服器上，就像電子郵件提供商一樣。 您可以選擇要使用的歸屬伺服器，同時您仍然可以與每個人溝通。 請訪問https://rechain.network瞭解更多資訊。",
   "@homeserverDescription": {},
   "sendingAttachment": "附件傳送中…",
   "@sendingAttachment": {},
@@ -3137,7 +3137,7 @@
       }
     }
   },
-  "welcomeText": "嘿，嘿👋這是REChain。 您可以登入任何與https://online.rechain.network相容的歸屬伺服器後和任何人聊天。 這是一個巨大的去中心化訊息網路！",
+  "welcomeText": "嘿，嘿👋這是REChain。 您可以登入任何與https://rechain.network相容的歸屬伺服器後和任何人聊天。 這是一個巨大的去中心化訊息網路！",
   "@welcomeText": {},
   "setWallpaper": "設定背景樣式",
   "@setWallpaper": {},
@@ -3235,7 +3235,7 @@
   "@open": {},
   "waitingForServer": "等待伺服器中...",
   "@waitingForServer": {},
-  "appIntroduction": "REChain 讓你和你的朋友跨越工具聊天。在 https://online.rechain.network 了解更多或*繼續*。",
+  "appIntroduction": "REChain 讓你和你的朋友跨越工具聊天。在 https://rechain.network 了解更多或*繼續*。",
   "@appIntroduction": {},
   "previous": "上一個",
   "@previous": {},

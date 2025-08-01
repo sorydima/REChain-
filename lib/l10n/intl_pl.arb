@@ -743,7 +743,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "rechainonline": "REChain",
+  "rechainonline": "rechainonline",
   "@rechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1047,7 +1047,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "newMessageInrechainonline": "💬 Nowa wiadomość we REChain",
+  "newMessageInrechainonline": "💬 Nowa wiadomość we rechainonline",
   "@newMessageInrechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1386,7 +1386,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "title": "REChain",
+  "title": "rechainonline",
   "@title": {
     "description": "Title for the application",
     "type": "String",
@@ -2197,8 +2197,8 @@
   },
   "commandHint_markasdm": "Oznacz jako pokój wiadomości bezpośrednich dla podanego REChain ID",
   "@commandHint_markasdm": {},
-  "confirmREChainId": "Potwierdź swój identyfikator Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network w celu usunięcia konta.",
-  "@confirmREChainId": {},
+  "confirmMatrixId": "Potwierdź swój identyfikator REChain w celu usunięcia konta.",
+  "@confirmMatrixId": {},
   "commandHint_markasgroup": "Oznacz jako grupę",
   "@commandHint_markasgroup": {},
   "noEmotesFound": "Nie znaleziono żadnych emotikonów. 😕",
@@ -2428,7 +2428,7 @@
   "@storeSecurlyOnThisDevice": {},
   "foregroundServiceRunning": "To powiadomienie pojawia się, gdy usługa w tle jest uruchomiona.",
   "@foregroundServiceRunning": {},
-  "screenSharingDetail": "Udostępniasz swój ekran w REChain",
+  "screenSharingDetail": "Udostępniasz swój ekran w rechainonline",
   "@screenSharingDetail": {},
   "callingAccount": "Konto połączeń",
   "@callingAccount": {},
@@ -2436,7 +2436,7 @@
   "@callingAccountDetails": {},
   "appearOnTop": "Wyświetlaj nad innymi",
   "@appearOnTop": {},
-  "otherCallingPermissions": "Mikrofon, kamera i inne uprawnienia REChain",
+  "otherCallingPermissions": "Mikrofon, kamera i inne uprawnienia rechainonline",
   "@otherCallingPermissions": {},
   "whyIsThisMessageEncrypted": "Dlaczego nie można odczytać tej wiadomości?",
   "@whyIsThisMessageEncrypted": {},
@@ -2697,9 +2697,9 @@
       }
     }
   },
-  "commandHint_ignore": "Ignoruj podany identyfikator Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network",
+  "commandHint_ignore": "Ignoruj podany identyfikator REChain",
   "@commandHint_ignore": {},
-  "commandHint_unignore": "Przestań ignorować podany identyfikator Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network",
+  "commandHint_unignore": "Przestań ignorować podany identyfikator REChain",
   "@commandHint_unignore": {},
   "changeTheChatPermissions": "Zmień uprawnienia w czacie",
   "@changeTheChatPermissions": {},
@@ -2843,7 +2843,7 @@
   "@changeTheDescriptionOfTheGroup": {},
   "sendCanceled": "Anulowano wysyłanie",
   "@sendCanceled": {},
-  "homeserverDescription": "Wszystkie Twoje dane trzymane są na serwerze domowym, jak u dostawców usług e-mail. Możesz wybrać swój serwer domowy i nadal rozmawiać ze wszystkimi. Dowiedz się więcej na https://online.rechain.network.",
+  "homeserverDescription": "Wszystkie Twoje dane trzymane są na serwerze domowym, jak u dostawców usług e-mail. Możesz wybrać swój serwer domowy i nadal rozmawiać ze wszystkimi. Dowiedz się więcej na https://rechain.network.",
   "@homeserverDescription": {},
   "doesNotSeemToBeAValidHomeserver": "Wydaje się nie być kompatybilnym serwerem domowym. Niepoprawny adres URL?",
   "@doesNotSeemToBeAValidHomeserver": {},
@@ -2867,7 +2867,7 @@
       }
     }
   },
-  "welcomeText": "No cześć! 👋 Tutaj REChain. Możesz zapisać się do dowolnego serwera domowego, kompatybilnego z https://online.rechain.network i rozmawiać ze wszystkimi. To duża zdecentralizowana sieć czatów!",
+  "welcomeText": "No cześć! 👋 Tutaj REChain. Możesz zapisać się do dowolnego serwera domowego, kompatybilnego z https://rechain.network i rozmawiać ze wszystkimi. To duża zdecentralizowana sieć czatów!",
   "@welcomeText": {},
   "blur": "Rozmazanie:",
   "@blur": {},
@@ -3059,13 +3059,13 @@
   "@discoverHomeservers": {},
   "whatIsAHomeserver": "Czym jest serwer domowy?",
   "@whatIsAHomeserver": {},
-  "loginWithREChainId": "Zaloguj się identyfikatorem Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network",
-  "@loginWithREChainId": {},
+  "loginWithMatrixId": "Zaloguj się identyfikatorem REChain",
+  "@loginWithMatrixId": {},
   "passwordsDoNotMatch": "Hasła się nie zgadzają",
   "@passwordsDoNotMatch": {},
   "unbanUserDescription": "Użytkownik będzie w stanie dołączyć do czatu ponownie.",
   "@unbanUserDescription": {},
-  "roomUpgradeDescription": "Czat zostanie przeniesiony do pokoju w nowej wersji. Wszyscy użytkownicy zostaną powiadomieni o konieczności dołączenia do nowego czatu. Możesz dowiedzieć się więcej o wersjach pokojów na https://spec.online.rechain.network/latest/rooms/",
+  "roomUpgradeDescription": "Czat zostanie przeniesiony do pokoju w nowej wersji. Wszyscy użytkownicy zostaną powiadomieni o konieczności dołączenia do nowego czatu. Możesz dowiedzieć się więcej o wersjach pokojów na https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle",
   "@roomUpgradeDescription": {},
   "userWouldLikeToChangeTheChat": "{user} chce dołączyć do czatu.",
   "@userWouldLikeToChangeTheChat": {
@@ -3303,7 +3303,7 @@
   },
   "waitingForServer": "Oczekiwanie na serwer...",
   "@waitingForServer": {},
-  "appIntroduction": "REChain umożliwia czatowanie ze znajomymi za pośrednictwem różnych komunikatorów. Dowiedz się więcej na stronie https://online.rechain.network lub kliknij na *Kontynuuj*.",
+  "appIntroduction": "REChain umożliwia czatowanie ze znajomymi za pośrednictwem różnych komunikatorów. Dowiedz się więcej na stronie https://rechain.network lub kliknij na *Kontynuuj*.",
   "@appIntroduction": {},
   "previous": "Poprzedni",
   "@previous": {},
@@ -3373,15 +3373,5 @@
   "youHaveKnocked": "Zapukałeś/-aś",
   "@youHaveKnocked": {},
   "pleaseWaitUntilInvited": "Proszę zaczekać na zaproszenie przez kogoś z pokoju.",
-  "@pleaseWaitUntilInvited": {},
-  "commandHint_logout": "Wyloguj bieżące urządzenie",
-  "@commandHint_logout": {},
-  "commandHint_logoutall": "Wyloguj wszystkie aktywne urządzenia",
-  "@commandHint_logoutall": {},
-  "displayNavigationRail": "Pokazuj pasek nawigacyjny na urządzeniach mobilnych",
-  "@displayNavigationRail": {},
-  "customReaction": "Własna reakcja",
-  "@customReaction": {},
-  "moreEvents": "Więcej zdarzeń",
-  "@moreEvents": {}
+  "@pleaseWaitUntilInvited": {}
 }

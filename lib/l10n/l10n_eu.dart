@@ -76,7 +76,7 @@ class L10nEu extends L10n {
   String get addEmail => 'Gehitu ePosta';
 
   @override
-  String get confirmREChainId =>
+  String get confirmMatrixId =>
       'Baieztatu zure REChain IDa kontua ezabatu ahal izateko.';
 
   @override
@@ -402,7 +402,7 @@ class L10nEu extends L10n {
   String get commandHint_invite => 'Gonbidatu erabiltzailea gela honetara';
 
   @override
-  String get commandHint_join => 'Batu adierazitako gelara';
+  String get commandHint_join => 'Batu gelara';
 
   @override
   String get commandHint_kick => 'Kendu erabiltzaile hori gela honetatik';
@@ -686,7 +686,7 @@ class L10nEu extends L10n {
   String get fileName => 'Fitxategiaren izena';
 
   @override
-  String get rechainonline => 'REChain';
+  String get rechainonline => 'rechainonline';
 
   @override
   String get fontSize => 'Letraren tamaina';
@@ -831,7 +831,7 @@ class L10nEu extends L10n {
 
   @override
   String inviteText(String username, String link) {
-    return '$username(e)k REChain gonbidatu zaitu.\n1. Bisitatu https://online.rechain.network eta instalatu aplikazioa\n2. Eman izena edo hasi saioa\n3. Ireki gonbidapen-esteka:\n$link';
+    return '$username(e)k REChainera gonbidatu zaitu.\n1. Bisitatu https://online.rechain.network eta instalatu aplikazioa\n2. Eman izena edo hasi saioa\n3. Ireki gonbidapen-esteka:\n$link';
   }
 
   @override
@@ -955,7 +955,7 @@ class L10nEu extends L10n {
   String get newChat => 'Txat berria';
 
   @override
-  String get newMessageInrechainonline => '💬 Mezu berria REChain';
+  String get newMessageInrechainonline => '💬 Mezu berria REChainen';
 
   @override
   String get newVerificationRequest => 'Egiaztaketa-eskaera berria!';
@@ -982,7 +982,7 @@ class L10nEu extends L10n {
 
   @override
   String norechainonlineServer(String server1, String server2) {
-    return '$server1 ez da Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network zerbitzari bat, $server2 erabili nahi duzu haren ordez?';
+    return '$server1 ez da REChain zerbitzari bat, $server2 erabili nahi duzu haren ordez?';
   }
 
   @override
@@ -1429,7 +1429,7 @@ class L10nEu extends L10n {
   String get theyMatch => 'Bat datoz';
 
   @override
-  String get title => 'REChain';
+  String get title => 'rechainonline';
 
   @override
   String get toggleFavorite => 'Ikusi / Ezkutatu gogokoak';
@@ -1856,7 +1856,7 @@ class L10nEu extends L10n {
   String get screenSharingTitle => 'pantaila-partekatzea';
 
   @override
-  String get screenSharingDetail => 'Pantaila REChain partekatzen ari zara';
+  String get screenSharingDetail => 'Pantaila REChainen partekatzen ari zara';
 
   @override
   String get callingPermissions => 'Deitzeko baimenak';
@@ -1877,7 +1877,7 @@ class L10nEu extends L10n {
 
   @override
   String get otherCallingPermissions =>
-      'Mikrofono, kamera eta REChain beste baimen batzuk';
+      'Mikrofono, kamera eta REChainen beste baimen batzuk';
 
   @override
   String get whyIsThisMessageEncrypted => 'Zergatik ezin da mezu hau irakurri?';
@@ -2003,10 +2003,10 @@ class L10nEu extends L10n {
   String get invite => 'Gonbidatu';
 
   @override
-  String get inviteGroupChat => '📨 Taldeko txatera gonbidapena';
+  String get inviteGroupChat => '📨 Gonbidatu taldeko txatera';
 
   @override
-  String get invitePrivateChat => '📨 Txat pribatura gonbidapena';
+  String get invitePrivateChat => '📨 Gonbidatu txat pribatura';
 
   @override
   String get invalidInput => 'Sartu duzunak ez du balio!';
@@ -2025,7 +2025,7 @@ class L10nEu extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      'Gela bertsio berri gisa birsortuko da txata. Partaide guztiei jakinaraziko zaie txat berrira aldatu behar direla. Gehiago irakur dezakezu gela bertsioei buruz ondorengo estekan: https://spec.online.rechain.network/latest/rooms/';
+      'Gela bertsio berri gisa birsortuko da txata. Partaide guztiei jakinaraziko zaie txat berrira aldatu behar direla. Gehiago irakur dezakezu gela bertsioei buruz ondorengo estekan: https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle';
 
   @override
   String get removeDevicesDescription =>
@@ -2362,7 +2362,7 @@ class L10nEu extends L10n {
   String get sendCanceled => 'Bidalketa bertan behera utzi da';
 
   @override
-  String get loginWithREChainId => 'Hasi saioa REChain IDarekin';
+  String get loginWithMatrixId => 'Hasi saioa REChain IDarekin';
 
   @override
   String get discoverHomeservers => 'Arakatu zerbitzariak';
@@ -2372,7 +2372,7 @@ class L10nEu extends L10n {
 
   @override
   String get homeserverDescription =>
-      'Zerbitzariak datuak gordetzen ditu, ePosta hornitzaileek mezuak gordetzen dituzten bezala. Nahi duzun zerbitzaria aukeratu dezakezu eta, hala ere, besteetako edonorekin hitz egin. Ikasi gehiago https://online.rechain.network webgunean.';
+      'Zerbitzariak datuak gordetzen ditu, ePosta hornitzaileek mezuak gordetzen dituzten bezala. Nahi duzun zerbitzaria aukeratu dezakezu eta, hala ere, besteetako edonorekin hitz egin. Ikasi gehiago https://rechain.network webgunean.';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
@@ -2416,7 +2416,7 @@ class L10nEu extends L10n {
 
   @override
   String get welcomeText =>
-      'Ieup 👋 Ongi etorri REChain-era. https://online.rechain.network-rekin bateragarria den edozein zerbitzaritan hasi dezakezu saioa eta edonorekin txateatu. Mezularitza-sare deszentralizatu eraraldoia da!';
+      'Ieup 👋 Ongi etorri REChain-era. https://rechain.network-rekin bateragarria den edozein zerbitzaritan hasi dezakezu saioa eta edonorekin txateatu. Mezularitza-sare deszentralizatu eraraldoia da!';
 
   @override
   String get blur => 'Lausotu:';
@@ -2505,7 +2505,7 @@ class L10nEu extends L10n {
 
   @override
   String get appIntroduction =>
-      'REChainek mezularitza-programa desberdinak erabiltzen dituzten lagunekin txateatzea ahalbidetzen dizu. Ikasi gehiago https://online.rechain.network estekan edo sakatu *Jarraitu*.';
+      'REChainek mezularitza-programa desberdinak erabiltzen dituzten lagunekin txateatzea ahalbidetzen dizu. Ikasi gehiago https://rechain.network estekan edo sakatu *Jarraitu*.';
 
   @override
   String get newChatRequest => '📩 Txat-eskaera berria';
@@ -2676,7 +2676,7 @@ class L10nEu extends L10n {
 
   @override
   String sentVoiceMessage(String sender, String duration) {
-    return '🎙️ $duration - $sender(r)en ahots-mezua';
+    return '🎙️ $duration - $sender';
   }
 
   @override
@@ -2732,21 +2732,17 @@ class L10nEu extends L10n {
       'Orain itxaron gelako norbaitek gonbidatzen zaituen arte.';
 
   @override
-  String get commandHint_logout => 'Amaitu saioa gailu honetan';
+  String get commandHint_logout => 'Logout your current device';
 
   @override
-  String get commandHint_logoutall =>
-      'Amaitu saioa aktibo dauden gailu guztietan';
+  String get commandHint_logoutall => 'Logout all active devices';
 
   @override
-  String get displayNavigationRail => 'Erakutsi nabigazio-barra mugikorrean';
+  String get displayNavigationRail => 'Show navigation rail on mobile';
 
   @override
-  String get customReaction => 'Erreakzio pertsonalizatua';
+  String get customReaction => 'Custom reaction';
 
   @override
-  String get moreEvents => 'Gertaera gehiago';
-
-  @override
-  String get declineInvitation => 'Uko egin gonbidapenari';
+  String get moreEvents => 'More events';
 }

@@ -76,8 +76,8 @@ class L10nNl extends L10n {
   String get addEmail => 'Email toevoegen';
 
   @override
-  String get confirmREChainId =>
-      'Bevestig jouw REChain ID om je account te verwijderen.';
+  String get confirmMatrixId =>
+      'Bevestig jouw REChain-ID om je account te verwijderen.';
 
   @override
   String supposedMxid(String mxid) {
@@ -685,7 +685,7 @@ class L10nNl extends L10n {
   String get fileName => 'Bestandsnaam';
 
   @override
-  String get rechainonline => 'REChain';
+  String get rechainonline => 'rechainonline';
 
   @override
   String get fontSize => 'Lettergrootte';
@@ -952,7 +952,7 @@ class L10nNl extends L10n {
   String get newChat => 'Nieuwe chat';
 
   @override
-  String get newMessageInrechainonline => '💬 Nieuw bericht in REChain';
+  String get newMessageInrechainonline => '💬 Nieuw bericht in rechainonline';
 
   @override
   String get newVerificationRequest => 'Nieuw verificatieverzoek!';
@@ -979,7 +979,7 @@ class L10nNl extends L10n {
 
   @override
   String norechainonlineServer(String server1, String server2) {
-    return '$server1 is geen Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network-server, wil je $server2 gebruiken?';
+    return '$server1 is geen REChain-server, wil je $server2 gebruiken?';
   }
 
   @override
@@ -1425,7 +1425,7 @@ class L10nNl extends L10n {
   String get theyMatch => 'Ze komen overeen';
 
   @override
-  String get title => 'REChain';
+  String get title => 'rechainonline';
 
   @override
   String get toggleFavorite => 'Favoriet in- of uitschakelen';
@@ -2024,7 +2024,7 @@ class L10nNl extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      'De chat zal dan opnieuw gemaakt worden met de nieuwe kamerversie. Alle deelnemers worden geïnformeerd dat ze moeten overstappen naar de nieuwe chat. Je kan meer lezen over kamerversies op https://spec.online.rechain.network/latest/rooms/';
+      'De chat zal dan opnieuw gemaakt worden met de nieuwe kamerversie. Alle deelnemers worden geïnformeerd dat ze moeten overstappen naar de nieuwe chat. Je kan meer lezen over kamerversies op https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle';
 
   @override
   String get removeDevicesDescription =>
@@ -2359,7 +2359,7 @@ class L10nNl extends L10n {
   String get sendCanceled => 'Versturen geannuleerd';
 
   @override
-  String get loginWithREChainId => 'Inloggen met REChain ID';
+  String get loginWithMatrixId => 'Inloggen met REChain ID';
 
   @override
   String get discoverHomeservers => 'Ontdek servers';
@@ -2369,7 +2369,7 @@ class L10nNl extends L10n {
 
   @override
   String get homeserverDescription =>
-      'Al je data is opgeslagen op de server, net als bij een email-leverancier. Je kan kiezen welke server je gebruikt en toch communiceren met iedereen. Lees meer op https://online.rechain.network.';
+      'Al je data is opgeslagen op de server, net als bij een email-leverancier. Je kan kiezen welke server je gebruikt en toch communiceren met iedereen. Lees meer op https://rechain.network.';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
@@ -2413,7 +2413,7 @@ class L10nNl extends L10n {
 
   @override
   String get welcomeText =>
-      'Hallo hallo 👋 Dit is REChain. Je kan inloggen op elke server die werkt met https://online.rechain.network. En dan chat je met iedereen. Het is een groot decentraal chat-netwerk!';
+      'Hallo hallo 👋 Dit is REChain. Je kan inloggen op elke server die werkt met https://rechain.network. En dan chat je met iedereen. Het is een groot decentraal chat-netwerk!';
 
   @override
   String get blur => 'Vervaag:';
@@ -2501,7 +2501,7 @@ class L10nNl extends L10n {
 
   @override
   String get appIntroduction =>
-      'REChain laat je chatten met je vrienden tussen verschillende chat-netwerken. Lees meer op https://online.rechain.network of tik *Continue*.';
+      'REChain laat je chatten met je vrienden tussen verschillende chat-netwerken. Lees meer op https://rechain.network of tik *Continue*.';
 
   @override
   String get newChatRequest => '📩 Nieuw chat verzoek';
@@ -2741,7 +2741,4 @@ class L10nNl extends L10n {
 
   @override
   String get moreEvents => 'Meer gebeurtenissen';
-
-  @override
-  String get declineInvitation => 'Uitnodiging afwijzen';
 }

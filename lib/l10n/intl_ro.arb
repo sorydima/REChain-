@@ -548,7 +548,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "rechainonline": "REChain",
+  "rechainonline": "rechainonline",
   "@rechainonline": {
     "type": "String",
     "placeholders": {}
@@ -706,7 +706,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "title": "REChain",
+  "title": "rechainonline",
   "@title": {
     "description": "Title for the application",
     "type": "String",
@@ -1351,11 +1351,11 @@
   "@user": {},
   "custom": "Personalizat",
   "@custom": {},
-  "screenSharingDetail": "Partajați ecranul în REChain",
+  "screenSharingDetail": "Partajați ecranul în rechainonline",
   "@screenSharingDetail": {},
   "storeSecurlyOnThisDevice": "Stoca sigur pe acest dispozitiv",
   "@storeSecurlyOnThisDevice": {},
-  "otherCallingPermissions": "Microfon, cameră și alte permisiuni lui REChain",
+  "otherCallingPermissions": "Microfon, cameră și alte permisiuni lui rechainonline",
   "@otherCallingPermissions": {},
   "whyIsThisMessageEncrypted": "De ce este acest mesaj ilizibil?",
   "@whyIsThisMessageEncrypted": {},
@@ -1493,7 +1493,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "norechainonlineServer": "{server1} nu este server Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network, înlocuiți cu {server2}?",
+  "norechainonlineServer": "{server1} nu este server REChain, înlocuiți cu {server2}?",
   "@norechainonlineServer": {
     "type": "String",
     "placeholders": {
@@ -1720,7 +1720,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "newMessageInrechainonline": "💬 Mesaj nou în REChain",
+  "newMessageInrechainonline": "💬 Mesaj nou în rechainonline",
   "@newMessageInrechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1780,8 +1780,8 @@
     "type": "String",
     "placeholders": {}
   },
-  "confirmREChainId": "Vă rugăm să confirmați REChain ID-ul vostru să ștergeți contul vostru.",
-  "@confirmREChainId": {},
+  "confirmMatrixId": "Vă rugăm să confirmați REChain ID-ul vostru să ștergeți contul vostru.",
+  "@confirmMatrixId": {},
   "cuddleContent": "{senderName} vă îmbrățișează",
   "@cuddleContent": {
     "type": "String",

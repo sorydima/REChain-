@@ -9,7 +9,7 @@ class L10nTa extends L10n {
   L10nTa([String locale = 'ta']) : super(locale);
 
   @override
-  String get alwaysUse24HourFormat => 'தவறு';
+  String get alwaysUse24HourFormat => '';
 
   @override
   String get repeatPassword => 'கடவுச்சொல்லை மீண்டும் செய்யவும்';
@@ -18,17 +18,17 @@ class L10nTa extends L10n {
   String get notAnImage => 'படக் கோப்பு அல்ல.';
 
   @override
-  String get setCustomPermissionLevel => 'தனிப்பயன் இசைவு அளவை அமைக்கவும்';
+  String get setCustomPermissionLevel => 'Set custom permission level';
 
   @override
   String get setPermissionsLevelDescription =>
-      'தயவுசெய்து கீழே ஒரு முன் வரையறுக்கப்பட்ட பாத்திரத்தைத் தேர்வுசெய்க அல்லது 0 மற்றும் 100 க்கு இடையில் தனிப்பயன் இசைவு நிலையை உள்ளிடவும்.';
+      'Please choose a predefined role below or enter a custom permission level between 0 and 100.';
 
   @override
-  String get ignoreUser => 'பயனரை புறக்கணிக்கவும்';
+  String get ignoreUser => 'Ignore user';
 
   @override
-  String get normalUser => 'சாதாரண பயனர்';
+  String get normalUser => 'Normal user';
 
   @override
   String get remove => 'அகற்று';
@@ -76,7 +76,7 @@ class L10nTa extends L10n {
   String get addEmail => 'மின்னஞ்சல் சேர்க்கவும்';
 
   @override
-  String get confirmREChainId =>
+  String get confirmMatrixId =>
       'உங்கள் கணக்கை நீக்க உங்கள் மேட்ரிக்ச் ஐடியை உறுதிப்படுத்தவும்.';
 
   @override
@@ -104,7 +104,7 @@ class L10nTa extends L10n {
 
   @override
   String get commandHint_roomupgrade =>
-      'கொடுக்கப்பட்ட அறை பதிப்பிற்கு இந்த அறையை மேம்படுத்தவும்';
+      'Upgrade this room to the given room version';
 
   @override
   String get commandHint_googly => 'சில கூகிள் கண்களை அனுப்பவும்';
@@ -208,7 +208,7 @@ class L10nTa extends L10n {
 
   @override
   String get noChatsFoundHere =>
-      'இங்கே அரட்டைகள் எதுவும் காணப்படவில்லை. கீழே உள்ள பொத்தானைப் பயன்படுத்தி ஒருவருடன் புதிய அரட்டையைத் தொடங்கவும். ⤵️';
+      'இங்கே அரட்டைகள் எதுவும் காணப்படவில்லை. கீழே உள்ள பொத்தானைப் பயன்படுத்தி ஒருவருடன் புதிய அரட்டையைத் தொடங்கவும். .';
 
   @override
   String get joinedChats => 'இணைந்த அரட்டைகள்';
@@ -496,7 +496,7 @@ class L10nTa extends L10n {
   }
 
   @override
-  String get checkList => 'சரிபார்ப்பு பட்டியல்';
+  String get checkList => 'Check list';
 
   @override
   String countParticipants(int count) {
@@ -505,7 +505,7 @@ class L10nTa extends L10n {
 
   @override
   String countInvited(int count) {
-    return '$count அழைக்கப்பட்டது';
+    return '$count invited';
   }
 
   @override
@@ -976,7 +976,7 @@ class L10nTa extends L10n {
   String get noConnectionToTheServer => 'சேவையகத்துடன் எந்த தொடர்பும் இல்லை';
 
   @override
-  String get noEmotesFound => 'உணர்ச்சிகள் எதுவும் காணப்படவில்லை. 😕';
+  String get noEmotesFound => 'உணர்ச்சிகள் எதுவும் காணப்படவில்லை. .';
 
   @override
   String get noEncryptionForPublicRooms =>
@@ -1141,7 +1141,7 @@ class L10nTa extends L10n {
 
   @override
   String play(String fileName) {
-    return '$fileName இயக்கு';
+    return 'Play $fileName';
   }
 
   @override
@@ -1427,7 +1427,7 @@ class L10nTa extends L10n {
 
   @override
   String synchronizingPleaseWaitCounter(String percentage) {
-    return ' ஒத்திசைத்தல்… ($percentage%)';
+    return ' Synchronizing… ($percentage%)';
   }
 
   @override
@@ -1487,7 +1487,7 @@ class L10nTa extends L10n {
   String get unmuteChat => 'மாறுதல் அரட்டை';
 
   @override
-  String get unpin => 'மூள்நீக்கு';
+  String get unpin => 'Unpin';
 
   @override
   String unreadChats(int unreadCount) {
@@ -1624,7 +1624,7 @@ class L10nTa extends L10n {
   String get yourPublicKey => 'உங்கள் பொது விசை';
 
   @override
-  String get messageInfo => 'செய்தி தகவல்';
+  String get messageInfo => 'செய்தி செய்தி';
 
   @override
   String get time => 'நேரம்';
@@ -1687,7 +1687,7 @@ class L10nTa extends L10n {
   String get emojis => 'ஈமோசிகள்';
 
   @override
-  String get placeCall => 'அழைப்பு இடு';
+  String get placeCall => 'அழைப்பு அழைப்பு';
 
   @override
   String get voiceCall => 'குரல் அழைப்பு';
@@ -2046,7 +2046,7 @@ class L10nTa extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      'அரட்டை பின்னர் புதிய அறை பதிப்பில் மீண்டும் உருவாக்கப்படும். பங்கேற்பாளர்கள் அனைவருக்கும் புதிய அரட்டைக்கு மாற வேண்டும் என்று அறிவிக்கப்படும். அறை பதிப்புகள் பற்றி மேலும் அறிய https://spec.online.rechain.network/latest/rooms/';
+      'அரட்டை பின்னர் புதிய அறை பதிப்பில் மீண்டும் உருவாக்கப்படும். பங்கேற்பாளர்கள் அனைவருக்கும் புதிய அரட்டைக்கு மாற வேண்டும் என்று அறிவிக்கப்படும். அறை பதிப்புகள் பற்றி மேலும் அறிய https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle';
 
   @override
   String get removeDevicesDescription =>
@@ -2243,14 +2243,14 @@ class L10nTa extends L10n {
 
   @override
   String get verifyOtherUserDescription =>
-      'நீங்கள் மற்றொரு பயனரைச் சரிபார்த்தால், நீங்கள் உண்மையில் யாருக்கு எழுதுகிறீர்கள் என்பது உங்களுக்குத் தெரியும் என்பதை நீங்கள் உறுதியாக நம்பலாம். 💪\n\nநீங்கள் ஒரு சரிபார்ப்பைத் தொடங்கும்போது, நீங்களும் மற்ற பயனரும் பயன்பாட்டில் ஒரு பாப்அப்பைக் காண்பீர்கள். நீங்கள் ஒருவருக்கொருவர் ஒப்பிட வேண்டிய தொடர்ச்சியான ஈமோசிகள் அல்லது எண்களைக் காண்பீர்கள்.\n\nஇதைச் செய்வதற்கான சிறந்த வழி வீடியோ அழைப்பைச் சந்திப்பது அல்லது தொடங்குவது. 👭';
+      'நீங்கள் மற்றொரு பயனரைச் சரிபார்த்தால், நீங்கள் உண்மையில் யாருக்கு எழுதுகிறீர்கள் என்பது உங்களுக்குத் தெரியும் என்பதை நீங்கள் உறுதியாக நம்பலாம். .\n\n நீங்கள் ஒரு சரிபார்ப்பைத் தொடங்கும்போது, நீங்களும் மற்ற பயனரும் பயன்பாட்டில் ஒரு பாப்அப்பைக் காண்பீர்கள். நீங்கள் ஒருவருக்கொருவர் ஒப்பிட வேண்டிய தொடர்ச்சியான ஈமோசிகள் அல்லது எண்களைக் காண்பீர்கள்.\n\n இதைச் செய்வதற்கான சிறந்த வழி வீடியோ அழைப்பைச் சந்திப்பது அல்லது தொடங்குவது. .';
 
   @override
   String get verifyOtherDevice => 'Sevice பிற சாதனத்தை சரிபார்க்கவும்';
 
   @override
   String get verifyOtherDeviceDescription =>
-      'நீங்கள் மற்றொரு சாதனத்தைச் சரிபார்க்கும்போது, அந்தச் சாதனங்கள் விசைகளைப் பரிமாறிக்கொள்ளலாம், உங்கள் ஒட்டுமொத்த பாதுகாப்பை அதிகரிக்கும். 💪 நீங்கள் ஒரு சரிபார்ப்பைத் தொடங்கும்போது, இரண்டு சாதனங்களிலும் பயன்பாட்டில் ஒரு பாப்அப் தோன்றும். நீங்கள் ஒருவருக்கொருவர் ஒப்பிட வேண்டிய தொடர்ச்சியான ஈமோசிகள் அல்லது எண்களைக் காண்பீர்கள். நீங்கள் சரிபார்ப்பைத் தொடங்குவதற்கு முன்பு இரண்டு சாதனங்களையும் எளிதில் வைத்திருப்பது நல்லது. 🤳';
+      'நீங்கள் மற்றொரு சாதனத்தை சரிபார்க்கும்போது, அந்த சாதனங்கள் விசைகளை பரிமாறிக்கொள்ளலாம், உங்கள் ஒட்டுமொத்த பாதுகாப்பை அதிகரிக்கும். So நீங்கள் ஒரு சரிபார்ப்பைத் தொடங்கும்போது, இரண்டு சாதனங்களிலும் பயன்பாட்டில் ஒரு பாப்அப் தோன்றும். நீங்கள் ஒருவருக்கொருவர் ஒப்பிட வேண்டிய தொடர்ச்சியான ஈமோசிகள் அல்லது எண்களைக் காண்பீர்கள். நீங்கள் சரிபார்ப்பைத் தொடங்குவதற்கு முன்பு இரண்டு சாதனங்களையும் எளிதில் வைத்திருப்பது நல்லது. .';
 
   @override
   String acceptedKeyVerification(String sender) {
@@ -2385,7 +2385,7 @@ class L10nTa extends L10n {
   String get sendCanceled => 'அனுப்பப்பட்டது ரத்து செய்யப்பட்டது';
 
   @override
-  String get loginWithREChainId => 'மேட்ரிக்ச்-ஐடியுடன் உள்நுழைக';
+  String get loginWithMatrixId => 'மேட்ரிக்ச்-ஐடியுடன் உள்நுழைக';
 
   @override
   String get discoverHomeservers => 'ஓம்சர்சர்களைக் கண்டறியவும்';
@@ -2395,7 +2395,7 @@ class L10nTa extends L10n {
 
   @override
   String get homeserverDescription =>
-      'உங்கள் எல்லா தரவுகளும் ஒரு மின்னஞ்சல் வழங்குநரைப் போலவே ஓம்சர்வரில் சேமிக்கப்படுகின்றன. நீங்கள் எந்த ஓம்சர்வரை பயன்படுத்த விரும்புகிறீர்கள் என்பதை நீங்கள் தேர்வு செய்யலாம், அதே நேரத்தில் நீங்கள் எல்லோரிடமும் தொடர்பு கொள்ளலாம். Https://online.rechain.network இல் மேலும் அறிக.';
+      'உங்கள் எல்லா தரவுகளும் ஒரு மின்னஞ்சல் வழங்குநரைப் போலவே ஓம்சர்வரில் சேமிக்கப்படுகின்றன. நீங்கள் எந்த ஓம்சர்வரை பயன்படுத்த விரும்புகிறீர்கள் என்பதை நீங்கள் தேர்வு செய்யலாம், அதே நேரத்தில் நீங்கள் எல்லோரிடமும் தொடர்பு கொள்ளலாம். https://rechain.network இல் மேலும் அறிக.';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
@@ -2440,7 +2440,7 @@ class L10nTa extends L10n {
 
   @override
   String get welcomeText =>
-      'ஏய் ஏய் 👋 இது பஞ்சுபோன்றது. Https://online.rechain.network உடன் இணக்கமான எந்த ஓம்சர்வரில் நீங்கள் உள்நுழையலாம். பின்னர் யாருடனும் அரட்டையடிக்கவும். இது ஒரு பெரிய பரவலாக்கப்பட்ட செய்தியிடல் நெட்வொர்க்!';
+      'ஏய் ஏய் 👋 இது பஞ்சுபோன்றது. https://rechain.network உடன் இணக்கமான எந்த ஓம்சர்வரில் நீங்கள் உள்நுழையலாம். பின்னர் யாருடனும் அரட்டையடிக்கவும். இது ஒரு பெரிய பரவலாக்கப்பட்ட செய்தியிடல் நெட்வொர்க்!';
 
   @override
   String get blur => 'மங்கலானது:';
@@ -2505,270 +2505,265 @@ class L10nTa extends L10n {
       'அரட்டையில் சேர முடியவில்லை. ஒருவேளை மற்ற கட்சி ஏற்கனவே உரையாடலை மூடியிருக்கலாம்.';
 
   @override
-  String get previous => 'முந்தைய';
+  String get previous => 'Previous';
 
   @override
   String get otherPartyNotLoggedIn =>
-      'மற்ற கட்சி தற்போது உள்நுழைந்திருக்கவில்லை, எனவே செய்திகளைப் பெற முடியாது!';
+      'The other party is currently not logged in and therefore cannot receive messages!';
 
   @override
   String appWantsToUseForLogin(String server) {
-    return 'உள்நுழைய \'$server\' ஐப் பயன்படுத்தவும்';
+    return 'Use \'$server\' to log in';
   }
 
   @override
   String get appWantsToUseForLoginDescription =>
-      'உங்களைப் பற்றிய தகவல்களைப் பகிர பயன்பாடு மற்றும் வலைத்தளத்தை இதன்மூலம் அனுமதிக்கிறீர்கள்.';
+      'You hereby allow the app and website to share information about you.';
 
   @override
-  String get open => 'திற';
+  String get open => 'Open';
 
   @override
-  String get waitingForServer => 'சேவையகத்திற்காக காத்திருக்கிறது ...';
+  String get waitingForServer => 'Waiting for server...';
 
   @override
   String get appIntroduction =>
-      'வெவ்வேறு தூதர்களில் உங்கள் நண்பர்களுடன் அரட்டையடிக்க உங்களை பஞ்சுபோன்றது உங்களை அனுமதிக்கிறது. Https://online.rechain.network இல் மேலும் அறிக அல்லது *தொடரவும் *தட்டவும்.';
+      'REChain lets you chat with your friends across different messengers. Learn more at https://rechain.network or just tap *Continue*.';
 
   @override
-  String get newChatRequest => 'அரட்டை கோரிக்கை';
+  String get newChatRequest => '📩 New chat request';
 
   @override
-  String get contentNotificationSettings => 'உள்ளடக்க அறிவிப்பு அமைப்புகள்';
+  String get contentNotificationSettings => 'Content notification settings';
 
   @override
-  String get generalNotificationSettings => 'பொது அறிவிப்பு அமைப்புகள்';
+  String get generalNotificationSettings => 'General notification settings';
 
   @override
-  String get roomNotificationSettings => 'அறை அறிவிப்பு அமைப்புகள்';
+  String get roomNotificationSettings => 'Room notification settings';
 
   @override
   String get userSpecificNotificationSettings =>
-      'பயனர் குறிப்பிட்ட அறிவிப்பு அமைப்புகள்';
+      'User specific notification settings';
 
   @override
-  String get otherNotificationSettings => 'பிற அறிவிப்பு அமைப்புகள்';
+  String get otherNotificationSettings => 'Other notification settings';
 
   @override
-  String get notificationRuleContainsUserName => 'பயனர் பெயரைக் கொண்டுள்ளது';
+  String get notificationRuleContainsUserName => 'Contains User Name';
 
   @override
   String get notificationRuleContainsUserNameDescription =>
-      'ஒரு செய்தியில் அவற்றின் பயனர்பெயர் இருக்கும்போது பயனருக்கு அறிவிக்கிறது.';
+      'Notifies the user when a message contains their username.';
 
   @override
-  String get notificationRuleMaster => 'அனைத்து அறிவிப்புகளையும் முடக்குகிறது';
+  String get notificationRuleMaster => 'Mute all notifications';
 
   @override
   String get notificationRuleMasterDescription =>
-      'மற்ற எல்லா விதிகளையும் மீறி அனைத்து அறிவிப்புகளையும் முடக்குகிறது.';
+      'Overrides all other rules and disables all notifications.';
 
   @override
-  String get notificationRuleSuppressNotices => 'தானியங்கு செய்திகளை அடக்கவும்';
+  String get notificationRuleSuppressNotices => 'Suppress Automated Messages';
 
   @override
   String get notificationRuleSuppressNoticesDescription =>
-      'போட்ச் போன்ற தானியங்கி வாடிக்கையாளர்களிடமிருந்து அறிவிப்புகளை அடக்குகிறது.';
+      'Suppresses notifications from automated clients like bots.';
 
   @override
-  String get notificationRuleInviteForMe => 'எனக்கு அழைக்கவும்';
+  String get notificationRuleInviteForMe => 'Invite for Me';
 
   @override
   String get notificationRuleInviteForMeDescription =>
-      'ஒரு அறைக்கு அழைக்கப்படும்போது பயனருக்கு அறிவிக்கிறது.';
+      'Notifies the user when they are invited to a room.';
 
   @override
-  String get notificationRuleMemberEvent => 'உறுப்பினர் நிகழ்வு';
+  String get notificationRuleMemberEvent => 'Member Event';
 
   @override
   String get notificationRuleMemberEventDescription =>
-      'உறுப்பினர் நிகழ்வுகளுக்கான அறிவிப்புகளை அடக்குகிறது.';
+      'Suppresses notifications for membership events.';
 
   @override
-  String get notificationRuleIsUserMention => 'பயனர் குறிப்பு';
+  String get notificationRuleIsUserMention => 'User Mention';
 
   @override
   String get notificationRuleIsUserMentionDescription =>
-      'ஒரு செய்தியில் நேரடியாக குறிப்பிடப்படும்போது பயனருக்கு அறிவிக்கிறது.';
+      'Notifies the user when they are directly mentioned in a message.';
 
   @override
-  String get notificationRuleContainsDisplayName =>
-      'காட்சி பெயரைக் கொண்டுள்ளது';
+  String get notificationRuleContainsDisplayName => 'Contains Display Name';
 
   @override
   String get notificationRuleContainsDisplayNameDescription =>
-      'ஒரு செய்தியில் அவற்றின் காட்சி பெயர் இருக்கும்போது பயனருக்கு அறிவிக்கிறது.';
+      'Notifies the user when a message contains their display name.';
 
   @override
-  String get notificationRuleIsRoomMention => 'அறை குறிப்பு';
+  String get notificationRuleIsRoomMention => 'Room Mention';
 
   @override
   String get notificationRuleIsRoomMentionDescription =>
-      'ஒரு அறை குறிப்பு இருக்கும்போது பயனருக்கு அறிவிக்கிறது.';
+      'Notifies the user when there is a room mention.';
 
   @override
-  String get notificationRuleRoomnotif => 'அறை அறிவிப்பு';
+  String get notificationRuleRoomnotif => 'Room Notification';
 
   @override
   String get notificationRuleRoomnotifDescription =>
-      'ஒரு செய்தியில் \'@ROOM\' இருக்கும்போது பயனருக்கு அறிவிக்கிறது.';
+      'Notifies the user when a message contains \'@room\'.';
 
   @override
-  String get notificationRuleTombstone => 'கல்லறை';
+  String get notificationRuleTombstone => 'Tombstone';
 
   @override
   String get notificationRuleTombstoneDescription =>
-      'அறை செயலிழக்கச் செய்திகளைப் பற்றி பயனருக்கு அறிவிக்கிறது.';
+      'Notifies the user about room deactivation messages.';
 
   @override
-  String get notificationRuleReaction => 'எதிர்வினை';
+  String get notificationRuleReaction => 'Reaction';
 
   @override
   String get notificationRuleReactionDescription =>
-      'எதிர்வினைகளுக்கான அறிவிப்புகளை அடக்குகிறது.';
+      'Suppresses notifications for reactions.';
 
   @override
-  String get notificationRuleRoomServerAcl => 'அறை சேவையகம் ACL';
+  String get notificationRuleRoomServerAcl => 'Room Server ACL';
 
   @override
   String get notificationRuleRoomServerAclDescription =>
-      'அறை சேவையக அணுகல் கட்டுப்பாட்டு பட்டியல்களுக்கான (ACL) அறிவிப்புகளை அடக்குகிறது.';
+      'Suppresses notifications for room server access control lists (ACL).';
 
   @override
-  String get notificationRuleSuppressEdits => 'திருத்தங்களை அடக்கவும்';
+  String get notificationRuleSuppressEdits => 'Suppress Edits';
 
   @override
   String get notificationRuleSuppressEditsDescription =>
-      'திருத்தப்பட்ட செய்திகளுக்கான அறிவிப்புகளை அடக்குகிறது.';
+      'Suppresses notifications for edited messages.';
 
   @override
-  String get notificationRuleCall => 'அழை';
+  String get notificationRuleCall => 'Call';
 
   @override
   String get notificationRuleCallDescription =>
-      'அழைப்புகள் பற்றி பயனருக்கு அறிவிக்கிறது.';
+      'Notifies the user about calls.';
 
   @override
   String get notificationRuleEncryptedRoomOneToOne =>
-      'மறைகுறியாக்கப்பட்ட அறை ஒன்றுக்கு ஒன்று';
+      'Encrypted Room One-to-One';
 
   @override
   String get notificationRuleEncryptedRoomOneToOneDescription =>
-      'மறைகுறியாக்கப்பட்ட ஒன்றுக்கு ஒன்று அறைகளில் செய்திகளைப் பற்றி பயனருக்கு அறிவிக்கிறது.';
+      'Notifies the user about messages in encrypted one-to-one rooms.';
 
   @override
-  String get notificationRuleRoomOneToOne => 'அறை ஒன்று';
+  String get notificationRuleRoomOneToOne => 'Room One-to-One';
 
   @override
   String get notificationRuleRoomOneToOneDescription =>
-      'ஒருவருக்கு ஒன்று அறைகளில் செய்திகளைப் பற்றி பயனருக்கு அறிவிக்கிறது.';
+      'Notifies the user about messages in one-to-one rooms.';
 
   @override
-  String get notificationRuleMessage => 'செய்தி';
+  String get notificationRuleMessage => 'Message';
 
   @override
   String get notificationRuleMessageDescription =>
-      'பொதுவான செய்திகளைப் பற்றி பயனருக்கு அறிவிக்கிறது.';
+      'Notifies the user about general messages.';
 
   @override
-  String get notificationRuleEncrypted => 'குறியாக்கப்பட்டது';
+  String get notificationRuleEncrypted => 'Encrypted';
 
   @override
   String get notificationRuleEncryptedDescription =>
-      'மறைகுறியாக்கப்பட்ட அறைகளில் செய்திகளைப் பற்றி பயனருக்கு அறிவிக்கிறது.';
+      'Notifies the user about messages in encrypted rooms.';
 
   @override
-  String get notificationRuleJitsi => 'சியோட்ச்';
+  String get notificationRuleJitsi => 'Jitsi';
 
   @override
   String get notificationRuleJitsiDescription =>
-      'சிட்சி விட்செட் நிகழ்வுகளைப் பற்றி பயனருக்கு அறிவிக்கிறது.';
+      'Notifies the user about Jitsi widget events.';
 
   @override
-  String get notificationRuleServerAcl => 'சேவையக ACL நிகழ்வுகளை அடக்கவும்';
+  String get notificationRuleServerAcl => 'Suppress Server ACL Events';
 
   @override
   String get notificationRuleServerAclDescription =>
-      'சேவையக ACL நிகழ்வுகளுக்கான அறிவிப்புகளை அடக்குகிறது.';
+      'Suppresses notifications for Server ACL events.';
 
   @override
   String unknownPushRule(String rule) {
-    return 'அறியப்படாத புச் விதி \'$rule\'';
+    return 'Unknown push rule \'$rule\'';
   }
 
   @override
   String sentVoiceMessage(String sender, String duration) {
-    return '🎙️$duration - $sender இலிருந்து குரல் செய்தி';
+    return '🎙️ $duration - Voice message from $sender';
   }
 
   @override
   String get deletePushRuleCanNotBeUndone =>
-      'இந்த அறிவிப்பு அமைப்பை நீங்கள் நீக்கினால், இதை செயல்தவிர்க்க முடியாது.';
+      'If you delete this notification setting, this can not be undone.';
 
   @override
-  String get more => 'மேலும்';
+  String get more => 'More';
 
   @override
-  String get shareKeysWith => 'விசைகளைப் பகிரவும் ...';
+  String get shareKeysWith => 'Share keys with...';
 
   @override
   String get shareKeysWithDescription =>
-      'மறைகுறியாக்கப்பட்ட அரட்டைகளில் உங்கள் செய்திகளுடன் படிக்க எந்த சாதனங்களை நம்ப வேண்டும்?';
+      'Which devices should be trusted so that they can read along your messages in encrypted chats?';
 
   @override
-  String get allDevices => 'அனைத்து சாதனங்களும்';
+  String get allDevices => 'All devices';
 
   @override
   String get crossVerifiedDevicesIfEnabled =>
-      'இயக்கப்பட்டால் சரிபார்க்கப்பட்ட சாதனங்களை குறுக்கு';
+      'Cross verified devices if enabled';
 
   @override
-  String get crossVerifiedDevices => 'குறுக்கு சரிபார்க்கப்பட்ட சாதனங்கள்';
+  String get crossVerifiedDevices => 'Cross verified devices';
 
   @override
-  String get verifiedDevicesOnly => 'சரிபார்க்கப்பட்ட சாதனங்கள் மட்டுமே';
+  String get verifiedDevicesOnly => 'Verified devices only';
 
   @override
-  String get takeAPhoto => 'புகைப்படம் எடுக்கவும்';
+  String get takeAPhoto => 'Take a photo';
 
   @override
-  String get recordAVideo => 'வீடியோவைப் பதிவுசெய்க';
+  String get recordAVideo => 'Record a video';
 
   @override
-  String get optionalMessage => '(விரும்பினால்) செய்தி ...';
+  String get optionalMessage => '(Optional) message...';
 
   @override
-  String get notSupportedOnThisDevice => 'இந்த சாதனத்தில் ஆதரிக்கப்படவில்லை';
+  String get notSupportedOnThisDevice => 'Not supported on this device';
 
   @override
-  String get enterNewChat => 'புதிய அரட்டையை உள்ளிடவும்';
+  String get enterNewChat => 'Enter new chat';
 
   @override
-  String get approve => 'ஒப்புதல்';
+  String get approve => 'Approve';
 
   @override
-  String get youHaveKnocked => 'நீங்கள் தட்டிவிட்டீர்கள்';
+  String get youHaveKnocked => 'You have knocked';
 
   @override
   String get pleaseWaitUntilInvited =>
-      'அறையில் இருந்து யாராவது உங்களை அழைக்கும் வரை தயவுசெய்து இப்போது காத்திருங்கள்.';
+      'Please wait now, until someone from the room invites you.';
 
   @override
-  String get commandHint_logout => 'உங்கள் தற்போதைய சாதனத்தை பதிவு செய்க';
+  String get commandHint_logout => 'Logout your current device';
 
   @override
-  String get commandHint_logoutall =>
-      'அனைத்து செயலில் உள்ள சாதனங்களையும் அனுப்புகிறது';
+  String get commandHint_logoutall => 'Logout all active devices';
 
   @override
-  String get displayNavigationRail => 'மொபைலில் வழிசெலுத்தல் ரெயிலைக் காட்டு';
+  String get displayNavigationRail => 'Show navigation rail on mobile';
 
   @override
-  String get customReaction => 'தனிப்பயன் எதிர்வினை';
+  String get customReaction => 'Custom reaction';
 
   @override
-  String get moreEvents => 'மேலும் நிகழ்வுகள்';
-
-  @override
-  String get declineInvitation => 'Decline invitation';
+  String get moreEvents => 'More events';
 }

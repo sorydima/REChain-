@@ -12,48 +12,48 @@ class L10nFa extends L10n {
   String get alwaysUse24HourFormat => 'false';
 
   @override
-  String get repeatPassword => 'تکرار گذرواژه';
+  String get repeatPassword => 'تکرار رمزعبور';
 
   @override
   String get notAnImage => 'یک فایل تصویری نیست.';
 
   @override
-  String get setCustomPermissionLevel => 'تنظیم سطح دسترسی سفارشی';
+  String get setCustomPermissionLevel => 'Set custom permission level';
 
   @override
   String get setPermissionsLevelDescription =>
-      'لطفاً نقش از پیش تعریف‌شده‌ای را انتخاب کنید یا سطح دسترسی سفارشی بین ۰ تا ۱۰۰ وارد کنید.';
+      'Please choose a predefined role below or enter a custom permission level between 0 and 100.';
 
   @override
-  String get ignoreUser => 'چشم‌پوشی از کاربر';
+  String get ignoreUser => 'Ignore user';
 
   @override
-  String get normalUser => 'کاربر عادی';
+  String get normalUser => 'Normal user';
 
   @override
-  String get remove => 'برداشتن';
+  String get remove => 'حذف کردن';
 
   @override
-  String get importNow => 'اکنون وارد کنید';
+  String get importNow => 'Import now';
 
   @override
-  String get importEmojis => 'وارد کردن شکلک‌ها';
+  String get importEmojis => 'Import Emojis';
 
   @override
-  String get importFromZipFile => 'وارد کردن از پرونده زیپ';
+  String get importFromZipFile => 'Import from .zip file';
 
   @override
-  String get exportEmotePack => 'صادر کردن بسته شکلک به‌صورت زیپ';
+  String get exportEmotePack => 'Export Emote pack as .zip';
 
   @override
-  String get replace => 'جایگزین کردن';
+  String get replace => 'Replace';
 
   @override
   String get about => 'درباره';
 
   @override
   String aboutHomeserver(String homeserver) {
-    return 'درباره $homeserver';
+    return 'About $homeserver';
   }
 
   @override
@@ -69,29 +69,29 @@ class L10nFa extends L10n {
 
   @override
   String activatedEndToEndEncryption(String username) {
-    return '🔐 $username رمزنگاری سراسری را فعال کرد';
+    return '🔐 $username رمزگذاری سرتاسر را فعال کرد';
   }
 
   @override
-  String get addEmail => 'افزودن رایانامه';
+  String get addEmail => 'افزودن ایمیل';
 
   @override
-  String get confirmREChainId =>
-      'برای پاک کردن حساب، لطفاً هویت ماتریکس خود را بپذیرید.';
+  String get confirmMatrixId =>
+      'برای حذف حسابتان، لطفا هویت ماتریکستان را تایید کنید.';
 
   @override
   String supposedMxid(String mxid) {
-    return 'گمان میرود $mxid باشد';
+    return 'این باید $mxid باشد';
   }
 
   @override
-  String get addChatDescription => 'افزودن توضیح گپ...';
+  String get addChatDescription => 'Add a chat description...';
 
   @override
-  String get addToSpace => 'به فضا افزودن';
+  String get addToSpace => 'به فضا اضافه کنید';
 
   @override
-  String get admin => 'مدیر';
+  String get admin => 'ادمین';
 
   @override
   String get alias => 'نام مستعار';
@@ -103,20 +103,21 @@ class L10nFa extends L10n {
   String get allChats => 'همه گپ‌ها';
 
   @override
-  String get commandHint_roomupgrade => 'ارتقای این اتاق به نگارش مشخص‌شده';
+  String get commandHint_roomupgrade =>
+      'Upgrade this room to the given room version';
 
   @override
-  String get commandHint_googly => 'فرستادن چند چشم گوگولی';
+  String get commandHint_googly => 'ارسال چند چشم گوگولی';
 
   @override
-  String get commandHint_cuddle => 'فرستادن آغوش';
+  String get commandHint_cuddle => 'ارسال آغوش';
 
   @override
-  String get commandHint_hug => 'فرستادن بغل';
+  String get commandHint_hug => 'ارسال بغل';
 
   @override
   String googlyEyesContent(String senderName) {
-    return '$senderName برای شما چشم‌های گوگولی می‌فرستد';
+    return '$senderName به شما چشمان گوگولی می‌فرستد';
   }
 
   @override
@@ -131,7 +132,7 @@ class L10nFa extends L10n {
 
   @override
   String answeredTheCall(String senderName) {
-    return '$senderName به تماس پاسخ داد';
+    return '$senderName پاسخ تماس را داد';
   }
 
   @override
@@ -142,13 +143,13 @@ class L10nFa extends L10n {
 
   @override
   String get appLockDescription =>
-      'قفل کردن برنامه با رمز کوتاه هنگام عدم استفاده';
+      'Lock the app when not using with a pin code';
 
   @override
   String get archive => 'بایگانی';
 
   @override
-  String get areGuestsAllowedToJoin => 'آیا مهمانان اجازه پیوستن دارند';
+  String get areGuestsAllowedToJoin => 'آیا کاربران مهمان اجازه پیوستن دارند';
 
   @override
   String get areYouSure => 'مطمئن هستید؟';
@@ -158,30 +159,30 @@ class L10nFa extends L10n {
 
   @override
   String get askSSSSSign =>
-      'لطفاً عبارت عبور یا کلید بازیابی حافظه امن را وارد کنید تا شخص دیگری را امضا کنید.';
+      'لطفا عبارت عبور یا کلید بازیابی حافظه امن خود را وارد کنید تا بتوانید شخص دیگر را امضا کنید.';
 
   @override
   String askVerificationRequest(String username) {
-    return 'آیا درخواست بازبینی $username را می‌پذیرید؟';
+    return 'این درخواست تایید را از $username می‌پذیرید؟';
   }
 
   @override
-  String get autoplayImages => 'پخش خودکار شکلک‌ها و برچسب‌های متحرک';
+  String get autoplayImages => 'اموجی و برچسب‌های متحرک به طور خودکار پخش شوند';
 
   @override
   String badServerLoginTypesException(String serverVersions,
       String supportedVersions, Object suportedVersions) {
-    return 'سرور از این نوع ورود پشتیبانی می‌کند:\n$serverVersions\nاما برنامه تنها از این‌ها پشتیبانی می‌کند:\n$supportedVersions';
+    return 'سرور می‌تواند این گونه‌های ورود‮ را پشتیباتی کند:\n$serverVersions\nولی این برنامه فقط می‌تواند این‌ها را پشتیبانی کند:\n$supportedVersions';
   }
 
   @override
-  String get sendTypingNotifications => 'فرستادن آگاه‌سازهای نوشتن';
+  String get sendTypingNotifications => 'Send typing notifications';
 
   @override
-  String get swipeRightToLeftToReply => 'کشیدن از راست به چپ برای پاسخ';
+  String get swipeRightToLeftToReply => 'Swipe right to left to reply';
 
   @override
-  String get sendOnEnter => 'فرستادن با کلید Enter';
+  String get sendOnEnter => 'ارسال با کلید تعويض سطر';
 
   @override
   String badServerVersionsException(
@@ -190,87 +191,87 @@ class L10nFa extends L10n {
       Object serverVerions,
       Object supoortedVersions,
       Object suportedVersions) {
-    return 'سرور از این نسخه‌های مشخصات پشتیبانی می‌کند:\n$serverVersions\nاما برنامه تنها از این‌ها پشتیبانی می‌کند:\n$supportedVersions';
+    return 'سرور می‌تواند این نسخه‌های مشخصات را پشتیبانی کند:\n$serverVersions\nولی این برنامه فقط می‌تواند این‌ها را پشتیبانی کند:\n$supportedVersions';
   }
 
   @override
   String countChatsAndCountParticipants(int chats, int participants) {
-    return '$chats گپ و $participants شرکت‌کننده';
+    return '$chats chats and $participants participants';
   }
 
   @override
-  String get noMoreChatsFound => 'گپ دیگری پیدا نشد...';
+  String get noMoreChatsFound => 'No more chats found...';
 
   @override
   String get noChatsFoundHere =>
-      'اینجا هنوز گپی پیدا نشد. با استفاده از دکمه زیر گپ جدیدی با کسی شروع کنید. ⤵️';
+      'No chats found here yet. Start a new chat with someone by using the button below. ⤵️';
 
   @override
-  String get joinedChats => 'گپ‌های پیوسته';
+  String get joinedChats => 'Joined chats';
 
   @override
-  String get unread => 'خوانده‌نشده';
+  String get unread => 'Unread';
 
   @override
-  String get space => 'فضا';
+  String get space => 'Space';
 
   @override
-  String get spaces => 'فضاها';
+  String get spaces => 'Spaces';
 
   @override
-  String get banFromChat => 'محروم کردن از گپ';
+  String get banFromChat => 'از گپ محروم کنید';
 
   @override
-  String get banned => 'محروم‌شده';
+  String get banned => 'محروم شده';
 
   @override
   String bannedUser(String username, String targetName) {
-    return '$username کاربر $targetName را محروم کرد';
+    return '$username $targetName را محروم کرد';
   }
 
   @override
-  String get blockDevice => 'مسدود کردن دستگاه';
+  String get blockDevice => 'دستگاه را مسدود کنید';
 
   @override
-  String get blocked => 'مسدود‌شده';
+  String get blocked => 'مسدود شده';
 
   @override
-  String get botMessages => 'پیام‌های ربات';
+  String get botMessages => 'پیام‌های روبات';
 
   @override
-  String get cancel => 'رد کردن';
+  String get cancel => 'لغو';
 
   @override
   String cantOpenUri(String uri) {
-    return 'نمی‌توان پیوند $uri را باز کرد';
+    return 'نمی‌توانیم این آدرس اینترنتی را باز کنیم: $uri';
   }
 
   @override
-  String get changeDeviceName => 'تغییر نام دستگاه';
+  String get changeDeviceName => 'نام دستگاه را تغییر دهید';
 
   @override
   String changedTheChatAvatar(String username) {
-    return '$username نماد گپ را تغییر داد';
+    return '$username تصویر گپ را تغییر داد';
   }
 
   @override
   String changedTheChatDescriptionTo(String username, String description) {
-    return '$username توضیح گپ را به \'$description\' تغییر داد';
+    return '$username توصیف گپ را تغییر داد به: «$description»';
   }
 
   @override
   String changedTheChatNameTo(String username, String chatname) {
-    return '$username نام گپ را به \'$chatname\' تغییر داد';
+    return '$username نام گپ را تغییر داد به: «$chatname»';
   }
 
   @override
   String changedTheChatPermissions(String username) {
-    return '$username دسترسی‌های گپ را تغییر داد';
+    return '$username اجازه‌های گپ را تغییر داد';
   }
 
   @override
   String changedTheDisplaynameTo(String username, String displayname) {
-    return '$username نام نمایشی را به \'$displayname\' تغییر داد';
+    return '$username نام نمایشی خود را تغییر داد به: «$displayname»';
   }
 
   @override
@@ -280,17 +281,17 @@ class L10nFa extends L10n {
 
   @override
   String changedTheGuestAccessRulesTo(String username, String rules) {
-    return '$username قوانین دسترسی مهمان را به $rules تغییر داد';
+    return '$username قوانین دسترسی مهمان را تغییر داد به: $rules';
   }
 
   @override
   String changedTheHistoryVisibility(String username) {
-    return '$username ویژگی دیدن تاریخچه را تغییر داد';
+    return '$username قابليت‌ ديدن‌ تاریخچه را تغییر داد';
   }
 
   @override
   String changedTheHistoryVisibilityTo(String username, String rules) {
-    return '$username ویژگی دیدن تاریخچه را به $rules تغییر داد';
+    return '$username قابليت‌ ديدن‌ تاریخچه را تغییر داد به: $rules';
   }
 
   @override
@@ -300,12 +301,12 @@ class L10nFa extends L10n {
 
   @override
   String changedTheJoinRulesTo(String username, String joinRules) {
-    return '$username قوانین پیوستن را به $joinRules تغییر داد';
+    return '$username قوانین پیوستن را تغییر داد به: $joinRules';
   }
 
   @override
   String changedTheProfileAvatar(String username) {
-    return '$username نماد نمایه را تغییر داد';
+    return '$username عکس پروفایل خود را تغییر داد';
   }
 
   @override
@@ -315,121 +316,124 @@ class L10nFa extends L10n {
 
   @override
   String changedTheRoomInvitationLink(String username) {
-    return '$username پیوند دعوت را تغییر داد';
+    return '$username لینک دعوت را تغییر داد';
   }
 
   @override
-  String get changePassword => 'تغییر گذرواژه';
+  String get changePassword => 'تغییر رمز عبور';
 
   @override
-  String get changeTheHomeserver => 'تغییر سرور خانگی';
+  String get changeTheHomeserver => 'تغییر سرور خانه';
 
   @override
-  String get changeTheme => 'تغییر پوسته';
+  String get changeTheme => 'سبک خود را تغییر دهید';
 
   @override
-  String get changeTheNameOfTheGroup => 'تغییر نام گروه';
+  String get changeTheNameOfTheGroup => 'نام گروه را تغییر دهید';
 
   @override
-  String get changeYourAvatar => 'تغییر نماد نمایه';
+  String get changeYourAvatar => 'عکس پروفایل خود را تغییر دهید';
 
   @override
-  String get channelCorruptedDecryptError => 'رمزنگاری مخدوش شده است';
+  String get channelCorruptedDecryptError => 'رمزگذاری مخدوش شده‌ است';
 
   @override
   String get chat => 'گپ';
 
   @override
-  String get yourChatBackupHasBeenSetUp => 'پشتیبان گپ شما تنظیم شد.';
+  String get yourChatBackupHasBeenSetUp => 'پشتیبان گپ‌تان تنظیم شده است.';
 
   @override
   String get chatBackup => 'پشتیبان گپ';
 
   @override
   String get chatBackupDescription =>
-      'پیام‌های قدیمی شما با یک کلید بازیابی امن می‌شوند. لطفاً مطمئن شوید آن را گم نمی‌کنید.';
+      'پیام‌های قدیمی‌تان با یک کلید باز یابی، امن می‌شوند. لطفا مطمئن شوید که آن را گم نمی‌کنید.';
 
   @override
   String get chatDetails => 'جزئیات گپ';
 
   @override
-  String get chatHasBeenAddedToThisSpace => 'گپ به این فضا افزوده شد';
+  String get chatHasBeenAddedToThisSpace => 'گپ به این فضا اضافه شده است';
 
   @override
   String get chats => 'گپ‌ها';
 
   @override
-  String get chooseAStrongPassword => 'یک گذرواژه قوی انتخاب کنید';
+  String get chooseAStrongPassword => 'رمز عبور قوی انتخاب کنید';
 
   @override
-  String get clearArchive => 'پاک کردن بایگانی';
+  String get clearArchive => 'بایگانی را پاک کنید';
 
   @override
   String get close => 'بستن';
 
   @override
   String get commandHint_markasdm =>
-      'علامت‌گذاری به‌عنوان اتاق پیام مستقیم با شناسه ماتریکس';
+      'برای دادن شناسه ماتریکس به عنوان اتاق پیام‌های مستقیم علامت بگذارید';
 
   @override
-  String get commandHint_markasgroup => 'علامت‌گذاری به‌عنوان گروه';
+  String get commandHint_markasgroup => 'به عنوان گروه علامت بگذارید';
 
   @override
-  String get commandHint_ban => 'محروم کردن کاربر مشخص‌شده از این اتاق';
+  String get commandHint_ban => 'کاربر مشخص شده را از این اتاق محروم کنید';
 
   @override
-  String get commandHint_clearcache => 'پاک کردن حافظه نهان';
+  String get commandHint_clearcache => 'حافظه پنھان را پاک کنید';
 
   @override
   String get commandHint_create =>
-      'ساختن یک گپ گروهی خالی\nاز «--no-encryption» برای غیرفعال کردن رمزنگاری استفاده کنید';
+      'یک گپ گروهی خالی بسازید\nاز «--no-encryption» برای غیرفعال کردن رمزگذاری استفاده کنید';
 
   @override
-  String get commandHint_discardsession => 'رد کردن نشست';
+  String get commandHint_discardsession => 'طرد نشست';
 
   @override
   String get commandHint_dm =>
-      'شروع یک گپ مستقیم\nاز «--no-encryption» برای غیرفعال کردن رمزنگاری استفاده کنید';
+      'یک گپ مستقیم شروع کنید\nاز «--no-encryption» برای غیرفعال کردن رمزگذاری استفاده کنید';
 
   @override
-  String get commandHint_html => 'فرستادن متن با قالب HTML';
+  String get commandHint_html => 'متن با فرمت HTML بفرستید';
 
   @override
-  String get commandHint_invite => 'دعوت از کاربر مشخص‌شده به این اتاق';
+  String get commandHint_invite => 'کاربر مشخص شده را به این اتاق دعوت کنید';
 
   @override
-  String get commandHint_join => 'پیوستن به اتاق مشخص‌شده';
+  String get commandHint_join => 'به اتاق مشخص شده بپیوندید';
 
   @override
-  String get commandHint_kick => 'بیرون کردن کاربر مشخص‌شده از این اتاق';
+  String get commandHint_kick => 'کاربر مشخص شده را از این اتاق حذف کنید';
 
   @override
-  String get commandHint_leave => 'ترک این اتاق';
+  String get commandHint_leave => 'این اتاق را ترک کنید';
 
   @override
-  String get commandHint_me => 'توصیف خود';
+  String get commandHint_me => 'خود را توصیف کنید';
 
   @override
   String get commandHint_myroomavatar =>
-      'تنظیم نماد نمایه برای این اتاق (با mxc-uri)';
+      'عکس پروفایل خود را برای این اتاق تنظیم کنید (با mxc-uri)';
 
   @override
-  String get commandHint_myroomnick => 'تنظیم نام نمایشی برای این اتاق';
+  String get commandHint_myroomnick =>
+      'نام نمایشی خود را برای این اتاق تنظیم کنید';
 
   @override
-  String get commandHint_op => 'تنظیم سطح دسترسی کاربر مشخص‌شده (پیش‌فرض: ۵۰)';
+  String get commandHint_op =>
+      'درجه اختیار کاربر مشخص شده را تنظیم کنید (پیشفرض: ۵۰)';
 
   @override
-  String get commandHint_plain => 'فرستادن متن بدون قالب';
+  String get commandHint_plain => 'متن بی‌فرمت بفرستید';
 
   @override
-  String get commandHint_react => 'فرستادن پاسخ به‌عنوان واکنش';
+  String get commandHint_react => 'پاسخ را به عنوان یک واکنش بفرستید';
 
   @override
-  String get commandHint_send => 'فرستادن متن';
+  String get commandHint_send => 'متن را بفرستید';
 
   @override
-  String get commandHint_unban => 'رد محرومیت کاربر مشخص‌شده از این اتاق';
+  String get commandHint_unban =>
+      'محرومیت کاربر مشخص شده را از این اتاق لغو کنید';
 
   @override
   String get commandInvalid => 'دستور نامعتبر';
@@ -440,69 +444,69 @@ class L10nFa extends L10n {
   }
 
   @override
-  String get compareEmojiMatch => 'لطفاً شکلک‌ها را مقایسه کنید';
+  String get compareEmojiMatch => 'لطفا ایموجی‌ها را مقایسه کنید';
 
   @override
-  String get compareNumbersMatch => 'لطفاً اعداد را مقایسه کنید';
+  String get compareNumbersMatch => 'لطفا اعداد را مقایسه کنید';
 
   @override
-  String get configureChat => 'پیکربندی گپ';
+  String get configureChat => 'گپ را تنظیم کنید';
 
   @override
-  String get confirm => 'پذیرفتن';
+  String get confirm => 'تایید';
 
   @override
   String get connect => 'اتصال';
 
   @override
-  String get contactHasBeenInvitedToTheGroup => 'مخاطب به گروه دعوت شد';
+  String get contactHasBeenInvitedToTheGroup => 'مخاطب به گروه دعوت شده است';
 
   @override
-  String get containsDisplayName => 'دارای نام نمایشی';
+  String get containsDisplayName => 'شامل نام نمایشی است';
 
   @override
-  String get containsUserName => 'دارای نام کاربری';
+  String get containsUserName => 'شامل نام کاربری است';
 
   @override
-  String get contentHasBeenReported => 'محتوا به مدیران سرور گزارش شد';
+  String get contentHasBeenReported => 'محتوا به مدیران سرور گزارش شده است';
 
   @override
-  String get copiedToClipboard => 'به بریده‌دان رونوشت شد';
+  String get copiedToClipboard => 'در حافظه کپی شد';
 
   @override
-  String get copy => 'رونوشت';
+  String get copy => 'کپی';
 
   @override
-  String get copyToClipboard => 'رونوشت به بریده‌دان';
+  String get copyToClipboard => 'در حافظه کپی کنید';
 
   @override
   String couldNotDecryptMessage(String error) {
-    return 'نمی‌توان پیام را رمزگشایی کرد: $error';
+    return 'نتوانستیم پیام را رمزگشایی کنیم: $error';
   }
 
   @override
-  String get checkList => 'فهرست بررسی';
+  String get checkList => 'Check list';
 
   @override
   String countParticipants(int count) {
-    return '$count شرکت‌کننده';
+    return '$count شرکت کننده';
   }
 
   @override
   String countInvited(int count) {
-    return '$count دعوت‌شده';
+    return '$count invited';
   }
 
   @override
-  String get create => 'ساختن';
+  String get create => 'ایجاد';
 
   @override
   String createdTheChat(String username) {
-    return '💬 $username گپ را ساخت';
+    return '💬 $username گپ را ایجاد کرد';
   }
 
   @override
-  String get createGroup => 'ساختن گروه';
+  String get createGroup => 'Create group';
 
   @override
   String get createNewSpace => 'فضای جدید';
@@ -511,7 +515,7 @@ class L10nFa extends L10n {
   String get currentlyActive => 'اکنون فعال';
 
   @override
-  String get darkTheme => 'تیره';
+  String get darkTheme => 'تاریک';
 
   @override
   String dateAndTimeOfDay(String date, String timeOfDay) {
@@ -530,25 +534,25 @@ class L10nFa extends L10n {
 
   @override
   String get deactivateAccountWarning =>
-      'این کار حساب شما را غیرفعال می‌کند. این کنش برگشت‌ناپذیر است! آیا مطمئن هستید؟';
+      'این کار حساب کاربری‌تان را غیرفعال خواهد کرد. این عمل قابل جبران و بازگشت نیست! آیا اطمینان دارید؟';
 
   @override
-  String get defaultPermissionLevel => 'سطح دسترسی پیش‌فرض';
+  String get defaultPermissionLevel => 'درجه اجازۀ پیشفرض';
 
   @override
-  String get delete => 'پاک کردن';
+  String get delete => 'حذف';
 
   @override
-  String get deleteAccount => 'پاک کردن حساب';
+  String get deleteAccount => 'حساب را حذف کنید';
 
   @override
-  String get deleteMessage => 'پاک کردن پیام';
+  String get deleteMessage => 'پیام را حذف کنید';
 
   @override
   String get device => 'دستگاه';
 
   @override
-  String get deviceId => 'شناسه دستگاه';
+  String get deviceId => 'هویت دستگاه';
 
   @override
   String get devices => 'دستگاه‌ها';
@@ -560,64 +564,64 @@ class L10nFa extends L10n {
   String get allRooms => 'تمام چت‌های گروهی';
 
   @override
-  String get displaynameHasBeenChanged => 'نام نمایشی تغییر کرد';
+  String get displaynameHasBeenChanged => 'نام نمایشی تغییر یافته است';
 
   @override
-  String get downloadFile => 'بارگیری پرونده';
+  String get downloadFile => 'بارگیری فایل';
 
   @override
   String get edit => 'ویرایش';
 
   @override
-  String get editBlockedServers => 'ویرایش سرورهای مسدود';
+  String get editBlockedServers => 'سرور‌های مسدود را ویرایش کنید';
 
   @override
-  String get chatPermissions => 'دسترسی‌های گپ';
+  String get chatPermissions => 'Chat permissions';
 
   @override
   String get editDisplayname => 'ویرایش نام نمایشی';
 
   @override
-  String get editRoomAliases => 'ویرایش نام‌های مستعار اتاق';
+  String get editRoomAliases => 'نام‌های مستعار اتاق را ویرایش کنید';
 
   @override
-  String get editRoomAvatar => 'ویرایش نماد اتاق';
+  String get editRoomAvatar => 'عکس اتاق را ویرایش کنید';
 
   @override
   String get emoteExists => 'شکلک از پیش وجود دارد!';
 
   @override
-  String get emoteInvalid => 'کد کوتاه شکلک نامعتبر است!';
+  String get emoteInvalid => 'کد کوتاه شکلک نامعتبر!';
 
   @override
   String get emoteKeyboardNoRecents =>
-      'شکلک‌هایی که به تازگی استفاده‌شده اینجا نمایش داده میشوند...';
+      'Recently-used emotes will appear here...';
 
   @override
   String get emotePacks => 'بسته‌های شکلک برای اتاق';
 
   @override
-  String get emoteSettings => 'تنظیمات شکلک';
+  String get emoteSettings => '‏تنظیمات شکلک';
 
   @override
-  String get globalChatId => 'شناسه گپ سراسری';
+  String get globalChatId => 'Global chat ID';
 
   @override
-  String get accessAndVisibility => 'دسترسی و قابلیت دید';
+  String get accessAndVisibility => 'Access and visibility';
 
   @override
   String get accessAndVisibilityDescription =>
-      'چه کسی اجازه پیوستن به این گپ را دارد و گپ چگونه قابل کشف است.';
+      'Who is allowed to join this chat and how the chat can be discovered.';
 
   @override
-  String get calls => 'تماس‌ها';
+  String get calls => 'Calls';
 
   @override
-  String get customEmojisAndStickers => 'شکلک‌ها و برچسب‌های سفارشی';
+  String get customEmojisAndStickers => 'Custom emojis and stickers';
 
   @override
   String get customEmojisAndStickersBody =>
-      'افزودن یا هم‌رسانی شکلک‌ها یا برچسب‌های سفارشی که در هر گپ قابل استفاده‌اند.';
+      'Add or share custom emojis or stickers which can be used in any chat.';
 
   @override
   String get emoteShortcode => 'کد کوتاه شکلک';
@@ -630,23 +634,23 @@ class L10nFa extends L10n {
   String get emptyChat => 'گپ خالی';
 
   @override
-  String get enableEmotesGlobally => 'فعال کردن بسته شکلک به‌صورت سراسری';
+  String get enableEmotesGlobally => 'بسته شکلک را به طور سراسری فعال کنید';
 
   @override
-  String get enableEncryption => 'فعال کردن رمزنگاری';
+  String get enableEncryption => 'رمزگذاری را فعال کنید';
 
   @override
   String get enableEncryptionWarning =>
-      'نمی‌توانید رمزنگاری را غیرفعال کنید. آیا مطمئن هستید؟';
+      'شما دیگر قادر به غیرفعال کردن رمزگذاری نخواهید بود. آیا مطمئن هستید؟';
 
   @override
-  String get encrypted => 'رمزنگاری‌شده';
+  String get encrypted => 'رمزگذاری شده';
 
   @override
-  String get encryption => 'رمزنگاری';
+  String get encryption => 'رمزگذاری';
 
   @override
-  String get encryptionNotEnabled => 'رمزنگاری فعال نیست';
+  String get encryptionNotEnabled => 'رمزگذاری فعال نیست';
 
   @override
   String endedTheCall(String senderName) {
@@ -654,27 +658,27 @@ class L10nFa extends L10n {
   }
 
   @override
-  String get enterAnEmailAddress => 'یک نشانی رایانامه وارد کنید';
+  String get enterAnEmailAddress => 'یک آدرس رایانامه(ایمیل) وارد کنید';
 
   @override
-  String get homeserver => 'سرور خانگی';
+  String get homeserver => 'سرور خانه';
 
   @override
-  String get enterYourHomeserver => 'سرور خانگی خود را وارد کنید';
+  String get enterYourHomeserver => 'سرور خانه خود را وارد کنید';
 
   @override
   String errorObtainingLocation(String error) {
-    return 'خطا در به‌دست آوردن مکان: $error';
+    return 'خطا هنگام بدست آوردن مکان: $error';
   }
 
   @override
   String get everythingReady => 'همه‌چیز آماده است!';
 
   @override
-  String get extremeOffensive => 'بسیار توهین‌آمیز';
+  String get extremeOffensive => 'به شدت توهین آمیز';
 
   @override
-  String get fileName => 'نام پرونده';
+  String get fileName => 'نام فایل';
 
   @override
   String get rechainonline => 'فلافی‌چت';
@@ -683,7 +687,7 @@ class L10nFa extends L10n {
   String get fontSize => 'اندازه قلم';
 
   @override
-  String get forward => 'هدایت';
+  String get forward => 'ارسال';
 
   @override
   String get fromJoining => 'از پیوستن';
@@ -692,16 +696,16 @@ class L10nFa extends L10n {
   String get fromTheInvitation => 'از دعوت';
 
   @override
-  String get goToTheNewRoom => 'رفتن به اتاق جدید';
+  String get goToTheNewRoom => 'به اتاق جدید بروید';
 
   @override
   String get group => 'گروه';
 
   @override
-  String get chatDescription => 'توضیح گپ';
+  String get chatDescription => 'Chat description';
 
   @override
-  String get chatDescriptionHasBeenChanged => 'توضیح گپ تغییر کرد';
+  String get chatDescriptionHasBeenChanged => 'Chat description changed';
 
   @override
   String get groupIsPublic => 'گروه عمومی است';
@@ -715,96 +719,97 @@ class L10nFa extends L10n {
   }
 
   @override
-  String get guestsAreForbidden => 'مهمان‌ها ممنوع هستند';
+  String get guestsAreForbidden => 'مهمان‌ها ممنوع شده‌اند';
 
   @override
   String get guestsCanJoin => 'مهمان‌ها می‌توانند بپیوندند';
 
   @override
   String hasWithdrawnTheInvitationFor(String username, String targetName) {
-    return '$username دعوت $targetName را پس گرفت';
+    return '$username دعوت‌نامه $targetName را پس گرفته است';
   }
 
   @override
   String get help => 'کمک';
 
   @override
-  String get hideRedactedEvents => 'پنهان کردن رویدادهای ویرایش‌شده';
+  String get hideRedactedEvents => 'پنهان کردن رویدادهای ویرایش شده';
 
   @override
-  String get hideRedactedMessages => 'پنهان کردن پیام‌های ویرایش‌شده';
+  String get hideRedactedMessages => 'Hide redacted messages';
 
   @override
   String get hideRedactedMessagesBody =>
-      'اگر کسی پیامی را ویرایش کند، دیگر نمیتوان آن پیام را در گپ دید.';
+      'If someone redacts a message, this message won\'t be visible in the chat anymore.';
 
   @override
   String get hideInvalidOrUnknownMessageFormats =>
-      'پنهان کردن قالب‌های پیام نامعتبر یا ناشناخته';
+      'Hide invalid or unknown message formats';
 
   @override
-  String get howOffensiveIsThisContent => 'این محتوا چقدر توهین‌آمیز است؟';
+  String get howOffensiveIsThisContent => 'این محتوا چه مقدار توهین آمیز است؟';
 
   @override
-  String get id => 'شناسه';
+  String get id => 'آی‌دی';
 
   @override
   String get identity => 'هویت';
 
   @override
-  String get block => 'مسدود کردن';
+  String get block => 'Block';
 
   @override
-  String get blockedUsers => 'کاربران مسدود‌شده';
+  String get blockedUsers => 'Blocked users';
 
   @override
   String get blockListDescription =>
-      'میتوانید کاربرانی که مزاحم شما هستند را مسدود کنید. از کاربران موجود در فهرست مسدود شخصی، پیام یا دعوت به اتاق دریافت نخواهید کرد.';
+      'You can block users who are disturbing you. You won\'t be able to receive any messages or room invites from the users on your personal block list.';
 
   @override
-  String get blockUsername => 'چشم‌پوشی از نام کاربری';
+  String get blockUsername => 'Ignore username';
 
   @override
-  String get iHaveClickedOnLink => 'روی پیوند کلیک کردم';
+  String get iHaveClickedOnLink => 'من روی پیوند کلیک کردم';
 
   @override
   String get incorrectPassphraseOrKey =>
-      'عبارت عبور یا کلید بازیابی نادرست است';
+      'عبارت عبور یا کلید بازیابی اشتباه است';
 
   @override
-  String get inoffensive => 'بی‌ضرر';
+  String get inoffensive => 'بی ضرر';
 
   @override
   String get inviteContact => 'دعوت از مخاطب';
 
   @override
   String inviteContactToGroupQuestion(Object contact, Object groupName) {
-    return 'آیا میخواهید $contact را به گپ «$groupName» دعوت کنید؟';
+    return 'Do you want to invite $contact to the chat \"$groupName\"?';
   }
 
   @override
   String inviteContactToGroup(String groupName) {
-    return 'دعوت مخاطب به $groupName';
+    return 'دعوت از مخاطب به $groupName';
   }
 
   @override
-  String get noChatDescriptionYet => 'هنوز توضیح گپی ساخته نشده است.';
+  String get noChatDescriptionYet => 'No chat description created yet.';
 
   @override
-  String get tryAgain => 'تلاش دوباره';
+  String get tryAgain => 'Try again';
 
   @override
-  String get invalidServerName => 'نام سرور نامعتبر';
+  String get invalidServerName => 'Invalid server name';
 
   @override
-  String get invited => 'دعوت‌شده';
+  String get invited => 'دعوت شده';
 
   @override
   String get redactMessageDescription =>
-      'پیام برای همه شرکت‌کنندگان در این گفتگو ویرایش خواهد شد. این کار برگشت‌ناپذیر است.';
+      'The message will be redacted for all participants in this conversation. This cannot be undone.';
 
   @override
-  String get optionalRedactReason => '(اختیاری) دلیل ویرایش این پیام...';
+  String get optionalRedactReason =>
+      '(Optional) Reason for redacting this message...';
 
   @override
   String invitedUser(String username, String targetName) {
@@ -812,14 +817,14 @@ class L10nFa extends L10n {
   }
 
   @override
-  String get invitedUsersOnly => 'فقط کاربران دعوت‌شده';
+  String get invitedUsersOnly => 'فقط کاربران دعوت شده';
 
   @override
   String get inviteForMe => 'دعوت برای من';
 
   @override
   String inviteText(String username, String link) {
-    return '$username شما را به فلافی‌چت دعوت کرد.\n۱. به online.rechain.network بروید و برنامه را نصب کنید\n۲. ثبت‌نام کنید یا وارد شوید\n۳. پیوند دعوت را باز کنید:\n $link';
+    return '$username شما را به فلافی‌چت دعوت کرد.\n۱. به online.rechain.network مراجعه کرده و کاره را نصب کنید\n۲. ثبت نام کنید یا وارد شوید.\n۳. لینک دعوت را باز کنید:\n $link';
   }
 
   @override
@@ -835,16 +840,16 @@ class L10nFa extends L10n {
 
   @override
   String kicked(String username, String targetName) {
-    return '👞 $username کاربر $targetName را بیرون کرد';
+    return '👞 $username $targetName را بیرون کرد';
   }
 
   @override
   String kickedAndBanned(String username, String targetName) {
-    return '🙅 $username کاربر $targetName را بیرون و محروم کرد';
+    return '🙅 $username $targetName را بیرون و محروم کرد';
   }
 
   @override
-  String get kickFromChat => 'بیرون کردن از گپ';
+  String get kickFromChat => 'از گفتگو بیرون کردن';
 
   @override
   String lastActiveAgo(String localizedTimeShort) {
@@ -858,86 +863,86 @@ class L10nFa extends L10n {
   String get leftTheChat => 'گپ را ترک کرد';
 
   @override
-  String get license => 'گواهینامه';
+  String get license => 'پروانه';
 
   @override
   String get lightTheme => 'روشن';
 
   @override
   String loadCountMoreParticipants(int count) {
-    return 'بارگیری $count شرکت‌کننده دیگر';
+    return 'بارگیری $count شرکت کنندۀ بیشتر';
   }
 
   @override
-  String get dehydrate => 'صدور نشست و پاک کردن دستگاه';
+  String get dehydrate => 'صدور جلسه و پاک کردن دستگاه';
 
   @override
   String get dehydrateWarning =>
-      'این کنش برگشت‌ناپذیر است. مطمئن شوید پرونده پشتیبان را به‌صورت امن ذخیره می‌کنید.';
+      'این عمل قابل لغو نیست. مطمئن شوید که فایل پشتیبان را به صورت امن ذخیره می کنید.';
 
   @override
-  String get dehydrateTor => 'کاربران تور: صدور نشست';
+  String get dehydrateTor => 'کاربران تور (TOR): صدور جلسه';
 
   @override
   String get dehydrateTorLong =>
-      'برای کاربران تور، پیشنهاد می‌شود پیش از بستن پنجره، نشست را صادر کنند.';
+      'برای کاربران تور (TOR)، توصیه می شود قبل از بستن پنجره، جلسه را صادر کنند.';
 
   @override
-  String get hydrateTor => 'کاربران تور: وارد کردن نشست صادر شده';
+  String get hydrateTor => 'کاربران تور (TOR): صادرات جلسه را وارد کنید';
 
   @override
   String get hydrateTorLong =>
-      'آیا آخرین بار نشست خود را با تور صادر کردید؟ آن را وارد کنید و گپ را ادامه دهید.';
+      'آیا آخرین بار جلسه خود را با تور (TOR) صادر کردید؟ به سرعت آن را وارد کنید و به گپ‌زنی ادامه دهید.';
 
   @override
-  String get hydrate => 'بازیابی از پرونده پشتیبان';
+  String get hydrate => 'بازیابی از فایل پشتیبان';
 
   @override
-  String get loadingPleaseWait => 'در حال بارگذاری… لطفاً صبر کنید.';
+  String get loadingPleaseWait => 'در حال بارگیری... لطفا صبر کنید.';
 
   @override
-  String get loadMore => 'بارگذاری بیشتر…';
+  String get loadMore => 'بارگیری بیشتر…';
 
   @override
   String get locationDisabledNotice =>
-      'مکان‌یاب غیرفعال است. لطفاً آن را فعال کنید تا بتوانید مکان خود را هم‌رسانی کنید.';
+      'خدمات مکان غیرفعال است. لطفا آن را فعال کنید تا بتوانید موقعیت مکانی خود را به اشتراک بگذارید.';
 
   @override
   String get locationPermissionDeniedNotice =>
-      'دسترسی به مکان رد شد. برای هم‌رسانی مکان، لطفاً دسترسی بدهید.';
+      'مجوز مکان رد شد. برای به اشتراک گذاشتن موقعیت مکانی شما لطفا به آن اجازه دهید.';
 
   @override
-  String get login => 'ورود';
+  String get login => 'وارد شدن';
 
   @override
   String logInTo(String homeserver) {
-    return 'ورود به $homeserver';
+    return 'وارد شدن به $homeserver';
   }
 
   @override
-  String get logout => 'خروج';
+  String get logout => 'خارج شدن';
 
   @override
   String get memberChanges => 'تغییرات اعضا';
 
   @override
-  String get mention => 'نام‌بردن';
+  String get mention => 'نام‌‌بردن‌';
 
   @override
   String get messages => 'پیام‌ها';
 
   @override
-  String get messagesStyle => 'پیام‌ها:';
+  String get messagesStyle => 'Messages:';
 
   @override
-  String get moderator => 'ناظر';
+  String get moderator => 'مدیر';
 
   @override
   String get muteChat => 'بی‌صدا کردن گپ';
 
   @override
   String get needPantalaimonWarning =>
-      'لطفاً توجه کنید که برای رمزنگاری سرتاسر به Pantalaimon نیاز دارید.';
+      'لطفا توجه داشته باشید که در حال حاضر برای استفاده از رمزگذاری انتها به انتها به Pantalaimon نیاز دارید.';
 
   @override
   String get newChat => 'گپ جدید';
@@ -946,58 +951,58 @@ class L10nFa extends L10n {
   String get newMessageInrechainonline => '💬 پیام جدید در فلافی‌چت';
 
   @override
-  String get newVerificationRequest => 'درخواست بازبینی جدید!';
+  String get newVerificationRequest => 'درخواست تایید جدید!';
 
   @override
   String get next => 'بعدی';
 
   @override
-  String get no => 'خیر';
+  String get no => 'نه';
 
   @override
-  String get noConnectionToTheServer => 'بدون اتصال به سرور';
+  String get noConnectionToTheServer => 'عدم اتصال به سرور';
 
   @override
-  String get noEmotesFound => 'شکلکی پیدا نشد. 😕';
+  String get noEmotesFound => 'هیچ شکلکی پیدا نشد. 😕';
 
   @override
   String get noEncryptionForPublicRooms =>
-      'رمزنگاری را تنها زمانی می‌توانید فعال کنید که اتاق عمومی نباشد.';
+      'فقط زمانی می‌توانید رمزگذاری را فعال کنید که اتاق، دیگر در دسترس عموم نباشد.';
 
   @override
   String get noGoogleServicesWarning =>
-      'به نظر می‌رسد دستگاه شما سرویس‌های گوگل ندارد. این انتخاب خوبی برای حریم خصوصی است! برای دریافت آگاه‌سازها در فلافی‌چت، پیشنهاد می‌کنیم از https://ntfy.sh استفاده کنید. با ntfy یا یک فراهم‌کننده UnifiedPush می‌توانید آگاه‌سازهای امن دریافت کنید. می‌توانید ntfy را از Play Store یا F-Droid بارگیری کنید.';
+      'به نظر می رسد که شما سرویس‌های گوگل را در گوشی خود ندارید. این تصمیم خوبی برای حفظ حریم خصوصی شماست! برای دریافت اعلان‌ها در فلافی‌چت توصیه می‌کنیم ازhttps://ntfy.sh استفاده کنید. با ntfy یا یک ارائه دهنده UnifiedPush می توانید اعلان‌های فشار را به روش داده امن دریافت کنید. می توانید ntfy را از پلی استور یا از اف‌دروید بارگیری کنید.';
 
   @override
   String norechainonlineServer(String server1, String server2) {
-    return '$server1 سرور ماتریکس نیست، از $server2 استفاده شود؟';
+    return '$server1 سرور ماتریکس نیست، به جای آن از $server2 استفاده شود؟';
   }
 
   @override
-  String get shareInviteLink => 'هم‌رسانی پیوند دعوت';
+  String get shareInviteLink => 'Share invite link';
 
   @override
-  String get scanQrCode => 'پویش کد QR';
+  String get scanQrCode => 'کد QR را اسکن کنید';
 
   @override
-  String get none => 'هیچ';
+  String get none => 'هیچ‌کدام';
 
   @override
   String get noPasswordRecoveryDescription =>
-      'هنوز روشی برای بازیابی گذرواژه خود اضافه نکرده‌اید.';
+      'شما هنوز راهی برای بازیابی رمز عبور خود اضافه نکرده‌اید.';
 
   @override
-  String get noPermission => 'بدون دسترسی';
+  String get noPermission => 'بدون اجازه';
 
   @override
   String get noRoomsFound => 'اتاقی پیدا نشد…';
 
   @override
-  String get notifications => 'آگاه‌سازها';
+  String get notifications => 'اعلان‌ها';
 
   @override
   String get notificationsEnabledForThisAccount =>
-      'آگاه‌سازها برای این حساب فعال شدند';
+      'اعلان‌ها برای این حساب فعال شد';
 
   @override
   String numUsersTyping(int count) {
@@ -1005,25 +1010,26 @@ class L10nFa extends L10n {
   }
 
   @override
-  String get obtainingLocation => 'در حال به‌دست آوردن مکان…';
+  String get obtainingLocation => 'به دست آوردن مکان…';
 
   @override
-  String get offensive => 'توهین‌آمیز';
+  String get offensive => 'توهین آمیز';
 
   @override
   String get offline => 'آفلاین';
 
   @override
-  String get ok => 'خوب';
+  String get ok => 'تایید';
 
   @override
   String get online => 'آنلاین';
 
   @override
-  String get onlineKeyBackupEnabled => 'پشتیبان‌گیری آنلاین کلید فعال است';
+  String get onlineKeyBackupEnabled => 'پشتیبان‌گیری آنلاین از کلید فعال است';
 
   @override
-  String get oopsPushError => 'اوه! خطایی در تنظیم آگاه‌سازها رخ داد.';
+  String get oopsPushError =>
+      'اوه! متاسفانه هنگام تنظیم اعلان‌ها خطایی روی داد.';
 
   @override
   String get oopsSomethingWentWrong => 'اوه، مشکلی پیش آمد…';
@@ -1035,29 +1041,30 @@ class L10nFa extends L10n {
   String get openCamera => 'باز کردن دوربین';
 
   @override
-  String get openVideoCamera => 'باز کردن دوربین برای فیلم‌برداری';
+  String get openVideoCamera => 'بازکردن دوربین برای فیلم‌برداری';
 
   @override
-  String get oneClientLoggedOut => 'یکی از برنامه‌های شما از سیستم خارج شد';
+  String get oneClientLoggedOut =>
+      'یکی از کلاینت(برنامه)های شما از سیستم خارج شده است';
 
   @override
-  String get addAccount => 'افزودن حساب';
+  String get addAccount => 'اضافه کردن حساب کاربری';
 
   @override
-  String get editBundlesForAccount => 'ویرایش بسته‌های این حساب';
+  String get editBundlesForAccount => 'بسته‌های این حساب را ویرایش کنید';
 
   @override
-  String get addToBundle => 'افزودن به بسته';
+  String get addToBundle => 'به بسته نرم‌افزاری اضافه کنید';
 
   @override
-  String get removeFromBundle => 'برداشتن از بسته';
+  String get removeFromBundle => 'از این بسته حذف کنید';
 
   @override
-  String get bundleName => 'نام بسته';
+  String get bundleName => 'اسم بسته';
 
   @override
   String get enableMultiAccounts =>
-      '(آزمایشی) فعال کردن چند حساب در این دستگاه';
+      '(آزمایشی) چند حساب را در این دستگاه فعال کنید';
 
   @override
   String get openInMaps => 'باز کردن در نقشه';
@@ -1067,7 +1074,7 @@ class L10nFa extends L10n {
 
   @override
   String get serverRequiresEmail =>
-      'برای ثبت‌نام، این سرور باید نشانی رایانامه شما را تأیید کند.';
+      'برای ثبت‌نام، این سرور باید آدرس ایمیل شما را تایید کند.';
 
   @override
   String get or => 'یا';
@@ -1079,39 +1086,39 @@ class L10nFa extends L10n {
   String get passphraseOrKey => 'عبارت عبور یا کلید بازیابی';
 
   @override
-  String get password => 'گذرواژه';
+  String get password => 'رمز عبور';
 
   @override
-  String get passwordForgotten => 'فراموشی گذرواژه';
+  String get passwordForgotten => 'رمز عبور را فراموش کرده‌ام';
 
   @override
-  String get passwordHasBeenChanged => 'گذرواژه تغییر کرد';
+  String get passwordHasBeenChanged => 'رمز عبور تغییر کرد';
 
   @override
   String get hideMemberChangesInPublicChats =>
-      'پنهان کردن تغییرات اعضا در گپ‌های عمومی';
+      'Hide member changes in public chats';
 
   @override
   String get hideMemberChangesInPublicChatsBody =>
-      'برای بهبود خوانایی، اینکه کسی به گپ عمومی پیوست یا آن را ترک کرد در خط زمانی گپ نمایش داده نشود.';
+      'Do not show in the chat timeline if someone joins or leaves a public chat to improve readability.';
 
   @override
-  String get overview => 'دید کلی';
+  String get overview => 'Overview';
 
   @override
-  String get notifyMeFor => 'برایم آگاه‌ساز بفرست برای';
+  String get notifyMeFor => 'Notify me for';
 
   @override
-  String get passwordRecoverySettings => 'تنظیمات بازیابی گذرواژه';
+  String get passwordRecoverySettings => 'Password recovery settings';
 
   @override
-  String get passwordRecovery => 'بازیابی گذرواژه';
+  String get passwordRecovery => 'بازیابی رمز عبور';
 
   @override
-  String get people => 'افراد';
+  String get people => 'مردم';
 
   @override
-  String get pickImage => 'انتخاب تصویر';
+  String get pickImage => 'یک عکس انتخاب کنید';
 
   @override
   String get pin => 'سنجاق کردن';
@@ -1122,34 +1129,34 @@ class L10nFa extends L10n {
   }
 
   @override
-  String get pleaseChoose => 'لطفاً انتخاب کنید';
+  String get pleaseChoose => 'لطفا انتخاب کنید';
 
   @override
-  String get pleaseChooseAPasscode => 'لطفاً یک رمز کوتاه انتخاب کنید';
+  String get pleaseChooseAPasscode => 'لطفا یک کد عبور انتخاب کنید';
 
   @override
   String get pleaseClickOnLink =>
-      'لطفاً روی پیوند در رایانامه کلیک کنید و ادامه دهید.';
+      'لطفا روی لینک موجود در رایانامه(ایمیل) کلیک کنید و سپس ادامه دهید.';
 
   @override
   String get pleaseEnter4Digits =>
-      'لطفاً ۴ رقم وارد کنید یا خالی بگذارید تا قفل برنامه غیرفعال شود.';
+      'لطفا ۴ رقم وارد کنید یا خالی بگذارید تا قفل برنامه غیرفعال شود.';
 
   @override
-  String get pleaseEnterRecoveryKey => 'لطفاً کلید بازیابی خود را وارد کنید:';
+  String get pleaseEnterRecoveryKey => 'لطفا کلید بازیابی خود را وارد کنید:';
 
   @override
-  String get pleaseEnterYourPassword => 'لطفاً گذرواژه خود را وارد کنید';
+  String get pleaseEnterYourPassword => 'لطفا رمزعبور خود را وارد کنید';
 
   @override
-  String get pleaseEnterYourPin => 'لطفاً رمز کوتاه خود را وارد کنید';
+  String get pleaseEnterYourPin => 'لطفا کد خود را وارد کنید';
 
   @override
-  String get pleaseEnterYourUsername => 'لطفاً نام کاربری خود را وارد کنید';
+  String get pleaseEnterYourUsername => 'لطفا نام‌کاربری خود را وارد کنید';
 
   @override
   String get pleaseFollowInstructionsOnWeb =>
-      'لطفاً دستورالعمل‌های وبگاه را دنبال کنید و روی بعدی بزنید.';
+      'لطفا دستورالعمل‌های وب‌سایت را دنبال کنید و روی بعدی بزنید.';
 
   @override
   String get privacy => 'حریم خصوصی';
@@ -1158,7 +1165,7 @@ class L10nFa extends L10n {
   String get publicRooms => 'اتاق‌های عمومی';
 
   @override
-  String get pushRules => 'قوانین آگاه‌ساز';
+  String get pushRules => 'قواعد دریافت اعلان';
 
   @override
   String get reason => 'دلیل';
@@ -1168,15 +1175,15 @@ class L10nFa extends L10n {
 
   @override
   String redactedBy(String username) {
-    return 'ویرایش‌شده به‌دست $username';
+    return 'Redacted by $username';
   }
 
   @override
-  String get directChat => 'گپ مستقیم';
+  String get directChat => 'Direct chat';
 
   @override
   String redactedByBecause(String username, String reason) {
-    return 'ویرایش‌شده به‌دست $username زیرا: «$reason»';
+    return 'Redacted by $username because: \"$reason\"';
   }
 
   @override
@@ -1188,7 +1195,7 @@ class L10nFa extends L10n {
   String get redactMessage => 'ویرایش پیام';
 
   @override
-  String get register => 'ثبت‌نام';
+  String get register => 'ثبت نام';
 
   @override
   String get reject => 'رد کردن';
@@ -1199,45 +1206,46 @@ class L10nFa extends L10n {
   }
 
   @override
-  String get rejoin => 'پیوستن دوباره';
+  String get rejoin => 'دوباره پیوستن';
 
   @override
-  String get removeAllOtherDevices => 'پاک کردن همه دستگاه‌های دیگر';
+  String get removeAllOtherDevices => 'حذف تمام دستگاه‌های دیگر';
 
   @override
   String removedBy(String username) {
-    return 'پاک‌شده توسط $username';
+    return 'حذف شده توسط $username';
   }
 
   @override
-  String get removeDevice => 'پاک کردن دستگاه';
+  String get removeDevice => 'حذف دستگاه';
 
   @override
   String get unbanFromChat => 'لغو محرومیت از گپ';
 
   @override
-  String get removeYourAvatar => 'برداشتن نماد نمایه';
+  String get removeYourAvatar => 'آواتار(عکس حساب) خود را حذف کنید';
 
   @override
-  String get replaceRoomWithNewerVersion => 'جایگزینی اتاق با نگارش جدیدتر';
+  String get replaceRoomWithNewerVersion =>
+      'اتاق را با نسخه جدیدتر جایگزین کنید';
 
   @override
   String get reply => 'پاسخ';
 
   @override
-  String get reportMessage => 'گزارش پیام';
+  String get reportMessage => 'گزارش دادن پیام';
 
   @override
-  String get requestPermission => 'درخواست دسترسی';
+  String get requestPermission => 'درخواست اجازه';
 
   @override
-  String get roomHasBeenUpgraded => 'اتاق ارتقا یافت';
+  String get roomHasBeenUpgraded => 'اتاق ارتقا پیدا کرد';
 
   @override
-  String get roomVersion => 'نگارش اتاق';
+  String get roomVersion => 'نسخه اتاق';
 
   @override
-  String get saveFile => 'ذخیره پرونده';
+  String get saveFile => 'ذخیره فایل';
 
   @override
   String get search => 'جستجو';
@@ -1249,61 +1257,61 @@ class L10nFa extends L10n {
   String get recoveryKey => 'کلید بازیابی';
 
   @override
-  String get recoveryKeyLost => 'کلید بازیابی گم شد؟';
+  String get recoveryKeyLost => 'کلید بازیابی را گم کردید؟';
 
   @override
   String seenByUser(String username) {
-    return 'دیده‌شده توسط $username';
+    return 'دیده شده توسط $username';
   }
 
   @override
-  String get send => 'فرستادن';
+  String get send => 'ارسال';
 
   @override
-  String get sendAMessage => 'فرستادن پیام';
+  String get sendAMessage => 'ارسال پیام';
 
   @override
-  String get sendAsText => 'فرستادن به‌عنوان متن';
+  String get sendAsText => 'ارسال به عنوان متن';
 
   @override
-  String get sendAudio => 'فرستادن صدا';
+  String get sendAudio => 'ارسال صدا';
 
   @override
-  String get sendFile => 'فرستادن پرونده';
+  String get sendFile => 'ارسال فایل';
 
   @override
-  String get sendImage => 'فرستادن تصویر';
+  String get sendImage => 'ارسال تصویر';
 
   @override
   String sendImages(int count) {
-    return 'فرستادن $count تصویر';
+    return 'Send $count image';
   }
 
   @override
-  String get sendMessages => 'فرستادن پیام‌ها';
+  String get sendMessages => 'ارسال پیام‌ها';
 
   @override
-  String get sendOriginal => 'فرستادن نسخه اصلی';
+  String get sendOriginal => 'ارسال اصل';
 
   @override
-  String get sendSticker => 'فرستادن برچسب';
+  String get sendSticker => 'ارسال برچسب';
 
   @override
-  String get sendVideo => 'فرستادن ویدئو';
+  String get sendVideo => 'ارسال ویدئو';
 
   @override
   String sentAFile(String username) {
-    return '📁 $username یک پرونده فرستاد';
+    return '📁 $username یک فایل فرستاد';
   }
 
   @override
   String sentAnAudio(String username) {
-    return '🎤 $username یک صدا فرستاد';
+    return '🎤 $username یک صدای ضبط شده فرستاد';
   }
 
   @override
   String sentAPicture(String username) {
-    return '🖼️ $username یک تصویر فرستاد';
+    return '🖼️ $username یک عکس فرستاد';
   }
 
   @override
@@ -1322,22 +1330,22 @@ class L10nFa extends L10n {
   }
 
   @override
-  String get separateChatTypes => 'جداسازی گپ‌های مستقیم از گروه‌ها';
+  String get separateChatTypes => 'گپ‌های مستقیم را از گروه‌ها جدا کنید';
 
   @override
-  String get setAsCanonicalAlias => 'تنظیم به‌عنوان نام مستعار اصلی';
+  String get setAsCanonicalAlias => 'به عنوان نام مستعار اصلی تنظیم کنید';
 
   @override
-  String get setCustomEmotes => 'تنظیم شکلک‌های سفارشی';
+  String get setCustomEmotes => 'شکلک سفارشی را تنظیم کنید';
 
   @override
-  String get setChatDescription => 'تنظیم توضیح گپ';
+  String get setChatDescription => 'Set chat description';
 
   @override
   String get setInvitationLink => 'تنظیم پیوند دعوت';
 
   @override
-  String get setPermissionsLevel => 'تنظیم سطح دسترسی';
+  String get setPermissionsLevel => 'تنظیم درجه اجازه‌ها';
 
   @override
   String get setStatus => 'تنظیم وضعیت';
@@ -1346,7 +1354,7 @@ class L10nFa extends L10n {
   String get settings => 'تنظیمات';
 
   @override
-  String get share => 'هم‌رسانی';
+  String get share => 'اشتراک‌گذاری';
 
   @override
   String sharedTheLocation(String username) {
@@ -1354,22 +1362,22 @@ class L10nFa extends L10n {
   }
 
   @override
-  String get shareLocation => 'هم‌رسانی مکان';
+  String get shareLocation => 'اشتراک‌گذاری وضعیت مکانی';
 
   @override
-  String get showPassword => 'نمایش گذرواژه';
+  String get showPassword => 'نمایش رمز عبور';
 
   @override
-  String get presenceStyle => 'حضور:';
+  String get presenceStyle => 'Presence:';
 
   @override
-  String get presencesToggle => 'نمایش پیام‌های وضعیت از دیگر کاربران';
+  String get presencesToggle => 'Show status messages from other users';
 
   @override
-  String get singlesignon => 'ورود یکپارچه';
+  String get singlesignon => 'شناسایی یگانه(Single Sign on)';
 
   @override
-  String get skip => 'رد کردن';
+  String get skip => 'رد شدن';
 
   @override
   String get sourceCode => 'کد منبع';
@@ -1382,11 +1390,11 @@ class L10nFa extends L10n {
 
   @override
   String startedACall(String senderName) {
-    return '$senderName تماس را آغاز کرد';
+    return '$senderName تماسی را شروع کرد';
   }
 
   @override
-  String get startFirstChat => 'شروع اولین گپ';
+  String get startFirstChat => 'اولین گپ خود را شروع کنید';
 
   @override
   String get status => 'وضعیت';
@@ -1402,42 +1410,42 @@ class L10nFa extends L10n {
 
   @override
   String synchronizingPleaseWaitCounter(String percentage) {
-    return ' در حال همگام‌سازی... ($percentage%)';
+    return ' Synchronizing… ($percentage%)';
   }
 
   @override
-  String get systemTheme => 'سامانه';
+  String get systemTheme => 'سیستم';
 
   @override
-  String get theyDontMatch => 'هم‌خوانی ندارند';
+  String get theyDontMatch => 'با هم منطبق نیستند';
 
   @override
-  String get theyMatch => 'هم‌خوانی دارند';
+  String get theyMatch => 'با هم منطبق هستند';
 
   @override
   String get title => 'فلافی‌چت';
 
   @override
-  String get toggleFavorite => 'تغییر وضعیت برگزیده';
+  String get toggleFavorite => 'تغییر حالت محبوبیت';
 
   @override
-  String get toggleMuted => 'تغییر وضعیت بی‌صدا';
+  String get toggleMuted => 'تغییر حالت بی‌صدا';
 
   @override
-  String get toggleUnread => 'تغییر وضعیت خوانده‌شده/خوانده‌نشده';
+  String get toggleUnread => 'علامت‌گذاشتن به عنوان خوانده‌شده/خوانده‌نشده';
 
   @override
   String get tooManyRequestsWarning =>
-      'درخواست‌های بیش از حد. لطفاً بعداً دوباره تلاش کنید!';
+      'تعداد درخواست‌های بیش از حد. لطفا بعدا دوباره امتحان کنید!';
 
   @override
   String get transferFromAnotherDevice => 'انتقال از دستگاهی دیگر';
 
   @override
-  String get tryToSendAgain => 'تلاش دوباره برای فرستادن';
+  String get tryToSendAgain => 'تلاش برای ارسال مجدد';
 
   @override
-  String get unavailable => 'در دسترس نیست';
+  String get unavailable => 'خارج از دسترس';
 
   @override
   String unbannedUser(String username, String targetName) {
@@ -1445,21 +1453,21 @@ class L10nFa extends L10n {
   }
 
   @override
-  String get unblockDevice => 'باز کردن دستگاه';
+  String get unblockDevice => 'برداشتن مسدود بودن دستگاه';
 
   @override
   String get unknownDevice => 'دستگاه ناشناس';
 
   @override
-  String get unknownEncryptionAlgorithm => 'الگوریتم رمزنگاری ناشناخته';
+  String get unknownEncryptionAlgorithm => 'الگوریتم رمزگذاری ناشناخته';
 
   @override
   String unknownEvent(String type) {
-    return 'رویداد ناشناخته \'$type\'';
+    return 'رویداد ناشناخته «$type»';
   }
 
   @override
-  String get unmuteChat => 'فعال کردن صدای گپ';
+  String get unmuteChat => 'بازکردن صدای گپ';
 
   @override
   String get unpin => 'برداشتن سنجاق';
@@ -1481,21 +1489,21 @@ class L10nFa extends L10n {
 
   @override
   String userAndUserAreTyping(String username, String username2) {
-    return '$username و $username2 در حال نوشتن…';
+    return '$username و $username2 در حال تایپ کردن…';
   }
 
   @override
   String userIsTyping(String username) {
-    return '$username در حال نوشتن…';
+    return '$username در حال تایپ کردن…';
   }
 
   @override
   String userLeftTheChat(String username) {
-    return '👋 $username گپ را ترک کرد';
+    return '🚪$username گپ را ترک کرد';
   }
 
   @override
-  String get username => 'نام کاربری';
+  String get username => 'نام‌کاربری';
 
   @override
   String userSentUnknownEvent(String username, String type) {
@@ -1503,19 +1511,19 @@ class L10nFa extends L10n {
   }
 
   @override
-  String get unverified => 'تأییدنشده';
+  String get unverified => 'تاییدنشده';
 
   @override
   String get verified => 'تاییدشده';
 
   @override
-  String get verify => 'بازبینی';
+  String get verify => 'بازبینی و تایید';
 
   @override
-  String get verifyStart => 'آغاز بازبینی';
+  String get verifyStart => 'شروع بازبینی و تایید';
 
   @override
-  String get verifySuccess => 'بازبینی با موفقیت انجام شد!';
+  String get verifySuccess => 'بازبینی و تایید با موفقیت انجام شد!';
 
   @override
   String get verifyTitle => 'در حال تایید حساب دیگر';
@@ -1527,23 +1535,24 @@ class L10nFa extends L10n {
   String get visibilityOfTheChatHistory => 'قابلیت دیدن تاریخچه گپ';
 
   @override
-  String get visibleForAllParticipants => 'قابل‌دید برای همه شرکت‌کنندگان';
+  String get visibleForAllParticipants => 'قابل رویت برای تمام شرکت‌کنندگان';
 
   @override
-  String get visibleForEveryone => 'قابل‌دید برای همه';
+  String get visibleForEveryone => 'قابل رویت برای همه';
 
   @override
   String get voiceMessage => 'پیام صوتی';
 
   @override
   String get waitingPartnerAcceptRequest =>
-      'در انتظار پذیرش درخواست توسط دیگری…';
+      'در انتظار پذیرفتن درخواست از جانب فرد دیگر…';
 
   @override
-  String get waitingPartnerEmoji => 'در انتظار پذیرش شکلک توسط دیگری…';
+  String get waitingPartnerEmoji => 'در انتظار پذیرفتن شکلک از جانب فرد دیگر…';
 
   @override
-  String get waitingPartnerNumbers => 'در انتظار پذیرش اعداد توسط دیگری…';
+  String get waitingPartnerNumbers =>
+      'در انتظار پذیرفتن اعداد از جانب فرد دیگر…';
 
   @override
   String get wallpaper => 'کاغذدیواری:';
@@ -1552,10 +1561,10 @@ class L10nFa extends L10n {
   String get warning => 'هشدار!';
 
   @override
-  String get weSentYouAnEmail => 'یک رایانامه برای شما فرستادیم';
+  String get weSentYouAnEmail => 'یک ایمیل برایتان فرستادیم';
 
   @override
-  String get whoCanPerformWhichAction => 'چه کسی می‌تواند چه کاری انجام دهد';
+  String get whoCanPerformWhichAction => 'چه کسی توان انجام کدام عمل را داراست';
 
   @override
   String get whoIsAllowedToJoinThisGroup =>
@@ -1611,10 +1620,10 @@ class L10nFa extends L10n {
 
   @override
   String get addToSpaceDescription =>
-      'فضایی را برای افزودن این گپ انتخاب کنید.';
+      'فضایی برای افزودن این گپ به آن انتخاب کنید.';
 
   @override
-  String get start => 'آغاز';
+  String get start => 'شروع';
 
   @override
   String get pleaseEnterRecoveryKeyDescription =>
@@ -1629,7 +1638,7 @@ class L10nFa extends L10n {
   }
 
   @override
-  String get openChat => 'باز کردن گپ';
+  String get openChat => 'بازکردن گپ';
 
   @override
   String get markAsRead => 'علامت‌گذاشتن به عنوان خوانده شده';
@@ -1638,7 +1647,7 @@ class L10nFa extends L10n {
   String get reportUser => 'گزارش دادن کاربر';
 
   @override
-  String get dismiss => 'رد کردن';
+  String get dismiss => 'رد كردن‌';
 
   @override
   String reactedWith(String sender, String reaction) {
@@ -1662,7 +1671,7 @@ class L10nFa extends L10n {
   String get voiceCall => 'تماس صوتی';
 
   @override
-  String get unsupportedAndroidVersion => 'نسخه اندروید پشتیبانی‌نشده';
+  String get unsupportedAndroidVersion => 'نسخه اندروید پشتیبانی نشده';
 
   @override
   String get unsupportedAndroidVersionLong =>
@@ -1744,7 +1753,7 @@ class L10nFa extends L10n {
 
   @override
   String youInvitedToBy(String alias) {
-    return '📩 شما با پیوند دعوت شده‌اید به:\n$alias';
+    return '📩 You have been invited via link to:\n$alias';
   }
 
   @override
@@ -1754,7 +1763,7 @@ class L10nFa extends L10n {
 
   @override
   String invitedBy(String user) {
-    return '📩 دعوت‌شده توسط $user';
+    return '📩 Invited by $user';
   }
 
   @override
@@ -1779,31 +1788,32 @@ class L10nFa extends L10n {
 
   @override
   String hasKnocked(String user) {
-    return '🚪 $user در زده است';
+    return '🚪 $user has knocked';
   }
 
   @override
-  String get usersMustKnock => 'کاربران باید در بزنند';
+  String get usersMustKnock => 'Users must knock';
 
   @override
-  String get noOneCanJoin => 'هیچ‌کس نمیتواند بپیوندد';
+  String get noOneCanJoin => 'No one can join';
 
   @override
   String userWouldLikeToChangeTheChat(String user) {
-    return '$user مایل به پیوستن به گپ است.';
+    return '$user would like to join the chat.';
   }
 
   @override
-  String get noPublicLinkHasBeenCreatedYet => 'هنوز پیوند عمومی ساخته نشده است';
+  String get noPublicLinkHasBeenCreatedYet =>
+      'No public link has been created yet';
 
   @override
-  String get knock => 'در زدن';
+  String get knock => 'Knock';
 
   @override
   String get users => 'کاربرها';
 
   @override
-  String get unlockOldMessages => 'گشودن پیام‌های قدیمی';
+  String get unlockOldMessages => 'گشودن قفل پیام‌های قدیمی';
 
   @override
   String get storeInSecureStorageDescription =>
@@ -1811,20 +1821,20 @@ class L10nFa extends L10n {
 
   @override
   String get saveKeyManuallyDescription =>
-      'این کلید را با استفاده از هم‌رسانی یا بریده‌دان به‌طور دستی ذخیره کنید.';
+      'این کلید را به صورت دستی با فعال کردن گفتگوی اشتراک گذاری سیستم یا کلیپ بورد ذخیره کنید.';
 
   @override
-  String get storeInAndroidKeystore => 'ذخیره در Android KeyStore';
+  String get storeInAndroidKeystore => 'در Android KeyStore ذخیره کنید';
 
   @override
-  String get storeInAppleKeyChain => 'ذخیره در Apple KeyChain';
+  String get storeInAppleKeyChain => 'در Apple KeyChain ذخیره کنید';
 
   @override
-  String get storeSecurlyOnThisDevice => 'ذخیره امن در این دستگاه';
+  String get storeSecurlyOnThisDevice => 'به طور ایمن در دستگاه ذخیره کنید';
 
   @override
   String countFiles(int count) {
-    return '$count پرونده';
+    return '$count فایل';
   }
 
   @override
@@ -1835,42 +1845,42 @@ class L10nFa extends L10n {
 
   @override
   String get foregroundServiceRunning =>
-      'این آگاه‌ساز زمانی ظاهر می‌شود که خدمت پیش‌زمینه فعال است.';
+      'این اعلان زمانی وقتی ظاهر می شود که سرویس پیش‌زمینه در حال اجرا است.';
 
   @override
-  String get screenSharingTitle => 'هم‌رسانی صفحه‌نمایش';
+  String get screenSharingTitle => 'اشتراک گذاری صفحه نمایش';
 
   @override
   String get screenSharingDetail =>
-      'شما در حال هم‌رسانی صفحه‌نمایش خود در فلافی‌چت هستید';
+      'شما در حال به اشتراک‌گذاری صفحه‌نمایش خود در فلافی‌چت هستید';
 
   @override
-  String get callingPermissions => 'دسترسی‌های تماس';
+  String get callingPermissions => 'اجازه‌های تماس';
 
   @override
   String get callingAccount => 'حساب تماس';
 
   @override
   String get callingAccountDetails =>
-      'اجازه به فلافی‌چت برای استفاده از شماره‌گیر بومی اندروید.';
+      'به فلافی‌چت اجازه می‌دهد تا از برنامه شماره‌گیر بومی اندروید استفاده کند.';
 
   @override
-  String get appearOnTop => 'نمایش در بالا';
+  String get appearOnTop => 'در بالا ظاهر شود';
 
   @override
   String get appearOnTopDetails =>
-      'اجازه به برنامه برای نمایش در بالا (اگر فلافی‌چت را به‌عنوان حساب تماس تنظیم کرده‌اید، لازم نیست)';
+      'به برنامه اجازه می‌دهد در بالا ظاهر شود (اگر قبلا فلافی‌‌چت را به عنوان حساب تماس تنظیم کرده‌اید، لازم نیست)';
 
   @override
   String get otherCallingPermissions =>
-      'میکروفون، دوربین و دیگر دسترسی‌های فلافی‌چت';
+      'میکروفون، دوربین و سایر مجوزهای فلافی‌چت';
 
   @override
-  String get whyIsThisMessageEncrypted => 'چرا این پیام خوانا نیست؟';
+  String get whyIsThisMessageEncrypted => 'چرا این پیام قابل خواندن نیست؟';
 
   @override
   String get noKeyForThisMessage =>
-      'اگر پیام پیش از ورود به حساب در این دستگاه فرستاده شده باشد، این مشکل ممکن است رخ دهد.\n\nهمچنین ممکن است فرستنده دستگاه شما را مسدود کرده باشد یا مشکلی در اتصال اینترنت وجود داشته باشد.\n\nآیا می‌توانید پیام را در نشست دیگری بخوانید؟ در این صورت، می‌توانید آن را منتقل کنید! به تنظیمات > دستگاه‌ها بروید و مطمئن شوید دستگاه‌هایتان یکدیگر را بازبینی کرده‌اند. هنگام باز کردن دوباره اتاق و فعال بودن هر دو نشست، کلیدها به‌صورت خودکار منتقل می‌شوند.\n\nآیا نمی‌خواهید هنگام خروج یا تغییر دستگاه کلیدها را گم کنید؟ مطمئن شوید پشتیبان گپ را در تنظیمات فعال کرده‌اید.';
+      'اگر پیام قبل از ورود به حسابتان در این دستگاه ارسال شده باشد، ممکن است این اتفاق بیفتد.\n\nهمچنین ممکن است فرستنده، دستگاه شما را مسدود کرده باشد یا مشکلی در اتصال اینترنت رخ داده باشد.\n\nآیا می توانید پیام را در نشست دیگری بخوانید؟ بنابراین می توانید پیام را از آن منتقل کنید! به تنظیمات > دستگاه‌ها بروید و مطمئن شوید که دستگاه های شما یکدیگر را تایید کرده‌اند. هنگامی که دفعه بعد اتاق را باز می‌کنید و هر دو جلسه در پیش‌زمینه هستند، کلیدها به طور خودکار منتقل می‌شوند.\n\nآیا نمی‌خواهید هنگام خروج از سیستم یا تعویض دستگاه، کلیدها را گم کنید؟ مطمئن شوید که پشتیبان گپ را در تنظیمات فعال کرده‌اید.';
 
   @override
   String get newGroup => 'گروه جدید';
@@ -1893,61 +1903,62 @@ class L10nFa extends L10n {
   }
 
   @override
-  String get hideUnimportantStateEvents => 'پنهان کردن رویدادهای غیرمهم وضعیت';
+  String get hideUnimportantStateEvents =>
+      'رویدادهای غیر مهم مربوط به وضعیت را پنهان کنید';
 
   @override
-  String get hidePresences => 'پنهان کردن فهرست وضعیت؟';
+  String get hidePresences => 'Hide Status List?';
 
   @override
-  String get doNotShowAgain => 'دوباره نمایش نده';
+  String get doNotShowAgain => 'دوباره نشان نده';
 
   @override
   String wasDirectChatDisplayName(String oldDisplayName) {
-    return 'گپ خالی (پیش‌تر $oldDisplayName بود)';
+    return 'گپ خالی ($oldDisplayName بود)';
   }
 
   @override
   String get newSpaceDescription =>
-      'فضاها امکان یکپارچه‌سازی گپ‌ها و ساخت جوامع خصوصی یا عمومی را فراهم می‌کنند.';
+      'فضاها به شما امکان می‌دهند گپ‌های خود را یکپارچه کنید و جوامع خصوصی یا عمومی بسازید.';
 
   @override
-  String get encryptThisChat => 'رمزنگاری این گپ';
+  String get encryptThisChat => 'این گپ را رمزگذاری کنید';
 
   @override
   String get disableEncryptionWarning =>
-      'به دلایل امنیتی نمی‌توانید رمزنگاری را در گپی که فعال شده غیرفعال کنید.';
+      'به دلایل امنیتی نمی‌توانید رمزگذاری را در گپ غیرفعال کنید، در حالی که از قبل فعال شده است.';
 
   @override
-  String get sorryThatsNotPossible => 'متأسفیم... این ممکن نیست';
+  String get sorryThatsNotPossible => 'متاسفم... این امکان‌پذیر نیست';
 
   @override
   String get deviceKeys => 'کلیدهای دستگاه:';
 
   @override
-  String get reopenChat => 'باز کردن دوباره گپ';
+  String get reopenChat => 'گپ را دوباره باز کنید';
 
   @override
   String get noBackupWarning =>
-      'هشدار! بدون فعال کردن پشتیبان گپ، دسترسی به پیام‌های رمزنگاری‌شده خود را از دست خواهید داد. پیشنهاد می‌شود پیش از خروج، پشتیبان گپ را فعال کنید.';
+      'هشدار! بدون فعال کردن پشتیبان گپ، دسترسی به پیام های رمزگذاری شده خود را از دست خواهید داد. قویا توصیه می‌شود قبل از خروج از سیستم، ابتدا پشتیبان‌گیری گپ را فعال کنید.';
 
   @override
   String get noOtherDevicesFound => 'دستگاه دیگری پیدا نشد';
 
   @override
   String fileIsTooBigForServer(String max) {
-    return 'نمیتوان فرستاد! سرور تنها از پیوست های تا $max پشتیبانی میکند.';
+    return 'سرور گزارش می‌دهد که فایل برای ارسال بسیار بزرگ است.';
   }
 
   @override
   String fileHasBeenSavedAt(String path) {
-    return 'پرونده در $path ذخیره شد';
+    return 'فایل در $path ذخیره شده است';
   }
 
   @override
-  String get jumpToLastReadMessage => 'پرش به آخرین پیام خوانده‌شده';
+  String get jumpToLastReadMessage => 'پرش به آخرین پیام خوانده شده';
 
   @override
-  String get readUpToHere => 'خوانده‌شده تا اینجا';
+  String get readUpToHere => 'تا اینجا خوانده شده';
 
   @override
   String get jump => 'پرش';
@@ -1971,759 +1982,759 @@ class L10nFa extends L10n {
 
   @override
   String signInWith(String provider) {
-    return 'ورود با $provider';
+    return 'Sign in with $provider';
   }
 
   @override
   String get profileNotFound =>
-      'کاربر در سرور پیدا نشد. شاید مشکل اتصال وجود دارد یا کاربر وجود ندارد.';
+      'The user could not be found on the server. Maybe there is a connection problem or the user doesn\'t exist.';
 
   @override
-  String get setTheme => 'تنظیم پوسته:';
+  String get setTheme => 'Set theme:';
 
   @override
-  String get setColorTheme => 'تنظیم پوسته رنگی:';
+  String get setColorTheme => 'Set color theme:';
 
   @override
-  String get invite => 'دعوت';
+  String get invite => 'Invite';
 
   @override
-  String get inviteGroupChat => '📨 دعوت به گپ گروهی';
+  String get inviteGroupChat => '📨 Invite group chat';
 
   @override
-  String get invitePrivateChat => '📨 دعوت به گپ خصوصی';
+  String get invitePrivateChat => '📨 Invite private chat';
 
   @override
-  String get invalidInput => 'ورودی نامعتبر!';
+  String get invalidInput => 'Invalid input!';
 
   @override
   String wrongPinEntered(int seconds) {
-    return 'رمز کوتاه نادرست وارد شد! $seconds ثانیه دیگر دوباره تلاش کنید...';
+    return 'Wrong pin entered! Try again in $seconds seconds...';
   }
 
   @override
-  String get pleaseEnterANumber => 'لطفاً عددی بزرگ‌تر از ۰ وارد کنید';
+  String get pleaseEnterANumber => 'Please enter a number greater than 0';
 
   @override
   String get archiveRoomDescription =>
-      'گپ به بایگانی خواهد رفت. کاربران دیگر میتوانند ببینند که شما گپ را ترک کرده‌اید.';
+      'The chat will be moved to the archive. Other users will be able to see that you have left the chat.';
 
   @override
   String get roomUpgradeDescription =>
-      'گپ با نگارش جدید اتاق بازسازی خواهد شد. به همه شرکت‌کنندگان آگاهی‌رسانی میشود که باید به گپ جدید بروند. داده‌های بیشتر درباره نگارش‌های اتاق در https://spec.online.rechain.network/latest/rooms/';
+      'The chat will then be recreated with the new room version. All participants will be notified that they need to switch to the new chat. You can find out more about room versions at https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle';
 
   @override
   String get removeDevicesDescription =>
-      'از این دستگاه خارج خواهید شد و دیگر نمیتوانید پیام دریافت کنید.';
+      'You will be logged out of this device and will no longer be able to receive messages.';
 
   @override
   String get banUserDescription =>
-      'کاربر از گپ محروم خواهد شد و تا زمانی که محرومیت برداشته نشود، نمیتواند دوباره وارد گپ شود.';
+      'The user will be banned from the chat and will not be able to enter the chat again until they are unbanned.';
 
   @override
   String get unbanUserDescription =>
-      'کاربر در صورت تلاش دوباره میتواند وارد گپ شود.';
+      'The user will be able to enter the chat again if they try.';
 
   @override
   String get kickUserDescription =>
-      'کاربر از گپ بیرون میشود اما محروم نمیشود. در گپ‌های عمومی، کاربر میتواند هر زمان دوباره بپیوندد.';
+      'The user is kicked out of the chat but not banned. In public chats, the user can rejoin at any time.';
 
   @override
   String get makeAdminDescription =>
-      'پس از مدیر کردن این کاربر، ممکن است نتوانید این کار را لغو کنید، زیرا آن‌ها همان دسترسی‌های شما را خواهند داشت.';
+      'Once you make this user admin, you may not be able to undo this as they will then have the same permissions as you.';
 
   @override
   String get pushNotificationsNotAvailable =>
-      'آگاه‌سازهای فشاری در دسترس نیستند';
+      'Push notifications not available';
 
   @override
-  String get learnMore => 'بیشتر بدانید';
+  String get learnMore => 'Learn more';
 
   @override
-  String get yourGlobalUserIdIs => 'شناسه کاربری سراسری شما: ';
+  String get yourGlobalUserIdIs => 'Your global user-ID is: ';
 
   @override
   String noUsersFoundWithQuery(String query) {
-    return 'متأسفانه کاربری با «$query» پیدا نشد. لطفاً بررسی کنید که آیا اشتباه نوشتاری دارید.';
+    return 'Unfortunately no user could be found with \"$query\". Please check whether you made a typo.';
   }
 
   @override
-  String get knocking => 'در زدن';
+  String get knocking => 'Knocking';
 
   @override
   String chatCanBeDiscoveredViaSearchOnServer(String server) {
-    return 'گپ با جستجو در $server قابل کشف است';
+    return 'Chat can be discovered via the search on $server';
   }
 
   @override
-  String get searchChatsRooms => 'جستجو برای #گپ‌ها، @کاربران...';
+  String get searchChatsRooms => 'Search for #chats, @users...';
 
   @override
-  String get nothingFound => 'چیزی پیدا نشد...';
+  String get nothingFound => 'Nothing found...';
 
   @override
-  String get groupName => 'نام گروه';
+  String get groupName => 'Group name';
 
   @override
-  String get createGroupAndInviteUsers => 'ساختن گروه و دعوت کاربران';
+  String get createGroupAndInviteUsers => 'Create a group and invite users';
 
   @override
-  String get groupCanBeFoundViaSearch => 'گروه با جستجو قابل یافتن است';
+  String get groupCanBeFoundViaSearch => 'Group can be found via search';
 
   @override
   String get wrongRecoveryKey =>
-      'متأسفیم... به نظر میرسد این کلید بازیابی درست نباشد.';
+      'Sorry... this does not seem to be the correct recovery key.';
 
   @override
-  String get startConversation => 'آغاز گفتگو';
+  String get startConversation => 'Start conversation';
 
   @override
-  String get commandHint_sendraw => 'فرستادن JSON خام';
+  String get commandHint_sendraw => 'Send raw json';
 
   @override
-  String get databaseMigrationTitle => 'پایگاه داده بهینه‌سازی شد';
+  String get databaseMigrationTitle => 'Database is optimized';
 
   @override
-  String get databaseMigrationBody =>
-      'لطفاً صبر کنید. این ممکن است لحظه‌ای طول بکشد.';
+  String get databaseMigrationBody => 'Please wait. This may take a moment.';
 
   @override
-  String get leaveEmptyToClearStatus => 'برای پاک کردن وضعیت، خالی بگذارید.';
+  String get leaveEmptyToClearStatus => 'Leave empty to clear your status.';
 
   @override
-  String get select => 'انتخاب';
+  String get select => 'Select';
 
   @override
-  String get searchForUsers => 'جستجو برای @کاربران...';
+  String get searchForUsers => 'Search for @users...';
 
   @override
   String get pleaseEnterYourCurrentPassword =>
-      'لطفاً گذرواژه کنونی خود را وارد کنید';
+      'Please enter your current password';
 
   @override
-  String get newPassword => 'گذرواژه جدید';
+  String get newPassword => 'New password';
 
   @override
-  String get pleaseChooseAStrongPassword => 'لطفاً یک گذرواژه قوی انتخاب کنید';
+  String get pleaseChooseAStrongPassword => 'Please choose a strong password';
 
   @override
-  String get passwordsDoNotMatch => 'گذرواژه‌ها هم‌خوانی ندارند';
+  String get passwordsDoNotMatch => 'Passwords do not match';
 
   @override
-  String get passwordIsWrong => 'گذرواژه واردشده نادرست است';
+  String get passwordIsWrong => 'Your entered password is wrong';
 
   @override
-  String get publicLink => 'پیوند عمومی';
+  String get publicLink => 'Public link';
 
   @override
-  String get publicChatAddresses => 'نشانی‌های گپ عمومی';
+  String get publicChatAddresses => 'Public chat addresses';
 
   @override
-  String get createNewAddress => 'ساختن نشانی جدید';
+  String get createNewAddress => 'Create new address';
 
   @override
-  String get joinSpace => 'پیوستن به فضا';
+  String get joinSpace => 'Join space';
 
   @override
-  String get publicSpaces => 'فضاهای عمومی';
+  String get publicSpaces => 'Public spaces';
 
   @override
-  String get addChatOrSubSpace => 'افزودن گپ یا زیرفضا';
+  String get addChatOrSubSpace => 'Add chat or sub space';
 
   @override
-  String get subspace => 'زیرفضا';
+  String get subspace => 'Subspace';
 
   @override
-  String get decline => 'نپذیرفتن';
+  String get decline => 'Decline';
 
   @override
-  String get thisDevice => 'این دستگاه:';
+  String get thisDevice => 'This device:';
 
   @override
-  String get initAppError => 'خطایی هنگام آغاز برنامه رخ داد';
+  String get initAppError => 'An error occured while init the app';
 
   @override
-  String get userRole => 'نقش کاربر';
+  String get userRole => 'User role';
 
   @override
   String minimumPowerLevel(String level) {
-    return '$level کمینه سطح دسترسی است.';
+    return '$level is the minimum power level.';
   }
 
   @override
   String searchIn(String chat) {
-    return 'جستجو در گپ «$chat»...';
+    return 'Search in chat \"$chat\"...';
   }
 
   @override
-  String get searchMore => 'جستجوی بیشتر...';
+  String get searchMore => 'Search more...';
 
   @override
-  String get gallery => 'نگارخانه';
+  String get gallery => 'Gallery';
 
   @override
-  String get files => 'پرونده‌ها';
+  String get files => 'Files';
 
   @override
   String databaseBuildErrorBody(String url, String error) {
-    return 'ناتوانی در ساخت پایگاه داده SQLite. برنامه اکنون سعی میکند از پایگاه داده قدیمی استفاده کند. لطفاً این خطا را به توسعه‌دهندگان در $url گزارش دهید. پیام خطا: $error';
+    return 'Unable to build the SQlite database. The app tries to use the legacy database for now. Please report this error to the developers at $url. The error message is: $error';
   }
 
   @override
   String sessionLostBody(String url, String error) {
-    return 'نشست شما گم شده است. لطفاً این خطا را به توسعه‌دهندگان در $url گزارش دهید. پیام خطا: $error';
+    return 'Your session is lost. Please report this error to the developers at $url. The error message is: $error';
   }
 
   @override
   String restoreSessionBody(String url, String error) {
-    return 'برنامه اکنون سعی میکند نشست شما را از پشتیبان بازیابی کند. لطفاً این خطا را به توسعه‌دهندگان در $url گزارش دهید. پیام خطا: $error';
+    return 'The app now tries to restore your session from the backup. Please report this error to the developers at $url. The error message is: $error';
   }
 
   @override
   String forwardMessageTo(String roomName) {
-    return 'هدایت پیام به $roomName؟';
+    return 'Forward message to $roomName?';
   }
 
   @override
-  String get sendReadReceipts => 'فرستادن رسیدهای خواندن';
+  String get sendReadReceipts => 'Send read receipts';
 
   @override
   String get sendTypingNotificationsDescription =>
-      'دیگر شرکت‌کنندگان در گپ میتوانند ببینند که شما در حال تایپ پیام جدید هستید.';
+      'Other participants in a chat can see when you are typing a new message.';
 
   @override
   String get sendReadReceiptsDescription =>
-      'دیگر شرکت‌کنندگان در گپ میتوانند ببینند که شما پیام را خوانده‌اید.';
+      'Other participants in a chat can see when you have read a message.';
 
   @override
-  String get formattedMessages => 'پیام‌های قالب‌بندی‌شده';
+  String get formattedMessages => 'Formatted messages';
 
   @override
   String get formattedMessagesDescription =>
-      'نمایش محتوای پیام غنی مانند متن پررنگ با استفاده از مارک‌داون.';
+      'Display rich message content like bold text using markdown.';
 
   @override
-  String get verifyOtherUser => '🔐 بازبینی کاربر دیگر';
+  String get verifyOtherUser => '🔐 Verify other user';
 
   @override
   String get verifyOtherUserDescription =>
-      'اگر کاربر دیگری را بازبینی کنید، میتوانید مطمئن شوید که واقعاً با چه کسی در حال نوشتن هستید. 💪\n\nهنگام شروع بازبینی، شما و کاربر دیگر پنجره‌ای در برنامه خواهید دید. در آنجا مجموعه‌ای از شکلک‌ها یا اعداد را مشاهده میکنید که باید با یکدیگر مقایسه کنید.\n\nبهترین راه برای این کار دیدار حضوری یا شروع تماس تصویری است. 👭';
+      'If you verify another user, you can be sure that you know who you are really writing to. 💪\n\nWhen you start a verification, you and the other user will see a popup in the app. There you will then see a series of emojis or numbers that you have to compare with each other.\n\nThe best way to do this is to meet up or start a video call. 👭';
 
   @override
-  String get verifyOtherDevice => '🔐 بازبینی دستگاه دیگر';
+  String get verifyOtherDevice => '🔐 Verify other device';
 
   @override
   String get verifyOtherDeviceDescription =>
-      'هنگام بازبینی دستگاه دیگر، آن دستگاه‌ها میتوانند کلیدها را تبادل کنند و امنیت کلی شما را افزایش دهند. 💪 هنگام شروع بازبینی، پنجره‌ای در برنامه روی هر دو دستگاه ظاهر میشود. در آنجا مجموعه‌ای از شکلک‌ها یا اعداد را مشاهده میکنید که باید با یکدیگر مقایسه کنید. بهتر است پیش از شروع بازبینی، هر دو دستگاه در دسترس باشند. 🤳';
+      'When you verify another device, those devices can exchange keys, increasing your overall security. 💪 When you start a verification, a popup will appear in the app on both devices. There you will then see a series of emojis or numbers that you have to compare with each other. It\'s best to have both devices handy before you start the verification. 🤳';
 
   @override
   String acceptedKeyVerification(String sender) {
-    return '$sender بازبینی کلید را پذیرفت';
+    return '$sender accepted key verification';
   }
 
   @override
   String canceledKeyVerification(String sender) {
-    return '$sender بازبینی کلید را رد کرد';
+    return '$sender canceled key verification';
   }
 
   @override
   String completedKeyVerification(String sender) {
-    return '$sender بازبینی کلید را کامل کرد';
+    return '$sender completed key verification';
   }
 
   @override
   String isReadyForKeyVerification(String sender) {
-    return '$sender برای بازبینی کلید آماده است';
+    return '$sender is ready for key verification';
   }
 
   @override
   String requestedKeyVerification(String sender) {
-    return '$sender درخواست بازبینی کلید کرد';
+    return '$sender requested key verification';
   }
 
   @override
   String startedKeyVerification(String sender) {
-    return '$sender بازبینی کلید را آغاز کرد';
+    return '$sender started key verification';
   }
 
   @override
-  String get transparent => 'شفاف';
+  String get transparent => 'Transparent';
 
   @override
-  String get incomingMessages => 'پیام‌های دریافتی';
+  String get incomingMessages => 'Incoming messages';
 
   @override
-  String get stickers => 'برچسب‌ها';
+  String get stickers => 'Stickers';
 
   @override
-  String get discover => 'کشف';
+  String get discover => 'Discover';
 
   @override
-  String get commandHint_ignore => 'چشم‌پوشی از شناسه ماتریکس داده‌شده';
+  String get commandHint_ignore => 'Ignore the given REChain ID';
 
   @override
-  String get commandHint_unignore => 'لغو چشم‌پوشی از شناسه ماتریکس داده‌شده';
+  String get commandHint_unignore => 'Unignore the given REChain ID';
 
   @override
   String unreadChatsInApp(String appname, String unread) {
-    return '$appname: $unread گپ خوانده‌نشده';
+    return '$appname: $unread unread chats';
   }
 
   @override
   String get noDatabaseEncryption =>
-      'رمزنگاری پایگاه داده در این سکو پشتیبانی نمیشود';
+      'Database encryption is not supported on this platform';
 
   @override
   String thereAreCountUsersBlocked(Object count) {
-    return 'اکنون $count کاربر مسدود شده‌اند.';
+    return 'Right now there are $count users blocked.';
   }
 
   @override
-  String get restricted => 'محدودشده';
+  String get restricted => 'Restricted';
 
   @override
-  String get knockRestricted => 'در زدن محدود';
+  String get knockRestricted => 'Knock restricted';
 
   @override
   String goToSpace(Object space) {
-    return 'رفتن به فضا: $space';
+    return 'Go to space: $space';
   }
 
   @override
-  String get markAsUnread => 'علامت‌گذاری به‌عنوان خوانده‌نشده';
+  String get markAsUnread => 'Mark as unread';
 
   @override
   String userLevel(int level) {
-    return '$level - کاربر';
+    return '$level - User';
   }
 
   @override
   String moderatorLevel(int level) {
-    return '$level - ناظر';
+    return '$level - Moderator';
   }
 
   @override
   String adminLevel(int level) {
-    return '$level - مدیر';
+    return '$level - Admin';
   }
 
   @override
-  String get changeGeneralChatSettings => 'تغییر تنظیمات عمومی گپ';
+  String get changeGeneralChatSettings => 'Change general chat settings';
 
   @override
-  String get inviteOtherUsers => 'دعوت کاربران دیگر به این گپ';
+  String get inviteOtherUsers => 'Invite other users to this chat';
 
   @override
-  String get changeTheChatPermissions => 'تغییر دسترسی‌های گپ';
+  String get changeTheChatPermissions => 'Change the chat permissions';
 
   @override
-  String get changeTheVisibilityOfChatHistory => 'تغییر قابلیت دید تاریخچه گپ';
+  String get changeTheVisibilityOfChatHistory =>
+      'Change the visibility of the chat history';
 
   @override
-  String get changeTheCanonicalRoomAlias => 'تغییر نشانی اصلی گپ عمومی';
+  String get changeTheCanonicalRoomAlias =>
+      'Change the main public chat address';
 
   @override
-  String get sendRoomNotifications => 'فرستادن آگاه‌سازهای @room';
+  String get sendRoomNotifications => 'Send a @room notifications';
 
   @override
-  String get changeTheDescriptionOfTheGroup => 'تغییر توضیح گپ';
+  String get changeTheDescriptionOfTheGroup =>
+      'Change the description of the chat';
 
   @override
   String get chatPermissionsDescription =>
-      'مشخص کنید کدام سطح دسترسی برای اقدامات خاصی در این گپ لازم است. سطح‌های دسترسی ۰، ۵۰ و ۱۰۰ معمولاً نشان‌دهنده کاربران، ناظران و مدیران هستند، اما هر درجه‌بندی ممکن است.';
+      'Define which power level is necessary for certain actions in this chat. The power levels 0, 50 and 100 are usually representing users, moderators and admins, but any gradation is possible.';
 
   @override
   String updateInstalled(String version) {
-    return '🎉 به‌روزرسانی $version نصب شد!';
+    return '🎉 Update $version installed!';
   }
 
   @override
-  String get changelog => 'فهرست تغییرات';
+  String get changelog => 'Changelog';
 
   @override
-  String get sendCanceled => 'فرستادن رد شد';
+  String get sendCanceled => 'Sending canceled';
 
   @override
-  String get loginWithREChainId => 'ورود با شناسه ماتریکس';
+  String get loginWithMatrixId => 'Login with REChain-ID';
 
   @override
-  String get discoverHomeservers => 'کشف سرورهای خانگی';
+  String get discoverHomeservers => 'Discover homeservers';
 
   @override
-  String get whatIsAHomeserver => 'سرور خانگی چیست؟';
+  String get whatIsAHomeserver => 'What is a homeserver?';
 
   @override
   String get homeserverDescription =>
-      'همه داده‌های شما روی سرور خانگی نگه‌داری میشوند، مانند یک فراهم‌کننده رایانامه. میتوانید سرور خانگی مورد نظر خود را انتخاب کنید، در حالی که همچنان میتوانید با هر کسی گفتگو کنید. اطلاعات بیشتر در https://online.rechain.network.';
+      'All your data is stored on the homeserver, just like an email provider. You can choose which homeserver you want to use, while you can still communicate with everyone. Learn more at at https://rechain.network.';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
-      'به نظر نمیرسد سرور خانگی سازگاری داشته باشد. نشانی اشتباه است؟';
+      'Doesn\'t seem to be a compatible homeserver. Wrong URL?';
 
   @override
-  String get calculatingFileSize => 'در حال محاسبه اندازه پرونده...';
+  String get calculatingFileSize => 'Calculating file size...';
 
   @override
-  String get prepareSendingAttachment => 'آماده‌سازی برای فرستادن پیوست...';
+  String get prepareSendingAttachment => 'Prepare sending attachment...';
 
   @override
-  String get sendingAttachment => 'در حال فرستادن پیوست...';
+  String get sendingAttachment => 'Sending attachment...';
 
   @override
-  String get generatingVideoThumbnail => 'در حال تولید تصویر کوچک ویدئو...';
+  String get generatingVideoThumbnail => 'Generating video thumbnail...';
 
   @override
-  String get compressVideo => 'در حال فشرده‌سازی ویدئو...';
+  String get compressVideo => 'Compressing video...';
 
   @override
   String sendingAttachmentCountOfCount(int index, int length) {
-    return 'در حال فرستادن پیوست $index از $length...';
+    return 'Sending attachment $index of $length...';
   }
 
   @override
   String serverLimitReached(int seconds) {
-    return 'محدودیت سرور رسیده است! $seconds ثانیه صبر کنید...';
+    return 'Server limit reached! Waiting $seconds seconds...';
   }
 
   @override
   String get oneOfYourDevicesIsNotVerified =>
-      'یکی از دستگاه‌های شما بازبینی نشده است';
+      'One of your devices is not verified';
 
   @override
   String get noticeChatBackupDeviceVerification =>
-      'توجه: وقتی همه دستگاه‌های خود را به پشتیبان گپ متصل کنید، به‌صورت خودکار بازبینی میشوند.';
+      'Note: When you connect all your devices to the chat backup, they are automatically verified.';
 
   @override
-  String get continueText => 'ادامه';
+  String get continueText => 'Continue';
 
   @override
   String get welcomeText =>
-      'درود درود 👋 این فلافی‌چت است. میتوانید به هر سرور خانگی سازگار با https://online.rechain.network وارد شوید و با هر کسی گپ بزنید. این یک شبکه پیام‌رسانی غیرمتمرکز بزرگ است!';
+      'Hey Hey 👋 This is REChain. You can sign in to any homeserver, which is compatible with https://rechain.network. And then chat with anyone. It\'s a huge decentralized messaging network!';
 
   @override
-  String get blur => 'محو کردن:';
+  String get blur => 'Blur:';
 
   @override
-  String get opacity => 'شفافیت:';
+  String get opacity => 'Opacity:';
 
   @override
-  String get setWallpaper => 'تنظیم کاغذدیواری';
+  String get setWallpaper => 'Set wallpaper';
 
   @override
-  String get manageAccount => 'مدیریت حساب';
+  String get manageAccount => 'Manage account';
 
   @override
   String get noContactInformationProvided =>
-      'سرور هیچ اطلاعات تماس معتبری نمیدهد';
+      'Server does not provide any valid contact information';
 
   @override
-  String get contactServerAdmin => 'تماس با مدیر سرور';
+  String get contactServerAdmin => 'Contact server admin';
 
   @override
-  String get contactServerSecurity => 'تماس با امنیت سرور';
+  String get contactServerSecurity => 'Contact server security';
 
   @override
-  String get supportPage => 'صفحه پشتیبانی';
+  String get supportPage => 'Support page';
 
   @override
-  String get serverInformation => 'درباره سرور:';
+  String get serverInformation => 'Server information:';
 
   @override
-  String get name => 'نام';
+  String get name => 'Name';
 
   @override
-  String get version => 'نگارش';
+  String get version => 'Version';
 
   @override
-  String get website => 'وبگاه';
+  String get website => 'Website';
 
   @override
-  String get compress => 'فشرده‌سازی';
+  String get compress => 'Compress';
 
   @override
-  String get boldText => 'متن درشت';
+  String get boldText => 'Bold text';
 
   @override
-  String get italicText => 'متن کج';
+  String get italicText => 'Italic text';
 
   @override
-  String get strikeThrough => 'خط‌خورده';
+  String get strikeThrough => 'Strikethrough';
 
   @override
-  String get pleaseFillOut => 'لطفاً پر کنید';
+  String get pleaseFillOut => 'Please fill out';
 
   @override
-  String get invalidUrl => 'نشانی نامعتبر';
+  String get invalidUrl => 'Invalid url';
 
   @override
-  String get addLink => 'افزودن پیوند';
+  String get addLink => 'Add link';
 
   @override
   String get unableToJoinChat =>
-      'ناتوانی در پیوستن به گپ. شاید طرف مقابل گفتگو را بسته است.';
+      'Unable to join chat. Maybe the other party has already closed the conversation.';
 
   @override
-  String get previous => 'پیشین';
+  String get previous => 'Previous';
 
   @override
   String get otherPartyNotLoggedIn =>
-      'طرف مقابل اکنون وارد نشده است و بنابراین نمیتواند پیام دریافت کند!';
+      'The other party is currently not logged in and therefore cannot receive messages!';
 
   @override
   String appWantsToUseForLogin(String server) {
-    return 'برای ورود از \'$server\' استفاده کنید';
+    return 'Use \'$server\' to log in';
   }
 
   @override
   String get appWantsToUseForLoginDescription =>
-      'شما بدین‌وسیله به برنامه و وبگاه اجازه میدهید اطلاعات شما را هم‌رسانی کنند.';
+      'You hereby allow the app and website to share information about you.';
 
   @override
-  String get open => 'باز کردن';
+  String get open => 'Open';
 
   @override
-  String get waitingForServer => 'در انتظار سرور...';
+  String get waitingForServer => 'Waiting for server...';
 
   @override
   String get appIntroduction =>
-      'فلافی‌چت به شما امکان گپ با دوستانتان در پیام‌رسان‌های مختلف را میدهد. اطلاعات بیشتر در https://online.rechain.network یا فقط روی *ادامه* بزنید.';
+      'REChain lets you chat with your friends across different messengers. Learn more at https://rechain.network or just tap *Continue*.';
 
   @override
-  String get newChatRequest => '📩 درخواست گپ جدید';
+  String get newChatRequest => '📩 New chat request';
 
   @override
-  String get contentNotificationSettings => 'تنظیمات آگاه‌ساز محتوا';
+  String get contentNotificationSettings => 'Content notification settings';
 
   @override
-  String get generalNotificationSettings => 'تنظیمات آگاه‌ساز عمومی';
+  String get generalNotificationSettings => 'General notification settings';
 
   @override
-  String get roomNotificationSettings => 'تنظیمات آگاه‌ساز اتاق';
+  String get roomNotificationSettings => 'Room notification settings';
 
   @override
-  String get userSpecificNotificationSettings => 'تنظیمات آگاه‌ساز خاص کاربر';
+  String get userSpecificNotificationSettings =>
+      'User specific notification settings';
 
   @override
-  String get otherNotificationSettings => 'سایر تنظیمات آگاه‌ساز';
+  String get otherNotificationSettings => 'Other notification settings';
 
   @override
-  String get notificationRuleContainsUserName => 'دارای نام کاربری';
+  String get notificationRuleContainsUserName => 'Contains User Name';
 
   @override
   String get notificationRuleContainsUserNameDescription =>
-      'وقتی پیامی حاوی نام کاربری باشد، کاربر را آگاه میکند.';
+      'Notifies the user when a message contains their username.';
 
   @override
-  String get notificationRuleMaster => 'بی‌صدا کردن همه آگاه‌سازها';
+  String get notificationRuleMaster => 'Mute all notifications';
 
   @override
   String get notificationRuleMasterDescription =>
-      'از قوانین دیگر چشم‌پوشی میکند و همه آگاه‌سازها را غیرفعال میکند.';
+      'Overrides all other rules and disables all notifications.';
 
   @override
-  String get notificationRuleSuppressNotices => 'سرکوب پیام‌های خودکار';
+  String get notificationRuleSuppressNotices => 'Suppress Automated Messages';
 
   @override
   String get notificationRuleSuppressNoticesDescription =>
-      'آگاه‌سازهای کارخواه‌های خودکار مانند ربات‌ها را سرکوب میکند.';
+      'Suppresses notifications from automated clients like bots.';
 
   @override
-  String get notificationRuleInviteForMe => 'دعوت برای من';
+  String get notificationRuleInviteForMe => 'Invite for Me';
 
   @override
   String get notificationRuleInviteForMeDescription =>
-      'وقتی کاربر به اتاقی دعوت میشود، او را آگاه میکند.';
+      'Notifies the user when they are invited to a room.';
 
   @override
-  String get notificationRuleMemberEvent => 'رویداد عضویت';
+  String get notificationRuleMemberEvent => 'Member Event';
 
   @override
   String get notificationRuleMemberEventDescription =>
-      'آگاه‌سازهای رویدادهای عضویت را سرکوب میکند.';
+      'Suppresses notifications for membership events.';
 
   @override
-  String get notificationRuleIsUserMention => 'نام‌بردن از کاربر';
+  String get notificationRuleIsUserMention => 'User Mention';
 
   @override
   String get notificationRuleIsUserMentionDescription =>
-      'وقتی در پیامی مستقیماً از کاربر نام برده میشود، او را آگاه میکند.';
+      'Notifies the user when they are directly mentioned in a message.';
 
   @override
-  String get notificationRuleContainsDisplayName => 'دارای نام نمایشی';
+  String get notificationRuleContainsDisplayName => 'Contains Display Name';
 
   @override
   String get notificationRuleContainsDisplayNameDescription =>
-      'وقتی پیامی حاوی نام نمایشی کاربر باشد، کاربر را آگاه میکند.';
+      'Notifies the user when a message contains their display name.';
 
   @override
-  String get notificationRuleIsRoomMention => 'نام‌بردن از اتاق';
+  String get notificationRuleIsRoomMention => 'Room Mention';
 
   @override
   String get notificationRuleIsRoomMentionDescription =>
-      'وقتی نام اتاق ذکر میشود، کاربر را آگاه میکند.';
+      'Notifies the user when there is a room mention.';
 
   @override
-  String get notificationRuleRoomnotif => 'آگاه‌ساز اتاق';
+  String get notificationRuleRoomnotif => 'Room Notification';
 
   @override
   String get notificationRuleRoomnotifDescription =>
-      'وقتی پیامی حاوی \'@room\' باشد، کاربر را آگاه میکند.';
+      'Notifies the user when a message contains \'@room\'.';
 
   @override
-  String get notificationRuleTombstone => 'سنگ قبر';
+  String get notificationRuleTombstone => 'Tombstone';
 
   @override
   String get notificationRuleTombstoneDescription =>
-      'کاربر را از پیام‌های غیرفعال‌سازی اتاق آگاه میکند.';
+      'Notifies the user about room deactivation messages.';
 
   @override
-  String get notificationRuleReaction => 'واکنش';
+  String get notificationRuleReaction => 'Reaction';
 
   @override
   String get notificationRuleReactionDescription =>
-      'آگاه‌سازهای واکنش‌ها را سرکوب میکند.';
+      'Suppresses notifications for reactions.';
 
   @override
-  String get notificationRuleRoomServerAcl => 'ACL سرور اتاق';
+  String get notificationRuleRoomServerAcl => 'Room Server ACL';
 
   @override
   String get notificationRuleRoomServerAclDescription =>
-      'آگاه‌سازهای فهرست‌های کنترل دسترسی سرور اتاق (ACL) را سرکوب میکند.';
+      'Suppresses notifications for room server access control lists (ACL).';
 
   @override
-  String get notificationRuleSuppressEdits => 'سرکوب ویرایش‌ها';
+  String get notificationRuleSuppressEdits => 'Suppress Edits';
 
   @override
   String get notificationRuleSuppressEditsDescription =>
-      'آگاه‌سازهای پیام‌های ویرایش‌شده را سرکوب میکند.';
+      'Suppresses notifications for edited messages.';
 
   @override
-  String get notificationRuleCall => 'تماس';
+  String get notificationRuleCall => 'Call';
 
   @override
   String get notificationRuleCallDescription =>
-      'درباره تماس‌ها کاربر را آگاه میکند.';
+      'Notifies the user about calls.';
 
   @override
   String get notificationRuleEncryptedRoomOneToOne =>
-      'اتاق رمزنگاری‌شده یک‌به‌یک';
+      'Encrypted Room One-to-One';
 
   @override
   String get notificationRuleEncryptedRoomOneToOneDescription =>
-      'کاربر را از پیام‌ها در اتاق‌های رمزنگاری‌شده یک‌به‌یک آگاه میکند.';
+      'Notifies the user about messages in encrypted one-to-one rooms.';
 
   @override
-  String get notificationRuleRoomOneToOne => 'اتاق یک‌به‌یک';
+  String get notificationRuleRoomOneToOne => 'Room One-to-One';
 
   @override
   String get notificationRuleRoomOneToOneDescription =>
-      'کاربر را از پیام‌ها در اتاق‌های یک‌به‌یک آگاه میکند.';
+      'Notifies the user about messages in one-to-one rooms.';
 
   @override
-  String get notificationRuleMessage => 'پیام';
+  String get notificationRuleMessage => 'Message';
 
   @override
   String get notificationRuleMessageDescription =>
-      'کاربر را از پیام‌های عمومی آگاه میکند.';
+      'Notifies the user about general messages.';
 
   @override
-  String get notificationRuleEncrypted => 'رمزنگاری‌شده';
+  String get notificationRuleEncrypted => 'Encrypted';
 
   @override
   String get notificationRuleEncryptedDescription =>
-      'کاربر را از پیام‌ها در اتاق‌های رمزنگاری‌شده آگاه میکند.';
+      'Notifies the user about messages in encrypted rooms.';
 
   @override
-  String get notificationRuleJitsi => 'جیتسی';
+  String get notificationRuleJitsi => 'Jitsi';
 
   @override
   String get notificationRuleJitsiDescription =>
-      'کاربر را از رویدادهای ابزارک جیتسی آگاه میکند.';
+      'Notifies the user about Jitsi widget events.';
 
   @override
-  String get notificationRuleServerAcl => 'سرکوب رویدادهای ACL سرور';
+  String get notificationRuleServerAcl => 'Suppress Server ACL Events';
 
   @override
   String get notificationRuleServerAclDescription =>
-      'آگاه‌سازهای رویدادهای ACL سرور را سرکوب میکند.';
+      'Suppresses notifications for Server ACL events.';
 
   @override
   String unknownPushRule(String rule) {
-    return 'قانون ناشناخته آگاه‌ساز \'$rule\'';
+    return 'Unknown push rule \'$rule\'';
   }
 
   @override
   String sentVoiceMessage(String sender, String duration) {
-    return '🎙️ $duration - پیام صوتی از $sender';
+    return '🎙️ $duration - Voice message from $sender';
   }
 
   @override
   String get deletePushRuleCanNotBeUndone =>
-      'اگر این تنظیم آگاه‌ساز را پاک کنید، این کار برگشت‌ناپذیر است.';
+      'If you delete this notification setting, this can not be undone.';
 
   @override
-  String get more => 'بیشتر';
+  String get more => 'More';
 
   @override
-  String get shareKeysWith => 'هم‌رسانی کلیدها با...';
+  String get shareKeysWith => 'Share keys with...';
 
   @override
   String get shareKeysWithDescription =>
-      'کدام دستگاه‌ها باید مورد اعتماد باشند تا بتوانند پیام‌های شما را در گپ‌های رمزنگاری‌شده بخوانند؟';
+      'Which devices should be trusted so that they can read along your messages in encrypted chats?';
 
   @override
-  String get allDevices => 'همه دستگاه‌ها';
+  String get allDevices => 'All devices';
 
   @override
   String get crossVerifiedDevicesIfEnabled =>
-      'دستگاه‌های بازبینی‌شده متقابل اگر فعال باشد';
+      'Cross verified devices if enabled';
 
   @override
-  String get crossVerifiedDevices => 'دستگاه‌های بازبینی‌شده متقابل';
+  String get crossVerifiedDevices => 'Cross verified devices';
 
   @override
-  String get verifiedDevicesOnly => 'فقط دستگاه‌های بازبینی‌شده';
+  String get verifiedDevicesOnly => 'Verified devices only';
 
   @override
-  String get takeAPhoto => 'گرفتن عکس';
+  String get takeAPhoto => 'Take a photo';
 
   @override
-  String get recordAVideo => 'ضبط ویدئو';
+  String get recordAVideo => 'Record a video';
 
   @override
-  String get optionalMessage => '(اختیاری) پیام...';
+  String get optionalMessage => '(Optional) message...';
 
   @override
-  String get notSupportedOnThisDevice => 'در این دستگاه پشتیبانی نمیشود';
+  String get notSupportedOnThisDevice => 'Not supported on this device';
 
   @override
-  String get enterNewChat => 'ورود به گپ جدید';
+  String get enterNewChat => 'Enter new chat';
 
   @override
-  String get approve => 'پذیرفتن';
+  String get approve => 'Approve';
 
   @override
-  String get youHaveKnocked => 'شما در زده‌اید';
+  String get youHaveKnocked => 'You have knocked';
 
   @override
   String get pleaseWaitUntilInvited =>
-      'لطفاً اکنون صبر کنید تا کسی از اتاق شما را دعوت کند.';
+      'Please wait now, until someone from the room invites you.';
 
   @override
-  String get commandHint_logout => 'خروج از دستگاه کنونی';
+  String get commandHint_logout => 'Logout your current device';
 
   @override
-  String get commandHint_logoutall => 'خروج از همه دستگاه‌های فعال';
+  String get commandHint_logoutall => 'Logout all active devices';
 
   @override
-  String get displayNavigationRail => 'نمایش نوار ناوبری در تلفن همراه';
+  String get displayNavigationRail => 'Show navigation rail on mobile';
 
   @override
-  String get customReaction => 'واکنش سفارشی';
+  String get customReaction => 'Custom reaction';
 
   @override
-  String get moreEvents => 'رویدادهای بیشتر';
-
-  @override
-  String get declineInvitation => 'Decline invitation';
+  String get moreEvents => 'More events';
 }

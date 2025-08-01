@@ -35,7 +35,7 @@ class ChatAccessSettingsController extends State<ChatAccessSettings> {
       'Unknown';
 
   /// Calculates which join rules are available based on the information on
-  /// https://spec.online.rechain.network/v1.11/rooms/#feature-matrix
+  /// https://spec.matrix.org/v1.11/rooms/#feature-matrix
   List<JoinRules> get availableJoinRules {
     final joinRules = Set<JoinRules>.from(JoinRules.values);
 
@@ -46,7 +46,6 @@ class ChatAccessSettingsController extends State<ChatAccessSettings> {
       joinRules.remove(JoinRules.knock);
     }
 
-    // Not yet supported in REChain:
     joinRules.remove(JoinRules.restricted);
     joinRules.remove(JoinRules.knockRestricted);
 

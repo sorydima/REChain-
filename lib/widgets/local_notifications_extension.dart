@@ -50,7 +50,7 @@ extension LocalNotificationsExtension on MatrixState {
       Uri? thumbnailUri;
 
       if (avatarUrl != null) {
-        const size = 128;
+        const size = 64;
         const thumbnailMethod = ThumbnailMethod.crop;
         // Pre-cache so that we can later just set the thumbnail uri as icon:
         await client.downloadMxcCached(
@@ -59,7 +59,6 @@ extension LocalNotificationsExtension on MatrixState {
           height: size,
           thumbnailMethod: thumbnailMethod,
           isThumbnail: true,
-          rounded: true,
         );
 
         thumbnailUri =
@@ -93,7 +92,6 @@ extension LocalNotificationsExtension on MatrixState {
           height: size,
           thumbnailMethod: thumbnailMethod,
           isThumbnail: true,
-          rounded: true,
         );
 
         final image = decodeImage(data);

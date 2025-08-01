@@ -317,11 +317,11 @@ abstract class L10n {
   /// **'Add email'**
   String get addEmail;
 
-  /// No description provided for @confirmREChainId.
+  /// No description provided for @confirmMatrixId.
   ///
   /// In en, this message translates to:
   /// **'Please confirm your REChain ID in order to delete your account.'**
-  String get confirmREChainId;
+  String get confirmMatrixId;
 
   /// No description provided for @supposedMxid.
   ///
@@ -1346,7 +1346,7 @@ abstract class L10n {
   /// No description provided for @rechainonline.
   ///
   /// In en, this message translates to:
-  /// **'REChain'**
+  /// **'rechainonline'**
   String get rechainonline;
 
   /// No description provided for @fontSize.
@@ -1808,7 +1808,7 @@ abstract class L10n {
   /// No description provided for @newMessageInrechainonline.
   ///
   /// In en, this message translates to:
-  /// **'💬 New message in REChain'**
+  /// **'💬 New message in rechainonline'**
   String get newMessageInrechainonline;
 
   /// No description provided for @newVerificationRequest.
@@ -1856,7 +1856,7 @@ abstract class L10n {
   /// No description provided for @norechainonlineServer.
   ///
   /// In en, this message translates to:
-  /// **'{server1} is no Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network server, use {server2} instead?'**
+  /// **'{server1} is no REChain server, use {server2} instead?'**
   String norechainonlineServer(String server1, String server2);
 
   /// No description provided for @shareInviteLink.
@@ -2654,7 +2654,7 @@ abstract class L10n {
   /// Title for the application
   ///
   /// In en, this message translates to:
-  /// **'REChain'**
+  /// **'rechainonline'**
   String get title;
 
   /// No description provided for @toggleFavorite.
@@ -3626,13 +3626,13 @@ abstract class L10n {
   /// No description provided for @inviteGroupChat.
   ///
   /// In en, this message translates to:
-  /// **'📨 Group chat invite'**
+  /// **'📨 Invite group chat'**
   String get inviteGroupChat;
 
   /// No description provided for @invitePrivateChat.
   ///
   /// In en, this message translates to:
-  /// **'📨 Private chat invite'**
+  /// **'📨 Invite private chat'**
   String get invitePrivateChat;
 
   /// No description provided for @invalidInput.
@@ -3662,7 +3662,7 @@ abstract class L10n {
   /// No description provided for @roomUpgradeDescription.
   ///
   /// In en, this message translates to:
-  /// **'The chat will then be recreated with the new room version. All participants will be notified that they need to switch to the new chat. You can find out more about room versions at https://spec.online.rechain.network/latest/rooms/'**
+  /// **'The chat will then be recreated with the new room version. All participants will be notified that they need to switch to the new chat. You can find out more about room versions at https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle'**
   String get roomUpgradeDescription;
 
   /// No description provided for @removeDevicesDescription.
@@ -4211,11 +4211,11 @@ abstract class L10n {
   /// **'Sending canceled'**
   String get sendCanceled;
 
-  /// No description provided for @loginWithREChainId.
+  /// No description provided for @loginWithMatrixId.
   ///
   /// In en, this message translates to:
-  /// **'Login with REChain ID'**
-  String get loginWithREChainId;
+  /// **'Login with REChain-ID'**
+  String get loginWithMatrixId;
 
   /// No description provided for @discoverHomeservers.
   ///
@@ -4232,7 +4232,7 @@ abstract class L10n {
   /// No description provided for @homeserverDescription.
   ///
   /// In en, this message translates to:
-  /// **'All your data is stored on the homeserver, just like an email provider. You can choose which homeserver you want to use, while you can still communicate with everyone. Learn more at at https://online.rechain.network.'**
+  /// **'All your data is stored on the homeserver, just like an email provider. You can choose which homeserver you want to use, while you can still communicate with everyone. Learn more at at https://rechain.network.'**
   String get homeserverDescription;
 
   /// No description provided for @doesNotSeemToBeAValidHomeserver.
@@ -4304,7 +4304,7 @@ abstract class L10n {
   /// No description provided for @welcomeText.
   ///
   /// In en, this message translates to:
-  /// **'Hey Hey 👋 This is REChain. You can sign in to any homeserver, which is compatible with https://online.rechain.network. And then chat with anyone. It\'s a huge decentralized messaging network!'**
+  /// **'Hey Hey 👋 This is REChain. You can sign in to any homeserver, which is compatible with https://rechain.network. And then chat with anyone. It\'s a huge decentralized messaging network!'**
   String get welcomeText;
 
   /// No description provided for @blur.
@@ -4466,7 +4466,7 @@ abstract class L10n {
   /// No description provided for @appIntroduction.
   ///
   /// In en, this message translates to:
-  /// **'REChain lets you chat with your friends across different messengers. Learn more at https://online.rechain.network or just tap *Continue*.'**
+  /// **'REChain lets you chat with your friends across different messengers. Learn more at https://rechain.network or just tap *Continue*.'**
   String get appIntroduction;
 
   /// No description provided for @newChatRequest.
@@ -4882,12 +4882,6 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'More events'**
   String get moreEvents;
-
-  /// No description provided for @declineInvitation.
-  ///
-  /// In en, this message translates to:
-  /// **'Decline invitation'**
-  String get declineInvitation;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {

@@ -793,7 +793,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "rechainonline": "REChain",
+  "rechainonline": "rechainonline",
   "@rechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1712,7 +1712,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "title": "REChain",
+  "title": "rechainonline",
   "@title": {
     "description": "Title for the application",
     "type": "String",
@@ -2014,7 +2014,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "norechainonlineServer": "{server1} 不是一个 Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network 服务器，试试 {server2}？",
+  "norechainonlineServer": "{server1} 不是一个 REChain 服务器，试试 {server2}？",
   "@norechainonlineServer": {
     "type": "String",
     "placeholders": {
@@ -2358,8 +2358,8 @@
   "@user": {},
   "custom": "自定义",
   "@custom": {},
-  "confirmREChainId": "请确认你的 REChain ID 以删除账户。",
-  "@confirmREChainId": {},
+  "confirmMatrixId": "请确认你的 REChain ID 以删除账户。",
+  "@confirmMatrixId": {},
   "supposedMxid": "应为 {mxid}",
   "@supposedMxid": {
     "type": "String",
@@ -2592,9 +2592,9 @@
       }
     }
   },
-  "inviteGroupChat": "📨 群聊邀请",
+  "inviteGroupChat": "📨 邀请至群聊",
   "@inviteGroupChat": {},
-  "invitePrivateChat": "📨 私聊邀请",
+  "invitePrivateChat": "📨 邀请至私聊",
   "@invitePrivateChat": {},
   "emoteKeyboardNoRecents": "最近使用过的表情会出现在这里...",
   "@emoteKeyboardNoRecents": {
@@ -2636,7 +2636,7 @@
   "@archiveRoomDescription": {},
   "learnMore": "了解更多",
   "@learnMore": {},
-  "roomUpgradeDescription": "将使用新版聊天室来重新创建当前聊天室。所有参与者都会收到通知以切换到新的聊天室。有关聊天室版本的更多信息，请访问 https://spec.online.rechain.network/latest/rooms/",
+  "roomUpgradeDescription": "将使用新版聊天室来重新创建当前聊天室。所有参与者都会收到通知以切换到新的聊天室。有关聊天室版本的更多信息，请访问 https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle",
   "@roomUpgradeDescription": {},
   "kickUserDescription": "该用户会被踢出聊天但没被封禁。在公开聊天中，该用户可以随时重新加入。",
   "@kickUserDescription": {},
@@ -3071,13 +3071,13 @@
   "@sendCanceled": {},
   "noChatsFoundHere": "此处尚未找到聊天。使用下方按钮 ⤵️ 开始和某人的新聊天",
   "@noChatsFoundHere": {},
-  "loginWithREChainId": "使用 REChain ID 登录",
-  "@loginWithREChainId": {},
+  "loginWithMatrixId": "使用 REChain-ID 登录",
+  "@loginWithMatrixId": {},
   "discoverHomeservers": "发现主服务器",
   "@discoverHomeservers": {},
   "whatIsAHomeserver": "什么是主服务器？",
   "@whatIsAHomeserver": {},
-  "homeserverDescription": "主服务器上就像电子邮件提供商，你的所有数据都存储在上面。你可以选择你想使用哪个主服务器。在 https://online.rechain.network 上了解更多信息。",
+  "homeserverDescription": "主服务器上就像电子邮件提供商，你的所有数据都存储在上面。你可以选择你想使用哪个主服务器。在 https://rechain.network 上了解更多信息。",
   "@homeserverDescription": {},
   "doesNotSeemToBeAValidHomeserver": "似乎不是兼容的主服务器。URL 不正确？",
   "@doesNotSeemToBeAValidHomeserver": {},
@@ -3116,7 +3116,7 @@
   "@oneOfYourDevicesIsNotVerified": {},
   "noticeChatBackupDeviceVerification": "注意：当你连接所有设备到聊天备份时，这些设备将被自动验证。",
   "@noticeChatBackupDeviceVerification": {},
-  "welcomeText": "你好呀 👋 欢迎来到 REChain。你可以登录任意兼容 https://online.rechain.network 的 homeserver，然后和任何人聊天。这是个巨大的去中心化消息网络！",
+  "welcomeText": "你好呀 👋 欢迎来到 REChain。你可以登录任意兼容 https://rechain.network 的 homeserver，然后和任何人聊天。这是个巨大的去中心化消息网络！",
   "@welcomeText": {},
   "continueText": "继续",
   "@continueText": {},
@@ -3206,7 +3206,7 @@
       }
     }
   },
-  "appIntroduction": "REChain 让使用不同即时通信工具的你和你的好友得以聊天。 访问 https://online.rechain.network 了解详情或轻按 *继续*。",
+  "appIntroduction": "REChain 让使用不同即时通信工具的你和你的好友得以聊天。 访问 https://rechain.network 了解详情或轻按 *继续*。",
   "@appIntroduction": {},
   "newChatRequest": "📩 新的聊天请求",
   "@newChatRequest": {},
@@ -3383,7 +3383,5 @@
   "customReaction": "自定义回应",
   "@customReaction": {},
   "moreEvents": "更多事件",
-  "@moreEvents": {},
-  "declineInvitation": "拒绝邀请",
-  "@declineInvitation": {}
+  "@moreEvents": {}
 }

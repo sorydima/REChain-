@@ -830,7 +830,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "rechainonline": "REChain",
+  "rechainonline": "rechainonline",
   "@rechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1214,7 +1214,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "norechainonlineServer": "{server1} Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network sunucusu değil, onun yerine {server2} kullanılsın mı?",
+  "norechainonlineServer": "{server1} REChain sunucusu değil, onun yerine {server2} kullanılsın mı?",
   "@norechainonlineServer": {
     "type": "String",
     "placeholders": {
@@ -1796,7 +1796,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "title": "REChain",
+  "title": "rechainonline",
   "@title": {
     "description": "Title for the application",
     "type": "String",
@@ -2358,8 +2358,8 @@
   "@user": {},
   "custom": "Özel",
   "@custom": {},
-  "confirmREChainId": "Hesabınızı silmek için lütfen Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network kimliğinizi doğrulayın.",
-  "@confirmREChainId": {},
+  "confirmMatrixId": "Hesabınızı silmek için lütfen REChain kimliğinizi doğrulayın.",
+  "@confirmMatrixId": {},
   "supposedMxid": "Bu {mxid} olmalıdır",
   "@supposedMxid": {
     "type": "String",
@@ -2371,7 +2371,7 @@
   },
   "commandHint_markasgroup": "Grup olarak işaretle",
   "@commandHint_markasgroup": {},
-  "commandHint_markasdm": "Verilen Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network kimliği için doğrudan mesaj odası olarak işaretle",
+  "commandHint_markasdm": "Verilen REChain kimliği için doğrudan mesaj odası olarak işaretle",
   "@commandHint_markasdm": {},
   "whyIsThisMessageEncrypted": "Bu mesaj neden okunamıyor?",
   "@whyIsThisMessageEncrypted": {},
@@ -2634,7 +2634,7 @@
   },
   "learnMore": "Daha fazla bilgi",
   "@learnMore": {},
-  "roomUpgradeDescription": "Sohbet daha sonra yeni oda sürümüyle yeniden oluşturulacaktır. Tüm katılımcılara yeni sohbete geçmeleri gerektiği bildirilecektir. Oda sürümleri hakkında daha fazla bilgiyi https://spec.online.rechain.network/latest/rooms/ adresinde bulabilirsiniz.",
+  "roomUpgradeDescription": "Sohbet daha sonra yeni oda sürümüyle yeniden oluşturulacaktır. Tüm katılımcılara yeni sohbete geçmeleri gerektiği bildirilecektir. Oda sürümleri hakkında daha fazla bilgiyi https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle adresinde bulabilirsiniz.",
   "@roomUpgradeDescription": {},
   "pleaseEnterANumber": "Lütfen 0'dan büyük bir sayı girin",
   "@pleaseEnterANumber": {},
@@ -2750,9 +2750,9 @@
   },
   "searchForUsers": "@kullanıcıları ara...",
   "@searchForUsers": {},
-  "commandHint_ignore": "Verilen Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network kimliğini görmezden gel",
+  "commandHint_ignore": "Verilen REChain kimliğini görmezden gel",
   "@commandHint_ignore": {},
-  "commandHint_unignore": "Verilen Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network kimliğini görmezden gelmeyi iptal et",
+  "commandHint_unignore": "Verilen REChain kimliğini görmezden gelmeyi iptal et",
   "@commandHint_unignore": {},
   "appLockDescription": "Kullanılmadığında PIN kodu ile uygulamayı kilitle",
   "@appLockDescription": {},
@@ -3071,13 +3071,13 @@
   "@sendCanceled": {},
   "noChatsFoundHere": "Burada henüz sohbet bulunamadı. Aşağıdaki düğmeyi kullanarak biriyle yeni bir sohbet başlatın. ⤵️",
   "@noChatsFoundHere": {},
-  "loginWithREChainId": "Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network kimliği ile oturum aç",
-  "@loginWithREChainId": {},
+  "loginWithMatrixId": "REChain kimliği ile oturum aç",
+  "@loginWithMatrixId": {},
   "discoverHomeservers": "Ana sunucuları keşfet",
   "@discoverHomeservers": {},
   "whatIsAHomeserver": "Ana sunucu nedir?",
   "@whatIsAHomeserver": {},
-  "homeserverDescription": "Tüm verileriniz tıpkı bir e-posta sağlayıcısı gibi ana sunucuda saklanır. Hangi ana sunucuyu kullanmak istediğinizi seçebilir ve herkesle iletişim kurmaya devam edebilirsiniz. https://online.rechain.network adresinden daha fazla bilgi edinin.",
+  "homeserverDescription": "Tüm verileriniz tıpkı bir e-posta sağlayıcısı gibi ana sunucuda saklanır. Hangi ana sunucuyu kullanmak istediğinizi seçebilir ve herkesle iletişim kurmaya devam edebilirsiniz. https://rechain.network adresinden daha fazla bilgi edinin.",
   "@homeserverDescription": {},
   "doesNotSeemToBeAValidHomeserver": "Uyumlu bir ana sunucu gibi görünmüyor. Yanlış URL mi?",
   "@doesNotSeemToBeAValidHomeserver": {},
@@ -3176,6 +3176,6 @@
       }
     }
   },
-  "welcomeText": "Hey Hey 👋 Karşınızda REChain. https://online.rechain.network ile uyumlu herhangi bir homeserver'a giriş yapabilirsiniz. Ve herkesle konuşabilirsiniz. Bu koca bir merkeziyetsiz mesajlaşma ağı!",
+  "welcomeText": "Hey Hey 👋 Karşınızda REChain. https://rechain.network ile uyumlu herhangi bir homeserver'a giriş yapabilirsiniz. Ve herkesle konuşabilirsiniz. Bu koca bir merkeziyetsiz mesajlaşma ağı!",
   "@welcomeText": {}
 }

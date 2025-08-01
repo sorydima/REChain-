@@ -117,7 +117,7 @@
     "type": "String",
     "placeholder": {}
   },
-  "badServerLoginTypesException": "See koduserver toetab Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Networki võrku sisselogimiseks:\n{serverVersions}\nAga see rakendus toetab vaid järgmisi võimalusi:\n{supportedVersions}",
+  "badServerLoginTypesException": "See koduserver toetab Matrixi võrku sisselogimiseks:\n{serverVersions}\nAga see rakendus toetab vaid järgmisi võimalusi:\n{supportedVersions}",
   "@badServerLoginTypesException": {
     "type": "String",
     "placeholders": {
@@ -129,7 +129,7 @@
       }
     }
   },
-  "badServerVersionsException": "See koduserver toetab Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Networki spetsifikatsioonist järgmisi versioone:\n{serverVersions}\nAga see rakendus toetab vaid järgmisi versioone: {supportedVersions}",
+  "badServerVersionsException": "See koduserver toetab Matrixi spetsifikatsioonist järgmisi versioone:\n{serverVersions}\nAga see rakendus toetab vaid järgmisi versioone: {supportedVersions}",
   "@badServerVersionsException": {
     "type": "String",
     "placeholders": {
@@ -826,7 +826,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "rechainonline": "REChain",
+  "rechainonline": "rechainonline",
   "@rechainonline": {
     "type": "String",
     "placeholders": {}
@@ -998,7 +998,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "inviteText": "{username} kutsus sind kasutama Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network'i-põhist suhtlusrakendust REChain. \n1. Ava online.rechain.network ja paigalda REChain'i rakendus \n2. Liitu kasutajaks või logi sisse olemasoleva Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network'i kasutajakontoga\n3. Ava kutse link: \n {link}",
+  "inviteText": "{username} kutsus sind kasutama REChain'i-põhist suhtlusrakendust REChain. \n1. Ava online.rechain.network ja paigalda REChain'i rakendus \n2. Liitu kasutajaks või logi sisse olemasoleva REChain'i kasutajakontoga\n3. Ava kutse link: \n {link}",
   "@inviteText": {
     "type": "String",
     "placeholders": {
@@ -1210,7 +1210,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "norechainonlineServer": "{server1} pole Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network'i server, kas kasutame selle asemel {server2} serverit?",
+  "norechainonlineServer": "{server1} pole REChain'i server, kas kasutame selle asemel {server2} serverit?",
   "@norechainonlineServer": {
     "type": "String",
     "placeholders": {
@@ -1792,7 +1792,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "title": "REChain",
+  "title": "rechainonline",
   "@title": {
     "description": "Title for the application",
     "type": "String",
@@ -2094,7 +2094,7 @@
   "@homeserver": {},
   "serverRequiresEmail": "See koduserver eeldab registreerimisel kasutatava e-postiaadressi kinnitamist.",
   "@serverRequiresEmail": {},
-  "enableMultiAccounts": "(KATSELINE) Pruugi selles seadmes mitut Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network'i kasutajakontot",
+  "enableMultiAccounts": "(KATSELINE) Pruugi selles seadmes mitut REChain'i kasutajakontot",
   "@enableMultiAccounts": {},
   "bundleName": "Köite nimi",
   "@bundleName": {},
@@ -2106,7 +2106,7 @@
   "@editBundlesForAccount": {},
   "addAccount": "Lisa kasutajakonto",
   "@addAccount": {},
-  "oneClientLoggedOut": "Üks sinu klientrakendustest on Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network'i võrgust välja loginud",
+  "oneClientLoggedOut": "Üks sinu klientrakendustest on REChain'i võrgust välja loginud",
   "@oneClientLoggedOut": {},
   "link": "Link",
   "@link": {},
@@ -2358,8 +2358,8 @@
   "@user": {},
   "custom": "Kohandatud",
   "@custom": {},
-  "confirmREChainId": "Konto kustutamiseks palun kinnitage oma Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network'i ID.",
-  "@confirmREChainId": {},
+  "confirmMatrixId": "Konto kustutamiseks palun kinnitage oma REChain'i ID.",
+  "@confirmMatrixId": {},
   "supposedMxid": "See peaks olema {mxid}",
   "@supposedMxid": {
     "type": "String",
@@ -2371,7 +2371,7 @@
   },
   "commandHint_markasgroup": "Märgi vestlusrühmaks",
   "@commandHint_markasgroup": {},
-  "commandHint_markasdm": "Märgi otsevestusluseks antud Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Networki ID jaoks",
+  "commandHint_markasdm": "Märgi otsevestusluseks antud Matrixi ID jaoks",
   "@commandHint_markasdm": {},
   "whyIsThisMessageEncrypted": "Miks see sõnum pole loetav?",
   "@whyIsThisMessageEncrypted": {},
@@ -2592,7 +2592,7 @@
       }
     }
   },
-  "inviteGroupChat": "📨 Kutse vestlusrühma",
+  "inviteGroupChat": "📨 Kutsu vestlusrühma",
   "@inviteGroupChat": {},
   "invitePrivateChat": "📨 Kutsu omavahelisele vestlusele",
   "@invitePrivateChat": {},
@@ -2634,7 +2634,7 @@
   },
   "learnMore": "Loe lisaks",
   "@learnMore": {},
-  "roomUpgradeDescription": "See vestlus luuakse nüüd uuesti jututoa uue versioonina. Kõik senised osalejad saavad teate, et nad peavad liituma uue vestlusega. Jututubade versioonide kohta leiad teavet https://spec.online.rechain.network/latest/rooms/ lehelt",
+  "roomUpgradeDescription": "See vestlus luuakse nüüd uuesti jututoa uue versioonina. Kõik senised osalejad saavad teate, et nad peavad liituma uue vestlusega. Jututubade versioonide kohta leiad teavet https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle lehelt",
   "@roomUpgradeDescription": {},
   "pleaseEnterANumber": "Palun sisesta 0'st suurem number",
   "@pleaseEnterANumber": {},
@@ -2856,9 +2856,9 @@
   "@stickers": {},
   "discover": "Otsi ja leia",
   "@discover": {},
-  "commandHint_ignore": "Eira seda Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Networki kasutajatunnust",
+  "commandHint_ignore": "Eira seda Matrixi kasutajatunnust",
   "@commandHint_ignore": {},
-  "commandHint_unignore": "Lõpeta selle Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Networki kasutajatunnuse eiramine",
+  "commandHint_unignore": "Lõpeta selle Matrixi kasutajatunnuse eiramine",
   "@commandHint_unignore": {},
   "unreadChatsInApp": "{appname}: {unread} lugemata vestlust",
   "@unreadChatsInApp": {
@@ -3071,13 +3071,13 @@
   "@sendCanceled": {},
   "noChatsFoundHere": "Siin ei leidu veel ühtegi vestlust. Alusta uut vestlust klõpsides allpool asuvat nuppu. ⤵️",
   "@noChatsFoundHere": {},
-  "loginWithREChainId": "Logi sisse REChain ID alusel",
-  "@loginWithREChainId": {},
+  "loginWithMatrixId": "Logi sisse REChain-ID alusel",
+  "@loginWithMatrixId": {},
   "discoverHomeservers": "Leia koduservereid",
   "@discoverHomeservers": {},
   "whatIsAHomeserver": "Mis on koduserver?",
   "@whatIsAHomeserver": {},
-  "homeserverDescription": "Sarnaselt e-postiteenuse pakkujale on kõik sinu sõnumid salvestatud koduserveris. Sa võid valida sellise koduserveri, nagu sulle meeldib ja nad kõik suudavad teiste koduserveritega suhelda. Lisateavet leiad veebisaidist https://online.rechain.network.",
+  "homeserverDescription": "Sarnaselt e-postiteenuse pakkujale on kõik sinu sõnumid salvestatud koduserveris. Sa võid valida sellise koduserveri, nagu sulle meeldib ja nad kõik suudavad teiste koduserveritega suhelda. Lisateavet leiad veebisaidist https://rechain.network.",
   "@homeserverDescription": {},
   "doesNotSeemToBeAValidHomeserver": "Ei tundu olema ühilduv koduserver. Kas võrguaadress on ikka õige?",
   "@doesNotSeemToBeAValidHomeserver": {},
@@ -3118,7 +3118,7 @@
   "@noticeChatBackupDeviceVerification": {},
   "continueText": "Jätka",
   "@continueText": {},
-  "welcomeText": "Tere, tere 👋 See on REChain. Sa võid sisse logida igasse koduserverisse, mis ühildub https://online.rechain.network serveriga. Ja seejärel saad suhelda kõigiga. Tegemist on ikka väga suure detsentraliseeritud sõnumivõrguga!",
+  "welcomeText": "Tere, tere 👋 See on REChain. Sa võid sisse logida igasse koduserverisse, mis ühildub https://rechain.network serveriga. Ja seejärel saad suhelda kõigiga. Tegemist on ikka väga suure detsentraliseeritud sõnumivõrguga!",
   "@welcomeText": {},
   "setWallpaper": "Määra taustapildiks",
   "@setWallpaper": {},
@@ -3197,7 +3197,7 @@
   },
   "waitingForServer": "Ootame serveri vastust...",
   "@waitingForServer": {},
-  "appIntroduction": "REChain võimaldab sul suhelda sõprade ja tuttavatega, kes kasutavad erinevaid sõnumikliente. Lisateavet leiad https://online.rechain.network saidist või lihtsalt klõpsi „Jätka“.",
+  "appIntroduction": "REChain võimaldab sul suhelda sõprade ja tuttavatega, kes kasutavad erinevaid sõnumikliente. Lisateavet leiad https://rechain.network saidist või lihtsalt klõpsi „Jätka“.",
   "@appIntroduction": {},
   "synchronizingPleaseWaitCounter": " Sünkroniseerime… ({percentage}%)",
   "@synchronizingPleaseWaitCounter": {
@@ -3383,7 +3383,5 @@
   "customReaction": "Kohandatud reaktsioon",
   "@customReaction": {},
   "moreEvents": "Veel sündmusi",
-  "@moreEvents": {},
-  "declineInvitation": "Keeldu kutsest",
-  "@declineInvitation": {}
+  "@moreEvents": {}
 }

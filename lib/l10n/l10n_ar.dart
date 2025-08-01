@@ -76,8 +76,8 @@ class L10nAr extends L10n {
   String get addEmail => 'أضف بريدًا إلكترونيًا';
 
   @override
-  String get confirmREChainId =>
-      'يرجى تأكيد معرف Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network الخاص بك من أجل حذف حسابك.';
+  String get confirmMatrixId =>
+      'يرجى تأكيد معرف REChain الخاص بك من أجل حذف حسابك.';
 
   @override
   String supposedMxid(String mxid) {
@@ -942,7 +942,7 @@ class L10nAr extends L10n {
   String get newChat => 'محادثة جديدة';
 
   @override
-  String get newMessageInrechainonline => '💬 رسالة جديدة في REChain';
+  String get newMessageInrechainonline => '💬 رسالة جديدة في rechainonline';
 
   @override
   String get newVerificationRequest => 'طلب تحقق جديد!';
@@ -2005,7 +2005,7 @@ class L10nAr extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      'سيتم بعد ذلك إعادة إنشاء المحادثة باستخدام إصدار الغرفة الجديد. سيتم إخطار جميع المشاركين بأنهم بحاجة إلى التبديل إلى المحادثة الجديدة. يمكنك معرفة المزيد حول إصدارات الغرف على https://spec.online.rechain.network/latest/rooms/';
+      'سيتم بعد ذلك إعادة إنشاء المحادثة باستخدام إصدار الغرفة الجديد. سيتم إخطار جميع المشاركين بأنهم بحاجة إلى التبديل إلى المحادثة الجديدة. يمكنك معرفة المزيد حول إصدارات الغرف على https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle';
 
   @override
   String get removeDevicesDescription =>
@@ -2337,7 +2337,7 @@ class L10nAr extends L10n {
   String get sendCanceled => 'تم إلغاء الإرسال';
 
   @override
-  String get loginWithREChainId => 'تسجيل الدخول باستخدام معرف ماتريكس';
+  String get loginWithMatrixId => 'تسجيل الدخول باستخدام معرف ماتريكس';
 
   @override
   String get discoverHomeservers => 'اكتشف الخوادم المنزلية';
@@ -2347,7 +2347,7 @@ class L10nAr extends L10n {
 
   @override
   String get homeserverDescription =>
-      'يتم تخزين جميع بياناتك على خادم المنزل، تمامًا مثل مزود خدمة البريد الإلكتروني. يمكنك اختيار خادم البيت الذي تريد استخدامه، بينما لا يزال بإمكانك التواصل مع الجميع. اعرف المزيد على https://online.rechain.network.';
+      'يتم تخزين جميع بياناتك على خادم المنزل، تمامًا مثل مزود خدمة البريد الإلكتروني. يمكنك اختيار خادم البيت الذي تريد استخدامه، بينما لا يزال بإمكانك التواصل مع الجميع. اعرف المزيد على https://rechain.network.';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
@@ -2390,7 +2390,7 @@ class L10nAr extends L10n {
 
   @override
   String get welcomeText =>
-      'مرحبًا، 👋 معك REChain. يمكنك تسجيل الدخول إلى أي خادم منزلي، وهو متوافق مع https://online.rechain.network. ثم دردش مع أي شخص. إنها شبكة مراسلة لا مركزية ضخمة!';
+      'مرحبًا، 👋 معك REChain. يمكنك تسجيل الدخول إلى أي خادم منزلي، وهو متوافق مع https://rechain.network. ثم دردش مع أي شخص. إنها شبكة مراسلة لا مركزية ضخمة!';
 
   @override
   String get blur => 'الضبابية:';
@@ -2478,7 +2478,7 @@ class L10nAr extends L10n {
 
   @override
   String get appIntroduction =>
-      'REChain lets you chat with your friends across different messengers. Learn more at https://online.rechain.network or just tap *Continue*.';
+      'REChain lets you chat with your friends across different messengers. Learn more at https://rechain.network or just tap *Continue*.';
 
   @override
   String get newChatRequest => '📩 New chat request';
@@ -2716,7 +2716,4 @@ class L10nAr extends L10n {
 
   @override
   String get moreEvents => 'More events';
-
-  @override
-  String get declineInvitation => 'Decline invitation';
 }

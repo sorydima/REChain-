@@ -21,7 +21,7 @@ abstract class SettingKeys {
   static const String unifiedPushEndpoint = 'com.rechain.unifiedpush.endpoint';
   static const String ownStatusMessage = 'com.rechain.status_msg';
   static const String dontAskForBootstrapKey =
-      'com.rechain.dont_ask_bootstrap';
+      'com.rechainchat.dont_ask_bootstrap';
   static const String autoplayImages = 'com.rechain.autoplay_images';
   static const String sendTypingNotifications =
       'com.rechain.send_typing_notifications';

@@ -143,7 +143,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "rechainonline": "REChain",
+  "rechainonline": "rechainonline",
   "@rechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1243,7 +1243,7 @@
   },
   "scanQrCode": "QR 코드 스캔",
   "@scanQrCode": {},
-  "norechainonlineServer": "{server1}은 Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network 서버가 아닙니다, {server2}를 대신 사용할까요?",
+  "norechainonlineServer": "{server1}은 REChain 서버가 아닙니다, {server2}를 대신 사용할까요?",
   "@norechainonlineServer": {
     "type": "String",
     "placeholders": {
@@ -1441,7 +1441,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "title": "REChain",
+  "title": "rechainonline",
   "@title": {
     "description": "Title for the application",
     "type": "String",
@@ -2207,8 +2207,8 @@
   "@videoCallsBetaWarning": {},
   "emailOrUsername": "이메일이나 유저 이름",
   "@emailOrUsername": {},
-  "confirmREChainId": "계정을 삭제하려면 REChain ID를 입력해 주세요.",
-  "@confirmREChainId": {},
+  "confirmMatrixId": "계정을 삭제하려면 REChain ID를 입력해 주세요.",
+  "@confirmMatrixId": {},
   "commandHint_googly": "왕눈이 눈알 보내기",
   "@commandHint_googly": {},
   "googlyEyesContent": "{senderName} 님이 왕눈이 눈알을 보냈습니다",
@@ -2553,7 +2553,7 @@
   "@newGroup": {},
   "dehydrateTor": "TOR 사용자: 세션 내보내기",
   "@dehydrateTor": {},
-  "roomUpgradeDescription": "채팅이 새로운 방 버전으로 다시 생성됩니다. 모든 참가자는 새로운 채팅으로 전환해야합니다. https://spec.online.rechain.network/latest/rooms/ 에서 방 버전에 대해 자세히 알아볼 수 있습니다.",
+  "roomUpgradeDescription": "채팅이 새로운 방 버전으로 다시 생성됩니다. 모든 참가자는 새로운 채팅으로 전환해야합니다. https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle 에서 방 버전에 대해 자세히 알아볼 수 있습니다.",
   "@roomUpgradeDescription": {},
   "pleaseEnterANumber": "0보다 큰 숫자를 입력하세요",
   "@pleaseEnterANumber": {},
@@ -3047,7 +3047,7 @@
   "@changeTheCanonicalRoomAlias": {},
   "sendCanceled": "전송 최소됨",
   "@sendCanceled": {},
-  "homeserverDescription": "당신의 모든 데이터는 이메일과 흡사하게 당신의 홈서버에 저장됩니다. 당신이 소통하고 싶은 사람들과 다른 서버를 사용해도 무관하니 당신이 원하는 홈서버를 선택해도 됩니다. https://online.rechain.network에서 자세히 알아보세요.",
+  "homeserverDescription": "당신의 모든 데이터는 이메일과 흡사하게 당신의 홈서버에 저장됩니다. 당신이 소통하고 싶은 사람들과 다른 서버를 사용해도 무관하니 당신이 원하는 홈서버를 선택해도 됩니다. https://rechain.network에서 자세히 알아보세요.",
   "@homeserverDescription": {},
   "sendingAttachmentCountOfCount": "첨부파일 {length}개중 {index}번째 전송 중...",
   "@sendingAttachmentCountOfCount": {
@@ -3072,7 +3072,7 @@
   },
   "noContactInformationProvided": "서버가 유효한 연락처 정보를 제공하지 않음",
   "@noContactInformationProvided": {},
-  "welcomeText": "안녕하세요 👋 REChain이에요. 당신은 htpps://online.rechain.network와 호환되는 모든 홈서버를 사용할 수 있어요. 그리고 모두와 대화해보세요. 거대한 분산 대화망이니까요!",
+  "welcomeText": "안녕하세요 👋 REChain이에요. 당신은 https://online.rechain.network와 호환되는 모든 홈서버를 사용할 수 있어요. 그리고 모두와 대화해보세요. 거대한 분산 대화망이니까요!",
   "@welcomeText": {},
   "changeGeneralChatSettings": "일반 채팅 설정 번경하기",
   "@changeGeneralChatSettings": {},
@@ -3123,8 +3123,8 @@
   "@sendRoomNotifications": {},
   "chatPermissionsDescription": "이 채팅에서 특정 작업에 요구할 권한 레벨을 정의합니다. 권한 레벨 0, 50, 100은 일반적으로 유저, 관리자, 운영자를 나타내지만, 모든 숫자가 가능합니다.",
   "@chatPermissionsDescription": {},
-  "loginWithREChainId": "REChain ID로 로그인",
-  "@loginWithREChainId": {},
+  "loginWithMatrixId": "REChain-ID로 로그인",
+  "@loginWithMatrixId": {},
   "discoverHomeservers": "홈서버 찾아보기",
   "@discoverHomeservers": {},
   "whatIsAHomeserver": "홈서버가 무엇인가요?",
@@ -3196,7 +3196,7 @@
   "@previous": {},
   "newChatRequest": "📩 새 채팅 요청",
   "@newChatRequest": {},
-  "appIntroduction": "REChain는 다른 메신저들을 사용하는 친구들과도 채팅할 수 있습니다. https://online.rechain.network에 방문하거나 *계속*을 눌러 자세한 정보를 확인하세요.",
+  "appIntroduction": "REChain는 다른 메신저들을 사용하는 친구들과도 채팅할 수 있습니다. https://rechain.network에 방문하거나 *계속*을 눌러 자세한 정보를 확인하세요.",
   "@appIntroduction": {},
   "synchronizingPleaseWaitCounter": " 동기화중… ({percentage}%)",
   "@synchronizingPleaseWaitCounter": {

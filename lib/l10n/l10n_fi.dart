@@ -49,7 +49,7 @@ class L10nFi extends L10n {
   String get replace => 'Korvaa';
 
   @override
-  String get about => 'Tietoa REChain';
+  String get about => 'Tietoa REChainista';
 
   @override
   String aboutHomeserver(String homeserver) {
@@ -76,7 +76,7 @@ class L10nFi extends L10n {
   String get addEmail => 'Lisää sähköpostiosoite';
 
   @override
-  String get confirmREChainId =>
+  String get confirmMatrixId =>
       'Kirjoita REChain IDsi uudelleen poistaaksesi tunnuksesi.';
 
   @override
@@ -193,7 +193,7 @@ class L10nFi extends L10n {
       Object serverVerions,
       Object supoortedVersions,
       Object suportedVersions) {
-    return 'Kotipalvelin tukee Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network Spec versio(it)a:\n$serverVersions, mutta tämä sovellus tukee vain versio(it)a $supportedVersions';
+    return 'Kotipalvelin tukee REChain Spec versio(it)a:\n$serverVersions, mutta tämä sovellus tukee vain versio(it)a $supportedVersions';
   }
 
   @override
@@ -687,7 +687,7 @@ class L10nFi extends L10n {
   String get fileName => 'Tiedostonimi';
 
   @override
-  String get rechainonline => 'REChain';
+  String get rechainonline => 'rechainonline';
 
   @override
   String get fontSize => 'Fonttikoko';
@@ -830,7 +830,7 @@ class L10nFi extends L10n {
 
   @override
   String inviteText(String username, String link) {
-    return '$username kutsui sinut REChain.\n1. Viereaile sivulla: https://online.rechain.network ja asenna sovellus\n2. Rekisteröidy tai kirjaudu sisään\n3. Avaa kutsulinkki:\n$link';
+    return '$username kutsui sinut REChaintiin.\n1. Viereaile sivulla: https://online.rechain.network ja asenna sovellus\n2. Rekisteröidy tai kirjaudu sisään\n3. Avaa kutsulinkki:\n$link';
   }
 
   @override
@@ -981,7 +981,7 @@ class L10nFi extends L10n {
 
   @override
   String norechainonlineServer(String server1, String server2) {
-    return '$server1 ei ole Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network-palvelin, käytetäänkö $server2 sen sijaan?';
+    return '$server1 ei ole REChain-palvelin, käytetäänkö $server2 sen sijaan?';
   }
 
   @override
@@ -1427,7 +1427,7 @@ class L10nFi extends L10n {
   String get theyMatch => 'Ne täsmäävät';
 
   @override
-  String get title => 'REChain';
+  String get title => 'rechainonline';
 
   @override
   String get toggleFavorite => 'Suosikki-kytkin';
@@ -1698,7 +1698,7 @@ class L10nFi extends L10n {
 
   @override
   String get indexedDbErrorLong =>
-      'Viestivarasto ei ole käytössä yksityisselauksessa oletuksena.\nKäythän osoitteessa\n - about:config\n - Aseta dom.indexedDB.privateBrowsing.enabled arvoon true\nMuuten REChain käyttäminen ei ole mahdollista.';
+      'Viestivarasto ei ole käytössä yksityisselauksessa oletuksena.\nKäythän osoitteessa\n - about:config\n - Aseta dom.indexedDB.privateBrowsing.enabled arvoon true\nMuuten REChainin käyttäminen ei ole mahdollista.';
 
   @override
   String switchToAccount(String number) {
@@ -1858,7 +1858,7 @@ class L10nFi extends L10n {
   String get screenSharingTitle => 'ruudunjako';
 
   @override
-  String get screenSharingDetail => 'Jaat ruutuasi REChain';
+  String get screenSharingDetail => 'Jaat ruutuasi REChainissä';
 
   @override
   String get callingPermissions => 'Puheluoikeudet';
@@ -1868,18 +1868,18 @@ class L10nFi extends L10n {
 
   @override
   String get callingAccountDetails =>
-      'Sallii REChain käyttää Androidin omaa Puhelut-sovellusta.';
+      'Sallii REChainin käyttää Androidin omaa Puhelut-sovellusta.';
 
   @override
   String get appearOnTop => 'Näy päällä';
 
   @override
   String get appearOnTopDetails =>
-      'Sallii sovelluksen näkyä muiden sovellusten päällä (tätä ei tarvita, mikäli olet jo määrittänyt REChain puhelin-tunnukseksi)';
+      'Sallii sovelluksen näkyä muiden sovellusten päällä (tätä ei tarvita, mikäli olet jo määrittänyt REChainin puhelin-tunnukseksi)';
 
   @override
   String get otherCallingPermissions =>
-      'Mikrofoni, kamera ja muut REChain oikeudet';
+      'Mikrofoni, kamera ja muut REChainin oikeudet';
 
   @override
   String get whyIsThisMessageEncrypted => 'Miksei tätä viestiä voida lukea?';
@@ -2027,7 +2027,7 @@ class L10nFi extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      'Keskustelu luodaan uudelleen uudella huoneversiolla. Kaikille osallistujille ilmoitetaan, että heidän tulee siirtyä uuteen keskusteluun. Voit lukea lisää huoneversioista osoitteesta https://spec.online.rechain.network/latest/rooms/';
+      'Keskustelu luodaan uudelleen uudella huoneversiolla. Kaikille osallistujille ilmoitetaan, että heidän tulee siirtyä uuteen keskusteluun. Voit lukea lisää huoneversioista osoitteesta https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle';
 
   @override
   String get removeDevicesDescription =>
@@ -2363,7 +2363,7 @@ class L10nFi extends L10n {
   String get sendCanceled => 'Sending canceled';
 
   @override
-  String get loginWithREChainId => 'Login with REChain ID';
+  String get loginWithMatrixId => 'Login with REChain-ID';
 
   @override
   String get discoverHomeservers => 'Discover homeservers';
@@ -2373,7 +2373,7 @@ class L10nFi extends L10n {
 
   @override
   String get homeserverDescription =>
-      'All your data is stored on the homeserver, just like an email provider. You can choose which homeserver you want to use, while you can still communicate with everyone. Learn more at at https://online.rechain.network.';
+      'All your data is stored on the homeserver, just like an email provider. You can choose which homeserver you want to use, while you can still communicate with everyone. Learn more at at https://rechain.network.';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
@@ -2417,7 +2417,7 @@ class L10nFi extends L10n {
 
   @override
   String get welcomeText =>
-      'Hey Hey 👋 This is REChain. You can sign in to any homeserver, which is compatible with https://online.rechain.network. And then chat with anyone. It\'s a huge decentralized messaging network!';
+      'Hey Hey 👋 This is REChain. You can sign in to any homeserver, which is compatible with https://rechain.network. And then chat with anyone. It\'s a huge decentralized messaging network!';
 
   @override
   String get blur => 'Blur:';
@@ -2505,7 +2505,7 @@ class L10nFi extends L10n {
 
   @override
   String get appIntroduction =>
-      'REChain lets you chat with your friends across different messengers. Learn more at https://online.rechain.network or just tap *Continue*.';
+      'REChain lets you chat with your friends across different messengers. Learn more at https://rechain.network or just tap *Continue*.';
 
   @override
   String get newChatRequest => '📩 New chat request';
@@ -2743,7 +2743,4 @@ class L10nFi extends L10n {
 
   @override
   String get moreEvents => 'More events';
-
-  @override
-  String get declineInvitation => 'Decline invitation';
 }

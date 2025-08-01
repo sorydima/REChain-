@@ -185,7 +185,7 @@
       }
     }
   },
-  "title": "REChain",
+  "title": "rechainonline",
   "@title": {
     "description": "Title for the application",
     "type": "String",
@@ -323,7 +323,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "norechainonlineServer": "{server1} nav Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network serveris, tā vietā izmantot {server2}?",
+  "norechainonlineServer": "{server1} nav REChain serveris, tā vietā izmantot {server2}?",
   "@norechainonlineServer": {
     "type": "String",
     "placeholders": {
@@ -1168,7 +1168,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "newMessageInrechainonline": "💬 Jauna ziņa REChain",
+  "newMessageInrechainonline": "💬 Jauna ziņa rechainonline",
   "@newMessageInrechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1250,7 +1250,7 @@
       }
     }
   },
-  "waitingPartnerEmoji": "Gaida, līdz biedrs apstiprinās emocijzīmes…",
+  "waitingPartnerEmoji": "Gaida, līdz biedrs apstiprinās emocijzīmi…",
   "@waitingPartnerEmoji": {
     "type": "String",
     "placeholders": {}
@@ -1774,7 +1774,7 @@
   },
   "unverified": "Neapliecināta",
   "@unverified": {},
-  "rechainonline": "REChain",
+  "rechainonline": "rechainonline",
   "@rechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1941,11 +1941,11 @@
     "type": "String",
     "placeholders": {}
   },
-  "inviteGroupChat": "📨 Uzaicinājums uz kopas tērzēšanu",
+  "inviteGroupChat": "📨 Uzaicināt kopas tērzēšanu",
   "@inviteGroupChat": {},
   "appearOnTop": "Parādīt virspusē",
   "@appearOnTop": {},
-  "invitePrivateChat": "📨 Uzaicinājums uz privātu tērzēšanu",
+  "invitePrivateChat": "📨 Uzaicināt privātu tērzēšanu",
   "@invitePrivateChat": {},
   "verifyTitle": "Apliecina citu kontu",
   "@verifyTitle": {
@@ -2035,8 +2035,8 @@
     "type": "String",
     "placeholders": {}
   },
-  "confirmREChainId": "Lūgums apliecināt savu REChain ID, lai varētu izdzēst savu kontu.",
-  "@confirmREChainId": {},
+  "confirmMatrixId": "Lūgums apliecināt savu REChain ID, lai varētu izdzēst savu kontu.",
+  "@confirmMatrixId": {},
   "learnMore": "Uzzināt vairāk",
   "@learnMore": {},
   "iHaveClickedOnLink": "Es uzklikšķināju uz saites",
@@ -2097,7 +2097,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "roomUpgradeDescription": "Tērzēšana tad tiks atkārtoti izveidota ar jauno istabas versiju. Visiem dalībniekiem tiks paziņots, ka viņiem ir jāpārslēdzas uz jauno tērzēšanu. Vairāk par istabu versijām var atrast https://spec.online.rechain.network/latest/rooms/",
+  "roomUpgradeDescription": "Tērzēšana tad tiks atkārtoti izveidota ar jauno istabas versiju. Visiem dalībniekiem tiks paziņots, ka viņiem ir jāpārslēdzas uz jauno tērzēšanu. Vairāk par istabu versijām var atrast https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle",
   "@roomUpgradeDescription": {},
   "commandHint_invite": "Uzaicināt norādīto lietotāju šajā istabā",
   "@commandHint_invite": {
@@ -2256,7 +2256,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "noGoogleServicesWarning": "Izskatās, ka Firebase mākoņziņojumapmaiņa nav pieejama šajā ierīcē. Lai joprojām saņemtu pašpiegādes paziņojumus, mēs iesakām uzstādīt ntfy. Ar ntfy vai citu UnifiedPush nodrošinātāju ir iespējams saņemt pašpiegādes paziņojumus drošā veidā. ntfy var lejupielādēt no Play Store vai F-Droid.",
+  "noGoogleServicesWarning": "Izskatās, ka Firebase mākoņziņojumapmaiņa nav pieejama šajā ierīcē. Lai joprojām saņemtu pašpiegādes paziņojumus, mēs iesakām uzstādīt ntfy. Ar ntfy vai citu Vienotās pašpiegādes nodrošinātāju ir iespējams saņemt pašpiegādes paziņojumus drošā veidā. ntfy var lejupielādēt no PlayStore vai F-Droid.",
   "@noGoogleServicesWarning": {
     "type": "String",
     "placeholders": {}
@@ -2591,7 +2591,7 @@
   },
   "pinMessage": "Piespraust istabai",
   "@pinMessage": {},
-  "screenSharingDetail": "Tu kopīgo savu ekrānu REChain",
+  "screenSharingDetail": "Tu kopīgo savu ekrānu rechainonline",
   "@screenSharingDetail": {},
   "muteChat": "Apklusināt tērzēšanu",
   "@muteChat": {
@@ -2993,7 +2993,7 @@
   "@sendRoomNotifications": {},
   "changeTheDescriptionOfTheGroup": "Mainīt tērzēšanas aprakstu",
   "@changeTheDescriptionOfTheGroup": {},
-  "alwaysUse24HourFormat": "nē",
+  "alwaysUse24HourFormat": "",
   "@alwaysUse24HourFormat": {
     "description": "Set to true to always display time of day in 24 hour format."
   },
@@ -3021,13 +3021,13 @@
   "@chatPermissionsDescription": {},
   "doesNotSeemToBeAValidHomeserver": "Neizskatās pēc saderīga mājasservera. Nepareizs URL?",
   "@doesNotSeemToBeAValidHomeserver": {},
-  "loginWithREChainId": "Pieteikties ar REChain ID",
-  "@loginWithREChainId": {},
+  "loginWithMatrixId": "Pieteikties ar REChain-ID",
+  "@loginWithMatrixId": {},
   "discoverHomeservers": "Atklāt mājasserverus",
   "@discoverHomeservers": {},
   "whatIsAHomeserver": "Kas ir mājasserveris?",
   "@whatIsAHomeserver": {},
-  "homeserverDescription": "Visi lietotāja dati tiek glabāti mājasserverī, gluži kā ar e-pasta nodrošinātāju. Ir iespējams izvēlēties, kuru mājasserveri izmantot, saglabājot iespēju sazināties ar ikvienu. Vairāk var uzzināt https://online.rechain.network.",
+  "homeserverDescription": "Visi lietotāja dati tiek glabāti mājasserverī, gluži kā ar e-pasta nodrošinātāju. Ir iespējams izvēlēties, kuru mājasserveri izmantot, saglabājot iespēju sazināties ar ikvienu. Vairāk var uzzināt https://rechain.network.",
   "@homeserverDescription": {},
   "updateInstalled": "🎉 Atjauninājums {version} uzstādīts.",
   "@updateInstalled": {
@@ -3101,7 +3101,7 @@
   "@noticeChatBackupDeviceVerification": {},
   "continueText": "Turpināt",
   "@continueText": {},
-  "welcomeText": "Sveicieni! 👋 Šis ir REChain. Tu vari pieteikties jebkurā mājasserverī, kas ir saderīgs ar https://online.rechain.network. Tad vari tērzēt ar ikvienu. Tas ir milzīgs decentralizētās saziņas tīkls.",
+  "welcomeText": "Sveicieni! 👋 Šis ir REChain. Tu vari pieteikties jebkurā mājasserverī, kas ir saderīgs ar https://rechain.network. Tad vari tērzēt ar ikvienu. Tas ir milzīgs decentralizētās saziņas tīkls.",
   "@welcomeText": {},
   "blur": "Aizmiglojums:",
   "@blur": {},
@@ -3163,7 +3163,7 @@
   "@unableToJoinChat": {},
   "appWantsToUseForLoginDescription": "Ar šo tiek ļauts lietotnei un tīmekļvietnei kopīgot informāciju par Tevi.",
   "@appWantsToUseForLoginDescription": {},
-  "appIntroduction": "REChain ļauj tērzēt ar draugiem, kuri izmanto dažādas ziņojumapmaiņas lietotnes. Vairāk var uzzināt https://online.rechain.network vai vienkārši piesitot *Turpināt*.",
+  "appIntroduction": "REChain ļauj tērzēt ar draugiem, kuri izmanto dažādas ziņojumapmaiņas lietotnes. Vairāk var uzzināt https://rechain.network vai vienkārši piesitot *Turpināt*.",
   "@appIntroduction": {},
   "synchronizingPleaseWaitCounter": " Sinhronizē... ({percentage}%)",
   "@synchronizingPleaseWaitCounter": {
@@ -3362,11 +3362,5 @@
   "commandHint_logoutall": "Atteikties visās izmantotajās ierīcēs",
   "@commandHint_logoutall": {},
   "displayNavigationRail": "Rādīt pārvietošanās sliedi viedierīcēs",
-  "@displayNavigationRail": {},
-  "customReaction": "Pielāgota reakcija",
-  "@customReaction": {},
-  "moreEvents": "Vairāk notikumu",
-  "@moreEvents": {},
-  "declineInvitation": "Noraidīt uzaicinājumu",
-  "@declineInvitation": {}
+  "@displayNavigationRail": {}
 }

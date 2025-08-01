@@ -326,8 +326,8 @@
       }
     }
   },
-  "confirmREChainId": "Confirm 你嘅 REChain ID ，我哋先至可以刪除你嘅 Account。",
-  "@confirmREChainId": {},
+  "confirmMatrixId": "Confirm 你嘅 REChain ID ，我哋先至可以刪除你嘅 Account。",
+  "@confirmMatrixId": {},
   "setCustomPermissionLevel": "自訂權限級別",
   "@setCustomPermissionLevel": {},
   "importFromZipFile": "喺 .zip 檔案導入",

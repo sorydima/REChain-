@@ -1607,7 +1607,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "@confirmREChainId": {},
+  "@confirmMatrixId": {},
   "@learnMore": {},
   "@iHaveClickedOnLink": {
     "type": "String",

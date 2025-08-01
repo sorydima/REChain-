@@ -76,7 +76,7 @@ class L10nZh extends L10n {
   String get addEmail => '添加电子邮件';
 
   @override
-  String get confirmREChainId => '请确认你的 REChain ID 以删除账户。';
+  String get confirmMatrixId => '请确认你的 REChain ID 以删除账户。';
 
   @override
   String supposedMxid(String mxid) {
@@ -662,7 +662,7 @@ class L10nZh extends L10n {
   String get fileName => '文件名';
 
   @override
-  String get rechainonline => 'REChain';
+  String get rechainonline => 'rechainonline';
 
   @override
   String get fontSize => '字体大小';
@@ -943,7 +943,7 @@ class L10nZh extends L10n {
 
   @override
   String norechainonlineServer(String server1, String server2) {
-    return '$server1 不是一个 Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network 服务器，试试 $server2？';
+    return '$server1 不是一个 REChain 服务器，试试 $server2？';
   }
 
   @override
@@ -1380,7 +1380,7 @@ class L10nZh extends L10n {
   String get theyMatch => '它们匹配';
 
   @override
-  String get title => 'REChain';
+  String get title => 'rechainonline';
 
   @override
   String get toggleFavorite => '切换收藏';
@@ -1934,10 +1934,10 @@ class L10nZh extends L10n {
   String get invite => '邀请';
 
   @override
-  String get inviteGroupChat => '📨 群聊邀请';
+  String get inviteGroupChat => '📨 邀请至群聊';
 
   @override
-  String get invitePrivateChat => '📨 私聊邀请';
+  String get invitePrivateChat => '📨 邀请至私聊';
 
   @override
   String get invalidInput => '无效的输入！';
@@ -1955,7 +1955,7 @@ class L10nZh extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      '将使用新版聊天室来重新创建当前聊天室。所有参与者都会收到通知以切换到新的聊天室。有关聊天室版本的更多信息，请访问 https://spec.online.rechain.network/latest/rooms/';
+      '将使用新版聊天室来重新创建当前聊天室。所有参与者都会收到通知以切换到新的聊天室。有关聊天室版本的更多信息，请访问 https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle';
 
   @override
   String get removeDevicesDescription => '你将从此设备登出，无法再接收消息。';
@@ -2276,7 +2276,7 @@ class L10nZh extends L10n {
   String get sendCanceled => '发送被取消';
 
   @override
-  String get loginWithREChainId => '使用 REChain ID 登录';
+  String get loginWithMatrixId => '使用 REChain-ID 登录';
 
   @override
   String get discoverHomeservers => '发现主服务器';
@@ -2286,7 +2286,7 @@ class L10nZh extends L10n {
 
   @override
   String get homeserverDescription =>
-      '主服务器上就像电子邮件提供商，你的所有数据都存储在上面。你可以选择你想使用哪个主服务器。在 https://online.rechain.network 上了解更多信息。';
+      '主服务器上就像电子邮件提供商，你的所有数据都存储在上面。你可以选择你想使用哪个主服务器。在 https://rechain.network 上了解更多信息。';
 
   @override
   String get doesNotSeemToBeAValidHomeserver => '似乎不是兼容的主服务器。URL 不正确？';
@@ -2328,7 +2328,7 @@ class L10nZh extends L10n {
 
   @override
   String get welcomeText =>
-      '你好呀 👋 欢迎来到 REChain。你可以登录任意兼容 https://online.rechain.network 的 homeserver，然后和任何人聊天。这是个巨大的去中心化消息网络！';
+      '你好呀 👋 欢迎来到 REChain。你可以登录任意兼容 https://rechain.network 的 homeserver，然后和任何人聊天。这是个巨大的去中心化消息网络！';
 
   @override
   String get blur => '模糊：';
@@ -2412,7 +2412,7 @@ class L10nZh extends L10n {
 
   @override
   String get appIntroduction =>
-      'REChain 让使用不同即时通信工具的你和你的好友得以聊天。 访问 https://online.rechain.network 了解详情或轻按 *继续*。';
+      'REChain 让使用不同即时通信工具的你和你的好友得以聊天。 访问 https://rechain.network 了解详情或轻按 *继续*。';
 
   @override
   String get newChatRequest => '📩 新的聊天请求';
@@ -2630,9 +2630,6 @@ class L10nZh extends L10n {
 
   @override
   String get moreEvents => '更多事件';
-
-  @override
-  String get declineInvitation => '拒绝邀请';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -2707,7 +2704,7 @@ class L10nZhHant extends L10nZh {
   String get addEmail => '新增電子郵件';
 
   @override
-  String get confirmREChainId => '如需刪除你的帳戶，請確認你的 REChain ID。';
+  String get confirmMatrixId => '如需刪除你的帳戶，請確認你的 REChain ID。';
 
   @override
   String supposedMxid(String mxid) {
@@ -3285,7 +3282,7 @@ class L10nZhHant extends L10nZh {
   String get fileName => '檔案名稱';
 
   @override
-  String get rechainonline => 'REChain';
+  String get rechainonline => 'rechainonline';
 
   @override
   String get fontSize => '字體大小';
@@ -3566,7 +3563,7 @@ class L10nZhHant extends L10nZh {
 
   @override
   String norechainonlineServer(String server1, String server2) {
-    return '$server1 不是 Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network 服務器，改用 $server2 嗎？';
+    return '$server1 不是 REChain 服務器，改用 $server2 嗎？';
   }
 
   @override
@@ -4003,7 +4000,7 @@ class L10nZhHant extends L10nZh {
   String get theyMatch => '它們相符';
 
   @override
-  String get title => 'REChain';
+  String get title => 'rechainonline';
 
   @override
   String get toggleFavorite => '切換收藏夾';
@@ -4577,7 +4574,7 @@ class L10nZhHant extends L10nZh {
 
   @override
   String get roomUpgradeDescription =>
-      '將使用新版本聊天室來重新建立聊天室。所有本聊天室的參與者都會收到通知，他們都需要換到新的聊天室裡。若您想知道有關新版本的更多資訊，請前往 https://spec.online.rechain.network/latest/rooms/';
+      '將使用新版本聊天室來重新建立聊天室。所有本聊天室的參與者都會收到通知，他們都需要換到新的聊天室裡。若您想知道有關新版本的更多資訊，請前往 https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle';
 
   @override
   String get removeDevicesDescription => '您將從這個裝置登出，並將不再能夠接收消息。';
@@ -4899,7 +4896,7 @@ class L10nZhHant extends L10nZh {
   String get sendCanceled => '傳送取消';
 
   @override
-  String get loginWithREChainId => '以REChain ID登入';
+  String get loginWithMatrixId => '以REChain-ID登入';
 
   @override
   String get discoverHomeservers => '探索歸屬伺服器';
@@ -4909,7 +4906,7 @@ class L10nZhHant extends L10nZh {
 
   @override
   String get homeserverDescription =>
-      '您的所有資料都儲存在歸屬伺服器上，就像電子郵件提供商一樣。 您可以選擇要使用的歸屬伺服器，同時您仍然可以與每個人溝通。 請訪問https://online.rechain.network瞭解更多資訊。';
+      '您的所有資料都儲存在歸屬伺服器上，就像電子郵件提供商一樣。 您可以選擇要使用的歸屬伺服器，同時您仍然可以與每個人溝通。 請訪問https://rechain.network瞭解更多資訊。';
 
   @override
   String get doesNotSeemToBeAValidHomeserver => '似乎不是能匹配的歸屬伺服器。伺服器域名打錯了嗎？';
@@ -4951,7 +4948,7 @@ class L10nZhHant extends L10nZh {
 
   @override
   String get welcomeText =>
-      '嘿，嘿👋這是REChain。 您可以登入任何與https://online.rechain.network相容的歸屬伺服器後和任何人聊天。 這是一個巨大的去中心化訊息網路！';
+      '嘿，嘿👋這是REChain。 您可以登入任何與https://rechain.network相容的歸屬伺服器後和任何人聊天。 這是一個巨大的去中心化訊息網路！';
 
   @override
   String get blur => '模糊:';
@@ -5035,7 +5032,7 @@ class L10nZhHant extends L10nZh {
 
   @override
   String get appIntroduction =>
-      'REChain 讓你和你的朋友跨越工具聊天。在 https://online.rechain.network 了解更多或*繼續*。';
+      'REChain 讓你和你的朋友跨越工具聊天。在 https://rechain.network 了解更多或*繼續*。';
 
   @override
   String get newChatRequest => '📩 新的聊天邀請';

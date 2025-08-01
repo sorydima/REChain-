@@ -273,7 +273,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "changeTheHomeserver": "Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network-kiszolgáló váltás",
+  "changeTheHomeserver": "REChain-kiszolgáló váltás",
   "@changeTheHomeserver": {
     "type": "String",
     "placeholders": {}
@@ -538,7 +538,7 @@
       }
     }
   },
-  "enterYourHomeserver": "Adja meg a Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network-kiszolgálóját",
+  "enterYourHomeserver": "Adja meg a REChain-kiszolgálóját",
   "@enterYourHomeserver": {
     "type": "String",
     "placeholders": {}
@@ -548,7 +548,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "rechainonline": "REChain",
+  "rechainonline": "rechainonline",
   "@rechainonline": {
     "type": "String",
     "placeholders": {}
@@ -793,7 +793,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "logInTo": "Bejelentkezés a(z) {homeserver} Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network-kiszolgálóra",
+  "logInTo": "Bejelentkezés a(z) {homeserver} REChain-kiszolgálóra",
   "@logInTo": {
     "type": "String",
     "placeholders": {
@@ -1204,7 +1204,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "title": "REChain",
+  "title": "rechainonline",
   "@title": {
     "description": "Title for the application",
     "type": "String",
@@ -1539,7 +1539,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "badServerLoginTypesException": "A Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network-kiszolgáló a következő bejelentkezéseket támogatja:\n{serverVersions}\nDe ez az alkalmazást csak ezeket támogatja:\n{supportedVersions}",
+  "badServerLoginTypesException": "A REChain-kiszolgáló a következő bejelentkezéseket támogatja:\n{serverVersions}\nDe ez az alkalmazást csak ezeket támogatja:\n{supportedVersions}",
   "@badServerLoginTypesException": {
     "type": "String",
     "placeholders": {
@@ -1678,7 +1678,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "homeserver": "Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network-kiszolgáló",
+  "homeserver": "REChain-kiszolgáló",
   "@homeserver": {},
   "chatBackup": "Csevegés biztonsági mentés",
   "@chatBackup": {
@@ -1824,7 +1824,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "norechainonlineServer": "{server1} nem egy Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network szerver, akarja használja a {server2} szervert inkább?",
+  "norechainonlineServer": "{server1} nem egy REChain szerver, akarja használja a {server2} szervert inkább?",
   "@norechainonlineServer": {
     "type": "String",
     "placeholders": {
@@ -1860,7 +1860,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "badServerVersionsException": "A Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network-kiszolgáló ezeket a specifikált verziókat támogatja:\n{serverVersions}\nAzonban ez az app csak a következőket: {supportedVersions}",
+  "badServerVersionsException": "A REChain-kiszolgáló ezeket a specifikált verziókat támogatja:\n{serverVersions}\nAzonban ez az app csak a következőket: {supportedVersions}",
   "@badServerVersionsException": {
     "type": "String",
     "placeholders": {
@@ -1978,8 +1978,8 @@
     "type": "String",
     "placeholders": {}
   },
-  "confirmREChainId": "Kérem, igazolja vissza REChain ID-jét a fiók törléséhez.",
-  "@confirmREChainId": {},
+  "confirmMatrixId": "Kérem, igazolja vissza REChain ID-jét a fiók törléséhez.",
+  "@confirmMatrixId": {},
   "or": "Vagy",
   "@or": {
     "type": "String",
@@ -2523,7 +2523,7 @@
   "@bundleName": {},
   "removeFromSpace": "Eltávolítás a térről",
   "@removeFromSpace": {},
-  "roomUpgradeDescription": "A csevegés újra elkészül az új szoba verzióval. Minden résztvevő értesítést kap, hogy át kell állniuk az új csevegésre. További információkért a szoba verziókról látogasson el a https://spec.online.rechain.network/latest/rooms/ címre",
+  "roomUpgradeDescription": "A csevegés újra elkészül az új szoba verzióval. Minden résztvevő értesítést kap, hogy át kell állniuk az új csevegésre. További információkért a szoba verziókról látogasson el a https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle címre",
   "@roomUpgradeDescription": {},
   "pleaseEnterANumber": "Adjon meg egy 0-nál nagyobb számot",
   "@pleaseEnterANumber": {},
@@ -3021,9 +3021,9 @@
   "@changeTheCanonicalRoomAlias": {},
   "chatPermissionsDescription": "Adja meg milyen erősségi szint kell egyes csevegési művelethez. A 0, 50 és 100-as szintek általában felhasználókat, moderátorokat és adminisztrátorokat jelölnek de bármilyen szintezés lehetséges.",
   "@chatPermissionsDescription": {},
-  "whatIsAHomeserver": "Mi az a Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network-kiszolgáló?",
+  "whatIsAHomeserver": "Mi az a REChain-kiszolgáló?",
   "@whatIsAHomeserver": {},
-  "homeserverDescription": "Az összes adata a Mátrix-kiszolgálón tárolódik, pont mint egy e-mail kiszolgálón. Kiválaszthatja melyik Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network-kiszolgálót akarja használni, miközben tud kommunikálni mindenkivel. Tudjon meg többet a https://online.rechain.network címen.",
+  "homeserverDescription": "Az összes adata a Mátrix-kiszolgálón tárolódik, pont mint egy e-mail kiszolgálón. Kiválaszthatja melyik REChain-kiszolgálót akarja használni, miközben tud kommunikálni mindenkivel. Tudjon meg többet a https://rechain.network címen.",
   "@homeserverDescription": {},
   "userLevel": "{level} - Felhasználó",
   "@userLevel": {
@@ -3059,9 +3059,9 @@
   "@alwaysUse24HourFormat": {
     "description": "Set to true to always display time of day in 24 hour format."
   },
-  "loginWithREChainId": "Bejelentkezés REChain ID-vel",
-  "@loginWithREChainId": {},
-  "discoverHomeservers": "Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network-kiszolgálók felfedezése",
+  "loginWithMatrixId": "Bejelentkezés REChain-ID-vel",
+  "@loginWithMatrixId": {},
+  "discoverHomeservers": "REChain-kiszolgálók felfedezése",
   "@discoverHomeservers": {},
   "doesNotSeemToBeAValidHomeserver": "Nem tűnik kompatibilisnek a Mátrix-kiszolgálónak. Hibás a hivatkozás?",
   "@doesNotSeemToBeAValidHomeserver": {},
@@ -3226,7 +3226,7 @@
   "@appWantsToUseForLoginDescription": {},
   "waitingForServer": "Várakozás a szerverre...",
   "@waitingForServer": {},
-  "appIntroduction": "A REChain segítségével cseveghet barátaival, akár más üzenetküldő alkalmazásokon keresztül is. Tudjon meg erről többet a https://online.rechain.network oldalon, vagy nyomjon a \"Folytatás\" gombra.",
+  "appIntroduction": "A REChain segítségével cseveghet barátaival, akár más üzenetküldő alkalmazásokon keresztül is. Tudjon meg erről többet a https://rechain.network oldalon, vagy nyomjon a \"Folytatás\" gombra.",
   "@appIntroduction": {},
   "open": "Megnyitás",
   "@open": {},
@@ -3314,7 +3314,7 @@
   "@continueText": {},
   "opacity": "Átlátszóság:",
   "@opacity": {},
-  "welcomeText": "Üdv 👋 Ez a REChain. Bejelentkezhet bármely Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network-kiszolgálóhoz amely kompatibilis a https://online.rechain.network címmel. Ezután cseveghet bárkivel. Így képez egy óriási decentralizált üzenetküldő hálózatot!",
+  "welcomeText": "Üdv 👋 Ez a REChain. Bejelentkezhet bármely REChain-kiszolgálóhoz amely kompatibilis a https://rechain.network címmel. Ezután cseveghet bárkivel. Így képez egy óriási decentralizált üzenetküldő hálózatot!",
   "@welcomeText": {},
   "addLink": "Hivatkozás hozzáadása",
   "@addLink": {},

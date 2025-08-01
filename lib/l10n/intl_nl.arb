@@ -829,7 +829,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "rechainonline": "REChain",
+  "rechainonline": "rechainonline",
   "@rechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1173,7 +1173,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "newMessageInrechainonline": "💬 Nieuw bericht in REChain",
+  "newMessageInrechainonline": "💬 Nieuw bericht in rechainonline",
   "@newMessageInrechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1213,7 +1213,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "norechainonlineServer": "{server1} is geen Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network-server, wil je {server2} gebruiken?",
+  "norechainonlineServer": "{server1} is geen REChain-server, wil je {server2} gebruiken?",
   "@norechainonlineServer": {
     "type": "String",
     "placeholders": {
@@ -1795,7 +1795,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "title": "REChain",
+  "title": "rechainonline",
   "@title": {
     "description": "Title for the application",
     "type": "String",
@@ -2357,8 +2357,8 @@
   "@user": {},
   "custom": "Aangepast",
   "@custom": {},
-  "confirmREChainId": "Bevestig jouw REChain ID om je account te verwijderen.",
-  "@confirmREChainId": {},
+  "confirmMatrixId": "Bevestig jouw REChain-ID om je account te verwijderen.",
+  "@confirmMatrixId": {},
   "supposedMxid": "Dit moet {mxid} zijn",
   "@supposedMxid": {
     "type": "String",
@@ -2633,7 +2633,7 @@
   },
   "learnMore": "Lees meer",
   "@learnMore": {},
-  "roomUpgradeDescription": "De chat zal dan opnieuw gemaakt worden met de nieuwe kamerversie. Alle deelnemers worden geïnformeerd dat ze moeten overstappen naar de nieuwe chat. Je kan meer lezen over kamerversies op https://spec.online.rechain.network/latest/rooms/",
+  "roomUpgradeDescription": "De chat zal dan opnieuw gemaakt worden met de nieuwe kamerversie. Alle deelnemers worden geïnformeerd dat ze moeten overstappen naar de nieuwe chat. Je kan meer lezen over kamerversies op https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle",
   "@roomUpgradeDescription": {},
   "pleaseEnterANumber": "Vul een getal in groter dan 0",
   "@pleaseEnterANumber": {},
@@ -3116,8 +3116,8 @@
   "@discoverHomeservers": {},
   "changelog": "Wijzigingengeschiedenis",
   "@changelog": {},
-  "loginWithREChainId": "Inloggen met REChain ID",
-  "@loginWithREChainId": {},
+  "loginWithMatrixId": "Inloggen met REChain ID",
+  "@loginWithMatrixId": {},
   "calculatingFileSize": "Bestandsgrootte berekenen...",
   "@calculatingFileSize": {},
   "sendingAttachment": "Bijlage versturen...",
@@ -3213,7 +3213,7 @@
   },
   "continueText": "Doorgaan",
   "@continueText": {},
-  "welcomeText": "Hallo hallo 👋 Dit is REChain. Je kan inloggen op elke server die werkt met https://online.rechain.network. En dan chat je met iedereen. Het is een groot decentraal chat-netwerk!",
+  "welcomeText": "Hallo hallo 👋 Dit is REChain. Je kan inloggen op elke server die werkt met https://rechain.network. En dan chat je met iedereen. Het is een groot decentraal chat-netwerk!",
   "@welcomeText": {},
   "appWantsToUseForLogin": "Inloggen met '{server}'",
   "@appWantsToUseForLogin": {
@@ -3228,7 +3228,7 @@
   "@appWantsToUseForLoginDescription": {},
   "open": "Open",
   "@open": {},
-  "appIntroduction": "REChain laat je chatten met je vrienden tussen verschillende chat-netwerken. Lees meer op https://online.rechain.network of tik *Continue*.",
+  "appIntroduction": "REChain laat je chatten met je vrienden tussen verschillende chat-netwerken. Lees meer op https://rechain.network of tik *Continue*.",
   "@appIntroduction": {},
   "completedKeyVerification": "{sender} ronde de sleutelverificatie af",
   "@completedKeyVerification": {
@@ -3239,7 +3239,7 @@
       }
     }
   },
-  "homeserverDescription": "Al je data is opgeslagen op de server, net als bij een email-leverancier. Je kan kiezen welke server je gebruikt en toch communiceren met iedereen. Lees meer op https://online.rechain.network.",
+  "homeserverDescription": "Al je data is opgeslagen op de server, net als bij een email-leverancier. Je kan kiezen welke server je gebruikt en toch communiceren met iedereen. Lees meer op https://rechain.network.",
   "@homeserverDescription": {},
   "notificationRuleContainsDisplayName": "Bevat de naam",
   "@notificationRuleContainsDisplayName": {},
@@ -3382,7 +3382,5 @@
   "moreEvents": "Meer gebeurtenissen",
   "@moreEvents": {},
   "customReaction": "Aangepaste reactie",
-  "@customReaction": {},
-  "declineInvitation": "Uitnodiging afwijzen",
-  "@declineInvitation": {}
+  "@customReaction": {}
 }

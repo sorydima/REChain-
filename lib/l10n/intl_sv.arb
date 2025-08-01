@@ -649,7 +649,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "rechainonline": "REChain",
+  "rechainonline": "rechainonline",
   "@rechainonline": {
     "type": "String",
     "placeholders": {}
@@ -973,7 +973,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "newMessageInrechainonline": "💬 Nya meddelanden i REChain",
+  "newMessageInrechainonline": "💬 Nya meddelanden i rechainonline",
   "@newMessageInrechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1479,7 +1479,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "title": "REChain",
+  "title": "rechainonline",
   "@title": {
     "description": "Title for the application",
     "type": "String",
@@ -1954,7 +1954,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "norechainonlineServer": "{server1} är inte en Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network server, använd {server2} istället?",
+  "norechainonlineServer": "{server1} är inte en REChain server, använd {server2} istället?",
   "@norechainonlineServer": {
     "type": "String",
     "placeholders": {
@@ -2329,8 +2329,8 @@
   "@disableEncryptionWarning": {},
   "sorryThatsNotPossible": "Det där är inte möjligt",
   "@sorryThatsNotPossible": {},
-  "confirmREChainId": "Bekräfta ditt REChain ID för att radera ditt konto.",
-  "@confirmREChainId": {},
+  "confirmMatrixId": "Bekräfta ditt REChain-ID för att radera ditt konto.",
+  "@confirmMatrixId": {},
   "supposedMxid": "Detta bör vara {mxid}",
   "@supposedMxid": {
     "type": "String",
@@ -2393,7 +2393,7 @@
   },
   "hydrate": "Återställ från säkerhetskopia",
   "@hydrate": {},
-  "screenSharingDetail": "Du delar din skärm i REChain",
+  "screenSharingDetail": "Du delar din skärm i rechainonline",
   "@screenSharingDetail": {},
   "youRejectedTheInvitation": "Du avvisade inbjudan",
   "@youRejectedTheInvitation": {},
@@ -2443,7 +2443,7 @@
   "@appearOnTop": {},
   "appearOnTopDetails": "Tillåt att appen visas ovanpå (behövs inte om du redan har REChain konfigurerat som ett samtalskonto)",
   "@appearOnTopDetails": {},
-  "otherCallingPermissions": "Mikrofon, kamera och andra behörigheter för REChain",
+  "otherCallingPermissions": "Mikrofon, kamera och andra behörigheter för rechainonline",
   "@otherCallingPermissions": {},
   "whyIsThisMessageEncrypted": "Varför kan inte detta meddelande läsas?",
   "@whyIsThisMessageEncrypted": {},
@@ -2610,7 +2610,7 @@
   "@notAnImage": {},
   "chatDescriptionHasBeenChanged": "Chattbeskrivningen ändrades",
   "@chatDescriptionHasBeenChanged": {},
-  "roomUpgradeDescription": "Chatten kommer då att återskapas med den nya rumversionen. Alla medlemmar kommer bli påminda om att de måste byta till den nya chatten. Du kan läsa mer om rumversioner på https://spec.online.rechain.network/latest/rooms/",
+  "roomUpgradeDescription": "Chatten kommer då att återskapas med den nya rumversionen. Alla medlemmar kommer bli påminda om att de måste byta till den nya chatten. Du kan läsa mer om rumversioner på https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle",
   "@roomUpgradeDescription": {},
   "pleaseEnterANumber": "Vänligen ange ett nummer större än 0",
   "@pleaseEnterANumber": {},

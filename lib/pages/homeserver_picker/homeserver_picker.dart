@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter_web_auth_2/flutter_web_auth_2.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:matrix/matrix.dart';
 import 'package:universal_html/html.dart' as html;
 import 'package:url_launcher/url_launcher_string.dart';
@@ -41,8 +42,27 @@ class HomeserverPickerController extends State<HomeserverPicker> {
 
   bool isTorBrowser = false;
 
+  bool showDebuggerPanel = false;
+
+  void toggleDebuggerPanel() {
+    setState(() {
+      showDebuggerPanel = !showDebuggerPanel;
+    });
+  }
+
   Future<void> _checkTorBrowser() async {
     if (!kIsWeb) return;
+
+    Hive.openBox('test').then((value) => null).catchError(
+      (e, s) async {
+        await showOkAlertDialog(
+          context: context,
+          title: L10n.of(context).indexedDbErrorTitle,
+          message: L10n.of(context).indexedDbErrorLong,
+        );
+        _checkTorBrowser();
+      },
+    );
 
     final isTor = await TorBrowserDetector.isTorBrowser;
     isTorBrowser = isTor;

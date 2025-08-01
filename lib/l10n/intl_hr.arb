@@ -807,7 +807,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "rechainonline": "REChain",
+  "rechainonline": "rechainonline",
   "@rechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1141,7 +1141,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "newMessageInrechainonline": "💬 Nova poruka u REChain",
+  "newMessageInrechainonline": "💬 Nova poruka u REChainu",
   "@newMessageInrechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1731,7 +1731,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "title": "REChain",
+  "title": "rechainonline",
   "@title": {
     "description": "Title for the application",
     "type": "String",
@@ -2055,7 +2055,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "norechainonlineServer": "{server1} nije Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network poslužitelj. Da li umjesto njega koristiti {server2}?",
+  "norechainonlineServer": "{server1} nije REChain poslužitelj. Da li umjesto njega koristiti {server2}?",
   "@norechainonlineServer": {
     "type": "String",
     "placeholders": {
@@ -2414,7 +2414,7 @@
   "@foregroundServiceRunning": {},
   "callingPermissions": "Dozvole za pozivanje",
   "@callingPermissions": {},
-  "callingAccountDetails": "Omogućuje REChain korištenje izvorne Android aplikacije za pozivanje.",
+  "callingAccountDetails": "Omogućuje REChainu korištenje izvorne Android aplikacije za pozivanje.",
   "@callingAccountDetails": {},
   "callingAccount": "Račun za pozivanje",
   "@callingAccount": {},
@@ -2424,8 +2424,8 @@
   "@commandHint_googly": {},
   "commandHint_cuddle": "Pošalji maženje",
   "@commandHint_cuddle": {},
-  "confirmREChainId": "Za brisanje tvog računa potvrdi svoj REChain ID.",
-  "@confirmREChainId": {},
+  "confirmMatrixId": "Za brisanje tvog računa potvrdi svoj REChain ID.",
+  "@confirmMatrixId": {},
   "supposedMxid": "Trebao bi biti {mxid}",
   "@supposedMxid": {
     "type": "String",
@@ -2883,7 +2883,7 @@
   },
   "restricted": "Ograničeni",
   "@restricted": {},
-  "roomUpgradeDescription": "Razgovor će se tada ponovo stvoriti s novom verzijom sobe. Svi sudionici će biti obaviješteni da se moraju prebaciti na novi razgovor. Više o verzijama soba možeš saznati na https://spec.online.rechain.network/latest/rooms/",
+  "roomUpgradeDescription": "Razgovor će se tada ponovo stvoriti s novom verzijom sobe. Svi sudionici će biti obaviješteni da se moraju prebaciti na novi razgovor. Više o verzijama soba možeš saznati na https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle",
   "@roomUpgradeDescription": {},
   "noGoogleServicesWarning": "Čini se da Firebase Cloud Messaging nije dostupan na tvom uređaju. Za daljnje primanje push obavijesti, preporučujemo da instaliraš ntfy. S ntfy ili drugim pružateljem usluge Unified Push možeš primati push obavijesti na podatkovno siguran način. Ntfy možeš preuzeti s PlayStorea ili s F-Droida.",
   "@noGoogleServicesWarning": {

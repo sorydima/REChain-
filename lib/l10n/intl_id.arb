@@ -247,7 +247,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "rechainonline": "REChain",
+  "rechainonline": "rechainonline",
   "@rechainonline": {
     "type": "String",
     "placeholders": {}
@@ -991,7 +991,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "newMessageInrechainonline": "💬 Pesan baru di REChain",
+  "newMessageInrechainonline": "💬 Pesan baru di rechainonline",
   "@newMessageInrechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1399,7 +1399,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "title": "REChain",
+  "title": "rechainonline",
   "@title": {
     "description": "Title for the application",
     "type": "String",
@@ -1775,7 +1775,7 @@
   },
   "scanQrCode": "Pindai kode QR",
   "@scanQrCode": {},
-  "norechainonlineServer": "{server1} itu bukan server Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network, gunakan {server2} saja?",
+  "norechainonlineServer": "{server1} itu bukan server REChain, gunakan {server2} saja?",
   "@norechainonlineServer": {
     "type": "String",
     "placeholders": {
@@ -2357,8 +2357,8 @@
   "@custom": {},
   "user": "Pengguna",
   "@user": {},
-  "confirmREChainId": "Mohon konfirmasi ID REChain Anda untuk menghapus akun Anda.",
-  "@confirmREChainId": {},
+  "confirmMatrixId": "Mohon konfirmasi ID REChain Anda untuk menghapus akun Anda.",
+  "@confirmMatrixId": {},
   "supposedMxid": "Ini seharusnya {mxid}",
   "@supposedMxid": {
     "type": "String",
@@ -2402,7 +2402,7 @@
   "@enterRoom": {},
   "allSpaces": "Semua space",
   "@allSpaces": {},
-  "screenSharingDetail": "Kamu membagikan layarmu di REChain",
+  "screenSharingDetail": "Kamu membagikan layarmu di rechainonline",
   "@screenSharingDetail": {},
   "numChats": "{number} obrolan",
   "@numChats": {
@@ -2633,7 +2633,7 @@
   },
   "learnMore": "Pelajari lebih lanjut",
   "@learnMore": {},
-  "roomUpgradeDescription": "Percakapannya akan dibuat ulang dengan versi ruangan yang baru. Semua anggota akan diberi tahu bahwa mereka harus ganti ke percakapan yang baru. Kamu bisa mempelajari lebih lanjut tentang versi ruangan di https://spec.online.rechain.network/latest/rooms/",
+  "roomUpgradeDescription": "Percakapannya akan dibuat ulang dengan versi ruangan yang baru. Semua anggota akan diberi tahu bahwa mereka harus ganti ke percakapan yang baru. Kamu bisa mempelajari lebih lanjut tentang versi ruangan di https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle",
   "@roomUpgradeDescription": {},
   "pleaseEnterANumber": "Silakan masukkan angka lebih dari 0",
   "@pleaseEnterANumber": {},
@@ -3053,8 +3053,8 @@
   "@changeGeneralChatSettings": {},
   "discoverHomeservers": "Jelajahi homeserver",
   "@discoverHomeservers": {},
-  "loginWithREChainId": "Masuk dengan ID REChain",
-  "@loginWithREChainId": {},
+  "loginWithMatrixId": "Masuk dengan ID REChain",
+  "@loginWithMatrixId": {},
   "doesNotSeemToBeAValidHomeserver": "Sepertinya bukan homeserver yang kompatibel. URL salah?",
   "@doesNotSeemToBeAValidHomeserver": {},
   "countChatsAndCountParticipants": "{chats} chat dan {participants} anggota",
@@ -3109,13 +3109,13 @@
   },
   "chatPermissionsDescription": "Tentukan tingkat kekuasaan yang diperlukan untuk tindakan tertentu dalam chat ini. Tingkat kekuasaan 0, 50 dan 100 biasanya mewakili pengguna, moderator dan admin, tetapi gradasi apa pun dimungkinkan.",
   "@chatPermissionsDescription": {},
-  "homeserverDescription": "Semua data Anda disimpan di dalam server, seperti halnya penyedia email. Anda dapat memilih homeserver mana yang ingin Anda gunakan, sementara Anda masih dapat berkomunikasi dengan semua orang. Pelajari lebih lanjut di https://online.rechain.network.",
+  "homeserverDescription": "Semua data Anda disimpan di dalam server, seperti halnya penyedia email. Anda dapat memilih homeserver mana yang ingin Anda gunakan, sementara Anda masih dapat berkomunikasi dengan semua orang. Pelajari lebih lanjut di https://rechain.network.",
   "@homeserverDescription": {},
   "oneOfYourDevicesIsNotVerified": "Salah satu perangkat Anda tidak terverifikasi",
   "@oneOfYourDevicesIsNotVerified": {},
   "noticeChatBackupDeviceVerification": "Catatan: Ketika Anda menghubungkan semua perangkat Anda ke cadangan chat, mereka akan diverifikasi secara otomatis.",
   "@noticeChatBackupDeviceVerification": {},
-  "welcomeText": "Halo 👋 Ini REChain. Kamu bisa masuk ke homeserver mana pun, yang kompatibel dengan https://online.rechain.network. Lalu, chat dengan siapa pun. Ini merupakan jaringan perpesanan besar yang terdesentralisasi!",
+  "welcomeText": "Halo 👋 Ini REChain. Kamu bisa masuk ke homeserver mana pun, yang kompatibel dengan https://rechain.network. Lalu, chat dengan siapa pun. Ini merupakan jaringan perpesanan besar yang terdesentralisasi!",
   "@welcomeText": {},
   "continueText": "Lanjutkan",
   "@continueText": {},
@@ -3286,7 +3286,7 @@
   "@crossVerifiedDevices": {},
   "waitingForServer": "Menunggu server...",
   "@waitingForServer": {},
-  "appIntroduction": "REChain memungkinkanmu untuk mengobrol dengan teman-temanmu di berbagai perpesanan. Pelajari lebih lanjut di https://online.rechain.network atau ketuk *Lanjutkan* saja.",
+  "appIntroduction": "REChain memungkinkanmu untuk mengobrol dengan teman-temanmu di berbagai perpesanan. Pelajari lebih lanjut di https://rechain.network atau ketuk *Lanjutkan* saja.",
   "@appIntroduction": {},
   "notificationRuleContainsDisplayNameDescription": "Memberi tahu pengguna ketika pesan berisi nama tampilannya.",
   "@notificationRuleContainsDisplayNameDescription": {},
@@ -3378,9 +3378,5 @@
   "commandHint_logoutall": "Keluarkan semua perangkat aktif",
   "@commandHint_logoutall": {},
   "displayNavigationRail": "Tampilkan jalur navigasi pada ponsel",
-  "@displayNavigationRail": {},
-  "customReaction": "Reaksi khusus",
-  "@customReaction": {},
-  "moreEvents": "Peristiwa tambahan",
-  "@moreEvents": {}
+  "@displayNavigationRail": {}
 }

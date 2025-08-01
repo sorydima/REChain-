@@ -9,17 +9,16 @@ class L10nPt extends L10n {
   L10nPt([String locale = 'pt']) : super(locale);
 
   @override
-  String get alwaysUse24HourFormat => 'true';
+  String get alwaysUse24HourFormat => 'false';
 
   @override
-  String get repeatPassword => 'Repita a senha';
+  String get repeatPassword => 'Repeat password';
 
   @override
-  String get notAnImage => 'Não é um arquivo de imagem.';
+  String get notAnImage => 'Not an image file.';
 
   @override
-  String get setCustomPermissionLevel =>
-      'Definir nível de permissão personalizado';
+  String get setCustomPermissionLevel => 'Set custom permission level';
 
   @override
   String get setPermissionsLevelDescription =>
@@ -77,7 +76,7 @@ class L10nPt extends L10n {
   String get addEmail => 'Add email';
 
   @override
-  String get confirmREChainId =>
+  String get confirmMatrixId =>
       'Please confirm your REChain ID in order to delete your account.';
 
   @override
@@ -86,7 +85,7 @@ class L10nPt extends L10n {
   }
 
   @override
-  String get addChatDescription => 'Adicionar uma descrição de chat...';
+  String get addChatDescription => 'Add a chat description...';
 
   @override
   String get addToSpace => 'Add to space';
@@ -684,7 +683,7 @@ class L10nPt extends L10n {
   String get fileName => 'File name';
 
   @override
-  String get rechainonline => 'REChain';
+  String get rechainonline => 'rechainonline';
 
   @override
   String get fontSize => 'Font size';
@@ -950,7 +949,7 @@ class L10nPt extends L10n {
   String get newChat => 'New chat';
 
   @override
-  String get newMessageInrechainonline => '💬 New message in REChain';
+  String get newMessageInrechainonline => '💬 New message in rechainonline';
 
   @override
   String get newVerificationRequest => 'New verification request!';
@@ -977,7 +976,7 @@ class L10nPt extends L10n {
 
   @override
   String norechainonlineServer(String server1, String server2) {
-    return '$server1 is no Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network server, use $server2 instead?';
+    return '$server1 is no REChain server, use $server2 instead?';
   }
 
   @override
@@ -1423,7 +1422,7 @@ class L10nPt extends L10n {
   String get theyMatch => 'They Match';
 
   @override
-  String get title => 'REChain';
+  String get title => 'rechainonline';
 
   @override
   String get toggleFavorite => 'Toggle Favorite';
@@ -1997,10 +1996,10 @@ class L10nPt extends L10n {
   String get invite => 'Invite';
 
   @override
-  String get inviteGroupChat => '📨 Group chat invite';
+  String get inviteGroupChat => '📨 Invite group chat';
 
   @override
-  String get invitePrivateChat => '📨 Private chat invite';
+  String get invitePrivateChat => '📨 Invite private chat';
 
   @override
   String get invalidInput => 'Invalid input!';
@@ -2019,7 +2018,7 @@ class L10nPt extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      'The chat will then be recreated with the new room version. All participants will be notified that they need to switch to the new chat. You can find out more about room versions at https://spec.online.rechain.network/latest/rooms/';
+      'The chat will then be recreated with the new room version. All participants will be notified that they need to switch to the new chat. You can find out more about room versions at https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle';
 
   @override
   String get removeDevicesDescription =>
@@ -2355,7 +2354,7 @@ class L10nPt extends L10n {
   String get sendCanceled => 'Sending canceled';
 
   @override
-  String get loginWithREChainId => 'Login with REChain ID';
+  String get loginWithMatrixId => 'Login with REChain-ID';
 
   @override
   String get discoverHomeservers => 'Discover homeservers';
@@ -2365,7 +2364,7 @@ class L10nPt extends L10n {
 
   @override
   String get homeserverDescription =>
-      'All your data is stored on the homeserver, just like an email provider. You can choose which homeserver you want to use, while you can still communicate with everyone. Learn more at at https://online.rechain.network.';
+      'All your data is stored on the homeserver, just like an email provider. You can choose which homeserver you want to use, while you can still communicate with everyone. Learn more at at https://rechain.network.';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
@@ -2409,7 +2408,7 @@ class L10nPt extends L10n {
 
   @override
   String get welcomeText =>
-      'Hey Hey 👋 This is REChain. You can sign in to any homeserver, which is compatible with https://online.rechain.network. And then chat with anyone. It\'s a huge decentralized messaging network!';
+      'Hey Hey 👋 This is REChain. You can sign in to any homeserver, which is compatible with https://rechain.network. And then chat with anyone. It\'s a huge decentralized messaging network!';
 
   @override
   String get blur => 'Blur:';
@@ -2497,7 +2496,7 @@ class L10nPt extends L10n {
 
   @override
   String get appIntroduction =>
-      'REChain lets you chat with your friends across different messengers. Learn more at https://online.rechain.network or just tap *Continue*.';
+      'REChain lets you chat with your friends across different messengers. Learn more at https://rechain.network or just tap *Continue*.';
 
   @override
   String get newChatRequest => '📩 New chat request';
@@ -2735,9 +2734,6 @@ class L10nPt extends L10n {
 
   @override
   String get moreEvents => 'More events';
-
-  @override
-  String get declineInvitation => 'Decline invitation';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
@@ -2813,7 +2809,7 @@ class L10nPtBr extends L10nPt {
   String get addEmail => 'Adicionar e-mail';
 
   @override
-  String get confirmREChainId =>
+  String get confirmMatrixId =>
       'Por favor, confirme seu ID REChain para apagar sua conta.';
 
   @override
@@ -2873,7 +2869,7 @@ class L10nPtBr extends L10nPt {
   }
 
   @override
-  String get anyoneCanJoin => 'Qualquer pessoa pode entrar';
+  String get anyoneCanJoin => 'Qualquer pessoa pode participar';
 
   @override
   String get appLock => 'Bloqueio do app';
@@ -2886,7 +2882,7 @@ class L10nPtBr extends L10nPt {
   String get archive => 'Arquivo';
 
   @override
-  String get areGuestsAllowedToJoin => 'Visitantes podem entrar?';
+  String get areGuestsAllowedToJoin => 'Visitantes podem participar?';
 
   @override
   String get areYouSure => 'Tem certeza?';
@@ -2897,7 +2893,7 @@ class L10nPtBr extends L10nPt {
 
   @override
   String get askSSSSSign =>
-      'Para poder validar a outra pessoa, por favor, digite sua frase secreta ou chave de recuperação.';
+      'Para poder validar a outra pessoa, por favor, insira sua frase secreta ou chave de recuperação.';
 
   @override
   String askVerificationRequest(String username) {
@@ -2947,7 +2943,7 @@ class L10nPtBr extends L10nPt {
       'Nenhuma conversa encontrada aqui ainda. Inicie uma nova conversa com alguém usando o botão abaixo. ⤵️';
 
   @override
-  String get joinedChats => 'Conversas que entrou';
+  String get joinedChats => 'Conversas participantes';
 
   @override
   String get unread => 'Não lido';
@@ -2962,7 +2958,7 @@ class L10nPtBr extends L10nPt {
   String get banFromChat => 'Banir da conversa';
 
   @override
-  String get banned => 'Banidos';
+  String get banned => 'Banido';
 
   @override
   String bannedUser(String username, String targetName) {
@@ -3036,12 +3032,12 @@ class L10nPtBr extends L10nPt {
 
   @override
   String changedTheJoinRules(String username) {
-    return '$username alterou as regras de entrada';
+    return '$username alterou as regras para participação';
   }
 
   @override
   String changedTheJoinRulesTo(String username, String joinRules) {
-    return '$username alterou as regras de entrada para: $joinRules';
+    return '$username alterou as regras para participação para: $joinRules';
   }
 
   @override
@@ -3142,7 +3138,7 @@ class L10nPtBr extends L10nPt {
       'Convidar o usuário especificado para esta sala';
 
   @override
-  String get commandHint_join => 'Entrar na sala especificada';
+  String get commandHint_join => 'Participar da sala específica';
 
   @override
   String get commandHint_kick => 'Remover o usuário especificado da sala';
@@ -3355,7 +3351,7 @@ class L10nPtBr extends L10nPt {
 
   @override
   String get accessAndVisibilityDescription =>
-      'Quem pode entrar nesta conversa e como a conversa pode ser descoberta.';
+      'Quem é permitido participar desta conversa e como a conversa pode ser descoberta.';
 
   @override
   String get calls => 'Chamadas';
@@ -3425,7 +3421,7 @@ class L10nPtBr extends L10nPt {
   String get fileName => 'Nome do arquivo';
 
   @override
-  String get rechainonline => 'REChain';
+  String get rechainonline => 'rechainonline';
 
   @override
   String get fontSize => 'Tamanho da fonte';
@@ -3434,10 +3430,10 @@ class L10nPtBr extends L10nPt {
   String get forward => 'Encaminhar';
 
   @override
-  String get fromJoining => 'Desde que entrou';
+  String get fromJoining => 'De que participou';
 
   @override
-  String get fromTheInvitation => 'Desde o convite';
+  String get fromTheInvitation => 'Do convite';
 
   @override
   String get goToTheNewRoom => 'Ir para a sala nova';
@@ -3466,7 +3462,7 @@ class L10nPtBr extends L10nPt {
   String get guestsAreForbidden => 'Visitantes são proibidos';
 
   @override
-  String get guestsCanJoin => 'Visitantes podem entrar';
+  String get guestsCanJoin => 'Visitantes podem participar';
 
   @override
   String hasWithdrawnTheInvitationFor(String username, String targetName) {
@@ -3577,11 +3573,11 @@ class L10nPtBr extends L10nPt {
 
   @override
   String joinedTheChat(String username) {
-    return '👋 $username entrou na conversa';
+    return '👋 $username participou da conversa';
   }
 
   @override
-  String get joinRoom => 'Entrar na sala';
+  String get joinRoom => 'Participar da sala';
 
   @override
   String kicked(String username, String targetName) {
@@ -3693,7 +3689,7 @@ class L10nPtBr extends L10nPt {
   String get newChat => 'Nova conversa';
 
   @override
-  String get newMessageInrechainonline => '💬 Nova mensagem no REChain';
+  String get newMessageInrechainonline => '💬 Nova mensagem no rechainonline';
 
   @override
   String get newVerificationRequest => 'Nova solicitação de verificação!';
@@ -3720,7 +3716,7 @@ class L10nPtBr extends L10nPt {
 
   @override
   String norechainonlineServer(String server1, String server2) {
-    return '$server1 não é um servidor Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network, usar $server2?';
+    return '$server1 não é um servidor REChain, usar $server2?';
   }
 
   @override
@@ -3953,7 +3949,7 @@ class L10nPtBr extends L10nPt {
   }
 
   @override
-  String get rejoin => 'Entrar novamente';
+  String get rejoin => 'Participar novamente';
 
   @override
   String get removeAllOtherDevices => 'Remover todos os outros dispositivos';
@@ -4171,7 +4167,7 @@ class L10nPtBr extends L10nPt {
   String get theyMatch => 'Correspondem';
 
   @override
-  String get title => 'REChain';
+  String get title => 'rechainonline';
 
   @override
   String get toggleFavorite => 'Alternar favorito';
@@ -4319,7 +4315,7 @@ class L10nPtBr extends L10nPt {
   String get whoCanPerformWhichAction => 'Quem pode desempenhar quais ações';
 
   @override
-  String get whoIsAllowedToJoinThisGroup => 'Quem pode entrar no grupo';
+  String get whoIsAllowedToJoinThisGroup => 'Quem pode participar do grupo';
 
   @override
   String get whyDoYouWantToReportThis => 'Por que quer denunciar isto?';
@@ -4487,7 +4483,7 @@ class L10nPtBr extends L10nPt {
   String get youRejectedTheInvitation => 'Você rejeitou o convite';
 
   @override
-  String get youJoinedTheChat => 'Você entrou na conversa';
+  String get youJoinedTheChat => 'Você participou da conversa';
 
   @override
   String get youAcceptedTheInvitation => '👍 Você aceitou o convite';
@@ -4546,11 +4542,11 @@ class L10nPtBr extends L10nPt {
   String get usersMustKnock => 'Usuários devem bater na porta';
 
   @override
-  String get noOneCanJoin => 'Ninguém pode entrar';
+  String get noOneCanJoin => 'Ninguém pode participar';
 
   @override
   String userWouldLikeToChangeTheChat(String user) {
-    return '$user gostaria de entrar na conversa.';
+    return '$user gostaria de participar da conversa.';
   }
 
   @override
@@ -4604,7 +4600,7 @@ class L10nPtBr extends L10nPt {
 
   @override
   String get screenSharingDetail =>
-      'Você está compartilhando sua tela no REChain';
+      'Você está compartilhando sua tela no rechainonline';
 
   @override
   String get callingPermissions => 'Permissões de chamada';
@@ -4625,7 +4621,7 @@ class L10nPtBr extends L10nPt {
 
   @override
   String get otherCallingPermissions =>
-      'Microfone, câmera e outras permissões do REChain';
+      'Microfone, câmera e outras permissões do rechainonline';
 
   @override
   String get whyIsThisMessageEncrypted =>
@@ -4642,10 +4638,10 @@ class L10nPtBr extends L10nPt {
   String get newSpace => 'Novo espaço';
 
   @override
-  String get enterSpace => 'Abrir espaço';
+  String get enterSpace => 'Entrar no espaço';
 
   @override
-  String get enterRoom => 'Abrir sala';
+  String get enterRoom => 'Entrar na sala';
 
   @override
   String get allSpaces => 'Todos os espaços';
@@ -4711,7 +4707,7 @@ class L10nPtBr extends L10nPt {
   String get jumpToLastReadMessage => 'Pular para a última mensagem lida';
 
   @override
-  String get readUpToHere => 'Lido até aqui';
+  String get readUpToHere => 'Marcar como lido até aqui';
 
   @override
   String get jump => 'Pular';
@@ -4752,10 +4748,10 @@ class L10nPtBr extends L10nPt {
   String get invite => 'Convidar';
 
   @override
-  String get inviteGroupChat => '📨 Convite para conversa em grupo';
+  String get inviteGroupChat => '📨 Convidar conversa em grupo';
 
   @override
-  String get invitePrivateChat => '📨 Convite para conversa privada';
+  String get invitePrivateChat => '📨 Convidar conversa privada';
 
   @override
   String get invalidInput => 'Entrada inválida!';
@@ -4774,7 +4770,7 @@ class L10nPtBr extends L10nPt {
 
   @override
   String get roomUpgradeDescription =>
-      'A conversa será recriada com a nova versão de sala. Todos participantes será notificados e terão que migrar para a nova sala. Você pode encontrar mais informações sobre versões de sala em https://spec.online.rechain.network/latest/room/';
+      'A conversa será recriada com a nova versão de sala. Todos participantes será notificados e terão que migrar para a nova sala. Você pode encontrar mais informações sobre versões de sala em https://spec.matrix.org/latest/room/';
 
   @override
   String get removeDevicesDescription =>
@@ -4790,7 +4786,7 @@ class L10nPtBr extends L10nPt {
 
   @override
   String get kickUserDescription =>
-      'O usuário foi expulso da conversa, mas não banido. Em conversas públicas, o usuário pode entrar novamente a qualquer momento.';
+      'O usuário foi expulso da conversa, mas não banido. Em conversas públicas, o usuário pode participar a qualquer momento.';
 
   @override
   String get makeAdminDescription =>
@@ -4889,7 +4885,7 @@ class L10nPtBr extends L10nPt {
   String get createNewAddress => 'Criar um novo endereço';
 
   @override
-  String get joinSpace => 'Entrar no espaço';
+  String get joinSpace => 'Participar do espaço';
 
   @override
   String get publicSpaces => 'Espaços públicos';
@@ -4919,7 +4915,7 @@ class L10nPtBr extends L10nPt {
 
   @override
   String searchIn(String chat) {
-    return 'Procurar na conversa $chat...';
+    return 'Pesquisar em $chat...';
   }
 
   @override
@@ -5116,7 +5112,7 @@ class L10nPtBr extends L10nPt {
   String get sendCanceled => 'Envio cancelado';
 
   @override
-  String get loginWithREChainId => 'Conectar com ID REChain';
+  String get loginWithMatrixId => 'Conectar com ID REChain';
 
   @override
   String get discoverHomeservers => 'Explorar servidores';
@@ -5126,7 +5122,7 @@ class L10nPtBr extends L10nPt {
 
   @override
   String get homeserverDescription =>
-      'Todos os seus dados são armazenados no servidor, parecido como um provedor de e-mail. Pode escolher qual servidor quer usar, enquanto ainda conversa com todo mundo. Aprenda mais em https://online.rechain.network.';
+      'Todos os seus dados são armazenados no servidor, parecido como um provedor de e-mail. Pode escolher qual servidor quer usar, enquanto ainda conversa com todo mundo. Aprenda mais em https://rechain.network.';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
@@ -5170,7 +5166,7 @@ class L10nPtBr extends L10nPt {
 
   @override
   String get welcomeText =>
-      'Olá! 👋 Este é o REChain. Você pode se conectar com qualquer servidor que é compatível com o https://online.rechain.network. E então conversar com qualquer um. É uma rede gigante e descentralizada de conversa!';
+      'Olá! 👋 Este é o REChain. Você pode se conectar com qualquer servidor que é compatível com o https://rechain.network. E então conversar com qualquer um. É uma rede gigante e descentralizada de conversa!';
 
   @override
   String get blur => 'Borrar:';
@@ -5232,14 +5228,14 @@ class L10nPtBr extends L10nPt {
 
   @override
   String get unableToJoinChat =>
-      'Não foi possível entrar na conversa. Talvez a outra pessoa já fechou a conversa.';
+      'Não foi possível participar da conversa. Talvez a outra pessoa já fechou a conversa.';
 
   @override
   String get previous => 'Anterior';
 
   @override
   String get otherPartyNotLoggedIn =>
-      'A outra pessoa não tem nenhum dispositivo conectado no momento e portanto não consegue receber mensagens!';
+      'A outra pessoa não há nenhum dispositivo conectado no momento e portanto não consegue receber mensagens!';
 
   @override
   String appWantsToUseForLogin(String server) {
@@ -5258,7 +5254,7 @@ class L10nPtBr extends L10nPt {
 
   @override
   String get appIntroduction =>
-      'O REChain permite que você converse com os seus amigos entre mensageiros diferentes. Aprenda mais em https://online.rechain.network ou toque em *Continuar*.';
+      'O REChain permite que você converse com os seus amigos entre mensageiros diferentes. Aprenda mais em https://rechain.network ou toque em *Continuar*.';
 
   @override
   String get newChatRequest => '📩 Nova solicitação de conversa';
@@ -5474,7 +5470,7 @@ class L10nPtBr extends L10nPt {
   String get notSupportedOnThisDevice => 'Não há suporte neste dispositivo';
 
   @override
-  String get enterNewChat => 'Abrir a conversa nova';
+  String get enterNewChat => 'Entrar na conversa nova';
 
   @override
   String get approve => 'Aprovar';
@@ -5484,7 +5480,7 @@ class L10nPtBr extends L10nPt {
 
   @override
   String get pleaseWaitUntilInvited =>
-      'Aguarde até que alguém da sala te convide.';
+      'Aguarde, até que alguém da sala te convide.';
 
   @override
   String get commandHint_logout => 'Desconecte-se do seu dispositivo atual';
@@ -5502,9 +5498,6 @@ class L10nPtBr extends L10nPt {
 
   @override
   String get moreEvents => 'Mais eventos';
-
-  @override
-  String get declineInvitation => 'Rejeitar convite';
 }
 
 /// The translations for Portuguese, as used in Portugal (`pt_PT`).
@@ -6028,7 +6021,7 @@ class L10nPtPt extends L10nPt {
   String get fileName => 'Nome do ficheiro';
 
   @override
-  String get rechainonline => 'REChain';
+  String get rechainonline => 'rechainonline';
 
   @override
   String get fontSize => 'Tamanho da letra';
@@ -6233,7 +6226,7 @@ class L10nPtPt extends L10nPt {
   String get newChat => 'Nova conversa';
 
   @override
-  String get newMessageInrechainonline => 'Nova mensagem no REChain';
+  String get newMessageInrechainonline => 'Nova mensagem no rechainonline';
 
   @override
   String get newVerificationRequest => 'Novo pedido de verificação!';
@@ -6260,7 +6253,7 @@ class L10nPtPt extends L10nPt {
 
   @override
   String norechainonlineServer(String server1, String server2) {
-    return '$server1 não é um servidor Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network, usar $server2?';
+    return '$server1 não é um servidor REChain, usar $server2?';
   }
 
   @override

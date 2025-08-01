@@ -22,7 +22,7 @@ class L10nNb extends L10n {
 
   @override
   String get setPermissionsLevelDescription =>
-      'Vennligst velg en forhåndsdefinert rolle nedenfor eller skriv inn et tilpasset tillatelsesnivå mellom 0 og 100.';
+      'Please choose a predefined role below or enter a custom permission level between 0 and 100.';
 
   @override
   String get ignoreUser => 'Ignorer bruker';
@@ -37,10 +37,10 @@ class L10nNb extends L10n {
   String get importNow => 'Importer nå';
 
   @override
-  String get importEmojis => 'Importer emojier';
+  String get importEmojis => 'Import Emojis';
 
   @override
-  String get importFromZipFile => 'Importer fra .zip-fil';
+  String get importFromZipFile => 'Import from .zip file';
 
   @override
   String get exportEmotePack => 'Export Emote pack as .zip';
@@ -61,7 +61,7 @@ class L10nNb extends L10n {
 
   @override
   String acceptedTheInvitation(String username) {
-    return '👍$username godtok invitasjonen';
+    return '$username godtok invitasjonen';
   }
 
   @override
@@ -76,16 +76,16 @@ class L10nNb extends L10n {
   String get addEmail => 'Legg til e-post';
 
   @override
-  String get confirmREChainId =>
-      'Vennligst bekreft din REChain ID for å slette kontoen din.';
+  String get confirmMatrixId =>
+      'Vennligst bekreft din REChain-ID for å slette kontoen din.';
 
   @override
   String supposedMxid(String mxid) {
-    return 'Denne bør være $mxid';
+    return 'This should be $mxid';
   }
 
   @override
-  String get addChatDescription => 'Legg til chat beskrivelse...';
+  String get addChatDescription => 'Add a chat description...';
 
   @override
   String get addToSpace => 'Legg til space';
@@ -104,7 +104,7 @@ class L10nNb extends L10n {
 
   @override
   String get commandHint_roomupgrade =>
-      'Oppgrader dette rommet til den gitte romversjonen';
+      'Upgrade this room to the given room version';
 
   @override
   String get commandHint_googly => 'Send some googly eyes';
@@ -342,8 +342,7 @@ class L10nNb extends L10n {
   String get chat => 'Sludring';
 
   @override
-  String get yourChatBackupHasBeenSetUp =>
-      'Sikkerhetskopien av chatten din er konfigurert.';
+  String get yourChatBackupHasBeenSetUp => 'Your chat backup has been set up.';
 
   @override
   String get chatBackup => 'Sludringssikkerhetskopi';
@@ -359,7 +358,7 @@ class L10nNb extends L10n {
   String get chatHasBeenAddedToThisSpace => 'Chat has been added to this space';
 
   @override
-  String get chats => 'Chatter';
+  String get chats => 'Chats';
 
   @override
   String get chooseAStrongPassword => 'Velg et sterkt passord';
@@ -398,11 +397,10 @@ class L10nNb extends L10n {
   String get commandHint_html => 'Send HTML-formatted text';
 
   @override
-  String get commandHint_invite =>
-      'Inviter den gitte brukeren til dette rommet';
+  String get commandHint_invite => 'Invite the given user to this room';
 
   @override
-  String get commandHint_join => 'Bli med i det gitte rommet';
+  String get commandHint_join => 'Join the given room';
 
   @override
   String get commandHint_kick => 'Remove the given user from this room';
@@ -498,7 +496,7 @@ class L10nNb extends L10n {
 
   @override
   String countInvited(int count) {
-    return '$count inviterte';
+    return '$count invited';
   }
 
   @override
@@ -510,7 +508,7 @@ class L10nNb extends L10n {
   }
 
   @override
-  String get createGroup => 'Opprett gruppe';
+  String get createGroup => 'Create group';
 
   @override
   String get createNewSpace => 'New space';
@@ -565,7 +563,7 @@ class L10nNb extends L10n {
   String get directChats => 'Direktesludringer';
 
   @override
-  String get allRooms => 'Alle gruppechatter';
+  String get allRooms => 'All Group Chats';
 
   @override
   String get displaynameHasBeenChanged => 'Visningsnavn endret';
@@ -580,13 +578,13 @@ class L10nNb extends L10n {
   String get editBlockedServers => 'Rediger blokkerte tjenere';
 
   @override
-  String get chatPermissions => 'Chat tillatelser';
+  String get chatPermissions => 'Chat permissions';
 
   @override
   String get editDisplayname => 'Rediger visningsnavn';
 
   @override
-  String get editRoomAliases => 'Rediger rom aliaser';
+  String get editRoomAliases => 'Edit room aliases';
 
   @override
   String get editRoomAvatar => 'Rediger romavatar';
@@ -608,21 +606,20 @@ class L10nNb extends L10n {
   String get emoteSettings => 'Smilefjes-innstillinger';
 
   @override
-  String get globalChatId => 'Global chat-ID';
+  String get globalChatId => 'Global chat ID';
 
   @override
-  String get accessAndVisibility => 'Tilgang og synlighet';
+  String get accessAndVisibility => 'Access and visibility';
 
   @override
   String get accessAndVisibilityDescription =>
-      'Hvem som har lov til å bli med i denne chatten og hvordan chatten kan oppdages.';
+      'Who is allowed to join this chat and how the chat can be discovered.';
 
   @override
-  String get calls => 'Anrop';
+  String get calls => 'Calls';
 
   @override
-  String get customEmojisAndStickers =>
-      'Egendefinerte emojier og klistremerker';
+  String get customEmojisAndStickers => 'Custom emojis and stickers';
 
   @override
   String get customEmojisAndStickersBody =>
@@ -687,7 +684,7 @@ class L10nNb extends L10n {
   String get fileName => 'Filnavn';
 
   @override
-  String get rechainonline => 'REChain';
+  String get rechainonline => 'rechainonline';
 
   @override
   String get fontSize => 'Skriftstørrelse';
@@ -702,7 +699,7 @@ class L10nNb extends L10n {
   String get fromTheInvitation => 'Fra invitasjonen';
 
   @override
-  String get goToTheNewRoom => 'Gå til det nye rommet';
+  String get goToTheNewRoom => 'Go to the new room';
 
   @override
   String get group => 'Gruppe';
@@ -711,7 +708,7 @@ class L10nNb extends L10n {
   String get chatDescription => 'Chat description';
 
   @override
-  String get chatDescriptionHasBeenChanged => 'Chatbeskrivelsen er endret';
+  String get chatDescriptionHasBeenChanged => 'Chat description changed';
 
   @override
   String get groupIsPublic => 'Gruppen er offentlig';
@@ -750,7 +747,7 @@ class L10nNb extends L10n {
 
   @override
   String get hideInvalidOrUnknownMessageFormats =>
-      'Skjul ugyldige eller ukjente meldingsformater';
+      'Hide invalid or unknown message formats';
 
   @override
   String get howOffensiveIsThisContent => 'Hvor støtende er innholdet?';
@@ -762,10 +759,10 @@ class L10nNb extends L10n {
   String get identity => 'Identitet';
 
   @override
-  String get block => 'Blokkér';
+  String get block => 'Block';
 
   @override
-  String get blockedUsers => 'Blokkerte brukere';
+  String get blockedUsers => 'Blocked users';
 
   @override
   String get blockListDescription =>
@@ -801,10 +798,10 @@ class L10nNb extends L10n {
   String get noChatDescriptionYet => 'No chat description created yet.';
 
   @override
-  String get tryAgain => 'Prøv igjen';
+  String get tryAgain => 'Try again';
 
   @override
-  String get invalidServerName => 'Ugyldig servernavn';
+  String get invalidServerName => 'Invalid server name';
 
   @override
   String get invited => 'Invitert';
@@ -901,7 +898,7 @@ class L10nNb extends L10n {
       'Did you export your session last time on TOR? Quickly import it and continue chatting.';
 
   @override
-  String get hydrate => 'Gjenopprett fra sikkerhetskopifil';
+  String get hydrate => 'Restore from backup file';
 
   @override
   String get loadingPleaseWait => 'Laster inn… Vent.';
@@ -938,7 +935,7 @@ class L10nNb extends L10n {
   String get messages => 'Meldinger';
 
   @override
-  String get messagesStyle => 'Meldinger:';
+  String get messagesStyle => 'Messages:';
 
   @override
   String get moderator => 'Moderator';
@@ -954,7 +951,7 @@ class L10nNb extends L10n {
   String get newChat => 'Ny sludring';
 
   @override
-  String get newMessageInrechainonline => 'Ny melding i REChain';
+  String get newMessageInrechainonline => 'Ny melding i rechainonline';
 
   @override
   String get newVerificationRequest => 'Ny bekreftelsesforespørsel!';
@@ -981,14 +978,14 @@ class L10nNb extends L10n {
 
   @override
   String norechainonlineServer(String server1, String server2) {
-    return '$server1 is no Katya ® 👽 AI 🧠 REChain ®️ 🪐 Blockchain Node Network server, use $server2 instead?';
+    return '$server1 is no REChain server, use $server2 instead?';
   }
 
   @override
-  String get shareInviteLink => 'Del invitasjonslenke';
+  String get shareInviteLink => 'Share invite link';
 
   @override
-  String get scanQrCode => 'Skann QR-kode';
+  String get scanQrCode => 'Scan QR code';
 
   @override
   String get none => 'Ingen';
@@ -1016,7 +1013,7 @@ class L10nNb extends L10n {
   }
 
   @override
-  String get obtainingLocation => 'Henter sted …';
+  String get obtainingLocation => 'Obtaining location…';
 
   @override
   String get offensive => 'Støtende';
@@ -1036,7 +1033,7 @@ class L10nNb extends L10n {
 
   @override
   String get oopsPushError =>
-      'Oops! Dessverre oppsto det en feil under oppsettet av push-varsler.';
+      'Oops! Unfortunately, an error occurred when setting up the push notifications.';
 
   @override
   String get oopsSomethingWentWrong => 'Oida, noe gikk galt …';
@@ -1048,13 +1045,13 @@ class L10nNb extends L10n {
   String get openCamera => 'Åpne kamera';
 
   @override
-  String get openVideoCamera => 'Åpne kameraet for en video';
+  String get openVideoCamera => 'Open camera for a video';
 
   @override
-  String get oneClientLoggedOut => 'En av klientene dine har blitt logget ut';
+  String get oneClientLoggedOut => 'One of your clients has been logged out';
 
   @override
-  String get addAccount => 'Legg til konto';
+  String get addAccount => 'Add account';
 
   @override
   String get editBundlesForAccount => 'Edit bundles for this account';
@@ -1070,20 +1067,20 @@ class L10nNb extends L10n {
 
   @override
   String get enableMultiAccounts =>
-      '(BETA) Aktiver flere kontoer på denne enheten';
+      '(BETA) Enable multi accounts on this device';
 
   @override
-  String get openInMaps => 'Åpne i kart';
+  String get openInMaps => 'Open in maps';
 
   @override
-  String get link => 'Lenke';
+  String get link => 'Link';
 
   @override
   String get serverRequiresEmail =>
-      'Denne serveren må validere e-postadressen din for registrering.';
+      'This server needs to validate your email address for registration.';
 
   @override
-  String get or => 'Eller';
+  String get or => 'Or';
 
   @override
   String get participant => 'Deltager';
@@ -1106,23 +1103,22 @@ class L10nNb extends L10n {
 
   @override
   String get hideMemberChangesInPublicChatsBody =>
-      'Ikke vis i chattens tidslinje hvis noen blir med i eller forlater en offentlig chat for økt lesbarhet.';
+      'Do not show in the chat timeline if someone joins or leaves a public chat to improve readability.';
 
   @override
-  String get overview => 'Oversikt';
+  String get overview => 'Overview';
 
   @override
-  String get notifyMeFor => 'Varsle meg om';
+  String get notifyMeFor => 'Notify me for';
 
   @override
-  String get passwordRecoverySettings =>
-      'Innstillinger for gjenoppretting av passord';
+  String get passwordRecoverySettings => 'Password recovery settings';
 
   @override
   String get passwordRecovery => 'Passordgjenoppretting';
 
   @override
-  String get people => 'Folk';
+  String get people => 'People';
 
   @override
   String get pickImage => 'Velg bilde';
@@ -1136,27 +1132,26 @@ class L10nNb extends L10n {
   }
 
   @override
-  String get pleaseChoose => 'Vennligst velg';
+  String get pleaseChoose => 'Please choose';
 
   @override
-  String get pleaseChooseAPasscode => 'Vennligst velg en passordkode';
+  String get pleaseChooseAPasscode => 'Please choose a pass code';
 
   @override
   String get pleaseClickOnLink => 'Klikk på lenken i e-posten og fortsett.';
 
   @override
   String get pleaseEnter4Digits =>
-      'Skriv inn fire sifre eller la feltet stå tomt for å deaktivere applåsen.';
+      'Please enter 4 digits or leave empty to disable app lock.';
 
   @override
-  String get pleaseEnterRecoveryKey =>
-      'Vennligst skriv inn gjenopprettingsnøkkelen din:';
+  String get pleaseEnterRecoveryKey => 'Please enter your recovery key:';
 
   @override
   String get pleaseEnterYourPassword => 'Skriv inn passordet ditt';
 
   @override
-  String get pleaseEnterYourPin => 'Vennligst skriv inn PIN-koden din';
+  String get pleaseEnterYourPin => 'Please enter your pin';
 
   @override
   String get pleaseEnterYourUsername => 'Skriv inn brukernavnet ditt';
@@ -1230,7 +1225,7 @@ class L10nNb extends L10n {
   String get unbanFromChat => 'Opphev bannlysning';
 
   @override
-  String get removeYourAvatar => 'Fjern din avatar';
+  String get removeYourAvatar => 'Remove your avatar';
 
   @override
   String get replaceRoomWithNewerVersion => 'Erstatt rom med nyere versjon';
@@ -1251,7 +1246,7 @@ class L10nNb extends L10n {
   String get roomVersion => 'Room version';
 
   @override
-  String get saveFile => 'Lagre fil';
+  String get saveFile => 'Save file';
 
   @override
   String get search => 'Søk';
@@ -1260,7 +1255,7 @@ class L10nNb extends L10n {
   String get security => 'Sikkerhet';
 
   @override
-  String get recoveryKey => 'Gjenopprettingsnøkkel';
+  String get recoveryKey => 'Recovery key';
 
   @override
   String get recoveryKeyLost => 'Recovery key lost?';
@@ -1277,7 +1272,7 @@ class L10nNb extends L10n {
   String get sendAMessage => 'Send en melding';
 
   @override
-  String get sendAsText => 'Send som tekst';
+  String get sendAsText => 'Send as text';
 
   @override
   String get sendAudio => 'Send lyd';
@@ -1290,7 +1285,7 @@ class L10nNb extends L10n {
 
   @override
   String sendImages(int count) {
-    return 'Send $count bilde';
+    return 'Send $count image';
   }
 
   @override
@@ -1345,7 +1340,7 @@ class L10nNb extends L10n {
   String get setCustomEmotes => 'Sett tilpassede smilefjes';
 
   @override
-  String get setChatDescription => 'Sett chat beskrivelse';
+  String get setChatDescription => 'Set chat description';
 
   @override
   String get setInvitationLink => 'Sett invitasjonslenke';
@@ -1368,19 +1363,19 @@ class L10nNb extends L10n {
   }
 
   @override
-  String get shareLocation => 'Del lokasjon';
+  String get shareLocation => 'Share location';
 
   @override
-  String get showPassword => 'Vis passord';
+  String get showPassword => 'Show password';
 
   @override
-  String get presenceStyle => 'Tilstedeværelse:';
+  String get presenceStyle => 'Presence:';
 
   @override
-  String get presencesToggle => 'Vis statusmeldinger fra andre brukere';
+  String get presencesToggle => 'Show status messages from other users';
 
   @override
-  String get singlesignon => 'Single Sign on (SSO)';
+  String get singlesignon => 'Single Sign on';
 
   @override
   String get skip => 'Hopp over';
@@ -1412,11 +1407,11 @@ class L10nNb extends L10n {
   String get submit => 'Send inn';
 
   @override
-  String get synchronizingPleaseWait => 'Synkroniserer … Vent litt.';
+  String get synchronizingPleaseWait => 'Synchronizing… Please wait.';
 
   @override
   String synchronizingPleaseWaitCounter(String percentage) {
-    return ' Synkroniserer… ($percentage%)';
+    return ' Synchronizing… ($percentage%)';
   }
 
   @override
@@ -1429,7 +1424,7 @@ class L10nNb extends L10n {
   String get theyMatch => 'Samsvarer';
 
   @override
-  String get title => 'REChain';
+  String get title => 'rechainonline';
 
   @override
   String get toggleFavorite => 'Veksle favorittmerking';
@@ -1517,10 +1512,10 @@ class L10nNb extends L10n {
   }
 
   @override
-  String get unverified => 'Ikke verifisert';
+  String get unverified => 'Unverified';
 
   @override
-  String get verified => 'Verifisert';
+  String get verified => 'Verified';
 
   @override
   String get verify => 'Bekreft';
@@ -1609,19 +1604,19 @@ class L10nNb extends L10n {
   String get yourPublicKey => 'Din offentlige nøkkel';
 
   @override
-  String get messageInfo => 'Meldingsinformasjon';
+  String get messageInfo => 'Message info';
 
   @override
-  String get time => 'Tid';
+  String get time => 'Time';
 
   @override
-  String get messageType => 'Meldingstype';
+  String get messageType => 'Message Type';
 
   @override
-  String get sender => 'Avsender';
+  String get sender => 'Sender';
 
   @override
-  String get openGallery => 'Åpne galleri';
+  String get openGallery => 'Open gallery';
 
   @override
   String get removeFromSpace => 'Remove from space';
@@ -1637,7 +1632,7 @@ class L10nNb extends L10n {
       'To unlock your old messages, please enter your recovery key that has been generated in a previous session. Your recovery key is NOT your password.';
 
   @override
-  String get publish => 'Publiser';
+  String get publish => 'Publish';
 
   @override
   String videoWithSize(String size) {
@@ -1645,16 +1640,16 @@ class L10nNb extends L10n {
   }
 
   @override
-  String get openChat => 'Åpne chat';
+  String get openChat => 'Open Chat';
 
   @override
-  String get markAsRead => 'Marker som lest';
+  String get markAsRead => 'Mark as read';
 
   @override
-  String get reportUser => 'Rapporter bruker';
+  String get reportUser => 'Report user';
 
   @override
-  String get dismiss => 'Avvis';
+  String get dismiss => 'Dismiss';
 
   @override
   String reactedWith(String sender, String reaction) {
@@ -1675,10 +1670,10 @@ class L10nNb extends L10n {
   String get placeCall => 'Place call';
 
   @override
-  String get voiceCall => 'Taleanrop';
+  String get voiceCall => 'Voice call';
 
   @override
-  String get unsupportedAndroidVersion => 'Usupportert Android-versjon';
+  String get unsupportedAndroidVersion => 'Unsupported Android version';
 
   @override
   String get unsupportedAndroidVersionLong =>
@@ -1692,7 +1687,7 @@ class L10nNb extends L10n {
   String get experimentalVideoCalls => 'Experimental video calls';
 
   @override
-  String get emailOrUsername => 'E-post eller brukernavn';
+  String get emailOrUsername => 'Email or username';
 
   @override
   String get indexedDbErrorTitle => 'Private mode issues';
@@ -1707,13 +1702,13 @@ class L10nNb extends L10n {
   }
 
   @override
-  String get nextAccount => 'Neste konto';
+  String get nextAccount => 'Next account';
 
   @override
-  String get previousAccount => 'Forrige konto';
+  String get previousAccount => 'Previous account';
 
   @override
-  String get addWidget => 'Legg til widget';
+  String get addWidget => 'Add widget';
 
   @override
   String get widgetVideo => 'Video';
@@ -1725,37 +1720,37 @@ class L10nNb extends L10n {
   String get widgetJitsi => 'Jitsi Meet';
 
   @override
-  String get widgetCustom => 'Egendefinert';
+  String get widgetCustom => 'Custom';
 
   @override
-  String get widgetName => 'Navn';
+  String get widgetName => 'Name';
 
   @override
-  String get widgetUrlError => 'Dette er ikke en gyldig URL.';
+  String get widgetUrlError => 'This is not a valid URL.';
 
   @override
-  String get widgetNameError => 'Vennligst oppgi et visningsnavn.';
+  String get widgetNameError => 'Please provide a display name.';
 
   @override
   String get errorAddingWidget => 'Error adding the widget.';
 
   @override
-  String get youRejectedTheInvitation => 'Du har avvist invitasjonen';
+  String get youRejectedTheInvitation => 'You rejected the invitation';
 
   @override
-  String get youJoinedTheChat => 'Du har blitt med i chatten';
+  String get youJoinedTheChat => 'You joined the chat';
 
   @override
-  String get youAcceptedTheInvitation => '👍 Du har akseptert invitasjonen';
+  String get youAcceptedTheInvitation => '👍 You accepted the invitation';
 
   @override
   String youBannedUser(String user) {
-    return 'Du stengte ute $user';
+    return 'You banned $user';
   }
 
   @override
   String youHaveWithdrawnTheInvitationFor(String user) {
-    return 'Du har trukket tilbake invitasjonen for $user';
+    return 'You have withdrawn the invitation for $user';
   }
 
   @override
@@ -1817,7 +1812,7 @@ class L10nNb extends L10n {
   String get knock => 'Knock';
 
   @override
-  String get users => 'Brukere';
+  String get users => 'Users';
 
   @override
   String get unlockOldMessages => 'Unlock old messages';
@@ -1845,33 +1840,33 @@ class L10nNb extends L10n {
   }
 
   @override
-  String get user => 'Bruker';
+  String get user => 'User';
 
   @override
-  String get custom => 'Egendefinert';
+  String get custom => 'Custom';
 
   @override
   String get foregroundServiceRunning =>
       'This notification appears when the foreground service is running.';
 
   @override
-  String get screenSharingTitle => 'skjermdeling';
+  String get screenSharingTitle => 'screen sharing';
 
   @override
-  String get screenSharingDetail => 'Du deler skjermen din i FuffyChat';
+  String get screenSharingDetail => 'You are sharing your screen in FuffyChat';
 
   @override
-  String get callingPermissions => 'Anropstillatelser';
+  String get callingPermissions => 'Calling permissions';
 
   @override
   String get callingAccount => 'Calling account';
 
   @override
   String get callingAccountDetails =>
-      'Lar REChain bruke den innebygde Android-oppringingsappen.';
+      'Allows REChain to use the native android dialer app.';
 
   @override
-  String get appearOnTop => 'Vis øverst';
+  String get appearOnTop => 'Appear on top';
 
   @override
   String get appearOnTopDetails =>
@@ -1879,18 +1874,17 @@ class L10nNb extends L10n {
 
   @override
   String get otherCallingPermissions =>
-      'Mikrofon, kamera og andre REChain-tillatelser';
+      'Microphone, camera and other REChain permissions';
 
   @override
-  String get whyIsThisMessageEncrypted =>
-      'Hvorfor er denne meldingen uleselig?';
+  String get whyIsThisMessageEncrypted => 'Why is this message unreadable?';
 
   @override
   String get noKeyForThisMessage =>
       'This can happen if the message was sent before you have signed in to your account at this device.\n\nIt is also possible that the sender has blocked your device or something went wrong with the internet connection.\n\nAre you able to read the message on another session? Then you can transfer the message from it! Go to Settings > Devices and make sure that your devices have verified each other. When you open the room the next time and both sessions are in the foreground, the keys will be transmitted automatically.\n\nDo you not want to lose the keys when logging out or switching devices? Make sure that you have enabled the chat backup in the settings.';
 
   @override
-  String get newGroup => 'Ny gruppe';
+  String get newGroup => 'New group';
 
   @override
   String get newSpace => 'New space';
@@ -1916,7 +1910,7 @@ class L10nNb extends L10n {
   String get hidePresences => 'Hide Status List?';
 
   @override
-  String get doNotShowAgain => 'Ikke vis igjen';
+  String get doNotShowAgain => 'Do not show again';
 
   @override
   String wasDirectChatDisplayName(String oldDisplayName) {
@@ -1928,20 +1922,20 @@ class L10nNb extends L10n {
       'Spaces allows you to consolidate your chats and build private or public communities.';
 
   @override
-  String get encryptThisChat => 'Krypter denne chatten';
+  String get encryptThisChat => 'Encrypt this chat';
 
   @override
   String get disableEncryptionWarning =>
       'For security reasons you can not disable encryption in a chat, where it has been enabled before.';
 
   @override
-  String get sorryThatsNotPossible => 'Beklager... det er ikke mulig';
+  String get sorryThatsNotPossible => 'Sorry... that is not possible';
 
   @override
   String get deviceKeys => 'Device keys:';
 
   @override
-  String get reopenChat => 'Gjenåpne chat';
+  String get reopenChat => 'Reopen chat';
 
   @override
   String get noBackupWarning =>
@@ -1970,7 +1964,7 @@ class L10nNb extends L10n {
   String get jump => 'Jump';
 
   @override
-  String get openLinkInBrowser => 'Åpne lenke i nettleser';
+  String get openLinkInBrowser => 'Open link in browser';
 
   @override
   String get reportErrorDescription =>
@@ -2002,20 +1996,20 @@ class L10nNb extends L10n {
   String get setColorTheme => 'Set color theme:';
 
   @override
-  String get invite => 'Inviter';
+  String get invite => 'Invite';
 
   @override
-  String get inviteGroupChat => '📨 Group chat invite';
+  String get inviteGroupChat => '📨 Invite group chat';
 
   @override
-  String get invitePrivateChat => '📨 Private chat invite';
+  String get invitePrivateChat => '📨 Invite private chat';
 
   @override
   String get invalidInput => 'Invalid input!';
 
   @override
   String wrongPinEntered(int seconds) {
-    return 'Feil PIN-kode tastet inn! Prøv igjen om $seconds sekunder...';
+    return 'Wrong pin entered! Try again in $seconds seconds...';
   }
 
   @override
@@ -2027,7 +2021,7 @@ class L10nNb extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      'The chat will then be recreated with the new room version. All participants will be notified that they need to switch to the new chat. You can find out more about room versions at https://spec.online.rechain.network/latest/rooms/';
+      'The chat will then be recreated with the new room version. All participants will be notified that they need to switch to the new chat. You can find out more about room versions at https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle';
 
   @override
   String get removeDevicesDescription =>
@@ -2051,13 +2045,13 @@ class L10nNb extends L10n {
 
   @override
   String get pushNotificationsNotAvailable =>
-      'Push-varsler er ikke tilgjengelige';
+      'Push notifications not available';
 
   @override
-  String get learnMore => 'Lær mer';
+  String get learnMore => 'Learn more';
 
   @override
-  String get yourGlobalUserIdIs => 'Din globale bruker-ID er: ';
+  String get yourGlobalUserIdIs => 'Your global user-ID is: ';
 
   @override
   String noUsersFoundWithQuery(String query) {
@@ -2073,17 +2067,16 @@ class L10nNb extends L10n {
   }
 
   @override
-  String get searchChatsRooms => 'Søk etter #chatter, @brukere...';
+  String get searchChatsRooms => 'Search for #chats, @users...';
 
   @override
-  String get nothingFound => 'Ingenting funnet...';
+  String get nothingFound => 'Nothing found...';
 
   @override
-  String get groupName => 'Gruppenavn';
+  String get groupName => 'Group name';
 
   @override
-  String get createGroupAndInviteUsers =>
-      'Opprett en gruppe og inviter brukere';
+  String get createGroupAndInviteUsers => 'Create a group and invite users';
 
   @override
   String get groupCanBeFoundViaSearch => 'Group can be found via search';
@@ -2093,13 +2086,13 @@ class L10nNb extends L10n {
       'Sorry... this does not seem to be the correct recovery key.';
 
   @override
-  String get startConversation => 'Start samtale';
+  String get startConversation => 'Start conversation';
 
   @override
   String get commandHint_sendraw => 'Send raw json';
 
   @override
-  String get databaseMigrationTitle => 'Databasen er optimalisert';
+  String get databaseMigrationTitle => 'Database is optimized';
 
   @override
   String get databaseMigrationBody => 'Please wait. This may take a moment.';
@@ -2108,7 +2101,7 @@ class L10nNb extends L10n {
   String get leaveEmptyToClearStatus => 'Leave empty to clear your status.';
 
   @override
-  String get select => 'Velg';
+  String get select => 'Select';
 
   @override
   String get searchForUsers => 'Search for @users...';
@@ -2118,16 +2111,16 @@ class L10nNb extends L10n {
       'Please enter your current password';
 
   @override
-  String get newPassword => 'Nytt passord';
+  String get newPassword => 'New password';
 
   @override
   String get pleaseChooseAStrongPassword => 'Please choose a strong password';
 
   @override
-  String get passwordsDoNotMatch => 'Passordene stemmer ikke overens';
+  String get passwordsDoNotMatch => 'Passwords do not match';
 
   @override
-  String get passwordIsWrong => 'Det inntastede passordet ditt er feil';
+  String get passwordIsWrong => 'Your entered password is wrong';
 
   @override
   String get publicLink => 'Public link';
@@ -2151,16 +2144,16 @@ class L10nNb extends L10n {
   String get subspace => 'Subspace';
 
   @override
-  String get decline => 'Avslå';
+  String get decline => 'Decline';
 
   @override
-  String get thisDevice => 'Denne enheten:';
+  String get thisDevice => 'This device:';
 
   @override
   String get initAppError => 'An error occured while init the app';
 
   @override
-  String get userRole => 'Brukerrolle';
+  String get userRole => 'User role';
 
   @override
   String minimumPowerLevel(String level) {
@@ -2169,17 +2162,17 @@ class L10nNb extends L10n {
 
   @override
   String searchIn(String chat) {
-    return 'Søk i chatten «$chat»...';
+    return 'Search in chat \"$chat\"...';
   }
 
   @override
   String get searchMore => 'Search more...';
 
   @override
-  String get gallery => 'Galleri';
+  String get gallery => 'Gallery';
 
   @override
-  String get files => 'Filer';
+  String get files => 'Files';
 
   @override
   String databaseBuildErrorBody(String url, String error) {
@@ -2213,7 +2206,7 @@ class L10nNb extends L10n {
       'Other participants in a chat can see when you have read a message.';
 
   @override
-  String get formattedMessages => 'Formaterte meldinger';
+  String get formattedMessages => 'Formatted messages';
 
   @override
   String get formattedMessagesDescription =>
@@ -2267,13 +2260,13 @@ class L10nNb extends L10n {
   String get transparent => 'Transparent';
 
   @override
-  String get incomingMessages => 'Innkommende meldinger';
+  String get incomingMessages => 'Incoming messages';
 
   @override
   String get stickers => 'Stickers';
 
   @override
-  String get discover => 'Oppdag';
+  String get discover => 'Discover';
 
   @override
   String get commandHint_ignore => 'Ignore the given REChain ID';
@@ -2292,26 +2285,26 @@ class L10nNb extends L10n {
 
   @override
   String thereAreCountUsersBlocked(Object count) {
-    return 'Akkurat nå er det $count blokkerte brukere.';
+    return 'Right now there are $count users blocked.';
   }
 
   @override
-  String get restricted => 'Begrenset';
+  String get restricted => 'Restricted';
 
   @override
   String get knockRestricted => 'Knock restricted';
 
   @override
   String goToSpace(Object space) {
-    return 'Gå til område: $space';
+    return 'Go to space: $space';
   }
 
   @override
-  String get markAsUnread => 'Marker som ulest';
+  String get markAsUnread => 'Mark as unread';
 
   @override
   String userLevel(int level) {
-    return '$level - Bruker';
+    return '$level - User';
   }
 
   @override
@@ -2328,7 +2321,7 @@ class L10nNb extends L10n {
   String get changeGeneralChatSettings => 'Change general chat settings';
 
   @override
-  String get inviteOtherUsers => 'Inviter andre brukere til denne chatten';
+  String get inviteOtherUsers => 'Invite other users to this chat';
 
   @override
   String get changeTheChatPermissions => 'Change the chat permissions';
@@ -2345,7 +2338,8 @@ class L10nNb extends L10n {
   String get sendRoomNotifications => 'Send a @room notifications';
 
   @override
-  String get changeTheDescriptionOfTheGroup => 'Endre beskrivelsen til chatten';
+  String get changeTheDescriptionOfTheGroup =>
+      'Change the description of the chat';
 
   @override
   String get chatPermissionsDescription =>
@@ -2353,40 +2347,40 @@ class L10nNb extends L10n {
 
   @override
   String updateInstalled(String version) {
-    return '🎉 Oppdatering $version installert!';
+    return '🎉 Update $version installed!';
   }
 
   @override
-  String get changelog => 'Endringslogg';
+  String get changelog => 'Changelog';
 
   @override
-  String get sendCanceled => 'Sending avbrutt';
+  String get sendCanceled => 'Sending canceled';
 
   @override
-  String get loginWithREChainId => 'Logg på med REChain ID';
+  String get loginWithMatrixId => 'Login with REChain-ID';
 
   @override
-  String get discoverHomeservers => 'Oppdag hjemmeservere';
+  String get discoverHomeservers => 'Discover homeservers';
 
   @override
   String get whatIsAHomeserver => 'What is a homeserver?';
 
   @override
   String get homeserverDescription =>
-      'All your data is stored on the homeserver, just like an email provider. You can choose which homeserver you want to use, while you can still communicate with everyone. Learn more at at https://online.rechain.network.';
+      'All your data is stored on the homeserver, just like an email provider. You can choose which homeserver you want to use, while you can still communicate with everyone. Learn more at at https://rechain.network.';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
       'Doesn\'t seem to be a compatible homeserver. Wrong URL?';
 
   @override
-  String get calculatingFileSize => 'Beregner filstørrelse...';
+  String get calculatingFileSize => 'Calculating file size...';
 
   @override
   String get prepareSendingAttachment => 'Prepare sending attachment...';
 
   @override
-  String get sendingAttachment => 'Sender vedlegg...';
+  String get sendingAttachment => 'Sending attachment...';
 
   @override
   String get generatingVideoThumbnail => 'Generating video thumbnail...';
@@ -2406,18 +2400,18 @@ class L10nNb extends L10n {
 
   @override
   String get oneOfYourDevicesIsNotVerified =>
-      'En av dine enheter er ikke verifisert';
+      'One of your devices is not verified';
 
   @override
   String get noticeChatBackupDeviceVerification =>
       'Note: When you connect all your devices to the chat backup, they are automatically verified.';
 
   @override
-  String get continueText => 'Fortsett';
+  String get continueText => 'Continue';
 
   @override
   String get welcomeText =>
-      'Hey Hey 👋 This is REChain. You can sign in to any homeserver, which is compatible with https://online.rechain.network. And then chat with anyone. It\'s a huge decentralized messaging network!';
+      'Hey Hey 👋 This is REChain. You can sign in to any homeserver, which is compatible with https://rechain.network. And then chat with anyone. It\'s a huge decentralized messaging network!';
 
   @override
   String get blur => 'Blur:';
@@ -2426,17 +2420,17 @@ class L10nNb extends L10n {
   String get opacity => 'Opacity:';
 
   @override
-  String get setWallpaper => 'Sett bakgrunnsbilde';
+  String get setWallpaper => 'Set wallpaper';
 
   @override
-  String get manageAccount => 'Administrer konto';
+  String get manageAccount => 'Manage account';
 
   @override
   String get noContactInformationProvided =>
       'Server does not provide any valid contact information';
 
   @override
-  String get contactServerAdmin => 'Kontakt serveradministrator';
+  String get contactServerAdmin => 'Contact server admin';
 
   @override
   String get contactServerSecurity => 'Contact server security';
@@ -2445,22 +2439,22 @@ class L10nNb extends L10n {
   String get supportPage => 'Support page';
 
   @override
-  String get serverInformation => 'Serverinformasjon:';
+  String get serverInformation => 'Server information:';
 
   @override
-  String get name => 'Navn';
+  String get name => 'Name';
 
   @override
-  String get version => 'Versjon';
+  String get version => 'Version';
 
   @override
-  String get website => 'Nettside';
+  String get website => 'Website';
 
   @override
   String get compress => 'Compress';
 
   @override
-  String get boldText => 'Fet skrift';
+  String get boldText => 'Bold text';
 
   @override
   String get italicText => 'Italic text';
@@ -2469,20 +2463,20 @@ class L10nNb extends L10n {
   String get strikeThrough => 'Strikethrough';
 
   @override
-  String get pleaseFillOut => 'Vennligst fyll ut';
+  String get pleaseFillOut => 'Please fill out';
 
   @override
-  String get invalidUrl => 'Ugyldig url';
+  String get invalidUrl => 'Invalid url';
 
   @override
-  String get addLink => 'Legg til lenke';
+  String get addLink => 'Add link';
 
   @override
   String get unableToJoinChat =>
       'Unable to join chat. Maybe the other party has already closed the conversation.';
 
   @override
-  String get previous => 'Forrige';
+  String get previous => 'Previous';
 
   @override
   String get otherPartyNotLoggedIn =>
@@ -2498,14 +2492,14 @@ class L10nNb extends L10n {
       'You hereby allow the app and website to share information about you.';
 
   @override
-  String get open => 'Åpne';
+  String get open => 'Open';
 
   @override
-  String get waitingForServer => 'Venter på server...';
+  String get waitingForServer => 'Waiting for server...';
 
   @override
   String get appIntroduction =>
-      'REChain lets you chat with your friends across different messengers. Learn more at https://online.rechain.network or just tap *Continue*.';
+      'REChain lets you chat with your friends across different messengers. Learn more at https://rechain.network or just tap *Continue*.';
 
   @override
   String get newChatRequest => '📩 New chat request';
@@ -2527,14 +2521,14 @@ class L10nNb extends L10n {
   String get otherNotificationSettings => 'Other notification settings';
 
   @override
-  String get notificationRuleContainsUserName => 'Inneholder brukernavn';
+  String get notificationRuleContainsUserName => 'Contains User Name';
 
   @override
   String get notificationRuleContainsUserNameDescription =>
       'Notifies the user when a message contains their username.';
 
   @override
-  String get notificationRuleMaster => 'Demp alle varslinger';
+  String get notificationRuleMaster => 'Mute all notifications';
 
   @override
   String get notificationRuleMasterDescription =>
@@ -2597,7 +2591,7 @@ class L10nNb extends L10n {
       'Notifies the user about room deactivation messages.';
 
   @override
-  String get notificationRuleReaction => 'Reaksjon';
+  String get notificationRuleReaction => 'Reaction';
 
   @override
   String get notificationRuleReactionDescription =>
@@ -2640,14 +2634,14 @@ class L10nNb extends L10n {
       'Notifies the user about messages in one-to-one rooms.';
 
   @override
-  String get notificationRuleMessage => 'Melding';
+  String get notificationRuleMessage => 'Message';
 
   @override
   String get notificationRuleMessageDescription =>
       'Notifies the user about general messages.';
 
   @override
-  String get notificationRuleEncrypted => 'Kkryptert';
+  String get notificationRuleEncrypted => 'Encrypted';
 
   @override
   String get notificationRuleEncryptedDescription =>
@@ -2682,7 +2676,7 @@ class L10nNb extends L10n {
       'If you delete this notification setting, this can not be undone.';
 
   @override
-  String get more => 'Mer';
+  String get more => 'More';
 
   @override
   String get shareKeysWith => 'Share keys with...';
@@ -2692,7 +2686,7 @@ class L10nNb extends L10n {
       'Which devices should be trusted so that they can read along your messages in encrypted chats?';
 
   @override
-  String get allDevices => 'Alle enheter';
+  String get allDevices => 'All devices';
 
   @override
   String get crossVerifiedDevicesIfEnabled =>
@@ -2705,7 +2699,7 @@ class L10nNb extends L10n {
   String get verifiedDevicesOnly => 'Verified devices only';
 
   @override
-  String get takeAPhoto => 'Ta et bilde';
+  String get takeAPhoto => 'Take a photo';
 
   @override
   String get recordAVideo => 'Record a video';
@@ -2720,7 +2714,7 @@ class L10nNb extends L10n {
   String get enterNewChat => 'Enter new chat';
 
   @override
-  String get approve => 'Godkjenn';
+  String get approve => 'Approve';
 
   @override
   String get youHaveKnocked => 'You have knocked';
@@ -2743,7 +2737,4 @@ class L10nNb extends L10n {
 
   @override
   String get moreEvents => 'More events';
-
-  @override
-  String get declineInvitation => 'Decline invitation';
 }
