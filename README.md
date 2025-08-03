@@ -72,9 +72,9 @@ shorebird patch android
 - [Shorebird Documentation](https://docs.shorebird.dev/)
 - [Shorebird Code Push Package](https://pub.dev/packages/shorebird_code_push)
 
-https://api.codemagic.io/apps/686d1ae5ebec9edd213662a9/686d1ae5ebec9edd213662a8/status_badge.svg
+https://api.codemagic.io/apps/688f97e647fd81ea2dff2a29/688f97e647fd81ea2dff2a28/status_badge.svg
 
-[![Codemagic build status](https://api.codemagic.io/apps/686d1ae5ebec9edd213662a9/686d1ae5ebec9edd213662a8/status_badge.svg)](https://codemagic.io/app/686d1ae5ebec9edd213662a9/686d1ae5ebec9edd213662a8/latest_build)
+[![Codemagic build status](https://api.codemagic.io/apps/688f97e647fd81ea2dff2a29/688f97e647fd81ea2dff2a28/status_badge.svg)](https://codemagic.io/app/688f97e647fd81ea2dff2a29/688f97e647fd81ea2dff2a28/latest_build)
 
 # REChain Ecosystem
 
