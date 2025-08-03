@@ -1,0 +1,24 @@
+Package: rechainonline
+Version: 4.1.7
+Section: net
+Priority: optional
+Architecture: amd64
+Depends: libc6, libgtk-3-0, libglib2.0-0
+Maintainer: REChain Team <support@rechain.network>
+Description: REChain - comprehensive platform for Matrix, blockchain, IPFS, AI
+ REChain is a comprehensive platform that unifies Matrix protocol, blockchain,
+ IPFS, AI, and external services into a seamless, extensible, and
+ developer-friendly ecosystem.
+ .
+ Supports Russian Linux systems including:
+ - Astra Linux
+ - РЕД ОС (RED OS)
+ - ОС «Альт» (ALT Linux)
+ - ОС РОСА (ROSA)
+ - «ОСнова» (OSNova)
+ - AlterOS
+ - ОС «Атлант» (Atlant OS)
+ - ОС «Стрелец» (Strelets OS)
+ - ОС «МСВСфера 9» (MSVSphere 9)
+ - ОС «Лотос» (Lotos OS)
+ - ОС «Эльбрус» (Elbrus OS)

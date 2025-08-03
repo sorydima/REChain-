@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=REChain
+Name[ru]=РЕЧейн
+Comment=REChain - comprehensive platform for Matrix, blockchain, IPFS, AI
+Comment[ru]=РЕЧейн - комплексная платформа для Matrix, блокчейн, IPFS, ИИ
+Exec=rechainonline
+Icon=rechainonline
+Terminal=false
+Type=Application
+Categories=Network;InstantMessaging;
+StartupWMClass=rechainonline
+MimeType=x-scheme-handler/matrix;
