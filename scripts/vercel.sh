@@ -35,23 +35,26 @@ echo "Building vodozemac WASM..."
 git clone https://github.com/matrix-org/vodozemac.git
 cd vodozemac
 
-# Add crate-type to Cargo.toml if not present
-if ! grep -q "crate-type.*cdylib" Cargo.toml; then
-    echo "Adding crate-type to Cargo.toml..."
-    
-    # Create a backup of the original Cargo.toml
-    cp Cargo.toml Cargo.toml.backup
-    
-    # Extract the package name from the original Cargo.toml
-    package_name=$(grep -A 10 "\[package\]" Cargo.toml.backup | grep "name" | head -1 | cut -d'"' -f2)
-    
-    # If we can't find the package name, use "vodozemac" as default
+# Immediately ensure crate-type is correctly configured
+echo "Ensuring crate-type configuration in Cargo.toml..."
+# Always rewrite Cargo.toml to ensure correct configuration
+echo "Creating backup of original Cargo.toml..."
+cp Cargo.toml Cargo.toml.original
+
+# Extract package name or use default
+if grep -q "name" Cargo.toml; then
+    package_name=$(grep "name" Cargo.toml | head -1 | cut -d'"' -f2)
     if [ -z "$package_name" ]; then
         package_name="vodozemac"
     fi
-    
-    # Create a new Cargo.toml with the correct crate-type
-    cat > Cargo.toml.new << EOF
+else
+    package_name="vodozemac"
+fi
+
+echo "Package name detected: $package_name"
+
+# Create a completely new Cargo.toml with guaranteed correct configuration
+cat > Cargo.toml << EOF
 [package]
 name = "$package_name"
 version = "0.5.0"
@@ -102,12 +105,17 @@ default = []
 low-level-api = []
 EOF
 
-    # Replace the original Cargo.toml with our new one
-    mv Cargo.toml.new Cargo.toml
-    
-    echo "Successfully created new Cargo.toml with crate-type configuration"
+echo "New Cargo.toml created with guaranteed crate-type configuration"
+echo "Verifying configuration:"
+if grep -q "crate-type.*cdylib" Cargo.toml; then
+    echo "✓ crate-type is correctly configured"
+    echo "Current [lib] section:"
+    grep -A 2 "\[lib\]" Cargo.toml
+else
+    echo "✗ ERROR: crate-type is not configured correctly"
     echo "Current Cargo.toml content:"
     cat Cargo.toml
+    exit 1
 fi
 
 # Install wasm-pack if not already installed
@@ -127,6 +135,16 @@ else
     echo "✗ ERROR: crate-type is not configured correctly"
     echo "Current Cargo.toml content:"
     cat Cargo.toml
+    exit 1
+fi
+
+# Additional verification - check if wasm-pack will work
+echo "Pre-flight check: Testing if wasm-pack can read Cargo.toml..."
+if cargo metadata --format-version 1 --no-deps > /dev/null 2>&1; then
+    echo "✓ Cargo.toml is valid"
+else
+    echo "✗ Cargo.toml validation failed"
+    cargo metadata --format-version 1 --no-deps
     exit 1
 fi
 
@@ -184,5 +202,15 @@ flutter pub get
 # Build Flutter web
 echo "Building Flutter web application..."
 flutter build web --release
+
+# Final verification before build
+echo "Final verification of Cargo.toml before wasm-pack build:"
+if ! grep -q "crate-type.*cdylib" Cargo.toml; then
+    echo "ERROR: crate-type not found in Cargo.toml"
+    cat Cargo.toml
+    exit 1
+fi
+
+echo "✓ Cargo.toml verified successfully"
 
 echo "Build completed successfully!"
