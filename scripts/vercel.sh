@@ -203,14 +203,4 @@ flutter pub get
 echo "Building Flutter web application..."
 flutter build web --release
 
-# Final verification before build
-echo "Final verification of Cargo.toml before wasm-pack build:"
-if ! grep -q "crate-type.*cdylib" Cargo.toml; then
-    echo "ERROR: crate-type not found in Cargo.toml"
-    cat Cargo.toml
-    exit 1
-fi
-
-echo "✓ Cargo.toml verified successfully"
-
 echo "Build completed successfully!"
