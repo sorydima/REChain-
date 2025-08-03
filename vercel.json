@@ -1,7 +1,7 @@
 {
   "buildCommand": "bash scripts/vercel.sh",
   "outputDirectory": "build/web",
-  "installCommand": "flutter/bin/flutter pub get",
+  "installCommand": "echo 'Using custom build script'",
   "framework": null,
   "functions": {},
   "rewrites": [
@@ -26,11 +26,20 @@
         {
           "key": "Content-Type",
           "value": "application/wasm"
+        },
+        {
+          "key": "Cross-Origin-Embedder-Policy",
+          "value": "require-corp"
+        },
+        {
+          "key": "Cross-Origin-Opener-Policy",
+          "value": "same-origin"
         }
       ]
     }
   ],
   "env": {
-    "FLUTTER_WEB": "true"
+    "FLUTTER_WEB": "true",
+    "CARGO_NET_GIT_FETCH_WITH_CLI": "true"
   }
 }
