@@ -2,7 +2,7 @@ name: rechainonline
 description: REChain is a comprehensive platform that unifies Matrix protocol, blockchain, IPFS, AI, and external services into a seamless, extensible, and developer-friendly ecosystem.
 publish_to: none
 # On version bump also increase the build number for F-Droid
-version: 4.1.7+1150
+version: 4.1.7+1151
 
 environment:
   sdk: ">=3.0.0 <4.0.0"

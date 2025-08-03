@@ -2,7 +2,7 @@ plugins {
     id "com.android.application"
     id "kotlin-android"
     id "dev.flutter.flutter-gradle-plugin"
-    //id "com.google.gms.google-services"
+    id "com.google.gms.google-services"
 }
 
 def localProperties = new Properties()
@@ -32,8 +32,8 @@ if (keystorePropertiesFile.exists()) {
 android {
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
 
         // Включаем core library desugaring
         coreLibraryDesugaringEnabled true
@@ -44,11 +44,11 @@ android {
     namespace = "com.rechain.online"
 
     kotlinOptions {
-            jvmTarget = '1.8' // Or '11' or higher, depending on your project needs
+            jvmTarget = '21'
         }
 
     kotlin {
-        jvmToolchain(18)
+        jvmToolchain(21)
     }
     
     sourceSets {
@@ -103,11 +103,10 @@ flutter {
 dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.4'
+    implementation 'com.google.firebase:firebase-bom:33.7.0'
+    implementation 'com.google.firebase:firebase-messaging'
+    implementation 'com.google.android.gms:play-services-location:21.3.0'
     // implementation 'com.huawei.agconnect:agconnect-core:1.5.2.300'
-}
-
-configurations.all {
-    exclude group: 'com.google.android.gms'
 }
 
 // apply plugin: 'com.huawei.agconnect'

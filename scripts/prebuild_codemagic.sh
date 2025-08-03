@@ -1,0 +1,23 @@
+curl https://sh.rustup.rs -sSf | sh -s -- -y
+source $HOME/.cargo/env
+rustc --version
+cargo --version
+git clone https://github.com/matrix-org/vodozemac.git
+cd vodozemac
+cargo install wasm-pack
+wasm-pack build --target web
+cd ..
+cd scripts
+chmod +x generate_locale_config.sh
+./generate_locale_config.sh
+chmod +x generate-locale-config.sh
+./generate-locale-config.sh
+cd ..
+git clone https://github.com/famedly/dart-vodozemac.git .vodozemac
+cd .vodozemac
+cargo install flutter_rust_bridge_codegen
+flutter_rust_bridge_codegen build-web --dart-root dart --rust-root $(readlink -f rust) --release
+cd ..
+rm -f ./assets/vodozemac/vodozemac_bindings_dart*
+mv .vodozemac/dart/web/pkg/vodozemac_bindings_dart* ./assets/vodozemac/
+rm -rf .vodozemac
