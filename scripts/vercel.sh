@@ -32,7 +32,7 @@ rm -rf .vodozemac
 
 # Build vodozemac WASM using our reliable standalone approach
 echo "Building vodozemac WASM using standalone approach..."
-bash ../scripts/build_vodozemac_wasm.sh
+bash scripts/build_vodozemac_wasm.sh
 
 # Run locale config scripts
 echo "Generating locale configuration..."

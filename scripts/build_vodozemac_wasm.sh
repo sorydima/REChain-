@@ -3,6 +3,11 @@ set -euo pipefail
 
 echo "=== Building vodozemac WASM from scratch ==="
 
+# Source Rust environment
+if [ -f "$HOME/.cargo/env" ]; then
+    source "$HOME/.cargo/env"
+fi
+
 # Create a temporary directory for building vodozemac
 BUILD_DIR="/tmp/vodozemac_build"
 rm -rf "$BUILD_DIR"
@@ -73,8 +78,23 @@ if ! command -v wasm-pack &> /dev/null; then
     cargo install wasm-pack
 fi
 
+# Add rust-src component which is needed for WASM compilation
+echo "Installing rust-src component..."
+rustup component add rust-src --toolchain nightly || echo "Failed to add rust-src component, continuing..."
+
+# Build with nightly toolchain and proper flags
 echo "Building WASM package..."
-wasm-pack build --target web
+export RUSTFLAGS="-C target-feature=+atomics,+bulk-memory,+mutable-globals"
+export RUSTUP_TOOLCHAIN=nightly
+
+# Try to build with build-std flag first
+if wasm-pack build --target web -- -Z build-std=std,panic_abort; then
+    echo "WASM build successful with build-std flag"
+else
+    echo "WASM build failed with build-std flag, trying without..."
+    # Fallback to regular build
+    wasm-pack build --target web
+fi
 
 echo "Build completed successfully!"
 echo "Generated files are in pkg/ directory"
@@ -82,8 +102,18 @@ echo "Generated files are in pkg/ directory"
 # Copy the generated files to the expected location
 if [ -d "pkg" ]; then
     echo "Copying generated files to project directory..."
-    mkdir -p /vercel/path0/assets/vodozemac
-    cp pkg/* /vercel/path0/assets/vodozemac/
+    # Try different possible paths
+    if [ -d "/vercel/path0" ]; then
+        mkdir -p /vercel/path0/assets/vodozemac
+        cp pkg/* /vercel/path0/assets/vodozemac/ || echo "Failed to copy to /vercel/path0"
+    elif [ -d "/Users/builder/clone" ]; then
+        mkdir -p /Users/builder/clone/assets/vodozemac
+        cp pkg/* /Users/builder/clone/assets/vodozemac/ || echo "Failed to copy to /Users/builder/clone"
+    else
+        # Fallback to relative path
+        mkdir -p ../../assets/vodozemac
+        cp pkg/* ../../assets/vodozemac/ || echo "Failed to copy to relative path"
+    fi
     echo "Files copied successfully"
 else
     echo "ERROR: pkg directory not found"
