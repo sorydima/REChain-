@@ -82,8 +82,8 @@ echo "Generated files are in pkg/ directory"
 # Copy the generated files to the expected location
 if [ -d "pkg" ]; then
     echo "Copying generated files to project directory..."
-    mkdir -p /home/sorydev/Документы/GitHub/REChain-/assets/vodozemac
-    cp pkg/* /home/sorydev/Документы/GitHub/REChain-/assets/vodozemac/
+    mkdir -p /vercel/path0/assets/vodozemac
+    cp pkg/* /vercel/path0/assets/vodozemac/
     echo "Files copied successfully"
 else
     echo "ERROR: pkg directory not found"
