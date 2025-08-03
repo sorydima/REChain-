@@ -39,48 +39,75 @@ cd vodozemac
 if ! grep -q "crate-type.*cdylib" Cargo.toml; then
     echo "Adding crate-type to Cargo.toml..."
     
-    # Try the patch approach first
-    echo "Trying patch approach..."
-    cp ../scripts/vodozemac-cargo.patch Cargo.toml.patched
+    # Create a backup of the original Cargo.toml
+    cp Cargo.toml Cargo.toml.backup
     
-    # Copy the original lib section and name if they exist
-    if grep -q "\[lib\]" Cargo.toml; then
-        # Extract the lib section from original and merge with our patch
-        name_line=$(grep -A 5 "\[lib\]" Cargo.toml | grep "name" | head -1)
-        
-        if [ ! -z "$name_line" ]; then
-            # Replace the name in our patch with the original name
-            sed -i "s/name = \"vodozemac\"/$name_line/" Cargo.toml.patched
-        fi
-        
-        # Replace the entire Cargo.toml with our patched version
-        cp Cargo.toml.patched Cargo.toml
-    else
-        # Just append our patch to the end of the file
-        echo "" >> Cargo.toml
-        cat Cargo.toml.patched >> Cargo.toml
+    # Extract the package name from the original Cargo.toml
+    package_name=$(grep -A 10 "\[package\]" Cargo.toml.backup | grep "name" | head -1 | cut -d'"' -f2)
+    
+    # If we can't find the package name, use "vodozemac" as default
+    if [ -z "$package_name" ]; then
+        package_name="vodozemac"
     fi
     
-    # Verify that crate-type was added, if not try sed approach
-    if ! grep -q "crate-type.*cdylib" Cargo.toml; then
-        echo "Patch approach failed, trying sed approach..."
-        # First make sure there's a [lib] section
-        if ! grep -q "\[lib\]" Cargo.toml; then
-            echo "" >> Cargo.toml
-            echo "[lib]" >> Cargo.toml
-        fi
-        # Add crate-type after [lib] section using sed
-        sed -i '/\[lib\]/a crate-type = ["cdylib", "rlib"]' Cargo.toml
-    fi
+    # Create a new Cargo.toml with the correct crate-type
+    cat > Cargo.toml.new << EOF
+[package]
+name = "$package_name"
+version = "0.5.0"
+edition = "2021"
+description = "A Rust implementation of Olm and Megolm cryptographic ratchets"
+license = "Apache-2.0"
+repository = "https://github.com/matrix-org/vodozemac"
+readme = "README.md"
+keywords = ["matrix", "olm", "megolm", "cryptography", "crypto"]
+categories = ["cryptography", "no-std"]
+
+[lib]
+name = "$package_name"
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+aes = "0.8"
+base64 = "0.22"
+curve25519-dalek = { version = "4", features = ["serde"] }
+ed25519-dalek = { version = "2", features = ["serde"] }
+getrandom = "0.2"
+hmac = "0.12"
+matrix-pickle = "0.1"
+pbkdf2 = { version = "0.12", default-features = false }
+prost = "0.12"
+rand = "0.8"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+sha2 = "0.10"
+thiserror = "1.0"
+x25519-dalek = { version = "2", features = ["serde", "static_secrets"] }
+zeroize = { version = "1.5", features = ["serde"] }
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+getrandom = { version = "0.2", features = ["js"] }
+
+[dev-dependencies]
+anyhow = "1.0"
+assert_matches = "1.5"
+proptest = "1.0"
+serde_json = "1.0"
+
+[build-dependencies]
+prost-build = "0.12"
+
+[features]
+default = []
+low-level-api = []
+EOF
+
+    # Replace the original Cargo.toml with our new one
+    mv Cargo.toml.new Cargo.toml
     
-    # Final verification
-    if grep -q "crate-type.*cdylib" Cargo.toml; then
-        echo "Successfully added crate-type to Cargo.toml"
-    else
-        echo "WARNING: Failed to add crate-type to Cargo.toml"
-        echo "Current Cargo.toml content:"
-        cat Cargo.toml
-    fi
+    echo "Successfully created new Cargo.toml with crate-type configuration"
+    echo "Current Cargo.toml content:"
+    cat Cargo.toml
 fi
 
 # Install wasm-pack if not already installed
@@ -91,6 +118,18 @@ fi
 
 # Build wasm
 echo "Building WASM package..."
+echo "Verifying Cargo.toml configuration before build:"
+if grep -q "crate-type.*cdylib" Cargo.toml; then
+    echo "✓ crate-type is correctly configured"
+    echo "Current [lib] section:"
+    grep -A 3 "\[lib\]" Cargo.toml
+else
+    echo "✗ ERROR: crate-type is not configured correctly"
+    echo "Current Cargo.toml content:"
+    cat Cargo.toml
+    exit 1
+fi
+
 wasm-pack build --target web
 cd ..
 
