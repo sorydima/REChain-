@@ -82,6 +82,8 @@ parts:
       - libsecret-1-0
       - libjsoncpp1
       - libpciaccess0
+      - libssl3
+      - libssl-dev
 
 slots:
   dbus-svc:
