@@ -7,55 +7,21 @@ summary: The inclusion of polls enhances decision-making processes.
 description: |
   REChain is a comprehensive platform that unifies Matrix protocol, blockchain, IPFS, AI, and external services into a seamless, extensible, and developer-friendly ecosystem. It empowers users and developers to build, scale, and secure decentralized apps, bots, and integrations for the future of the internet.
 
-
   ## Features
+  - Matrix, Blockchain (TON, Ethereum, Web3), IPFS, AI & Analytics, REST/gRPC, Encryption
+  - Flutter-based responsive UI
+  - Messaging, files, voice, location, notifications, public/private chats, dark mode, stickers
+  - Matrix federation, video calls (Jitsi), end-to-end encryption, emoji verification
+  - Compatible with Element, Nheko, NeoChat
 
-  - Matrix Protocol: Multi-client, multi-server, bridges, bots, federation, and advanced Matrix integrations
-  - Blockchain: TON, Ethereum, Bitget, Web3, smart contracts, token/NFT support, on-chain identity
-  - IPFS: Multi-provider decentralized storage, file manager, encryption, quotas, analytics, REST/gRPC API
-  - AI & Analytics: GPT, moderation, translation, code analysis, monitoring, dashboards
-  - Serverless & API: REST, GraphQL, gRPC, WebSocket, serverless hooks, monitoring
-  - Security: Encryption, quotas, advanced logging, best practices
-  - Modern UI/UX: Flutter-based, responsive, accessible, beautiful dashboards and tools
-  - Send all kinds of messages, images and files
-  - Voice messages
-  - Location sharing
-  - Push notifications
-  - Unlimited private and public group chats
-  - Public channels with thousands of participants
-  - Feature rich group moderation including all matrix features
-  - Discover and join public groups
-  - Dark mode
-  - Hides complexity of Matrix IDs behind simple QR codes
-  - Custom emotes and stickers
-  - Video calls via sharing links to Jitsi
-  - Spaces
-  - Compatible with Element, Nheko, NeoChat and all other Matrix apps
-  - End to end encryption
-  - Emoji verification & cross signing
-  - And much more...
-
-
-  ## REChain.Online comes with a dream!
-
-  Imagine a world where everyone can choose the messenger they like and is still able to chat with all of their friends.
-
-  A world where there are no companies spying on you when you send selfies to friends and lovers.
-
-  And a world where apps are made for awesomeness and not for profit. ♥
-
+  ## Dream
+  Imagine a world where anyone can chat freely without corporate surveillance.
   Join the community: https://matrix.to/#/#chatting:matrix.katya.wtf
   Website: http://online.rechain.network
   Microblog: https://instagram.com/rechain_inc
 
 grade: stable
 confinement: strict
-
-# platforms:
-#   amd64:
-#     build-on: amd64
-#   arm64:
-#     build-on: arm64
 
 parts:
   flutter-git:
@@ -64,12 +30,18 @@ parts:
     source-depth: 1
     plugin: nil
     override-build: |
-      mkdir -p $CRAFT_PART_INSTALL/usr/bin
-      mkdir -p $CRAFT_PART_INSTALL/usr/libexec
-      cp -r $CRAFT_PART_SRC $CRAFT_PART_INSTALL/usr/libexec/flutter
-      ln -s $CRAFT_PART_INSTALL/usr/libexec/flutter/bin/flutter $CRAFT_PART_INSTALL/usr/bin/flutter
-      ln -s $SNAPCRAFT_PART_INSTALL/usr/libexec/flutter/bin/dart $SNAPCRAFT_PART_INSTALL/usr/bin/dart
-      $CRAFT_PART_INSTALL/usr/bin/flutter doctor
+      set -e
+      INSTALL_DIR="${CRAFT_PART_INSTALL:-$SNAPCRAFT_PART_INSTALL}"
+      SRC_DIR="${CRAFT_PART_SRC:-$SNAPCRAFT_PART_SRC}"
+
+      mkdir -p "$INSTALL_DIR/usr/bin"
+      mkdir -p "$INSTALL_DIR/usr/libexec"
+
+      cp -r "$SRC_DIR" "$INSTALL_DIR/usr/libexec/flutter"
+      ln -s "$INSTALL_DIR/usr/libexec/flutter/bin/flutter" "$INSTALL_DIR/usr/bin/flutter"
+      ln -s "$INSTALL_DIR/usr/libexec/flutter/bin/dart" "$INSTALL_DIR/usr/bin/dart"
+
+      "$INSTALL_DIR/usr/bin/flutter" doctor
     build-packages:
       - clang
       - cmake
@@ -86,12 +58,17 @@ parts:
     plugin: nil
     source: .
     override-build: |
-      # Workaround for Flutter build error:
+      set -e
+      export PATH="$PATH:$CRAFT_STAGE/usr/bin"
+
+      # Clean previous build
       rm -rf build
 
+      # Use flutter from installed flutter-git
       flutter build linux --release -v
-      mkdir -p $CRAFT_PART_INSTALL/bin/
-      cp -r build/linux/*/release/bundle/* $CRAFT_PART_INSTALL/bin/
+
+      mkdir -p "$CRAFT_PART_INSTALL/bin"
+      cp -r build/linux/*/release/bundle/* "$CRAFT_PART_INSTALL/bin/"
     build-packages:
       - libsecret-1-dev
       - libjsoncpp-dev
@@ -102,7 +79,7 @@ parts:
       - rustup
     stage-packages:
       - libsecret-1-0
-      - libjsoncpp25
+      - libjsoncpp1
       - libpciaccess0
 
 slots:
@@ -114,7 +91,6 @@ slots:
 apps:
   rechainonline:
     command: bin/rechainonline
-    # extensions: [ gnome ]
     plugs:
       - audio-playback
       - desktop
@@ -129,8 +105,6 @@ apps:
       - password-manager-service
     slots:
       - dbus-svc
-    # Workaround for:
-    # https://github.com/flutter-webrtc/flutter-webrtc/issues/1212#issuecomment-1611899344
     environment:
       XDG_DATA_HOME: $SNAP_USER_DATA
       XDG_DATA_DIRS: $SNAP/usr/share

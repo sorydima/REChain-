@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=REChain
+Comment=Decentralized, federated Matrix-based secure messenger
+Exec=rechainonline
+Icon=${SNAP}/meta/gui/rechainonline.png
+Terminal=false
+Type=Application
+Categories=Network;Chat;InstantMessaging;
+StartupNotify=true
