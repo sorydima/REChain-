@@ -40,6 +40,8 @@
   ],
   "env": {
     "FLUTTER_WEB": "true",
-    "CARGO_NET_GIT_FETCH_WITH_CLI": "true"
+    "CARGO_NET_GIT_FETCH_WITH_CLI": "true",
+    "RUST_BACKTRACE": "1",
+    "CARGO_TARGET_WASM32_UNKNOWN_UNKNOWN_RUNNER": "wasm-bindgen-test-runner"
   }
 }

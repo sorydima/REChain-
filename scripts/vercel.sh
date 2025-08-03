@@ -38,7 +38,49 @@ cd vodozemac
 # Add crate-type to Cargo.toml if not present
 if ! grep -q "crate-type.*cdylib" Cargo.toml; then
     echo "Adding crate-type to Cargo.toml..."
-    sed -i '/\[lib\]/a crate-type = ["cdylib", "rlib"]' Cargo.toml
+    
+    # Try the patch approach first
+    echo "Trying patch approach..."
+    cp ../scripts/vodozemac-cargo.patch Cargo.toml.patched
+    
+    # Copy the original lib section and name if they exist
+    if grep -q "\[lib\]" Cargo.toml; then
+        # Extract the lib section from original and merge with our patch
+        name_line=$(grep -A 5 "\[lib\]" Cargo.toml | grep "name" | head -1)
+        
+        if [ ! -z "$name_line" ]; then
+            # Replace the name in our patch with the original name
+            sed -i "s/name = \"vodozemac\"/$name_line/" Cargo.toml.patched
+        fi
+        
+        # Replace the entire Cargo.toml with our patched version
+        cp Cargo.toml.patched Cargo.toml
+    else
+        # Just append our patch to the end of the file
+        echo "" >> Cargo.toml
+        cat Cargo.toml.patched >> Cargo.toml
+    fi
+    
+    # Verify that crate-type was added, if not try sed approach
+    if ! grep -q "crate-type.*cdylib" Cargo.toml; then
+        echo "Patch approach failed, trying sed approach..."
+        # First make sure there's a [lib] section
+        if ! grep -q "\[lib\]" Cargo.toml; then
+            echo "" >> Cargo.toml
+            echo "[lib]" >> Cargo.toml
+        fi
+        # Add crate-type after [lib] section using sed
+        sed -i '/\[lib\]/a crate-type = ["cdylib", "rlib"]' Cargo.toml
+    fi
+    
+    # Final verification
+    if grep -q "crate-type.*cdylib" Cargo.toml; then
+        echo "Successfully added crate-type to Cargo.toml"
+    else
+        echo "WARNING: Failed to add crate-type to Cargo.toml"
+        echo "Current Cargo.toml content:"
+        cat Cargo.toml
+    fi
 fi
 
 # Install wasm-pack if not already installed
