@@ -79,7 +79,7 @@ parts:
       - rustup
     stage-packages:
       - libsecret-1-0
-      - libjsoncpp25
+      - libjsoncpp1
       - libpciaccess0
 
 slots:
