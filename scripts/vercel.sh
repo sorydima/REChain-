@@ -1,6 +1,11 @@
 #!/bin/bash
 set -euo pipefail
 
+curl -L https://github.com/rustwasm/wasm-pack/releases/download/v0.13.1/wasm-pack-v0.13.1-x86_64-unknown-linux-musl.tar.gz | tar xz
+mv wasm-pack*/wasm-pack /vercel/.cargo/bin/
+
+git submodule add https://github.com/matrix-org/vodozemac.git vodozemac
+
 echo "🦀 Installing Rust toolchain..."
 curl https://sh.rustup.rs -sSf | sh -s -- -y
 source $HOME/.cargo/env
