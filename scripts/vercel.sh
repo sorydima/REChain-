@@ -7,7 +7,7 @@ apt-get install -y curl git unzip libstdc++6 pkg-config libssl-dev build-essenti
 
 echo "🦀 Installing Rust toolchain..."
 curl https://sh.rustup.rs -sSf | sh -s -- -y
-source $HOME/.cargo/env
+source "$HOME/.cargo/env"
 rustup target add wasm32-unknown-unknown
 
 echo "📦 Installing wasm-pack..."
@@ -15,10 +15,16 @@ cargo install wasm-pack
 
 # 🔧 Ensure Cargo.toml is configured properly
 echo "🔧 Patching Cargo.toml with cdylib crate-type if needed..."
-if grep -q "\[lib\]" Cargo.toml && ! grep -q "crate-type" Cargo.toml; then
-  sed -i '/\[lib\]/a crate-type = ["cdylib", "rlib"]' Cargo.toml
+if grep -q "\[lib\]" Cargo.toml; then
+  if ! grep -q "crate-type" Cargo.toml; then
+    sed -i '/\[lib\]/a crate-type = ["cdylib", "rlib"]' Cargo.toml
+    echo "✅ Added crate-type to existing [lib] section."
+  else
+    echo "✅ crate-type already present in [lib]."
+  fi
 else
-  echo "✅ Cargo.toml already contains crate-type or [lib] section missing"
+  echo -e "\n[lib]\ncrate-type = [\"cdylib\", \"rlib\"]" >> Cargo.toml
+  echo "✅ Created [lib] section with crate-type."
 fi
 
 echo "🚀 Building Rust WASM module..."
