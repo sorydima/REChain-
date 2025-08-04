@@ -1,6 +1,6 @@
 {
   "buildCommand": "bash scripts/vercel.sh",
-  "outputDirectory": "build/web",
+  "outputDirectory": "public",
   "installCommand": "echo 'Using custom build script'",
   "framework": null,
   "functions": {},
