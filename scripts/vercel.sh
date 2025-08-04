@@ -1,48 +1,57 @@
 #!/bin/bash
-set -e
 
-echo "📦 Installing system dependencies..."
-apt-get update
-apt-get install -y curl git unzip libstdc++6 pkg-config libssl-dev build-essential cmake clang
+set -euxo pipefail
 
-echo "🦀 Installing Rust toolchain..."
+echo "📦 Installing Rust & WebAssembly tooling..."
+
+# Install Rust
 curl https://sh.rustup.rs -sSf | sh -s -- -y
 source "$HOME/.cargo/env"
+
+# Add required targets and tools
+rustup component add llvm-tools-preview
 rustup target add wasm32-unknown-unknown
-
-echo "📦 Installing wasm-pack..."
 cargo install wasm-pack
+cargo install flutter_rust_bridge_codegen
 
-# 🔧 Ensure Cargo.toml is configured properly
-echo "🔧 Patching Cargo.toml with cdylib crate-type if needed..."
-if grep -q "\[lib\]" Cargo.toml; then
-  if ! grep -q "crate-type" Cargo.toml; then
-    sed -i '/\[lib\]/a crate-type = ["cdylib", "rlib"]' Cargo.toml
-    echo "✅ Added crate-type to existing [lib] section."
-  else
-    echo "✅ crate-type already present in [lib]."
-  fi
-else
-  echo -e "\n[lib]\ncrate-type = [\"cdylib\", \"rlib\"]" >> Cargo.toml
-  echo "✅ Created [lib] section with crate-type."
-fi
+# Show versions
+rustc --version
+cargo --version
 
-echo "🚀 Building Rust WASM module..."
-cd rust || exit 1
+# Clone vodozemac for building WASM bindings
+echo "📦 Cloning and building vodozemac..."
+git clone https://github.com/matrix-org/vodozemac.git
+cd vodozemac
 wasm-pack build --target web
 cd ..
 
-echo "🦋 Installing Flutter..."
-git clone https://github.com/flutter/flutter.git -b stable --depth=1
-export PATH="$PWD/flutter/bin:$PATH"
-flutter config --enable-web
-flutter pub get
+# Generate locale config if needed
+echo "🌍 Generating locale config..."
+chmod +x scripts/generate_locale_config.sh || true
+./scripts/generate_locale_config.sh || true
 
-echo "🌐 Building Flutter web app..."
-flutter build web --release
+chmod +x scripts/generate-locale-config.sh || true
+./scripts/generate-locale-config.sh || true
 
-echo "📁 Moving build output to public directory..."
-mkdir -p public
-cp -r build/web/* public/
+# Clone Dart bindings
+echo "🔁 Cloning dart-vodozemac and generating bridge code..."
+git clone https://github.com/famedly/dart-vodozemac.git .vodozemac
+cd .vodozemac
 
-echo "✅ Build finished successfully"
+flutter_rust_bridge_codegen build-web \
+  --dart-root dart \
+  --rust-root "$(readlink -f rust)" \
+  --release
+cd ..
+
+# Move and clean up
+mkdir -p assets/vodozemac
+rm -f ./assets/vodozemac/vodozemac_bindings_dart*
+mv .vodozemac/dart/web/pkg/vodozemac_bindings_dart* ./assets/vodozemac/
+rm -rf .vodozemac vodozemac
+
+# Prepare build output
+mkdir -p build
+cp -r public/* build/
+
+echo "✅ Build completed for Vercel"
