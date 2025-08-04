@@ -78,12 +78,24 @@ fi
 # Clean up
 rm -rf .vodozemac
 
-# Get Flutter dependencies
-echo "Getting Flutter dependencies..."
+#!/bin/bash
+set -e
+
+echo "🔧 Installing Flutter SDK"
+git clone https://github.com/flutter/flutter.git -b stable
+export PATH="$PWD/flutter/bin:$PATH"
+export PATH="$PWD/flutter/bin/cache/dart-sdk/bin:$PATH"
+
+flutter doctor
+flutter config --enable-web
 flutter pub get
 
-# Build Flutter web
-echo "Building Flutter web application..."
-flutter build web --release
+echo "🏗️ Building Flutter Web"
+flutter build web
 
-echo "Build completed successfully!"
+echo "📦 Preparing output directory"
+mkdir -p public
+cp -r build/web/* public/
+
+echo "✅ Build completed and output moved to public/"
+
