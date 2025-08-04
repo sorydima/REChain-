@@ -3,7 +3,6 @@
   "outputDirectory": "public",
   "installCommand": "echo 'Using custom build script'",
   "framework": null,
-  "functions": {},
   "rewrites": [
     {
       "source": "/(.*)",
