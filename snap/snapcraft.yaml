@@ -62,10 +62,8 @@ parts:
       STAGE_DIR="${CRAFT_STAGE:-$SNAPCRAFT_PART_INSTALL}"
       export PATH="$PATH:$STAGE_DIR/usr/bin"
 
-      # Clean previous build
       rm -rf build
 
-      # Use flutter from installed flutter-git
       flutter build linux --release -v
 
       mkdir -p "$CRAFT_PART_INSTALL/bin"
@@ -82,34 +80,4 @@ parts:
       - libsecret-1-0
       - libjsoncpp1
       - libpciaccess0
-      - libssl3
-      - libssl-dev
-
-slots:
-  dbus-svc:
-    interface: dbus
-    bus: session
-    name: com.rechain.online
-
-apps:
-  rechainonline:
-    command: bin/rechainonline
-    plugs:
-      - audio-playback
-      - desktop
-      - desktop-legacy
-      - home
-      - network
-      - network-manager
-      - network-manager-observe
-      - opengl
-      - removable-media
-      - browser-support
-      - password-manager-service
-    slots:
-      - dbus-svc
-    environment:
-      XDG_DATA_HOME: $SNAP_USER_DATA
-      XDG_DATA_DIRS: $SNAP/usr/share
-      GDK_GL: gles
-      LD_LIBRARY_PATH: "$LD_LIBRARY_PATH:$SNAP/lib:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET"
+      - libssl1.1   # ✅ Correct for core20 (Ubuntu 20.04)
