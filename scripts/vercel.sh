@@ -1,8 +1,22 @@
 #!/bin/bash
 set -euo pipefail
 
+echo "Using custom build script"
+
+# Устанавливаем wasm-pack вручную
 curl -L https://github.com/rustwasm/wasm-pack/releases/download/v0.13.1/wasm-pack-v0.13.1-x86_64-unknown-linux-musl.tar.gz | tar xz
-mv wasm-pack*/wasm-pack /vercel/.cargo/bin/
+
+# Создаем .cargo/bin если её нет
+mkdir -p ~/.cargo/bin
+
+# Перемещаем wasm-pack
+mv wasm-pack-v0.13.1-x86_64-unknown-linux-musl/wasm-pack ~/.cargo/bin/
+
+# Добавляем wasm-pack в PATH
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# Билдим
+wasm-pack build --release
 
 git submodule add https://github.com/matrix-org/vodozemac.git vodozemac
 
