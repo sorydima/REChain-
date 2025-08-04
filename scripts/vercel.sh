@@ -1,101 +1,42 @@
 #!/bin/bash
-set -euo pipefail
-
-echo "=== REChain Vercel Build Script ==="
-
-# Install Rust if not already installed
-if ! command -v rustc &> /dev/null; then
-    echo "Installing Rust..."
-    curl https://sh.rustup.rs -sSf | sh -s -- -y
-    source $HOME/.cargo/env
-else
-    source $HOME/.cargo/env
-fi
-
-# Check versions
-echo "Rust version: $(rustc --version)"
-echo "Cargo version: $(cargo --version)"
-
-# Install Flutter if not present
-if [ ! -d "flutter" ]; then
-    echo "Installing Flutter..."
-    git clone https://github.com/flutter/flutter.git -b stable --depth 1
-    export PATH="$PATH:$(pwd)/flutter/bin"
-    flutter doctor
-fi
-
-export PATH="$PATH:$(pwd)/flutter/bin"
-
-# Clean up previous builds
-rm -rf vodozemac
-rm -rf .vodozemac
-
-# Build vodozemac WASM using our reliable standalone approach
-echo "Building vodozemac WASM using standalone approach..."
-bash scripts/build_vodozemac_wasm.sh
-
-# Run locale config scripts
-echo "Generating locale configuration..."
-cd scripts
-chmod +x generate_locale_config.sh
-./generate_locale_config.sh
-chmod +x generate-locale-config.sh
-./generate-locale-config.sh
-cd ..
-
-# Clone dart-vodozemac
-echo "Building dart-vodozemac..."
-git clone https://github.com/famedly/dart-vodozemac.git .vodozemac
-cd .vodozemac
-
-# Install flutter_rust_bridge_codegen if not already installed
-if ! command -v flutter_rust_bridge_codegen &> /dev/null; then
-    echo "Installing flutter_rust_bridge_codegen..."
-    cargo install flutter_rust_bridge_codegen
-fi
-
-# Check if dart is installed
-if ! command -v dart &> /dev/null; then
-    echo "Warning: dart command not found. Please install Dart SDK."
-    echo "Attempting to continue without dart..."
-else
-    # Run flutter_rust_bridge_codegen
-    echo "Running flutter_rust_bridge_codegen..."
-    flutter_rust_bridge_codegen build-web --dart-root dart --rust-root $(readlink -f rust) --release
-fi
-
-cd ..
-
-# Copy generated files if they exist
-if ls .vodozemac/dart/web/pkg/vodozemac_bindings_dart* 1> /dev/null 2>&1; then
-    echo "Copying vodozemac bindings..."
-    rm -f ./assets/vodozemac/vodozemac_bindings_dart*
-    mv .vodozemac/dart/web/pkg/vodozemac_bindings_dart* ./assets/vodozemac/
-else
-    echo "Warning: vodozemac_bindings_dart files not found. Skipping copy."
-fi
-
-# Clean up
-rm -rf .vodozemac
-
-#!/bin/bash
 set -e
 
-echo "🔧 Installing Flutter SDK"
-git clone https://github.com/flutter/flutter.git -b stable
-export PATH="$PWD/flutter/bin:$PATH"
-export PATH="$PWD/flutter/bin/cache/dart-sdk/bin:$PATH"
+echo "📦 Installing system dependencies..."
+apt-get update
+apt-get install -y curl git unzip libstdc++6 pkg-config libssl-dev build-essential cmake clang
 
-flutter doctor
+echo "🦀 Installing Rust toolchain..."
+curl https://sh.rustup.rs -sSf | sh -s -- -y
+source $HOME/.cargo/env
+rustup target add wasm32-unknown-unknown
+
+echo "📦 Installing wasm-pack..."
+cargo install wasm-pack
+
+# 🔧 Ensure Cargo.toml is configured properly
+echo "🔧 Patching Cargo.toml with cdylib crate-type if needed..."
+if grep -q "\[lib\]" Cargo.toml && ! grep -q "crate-type" Cargo.toml; then
+  sed -i '/\[lib\]/a crate-type = ["cdylib", "rlib"]' Cargo.toml
+else
+  echo "✅ Cargo.toml already contains crate-type or [lib] section missing"
+fi
+
+echo "🚀 Building Rust WASM module..."
+cd rust || exit 1
+wasm-pack build --target web
+cd ..
+
+echo "🦋 Installing Flutter..."
+git clone https://github.com/flutter/flutter.git -b stable --depth=1
+export PATH="$PWD/flutter/bin:$PATH"
 flutter config --enable-web
 flutter pub get
 
-echo "🏗️ Building Flutter Web"
-flutter build web
+echo "🌐 Building Flutter web app..."
+flutter build web --release
 
-echo "📦 Preparing output directory"
+echo "📁 Moving build output to public directory..."
 mkdir -p public
 cp -r build/web/* public/
 
-echo "✅ Build completed and output moved to public/"
-
+echo "✅ Build finished successfully"
