@@ -1,20 +1,21 @@
+buildscript {
+    repositories {
+        google() // 🔧 добавлено
+        mavenCentral() // 🔧 добавлено
+        maven { url 'https://developer.huawei.com/repo/' }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.2.0'
+        classpath 'com.huawei.agconnect:agcp:1.5.2.300'
+    }
+}
+
 allprojects {
     repositories {
         google()
         mavenCentral()
-        // Add the Maven address.
-        maven {url 'https://developer.huawei.com/repo/'}
-    }
-}
-
-buildscript{
-    repositories {
-        // Add the Maven address.
         maven { url 'https://developer.huawei.com/repo/' }
-    }
-    dependencies {
-        // Add dependencies.
-        classpath 'com.huawei.agconnect:agcp:1.5.2.300'
+        maven { url 'https://artifactory-external.vkpartner.ru/artifactory/maven/' } // RuStore
     }
 }
 

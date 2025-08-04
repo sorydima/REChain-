@@ -1,57 +1,53 @@
 #!/bin/bash
+set -e
 
-set -euxo pipefail
-
-echo "📦 Installing Rust & WebAssembly tooling..."
-
-# Install Rust
+# Install rustup silently
 curl https://sh.rustup.rs -sSf | sh -s -- -y
-source "$HOME/.cargo/env"
 
-# Add required targets and tools
+# Source cargo environment
+source $HOME/.cargo/env
+
+# Add rust components and targets
 rustup component add llvm-tools-preview
 rustup target add wasm32-unknown-unknown
-cargo install wasm-pack
-cargo install flutter_rust_bridge_codegen
 
-# Show versions
+# Show rustc and cargo versions
 rustc --version
 cargo --version
 
-# Clone vodozemac for building WASM bindings
-echo "📦 Cloning and building vodozemac..."
+# Clone vodozemac repository
 git clone https://github.com/matrix-org/vodozemac.git
 cd vodozemac
+
+# Install wasm-pack and build wasm target
+cargo install wasm-pack
 wasm-pack build --target web
+
 cd ..
 
-# Generate locale config if needed
-echo "🌍 Generating locale config..."
-chmod +x scripts/generate_locale_config.sh || true
-./scripts/generate_locale_config.sh || true
+# Run locale config scripts
+cd scripts
+chmod +x generate_locale_config.sh
+./generate_locale_config.sh
+chmod +x generate-locale-config.sh
+./generate-locale-config.sh
+cd ..
 
-chmod +x scripts/generate-locale-config.sh || true
-./scripts/generate-locale-config.sh || true
-
-# Clone Dart bindings
-echo "🔁 Cloning dart-vodozemac and generating bridge code..."
+# Clone dart-vodozemac repository and run flutter_rust_bridge_codegen build-web
 git clone https://github.com/famedly/dart-vodozemac.git .vodozemac
 cd .vodozemac
 
-flutter_rust_bridge_codegen build-web \
-  --dart-root dart \
-  --rust-root "$(readlink -f rust)" \
-  --release
+cargo install flutter_rust_bridge_codegen
+flutter_rust_bridge_codegen build-web --dart-root dart --rust-root $(readlink -f rust) --release
+
 cd ..
 
-# Move and clean up
-mkdir -p assets/vodozemac
+# Move generated dart bindings to assets and clean up
 rm -f ./assets/vodozemac/vodozemac_bindings_dart*
 mv .vodozemac/dart/web/pkg/vodozemac_bindings_dart* ./assets/vodozemac/
-rm -rf .vodozemac vodozemac
+rm -rf .vodozemac
 
-# Prepare build output
-mkdir -p build
-cp -r public/* build/
+# Note: Flutter and cmake installation commands are Windows-specific and omitted here.
+# Ensure flutter and cmake are installed in your environment separately if needed.
 
-echo "✅ Build completed for Vercel"
+echo "vercel.sh script completed successfully."

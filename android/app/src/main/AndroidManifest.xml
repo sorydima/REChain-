@@ -26,6 +26,9 @@
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+
     <uses-sdk
             tools:overrideLibrary="io.wazo.callkeep, net.touchcapture.qr.flutterqr, com.cloudwebrtc.webrtc, org.webrtc, com.it_nomads.fluttersecurestorage, com.pichillilorenzo.flutter_inappwebview, com.example.video_compress, com.otaliastudios.transcoder, com.otaliastudios.opengl, com.kineapps.flutter_file_dialog, com.llfbandit.record, com.pravera.flutter_foreground_task"/>
     <application
@@ -139,12 +142,19 @@
             android:enabled="false">
         </receiver>
 
-        <receiver android:exported="false"  android:enabled="true"  android:name=".UnifiedPushReceiver">
+        <receiver
+            android:name="ru.rustore.sdk.push.receiver.RuStorePushReceiver"
+            android:exported="true">
             <intent-filter>
-                <action android:name="org.unifiedpush.flutter.connector.MESSAGE"/>
-                <action android:name="org.unifiedpush.flutter.connector.UNREGISTERED"/>
-                <action android:name="org.unifiedpush.flutter.connector.NEW_ENDPOINT"/>
-                <action android:name="org.unifiedpush.flutter.connector.REGISTRATION_FAILED" />
+                <action android:name="ru.rustore.sdk.push.ACTION_PUSH_RECEIVED"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name="com.rechain.online.CustomPushReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="ru.rustore.sdk.push.ACTION_PUSH_RECEIVED"/>
             </intent-filter>
         </receiver>
 
