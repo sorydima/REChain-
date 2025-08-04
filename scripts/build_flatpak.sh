@@ -15,11 +15,20 @@ if ! flatpak remote-list | grep -q flathub; then
     flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 fi
 
-# Navigate to flatpak directory
-cd com.rechain.online
+# Use relative path from script location
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+FLATPAK_DIR="$SCRIPT_DIR/../com.rechain.online"
 
-# Build the flatpak package
-echo "Building flatpak package..."
+# Check if flatpak directory exists
+if [ ! -d "$FLATPAK_DIR" ]; then
+    echo "Error: Flatpak directory not found at $FLATPAK_DIR"
+    echo "Please ensure the com.rechain.online directory exists in the project root"
+    exit 1
+fi
+
+# Build the Flatpak
+echo "Building Flatpak package..."
+cd "$FLATPAK_DIR"
 flatpak-builder --force-clean --install-deps-from=flathub build-dir com.rechain.online.json
 
 # Export the flatpak
@@ -27,4 +36,4 @@ echo "Exporting flatpak..."
 flatpak-builder --export-only --install-deps-from=flathub build-dir com.rechain.online.json
 
 echo "Flatpak package built successfully!"
-echo "Package location: $(pwd)/build-dir"
+echo "Package location: $FLATPAK_DIR/build-dir"

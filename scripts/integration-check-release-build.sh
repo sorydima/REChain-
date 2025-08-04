@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Flutter path
+FLUTTER_PATH="/home/sorydev/flutter/bin/flutter"
+
 # generate a temporary signing key adn apply its configuration
 cd android
 KEYFILE="$(pwd)/key.jks"
@@ -13,11 +16,11 @@ ls | grep key
 cd ..
 
 # build release mode APK
-flutter pub get
-flutter build apk --release
+"$FLUTTER_PATH" pub get
+"$FLUTTER_PATH" build apk --release
 
 # install and launch APK
-flutter install
+"$FLUTTER_PATH" install
 adb shell am start -n com.rechain.online/com.rechain.online.MainActivity
 
 sleep 5

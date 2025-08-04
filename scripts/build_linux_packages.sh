@@ -1,12 +1,15 @@
 #!/bin/bash
 set -euo pipefail
 
+# Flutter path
+FLUTTER_PATH="/home/sorydev/flutter/bin/flutter"
+
 echo "=== Building REChain Linux packages ==="
 echo "For detailed instructions, see BUILD_LINUX_PACKAGES.md"
 
 # Build Flutter Linux release
 echo "Building Flutter Linux release..."
-flutter build linux --release
+"$FLUTTER_PATH" build linux --release
 
 # Snap package
 echo "Building Snap package..."

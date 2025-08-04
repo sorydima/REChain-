@@ -2,6 +2,9 @@
 
 set -euo pipefail
 
+# Flutter path
+FLUTTER_PATH="/home/sorydev/flutter/bin/flutter"
+
 PROJECT_NAME="flutter_rus_app"
 BUILD_DIR="build/linux"
 DIST_DIR="dist"
@@ -71,21 +74,21 @@ configure_russian_locale() {
 flutter_build() {
   echo "[INFO] Сборка Flutter-приложения..."
 
-  flutter config --enable-linux-desktop
-  flutter pub get
-  flutter clean
+  "$FLUTTER_PATH" config --enable-linux-desktop
+  "$FLUTTER_PATH" pub get
+  "$FLUTTER_PATH" clean
 
   case "$ARCH" in
     e2k)
       echo "[INFO] Сборка под Эльбрус..."
-      flutter build linux --release --target-platform=linux-e2k
+      "$FLUTTER_PATH" build linux --release --target-platform=linux-e2k
       ;;
     aarch64)
       echo "[INFO] Сборка под ARM64..."
-      flutter build linux --release --target-platform=linux-arm64
+      "$FLUTTER_PATH" build linux --release --target-platform=linux-arm64
       ;;
     *)
-      flutter build linux --release
+      "$FLUTTER_PATH" build linux --release
       ;;
   esac
 }

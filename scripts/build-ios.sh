@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+
+# Flutter path
+FLUTTER_PATH="/home/sorydev/flutter/bin/flutter"
+
 git apply ./scripts/enable-android-google-services.patch
 RECHAIN_ORIG_GROUP="com.rechain"
 RECHAIN_ORIG_TEAM="ABCDE12345"
