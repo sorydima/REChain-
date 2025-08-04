@@ -1,10 +1,6 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "📦 Installing system dependencies..."
-apt-get update
-apt-get install -y curl git unzip libstdc++6 pkg-config libssl-dev build-essential cmake clang
-
 echo "🦀 Installing Rust toolchain..."
 curl https://sh.rustup.rs -sSf | sh -s -- -y
 source $HOME/.cargo/env
