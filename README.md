@@ -76,6 +76,224 @@ https://api.codemagic.io/apps/688f97e647fd81ea2dff2a29/688f97e647fd81ea2dff2a28/
 
 [![Codemagic build status](https://api.codemagic.io/apps/688f97e647fd81ea2dff2a29/688f97e647fd81ea2dff2a28/status_badge.svg)](https://codemagic.io/app/688f97e647fd81ea2dff2a29/688f97e647fd81ea2dff2a28/latest_build)
 
+# REChain: Digital Infrastructure of Autonomous Organizations
+
+<!--
+  Update the badge URL below to match your actual GitHub repository and workflow name.
+  Example: https://github.com/<owner>/<repo>/actions/workflows/<workflow_file>.yml/badge.svg
+-->
+[![Build Status](https://github.com/<owner>/<repo>/actions/workflows/build.yml/badge.svg)](https://github.com/<owner>/<repo>/actions)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![Flutter](https://img.shields.io/badge/Flutter-3.32.8-blue.svg)](https://flutter.dev)
+[![Matrix](https://img.shields.io/badge/Matrix-Protocol-green.svg)](https://matrix.org)
+
+> **REChain is the foundational "Digital Spine" for the next generation of autonomous organizations, bridging the gap between traditional enterprise systems and emerging Web4.0 technologies.**
+
+## 🌟 Vision 2025-2030
+
+REChain is positioned as the comprehensive digital autonomy infrastructure that enables the creation of decentralized digital workforces, sovereign network identities, and AI-driven autonomous ecosystems. Our platform represents the convergence of cutting-edge technologies to create a more efficient, transparent, and autonomous digital future.
+
+### 🚀 Key Capabilities
+
+- **🤖 Multi-Agent Protocols**: Autonomous agent systems for business automation
+- **🔐 Digital Sovereignty**: Self-sovereign identity and trusted Web 4.0 infrastructure
+- **🧠 AI + Blockchain Fusion**: Julia AI & Magic AI for intelligent business processes
+- **🌐 Open Ecosystem**: Comprehensive B2C, B2B, B2G compatibility
+- **📄 RWA & LegalTech**: Real-world asset tokenization and legal transparency
+- **🌍 Global Impact**: Community-driven innovations and NGO support programs
+- **🔒 Beyond Web3 Security**: Multi-layered cybersecurity with AI threat detection
+
+## 📚 Comprehensive Documentation
+
+### Strategic Vision & Roadmap
+- **[Vision 2025-2030](VISION_2025.md)** - Complete strategic vision and capabilities overview
+- **[Roadmap 2025-2030](ROADMAP_2025.md)** - Detailed development phases and milestones
+- **[Ecosystem Architecture](ECOSYSTEM_ARCHITECTURE.md)** - Technical architecture and integration capabilities
+- **[Impact Initiatives](IMPACT_INITIATIVES.md)** - Social impact programs and community initiatives
+
+### Technical Documentation
+- **[Architecture Overview](Architecture.md)** - System architecture and design principles
+- **[API Documentation](API.md)** - Comprehensive API reference and integration guides
+- **[Security Framework](SECURITY.md)** - Multi-layered security architecture
+- **[CI/CD Setup](scripts/README_CI_CD.md)** - Build and deployment automation
+
+### User Guides
+- **[Getting Started](Getting-Started.md)** - Quick start guide for new users
+- **[User Guide](USER_GUIDE.md)** - Comprehensive user documentation
+- **[Developer Guide](FOR_DEVELOPERS.md)** - Development and contribution guidelines
+- **[Installation Guide](INSTALLERS.md)** - Platform installation and setup
+
+## 🏗️ Platform Architecture
+
+REChain integrates multiple cutting-edge technologies:
+
+```
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Matrix        │    │   IPFS          │    │   Blockchain    │
+│   Protocol      │    │   Network       │    │   Networks      │
+│                 │    │                 │    │                 │
+│ • Messaging     │◄──►│ • Storage       │◄──►│ • Transactions  │
+│ • Collaboration │    │ • Distribution  │    │ • Smart         │
+│ • Federation    │    │ • Censorship    │    │   Contracts     │
+│                 │    │   Resistance    │    │ • Governance    │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+```
+
+### Core Components
+
+- **🔗 Bridge Infrastructure**: Multi-protocol connectivity and interoperability
+- **🤖 AI Agent Framework**: Julia AI & Magic AI for autonomous business processes
+- **🆔 Identity Management**: Self-sovereign identity (SSI) with zero-knowledge proofs
+- **💼 Digital Workspaces**: Collaborative environments with autonomous agents
+- **📊 Data Mesh**: Distributed data management and analytics
+- **🔒 Security Stack**: Multi-layered cybersecurity beyond Web3 standards
+
+## 🌍 Global Impact & Community
+
+### Social Impact Initiatives
+- **Zero-Cost Protocol Access**: Free platform access for NGOs and social enterprises
+- **Piglet Initiative**: Sustainable agriculture and food security through technology
+- **Digital Literacy Programs**: Technology training for underserved communities
+- **Environmental Monitoring**: Climate data and sustainability tracking
+
+### Community Programs
+- **Academic Partnerships**: University research collaborations and educational programs
+- **Developer Community**: Open source development and innovation hubs
+- **Impact Measurement**: Comprehensive social and environmental impact tracking
+- **Global Expansion**: MENA region, BRICS corridors, and emerging markets
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Flutter 3.32.8 or higher
+- Rust toolchain (for vodozemac compilation)
+- Git
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/sorydima/REChain-.git
+   cd rechain
+   ```
+
+2. **Install dependencies**
+   ```bash
+   flutter pub get
+   ```
+
+3. **Setup vodozemac (if needed)**
+   ```bash
+   # For Windows CI/CD
+   .\scripts\build_windows_ci.ps1
+   
+   # For Linux/macOS
+   ./scripts/build_linux_ci.sh
+   ```
+
+4. **Run the application**
+   ```bash
+   flutter run
+   ```
+
+### CI/CD Setup
+
+Our comprehensive CI/CD system handles complex build requirements:
+
+- **Multi-platform builds**: Windows, Linux, macOS, Android, Web
+- **Automated testing**: Unit tests, integration tests, and security audits
+- **Error handling**: Graceful failure handling and retry mechanisms
+- **Documentation**: Automated documentation generation and deployment
+
+See [CI/CD Documentation](scripts/README_CI_CD.md) for detailed setup instructions.
+
+## 🔧 Development
+
+### Contributing
+
+We welcome contributions from the global community! Please see our [Contributing Guidelines](Contributing.md) and [Code of Conduct](CODE_OF_CONDUCT.md).
+
+### Development Setup
+
+1. **Fork the repository**
+2. **Create a feature branch**
+3. **Make your changes**
+4. **Run tests**: `flutter test`
+5. **Submit a pull request**
+
+### Architecture Overview
+
+REChain follows a modular architecture with clear separation of concerns:
+
+- **Core Protocol**: Matrix, IPFS, and blockchain integration
+- **AI Layer**: Autonomous agents and intelligent automation
+- **Security Layer**: Multi-layered cybersecurity framework
+- **Integration Layer**: APIs, SDKs, and bridge infrastructure
+
+## 📈 Roadmap Highlights
+
+### 2025: Foundation & Core Platform
+- ✅ Core infrastructure and protocol implementation
+- 🔄 AI integration and digital workspaces
+- 📅 Global expansion initiation (MENA, BRICS)
+- 📅 Community and NGO programs
+
+### 2026-2027: Global Expansion
+- 📅 Full MENA region coverage
+- 📅 BRICS corridor operational deployment
+- 📅 Enterprise adoption and revenue generation
+- 📅 Ecosystem maturity and community development
+
+### 2028-2030: Digital Autonomy
+- 📅 Advanced AI integration and autonomous systems
+- 📅 Complete digital autonomy infrastructure
+- 📅 Global transformation and widespread adoption
+- 📅 Vision realization and sustainable ecosystem
+
+## 🤝 Partnerships & Alliances
+
+REChain is a founding member of the global alliance for a free, secure, and transparent internet. We collaborate with:
+
+- **Academic Institutions**: Research partnerships and educational programs
+- **Government Agencies**: Digital transformation and public services
+- **NGOs & Social Enterprises**: Impact initiatives and community programs
+- **Technology Partners**: Innovation and ecosystem development
+
+## 📊 Impact Metrics
+
+Our commitment to measurable impact includes:
+
+- **Social Impact**: 1000+ NGOs supported, 50,000+ people served
+- **Environmental Impact**: Carbon-neutral operations, sustainability tracking
+- **Economic Impact**: $1B+ economic value creation target by 2030
+- **Innovation Impact**: 100+ startups built on REChain platform
+
+## 🔒 Security & Compliance
+
+- **Multi-layered Security**: Network, application, data, and AI-based threat detection
+- **Bug Bounty Program**: Rewards for security vulnerability discovery
+- **Regular Audits**: Third-party security assessments and compliance checks
+- **Privacy by Design**: GDPR, CCPA, and privacy regulation compliance
+
+## 📄 License
+
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
+
+## 🌟 Join the Revolution
+
+REChain is more than a technology platform—it's a movement toward a more efficient, transparent, and autonomous digital future. Join us in building the digital infrastructure of tomorrow.
+
+**Connect with us:**
+- 🌐 [Website](https://online.rechain.network)
+- 💬 [Matrix Community](https://matrix.to/#/#chatting:matrix.katya.wtf)
+- 📧 [Email](mailto:support@rechain.network)
+- 🐦 [Twitter](https://twitter.com/rechain_inc)
+- 📖 [Documentation](https://github.com/sorydima/REChain-/wiki)
+
+---
+
+**REChain: Building the Digital Infrastructure of Autonomous Organizations** 🚀
+
 # REChain Ecosystem
 
 A next-generation, open-source, modular ecosystem for decentralized communication, blockchain, AI, and Web3 integrations. Built with Flutter, Dart, and modern cloud-native technologies.
