@@ -1,0 +1,16 @@
+{
+  "demo_mode": true,
+  "features": {
+    "matrix_integration": true,
+    "ai_agents": true,
+    "blockchain": true,
+    "ipfs_storage": true,
+    "digital_workspaces": true
+  },
+  "demo_data": {
+    "users": 1000,
+    "transactions": 50000,
+    "ai_agents": 25,
+    "workspaces": 50
+  }
+}
