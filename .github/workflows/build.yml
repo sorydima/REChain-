@@ -1,0 +1,299 @@
+name: Build REChain Application
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  release:
+    types: [ published ]
+
+env:
+  FLUTTER_VERSION: "3.32.8"
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    name: Build Windows
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Setup PowerShell
+      uses: actions/setup-powershell@v1
+      with:
+        powershell-version: '7.0'
+
+    - name: Run Windows Build Script
+      shell: pwsh
+      continue-on-error: true
+      run: |
+        .\scripts\build_windows_ci.ps1 -BuildType "Release" -FlutterVersion "$env:FLUTTER_VERSION"
+
+    - name: Upload Windows Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: rechain-windows
+        path: build/windows/runner/Release/
+        retention-days: 30
+
+  build-linux:
+    runs-on: ubuntu-latest
+    name: Build Linux
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Make build script executable
+      run: chmod +x scripts/build_linux_ci.sh
+
+    - name: Run Linux Build Script
+      run: |
+        ./scripts/build_linux_ci.sh release "$FLUTTER_VERSION"
+
+    - name: Upload Linux Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: rechain-linux
+        path: build/linux/x64/release/bundle/
+        retention-days: 30
+
+  build-macos:
+    runs-on: macos-latest
+    name: Build macOS
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Install Rust
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        override: true
+
+    - name: Install Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: ${{ env.FLUTTER_VERSION }}
+        channel: 'stable'
+
+    - name: Install dependencies
+      run: |
+        flutter pub get
+        flutter config --no-analytics
+
+    - name: Setup vodozemac
+      run: |
+        # Clone vodozemac
+        git clone https://github.com/matrix-org/vodozemac.git
+        
+        # Install wasm-pack
+        cargo install wasm-pack
+        
+        # Build vodozemac for web
+        cd vodozemac
+        wasm-pack build --target web
+        cd ..
+        
+        # Setup dart-vodozemac
+        git clone https://github.com/famedly/dart-vodozemac.git .vodozemac
+        
+        # Install flutter_rust_bridge_codegen
+        cargo install flutter_rust_bridge_codegen
+        
+        # Build vodozemac bindings
+        cd .vodozemac
+        flutter_rust_bridge_codegen build-web --dart-root dart --rust-root $(readlink -f rust) --release
+        cd ..
+        
+        # Copy generated files
+        mkdir -p assets/vodozemac
+        rm -f assets/vodozemac/vodozemac_bindings_dart*
+        cp .vodozemac/dart/web/pkg/vodozemac_bindings_dart* assets/vodozemac/
+        rm -rf .vodozemac
+
+    - name: Build macOS
+      run: flutter build macos --release
+
+    - name: Upload macOS Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: rechain-macos
+        path: build/macos/Build/Products/Release/
+        retention-days: 30
+
+  build-android:
+    runs-on: ubuntu-latest
+    name: Build Android
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Install Rust
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        override: true
+
+    - name: Install Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: ${{ env.FLUTTER_VERSION }}
+        channel: 'stable'
+
+    - name: Setup Android SDK
+      uses: android-actions/setup-android@v3
+
+    - name: Setup vodozemac
+      run: |
+        # Clone vodozemac
+        git clone https://github.com/matrix-org/vodozemac.git
+        
+        # Install wasm-pack
+        cargo install wasm-pack
+        
+        # Build vodozemac for web
+        cd vodozemac
+        wasm-pack build --target web
+        cd ..
+        
+        # Setup dart-vodozemac
+        git clone https://github.com/famedly/dart-vodozemac.git .vodozemac
+        
+        # Install flutter_rust_bridge_codegen
+        cargo install flutter_rust_bridge_codegen
+        
+        # Build vodozemac bindings
+        cd .vodozemac
+        flutter_rust_bridge_codegen build-web --dart-root dart --rust-root $(readlink -f rust) --release
+        cd ..
+        
+        # Copy generated files
+        mkdir -p assets/vodozemac
+        rm -f assets/vodozemac/vodozemac_bindings_dart*
+        cp .vodozemac/dart/web/pkg/vodozemac_bindings_dart* assets/vodozemac/
+        rm -rf .vodozemac
+
+    - name: Build Android APK
+      run: flutter build apk --release
+
+    - name: Upload Android Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: rechain-android
+        path: build/app/outputs/flutter-apk/
+        retention-days: 30
+
+  build-web:
+    runs-on: ubuntu-latest
+    name: Build Web
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Install Rust
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        override: true
+
+    - name: Install Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: ${{ env.FLUTTER_VERSION }}
+        channel: 'stable'
+
+    - name: Setup vodozemac
+      run: |
+        # Clone vodozemac
+        git clone https://github.com/matrix-org/vodozemac.git
+        
+        # Install wasm-pack
+        cargo install wasm-pack
+        
+        # Build vodozemac for web
+        cd vodozemac
+        wasm-pack build --target web
+        cd ..
+        
+        # Setup dart-vodozemac
+        git clone https://github.com/famedly/dart-vodozemac.git .vodozemac
+        
+        # Install flutter_rust_bridge_codegen
+        cargo install flutter_rust_bridge_codegen
+        
+        # Build vodozemac bindings
+        cd .vodozemac
+        flutter_rust_bridge_codegen build-web --dart-root dart --rust-root $(readlink -f rust) --release
+        cd ..
+        
+        # Copy generated files
+        mkdir -p assets/vodozemac
+        rm -f assets/vodozemac/vodozemac_bindings_dart*
+        cp .vodozemac/dart/web/pkg/vodozemac_bindings_dart* assets/vodozemac/
+        rm -rf .vodozemac
+
+    - name: Build Web
+      run: flutter build web --release
+
+    - name: Upload Web Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: rechain-web
+        path: build/web/
+        retention-days: 30
+
+  test:
+    runs-on: ubuntu-latest
+    name: Run Tests
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: ${{ env.FLUTTER_VERSION }}
+        channel: 'stable'
+
+    - name: Get dependencies
+      run: flutter pub get
+
+    - name: Run tests
+      run: flutter test
+
+  lint:
+    runs-on: ubuntu-latest
+    name: Lint Code
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: ${{ env.FLUTTER_VERSION }}
+        channel: 'stable'
+
+    - name: Get dependencies
+      run: flutter pub get
+
+    - name: Analyze code
+      run: flutter analyze 
