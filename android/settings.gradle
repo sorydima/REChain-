@@ -16,6 +16,7 @@ pluginManagement {
         maven {
             url "https://artifactory-external.vkpartner.ru/artifactory/maven"
         }
+        maven { url 'https://jitpack.io' }
     }
 }
 

@@ -108,7 +108,7 @@ dependencies {
     implementation 'com.google.android.gms:play-services-location:21.3.0'
     // Add dependencies.
     implementation 'com.huawei.agconnect:agconnect-core:1.5.2.300'
-    implementation 'ru.rustore.sdk:push:6.10.0'
+    // implementation 'ru.rustore.sdk:push:6.10.0'
 }
 
 apply plugin: 'com.huawei.agconnect'
