@@ -3,7 +3,6 @@
   "outputDirectory": "build/web",
   "installCommand": "flutter/bin/flutter pub get",
   "framework": null,
-  "functions": {},
   "rewrites": [
     {
       "source": "/(.*)",
