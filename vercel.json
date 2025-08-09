@@ -1,22 +1,13 @@
 {
   "version": 2,
+  "public": true,
   "builds": [
     {
-      "src": "scripts/vercel.sh",
-      "use": "@vercel/static-build",
-      "config": {
-        "zeroConfig": true
-      }
+      "src": "build/web/**",
+      "use": "@vercel/static"
     }
   ],
-  "functions": {
-    "api/**/*.rs": {
-      "runtime": "vercel-rust@1.0.0"
-    }
-  },
   "routes": [
-    { "src": "/(.*)", "dest": "/index.html" }
-  ],
-  "buildCommand": "bash scripts/vercel.sh",
-  "outputDirectory": "build"
+    { "src": "/(.*)", "dest": "/build/web/$1" }
+  ]
 }
