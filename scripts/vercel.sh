@@ -1,53 +1,46 @@
 #!/bin/bash
 set -e
 
-# Install rustup silently
+echo "=== Установка Rust через rustup ==="
 curl https://sh.rustup.rs -sSf | sh -s -- -y
 
-# Source cargo environment
-source $HOME/.cargo/env
+export PATH="$HOME/.cargo/bin:$PATH"
 
-# Add rust components and targets
-rustup component add llvm-tools-preview
-rustup target add wasm32-unknown-unknown
-
-# Show rustc and cargo versions
-rustc --version
-cargo --version
-
-# Clone vodozemac repository
+echo "=== Клонирование vodozemac и сборка wasm ==="
 git clone https://github.com/matrix-org/vodozemac.git
 cd vodozemac
 
-# Install wasm-pack and build wasm target
-cargo install wasm-pack
-wasm-pack build --target web
+cargo install wasm-pack --force
 
+wasm-pack build --target web
 cd ..
 
-# Run locale config scripts
+echo "=== Запуск скриптов генерации локалей ==="
 cd scripts
-chmod +x generate_locale_config.sh
+chmod +x generate_locale_config.sh generate-locale-config.sh
 ./generate_locale_config.sh
-chmod +x generate-locale-config.sh
 ./generate-locale-config.sh
 cd ..
 
-# Clone dart-vodozemac repository and run flutter_rust_bridge_codegen build-web
+echo "=== Клонирование dart-vodozemac и сборка bindings ==="
 git clone https://github.com/famedly/dart-vodozemac.git .vodozemac
 cd .vodozemac
 
-cargo install flutter_rust_bridge_codegen
-flutter_rust_bridge_codegen build-web --dart-root dart --rust-root $(readlink -f rust) --release
+cargo install flutter_rust_bridge_codegen --force
 
+# readlink -f может не работать, заменим на относительный путь:
+flutter_rust_bridge_codegen build-web --dart-root dart --rust-root rust --release
 cd ..
 
-# Move generated dart bindings to assets and clean up
+echo "=== Перемещение сгенерированных dart bindings ==="
 rm -f ./assets/vodozemac/vodozemac_bindings_dart*
 mv .vodozemac/dart/web/pkg/vodozemac_bindings_dart* ./assets/vodozemac/
+
+echo "=== Очистка временных файлов ==="
 rm -rf .vodozemac
 
-# Note: Flutter and cmake installation commands are Windows-specific and omitted here.
-# Ensure flutter and cmake are installed in your environment separately if needed.
+echo "=== Отключение аналитики Flutter ==="
+flutter config --no-analytics
 
-echo "vercel.sh script completed successfully."
+echo "=== Сборка Flutter Web ==="
+flutter build web
