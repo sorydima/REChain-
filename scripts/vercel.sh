@@ -68,7 +68,7 @@ cd ..
 echo "=== Генерация локалей ==="
 chmod +x scripts/generate_locale_config.sh scripts/generate-locale-config.sh
 scripts/generate_locale_config.sh || error_exit "Ошибка при generate_locale_config.sh"
-scripts/generate-locale-config.sh || error_exit "Ошибка при generate_locale_config.sh"
+scripts/generate_locale_config.sh || error_exit "Ошибка при generate_locale_config.sh"
 
 echo "=== Клонирование dart-vodozemac и сборка bindings ==="
 rm -rf .vodozemac
@@ -83,7 +83,8 @@ fi
 
 cargo install flutter_rust_bridge_codegen --force
 
-# Запускаем flutter_rust_bridge_codegen через nightly, чтобы были доступны unstable флаги
+# Запускаем flutter_rust_bridge_codegen через nightly, чтобы были доступны unstable флаги и build-std
+export FRB_DART_RUN_COMMAND_STDERR=1
 rustup run nightly flutter_rust_bridge_codegen build-web \
     --dart-root dart \
     --rust-root "$RUST_PATH" \
