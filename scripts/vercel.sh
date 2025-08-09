@@ -7,15 +7,13 @@ error_exit() {
 }
 
 echo "=== Настройка окружения ==="
-export HOME="/vercel"
-mkdir -p "$HOME"
 
 # Установка Dart SDK
 echo "→ Устанавливаем Dart..."
 curl -s -O https://storage.googleapis.com/dart-archive/channels/stable/release/latest/sdk/dartsdk-linux-x64-release.zip \
     || error_exit "Не удалось скачать Dart SDK"
-unzip -q dartsdk-linux-x64-release.zip -d "$HOME/dart-sdk"
-export PATH="$HOME/dart-sdk/dart-sdk/bin:$PATH"
+unzip -q dartsdk-linux-x64-release.zip -d "$PWD/dart-sdk"
+export PATH="$PWD/dart-sdk/dart-sdk/bin:$PATH"
 command -v dart >/dev/null || error_exit "Dart не установился"
 
 # Установка Flutter
@@ -29,7 +27,7 @@ command -v flutter >/dev/null || error_exit "Flutter не установился
 
 echo "=== Установка Rust ==="
 curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path
-source "$HOME/.cargo/env"
+source "$PWD/.cargo/env"
 rustup update stable
 rustup default stable
 command -v cargo >/dev/null || error_exit "Rust не установился"
@@ -39,18 +37,13 @@ rm -rf vodozemac
 git clone https://github.com/sorydima/vodozemac.git || error_exit "Не удалось клонировать vodozemac"
 cd vodozemac
 
-# Проверка Cargo.toml
-[ -f Cargo.toml ] || error_exit "В vodozemac нет Cargo.toml"
-[ -f src/lib.rs ] || error_exit "В vodozemac нет src/lib.rs"
-
-# Настройка Cargo.toml
 sed -i '/^\[lib\]/,+2d' Cargo.toml || true
 echo -e "[lib]\ncrate-type = [\"cdylib\", \"rlib\"]" >> Cargo.toml
 sed -i '/^getrandom = /d' Cargo.toml
 echo 'getrandom = { version = "0.2.16", features = ["js"] }' >> Cargo.toml
 
 cargo install wasm-pack --force
-wasm-pack build --target web || error_exit "Сборка wasm не удалась"
+wasm-pack build --target web --crate vodozemac || error_exit "Сборка wasm не удалась"
 cd ..
 
 echo "=== Генерация локалей ==="
@@ -63,7 +56,6 @@ rm -rf .vodozemac
 git clone https://github.com/famedly/dart-vodozemac.git .vodozemac || error_exit "Не удалось клонировать dart-vodozemac"
 cd .vodozemac
 
-# Проверка rust crate внутри dart-vodozemac
 if [ -d rust ] && [ -f rust/Cargo.toml ] && [ -f rust/src/lib.rs ]; then
     RUST_PATH=$(cd rust && pwd)
 else
