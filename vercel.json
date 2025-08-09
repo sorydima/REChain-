@@ -1,8 +1,7 @@
 {
   "buildCommand": "bash scripts/vercel.sh",
   "outputDirectory": "build/web",
-  "installCommand": "flutter/bin/flutter pub get",
-  "framework": null,
+  "installCommand": "if cd flutter; then git pull && cd ..; else git clone https://github.com/flutter/flutter.git; fi && flutter/bin/flutter pub get",
   "rewrites": [
     {
       "source": "/(.*)",
