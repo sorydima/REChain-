@@ -37,7 +37,7 @@ NIGHTLY_VER=nightly-2025-07-01
 
 rustup install "$NIGHTLY_VER" || error_exit "Не удалось установить Rust nightly $NIGHTLY_VER"
 rustup component add rust-src --toolchain "$NIGHTLY_VER" || error_exit "Не удалось установить rust-src для $NIGHTLY_VER"
-rustup component add llvm-tools-preview --toolchain "$NIGHTLY_VER" || error_exit "Не удалось установить llvm-tools-preview для $NIGHTLY_VER"
+rustup component add llvm-tools --toolchain "$NIGHTLY_VER" || error_exit "Не удалось установить llvm-tools для $NIGHTLY_VER"  # изменено
 rustup default "$NIGHTLY_VER"
 
 command -v cargo >/dev/null || error_exit "Rust не установился"
@@ -49,10 +49,10 @@ else
     error_exit "rust-src не установлен"
 fi
 
-if rustup component list --toolchain "$NIGHTLY_VER" | grep -q "^llvm-tools-preview.*(installed)"; then
-    echo "llvm-tools-preview установлен"
+if rustup component list --toolchain "$NIGHTLY_VER" | grep -q "^llvm-tools.*(installed)"; then  # изменено
+    echo "llvm-tools установлен"
 else
-    error_exit "llvm-tools-preview не установлен"
+    error_exit "llvm-tools не установлен"
 fi
 
 echo "=== Клонирование vodozemac и сборка wasm ==="
@@ -70,7 +70,7 @@ rustup run "$NIGHTLY_VER" wasm-pack build --target web || error_exit "Сборк
 cd ..
 
 echo "=== Генерация локалей ==="
-chmod +x scripts/generate_locale_config.sh scripts/generate_locale-config.sh
+chmod +x scripts/generate_locale_config.sh scripts/generate-locale-config.sh
 scripts/generate_locale_config.sh || error_exit "Ошибка при generate_locale_config.sh"
 scripts/generate_locale_config.sh || error_exit "Ошибка при generate_locale_config.sh"
 
