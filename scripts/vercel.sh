@@ -28,7 +28,7 @@ command -v flutter >/dev/null || error_exit "Flutter не установился
 echo "=== Установка Rust ==="
 curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path
 
-# Источник окружения cargo
+# Подключаем окружение cargo
 if [ -f "$PWD/.cargo/env" ]; then
     source "$PWD/.cargo/env"
 elif [ -f "$HOME/.cargo/env" ]; then
@@ -40,11 +40,13 @@ else
 fi
 
 rustup update stable
-rustup default stable
+rustup update nightly
 
-# Устанавливаем компонент rust-src, необходимый для сборки build-std
-rustup install nightly
+# Устанавливаем необходимые компоненты для nightly toolchain
 rustup component add rust-src --toolchain nightly
+rustup component add llvm-tools-preview --toolchain nightly
+
+# Используем nightly по умолчанию, так как нужен unstable флаг для сборки std
 rustup default nightly
 
 command -v cargo >/dev/null || error_exit "Rust не установился"
@@ -66,7 +68,7 @@ cd ..
 echo "=== Генерация локалей ==="
 chmod +x scripts/generate_locale_config.sh scripts/generate-locale-config.sh
 scripts/generate_locale_config.sh || error_exit "Ошибка при generate_locale_config.sh"
-scripts/generate-locale-config.sh || error_exit "Ошибка при generate-locale-config.sh"
+scripts/generate-locale-config.sh || error_exit "Ошибка при generate_locale_config.sh"
 
 echo "=== Клонирование dart-vodozemac и сборка bindings ==="
 rm -rf .vodozemac
@@ -80,7 +82,9 @@ else
 fi
 
 cargo install flutter_rust_bridge_codegen --force
-flutter_rust_bridge_codegen build-web \
+
+# Запускаем flutter_rust_bridge_codegen через nightly, чтобы были доступны unstable флаги
+rustup run nightly flutter_rust_bridge_codegen build-web \
     --dart-root dart \
     --rust-root "$RUST_PATH" \
     --release || error_exit "flutter_rust_bridge_codegen не выполнился"
