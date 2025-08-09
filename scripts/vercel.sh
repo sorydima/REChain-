@@ -28,7 +28,7 @@ command -v flutter >/dev/null || error_exit "Flutter не установился
 echo "=== Установка Rust ==="
 curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path
 
-# Попытка source .cargo/env с несколькими вариантами пути
+# Источник окружения cargo
 if [ -f "$PWD/.cargo/env" ]; then
     source "$PWD/.cargo/env"
 elif [ -f "$HOME/.cargo/env" ]; then
@@ -41,6 +41,10 @@ fi
 
 rustup update stable
 rustup default stable
+
+# Устанавливаем компонент rust-src, необходимый для сборки build-std
+rustup component add rust-src --toolchain stable
+
 command -v cargo >/dev/null || error_exit "Rust не установился"
 
 echo "=== Клонирование vodozemac и сборка wasm ==="
