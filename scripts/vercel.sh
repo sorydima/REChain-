@@ -1,6 +1,10 @@
 #!/bin/bash
 set -e
 
+curl -O https://storage.googleapis.com/dart-archive/channels/stable/release/latest/sdk/dartsdk-linux-x64-release.zip
+unzip dartsdk-linux-x64-release.zip -d $HOME/dart-sdk
+export PATH="$HOME/dart-sdk/dart-sdk/bin:$PATH"
+
 echo "=== Установка Rust ==="
 curl https://sh.rustup.rs -sSf | sh -s -- -y
 source $HOME/.cargo/env
