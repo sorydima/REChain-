@@ -23,7 +23,6 @@ command -v flutter >/dev/null || error_exit "Flutter не установился
 echo "=== Установка Rust и nightly toolchain с компонентами ==="
 curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path
 
-# Подключаем окружение cargo (для cargo, rustup и rustc)
 if [ -f "$HOME/.cargo/env" ]; then
     source "$HOME/.cargo/env"
 elif [ -f "$PWD/.cargo/env" ]; then
@@ -36,42 +35,42 @@ fi
 
 NIGHTLY_VER=nightly-2025-07-01
 
-echo "→ Установка nightly toolchain $NIGHTLY_VER"
 rustup install "$NIGHTLY_VER" || error_exit "Не удалось установить Rust nightly $NIGHTLY_VER"
-
-echo "→ Установка компонентов rust-src и llvm-tools-preview для $NIGHTLY_VER"
 rustup component add rust-src --toolchain "$NIGHTLY_VER" || error_exit "Не удалось установить rust-src для $NIGHTLY_VER"
 rustup component add llvm-tools-preview --toolchain "$NIGHTLY_VER" || error_exit "Не удалось установить llvm-tools-preview для $NIGHTLY_VER"
-
-echo "→ Установка nightly по умолчанию"
 rustup default "$NIGHTLY_VER"
 
 command -v cargo >/dev/null || error_exit "Rust не установился"
 
 echo "=== Проверка установленных компонентов ==="
-rustup component list --toolchain "$NIGHTLY_VER" | grep rust-src || error_exit "rust-src не установлен"
-rustup component list --toolchain "$NIGHTLY_VER" | grep llvm-tools-preview || error_exit "llvm-tools-preview не установлен"
+if rustup component list --toolchain "$NIGHTLY_VER" | grep -q "^rust-src.*(installed)"; then
+    echo "rust-src установлен"
+else
+    error_exit "rust-src не установлен"
+fi
+
+if rustup component list --toolchain "$NIGHTLY_VER" | grep -q "^llvm-tools-preview.*(installed)"; then
+    echo "llvm-tools-preview установлен"
+else
+    error_exit "llvm-tools-preview не установлен"
+fi
 
 echo "=== Клонирование vodozemac и сборка wasm ==="
 rm -rf vodozemac
 git clone https://github.com/sorydima/vodozemac.git || error_exit "Не удалось клонировать vodozemac"
 cd vodozemac
 
-# Подправляем Cargo.toml для сборки wasm
 sed -i '/^\[lib\]/,+2d' Cargo.toml || true
 echo -e "[lib]\ncrate-type = [\"cdylib\", \"rlib\"]" >> Cargo.toml
 sed -i '/^getrandom = /d' Cargo.toml
 echo 'getrandom = { version = "0.2.16", features = ["js"] }' >> Cargo.toml
 
-echo "→ Установка wasm-pack"
 cargo install wasm-pack --force
-
-echo "→ Сборка wasm с использованием nightly"
 rustup run "$NIGHTLY_VER" wasm-pack build --target web || error_exit "Сборка wasm не удалась"
 cd ..
 
 echo "=== Генерация локалей ==="
-chmod +x scripts/generate_locale_config.sh scripts/generate-locale-config.sh
+chmod +x scripts/generate_locale_config.sh scripts/generate_locale-config.sh
 scripts/generate_locale_config.sh || error_exit "Ошибка при generate_locale_config.sh"
 scripts/generate_locale_config.sh || error_exit "Ошибка при generate_locale_config.sh"
 
@@ -86,12 +85,9 @@ else
     error_exit "В dart-vodozemac нет корректной папки rust"
 fi
 
-echo "→ Установка flutter_rust_bridge_codegen"
 cargo install flutter_rust_bridge_codegen --force
 
 export FRB_DART_RUN_COMMAND_STDERR=1
-
-echo "→ Генерация bindings flutter_rust_bridge_codegen (build-web)"
 rustup run "$NIGHTLY_VER" flutter_rust_bridge_codegen build-web \
     --dart-root dart \
     --rust-root "$RUST_PATH" \
