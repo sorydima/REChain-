@@ -9,9 +9,12 @@ echo "=== Клонирование vodozemac и сборка wasm ==="
 git clone https://github.com/matrix-org/vodozemac.git
 cd vodozemac
 
-# Добавляем crate-type в Cargo.toml
-sed -i '/\[lib\]/,+2d' Cargo.toml || true
+# Патчим Cargo.toml: добавляем crate-type
+sed -i '/^\[lib\]/,+2d' Cargo.toml || true
 echo -e "[lib]\ncrate-type = [\"cdylib\", \"rlib\"]" >> Cargo.toml
+
+# Патчим getrandom зависимость (если есть в Cargo.toml)
+sed -i 's/getrandom = "0.2.16"/getrandom = { version = "0.2.16", features = ["js"] }/' Cargo.toml || true
 
 cargo install wasm-pack --force
 wasm-pack build --target web
