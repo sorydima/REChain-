@@ -54,7 +54,7 @@ sed -i '/^getrandom = /d' Cargo.toml
 echo 'getrandom = { version = "0.2.16", features = ["js"] }' >> Cargo.toml
 
 cargo install wasm-pack --force
-wasm-pack build --target web --crate vodozemac || error_exit "Сборка wasm не удалась"
+wasm-pack build --target web || error_exit "Сборка wasm не удалась"
 cd ..
 
 echo "=== Генерация локалей ==="
