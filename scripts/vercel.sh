@@ -4,9 +4,11 @@ set -e
 echo "=== Установка Rust ==="
 curl https://sh.rustup.rs -sSf | sh -s -- -y
 source $HOME/.cargo/env
+rustup update stable
+rustup default stable
 
 echo "=== Клонирование vodozemac и сборка wasm ==="
-git clone https://github.com/matrix-org/vodozemac.git
+git clone https://github.com/sorydima/vodozemac.git
 cd vodozemac
 
 # Патчим Cargo.toml: добавляем crate-type
