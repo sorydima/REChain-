@@ -6,57 +6,29 @@ error_exit() {
     exit 1
 }
 
-echo "=== Настройка окружения ==="
-
-# Установка Dart SDK
-echo "→ Устанавливаем Dart..."
+echo "=== Установка Dart SDK ==="
 curl -s -O https://storage.googleapis.com/dart-archive/channels/stable/release/latest/sdk/dartsdk-linux-x64-release.zip \
     || error_exit "Не удалось скачать Dart SDK"
 unzip -q dartsdk-linux-x64-release.zip -d "$PWD/dart-sdk"
 export PATH="$PWD/dart-sdk/dart-sdk/bin:$PATH"
 command -v dart >/dev/null || error_exit "Dart не установился"
 
-# Установка Flutter
+echo "=== Установка Flutter ==="
 if [ ! -d flutter ]; then
-    echo "→ Клонируем Flutter..."
-    git clone --depth 1 https://github.com/flutter/flutter.git \
-        || error_exit "Не удалось клонировать Flutter"
+    git clone --depth 1 https://github.com/flutter/flutter.git || error_exit "Не удалось клонировать Flutter"
 fi
 export PATH="$PWD/flutter/bin:$PATH"
 command -v flutter >/dev/null || error_exit "Flutter не установился"
 
-echo "=== Установка Rust ==="
 echo "=== Установка Rust nightly с компонентами ==="
 curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path
 source "$HOME/.cargo/env" || source "$PWD/.cargo/env" || true
 
-rustup install nightly-2025-07-01
-rustup default nightly-2025-07-01
-rustup component add rust-src --toolchain nightly-2025-07-01
-rustup component add llvm-tools-preview --toolchain nightly-2025-07-01
-
-command -v cargo >/dev/null || error_exit "Rust не установился"
-
-# Подключаем окружение cargo
-if [ -f "$PWD/.cargo/env" ]; then
-    source "$PWD/.cargo/env"
-elif [ -f "$HOME/.cargo/env" ]; then
-    source "$HOME/.cargo/env"
-elif [ -f "/root/.cargo/env" ]; then
-    source "/root/.cargo/env"
-else
-    echo "⚠️ Не найден файл .cargo/env, продолжаем без source"
-fi
-
-rustup update stable
-rustup update nightly
-
-# Устанавливаем необходимые компоненты для nightly toolchain
-rustup component add rust-src --toolchain nightly
-rustup component add llvm-tools-preview --toolchain nightly
-
-# Используем nightly по умолчанию, так как нужен unstable флаг для сборки std
-rustup default nightly
+NIGHTLY_VER=nightly-2025-07-01
+rustup install "$NIGHTLY_VER"
+rustup default "$NIGHTLY_VER"
+rustup component add rust-src --toolchain "$NIGHTLY_VER" || error_exit "Не удалось установить rust-src"
+rustup component add llvm-tools-preview --toolchain "$NIGHTLY_VER" || error_exit "Не удалось установить llvm-tools-preview"
 
 command -v cargo >/dev/null || error_exit "Rust не установился"
 
@@ -71,7 +43,7 @@ sed -i '/^getrandom = /d' Cargo.toml
 echo 'getrandom = { version = "0.2.16", features = ["js"] }' >> Cargo.toml
 
 cargo install wasm-pack --force
-wasm-pack build --target web || error_exit "Сборка wasm не удалась"
+rustup run "$NIGHTLY_VER" wasm-pack build --target web || error_exit "Сборка wasm не удалась"
 cd ..
 
 echo "=== Генерация локалей ==="
@@ -92,9 +64,8 @@ fi
 
 cargo install flutter_rust_bridge_codegen --force
 
-# Запускаем flutter_rust_bridge_codegen через nightly, чтобы были доступны unstable флаги и build-std
 export FRB_DART_RUN_COMMAND_STDERR=1
-rustup run nightly flutter_rust_bridge_codegen build-web \
+rustup run "$NIGHTLY_VER" flutter_rust_bridge_codegen build-web \
     --dart-root dart \
     --rust-root "$RUST_PATH" \
     --release || error_exit "flutter_rust_bridge_codegen не выполнился"
