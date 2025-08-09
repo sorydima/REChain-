@@ -27,7 +27,18 @@ command -v flutter >/dev/null || error_exit "Flutter не установился
 
 echo "=== Установка Rust ==="
 curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path
-source "$PWD/.cargo/env"
+
+# Попытка source .cargo/env с несколькими вариантами пути
+if [ -f "$PWD/.cargo/env" ]; then
+    source "$PWD/.cargo/env"
+elif [ -f "$HOME/.cargo/env" ]; then
+    source "$HOME/.cargo/env"
+elif [ -f "/root/.cargo/env" ]; then
+    source "/root/.cargo/env"
+else
+    echo "⚠️ Не найден файл .cargo/env, продолжаем без source"
+fi
+
 rustup update stable
 rustup default stable
 command -v cargo >/dev/null || error_exit "Rust не установился"
