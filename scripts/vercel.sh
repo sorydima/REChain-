@@ -48,6 +48,7 @@ rm -rf vodozemac
 git clone https://github.com/sorydima/vodozemac.git || error_exit "Не удалось клонировать vodozemac"
 cd vodozemac
 
+# Подправляем Cargo.toml
 sed -i '/^\[lib\]/,+2d' Cargo.toml || true
 echo -e "[lib]\ncrate-type = [\"cdylib\", \"rlib\"]" >> Cargo.toml
 sed -i '/^getrandom = /d' Cargo.toml
@@ -58,7 +59,7 @@ rustup run "$NIGHTLY_VER" wasm-pack build --target web || error_exit "Сборк
 cd ..
 
 echo "=== Генерация локалей ==="
-chmod +x scripts/generate_locale_config.sh scripts/generate-locale-config.sh
+chmod +x scripts/generate_locale_config.sh scripts/generate_locale_config.sh
 scripts/generate_locale_config.sh || error_exit "Ошибка при generate_locale_config.sh"
 scripts/generate_locale_config.sh || error_exit "Ошибка при generate_locale_config.sh"
 
