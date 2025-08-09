@@ -1,7 +1,8 @@
 {
+  "installCommand": "if cd flutter; then git pull && cd ..; else git clone https://github.com/flutter/flutter.git; fi && curl -O https://storage.googleapis.com/dart-archive/channels/stable/release/latest/sdk/dartsdk-linux-x64-release.zip && unzip dartsdk-linux-x64-release.zip -d $HOME/dart-sdk && export PATH=\"$HOME/dart-sdk/dart-sdk/bin:$PATH\" && flutter/bin/flutter pub get",
   "buildCommand": "bash scripts/vercel.sh",
   "outputDirectory": "build/web",
-  "installCommand": "if cd flutter; then git pull && cd ..; else git clone https://github.com/flutter/flutter.git; fi && flutter/bin/flutter pub get",
+  "framework": null,
   "rewrites": [
     {
       "source": "/(.*)",
