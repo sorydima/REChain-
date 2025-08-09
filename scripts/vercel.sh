@@ -22,13 +22,24 @@ command -v flutter >/dev/null || error_exit "Flutter не установился
 
 echo "=== Установка Rust nightly с компонентами ==="
 curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path
-source "$HOME/.cargo/env" || source "$PWD/.cargo/env" || true
+
+# Источник окружения cargo
+if [ -f "$HOME/.cargo/env" ]; then
+    source "$HOME/.cargo/env"
+elif [ -f "$PWD/.cargo/env" ]; then
+    source "$PWD/.cargo/env"
+elif [ -f "/root/.cargo/env" ]; then
+    source "/root/.cargo/env"
+else
+    echo "⚠️ Не найден файл .cargo/env, продолжаем без source"
+fi
 
 NIGHTLY_VER=nightly-2025-07-01
-rustup install "$NIGHTLY_VER"
+
+rustup install "$NIGHTLY_VER" || error_exit "Не удалось установить Rust nightly $NIGHTLY_VER"
+rustup component add rust-src --toolchain "$NIGHTLY_VER" || error_exit "Не удалось установить rust-src для $NIGHTLY_VER"
+rustup component add llvm-tools-preview --toolchain "$NIGHTLY_VER" || error_exit "Не удалось установить llvm-tools-preview для $NIGHTLY_VER"
 rustup default "$NIGHTLY_VER"
-rustup component add rust-src --toolchain "$NIGHTLY_VER" || error_exit "Не удалось установить rust-src"
-rustup component add llvm-tools-preview --toolchain "$NIGHTLY_VER" || error_exit "Не удалось установить llvm-tools-preview"
 
 command -v cargo >/dev/null || error_exit "Rust не установился"
 
