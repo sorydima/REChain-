@@ -26,7 +26,16 @@ export PATH="$PWD/flutter/bin:$PATH"
 command -v flutter >/dev/null || error_exit "Flutter не установился"
 
 echo "=== Установка Rust ==="
+echo "=== Установка Rust nightly с компонентами ==="
 curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path
+source "$HOME/.cargo/env" || source "$PWD/.cargo/env" || true
+
+rustup install nightly-2025-07-01
+rustup default nightly-2025-07-01
+rustup component add rust-src --toolchain nightly-2025-07-01
+rustup component add llvm-tools-preview --toolchain nightly-2025-07-01
+
+command -v cargo >/dev/null || error_exit "Rust не установился"
 
 # Подключаем окружение cargo
 if [ -f "$PWD/.cargo/env" ]; then
