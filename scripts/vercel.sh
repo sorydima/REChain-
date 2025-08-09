@@ -37,22 +37,17 @@ NIGHTLY_VER=nightly-2025-07-01
 
 rustup install "$NIGHTLY_VER" || error_exit "Не удалось установить Rust nightly $NIGHTLY_VER"
 rustup component add rust-src --toolchain "$NIGHTLY_VER" || error_exit "Не удалось установить rust-src для $NIGHTLY_VER"
-rustup component add llvm-tools --toolchain "$NIGHTLY_VER" || error_exit "Не удалось установить llvm-tools для $NIGHTLY_VER"  # изменено
+rustup component add llvm-tools --toolchain "$NIGHTLY_VER" || error_exit "Не удалось установить llvm-tools для $NIGHTLY_VER"
 rustup default "$NIGHTLY_VER"
 
 command -v cargo >/dev/null || error_exit "Rust не установился"
 
-echo "=== Проверка установленных компонентов ==="
+echo "=== Проверяем rust-src ==="
 if rustup component list --toolchain "$NIGHTLY_VER" | grep -q "^rust-src.*(installed)"; then
     echo "rust-src установлен"
+    ls -la ~/.rustup/toolchains/${NIGHTLY_VER}-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/
 else
     error_exit "rust-src не установлен"
-fi
-
-if rustup component list --toolchain "$NIGHTLY_VER" | grep -q "^llvm-tools.*(installed)"; then  # изменено
-    echo "llvm-tools установлен"
-else
-    error_exit "llvm-tools не установлен"
 fi
 
 echo "=== Клонирование vodozemac и сборка wasm ==="
@@ -66,7 +61,10 @@ sed -i '/^getrandom = /d' Cargo.toml
 echo 'getrandom = { version = "0.2.16", features = ["js"] }' >> Cargo.toml
 
 cargo install wasm-pack --force
+
+# Попробуйте без -Z build-std, если он вызывает ошибку:
 rustup run "$NIGHTLY_VER" wasm-pack build --target web || error_exit "Сборка wasm не удалась"
+
 cd ..
 
 echo "=== Генерация локалей ==="
