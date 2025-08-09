@@ -28,6 +28,10 @@ command -v flutter >/dev/null || error_exit "Flutter не установился
 echo "=== Установка Rust ==="
 curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path
 
+rustup install nightly
+rustup component add rust-src --toolchain nightly
+rustup default nightly
+
 # Источник окружения cargo
 if [ -f "$PWD/.cargo/env" ]; then
     source "$PWD/.cargo/env"
