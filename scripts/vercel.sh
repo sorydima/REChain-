@@ -8,6 +8,11 @@ source $HOME/.cargo/env
 echo "=== Клонирование vodozemac и сборка wasm ==="
 git clone https://github.com/matrix-org/vodozemac.git
 cd vodozemac
+
+# Добавляем crate-type в Cargo.toml
+sed -i '/\[lib\]/,+2d' Cargo.toml || true
+echo -e "[lib]\ncrate-type = [\"cdylib\", \"rlib\"]" >> Cargo.toml
+
 cargo install wasm-pack --force
 wasm-pack build --target web
 cd ..
