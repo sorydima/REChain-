@@ -28,32 +28,32 @@ class MainActivity extends StatefulWidget {
   State<MainActivity> createState() => _MainActivityState();
 }
 
-class _MainActivityState extends State<MainActivity> {
-  String? _lastPush;
+// class _MainActivityState extends State<MainActivity> {
+//   String? _lastPush;
 
-  @override
-  void initState() {
-    super.initState();
+//   @override
+//   void initState() {
+//     super.initState();
 
-    RuStorePush.pushStream.listen((payload) {
-      setState(() {
-        _lastPush = payload;
-      });
-    });
-  }
+//     RuStorePush.pushStream.listen((payload) {
+//       setState(() {
+//         _lastPush = payload;
+//       });
+//     });
+//   }
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(title: const Text('REChain Push')),
-        body: Center(
-          child: Text(_lastPush != null ? 'Push: $_lastPush' : 'Waiting for pushes ...'),
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Scaffold(
+//         appBar: AppBar(title: const Text('REChain Push')),
+//         body: Center(
+//           child: Text(_lastPush != null ? 'Push: $_lastPush' : 'Waiting for pushes ...'),
+//         ),
+//       ),
+//     );
+//   }
+// }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
