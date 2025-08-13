@@ -24,8 +24,8 @@ import 'rustore_push.dart';
 class MainActivity extends StatefulWidget {
   const MainActivity({super.key});
 
-  @override
-  State<MainActivity> createState() => _MainActivityState();
+  // @override
+  // State<MainActivity> createState() => _MainActivityState();
 }
 
 // class _MainActivityState extends State<MainActivity> {
