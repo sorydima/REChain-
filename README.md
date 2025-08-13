@@ -82,7 +82,6 @@ https://api.codemagic.io/apps/688f97e647fd81ea2dff2a29/688f97e647fd81ea2dff2a28/
   Update the badge URL below to match your actual GitHub repository and workflow name.
   Example: https://github.com/<owner>/<repo>/actions/workflows/<workflow_file>.yml/badge.svg
 -->
-[![Build Status](https://github.com/<owner>/<repo>/actions/workflows/build.yml/badge.svg)](https://github.com/<owner>/<repo>/actions)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Flutter](https://img.shields.io/badge/Flutter-3.32.8-blue.svg)](https://flutter.dev)
 [![Matrix](https://img.shields.io/badge/Matrix-Protocol-green.svg)](https://matrix.org)
