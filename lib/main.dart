@@ -21,12 +21,12 @@ import 'widgets/missing_widgets.dart';
 import 'package:flutter/material.dart';
 import 'rustore_push.dart';
 
-class MainActivity extends StatefulWidget {
-  const MainActivity({super.key});
+// class MainActivity extends StatefulWidget {
+//   const MainActivity({super.key});
 
-  // @override
-  // State<MainActivity> createState() => _MainActivityState();
-}
+//   // @override
+//   // State<MainActivity> createState() => _MainActivityState();
+// }
 
 // class _MainActivityState extends State<MainActivity> {
 //   String? _lastPush;
