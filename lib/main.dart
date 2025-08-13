@@ -125,8 +125,8 @@ void main() async {
   Logs().i('Welcome to ${AppConfig.applicationName} <3');
 
   WidgetsFlutterBinding.ensureInitialized();
-  await RuStorePush.initialize();
-  runApp(const MainActivity());
+  // await RuStorePush.initialize();
+  // runApp(const MainActivity());
 
   // Our background push shared isolate accesses flutter-internal things very early in the startup proccess
   // To make sure that the parts of flutter needed are started up already, we need to ensure that the
