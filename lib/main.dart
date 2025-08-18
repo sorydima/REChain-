@@ -21,39 +21,39 @@ import 'widgets/missing_widgets.dart';
 import 'package:flutter/material.dart';
 import 'rustore_push.dart';
 
-class MainActivity extends StatefulWidget {
-  const MainActivity({super.key});
+// class MainActivity extends StatefulWidget {
+//   const MainActivity({super.key});
 
-  @override
-  State<MainActivity> createState() => _MainActivityState();
-}
+//    @override
+//    State<MainActivity> createState() => _MainActivityState();
+// }
 
-class _MainActivityState extends State<MainActivity> {
-  String? _lastPush;
+// class _MainActivityState extends State<MainActivity> {
+//   String? _lastPush;
 
-  @override
-  void initState() {
-    super.initState();
+//   @override
+//   void initState() {
+//     super.initState();
 
-    RuStorePush.pushStream.listen((payload) {
-      setState(() {
-        _lastPush = payload;
-      });
-    });
-  }
+//     RuStorePush.pushStream.listen((payload) {
+//       setState(() {
+//         _lastPush = payload;
+//       });
+//     });
+//   }
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(title: const Text('REChain Push')),
-        body: Center(
-          child: Text(_lastPush != null ? 'Push: $_lastPush' : 'Waiting for pushes ...'),
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Scaffold(
+//         appBar: AppBar(title: const Text('REChain Push')),
+//         body: Center(
+//           child: Text(_lastPush != null ? 'Push: $_lastPush' : 'Waiting for pushes ...'),
+//         ),
+//       ),
+//     );
+//   }
+// }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -125,8 +125,8 @@ void main() async {
   Logs().i('Welcome to ${AppConfig.applicationName} <3');
 
   WidgetsFlutterBinding.ensureInitialized();
-  await RuStorePush.initialize();
-  runApp(const MainActivity());
+  // await RuStorePush.initialize();
+  // runApp(const MainActivity());
 
   // Our background push shared isolate accesses flutter-internal things very early in the startup proccess
   // To make sure that the parts of flutter needed are started up already, we need to ensure that the
