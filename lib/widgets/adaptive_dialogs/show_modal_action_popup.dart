@@ -13,6 +13,7 @@ Future<T?> showModalActionPopup<T>({
 
   switch (theme.platform) {
     case TargetPlatform.android:
+    case TargetPlatform.aurora:
     case TargetPlatform.fuchsia:
     case TargetPlatform.windows:
     case TargetPlatform.linux:

@@ -20,6 +20,7 @@ class AdaptiveDialogAction extends StatelessWidget {
     final theme = Theme.of(context);
     switch (theme.platform) {
       case TargetPlatform.android:
+      case TargetPlatform.aurora:
       case TargetPlatform.fuchsia:
       case TargetPlatform.linux:
       case TargetPlatform.windows:

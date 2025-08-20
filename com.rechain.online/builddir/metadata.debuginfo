@@ -1,0 +1,5 @@
+[Runtime]
+name=com.rechain.online.Debug
+
+[ExtensionOf]
+ref=app/com.rechain.online/x86_64/master

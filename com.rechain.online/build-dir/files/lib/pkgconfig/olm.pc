@@ -1,0 +1,10 @@
+prefix=/app
+exec_prefix=${prefix}
+includedir=/app/include
+libdir=/app/lib
+
+Name: olm
+Description: implementation of the Double Ratchet cryptographic ratchet in C++
+Version: 3.2.14
+Cflags: -I${includedir}
+Libs: -L${libdir} -lolm

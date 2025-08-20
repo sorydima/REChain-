@@ -7,3 +7,5 @@
 	fetch = +refs/*:refs/*
 [transfer]
 	fsckObjects = 1
+[lfs]
+	repositoryformatversion = 0

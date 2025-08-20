@@ -1,0 +1,110 @@
+{
+  "id" : "com.rechain.online",
+  "runtime" : "org.freedesktop.Platform",
+  "runtime-version" : "23.08",
+  "runtime-commit" : "999f62fe519d125cd33f0009469157be14c692ef2a2f0b69bad11e2429ea295d",
+  "sdk" : "org.freedesktop.Sdk",
+  "sdk-commit" : "3f53d0c54f58512f6149f839ac7d5edeb7685d83dda96fc44eeba723b935a029",
+  "command" : "rechainonline",
+  "modules" : [
+    {
+      "name" : "libjsoncpp",
+      "buildsystem" : "meson",
+      "config-opts" : [
+        "--buildtype=release",
+        "--default-library=shared"
+      ],
+      "only-arches" : [
+        "x86_64"
+      ],
+      "sources" : [
+        {
+          "url" : "https://github.com/open-source-parsers/jsoncpp/archive/refs/tags/1.9.5.tar.gz",
+          "sha256" : "f409856e5920c18d0c2fb85276e24ee607d2a09b5e7d5f0a371368903c275da2",
+          "type" : "archive"
+        }
+      ]
+    },
+    {
+      "name" : "olm",
+      "buildsystem" : "cmake",
+      "sources" : [
+        {
+          "url" : "https://gitlab.matrix.org/matrix-org/olm.git",
+          "commit" : "d9593ef5317348f64ca2d07d19eb3a2e92975b63",
+          "type" : "git"
+        }
+      ]
+    },
+    {
+      "name" : "libsecret",
+      "buildsystem" : "meson",
+      "config-opts" : [
+        "-Dvapi=false",
+        "-Dgtk_doc=false"
+      ],
+      "sources" : [
+        {
+          "url" : "https://gitlab.gnome.org/GNOME/libsecret.git",
+          "commit" : "acbb225de3de457425fc16cc840b3c1a657b53f2",
+          "type" : "git"
+        }
+      ]
+    },
+    {
+      "name" : "REChain",
+      "buildsystem" : "simple",
+      "only-arches" : [
+        "x86_64"
+      ],
+      "sources" : [
+        {
+          "dest" : "REChain",
+          "only-arches" : [
+            "x86_64"
+          ],
+          "url" : "https://github.com/sorydima/REChain-/releases/download/4.1.7%2B1151/REChain.Online.tar.gz",
+          "sha256" : "e5d9b9c7ad648ad2c694e9e8f8779a9bcc7004e4309dc7ac5bc5f35ad5731e33",
+          "type" : "archive"
+        },
+        {
+          "path" : "com.rechain.online.metainfo.xml",
+          "type" : "file"
+        },
+        {
+          "path" : "com.rechain.online.desktop",
+          "type" : "file"
+        },
+        {
+          "path" : "logo.svg",
+          "type" : "file"
+        }
+      ],
+      "build-commands" : [
+        "ls REChain",
+        "cp -r REChain /app/REChain",
+        "chmod +x /app/REChain/rechainonline",
+        "install -Dm644 logo.svg /app/share/icons/hicolor/scalable/apps/com.rechain.online.svg",
+        "mkdir -p /app/bin",
+        "ln -s /usr/lib/x86_64-linux-gnu/libsqlite3.so.0 /app/lib/libsqlite3.so",
+        "if [ ! -e '/app/lib/libsqlite3.so' ]; then ln -s -f /usr/lib/aarch64-linux-gnu/libsqlite3.so.0 /app/lib/libsqlite3.so; fi",
+        "ln -s /app/REChain/rechainonline /app/bin/rechainonline",
+        "if [ $(arch) == \"aarch64\"  ]; then sed -si \"/Exec=/cExec=env GDK_GL=gles REChain %U\" com.rechain.online.desktop; fi",
+        "install -Dm644 com.rechain.online.desktop /app/share/applications/com.rechain.online.desktop",
+        "install -Dm644 com.rechain.online.metainfo.xml /app/share/appdata/com.rechain.online.metainfo.xml"
+      ]
+    }
+  ],
+  "separate-locales" : false,
+  "finish-args" : [
+    "--share=ipc",
+    "--socket=fallback-x11",
+    "--socket=wayland",
+    "--socket=pulseaudio",
+    "--share=network",
+    "--device=all",
+    "--filesystem=xdg-download",
+    "--talk-name=org.freedesktop.Notifications",
+    "--own-name=com.rechain.online"
+  ]
+}
