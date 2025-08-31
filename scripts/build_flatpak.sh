@@ -17,23 +17,23 @@ fi
 
 # Use relative path from script location
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-FLATPAK_DIR="$SCRIPT_DIR/../com.rechain.online"
+FLATPAK_DIR="$SCRIPT_DIR/../com.rechain.dapp"
 
 # Check if flatpak directory exists
 if [ ! -d "$FLATPAK_DIR" ]; then
     echo "Error: Flatpak directory not found at $FLATPAK_DIR"
-    echo "Please ensure the com.rechain.online directory exists in the project root"
+    echo "Please ensure the com.rechain.dapp directory exists in the project root"
     exit 1
 fi
 
 # Build the Flatpak
 echo "Building Flatpak package..."
 cd "$FLATPAK_DIR"
-flatpak-builder --force-clean --install-deps-from=flathub build-dir com.rechain.online.json
+flatpak-builder --force-clean --install-deps-from=flathub build-dir com.rechain.dapp.json
 
 # Export the flatpak
 echo "Exporting flatpak..."
-flatpak-builder --export-only --install-deps-from=flathub build-dir com.rechain.online.json
+flatpak-builder --export-only --install-deps-from=flathub build-dir com.rechain.dapp.json
 
 echo "Flatpak package built successfully!"
 echo "Package location: $FLATPAK_DIR/build-dir"

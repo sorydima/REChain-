@@ -1,4 +1,4 @@
-package com.rechain.online
+package com.rechain.dapp
 
 import android.content.BroadcastReceiver
 import android.content.Context

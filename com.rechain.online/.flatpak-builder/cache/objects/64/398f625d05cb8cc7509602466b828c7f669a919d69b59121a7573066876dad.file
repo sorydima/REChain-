@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
-  <id>com.rechain.online</id>
+  <id>com.rechain.dapp</id>
   <name>REChain ®️ 🪐 ✨</name>
   <summary>REChain ®️ 🪐 ✨ Platform encourages collaborative communication through features such as threads, allowing users to organize discussions and streamline conversations.</summary>
   <metadata_license>CC0-1.0</metadata_license>
@@ -57,7 +57,7 @@
       <image type="source">https://github.com/sorydima/REChain-/blob/main/screenshots/showcase10.jpeg</image>
     </screenshot>
   </screenshots>
-  <launchable type="desktop-id">com.rechain.online.desktop</launchable>
+  <launchable type="desktop-id">com.rechain.dapp.desktop</launchable>
   <releases>
     <release version="4.1.7" date="2025-07-10"/>
   </releases>

@@ -23,7 +23,7 @@ class CallKeepManager {
         'cancelButton': 'Cancel',
         'okButton': 'ok',
         'foregroundService': {
-          'channelId': 'com.rechain.online',
+          'channelId': 'com.rechain.dapp',
           'channelName': 'Foreground service for my app',
           'notificationTitle': '$appName is running on background',
           'notificationIcon': 'mipmap/ic_notification_launcher',

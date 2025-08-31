@@ -17,7 +17,7 @@ dependencies {
 }
 
 android {
-    namespace = "com.rechain.online"
+    namespace = "com.rechain.dapp"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = "27.0.12077973"
 
@@ -53,7 +53,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.rechain.online"
+        applicationId = "com.rechain.dapp"
         minSdk = 21
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode

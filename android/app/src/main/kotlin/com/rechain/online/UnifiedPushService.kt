@@ -1,4 +1,4 @@
-package com.rechain.online
+package com.rechain.dapp
 
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.embedding.engine.dart.DartExecutor

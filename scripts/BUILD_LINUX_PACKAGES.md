@@ -77,11 +77,11 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 
 Or manually:
 ```bash
-cd com.rechain.online
-flatpak-builder --force-clean --install-deps-from=flathub build-dir com.rechain.online.json
+cd com.rechain.dapp
+flatpak-builder --force-clean --install-deps-from=flathub build-dir com.rechain.dapp.json
 ```
 
-The resulting flatpak package will be in the `com.rechain.online/build-dir` directory.
+The resulting flatpak package will be in the `com.rechain.dapp/build-dir` directory.
 
 ### 3. AppImage Package
 

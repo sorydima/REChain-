@@ -19,8 +19,8 @@ cd ..
 
 # Flatpak package
 echo "Building Flatpak package..."
-cd com.rechain.online
-flatpak-builder --force-clean --install-deps-from=flathub build-dir com.rechain.online.json
+cd com.rechain.dapp
+flatpak-builder --force-clean --install-deps-from=flathub build-dir com.rechain.dapp.json
 cd ..
 
 # AppImage package
