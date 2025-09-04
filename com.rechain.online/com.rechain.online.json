@@ -1,5 +1,5 @@
 {
-  "app-id": "com.rechain.dapp",
+  "app-id": "com.rechain.online",
   "runtime": "org.freedesktop.Platform",
   "runtime-version": "23.08",
   "sdk": "org.freedesktop.Sdk",
@@ -14,7 +14,7 @@
     "--device=all",
     "--filesystem=xdg-download",
     "--talk-name=org.freedesktop.Notifications",
-    "--own-name=com.rechain.dapp",
+    "--own-name=com.rechain.online",
     "--env=LD_LIBRARY_PATH=/app/lib:/app/lib/plugins:$LD_LIBRARY_PATH"
   ],
   "modules": [
@@ -114,9 +114,9 @@
         "cp -r REChain /app/REChain",
         "chmod +x /app/REChain/rechainonline",
         "install -Dm755 /app/REChain/rechainonline /app/bin/rechainonline",
-        "install -Dm644 logo.svg /app/share/icons/hicolor/scalable/apps/com.rechain.dapp.svg",
-        "install -Dm644 com.rechain.dapp.desktop /app/share/applications/com.rechain.dapp.desktop",
-        "install -Dm644 com.rechain.dapp.metainfo.xml /app/share/metainfo/com.rechain.dapp.metainfo.xml"
+        "install -Dm644 logo.svg /app/share/icons/hicolor/scalable/apps/com.rechain.online.svg",
+        "install -Dm644 com.rechain.online.desktop /app/share/applications/com.rechain.online.desktop",
+        "install -Dm644 com.rechain.online.metainfo.xml /app/share/metainfo/com.rechain.online.metainfo.xml"
       ],
       "build-options": {
         "env": {
@@ -133,8 +133,8 @@
           "sha256": "e5d9b9c7ad648ad2c694e9e8f8779a9bcc7004e4309dc7ac5bc5f35ad5731e33",
           "dest": "REChain"
         },
-        { "type": "file", "path": "com.rechain.dapp.metainfo.xml" },
-        { "type": "file", "path": "com.rechain.dapp.desktop" },
+        { "type": "file", "path": "com.rechain.online.metainfo.xml" },
+        { "type": "file", "path": "com.rechain.online.desktop" },
         { "type": "file", "path": "logo.svg" }
       ]
     },

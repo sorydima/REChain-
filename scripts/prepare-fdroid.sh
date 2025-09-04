@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cp -r android/fastlane fdroid/metadata/com.rechain.dapp
+cp -r android/fastlane fdroid/metadata/com.rechain.online
 cd fdroid
 echo $FDROID_KEY | base64 --decode --ignore-garbage > key.jks
 echo $FDROID_NIGHTLY_KEY | base64 --decode --ignore-garbage > key.nightly.jks

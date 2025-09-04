@@ -4,7 +4,7 @@
 # PSDK_MAJOR             - Build psdk major version
 
 cmake_minimum_required(VERSION 3.10)
-project(com.rechain.dapp LANGUAGES CXX)
+project(com.rechain.online LANGUAGES CXX)
 
 include(GNUInstallDirs)
 

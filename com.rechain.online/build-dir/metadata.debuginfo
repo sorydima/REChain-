@@ -1,5 +1,5 @@
 [Runtime]
-name=com.rechain.dapp.Debug
+name=com.rechain.online.Debug
 
 [ExtensionOf]
-ref=app/com.rechain.dapp/x86_64/master
+ref=app/com.rechain.online/x86_64/master

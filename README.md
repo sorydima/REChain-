@@ -620,7 +620,7 @@ flutter-aurora build aurora
 ### Notes
 - Some plugins may require extra permissions or tweaks for Aurora OS.
 - Test on a real device or emulator for best results.
-- For packaging, see `aurora/rpm/com.rechain.dapp.spec`.
+- For packaging, see `aurora/rpm/com.rechain.online.spec`.
 
 For more, see [docs/](docs/) and the [wiki](https://github.com/sorydima/REChain-/wiki).
 

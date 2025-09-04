@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:877790798155:android:610cc405a9a2d093d848ce",
         "android_client_info": {
-          "package_name": "com.rechain.dapp"
+          "package_name": "com.rechain.online"
         }
       },
       "oauth_client": [
@@ -34,7 +34,7 @@
               "client_id": "877790798155-do64urg89fr961eur4iusehvhq66icbp.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.rechain.dapp"
+                "bundle_id": "com.rechain.online"
               }
             }
           ]

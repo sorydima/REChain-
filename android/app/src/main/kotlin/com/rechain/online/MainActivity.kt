@@ -1,4 +1,4 @@
-package com.rechain.dapp
+package com.rechain.online
 
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine

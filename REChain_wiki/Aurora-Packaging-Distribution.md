@@ -1,15 +1,15 @@
 # Packaging & Distribution for Aurora OS
 
 ## RPM Packaging
-- Use the spec file in `aurora/rpm/com.rechain.dapp.spec` for RPM builds.
+- Use the spec file in `aurora/rpm/com.rechain.online.spec` for RPM builds.
 - Build with:
   ```sh
-  rpmbuild -ba aurora/rpm/com.rechain.dapp.spec
+  rpmbuild -ba aurora/rpm/com.rechain.online.spec
   ```
 - Ensure all assets, icons, and desktop files are included.
 
 ## Desktop Files & Icons
-- Edit `aurora/desktop/com.rechain.dapp.desktop` for app metadata and permissions.
+- Edit `aurora/desktop/com.rechain.online.desktop` for app metadata and permissions.
 - Place icons in `aurora/icons/` with required sizes (86x86, 108x108, 128x128, 172x172).
 
 ## Aurora Store Submission

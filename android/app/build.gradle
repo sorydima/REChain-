@@ -41,7 +41,7 @@ android {
 
     compileSdkVersion 35
     ndkVersion = "28.0.13004108"
-    namespace = "com.rechain.dapp"
+    namespace = "com.rechain.online"
 
     kotlinOptions {
             jvmTarget = '21'
@@ -60,7 +60,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.rechain.dapp"
+        applicationId "com.rechain.online"
         minSdkVersion 21
         targetSdkVersion 35
         versionCode flutterVersionCode.toInteger()

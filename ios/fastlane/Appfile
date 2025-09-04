@@ -1,4 +1,4 @@
-app_identifier("com.rechain.dapp") # The bundle identifier of your app
+app_identifier("com.rechain.online") # The bundle identifier of your app
 apple_id("sorydima@gmail.com") # Your Apple email address
 
 itc_team_id("") # App Store Connect Team ID
