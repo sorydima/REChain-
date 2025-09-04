@@ -1,4 +1,4 @@
-# Updated for REChain version 4.1.7+1150 - 2025-07-08
+# Updated for REChain version 4.1.8+1150 - 2025-07-08
 version: '3.9'
 services:
   synapse:

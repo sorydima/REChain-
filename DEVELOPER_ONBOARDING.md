@@ -4,7 +4,7 @@
 
 ## Latest Release Information
 
-This onboarding guide is updated for REChain version 4.1.7+1150, released on 2025-07-08. Please ensure your development environment and dependencies align with this release.
+This onboarding guide is updated for REChain version 4.1.8+1150, released on 2025-07-08. Please ensure your development environment and dependencies align with this release.
 
 Refer to [RELEASE_NOTES.md](./RELEASE_NOTES.md) for detailed release information.
 
@@ -19,7 +19,7 @@ Welcome to the REChain developer community! This guide will help you set up your
 ## Prerequisites
 
 - Git
-- Flutter SDK (compatible with REChain version 4.1.7+1150)
+- Flutter SDK (compatible with REChain version 4.1.8+1150)
 - Dart SDK
 - IDE (VSCode, Android Studio, or IntelliJ IDEA)
 - Docker (optional, for containerized development)

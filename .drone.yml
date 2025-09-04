@@ -1,4 +1,4 @@
-# Drone CI/CD pipeline configuration for REChain version 4.1.7+1150 - 2025-07-08
+# Drone CI/CD pipeline configuration for REChain version 4.1.8+1150 - 2025-07-08
 
 kind: pipeline
 type: docker

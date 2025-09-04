@@ -8,7 +8,7 @@
 **Полная поддержка российских ОС Linux**
 
 [![Лицензия](https://img.shields.io/badge/License-REChain_EULA-blue.svg)](REChain_EULA.txt)
-[![Версия](https://img.shields.io/badge/Version-4.1.7+1150-green.svg)](CHANGELOG.md)
+[![Версия](https://img.shields.io/badge/Version-4.1.8+1150-green.svg)](CHANGELOG.md)
 [![Поддержка ОС](https://img.shields.io/badge/Russian_Linux-12_Systems-red.svg)](#поддерживаемые-ос)
 [![ГОСТ](https://img.shields.io/badge/ГОСТ-Compliant-yellow.svg)](docs/SECURITY_COMPLIANCE_RUSSIAN.md)
 [![ФСТЭК](https://img.shields.io/badge/ФСТЭК-Certified-orange.svg)](docs/SECURITY_COMPLIANCE_RUSSIAN.md)
@@ -110,11 +110,11 @@ curl -fsSL https://raw.githubusercontent.com/sorydima/REChain-/main/scripts/buil
 
 ```
 packages/
-├── rechainonline-4.1.7-amd64.deb          # 48.4 МБ - Для Astra Linux
+├── rechainonline-4.1.8-amd64.deb          # 48.4 МБ - Для Astra Linux
 ├── rpm/RPMS/x86_64/
-│   └── rechainonline-4.1.7-1.x86_64.rpm   # 50.3 МБ - Для РЕД ОС, ОС «Альт», РОСА
+│   └── rechainonline-4.1.8-1.x86_64.rpm   # 50.3 МБ - Для РЕД ОС, ОС «Альт», РОСА
 ├── rpm/SRPMS/
-│   └── rechainonline-4.1.7-1.src.rpm      # 56.7 МБ - Исходный код
+│   └── rechainonline-4.1.8-1.src.rpm      # 56.7 МБ - Исходный код
 └── appimage/rechainonline.AppDir/          # Универсальный формат
 ```
 
@@ -149,8 +149,8 @@ packages/
 ### 🏛️ Государственные учреждения
 ```bash
 # Astra Linux с максимальной безопасностью
-wget https://github.com/sorydima/REChain-/releases/latest/download/rechainonline-4.1.7-amd64.deb
-sudo dpkg -i rechainonline-4.1.7-amd64.deb
+wget https://github.com/sorydima/REChain-/releases/latest/download/rechainonline-4.1.8-amd64.deb
+sudo dpkg -i rechainonline-4.1.8-amd64.deb
 sudo apt-get install -f
 
 # Настройка меток безопасности
@@ -160,8 +160,8 @@ sudo pdpl-file -l "Несекретно" /usr/bin/rechainonline
 ### 🏢 Корпорации
 ```bash
 # РЕД ОС с корпоративными функциями
-wget https://github.com/sorydima/REChain-/releases/latest/download/rechainonline-4.1.7-1.x86_64.rpm
-sudo dnf install rechainonline-4.1.7-1.x86_64.rpm
+wget https://github.com/sorydima/REChain-/releases/latest/download/rechainonline-4.1.8-1.x86_64.rpm
+sudo dnf install rechainonline-4.1.8-1.x86_64.rpm
 
 # Настройка домена
 sudo realm join company.local
@@ -170,8 +170,8 @@ sudo realm join company.local
 ### 🎓 Образовательные учреждения
 ```bash
 # ОС «Альт» с образовательными настройками
-wget https://github.com/sorydima/REChain-/releases/latest/download/rechainonline-4.1.7-1.x86_64.rpm
-sudo apt-get install ./rechainonline-4.1.7-1.x86_64.rpm
+wget https://github.com/sorydima/REChain-/releases/latest/download/rechainonline-4.1.8-1.x86_64.rpm
+sudo apt-get install ./rechainonline-4.1.8-1.x86_64.rpm
 
 # Настройка родительского контроля
 sudo tee /etc/rechainonline/education.conf << EOF
@@ -184,8 +184,8 @@ EOF
 ### 🏠 Домашнее использование
 ```bash
 # ОС РОСА для семьи
-wget https://github.com/sorydima/REChain-/releases/latest/download/rechainonline-4.1.7-1.x86_64.rpm
-sudo urpmi rechainonline-4.1.7-1.x86_64.rpm
+wget https://github.com/sorydima/REChain-/releases/latest/download/rechainonline-4.1.8-1.x86_64.rpm
+sudo urpmi rechainonline-4.1.8-1.x86_64.rpm
 
 # Семейная конфигурация
 mkdir -p ~/.config/REChain/

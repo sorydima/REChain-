@@ -304,7 +304,7 @@ send_to_siem() {
     local timestamp=$(date --iso-8601=seconds)
     
     # Формат CEF (Common Event Format)
-    local cef_message="CEF:0|REChain|REChain|4.1.7|$severity|$message|$severity|rt=$timestamp"
+    local cef_message="CEF:0|REChain|REChain|4.1.8|$severity|$message|$severity|rt=$timestamp"
     
     # Отправка через syslog
     logger -p "$FACILITY.$severity" -t "REChain-SIEM" "$cef_message"
@@ -424,7 +424,7 @@ generate_fstec_report() {
 <body>
     <div class="header">
         <h1>Отчет о соответствии требованиям ФСТЭК</h1>
-        <p><strong>Система:</strong> REChain v4.1.7</p>
+        <p><strong>Система:</strong> REChain v4.1.8</p>
         <p><strong>Дата отчета:</strong> $report_date</p>
         <p><strong>Организация:</strong> $(hostname -d)</p>
     </div>
@@ -511,7 +511,7 @@ generate_gost_report() {
 {
     "report_info": {
         "system": "REChain",
-        "version": "4.1.7",
+        "version": "4.1.8",
         "date": "$(date --iso-8601)",
         "standard": "ГОСТ Р 34.10-2012, ГОСТ Р 34.11-2012, ГОСТ 28147-89"
     },
@@ -572,5 +572,5 @@ main "$@"
 
 ---
 
-*Руководство по безопасности и соответствию версии 4.1.7+1150*
+*Руководство по безопасности и соответствию версии 4.1.8+1150*
 *Соответствует требованиям ФСТЭК России и стандартам ГОСТ*

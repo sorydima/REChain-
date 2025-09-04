@@ -24,25 +24,25 @@
 sudo urpmi.update -a
 
 # Скачивание RPM пакета
-wget https://github.com/sorydima/REChain-/releases/latest/download/rechainonline-4.1.7-1.x86_64.rpm
+wget https://github.com/sorydima/REChain-/releases/latest/download/rechainonline-4.1.8-1.x86_64.rpm
 
 # Установка через urpmi
-sudo urpmi rechainonline-4.1.7-1.x86_64.rpm
+sudo urpmi rechainonline-4.1.8-1.x86_64.rpm
 
 # Или установка с автоматическим разрешением зависимостей
-sudo urpmi --auto rechainonline-4.1.7-1.x86_64.rpm
+sudo urpmi --auto rechainonline-4.1.8-1.x86_64.rpm
 ```
 
 ### Установка через RPM
 ```bash
 # Прямая установка
-sudo rpm -i rechainonline-4.1.7-1.x86_64.rpm
+sudo rpm -i rechainonline-4.1.8-1.x86_64.rpm
 
 # Установка с принудительным разрешением зависимостей
-sudo rpm -i --force --nodeps rechainonline-4.1.7-1.x86_64.rpm
+sudo rpm -i --force --nodeps rechainonline-4.1.8-1.x86_64.rpm
 
 # Обновление существующей версии
-sudo rpm -U rechainonline-4.1.7-1.x86_64.rpm
+sudo rpm -U rechainonline-4.1.8-1.x86_64.rpm
 ```
 
 ### Установка через Rpmdrake (графический интерфейс)
@@ -52,7 +52,7 @@ sudo rpmdrake
 
 # В интерфейсе:
 # 1. Файл -> Установить RPM пакет
-# 2. Выбрать rechainonline-4.1.7-1.x86_64.rpm
+# 2. Выбрать rechainonline-4.1.8-1.x86_64.rpm
 # 3. Нажать "Установить"
 ```
 
@@ -311,7 +311,7 @@ sudo urpmi.update -a
 
 # Переустановка REChain
 sudo urpme rechainonline
-sudo urpmi rechainonline-4.1.7-1.x86_64.rpm
+sudo urpmi rechainonline-4.1.8-1.x86_64.rpm
 ```
 
 ### Проблемы с мультимедиа
@@ -399,5 +399,5 @@ EOF
 
 ---
 
-*Руководство для ROSA Linux версии 4.1.7+1150*
+*Руководство для ROSA Linux версии 4.1.8+1150*
 *Оптимизировано для домашнего использования*

@@ -254,5 +254,5 @@ If you encounter persistent issues:
 
 ---
 
-*REChain Vercel Troubleshooting Guide v4.1.7+1150*
+*REChain Vercel Troubleshooting Guide v4.1.8+1150*
 *Last Updated: 2025*

@@ -3,7 +3,7 @@
 
 Name: com.rechain.online
 Summary: The inclusion of polls enhances decision-making processes by facilitating quick and efficient feedback gathering. Additionally, the platform supports user-friendly interface & goods!
-Version: 4.1.7
+Version: 4.1.8
 Release: 1150
 License: AGPL-3.0 license
 Source0: %{name}-%{version}.tar.zst

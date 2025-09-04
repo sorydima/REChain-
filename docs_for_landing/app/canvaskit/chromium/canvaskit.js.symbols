@@ -1149,7 +1149,7 @@
 1148:GrSimpleMeshDrawOpHelper::finalizeProcessors\28GrCaps\20const&\2c\20GrAppliedClip\20const*\2c\20GrClampType\2c\20GrProcessorAnalysisCoverage\2c\20SkRGBA4f<\28SkAlphaType\292>*\2c\20bool*\29
 1149:GrResourceProvider::findResourceByUniqueKey\28skgpu::UniqueKey\20const&\29
 1150:GrRecordingContext::OwnedArenas::get\28\29
-1151:GrProxyProvider::createProxy\28GrBackendFormat\20const&\2c\20SkISize\2c\20skgpu::Renderable\2c\20int\2c\20skgpu::Mipmapped\2c\20SkBackingFit\2c\20skgpu::Budgeted\2c\20skgpu::Protected\2c\20std::__2::basic_string_view<char\2c\20std::__2::char_traits<char>>\2c\20GrInternalSurfaceFlags\2c\20GrSurfaceProxy::UseAllocator\29
+1152:GrProxyProvider::createProxy\28GrBackendFormat\20const&\2c\20SkISize\2c\20skgpu::Renderable\2c\20int\2c\20skgpu::Mipmapped\2c\20SkBackingFit\2c\20skgpu::Budgeted\2c\20skgpu::Protected\2c\20std::__2::basic_string_view<char\2c\20std::__2::char_traits<char>>\2c\20GrInternalSurfaceFlags\2c\20GrSurfaceProxy::UseAllocator\29
 1152:GrProxyProvider::assignUniqueKeyToProxy\28skgpu::UniqueKey\20const&\2c\20GrTextureProxy*\29
 1153:GrProcessorSet::finalize\28GrProcessorAnalysisColor\20const&\2c\20GrProcessorAnalysisCoverage\2c\20GrAppliedClip\20const*\2c\20GrUserStencilSettings\20const*\2c\20GrCaps\20const&\2c\20GrClampType\2c\20SkRGBA4f<\28SkAlphaType\292>*\29
 1154:GrOpFlushState::allocator\28\29

@@ -4,7 +4,7 @@
 
 ## Latest Release Information
 
-This document is updated for REChain version 4.1.7+1150, released on 2025-07-08.
+This document is updated for REChain version 4.1.8+1150, released on 2025-07-08.
 
 ---
 
@@ -80,7 +80,7 @@ For support and questions, contact support@rechain.network or join the REChain c
 
 ---
 
-*This document is part of the REChain v4.1.7+1150 release documentation.*
+*This document is part of the REChain v4.1.8+1150 release documentation.*
 
 # Matrix Synapse + Bridges Full Setup
 

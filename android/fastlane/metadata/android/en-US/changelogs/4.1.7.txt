@@ -1,4 +1,4 @@
-## [v4.1.7 + 1150] - 2025-06-08
+## [v4.1.8 + 1150] - 2025-06-08
 
 ### ✨ Features
 - Add confirmation dialog before accepting invite  
@@ -74,7 +74,7 @@
 - Russian  
 - Ukrainian  
 
-## @@v4.1.7 + 1150
+## @@v4.1.8 + 1150
 - feat: Add confirmation dialog before accepting invite 
 - feat: Add feature flag for refresh tokens 
 - feat: add setting for whether to show space navigation rail on mobile 

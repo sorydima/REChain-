@@ -11,10 +11,10 @@ curl -fsSL https://raw.githubusercontent.com/sorydima/REChain-/main/scripts/buil
 
 | ОС | Команда установки |
 |---|---|
-| **Astra Linux** | `sudo dpkg -i rechainonline-4.1.7-amd64.deb && sudo apt-get install -f` |
-| **РЕД ОС** | `sudo dnf install rechainonline-4.1.7-1.x86_64.rpm` |
-| **ОС «Альт»** | `sudo apt-get install ./rechainonline-4.1.7-1.x86_64.rpm` |
-| **РОСА** | `sudo urpmi rechainonline-4.1.7-1.x86_64.rpm` |
+| **Astra Linux** | `sudo dpkg -i rechainonline-4.1.8-amd64.deb && sudo apt-get install -f` |
+| **РЕД ОС** | `sudo dnf install rechainonline-4.1.8-1.x86_64.rpm` |
+| **ОС «Альт»** | `sudo apt-get install ./rechainonline-4.1.8-1.x86_64.rpm` |
+| **РОСА** | `sudo urpmi rechainonline-4.1.8-1.x86_64.rpm` |
 | **Эльбрус** | `chmod +x rechainonline.AppImage && ./rechainonline.AppImage` |
 | **Универсальная** | `chmod +x rechainonline.AppImage && ./rechainonline.AppImage --appimage-integrate` |
 
@@ -103,4 +103,4 @@ export http_proxy=http://proxy.company.ru:8080
 - **[Форум](https://forum.rechain.online)** - Сообщество пользователей
 
 ---
-*Быстрый справочник REChain v4.1.7+1150*
+*Быстрый справочник REChain v4.1.8+1150*

@@ -4,7 +4,7 @@
 
 ## Latest Release Information
 
-This document is updated for REChain version 4.1.7+1150, released on 2025-07-08.
+This document is updated for REChain version 4.1.8+1150, released on 2025-07-08.
 
 ---
 
@@ -96,4 +96,4 @@ Official installers for the latest release can be downloaded from the following 
 
 ---
 
-*This guide is part of the REChain v4.1.7+1150 release documentation.*
+*This guide is part of the REChain v4.1.8+1150 release documentation.*

@@ -23,16 +23,16 @@ REChain полностью поддерживает все основные ро
 ## 📦 Доступные форматы пакетов
 
 ### 1. DEB пакеты (для Debian-based систем)
-**Файл:** `packages/rechainonline-4.1.7-amd64.deb`
+**Файл:** `packages/rechainonline-4.1.8-amd64.deb`
 **Размер:** 48.4 МБ
 **Подходит для:**
 - Astra Linux
 - Другие системы на базе Debian
 
 ### 2. RPM пакеты (для RPM-based систем)
-**Бинарный пакет:** `packages/rpm/RPMS/x86_64/rechainonline-4.1.7-1.x86_64.rpm`
+**Бинарный пакет:** `packages/rpm/RPMS/x86_64/rechainonline-4.1.8-1.x86_64.rpm`
 **Размер:** 50.3 МБ
-**Исходный пакет:** `packages/rpm/SRPMS/rechainonline-4.1.7-1.src.rpm`
+**Исходный пакет:** `packages/rpm/SRPMS/rechainonline-4.1.8-1.src.rpm`
 **Размер:** 56.7 МБ
 **Подходит для:**
 - РЕД ОС, ОС «Альт», ОС РОСА, AlterOS, ОС «Атлант», ОС «Стрелец», ОС «МСВСфера 9», ОС «Лотос», ОС «Эльбрус»
@@ -47,10 +47,10 @@ REChain полностью поддерживает все основные ро
 
 ```bash
 # Скачайте DEB пакет
-wget https://github.com/sorydima/REChain-/releases/latest/download/rechainonline-4.1.7-amd64.deb
+wget https://github.com/sorydima/REChain-/releases/latest/download/rechainonline-4.1.8-amd64.deb
 
 # Установите пакет
-sudo dpkg -i rechainonline-4.1.7-amd64.deb
+sudo dpkg -i rechainonline-4.1.8-amd64.deb
 
 # Исправьте зависимости при необходимости
 sudo apt-get install -f
@@ -63,13 +63,13 @@ rechainonline
 
 ```bash
 # Скачайте RPM пакет
-wget https://github.com/sorydima/REChain-/releases/latest/download/rechainonline-4.1.7-1.x86_64.rpm
+wget https://github.com/sorydima/REChain-/releases/latest/download/rechainonline-4.1.8-1.x86_64.rpm
 
 # Установите пакет
-sudo dnf install rechainonline-4.1.7-1.x86_64.rpm
+sudo dnf install rechainonline-4.1.8-1.x86_64.rpm
 
 # Или используйте rpm напрямую
-sudo rpm -i rechainonline-4.1.7-1.x86_64.rpm
+sudo rpm -i rechainonline-4.1.8-1.x86_64.rpm
 
 # Запустите приложение
 rechainonline
@@ -82,13 +82,13 @@ rechainonline
 sudo apt-get update
 
 # Скачайте RPM пакет
-wget https://github.com/sorydima/REChain-/releases/latest/download/rechainonline-4.1.7-1.x86_64.rpm
+wget https://github.com/sorydima/REChain-/releases/latest/download/rechainonline-4.1.8-1.x86_64.rpm
 
 # Установите пакет
-sudo rpm -i rechainonline-4.1.7-1.x86_64.rpm
+sudo rpm -i rechainonline-4.1.8-1.x86_64.rpm
 
 # Или используйте apt-rpm
-sudo apt-get install ./rechainonline-4.1.7-1.x86_64.rpm
+sudo apt-get install ./rechainonline-4.1.8-1.x86_64.rpm
 
 # Запустите приложение
 rechainonline
@@ -98,13 +98,13 @@ rechainonline
 
 ```bash
 # Скачайте RPM пакет
-wget https://github.com/sorydima/REChain-/releases/latest/download/rechainonline-4.1.7-1.x86_64.rpm
+wget https://github.com/sorydima/REChain-/releases/latest/download/rechainonline-4.1.8-1.x86_64.rpm
 
 # Установите пакет через urpmi
-sudo urpmi rechainonline-4.1.7-1.x86_64.rpm
+sudo urpmi rechainonline-4.1.8-1.x86_64.rpm
 
 # Или используйте rpm
-sudo rpm -i rechainonline-4.1.7-1.x86_64.rpm
+sudo rpm -i rechainonline-4.1.8-1.x86_64.rpm
 
 # Запустите приложение
 rechainonline
@@ -194,7 +194,7 @@ ls -la /usr/bin/rechainonline
 
 # Переустановите пакет
 sudo dpkg --purge rechainonline
-sudo dpkg -i rechainonline-4.1.7-amd64.deb
+sudo dpkg -i rechainonline-4.1.8-amd64.deb
 ```
 
 #### Проблема: Ошибка зависимостей на РЕД ОС
@@ -206,7 +206,7 @@ sudo dnf update
 sudo dnf install gtk3-devel glib2-devel
 
 # Переустановите пакет
-sudo dnf reinstall rechainonline-4.1.7-1.x86_64.rpm
+sudo dnf reinstall rechainonline-4.1.8-1.x86_64.rpm
 ```
 
 #### Проблема: AppImage не запускается
@@ -247,5 +247,5 @@ REChain распространяется под собственной лице�
 
 ---
 
-*Документация обновлена для версии 4.1.7+1150*
+*Документация обновлена для версии 4.1.8+1150*
 *Дата обновления: Август 2024*

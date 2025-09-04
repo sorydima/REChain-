@@ -2324,7 +2324,7 @@ single-precision floating point argument.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gobject/gmarshal.c"
-                 line="1151">Additional data specified when registering the
+                 line="1152">Additional data specified when registering the
   marshaller, see g_closure_set_marshal() and
   g_closure_set_meta_marshal()</doc>
             <type name="gpointer" c:type="gpointer"/>
@@ -22159,7 +22159,7 @@ single-precision floating point argument.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="gobject/gmarshal.c"
-               line="1151">Additional data specified when registering the
+               line="1152">Additional data specified when registering the
   marshaller, see g_closure_set_marshal() and
   g_closure_set_meta_marshal()</doc>
           <type name="gpointer" c:type="gpointer"/>

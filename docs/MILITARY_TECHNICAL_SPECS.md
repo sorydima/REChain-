@@ -203,7 +203,7 @@ class AndromedeIntegration:
 openapi: 3.0.0
 info:
   title: REChain Military API
-  version: 4.1.7-MILITARY
+  version: 4.1.8-MILITARY
   description: API для интеграции с военными системами
 
 paths:
@@ -620,5 +620,5 @@ REChain представляет собой критически важную с
 ---
 
 *REChain - Технологическое превосходство для военного превосходства*  
-*Версия документа: 4.1.7+1150 MILITARY-TECH*  
+*Версия документа: 4.1.8+1150 MILITARY-TECH*  
 *Гриф секретности: ДЛЯ СЛУЖЕБНОГО ПОЛЬЗОВАНИЯ*

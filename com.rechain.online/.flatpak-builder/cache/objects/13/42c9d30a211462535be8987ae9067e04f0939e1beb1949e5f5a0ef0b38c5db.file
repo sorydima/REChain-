@@ -2762,7 +2762,7 @@ static const decomposition decomp_table[] =
   { 0x022d, 1137, G_UNICODE_NOT_PRESENT_OFFSET },
   { 0x022e, 1143, G_UNICODE_NOT_PRESENT_OFFSET },
   { 0x022f, 1147, G_UNICODE_NOT_PRESENT_OFFSET },
-  { 0x0230, 1151, G_UNICODE_NOT_PRESENT_OFFSET },
+  { 0x0230, 1152, G_UNICODE_NOT_PRESENT_OFFSET },
   { 0x0231, 1157, G_UNICODE_NOT_PRESENT_OFFSET },
   { 0x0232, 1163, G_UNICODE_NOT_PRESENT_OFFSET },
   { 0x0233, 1167, G_UNICODE_NOT_PRESENT_OFFSET },
@@ -4990,8 +4990,8 @@ static const decomposition decomp_table[] =
   { 0xf99c, 11501, G_UNICODE_NOT_PRESENT_OFFSET },
   { 0xf99d, 11505, G_UNICODE_NOT_PRESENT_OFFSET },
   { 0xf99e, 11509, G_UNICODE_NOT_PRESENT_OFFSET },
-  { 0xf99f, 11513, G_UNICODE_NOT_PRESENT_OFFSET },
-  { 0xf9a0, 11517, G_UNICODE_NOT_PRESENT_OFFSET },
+  { 0xf99f, 11523, G_UNICODE_NOT_PRESENT_OFFSET },
+  { 0xf9a0, 11527, G_UNICODE_NOT_PRESENT_OFFSET },
   { 0xf9a1, 11333, G_UNICODE_NOT_PRESENT_OFFSET },
   { 0xf9a2, 11521, G_UNICODE_NOT_PRESENT_OFFSET },
   { 0xf9a3, 11525, G_UNICODE_NOT_PRESENT_OFFSET },
@@ -8622,7 +8622,7 @@ static const gchar decomp_expansion_string[] =
   "\x6f\xcc\x83\xcc\x84\0" /* offset 1137 */
   "\x4f\xcc\x87\0" /* offset 1143 */
   "\x6f\xcc\x87\0" /* offset 1147 */
-  "\x4f\xcc\x87\xcc\x84\0" /* offset 1151 */
+  "\x4f\xcc\x87\xcc\x84\0" /* offset 1152 */
   "\x6f\xcc\x87\xcc\x84\0" /* offset 1157 */
   "\x59\xcc\x84\0" /* offset 1163 */
   "\x79\xcc\x84\0" /* offset 1167 */
@@ -10630,8 +10630,8 @@ static const gchar decomp_expansion_string[] =
   "\xe5\x88\x97\0" /* offset 11501 */
   "\xe5\x8a\xa3\0" /* offset 11505 */
   "\xe5\x92\xbd\0" /* offset 11509 */
-  "\xe7\x83\x88\0" /* offset 11513 */
-  "\xe8\xa3\x82\0" /* offset 11517 */
+  "\xe7\x83\x88\0" /* offset 11523 */
+  "\xe8\xa3\x82\0" /* offset 11527 */
   "\xe5\xbb\x89\0" /* offset 11521 */
   "\xe5\xbf\xb5\0" /* offset 11525 */
   "\xe6\x8d\xbb\0" /* offset 11529 */
