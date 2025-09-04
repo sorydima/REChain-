@@ -2350,7 +2350,7 @@ Changes:
 
 Bug fixes:
 
--   Fix not being allowed to set your own `state_key`, thanks to Patrik Oldsberg. ([\#1150](https://github.com/matrix-org/synapse/issues/1150))
+-   Fix not being allowed to set your own `state_key`, thanks to Patrik Oldsberg. ([\#1152](https://github.com/matrix-org/synapse/issues/1152))
 -   Fix interactive auth to return 401 from for incorrect password. ([\#1160](https://github.com/matrix-org/synapse/issues/1160), [\#1166](https://github.com/matrix-org/synapse/issues/1166))
 -   Fix email push notifs being dropped. ([\#1169](https://github.com/matrix-org/synapse/issues/1169))
 

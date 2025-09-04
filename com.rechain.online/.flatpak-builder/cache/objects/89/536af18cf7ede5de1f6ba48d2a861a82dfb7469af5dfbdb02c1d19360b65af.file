@@ -47374,7 +47374,7 @@ the tree, then walk the list and remove each item.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="glib/gtree.c"
-                 line="1150">user data to pass to the function</doc>
+                 line="1152">user data to pass to the function</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -61867,7 +61867,7 @@ This call acts as a full compiler and hardware memory barrier.</doc>
               deprecated-version="2.30">
       <doc xml:space="preserve"
            filename="glib/gatomic.c"
-           line="1150">This function existed before g_atomic_int_add() returned the prior
+           line="1152">This function existed before g_atomic_int_add() returned the prior
 value of the integer (which it now does).  It is retained only for
 compatibility reasons.  Don't use this function in new code.</doc>
       <doc-deprecated xml:space="preserve">Use g_atomic_int_add() instead.</doc-deprecated>
@@ -65681,7 +65681,7 @@ should not destroy the object in the normal way.</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/gdataset.c"
-             line="1150">%TRUE if the existing value for @key_id was replaced
+             line="1152">%TRUE if the existing value for @key_id was replaced
  by @newval, %FALSE otherwise.</doc>
         <type name="gboolean" c:type="gboolean"/>
       </return-value>

@@ -103,4 +103,4 @@ export http_proxy=http://proxy.company.ru:8080
 - **[Форум](https://forum.rechain.online)** - Сообщество пользователей
 
 ---
-*Быстрый справочник REChain v4.1.8+1150*
+*Быстрый справочник REChain v4.1.8+1152*

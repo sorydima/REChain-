@@ -235,7 +235,7 @@ class OptimismService implements BlockchainService, InvestmentService, StakingSe
     try {
       return OptimismInvestmentStats(
         totalInvested: 1000.0,
-        totalReturns: 1150.0,
+        totalReturns: 1152.0,
         pendingRewards: 25.0,
         activeInvestments: 2,
         averageAPR: 15.0,

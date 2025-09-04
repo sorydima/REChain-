@@ -4987,9 +4987,9 @@ static const decomposition decomp_table[] =
   { 0xf999, 11489, G_UNICODE_NOT_PRESENT_OFFSET },
   { 0xf99a, 11493, G_UNICODE_NOT_PRESENT_OFFSET },
   { 0xf99b, 11497, G_UNICODE_NOT_PRESENT_OFFSET },
-  { 0xf99c, 11501, G_UNICODE_NOT_PRESENT_OFFSET },
-  { 0xf99d, 11505, G_UNICODE_NOT_PRESENT_OFFSET },
-  { 0xf99e, 11509, G_UNICODE_NOT_PRESENT_OFFSET },
+  { 0xf99c, 11521, G_UNICODE_NOT_PRESENT_OFFSET },
+  { 0xf99d, 11525, G_UNICODE_NOT_PRESENT_OFFSET },
+  { 0xf99e, 11529, G_UNICODE_NOT_PRESENT_OFFSET },
   { 0xf99f, 11523, G_UNICODE_NOT_PRESENT_OFFSET },
   { 0xf9a0, 11527, G_UNICODE_NOT_PRESENT_OFFSET },
   { 0xf9a1, 11333, G_UNICODE_NOT_PRESENT_OFFSET },
@@ -10627,9 +10627,9 @@ static const gchar decomp_expansion_string[] =
   "\xe8\x93\xae\0" /* offset 11489 */
   "\xe9\x80\xa3\0" /* offset 11493 */
   "\xe9\x8d\x8a\0" /* offset 11497 */
-  "\xe5\x88\x97\0" /* offset 11501 */
-  "\xe5\x8a\xa3\0" /* offset 11505 */
-  "\xe5\x92\xbd\0" /* offset 11509 */
+  "\xe5\x88\x97\0" /* offset 11521 */
+  "\xe5\x8a\xa3\0" /* offset 11525 */
+  "\xe5\x92\xbd\0" /* offset 11529 */
   "\xe7\x83\x88\0" /* offset 11523 */
   "\xe8\xa3\x82\0" /* offset 11527 */
   "\xe5\xbb\x89\0" /* offset 11521 */

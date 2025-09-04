@@ -347,7 +347,7 @@ class BinanceService implements BlockchainService, InvestmentService, StakingSer
     try {
       return BinanceInvestmentStats(
         totalInvested: 1000.0,
-        totalReturns: 1150.0,
+        totalReturns: 1152.0,
         pendingRewards: 50.0,
         activeInvestments: 2,
         averageAPR: 12.5,

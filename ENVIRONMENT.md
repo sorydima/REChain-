@@ -4,7 +4,7 @@
 
 ## Latest Release Information
 
-This document is updated for REChain version 4.1.8+1150, released on 2025-07-08.
+This document is updated for REChain version 4.1.8+1152, released on 2025-07-08.
 
 ---
 
@@ -78,4 +78,4 @@ This guide provides detailed instructions for setting up the development and pro
 
 ---
 
-*This environment setup guide is part of the REChain v4.1.8+1150 release documentation.*
+*This environment setup guide is part of the REChain v4.1.8+1152 release documentation.*

@@ -8,7 +8,7 @@
 **Полная поддержка российских ОС Linux**
 
 [![Лицензия](https://img.shields.io/badge/License-REChain_EULA-blue.svg)](REChain_EULA.txt)
-[![Версия](https://img.shields.io/badge/Version-4.1.8+1150-green.svg)](CHANGELOG.md)
+[![Версия](https://img.shields.io/badge/Version-4.1.8+1152-green.svg)](CHANGELOG.md)
 [![Поддержка ОС](https://img.shields.io/badge/Russian_Linux-12_Systems-red.svg)](#поддерживаемые-ос)
 [![ГОСТ](https://img.shields.io/badge/ГОСТ-Compliant-yellow.svg)](docs/SECURITY_COMPLIANCE_RUSSIAN.md)
 [![ФСТЭК](https://img.shields.io/badge/ФСТЭК-Certified-orange.svg)](docs/SECURITY_COMPLIANCE_RUSSIAN.md)

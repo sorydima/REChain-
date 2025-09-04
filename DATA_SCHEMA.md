@@ -4,7 +4,7 @@
 
 ## Latest Release Information
 
-This data schema document is updated for REChain version 4.1.8+1150, released on 2025-07-08.
+This data schema document is updated for REChain version 4.1.8+1152, released on 2025-07-08.
 
 Refer to [RELEASE_NOTES.md](./RELEASE_NOTES.md) for detailed release information.
 

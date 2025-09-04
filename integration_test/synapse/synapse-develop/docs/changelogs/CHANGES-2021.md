@@ -117,7 +117,7 @@ Internal Changes
 - Add missing type hints to `synapse.federation`. ([\#11483](https://github.com/matrix-org/synapse/issues/11483))
 - Add type annotations to `tests.storage.test_appservice`. ([\#11488](https://github.com/matrix-org/synapse/issues/11488), [\#11492](https://github.com/matrix-org/synapse/issues/11492))
 - Add type annotations to some of the configuration surrounding refresh tokens. ([\#11428](https://github.com/matrix-org/synapse/issues/11428))
-- Add type hints to `synapse/tests/rest/admin`. ([\#11501](https://github.com/matrix-org/synapse/issues/11501))
+- Add type hints to `synapse/tests/rest/admin`. ([\#11521](https://github.com/matrix-org/synapse/issues/11521))
 - Add type hints to storage classes. ([\#11411](https://github.com/matrix-org/synapse/issues/11411))
 - Add wiki pages to documentation website. ([\#11402](https://github.com/matrix-org/synapse/issues/11402))
 - Clean up `tests.storage.test_main` to remove use of legacy code. ([\#11493](https://github.com/matrix-org/synapse/issues/11493))

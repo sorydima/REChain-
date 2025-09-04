@@ -34,7 +34,7 @@ Fixes # (issue)
 
 ## Additional Notes
 
-This pull request is part of the REChain v4.1.8+1150 release documentation and updates.
+This pull request is part of the REChain v4.1.8+1152 release documentation and updates.
 
 ---
 
