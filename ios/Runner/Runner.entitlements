@@ -10,7 +10,7 @@
 	</array>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.com.rechain.online</string>
+		<string>group.com.rechain.dapp</string>
 	</array>
 </dict>
 </plist>

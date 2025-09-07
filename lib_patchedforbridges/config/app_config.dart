@@ -32,7 +32,7 @@ abstract class AppConfig {
       'https://github.com/sorydima/REChain-/wiki#2-disable-end-to-end-encryption';
   static const String startChatTutorial =
       'https://github.com/sorydima/REChain-/wiki#basics';
-  static const String appId = 'com.rechain.online';
+  static const String appId = 'com.rechain.dapp';
   static const String appOpenUrlScheme = 'com.rechain';
   static String _webBaseUrl = '';
 
@@ -67,7 +67,7 @@ abstract class AppConfig {
   static const String deepLinkPrefix = 'com.rechain://online/';
   static const String schemePrefix = 'matrix:';
   static const String pushNotificationsChannelId = 'REChainOnline_Push';
-  static const String pushNotificationsAppId = 'com.rechain.online';
+  static const String pushNotificationsAppId = 'com.rechain.dapp';
   static const double borderRadius = 18.0;
   static const double columnWidth = 360.0;
   static final Uri homeserverList = Uri(

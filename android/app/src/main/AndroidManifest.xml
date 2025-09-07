@@ -151,7 +151,7 @@
         </receiver>
 
         <receiver
-            android:name="com.rechain.online.CustomPushReceiver"
+            android:name="com.rechain.dapp.CustomPushReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="ru.rustore.sdk.push.ACTION_PUSH_RECEIVED"/>

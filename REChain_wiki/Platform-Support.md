@@ -25,7 +25,7 @@ REChain supports Aurora OS via the [flutter-aurora](https://github.com/auroraos/
 ## Troubleshooting
 - Some plugins may require extra permissions or tweaks for Aurora OS
 - Test on a real device or emulator
-- For packaging, see `aurora/rpm/com.rechain.online.spec`
+- For packaging, see `aurora/rpm/com.rechain.dapp.spec`
 - If you encounter build errors, check the flutter-aurora documentation and ensure all dependencies are compatible
 
 ---

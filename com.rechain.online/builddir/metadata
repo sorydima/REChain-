@@ -1,5 +1,5 @@
 [Application]
-name=com.rechain.online
+name=com.rechain.dapp
 runtime=org.freedesktop.Platform/x86_64/23.08
 sdk=org.freedesktop.Sdk/x86_64/23.08
 command=rechainonline
@@ -11,16 +11,16 @@ devices=all;
 filesystems=xdg-download;
 
 [Session Bus Policy]
-com.rechain.online=own
+com.rechain.dapp=own
 org.freedesktop.Notifications=talk
 
 [Environment]
 LD_LIBRARY_PATH=/app/lib:/app/lib/plugins:$LD_LIBRARY_PATH
 
-[Extension com.rechain.online.Debug]
+[Extension com.rechain.dapp.Debug]
 directory=lib/debug
 autodelete=true
 no-autodownload=true
 
 [Build]
-built-extensions=com.rechain.online.Debug;
+built-extensions=com.rechain.dapp.Debug;
