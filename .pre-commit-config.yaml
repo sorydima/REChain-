@@ -1,0 +1,75 @@
+# Pre-commit hooks configuration for REChain
+# Install with: pip install pre-commit
+# Then: pre-commit install
+
+repos:
+  # General hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+      - id: check-merge-conflict
+
+  # Dart/Flutter formatting and linting
+  - repo: https://github.com/psf/black
+    rev: 22.3.0
+    hooks:
+      - id: black
+        language_version: python3
+        files: \.(py)$
+        exclude: ^(android|ios|web|linux|macos|windows)/
+
+  # For Dart files, use flutter format (requires Flutter SDK)
+  # Note: This assumes flutter is in PATH
+  - repo: local
+    hooks:
+      - id: flutter-format
+        name: Flutter Format
+        entry: flutter format --line-length 80
+        language: system
+        files: \.dart$
+        pass_filenames: false
+
+  - repo: local
+    hooks:
+      - id: flutter-analyze
+        name: Flutter Analyze
+        entry: flutter analyze
+        language: system
+        files: \.dart$
+        pass_filenames: false
+
+  # For Markdown
+  - repo: https://github.com/executablebooks/mdformat
+    rev: 0.7.16
+    hooks:
+      - id: mdformat
+        additional_dependencies:
+          - mdformat-gfm
+          - mdformat-frontmatter
+          - mdformat-footnote
+
+# Exclude certain files or directories
+exclude: |
+  (?x)(
+      ^android/.*$|
+      ^ios/.*$|
+      ^web/.*$|
+      ^linux/.*$|
+      ^macos/.*$|
+      ^windows/.*$|
+      ^aurora/.*$|
+      ^REChainPWAForAuroraOS/.*$|
+      ^com.rechain.online/.*$|
+      ^coverage/.*$|
+      ^fastlane/.*$|
+      ^fdroid/.*$|
+      ^packages/.*$|
+      ^screenshots/.*$|
+      ^test_driver/.*$|
+      ^assets/vodozemac/.*$|
+      ^lib_patchedforbridges/.*$
+  )

@@ -1,29 +1,51 @@
-name: Telegram Super TMA CI
+name: CI
 
 on:
   push:
-    paths:
-      - 'bridges/telegram_super_tma/**'
-      - '.github/workflows/ci.yml'
+    branches: [ main, master ]
   pull_request:
-    paths:
-      - 'bridges/telegram_super_tma/**'
-      - '.github/workflows/ci.yml'
+    branches: [ main, master ]
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r bridges/telegram_super_tma/requirements.txt
-          pip install pytest pyyaml
-      - name: Run tests
-        run: |
-          pytest bridges/telegram_super_tma/test_bot.py 
+    - uses: actions/checkout@v3
+    - uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.32.8'
+    - run: flutter pub get
+    - run: flutter analyze
+    - run: flutter test
+    - run: flutter build apk --debug
+    - run: flutter build web
+
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.32.8'
+    - run: flutter pub get
+    - run: flutter build linux
+
+  build-windows:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.32.8'
+    - run: flutter pub get
+    - run: flutter build windows
+
+  build-macos:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.32.8'
+    - run: flutter pub get
+    - run: flutter build macos

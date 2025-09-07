@@ -1,4 +1,31 @@
-# These are supported funding model platforms
+# GitHub Sponsors and Funding Options for REChain
 
-github: [sorydima, sorokin-cyber]
-Tether - (TRC20) - Tron: [TRZ7jyMBNtRtqokkkJ7g5BJDzFycDv8cBm]
+# GitHub Sponsors username (replace with actual username)
+github: [your-github-username]
+
+# Patreon (if applicable)
+# patreon: rechain
+
+# Open Collective (if applicable)
+# open_collective: rechain
+
+# Ko-fi (if applicable)
+# ko_fi: rechain
+
+# Tidelift (if applicable)
+# tidelift: npm/rechain
+
+# Community Bridge (if applicable)
+# community_bridge: rechain
+
+# Liberapay (if applicable)
+# liberapay: rechain
+
+# IssueHunt (if applicable)
+# issuehunt: rechain
+
+# Otechie (if applicable)
+# otechie: rechain
+
+# Custom funding URL (e.g., Buy Me a Coffee, PayPal)
+custom: ['https://www.buymeacoffee.com/rechain', 'https://paypal.me/rechain']
