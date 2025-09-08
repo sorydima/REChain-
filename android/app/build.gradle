@@ -1,6 +1,9 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'com.google.gms.google-services'
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+    id "com.google.gms.google-services"
+}
 
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file('local.properties')
@@ -28,31 +31,38 @@ if (keystorePropertiesFile.exists()) {
 
 android {
 
-    compileSdkVersion 33
-    ndkVersion "25.1.8937393"
-
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
+
+        // Включаем core library desugaring
         coreLibraryDesugaringEnabled true
     }
 
+    compileSdkVersion 35
+    ndkVersion = "28.0.13004108"
+    namespace = "com.rechain.dapp"
+
     kotlinOptions {
-        jvmTarget = '1.8'
+            jvmTarget = '21'
+        }
+
+    kotlin {
+        jvmToolchain(21)
     }
     
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
 
-    lint {
+    lintOptions {
         disable 'InvalidPackage'
     }
 
     defaultConfig {
         applicationId "com.rechain.dapp"
         minSdkVersion 21
-        targetSdkVersion 33
+        targetSdkVersion 35
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -73,16 +83,9 @@ android {
         debug {
             signingConfig signingConfigs.debug
             versionNameSuffix "-debug"
-            debuggable true
-            minifyEnabled false
-            shrinkResources false
         }
         release {
             signingConfig signingConfigs.release
-            debuggable false
-            minifyEnabled true
-            shrinkResources true
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     packagingOptions {
@@ -99,33 +102,13 @@ flutter {
 
 dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
-    implementation 'androidx.core:core-ktx:1.12.0'
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'
-    implementation 'androidx.work:work-runtime-ktx:2.9.0'
-    implementation 'androidx.startup:startup-runtime:1.1.1'
-    
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.4'
-    
-    implementation platform('com.google.firebase:firebase-bom:33.7.0')
+    implementation 'com.google.firebase:firebase-bom:33.7.0'
     implementation 'com.google.firebase:firebase-messaging'
-    implementation 'com.google.firebase:firebase-analytics'
-    implementation 'com.google.firebase:firebase-crashlytics'
-    
     implementation 'com.google.android.gms:play-services-location:21.3.0'
-    implementation 'com.google.android.gms:play-services-auth:21.0.0'
-    
+    // Add dependencies.
     implementation 'com.huawei.agconnect:agconnect-core:1.5.2.300'
-    
-    // JSON processing
-    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2'
-    
-    // Logging
-    implementation 'com.jakewharton.timber:timber:5.0.1'
-    
-    // Testing
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    // implementation 'ru.rustore.sdk:push:6.10.0'
 }
 
 apply plugin: 'com.huawei.agconnect'
