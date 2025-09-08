@@ -74,6 +74,10 @@ android {
         }
     }
 
+    buildFeatures {
+        buildConfig true
+    }
+
     signingConfigs {
         release {
             if (keystorePropertiesFile.exists()) {
