@@ -28,31 +28,5 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
-	<key>CFBundleDisplayName</key>
-	<string>REChain</string>
-	<key>NSUserNotificationAlertStyle</key>
-	<string>alert</string>
-	<key>NSSupportsAutomaticTermination</key>
-	<true/>
-	<key>NSSupportsSuddenTermination</key>
-	<true/>
-	<key>LSApplicationCategoryType</key>
-	<string>public.app-category.social-networking</string>
-	<key>NSCameraUsageDescription</key>
-	<string>REChain needs access to your camera to take photos and videos for sharing in conversations.</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>REChain needs access to your microphone to record voice messages and make voice calls.</string>
-	<key>NSContactsUsageDescription</key>
-	<string>REChain can help you find contacts to invite to conversations.</string>
-	<key>NSLocationUsageDescription</key>
-	<string>REChain can share your location with contacts when you choose to do so.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>REChain needs access to your photo library to share images and videos in conversations.</string>
-	<key>NSCalendarsUsageDescription</key>
-	<string>REChain can share calendar events with your contacts.</string>
-	<key>NSAppleEventsUsageDescription</key>
-	<string>REChain uses Apple Events for system integration and automation features.</string>
-	<key>NSSystemAdministrationUsageDescription</key>
-	<string>REChain may need administrative access for certain security features.</string>
 </dict>
 </plist>

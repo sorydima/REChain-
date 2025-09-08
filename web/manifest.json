@@ -1,109 +1,35 @@
 {
-    "name": "REChain - Decentralized Communication Platform",
-    "short_name": "REChain",
+    "name": "rechain_new",
+    "short_name": "rechain_new",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A next-generation, open-source, modular ecosystem for decentralized communication, blockchain, AI, and Web3 integrations. Built with Flutter, Dart, and modern cloud-native technologies.",
+    "description": "A new Flutter project.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
-    "categories": ["communication", "social", "productivity", "utilities"],
-    "lang": "en",
-    "dir": "ltr",
-    "scope": "/",
     "icons": [
         {
             "src": "icons/Icon-192.png",
             "sizes": "192x192",
-            "type": "image/png",
-            "purpose": "any maskable"
+            "type": "image/png"
         },
         {
             "src": "icons/Icon-512.png",
             "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-maskable-192.png",
+            "sizes": "192x192",
             "type": "image/png",
-            "purpose": "any maskable"
-        }
-    ],
-    "screenshots": [
-        {
-            "src": "screenshots/showcase1.jpeg",
-            "sizes": "1280x720",
-            "type": "image/jpeg",
-            "form_factor": "wide",
-            "label": "REChain Dashboard"
+            "purpose": "maskable"
         },
         {
-            "src": "screenshots/showcase2.jpeg",
-            "sizes": "720x1280",
-            "type": "image/jpeg",
-            "form_factor": "narrow",
-            "label": "REChain Mobile View"
+            "src": "icons/Icon-maskable-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
         }
-    ],
-    "shortcuts": [
-        {
-            "name": "New Chat",
-            "short_name": "Chat",
-            "description": "Start a new conversation",
-            "url": "/chat",
-            "icons": [
-                {
-                    "src": "icons/Icon-192.png",
-                    "sizes": "192x192"
-                }
-            ]
-        },
-        {
-            "name": "Settings",
-            "short_name": "Settings",
-            "description": "Open application settings",
-            "url": "/settings",
-            "icons": [
-                {
-                    "src": "icons/Icon-192.png",
-                    "sizes": "192x192"
-                }
-            ]
-        }
-    ],
-    "share_target": {
-        "action": "/share",
-        "method": "POST",
-        "enctype": "multipart/form-data",
-        "params": {
-            "title": "title",
-            "text": "text",
-            "url": "url",
-            "files": [
-                {
-                    "name": "files",
-                    "accept": ["image/*", "text/*", "application/pdf"]
-                }
-            ]
-        }
-    },
-    "protocol_handlers": [
-        {
-            "protocol": "matrix",
-            "url": "/matrix?uri=%s"
-        }
-    ],
-    "file_handlers": [
-        {
-            "action": "/open-file",
-            "accept": {
-                "image/*": [".jpg", ".jpeg", ".png", ".gif", ".webp"],
-                "text/*": [".txt", ".md"],
-                "application/pdf": [".pdf"]
-            }
-        }
-    ],
-    "edge_side_panel": {
-        "preferred_width": 400
-    },
-    "launch_handler": {
-        "client_mode": "focus-existing"
-    }
+    ]
 }

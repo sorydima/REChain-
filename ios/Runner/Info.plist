@@ -2,16 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>BGTaskSchedulerPermittedIdentifiers</key>
-	<array>
-		<string>com.rechain.dapp.refresh</string>
-		<string>com.rechain.dapp.processing</string>
-		<string>com.rechain.dapp.notification</string>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>REChain</string>
+	<string>Rechain New</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -19,75 +13,21 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>rechainonline</string>
+	<string>rechain_new</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>$(FLUTTER_BUILD_NAME)</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLName</key>
-			<string>com.rechain.dapp.uris</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>ShareMedia-$(PRODUCT_BUNDLE_IDENTIFIER)</string>
-				<string>com.rechain</string>
-				<string>matrix</string>
-			</array>
-		</dict>
-	</array>
 	<key>CFBundleVersion</key>
-	<string>$(CURRENT_PROJECT_VERSION)</string>
-	<key>ITSAppUsesNonExemptEncryption</key>
-	<false/>
+	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSAppleMusicUsageDescription</key>
-	<string>Play audio and voice messages in the app.</string>
-	<key>NSBluetoothAlwaysUsageDescription</key>
-	<string>Play audio and voice messages via bluetooth devices.</string>
-	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>Play audio and voice messages on bluetooth devices</string>
-	<key>NSCalendarsUsageDescription</key>
-	<string>Share calendar dates with your contacts in REChain.</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Open the camera and take a picture to share them with your contacts on REChain.</string>
-	<key>NSContactsUsageDescription</key>
-	<string>Share contacts with your contacts in REChain.</string>
-	<key>NSFaceIDUsageDescription</key>
-	<string>REChain uses an app lock for an additional security level</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Share your location with your contacts in REChain.</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Share your location with your contacts in REChain.</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Share your location with your contacts in REChain.</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Record voice message and share them with your contacts on REChain.</string>
-	<key>NSMotionUsageDescription</key>
-	<string>Share motions with your contacts in REChain.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Open photos from your gallery and share them with your contacts on REChain.</string>
-	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>Share data with your contacts in REChain.</string>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>audio</string>
-		<string>fetch</string>
-		<string>processing</string>
-		<string>remote-notification</string>
-	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
-	<key>UIStatusBarHidden</key>
-	<false/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -101,39 +41,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false/>
-	<key>io.flutter.embedded_views_preview</key>
-	<true/>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<false/>
-		<key>NSExceptionDomains</key>
-		<dict>
-			<key>localhost</key>
-			<dict>
-				<key>NSExceptionAllowsInsecureHTTPLoads</key>
-				<true/>
-			</dict>
-			<key>matrix.org</key>
-			<dict>
-				<key>NSExceptionRequiresForwardSecrecy</key>
-				<false/>
-			</dict>
-		</dict>
-	</dict>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
-	<key>NSUserNotificationAlertStyle</key>
-	<string>alert</string>
-	<key>UIUserInterfaceStyle</key>
-	<string>Automatic</string>
-	<key>UNNotificationExtensionCategory</key>
-	<string>REChainNotification</string>
-	<key>UNNotificationExtensionDefaultContentHidden</key>
-	<false/>
 </dict>
 </plist>

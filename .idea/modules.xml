@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/REChain-.iml" filepath="$PROJECT_DIR$/.idea/REChain-.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rechain_new.iml" filepath="$PROJECT_DIR$/rechain_new.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/rechain_new_android.iml" filepath="$PROJECT_DIR$/android/rechain_new_android.iml" />
     </modules>
   </component>
 </project>

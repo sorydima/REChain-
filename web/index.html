@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <!--
     If you are serving your web app in a path other than the root, change the
@@ -19,65 +18,21 @@
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A next-generation, open-source, modular ecosystem for decentralized communication, blockchain, AI, and Web3 integrations. Built with Flutter, Dart, and modern cloud-native technologies.">
+  <meta name="description" content="A new Flutter project.">
 
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="REChain">
+  <meta name="apple-mobile-web-app-title" content="rechain_new">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>REChain PWA</title>
+  <title>rechain_new</title>
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" type="text/css" href="splash/style.css">
-
-  <!-- REChain Web Services -->
-  <script src="js/ErrorHandler.js"></script>
-  <script src="js/AutonomousNotificationService.js"></script>
-  <script src="js/CrashReportingManager.js"></script>
-  <script src="js/WebSystemIntegration.js"></script>
-  <script src="js/AutonomousNotificationIntegration.js"></script>
-  <script src="js/WebPushService.js"></script>
-  <script src="js/rechain-init.js"></script>
-  
-  <!-- This script adds the flutter initialization JS code -->
-  <script src="flutter.js" defer></script>
 </head>
-
 <body>
-  <script>
-    window.addEventListener('load', function (ev) {
-      {{flutter_js}}
-      {{flutter_build_config}}
-
-      _flutter.loader.load({
-        serviceWorker: {
-          serviceWorkerVersion: {{flutter_service_worker_version}},
-        },
-        onEntrypointLoaded: function (engineInitializer) {
-          engineInitializer.initializeEngine({ useColorEmoji: true }).then(function (appRunner) {
-            appRunner.runApp();
-            // Notify that Flutter is ready
-            if (window.onFlutterAppReady) {
-              window.onFlutterAppReady();
-            }
-          });
-        }
-      });
-    });
-  </script>
-  <picture id="splash">
-    <source
-      srcset="splash/img/light-1x.png 1x, splash/img/light-2x.png 2x, splash/img/light-3x.png 3x, splash/img/light-4x.png 4x"
-      media="(prefers-color-scheme: light) or (prefers-color-scheme: no-preference)">
-    <source
-      srcset="splash/img/dark-1x.png 1x, splash/img/dark-2x.png 2x, splash/img/dark-3x.png 3x, splash/img/dark-4x.png 4x"
-      media="(prefers-color-scheme: dark)">
-    <img class="center" src="splash/img/light-1x.png" />
-  </picture>
+  <script src="flutter_bootstrap.js" async></script>
 </body>
-
 </html>
