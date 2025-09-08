@@ -1,8 +1,8 @@
 plugins {
-    id "com.android.application"
-    id "kotlin-android"
-    id "dev.flutter.flutter-gradle-plugin"
-    id "com.google.gms.google-services"
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'dev.flutter.flutter-gradle-plugin'
+    id 'com.google.gms.google-services'
 }
 
 def localProperties = new Properties()
@@ -31,42 +31,32 @@ if (keystorePropertiesFile.exists()) {
 
 android {
 
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_21
-        targetCompatibility JavaVersion.VERSION_21
+    compileSdk 34
+    ndkVersion "26.1.10909125"
+    namespace "com.rechain.dapp"
 
-        // Включаем core library desugaring
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
         coreLibraryDesugaringEnabled true
     }
 
-    compileSdkVersion 35
-    ndkVersion = "28.0.13004108"
-    namespace = "com.rechain.dapp"
-
     kotlinOptions {
-        jvmTarget = '21'
-        freeCompilerArgs += [
-            '-Xjvm-default=all',
-            '-opt-in=kotlin.RequiresOptIn'
-        ]
-    }
-
-    kotlin {
-        jvmToolchain(21)
+        jvmTarget = '1.8'
     }
     
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
 
-    lintOptions {
+    lint {
         disable 'InvalidPackage'
     }
 
     defaultConfig {
         applicationId "com.rechain.dapp"
-        minSdkVersion flutter.minSdkVersion
-        targetSdkVersion 35
+        minSdkVersion 21
+        targetSdkVersion 34
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -99,7 +89,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    packagingOptions {
+    packaging {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
         pickFirst 'lib/x86/libc++_shared.so'
         pickFirst 'lib/x86_64/libc++_shared.so'
         pickFirst 'lib/armeabi-v7a/libc++_shared.so'
