@@ -33,12 +33,6 @@ class REChainApplication : Application() {
     private class ReleaseTree : Timber.Tree() {
         override fun log(priority: Int, tag: String?, message: String, t: Throwable?) {
             // Only log warnings and errors in release builds
-            if (priority >= android.util.Log.WARN) {
-                CrashReportingManager.getInstance().logMessage("$tag: $message")
-                if (t != null) {
-                    CrashReportingManager.getInstance().logException(t)
-                }
-            }
         }
     }
 }
