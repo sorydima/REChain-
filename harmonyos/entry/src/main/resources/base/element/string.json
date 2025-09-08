@@ -1,0 +1,212 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "REChain - Secure Matrix Client for HarmonyOS"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "REChain main application entry point"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "REChain"
+    },
+    {
+      "name": "notification_extension_desc",
+      "value": "REChain notification service extension"
+    },
+    {
+      "name": "service_extension_desc",
+      "value": "REChain background service extension"
+    },
+    {
+      "name": "permission_internet_reason",
+      "value": "REChain needs internet access to connect to Matrix servers and sync messages"
+    },
+    {
+      "name": "permission_notification_reason",
+      "value": "REChain needs notification permissions to show message alerts and system notifications"
+    },
+    {
+      "name": "permission_reminder_reason",
+      "value": "REChain needs reminder permissions to schedule message notifications and alerts"
+    },
+    {
+      "name": "permission_vibrate_reason",
+      "value": "REChain needs vibration permission to provide haptic feedback for notifications"
+    },
+    {
+      "name": "permission_float_window_reason",
+      "value": "REChain needs floating window permission for call notifications and quick replies"
+    },
+    {
+      "name": "permission_network_info_reason",
+      "value": "REChain needs network information to optimize connection and sync performance"
+    },
+    {
+      "name": "permission_sensor_reason",
+      "value": "REChain uses sensors for device orientation and motion-based features"
+    },
+    {
+      "name": "permission_media_reason",
+      "value": "REChain needs media access to send and receive files, images, and voice messages"
+    },
+    {
+      "name": "app_name",
+      "value": "REChain"
+    },
+    {
+      "name": "app_description",
+      "value": "Secure, decentralized Matrix client for HarmonyOS with end-to-end encryption and comprehensive system integration"
+    },
+    {
+      "name": "notification_channel_messages",
+      "value": "Messages"
+    },
+    {
+      "name": "notification_channel_calls",
+      "value": "Calls"
+    },
+    {
+      "name": "notification_channel_system",
+      "value": "System"
+    },
+    {
+      "name": "notification_new_message",
+      "value": "New message"
+    },
+    {
+      "name": "notification_incoming_call",
+      "value": "Incoming call"
+    },
+    {
+      "name": "notification_missed_call",
+      "value": "Missed call"
+    },
+    {
+      "name": "notification_user_joined",
+      "value": "User joined"
+    },
+    {
+      "name": "notification_user_left",
+      "value": "User left"
+    },
+    {
+      "name": "notification_file_uploaded",
+      "value": "File uploaded"
+    },
+    {
+      "name": "notification_room_created",
+      "value": "Room created"
+    },
+    {
+      "name": "notification_sync_error",
+      "value": "Sync error"
+    },
+    {
+      "name": "notification_login_success",
+      "value": "Login successful"
+    },
+    {
+      "name": "notification_device_verification",
+      "value": "Device verification required"
+    },
+    {
+      "name": "notification_space_joined",
+      "value": "Space joined"
+    },
+    {
+      "name": "error_network_unavailable",
+      "value": "Network connection unavailable"
+    },
+    {
+      "name": "error_server_unreachable",
+      "value": "Matrix server unreachable"
+    },
+    {
+      "name": "error_authentication_failed",
+      "value": "Authentication failed"
+    },
+    {
+      "name": "error_sync_failed",
+      "value": "Message sync failed"
+    },
+    {
+      "name": "error_encryption_failed",
+      "value": "Message encryption failed"
+    },
+    {
+      "name": "error_decryption_failed",
+      "value": "Message decryption failed"
+    },
+    {
+      "name": "status_connecting",
+      "value": "Connecting..."
+    },
+    {
+      "name": "status_connected",
+      "value": "Connected"
+    },
+    {
+      "name": "status_disconnected",
+      "value": "Disconnected"
+    },
+    {
+      "name": "status_syncing",
+      "value": "Syncing messages..."
+    },
+    {
+      "name": "status_sync_complete",
+      "value": "Sync complete"
+    },
+    {
+      "name": "button_retry",
+      "value": "Retry"
+    },
+    {
+      "name": "button_cancel",
+      "value": "Cancel"
+    },
+    {
+      "name": "button_ok",
+      "value": "OK"
+    },
+    {
+      "name": "button_send",
+      "value": "Send"
+    },
+    {
+      "name": "button_reply",
+      "value": "Reply"
+    },
+    {
+      "name": "button_call",
+      "value": "Call"
+    },
+    {
+      "name": "button_video_call",
+      "value": "Video Call"
+    },
+    {
+      "name": "settings_notifications",
+      "value": "Notifications"
+    },
+    {
+      "name": "settings_privacy",
+      "value": "Privacy & Security"
+    },
+    {
+      "name": "settings_appearance",
+      "value": "Appearance"
+    },
+    {
+      "name": "settings_advanced",
+      "value": "Advanced"
+    },
+    {
+      "name": "settings_about",
+      "value": "About"
+    }
+  ]
+}

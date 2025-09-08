@@ -34,6 +34,15 @@
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" type="text/css" href="splash/style.css">
 
+  <!-- REChain Web Services -->
+  <script src="js/ErrorHandler.js"></script>
+  <script src="js/AutonomousNotificationService.js"></script>
+  <script src="js/CrashReportingManager.js"></script>
+  <script src="js/WebSystemIntegration.js"></script>
+  <script src="js/AutonomousNotificationIntegration.js"></script>
+  <script src="js/WebPushService.js"></script>
+  <script src="js/rechain-init.js"></script>
+  
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
 </head>
@@ -48,11 +57,15 @@
         serviceWorker: {
           serviceWorkerVersion: {{flutter_service_worker_version}},
         },
-      onEntrypointLoaded: function (engineInitializer) {
-        engineInitializer.initializeEngine({ useColorEmoji: true }).then(function (appRunner) {
-          appRunner.runApp();
-        });
-      }
+        onEntrypointLoaded: function (engineInitializer) {
+          engineInitializer.initializeEngine({ useColorEmoji: true }).then(function (appRunner) {
+            appRunner.runApp();
+            // Notify that Flutter is ready
+            if (window.onFlutterAppReady) {
+              window.onFlutterAppReady();
+            }
+          });
+        }
       });
     });
   </script>

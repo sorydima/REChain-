@@ -1,0 +1,14 @@
+{
+  "name": "entry",
+  "version": "1.0.0",
+  "description": "REChain HarmonyOS Entry Module",
+  "main": "./src/main/ets/entryability/EntryAbility.ets",
+  "author": "REChain Team",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "@ohos/hypium": "1.0.6"
+  },
+  "devDependencies": {
+    "@ohos/hvigor-ohos-plugin": "4.0.5"
+  }
+}

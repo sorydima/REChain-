@@ -1,0 +1,64 @@
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "build/default.p7b",
+          "storePassword": "0000001B9A1C8B9B4F7F3E8A2D5C6E9F",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001B9A1C8B9B4F7F3E8A2D5C6E9F",
+          "profile": "build/default.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "build/default.p12"
+        }
+      }
+    ],
+    "compileSdkVersion": 12,
+    "compatibleSdkVersion": 12,
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+        "compileSdkVersion": 12,
+        "compatibleSdkVersion": 12,
+        "runtimeOS": "HarmonyOS"
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug"
+      },
+      {
+        "name": "release"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "rechain_native",
+      "srcPath": "./rechain_native", 
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}

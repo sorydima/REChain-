@@ -1,0 +1,80 @@
+{
+  "color": [
+    {
+      "name": "start_window_background",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "primary_color",
+      "value": "#1976D2"
+    },
+    {
+      "name": "primary_dark",
+      "value": "#1565C0"
+    },
+    {
+      "name": "primary_light",
+      "value": "#42A5F5"
+    },
+    {
+      "name": "accent_color",
+      "value": "#FF4081"
+    },
+    {
+      "name": "background_color",
+      "value": "#FAFAFA"
+    },
+    {
+      "name": "surface_color",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "error_color",
+      "value": "#F44336"
+    },
+    {
+      "name": "warning_color",
+      "value": "#FF9800"
+    },
+    {
+      "name": "success_color",
+      "value": "#4CAF50"
+    },
+    {
+      "name": "info_color",
+      "value": "#2196F3"
+    },
+    {
+      "name": "text_primary",
+      "value": "#212121"
+    },
+    {
+      "name": "text_secondary",
+      "value": "#757575"
+    },
+    {
+      "name": "text_disabled",
+      "value": "#BDBDBD"
+    },
+    {
+      "name": "divider_color",
+      "value": "#E0E0E0"
+    },
+    {
+      "name": "notification_background",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "notification_text",
+      "value": "#212121"
+    },
+    {
+      "name": "status_bar_color",
+      "value": "#1976D2"
+    },
+    {
+      "name": "navigation_bar_color",
+      "value": "#FFFFFF"
+    }
+  ]
+}
