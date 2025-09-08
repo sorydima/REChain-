@@ -5,6 +5,11 @@ import android.content.Context
 import androidx.multidex.MultiDex
 import timber.log.Timber
 
+import androidx.lifecycle.LifecycleService
+import androidx.work.*
+import com.jakewharton.timber.log.Timber
+import com.google.firebase.crashlytics.FirebaseCrashlytics
+
 class REChainApplication : Application() {
     
     companion object {

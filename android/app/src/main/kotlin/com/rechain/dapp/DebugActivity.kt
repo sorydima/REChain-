@@ -8,6 +8,11 @@ import android.widget.ScrollView
 import android.widget.TextView
 import timber.log.Timber
 
+import androidx.lifecycle.LifecycleService
+import androidx.work.*
+import com.jakewharton.timber.log.Timber
+import com.google.firebase.crashlytics.FirebaseCrashlytics
+
 class DebugActivity : Activity() {
     
     private lateinit var autonomousNotificationService: AutonomousNotificationService

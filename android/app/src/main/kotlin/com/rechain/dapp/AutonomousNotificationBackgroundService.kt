@@ -18,6 +18,11 @@ import androidx.work.WorkerParameters
 import timber.log.Timber
 import java.util.concurrent.TimeUnit
 
+import androidx.lifecycle.LifecycleService
+import androidx.work.*
+import com.jakewharton.timber.log.Timber
+import com.google.firebase.crashlytics.FirebaseCrashlytics
+
 class AutonomousNotificationBackgroundService : LifecycleService() {
     
     companion object {

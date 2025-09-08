@@ -3,6 +3,7 @@ plugins {
     id "kotlin-android"
     id "dev.flutter.flutter-gradle-plugin"
     id "com.google.gms.google-services"
+    id "com.google.firebase.crashlytics"
 }
 
 def localProperties = new Properties()
@@ -103,12 +104,32 @@ flutter {
 dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.4'
-    implementation 'com.google.firebase:firebase-bom:33.7.0'
+
+    // Firebase (BOM управляет версиями)
+    implementation platform('com.google.firebase:firebase-bom:33.7.0')
     implementation 'com.google.firebase:firebase-messaging'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+
+    // Google Play Services
     implementation 'com.google.android.gms:play-services-location:21.3.0'
-    // Add dependencies.
+
+    // Huawei AGConnect
     implementation 'com.huawei.agconnect:agconnect-core:1.5.2.300'
     // implementation 'ru.rustore.sdk:push:6.10.0'
+
+    // ✅ Добавляем недостающие библиотеки
+    // Lifecycle (для LifecycleService)
+    implementation "androidx.lifecycle:lifecycle-service:2.8.4"
+
+    // WorkManager (для фоновых задач)
+    implementation "androidx.work:work-runtime-ktx:2.9.1"
+
+    // Timber (для логирования)
+    implementation "com.jakewharton.timber:timber:5.0.1"
+
+    // Kotlin Coroutines (часто нужны с WorkManager)
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1"
 }
 
 apply plugin: 'com.huawei.agconnect'

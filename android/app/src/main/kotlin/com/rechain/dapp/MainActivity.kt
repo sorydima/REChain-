@@ -12,6 +12,11 @@ import io.flutter.plugin.common.MethodChannel
 import org.json.JSONObject
 import timber.log.Timber
 
+import androidx.lifecycle.LifecycleService
+import androidx.work.*
+import com.jakewharton.timber.log.Timber
+import com.google.firebase.crashlytics.FirebaseCrashlytics
+
 class MainActivity : FlutterActivity() {
     private val INIT_CHANNEL = "rechain.push/init"
     private val EVENT_CHANNEL = "rechain.push/events"

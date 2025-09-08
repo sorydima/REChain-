@@ -4,6 +4,11 @@ import android.content.Context
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import timber.log.Timber
 
+import androidx.lifecycle.LifecycleService
+import androidx.work.*
+import com.jakewharton.timber.log.Timber
+import com.google.firebase.crashlytics.FirebaseCrashlytics
+
 class CrashReportingManager private constructor() {
     
     companion object {
