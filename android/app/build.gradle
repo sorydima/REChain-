@@ -44,8 +44,12 @@ android {
     namespace = "com.rechain.dapp"
 
     kotlinOptions {
-            jvmTarget = '21'
-        }
+        jvmTarget = '21'
+        freeCompilerArgs += [
+            '-Xjvm-default=all',
+            '-opt-in=kotlin.RequiresOptIn'
+        ]
+    }
 
     kotlin {
         jvmToolchain(21)
@@ -83,9 +87,16 @@ android {
         debug {
             signingConfig signingConfigs.debug
             versionNameSuffix "-debug"
+            debuggable true
+            minifyEnabled false
+            shrinkResources false
         }
         release {
             signingConfig signingConfigs.release
+            debuggable false
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     packagingOptions {
@@ -102,13 +113,33 @@ flutter {
 
 dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'
+    implementation 'androidx.work:work-runtime-ktx:2.9.0'
+    implementation 'androidx.startup:startup-runtime:1.1.1'
+    
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.4'
-    implementation 'com.google.firebase:firebase-bom:33.7.0'
+    
+    implementation platform('com.google.firebase:firebase-bom:33.7.0')
     implementation 'com.google.firebase:firebase-messaging'
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-crashlytics'
+    
     implementation 'com.google.android.gms:play-services-location:21.3.0'
-    // Add dependencies.
+    implementation 'com.google.android.gms:play-services-auth:21.0.0'
+    
     implementation 'com.huawei.agconnect:agconnect-core:1.5.2.300'
-    // implementation 'ru.rustore.sdk:push:6.10.0'
+    
+    // JSON processing
+    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2'
+    
+    // Logging
+    implementation 'com.jakewharton.timber:timber:5.0.1'
+    
+    // Testing
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }
 
 apply plugin: 'com.huawei.agconnect'

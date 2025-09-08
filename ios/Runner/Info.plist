@@ -4,7 +4,9 @@
 <dict>
 	<key>BGTaskSchedulerPermittedIdentifiers</key>
 	<array>
-		<string>com.rechain.dapp</string>
+		<string>com.rechain.dapp.refresh</string>
+		<string>com.rechain.dapp.processing</string>
+		<string>com.rechain.dapp.notification</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
@@ -105,12 +107,33 @@
 	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
-  	<key>NSAllowsArbitraryLoads</key>
-  	<true/>
-</dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<false/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>localhost</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+			<key>matrix.org</key>
+			<dict>
+				<key>NSExceptionRequiresForwardSecrecy</key>
+				<false/>
+			</dict>
+		</dict>
+	</dict>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>NSUserNotificationAlertStyle</key>
+	<string>alert</string>
+	<key>UIUserInterfaceStyle</key>
+	<string>Automatic</string>
+	<key>UNNotificationExtensionCategory</key>
+	<string>REChainNotification</string>
+	<key>UNNotificationExtensionDefaultContentHidden</key>
+	<false/>
 </dict>
 </plist>

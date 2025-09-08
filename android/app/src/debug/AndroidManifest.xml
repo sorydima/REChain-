@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Debug-specific permissions -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    
+    <application
+        android:usesCleartextTraffic="true"
+        android:networkSecurityConfig="@xml/network_security_config">
+        
+        <!-- Debug activity for testing notifications -->
+        <activity
+            android:name="com.rechain.dapp.DebugActivity"
+            android:exported="true"
+            android:theme="@android:style/Theme.Material.Light">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="rechain" android:host="debug" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

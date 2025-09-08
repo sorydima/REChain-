@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">REChain</string>
+    <string name="notification_channel_name">REChain Notifications</string>
+    <string name="notification_channel_description">Notifications for REChain messages and events</string>
+    <string name="background_service_name">REChain Background Service</string>
+    <string name="background_service_description">Monitoring for new messages and events</string>
+    
+    <!-- Notification messages -->
+    <string name="new_message">New message</string>
+    <string name="incoming_call">Incoming call</string>
+    <string name="missed_call">Missed call</string>
+    <string name="user_joined">User joined</string>
+    <string name="user_left">User left</string>
+    <string name="file_uploaded">File uploaded</string>
+    <string name="room_created">Room created</string>
+    <string name="room_invited">Room invitation</string>
+    <string name="encryption_enabled">Encryption enabled</string>
+    <string name="sync_error">Sync error</string>
+    <string name="login_success">Login successful</string>
+    <string name="backup_created">Backup created</string>
+    <string name="device_verified">Device verified</string>
+    <string name="space_joined">Space joined</string>
+    <string name="reaction_added">New reaction</string>
+    
+    <!-- Error messages -->
+    <string name="permission_denied">Permission denied</string>
+    <string name="notification_error">Notification error</string>
+    <string name="service_error">Service error</string>
+</resources>

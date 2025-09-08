@@ -31,6 +31,19 @@ target 'Runner' do
   use_modular_headers!
 
   flutter_install_all_macos_pods File.dirname(File.realpath(__FILE__))
+
+  # Firebase pods
+  pod 'Firebase/Crashlytics'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Messaging'
+  
+  target 'RunnerTests' do
+    inherit! :search_paths
+  end
+  
+  target 'RunnerUITests' do
+    inherit! :search_paths
+  end
 end
 
 post_install do |installer|
