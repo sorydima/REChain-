@@ -19,7 +19,6 @@ import timber.log.Timber
 import java.util.concurrent.TimeUnit
 
 import androidx.work.*
-import com.google.firebase.crashlytics.FirebaseCrashlytics
 
 class AutonomousNotificationBackgroundService : LifecycleService() {
     

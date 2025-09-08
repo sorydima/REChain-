@@ -10,7 +10,6 @@ import timber.log.Timber
 
 import androidx.lifecycle.LifecycleService
 import androidx.work.*
-import com.google.firebase.crashlytics.FirebaseCrashlytics
 
 class DebugActivity : Activity() {
     

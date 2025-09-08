@@ -7,7 +7,6 @@ import timber.log.Timber
 
 import androidx.lifecycle.LifecycleService
 import androidx.work.*
-import com.google.firebase.crashlytics.FirebaseCrashlytics
 
 class REChainApplication : Application() {
     
@@ -21,18 +20,6 @@ class REChainApplication : Application() {
         instance = this
         
         Timber.d("REChainApplication initialized")
-        
-        // Initialize crash reporting
-        CrashReportingManager.getInstance().initialize(this, enableInDebug = false)
-        
-        CrashReportingManager.getInstance().apply {
-            setCustomKey("version_name", versionInfo.versionName)
-            setCustomKey("version_code", versionInfo.versionCode.toInt())
-            setCustomKey("build_type", versionInfo.buildType)
-            setCustomKey("device_model", "${deviceInfo.manufacturer} ${deviceInfo.model}")
-            setCustomKey("android_version", deviceInfo.androidVersion)
-            setCustomKey("api_level", deviceInfo.apiLevel)
-        }
         
         // Initialize autonomous notification service
         AutonomousNotificationBackgroundService.startService(this)
