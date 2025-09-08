@@ -35,6 +35,12 @@ android {
     compileSdkVersion 35
     ndkVersion = "29.0.13113456"
     
+    // Memory optimization for large builds
+    dexOptions {
+        javaMaxHeapSize "4g"
+        preDexLibraries = false
+    }
+    
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
@@ -92,9 +98,14 @@ android {
         debug {
             signingConfig signingConfigs.debug
             versionNameSuffix "-debug"
+            minifyEnabled false
+            shrinkResources false
         }
         release {
             signingConfig signingConfigs.release
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     packaging {
