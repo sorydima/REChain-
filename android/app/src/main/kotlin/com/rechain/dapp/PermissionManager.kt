@@ -17,15 +17,28 @@ class PermissionManager(private val context: Context) {
     companion object {
         const val PERMISSION_REQUEST_CODE = 1001
         
-        val REQUIRED_PERMISSIONS = arrayOf(
+        private val REQUIRED_PERMISSIONS = arrayOf(
             Manifest.permission.INTERNET,
             Manifest.permission.VIBRATE,
             Manifest.permission.RECORD_AUDIO,
-            Manifest.permission.CAMERA,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.ACCESS_FINE_LOCATION,
             Manifest.permission.ACCESS_COARSE_LOCATION,
-            Manifest.permission.READ_EXTERNAL_STORAGE,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE
+            Manifest.permission.CAMERA,
+            Manifest.permission.BLUETOOTH,
+            Manifest.permission.MODIFY_AUDIO_SETTINGS,
+            Manifest.permission.WAKE_LOCK,
+            Manifest.permission.CALL_PHONE,
+            Manifest.permission.SYSTEM_ALERT_WINDOW,
+            Manifest.permission.RECEIVE_BOOT_COMPLETED,
+            // Android 13+ (API 33+) permissions
+            "android.permission.POST_NOTIFICATIONS",
+            "android.permission.USE_FULL_SCREEN_INTENT",
+            "android.permission.FOREGROUND_SERVICE",
+            "android.permission.FOREGROUND_SERVICE_MICROPHONE",
+            "android.permission.FOREGROUND_SERVICE_CAMERA",
+            "android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION"
         )
         
         val ANDROID_13_PERMISSIONS = arrayOf(

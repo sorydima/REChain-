@@ -146,12 +146,16 @@ class MainActivity : FlutterActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         
-        // Проверка и запрос разрешений
-        if (!permissionManager.checkAllPermissions()) {
-            permissionManager.requestMissingPermissions(this)
+        try {
+            // Проверка и запрос разрешений
+            if (!permissionManager.checkAllPermissions()) {
+                permissionManager.requestMissingPermissions(this)
+            }
+            
+            Timber.d("MainActivity created")
+        } catch (e: Exception) {
+            Timber.e(e, "Error in MainActivity onCreate")
         }
-        
-        Timber.d("MainActivity created")
     }
     
     override fun onRequestPermissionsResult(
