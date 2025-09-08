@@ -1,13 +1,10 @@
 package com.rechain.dapp
 
 import android.content.Context
-import com.google.firebase.crashlytics.FirebaseCrashlytics
 import timber.log.Timber
 
 import androidx.lifecycle.LifecycleService
 import androidx.work.*
-import com.jakewharton.timber.log.Timber
-import com.google.firebase.crashlytics.FirebaseCrashlytics
 
 class CrashReportingManager private constructor() {
     
@@ -19,28 +16,6 @@ class CrashReportingManager private constructor() {
             return INSTANCE ?: synchronized(this) {
                 INSTANCE ?: CrashReportingManager().also { INSTANCE = it }
             }
-        }
-    }
-    
-    private var crashlytics: FirebaseCrashlytics? = null
-    private var isInitialized = false
-    
-    fun initialize(context: Context, enableInDebug: Boolean = false) {
-        if (isInitialized) return
-        
-        try {
-            crashlytics = FirebaseCrashlytics.getInstance()
-            
-            // Enable/disable crashlytics collection
-            crashlytics?.setCrashlyticsCollectionEnabled(
-                !BuildConfig.DEBUG || enableInDebug
-            )
-            
-            isInitialized = true
-            Timber.d("CrashReportingManager initialized")
-            
-        } catch (e: Exception) {
-            Timber.e(e, "Failed to initialize crash reporting")
         }
     }
     

@@ -7,7 +7,6 @@ import android.util.Log
 
 import androidx.lifecycle.LifecycleService
 import androidx.work.*
-import com.jakewharton.timber.log.Timber
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 
 class CustomPushReceiver : BroadcastReceiver() {

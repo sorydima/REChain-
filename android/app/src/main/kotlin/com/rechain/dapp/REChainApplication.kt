@@ -7,7 +7,6 @@ import timber.log.Timber
 
 import androidx.lifecycle.LifecycleService
 import androidx.work.*
-import com.jakewharton.timber.log.Timber
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 
 class REChainApplication : Application() {
@@ -21,26 +20,10 @@ class REChainApplication : Application() {
         super.onCreate()
         instance = this
         
-        // Initialize Timber logging
-        if (BuildConfig.DEBUG) {
-            Timber.plant(Timber.DebugTree())
-        } else {
-            // In production, you might want to use a different tree
-            // that logs to crashlytics or other crash reporting service
-            Timber.plant(ReleaseTree())
-        }
-        
         Timber.d("REChainApplication initialized")
-        
-        // Log build and device info
-        BuildConfigHelper.logBuildInfo(this)
         
         // Initialize crash reporting
         CrashReportingManager.getInstance().initialize(this, enableInDebug = false)
-        
-        // Set crash reporting context
-        val versionInfo = BuildConfigHelper.getVersionInfo(this)
-        val deviceInfo = BuildConfigHelper.getDeviceInfo()
         
         CrashReportingManager.getInstance().apply {
             setCustomKey("version_name", versionInfo.versionName)
