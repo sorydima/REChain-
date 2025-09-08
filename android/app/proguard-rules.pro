@@ -13,6 +13,12 @@
 -keep class com.google.firebase.** { *; }
 -keep class com.google.android.gms.** { *; }
 
+# Keep Google Play Core classes (required for Flutter deferred components)
+-keep class com.google.android.play.core.** { *; }
+-keep class com.google.android.play.core.splitcompat.** { *; }
+-keep class com.google.android.play.core.splitinstall.** { *; }
+-keep class com.google.android.play.core.tasks.** { *; }
+
 # Keep Huawei AGConnect classes
 -keep class com.huawei.agconnect.** { *; }
 
