@@ -168,9 +168,22 @@
 
         <receiver
             android:name="com.rechain.dapp.CustomPushReceiver"
-            android:exported="true">
+            android:exported="true"
+            android:enabled="true">
             <intent-filter>
                 <action android:name="ru.rustore.sdk.push.ACTION_PUSH_RECEIVED"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- Boot receiver for Android 14+ compatibility -->
+        <receiver
+            android:name="com.rechain.dapp.BootReceiver"
+            android:exported="true"
+            android:enabled="true">
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </receiver>
 
