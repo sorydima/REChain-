@@ -281,8 +281,8 @@ class MyCallingPage extends State<Calling> {
                 L10n.of(widget.context).foregroundServiceRunning,
           ),
           iosNotificationOptions: const IOSNotificationOptions(),
-          foregroundTaskOptions: const ForegroundTaskOptions(
-            eventAction: ForegroundTaskEventAction.nothing,
+          foregroundTaskOptions: ForegroundTaskOptions(
+            eventAction: ForegroundTaskEventAction.nothing(),
           ),
         );
         FlutterForegroundTask.startService(
