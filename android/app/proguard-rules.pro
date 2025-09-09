@@ -18,10 +18,17 @@
 -keep class com.google.android.play.core.splitcompat.** { *; }
 -keep class com.google.android.play.core.splitinstall.** { *; }
 -keep class com.google.android.play.core.tasks.** { *; }
+-keep class com.google.android.play.core.common.** { *; }
+-keep class com.google.android.play.core.feature.** { *; }
+-keep class com.google.android.play.core.assetpacks.** { *; }
 
-# Keep Flutter Play Store Split Application
+# Keep Flutter Play Store Split Application and related classes
 -keep class io.flutter.embedding.android.FlutterPlayStoreSplitApplication { *; }
 -keep class io.flutter.embedding.engine.deferredcomponents.** { *; }
+-keep class * extends android.app.Application { *; }
+-keep class * extends android.app.Activity { *; }
+-keep class * extends android.app.Service { *; }
+-keep class * extends android.content.BroadcastReceiver { *; }
 
 # Prevent obfuscation of Play Core interfaces and exceptions
 -keepclassmembers class com.google.android.play.core.** {
@@ -31,6 +38,8 @@
 # Keep Play Core listeners and callbacks
 -keep interface com.google.android.play.core.** { *; }
 -keep class * implements com.google.android.play.core.** { *; }
+-keep class * extends com.google.android.play.core.tasks.Task { *; }
+-keep class * extends com.google.android.play.core.splitinstall.SplitInstallStateUpdatedListener { *; }
 
 # Keep Huawei AGConnect classes
 -keep class com.huawei.agconnect.** { *; }
@@ -43,6 +52,9 @@
 -optimizationpasses 5
 -allowaccessmodification
 -dontpreverify
+-dontwarn com.google.android.play.core.**
+-dontwarn com.google.android.play.**
+-dontwarn com.google.android.gms.**
 
 # Remove logging in release builds
 -assumenosideeffects class android.util.Log {
