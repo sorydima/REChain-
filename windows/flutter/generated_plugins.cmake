@@ -3,9 +3,26 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
+  app_links
+  desktop_drop
+  dynamic_color
+  emoji_picker_flutter
+  file_selector_windows
+  firebase_core
+  flutter_secure_storage_windows
+  flutter_webrtc
+  geolocator_windows
+  pasteboard
+  permission_handler_windows
+  record_windows
+  share_plus
+  sqlcipher_flutter_libs
+  url_launcher_windows
+  window_to_front
 )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST
+  flutter_vodozemac
 )
 
 set(PLUGIN_BUNDLED_LIBRARIES)

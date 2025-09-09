@@ -3,9 +3,23 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
+  desktop_drop
+  dynamic_color
+  emoji_picker_flutter
+  file_selector_linux
+  flutter_secure_storage_linux
+  flutter_webrtc
+  gtk
+  handy_window
+  pasteboard
+  record_linux
+  sqlcipher_flutter_libs
+  url_launcher_linux
+  window_to_front
 )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST
+  flutter_vodozemac
 )
 
 set(PLUGIN_BUNDLED_LIBRARIES)

@@ -19,6 +19,19 @@
 -keep class com.google.android.play.core.splitinstall.** { *; }
 -keep class com.google.android.play.core.tasks.** { *; }
 
+# Keep Flutter Play Store Split Application
+-keep class io.flutter.embedding.android.FlutterPlayStoreSplitApplication { *; }
+-keep class io.flutter.embedding.engine.deferredcomponents.** { *; }
+
+# Prevent obfuscation of Play Core interfaces and exceptions
+-keepclassmembers class com.google.android.play.core.** {
+    public *;
+}
+
+# Keep Play Core listeners and callbacks
+-keep interface com.google.android.play.core.** { *; }
+-keep class * implements com.google.android.play.core.** { *; }
+
 # Keep Huawei AGConnect classes
 -keep class com.huawei.agconnect.** { *; }
 
