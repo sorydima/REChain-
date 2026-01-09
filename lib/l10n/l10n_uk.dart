@@ -9,7 +9,7 @@ class L10nUk extends L10n {
   L10nUk([String locale = 'uk']) : super(locale);
 
   @override
-  String get alwaysUse24HourFormat => 'false';
+  String get alwaysUse24HourFormat => 'вимкнено';
 
   @override
   String get repeatPassword => 'Повторіть пароль';
@@ -169,11 +169,14 @@ class L10nUk extends L10n {
 
   @override
   String get autoplayImages =>
-      'Автоматично відтворювати анімовані наліпки та емоджі';
+      'Автоматично відтворювати анімовані наліпки та емодзі';
 
   @override
-  String badServerLoginTypesException(String serverVersions,
-      String supportedVersions, Object suportedVersions) {
+  String badServerLoginTypesException(
+    String serverVersions,
+    String supportedVersions,
+    Object suportedVersions,
+  ) {
     return 'Домашній сервер підтримує такі типи входу:\n$serverVersions\nАле цей застосунок підтримує лише:\n$supportedVersions';
   }
 
@@ -189,11 +192,12 @@ class L10nUk extends L10n {
 
   @override
   String badServerVersionsException(
-      String serverVersions,
-      String supportedVersions,
-      Object serverVerions,
-      Object supoortedVersions,
-      Object suportedVersions) {
+    String serverVersions,
+    String supportedVersions,
+    Object serverVerions,
+    Object supoortedVersions,
+    Object suportedVersions,
+  ) {
     return 'Домашній сервер підтримує такі версії специфікацій:\n$serverVersions\nАле цей застосунок підтримує лише $supportedVersions';
   }
 
@@ -258,8 +262,18 @@ class L10nUk extends L10n {
   }
 
   @override
+  String changedTheChatDescription(Object username) {
+    return '$username змінює опис бесіди';
+  }
+
+  @override
   String changedTheChatDescriptionTo(String username, String description) {
     return '$username змінює опис бесіди на: \'$description\'';
+  }
+
+  @override
+  String changedTheChatName(Object username) {
+    return '$username змінює назву бесіди';
   }
 
   @override
@@ -351,7 +365,7 @@ class L10nUk extends L10n {
 
   @override
   String get chatBackupDescription =>
-      'Ваші старі повідомлення захищені ключем відновлення. Переконайтеся, що ви не втратите його.';
+      'Ваші повідомлення захищені ключем відновлення. Переконайтеся, що ви не втратите його.';
 
   @override
   String get chatDetails => 'Подробиці бесіди';
@@ -605,7 +619,7 @@ class L10nUk extends L10n {
       'Тут з\'являться нещодавно використані смайлики...';
 
   @override
-  String get emotePacks => 'Набори емоджі для кімнати';
+  String get emotePacks => 'Набори емодзі для кімнати';
 
   @override
   String get emoteSettings => 'Налаштування емодзі';
@@ -624,11 +638,11 @@ class L10nUk extends L10n {
   String get calls => 'Виклики';
 
   @override
-  String get customEmojisAndStickers => 'Власні емоджі та наліпки';
+  String get customEmojisAndStickers => 'Власні емодзі та наліпки';
 
   @override
   String get customEmojisAndStickersBody =>
-      'Додавайте або діліться власними емоджі або наліпками, які можна використовувати в будь-якій бесіді.';
+      'Додавайте або діліться власними емодзі або наліпками, які можна використовувати в будь-якій бесіді.';
 
   @override
   String get emoteShortcode => 'Короткий код для емодзі';
@@ -641,7 +655,7 @@ class L10nUk extends L10n {
   String get emptyChat => 'Порожня бесіда';
 
   @override
-  String get enableEmotesGlobally => 'Увімкнути пакунок емоджі глобально';
+  String get enableEmotesGlobally => 'Увімкнути набір емодзі глобально';
 
   @override
   String get enableEncryption => 'Увімкнути шифрування';
@@ -688,7 +702,7 @@ class L10nUk extends L10n {
   String get fileName => 'Назва файлу';
 
   @override
-  String get rechainonline => 'rechainonline';
+  String get rechainonline => 'REChain';
 
   @override
   String get fontSize => 'Розмір шрифту';
@@ -831,7 +845,7 @@ class L10nUk extends L10n {
 
   @override
   String inviteText(String username, String link) {
-    return '$username запрошує вас у REChain. \n1. Перейдіть на online.rechain.network й установіть застосунок \n2. Зареєструйтесь або ввійдіть \n3. Відкрийте запрошувальне посилання:\n $link';
+    return '$username запрошує вас у REChain. \n1. Перейдіть на github.com/sorydima/REChain- й установіть застосунок \n2. Зареєструйтесь або ввійдіть \n3. Відкрийте запрошувальне посилання:\n $link';
   }
 
   @override
@@ -955,8 +969,7 @@ class L10nUk extends L10n {
   String get newChat => 'Нова бесіда';
 
   @override
-  String get newMessageInrechainonline =>
-      '💬 Нове повідомлення у rechainonline';
+  String get newMessageInrechainonline => '💬 Нове повідомлення у REChain';
 
   @override
   String get newVerificationRequest => 'Новий запит перевірки!';
@@ -971,7 +984,7 @@ class L10nUk extends L10n {
   String get noConnectionToTheServer => 'Немає з\'єднання з сервером';
 
   @override
-  String get noEmotesFound => 'Емоджі не знайдено. 😕';
+  String get noEmotesFound => 'Емодзі не знайдено. 😕';
 
   @override
   String get noEncryptionForPublicRooms =>
@@ -1346,7 +1359,7 @@ class L10nUk extends L10n {
   String get setAsCanonicalAlias => 'Установити основним псевдонімом';
 
   @override
-  String get setCustomEmotes => 'Установити користувацькі емоджі';
+  String get setCustomEmotes => 'Встановити власні емодзі';
 
   @override
   String get setChatDescription => 'Налаштувати опис бесіди';
@@ -1434,7 +1447,7 @@ class L10nUk extends L10n {
   String get theyMatch => 'Вони збігаються';
 
   @override
-  String get title => 'rechainonline';
+  String get title => 'REChain';
 
   @override
   String get toggleFavorite => 'Перемикнути вибране';
@@ -1561,7 +1574,7 @@ class L10nUk extends L10n {
       'Очікування прийняття запиту партнером…';
 
   @override
-  String get waitingPartnerEmoji => 'Очікування прийняття емоджі партнером…';
+  String get waitingPartnerEmoji => 'Очікування прийняття емодзі партнером…';
 
   @override
   String get waitingPartnerNumbers => 'Очікування прийняття чисел партнером…';
@@ -1672,10 +1685,10 @@ class L10nUk extends L10n {
 
   @override
   String get confirmEventUnpin =>
-      'Ви впевнені, що бажаєте назавжди відкріпите подію?';
+      'Ви впевнені, що бажаєте назавжди відкріпити подію?';
 
   @override
-  String get emojis => 'Емоджі';
+  String get emojis => 'Емодзі';
 
   @override
   String get placeCall => 'Здійснити виклик';
@@ -1864,7 +1877,7 @@ class L10nUk extends L10n {
   String get screenSharingTitle => 'спільний доступ до екрана';
 
   @override
-  String get screenSharingDetail => 'Ви ділитеся своїм екраном FuffyChat';
+  String get screenSharingDetail => 'Ви ділитеся своїм екраном REChain';
 
   @override
   String get callingPermissions => 'Дозволи на виклик';
@@ -1885,7 +1898,7 @@ class L10nUk extends L10n {
 
   @override
   String get otherCallingPermissions =>
-      'Мікрофон, камера та інші дозволи rechainonline';
+      'Мікрофон, камера та інші дозволи REChain';
 
   @override
   String get whyIsThisMessageEncrypted => 'Чому це повідомлення нечитабельне?';
@@ -2011,10 +2024,10 @@ class L10nUk extends L10n {
   String get invite => 'Запросити';
 
   @override
-  String get inviteGroupChat => '📨 Запросити до групової бесіди';
+  String get inviteGroupChat => '📨 Запрошення до групової бесіди';
 
   @override
-  String get invitePrivateChat => '📨 Запросити до приватної бесіди';
+  String get invitePrivateChat => '📨 Запрошення до приватної бесіди';
 
   @override
   String get invalidInput => 'Недійсний ввід!';
@@ -2033,7 +2046,7 @@ class L10nUk extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      'Після цього бесіду буде відтворено з новою версією кімнати. Усі учасники отримають сповіщення, що їм потрібно перейти до нової бесіди. Ви можете дізнатися більше про версії кімнат на https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle';
+      'Після цього бесіду буде відтворено з новою версією кімнати. Усі учасники отримають сповіщення, що їм потрібно перейти до нової бесіди. Ви можете дізнатися більше про версії кімнат на https://github.com/sorydima/REChain-.git';
 
   @override
   String get removeDevicesDescription =>
@@ -2378,7 +2391,7 @@ class L10nUk extends L10n {
 
   @override
   String get homeserverDescription =>
-      'Усі ваші дані зберігаються на домашньому сервері, так само як у постачальника послуг електронної пошти. Ви можете вибрати, який домашній сервер ви хочете використовувати, водночас ви можете спілкуватися з усіма. Докладніше на https://rechain.network.';
+      'Усі ваші дані зберігаються на домашньому сервері, так само як у постачальника послуг електронної пошти. Ви можете вибрати, який домашній сервер ви хочете використовувати, водночас ви можете спілкуватися з усіма. Докладніше на https://github.com/sorydima/REChain-.git.';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
@@ -2423,7 +2436,7 @@ class L10nUk extends L10n {
 
   @override
   String get welcomeText =>
-      'Привіт-привіт 👋 Це REChain. Ви можете увійти на будь-який сервер, сумісний із https://rechain.network. А потім спілкуватися з будь-ким. Це величезна децентралізована мережа для обміну повідомленнями!';
+      'Привіт-привіт 👋 Це REChain. Ви можете увійти на будь-який сервер, сумісний із https://github.com/sorydima/REChain-.git. А потім спілкуватися з будь-ким. Це величезна децентралізована мережа для обміну повідомленнями!';
 
   @override
   String get blur => 'Розмиття:';
@@ -2511,7 +2524,7 @@ class L10nUk extends L10n {
 
   @override
   String get appIntroduction =>
-      'REChain дає змогу спілкуватися з друзями у різних месенджерах. Дізнайтеся більше на https://rechain.network або просто натисніть *Продовжити*.';
+      'REChain дає змогу спілкуватися з друзями у різних месенджерах. Дізнайтеся більше на https://github.com/sorydima/REChain-.git або просто натисніть *Продовжити*.';
 
   @override
   String get newChatRequest => '📩 Новий запит на спілкування';
@@ -2552,7 +2565,7 @@ class L10nUk extends L10n {
 
   @override
   String get notificationRuleSuppressNoticesDescription =>
-      'Забороняє сповіщення від автоматизованих клієнтів, таких як боти.';
+      'Забороняє сповіщення від автоматизованих клієнтів, як-от боти.';
 
   @override
   String get notificationRuleInviteForMe => 'Запрошення мене';
@@ -2681,7 +2694,7 @@ class L10nUk extends L10n {
 
   @override
   String sentVoiceMessage(String sender, String duration) {
-    return '🎙️ $duration - $sender - Голосове повідомлення від $sender';
+    return '🎙️Голосове повідомлення від $sender ($duration)';
   }
 
   @override
@@ -2743,11 +2756,178 @@ class L10nUk extends L10n {
   String get commandHint_logoutall => 'Вийти на всіх активних пристроях';
 
   @override
-  String get displayNavigationRail => 'Show navigation rail on mobile';
+  String get displayNavigationRail =>
+      'Показати навігаційну карту на мобільному';
 
   @override
-  String get customReaction => 'Custom reaction';
+  String get customReaction => 'Власні реакції';
 
   @override
-  String get moreEvents => 'More events';
+  String get moreEvents => 'Інші події';
+
+  @override
+  String get declineInvitation => 'Відхилити запрошення';
+
+  @override
+  String get noMessagesYet => 'Поки немає повідомлень';
+
+  @override
+  String get longPressToRecordVoiceMessage =>
+      'Довге натискання, щоби записати голосове повідомлення.';
+
+  @override
+  String get pause => 'Призупинити';
+
+  @override
+  String get resume => 'Продовжити';
+
+  @override
+  String get newSubSpace => 'Новий вкладений простір';
+
+  @override
+  String get moveToDifferentSpace => 'Перемістити в інший простір';
+
+  @override
+  String get moveUp => 'Перемістити вище';
+
+  @override
+  String get moveDown => 'Переместити нижче';
+
+  @override
+  String get removeFromSpaceDescription =>
+      'Бесіду буде видалено з простору, та вона залишиться у вашому списку бесід.';
+
+  @override
+  String countChats(int chats) {
+    return '$chats бесід';
+  }
+
+  @override
+  String spaceMemberOf(String spaces) {
+    return 'Учасник $spaces просторів';
+  }
+
+  @override
+  String spaceMemberOfCanKnock(String spaces) {
+    return 'Учасник просторів $spaces може постукати';
+  }
+
+  @override
+  String get donate => 'Задонатити';
+
+  @override
+  String startedAPoll(String username) {
+    return 'Нове опитування від $username.';
+  }
+
+  @override
+  String get poll => 'Опитування';
+
+  @override
+  String get startPoll => 'Розпочати опитування';
+
+  @override
+  String get endPoll => 'Завершити опитування';
+
+  @override
+  String get answersVisible => 'Публічні відповіді';
+
+  @override
+  String get answersHidden => 'Приховані відповіді';
+
+  @override
+  String get pollQuestion => 'Запитання';
+
+  @override
+  String get answerOption => 'Варіант відповіді';
+
+  @override
+  String get addAnswerOption => 'Додати варіант відповіді';
+
+  @override
+  String get allowMultipleAnswers => 'Дозволити декілька варіантів відповіді';
+
+  @override
+  String get pollHasBeenEnded => 'Опитування завершилось';
+
+  @override
+  String countVotes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count голосів',
+      one: 'Один голос',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get answersWillBeVisibleWhenPollHasEnded =>
+      'Відповіді стануть публічними після завершення опитування';
+
+  @override
+  String get replyInThread => 'Відповісти у вітці';
+
+  @override
+  String countReplies(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count відповідей',
+      one: 'Одна відповідь',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get thread => 'Вітка';
+
+  @override
+  String get backToMainChat => 'Повернутись до основної бесіди';
+
+  @override
+  String get saveChanges => 'Зберегти зміни';
+
+  @override
+  String get createSticker => 'Створити наліпку чи емодзі';
+
+  @override
+  String get useAsSticker => 'Використати як наліпку';
+
+  @override
+  String get useAsEmoji => 'Використати як емодзі';
+
+  @override
+  String get stickerPackNameAlreadyExists =>
+      'Набір наліпок з такою назвою вже є';
+
+  @override
+  String get newStickerPack => 'Новий набір наліпок';
+
+  @override
+  String get stickerPackName => 'Назва набору наліпок';
+
+  @override
+  String get attribution => 'Атрибуція';
+
+  @override
+  String get skipChatBackup => 'Пропустити резервне копіювання бесід';
+
+  @override
+  String get skipChatBackupWarning =>
+      'Ви впевнені? Без резервного копіювання бесід ви можете втратити доступ до повідомлень, якщо ви зміните пристрій.';
+
+  @override
+  String get loadingMessages => 'Завантажуються повідомлення';
+
+  @override
+  String get setupChatBackup => 'Налаштувати резервне копіювання бесід';
+
+  @override
+  String get noMoreResultsFound => 'No more results found';
+
+  @override
+  String chatSearchedUntil(String time) {
+    return 'Chat searched until $time';
+  }
 }

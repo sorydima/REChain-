@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:collection/collection.dart' show IterableExtension;
 import 'package:matrix/encryption/utils/key_verification.dart';
 import 'package:matrix/matrix.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/pages/device_settings/device_settings_view.dart';
@@ -52,6 +53,15 @@ class DevicesSettingsController extends State<DevicesSettings> {
   }
 
   void removeDevicesAction(List<Device> devices) async {
+    final client = Matrix.of(context).client;
+
+    final accountManageUrl = client.wellKnown?.additionalProperties
+        .tryGetMap<String, Object?>('org.matrix.msc2965.authentication')
+        ?.tryGet<String>('account');
+    if (accountManageUrl != null) {
+      launchUrlString(accountManageUrl, mode: LaunchMode.inAppBrowserView);
+      return;
+    }
     if (await showOkCancelAlertDialog(
           context: context,
           title: L10n.of(context).areYouSure,
@@ -73,10 +83,7 @@ class DevicesSettingsController extends State<DevicesSettings> {
       context: context,
       delay: false,
       future: () => matrix.client.uiaRequestBackground(
-        (auth) => matrix.client.deleteDevices(
-          deviceIds,
-          auth: auth,
-        ),
+        (auth) => matrix.client.deleteDevices(deviceIds, auth: auth),
       ),
     );
     reload();
@@ -93,9 +100,9 @@ class DevicesSettingsController extends State<DevicesSettings> {
     if (displayName == null) return;
     final success = await showFutureLoadingDialog(
       context: context,
-      future: () => Matrix.of(context)
-          .client
-          .updateDevice(device.deviceId, displayName: displayName),
+      future: () => Matrix.of(
+        context,
+      ).client.updateDevice(device.deviceId, displayName: displayName),
     );
     if (success.error == null) {
       reload();
@@ -117,8 +124,10 @@ class DevicesSettingsController extends State<DevicesSettings> {
         .deviceKeys[device.deviceId]!
         .startVerification();
     req.onUpdate = () {
-      if ({KeyVerificationState.error, KeyVerificationState.done}
-          .contains(req.state)) {
+      if ({
+        KeyVerificationState.error,
+        KeyVerificationState.done,
+      }.contains(req.state)) {
         setState(() {});
       }
     };
@@ -149,9 +158,7 @@ class DevicesSettingsController extends State<DevicesSettings> {
   bool _isOwnDevice(Device userDevice) =>
       userDevice.deviceId == Matrix.of(context).client.deviceID;
 
-  Device? get thisDevice => devices!.firstWhereOrNull(
-        _isOwnDevice,
-      );
+  Device? get thisDevice => devices!.firstWhereOrNull(_isOwnDevice);
 
   List<Device> get notThisDevice => List<Device>.from(devices!)
     ..removeWhere(_isOwnDevice)

@@ -9,7 +9,6 @@ import 'package:rechainonline/widgets/adaptive_dialogs/show_text_input_dialog.da
 import 'package:rechainonline/widgets/app_lock.dart';
 import 'package:rechainonline/widgets/future_loading_dialog.dart';
 import 'package:rechainonline/widgets/matrix.dart';
-import '../bootstrap/bootstrap_dialog.dart';
 import 'settings_security_view.dart';
 
 class SettingsSecurity extends StatefulWidget {
@@ -75,46 +74,28 @@ class SettingsSecurityController extends State<SettingsSecurity> {
     if (mxid == null || mxid.isEmpty || mxid != supposedMxid) {
       return;
     }
-    final input = await showTextInputDialog(
-      useRootNavigator: false,
+    final resp = await showFutureLoadingDialog(
       context: context,
-      title: L10n.of(context).pleaseEnterYourPassword,
-      okLabel: L10n.of(context).ok,
-      cancelLabel: L10n.of(context).cancel,
-      isDestructive: true,
-      obscureText: true,
-      hintText: '******',
-      minLines: 1,
-      maxLines: 1,
-    );
-    if (input == null) return;
-    await showFutureLoadingDialog(
-      context: context,
-      future: () => Matrix.of(context).client.deactivateAccount(
-            auth: AuthenticationPassword(
-              password: input,
-              identifier: AuthenticationUserIdentifier(
-                user: Matrix.of(context).client.userID!,
-              ),
-            ),
+      delay: false,
+      future: () =>
+          Matrix.of(context).client.uiaRequestBackground<IdServerUnbindResult?>(
+            (auth) => Matrix.of(context).client.deactivateAccount(auth: auth),
           ),
     );
-  }
 
-  void showBootstrapDialog(BuildContext context) async {
-    await BootstrapDialog(
-      client: Matrix.of(context).client,
-    ).show(context);
+    if (!resp.isError) {
+      await showFutureLoadingDialog(
+        context: context,
+        future: () => Matrix.of(context).client.logout(),
+      );
+    }
   }
 
   Future<void> dehydrateAction() => Matrix.of(context).dehydrateAction(context);
 
   void changeShareKeysWith(ShareKeysWith? shareKeysWith) async {
     if (shareKeysWith == null) return;
-    AppSettings.shareKeysWith.setItem(
-      Matrix.of(context).store,
-      shareKeysWith.name,
-    );
+    AppSettings.shareKeysWith.setItem(shareKeysWith.name);
     Matrix.of(context).client.shareKeysWith = shareKeysWith;
     setState(() {});
   }

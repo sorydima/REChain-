@@ -18,17 +18,17 @@ class L10nKo extends L10n {
   String get notAnImage => '이미지 파일이 아닙니다.';
 
   @override
-  String get setCustomPermissionLevel => 'Set custom permission level';
+  String get setCustomPermissionLevel => '사용자 지정 권한 수준 설정';
 
   @override
   String get setPermissionsLevelDescription =>
-      'Please choose a predefined role below or enter a custom permission level between 0 and 100.';
+      '아래에서 미리 정의된 역할을 선택하거나 0부터 100 사이의 사용자 지정 권한 수준을 입력해 주세요.';
 
   @override
-  String get ignoreUser => 'Ignore user';
+  String get ignoreUser => '사용자 무시';
 
   @override
-  String get normalUser => 'Normal user';
+  String get normalUser => '일반 사용자';
 
   @override
   String get remove => '지우기';
@@ -102,8 +102,7 @@ class L10nKo extends L10n {
   String get allChats => '모든 채팅';
 
   @override
-  String get commandHint_roomupgrade =>
-      'Upgrade this room to the given room version';
+  String get commandHint_roomupgrade => '이 방을 주어진 방 버전으로 업그레이드합니다';
 
   @override
   String get commandHint_googly => '왕눈이 눈알 보내기';
@@ -167,8 +166,11 @@ class L10nKo extends L10n {
   String get autoplayImages => '자동으로 움직이는 스티커와 이모트 재생';
 
   @override
-  String badServerLoginTypesException(String serverVersions,
-      String supportedVersions, Object suportedVersions) {
+  String badServerLoginTypesException(
+    String serverVersions,
+    String supportedVersions,
+    Object suportedVersions,
+  ) {
     return '홈서버가 지원하는 로그인 유형:\n$serverVersions\n하지만 이 앱에서 지원하는 것은:\n$supportedVersions';
   }
 
@@ -183,11 +185,12 @@ class L10nKo extends L10n {
 
   @override
   String badServerVersionsException(
-      String serverVersions,
-      String supportedVersions,
-      Object serverVerions,
-      Object supoortedVersions,
-      Object suportedVersions) {
+    String serverVersions,
+    String supportedVersions,
+    Object serverVerions,
+    Object supoortedVersions,
+    Object suportedVersions,
+  ) {
     return '이 홈서버가 지원하는 Spec 버전:\n$serverVersions\n하지만 이 앱은 $supportedVersions만 지원합니다';
   }
 
@@ -252,8 +255,18 @@ class L10nKo extends L10n {
   }
 
   @override
+  String changedTheChatDescription(Object username) {
+    return '$username changed the chat description';
+  }
+
+  @override
   String changedTheChatDescriptionTo(String username, String description) {
     return '$username님이 채팅 설명을 \'$description\' 으로 변경함';
+  }
+
+  @override
+  String changedTheChatName(Object username) {
+    return '$username changed the chat name';
   }
 
   @override
@@ -476,7 +489,7 @@ class L10nKo extends L10n {
   }
 
   @override
-  String get checkList => 'Check list';
+  String get checkList => '체크리스트';
 
   @override
   String countParticipants(int count) {
@@ -485,7 +498,7 @@ class L10nKo extends L10n {
 
   @override
   String countInvited(int count) {
-    return '$count invited';
+    return '$count초대받은';
   }
 
   @override
@@ -669,7 +682,7 @@ class L10nKo extends L10n {
   String get fileName => '파일 이름';
 
   @override
-  String get rechainonline => 'rechainonline';
+  String get rechainonline => 'REChain';
 
   @override
   String get fontSize => '폰트 크기';
@@ -808,7 +821,7 @@ class L10nKo extends L10n {
 
   @override
   String inviteText(String username, String link) {
-    return '$username님이 당신을 REChain에 초대했습니다.\n1. REChain 설치: https://online.rechain.network \n2. 가입하거나 로그인 \n3. 초대 링크 열기: \n $link';
+    return '$username님이 당신을 REChain. 초대했습니다.\n1. REChain 설치: https://github.com/sorydima/REChain- \n2. 가입하거나 로그인 \n3. 초대 링크 열기: \n $link';
   }
 
   @override
@@ -928,7 +941,7 @@ class L10nKo extends L10n {
   String get newChat => '새 채팅';
 
   @override
-  String get newMessageInrechainonline => '💬 REChain에서 새로운 메시지';
+  String get newMessageInrechainonline => '💬 REChain.서 새로운 메시지';
 
   @override
   String get newVerificationRequest => '새로운 확인 요청!';
@@ -951,7 +964,7 @@ class L10nKo extends L10n {
 
   @override
   String get noGoogleServicesWarning =>
-      '이 휴대폰에 Firebase Cloud Messaging 서비스가 없는 것 같습니다. REChain에서 푸시 알림을 받으려면 ntfy 사용을 추천합니다. ntfy 혹은 다른 푸시 알림 제공자를 사용하면 알림을 보안적인 방법으로 받을 수 있습니다. ntfy는 PlayStore와 F-Droid에서 설치 가능합니다.';
+      '이 휴대폰에 Firebase Cloud Messaging 서비스가 없는 것 같습니다. REChain.서 푸시 알림을 받으려면 ntfy 사용을 추천합니다. ntfy 혹은 다른 푸시 알림 제공자를 사용하면 알림을 보안적인 방법으로 받을 수 있습니다. ntfy는 PlayStore와 F-Droid에서 설치 가능합니다.';
 
   @override
   String norechainonlineServer(String server1, String server2) {
@@ -1392,7 +1405,7 @@ class L10nKo extends L10n {
   String get theyMatch => '일치합니다';
 
   @override
-  String get title => 'rechainonline';
+  String get title => 'REChain';
 
   @override
   String get toggleFavorite => '즐겨찾기 토글';
@@ -1655,7 +1668,7 @@ class L10nKo extends L10n {
 
   @override
   String get indexedDbErrorLong =>
-      '메시지 저장은 기본적으로 사생활 보호 모드에서 사용할 수 없습니다.\n- about:config 로 이동\n- dom.indexedDB.privateBrowsing.enabled 를 true로 설정\n그렇지 않으면 REChain을 실행할 수 없습니다.';
+      '메시지 저장은 기본적으로 사생활 보호 모드에서 사용할 수 없습니다.\n- about:config 로 이동\n- dom.indexedDB.privateBrowsing.enabled 를 true로 설정\n그렇지 않으면 REChain. 실행할 수 없습니다.';
 
   @override
   String switchToAccount(String number) {
@@ -1826,7 +1839,7 @@ class L10nKo extends L10n {
 
   @override
   String get appearOnTopDetails =>
-      '앱이 상단에 표시되도록 허용 (이미 REChain을 통화 계정으로 설정한 경우에는 필요하지 않음)';
+      '앱이 상단에 표시되도록 허용 (이미 REChain. 통화 계정으로 설정한 경우에는 필요하지 않음)';
 
   @override
   String get otherCallingPermissions => '마이크, 카메라 그리고 다름 REChain 권한';
@@ -1976,7 +1989,7 @@ class L10nKo extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      '채팅이 새로운 방 버전으로 다시 생성됩니다. 모든 참가자는 새로운 채팅으로 전환해야합니다. https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle 에서 방 버전에 대해 자세히 알아볼 수 있습니다.';
+      '채팅이 새로운 방 버전으로 다시 생성됩니다. 모든 참가자는 새로운 채팅으로 전환해야합니다. https://github.com/sorydima/REChain-.git 에서 방 버전에 대해 자세히 알아볼 수 있습니다.';
 
   @override
   String get removeDevicesDescription => '이 기기에서 로그아웃되며 더 이상 메시지를 받을 수 없습니다.';
@@ -2312,7 +2325,7 @@ class L10nKo extends L10n {
 
   @override
   String get homeserverDescription =>
-      '당신의 모든 데이터는 이메일과 흡사하게 당신의 홈서버에 저장됩니다. 당신이 소통하고 싶은 사람들과 다른 서버를 사용해도 무관하니 당신이 원하는 홈서버를 선택해도 됩니다. https://rechain.network에서 자세히 알아보세요.';
+      '당신의 모든 데이터는 이메일과 흡사하게 당신의 홈서버에 저장됩니다. 당신이 소통하고 싶은 사람들과 다른 서버를 사용해도 무관하니 당신이 원하는 홈서버를 선택해도 됩니다. https://github.com/sorydima/REChain-.git에서 자세히 알아보세요.';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
@@ -2355,7 +2368,7 @@ class L10nKo extends L10n {
 
   @override
   String get welcomeText =>
-      '안녕하세요 👋 REChain이에요. 당신은 https://online.rechain.network와 호환되는 모든 홈서버를 사용할 수 있어요. 그리고 모두와 대화해보세요. 거대한 분산 대화망이니까요!';
+      '안녕하세요 👋 REChain.에요. 당신은 https://github.com/sorydima/REChain-.git와 호환되는 모든 홈서버를 사용할 수 있어요. 그리고 모두와 대화해보세요. 거대한 분산 대화망이니까요!';
 
   @override
   String get blur => '블러:';
@@ -2439,7 +2452,7 @@ class L10nKo extends L10n {
 
   @override
   String get appIntroduction =>
-      'REChain는 다른 메신저들을 사용하는 친구들과도 채팅할 수 있습니다. https://rechain.network에 방문하거나 *계속*을 눌러 자세한 정보를 확인하세요.';
+      'REChain는 다른 메신저들을 사용하는 친구들과도 채팅할 수 있습니다. https://github.com/sorydima/REChain-.git에 방문하거나 *계속*을 눌러 자세한 정보를 확인하세요.';
 
   @override
   String get newChatRequest => '📩 새 채팅 요청';
@@ -2672,4 +2685,169 @@ class L10nKo extends L10n {
 
   @override
   String get moreEvents => 'More events';
+
+  @override
+  String get declineInvitation => 'Decline invitation';
+
+  @override
+  String get noMessagesYet => 'No messages yet';
+
+  @override
+  String get longPressToRecordVoiceMessage =>
+      'Long press to record voice message.';
+
+  @override
+  String get pause => 'Pause';
+
+  @override
+  String get resume => 'Resume';
+
+  @override
+  String get newSubSpace => 'New sub space';
+
+  @override
+  String get moveToDifferentSpace => 'Move to different space';
+
+  @override
+  String get moveUp => 'Move up';
+
+  @override
+  String get moveDown => 'Move down';
+
+  @override
+  String get removeFromSpaceDescription =>
+      'The chat will be removed from the space but still appear in your chat list.';
+
+  @override
+  String countChats(int chats) {
+    return '$chats chats';
+  }
+
+  @override
+  String spaceMemberOf(String spaces) {
+    return 'Space member of $spaces';
+  }
+
+  @override
+  String spaceMemberOfCanKnock(String spaces) {
+    return 'Space member of $spaces can knock';
+  }
+
+  @override
+  String get donate => 'Donate';
+
+  @override
+  String startedAPoll(String username) {
+    return '$username started a poll.';
+  }
+
+  @override
+  String get poll => 'Poll';
+
+  @override
+  String get startPoll => 'Start poll';
+
+  @override
+  String get endPoll => 'End poll';
+
+  @override
+  String get answersVisible => 'Answers visible';
+
+  @override
+  String get answersHidden => 'Answers hidden';
+
+  @override
+  String get pollQuestion => 'Poll question';
+
+  @override
+  String get answerOption => 'Answer option';
+
+  @override
+  String get addAnswerOption => 'Add answer option';
+
+  @override
+  String get allowMultipleAnswers => 'Allow multiple answers';
+
+  @override
+  String get pollHasBeenEnded => 'Poll has been ended';
+
+  @override
+  String countVotes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count votes',
+      one: 'One vote',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get answersWillBeVisibleWhenPollHasEnded =>
+      'Answers will be visible when poll has ended';
+
+  @override
+  String get replyInThread => 'Reply in thread';
+
+  @override
+  String countReplies(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count replies',
+      one: 'One reply',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get thread => 'Thread';
+
+  @override
+  String get backToMainChat => 'Back to main chat';
+
+  @override
+  String get saveChanges => 'Save changes';
+
+  @override
+  String get createSticker => 'Create sticker or emoji';
+
+  @override
+  String get useAsSticker => 'Use as sticker';
+
+  @override
+  String get useAsEmoji => 'Use as emoji';
+
+  @override
+  String get stickerPackNameAlreadyExists => 'Sticker pack name already exists';
+
+  @override
+  String get newStickerPack => 'New sticker pack';
+
+  @override
+  String get stickerPackName => 'Sticker pack name';
+
+  @override
+  String get attribution => 'Attribution';
+
+  @override
+  String get skipChatBackup => 'Skip chat backup';
+
+  @override
+  String get skipChatBackupWarning =>
+      'Are you sure? Without enabling the chat backup you may lose access to your messages if you switch your device.';
+
+  @override
+  String get loadingMessages => 'Loading messages';
+
+  @override
+  String get setupChatBackup => 'Set up chat backup';
+
+  @override
+  String get noMoreResultsFound => 'No more results found';
+
+  @override
+  String chatSearchedUntil(String time) {
+    return 'Chat searched until $time';
+  }
 }

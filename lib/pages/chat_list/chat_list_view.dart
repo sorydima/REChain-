@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
 
-import 'package:rechainonline/config/app_config.dart';
+import 'package:rechainonline/config/setting_keys.dart';
 import 'package:rechainonline/config/themes.dart';
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/pages/chat_list/chat_list.dart';
@@ -32,16 +32,13 @@ class ChatListView extends StatelessWidget {
       child: Row(
         children: [
           if (rechainonlineThemes.isColumnMode(context) ||
-              AppConfig.displayNavigationRail) ...[
+              AppSettings.displayNavigationRail.value) ...[
             SpacesNavigationRail(
               activeSpaceId: controller.activeSpaceId,
               onGoToChats: controller.clearActiveSpace,
               onGoToSpaceId: controller.setActiveSpace,
             ),
-            Container(
-              color: Theme.of(context).dividerColor,
-              width: 1,
-            ),
+            Container(color: Theme.of(context).dividerColor, width: 1),
           ],
           Expanded(
             child: GestureDetector(
@@ -50,8 +47,8 @@ class ChatListView extends StatelessWidget {
               behavior: HitTestBehavior.translucent,
               child: Scaffold(
                 body: ChatListViewBody(controller),
-                floatingActionButton: !controller.isSearchMode &&
-                        controller.activeSpaceId == null
+                floatingActionButton:
+                    !controller.isSearchMode && controller.activeSpaceId == null
                     ? FloatingActionButton.extended(
                         onPressed: () => context.go('/rooms/newprivatechat'),
                         icon: const Icon(Icons.add_outlined),

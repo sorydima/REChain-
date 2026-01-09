@@ -12,7 +12,7 @@ class L10nSr extends L10n {
   String get alwaysUse24HourFormat => 'false';
 
   @override
-  String get repeatPassword => 'Repeat password';
+  String get repeatPassword => 'Ponovite lozinku';
 
   @override
   String get notAnImage => 'Not an image file.';
@@ -77,7 +77,7 @@ class L10nSr extends L10n {
 
   @override
   String get confirmMatrixId =>
-      'Please confirm your REChain ID in order to delete your account.';
+      'Please confirm your Matrix x REChain ID in order to delete your account.';
 
   @override
   String supposedMxid(String mxid) {
@@ -110,7 +110,7 @@ class L10nSr extends L10n {
   String get commandHint_googly => 'Send some googly eyes';
 
   @override
-  String get commandHint_cuddle => 'Send a cuddle';
+  String get commandHint_cuddle => 'Pošalji zagrljaj';
 
   @override
   String get commandHint_hug => 'Send a hug';
@@ -171,8 +171,11 @@ class L10nSr extends L10n {
       'Automatically play animated stickers and emotes';
 
   @override
-  String badServerLoginTypesException(String serverVersions,
-      String supportedVersions, Object suportedVersions) {
+  String badServerLoginTypesException(
+    String serverVersions,
+    String supportedVersions,
+    Object suportedVersions,
+  ) {
     return 'Домаћи сервер подржава начине пријаве:\n$serverVersions\nали ова апликација подржава само:\n$supportedVersions';
   }
 
@@ -187,11 +190,12 @@ class L10nSr extends L10n {
 
   @override
   String badServerVersionsException(
-      String serverVersions,
-      String supportedVersions,
-      Object serverVerions,
-      Object supoortedVersions,
-      Object suportedVersions) {
+    String serverVersions,
+    String supportedVersions,
+    Object serverVerions,
+    Object supoortedVersions,
+    Object suportedVersions,
+  ) {
     return 'Домаћи сервер подржава верзије:\n$serverVersions\nали ова апликација подржава само $supportedVersions';
   }
 
@@ -256,8 +260,18 @@ class L10nSr extends L10n {
   }
 
   @override
+  String changedTheChatDescription(Object username) {
+    return '$username changed the chat description';
+  }
+
+  @override
   String changedTheChatDescriptionTo(String username, String description) {
     return '$username промени опис ћаскања у: „$description“';
+  }
+
+  @override
+  String changedTheChatName(Object username) {
+    return '$username changed the chat name';
   }
 
   @override
@@ -371,7 +385,7 @@ class L10nSr extends L10n {
 
   @override
   String get commandHint_markasdm =>
-      'Mark as direct message room for the giving REChain ID';
+      'Mark as direct message room for the giving Matrix x REChain ID';
 
   @override
   String get commandHint_markasgroup => 'Mark as group';
@@ -683,7 +697,7 @@ class L10nSr extends L10n {
   String get fileName => 'Назив фајла';
 
   @override
-  String get rechainonline => 'rechainonline';
+  String get rechainonline => 'REChain';
 
   @override
   String get fontSize => 'Величина фонта';
@@ -825,7 +839,7 @@ class L10nSr extends L10n {
 
   @override
   String inviteText(String username, String link) {
-    return '$username вас позива у REChain. \n1. Инсталирајте REChain: https://online.rechain.network \n2. Региструјте се или пријавите \n3. Отворите везу позивнице: $link';
+    return '$username вас позива у REChain. \n1. Инсталирајте REChain. https://github.com/sorydima/REChain- \n2. Региструјте се или пријавите \n3. Отворите везу позивнице: $link';
   }
 
   @override
@@ -949,7 +963,7 @@ class L10nSr extends L10n {
   String get newChat => 'Ново ћаскање';
 
   @override
-  String get newMessageInrechainonline => 'Нова порука — rechainonline';
+  String get newMessageInrechainonline => 'Нова порука — REChain';
 
   @override
   String get newVerificationRequest => 'Нови захтев за верификацију!';
@@ -972,7 +986,7 @@ class L10nSr extends L10n {
 
   @override
   String get noGoogleServicesWarning =>
-      'Чини се да немате Гугл услуге на телефону. То је добра одлука за вашу приватност! Да би се протурале нотификације у REChain, препоручујемо коришћење https://microg.org/ или https://unifiedpush.org/';
+      'Чини се да немате Гугл услуге на телефону. То је добра одлука за вашу приватност! Да би се протурале нотификације у REChain. препоручујемо коришћење https://microg.org/ или https://unifiedpush.org/';
 
   @override
   String norechainonlineServer(String server1, String server2) {
@@ -1422,7 +1436,7 @@ class L10nSr extends L10n {
   String get theyMatch => 'Поклапају се';
 
   @override
-  String get title => 'rechainonline';
+  String get title => 'REChain';
 
   @override
   String get toggleFavorite => 'Мењај омиљеност';
@@ -1846,7 +1860,7 @@ class L10nSr extends L10n {
   String get screenSharingTitle => 'screen sharing';
 
   @override
-  String get screenSharingDetail => 'You are sharing your screen in FuffyChat';
+  String get screenSharingDetail => 'You are sharing your screen in REChain';
 
   @override
   String get callingPermissions => 'Calling permissions';
@@ -1992,10 +2006,10 @@ class L10nSr extends L10n {
   String get invite => 'Invite';
 
   @override
-  String get inviteGroupChat => '📨 Invite group chat';
+  String get inviteGroupChat => '📨 Group chat invite';
 
   @override
-  String get invitePrivateChat => '📨 Invite private chat';
+  String get invitePrivateChat => '📨 Private chat invite';
 
   @override
   String get invalidInput => 'Invalid input!';
@@ -2014,7 +2028,7 @@ class L10nSr extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      'The chat will then be recreated with the new room version. All participants will be notified that they need to switch to the new chat. You can find out more about room versions at https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle';
+      'The chat will then be recreated with the new room version. All participants will be notified that they need to switch to the new chat. You can find out more about room versions at https://github.com/sorydima/REChain-.git';
 
   @override
   String get removeDevicesDescription =>
@@ -2360,7 +2374,7 @@ class L10nSr extends L10n {
 
   @override
   String get homeserverDescription =>
-      'All your data is stored on the homeserver, just like an email provider. You can choose which homeserver you want to use, while you can still communicate with everyone. Learn more at at https://rechain.network.';
+      'All your data is stored on the homeserver, just like an email provider. You can choose which homeserver you want to use, while you can still communicate with everyone. Learn more at at https://github.com/sorydima/REChain-.git';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
@@ -2404,7 +2418,7 @@ class L10nSr extends L10n {
 
   @override
   String get welcomeText =>
-      'Hey Hey 👋 This is REChain. You can sign in to any homeserver, which is compatible with https://rechain.network. And then chat with anyone. It\'s a huge decentralized messaging network!';
+      'Hey Hey 👋 This is REChain. You can sign in to any homeserver, which is compatible with https://github.com/sorydima/REChain-.git. And then chat with anyone. It\'s a huge decentralized messaging network!';
 
   @override
   String get blur => 'Blur:';
@@ -2492,7 +2506,7 @@ class L10nSr extends L10n {
 
   @override
   String get appIntroduction =>
-      'REChain lets you chat with your friends across different messengers. Learn more at https://rechain.network or just tap *Continue*.';
+      'REChain lets you chat with your friends across different messengers. Learn more at https://github.com/sorydima/REChain-.git or just tap *Continue*.';
 
   @override
   String get newChatRequest => '📩 New chat request';
@@ -2730,4 +2744,169 @@ class L10nSr extends L10n {
 
   @override
   String get moreEvents => 'More events';
+
+  @override
+  String get declineInvitation => 'Decline invitation';
+
+  @override
+  String get noMessagesYet => 'No messages yet';
+
+  @override
+  String get longPressToRecordVoiceMessage =>
+      'Long press to record voice message.';
+
+  @override
+  String get pause => 'Pause';
+
+  @override
+  String get resume => 'Resume';
+
+  @override
+  String get newSubSpace => 'New sub space';
+
+  @override
+  String get moveToDifferentSpace => 'Move to different space';
+
+  @override
+  String get moveUp => 'Move up';
+
+  @override
+  String get moveDown => 'Move down';
+
+  @override
+  String get removeFromSpaceDescription =>
+      'The chat will be removed from the space but still appear in your chat list.';
+
+  @override
+  String countChats(int chats) {
+    return '$chats chats';
+  }
+
+  @override
+  String spaceMemberOf(String spaces) {
+    return 'Space member of $spaces';
+  }
+
+  @override
+  String spaceMemberOfCanKnock(String spaces) {
+    return 'Space member of $spaces can knock';
+  }
+
+  @override
+  String get donate => 'Donate';
+
+  @override
+  String startedAPoll(String username) {
+    return '$username started a poll.';
+  }
+
+  @override
+  String get poll => 'Poll';
+
+  @override
+  String get startPoll => 'Start poll';
+
+  @override
+  String get endPoll => 'End poll';
+
+  @override
+  String get answersVisible => 'Answers visible';
+
+  @override
+  String get answersHidden => 'Answers hidden';
+
+  @override
+  String get pollQuestion => 'Poll question';
+
+  @override
+  String get answerOption => 'Answer option';
+
+  @override
+  String get addAnswerOption => 'Add answer option';
+
+  @override
+  String get allowMultipleAnswers => 'Allow multiple answers';
+
+  @override
+  String get pollHasBeenEnded => 'Poll has been ended';
+
+  @override
+  String countVotes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count votes',
+      one: 'One vote',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get answersWillBeVisibleWhenPollHasEnded =>
+      'Answers will be visible when poll has ended';
+
+  @override
+  String get replyInThread => 'Reply in thread';
+
+  @override
+  String countReplies(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count replies',
+      one: 'One reply',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get thread => 'Thread';
+
+  @override
+  String get backToMainChat => 'Back to main chat';
+
+  @override
+  String get saveChanges => 'Save changes';
+
+  @override
+  String get createSticker => 'Create sticker or emoji';
+
+  @override
+  String get useAsSticker => 'Use as sticker';
+
+  @override
+  String get useAsEmoji => 'Use as emoji';
+
+  @override
+  String get stickerPackNameAlreadyExists => 'Sticker pack name already exists';
+
+  @override
+  String get newStickerPack => 'New sticker pack';
+
+  @override
+  String get stickerPackName => 'Sticker pack name';
+
+  @override
+  String get attribution => 'Attribution';
+
+  @override
+  String get skipChatBackup => 'Skip chat backup';
+
+  @override
+  String get skipChatBackupWarning =>
+      'Are you sure? Without enabling the chat backup you may lose access to your messages if you switch your device.';
+
+  @override
+  String get loadingMessages => 'Loading messages';
+
+  @override
+  String get setupChatBackup => 'Set up chat backup';
+
+  @override
+  String get noMoreResultsFound => 'No more results found';
+
+  @override
+  String chatSearchedUntil(String time) {
+    return 'Chat searched until $time';
+  }
 }

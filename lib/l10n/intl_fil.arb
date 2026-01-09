@@ -27,7 +27,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "confirmMatrixId": "Paki-kumpirma ang iyong REChain ID para burahin ang iyong account.",
+  "confirmMatrixId": "Paki-kumpirma ang iyong Matrix x REChain ID para burahin ang iyong account.",
   "@confirmMatrixId": {},
   "addChatDescription": "Magdagdag ng deskripsyon ng chat...",
   "@addChatDescription": {},
@@ -476,7 +476,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "commandHint_markasdm": "Markahan bilang direktang mensahe na room para sa ibinigay na REChain ID",
+  "commandHint_markasdm": "Markahan bilang direktang mensahe na room para sa ibinigay na Matrix x REChain ID",
   "@commandHint_markasdm": {},
   "changedTheGuestAccessRulesTo": "Pinalitan ni {username} ang mga tuntunin sa pag-access ng bisita sa: {rules}",
   "@changedTheGuestAccessRulesTo": {
@@ -953,7 +953,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "rechainonline": "rechainonline",
+  "rechainonline": "REChain",
   "@rechainonline": {
     "type": "String",
     "placeholders": {}

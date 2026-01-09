@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 
 import 'package:matrix/matrix.dart';
@@ -22,150 +20,108 @@ class ChatSearchController extends State<ChatSearchPage>
   final TextEditingController searchController = TextEditingController();
   late final TabController tabController;
 
-  Timeline? timeline;
-
-  Stream<(List<Event>, String?)>? searchStream;
-  Stream<(List<Event>, String?)>? galleryStream;
-  Stream<(List<Event>, String?)>? fileStream;
+  final List<Event> messages = [];
+  final List<Event> images = [];
+  final List<Event> files = [];
+  String? messagesNextBatch, imagesNextBatch, filesNextBatch;
+  bool messagesEndReached = false;
+  bool imagesEndReached = false;
+  bool filesEndReached = false;
+  bool isLoading = false;
+  DateTime? searchedUntil;
 
   void restartSearch() {
-    if (searchController.text.isEmpty) {
-      setState(() {
-        searchStream = null;
-      });
-      return;
-    }
     setState(() {
-      searchStream = const Stream.empty();
+      messages.clear();
+      images.clear();
+      files.clear();
+      messagesNextBatch = imagesNextBatch = filesNextBatch = searchedUntil =
+          null;
+      messagesEndReached = imagesEndReached = filesEndReached = false;
     });
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      startMessageSearch();
+      startSearch();
     });
   }
 
-  void startMessageSearch({
-    String? prevBatch,
-    List<Event>? previousSearchResult,
-  }) async {
-    final timeline = this.timeline ??= await room!.getTimeline();
-
-    if (tabController.index == 0 && searchController.text.isEmpty) {
-      return;
-    }
-
-    setState(() {
-      searchStream = timeline
-          .startSearch(
-            searchTerm: searchController.text,
-            prevBatch: prevBatch,
-            requestHistoryCount: 1000,
-            limit: 32,
-          )
-          .map(
-            (result) => (
-              [
-                if (previousSearchResult != null) ...previousSearchResult,
-                ...result.$1,
-              ],
-              result.$2,
-            ),
-          )
-          .map(
-            (result) => (
-              <String, Event>{
-                for (final event in result.$1) event.eventId: event,
-              }.values.toList(),
-              result.$2,
-            ),
-          )
-          .asBroadcastStream();
-    });
-  }
-
-  void startGallerySearch({
-    String? prevBatch,
-    List<Event>? previousSearchResult,
-  }) async {
-    final timeline = this.timeline ??= await room!.getTimeline();
-
-    setState(() {
-      galleryStream = timeline
-          .startSearch(
-            searchFunc: (event) => {
+  void startSearch() async {
+    switch (tabController.index) {
+      case 0:
+        final searchQuery = searchController.text.trim();
+        if (searchQuery.isEmpty) return;
+        setState(() {
+          isLoading = true;
+        });
+        final result = await room!.client.search(
+          searchTerm: searchController.text.trim(),
+          nextBatch: messagesNextBatch,
+          filter: RoomEventFilter(
+            rooms: [room!.id],
+          ),
+        );
+        setState(() {
+          isLoading = false;
+          messages.addAll(result.events);
+          messagesNextBatch = result.nextBatch;
+          messagesEndReached = result.nextBatch == null;
+          searchedUntil = result.searchedUntil;
+        });
+        return;
+      case 1:
+        setState(() {
+          isLoading = true;
+        });
+        final result = await room!.client.search(
+          nextBatch: imagesNextBatch,
+          filter: RoomEventFilter(
+            rooms: [room!.id],
+            types: [
               MessageTypes.Image,
               MessageTypes.Video,
-            }.contains(event.messageType),
-            prevBatch: prevBatch,
-            requestHistoryCount: 1000,
-            limit: 32,
-          )
-          .map(
-            (result) => (
-              [
-                if (previousSearchResult != null) ...previousSearchResult,
-                ...result.$1,
-              ],
-              result.$2,
-            ),
-          )
-          .map(
-            (result) => (
-              <String, Event>{
-                for (final event in result.$1) event.eventId: event,
-              }.values.toList(),
-              result.$2,
-            ),
-          )
-          .asBroadcastStream();
-    });
-  }
-
-  void startFileSearch({
-    String? prevBatch,
-    List<Event>? previousSearchResult,
-  }) async {
-    final timeline = this.timeline ??= await room!.getTimeline();
-
-    setState(() {
-      fileStream = timeline
-          .startSearch(
-            searchFunc: (event) =>
-                event.messageType == MessageTypes.File ||
-                (event.messageType == MessageTypes.Audio &&
-                    !event.content.containsKey('org.matrix.msc3245.voice')),
-            prevBatch: prevBatch,
-            requestHistoryCount: 1000,
-            limit: 32,
-          )
-          .map(
-            (result) => (
-              [
-                if (previousSearchResult != null) ...previousSearchResult,
-                ...result.$1,
-              ],
-              result.$2,
-            ),
-          )
-          .map(
-            (result) => (
-              <String, Event>{
-                for (final event in result.$1) event.eventId: event,
-              }.values.toList(),
-              result.$2,
-            ),
-          )
-          .asBroadcastStream();
-    });
+            ],
+          ),
+        );
+        setState(() {
+          isLoading = false;
+          images.addAll(result.events);
+          imagesNextBatch = result.nextBatch;
+          imagesEndReached = result.nextBatch == null;
+          searchedUntil = result.searchedUntil;
+        });
+        return;
+      case 2:
+        setState(() {
+          isLoading = true;
+        });
+        final result = await room!.client.search(
+          nextBatch: filesNextBatch,
+          filter: RoomEventFilter(
+            rooms: [room!.id],
+            types: [
+              MessageTypes.File,
+            ],
+          ),
+        );
+        setState(() {
+          isLoading = false;
+          files.addAll(result.events);
+          filesNextBatch = result.nextBatch;
+          filesEndReached = result.nextBatch == null;
+          searchedUntil = result.searchedUntil;
+        });
+        return;
+      default:
+        return;
+    }
   }
 
   void _onTabChanged() {
     switch (tabController.index) {
       case 1:
-        startGallerySearch();
-        break;
       case 2:
-        startFileSearch();
+        startSearch();
         break;
+      case 0:
       default:
         restartSearch();
         break;

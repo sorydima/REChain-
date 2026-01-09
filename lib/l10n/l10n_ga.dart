@@ -9,7 +9,7 @@ class L10nGa extends L10n {
   L10nGa([String locale = 'ga']) : super(locale);
 
   @override
-  String get alwaysUse24HourFormat => '';
+  String get alwaysUse24HourFormat => 'bréagach';
 
   @override
   String get repeatPassword => 'Scríobh an pasfhocal arís';
@@ -78,7 +78,7 @@ class L10nGa extends L10n {
 
   @override
   String get confirmMatrixId =>
-      'Deimhnigh d’ID Maitrís chun do chuntas a scriosadh.';
+      'Deimhnigh d’ID Matrix x REChain chun do chuntas a scriosadh.';
 
   @override
   String supposedMxid(String mxid) {
@@ -174,8 +174,11 @@ class L10nGa extends L10n {
       'Seinn greamáin agus straoiseog beoite go huathoibríoch';
 
   @override
-  String badServerLoginTypesException(String serverVersions,
-      String supportedVersions, Object suportedVersions) {
+  String badServerLoginTypesException(
+    String serverVersions,
+    String supportedVersions,
+    Object suportedVersions,
+  ) {
     return 'Tá na cineálacha logála isteach seo ar fáil faoin freastalaí baile:\n$serverVersions\nAch níl ach na ceann seo ar fáil faoin aip seo:\n$supportedVersions';
   }
 
@@ -191,11 +194,12 @@ class L10nGa extends L10n {
 
   @override
   String badServerVersionsException(
-      String serverVersions,
-      String supportedVersions,
-      Object serverVerions,
-      Object supoortedVersions,
-      Object suportedVersions) {
+    String serverVersions,
+    String supportedVersions,
+    Object serverVerions,
+    Object supoortedVersions,
+    Object suportedVersions,
+  ) {
     return 'Tá na leaganacha sonraíochta seo ar fáil faoin freastalaí baile:\n$serverVersions\nAch níl ach na ceann seo ar fáil faoin aip seo $supportedVersions';
   }
 
@@ -260,8 +264,18 @@ class L10nGa extends L10n {
   }
 
   @override
+  String changedTheChatDescription(Object username) {
+    return 'D\'athraigh $username cur síos an chomhrá';
+  }
+
+  @override
   String changedTheChatDescriptionTo(String username, String description) {
     return 'D\'athraigh $username an cur síos comhrá go: \'$description\'';
+  }
+
+  @override
+  String changedTheChatName(Object username) {
+    return 'D\'athraigh $username ainm an chomhrá';
   }
 
   @override
@@ -353,7 +367,7 @@ class L10nGa extends L10n {
 
   @override
   String get chatBackupDescription =>
-      'Tá do sheanteachtaireachtaí slán le eochair athshlánaithe. Le do thoil déan cinnte nach gcaillfidh tú é.';
+      'Tá do theachtaireachtaí slán le heochair aisghabhála. Déan cinnte nach gcaillfidh tú í.';
 
   @override
   String get chatDetails => 'Sonraí comhrá';
@@ -693,7 +707,7 @@ class L10nGa extends L10n {
   String get fileName => 'Ainm an chomhaid';
 
   @override
-  String get rechainonline => 'rechainonline';
+  String get rechainonline => 'REChain';
 
   @override
   String get fontSize => 'Méid cló';
@@ -839,7 +853,7 @@ class L10nGa extends L10n {
 
   @override
   String inviteText(String username, String link) {
-    return 'Thug $username cuireadh duit chuig REChain.\n1. Tabhair cuairt ar online.rechain.network agus a shuiteáil an app\n2. Cláraigh nó sínigh isteach\n3. Oscail an nasc cuirí:\n $link';
+    return 'Thug $username cuireadh duit chuig REChain.\n1. Tabhair cuairt ar github.com/sorydima/REChain- agus a shuiteáil an app\n2. Cláraigh nó sínigh isteach\n3. Oscail an nasc cuirí:\n $link';
   }
 
   @override
@@ -963,8 +977,7 @@ class L10nGa extends L10n {
   String get newChat => 'Comhrá nua';
 
   @override
-  String get newMessageInrechainonline =>
-      '💬 Teachtaireacht nua in rechainonline';
+  String get newMessageInrechainonline => '💬 Teachtaireacht nua in REChain';
 
   @override
   String get newVerificationRequest => 'Iarratas fíoraithe nua!';
@@ -991,7 +1004,7 @@ class L10nGa extends L10n {
 
   @override
   String norechainonlineServer(String server1, String server2) {
-    return 'Níl $server1 freastalaí Matrix. Úsáid $server2 ina áit sin?';
+    return 'Níl $server1 freastalaí REChain. Úsáid $server2 ina áit sin?';
   }
 
   @override
@@ -1442,7 +1455,7 @@ class L10nGa extends L10n {
   String get theyMatch => 'Tá siad céanna';
 
   @override
-  String get title => 'rechainonline';
+  String get title => 'REChain';
 
   @override
   String get toggleFavorite => 'Scoránaigh mar ceann is fearr leat';
@@ -1875,7 +1888,7 @@ class L10nGa extends L10n {
   String get screenSharingTitle => 'comhroinnt scáileáin';
 
   @override
-  String get screenSharingDetail => 'Tá do scáileán á roinnt agat i FuffyChat';
+  String get screenSharingDetail => 'Tá do scáileán á roinnt agat i REChain';
 
   @override
   String get callingPermissions => 'Ceadanna a ghlaoch';
@@ -2024,10 +2037,10 @@ class L10nGa extends L10n {
   String get invite => 'Tabhair cuireadh';
 
   @override
-  String get inviteGroupChat => '📨 Tabhair cuireadh comhrá grúpa';
+  String get inviteGroupChat => '📨 Cuireadh chuig comhrá grúpa';
 
   @override
-  String get invitePrivateChat => '📨 Tabhair cuireadh comhrá príobháideach';
+  String get invitePrivateChat => '📨 Cuireadh chuig comhrá príobháideach';
 
   @override
   String get invalidInput => 'Ionchur neamhbhailí!';
@@ -2046,7 +2059,7 @@ class L10nGa extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      'Déanfar an comhrá a athchruthú ansin leis an leagan seomra nua. Cuirfear in iúl do gach rannpháirtí go gcaithfidh siad aistriú chuig an gcomhrá nua. Is féidir leat tuilleadh eolais a fháil faoi leaganacha seomra ag https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle';
+      'Déanfar an comhrá a athchruthú ansin leis an leagan seomra nua. Cuirfear in iúl do gach rannpháirtí go gcaithfidh siad aistriú chuig an gcomhrá nua. Is féidir leat tuilleadh eolais a fháil faoi leaganacha seomra ag https://github.com/sorydima/REChain-.git';
 
   @override
   String get removeDevicesDescription =>
@@ -2387,7 +2400,7 @@ class L10nGa extends L10n {
   String get sendCanceled => 'Cealaíodh seoladh';
 
   @override
-  String get loginWithMatrixId => 'Logáil isteach le REChain-ID';
+  String get loginWithMatrixId => 'Logáil isteach le Matrix x REChain-ID';
 
   @override
   String get discoverHomeservers => 'Faigh amach faoi fhreastalaithe baile';
@@ -2397,7 +2410,7 @@ class L10nGa extends L10n {
 
   @override
   String get homeserverDescription =>
-      'Stóráiltear do chuid sonraí go léir ar an bhfreastalaí baile, díreach cosúil le soláthraí ríomhphoist. Is féidir leat an freastalaí baile is mian leat a úsáid a roghnú, agus is féidir leat cumarsáid a dhéanamh le gach duine fós. Foghlaim níos mó ag https://rechain.network.';
+      'Stóráiltear do chuid sonraí go léir ar an bhfreastalaí baile, díreach cosúil le soláthraí ríomhphoist. Is féidir leat an freastalaí baile is mian leat a úsáid a roghnú, agus is féidir leat cumarsáid a dhéanamh le gach duine fós. Foghlaim níos mó ag https://github.com/sorydima/REChain-.git';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
@@ -2441,7 +2454,7 @@ class L10nGa extends L10n {
 
   @override
   String get welcomeText =>
-      'Hey Hey 👋 Is é seo REChain. Is féidir leat síniú isteach in aon fhreastalaí baile, atá comhoiriúnach leis https://rechain.network. Agus ansin comhrá a dhéanamh le duine ar bith. Is líonra teachtaireachtaí díláraithe ollmhór é!';
+      'Hey Hey 👋 Is é seo REChain. Is féidir leat síniú isteach in aon fhreastalaí baile, atá comhoiriúnach leis https://github.com/sorydima/REChain-.git. Agus ansin comhrá a dhéanamh le duine ar bith. Is líonra teachtaireachtaí díláraithe ollmhór é!';
 
   @override
   String get blur => 'Doiléirigh:';
@@ -2530,7 +2543,7 @@ class L10nGa extends L10n {
 
   @override
   String get appIntroduction =>
-      'Ligeann REChain duit comhrá a dhéanamh le do chairde thar theachtairí éagsúla. Foghlaim tuilleadh ag https://rechain.network nó tapáil *Ar aghaidh*.';
+      'Ligeann REChain duit comhrá a dhéanamh le do chairde thar theachtairí éagsúla. Foghlaim tuilleadh ag https://github.com/sorydima/REChain-.git nó tapáil *Ar aghaidh*.';
 
   @override
   String get newChatRequest => '📩 Iarratas comhrá nua';
@@ -2766,8 +2779,174 @@ class L10nGa extends L10n {
       'Taispeáin ráille nascleanúna ar fhóin phóca';
 
   @override
-  String get customReaction => 'Custom reaction';
+  String get customReaction => 'Imoibriú saincheaptha';
 
   @override
-  String get moreEvents => 'More events';
+  String get moreEvents => 'Tuilleadh imeachtaí';
+
+  @override
+  String get declineInvitation => 'Diúltaigh don chuireadh';
+
+  @override
+  String get noMessagesYet => 'Gan aon teachtaireachtaí fós';
+
+  @override
+  String get longPressToRecordVoiceMessage =>
+      'Brúigh go fada chun teachtaireacht gutha a thaifeadadh.';
+
+  @override
+  String get pause => 'Sos';
+
+  @override
+  String get resume => 'Atosú';
+
+  @override
+  String get newSubSpace => 'Fo-spás nua';
+
+  @override
+  String get moveToDifferentSpace => 'Bog go spás difriúil';
+
+  @override
+  String get moveUp => 'Bog suas';
+
+  @override
+  String get moveDown => 'Bog síos';
+
+  @override
+  String get removeFromSpaceDescription =>
+      'Bainfear an comhrá as an spás ach beidh sé fós le feiceáil i do liosta comhrá.';
+
+  @override
+  String countChats(int chats) {
+    return 'comhráite $chats';
+  }
+
+  @override
+  String spaceMemberOf(String spaces) {
+    return 'Ball spáis de $spaces';
+  }
+
+  @override
+  String spaceMemberOfCanKnock(String spaces) {
+    return 'Is féidir le ball spáis de $spaces cnagadh';
+  }
+
+  @override
+  String get donate => 'Tabhair Síntiús';
+
+  @override
+  String startedAPoll(String username) {
+    return 'Chuir $username tús le pobalbhreith.';
+  }
+
+  @override
+  String get poll => 'Polaitíocht';
+
+  @override
+  String get startPoll => 'Tosaigh pobalbhreith';
+
+  @override
+  String get endPoll => 'Deireadh leis an pobalbhreith';
+
+  @override
+  String get answersVisible => 'Freagraí le feiceáil';
+
+  @override
+  String get answersHidden => 'Freagraí i bhfolach';
+
+  @override
+  String get pollQuestion => 'Ceist pobalbhreithe';
+
+  @override
+  String get answerOption => 'Rogha freagartha';
+
+  @override
+  String get addAnswerOption => 'Cuir rogha freagra leis';
+
+  @override
+  String get allowMultipleAnswers => 'Ceadaigh freagraí iolracha';
+
+  @override
+  String get pollHasBeenEnded => 'Tá deireadh leis an pobalbhreith';
+
+  @override
+  String countVotes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count vótaí',
+      one: 'Vóta amháin',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get answersWillBeVisibleWhenPollHasEnded =>
+      'Beidh freagraí le feiceáil nuair a bheidh an pobalbhreith thart';
+
+  @override
+  String get replyInThread => 'Freagra sa snáithe';
+
+  @override
+  String countReplies(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count freagraí',
+      one: 'Freagra amháin',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get thread => 'Snáithe';
+
+  @override
+  String get backToMainChat => 'Ar ais chuig an bpríomhchomhrá';
+
+  @override
+  String get saveChanges => 'Sábháil athruithe';
+
+  @override
+  String get createSticker => 'Cruthaigh greamán nó emoji';
+
+  @override
+  String get useAsSticker => 'Úsáid mar ghreamán';
+
+  @override
+  String get useAsEmoji => 'Úsáid mar emoji';
+
+  @override
+  String get stickerPackNameAlreadyExists =>
+      'Tá ainm an phacáiste greamán ann cheana féin';
+
+  @override
+  String get newStickerPack => 'Pacáiste greamán nua';
+
+  @override
+  String get stickerPackName => 'Ainm an phacáiste greamán';
+
+  @override
+  String get attribution => 'Atribution';
+
+  @override
+  String get skipChatBackup => 'Seachain cúltaca comhrá';
+
+  @override
+  String get skipChatBackupWarning =>
+      'An bhfuil tú cinnte? Mura gcumasaíonn tú an cúltaca comhrá, d’fhéadfá rochtain ar do theachtaireachtaí a chailleadh má athraíonn tú do ghléas.';
+
+  @override
+  String get loadingMessages => 'Ag lódáil teachtaireachtaí';
+
+  @override
+  String get setupChatBackup => 'Socraigh cúltaca comhrá';
+
+  @override
+  String get noMoreResultsFound => 'No more results found';
+
+  @override
+  String chatSearchedUntil(String time) {
+    return 'Chat searched until $time';
+  }
 }

@@ -52,6 +52,7 @@ import 'l10n_te.dart' deferred as l10n_te;
 import 'l10n_th.dart' deferred as l10n_th;
 import 'l10n_tr.dart' deferred as l10n_tr;
 import 'l10n_uk.dart' deferred as l10n_uk;
+import 'l10n_uz.dart' deferred as l10n_uz;
 import 'l10n_vi.dart' deferred as l10n_vi;
 import 'l10n_yue.dart' deferred as l10n_yue;
 import 'l10n_zh.dart' deferred as l10n_zh;
@@ -111,7 +112,7 @@ import 'l10n_zh.dart' deferred as l10n_zh;
 /// property.
 abstract class L10n {
   L10n(String locale)
-      : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+    : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
@@ -133,11 +134,11 @@ abstract class L10n {
   /// of delegates is preferred or required.
   static const List<LocalizationsDelegate<dynamic>> localizationsDelegates =
       <LocalizationsDelegate<dynamic>>[
-    delegate,
-    GlobalMaterialLocalizations.delegate,
-    GlobalCupertinoLocalizations.delegate,
-    GlobalWidgetsLocalizations.delegate,
-  ];
+        delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ];
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
@@ -191,10 +192,11 @@ abstract class L10n {
     Locale('th'),
     Locale('tr'),
     Locale('uk'),
+    Locale('uz'),
     Locale('vi'),
     Locale('yue'),
     Locale('zh'),
-    Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant')
+    Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant'),
   ];
 
   /// Set to true to always display time of day in 24 hour format.
@@ -320,7 +322,7 @@ abstract class L10n {
   /// No description provided for @confirmMatrixId.
   ///
   /// In en, this message translates to:
-  /// **'Please confirm your REChain ID in order to delete your account.'**
+  /// **'Please confirm your Matrix x REChain ID in order to delete your account.'**
   String get confirmMatrixId;
 
   /// No description provided for @supposedMxid.
@@ -478,7 +480,10 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'The homeserver supports the login types:\n{serverVersions}\nBut this app supports only:\n{supportedVersions}'**
   String badServerLoginTypesException(
-      String serverVersions, String supportedVersions, Object suportedVersions);
+    String serverVersions,
+    String supportedVersions,
+    Object suportedVersions,
+  );
 
   /// No description provided for @sendTypingNotifications.
   ///
@@ -503,11 +508,12 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'The homeserver supports the Spec versions:\n{serverVersions}\nBut this app supports only {supportedVersions}'**
   String badServerVersionsException(
-      String serverVersions,
-      String supportedVersions,
-      Object serverVerions,
-      Object supoortedVersions,
-      Object suportedVersions);
+    String serverVersions,
+    String supportedVersions,
+    Object serverVerions,
+    Object supoortedVersions,
+    Object suportedVersions,
+  );
 
   /// No description provided for @countChatsAndCountParticipants.
   ///
@@ -611,11 +617,23 @@ abstract class L10n {
   /// **'{username} changed the chat avatar'**
   String changedTheChatAvatar(String username);
 
+  /// No description provided for @changedTheChatDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'{username} changed the chat description'**
+  String changedTheChatDescription(Object username);
+
   /// No description provided for @changedTheChatDescriptionTo.
   ///
   /// In en, this message translates to:
   /// **'{username} changed the chat description to: \'{description}\''**
   String changedTheChatDescriptionTo(String username, String description);
+
+  /// No description provided for @changedTheChatName.
+  ///
+  /// In en, this message translates to:
+  /// **'{username} changed the chat name'**
+  String changedTheChatName(Object username);
 
   /// No description provided for @changedTheChatNameTo.
   ///
@@ -746,7 +764,7 @@ abstract class L10n {
   /// No description provided for @chatBackupDescription.
   ///
   /// In en, this message translates to:
-  /// **'Your old messages are secured with a recovery key. Please make sure you don\'t lose it.'**
+  /// **'Your messages are secured with a recovery key. Please make sure you don\'t lose it.'**
   String get chatBackupDescription;
 
   /// No description provided for @chatDetails.
@@ -788,7 +806,7 @@ abstract class L10n {
   /// No description provided for @commandHint_markasdm.
   ///
   /// In en, this message translates to:
-  /// **'Mark as direct message room for the giving REChain ID'**
+  /// **'Mark as direct message room for the giving Matrix x REChain ID'**
   String get commandHint_markasdm;
 
   /// No description provided for @commandHint_markasgroup.
@@ -1346,7 +1364,7 @@ abstract class L10n {
   /// No description provided for @rechainonline.
   ///
   /// In en, this message translates to:
-  /// **'rechainonline'**
+  /// **'REChain'**
   String get rechainonline;
 
   /// No description provided for @fontSize.
@@ -1598,7 +1616,7 @@ abstract class L10n {
   /// No description provided for @inviteText.
   ///
   /// In en, this message translates to:
-  /// **'{username} invited you to REChain.\n1. Visit online.rechain.network and install the app \n2. Sign up or sign in \n3. Open the invite link: \n {link}'**
+  /// **'{username} invited you to REChain.\n1. Visit github.com/sorydima/REChain- and install the app \n2. Sign up or sign in \n3. Open the invite link: \n {link}'**
   String inviteText(String username, String link);
 
   /// No description provided for @isTyping.
@@ -1808,7 +1826,7 @@ abstract class L10n {
   /// No description provided for @newMessageInrechainonline.
   ///
   /// In en, this message translates to:
-  /// **'💬 New message in rechainonline'**
+  /// **'💬 New message in REChain'**
   String get newMessageInrechainonline;
 
   /// No description provided for @newVerificationRequest.
@@ -2654,7 +2672,7 @@ abstract class L10n {
   /// Title for the application
   ///
   /// In en, this message translates to:
-  /// **'rechainonline'**
+  /// **'REChain'**
   String get title;
 
   /// No description provided for @toggleFavorite.
@@ -3374,7 +3392,7 @@ abstract class L10n {
   /// No description provided for @screenSharingDetail.
   ///
   /// In en, this message translates to:
-  /// **'You are sharing your screen in FuffyChat'**
+  /// **'You are sharing your screen in REChain'**
   String get screenSharingDetail;
 
   /// No description provided for @callingPermissions.
@@ -3626,13 +3644,13 @@ abstract class L10n {
   /// No description provided for @inviteGroupChat.
   ///
   /// In en, this message translates to:
-  /// **'📨 Invite group chat'**
+  /// **'📨 Group chat invite'**
   String get inviteGroupChat;
 
   /// No description provided for @invitePrivateChat.
   ///
   /// In en, this message translates to:
-  /// **'📨 Invite private chat'**
+  /// **'📨 Private chat invite'**
   String get invitePrivateChat;
 
   /// No description provided for @invalidInput.
@@ -3662,7 +3680,7 @@ abstract class L10n {
   /// No description provided for @roomUpgradeDescription.
   ///
   /// In en, this message translates to:
-  /// **'The chat will then be recreated with the new room version. All participants will be notified that they need to switch to the new chat. You can find out more about room versions at https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle'**
+  /// **'The chat will then be recreated with the new room version. All participants will be notified that they need to switch to the new chat. You can find out more about room versions at https://github.com/sorydima/REChain-.git'**
   String get roomUpgradeDescription;
 
   /// No description provided for @removeDevicesDescription.
@@ -4232,7 +4250,7 @@ abstract class L10n {
   /// No description provided for @homeserverDescription.
   ///
   /// In en, this message translates to:
-  /// **'All your data is stored on the homeserver, just like an email provider. You can choose which homeserver you want to use, while you can still communicate with everyone. Learn more at at https://rechain.network.'**
+  /// **'All your data is stored on the homeserver, just like an email provider. You can choose which homeserver you want to use, while you can still communicate with everyone. Learn more at at https://github.com/sorydima/REChain-.git'**
   String get homeserverDescription;
 
   /// No description provided for @doesNotSeemToBeAValidHomeserver.
@@ -4304,7 +4322,7 @@ abstract class L10n {
   /// No description provided for @welcomeText.
   ///
   /// In en, this message translates to:
-  /// **'Hey Hey 👋 This is REChain. You can sign in to any homeserver, which is compatible with https://rechain.network. And then chat with anyone. It\'s a huge decentralized messaging network!'**
+  /// **'Hey Hey 👋 This is REChain. You can sign in to any homeserver, which is compatible with https://github.com/sorydima/REChain-.git. And then chat with anyone. It\'s a huge decentralized messaging network!'**
   String get welcomeText;
 
   /// No description provided for @blur.
@@ -4466,7 +4484,7 @@ abstract class L10n {
   /// No description provided for @appIntroduction.
   ///
   /// In en, this message translates to:
-  /// **'REChain lets you chat with your friends across different messengers. Learn more at https://rechain.network or just tap *Continue*.'**
+  /// **'REChain lets you chat with your friends across different messengers. Learn more at https://github.com/sorydima/REChain-.git or just tap *Continue*.'**
   String get appIntroduction;
 
   /// No description provided for @newChatRequest.
@@ -4882,6 +4900,276 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'More events'**
   String get moreEvents;
+
+  /// No description provided for @declineInvitation.
+  ///
+  /// In en, this message translates to:
+  /// **'Decline invitation'**
+  String get declineInvitation;
+
+  /// No description provided for @noMessagesYet.
+  ///
+  /// In en, this message translates to:
+  /// **'No messages yet'**
+  String get noMessagesYet;
+
+  /// No description provided for @longPressToRecordVoiceMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Long press to record voice message.'**
+  String get longPressToRecordVoiceMessage;
+
+  /// No description provided for @pause.
+  ///
+  /// In en, this message translates to:
+  /// **'Pause'**
+  String get pause;
+
+  /// No description provided for @resume.
+  ///
+  /// In en, this message translates to:
+  /// **'Resume'**
+  String get resume;
+
+  /// No description provided for @newSubSpace.
+  ///
+  /// In en, this message translates to:
+  /// **'New sub space'**
+  String get newSubSpace;
+
+  /// No description provided for @moveToDifferentSpace.
+  ///
+  /// In en, this message translates to:
+  /// **'Move to different space'**
+  String get moveToDifferentSpace;
+
+  /// No description provided for @moveUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Move up'**
+  String get moveUp;
+
+  /// No description provided for @moveDown.
+  ///
+  /// In en, this message translates to:
+  /// **'Move down'**
+  String get moveDown;
+
+  /// No description provided for @removeFromSpaceDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'The chat will be removed from the space but still appear in your chat list.'**
+  String get removeFromSpaceDescription;
+
+  /// No description provided for @countChats.
+  ///
+  /// In en, this message translates to:
+  /// **'{chats} chats'**
+  String countChats(int chats);
+
+  /// No description provided for @spaceMemberOf.
+  ///
+  /// In en, this message translates to:
+  /// **'Space member of {spaces}'**
+  String spaceMemberOf(String spaces);
+
+  /// No description provided for @spaceMemberOfCanKnock.
+  ///
+  /// In en, this message translates to:
+  /// **'Space member of {spaces} can knock'**
+  String spaceMemberOfCanKnock(String spaces);
+
+  /// No description provided for @donate.
+  ///
+  /// In en, this message translates to:
+  /// **'Donate'**
+  String get donate;
+
+  /// No description provided for @startedAPoll.
+  ///
+  /// In en, this message translates to:
+  /// **'{username} started a poll.'**
+  String startedAPoll(String username);
+
+  /// No description provided for @poll.
+  ///
+  /// In en, this message translates to:
+  /// **'Poll'**
+  String get poll;
+
+  /// No description provided for @startPoll.
+  ///
+  /// In en, this message translates to:
+  /// **'Start poll'**
+  String get startPoll;
+
+  /// No description provided for @endPoll.
+  ///
+  /// In en, this message translates to:
+  /// **'End poll'**
+  String get endPoll;
+
+  /// No description provided for @answersVisible.
+  ///
+  /// In en, this message translates to:
+  /// **'Answers visible'**
+  String get answersVisible;
+
+  /// No description provided for @answersHidden.
+  ///
+  /// In en, this message translates to:
+  /// **'Answers hidden'**
+  String get answersHidden;
+
+  /// No description provided for @pollQuestion.
+  ///
+  /// In en, this message translates to:
+  /// **'Poll question'**
+  String get pollQuestion;
+
+  /// No description provided for @answerOption.
+  ///
+  /// In en, this message translates to:
+  /// **'Answer option'**
+  String get answerOption;
+
+  /// No description provided for @addAnswerOption.
+  ///
+  /// In en, this message translates to:
+  /// **'Add answer option'**
+  String get addAnswerOption;
+
+  /// No description provided for @allowMultipleAnswers.
+  ///
+  /// In en, this message translates to:
+  /// **'Allow multiple answers'**
+  String get allowMultipleAnswers;
+
+  /// No description provided for @pollHasBeenEnded.
+  ///
+  /// In en, this message translates to:
+  /// **'Poll has been ended'**
+  String get pollHasBeenEnded;
+
+  /// No description provided for @countVotes.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{One vote} other{{count} votes}}'**
+  String countVotes(int count);
+
+  /// No description provided for @answersWillBeVisibleWhenPollHasEnded.
+  ///
+  /// In en, this message translates to:
+  /// **'Answers will be visible when poll has ended'**
+  String get answersWillBeVisibleWhenPollHasEnded;
+
+  /// No description provided for @replyInThread.
+  ///
+  /// In en, this message translates to:
+  /// **'Reply in thread'**
+  String get replyInThread;
+
+  /// No description provided for @countReplies.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{One reply} other{{count} replies}}'**
+  String countReplies(int count);
+
+  /// No description provided for @thread.
+  ///
+  /// In en, this message translates to:
+  /// **'Thread'**
+  String get thread;
+
+  /// No description provided for @backToMainChat.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to main chat'**
+  String get backToMainChat;
+
+  /// No description provided for @saveChanges.
+  ///
+  /// In en, this message translates to:
+  /// **'Save changes'**
+  String get saveChanges;
+
+  /// No description provided for @createSticker.
+  ///
+  /// In en, this message translates to:
+  /// **'Create sticker or emoji'**
+  String get createSticker;
+
+  /// No description provided for @useAsSticker.
+  ///
+  /// In en, this message translates to:
+  /// **'Use as sticker'**
+  String get useAsSticker;
+
+  /// No description provided for @useAsEmoji.
+  ///
+  /// In en, this message translates to:
+  /// **'Use as emoji'**
+  String get useAsEmoji;
+
+  /// No description provided for @stickerPackNameAlreadyExists.
+  ///
+  /// In en, this message translates to:
+  /// **'Sticker pack name already exists'**
+  String get stickerPackNameAlreadyExists;
+
+  /// No description provided for @newStickerPack.
+  ///
+  /// In en, this message translates to:
+  /// **'New sticker pack'**
+  String get newStickerPack;
+
+  /// No description provided for @stickerPackName.
+  ///
+  /// In en, this message translates to:
+  /// **'Sticker pack name'**
+  String get stickerPackName;
+
+  /// No description provided for @attribution.
+  ///
+  /// In en, this message translates to:
+  /// **'Attribution'**
+  String get attribution;
+
+  /// No description provided for @skipChatBackup.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip chat backup'**
+  String get skipChatBackup;
+
+  /// No description provided for @skipChatBackupWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure? Without enabling the chat backup you may lose access to your messages if you switch your device.'**
+  String get skipChatBackupWarning;
+
+  /// No description provided for @loadingMessages.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading messages'**
+  String get loadingMessages;
+
+  /// No description provided for @setupChatBackup.
+  ///
+  /// In en, this message translates to:
+  /// **'Set up chat backup'**
+  String get setupChatBackup;
+
+  /// No description provided for @noMoreResultsFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No more results found'**
+  String get noMoreResultsFound;
+
+  /// No description provided for @chatSearchedUntil.
+  ///
+  /// In en, this message translates to:
+  /// **'Chat searched until {time}'**
+  String chatSearchedUntil(String time);
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {
@@ -4894,58 +5182,59 @@ class _L10nDelegate extends LocalizationsDelegate<L10n> {
 
   @override
   bool isSupported(Locale locale) => <String>[
-        'ar',
-        'be',
-        'bn',
-        'bo',
-        'ca',
-        'cs',
-        'da',
-        'de',
-        'el',
-        'en',
-        'eo',
-        'es',
-        'et',
-        'eu',
-        'fa',
-        'fi',
-        'fil',
-        'fr',
-        'ga',
-        'gl',
-        'he',
-        'hi',
-        'hr',
-        'hu',
-        'ia',
-        'id',
-        'ie',
-        'it',
-        'ja',
-        'ka',
-        'ko',
-        'lt',
-        'lv',
-        'nb',
-        'nl',
-        'pl',
-        'pt',
-        'ro',
-        'ru',
-        'sk',
-        'sl',
-        'sr',
-        'sv',
-        'ta',
-        'te',
-        'th',
-        'tr',
-        'uk',
-        'vi',
-        'yue',
-        'zh'
-      ].contains(locale.languageCode);
+    'ar',
+    'be',
+    'bn',
+    'bo',
+    'ca',
+    'cs',
+    'da',
+    'de',
+    'el',
+    'en',
+    'eo',
+    'es',
+    'et',
+    'eu',
+    'fa',
+    'fi',
+    'fil',
+    'fr',
+    'ga',
+    'gl',
+    'he',
+    'hi',
+    'hr',
+    'hu',
+    'ia',
+    'id',
+    'ie',
+    'it',
+    'ja',
+    'ka',
+    'ko',
+    'lt',
+    'lv',
+    'nb',
+    'nl',
+    'pl',
+    'pt',
+    'ro',
+    'ru',
+    'sk',
+    'sl',
+    'sr',
+    'sv',
+    'ta',
+    'te',
+    'th',
+    'tr',
+    'uk',
+    'uz',
+    'vi',
+    'yue',
+    'zh',
+  ].contains(locale.languageCode);
 
   @override
   bool shouldReload(_L10nDelegate old) => false;
@@ -4958,9 +5247,9 @@ Future<L10n> lookupL10n(Locale locale) {
       {
         switch (locale.scriptCode) {
           case 'Hant':
-            return l10n_zh
-                .loadLibrary()
-                .then((dynamic _) => l10n_zh.L10nZhHant());
+            return l10n_zh.loadLibrary().then(
+              (dynamic _) => l10n_zh.L10nZhHant(),
+            );
         }
         break;
       }
@@ -4972,13 +5261,13 @@ Future<L10n> lookupL10n(Locale locale) {
       {
         switch (locale.countryCode) {
           case 'BR':
-            return l10n_pt
-                .loadLibrary()
-                .then((dynamic _) => l10n_pt.L10nPtBr());
+            return l10n_pt.loadLibrary().then(
+              (dynamic _) => l10n_pt.L10nPtBr(),
+            );
           case 'PT':
-            return l10n_pt
-                .loadLibrary()
-                .then((dynamic _) => l10n_pt.L10nPtPt());
+            return l10n_pt.loadLibrary().then(
+              (dynamic _) => l10n_pt.L10nPtPt(),
+            );
         }
         break;
       }
@@ -5082,6 +5371,8 @@ Future<L10n> lookupL10n(Locale locale) {
       return l10n_tr.loadLibrary().then((dynamic _) => l10n_tr.L10nTr());
     case 'uk':
       return l10n_uk.loadLibrary().then((dynamic _) => l10n_uk.L10nUk());
+    case 'uz':
+      return l10n_uz.loadLibrary().then((dynamic _) => l10n_uz.L10nUz());
     case 'vi':
       return l10n_vi.loadLibrary().then((dynamic _) => l10n_vi.L10nVi());
     case 'yue':
@@ -5091,8 +5382,9 @@ Future<L10n> lookupL10n(Locale locale) {
   }
 
   throw FlutterError(
-      'L10n.delegate failed to load unsupported locale "$locale". This is likely '
-      'an issue with the localizations generation tool. Please file an issue '
-      'on GitHub with a reproducible sample app and the gen-l10n configuration '
-      'that was used.');
+    'L10n.delegate failed to load unsupported locale "$locale". This is likely '
+    'an issue with the localizations generation tool. Please file an issue '
+    'on GitHub with a reproducible sample app and the gen-l10n configuration '
+    'that was used.',
+  );
 }

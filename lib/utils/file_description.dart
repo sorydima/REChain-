@@ -5,15 +5,23 @@ extension FileDescriptionExtension on Event {
     if (!{
       MessageTypes.File,
       MessageTypes.Image,
+      MessageTypes.Sticker,
+      MessageTypes.Video,
+      MessageTypes.Audio,
     }.contains(messageType)) {
       return null;
     }
     final formattedBody = content.tryGet<String>('formatted_body');
-    if (formattedBody != null) return formattedBody;
+    if (formattedBody != null && formattedBody.isNotEmpty) return formattedBody;
 
     final filename = content.tryGet<String>('filename');
     final body = content.tryGet<String>('body');
-    if (filename != body && body != null && filename != null) return body;
+    if (filename != body &&
+        body != null &&
+        filename != null &&
+        body.isNotEmpty) {
+      return body;
+    }
     return null;
   }
 }

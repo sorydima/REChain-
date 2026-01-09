@@ -4,6 +4,7 @@ import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:matrix/matrix.dart';
 
 import 'package:rechainonline/config/app_config.dart';
+import 'package:rechainonline/config/setting_keys.dart';
 import 'package:rechainonline/pages/image_viewer/image_viewer.dart';
 import 'package:rechainonline/utils/file_description.dart';
 import 'package:rechainonline/utils/url_launcher.dart';
@@ -45,8 +46,8 @@ class ImageBubble extends StatelessWidget {
   Widget _buildPlaceholder(BuildContext context) {
     final String blurHashString =
         event.infoMap['xyz.amorgan.blurhash'] is String
-            ? event.infoMap['xyz.amorgan.blurhash']
-            : 'LEHV6nWB2yk8pyo0adR*.7kCMdnj';
+        ? event.infoMap['xyz.amorgan.blurhash']
+        : 'LEHV6nWB2yk8pyo0adR*.7kCMdnj';
     return SizedBox(
       width: width,
       height: height,
@@ -67,11 +68,8 @@ class ImageBubble extends StatelessWidget {
     if (!tapToView) return;
     showDialog(
       context: context,
-      builder: (_) => ImageViewer(
-        event,
-        timeline: timeline,
-        outerContext: context,
-      ),
+      builder: (_) =>
+          ImageViewer(event, timeline: timeline, outerContext: context),
     );
   }
 
@@ -130,23 +128,22 @@ class ImageBubble extends StatelessWidget {
           SizedBox(
             width: width,
             child: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 16,
-                vertical: 8,
-              ),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               child: Linkify(
                 text: fileDescription,
                 textScaleFactor: MediaQuery.textScalerOf(context).scale(1),
                 style: TextStyle(
                   color: textColor,
                   fontSize:
-                      AppConfig.fontSizeFactor * AppConfig.messageFontSize,
+                      AppSettings.fontSizeFactor.value *
+                      AppConfig.messageFontSize,
                 ),
                 options: const LinkifyOptions(humanize: false),
                 linkStyle: TextStyle(
                   color: linkColor,
                   fontSize:
-                      AppConfig.fontSizeFactor * AppConfig.messageFontSize,
+                      AppSettings.fontSizeFactor.value *
+                      AppConfig.messageFontSize,
                   decoration: TextDecoration.underline,
                   decorationColor: linkColor,
                 ),

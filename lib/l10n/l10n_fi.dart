@@ -9,7 +9,7 @@ class L10nFi extends L10n {
   L10nFi([String locale = 'fi']) : super(locale);
 
   @override
-  String get alwaysUse24HourFormat => 'false';
+  String get alwaysUse24HourFormat => 'väärä';
 
   @override
   String get repeatPassword => 'Salasana uudelleen';
@@ -18,17 +18,17 @@ class L10nFi extends L10n {
   String get notAnImage => 'Tämä ei ole kuvatiedosto.';
 
   @override
-  String get setCustomPermissionLevel => 'Set custom permission level';
+  String get setCustomPermissionLevel => 'Aseta mukautettu lupataso';
 
   @override
   String get setPermissionsLevelDescription =>
-      'Please choose a predefined role below or enter a custom permission level between 0 and 100.';
+      'Valitse alla oleva ennalta määritetty rooli tai anna mukautettu lupataso väliltä 0–100.';
 
   @override
-  String get ignoreUser => 'Ignore user';
+  String get ignoreUser => 'Jätä huomiotta';
 
   @override
-  String get normalUser => 'Normal user';
+  String get normalUser => 'Peruskäyttäjä';
 
   @override
   String get remove => 'Poista';
@@ -49,11 +49,11 @@ class L10nFi extends L10n {
   String get replace => 'Korvaa';
 
   @override
-  String get about => 'Tietoa REChainista';
+  String get about => 'Tietoa REChain.sta';
 
   @override
   String aboutHomeserver(String homeserver) {
-    return 'About $homeserver';
+    return 'Tietoja $homeserver:sta';
   }
 
   @override
@@ -77,7 +77,7 @@ class L10nFi extends L10n {
 
   @override
   String get confirmMatrixId =>
-      'Kirjoita REChain IDsi uudelleen poistaaksesi tunnuksesi.';
+      'Kirjoita Matrix x REChain IDsi uudelleen poistaaksesi tunnuksesi.';
 
   @override
   String supposedMxid(String mxid) {
@@ -104,7 +104,7 @@ class L10nFi extends L10n {
 
   @override
   String get commandHint_roomupgrade =>
-      'Upgrade this room to the given room version';
+      'Päivitä tämä huone annettuun huoneversioon';
 
   @override
   String get commandHint_googly => 'Lähetä askartelusilmiä';
@@ -143,7 +143,7 @@ class L10nFi extends L10n {
 
   @override
   String get appLockDescription =>
-      'Lock the app when not using with a pin code';
+      'Lukitse sovellus kun sitä ei käytetä PIN-koodin kanssa';
 
   @override
   String get archive => 'Arkisto';
@@ -171,13 +171,16 @@ class L10nFi extends L10n {
       'Toista animoidut tarrat ja emojit automaattisesti';
 
   @override
-  String badServerLoginTypesException(String serverVersions,
-      String supportedVersions, Object suportedVersions) {
+  String badServerLoginTypesException(
+    String serverVersions,
+    String supportedVersions,
+    Object suportedVersions,
+  ) {
     return 'Tämä kotipalvelin tukee sisäänkirjautumistapoja: \n$serverVersions,\nmutta tämä sovellus tukee vain -tapoja: \n$supportedVersions';
   }
 
   @override
-  String get sendTypingNotifications => 'acLähetä kirjoitusilmoituksia';
+  String get sendTypingNotifications => 'Lähetä kirjoitusilmoituksia';
 
   @override
   String get swipeRightToLeftToReply =>
@@ -188,17 +191,18 @@ class L10nFi extends L10n {
 
   @override
   String badServerVersionsException(
-      String serverVersions,
-      String supportedVersions,
-      Object serverVerions,
-      Object supoortedVersions,
-      Object suportedVersions) {
+    String serverVersions,
+    String supportedVersions,
+    Object serverVerions,
+    Object supoortedVersions,
+    Object suportedVersions,
+  ) {
     return 'Kotipalvelin tukee REChain Spec versio(it)a:\n$serverVersions, mutta tämä sovellus tukee vain versio(it)a $supportedVersions';
   }
 
   @override
   String countChatsAndCountParticipants(int chats, int participants) {
-    return '$chats chats and $participants participants';
+    return '$chats pikakeskustelut ja $participants osallistujat';
   }
 
   @override
@@ -206,19 +210,19 @@ class L10nFi extends L10n {
 
   @override
   String get noChatsFoundHere =>
-      'No chats found here yet. Start a new chat with someone by using the button below. ⤵️';
+      'Täältä ei löytynyt vielä pikakeskusteluja. Aloita uusi pikakeskustelu jonkun kanssa alla olevalla painikkeella. ⤵️';
 
   @override
-  String get joinedChats => 'Joined chats';
+  String get joinedChats => 'Liittyneet pikakeskustelut';
 
   @override
   String get unread => 'Lukemattomat';
 
   @override
-  String get space => 'Space';
+  String get space => 'Tila';
 
   @override
-  String get spaces => 'Spaces';
+  String get spaces => 'Tilat';
 
   @override
   String get banFromChat => 'Anna porttikielto keskusteluun';
@@ -257,8 +261,18 @@ class L10nFi extends L10n {
   }
 
   @override
+  String changedTheChatDescription(Object username) {
+    return '$username changed the chat description';
+  }
+
+  @override
   String changedTheChatDescriptionTo(String username, String description) {
     return '$username asetti keskustelun kuvaukseksi: \'$description\'';
+  }
+
+  @override
+  String changedTheChatName(Object username) {
+    return '$username changed the chat name';
   }
 
   @override
@@ -491,7 +505,7 @@ class L10nFi extends L10n {
   }
 
   @override
-  String get checkList => 'Check list';
+  String get checkList => 'Tarkistuslista';
 
   @override
   String countParticipants(int count) {
@@ -500,7 +514,7 @@ class L10nFi extends L10n {
 
   @override
   String countInvited(int count) {
-    return '$count invited';
+    return '$count kutsuttu';
   }
 
   @override
@@ -598,7 +612,7 @@ class L10nFi extends L10n {
   String get emoteExists => 'Emote on jo olemassa!';
 
   @override
-  String get emoteInvalid => 'Epäkelpo emote-lyhytkoodi';
+  String get emoteInvalid => 'Epäkelpo emote-lyhytkoodi!';
 
   @override
   String get emoteKeyboardNoRecents =>
@@ -611,24 +625,24 @@ class L10nFi extends L10n {
   String get emoteSettings => 'Emote-asetukset';
 
   @override
-  String get globalChatId => 'Global chat ID';
+  String get globalChatId => 'Yleisesti pätevä keskustelutunnus';
 
   @override
   String get accessAndVisibility => 'Pääsy ja näkyvyys';
 
   @override
   String get accessAndVisibilityDescription =>
-      'Who is allowed to join this chat and how the chat can be discovered.';
+      'Kuka voi liittyä tähän pikakeskusteluun ja miten pikakeskustelun voi löytää.';
 
   @override
-  String get calls => 'Calls';
+  String get calls => 'Puhelut';
 
   @override
-  String get customEmojisAndStickers => 'Custom emojis and stickers';
+  String get customEmojisAndStickers => 'Mukautetut emojit ja tarrat';
 
   @override
   String get customEmojisAndStickersBody =>
-      'Add or share custom emojis or stickers which can be used in any chat.';
+      'Lisää tai jaa mukautettuja emojeja tai tarroja, joita voidaan käyttää missä tahansa pikakeskustelussa.';
 
   @override
   String get emoteShortcode => 'Emote-lyhytkoodi';
@@ -687,7 +701,7 @@ class L10nFi extends L10n {
   String get fileName => 'Tiedostonimi';
 
   @override
-  String get rechainonline => 'rechainonline';
+  String get rechainonline => 'REChain';
 
   @override
   String get fontSize => 'Fonttikoko';
@@ -742,15 +756,16 @@ class L10nFi extends L10n {
   String get hideRedactedEvents => 'Piilota poistetut tapahtumat';
 
   @override
-  String get hideRedactedMessages => 'Hide redacted messages';
+  String get hideRedactedMessages =>
+      'Piilota valvojan toimesta poistetut viestit';
 
   @override
   String get hideRedactedMessagesBody =>
-      'If someone redacts a message, this message won\'t be visible in the chat anymore.';
+      'Jos viesti jonkun toimesta poistetaan, se ei enää näy pikakeskustelussa.';
 
   @override
   String get hideInvalidOrUnknownMessageFormats =>
-      'Hide invalid or unknown message formats';
+      'Piilota virheelliset tai tuntemattomat viestimuodot';
 
   @override
   String get howOffensiveIsThisContent => 'Kuinka loukkaavaa tämä sisältö on?';
@@ -762,17 +777,17 @@ class L10nFi extends L10n {
   String get identity => 'Identiteetti';
 
   @override
-  String get block => 'Block';
+  String get block => 'Estä';
 
   @override
-  String get blockedUsers => 'Blocked users';
+  String get blockedUsers => 'Estetyt käyttäjät';
 
   @override
   String get blockListDescription =>
-      'You can block users who are disturbing you. You won\'t be able to receive any messages or room invites from the users on your personal block list.';
+      'Voit estää sinua häiritsevät käyttäjät. Et voi vastaanottaa viestejä tai huonekutsuja henkilökohtaisella estolistallasi olevilta käyttäjiltä.';
 
   @override
-  String get blockUsername => 'Ignore username';
+  String get blockUsername => 'Jätä käyttäjänimi huomiotta';
 
   @override
   String get iHaveClickedOnLink => 'Olen klikannut linkkiä';
@@ -830,7 +845,7 @@ class L10nFi extends L10n {
 
   @override
   String inviteText(String username, String link) {
-    return '$username kutsui sinut REChaintiin.\n1. Viereaile sivulla: https://online.rechain.network ja asenna sovellus\n2. Rekisteröidy tai kirjaudu sisään\n3. Avaa kutsulinkki:\n$link';
+    return '$username kutsui sinut REChain.iin.\n1. Viereaile sivulla: https://github.com/sorydima/REChain- ja asenna sovellus\n2. Rekisteröidy tai kirjaudu sisään\n3. Avaa kutsulinkki:\n$link';
   }
 
   @override
@@ -884,7 +899,7 @@ class L10nFi extends L10n {
 
   @override
   String get dehydrateWarning =>
-      'Tätä toimenpidettä ei voi kumota.\nVarmista varmuuskopiotiedoston turvallinen tallennus.';
+      'Tätä toimenpidettä ei voi kumota. Varmista varmuuskopiotiedoston turvallinen tallennus.';
 
   @override
   String get dehydrateTor => 'TOR-käyttäjät: vie istunto';
@@ -1101,20 +1116,20 @@ class L10nFi extends L10n {
 
   @override
   String get hideMemberChangesInPublicChats =>
-      'Hide member changes in public chats';
+      'Piilota jäsenten muutokset julkisissa pikakeskusteluissa';
 
   @override
   String get hideMemberChangesInPublicChatsBody =>
-      'Do not show in the chat timeline if someone joins or leaves a public chat to improve readability.';
+      'Älä näytä pikakeskustelun aikajanalla, jos joku liittyy julkiseen pikakeskusteluun tai poistuu siitä luettavuuden parantamiseksi.';
 
   @override
-  String get overview => 'Overview';
+  String get overview => 'Yleiskatsaus';
 
   @override
-  String get notifyMeFor => 'Notify me for';
+  String get notifyMeFor => 'Ilmoita minulle';
 
   @override
-  String get passwordRecoverySettings => 'Password recovery settings';
+  String get passwordRecoverySettings => 'Salasanan palautusasetukset';
 
   @override
   String get passwordRecovery => 'Salasanan palautus';
@@ -1288,7 +1303,7 @@ class L10nFi extends L10n {
 
   @override
   String sendImages(int count) {
-    return 'Send $count image';
+    return 'Lähetä $count kuva';
   }
 
   @override
@@ -1372,10 +1387,10 @@ class L10nFi extends L10n {
   String get showPassword => 'Näytä salasana';
 
   @override
-  String get presenceStyle => 'Presence:';
+  String get presenceStyle => 'Läsnäolo:';
 
   @override
-  String get presencesToggle => 'Show status messages from other users';
+  String get presencesToggle => 'Näytä muiden käyttäjien tilaviestit';
 
   @override
   String get singlesignon => 'Kertakirjautuminen';
@@ -1414,7 +1429,7 @@ class L10nFi extends L10n {
 
   @override
   String synchronizingPleaseWaitCounter(String percentage) {
-    return ' Synchronizing… ($percentage%)';
+    return ' Synkronoidaan… ($percentage %)';
   }
 
   @override
@@ -1427,7 +1442,7 @@ class L10nFi extends L10n {
   String get theyMatch => 'Ne täsmäävät';
 
   @override
-  String get title => 'rechainonline';
+  String get title => 'REChain';
 
   @override
   String get toggleFavorite => 'Suosikki-kytkin';
@@ -1681,7 +1696,7 @@ class L10nFi extends L10n {
 
   @override
   String get unsupportedAndroidVersionLong =>
-      'Tämä ominaisuus vaatii uudemman Android-version. Tarkista päivitykset tai Mobile KatyaOS-tuki.';
+      'Tämä ominaisuus vaatii uudemman Android-version. Tarkistathan päivitykset tai Mobile Katya OS :n tuki.';
 
   @override
   String get videoCallsBetaWarning =>
@@ -1698,7 +1713,7 @@ class L10nFi extends L10n {
 
   @override
   String get indexedDbErrorLong =>
-      'Viestivarasto ei ole käytössä yksityisselauksessa oletuksena.\nKäythän osoitteessa\n - about:config\n - Aseta dom.indexedDB.privateBrowsing.enabled arvoon true\nMuuten REChainin käyttäminen ei ole mahdollista.';
+      'Viestivarasto ei ole käytössä yksityisselauksessa oletuksena.\nKäythän osoitteessa\n - about:config\n - Aseta dom.indexedDB.privateBrowsing.enabled arvoon true\nMuuten REChain.n käyttäminen ei ole mahdollista.';
 
   @override
   String switchToAccount(String number) {
@@ -1759,7 +1774,7 @@ class L10nFi extends L10n {
 
   @override
   String youInvitedToBy(String alias) {
-    return '📩 You have been invited via link to:\n$alias';
+    return '📩 Sinut on kutsuttu linkin kautta kohteeseen:\n$alias';
   }
 
   @override
@@ -1769,7 +1784,7 @@ class L10nFi extends L10n {
 
   @override
   String invitedBy(String user) {
-    return '📩 Invited by $user';
+    return '📩 Kutsujana $user';
   }
 
   @override
@@ -1798,22 +1813,22 @@ class L10nFi extends L10n {
   }
 
   @override
-  String get usersMustKnock => 'Users must knock';
+  String get usersMustKnock => 'Käyttäjien on koputettava';
 
   @override
-  String get noOneCanJoin => 'No one can join';
+  String get noOneCanJoin => 'Kukaan ei voi liittyä';
 
   @override
   String userWouldLikeToChangeTheChat(String user) {
-    return '$user would like to join the chat.';
+    return '$user haluaa liittyä pikakeskusteluun.';
   }
 
   @override
   String get noPublicLinkHasBeenCreatedYet =>
-      'No public link has been created yet';
+      'Julkista linkkiä ei ole vielä luotu';
 
   @override
-  String get knock => 'Knock';
+  String get knock => 'Koputa';
 
   @override
   String get users => 'Käyttäjät';
@@ -1858,7 +1873,7 @@ class L10nFi extends L10n {
   String get screenSharingTitle => 'ruudunjako';
 
   @override
-  String get screenSharingDetail => 'Jaat ruutuasi REChainissä';
+  String get screenSharingDetail => 'Jaat ruutuasi REChain.ssä';
 
   @override
   String get callingPermissions => 'Puheluoikeudet';
@@ -1868,18 +1883,18 @@ class L10nFi extends L10n {
 
   @override
   String get callingAccountDetails =>
-      'Sallii REChainin käyttää Androidin omaa Puhelut-sovellusta.';
+      'Sallii REChain.n käyttää Androidin omaa Puhelut-sovellusta.';
 
   @override
   String get appearOnTop => 'Näy päällä';
 
   @override
   String get appearOnTopDetails =>
-      'Sallii sovelluksen näkyä muiden sovellusten päällä (tätä ei tarvita, mikäli olet jo määrittänyt REChainin puhelin-tunnukseksi)';
+      'Sallii sovelluksen näkyä muiden sovellusten päällä (tätä ei tarvita, mikäli olet jo määrittänyt REChain.n puhelin-tunnukseksi)';
 
   @override
   String get otherCallingPermissions =>
-      'Mikrofoni, kamera ja muut REChainin oikeudet';
+      'Mikrofoni, kamera ja muut REChain.n oikeudet';
 
   @override
   String get whyIsThisMessageEncrypted => 'Miksei tätä viestiä voida lukea?';
@@ -1913,7 +1928,7 @@ class L10nFi extends L10n {
       'Piilota ei-niin-tärkeät tilatapahtumat';
 
   @override
-  String get hidePresences => 'Hide Status List?';
+  String get hidePresences => 'Piilotetaanko tilaluettelo?';
 
   @override
   String get doNotShowAgain => 'Älä näytä uudelleen';
@@ -2005,10 +2020,10 @@ class L10nFi extends L10n {
   String get invite => 'Kutsu';
 
   @override
-  String get inviteGroupChat => 'Kutsu ryhmäkeskusteluun';
+  String get inviteGroupChat => '📨 Kutsu ryhmäkeskusteluun';
 
   @override
-  String get invitePrivateChat => 'Kutsu yksityiskeskusteluun';
+  String get invitePrivateChat => '📨 Kutsu yksityiskeskusteluun';
 
   @override
   String get invalidInput => 'Virheellinen syöte!';
@@ -2027,720 +2042,889 @@ class L10nFi extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      'Keskustelu luodaan uudelleen uudella huoneversiolla. Kaikille osallistujille ilmoitetaan, että heidän tulee siirtyä uuteen keskusteluun. Voit lukea lisää huoneversioista osoitteesta https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle';
+      'Keskustelu luodaan uudelleen uudella huoneversiolla. Kaikille osallistujille ilmoitetaan, että heidän tulee siirtyä uuteen keskusteluun. Voit lukea lisää huoneversioista osoitteesta https://github.com/sorydima/REChain-.git';
 
   @override
   String get removeDevicesDescription =>
-      'You will be logged out of this device and will no longer be able to receive messages.';
+      'Sinut kirjataan ulos tästä laitteesta, etkä voi enää vastaanottaa viestejä.';
 
   @override
   String get banUserDescription =>
-      'The user will be banned from the chat and will not be able to enter the chat again until they are unbanned.';
+      'Käyttäjä kielletään pikakeskustelusta, eikä hän voi liittyä pikakeskusteluun uudelleen ennen kuin kielto kumotetaan.';
 
   @override
   String get unbanUserDescription =>
-      'The user will be able to enter the chat again if they try.';
+      'Käyttäjä voi liittyä pikakeskusteluun uudelleen, jos hän yrittää.';
 
   @override
   String get kickUserDescription =>
-      'The user is kicked out of the chat but not banned. In public chats, the user can rejoin at any time.';
+      'Käyttäjä potkitaan ulos pikakeskustelusta, mutta häntä ei porttikieltoa saada. Julkisissa pikakeskusteluissa käyttäjä voi liittyä takaisin milloin tahansa.';
 
   @override
   String get makeAdminDescription =>
-      'Once you make this user admin, you may not be able to undo this as they will then have the same permissions as you.';
+      'Kun olet tehnyt tästä käyttäjästä järjestelmänvalvojan, et ehkä voi perua tätä, koska hänellä on siitä hetkestä lähtien samat oikeudet kuin sinulla.';
 
   @override
-  String get pushNotificationsNotAvailable =>
-      'Push notifications not available';
+  String get pushNotificationsNotAvailable => 'Työntöilmoitukset ei saatavilla';
 
   @override
-  String get learnMore => 'Learn more';
+  String get learnMore => 'Opi lisää';
 
   @override
-  String get yourGlobalUserIdIs => 'Your global user-ID is: ';
+  String get yourGlobalUserIdIs => 'Yleisesti pätevä käyttäjätunnuksesi on: ';
 
   @override
   String noUsersFoundWithQuery(String query) {
-    return 'Unfortunately no user could be found with \"$query\". Please check whether you made a typo.';
+    return 'Valitettavasti käyttäjää ei löytynyt haulla \"$query\". Tarkistathan, onko kirjoitusvirhe.';
   }
 
   @override
-  String get knocking => 'Knocking';
+  String get knocking => 'Koputetaan';
 
   @override
   String chatCanBeDiscoveredViaSearchOnServer(String server) {
-    return 'Chat can be discovered via the search on $server';
+    return 'Pikakeskustelu löytyy haulla $server:lta';
   }
 
   @override
-  String get searchChatsRooms => 'Search for #chats, @users...';
+  String get searchChatsRooms => 'Hae #pikakeskustelut, @käyttäjät...';
 
   @override
-  String get nothingFound => 'Nothing found...';
+  String get nothingFound => 'Mitään ei löytynyt...';
 
   @override
-  String get groupName => 'Group name';
+  String get groupName => 'Ryhmän nimi';
 
   @override
-  String get createGroupAndInviteUsers => 'Create a group and invite users';
+  String get createGroupAndInviteUsers => 'Luo ryhmä ja kutsu käyttäjiä';
 
   @override
-  String get groupCanBeFoundViaSearch => 'Group can be found via search';
+  String get groupCanBeFoundViaSearch => 'Ryhmä löytyy haun kautta';
 
   @override
   String get wrongRecoveryKey =>
-      'Sorry... this does not seem to be the correct recovery key.';
+      'Pahoittelut... tämä ei vaikuta olevan oikea palautusavain.';
 
   @override
-  String get startConversation => 'Start conversation';
+  String get startConversation => 'Aloita keskustelu';
 
   @override
-  String get commandHint_sendraw => 'Send raw json';
+  String get commandHint_sendraw => 'Lähetä raaka JSON';
 
   @override
-  String get databaseMigrationTitle => 'Database is optimized';
+  String get databaseMigrationTitle => 'Tietokanta on optimoitu';
 
   @override
-  String get databaseMigrationBody => 'Please wait. This may take a moment.';
+  String get databaseMigrationBody =>
+      'Odotathan hetki. Tämä voi kestää hetken.';
 
   @override
-  String get leaveEmptyToClearStatus => 'Leave empty to clear your status.';
+  String get leaveEmptyToClearStatus => 'Jätä tyhjäksi tyhjentääksesi tilasi.';
 
   @override
-  String get select => 'Select';
+  String get select => 'Valitse';
 
   @override
-  String get searchForUsers => 'Search for @users...';
+  String get searchForUsers => 'Etsi @users...';
 
   @override
-  String get pleaseEnterYourCurrentPassword =>
-      'Please enter your current password';
+  String get pleaseEnterYourCurrentPassword => 'Anna nykyinen salasanasi';
 
   @override
-  String get newPassword => 'New password';
+  String get newPassword => 'Uusi salasana';
 
   @override
-  String get pleaseChooseAStrongPassword => 'Please choose a strong password';
+  String get pleaseChooseAStrongPassword => 'Valitse vahva salasana';
 
   @override
-  String get passwordsDoNotMatch => 'Passwords do not match';
+  String get passwordsDoNotMatch => 'Salasanat eivät täsmää';
 
   @override
-  String get passwordIsWrong => 'Your entered password is wrong';
+  String get passwordIsWrong => 'Salasanasi on väärä';
 
   @override
-  String get publicLink => 'Public link';
+  String get publicLink => 'Julkinen linkki';
 
   @override
-  String get publicChatAddresses => 'Public chat addresses';
+  String get publicChatAddresses => 'Julkiset keskusteluosoitteet';
 
   @override
-  String get createNewAddress => 'Create new address';
+  String get createNewAddress => 'Luo uusi osoite';
 
   @override
-  String get joinSpace => 'Join space';
+  String get joinSpace => 'Liity tilaan';
 
   @override
-  String get publicSpaces => 'Public spaces';
+  String get publicSpaces => 'Julkiset tilat';
 
   @override
-  String get addChatOrSubSpace => 'Add chat or sub space';
+  String get addChatOrSubSpace => 'Lisää pikakeskustelu tai alitila';
 
   @override
-  String get subspace => 'Subspace';
+  String get subspace => 'Alitila';
 
   @override
-  String get decline => 'Decline';
+  String get decline => 'Hylkää';
 
   @override
-  String get thisDevice => 'This device:';
+  String get thisDevice => 'Tämä laite:';
 
   @override
-  String get initAppError => 'An error occured while init the app';
+  String get initAppError => 'Sovelluksen alustamisessa tapahtui virhe';
 
   @override
-  String get userRole => 'User role';
+  String get userRole => 'Käyttäjärooli';
 
   @override
   String minimumPowerLevel(String level) {
-    return '$level is the minimum power level.';
+    return '$level on pienin tehotaso.';
   }
 
   @override
   String searchIn(String chat) {
-    return 'Search in chat \"$chat\"...';
+    return 'Hae keskustelusta \"$chat\"...';
   }
 
   @override
-  String get searchMore => 'Search more...';
+  String get searchMore => 'Hae lisää...';
 
   @override
-  String get gallery => 'Gallery';
+  String get gallery => 'Galleria';
 
   @override
-  String get files => 'Files';
+  String get files => 'Tiedostot';
 
   @override
   String databaseBuildErrorBody(String url, String error) {
-    return 'Unable to build the SQlite database. The app tries to use the legacy database for now. Please report this error to the developers at $url. The error message is: $error';
+    return 'SQlite-tietokantaa ei voida rakentaa. Sovellus yrittää toistaiseksi käyttää vanhaa tietokantaa. Ilmoita tästä virheestä kehittäjille osoitteessa $url. Virheviesti on: $error';
   }
 
   @override
   String sessionLostBody(String url, String error) {
-    return 'Your session is lost. Please report this error to the developers at $url. The error message is: $error';
+    return 'Istuntosi on menetetty. Ilmoita tästä virheestä kehittäjille osoitteessa $url. Virheviesti on: $error';
   }
 
   @override
   String restoreSessionBody(String url, String error) {
-    return 'The app now tries to restore your session from the backup. Please report this error to the developers at $url. The error message is: $error';
+    return 'Sovellus yrittää nyt palauttaa istuntosi varmuuskopiosta. Ilmoita tästä virheestä kehittäjille osoitteessa $url. Virheviesti on: $error';
   }
 
   @override
   String forwardMessageTo(String roomName) {
-    return 'Forward message to $roomName?';
+    return 'Lähetätkö viestin edelleen kohteeseen $roomName?';
   }
 
   @override
-  String get sendReadReceipts => 'Send read receipts';
+  String get sendReadReceipts => 'Lähetä lukukuittaukset';
 
   @override
   String get sendTypingNotificationsDescription =>
-      'Other participants in a chat can see when you are typing a new message.';
+      'Muut keskustelun osallistujat näkevät, milloin olet kirjoittamassa uutta viestiä.';
 
   @override
   String get sendReadReceiptsDescription =>
-      'Other participants in a chat can see when you have read a message.';
+      'Muut keskustelun osallistujat näkevät, milloin olet lukenut viestin.';
 
   @override
-  String get formattedMessages => 'Formatted messages';
+  String get formattedMessages => 'Muotoillut viestit';
 
   @override
   String get formattedMessagesDescription =>
-      'Display rich message content like bold text using markdown.';
+      'Näytä rikasta viestisisältöä, kuten lihavoitua tekstiä, käyttämällä Markdownia.';
 
   @override
-  String get verifyOtherUser => '🔐 Verify other user';
+  String get verifyOtherUser => '🔐 Vahvista toinen käyttäjä';
 
   @override
   String get verifyOtherUserDescription =>
-      'If you verify another user, you can be sure that you know who you are really writing to. 💪\n\nWhen you start a verification, you and the other user will see a popup in the app. There you will then see a series of emojis or numbers that you have to compare with each other.\n\nThe best way to do this is to meet up or start a video call. 👭';
+      'Jos vahvistat toisen käyttäjän, voit olla varma, että tiedät kenelle todella kirjoitat. 💪\n\nKun aloitat vahvistuksen, sinä ja toinen käyttäjä näette sovelluksessa ponnahdusikkunan. Siellä näette sitten sarjan emojeja tai numeroita, joita teidän on verrattava toisiinsa.\n\nParas tapa tehdä tämä on tavata heidät tai aloittaa videopuhelu. 👭';
 
   @override
-  String get verifyOtherDevice => '🔐 Verify other device';
+  String get verifyOtherDevice => '🔐 Vahvista toinen laite';
 
   @override
   String get verifyOtherDeviceDescription =>
-      'When you verify another device, those devices can exchange keys, increasing your overall security. 💪 When you start a verification, a popup will appear in the app on both devices. There you will then see a series of emojis or numbers that you have to compare with each other. It\'s best to have both devices handy before you start the verification. 🤳';
+      'Kun vahvistat toisen laitteen, kyseiset laitteet voivat vaihtaa avaimia, mikä lisää yleistä turvallisuuttasi. 💪 Kun aloitat vahvistuksen, molempien laitteiden sovellukseen ilmestyy ponnahdusikkuna. Siellä näet sitten sarjan emojeja tai numeroita, joita sinun on verrattava toisiinsa. On parasta pitää molemmat laitteet käsillä ennen vahvistuksen aloittamista. 🤳';
 
   @override
   String acceptedKeyVerification(String sender) {
-    return '$sender accepted key verification';
+    return '$sender hyväksyi avaimen vahvistuksen';
   }
 
   @override
   String canceledKeyVerification(String sender) {
-    return '$sender canceled key verification';
+    return '$sender peruutti avaimen vahvistuksen';
   }
 
   @override
   String completedKeyVerification(String sender) {
-    return '$sender completed key verification';
+    return '$sender suoritti avaimen vahvistuksen';
   }
 
   @override
   String isReadyForKeyVerification(String sender) {
-    return '$sender is ready for key verification';
+    return '$sender on valmis avaimen vahvistukseen';
   }
 
   @override
   String requestedKeyVerification(String sender) {
-    return '$sender requested key verification';
+    return '$sender pyysi avaimen vahvistusta';
   }
 
   @override
   String startedKeyVerification(String sender) {
-    return '$sender started key verification';
+    return '$sender aloitti avaimen vahvistuksen';
   }
 
   @override
-  String get transparent => 'Transparent';
+  String get transparent => 'Läpinäkyvä';
 
   @override
-  String get incomingMessages => 'Incoming messages';
+  String get incomingMessages => 'Saapuvat viestit';
 
   @override
-  String get stickers => 'Stickers';
+  String get stickers => 'Tarrat';
 
   @override
-  String get discover => 'Discover';
+  String get discover => 'Tutustu';
 
   @override
-  String get commandHint_ignore => 'Ignore the given REChain ID';
+  String get commandHint_ignore => 'Jätä huomiotta annettu REChain-tunnus';
 
   @override
-  String get commandHint_unignore => 'Unignore the given REChain ID';
+  String get commandHint_unignore =>
+      'Kumoa annetun REChain-tunnuksen huomiottajätäminen';
 
   @override
   String unreadChatsInApp(String appname, String unread) {
-    return '$appname: $unread unread chats';
+    return '$appname: $unread lukematonta keskustelua';
   }
 
   @override
   String get noDatabaseEncryption =>
-      'Database encryption is not supported on this platform';
+      'Tietokannan salausta ei tueta tällä alustalla';
 
   @override
   String thereAreCountUsersBlocked(Object count) {
-    return 'Right now there are $count users blocked.';
+    return 'Tällä hetkellä $count käyttäjää on estetty.';
   }
 
   @override
-  String get restricted => 'Restricted';
+  String get restricted => 'Rajoitettu';
 
   @override
-  String get knockRestricted => 'Knock restricted';
+  String get knockRestricted => 'Koputus rajoitettu';
 
   @override
   String goToSpace(Object space) {
-    return 'Go to space: $space';
+    return 'Siirry tilaan: $space';
   }
 
   @override
-  String get markAsUnread => 'Mark as unread';
+  String get markAsUnread => 'Merkitse lukemattomaksi';
 
   @override
   String userLevel(int level) {
-    return '$level - User';
+    return '$level - Käyttäjä';
   }
 
   @override
   String moderatorLevel(int level) {
-    return '$level - Moderator';
+    return '$level - Valvoja';
   }
 
   @override
   String adminLevel(int level) {
-    return '$level - Admin';
+    return '$level - Järjestelmänvalvoja';
   }
 
   @override
-  String get changeGeneralChatSettings => 'Change general chat settings';
+  String get changeGeneralChatSettings => 'Muuta yleisiä keskusteluasetuksia';
 
   @override
-  String get inviteOtherUsers => 'Invite other users to this chat';
+  String get inviteOtherUsers => 'Kutsu muita käyttäjiä tähän pikakeskusteluun';
 
   @override
-  String get changeTheChatPermissions => 'Change the chat permissions';
+  String get changeTheChatPermissions => 'Muuta keskustelulupia';
 
   @override
   String get changeTheVisibilityOfChatHistory =>
-      'Change the visibility of the chat history';
+      'Muuta pikakeskusteluhistorian näkyvyyttä';
 
   @override
   String get changeTheCanonicalRoomAlias =>
-      'Change the main public chat address';
+      'Vaihda julkisen pikakeskustelun pääosoite';
 
   @override
-  String get sendRoomNotifications => 'Send a @room notifications';
+  String get sendRoomNotifications => 'Lähetä @room-ilmoituksia';
 
   @override
-  String get changeTheDescriptionOfTheGroup =>
-      'Change the description of the chat';
+  String get changeTheDescriptionOfTheGroup => 'Muuta keskustelun kuvausta';
 
   @override
   String get chatPermissionsDescription =>
-      'Define which power level is necessary for certain actions in this chat. The power levels 0, 50 and 100 are usually representing users, moderators and admins, but any gradation is possible.';
+      'Määritä tarvittava tehotaso tietyille toiminnoille tässä pikakeskustelussa. Tehotasot 0, 50 ja 100 edustavat yleensä käyttäjiä, valvoja ja ylläpitäjiä, mutta mikä tahansa porrastus on mahdollinen.';
 
   @override
   String updateInstalled(String version) {
-    return '🎉 Update $version installed!';
+    return '🎉 Päivitys $version asennettu!';
   }
 
   @override
-  String get changelog => 'Changelog';
+  String get changelog => 'Muutosloki';
 
   @override
-  String get sendCanceled => 'Sending canceled';
+  String get sendCanceled => 'Lähetys peruttu';
 
   @override
-  String get loginWithMatrixId => 'Login with REChain-ID';
+  String get loginWithMatrixId => 'Kirjaudu sisään REChain-tunnuksella';
 
   @override
-  String get discoverHomeservers => 'Discover homeservers';
+  String get discoverHomeservers => 'Tutustu kotipalvelimiin';
 
   @override
-  String get whatIsAHomeserver => 'What is a homeserver?';
+  String get whatIsAHomeserver => 'Mikä on kotipalvelin?';
 
   @override
   String get homeserverDescription =>
-      'All your data is stored on the homeserver, just like an email provider. You can choose which homeserver you want to use, while you can still communicate with everyone. Learn more at at https://rechain.network.';
+      'Kaikki tietosi tallennetaan kotipalvelimelle, aivan kuten sähköpostipalveluntarjoaja. Voit valita, mitä kotipalvelinta haluat käyttää, ja silti kommunikoida kaikkien kanssa. Lisätietoja osoitteessa https://github.com/sorydima/REChain-.git';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
-      'Doesn\'t seem to be a compatible homeserver. Wrong URL?';
+      'Ei näytä olevan yhteensopiva kotipalvelin. Väärä URL-osoite?';
 
   @override
-  String get calculatingFileSize => 'Calculating file size...';
+  String get calculatingFileSize => 'Lasketaan tiedoston kokoa...';
 
   @override
-  String get prepareSendingAttachment => 'Prepare sending attachment...';
+  String get prepareSendingAttachment => 'Valmistele lähetettävä liite...';
 
   @override
-  String get sendingAttachment => 'Sending attachment...';
+  String get sendingAttachment => 'Lähetetään liitettä...';
 
   @override
-  String get generatingVideoThumbnail => 'Generating video thumbnail...';
+  String get generatingVideoThumbnail => 'Videon pikkukuvan luominen...';
 
   @override
-  String get compressVideo => 'Compressing video...';
+  String get compressVideo => 'Pakataan videota...';
 
   @override
   String sendingAttachmentCountOfCount(int index, int length) {
-    return 'Sending attachment $index of $length...';
+    return 'Lähetetään $length pituista liitettä $index...';
   }
 
   @override
   String serverLimitReached(int seconds) {
-    return 'Server limit reached! Waiting $seconds seconds...';
+    return 'Palvelinraja saavutettu! Odotetaan $seconds sekuntia...';
   }
 
   @override
   String get oneOfYourDevicesIsNotVerified =>
-      'One of your devices is not verified';
+      'Yhtä laitteistasi ei ole vahvistettu';
 
   @override
   String get noticeChatBackupDeviceVerification =>
-      'Note: When you connect all your devices to the chat backup, they are automatically verified.';
+      'Huomautus: Kun yhdistät kaikki laitteesi keskustelun varmuuskopiointiin, ne vahvistetaan automaattisesti.';
 
   @override
-  String get continueText => 'Continue';
+  String get continueText => 'Jatka';
 
   @override
   String get welcomeText =>
-      'Hey Hey 👋 This is REChain. You can sign in to any homeserver, which is compatible with https://rechain.network. And then chat with anyone. It\'s a huge decentralized messaging network!';
+      'Hei 👋, Tämä on REChain. Voit kirjautua sisään mihin tahansa kotipalvelimeen, joka on yhteensopiva https://github.com/sorydima/REChain-.git :in kanssa. Sitten jutellaan kenen kanssa tahansa. Se on hajautettu viestiverkosto!';
 
   @override
-  String get blur => 'Blur:';
+  String get blur => 'Sumeus:';
 
   @override
-  String get opacity => 'Opacity:';
+  String get opacity => 'Läpinäkymättömyys:';
 
   @override
-  String get setWallpaper => 'Set wallpaper';
+  String get setWallpaper => 'Aseta taustakuva';
 
   @override
-  String get manageAccount => 'Manage account';
+  String get manageAccount => 'Hallinnoi tiliä';
 
   @override
   String get noContactInformationProvided =>
-      'Server does not provide any valid contact information';
+      'Palvelin ei ilmoittaa mitään kelvollisia yhteystietoja';
 
   @override
-  String get contactServerAdmin => 'Contact server admin';
+  String get contactServerAdmin => 'Ota yhteyttä palvelimen ylläpitäjään';
 
   @override
-  String get contactServerSecurity => 'Contact server security';
+  String get contactServerSecurity =>
+      'Ota yhteyttä palvelimen tietoturvaosastoon';
 
   @override
-  String get supportPage => 'Support page';
+  String get supportPage => 'Tukisivu';
 
   @override
-  String get serverInformation => 'Server information:';
+  String get serverInformation => 'Palvelimen tiedot:';
 
   @override
-  String get name => 'Name';
+  String get name => 'Nimi';
 
   @override
-  String get version => 'Version';
+  String get version => 'Versio';
 
   @override
-  String get website => 'Website';
+  String get website => 'Verkkosivu';
 
   @override
-  String get compress => 'Compress';
+  String get compress => 'Pakkaa';
 
   @override
-  String get boldText => 'Bold text';
+  String get boldText => 'Lihavoitu teksti';
 
   @override
-  String get italicText => 'Italic text';
+  String get italicText => 'Kursivoitu teksti';
 
   @override
-  String get strikeThrough => 'Strikethrough';
+  String get strikeThrough => 'Yliviivaus';
 
   @override
-  String get pleaseFillOut => 'Please fill out';
+  String get pleaseFillOut => 'Ole hyvä ja täytä';
 
   @override
-  String get invalidUrl => 'Invalid url';
+  String get invalidUrl => 'Virheellinen URL-osoite';
 
   @override
-  String get addLink => 'Add link';
+  String get addLink => 'Lisää linkki';
 
   @override
   String get unableToJoinChat =>
-      'Unable to join chat. Maybe the other party has already closed the conversation.';
+      'Pikakeskusteluun liittyminen ei onnistu. Toinen osapuoli on ehkä jo sulkenut keskustelun.';
 
   @override
-  String get previous => 'Previous';
+  String get previous => 'Edellinen';
 
   @override
   String get otherPartyNotLoggedIn =>
-      'The other party is currently not logged in and therefore cannot receive messages!';
+      'Toinen osapuoli ei ole tällä hetkellä kirjautuneena sisään, joten ei voi vastaanottaa viestejä!';
 
   @override
   String appWantsToUseForLogin(String server) {
-    return 'Use \'$server\' to log in';
+    return 'Kirjaudu sisään käyttämällä \'$server\':ta';
   }
 
   @override
   String get appWantsToUseForLoginDescription =>
-      'You hereby allow the app and website to share information about you.';
+      'Annat täten sovellukselle ja verkkosivustolle luvan jakaa tietoja sinusta.';
 
   @override
-  String get open => 'Open';
+  String get open => 'Avaa';
 
   @override
-  String get waitingForServer => 'Waiting for server...';
+  String get waitingForServer => 'Odotetaan palvelinta...';
 
   @override
   String get appIntroduction =>
-      'REChain lets you chat with your friends across different messengers. Learn more at https://rechain.network or just tap *Continue*.';
+      'REChainin avulla voit keskustella ystäviesi kanssa eri pikaviestimien kautta. Lue lisää osoitteesta https://github.com/sorydima/REChain-.git tai napauta *Jatka*.';
 
   @override
-  String get newChatRequest => '📩 New chat request';
+  String get newChatRequest => '📩 Uusi pikakeskustelupyyntö';
 
   @override
-  String get contentNotificationSettings => 'Content notification settings';
+  String get contentNotificationSettings => 'Sisältöilmoitusten asetukset';
 
   @override
-  String get generalNotificationSettings => 'General notification settings';
+  String get generalNotificationSettings => 'Yleiset ilmoitusasetukset';
 
   @override
-  String get roomNotificationSettings => 'Room notification settings';
+  String get roomNotificationSettings => 'Huoneen ilmoitusten asetukset';
 
   @override
   String get userSpecificNotificationSettings =>
-      'User specific notification settings';
+      'Käyttäjäkohtaiset ilmoitusten asetukset';
 
   @override
-  String get otherNotificationSettings => 'Other notification settings';
+  String get otherNotificationSettings => 'Muut ilmoitusten asetukset';
 
   @override
-  String get notificationRuleContainsUserName => 'Contains User Name';
+  String get notificationRuleContainsUserName => 'Sisältää käyttäjän nimen';
 
   @override
   String get notificationRuleContainsUserNameDescription =>
-      'Notifies the user when a message contains their username.';
+      'Ilmoittaa käyttäjälle, kun viesti sisältää hänen käyttäjän nimensä.';
 
   @override
-  String get notificationRuleMaster => 'Mute all notifications';
+  String get notificationRuleMaster => 'Mykistä kaikki ilmoitukset';
 
   @override
   String get notificationRuleMasterDescription =>
-      'Overrides all other rules and disables all notifications.';
+      'Ohittaa kaikki muut säännöt ja poistaa kaikki ilmoitukset käytöstä.';
 
   @override
-  String get notificationRuleSuppressNotices => 'Suppress Automated Messages';
+  String get notificationRuleSuppressNotices =>
+      'Poista kaikki automatisoidut viestit';
 
   @override
   String get notificationRuleSuppressNoticesDescription =>
-      'Suppresses notifications from automated clients like bots.';
+      'Poistaa ilmoitukset automatisoiduilta asiakkailta, kuten boteilta.';
 
   @override
-  String get notificationRuleInviteForMe => 'Invite for Me';
+  String get notificationRuleInviteForMe => 'Kutsu minulle';
 
   @override
   String get notificationRuleInviteForMeDescription =>
-      'Notifies the user when they are invited to a room.';
+      'Ilmoittaa käyttäjälle, kun hänet on kutsuttu huoneeseen.';
 
   @override
-  String get notificationRuleMemberEvent => 'Member Event';
+  String get notificationRuleMemberEvent => 'Jäsentapahtuma';
 
   @override
   String get notificationRuleMemberEventDescription =>
-      'Suppresses notifications for membership events.';
+      'Poistaa jäsenyystapahtumien ilmoitukset.';
 
   @override
-  String get notificationRuleIsUserMention => 'User Mention';
+  String get notificationRuleIsUserMention => 'Käyttäjän maininta';
 
   @override
   String get notificationRuleIsUserMentionDescription =>
-      'Notifies the user when they are directly mentioned in a message.';
+      'Ilmoittaa käyttäjälle, kun hänet mainitaan suoraan viestissä.';
 
   @override
-  String get notificationRuleContainsDisplayName => 'Contains Display Name';
+  String get notificationRuleContainsDisplayName => 'Sisältää näyttönimen';
 
   @override
   String get notificationRuleContainsDisplayNameDescription =>
-      'Notifies the user when a message contains their display name.';
+      'Ilmoittaa käyttäjälle, kun viesti sisältää hänen näyttönimensä.';
 
   @override
-  String get notificationRuleIsRoomMention => 'Room Mention';
+  String get notificationRuleIsRoomMention => 'Huoneen maininta';
 
   @override
   String get notificationRuleIsRoomMentionDescription =>
-      'Notifies the user when there is a room mention.';
+      'Ilmoittaa käyttäjälle, kun huoneesta on maininta.';
 
   @override
-  String get notificationRuleRoomnotif => 'Room Notification';
+  String get notificationRuleRoomnotif => 'Huoneilmoitus';
 
   @override
   String get notificationRuleRoomnotifDescription =>
-      'Notifies the user when a message contains \'@room\'.';
+      'Ilmoittaa käyttäjälle, kun viesti sisältää \'@room\'.';
 
   @override
-  String get notificationRuleTombstone => 'Tombstone';
+  String get notificationRuleTombstone => 'Hautakivi';
 
   @override
   String get notificationRuleTombstoneDescription =>
-      'Notifies the user about room deactivation messages.';
+      'Ilmoittaa käyttäjälle huoneen deaktivointiviesteistä.';
 
   @override
-  String get notificationRuleReaction => 'Reaction';
+  String get notificationRuleReaction => 'Reagointi';
 
   @override
   String get notificationRuleReactionDescription =>
-      'Suppresses notifications for reactions.';
+      'Poistaa ilmoitukset reaktioista.';
 
   @override
-  String get notificationRuleRoomServerAcl => 'Room Server ACL';
+  String get notificationRuleRoomServerAcl => 'Huonepalvelimen pääsyluettelo';
 
   @override
   String get notificationRuleRoomServerAclDescription =>
-      'Suppresses notifications for room server access control lists (ACL).';
+      'Poistaa huonepalvelimen pääsyluetteloiden (ACL) ilmoitukset.';
 
   @override
-  String get notificationRuleSuppressEdits => 'Suppress Edits';
+  String get notificationRuleSuppressEdits => 'Poista muokkaukset';
 
   @override
   String get notificationRuleSuppressEditsDescription =>
-      'Suppresses notifications for edited messages.';
+      'Poistaa ilmoitukset muokatuista viesteistä.';
 
   @override
-  String get notificationRuleCall => 'Call';
+  String get notificationRuleCall => 'Soita';
 
   @override
   String get notificationRuleCallDescription =>
-      'Notifies the user about calls.';
+      'Ilmoittaa käyttäjälle soitoista.';
 
   @override
   String get notificationRuleEncryptedRoomOneToOne =>
-      'Encrypted Room One-to-One';
+      'Kahdenkeskinen salattu huone';
 
   @override
   String get notificationRuleEncryptedRoomOneToOneDescription =>
-      'Notifies the user about messages in encrypted one-to-one rooms.';
+      'Ilmoittaa käyttäjälle kahdenkeskisissä salatuissa huoneissa olevista viesteistä.';
 
   @override
-  String get notificationRuleRoomOneToOne => 'Room One-to-One';
+  String get notificationRuleRoomOneToOne => 'Kahdenkeskinen huone';
 
   @override
   String get notificationRuleRoomOneToOneDescription =>
-      'Notifies the user about messages in one-to-one rooms.';
+      'Ilmoittaa käyttäjälle kahdenkeskisissä huoneissa olevista viesteistä.';
 
   @override
-  String get notificationRuleMessage => 'Message';
+  String get notificationRuleMessage => 'Viesti';
 
   @override
   String get notificationRuleMessageDescription =>
-      'Notifies the user about general messages.';
+      'Ilmoittaa käyttäjälle yleisistä viesteistä.';
 
   @override
-  String get notificationRuleEncrypted => 'Encrypted';
+  String get notificationRuleEncrypted => 'Salattu';
 
   @override
   String get notificationRuleEncryptedDescription =>
-      'Notifies the user about messages in encrypted rooms.';
+      'Ilmoittaa käyttäjälle salatuissa huoneissa olevista viesteistä.';
 
   @override
   String get notificationRuleJitsi => 'Jitsi';
 
   @override
   String get notificationRuleJitsiDescription =>
-      'Notifies the user about Jitsi widget events.';
+      'Ilmoittaa käyttäjälle tapahtumista Jitsi-vimpaimesta.';
 
   @override
-  String get notificationRuleServerAcl => 'Suppress Server ACL Events';
+  String get notificationRuleServerAcl =>
+      'Poista tapahtumat palvelimen pääsyluettelosta';
 
   @override
   String get notificationRuleServerAclDescription =>
-      'Suppresses notifications for Server ACL events.';
+      'Poistaa ilmoitukset palvelimen pääsyluettelosta.';
 
   @override
   String unknownPushRule(String rule) {
-    return 'Unknown push rule \'$rule\'';
+    return 'Tuntematon työntösääntö \'$rule\'';
   }
 
   @override
   String sentVoiceMessage(String sender, String duration) {
-    return '🎙️ $duration - Voice message from $sender';
+    return '🎙️ $duration - Ääniviesti $sender:lta';
   }
 
   @override
   String get deletePushRuleCanNotBeUndone =>
-      'If you delete this notification setting, this can not be undone.';
+      'Jos poistat tämän ilmoitusasetuksen, sitä ei voi kumota.';
 
   @override
-  String get more => 'More';
+  String get more => 'Lisää';
 
   @override
-  String get shareKeysWith => 'Share keys with...';
+  String get shareKeysWith => 'Jaa avaimet...';
 
   @override
   String get shareKeysWithDescription =>
-      'Which devices should be trusted so that they can read along your messages in encrypted chats?';
+      'Mihin laitteisiin tulisi luottaa, jotta ne voivat lukea viestejäsi salatuissa keskusteluissa?';
 
   @override
-  String get allDevices => 'All devices';
+  String get allDevices => 'Kaikki laitteet';
 
   @override
   String get crossVerifiedDevicesIfEnabled =>
-      'Cross verified devices if enabled';
+      'Ristiinvahvistetut laitteet, jos otettu käyttöön';
 
   @override
-  String get crossVerifiedDevices => 'Cross verified devices';
+  String get crossVerifiedDevices => 'Ristiinvahvistetut laitteet';
 
   @override
-  String get verifiedDevicesOnly => 'Verified devices only';
+  String get verifiedDevicesOnly => 'Vain vahvistetut laitteet';
 
   @override
-  String get takeAPhoto => 'Take a photo';
+  String get takeAPhoto => 'Ota valokuva';
 
   @override
-  String get recordAVideo => 'Record a video';
+  String get recordAVideo => 'Nauhoita video';
 
   @override
-  String get optionalMessage => '(Optional) message...';
+  String get optionalMessage => '(Valinnainen) viesti...';
 
   @override
-  String get notSupportedOnThisDevice => 'Not supported on this device';
+  String get notSupportedOnThisDevice => 'Ei tuettu tällä laitteella';
 
   @override
-  String get enterNewChat => 'Enter new chat';
+  String get enterNewChat => 'Aloita uusi pikakeskustelu';
 
   @override
-  String get approve => 'Approve';
+  String get approve => 'Hyväksy';
 
   @override
-  String get youHaveKnocked => 'You have knocked';
+  String get youHaveKnocked => 'Olet koputtanut';
 
   @override
   String get pleaseWaitUntilInvited =>
-      'Please wait now, until someone from the room invites you.';
+      'Odotathan nyt, kunnes joku huoneesta kutsuu sinut.';
 
   @override
-  String get commandHint_logout => 'Logout your current device';
+  String get commandHint_logout => 'Kirjaudu ulos nykyinen laitteesi';
 
   @override
-  String get commandHint_logoutall => 'Logout all active devices';
+  String get commandHint_logoutall =>
+      'Kirjaudu ulos kaikki aktiiviset laitteet';
 
   @override
-  String get displayNavigationRail => 'Show navigation rail on mobile';
+  String get displayNavigationRail =>
+      'Näytä navigointipalkki mobiililaitteella';
 
   @override
-  String get customReaction => 'Custom reaction';
+  String get customReaction => 'Mukautettu reagointi';
 
   @override
-  String get moreEvents => 'More events';
+  String get moreEvents => 'Lisää tapahtumia';
+
+  @override
+  String get declineInvitation => 'Hylkää kutsu';
+
+  @override
+  String get noMessagesYet => 'Ei vielä viestejä';
+
+  @override
+  String get longPressToRecordVoiceMessage =>
+      'Pitkä painallus ääniviestin tallentamiseksi.';
+
+  @override
+  String get pause => 'Keskeytä';
+
+  @override
+  String get resume => 'Jatka';
+
+  @override
+  String get newSubSpace => 'Uusi alitila';
+
+  @override
+  String get moveToDifferentSpace => 'Siirry eri tilaan';
+
+  @override
+  String get moveUp => 'Siirrä ylös';
+
+  @override
+  String get moveDown => 'Siirrä alas';
+
+  @override
+  String get removeFromSpaceDescription =>
+      'Pikakeskustelu poistetaan tilasta, mutta se näkyy edelleen pikakeskusteluluettelossasi.';
+
+  @override
+  String countChats(int chats) {
+    return '$chats pikakeskustelua';
+  }
+
+  @override
+  String spaceMemberOf(String spaces) {
+    return '$spaces:jen tilanjäsen';
+  }
+
+  @override
+  String spaceMemberOfCanKnock(String spaces) {
+    return '$spaces:jen tilanjäsen saa koputtaa';
+  }
+
+  @override
+  String get donate => 'Lahjoita';
+
+  @override
+  String startedAPoll(String username) {
+    return '$username aloitti kyselyn.';
+  }
+
+  @override
+  String get poll => 'Kysely';
+
+  @override
+  String get startPoll => 'Aloita kysely';
+
+  @override
+  String get endPoll => 'Lopeta kysely';
+
+  @override
+  String get answersVisible => 'Vastaukset näkyvissä';
+
+  @override
+  String get answersHidden => 'Vastaukset piilotettu';
+
+  @override
+  String get pollQuestion => 'Kyselykysymys';
+
+  @override
+  String get answerOption => 'Vastausvaihtoehto';
+
+  @override
+  String get addAnswerOption => 'Lisää vastausvaihtoehto';
+
+  @override
+  String get allowMultipleAnswers => 'Salli useita vastauksia';
+
+  @override
+  String get pollHasBeenEnded => 'Kysely on päättynyt';
+
+  @override
+  String countVotes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ääntä',
+      one: 'One vote',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get answersWillBeVisibleWhenPollHasEnded =>
+      'Vastaukset näkyvät, kun kysely on päättynyt';
+
+  @override
+  String get replyInThread => 'Vastaa ketjussa';
+
+  @override
+  String countReplies(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count vastausta',
+      one: 'One reply',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get thread => 'Ketju';
+
+  @override
+  String get backToMainChat => 'Takaisin pääpikakeskusteluun';
+
+  @override
+  String get saveChanges => 'Save changes';
+
+  @override
+  String get createSticker => 'Create sticker or emoji';
+
+  @override
+  String get useAsSticker => 'Use as sticker';
+
+  @override
+  String get useAsEmoji => 'Use as emoji';
+
+  @override
+  String get stickerPackNameAlreadyExists => 'Sticker pack name already exists';
+
+  @override
+  String get newStickerPack => 'New sticker pack';
+
+  @override
+  String get stickerPackName => 'Sticker pack name';
+
+  @override
+  String get attribution => 'Attribution';
+
+  @override
+  String get skipChatBackup => 'Skip chat backup';
+
+  @override
+  String get skipChatBackupWarning =>
+      'Are you sure? Without enabling the chat backup you may lose access to your messages if you switch your device.';
+
+  @override
+  String get loadingMessages => 'Loading messages';
+
+  @override
+  String get setupChatBackup => 'Set up chat backup';
+
+  @override
+  String get noMoreResultsFound => 'No more results found';
+
+  @override
+  String chatSearchedUntil(String time) {
+    return 'Chat searched until $time';
+  }
 }

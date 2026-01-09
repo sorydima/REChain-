@@ -158,7 +158,7 @@
       }
     }
   },
-  "rechainonline": "rechainonline",
+  "rechainonline": "REChain",
   "@rechainonline": {
     "type": "String",
     "placeholders": {}

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'package:flutter_highlighter/flutter_highlighter.dart';
-import 'package:flutter_highlighter/themes/shades-of-purple.dart';
 import 'package:matrix/matrix.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -11,26 +9,38 @@ import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/widgets/adaptive_dialogs/adaptive_dialog_action.dart';
 
 class ErrorReporter {
-  final BuildContext context;
+  final BuildContext? context;
   final String? message;
 
   const ErrorReporter(this.context, [this.message]);
 
-  void onErrorCallback(Object error, [StackTrace? stackTrace]) async {
+  static const Set<String> ingoredTypes = {
+    "IOException",
+    "ClientException",
+    "SocketException",
+    "TlsException",
+    "HandshakeException",
+  };
+
+  void onErrorCallback(Object error, [StackTrace? stackTrace]) {
+    if (ingoredTypes.contains(error.runtimeType.toString())) return;
     Logs().e(message ?? 'Error caught', error, stackTrace);
     final text = '$error\n${stackTrace ?? ''}';
+    return _onErrorCallback(text);
+  }
+
+  void _onErrorCallback(String text) async {
     await showAdaptiveDialog(
-      context: context,
+      context: context!,
       builder: (context) => AlertDialog.adaptive(
         title: Text(L10n.of(context).reportErrorDescription),
         content: SizedBox(
           height: 256,
           width: 256,
           child: SingleChildScrollView(
-            child: HighlightView(
+            child: Text(
               text,
-              language: 'sh',
-              theme: shadesOfPurpleTheme,
+              style: const TextStyle(fontSize: 14, fontFamily: 'RobotoMono'),
             ),
           ),
         ),
@@ -40,9 +50,7 @@ class ErrorReporter {
             child: Text(L10n.of(context).close),
           ),
           AdaptiveDialogAction(
-            onPressed: () => Clipboard.setData(
-              ClipboardData(text: text),
-            ),
+            onPressed: () => Clipboard.setData(ClipboardData(text: text)),
             child: Text(L10n.of(context).copy),
           ),
           AdaptiveDialogAction(

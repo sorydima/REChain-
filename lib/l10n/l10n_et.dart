@@ -172,9 +172,12 @@ class L10nEt extends L10n {
       'Esita liikuvad kleepse ja emotikone automaatselt';
 
   @override
-  String badServerLoginTypesException(String serverVersions,
-      String supportedVersions, Object suportedVersions) {
-    return 'See koduserver toetab Matrixi võrku sisselogimiseks:\n$serverVersions\nAga see rakendus toetab vaid järgmisi võimalusi:\n$supportedVersions';
+  String badServerLoginTypesException(
+    String serverVersions,
+    String supportedVersions,
+    Object suportedVersions,
+  ) {
+    return 'See koduserver toetab REChain võrku sisselogimiseks:\n$serverVersions\nAga see rakendus toetab vaid järgmisi võimalusi:\n$supportedVersions';
   }
 
   @override
@@ -188,12 +191,13 @@ class L10nEt extends L10n {
 
   @override
   String badServerVersionsException(
-      String serverVersions,
-      String supportedVersions,
-      Object serverVerions,
-      Object supoortedVersions,
-      Object suportedVersions) {
-    return 'See koduserver toetab Matrixi spetsifikatsioonist järgmisi versioone:\n$serverVersions\nAga see rakendus toetab vaid järgmisi versioone: $supportedVersions';
+    String serverVersions,
+    String supportedVersions,
+    Object serverVerions,
+    Object supoortedVersions,
+    Object suportedVersions,
+  ) {
+    return 'See koduserver toetab REChain spetsifikatsioonist järgmisi versioone:\n$serverVersions\nAga see rakendus toetab vaid järgmisi versioone: $supportedVersions';
   }
 
   @override
@@ -257,8 +261,18 @@ class L10nEt extends L10n {
   }
 
   @override
+  String changedTheChatDescription(Object username) {
+    return '$username muutis vestluse kirjeldust';
+  }
+
+  @override
   String changedTheChatDescriptionTo(String username, String description) {
     return '$username muutis vestluse uueks kirjelduseks \'$description\'';
+  }
+
+  @override
+  String changedTheChatName(Object username) {
+    return '$username muutis vestluse nime';
   }
 
   @override
@@ -373,7 +387,7 @@ class L10nEt extends L10n {
 
   @override
   String get commandHint_markasdm =>
-      'Märgi otsevestusluseks antud Matrixi ID jaoks';
+      'Märgi otsevestusluseks antud REChain ID jaoks';
 
   @override
   String get commandHint_markasgroup => 'Märgi vestlusrühmaks';
@@ -686,7 +700,7 @@ class L10nEt extends L10n {
   String get fileName => 'Faili nimi';
 
   @override
-  String get rechainonline => 'rechainonline';
+  String get rechainonline => 'REChain';
 
   @override
   String get fontSize => 'Fondi suurus';
@@ -828,7 +842,7 @@ class L10nEt extends L10n {
 
   @override
   String inviteText(String username, String link) {
-    return '$username kutsus sind kasutama REChain\'i-põhist suhtlusrakendust REChain. \n1. Ava online.rechain.network ja paigalda REChain\'i rakendus \n2. Liitu kasutajaks või logi sisse olemasoleva REChain\'i kasutajakontoga\n3. Ava kutse link: \n $link';
+    return '$username kutsus sind kasutama REChain\'i-põhist suhtlusrakendust REChain. \n1. Ava github.com/sorydima/REChain- ja paigalda REChain.i rakendus \n2. Liitu kasutajaks või logi sisse olemasoleva REChain\'i kasutajakontoga\n3. Ava kutse link: \n $link';
   }
 
   @override
@@ -954,7 +968,7 @@ class L10nEt extends L10n {
   String get newChat => 'Uus vestlus';
 
   @override
-  String get newMessageInrechainonline => '💬 Uus sõnum REChain\'i vahendusel';
+  String get newMessageInrechainonline => '💬 Uus sõnum REChain.i vahendusel';
 
   @override
   String get newVerificationRequest => 'Uus verifitseerimispäring!';
@@ -977,7 +991,7 @@ class L10nEt extends L10n {
 
   @override
   String get noGoogleServicesWarning =>
-      'Tundub, et sinu nutiseadmes pole Firebase Cloud Messaging teenuseid. Sinu privaatsuse mõttes on see kindlasti hea otsus! Kui sa soovid REChainis näha tõuketeavitusi, siis soovitame, et selle jaoks kasutad ntfy liidestust. Kasutades ntfyd või mõnda muud Unified Push standardil põhinevat liidestust saad tõuketeavitusi turvalisel moel. Ntfy rakendus on saadaval nii PlayStore kui F-Droidi rakendusepoodides.';
+      'Tundub, et sinu nutiseadmes pole Firebase Cloud Messaging teenuseid. Sinu privaatsuse mõttes on see kindlasti hea otsus! Kui sa soovid REChain.s näha tõuketeavitusi, siis soovitame, et selle jaoks kasutad ntfy liidestust. Kasutades ntfyd või mõnda muud Unified Push standardil põhinevat liidestust saad tõuketeavitusi turvalisel moel. Ntfy rakendus on saadaval nii PlayStore kui F-Droidi rakendusepoodides.';
 
   @override
   String norechainonlineServer(String server1, String server2) {
@@ -1128,7 +1142,7 @@ class L10nEt extends L10n {
   String get pickImage => 'Vali pilt';
 
   @override
-  String get pin => 'Klammerda';
+  String get pin => 'Tõsta esile';
 
   @override
   String play(String fileName) {
@@ -1430,7 +1444,7 @@ class L10nEt extends L10n {
   String get theyMatch => 'Nad klapivad omavahel';
 
   @override
-  String get title => 'rechainonline';
+  String get title => 'REChain';
 
   @override
   String get toggleFavorite => 'Muuda olekut lemmikuna';
@@ -1477,7 +1491,7 @@ class L10nEt extends L10n {
   String get unmuteChat => 'Lõpeta vestluse vaigistamine';
 
   @override
-  String get unpin => 'Eemalda klammerdus';
+  String get unpin => 'Eemalda esiletõstmine';
 
   @override
   String unreadChats(int unreadCount) {
@@ -1592,7 +1606,7 @@ class L10nEt extends L10n {
       'Nende e-posti aadresside abil saad taastada oma salasõna.';
 
   @override
-  String get writeAMessage => 'Kirjuta üks sõnum…';
+  String get writeAMessage => 'Koosta sõnum…';
 
   @override
   String get yes => 'Jah';
@@ -1666,11 +1680,11 @@ class L10nEt extends L10n {
   }
 
   @override
-  String get pinMessage => 'Klammerda sõnum jututuppa';
+  String get pinMessage => 'Tõsta sõnum jututoas esile';
 
   @override
   String get confirmEventUnpin =>
-      'Kas sa oled kindel, et tahad klammerdatud sündmuse eemaldada?';
+      'Kas sa oled kindel, et tahad esiletõstetud sündmuse jäädavalt eemaldada?';
 
   @override
   String get emojis => 'Emotikonid';
@@ -1705,7 +1719,7 @@ class L10nEt extends L10n {
 
   @override
   String get indexedDbErrorLong =>
-      'Privaatse akna puhul andmete salvestamine vaikimisi pole kasutusel.\nPalun toimi alljärgnevalt:\n- ava about:config\n- määra dom.indexedDB.privateBrowsing.enabled väärtuseks true\nVastasel juhul sa ei saa REChain\'i kasutada.';
+      'Privaatse akna puhul andmete salvestamine vaikimisi pole kasutusel.\nPalun toimi alljärgnevalt:\n- ava about:config\n- määra dom.indexedDB.privateBrowsing.enabled väärtuseks true\nVastasel juhul sa ei saa REChain.i kasutada.';
 
   @override
   String switchToAccount(String number) {
@@ -1864,8 +1878,7 @@ class L10nEt extends L10n {
   String get screenSharingTitle => 'ekraani jagamine';
 
   @override
-  String get screenSharingDetail =>
-      'Sa jagad oma ekraani FuffyChati vahendusel';
+  String get screenSharingDetail => 'Sa jagad oma ekraani REChaini vahendusel';
 
   @override
   String get callingPermissions => 'Helistamise õigused';
@@ -1875,7 +1888,7 @@ class L10nEt extends L10n {
 
   @override
   String get callingAccountDetails =>
-      'Võimaldab REChain\'il kasutada Androidi helistamisrakendust.';
+      'Võimaldab REChain.il kasutada Androidi helistamisrakendust.';
 
   @override
   String get appearOnTop => 'Luba pealmise rakendusena';
@@ -1886,7 +1899,7 @@ class L10nEt extends L10n {
 
   @override
   String get otherCallingPermissions =>
-      'Mikrofoni, kaamera ja muud REChain\'i õigused';
+      'Mikrofoni, kaamera ja muud REChain.i õigused';
 
   @override
   String get whyIsThisMessageEncrypted => 'Miks see sõnum pole loetav?';
@@ -2011,7 +2024,7 @@ class L10nEt extends L10n {
   String get invite => 'Kutsu';
 
   @override
-  String get inviteGroupChat => '📨 Kutsu vestlusrühma';
+  String get inviteGroupChat => '📨 Kutse vestlusrühma';
 
   @override
   String get invitePrivateChat => '📨 Kutsu omavahelisele vestlusele';
@@ -2033,7 +2046,7 @@ class L10nEt extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      'See vestlus luuakse nüüd uuesti jututoa uue versioonina. Kõik senised osalejad saavad teate, et nad peavad liituma uue vestlusega. Jututubade versioonide kohta leiad teavet https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle lehelt';
+      'See vestlus luuakse nüüd uuesti jututoa uue versioonina. Kõik senised osalejad saavad teate, et nad peavad liituma uue vestlusega. Jututubade versioonide kohta leiad teavet https://github.com/sorydima/REChain-.git lehelt';
 
   @override
   String get removeDevicesDescription =>
@@ -2283,11 +2296,11 @@ class L10nEt extends L10n {
   String get discover => 'Otsi ja leia';
 
   @override
-  String get commandHint_ignore => 'Eira seda Matrixi kasutajatunnust';
+  String get commandHint_ignore => 'Eira seda REChain kasutajatunnust';
 
   @override
   String get commandHint_unignore =>
-      'Lõpeta selle Matrixi kasutajatunnuse eiramine';
+      'Lõpeta selle REChain kasutajatunnuse eiramine';
 
   @override
   String unreadChatsInApp(String appname, String unread) {
@@ -2381,7 +2394,7 @@ class L10nEt extends L10n {
 
   @override
   String get homeserverDescription =>
-      'Sarnaselt e-postiteenuse pakkujale on kõik sinu sõnumid salvestatud koduserveris. Sa võid valida sellise koduserveri, nagu sulle meeldib ja nad kõik suudavad teiste koduserveritega suhelda. Lisateavet leiad veebisaidist https://rechain.network.';
+      'Sarnaselt e-postiteenuse pakkujale on kõik sinu sõnumid salvestatud koduserveris. Sa võid valida sellise koduserveri, nagu sulle meeldib ja nad kõik suudavad teiste koduserveritega suhelda. Lisateavet leiad veebisaidist https://github.com/sorydima/REChain-.git';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
@@ -2425,7 +2438,7 @@ class L10nEt extends L10n {
 
   @override
   String get welcomeText =>
-      'Tere, tere 👋 See on REChain. Sa võid sisse logida igasse koduserverisse, mis ühildub https://rechain.network serveriga. Ja seejärel saad suhelda kõigiga. Tegemist on ikka väga suure detsentraliseeritud sõnumivõrguga!';
+      'Tere, tere 👋 See on REChain. Sa võid sisse logida igasse koduserverisse, mis ühildub https://github.com/sorydima/REChain-.git serveriga. Ja seejärel saad suhelda kõigiga. Tegemist on ikka väga suure detsentraliseeritud sõnumivõrguga!';
 
   @override
   String get blur => 'Hägusus:';
@@ -2514,7 +2527,7 @@ class L10nEt extends L10n {
 
   @override
   String get appIntroduction =>
-      'REChain võimaldab sul suhelda sõprade ja tuttavatega, kes kasutavad erinevaid sõnumikliente. Lisateavet leiad https://rechain.network saidist või lihtsalt klõpsi „Jätka“.';
+      'REChain võimaldab sul suhelda sõprade ja tuttavatega, kes kasutavad erinevaid sõnumikliente. Lisateavet leiad https://github.com/sorydima/REChain-.git saidist või lihtsalt klõpsi „Jätka“.';
 
   @override
   String get newChatRequest => '📩 Uus vestluskutse';
@@ -2758,4 +2771,170 @@ class L10nEt extends L10n {
 
   @override
   String get moreEvents => 'Veel sündmusi';
+
+  @override
+  String get declineInvitation => 'Keeldu kutsest';
+
+  @override
+  String get noMessagesYet => 'Pole veel ühtegi sõnumit';
+
+  @override
+  String get longPressToRecordVoiceMessage =>
+      'Pika vajutusega saad salvestada häälsõnumi.';
+
+  @override
+  String get pause => 'Peata';
+
+  @override
+  String get resume => 'Jätka';
+
+  @override
+  String get newSubSpace => 'Uus alamkogukond';
+
+  @override
+  String get moveToDifferentSpace => 'Tõsta teise kogukonda';
+
+  @override
+  String get moveUp => 'Liiguta ülespoole';
+
+  @override
+  String get moveDown => 'Liiguta allapoole';
+
+  @override
+  String get removeFromSpaceDescription =>
+      'See vestlus eemaldatakse nüüd kogukonnast, kuid on jätkuvalt nähtav sinu vestluste loendis.';
+
+  @override
+  String countChats(int chats) {
+    return '$chats vestlust';
+  }
+
+  @override
+  String spaceMemberOf(String spaces) {
+    return 'Kogukonna liige: $spaces';
+  }
+
+  @override
+  String spaceMemberOfCanKnock(String spaces) {
+    return '$spaces kogukonna liige võib uksele koputada';
+  }
+
+  @override
+  String get donate => 'Toeta meid rahaliselt';
+
+  @override
+  String startedAPoll(String username) {
+    return '$username koostas küsitluse.';
+  }
+
+  @override
+  String get poll => 'Küsitlus';
+
+  @override
+  String get startPoll => 'Koosta küsitlus';
+
+  @override
+  String get endPoll => 'Lõpeta küsitlus';
+
+  @override
+  String get answersVisible => 'Vastused on näha';
+
+  @override
+  String get answersHidden => 'Vastused on peidetud';
+
+  @override
+  String get pollQuestion => 'Küsitluse küsimus';
+
+  @override
+  String get answerOption => 'Valikvastus';
+
+  @override
+  String get addAnswerOption => 'Lisa valikvastus';
+
+  @override
+  String get allowMultipleAnswers => 'Luba mitu vastusevalikut';
+
+  @override
+  String get pollHasBeenEnded => 'Küsitlus on lõppenud';
+
+  @override
+  String countVotes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count häält',
+      one: 'Üks hääl',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get answersWillBeVisibleWhenPollHasEnded =>
+      'Vastused on näha küsitluse lõppedes';
+
+  @override
+  String get replyInThread => 'Vasta jutulõngas';
+
+  @override
+  String countReplies(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count vastust',
+      one: 'Üks vastus',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get thread => 'Jutulõng';
+
+  @override
+  String get backToMainChat => 'Tagasi põhivestlusesse';
+
+  @override
+  String get saveChanges => 'Salvesta muudatused';
+
+  @override
+  String get createSticker => 'Loo kleeps või emoji';
+
+  @override
+  String get useAsSticker => 'Kasuta kleepsuna';
+
+  @override
+  String get useAsEmoji => 'Kasuta emojina';
+
+  @override
+  String get stickerPackNameAlreadyExists =>
+      'Selline kleepsupaki nimi on juba olemas';
+
+  @override
+  String get newStickerPack => 'Uus kleepsupakk';
+
+  @override
+  String get stickerPackName => 'Kleepsupaki nimi';
+
+  @override
+  String get attribution => 'Autoriõigused';
+
+  @override
+  String get skipChatBackup => 'Jäta vestluse varundamine vahele';
+
+  @override
+  String get skipChatBackupWarning =>
+      'Kas oled kindel? Kui sa pole lülitanud sisse vestluste krüptovõtmete varundust, siis võid oma seadme vahetamisel kaotada ligipääsu oma senistele sõnumitele.';
+
+  @override
+  String get loadingMessages => 'Laadin sõnumeid';
+
+  @override
+  String get setupChatBackup => 'Võta kasutusele vestluste varundus';
+
+  @override
+  String get noMoreResultsFound => 'Rohkem tulemusi ei leidu';
+
+  @override
+  String chatSearchedUntil(String time) {
+    return 'Otsing vestlusest kuni $time';
+  }
 }

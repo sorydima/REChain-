@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 
 import 'package:matrix/matrix.dart';
 
-import 'package:rechainonline/config/app_config.dart';
+import 'package:rechainonline/config/setting_keys.dart';
 import 'package:rechainonline/l10n/l10n.dart';
+import 'package:rechainonline/models/public_room.dart';
 import 'package:rechainonline/pages/chat_list/chat_list.dart';
 import 'package:rechainonline/pages/chat_list/chat_list_item.dart';
 import 'package:rechainonline/pages/chat_list/dummy_chat_list_item.dart';
@@ -36,10 +37,7 @@ class ChatListViewBody extends StatelessWidget {
         spaceId: activeSpace,
         onBack: controller.clearActiveSpace,
         onChatTab: (room) => controller.onChatTap(room),
-        onChatContext: (room, context) =>
-            controller.chatContextAction(room, context),
         activeChat: controller.activeChat,
-        toParentSpace: controller.setActiveSpace,
       );
     }
     final spaces = client.rooms.where((r) => r.isSpace);
@@ -62,9 +60,7 @@ class ChatListViewBody extends StatelessWidget {
     const dummyChatCount = 4;
     final filter = controller.searchController.text.toLowerCase();
     return StreamBuilder(
-      key: ValueKey(
-        client.userID.toString(),
-      ),
+      key: ValueKey(client.userID.toString()),
       stream: client.onSync.stream
           .where((s) => s.hasRoomUpdate)
           .rateLimit(const Duration(seconds: 1)),
@@ -77,167 +73,151 @@ class ChatListViewBody extends StatelessWidget {
             slivers: [
               ChatListHeader(controller: controller),
               SliverList(
-                delegate: SliverChildListDelegate(
-                  [
-                    if (controller.isSearchMode) ...[
-                      SearchTitle(
-                        title: L10n.of(context).publicRooms,
-                        icon: const Icon(Icons.explore_outlined),
-                      ),
-                      PublicRoomsHorizontalList(publicRooms: publicRooms),
-                      SearchTitle(
-                        title: L10n.of(context).publicSpaces,
-                        icon: const Icon(Icons.workspaces_outlined),
-                      ),
-                      PublicRoomsHorizontalList(publicRooms: publicSpaces),
-                      SearchTitle(
-                        title: L10n.of(context).users,
-                        icon: const Icon(Icons.group_outlined),
-                      ),
-                      AnimatedContainer(
-                        clipBehavior: Clip.hardEdge,
-                        decoration: const BoxDecoration(),
-                        height: userSearchResult == null ||
-                                userSearchResult.results.isEmpty
-                            ? 0
-                            : 106,
-                        duration: rechainonlineThemes.animationDuration,
-                        curve: rechainonlineThemes.animationCurve,
-                        child: userSearchResult == null
-                            ? null
-                            : ListView.builder(
-                                scrollDirection: Axis.horizontal,
-                                itemCount: userSearchResult.results.length,
-                                itemBuilder: (context, i) => _SearchItem(
-                                  title:
-                                      userSearchResult.results[i].displayName ??
-                                          userSearchResult
-                                              .results[i].userId.localpart ??
-                                          L10n.of(context).unknownDevice,
-                                  avatar: userSearchResult.results[i].avatarUrl,
-                                  onPressed: () => UserDialog.show(
-                                    context: context,
-                                    profile: userSearchResult.results[i],
-                                  ),
-                                ),
-                              ),
-                      ),
-                    ],
-                    if (!controller.isSearchMode && AppConfig.showPresences)
-                      GestureDetector(
-                        onLongPress: () => controller.dismissStatusList(),
-                        child: StatusMessageList(
-                          onStatusEdit: controller.setStatus,
-                        ),
-                      ),
+                delegate: SliverChildListDelegate([
+                  if (controller.isSearchMode) ...[
+                    SearchTitle(
+                      title: L10n.of(context).publicRooms,
+                      icon: const Icon(Icons.explore_outlined),
+                    ),
+                    PublicRoomsHorizontalList(publicRooms: publicRooms),
+                    SearchTitle(
+                      title: L10n.of(context).publicSpaces,
+                      icon: const Icon(Icons.workspaces_outlined),
+                    ),
+                    PublicRoomsHorizontalList(publicRooms: publicSpaces),
+                    SearchTitle(
+                      title: L10n.of(context).users,
+                      icon: const Icon(Icons.group_outlined),
+                    ),
                     AnimatedContainer(
-                      height: controller.isTorBrowser ? 64 : 0,
-                      duration: rechainonlineThemes.animationDuration,
-                      curve: rechainonlineThemes.animationCurve,
                       clipBehavior: Clip.hardEdge,
                       decoration: const BoxDecoration(),
-                      child: Material(
-                        color: theme.colorScheme.surface,
-                        child: ListTile(
-                          leading: const Icon(Icons.vpn_key),
-                          title: Text(L10n.of(context).dehydrateTor),
-                          subtitle: Text(L10n.of(context).dehydrateTorLong),
-                          trailing: const Icon(Icons.chevron_right_outlined),
-                          onTap: controller.dehydrate,
-                        ),
-                      ),
-                    ),
-                    if (client.rooms.isNotEmpty && !controller.isSearchMode)
-                      SizedBox(
-                        height: 64,
-                        child: ListView(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 12.0,
-                            vertical: 12.0,
-                          ),
-                          shrinkWrap: true,
-                          scrollDirection: Axis.horizontal,
-                          children: [
-                            if (AppConfig.separateChatTypes)
-                              ActiveFilter.messages
-                            else
-                              ActiveFilter.allChats,
-                            ActiveFilter.groups,
-                            ActiveFilter.unread,
-                            if (spaceDelegateCandidates.isNotEmpty &&
-                                !AppConfig.displayNavigationRail &&
-                                !rechainonlineThemes.isColumnMode(context))
-                              ActiveFilter.spaces,
-                          ]
-                              .map(
-                                (filter) => Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                    horizontal: 4.0,
-                                  ),
-                                  child: FilterChip(
-                                    selected: filter == controller.activeFilter,
-                                    onSelected: (_) =>
-                                        controller.setActiveFilter(filter),
-                                    label:
-                                        Text(filter.toLocalizedString(context)),
-                                  ),
+                      height:
+                          userSearchResult == null ||
+                              userSearchResult.results.isEmpty
+                          ? 0
+                          : 106,
+                      duration: rechainonlineThemes.animationDuration,
+                      curve: rechainonlineThemes.animationCurve,
+                      child: userSearchResult == null
+                          ? null
+                          : ListView.builder(
+                              scrollDirection: Axis.horizontal,
+                              itemCount: userSearchResult.results.length,
+                              itemBuilder: (context, i) => _SearchItem(
+                                title:
+                                    userSearchResult.results[i].displayName ??
+                                    userSearchResult
+                                        .results[i]
+                                        .userId
+                                        .localpart ??
+                                    L10n.of(context).unknownDevice,
+                                avatar: userSearchResult.results[i].avatarUrl,
+                                onPressed: () => UserDialog.show(
+                                  context: context,
+                                  profile: userSearchResult.results[i],
                                 ),
-                              )
-                              .toList(),
-                        ),
-                      ),
-                    if (controller.isSearchMode)
-                      SearchTitle(
-                        title: L10n.of(context).chats,
-                        icon: const Icon(Icons.forum_outlined),
-                      ),
-                    if (client.prevBatch != null &&
-                        rooms.isEmpty &&
-                        !controller.isSearchMode) ...[
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Stack(
-                            alignment: Alignment.center,
-                            children: [
-                              const Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  DummyChatListItem(
-                                    opacity: 0.5,
-                                    animate: false,
-                                  ),
-                                  DummyChatListItem(
-                                    opacity: 0.3,
-                                    animate: false,
-                                  ),
-                                ],
-                              ),
-                              Icon(
-                                CupertinoIcons.chat_bubble_text_fill,
-                                size: 128,
-                                color: theme.colorScheme.secondary,
-                              ),
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(16.0),
-                            child: Text(
-                              client.rooms.isEmpty
-                                  ? L10n.of(context).noChatsFoundHere
-                                  : L10n.of(context).noMoreChatsFound,
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontSize: 18,
-                                color: theme.colorScheme.secondary,
                               ),
                             ),
-                          ),
-                        ],
-                      ),
-                    ],
+                    ),
                   ],
-                ),
+                  if (!controller.isSearchMode &&
+                      AppSettings.showPresences.value)
+                    GestureDetector(
+                      onLongPress: () => controller.dismissStatusList(),
+                      child: StatusMessageList(
+                        onStatusEdit: controller.setStatus,
+                      ),
+                    ),
+                  if (client.rooms.isNotEmpty && !controller.isSearchMode)
+                    SizedBox(
+                      height: 64,
+                      child: ListView(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 12.0,
+                          vertical: 12.0,
+                        ),
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        children:
+                            [
+                                  if (AppSettings.separateChatTypes.value)
+                                    ActiveFilter.messages
+                                  else
+                                    ActiveFilter.allChats,
+                                  ActiveFilter.groups,
+                                  ActiveFilter.unread,
+                                  if (spaceDelegateCandidates.isNotEmpty &&
+                                      !AppSettings
+                                          .displayNavigationRail
+                                          .value &&
+                                      !rechainonlineThemes.isColumnMode(context))
+                                    ActiveFilter.spaces,
+                                ]
+                                .map(
+                                  (filter) => Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 4.0,
+                                    ),
+                                    child: FilterChip(
+                                      selected:
+                                          filter == controller.activeFilter,
+                                      onSelected: (_) =>
+                                          controller.setActiveFilter(filter),
+                                      label: Text(
+                                        filter.toLocalizedString(context),
+                                      ),
+                                    ),
+                                  ),
+                                )
+                                .toList(),
+                      ),
+                    ),
+                  if (controller.isSearchMode)
+                    SearchTitle(
+                      title: L10n.of(context).chats,
+                      icon: const Icon(Icons.forum_outlined),
+                    ),
+                  if (client.prevBatch != null &&
+                      rooms.isEmpty &&
+                      !controller.isSearchMode) ...[
+                    Column(
+                      mainAxisAlignment: .center,
+                      children: [
+                        Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            const Column(
+                              mainAxisSize: .min,
+                              children: [
+                                DummyChatListItem(opacity: 0.5, animate: false),
+                                DummyChatListItem(opacity: 0.3, animate: false),
+                              ],
+                            ),
+                            Icon(
+                              CupertinoIcons.chat_bubble_text_fill,
+                              size: 128,
+                              color: theme.colorScheme.secondary,
+                            ),
+                          ],
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Text(
+                            client.rooms.isEmpty
+                                ? L10n.of(context).noChatsFoundHere
+                                : L10n.of(context).noMoreChatsFound,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: theme.colorScheme.secondary,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ]),
               ),
               if (client.prevBatch == null)
                 SliverList(
@@ -276,12 +256,9 @@ class ChatListViewBody extends StatelessWidget {
 }
 
 class PublicRoomsHorizontalList extends StatelessWidget {
-  const PublicRoomsHorizontalList({
-    super.key,
-    required this.publicRooms,
-  });
+  const PublicRoomsHorizontalList({super.key, required this.publicRooms});
 
-  final List<PublicRoomsChunk>? publicRooms;
+  final List<PublishedRoomsChunk>? publicRooms;
 
   @override
   Widget build(BuildContext context) {
@@ -298,7 +275,8 @@ class PublicRoomsHorizontalList extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemCount: publicRooms.length,
               itemBuilder: (context, i) => _SearchItem(
-                title: publicRooms[i].name ??
+                title:
+                    publicRooms[i].name ??
                     publicRooms[i].canonicalAlias?.localpart ??
                     L10n.of(context).group,
                 avatar: publicRooms[i].avatarUrl,
@@ -329,31 +307,26 @@ class _SearchItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => InkWell(
-        onTap: onPressed,
-        child: SizedBox(
-          width: 84,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const SizedBox(height: 8),
-              Avatar(
-                mxContent: avatar,
-                name: title,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  title,
-                  maxLines: 2,
-                  textAlign: TextAlign.center,
-                  overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
-                    fontSize: 12,
-                  ),
-                ),
-              ),
-            ],
+    onTap: onPressed,
+    child: SizedBox(
+      width: 84,
+      child: Column(
+        mainAxisSize: .min,
+        children: [
+          const SizedBox(height: 8),
+          Avatar(mxContent: avatar, name: title),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              title,
+              maxLines: 2,
+              textAlign: TextAlign.center,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(fontSize: 12),
+            ),
           ),
-        ),
-      );
+        ],
+      ),
+    ),
+  );
 }

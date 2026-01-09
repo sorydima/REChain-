@@ -39,7 +39,8 @@ class PinnedEvents extends StatelessWidget {
                   (event) => AdaptiveModalAction(
                     value: event?.eventId ?? '',
                     icon: const Icon(Icons.push_pin_outlined),
-                    label: event?.calcLocalizedBodyFallback(
+                    label:
+                        event?.calcLocalizedBodyFallback(
                           MatrixLocals(L10n.of(context)),
                           withSenderNamePrefix: true,
                           hideReply: true,
@@ -59,7 +60,7 @@ class PinnedEvents extends StatelessWidget {
 
     final pinnedEventIds = controller.room.pinnedEventIds;
 
-    if (pinnedEventIds.isEmpty) {
+    if (pinnedEventIds.isEmpty || controller.activeThreadId != null) {
       return const SizedBox.shrink();
     }
 
@@ -68,7 +69,8 @@ class PinnedEvents extends StatelessWidget {
       builder: (context, snapshot) {
         final event = snapshot.data;
         return ChatAppBarListTile(
-          title: event?.calcLocalizedBodyFallback(
+          title:
+              event?.calcLocalizedBodyFallback(
                 MatrixLocals(L10n.of(context)),
                 withSenderNamePrefix: true,
                 hideReply: true,

@@ -43,10 +43,12 @@ class SettingsIgnoreListController extends State<SettingsIgnoreList> {
       errorText = null;
     });
 
+    final client = Matrix.of(context).client;
     showFutureLoadingDialog(
       context: context,
-      future: () => Matrix.of(context).client.ignoreUser(userId),
+      future: () => client.ignoreUser(userId),
     );
+    setState(() {});
     controller.clear();
   }
 

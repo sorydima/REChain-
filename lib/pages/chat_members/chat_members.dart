@@ -29,11 +29,10 @@ class ChatMembersController extends State<ChatMembersPage> {
     setFilter();
   }
 
-  void setFilter([_]) async {
+  void setFilter([dynamic _]) async {
     final filter = filterController.text.toLowerCase().trim();
 
-    final members = this
-        .members
+    final members = this.members
         ?.where((member) => member.membership == membershipFilter)
         .toList();
 
@@ -45,25 +44,25 @@ class ChatMembersController extends State<ChatMembersPage> {
       return;
     }
     setState(() {
-      filteredMembers = members
-          ?.where(
-            (user) =>
-                user.displayName?.toLowerCase().contains(filter) ??
-                user.id.toLowerCase().contains(filter),
-          )
-          .toList()
-        ?..sort((b, a) => a.powerLevel.compareTo(b.powerLevel));
+      filteredMembers =
+          members
+              ?.where(
+                (user) =>
+                    user.displayName?.toLowerCase().contains(filter) ??
+                    user.id.toLowerCase().contains(filter),
+              )
+              .toList()
+            ?..sort((b, a) => a.powerLevel.compareTo(b.powerLevel));
     });
   }
 
-  void refreshMembers([_]) async {
+  void refreshMembers([dynamic _]) async {
     Logs().d('Load room members from', widget.roomId);
     try {
       setState(() {
         error = null;
       });
-      final participants = await Matrix.of(context)
-          .client
+      final participants = await Matrix.of(context).client
           .getRoomById(widget.roomId)
           ?.requestParticipants(
             [...Membership.values]..remove(Membership.leave),
@@ -76,8 +75,11 @@ class ChatMembersController extends State<ChatMembersPage> {
       });
       setFilter();
     } catch (e, s) {
-      Logs()
-          .d('Unable to request participants. Try again in 3 seconds...', e, s);
+      Logs().d(
+        'Unable to request participants. Try again in 3 seconds...',
+        e,
+        s,
+      );
       setState(() {
         error = e;
       });
@@ -91,14 +93,12 @@ class ChatMembersController extends State<ChatMembersPage> {
     super.initState();
     refreshMembers();
 
-    _updateSub = Matrix.of(context)
-        .client
-        .onSync
-        .stream
+    _updateSub = Matrix.of(context).client.onSync.stream
         .where(
           (syncUpdate) =>
-              syncUpdate.rooms?.join?[widget.roomId]?.timeline?.events
-                  ?.any((state) => state.type == EventTypes.RoomMember) ??
+              syncUpdate.rooms?.join?[widget.roomId]?.timeline?.events?.any(
+                (state) => state.type == EventTypes.RoomMember,
+              ) ??
               false,
         )
         .listen(refreshMembers);

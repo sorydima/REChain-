@@ -67,7 +67,7 @@ android {
 
     defaultConfig {
         applicationId "com.rechain.dapp"
-        minSdkVersion 21
+        minSdkVersion flutter.minSdkVersion
         targetSdkVersion 36
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName

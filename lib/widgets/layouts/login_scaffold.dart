@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 import 'package:rechainonline/config/app_config.dart';
@@ -70,7 +71,7 @@ class LoginScaffold extends StatelessWidget {
               ),
             ),
           ),
-          const _PrivacyButtons(mainAxisAlignment: MainAxisAlignment.center),
+          const _PrivacyButtons(mainAxisAlignment: .center),
         ],
       ),
     );
@@ -94,31 +95,19 @@ class _PrivacyButtons extends StatelessWidget {
           children: [
             TextButton(
               onPressed: () => launchUrlString(AppConfig.website),
-              child: Text(
-                L10n.of(context).website,
-                style: shadowTextStyle,
-              ),
+              child: Text(L10n.of(context).website, style: shadowTextStyle),
             ),
             TextButton(
               onPressed: () => launchUrlString(AppConfig.supportUrl),
-              child: Text(
-                L10n.of(context).help,
-                style: shadowTextStyle,
-              ),
+              child: Text(L10n.of(context).help, style: shadowTextStyle),
             ),
             TextButton(
-              onPressed: () => launchUrlString(AppConfig.privacyUrl),
-              child: Text(
-                L10n.of(context).privacy,
-                style: shadowTextStyle,
-              ),
+              onPressed: () => launchUrl(AppConfig.privacyUrl),
+              child: Text(L10n.of(context).privacy, style: shadowTextStyle),
             ),
             TextButton(
               onPressed: () => PlatformInfos.showDialog(context),
-              child: Text(
-                L10n.of(context).about,
-                style: shadowTextStyle,
-              ),
+              child: Text(L10n.of(context).about, style: shadowTextStyle),
             ),
           ],
         ),

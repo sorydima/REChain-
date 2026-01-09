@@ -171,8 +171,11 @@ class L10nHu extends L10n {
       'Animált matricák és hangulatjelek automatikus lejátszása';
 
   @override
-  String badServerLoginTypesException(String serverVersions,
-      String supportedVersions, Object suportedVersions) {
+  String badServerLoginTypesException(
+    String serverVersions,
+    String supportedVersions,
+    Object suportedVersions,
+  ) {
     return 'A REChain-kiszolgáló a következő bejelentkezéseket támogatja:\n$serverVersions\nDe ez az alkalmazást csak ezeket támogatja:\n$supportedVersions';
   }
 
@@ -187,11 +190,12 @@ class L10nHu extends L10n {
 
   @override
   String badServerVersionsException(
-      String serverVersions,
-      String supportedVersions,
-      Object serverVerions,
-      Object supoortedVersions,
-      Object suportedVersions) {
+    String serverVersions,
+    String supportedVersions,
+    Object serverVerions,
+    Object supoortedVersions,
+    Object suportedVersions,
+  ) {
     return 'A REChain-kiszolgáló ezeket a specifikált verziókat támogatja:\n$serverVersions\nAzonban ez az app csak a következőket: $supportedVersions';
   }
 
@@ -256,8 +260,18 @@ class L10nHu extends L10n {
   }
 
   @override
+  String changedTheChatDescription(Object username) {
+    return '$username changed the chat description';
+  }
+
+  @override
   String changedTheChatDescriptionTo(String username, String description) {
     return '$username megváltoztatta a csevegés leírást a következőre: \'$description\'';
+  }
+
+  @override
+  String changedTheChatName(Object username) {
+    return '$username changed the chat name';
   }
 
   @override
@@ -687,7 +701,7 @@ class L10nHu extends L10n {
   String get fileName => 'Fájlnév';
 
   @override
-  String get rechainonline => 'rechainonline';
+  String get rechainonline => 'REChain';
 
   @override
   String get fontSize => 'Betűméret';
@@ -829,7 +843,7 @@ class L10nHu extends L10n {
 
   @override
   String inviteText(String username, String link) {
-    return '$username meghívta a REChain-be.\n1. Keresse fel a online.rechain.network oldalt, és telepítse az alkalmazást \n2. Regisztráljon vagy jelentkezzen be \n3. Nyissa meg a meghívó linket: \n $link';
+    return '$username meghívta a REChain.be.\n1. Keresse fel a github.com/sorydima/REChain- oldalt, és telepítse az alkalmazást \n2. Regisztráljon vagy jelentkezzen be \n3. Nyissa meg a meghívó linket: \n $link';
   }
 
   @override
@@ -1429,7 +1443,7 @@ class L10nHu extends L10n {
   String get theyMatch => 'Egyezőek';
 
   @override
-  String get title => 'rechainonline';
+  String get title => 'REChain';
 
   @override
   String get toggleFavorite => 'Kedvencek megjelenítése';
@@ -1682,7 +1696,7 @@ class L10nHu extends L10n {
 
   @override
   String get unsupportedAndroidVersionLong =>
-      'Ehhez a funkcióhoz egy újabb Android verzió kell. Kérem ellenőrizze be van e frissítve teljesen készüléke, esetlegesen van e Mobile KatyaOS támogatás hozzá.';
+      'Ehhez a funkcióhoz egy újabb Android verzió kell. Kérem ellenőrizze be van e frissítve teljesen készüléke, esetlegesen van e Mobile Katya OS támogatás hozzá.';
 
   @override
   String get videoCallsBetaWarning =>
@@ -1858,7 +1872,7 @@ class L10nHu extends L10n {
   String get screenSharingTitle => 'képernyő megosztás';
 
   @override
-  String get screenSharingDetail => 'Megosztja a képernyőjét a REChain-ben';
+  String get screenSharingDetail => 'Megosztja a képernyőjét a REChain.ben';
 
   @override
   String get callingPermissions => 'Hívási engedélyek';
@@ -2027,7 +2041,7 @@ class L10nHu extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      'A csevegés újra elkészül az új szoba verzióval. Minden résztvevő értesítést kap, hogy át kell állniuk az új csevegésre. További információkért a szoba verziókról látogasson el a https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle címre';
+      'A csevegés újra elkészül az új szoba verzióval. Minden résztvevő értesítést kap, hogy át kell állniuk az új csevegésre. További információkért a szoba verziókról látogasson el a https://github.com/sorydima/REChain-.git címre';
 
   @override
   String get removeDevicesDescription =>
@@ -2376,7 +2390,7 @@ class L10nHu extends L10n {
 
   @override
   String get homeserverDescription =>
-      'Az összes adata a Mátrix-kiszolgálón tárolódik, pont mint egy e-mail kiszolgálón. Kiválaszthatja melyik REChain-kiszolgálót akarja használni, miközben tud kommunikálni mindenkivel. Tudjon meg többet a https://rechain.network címen.';
+      'Az összes adata a Mátrix-kiszolgálón tárolódik, pont mint egy e-mail kiszolgálón. Kiválaszthatja melyik REChain-kiszolgálót akarja használni, miközben tud kommunikálni mindenkivel. Tudjon meg többet a https://github.com/sorydima/REChain-.git címen.';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
@@ -2420,7 +2434,7 @@ class L10nHu extends L10n {
 
   @override
   String get welcomeText =>
-      'Üdv 👋 Ez a REChain. Bejelentkezhet bármely REChain-kiszolgálóhoz amely kompatibilis a https://rechain.network címmel. Ezután cseveghet bárkivel. Így képez egy óriási decentralizált üzenetküldő hálózatot!';
+      'Üdv 👋 Ez a REChain. Bejelentkezhet bármely REChain-kiszolgálóhoz amely kompatibilis a https://github.com/sorydima/REChain-.git címmel. Ezután cseveghet bárkivel. Így képez egy óriási decentralizált üzenetküldő hálózatot!';
 
   @override
   String get blur => 'Homályosít:';
@@ -2509,7 +2523,7 @@ class L10nHu extends L10n {
 
   @override
   String get appIntroduction =>
-      'A REChain segítségével cseveghet barátaival, akár más üzenetküldő alkalmazásokon keresztül is. Tudjon meg erről többet a https://rechain.network oldalon, vagy nyomjon a \"Folytatás\" gombra.';
+      'A REChain segítségével cseveghet barátaival, akár más üzenetküldő alkalmazásokon keresztül is. Tudjon meg erről többet a https://github.com/sorydima/REChain-.git oldalon, vagy nyomjon a \"Folytatás\" gombra.';
 
   @override
   String get newChatRequest => '📩 Új csevegés kérelem';
@@ -2749,4 +2763,169 @@ class L10nHu extends L10n {
 
   @override
   String get moreEvents => 'More events';
+
+  @override
+  String get declineInvitation => 'Decline invitation';
+
+  @override
+  String get noMessagesYet => 'No messages yet';
+
+  @override
+  String get longPressToRecordVoiceMessage =>
+      'Long press to record voice message.';
+
+  @override
+  String get pause => 'Pause';
+
+  @override
+  String get resume => 'Resume';
+
+  @override
+  String get newSubSpace => 'New sub space';
+
+  @override
+  String get moveToDifferentSpace => 'Move to different space';
+
+  @override
+  String get moveUp => 'Move up';
+
+  @override
+  String get moveDown => 'Move down';
+
+  @override
+  String get removeFromSpaceDescription =>
+      'The chat will be removed from the space but still appear in your chat list.';
+
+  @override
+  String countChats(int chats) {
+    return '$chats chats';
+  }
+
+  @override
+  String spaceMemberOf(String spaces) {
+    return 'Space member of $spaces';
+  }
+
+  @override
+  String spaceMemberOfCanKnock(String spaces) {
+    return 'Space member of $spaces can knock';
+  }
+
+  @override
+  String get donate => 'Donate';
+
+  @override
+  String startedAPoll(String username) {
+    return '$username started a poll.';
+  }
+
+  @override
+  String get poll => 'Poll';
+
+  @override
+  String get startPoll => 'Start poll';
+
+  @override
+  String get endPoll => 'End poll';
+
+  @override
+  String get answersVisible => 'Answers visible';
+
+  @override
+  String get answersHidden => 'Answers hidden';
+
+  @override
+  String get pollQuestion => 'Poll question';
+
+  @override
+  String get answerOption => 'Answer option';
+
+  @override
+  String get addAnswerOption => 'Add answer option';
+
+  @override
+  String get allowMultipleAnswers => 'Allow multiple answers';
+
+  @override
+  String get pollHasBeenEnded => 'Poll has been ended';
+
+  @override
+  String countVotes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count votes',
+      one: 'One vote',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get answersWillBeVisibleWhenPollHasEnded =>
+      'Answers will be visible when poll has ended';
+
+  @override
+  String get replyInThread => 'Reply in thread';
+
+  @override
+  String countReplies(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count replies',
+      one: 'One reply',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get thread => 'Thread';
+
+  @override
+  String get backToMainChat => 'Back to main chat';
+
+  @override
+  String get saveChanges => 'Save changes';
+
+  @override
+  String get createSticker => 'Create sticker or emoji';
+
+  @override
+  String get useAsSticker => 'Use as sticker';
+
+  @override
+  String get useAsEmoji => 'Use as emoji';
+
+  @override
+  String get stickerPackNameAlreadyExists => 'Sticker pack name already exists';
+
+  @override
+  String get newStickerPack => 'New sticker pack';
+
+  @override
+  String get stickerPackName => 'Sticker pack name';
+
+  @override
+  String get attribution => 'Attribution';
+
+  @override
+  String get skipChatBackup => 'Skip chat backup';
+
+  @override
+  String get skipChatBackupWarning =>
+      'Are you sure? Without enabling the chat backup you may lose access to your messages if you switch your device.';
+
+  @override
+  String get loadingMessages => 'Loading messages';
+
+  @override
+  String get setupChatBackup => 'Set up chat backup';
+
+  @override
+  String get noMoreResultsFound => 'No more results found';
+
+  @override
+  String chatSearchedUntil(String time) {
+    return 'Chat searched until $time';
+  }
 }

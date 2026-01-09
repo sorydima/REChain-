@@ -4,6 +4,7 @@ import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:matrix/matrix.dart';
 
 import 'package:rechainonline/config/app_config.dart';
+import 'package:rechainonline/config/setting_keys.dart';
 import 'package:rechainonline/utils/file_description.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/event_extension.dart';
 import 'package:rechainonline/utils/url_launcher.dart';
@@ -26,10 +27,10 @@ class MessageDownloadContent extends StatelessWidget {
     final filetype = (filename.contains('.')
         ? filename.split('.').last.toUpperCase()
         : event.content
-                .tryGetMap<String, dynamic>('info')
-                ?.tryGet<String>('mimetype')
-                ?.toUpperCase() ??
-            'UNKNOWN');
+                  .tryGetMap<String, dynamic>('info')
+                  ?.tryGet<String>('mimetype')
+                  ?.toUpperCase() ??
+              'UNKNOWN');
     final sizeString = event.sizeString ?? '?MB';
     final fileDescription = event.fileDescription;
     return Column(
@@ -53,33 +54,38 @@ class MessageDownloadContent extends StatelessWidget {
                     backgroundColor: textColor.withAlpha(32),
                     child: Icon(Icons.file_download_outlined, color: textColor),
                   ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        filename,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          color: textColor,
-                          fontWeight: FontWeight.w500,
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          filename,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            color: textColor,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 14,
+                          ),
                         ),
-                      ),
-                      Text(
-                        '$sizeString | $filetype',
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(color: textColor, fontSize: 10),
-                      ),
-                    ],
+                        Text(
+                          '$sizeString | $filetype',
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            color: textColor,
+                            fontSize: 10,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
             ),
           ),
         ),
-        if (fileDescription != null) ...[
+        if (fileDescription != null)
           Padding(
             padding: const EdgeInsets.symmetric(
               horizontal: 16.0,
@@ -90,19 +96,22 @@ class MessageDownloadContent extends StatelessWidget {
               textScaleFactor: MediaQuery.textScalerOf(context).scale(1),
               style: TextStyle(
                 color: textColor,
-                fontSize: AppConfig.fontSizeFactor * AppConfig.messageFontSize,
+                fontSize:
+                    AppSettings.fontSizeFactor.value *
+                    AppConfig.messageFontSize,
               ),
               options: const LinkifyOptions(humanize: false),
               linkStyle: TextStyle(
                 color: linkColor,
-                fontSize: AppConfig.fontSizeFactor * AppConfig.messageFontSize,
+                fontSize:
+                    AppSettings.fontSizeFactor.value *
+                    AppConfig.messageFontSize,
                 decoration: TextDecoration.underline,
                 decorationColor: linkColor,
               ),
               onOpen: (url) => UrlLauncher(context, url.url).launchUrl(),
             ),
           ),
-        ],
       ],
     );
   }

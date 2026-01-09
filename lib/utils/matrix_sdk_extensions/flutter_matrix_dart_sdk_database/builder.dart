@@ -8,7 +8,6 @@ import 'package:path_provider/path_provider.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 import 'package:universal_html/html.dart' as html;
 
-import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/utils/client_manager.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
@@ -25,33 +24,28 @@ Future<DatabaseApi> flutterMatrixSdkDatabaseBuilder(String clientName) async {
     return database;
   } catch (e, s) {
     Logs().wtf('Unable to construct database!', e, s);
-    // Try to delete database so that it can created again on next init:
-    database?.delete().catchError(
-          (e, s) => Logs().wtf(
-            'Unable to delete database, after failed construction',
-            e,
-            s,
-          ),
-        );
-
-    // Delete database file:
-    if (database == null && !kIsWeb) {
-      final dbFile = File(await _getDatabasePath(clientName));
-      if (await dbFile.exists()) await dbFile.delete();
-    }
 
     try {
       // Send error notification:
       final l10n = await lookupL10n(PlatformDispatcher.instance.locale);
-      ClientManager.sendInitNotification(
-        l10n.initAppError,
-        l10n.databaseBuildErrorBody(
-          AppConfig.newIssueUrl.toString(),
-          e.toString(),
-        ),
-      );
+      ClientManager.sendInitNotification(l10n.initAppError, e.toString());
     } catch (e, s) {
       Logs().e('Unable to send error notification', e, s);
+    }
+
+    // Try to delete database so that it can created again on next init:
+    database?.delete().catchError(
+      (e, s) => Logs().wtf(
+        'Unable to delete database, after failed construction',
+        e,
+        s,
+      ),
+    );
+
+    // Delete database file:
+    if (!kIsWeb) {
+      final dbFile = File(await _getDatabasePath(clientName));
+      if (await dbFile.exists()) await dbFile.delete();
     }
 
     rethrow;
@@ -80,24 +74,21 @@ Future<MatrixSdkDatabase> _constructDatabase(String clientName) async {
   // fix dlopen for old Android
   await applyWorkaroundToOpenSqlCipherOnOldAndroidVersions();
   // import the SQLite / SQLCipher shared objects / dynamic libraries
-  final factory =
-      createDatabaseFactoryFfi(ffiInit: SQfLiteEncryptionHelper.ffiInit);
-
-  // migrate from potential previous SQLite database path to current one
-  await _migrateLegacyLocation(path, clientName);
+  final factory = createDatabaseFactoryFfi(
+    ffiInit: SQfLiteEncryptionHelper.ffiInit,
+  );
 
   // required for [getDatabasesPath]
   databaseFactory = factory;
+
+  // migrate from potential previous SQLite database path to current one
+  await _migrateLegacyLocation(path, clientName);
 
   // in case we got a cipher, we use the encryption helper
   // to manage SQLite encryption
   final helper = cipher == null
       ? null
-      : SQfLiteEncryptionHelper(
-          factory: factory,
-          path: path,
-          cipher: cipher,
-        );
+      : SQfLiteEncryptionHelper(factory: factory, path: path, cipher: cipher);
 
   // check whether the DB is already encrypted and otherwise do so
   await helper?.ensureDatabaseFileEncrypted();

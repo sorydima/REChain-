@@ -1,3 +1,6 @@
+import 'dart:isolate';
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 import 'package:collection/collection.dart';
@@ -8,139 +11,36 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/utils/client_manager.dart';
+import 'package:rechainonline/utils/notification_background_handler.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
 import 'config/setting_keys.dart';
 import 'utils/background_push.dart';
 import 'widgets/rechainonline_chat_app.dart';
-import 'package:flutter/foundation.dart' show kIsWeb;
 
-import 'telegram_web_app_stub.dart'
-    if (dart.library.js) 'package:telegram_web_app/telegram_web_app.dart';
-import 'widgets/missing_widgets.dart';
-
-import 'package:flutter/material.dart';
-import 'rustore_push.dart';
-
-// class MainActivity extends StatefulWidget {
-//   const MainActivity({super.key});
-
-//    @override
-//    State<MainActivity> createState() => _MainActivityState();
-// }
-
-// class _MainActivityState extends State<MainActivity> {
-//   String? _lastPush;
-
-//   @override
-//   void initState() {
-//     super.initState();
-
-//     RuStorePush.pushStream.listen((payload) {
-//       setState(() {
-//         _lastPush = payload;
-//       });
-//     });
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       home: Scaffold(
-//         appBar: AppBar(title: const Text('REChain Push')),
-//         body: Center(
-//           child: Text(_lastPush != null ? 'Push: $_lastPush' : 'Waiting for pushes ...'),
-//         ),
-//       ),
-//     );
-//   }
-// }
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Telegram REChain App',
-      theme: TelegramThemeUtil.getTheme(TelegramWebApp.instance),
-      home: const MainScreen(),
-    );
-  }
-}
-
-class MainScreen extends StatelessWidget {
-  const MainScreen({super.key});
-
-  double get safeAreaTop => 0.0;
-
-  @override
-  Widget build(BuildContext context) {
-    final TelegramWebApp telegram = TelegramWebApp.instance;
-    return Scaffold(
-      backgroundColor: (telegram.backgroundColor as Color?) ?? Colors.grey,
-      appBar: TeleAppbar(title: 'REChain App', top: safeAreaTop),
-      body: ListView(
-        padding: const EdgeInsets.all(8),
-        children: [
-          ListButton('Expand', onPress: telegram.expand),
-          InfoExpandableTile(
-            'Init Data',
-            telegram.initData.toString(),
-          ),
-          InfoExpandableTile(
-            'Init Data Unsafe',
-            telegram.initDataUnsafe?.toReadableString() ?? 'null',
-          ),
-          InfoExpandableTile(
-            'isVerticalSwipesEnabled',
-            telegram.isVerticalSwipesEnabled.toString(),
-          ),
-          ListButton('enableVerticalSwipes', onPress: telegram.enableVerticalSwipes),
-          ListButton('disableVerticalSwipes', onPress: telegram.disableVerticalSwipes),
-          InfoExpandableTile('Version', telegram.version ?? ''),
-          InfoExpandableTile('Platform', telegram.platform ?? ''),
-          InfoExpandableTile('Color Scheme', telegram.colorScheme?.name ?? ''),
-          ThemeParamsWidget(telegram.themeParams),
-          InfoExpandableTile('isActive', telegram.isActive.toString()),
-          InfoExpandableTile('isExpanded', telegram.isExpanded.toString()),
-          InfoExpandableTile('viewportHeight', telegram.viewportHeight.toString()),
-          InfoExpandableTile('viewportStableHeight', telegram.viewportStableHeight.toString()),
-          InfoExpandableTile('safeAreaInset', telegram.safeAreaInset.toString()),
-          InfoExpandableTile('contentSafeAreaInset', telegram.contentSafeAreaInset.toString()),
-          OneColorExpandableTile('headerColor', telegram.headerColor),
-          OneColorExpandableTile('backgroundColor', telegram.backgroundColor as Color?),
-          OneColorExpandableTile('bottomBarColor', telegram.bottomBarColor),
-        ],
-      ),
-    );
-  }
-}
+ReceivePort? mainIsolateReceivePort;
 
 void main() async {
-  // Add Flutter framework error handler
-  FlutterError.onError = (FlutterErrorDetails details) {
-    Logs().e('Flutter framework error', details.exception, details.stack);
-  };
-
-  Logs().i('Welcome to ${AppConfig.applicationName} <3');
-
-  WidgetsFlutterBinding.ensureInitialized();
-  // await RuStorePush.initialize();
-  // runApp(const MainActivity());
+  if (PlatformInfos.isAndroid) {
+    final port = mainIsolateReceivePort = ReceivePort();
+    IsolateNameServer.removePortNameMapping(AppConfig.mainIsolatePortName);
+    IsolateNameServer.registerPortWithName(
+      port.sendPort,
+      AppConfig.mainIsolatePortName,
+    );
+    await waitForPushIsolateDone();
+  }
 
   // Our background push shared isolate accesses flutter-internal things very early in the startup proccess
   // To make sure that the parts of flutter needed are started up already, we need to ensure that the
   // widget bindings are initialized already.
   WidgetsFlutterBinding.ensureInitialized();
 
-  try {
-    await vod.init(wasmPath: './assets/vodozemac/');
-  } catch (e, s) {
-    Logs().e('Failed to initialize flutter_vodozemac', e, s);
-  }
+  final store = await AppSettings.init();
+  Logs().i('Welcome to ${AppSettings.applicationName.value} <3');
+
+  await vod.init(wasmPath: './assets/assets/vodozemac/');
 
   Logs().nativeColors = !PlatformInfos.isIOS;
-  final store = await SharedPreferences.getInstance();
   final clients = await ClientManager.getClients(store: store);
 
   // If the app starts in detached mode, we assume that it is in
@@ -160,14 +60,14 @@ void main() async {
     // To start the flutter engine afterwards we add an custom observer.
     WidgetsBinding.instance.addObserver(AppStarter(clients, store));
     Logs().i(
-      '${AppConfig.applicationName} started in background-fetch mode. No GUI will be created unless the app is no longer detached.',
+      '${AppSettings.applicationName.value} started in background-fetch mode. No GUI will be created unless the app is no longer detached.',
     );
     return;
   }
 
   // Started in foreground mode.
   Logs().i(
-    '${AppConfig.applicationName} started in foreground mode. Rendering GUI...',
+    '${AppSettings.applicationName.value} started in foreground mode. Rendering GUI...',
   );
   await startGui(clients, store);
 }
@@ -178,8 +78,9 @@ Future<void> startGui(List<Client> clients, SharedPreferences store) async {
   String? pin;
   if (PlatformInfos.isMobile) {
     try {
-      pin =
-          await const FlutterSecureStorage().read(key: SettingKeys.appLockKey);
+      pin = await const FlutterSecureStorage().read(
+        key: 'com.rechain.app_lock',
+      );
     } catch (e, s) {
       Logs().d('Unable to read PIN from Secure storage', e, s);
     }
@@ -190,12 +91,7 @@ Future<void> startGui(List<Client> clients, SharedPreferences store) async {
   await firstClient?.roomsLoading;
   await firstClient?.accountDataLoading;
 
-  try {
-    runApp(rechainonlineChatApp(clients: clients, pincode: pin, store: store));
-  } catch (e, s) {
-    Logs().e('Error during runApp', e, s);
-    rethrow;
-  }
+  runApp(REChainApp(clients: clients, pincode: pin, store: store));
 }
 
 /// Watches the lifecycle changes to start the application when it
@@ -213,7 +109,7 @@ class AppStarter with WidgetsBindingObserver {
     if (state == AppLifecycleState.detached) return;
 
     Logs().i(
-      '${AppConfig.applicationName} switches from the detached background-fetch mode to ${state.name} mode. Rendering GUI...',
+      '${AppSettings.applicationName.value} switches from the detached background-fetch mode to ${state.name} mode. Rendering GUI...',
     );
     // Switching to foreground mode needs to reenable send online sync presence.
     for (final client in clients) {

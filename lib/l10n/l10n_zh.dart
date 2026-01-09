@@ -9,7 +9,7 @@ class L10nZh extends L10n {
   L10nZh([String locale = 'zh']) : super(locale);
 
   @override
-  String get alwaysUse24HourFormat => 'false';
+  String get alwaysUse24HourFormat => '否';
 
   @override
   String get repeatPassword => '重复输入密码';
@@ -152,7 +152,7 @@ class L10nZh extends L10n {
   String get areYouSure => '你确定吗？';
 
   @override
-  String get areYouSureYouWantToLogout => '你确定要注销吗？';
+  String get areYouSureYouWantToLogout => '你确定要退出登录吗？';
 
   @override
   String get askSSSSSign => '请输入你的安全存储的密码短语或恢复密钥，以向对方签名。';
@@ -166,8 +166,11 @@ class L10nZh extends L10n {
   String get autoplayImages => '自动播放动态贴纸和表情';
 
   @override
-  String badServerLoginTypesException(String serverVersions,
-      String supportedVersions, Object suportedVersions) {
+  String badServerLoginTypesException(
+    String serverVersions,
+    String supportedVersions,
+    Object suportedVersions,
+  ) {
     return '主服务器支持的登录方式：\n$serverVersions\n但此应用仅支持：\n$supportedVersions';
   }
 
@@ -182,11 +185,12 @@ class L10nZh extends L10n {
 
   @override
   String badServerVersionsException(
-      String serverVersions,
-      String supportedVersions,
-      Object serverVerions,
-      Object supoortedVersions,
-      Object suportedVersions) {
+    String serverVersions,
+    String supportedVersions,
+    Object serverVerions,
+    Object supoortedVersions,
+    Object suportedVersions,
+  ) {
     return '主服务器支持的 Spec 版本：\n$serverVersions\n但此应用仅支持 $supportedVersions 版本';
   }
 
@@ -250,8 +254,18 @@ class L10nZh extends L10n {
   }
 
   @override
+  String changedTheChatDescription(Object username) {
+    return '$username 更改了聊天描述';
+  }
+
+  @override
   String changedTheChatDescriptionTo(String username, String description) {
     return '$username 将聊天描述更改为：\'$description\'';
+  }
+
+  @override
+  String changedTheChatName(Object username) {
+    return '$username 更改了聊天名';
   }
 
   @override
@@ -342,7 +356,7 @@ class L10nZh extends L10n {
   String get chatBackup => '聊天记录备份';
 
   @override
-  String get chatBackupDescription => '你的旧消息受恢复密钥保护。请确保你不会丢失它。';
+  String get chatBackupDescription => '你的消息受恢复密钥保护。请确保你不会丢失它。';
 
   @override
   String get chatDetails => '聊天详情';
@@ -662,7 +676,7 @@ class L10nZh extends L10n {
   String get fileName => '文件名';
 
   @override
-  String get rechainonline => 'rechainonline';
+  String get rechainonline => 'REChain';
 
   @override
   String get fontSize => '字体大小';
@@ -799,7 +813,7 @@ class L10nZh extends L10n {
 
   @override
   String inviteText(String username, String link) {
-    return '$username 邀请你使用 REChain。 \n1. 安装 REChain：https://online.rechain.network \n2. 注册或登录 \n3. 打开邀请链接：\n $link';
+    return '$username 邀请你使用 REChain. \n1. 安装 REChain.https://github.com/sorydima/REChain- \n2. 注册或登录 \n3. 打开邀请链接：\n $link';
   }
 
   @override
@@ -890,7 +904,7 @@ class L10nZh extends L10n {
   }
 
   @override
-  String get logout => '注销';
+  String get logout => '退出登录';
 
   @override
   String get memberChanges => '成员变更';
@@ -985,7 +999,7 @@ class L10nZh extends L10n {
   String get offline => '离线';
 
   @override
-  String get ok => '好';
+  String get ok => '确认';
 
   @override
   String get online => '在线';
@@ -1380,7 +1394,7 @@ class L10nZh extends L10n {
   String get theyMatch => '它们匹配';
 
   @override
-  String get title => 'rechainonline';
+  String get title => 'REChain';
 
   @override
   String get toggleFavorite => '切换收藏';
@@ -1641,7 +1655,7 @@ class L10nZh extends L10n {
 
   @override
   String get indexedDbErrorLong =>
-      '遗憾的是，默认情况下未在私有模式下启用消息存储。\n请访问\n - about:config\n - 将 dom.indexedDB.privateBrowsing.enabled 设置为 true\n否则，无法运行 REChain。';
+      '遗憾的是，默认情况下未在私有模式下启用消息存储。\n请访问\n - about:config\n - 将 dom.indexedDB.privateBrowsing.enabled 设置为 true\n否则，无法运行 REChain.';
 
   @override
   String switchToAccount(String number) {
@@ -1822,7 +1836,7 @@ class L10nZh extends L10n {
 
   @override
   String get noKeyForThisMessage =>
-      '如果消息是在你在此设备上登录账户前发送的，就可能发生这种情况。\n\n也有可能是发送者屏蔽了你的设备或网络连接出了问题。\n\n你能在另一个会话中读取消息吗？如果是的话，你可以从它那里传递信息！点击设置 > 设备，并确保你的设备已经相互验证。当你下次打开聊天室，且两个会话都在前台，密钥就会自动传输。\n\n你不想在注销或切换设备时丢失密钥？请确保在设置中启用了聊天备份。';
+      '如果消息是在你在此设备上登录账户前发送的，就可能发生这种情况。\n\n也有可能是发送者屏蔽了你的设备或网络连接出了问题。\n\n你能在另一个会话中读取消息吗？如果是的话，你可以从它那里传递信息！点击设置 > 设备，并确保你的设备已经相互验证。当你下次打开聊天室，且两个会话都在前台，密钥就会自动传输。\n\n你不想在退出登录或切换设备时丢失密钥？请确保在设置中启用了聊天备份。';
 
   @override
   String get newGroup => '新群组';
@@ -1877,7 +1891,7 @@ class L10nZh extends L10n {
   String get reopenChat => '重新打开聊天';
 
   @override
-  String get noBackupWarning => '警告！如果不启用聊天备份，你将无法访问加密消息。强烈建议在注销前先启用聊天备份。';
+  String get noBackupWarning => '警告！如果不启用聊天备份，你将无法访问加密消息。强烈建议在退出登录前先启用聊天备份。';
 
   @override
   String get noOtherDevicesFound => '未找到其它设备';
@@ -1934,10 +1948,10 @@ class L10nZh extends L10n {
   String get invite => '邀请';
 
   @override
-  String get inviteGroupChat => '📨 邀请至群聊';
+  String get inviteGroupChat => '📨 群聊邀请';
 
   @override
-  String get invitePrivateChat => '📨 邀请至私聊';
+  String get invitePrivateChat => '📨 私聊邀请';
 
   @override
   String get invalidInput => '无效的输入！';
@@ -1955,7 +1969,7 @@ class L10nZh extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      '将使用新版聊天室来重新创建当前聊天室。所有参与者都会收到通知以切换到新的聊天室。有关聊天室版本的更多信息，请访问 https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle';
+      '将使用新版聊天室来重新创建当前聊天室。所有参与者都会收到通知以切换到新的聊天室。有关聊天室版本的更多信息，请访问 https://github.com/sorydima/REChain-.git';
 
   @override
   String get removeDevicesDescription => '你将从此设备登出，无法再接收消息。';
@@ -2286,7 +2300,7 @@ class L10nZh extends L10n {
 
   @override
   String get homeserverDescription =>
-      '主服务器上就像电子邮件提供商，你的所有数据都存储在上面。你可以选择你想使用哪个主服务器。在 https://rechain.network 上了解更多信息。';
+      '主服务器上就像电子邮件提供商，你的所有数据都存储在上面。你可以选择你想使用哪个主服务器。在 https://github.com/sorydima/REChain-.git 上了解更多信息。';
 
   @override
   String get doesNotSeemToBeAValidHomeserver => '似乎不是兼容的主服务器。URL 不正确？';
@@ -2328,7 +2342,7 @@ class L10nZh extends L10n {
 
   @override
   String get welcomeText =>
-      '你好呀 👋 欢迎来到 REChain。你可以登录任意兼容 https://rechain.network 的 homeserver，然后和任何人聊天。这是个巨大的去中心化消息网络！';
+      '你好呀 👋 欢迎来到 REChain.你可以登录任意兼容 https://github.com/sorydima/REChain-.git 的 homeserver，然后和任何人聊天。这是个巨大的去中心化消息网络！';
 
   @override
   String get blur => '模糊：';
@@ -2412,7 +2426,7 @@ class L10nZh extends L10n {
 
   @override
   String get appIntroduction =>
-      'REChain 让使用不同即时通信工具的你和你的好友得以聊天。 访问 https://rechain.network 了解详情或轻按 *继续*。';
+      'REChain 让使用不同即时通信工具的你和你的好友得以聊天。 访问 https://github.com/sorydima/REChain-.git 了解详情或轻按 *继续*。';
 
   @override
   String get newChatRequest => '📩 新的聊天请求';
@@ -2630,6 +2644,167 @@ class L10nZh extends L10n {
 
   @override
   String get moreEvents => '更多事件';
+
+  @override
+  String get declineInvitation => '拒绝邀请';
+
+  @override
+  String get noMessagesYet => '尚无消息';
+
+  @override
+  String get longPressToRecordVoiceMessage => '长按录制语音消息。';
+
+  @override
+  String get pause => '暂停';
+
+  @override
+  String get resume => '继续';
+
+  @override
+  String get newSubSpace => '新建子空间';
+
+  @override
+  String get moveToDifferentSpace => '移动到别的空间';
+
+  @override
+  String get moveUp => '上移';
+
+  @override
+  String get moveDown => '下移';
+
+  @override
+  String get removeFromSpaceDescription => '将从空间移除该聊天，但仍出现在聊天列表中。';
+
+  @override
+  String countChats(int chats) {
+    return '$chats 个聊天';
+  }
+
+  @override
+  String spaceMemberOf(String spaces) {
+    return '$spaces 的空间成员';
+  }
+
+  @override
+  String spaceMemberOfCanKnock(String spaces) {
+    return '$spaces 的空间成员可以敲门';
+  }
+
+  @override
+  String get donate => '捐赠';
+
+  @override
+  String startedAPoll(String username) {
+    return '$username 启动了投票。';
+  }
+
+  @override
+  String get poll => '投票';
+
+  @override
+  String get startPoll => '启动投票';
+
+  @override
+  String get endPoll => '结束投票';
+
+  @override
+  String get answersVisible => '结果可见';
+
+  @override
+  String get answersHidden => '结果隐藏';
+
+  @override
+  String get pollQuestion => '投票问题';
+
+  @override
+  String get answerOption => '结果选项';
+
+  @override
+  String get addAnswerOption => '添加结果选项';
+
+  @override
+  String get allowMultipleAnswers => '允许多个结果';
+
+  @override
+  String get pollHasBeenEnded => '投票已结束';
+
+  @override
+  String countVotes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 票',
+      one: '票',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get answersWillBeVisibleWhenPollHasEnded => '投票结束后将显示结果';
+
+  @override
+  String get replyInThread => '在嘟文串中回复';
+
+  @override
+  String countReplies(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 则回复',
+      one: '则回复',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get thread => '嘟文串';
+
+  @override
+  String get backToMainChat => '返回主聊天';
+
+  @override
+  String get saveChanges => '保存更改';
+
+  @override
+  String get createSticker => '创建贴纸或表情图片';
+
+  @override
+  String get useAsSticker => '用作贴纸';
+
+  @override
+  String get useAsEmoji => '用作表情图片';
+
+  @override
+  String get stickerPackNameAlreadyExists => '贴纸包名已存在';
+
+  @override
+  String get newStickerPack => '新建贴纸包';
+
+  @override
+  String get stickerPackName => '贴纸包名';
+
+  @override
+  String get attribution => '作者';
+
+  @override
+  String get skipChatBackup => '跳过聊天备份';
+
+  @override
+  String get skipChatBackupWarning => '确定吗？不开启聊天备份，如果切换设备可能无法访问消息。';
+
+  @override
+  String get loadingMessages => '加载消息中';
+
+  @override
+  String get setupChatBackup => '设置聊天备份';
+
+  @override
+  String get noMoreResultsFound => 'No more results found';
+
+  @override
+  String chatSearchedUntil(String time) {
+    return 'Chat searched until $time';
+  }
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -2794,8 +2969,11 @@ class L10nZhHant extends L10nZh {
   String get autoplayImages => '自動播放動態貼圖和表情';
 
   @override
-  String badServerLoginTypesException(String serverVersions,
-      String supportedVersions, Object suportedVersions) {
+  String badServerLoginTypesException(
+    String serverVersions,
+    String supportedVersions,
+    Object suportedVersions,
+  ) {
     return '目前伺服器支援的登入類型：\n$serverVersions\n但本應用程式僅支援：\n$supportedVersions';
   }
 
@@ -2810,11 +2988,12 @@ class L10nZhHant extends L10nZh {
 
   @override
   String badServerVersionsException(
-      String serverVersions,
-      String supportedVersions,
-      Object serverVerions,
-      Object supoortedVersions,
-      Object suportedVersions) {
+    String serverVersions,
+    String supportedVersions,
+    Object serverVerions,
+    Object supoortedVersions,
+    Object suportedVersions,
+  ) {
     return '目前伺服器支援的協議版本：\n$serverVersions\n但本應用程式僅支援 $supportedVersions';
   }
 
@@ -3105,6 +3284,11 @@ class L10nZhHant extends L10nZh {
   }
 
   @override
+  String countInvited(int count) {
+    return '已邀請$count位';
+  }
+
+  @override
   String get create => '建立';
 
   @override
@@ -3282,7 +3466,7 @@ class L10nZhHant extends L10nZh {
   String get fileName => '檔案名稱';
 
   @override
-  String get rechainonline => 'rechainonline';
+  String get rechainonline => 'REChain';
 
   @override
   String get fontSize => '字體大小';
@@ -3419,7 +3603,7 @@ class L10nZhHant extends L10nZh {
 
   @override
   String inviteText(String username, String link) {
-    return '$username 邀請您使用 REChain\n1. 安裝 REChain：https://online.rechain.network\n2. 登入或註冊\n3. 打開該邀請網址：\n$link';
+    return '$username 邀請您使用 REChain.n1. 安裝 REChain.https://github.com/sorydima/REChain-\n2. 登入或註冊\n3. 打開該邀請網址：\n$link';
   }
 
   @override
@@ -4000,7 +4184,7 @@ class L10nZhHant extends L10nZh {
   String get theyMatch => '它們相符';
 
   @override
-  String get title => 'rechainonline';
+  String get title => 'REChain';
 
   @override
   String get toggleFavorite => '切換收藏夾';
@@ -4261,7 +4445,7 @@ class L10nZhHant extends L10nZh {
 
   @override
   String get indexedDbErrorLong =>
-      '預設情況下，私密模式不啟用消息存儲。\n請訪問\n - about:config\n - 將 dom.indexedDB.privateBrowsing.enabled 設定為 true\n否則，無法運行 REChain。';
+      '預設情況下，私密模式不啟用消息存儲。\n請訪問\n - about:config\n - 將 dom.indexedDB.privateBrowsing.enabled 設定為 true\n否則，無法運行 REChain.';
 
   @override
   String switchToAccount(String number) {
@@ -4416,7 +4600,7 @@ class L10nZhHant extends L10nZh {
   String get screenSharingTitle => '螢幕分享';
 
   @override
-  String get screenSharingDetail => '您正在 FuffyChat 中分享您的螢幕';
+  String get screenSharingDetail => '您正在 REChain 中分享您的螢幕';
 
   @override
   String get callingPermissions => '通話權限';
@@ -4574,7 +4758,7 @@ class L10nZhHant extends L10nZh {
 
   @override
   String get roomUpgradeDescription =>
-      '將使用新版本聊天室來重新建立聊天室。所有本聊天室的參與者都會收到通知，他們都需要換到新的聊天室裡。若您想知道有關新版本的更多資訊，請前往 https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle';
+      '將使用新版本聊天室來重新建立聊天室。所有本聊天室的參與者都會收到通知，他們都需要換到新的聊天室裡。若您想知道有關新版本的更多資訊，請前往 https://github.com/sorydima/REChain-.git';
 
   @override
   String get removeDevicesDescription => '您將從這個裝置登出，並將不再能夠接收消息。';
@@ -4896,7 +5080,7 @@ class L10nZhHant extends L10nZh {
   String get sendCanceled => '傳送取消';
 
   @override
-  String get loginWithMatrixId => '以REChain-ID登入';
+  String get loginWithMatrixId => 'REChain-ID登入';
 
   @override
   String get discoverHomeservers => '探索歸屬伺服器';
@@ -4906,7 +5090,7 @@ class L10nZhHant extends L10nZh {
 
   @override
   String get homeserverDescription =>
-      '您的所有資料都儲存在歸屬伺服器上，就像電子郵件提供商一樣。 您可以選擇要使用的歸屬伺服器，同時您仍然可以與每個人溝通。 請訪問https://rechain.network瞭解更多資訊。';
+      '您的所有資料都儲存在歸屬伺服器上，就像電子郵件提供商一樣。 您可以選擇要使用的歸屬伺服器，同時您仍然可以與每個人溝通。 請訪問https://github.com/sorydima/REChain-.git瞭解更多資訊。';
 
   @override
   String get doesNotSeemToBeAValidHomeserver => '似乎不是能匹配的歸屬伺服器。伺服器域名打錯了嗎？';
@@ -4948,7 +5132,7 @@ class L10nZhHant extends L10nZh {
 
   @override
   String get welcomeText =>
-      '嘿，嘿👋這是REChain。 您可以登入任何與https://rechain.network相容的歸屬伺服器後和任何人聊天。 這是一個巨大的去中心化訊息網路！';
+      '嘿，嘿👋這是REChain. 您可以登入任何與https://github.com/sorydima/REChain-.git相容的歸屬伺服器後和任何人聊天。 這是一個巨大的去中心化訊息網路！';
 
   @override
   String get blur => '模糊:';
@@ -5032,7 +5216,7 @@ class L10nZhHant extends L10nZh {
 
   @override
   String get appIntroduction =>
-      'REChain 讓你和你的朋友跨越工具聊天。在 https://rechain.network 了解更多或*繼續*。';
+      'REChain 讓你和你的朋友跨越工具聊天。在 https://github.com/sorydima/REChain-.git 了解更多或*繼續*。';
 
   @override
   String get newChatRequest => '📩 新的聊天邀請';

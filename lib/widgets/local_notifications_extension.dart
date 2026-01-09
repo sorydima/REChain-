@@ -9,7 +9,7 @@ import 'package:image/image.dart';
 import 'package:matrix/matrix.dart';
 import 'package:universal_html/html.dart' as html;
 
-import 'package:rechainonline/config/app_config.dart';
+import 'package:rechainonline/config/setting_keys.dart';
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/utils/client_download_content_extension.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
@@ -33,11 +33,13 @@ extension LocalNotificationsExtension on MatrixState {
       }
     }
 
-    final title =
-        event.room.getLocalizedDisplayname(MatrixLocals(L10n.of(context)));
+    final title = event.room.getLocalizedDisplayname(
+      MatrixLocals(L10n.of(context)),
+    );
     final body = await event.calcLocalizedBody(
       MatrixLocals(L10n.of(context)),
-      withSenderNamePrefix: !event.room.isDirectChat ||
+      withSenderNamePrefix:
+          !event.room.isDirectChat ||
           event.room.lastEvent?.senderId == client.userID,
       plaintextBody: true,
       hideReply: true,
@@ -50,24 +52,29 @@ extension LocalNotificationsExtension on MatrixState {
       Uri? thumbnailUri;
 
       if (avatarUrl != null) {
-        const size = 64;
+        const size = 128;
         const thumbnailMethod = ThumbnailMethod.crop;
         // Pre-cache so that we can later just set the thumbnail uri as icon:
-        await client.downloadMxcCached(
-          avatarUrl,
-          width: size,
-          height: size,
-          thumbnailMethod: thumbnailMethod,
-          isThumbnail: true,
-        );
+        try {
+          await client.downloadMxcCached(
+            avatarUrl,
+            width: size,
+            height: size,
+            thumbnailMethod: thumbnailMethod,
+            isThumbnail: true,
+            rounded: true,
+          );
+        } catch (e, s) {
+          Logs().d('Unable to pre-download avatar for web notification', e, s);
+        }
 
-        thumbnailUri =
-            await event.senderFromMemoryOrFallback.avatarUrl?.getThumbnailUri(
-          client,
-          width: size,
-          height: size,
-          method: thumbnailMethod,
-        );
+        thumbnailUri = await event.senderFromMemoryOrFallback.avatarUrl
+            ?.getThumbnailUri(
+              client,
+              width: size,
+              height: size,
+              method: thumbnailMethod,
+            );
       }
 
       _audioPlayer.play();
@@ -92,6 +99,7 @@ extension LocalNotificationsExtension on MatrixState {
           height: size,
           thumbnailMethod: thumbnailMethod,
           isThumbnail: true,
+          rounded: true,
         );
 
         final image = decodeImage(data);
@@ -112,7 +120,7 @@ extension LocalNotificationsExtension on MatrixState {
         title,
         body: body,
         replacesId: linuxNotificationIds[roomId] ?? 0,
-        appName: AppConfig.applicationName,
+        appName: AppSettings.applicationName.value,
         appIcon: 'rechainonline',
         actions: [
           NotificationAction(
@@ -127,8 +135,9 @@ extension LocalNotificationsExtension on MatrixState {
         hints: hints,
       );
       notification.action.then((actionStr) {
-        var action = DesktopNotificationActions.values
-            .singleWhereOrNull((a) => a.name == actionStr);
+        var action = DesktopNotificationActions.values.singleWhereOrNull(
+          (a) => a.name == actionStr,
+        );
         if (action == null && actionStr == "default") {
           action = DesktopNotificationActions.openChat;
         }
@@ -137,11 +146,13 @@ extension LocalNotificationsExtension on MatrixState {
             event.room.setReadMarker(
               event.eventId,
               mRead: event.eventId,
-              public: AppConfig.sendPublicReadReceipts,
+              public: AppSettings.sendPublicReadReceipts.value,
             );
             break;
           case DesktopNotificationActions.openChat:
-            rechainonlineChatApp.router.go('/rooms/${event.room.id}');
+            setActiveClient(event.room.client);
+
+            REChain.pp.router.go('/rooms/${event.room.id}');
             break;
         }
       });

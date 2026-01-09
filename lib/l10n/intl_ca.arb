@@ -624,7 +624,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "rechainonline": "rechainonline",
+  "rechainonline": "REChain",
   "@rechainonline": {
     "type": "String",
     "placeholders": {}
@@ -766,7 +766,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "inviteText": "{username} t'ha convidat a REChain.\n1. Visita online.rechain.network i instaŀla l'app\n2. Registra't o inicia sessió\n3. Obre l'enllaç d'invitació:\n{link}",
+  "inviteText": "{username} t'ha convidat a REChain.\n1. Visita github.com/sorydima/REChain- i instaŀla l'app\n2. Registra't o inicia sessió\n3. Obre l'enllaç d'invitació:\n{link}",
   "@inviteText": {
     "type": "String",
     "placeholders": {
@@ -928,7 +928,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "newMessageInrechainonline": "💬 Missatge nou al rechainonline",
+  "newMessageInrechainonline": "💬 Missatge nou al REChain",
   "@newMessageInrechainonline": {
     "type": "String",
     "placeholders": {}
@@ -953,7 +953,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "noGoogleServicesWarning": "Sembla que no teniu els Serveis de Google al telèfon. Això és una bona decisió respecte a la vostra privadesa! Per a rebre notificacions automàtiques del REChain, us recomanem instaŀlar ntfy. Amb ntfy o qualsevol altre proveïdor de Unified Push, pots rebre notificacions de forma segura i lliure. Pots instaŀlar ntfy des de la PlayStore o des de F-Droid.",
+  "noGoogleServicesWarning": "Sembla que no teniu els Serveis de Google al telèfon. Això és una bona decisió respecte a la vostra privadesa! Per a rebre notificacions automàtiques del REChain. us recomanem instaŀlar ntfy. Amb ntfy o qualsevol altre proveïdor de Unified Push, pots rebre notificacions de forma segura i lliure. Pots instaŀlar ntfy des de la PlayStore o des de F-Droid.",
   "@noGoogleServicesWarning": {
     "type": "String",
     "placeholders": {}
@@ -1393,7 +1393,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "title": "rechainonline",
+  "title": "REChain",
   "@title": {
     "description": "Title for the application",
     "type": "String",
@@ -2137,7 +2137,7 @@
   "@unbanUserDescription": {},
   "youRejectedTheInvitation": "Has rebutjat la invitació",
   "@youRejectedTheInvitation": {},
-  "otherCallingPermissions": "Micròfon, càmera i altres permisos del rechainonline",
+  "otherCallingPermissions": "Micròfon, càmera i altres permisos del REChain",
   "@otherCallingPermissions": {},
   "messagesStyle": "Missatges:",
   "@messagesStyle": {},
@@ -2494,7 +2494,7 @@
   "@dehydrateTor": {},
   "removeFromSpace": "Esborra de l'espai",
   "@removeFromSpace": {},
-  "roomUpgradeDescription": "El xat serà recreat amb una versió de sala nova. Totis lis participants seran notificadis que han de canviar al nou xat. Pots llegir més sobre les versions de sala a https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle",
+  "roomUpgradeDescription": "El xat serà recreat amb una versió de sala nova. Totis lis participants seran notificadis que han de canviar al nou xat. Pots llegir més sobre les versions de sala a https://github.com/sorydima/REChain-.git",
   "@roomUpgradeDescription": {},
   "pleaseEnterANumber": "Introdueix un número major que 0",
   "@pleaseEnterANumber": {},
@@ -2635,7 +2635,7 @@
   "@unsupportedAndroidVersionLong": {},
   "storeSecurlyOnThisDevice": "Desa de forma segura en aquest dispositiu",
   "@storeSecurlyOnThisDevice": {},
-  "screenSharingDetail": "Estàs compartint la teva pantalla a rechainonline",
+  "screenSharingDetail": "Estàs compartint la teva pantalla a REChain",
   "@screenSharingDetail": {},
   "placeCall": "Truca",
   "@placeCall": {},
@@ -3043,7 +3043,7 @@
   "@discoverHomeservers": {},
   "whatIsAHomeserver": "Què és un servidor de REChain?",
   "@whatIsAHomeserver": {},
-  "homeserverDescription": "Totes les teves dades s'emmagatzemen al servidor, com passa amb el e-mail. Pots triar quin servidor vols fer servir sense témer a no poder comunicar gent d'altres servidors. Llegeix-ne més a https://rechain.network.",
+  "homeserverDescription": "Totes les teves dades s'emmagatzemen al servidor, com passa amb el e-mail. Pots triar quin servidor vols fer servir sense témer a no poder comunicar gent d'altres servidors. Llegeix-ne més a https://github.com/sorydima/REChain-.git",
   "@homeserverDescription": {},
   "doesNotSeemToBeAValidHomeserver": "No sembla un servidor compatible. Pot ser que la URL estigui malament?",
   "@doesNotSeemToBeAValidHomeserver": {},
@@ -3134,7 +3134,7 @@
   },
   "oneOfYourDevicesIsNotVerified": "Un dels teus dispositius no està verificat",
   "@oneOfYourDevicesIsNotVerified": {},
-  "welcomeText": "Hola hola! 👋 Això és REChain. Pots iniciar sessió en qualsevol servidor compatible amb https://rechain.network. I llavors xatejar amb qualsevol. És una xarxa enorme de missatgeria descentralitzada !",
+  "welcomeText": "Hola hola! 👋 Això és REChain. Pots iniciar sessió en qualsevol servidor compatible amb https://github.com/sorydima/REChain-.git. I llavors xatejar amb qualsevol. És una xarxa enorme de missatgeria descentralitzada !",
   "@welcomeText": {},
   "blur": "Difumina:",
   "@blur": {},
@@ -3316,7 +3316,7 @@
   "@appWantsToUseForLoginDescription": {},
   "open": "Obre",
   "@open": {},
-  "appIntroduction": "El REChain et permet xatejar amb amiguis entre diverses aplicacions. Llegeix-ne més a https://rechain.network o pica \"Continua\".",
+  "appIntroduction": "El REChain et permet xatejar amb amiguis entre diverses aplicacions. Llegeix-ne més a https://github.com/sorydima/REChain-.git o pica \"Continua\".",
   "@appIntroduction": {},
   "waitingForServer": "S'està esperant el servidor...",
   "@waitingForServer": {},

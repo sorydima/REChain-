@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
 import 'package:matrix/matrix.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 import 'package:rechainonline/config/app_config.dart';
@@ -24,8 +25,9 @@ class SettingsView extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final showChatBackupBanner = controller.showChatBackupBanner;
-    final activeRoute =
-        GoRouter.of(context).routeInformationProvider.value.uri.path;
+    final activeRoute = GoRouter.of(
+      context,
+    ).routeInformationProvider.value.uri.path;
     final accountManageUrl = Matrix.of(context)
         .client
         .wellKnown
@@ -40,10 +42,7 @@ class SettingsView extends StatelessWidget {
             onGoToChats: () => context.go('/rooms'),
             onGoToSpaceId: (spaceId) => context.go('/rooms?spaceId=$spaceId'),
           ),
-          Container(
-            color: Theme.of(context).dividerColor,
-            width: 1,
-          ),
+          Container(color: Theme.of(context).dividerColor, width: 1),
         ],
         Expanded(
           child: Scaffold(
@@ -52,9 +51,7 @@ class SettingsView extends StatelessWidget {
                 : AppBar(
                     title: Text(L10n.of(context).settings),
                     leading: Center(
-                      child: BackButton(
-                        onPressed: () => context.go('/rooms'),
-                      ),
+                      child: BackButton(onPressed: () => context.go('/rooms')),
                     ),
                   ),
             body: ListTileTheme(
@@ -67,7 +64,8 @@ class SettingsView extends StatelessWidget {
                     builder: (context, snapshot) {
                       final profile = snapshot.data;
                       final avatar = profile?.avatarUrl;
-                      final mxid = Matrix.of(context).client.userID ??
+                      final mxid =
+                          Matrix.of(context).client.userID ??
                           L10n.of(context).user;
                       final displayname =
                           profile?.displayName ?? mxid.localpart ?? mxid;
@@ -83,10 +81,10 @@ class SettingsView extends StatelessWidget {
                                   size: Avatar.defaultSize * 2.5,
                                   onTap: avatar != null
                                       ? () => showDialog(
-                                            context: context,
-                                            builder: (_) =>
-                                                MxcImageViewer(avatar),
-                                          )
+                                          context: context,
+                                          builder: (_) =>
+                                              MxcImageViewer(avatar),
+                                        )
                                       : null,
                                 ),
                                 if (profile != null)
@@ -107,8 +105,8 @@ class SettingsView extends StatelessWidget {
                           ),
                           Expanded(
                             child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: .center,
+                              crossAxisAlignment: .start,
                               children: [
                                 TextButton.icon(
                                   onPressed: controller.setDisplaynameAction,
@@ -125,9 +123,7 @@ class SettingsView extends StatelessWidget {
                                     displayname,
                                     maxLines: 1,
                                     overflow: TextOverflow.ellipsis,
-                                    style: const TextStyle(
-                                      fontSize: 18,
-                                    ),
+                                    style: const TextStyle(fontSize: 18),
                                   ),
                                 ),
                                 TextButton.icon(
@@ -181,9 +177,7 @@ class SettingsView extends StatelessWidget {
                       title: Text(L10n.of(context).chatBackup),
                       onChanged: controller.firstRunBootstrapAction,
                     ),
-                  Divider(
-                    color: theme.dividerColor,
-                  ),
+                  Divider(color: theme.dividerColor),
                   ListTile(
                     leading: const Icon(Icons.format_paint_outlined),
                     title: Text(L10n.of(context).changeTheme),
@@ -197,8 +191,8 @@ class SettingsView extends StatelessWidget {
                     title: Text(L10n.of(context).notifications),
                     tileColor:
                         activeRoute.startsWith('/rooms/settings/notifications')
-                            ? theme.colorScheme.surfaceContainerHigh
-                            : null,
+                        ? theme.colorScheme.surfaceContainerHigh
+                        : null,
                     onTap: () => context.go('/rooms/settings/notifications'),
                   ),
                   ListTile(
@@ -223,8 +217,8 @@ class SettingsView extends StatelessWidget {
                     onTap: () => context.go('/rooms/settings/security'),
                     tileColor:
                         activeRoute.startsWith('/rooms/settings/security')
-                            ? theme.colorScheme.surfaceContainerHigh
-                            : null,
+                        ? theme.colorScheme.surfaceContainerHigh
+                        : null,
                   ),
                   Divider(color: theme.dividerColor),
                   ListTile(
@@ -238,13 +232,13 @@ class SettingsView extends StatelessWidget {
                     onTap: () => context.go('/rooms/settings/homeserver'),
                     tileColor:
                         activeRoute.startsWith('/rooms/settings/homeserver')
-                            ? theme.colorScheme.surfaceContainerHigh
-                            : null,
+                        ? theme.colorScheme.surfaceContainerHigh
+                        : null,
                   ),
                   ListTile(
                     leading: const Icon(Icons.privacy_tip_outlined),
                     title: Text(L10n.of(context).privacy),
-                    onTap: () => launchUrlString(AppConfig.privacyUrl),
+                    onTap: () => launchUrl(AppConfig.privacyUrl),
                   ),
                   ListTile(
                     leading: const Icon(Icons.info_outline_rounded),

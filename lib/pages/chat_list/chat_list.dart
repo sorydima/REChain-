@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -12,7 +11,6 @@ import 'package:matrix/matrix.dart' as sdk;
 import 'package:matrix/matrix.dart';
 import 'package:receive_sharing_intent/receive_sharing_intent.dart';
 
-import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/pages/chat_list/chat_list_view.dart';
 import 'package:rechainonline/utils/localized_exception_extension.dart';
@@ -20,7 +18,6 @@ import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
 import 'package:rechainonline/utils/show_scaffold_dialog.dart';
 import 'package:rechainonline/utils/show_update_snackbar.dart';
-import 'package:rechainonline/widgets/adaptive_dialogs/adaptive_dialog_action.dart';
 import 'package:rechainonline/widgets/adaptive_dialogs/show_modal_action_popup.dart';
 import 'package:rechainonline/widgets/adaptive_dialogs/show_ok_cancel_alert_dialog.dart';
 import 'package:rechainonline/widgets/adaptive_dialogs/show_text_input_dialog.dart';
@@ -31,10 +28,7 @@ import '../../../utils/account_bundles.dart';
 import '../../config/setting_keys.dart';
 import '../../utils/url_launcher.dart';
 import '../../widgets/matrix.dart';
-import '../bootstrap/bootstrap_dialog.dart';
-
-import 'package:rechainonline/utils/tor_stub.dart'
-    if (dart.library.html) 'package:tor_detector_web/tor_detector_web.dart';
+import '../../models/public_room.dart';
 
 enum PopupMenuAction {
   settings,
@@ -45,13 +39,7 @@ enum PopupMenuAction {
   archive,
 }
 
-enum ActiveFilter {
-  allChats,
-  messages,
-  groups,
-  unread,
-  spaces,
-}
+enum ActiveFilter { allChats, messages, groups, unread, spaces }
 
 extension LocalizedActiveFilter on ActiveFilter {
   String toLocalizedString(BuildContext context) {
@@ -73,11 +61,13 @@ extension LocalizedActiveFilter on ActiveFilter {
 class ChatList extends StatefulWidget {
   static BuildContext? contextForVoip;
   final String? activeChat;
+  final String? activeSpace;
   final bool displayNavigationRail;
 
   const ChatList({
     super.key,
     required this.activeChat,
+    this.activeSpace,
     this.displayNavigationRail = false,
   });
 
@@ -93,9 +83,7 @@ class ChatListController extends State<ChatList>
 
   StreamSubscription? _intentUriStreamSubscription;
 
-  ActiveFilter activeFilter = AppConfig.separateChatTypes
-      ? ActiveFilter.messages
-      : ActiveFilter.allChats;
+  late ActiveFilter activeFilter;
 
   String? _activeSpaceId;
   String? get activeSpaceId => _activeSpaceId;
@@ -109,87 +97,11 @@ class ChatListController extends State<ChatList>
   }
 
   void clearActiveSpace() => setState(() {
-        _activeSpaceId = null;
-      });
+    _activeSpaceId = null;
+  });
 
   void onChatTap(Room room) async {
     if (room.membership == Membership.invite) {
-      final theme = Theme.of(context);
-      final inviteEvent = room.getState(
-        EventTypes.RoomMember,
-        room.client.userID!,
-      );
-      final matrixLocals = MatrixLocals(L10n.of(context));
-      final action = await showAdaptiveDialog<InviteAction>(
-        context: context,
-        builder: (context) => AlertDialog.adaptive(
-          title: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 256),
-            child: Center(
-              child: Text(
-                room.getLocalizedDisplayname(matrixLocals),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ),
-          content: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 256, maxHeight: 256),
-            child: Text(
-              inviteEvent == null
-                  ? L10n.of(context).inviteForMe
-                  : inviteEvent.content.tryGet<String>('reason') ??
-                      L10n.of(context).youInvitedBy(
-                        room
-                            .unsafeGetUserFromMemoryOrFallback(
-                              inviteEvent.senderId,
-                            )
-                            .calcDisplayname(i18n: matrixLocals),
-                      ),
-              textAlign: TextAlign.center,
-            ),
-          ),
-          actions: [
-            AdaptiveDialogAction(
-              onPressed: () => Navigator.of(context).pop(InviteAction.accept),
-              bigButtons: true,
-              child: Text(L10n.of(context).accept),
-            ),
-            AdaptiveDialogAction(
-              onPressed: () => Navigator.of(context).pop(InviteAction.decline),
-              bigButtons: true,
-              child: Text(
-                L10n.of(context).decline,
-                style: TextStyle(color: theme.colorScheme.error),
-              ),
-            ),
-            AdaptiveDialogAction(
-              onPressed: () => Navigator.of(context).pop(InviteAction.block),
-              bigButtons: true,
-              child: Text(
-                L10n.of(context).block,
-                style: TextStyle(color: theme.colorScheme.error),
-              ),
-            ),
-          ],
-        ),
-      );
-      switch (action) {
-        case null:
-          return;
-        case InviteAction.accept:
-          break;
-        case InviteAction.decline:
-          await showFutureLoadingDialog(
-            context: context,
-            future: () => room.leave(),
-          );
-          return;
-        case InviteAction.block:
-          final userId = inviteEvent?.senderId;
-          context.go('/rooms/settings/security/ignorelist', extra: userId);
-          return;
-      }
-      if (!mounted) return;
       final joinResult = await showFutureLoadingDialog(
         context: context,
         future: () async {
@@ -207,9 +119,7 @@ class ChatListController extends State<ChatList>
 
     if (room.membership == Membership.ban) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(L10n.of(context).youHaveBeenBannedFromThisChat),
-        ),
+        SnackBar(content: Text(L10n.of(context).youHaveBeenBannedFromThisChat)),
       );
       return;
     }
@@ -242,11 +152,9 @@ class ChatListController extends State<ChatList>
     }
   }
 
-  List<Room> get filteredRooms => Matrix.of(context)
-      .client
-      .rooms
-      .where(getRoomFilterByActiveFilter(activeFilter))
-      .toList();
+  List<Room> get filteredRooms => Matrix.of(
+    context,
+  ).client.rooms.where(getRoomFilterByActiveFilter(activeFilter)).toList();
 
   bool isSearchMode = false;
   Future<QueryPublicRoomsResponse>? publicRoomsResponse;
@@ -305,18 +213,19 @@ class ChatListController extends State<ChatList>
 
       if (searchQuery.isValidMatrixId &&
           searchQuery.sigil == '#' &&
-          roomSearchResult.chunk
-                  .any((room) => room.canonicalAlias == searchQuery) ==
+          roomSearchResult.chunk.any(
+                (room) => room.canonicalAlias == searchQuery,
+              ) ==
               false) {
         final response = await client.getRoomIdByAlias(searchQuery);
         final roomId = response.roomId;
         if (roomId != null) {
           roomSearchResult.chunk.add(
-            PublicRoomsChunk(
+            PublicRoom(
+              roomId: roomId,
               name: searchQuery,
               guestCanJoin: false,
               numJoinedMembers: 0,
-              roomId: roomId,
               worldReadable: false,
               canonicalAlias: searchQuery,
             ),
@@ -329,13 +238,9 @@ class ChatListController extends State<ChatList>
       );
     } catch (e, s) {
       Logs().w('Searching has crashed', e, s);
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(
-            e.toLocalizedString(context),
-          ),
-        ),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(e.toLocalizedString(context))));
     }
     if (!isSearchMode) return;
     setState(() {
@@ -379,8 +284,6 @@ class ChatListController extends State<ChatList>
     if (unfocus) searchFocusNode.unfocus();
   }
 
-  bool isTorBrowser = false;
-
   BoxConstraints? snappingSheetContainerSize;
 
   final ScrollController scrollController = ScrollController();
@@ -418,22 +321,17 @@ class ChatListController extends State<ChatList>
     showScaffoldDialog(
       context: context,
       builder: (context) => ShareScaffoldDialog(
-        items: files.map(
-          (file) {
-            if ({
-              SharedMediaType.text,
-              SharedMediaType.url,
-            }.contains(file.type)) {
-              return TextShareItem(file.path);
-            }
-            return FileShareItem(
-              XFile(
-                file.path.replaceFirst('file://', ''),
-                mimeType: file.mimeType,
-              ),
-            );
-          },
-        ).toList(),
+        items: files.map((file) {
+          if ({SharedMediaType.text, SharedMediaType.url}.contains(file.type)) {
+            return TextShareItem(file.path);
+          }
+          return FileShareItem(
+            XFile(
+              file.path.replaceFirst('file://', ''),
+              mimeType: file.mimeType,
+            ),
+          );
+        }).toList(),
       ),
     );
   }
@@ -455,36 +353,42 @@ class ChatListController extends State<ChatList>
         .listen(_processIncomingSharedMedia, onError: print);
 
     // For sharing images coming from outside the app while the app is closed
-    ReceiveSharingIntent.instance
-        .getInitialMedia()
-        .then(_processIncomingSharedMedia);
+    ReceiveSharingIntent.instance.getInitialMedia().then(
+      _processIncomingSharedMedia,
+    );
 
     // For receiving shared Uris
-    _intentUriStreamSubscription =
-        AppLinks().uriLinkStream.listen(_processIncomingUris);
+    _intentUriStreamSubscription = AppLinks().uriLinkStream.listen(
+      _processIncomingUris,
+    );
 
     if (PlatformInfos.isAndroid) {
       final shortcuts = FlutterShortcuts();
       shortcuts.initialize().then(
-            (_) => shortcuts.listenAction((action) {
-              if (!mounted) return;
-              UrlLauncher(context, action).launchUrl();
-            }),
-          );
+        (_) => shortcuts.listenAction((action) {
+          if (!mounted) return;
+          UrlLauncher(context, action).launchUrl();
+        }),
+      );
     }
   }
 
   @override
   void initState() {
+    activeFilter = AppSettings.separateChatTypes.value
+        ? ActiveFilter.messages
+        : ActiveFilter.allChats;
     _initReceiveSharingIntent();
+    _activeSpaceId = widget.activeSpace;
 
     scrollController.addListener(_onScroll);
     _waitForFirstSync();
     _hackyWebRTCFixForWeb();
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       if (mounted) {
-        searchServer =
-            Matrix.of(context).store.getString(_serverStoreNamespace);
+        searchServer = Matrix.of(
+          context,
+        ).store.getString(_serverStoreNamespace);
         Matrix.of(context).backgroundPush?.setupPush();
         UpdateNotifier.showUpdateSnackBar(context);
       }
@@ -494,8 +398,6 @@ class ChatListController extends State<ChatList>
         Theme.of(context).appBarTheme.systemOverlayStyle!,
       );
     });
-
-    _checkTorBrowser();
 
     super.initState();
   }
@@ -530,8 +432,9 @@ class ChatListController extends State<ChatList>
       Offset.zero & overlay.size,
     );
 
-    final displayname =
-        room.getLocalizedDisplayname(MatrixLocals(L10n.of(context)));
+    final displayname = room.getLocalizedDisplayname(
+      MatrixLocals(L10n.of(context)),
+    );
 
     final spacesWithPowerLevels = room.client.rooms
         .where(
@@ -549,19 +452,17 @@ class ChatListController extends State<ChatList>
         PopupMenuItem(
           value: ChatContextAction.open,
           child: Row(
-            mainAxisSize: MainAxisSize.min,
+            mainAxisSize: .min,
             spacing: 12.0,
             children: [
-              Avatar(
-                mxContent: room.avatar,
-                name: displayname,
-              ),
+              Avatar(mxContent: room.avatar, name: displayname),
               ConstrainedBox(
                 constraints: const BoxConstraints(maxWidth: 128),
                 child: Text(
                   displayname,
-                  style:
-                      TextStyle(color: Theme.of(context).colorScheme.onSurface),
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -574,7 +475,7 @@ class ChatListController extends State<ChatList>
           PopupMenuItem(
             value: ChatContextAction.goToSpace,
             child: Row(
-              mainAxisSize: MainAxisSize.min,
+              mainAxisSize: .min,
               children: [
                 Avatar(
                   mxContent: space.avatar,
@@ -594,7 +495,7 @@ class ChatListController extends State<ChatList>
           PopupMenuItem(
             value: ChatContextAction.mute,
             child: Row(
-              mainAxisSize: MainAxisSize.min,
+              mainAxisSize: .min,
               children: [
                 Icon(
                   room.pushRuleState == PushRuleState.notify
@@ -613,7 +514,7 @@ class ChatListController extends State<ChatList>
           PopupMenuItem(
             value: ChatContextAction.markUnread,
             child: Row(
-              mainAxisSize: MainAxisSize.min,
+              mainAxisSize: .min,
               children: [
                 Icon(
                   room.markedUnread
@@ -632,7 +533,7 @@ class ChatListController extends State<ChatList>
           PopupMenuItem(
             value: ChatContextAction.favorite,
             child: Row(
-              mainAxisSize: MainAxisSize.min,
+              mainAxisSize: .min,
               children: [
                 Icon(
                   room.isFavourite ? Icons.push_pin : Icons.push_pin_outlined,
@@ -650,7 +551,7 @@ class ChatListController extends State<ChatList>
             PopupMenuItem(
               value: ChatContextAction.addToSpace,
               child: Row(
-                mainAxisSize: MainAxisSize.min,
+                mainAxisSize: .min,
                 children: [
                   const Icon(Icons.group_work_outlined),
                   const SizedBox(width: 12),
@@ -662,7 +563,7 @@ class ChatListController extends State<ChatList>
         PopupMenuItem(
           value: ChatContextAction.leave,
           child: Row(
-            mainAxisSize: MainAxisSize.min,
+            mainAxisSize: .min,
             children: [
               Icon(
                 Icons.delete_outlined,
@@ -680,6 +581,26 @@ class ChatListController extends State<ChatList>
             ],
           ),
         ),
+        if (room.membership == Membership.invite)
+          PopupMenuItem(
+            value: ChatContextAction.block,
+            child: Row(
+              mainAxisSize: .min,
+              children: [
+                Icon(
+                  Icons.block_outlined,
+                  color: Theme.of(context).colorScheme.onErrorContainer,
+                ),
+                const SizedBox(width: 12),
+                Text(
+                  L10n.of(context).block,
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.onErrorContainer,
+                  ),
+                ),
+              ],
+            ),
+          ),
       ],
     );
 
@@ -715,6 +636,15 @@ class ChatListController extends State<ChatList>
           ),
         );
         return;
+      case ChatContextAction.block:
+        final inviteEvent = room.getState(
+          EventTypes.RoomMember,
+          room.client.userID!,
+        );
+        context.go(
+          '/rooms/settings/security/ignorelist',
+          extra: inviteEvent?.senderId,
+        );
       case ChatContextAction.leave:
         final confirmed = await showOkCancelAlertDialog(
           context: context,
@@ -738,8 +668,9 @@ class ChatListController extends State<ChatList>
               .map(
                 (space) => AdaptiveModalAction(
                   value: space,
-                  label: space
-                      .getLocalizedDisplayname(MatrixLocals(L10n.of(context))),
+                  label: space.getLocalizedDisplayname(
+                    MatrixLocals(L10n.of(context)),
+                  ),
                 ),
               )
               .toList(),
@@ -758,8 +689,7 @@ class ChatListController extends State<ChatList>
       context: context,
     );
     if (result == OkCancelResult.ok) {
-      await Matrix.of(context).store.setBool(SettingKeys.showPresences, false);
-      AppConfig.showPresences = false;
+      AppSettings.showPresences.setItem(false);
       setState(() {});
     }
   }
@@ -801,30 +731,23 @@ class ChatListController extends State<ChatList>
     await client.accountDataLoading;
     await client.userDeviceKeysLoading;
     if (client.prevBatch == null) {
-      await client.onSyncStatus.stream
-          .firstWhere((status) => status.status == SyncStatus.finished);
+      await client.onSyncStatus.stream.firstWhere(
+        (status) => status.status == SyncStatus.finished,
+      );
 
       if (!mounted) return;
       setState(() {
         waitForFirstSync = true;
       });
-
-      // Display first login bootstrap if enabled
-      if (client.encryption?.keyManager.enabled == true) {
-        if (await client.encryption?.keyManager.isCached() == false ||
-            await client.encryption?.crossSigning.isCached() == false ||
-            client.isUnknownSession && !mounted) {
-          await BootstrapDialog(client: client).show(context);
-        }
-      }
     }
     if (!mounted) return;
     setState(() {
       waitForFirstSync = true;
     });
 
-    if (client.userDeviceKeys[client.userID!]?.deviceKeys.values
-            .any((device) => !device.verified && !device.blocked) ??
+    if (client.userDeviceKeys[client.userID!]?.deviceKeys.values.any(
+          (device) => !device.verified && !device.blocked,
+        ) ??
         false) {
       late final ScaffoldFeatureController controller;
       final theme = Theme.of(context);
@@ -836,9 +759,7 @@ class ChatListController extends State<ChatList>
           closeIconColor: theme.colorScheme.onErrorContainer,
           content: Text(
             L10n.of(context).oneOfYourDevicesIsNotVerified,
-            style: TextStyle(
-              color: theme.colorScheme.onErrorContainer,
-            ),
+            style: TextStyle(color: theme.colorScheme.onErrorContainer),
           ),
           action: SnackBarAction(
             onPressed: () {
@@ -874,20 +795,21 @@ class ChatListController extends State<ChatList>
     setState(() {
       _activeSpaceId = null;
       Matrix.of(context).activeBundle = bundle;
-      if (!Matrix.of(context)
-          .currentBundle!
-          .any((client) => client == Matrix.of(context).client)) {
-        Matrix.of(context)
-            .setActiveClient(Matrix.of(context).currentBundle!.first);
+      if (!Matrix.of(
+        context,
+      ).currentBundle!.any((client) => client == Matrix.of(context).client)) {
+        Matrix.of(
+          context,
+        ).setActiveClient(Matrix.of(context).currentBundle!.first);
       }
     });
   }
 
   void editBundlesForAccount(String? userId, String? activeBundle) async {
     final l10n = L10n.of(context);
-    final client = Matrix.of(context)
-        .widget
-        .clients[Matrix.of(context).getClientIndexByMatrixId(userId!)];
+    final client = Matrix.of(
+      context,
+    ).widget.clients[Matrix.of(context).getClientIndexByMatrixId(userId!)];
     final action = await showModalActionPopup<EditBundleAction>(
       context: context,
       title: L10n.of(context).editBundlesForAccount,
@@ -932,10 +854,9 @@ class ChatListController extends State<ChatList>
 
   String? get secureActiveBundle {
     if (Matrix.of(context).activeBundle == null ||
-        !Matrix.of(context)
-            .accountBundles
-            .keys
-            .contains(Matrix.of(context).activeBundle)) {
+        !Matrix.of(
+          context,
+        ).accountBundles.keys.contains(Matrix.of(context).activeBundle)) {
       return Matrix.of(context).accountBundles.keys.first;
     }
     return Matrix.of(context).activeBundle;
@@ -956,22 +877,12 @@ class ChatListController extends State<ChatList>
     ChatList.contextForVoip = context;
   }
 
-  Future<void> _checkTorBrowser() async {
-    if (!kIsWeb) return;
-    final isTor = await TorBrowserDetector.isTorBrowser;
-    isTorBrowser = isTor;
-  }
-
   Future<void> dehydrate() => Matrix.of(context).dehydrateAction(context);
 }
 
 enum EditBundleAction { addToBundle, removeFromBundle }
 
-enum InviteActions {
-  accept,
-  decline,
-  block,
-}
+enum InviteActions { accept, decline, block }
 
 enum ChatContextAction {
   open,
@@ -981,6 +892,5 @@ enum ChatContextAction {
   mute,
   leave,
   addToSpace,
+  block,
 }
-
-enum InviteAction { accept, decline, block }

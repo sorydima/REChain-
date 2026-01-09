@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:matrix/matrix.dart';
 
+import 'package:rechainonline/config/setting_keys.dart';
 import 'package:rechainonline/config/themes.dart';
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
@@ -34,8 +35,9 @@ class StateMessage extends StatelessWidget {
                   padding: const EdgeInsets.all(4),
                   child: Material(
                     color: theme.colorScheme.surface.withAlpha(128),
-                    borderRadius:
-                        BorderRadius.circular(AppConfig.borderRadius / 3),
+                    borderRadius: BorderRadius.circular(
+                      AppConfig.borderRadius / 3,
+                    ),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
                         horizontal: 8.0,
@@ -50,10 +52,7 @@ class StateMessage extends StatelessWidget {
                               ),
                             ),
                             if (onExpand != null) ...[
-                              const TextSpan(
-                                text: ' + ',
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
+                              const TextSpan(text: '\n'),
                               TextSpan(
                                 style: TextStyle(
                                   color: theme.colorScheme.primary,
@@ -68,7 +67,7 @@ class StateMessage extends StatelessWidget {
                         ),
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: 12 * AppConfig.fontSizeFactor,
+                          fontSize: 11 * AppSettings.fontSizeFactor.value,
                           decoration: event.redacted
                               ? TextDecoration.lineThrough
                               : null,

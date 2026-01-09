@@ -1,12 +1,12 @@
-import 'package:rechainonline/config/setting_keys.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'package:emojis/emoji.dart';
-import 'package:flutter_typeahead/flutter_typeahead.dart';
+import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
 import 'package:matrix/matrix.dart';
 import 'package:slugify/slugify.dart';
 
+import 'package:rechainonline/config/app_config.dart';
+import 'package:rechainonline/config/setting_keys.dart';
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/utils/markdown_context_builder.dart';
 import 'package:rechainonline/widgets/mxc_image.dart';
@@ -28,6 +28,7 @@ class InputBar extends StatelessWidget {
   final ValueChanged<String>? onChanged;
   final bool? autofocus;
   final bool readOnly;
+  final List<Emoji> suggestionEmojis;
 
   const InputBar({
     required this.room,
@@ -43,17 +44,16 @@ class InputBar extends StatelessWidget {
     this.autofocus,
     this.textInputAction,
     this.readOnly = false,
+    required this.suggestionEmojis,
     super.key,
   });
 
-  List<Map<String, String?>> getSuggestions(String text) {
-    if (controller!.selection.baseOffset !=
-            controller!.selection.extentOffset ||
-        controller!.selection.baseOffset < 0) {
+  List<Map<String, String?>> getSuggestions(TextEditingValue text) {
+    if (text.selection.baseOffset != text.selection.extentOffset ||
+        text.selection.baseOffset < 0) {
       return []; // no entries if there is selected text
     }
-    final searchText =
-        controller!.text.substring(0, controller!.selection.baseOffset);
+    final searchText = text.text.substring(0, text.selection.baseOffset);
     final ret = <Map<String, String?>>[];
     const maxResults = 30;
 
@@ -62,17 +62,16 @@ class InputBar extends StatelessWidget {
       final commandSearch = commandMatch[1]!.toLowerCase();
       for (final command in room.client.commands.keys) {
         if (command.contains(commandSearch)) {
-          ret.add({
-            'type': 'command',
-            'name': command,
-          });
+          ret.add({'type': 'command', 'name': command});
         }
 
         if (ret.length > maxResults) return ret;
       }
     }
-    final emojiMatch =
-        RegExp(r'(?:\s|^):(?:([-\w]+)~)?([-\w]+)$').firstMatch(searchText);
+    final emojiMatch = RegExp(
+      r'(?:\s|^):(?:([\p{L}\p{N}_-]+)~)?([\p{L}\p{N}_-]+)$',
+      unicode: true,
+    ).firstMatch(searchText);
     if (emojiMatch != null) {
       final packSearch = emojiMatch[1];
       final emoteSearch = emojiMatch[2]!.toLowerCase();
@@ -105,8 +104,8 @@ class InputBar extends StatelessWidget {
               'type': 'emote',
               'name': emote.key,
               'pack': packSearch,
-              'pack_avatar_url':
-                  emotePacks[packSearch]!.pack.avatarUrl?.toString(),
+              'pack_avatar_url': emotePacks[packSearch]!.pack.avatarUrl
+                  ?.toString(),
               'pack_display_name':
                   emotePacks[packSearch]!.pack.displayName ?? packSearch,
               'mxc': emote.value.url.toString(),
@@ -117,13 +116,12 @@ class InputBar extends StatelessWidget {
           }
         }
       }
+
       // aside of emote packs, also propose normal (tm) unicode emojis
-      final matchingUnicodeEmojis = Emoji.all()
-          .where(
-            (element) => [element.name, ...element.keywords]
-                .any((element) => element.toLowerCase().contains(emoteSearch)),
-          )
+      final matchingUnicodeEmojis = suggestionEmojis
+          .where((emoji) => emoji.name.toLowerCase().contains(emoteSearch))
           .toList();
+
       // sort by the index of the search term in the name in order to have
       // best matches first
       // (thanks for the hint by github.com/nextcloud/circles devs)
@@ -143,9 +141,8 @@ class InputBar extends StatelessWidget {
       for (final emoji in matchingUnicodeEmojis) {
         ret.add({
           'type': 'emoji',
-          'emoji': emoji.char,
-          // don't include sub-group names, splitting at `:` hence
-          'label': '${emoji.char} - ${emoji.name.split(':').first}',
+          'emoji': emoji.emoji,
+          'label': emoji.name,
           'current_word': ':$emoteSearch',
         });
         if (ret.length > maxResults) {
@@ -159,8 +156,9 @@ class InputBar extends StatelessWidget {
       for (final user in room.getParticipants()) {
         if ((user.displayName != null &&
                 (user.displayName!.toLowerCase().contains(userSearch) ||
-                    slugify(user.displayName!.toLowerCase())
-                        .contains(userSearch))) ||
+                    slugify(
+                      user.displayName!.toLowerCase(),
+                    ).contains(userSearch))) ||
             user.id.split(':')[0].toLowerCase().contains(userSearch)) {
           ret.add({
             'type': 'user',
@@ -218,33 +216,28 @@ class InputBar extends StatelessWidget {
   Widget buildSuggestion(
     BuildContext context,
     Map<String, String?> suggestion,
+    void Function(Map<String, String?>) onSelected,
     Client? client,
   ) {
     final theme = Theme.of(context);
     const size = 30.0;
-    const padding = EdgeInsets.all(4.0);
     if (suggestion['type'] == 'command') {
       final command = suggestion['name']!;
       final hint = commandHint(L10n.of(context), command);
       return Tooltip(
         message: hint,
         waitDuration: const Duration(days: 1), // don't show on hover
-        child: Container(
-          padding: padding,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                commandExample(command),
-                style: const TextStyle(fontFamily: 'RobotoMono'),
-              ),
-              Text(
-                hint,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                style: theme.textTheme.bodySmall,
-              ),
-            ],
+        child: ListTile(
+          onTap: () => onSelected(suggestion),
+          title: Text(
+            commandExample(command),
+            style: const TextStyle(fontFamily: 'RobotoMono'),
+          ),
+          subtitle: Text(
+            hint,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: theme.textTheme.bodySmall,
           ),
         ),
       );
@@ -254,29 +247,35 @@ class InputBar extends StatelessWidget {
       return Tooltip(
         message: label,
         waitDuration: const Duration(days: 1), // don't show on hover
-        child: Container(
-          padding: padding,
-          child: Text(label, style: const TextStyle(fontFamily: 'RobotoMono')),
+        child: ListTile(
+          onTap: () => onSelected(suggestion),
+          leading: SizedBox.square(
+            dimension: size,
+            child: Text(
+              suggestion['emoji']!,
+              style: const TextStyle(fontSize: 16),
+            ),
+          ),
+          title: Text(label, maxLines: 1, overflow: TextOverflow.ellipsis),
         ),
       );
     }
     if (suggestion['type'] == 'emote') {
-      return Container(
-        padding: padding,
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
+      return ListTile(
+        onTap: () => onSelected(suggestion),
+        leading: MxcImage(
+          // ensure proper ordering ...
+          key: ValueKey(suggestion['name']),
+          uri: suggestion['mxc'] is String
+              ? Uri.parse(suggestion['mxc'] ?? '')
+              : null,
+          width: size,
+          height: size,
+          isThumbnail: false,
+        ),
+        title: Row(
+          crossAxisAlignment: .center,
           children: <Widget>[
-            MxcImage(
-              // ensure proper ordering ...
-              key: ValueKey(suggestion['name']),
-              uri: suggestion['mxc'] is String
-                  ? Uri.parse(suggestion['mxc'] ?? '')
-                  : null,
-              width: size,
-              height: size,
-              isThumbnail: false,
-            ),
-            const SizedBox(width: 6),
             Text(suggestion['name']!),
             Expanded(
               child: Align(
@@ -302,30 +301,27 @@ class InputBar extends StatelessWidget {
     }
     if (suggestion['type'] == 'user' || suggestion['type'] == 'room') {
       final url = Uri.parse(suggestion['avatar_url'] ?? '');
-      return Container(
-        padding: padding,
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            Avatar(
-              mxContent: url,
-              name: suggestion.tryGet<String>('displayname') ??
-                  suggestion.tryGet<String>('mxid'),
-              size: size,
-              client: client,
-            ),
-            const SizedBox(width: 6),
-            Text(suggestion['displayname'] ?? suggestion['mxid']!),
-          ],
+      return ListTile(
+        onTap: () => onSelected(suggestion),
+        leading: Avatar(
+          mxContent: url,
+          name:
+              suggestion.tryGet<String>('displayname') ??
+              suggestion.tryGet<String>('mxid'),
+          size: size,
+          client: client,
         ),
+        title: Text(suggestion['displayname'] ?? suggestion['mxid']!),
       );
     }
     return const SizedBox.shrink();
   }
 
-  void insertSuggestion(_, Map<String, String?> suggestion) {
-    final replaceText =
-        controller!.text.substring(0, controller!.selection.baseOffset);
+  String insertSuggestion(Map<String, String?> suggestion) {
+    final replaceText = controller!.text.substring(
+      0,
+      controller!.selection.baseOffset,
+    );
     var startText = '';
     final afterText = replaceText == controller!.text
         ? ''
@@ -384,27 +380,18 @@ class InputBar extends StatelessWidget {
         (Match m) => '${m[1]}$insertText',
       );
     }
-    if (insertText.isNotEmpty && startText.isNotEmpty) {
-      controller!.text = startText + afterText;
-      controller!.selection = TextSelection(
-        baseOffset: startText.length,
-        extentOffset: startText.length,
-      );
-    }
+
+    return startText + afterText;
   }
 
   @override
   Widget build(BuildContext context) {
-    return TypeAheadField<Map<String, String?>>(
-      direction: VerticalDirection.up,
-      hideOnEmpty: true,
-      hideOnLoading: true,
-      controller: controller,
+    final theme = Theme.of(context);
+    return Autocomplete<Map<String, String?>>(
       focusNode: focusNode,
-      hideOnSelect: false,
-      debounceDuration: const Duration(milliseconds: 50),
-      // show suggestions after 50ms idle time (default is 300)
-      builder: (context, controller, focusNode) => TextField(
+      textEditingController: controller,
+      optionsBuilder: getSuggestions,
+      fieldViewBuilder: (context, controller, focusNode, _) => TextField(
         controller: controller,
         focusNode: focusNode,
         readOnly: readOnly,
@@ -419,10 +406,7 @@ class InputBar extends StatelessWidget {
               bytes: data,
               name: content.uri.split('/').last,
             );
-            room.sendFileEvent(
-              file,
-              shrinkImageMaxDimension: 1600,
-            );
+            room.sendFileEvent(file, shrinkImageMaxDimension: 1600);
           },
         ),
         minLines: minLines,
@@ -438,8 +422,7 @@ class InputBar extends StatelessWidget {
           // it sets the types for the callback incorrectly
           onSubmitted!(text);
         },
-        maxLength:
-            AppSettings.textMessageMaxLength.getItem(Matrix.of(context).store),
+        maxLength: AppSettings.textMessageMaxLength.value,
         decoration: decoration,
         onChanged: (text) {
           // fix for the library for now
@@ -448,17 +431,27 @@ class InputBar extends StatelessWidget {
         },
         textCapitalization: TextCapitalization.sentences,
       ),
-
-      suggestionsCallback: getSuggestions,
-      itemBuilder: (c, s) => buildSuggestion(c, s, Matrix.of(context).client),
-      onSelected: (Map<String, String?> suggestion) =>
-          insertSuggestion(context, suggestion),
-      errorBuilder: (BuildContext context, Object? error) =>
-          const SizedBox.shrink(),
-      loadingBuilder: (BuildContext context) => const SizedBox.shrink(),
-      // fix loading briefly flickering a dark box
-      emptyBuilder: (BuildContext context) =>
-          const SizedBox.shrink(), // fix loading briefly showing no suggestions
+      optionsViewBuilder: (c, onSelected, s) {
+        final suggestions = s.toList();
+        return Material(
+          elevation: theme.appBarTheme.scrolledUnderElevation ?? 4,
+          shadowColor: theme.appBarTheme.shadowColor,
+          borderRadius: BorderRadius.circular(AppConfig.borderRadius),
+          clipBehavior: Clip.hardEdge,
+          child: ListView.builder(
+            shrinkWrap: true,
+            itemCount: suggestions.length,
+            itemBuilder: (context, i) => buildSuggestion(
+              c,
+              suggestions[i],
+              onSelected,
+              Matrix.of(context).client,
+            ),
+          ),
+        );
+      },
+      displayStringForOption: insertSuggestion,
+      optionsViewOpenDirection: OptionsViewOpenDirection.up,
     );
   }
 }

@@ -6,12 +6,12 @@ import 'package:flutter/material.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter_web_auth_2/flutter_web_auth_2.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:matrix/matrix.dart';
 import 'package:universal_html/html.dart' as html;
-import 'package:url_launcher/url_launcher_string.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'package:rechainonline/config/app_config.dart';
+import 'package:rechainonline/config/setting_keys.dart';
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/pages/homeserver_picker/homeserver_picker_view.dart';
 import 'package:rechainonline/utils/file_selector.dart';
@@ -19,9 +19,6 @@ import 'package:rechainonline/utils/platform_infos.dart';
 import 'package:rechainonline/widgets/adaptive_dialogs/show_ok_cancel_alert_dialog.dart';
 import 'package:rechainonline/widgets/matrix.dart';
 import '../../utils/localized_exception_extension.dart';
-
-import 'package:rechainonline/utils/tor_stub.dart'
-    if (dart.library.html) 'package:tor_detector_web/tor_detector_web.dart';
 
 class HomeserverPicker extends StatefulWidget {
   final bool addMultiAccount;
@@ -35,46 +32,20 @@ class HomeserverPickerController extends State<HomeserverPicker> {
   bool isLoading = false;
 
   final TextEditingController homeserverController = TextEditingController(
-    text: AppConfig.defaultHomeserver,
+    text: AppSettings.defaultHomeserver.value,
   );
 
   String? error;
-
-  bool isTorBrowser = false;
-
-  bool showDebuggerPanel = false;
-
-  void toggleDebuggerPanel() {
-    setState(() {
-      showDebuggerPanel = !showDebuggerPanel;
-    });
-  }
-
-  Future<void> _checkTorBrowser() async {
-    if (!kIsWeb) return;
-
-    Hive.openBox('test').then((value) => null).catchError(
-      (e, s) async {
-        await showOkAlertDialog(
-          context: context,
-          title: L10n.of(context).indexedDbErrorTitle,
-          message: L10n.of(context).indexedDbErrorLong,
-        );
-        _checkTorBrowser();
-      },
-    );
-
-    final isTor = await TorBrowserDetector.isTorBrowser;
-    isTorBrowser = isTor;
-  }
 
   /// Starts an analysis of the given homeserver. It uses the current domain and
   /// makes sure that it is prefixed with https. Then it searches for the
   /// well-known information and forwards to the login page depending on the
   /// login type.
   Future<void> checkHomeserverAction({bool legacyPasswordLogin = false}) async {
-    final homeserverInput =
-        homeserverController.text.trim().toLowerCase().replaceAll(' ', '-');
+    final homeserverInput = homeserverController.text
+        .trim()
+        .toLowerCase()
+        .replaceAll(' ', '-');
 
     if (homeserverInput.isEmpty) {
       final client = await Matrix.of(context).getLoginClient();
@@ -98,8 +69,8 @@ class HomeserverPickerController extends State<HomeserverPicker> {
         homeserver = Uri.https(homeserverInput, '');
       }
       final client = await Matrix.of(context).getLoginClient();
-      final (_, _, loginFlows) = await client.checkHomeserver(homeserver);
-      this.loginFlows = loginFlows;
+      final result = await client.checkHomeserver(homeserver);
+      this.loginFlows = result.$3;
       if (supportsSso && !legacyPasswordLogin) {
         if (!PlatformInfos.isMobile) {
           final consent = await showOkCancelAlertDialog(
@@ -144,14 +115,12 @@ class HomeserverPickerController extends State<HomeserverPicker> {
 
   void ssoLoginAction() async {
     final redirectUrl = kIsWeb
-        ? Uri.parse(html.window.location.href)
-            .resolveUri(
-              Uri(pathSegments: ['auth.html']),
-            )
-            .toString()
+        ? Uri.parse(
+            html.window.location.href,
+          ).resolveUri(Uri(pathSegments: ['auth.html'])).toString()
         : isDefaultPlatform
-            ? '${AppConfig.appOpenUrlScheme.toLowerCase()}://login'
-            : 'http://localhost:3001//login';
+        ? '${AppConfig.appOpenUrlScheme.toLowerCase()}://login'
+        : 'http://localhost:3001//login';
     final client = await Matrix.of(context).getLoginClient();
     final url = client.homeserver!.replace(
       path: '/_matrix/client/v3/login/sso/redirect',
@@ -164,7 +133,6 @@ class HomeserverPickerController extends State<HomeserverPicker> {
     final result = await FlutterWebAuth2.authenticate(
       url: url.toString(),
       callbackUrlScheme: urlScheme,
-      options: const FlutterWebAuth2Options(),
     );
     final token = Uri.parse(result).queryParameters['loginToken'];
     if (token?.isEmpty ?? false) return;
@@ -190,12 +158,6 @@ class HomeserverPickerController extends State<HomeserverPicker> {
         });
       }
     }
-  }
-
-  @override
-  void initState() {
-    _checkTorBrowser();
-    super.initState();
   }
 
   @override
@@ -231,7 +193,7 @@ class HomeserverPickerController extends State<HomeserverPicker> {
       case MoreLoginActions.importBackup:
         restoreBackup();
       case MoreLoginActions.privacy:
-        launchUrlString(AppConfig.privacyUrl);
+        launchUrl(AppConfig.privacyUrl);
       case MoreLoginActions.about:
         PlatformInfos.showDialog(context);
     }

@@ -19,10 +19,7 @@ import '../../widgets/mxc_image.dart';
 class EventVideoPlayer extends StatefulWidget {
   final Event event;
 
-  const EventVideoPlayer(
-    this.event, {
-    super.key,
-  });
+  const EventVideoPlayer(this.event, {super.key});
 
   @override
   EventVideoPlayerState createState() => EventVideoPlayerState();
@@ -31,6 +28,8 @@ class EventVideoPlayer extends StatefulWidget {
 class EventVideoPlayerState extends State<EventVideoPlayer> {
   ChewieController? _chewieController;
   VideoPlayerController? _videoPlayerController;
+
+  double? _downloadProgress;
 
   // The video_player package only doesn't support Windows and Linux.
   final _supportsVideoPlayer =
@@ -43,6 +42,9 @@ class EventVideoPlayerState extends State<EventVideoPlayer> {
     }
 
     try {
+      final fileSize = widget.event.content
+          .tryGetMap<String, dynamic>('info')
+          ?.tryGet<int>('size');
       final videoFile = await widget.event.downloadAndDecryptAttachment();
 
       // Dispose the controllers if we already have them.
@@ -85,11 +87,9 @@ class EventVideoPlayerState extends State<EventVideoPlayer> {
         );
       });
     } on IOException catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(e.toLocalizedString(context)),
-        ),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(e.toLocalizedString(context))));
     } catch (e, s) {
       ErrorReporter(context, 'Unable to play video').onErrorCallback(e, s);
     }
@@ -121,13 +121,15 @@ class EventVideoPlayerState extends State<EventVideoPlayer> {
   @override
   Widget build(BuildContext context) {
     final hasThumbnail = widget.event.hasThumbnail;
-    final blurHash = (widget.event.infoMap as Map<String, dynamic>)
-            .tryGet<String>('xyz.amorgan.blurhash') ??
+    final blurHash =
+        (widget.event.infoMap as Map<String, dynamic>).tryGet<String>(
+          'xyz.amorgan.blurhash',
+        ) ??
         fallbackBlurHash;
     final infoMap = widget.event.content.tryGetMap<String, Object?>('info');
     final videoWidth = infoMap?.tryGet<int>('w') ?? 400;
     final videoHeight = infoMap?.tryGet<int>('h') ?? 300;
-    final height = MediaQuery.of(context).size.height - 52;
+    final height = MediaQuery.sizeOf(context).height - 52;
     final width = videoWidth * (height / videoHeight);
 
     final chewieController = _chewieController;
@@ -165,7 +167,11 @@ class EventVideoPlayerState extends State<EventVideoPlayer> {
                         ),
                 ),
               ),
-              const Center(child: CircularProgressIndicator.adaptive()),
+              Center(
+                child: CircularProgressIndicator.adaptive(
+                  value: _downloadProgress,
+                ),
+              ),
             ],
           );
   }

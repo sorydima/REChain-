@@ -9,7 +9,7 @@ class L10nLv extends L10n {
   L10nLv([String locale = 'lv']) : super(locale);
 
   @override
-  String get alwaysUse24HourFormat => '';
+  String get alwaysUse24HourFormat => 'nē';
 
   @override
   String get repeatPassword => 'Atkārtot paroli';
@@ -77,7 +77,7 @@ class L10nLv extends L10n {
 
   @override
   String get confirmMatrixId =>
-      'Lūgums apliecināt savu REChain ID, lai varētu izdzēst savu kontu.';
+      'Lūgums apliecināt savu REChain Id, lai varētu izdzēst savu kontu.';
 
   @override
   String supposedMxid(String mxid) {
@@ -172,8 +172,11 @@ class L10nLv extends L10n {
       'Automātiski atskaņot animētas uzlīmes un emocijas';
 
   @override
-  String badServerLoginTypesException(String serverVersions,
-      String supportedVersions, Object suportedVersions) {
+  String badServerLoginTypesException(
+    String serverVersions,
+    String supportedVersions,
+    Object suportedVersions,
+  ) {
     return 'Mājasserveris nodrošina pieteikšanās veidus:\n$serverVersions\nSavukārt, šī lietotne atbalsta tikai:\n$supportedVersions';
   }
 
@@ -189,11 +192,12 @@ class L10nLv extends L10n {
 
   @override
   String badServerVersionsException(
-      String serverVersions,
-      String supportedVersions,
-      Object serverVerions,
-      Object supoortedVersions,
-      Object suportedVersions) {
+    String serverVersions,
+    String supportedVersions,
+    Object serverVerions,
+    Object supoortedVersions,
+    Object suportedVersions,
+  ) {
     return 'Mājasserveris nodrošina specifikācijas versijas:\n$serverVersions\nSavukārt, lietotne atbalsta tikai $supportedVersions';
   }
 
@@ -258,8 +262,18 @@ class L10nLv extends L10n {
   }
 
   @override
+  String changedTheChatDescription(Object username) {
+    return '$username nomainīja tērzēšanas aprakstu';
+  }
+
+  @override
   String changedTheChatDescriptionTo(String username, String description) {
     return '$username nomainīja tērzēšanas aprakstu uz \'$description\'';
+  }
+
+  @override
+  String changedTheChatName(Object username) {
+    return '$username nomainīja tērzēšanas nosaukumu';
   }
 
   @override
@@ -345,14 +359,14 @@ class L10nLv extends L10n {
 
   @override
   String get yourChatBackupHasBeenSetUp =>
-      'Tērzēšanu rezerves kopēšana tika iestatīta.';
+      'Tērzēšanu rezerves kopēšana iestatīta.';
 
   @override
   String get chatBackup => 'Tērzēšanu rezerves kopēšana';
 
   @override
   String get chatBackupDescription =>
-      'Iepriekšējās ziņas ir aizsargātas ar atkopes atslēgu. Lūgums nodrošināt, ka tā netiek pazaudēta.';
+      'Ziņas ir aizsargātas ar atkopes atslēgu. Lūgums nodrošināt, ka tā netiek pazaudēta.';
 
   @override
   String get chatDetails => 'Tērzēšanas izvērsums';
@@ -375,7 +389,7 @@ class L10nLv extends L10n {
 
   @override
   String get commandHint_markasdm =>
-      'Atzīmēt kā tiešo ziņu istabu norādītajam REChain ID';
+      'Atzīmēt kā tiešo ziņu istabu norādītajam REChain Id';
 
   @override
   String get commandHint_markasgroup => 'Atzīmēt kā kopu';
@@ -689,7 +703,7 @@ class L10nLv extends L10n {
   String get fileName => 'Datnes nosaukums';
 
   @override
-  String get rechainonline => 'rechainonline';
+  String get rechainonline => 'REChain';
 
   @override
   String get fontSize => 'Fonta izmērs';
@@ -832,7 +846,7 @@ class L10nLv extends L10n {
 
   @override
   String inviteText(String username, String link) {
-    return '$username uzaicināja pievienoties REChain.\n1. Jāapmeklē online.rechain.network un jāuzstāda lietotne \n2. Jāizveido konts vai jāpiesakās \n3. Jāatver uzaicinājuma saite: \n $link';
+    return '$username uzaicināja pievienoties REChain.\n1. Jāapmeklē github.com/sorydima/REChain- un jāuzstāda lietotne \n2. Jāizveido konts vai jāpiesakās \n3. Jāatver uzaicinājuma saite: \n $link';
   }
 
   @override
@@ -956,7 +970,7 @@ class L10nLv extends L10n {
   String get newChat => 'Jauna tērzēšana';
 
   @override
-  String get newMessageInrechainonline => '💬 Jauna ziņa rechainonline';
+  String get newMessageInrechainonline => '💬 Jauna ziņa REChain';
 
   @override
   String get newVerificationRequest => 'Jauns apliecināšanas pieprasījums.';
@@ -979,7 +993,7 @@ class L10nLv extends L10n {
 
   @override
   String get noGoogleServicesWarning =>
-      'Izskatās, ka Firebase mākoņziņojumapmaiņa nav pieejama šajā ierīcē. Lai joprojām saņemtu pašpiegādes paziņojumus, mēs iesakām uzstādīt ntfy. Ar ntfy vai citu Vienotās pašpiegādes nodrošinātāju ir iespējams saņemt pašpiegādes paziņojumus drošā veidā. ntfy var lejupielādēt no PlayStore vai F-Droid.';
+      'Izskatās, ka Firebase mākoņziņojumapmaiņa nav pieejama šajā ierīcē. Lai joprojām saņemtu pašpiegādes paziņojumus, mēs iesakām uzstādīt ntfy. Ar ntfy vai citu UnifiedPush nodrošinātāju ir iespējams saņemt pašpiegādes paziņojumus drošā veidā. ntfy var lejupielādēt no Play Store vai F-Droid.';
 
   @override
   String norechainonlineServer(String server1, String server2) {
@@ -1431,7 +1445,7 @@ class L10nLv extends L10n {
   String get theyMatch => 'Tās sakrīt';
 
   @override
-  String get title => 'rechainonline';
+  String get title => 'REChain';
 
   @override
   String get toggleFavorite => 'Pārslēgt iecienīto';
@@ -1444,7 +1458,7 @@ class L10nLv extends L10n {
 
   @override
   String get tooManyRequestsWarning =>
-      'Pārāk daudz pieprasījumu. Lūgums vēlāk mēģināt vēlreiz.';
+      'Pārāk daudz pieprasījumu. Lūdzu, vēlāk mēģini vēlreiz!';
 
   @override
   String get transferFromAnotherDevice => 'Pārnest no citas ierīces';
@@ -1559,7 +1573,7 @@ class L10nLv extends L10n {
 
   @override
   String get waitingPartnerEmoji =>
-      'Gaida, līdz biedrs apstiprinās emocijzīmi…';
+      'Gaida, līdz biedrs apstiprinās emocijzīmes…';
 
   @override
   String get waitingPartnerNumbers =>
@@ -1863,7 +1877,7 @@ class L10nLv extends L10n {
   String get screenSharingTitle => 'ekrāna kopīgošana';
 
   @override
-  String get screenSharingDetail => 'Tu kopīgo savu ekrānu rechainonline';
+  String get screenSharingDetail => 'Tu kopīgo savu ekrānu REChain';
 
   @override
   String get callingPermissions => 'Zvanīšanas atļaujas';
@@ -2010,10 +2024,10 @@ class L10nLv extends L10n {
   String get invite => 'Uzaicināt';
 
   @override
-  String get inviteGroupChat => '📨 Uzaicināt kopas tērzēšanu';
+  String get inviteGroupChat => '📨 Uzaicinājums uz kopas tērzēšanu';
 
   @override
-  String get invitePrivateChat => '📨 Uzaicināt privātu tērzēšanu';
+  String get invitePrivateChat => '📨 Uzaicinājums uz privātu tērzēšanu';
 
   @override
   String get invalidInput => 'Nederīga ievade.';
@@ -2032,7 +2046,7 @@ class L10nLv extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      'Tērzēšana tad tiks atkārtoti izveidota ar jauno istabas versiju. Visiem dalībniekiem tiks paziņots, ka viņiem ir jāpārslēdzas uz jauno tērzēšanu. Vairāk par istabu versijām var atrast https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle';
+      'Tērzēšana tad tiks atkārtoti izveidota ar jauno istabas versiju. Visiem dalībniekiem tiks paziņots, ka viņiem ir jāpārslēdzas uz jauno tērzēšanu. Vairāk par istabu versijām var atrast https://github.com/sorydima/REChain-.git';
 
   @override
   String get removeDevicesDescription =>
@@ -2283,11 +2297,11 @@ class L10nLv extends L10n {
   String get discover => 'Atklāt';
 
   @override
-  String get commandHint_ignore => 'Neņemt vērā norādīto REChain ID';
+  String get commandHint_ignore => 'Neņemt vērā norādīto REChain Id';
 
   @override
   String get commandHint_unignore =>
-      'Atcelt norādītā REChain ID neņemšanu vērā';
+      'Atcelt norādītā REChain Id neņemšanu vērā';
 
   @override
   String unreadChatsInApp(String appname, String unread) {
@@ -2372,7 +2386,7 @@ class L10nLv extends L10n {
   String get sendCanceled => 'Sūtīšana atcelta';
 
   @override
-  String get loginWithMatrixId => 'Pieteikties ar REChain-ID';
+  String get loginWithMatrixId => 'Pieteikties ar REChain-Id';
 
   @override
   String get discoverHomeservers => 'Atklāt mājasserverus';
@@ -2382,7 +2396,7 @@ class L10nLv extends L10n {
 
   @override
   String get homeserverDescription =>
-      'Visi lietotāja dati tiek glabāti mājasserverī, gluži kā ar e-pasta nodrošinātāju. Ir iespējams izvēlēties, kuru mājasserveri izmantot, saglabājot iespēju sazināties ar ikvienu. Vairāk var uzzināt https://rechain.network.';
+      'Visi lietotāja dati tiek glabāti mājasserverī, gluži kā ar e-pasta nodrošinātāju. Ir iespējams izvēlēties, kuru mājasserveri izmantot, saglabājot iespēju sazināties ar ikvienu. Vairāk var uzzināt https://github.com/sorydima/REChain-.git';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
@@ -2426,7 +2440,7 @@ class L10nLv extends L10n {
 
   @override
   String get welcomeText =>
-      'Sveicieni! 👋 Šis ir REChain. Tu vari pieteikties jebkurā mājasserverī, kas ir saderīgs ar https://rechain.network. Tad vari tērzēt ar ikvienu. Tas ir milzīgs decentralizētās saziņas tīkls.';
+      'Sveicieni! 👋 Šis ir REChain. Tu vari pieteikties jebkurā mājasserverī, kas ir saderīgs ar https://github.com/sorydima/REChain-.git. Tad vari tērzēt ar ikvienu. Tas ir milzīgs decentralizētās saziņas tīkls.';
 
   @override
   String get blur => 'Aizmiglojums:';
@@ -2515,7 +2529,7 @@ class L10nLv extends L10n {
 
   @override
   String get appIntroduction =>
-      'REChain ļauj tērzēt ar draugiem, kuri izmanto dažādas ziņojumapmaiņas lietotnes. Vairāk var uzzināt https://rechain.network vai vienkārši piesitot *Turpināt*.';
+      'REChain ļauj tērzēt ar draugiem, kuri izmanto dažādas ziņojumapmaiņas lietotnes. Vairāk var uzzināt https://github.com/sorydima/REChain-.git vai vienkārši piesitot *Turpināt*.';
 
   @override
   String get newChatRequest => '📩 Jauns tērzēšanas pieprasījums';
@@ -2749,8 +2763,176 @@ class L10nLv extends L10n {
   String get displayNavigationRail => 'Rādīt pārvietošanās sliedi viedierīcēs';
 
   @override
-  String get customReaction => 'Custom reaction';
+  String get customReaction => 'Pielāgota reakcija';
 
   @override
-  String get moreEvents => 'More events';
+  String get moreEvents => 'Vairāk notikumu';
+
+  @override
+  String get declineInvitation => 'Noraidīt uzaicinājumu';
+
+  @override
+  String get noMessagesYet => 'Vēl nav ziņu';
+
+  @override
+  String get longPressToRecordVoiceMessage =>
+      'Ilga piespiešana, lai ierakstītu balss ziņu.';
+
+  @override
+  String get pause => 'Apturēt';
+
+  @override
+  String get resume => 'Atsākt';
+
+  @override
+  String get newSubSpace => 'Jauna apakšvieta';
+
+  @override
+  String get moveToDifferentSpace => 'Pārvietot uz citu vietu';
+
+  @override
+  String get moveUp => 'Pārvietot augšup';
+
+  @override
+  String get moveDown => 'Pārvietot lejup';
+
+  @override
+  String get removeFromSpaceDescription =>
+      'Tērzēšana tiks noņemta no vietas, bet tā joprojām būs redzama tērzēšanu sarakstā.';
+
+  @override
+  String countChats(int chats) {
+    return '$chats tērzēšanas';
+  }
+
+  @override
+  String spaceMemberOf(String spaces) {
+    return '$spaces dalībnieks';
+  }
+
+  @override
+  String spaceMemberOfCanKnock(String spaces) {
+    return '$spaces dalībnieks var pieklauvēt';
+  }
+
+  @override
+  String get donate => 'Ziedot';
+
+  @override
+  String startedAPoll(String username) {
+    return '$username uzsāka aptauju.';
+  }
+
+  @override
+  String get poll => 'Aptauja';
+
+  @override
+  String get startPoll => 'Sākt aptauju';
+
+  @override
+  String get endPoll => 'Noslēgt aptauju';
+
+  @override
+  String get answersVisible => 'Atbildes ir redzamas';
+
+  @override
+  String get answersHidden => 'Atbildes ir paslēptas';
+
+  @override
+  String get pollQuestion => 'Aptaujas jautājums';
+
+  @override
+  String get answerOption => 'Atbildes iespēja';
+
+  @override
+  String get addAnswerOption => 'Pievienot atbildes iespēju';
+
+  @override
+  String get allowMultipleAnswers => 'Atļaut vairākas atbildes';
+
+  @override
+  String get pollHasBeenEnded => 'Aptauja ir noslēgusies';
+
+  @override
+  String countVotes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count balsis',
+      one: '$count balss',
+      zero: '$count balsu',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get answersWillBeVisibleWhenPollHasEnded =>
+      'Atbildes būs redzams, kad aptauja noslēgsies';
+
+  @override
+  String get replyInThread => 'Atbildēt pavedienā';
+
+  @override
+  String countReplies(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count atbildes',
+      one: '$count atbilde',
+      zero: '$count atbilžu',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get thread => 'Pavediens';
+
+  @override
+  String get backToMainChat => 'Atgriezties galvenajā tērzēšanā';
+
+  @override
+  String get saveChanges => 'Saglabāt izmaiņas';
+
+  @override
+  String get createSticker => 'Izveidot uzlīmi vai emocijzīmi';
+
+  @override
+  String get useAsSticker => 'Izmantot kā uzlīmi';
+
+  @override
+  String get useAsEmoji => 'Izmantot kā emocijzīmi';
+
+  @override
+  String get stickerPackNameAlreadyExists =>
+      'Uzlīmju pakas nosaukums jau pastāv';
+
+  @override
+  String get newStickerPack => 'Jauna uzlīmju paka';
+
+  @override
+  String get stickerPackName => 'Uzlīmju pakas nosaukums';
+
+  @override
+  String get attribution => 'Piedēvējums';
+
+  @override
+  String get skipChatBackup => 'Izlaist tērzēšanu rezerves kopēšanu';
+
+  @override
+  String get skipChatBackupWarning =>
+      'Vai tiešām? Bez tērzēšanu rezerves kopēšanas var tikt zaudēta piekļuve savām ziņām, kad tiks mainīta ierīce.';
+
+  @override
+  String get loadingMessages => 'Ielādē ziņas';
+
+  @override
+  String get setupChatBackup => 'Iestatīt tērzēšanu rezerves kopēšanu';
+
+  @override
+  String get noMoreResultsFound => 'No more results found';
+
+  @override
+  String chatSearchedUntil(String time) {
+    return 'Chat searched until $time';
+  }
 }

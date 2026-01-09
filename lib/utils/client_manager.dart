@@ -6,18 +6,14 @@ import 'package:collection/collection.dart';
 import 'package:desktop_notifications/desktop_notifications.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_vodozemac/flutter_vodozemac.dart' as vod;
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:matrix/encryption/utils/key_verification.dart';
 import 'package:matrix/matrix.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:universal_html/html.dart' as html;
 
-import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/config/setting_keys.dart';
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/utils/custom_http_client.dart';
-import 'package:rechainonline/utils/custom_image_resizer.dart';
 import 'package:rechainonline/utils/init_with_restore.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
 import 'matrix_sdk_extensions/flutter_matrix_dart_sdk_database/builder.dart';
@@ -29,11 +25,6 @@ abstract class ClientManager {
     bool initialize = true,
     required SharedPreferences store,
   }) async {
-    if (PlatformInfos.isLinux) {
-      Hive.init((await getApplicationSupportDirectory()).path);
-    } else {
-      await Hive.initFlutter();
-    }
     final clientNames = <String>{};
     try {
       final clientNamesList = store.getStringList(clientNamespace) ?? [];
@@ -46,22 +37,27 @@ abstract class ClientManager {
       clientNames.add(PlatformInfos.clientName);
       await store.setStringList(clientNamespace, clientNames.toList());
     }
-    final clients =
-        await Future.wait(clientNames.map((name) => createClient(name, store)));
+    final clients = await Future.wait(
+      clientNames.map((name) => createClient(name, store)),
+    );
     if (initialize) {
       await Future.wait(
         clients.map(
-          (client) => client.initWithRestore(
-            onMigration: () async {
-              final l10n = await lookupL10n(PlatformDispatcher.instance.locale);
-              sendInitNotification(
-                l10n.databaseMigrationTitle,
-                l10n.databaseMigrationBody,
-              );
-            },
-          ).catchError(
-            (e, s) => Logs().e('Unable to initialize client', e, s),
-          ),
+          (client) => client
+              .initWithRestore(
+                onMigration: () async {
+                  final l10n = await lookupL10n(
+                    PlatformDispatcher.instance.locale,
+                  );
+                  sendInitNotification(
+                    l10n.databaseMigrationTitle,
+                    l10n.databaseMigrationBody,
+                  );
+                },
+              )
+              .catchError(
+                (e, s) => Logs().e('Unable to initialize client', e, s),
+              ),
         ),
       );
     }
@@ -98,7 +94,10 @@ abstract class ClientManager {
   }
 
   static NativeImplementations get nativeImplementations => kIsWeb
-      ? const NativeImplementationsDummy()
+      ? NativeImplementationsWebWorker(
+          Uri.parse('native_executor.js'),
+          timeout: const Duration(minutes: 1),
+        )
       : NativeImplementationsIsolate(
           compute,
           vodozemacInit: () => vod.init(wasmPath: './assets/assets/vodozemac/'),
@@ -108,13 +107,12 @@ abstract class ClientManager {
     String clientName,
     SharedPreferences store,
   ) async {
-    final shareKeysWith = AppSettings.shareKeysWith.getItem(store);
-    final enableSoftLogout = AppSettings.enableSoftLogout.getItem(store);
+    final shareKeysWith = AppSettings.shareKeysWith.value;
+    final enableSoftLogout = AppSettings.enableSoftLogout.value;
 
     return Client(
       clientName,
-      httpClient:
-          PlatformInfos.isAndroid ? CustomHttpClient.createHTTPClient() : null,
+      httpClient: CustomHttpClient.createHTTPClient(),
       verificationMethods: {
         KeyVerificationMethod.numbers,
         if (kIsWeb || PlatformInfos.isMobile || PlatformInfos.isLinux)
@@ -131,34 +129,31 @@ abstract class ClientManager {
         AuthenticationTypes.sso,
       },
       nativeImplementations: nativeImplementations,
-      customImageResizer: PlatformInfos.isMobile ? customImageResizer : null,
       defaultNetworkRequestTimeout: const Duration(minutes: 30),
       enableDehydratedDevices: true,
-      shareKeysWith: ShareKeysWith.values
-              .singleWhereOrNull((share) => share.name == shareKeysWith) ??
+      shareKeysWith:
+          ShareKeysWith.values.singleWhereOrNull(
+            (share) => share.name == shareKeysWith,
+          ) ??
           ShareKeysWith.all,
       convertLinebreaksInFormatting: false,
-      onSoftLogout:
-          enableSoftLogout ? (client) => client.refreshAccessToken() : null,
+      onSoftLogout: enableSoftLogout
+          ? (client) => client.refreshAccessToken()
+          : null,
     );
   }
 
   static void sendInitNotification(String title, String body) async {
     if (kIsWeb) {
-      html.Notification(
-        title,
-        body: body,
-      );
+      html.Notification(title, body: body);
       return;
     }
     if (Platform.isLinux) {
       await NotificationsClient().notify(
         title,
         body: body,
-        appName: AppConfig.applicationName,
-        hints: [
-          NotificationHint.soundName('message-new-instant'),
-        ],
+        appName: AppSettings.applicationName.value,
+        hints: [NotificationHint.soundName('message-new-instant')],
       );
       return;
     }

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'package:matrix/matrix.dart';
 
-import 'package:rechainonline/config/app_config.dart';
+import 'package:rechainonline/config/setting_keys.dart';
 import 'package:rechainonline/l10n/l10n.dart';
 
 class CuteContent extends StatefulWidget {
@@ -21,7 +21,7 @@ class _CuteContentState extends State<CuteContent> {
 
   @override
   void initState() {
-    if (AppConfig.autoplayImages && !_isOverlayShown) {
+    if (AppSettings.autoplayImages.value && !_isOverlayShown) {
       addOverlay();
     }
     super.initState();
@@ -40,10 +40,7 @@ class _CuteContentState extends State<CuteContent> {
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                widget.event.text,
-                style: const TextStyle(fontSize: 150),
-              ),
+              Text(widget.event.text, style: const TextStyle(fontSize: 150)),
               if (label != null) Text(label),
             ],
           ),
@@ -69,7 +66,7 @@ class _CuteContentState extends State<CuteContent> {
     Overlay.of(context).insert(overlay);
   }
 
-  generateLabel(User? user) {
+  String? generateLabel(User? user) {
     switch (widget.event.content['cute_type']) {
       case 'googly_eyes':
         return L10n.of(context).googlyEyesContent(
@@ -90,6 +87,7 @@ class _CuteContentState extends State<CuteContent> {
               '',
         );
     }
+    return null;
   }
 }
 
@@ -111,10 +109,7 @@ class _CuteEventOverlayState extends State<CuteEventOverlay>
     with TickerProviderStateMixin {
   final List<Size> items = List.generate(
     50,
-    (index) => Size(
-      Random().nextDouble(),
-      4 + (Random().nextDouble() * 4),
-    ),
+    (index) => Size(Random().nextDouble(), 4 + (Random().nextDouble() * 4)),
   );
 
   AnimationController? controller;
@@ -149,14 +144,13 @@ class _CuteEventOverlayState extends State<CuteEventOverlay>
                     .map(
                       (position) => Positioned(
                         left: position.width * width,
-                        bottom: (height *
+                        bottom:
+                            (height *
                                 .25 *
                                 position.height *
                                 (controller?.value ?? 0)) -
                             _CuteOverlayContent.size,
-                        child: _CuteOverlayContent(
-                          emoji: widget.emoji,
-                        ),
+                        child: _CuteOverlayContent(emoji: widget.emoji),
                       ),
                     )
                     .toList(),
@@ -185,10 +179,7 @@ class _CuteOverlayContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox.square(
       dimension: size,
-      child: Text(
-        emoji,
-        style: const TextStyle(fontSize: 48),
-      ),
+      child: Text(emoji, style: const TextStyle(fontSize: 48)),
     );
   }
 }

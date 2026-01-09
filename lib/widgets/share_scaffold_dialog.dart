@@ -64,9 +64,7 @@ class _ShareScaffoldDialogState extends State<ShareScaffoldDialog> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final rooms = Matrix.of(context)
-        .client
-        .rooms
+    final rooms = Matrix.of(context).client.rooms
         .where(
           (room) =>
               room.canSendDefaultMessages &&
@@ -138,15 +136,29 @@ class _ShareScaffoldDialogState extends State<ShareScaffoldDialog> {
                     ),
                     controlAffinity: ListTileControlAffinity.trailing,
                     shape: RoundedRectangleBorder(
-                      borderRadius:
-                          BorderRadius.circular(AppConfig.borderRadius),
+                      borderRadius: BorderRadius.circular(
+                        AppConfig.borderRadius,
+                      ),
                     ),
                     secondary: Avatar(
                       mxContent: room.avatar,
                       name: displayname,
                       size: Avatar.defaultSize * 0.75,
                     ),
-                    title: Text(displayname),
+                    title: Text(
+                      displayname,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    subtitle: Text(
+                      room.directChatMatrixID ??
+                          L10n.of(context).countParticipants(
+                            (room.summary.mJoinedMemberCount ?? 0) +
+                                (room.summary.mInvitedMemberCount ?? 0),
+                          ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                     value: selectedRoomId == room.id,
                     onChanged: (_) => _toggleRoom(room.id),
                   ),

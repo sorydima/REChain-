@@ -649,7 +649,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "rechainonline": "rechainonline",
+  "rechainonline": "REChain",
   "@rechainonline": {
     "type": "String",
     "placeholders": {}
@@ -811,7 +811,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "inviteText": "{username} bjöd in dig till REChain.\n1. Besök online.rechain.network och installera appen\n2. Registrera dig eller logga in\n3. Öppna inbjudningslänk:\n {link}",
+  "inviteText": "{username} bjöd in dig till REChain.\n1. Besök github.com/sorydima/REChain- och installera appen\n2. Registrera dig eller logga in\n3. Öppna inbjudningslänk:\n {link}",
   "@inviteText": {
     "type": "String",
     "placeholders": {
@@ -973,7 +973,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "newMessageInrechainonline": "💬 Nya meddelanden i rechainonline",
+  "newMessageInrechainonline": "💬 Nya meddelanden i REChain",
   "@newMessageInrechainonline": {
     "type": "String",
     "placeholders": {}
@@ -1479,7 +1479,7 @@
     "type": "String",
     "placeholders": {}
   },
-  "title": "rechainonline",
+  "title": "REChain",
   "@title": {
     "description": "Title for the application",
     "type": "String",
@@ -2393,7 +2393,7 @@
   },
   "hydrate": "Återställ från säkerhetskopia",
   "@hydrate": {},
-  "screenSharingDetail": "Du delar din skärm i rechainonline",
+  "screenSharingDetail": "Du delar din skärm i REChain",
   "@screenSharingDetail": {},
   "youRejectedTheInvitation": "Du avvisade inbjudan",
   "@youRejectedTheInvitation": {},
@@ -2443,7 +2443,7 @@
   "@appearOnTop": {},
   "appearOnTopDetails": "Tillåt att appen visas ovanpå (behövs inte om du redan har REChain konfigurerat som ett samtalskonto)",
   "@appearOnTopDetails": {},
-  "otherCallingPermissions": "Mikrofon, kamera och andra behörigheter för rechainonline",
+  "otherCallingPermissions": "Mikrofon, kamera och andra behörigheter för REChain",
   "@otherCallingPermissions": {},
   "whyIsThisMessageEncrypted": "Varför kan inte detta meddelande läsas?",
   "@whyIsThisMessageEncrypted": {},
@@ -2610,7 +2610,7 @@
   "@notAnImage": {},
   "chatDescriptionHasBeenChanged": "Chattbeskrivningen ändrades",
   "@chatDescriptionHasBeenChanged": {},
-  "roomUpgradeDescription": "Chatten kommer då att återskapas med den nya rumversionen. Alla medlemmar kommer bli påminda om att de måste byta till den nya chatten. Du kan läsa mer om rumversioner på https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle",
+  "roomUpgradeDescription": "Chatten kommer då att återskapas med den nya rumversionen. Alla medlemmar kommer bli påminda om att de måste byta till den nya chatten. Du kan läsa mer om rumversioner på https://github.com/sorydima/REChain-.git",
   "@roomUpgradeDescription": {},
   "pleaseEnterANumber": "Vänligen ange ett nummer större än 0",
   "@pleaseEnterANumber": {},

@@ -46,8 +46,8 @@ class NaviRailItem extends StatelessWidget {
                 child: AnimatedContainer(
                   width: isSelected
                       ? rechainonlineThemes.isColumnMode(context)
-                          ? 8
-                          : 4
+                            ? 8
+                            : 4
                       : 0,
                   duration: rechainonlineThemes.animationDuration,
                   curve: rechainonlineThemes.animationCurve,

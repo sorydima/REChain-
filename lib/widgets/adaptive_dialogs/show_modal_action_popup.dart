@@ -23,7 +23,7 @@ Future<T?> showModalActionPopup<T>({
         clipBehavior: Clip.hardEdge,
         constraints: BoxConstraints(
           maxWidth: 512,
-          maxHeight: MediaQuery.of(context).size.height - 32,
+          maxHeight: MediaQuery.sizeOf(context).height - 32,
         ),
         builder: (context) => ListView(
           shrinkWrap: true,
@@ -32,10 +32,7 @@ Future<T?> showModalActionPopup<T>({
               ListTile(
                 title: title == null
                     ? null
-                    : Text(
-                        title,
-                        style: theme.textTheme.labelSmall,
-                      ),
+                    : Text(title, style: theme.textTheme.labelSmall),
                 subtitle: message == null ? null : Text(message),
               ),
               const Divider(height: 1),
@@ -49,8 +46,9 @@ Future<T?> showModalActionPopup<T>({
                   style: action.isDestructive
                       ? TextStyle(
                           color: theme.colorScheme.error,
-                          fontWeight:
-                              action.isDefaultAction ? FontWeight.bold : null,
+                          fontWeight: action.isDefaultAction
+                              ? FontWeight.bold
+                              : null,
                         )
                       : null,
                 ),

@@ -21,7 +21,7 @@ class ChatEmojiPicker extends StatelessWidget {
       clipBehavior: Clip.hardEdge,
       decoration: const BoxDecoration(),
       height: controller.showEmojiPicker
-          ? MediaQuery.of(context).size.height / 2
+          ? MediaQuery.sizeOf(context).height / 2
           : 0,
       child: controller.showEmojiPicker
           ? DefaultTabController(
@@ -41,6 +41,7 @@ class ChatEmojiPicker extends StatelessWidget {
                           onEmojiSelected: controller.onEmojiSelected,
                           onBackspacePressed: controller.emojiPickerBackspace,
                           config: Config(
+                            locale: Localizations.localeOf(context),
                             emojiViewConfig: EmojiViewConfig(
                               noRecents: const NoRecent(),
                               backgroundColor:
@@ -51,8 +52,9 @@ class ChatEmojiPicker extends StatelessWidget {
                             ),
                             categoryViewConfig: CategoryViewConfig(
                               backspaceColor: theme.colorScheme.primary,
-                              iconColor:
-                                  theme.colorScheme.primary.withAlpha(128),
+                              iconColor: theme.colorScheme.primary.withAlpha(
+                                128,
+                              ),
                               iconColorSelected: theme.colorScheme.primary,
                               indicatorColor: theme.colorScheme.primary,
                               backgroundColor: theme.colorScheme.surface,
@@ -77,6 +79,8 @@ class ChatEmojiPicker extends StatelessWidget {
                                 'url': sticker.url.toString(),
                               },
                               type: EventTypes.Sticker,
+                              threadRootEventId: controller.activeThreadId,
+                              threadLastEventId: controller.threadLastEventId,
                             );
                             controller.hideEmojiPicker();
                           },

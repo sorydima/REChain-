@@ -34,8 +34,8 @@ class ChatAppBarTitle extends StatelessWidget {
       onTap: controller.isArchived
           ? null
           : () => rechainonlineThemes.isThreeColumnMode(context)
-              ? controller.toggleDisplayChatDetailsColumn()
-              : context.go('/rooms/${room.id}/details'),
+                ? controller.toggleDisplayChatDetailsColumn()
+                : context.go('/rooms/${room.id}/details'),
       child: Row(
         children: [
           Hero(
@@ -51,22 +51,22 @@ class ChatAppBarTitle extends StatelessWidget {
           const SizedBox(width: 12),
           Expanded(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: .start,
               children: [
                 Text(
                   room.getLocalizedDisplayname(MatrixLocals(L10n.of(context))),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
-                    fontSize: 16,
-                  ),
+                  style: const TextStyle(fontSize: 16),
                 ),
                 StreamBuilder(
                   stream: room.client.onSyncStatus.stream,
                   builder: (context, snapshot) {
-                    final status = room.client.onSyncStatus.value ??
+                    final status =
+                        room.client.onSyncStatus.value ??
                         const SyncStatusUpdate(SyncStatus.waitingForResponse);
-                    final hide = rechainonlineThemes.isColumnMode(context) ||
+                    final hide =
+                        rechainonlineThemes.isColumnMode(context) ||
                         (room.client.onSync.value != null &&
                             status.status != SyncStatus.error &&
                             room.client.prevBatch != null);
@@ -78,8 +78,10 @@ class ChatAppBarTitle extends StatelessWidget {
                               builder: (context, presence) {
                                 final lastActiveTimestamp =
                                     presence?.lastActiveTimestamp;
-                                final style =
-                                    Theme.of(context).textTheme.bodySmall;
+                                final style = TextStyle(
+                                  fontSize: 12,
+                                  color: Theme.of(context).colorScheme.outline,
+                                );
                                 if (presence?.currentlyActive == true) {
                                   return Text(
                                     L10n.of(context).currentlyActive,
@@ -89,8 +91,9 @@ class ChatAppBarTitle extends StatelessWidget {
                                 if (lastActiveTimestamp != null) {
                                   return Text(
                                     L10n.of(context).lastActiveAgo(
-                                      lastActiveTimestamp
-                                          .localizedTimeShort(context),
+                                      lastActiveTimestamp.localizedTimeShort(
+                                        context,
+                                      ),
                                     ),
                                     style: style,
                                   );

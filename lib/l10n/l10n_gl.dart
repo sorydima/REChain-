@@ -78,7 +78,7 @@ class L10nGl extends L10n {
 
   @override
   String get confirmMatrixId =>
-      'Confirma o teu ID REChain para poder eliminar a conta.';
+      'Confirma o teu ID Matrix x REChain para poder eliminar a conta.';
 
   @override
   String supposedMxid(String mxid) {
@@ -171,8 +171,11 @@ class L10nGl extends L10n {
   String get autoplayImages => 'Reproducir automáticamente adhesivos e emotes';
 
   @override
-  String badServerLoginTypesException(String serverVersions,
-      String supportedVersions, Object suportedVersions) {
+  String badServerLoginTypesException(
+    String serverVersions,
+    String supportedVersions,
+    Object suportedVersions,
+  ) {
     return 'O servidor soporta as seguintes formas de conexión:\n$serverVersions\nPero esta app só soporta:\n$supportedVersions';
   }
 
@@ -188,11 +191,12 @@ class L10nGl extends L10n {
 
   @override
   String badServerVersionsException(
-      String serverVersions,
-      String supportedVersions,
-      Object serverVerions,
-      Object supoortedVersions,
-      Object suportedVersions) {
+    String serverVersions,
+    String supportedVersions,
+    Object serverVerions,
+    Object supoortedVersions,
+    Object suportedVersions,
+  ) {
     return 'O servidor soporta as seguintes características:\n$serverVersions\nPero esta app só soporta $supportedVersions';
   }
 
@@ -206,7 +210,7 @@ class L10nGl extends L10n {
 
   @override
   String get noChatsFoundHere =>
-      'Sen charlas por aquí. Comeza unha nova conversa con alguén premendo no botón de abaixo. ⤵️';
+      'Aínda non hai conversas. Comeza a conversar con alguén premendo no botón de abaixo. ⤵️';
 
   @override
   String get joinedChats => 'Charlas nas que participas';
@@ -257,8 +261,18 @@ class L10nGl extends L10n {
   }
 
   @override
+  String changedTheChatDescription(Object username) {
+    return '$username cambiou a descrición da sala';
+  }
+
+  @override
   String changedTheChatDescriptionTo(String username, String description) {
     return '$username mudou a descrición da conversa a: \'$description\'';
+  }
+
+  @override
+  String changedTheChatName(Object username) {
+    return '$username cambiou o nome da sala';
   }
 
   @override
@@ -351,7 +365,7 @@ class L10nGl extends L10n {
 
   @override
   String get chatBackupDescription =>
-      'As mensaxes antigas están protexidas cunha chave de recuperación. Pon coidado e non a perdas.';
+      'As mensaxes están protexidas cunha clave de recuperación. Pon coidado e non a perdas.';
 
   @override
   String get chatDetails => 'Detalles da conversa';
@@ -374,7 +388,7 @@ class L10nGl extends L10n {
 
   @override
   String get commandHint_markasdm =>
-      'Marcar como sala de mensaxe directa para o ID REChain indicado';
+      'Marcar como sala de mensaxe directa para o ID REChain x Matrix indicado';
 
   @override
   String get commandHint_markasgroup => 'Marcar como grupo';
@@ -490,7 +504,7 @@ class L10nGl extends L10n {
   }
 
   @override
-  String get checkList => 'Check list';
+  String get checkList => 'Comprobar lista';
 
   @override
   String countParticipants(int count) {
@@ -686,7 +700,7 @@ class L10nGl extends L10n {
   String get fileName => 'Nome do ficheiro';
 
   @override
-  String get rechainonline => 'rechainonline';
+  String get rechainonline => 'REChain';
 
   @override
   String get fontSize => 'Tamaño da letra';
@@ -831,7 +845,7 @@ class L10nGl extends L10n {
 
   @override
   String inviteText(String username, String link) {
-    return '$username convidoute a REChain.\n1. Visita online.rechain.network e instala a app\n2. Crea unha conta ou Accede\n3. Abre a ligazón do convite: \n $link';
+    return '$username convidoute a REChain.\n1. Visita github.com/sorydima/REChain- e instala a app\n2. Crea unha conta ou Accede\n3. Abre a ligazón do convite: \n $link';
   }
 
   @override
@@ -955,7 +969,7 @@ class L10nGl extends L10n {
   String get newChat => 'Nova conversa';
 
   @override
-  String get newMessageInrechainonline => '💬 Nova mensaxe en rechainonline';
+  String get newMessageInrechainonline => '💬 Nova mensaxe en REChain';
 
   @override
   String get newVerificationRequest => 'Nova solicitude de verificación!';
@@ -1430,7 +1444,7 @@ class L10nGl extends L10n {
   String get theyMatch => 'Concordan';
 
   @override
-  String get title => 'rechainonline';
+  String get title => 'REChain';
 
   @override
   String get toggleFavorite => 'Marcar Favorito';
@@ -1585,7 +1599,7 @@ class L10nGl extends L10n {
 
   @override
   String get wipeChatBackup =>
-      'Queres eliminar a copia de apoio da conversa e crear unha nova chave de recuperación?';
+      'Queres eliminar a copia de apoio e crear unha nova chave de recuperación?';
 
   @override
   String get withTheseAddressesRecoveryDescription =>
@@ -1684,7 +1698,7 @@ class L10nGl extends L10n {
 
   @override
   String get unsupportedAndroidVersionLong =>
-      'Esta característica require unha vesión máis recente de Android. Mira se hai actualizacións ou soporte de Mobile KatyaOS.';
+      'Esta característica require unha vesión máis recente de Android. Mira se hai actualizacións ou soporte de Mobile Katya OS.';
 
   @override
   String get videoCallsBetaWarning =>
@@ -1862,7 +1876,7 @@ class L10nGl extends L10n {
 
   @override
   String get screenSharingDetail =>
-      'Estás a compartir a túa pantalla en rechainonline';
+      'Estás a compartir a túa pantalla en REChain';
 
   @override
   String get callingPermissions => 'Permisos de chamada';
@@ -1883,7 +1897,7 @@ class L10nGl extends L10n {
 
   @override
   String get otherCallingPermissions =>
-      'Micrófono, cámara e outros permisos para rechainonline';
+      'Micrófono, cámara e outros permisos para REChain';
 
   @override
   String get whyIsThisMessageEncrypted => 'Por que non podo ler esta mensaxe?';
@@ -2031,7 +2045,7 @@ class L10nGl extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      'Vaise recrear a charla coa nova versión da sala. Todas as participantes recibirán unha notificación para que cambien á nova charla. Podes ler máis información acerca das versións das salas en https://github.com/sorydima/REChain-/tree/main/matrix_bridge_setup_bundle';
+      'Vaise recrear a charla coa nova versión da sala. Todas as participantes recibirán unha notificación para que cambien á nova charla. Podes ler máis información acerca das versións das salas en https://github.com/sorydima/REChain-.git';
 
   @override
   String get removeDevicesDescription =>
@@ -2366,7 +2380,7 @@ class L10nGl extends L10n {
   String get sendCanceled => 'Cancelouse o envío';
 
   @override
-  String get loginWithMatrixId => 'Acceder co ID-REChain';
+  String get loginWithMatrixId => 'Acceder co ID-REChain x Matrix';
 
   @override
   String get discoverHomeservers => 'Atopar servidores';
@@ -2376,7 +2390,7 @@ class L10nGl extends L10n {
 
   @override
   String get homeserverDescription =>
-      'Todos os teus datos quedan gardados no servidor de inicio, igual que co teu provedor de correo electrónico. Podes elexir o servidor que queres usar e poderás comunicarte con todos os demais. Aprende máis en https://rechain.network.';
+      'Todos os teus datos quedan gardados no servidor de inicio, igual que co teu provedor de correo electrónico. Podes elexir o servidor que queres usar e poderás comunicarte con todos os demais. Aprende máis en https://github.com/sorydima/REChain-.git';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
@@ -2420,7 +2434,7 @@ class L10nGl extends L10n {
 
   @override
   String get welcomeText =>
-      'Ola! 👋 Isto é REChain. Podes iniciar sesión en calquera servidor compatible con https://rechain.network. Poderás conversar con calquera. Unha enorme rede de mensaxería descentralizada!';
+      'Ola! 👋 Isto é REChain. Podes iniciar sesión en calquera servidor compatible con https://github.com/sorydima/REChain-.git. Poderás conversar con calquera. Unha enorme rede de mensaxería descentralizada!';
 
   @override
   String get blur => 'Néboa:';
@@ -2508,7 +2522,7 @@ class L10nGl extends L10n {
 
   @override
   String get appIntroduction =>
-      'REChain permíteche laretar coas túas amizades entre diferentes mensaxerías. Coñece máis en https://rechain.network ou toca en *Continuar*.';
+      'REChain permíteche laretar coas túas amizades entre diferentes mensaxerías. Coñece máis en https://github.com/sorydima/REChain-.git ou toca en *Continuar*.';
 
   @override
   String get newChatRequest => '📩 Nova solicitude de conversa';
@@ -2679,7 +2693,7 @@ class L10nGl extends L10n {
 
   @override
   String sentVoiceMessage(String sender, String duration) {
-    return '🎙️ $duration - Mensaxe de voz de  $sender';
+    return '🎙️ $duration - Mensaxe de voz de $sender';
   }
 
   @override
@@ -2742,11 +2756,178 @@ class L10nGl extends L10n {
       'Fechar a sesión en todos os dispositivos activos';
 
   @override
-  String get displayNavigationRail => 'Show navigation rail on mobile';
+  String get displayNavigationRail =>
+      'Mostrar carril de navegación nos móbiles';
 
   @override
   String get customReaction => 'Reacción personalizada';
 
   @override
   String get moreEvents => 'Máis eventos';
+
+  @override
+  String get declineInvitation => 'Rexeitar o convite';
+
+  @override
+  String get noMessagesYet => 'Aínda non hai mensaxes';
+
+  @override
+  String get longPressToRecordVoiceMessage =>
+      'Pulsación longa para gravar mensaxe de voz.';
+
+  @override
+  String get pause => 'Deter';
+
+  @override
+  String get resume => 'Continuar';
+
+  @override
+  String get newSubSpace => 'Novo sub espazo';
+
+  @override
+  String get moveToDifferentSpace => 'Mover a outro espazo';
+
+  @override
+  String get moveUp => 'Mover arriba';
+
+  @override
+  String get moveDown => 'Mover abaixo';
+
+  @override
+  String get removeFromSpaceDescription =>
+      'Vaise quitar a conversa do espazo pero seguirá aparecendo na túa lista de conversas.';
+
+  @override
+  String countChats(int chats) {
+    return '$chats conversas';
+  }
+
+  @override
+  String spaceMemberOf(String spaces) {
+    return 'Participa no espazo $spaces';
+  }
+
+  @override
+  String spaceMemberOfCanKnock(String spaces) {
+    return 'Os membros de $spaces poden petar á porta';
+  }
+
+  @override
+  String get donate => 'Doar';
+
+  @override
+  String startedAPoll(String username) {
+    return '$username publicou unha enquisa.';
+  }
+
+  @override
+  String get poll => 'Enquisa';
+
+  @override
+  String get startPoll => 'Publicar enquisa';
+
+  @override
+  String get endPoll => 'Finalizar enquisa';
+
+  @override
+  String get answersVisible => 'Resultados visibles';
+
+  @override
+  String get answersHidden => 'Non se ven os resultados';
+
+  @override
+  String get pollQuestion => 'Pregunta da enquisa';
+
+  @override
+  String get answerOption => 'Opción de resposta';
+
+  @override
+  String get addAnswerOption => 'Engadir opción';
+
+  @override
+  String get allowMultipleAnswers => 'Permitir varias respostas';
+
+  @override
+  String get pollHasBeenEnded => 'Rematou a enquisa';
+
+  @override
+  String countVotes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count votos',
+      one: 'Un voto',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get answersWillBeVisibleWhenPollHasEnded =>
+      'As respostas son visibles ao finalizar a enquisa';
+
+  @override
+  String get replyInThread => 'Responder ao fío';
+
+  @override
+  String countReplies(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count respostas',
+      one: 'Unha resposta',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get thread => 'Fío';
+
+  @override
+  String get backToMainChat => 'Volver á conversa principal';
+
+  @override
+  String get saveChanges => 'Gardar cambios';
+
+  @override
+  String get createSticker => 'Crear adhesivo ou emoji';
+
+  @override
+  String get useAsSticker => 'Usar como adhesivo';
+
+  @override
+  String get useAsEmoji => 'Usar como emoji';
+
+  @override
+  String get stickerPackNameAlreadyExists =>
+      'Xa existe ese nome de paquete de adhesivos';
+
+  @override
+  String get newStickerPack => 'Novo paquete de adhesivos';
+
+  @override
+  String get stickerPackName => 'Nome do paquete de adhesivos';
+
+  @override
+  String get attribution => 'Atribución';
+
+  @override
+  String get skipChatBackup => 'Omitir copia da conversa';
+
+  @override
+  String get skipChatBackupWarning =>
+      'Tes certeza? A non activar a copia de apoio da conversa poderías perder o acceso ás mensaxes se cambias de dispositivo.';
+
+  @override
+  String get loadingMessages => 'Cargando mensaxes';
+
+  @override
+  String get setupChatBackup => 'Configurar copia de apoio';
+
+  @override
+  String get noMoreResultsFound => 'No more results found';
+
+  @override
+  String chatSearchedUntil(String time) {
+    return 'Chat searched until $time';
+  }
 }

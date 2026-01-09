@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
 import 'package:matrix/matrix.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
+import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/config/themes.dart';
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/widgets/adaptive_dialogs/show_ok_cancel_alert_dialog.dart';
@@ -23,8 +25,8 @@ class ClientChooserButton extends StatelessWidget {
         (a, b) => a!.isValidMatrixId == b!.isValidMatrixId
             ? 0
             : a.isValidMatrixId && !b.isValidMatrixId
-                ? -1
-                : 1,
+            ? -1
+            : 1,
       );
     return <PopupMenuEntry<Object>>[
       PopupMenuItem(
@@ -67,6 +69,17 @@ class ClientChooserButton extends StatelessWidget {
           ],
         ),
       ),
+      if (Matrix.of(context).backgroundPush?.firebaseEnabled != true)
+        PopupMenuItem(
+          value: SettingsAction.support,
+          child: Row(
+            children: [
+              const Icon(Icons.favorite, color: Colors.red),
+              const SizedBox(width: 18),
+              Text(L10n.of(context).donate),
+            ],
+          ),
+        ),
       PopupMenuItem(
         value: SettingsAction.settings,
         child: Row(
@@ -110,7 +123,8 @@ class ClientChooserButton extends StatelessWidget {
                     children: [
                       Avatar(
                         mxContent: snapshot.data?.avatarUrl,
-                        name: snapshot.data?.displayName ??
+                        name:
+                            snapshot.data?.displayName ??
                             client.userID!.localpart,
                         size: 32,
                       ),
@@ -180,10 +194,7 @@ class ClientChooserButton extends StatelessWidget {
     );
   }
 
-  void _clientSelected(
-    Object object,
-    BuildContext context,
-  ) async {
+  void _clientSelected(Object object, BuildContext context) async {
     if (object is Client) {
       controller.setActiveClient(object);
     } else if (object is String) {
@@ -207,6 +218,9 @@ class ClientChooserButton extends StatelessWidget {
         case SettingsAction.invite:
           rechainonlineShare.shareInviteLink(context);
           break;
+        case SettingsAction.support:
+          launchUrlString(AppConfig.donationUrl);
+          break;
         case SettingsAction.settings:
           context.go('/rooms/settings');
           break;
@@ -226,6 +240,7 @@ enum SettingsAction {
   newGroup,
   setStatus,
   invite,
+  support,
   settings,
   archive,
 }

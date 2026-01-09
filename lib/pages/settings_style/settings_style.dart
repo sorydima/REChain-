@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:file_picker/file_picker.dart';
+
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/config/setting_keys.dart';
 import 'package:rechainonline/utils/account_config.dart';
@@ -18,16 +20,15 @@ class SettingsStyle extends StatefulWidget {
 
 class SettingsStyleController extends State<SettingsStyle> {
   void setChatColor(Color? color) async {
-    AppConfig.colorSchemeSeed = color;
+    AppSettings.colorSchemeSeedInt.setItem(
+      color?.toARGB32() ?? AppSettings.colorSchemeSeedInt.defaultValue,
+    );
     ThemeController.of(context).setPrimaryColor(color);
   }
 
   void setWallpaper() async {
     final client = Matrix.of(context).client;
-    final picked = await selectFiles(
-      context,
-      type: FileSelectorType.images,
-    );
+    final picked = await selectFiles(context, type: FileType.image);
     final pickedFile = picked.firstOrNull;
     if (pickedFile == null) return;
 
@@ -101,14 +102,11 @@ class SettingsStyleController extends State<SettingsStyle> {
   }
 
   void deleteChatWallpaper() => showFutureLoadingDialog(
-        context: context,
-        future: () => Matrix.of(context).client.setApplicationAccountConfig(
-              const ApplicationAccountConfig(
-                wallpaperUrl: null,
-                wallpaperBlur: null,
-              ),
-            ),
-      );
+    context: context,
+    future: () => Matrix.of(context).client.setApplicationAccountConfig(
+      const ApplicationAccountConfig(wallpaperUrl: null, wallpaperBlur: null),
+    ),
+  );
 
   ThemeMode get currentTheme => ThemeController.of(context).themeMode;
   Color? get currentColor => ThemeController.of(context).primaryColor;
@@ -155,12 +153,9 @@ class SettingsStyleController extends State<SettingsStyle> {
     setState(() {});
   }
 
-  void changeFontSizeFactor(double d) {
-    setState(() => AppConfig.fontSizeFactor = d);
-    Matrix.of(context).store.setString(
-          SettingKeys.fontSizeFactor,
-          AppConfig.fontSizeFactor.toString(),
-        );
+  void changeFontSizeFactor(double d) async {
+    await AppSettings.fontSizeFactor.setItem(d);
+    setState(() {});
   }
 
   @override

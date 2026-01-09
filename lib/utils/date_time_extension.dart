@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import 'package:rechainonline/l10n/l10n.dart';
+import 'package:rechainonline/utils/platform_infos.dart';
 
 /// Provides extra functionality for formatting the time.
 extension DateTimeExtension on DateTime {
@@ -28,10 +29,9 @@ extension DateTimeExtension on DateTime {
       difference(prevTime) < const Duration(hours: 1);
 
   /// Returns a simple time String.
-  String localizedTimeOfDay(BuildContext context) =>
-      L10n.of(context).alwaysUse24HourFormat == 'true'
-          ? DateFormat('HH:mm', L10n.of(context).localeName).format(this)
-          : DateFormat('h:mm a', L10n.of(context).localeName).format(this);
+  String localizedTimeOfDay(BuildContext context) => use24HourFormat(context)
+      ? DateFormat('HH:mm', L10n.of(context).localeName).format(this)
+      : DateFormat('h:mm a', L10n.of(context).localeName).format(this);
 
   /// Returns [localizedTimeOfDay()] if the ChatTime is today, the name of the week
   /// day if the ChatTime is this week and a date string else.
@@ -42,7 +42,8 @@ extension DateTimeExtension on DateTime {
 
     final sameDay = sameYear && now.month == month && now.day == day;
 
-    final sameWeek = sameYear &&
+    final sameWeek =
+        sameYear &&
         !sameDay &&
         now.millisecondsSinceEpoch - millisecondsSinceEpoch <
             1000 * 60 * 60 * 24 * 7;
@@ -50,14 +51,17 @@ extension DateTimeExtension on DateTime {
     if (sameDay) {
       return localizedTimeOfDay(context);
     } else if (sameWeek) {
-      return DateFormat.E(Localizations.localeOf(context).languageCode)
-          .format(this);
+      return DateFormat.E(
+        Localizations.localeOf(context).languageCode,
+      ).format(this);
     } else if (sameYear) {
-      return DateFormat.MMMd(Localizations.localeOf(context).languageCode)
-          .format(this);
+      return DateFormat.MMMd(
+        Localizations.localeOf(context).languageCode,
+      ).format(this);
     }
-    return DateFormat.yMMMd(Localizations.localeOf(context).languageCode)
-        .format(this);
+    return DateFormat.yMMMd(
+      Localizations.localeOf(context).languageCode,
+    ).format(this);
   }
 
   /// If the DateTime is today, this returns [localizedTimeOfDay()], if not it also
@@ -75,5 +79,20 @@ extension DateTimeExtension on DateTime {
       localizedTimeShort(context),
       localizedTimeOfDay(context),
     );
+  }
+
+  /// Check if time needs to be in 24h format
+  bool use24HourFormat(BuildContext context) {
+    final mediaQuery24h = MediaQuery.alwaysUse24HourFormatOf(context);
+
+    final l10n24h = L10n.of(context).alwaysUse24HourFormat == 'true';
+
+    if (PlatformInfos.isAndroid) {
+      return mediaQuery24h;
+    } else if (PlatformInfos.isIOS) {
+      return mediaQuery24h || l10n24h;
+    }
+
+    return l10n24h;
   }
 }

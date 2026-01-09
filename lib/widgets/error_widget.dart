@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:rechainonline/utils/error_reporter.dart';
 
-class rechainonlineChatErrorWidget extends StatefulWidget {
+class REChain.rrorWidget extends StatefulWidget {
   final FlutterErrorDetails details;
-  const rechainonlineChatErrorWidget(this.details, {super.key});
+  const REChain.rrorWidget(this.details, {super.key});
 
   @override
   State<rechainonlineChatErrorWidget> createState() => _rechainonlineChatErrorWidgetState();
@@ -21,10 +21,10 @@ class _rechainonlineChatErrorWidgetState extends State<rechainonlineChatErrorWid
     }
     knownExceptions.add(widget.details.exception.toString());
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      ErrorReporter(context, 'Error Widget').onErrorCallback(
-        widget.details.exception,
-        widget.details.stack,
-      );
+      ErrorReporter(
+        context,
+        'Error Widget',
+      ).onErrorCallback(widget.details.exception, widget.details.stack);
     });
   }
 
