@@ -1,3 +1,6 @@
+https://api.codemagic.io/apps/6961499bce9435e17360eeb6/6961499bce9435e17360eeb5/status_badge.svg
+
+[![Codemagic build status](https://api.codemagic.io/apps/6961499bce9435e17360eeb6/6961499bce9435e17360eeb5/status_badge.svg)](https://codemagic.io/app/6961499bce9435e17360eeb6/6961499bce9435e17360eeb5/latest_build)
 
 ## 🐦 Shorebird Integration (Code Push Updates)
 
