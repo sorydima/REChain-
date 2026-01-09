@@ -17,6 +17,67 @@ import 'config/setting_keys.dart';
 import 'utils/background_push.dart';
 import 'widgets/rechainonline_chat_app.dart';
 
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Telegram REChain App',
+      theme: TelegramThemeUtil.getTheme(TelegramWebApp.instance),
+      home: const MainScreen(),
+    );
+  }
+}
+
+class MainScreen extends StatelessWidget {
+  const MainScreen({super.key});
+
+  double get safeAreaTop => 0.0;
+
+  @override
+  Widget build(BuildContext context) {
+    final TelegramWebApp telegram = TelegramWebApp.instance;
+    return Scaffold(
+      backgroundColor: (telegram.backgroundColor as Color?) ?? Colors.grey,
+      appBar: TeleAppbar(title: 'REChain App', top: safeAreaTop),
+      body: ListView(
+        padding: const EdgeInsets.all(8),
+        children: [
+          ListButton('Expand', onPress: telegram.expand),
+          InfoExpandableTile(
+            'Init Data',
+            telegram.initData.toString(),
+          ),
+          InfoExpandableTile(
+            'Init Data Unsafe',
+            telegram.initDataUnsafe?.toReadableString() ?? 'null',
+          ),
+          InfoExpandableTile(
+            'isVerticalSwipesEnabled',
+            telegram.isVerticalSwipesEnabled.toString(),
+          ),
+          ListButton('enableVerticalSwipes', onPress: telegram.enableVerticalSwipes),
+          ListButton('disableVerticalSwipes', onPress: telegram.disableVerticalSwipes),
+          InfoExpandableTile('Version', telegram.version ?? ''),
+          InfoExpandableTile('Platform', telegram.platform ?? ''),
+          InfoExpandableTile('Color Scheme', telegram.colorScheme?.name ?? ''),
+          ThemeParamsWidget(telegram.themeParams),
+          InfoExpandableTile('isActive', telegram.isActive.toString()),
+          InfoExpandableTile('isExpanded', telegram.isExpanded.toString()),
+          InfoExpandableTile('viewportHeight', telegram.viewportHeight.toString()),
+          InfoExpandableTile('viewportStableHeight', telegram.viewportStableHeight.toString()),
+          InfoExpandableTile('safeAreaInset', telegram.safeAreaInset.toString()),
+          InfoExpandableTile('contentSafeAreaInset', telegram.contentSafeAreaInset.toString()),
+          OneColorExpandableTile('headerColor', telegram.headerColor),
+          OneColorExpandableTile('backgroundColor', telegram.backgroundColor as Color?),
+          OneColorExpandableTile('bottomBarColor', telegram.bottomBarColor),
+        ],
+      ),
+    );
+  }
+}
+
 ReceivePort? mainIsolateReceivePort;
 
 void main() async {
