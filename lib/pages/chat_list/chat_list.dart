@@ -221,7 +221,7 @@ class ChatListController extends State<ChatList>
         final roomId = response.roomId;
         if (roomId != null) {
           roomSearchResult.chunk.add(
-            PublicRoom(
+            PublishedRoomsChunk(
               roomId: roomId,
               name: searchQuery,
               guestCanJoin: false,

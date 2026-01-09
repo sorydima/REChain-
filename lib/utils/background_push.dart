@@ -369,16 +369,17 @@ class BackgroundPush {
   }
 
   Future<void> _newUpEndpoint(PushEndpoint newEndpoint, String i) async {
-    final newEndpoint = newPushEndpoint;
+    final endpoint = newEndpoint.toString();
+    String finalEndpoint = endpoint;
     upAction = true;
-    if (newEndpoint.isEmpty) {
+    if (endpoint.isEmpty) {
       await _upUnregistered(i);
       return;
     }
-    var endpoint =
+    var gatewayEndpoint =
         'https://matrix.gateway.unifiedpush.org/_matrix/push/v1/notify';
     try {
-      final url = Uri.parse(newEndpoint)
+      final url = Uri.parse(endpoint)
           .replace(path: '/_matrix/push/v1/notify', query: '')
           .toString()
           .split('?')
@@ -389,26 +390,26 @@ class BackgroundPush {
       if (res['gateway'] == 'matrix' ||
           (res['unifiedpush'] is Map &&
               res['unifiedpush']['gateway'] == 'matrix')) {
-        endpoint = url;
+        finalEndpoint = url;
       }
     } catch (e) {
       Logs().i(
         '[Push] No self-hosted unified push gateway present: $newEndpoint',
       );
     }
-    Logs().i('[Push] UnifiedPush using endpoint $endpoint');
+    Logs().i('[Push] UnifiedPush using endpoint $finalEndpoint');
     final oldTokens = <String?>{};
     try {
       //<GOOGLE_SERVICES>final fcmToken = await firebase.getToken();
       //<GOOGLE_SERVICES>oldTokens.add(fcmToken);
     } catch (_) {}
     await setupPusher(
-      gatewayUrl: endpoint,
-      token: newEndpoint,
+      gatewayUrl: finalEndpoint,
+      token: finalEndpoint,
       oldTokens: oldTokens,
       useDeviceSpecificAppId: true,
     );
-    await AppSettings.unifiedPushEndpoint.setItem(newEndpoint);
+    await AppSettings.unifiedPushEndpoint.setItem(finalEndpoint);
     await AppSettings.unifiedPushRegistered.setItem(true);
   }
 
