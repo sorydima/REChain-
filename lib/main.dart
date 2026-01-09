@@ -8,6 +8,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:flutter_vodozemac/flutter_vodozemac.dart' as vod;
 import 'package:matrix/matrix.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:telegram_web_app/telegram_web_app.dart';
 
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/utils/client_manager.dart';
@@ -24,7 +25,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Telegram REChain App',
-      theme: TelegramThemeUtil.getTheme(TelegramWebApp.instance),
+      theme: ThemeData.from(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: TelegramWebApp.instance.themeParams.buttonColor ?? Colors.blue,
+        ),
+      ),
       home: const MainScreen(),
     );
   }
@@ -33,45 +38,89 @@ class MyApp extends StatelessWidget {
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
 
-  double get safeAreaTop => 0.0;
+  double get safeAreaTop => TelegramWebApp.instance.safeAreaInset.top;
 
   @override
   Widget build(BuildContext context) {
-    final TelegramWebApp telegram = TelegramWebApp.instance;
+    final telegram = TelegramWebApp.instance;
     return Scaffold(
-      backgroundColor: (telegram.backgroundColor as Color?) ?? Colors.grey,
-      appBar: TeleAppbar(title: 'REChain App', top: safeAreaTop),
+      backgroundColor: telegram.backgroundColor ?? Colors.grey,
+      appBar: AppBar(
+        title: const Text('REChain App'),
+        backgroundColor: telegram.headerColor,
+      ),
       body: ListView(
         padding: const EdgeInsets.all(8),
         children: [
-          ListButton('Expand', onPress: telegram.expand),
-          InfoExpandableTile(
-            'Init Data',
-            telegram.initData.toString(),
+          ListTile(
+            title: const Text('Expand'),
+            onTap: telegram.expand,
           ),
-          InfoExpandableTile(
-            'Init Data Unsafe',
-            telegram.initDataUnsafe?.toReadableString() ?? 'null',
+          ExpansionTile(
+            title: const Text('Init Data'),
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(telegram.initData.toString()),
+              ),
+            ],
           ),
-          InfoExpandableTile(
-            'isVerticalSwipesEnabled',
-            telegram.isVerticalSwipesEnabled.toString(),
+          ExpansionTile(
+            title: const Text('Init Data Unsafe'),
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(telegram.initDataUnsafe?.toString() ?? 'null'),
+              ),
+            ],
           ),
-          ListButton('enableVerticalSwipes', onPress: telegram.enableVerticalSwipes),
-          ListButton('disableVerticalSwipes', onPress: telegram.disableVerticalSwipes),
-          InfoExpandableTile('Version', telegram.version ?? ''),
-          InfoExpandableTile('Platform', telegram.platform ?? ''),
-          InfoExpandableTile('Color Scheme', telegram.colorScheme?.name ?? ''),
-          ThemeParamsWidget(telegram.themeParams),
-          InfoExpandableTile('isActive', telegram.isActive.toString()),
-          InfoExpandableTile('isExpanded', telegram.isExpanded.toString()),
-          InfoExpandableTile('viewportHeight', telegram.viewportHeight.toString()),
-          InfoExpandableTile('viewportStableHeight', telegram.viewportStableHeight.toString()),
-          InfoExpandableTile('safeAreaInset', telegram.safeAreaInset.toString()),
-          InfoExpandableTile('contentSafeAreaInset', telegram.contentSafeAreaInset.toString()),
-          OneColorExpandableTile('headerColor', telegram.headerColor),
-          OneColorExpandableTile('backgroundColor', telegram.backgroundColor as Color?),
-          OneColorExpandableTile('bottomBarColor', telegram.bottomBarColor),
+          ListTile(
+            title: Text('isVerticalSwipesEnabled: ${telegram.isVerticalSwipesEnabled}'),
+          ),
+          ListTile(
+            title: const Text('enableVerticalSwipes'),
+            onTap: telegram.enableVerticalSwipes,
+          ),
+          ListTile(
+            title: const Text('disableVerticalSwipes'),
+            onTap: telegram.disableVerticalSwipes,
+          ),
+          ListTile(
+            title: Text('Version: ${telegram.version ?? ''}'),
+          ),
+          ListTile(
+            title: Text('Platform: ${telegram.platform ?? ''}'),
+          ),
+          ListTile(
+            title: Text('Color Scheme: ${telegram.colorScheme?.name ?? ''}'),
+          ),
+          ListTile(
+            title: Text('isActive: ${telegram.isActive}'),
+          ),
+          ListTile(
+            title: Text('isExpanded: ${telegram.isExpanded}'),
+          ),
+          ListTile(
+            title: Text('viewportHeight: ${telegram.viewportHeight}'),
+          ),
+          ListTile(
+            title: Text('viewportStableHeight: ${telegram.viewportStableHeight}'),
+          ),
+          ListTile(
+            title: Text('safeAreaInset: ${telegram.safeAreaInset}'),
+          ),
+          ListTile(
+            title: Text('contentSafeAreaInset: ${telegram.contentSafeAreaInset}'),
+          ),
+          ListTile(
+            title: Text('headerColor: ${telegram.headerColor}'),
+          ),
+          ListTile(
+            title: Text('backgroundColor: ${telegram.backgroundColor}'),
+          ),
+          ListTile(
+            title: Text('bottomBarColor: ${telegram.bottomBarColor}'),
+          ),
         ],
       ),
     );
