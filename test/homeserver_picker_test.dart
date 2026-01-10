@@ -8,7 +8,7 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   testWidgets('Test if the widget can be created', (WidgetTester tester) async {
     /*await tester.pumpWidget(
-      ChatApp(
+      rechainonlineChatApp(
         client: await prepareTestClient(),
         testWidget: HomeserverPicker(),
       ),
