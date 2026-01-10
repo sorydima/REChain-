@@ -122,7 +122,7 @@ void main() async {
     Logs().e('Flutter framework error', details.exception, details.stack);
   };
 
-  Logs().i('Welcome to ${AppConfig.applicationName} <3');
+  Logs().i('Welcome to REChain <3');
 
   WidgetsFlutterBinding.ensureInitialized();
   // await RuStorePush.initialize();
@@ -160,14 +160,14 @@ void main() async {
     // To start the flutter engine afterwards we add an custom observer.
     WidgetsBinding.instance.addObserver(AppStarter(clients, store));
     Logs().i(
-      '${AppConfig.applicationName} started in background-fetch mode. No GUI will be created unless the app is no longer detached.',
+      'REChain started in background-fetch mode. No GUI will be created unless the app is no longer detached.',
     );
     return;
   }
 
   // Started in foreground mode.
   Logs().i(
-    '${AppConfig.applicationName} started in foreground mode. Rendering GUI...',
+    'REChain started in foreground mode. Rendering GUI...',
   );
   await startGui(clients, store);
 }
@@ -213,7 +213,7 @@ class AppStarter with WidgetsBindingObserver {
     if (state == AppLifecycleState.detached) return;
 
     Logs().i(
-      '${AppConfig.applicationName} switches from the detached background-fetch mode to ${state.name} mode. Rendering GUI...',
+      'REChain switches from the detached background-fetch mode to ${state.name} mode. Rendering GUI...',
     );
     // Switching to foreground mode needs to reenable send online sync presence.
     for (final client in clients) {
