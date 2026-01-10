@@ -191,7 +191,7 @@ Future<void> startGui(List<Client> clients, SharedPreferences store) async {
   await firstClient?.accountDataLoading;
 
   try {
-    runApp(rechainonlineChatApp(clients: clients, pincode: pin, store: store));
+    runApp(ChatApp(clients: clients, pincode: pin, store: store));
   } catch (e, s) {
     Logs().e('Error during runApp', e, s);
     rethrow;

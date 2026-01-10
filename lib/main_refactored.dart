@@ -88,7 +88,7 @@ Future<void> startGui(List<Client> clients, SharedPreferences store) async {
   await firstClient?.roomsLoading;
   await firstClient?.accountDataLoading;
 
-  runApp(rechainonlineChatApp(clients: clients, pincode: pin, store: store));
+  runApp(ChatApp(clients: clients, pincode: pin, store: store));
 }
 
 /// Watches the lifecycle changes to start the application when it
