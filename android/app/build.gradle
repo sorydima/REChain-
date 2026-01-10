@@ -126,7 +126,7 @@ flutter {
 
 dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
-    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.4'
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.4'
 
     // Firebase (BOM управляет версиями)
     implementation platform('com.google.firebase:firebase-bom:33.7.0')
