@@ -4,6 +4,7 @@ import 'dart:ui';
 
 import 'package:collection/collection.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:flutter_vodozemac/flutter_vodozemac.dart' as vod;
 import 'package:go_router/go_router.dart';
 import 'package:matrix/matrix.dart';
 
@@ -72,6 +73,7 @@ void notificationTapBackground(
   );
 
   if (!_vodInitialized) {
+    await vod.init();
     _vodInitialized = true;
   }
   final store = await AppSettings.init();
