@@ -26,7 +26,7 @@ void main() {
         () async {
           // this random dialog popping up is super hard to cover in tests
           SharedPreferences.setMockInitialValues({
-            SettingKeys.showNoGoogle: false,
+            AppSettings.showNoGoogle.key: false,
           });
           try {
             Hive.deleteFromDisk();

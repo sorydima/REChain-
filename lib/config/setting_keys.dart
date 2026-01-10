@@ -53,7 +53,8 @@ enum AppSettings<T> {
   // colorSchemeSeed stored as ARGB int
   colorSchemeSeedInt<int>('com.rechain.color_scheme_seed', 0xFF5625BA),
   emojiSuggestionLocale<String>('emoji_suggestion_locale', 'en'),
-  enableSoftLogout<bool>('com.rechain.enable_soft_logout', true);
+  enableSoftLogout<bool>('com.rechain.enable_soft_logout', true),
+  appLockKey<String>('com.rechain.app_lock_key', '');
 
   final String key;
   final T defaultValue;
