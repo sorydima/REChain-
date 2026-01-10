@@ -40,6 +40,7 @@ class BackgroundPush {
   String? _fcmToken;
   void Function(String errorMsg, {Uri? link})? onFcmError;
   L10n? l10n;
+  ReceivePort? mainIsolateReceivePort;
 
   Future<void> loadLocale() async {
     final context = matrix?.context;
@@ -136,6 +137,7 @@ class BackgroundPush {
   }
 
   BackgroundPush._(this.client) {
+    mainIsolateReceivePort = ReceivePort();
     _init();
   }
 
@@ -152,6 +154,10 @@ class BackgroundPush {
     // ignore: prefer_initializing_formals
     instance.onFcmError = onFcmError;
     return instance;
+  }
+
+  void dispose() {
+    mainIsolateReceivePort?.close();
   }
 
   Future<void> cancelNotification(String roomId) async {
