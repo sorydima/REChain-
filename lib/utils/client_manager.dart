@@ -5,7 +5,6 @@ import 'package:flutter/foundation.dart';
 import 'package:collection/collection.dart';
 import 'package:desktop_notifications/desktop_notifications.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:flutter_vodozemac/flutter_vodozemac.dart' as vod;
 import 'package:matrix/encryption/utils/key_verification.dart';
 import 'package:matrix/matrix.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -100,7 +99,6 @@ abstract class ClientManager {
         )
       : NativeImplementationsIsolate(
           compute,
-          vodozemacInit: () => vod.init(wasmPath: './assets/assets/vodozemac/'),
         );
 
   static Future<Client> createClient(
