@@ -179,7 +179,7 @@ Future<void> startGui(List<Client> clients, SharedPreferences store) async {
   if (PlatformInfos.isMobile) {
     try {
       pin =
-          await const FlutterSecureStorage().read(key: SettingKeys.appLockKey);
+          await const FlutterSecureStorage().read(key: AppSettings.appLockKey.key);
     } catch (e, s) {
       Logs().d('Unable to read PIN from Secure storage', e, s);
     }
@@ -191,7 +191,7 @@ Future<void> startGui(List<Client> clients, SharedPreferences store) async {
   await firstClient?.accountDataLoading;
 
   try {
-    runApp(FluffyChatApp(clients: clients, pincode: pin, store: store));
+    runApp(REChainApp(clients: clients, pincode: pin, store: store));
   } catch (e, s) {
     Logs().e('Error during runApp', e, s);
     rethrow;
