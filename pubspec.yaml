@@ -169,4 +169,5 @@ dependency_overrides:
   mime: ^1.0.6
   # Fix dependency conflict between pasteboard and flutter_webrtc
   js: ^0.6.7
-  win32: 5.5.3
+  win32: ^5.10.0
+  win32_registry: ^2.1.0
