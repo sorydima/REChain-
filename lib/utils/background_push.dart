@@ -138,6 +138,11 @@ class BackgroundPush {
 
   BackgroundPush._(this.client) {
     mainIsolateReceivePort = ReceivePort();
+    // Register the main isolate receive port so background notifications can find it
+    IsolateNameServer.registerPortWithName(
+      mainIsolateReceivePort!.sendPort,
+      AppConfig.mainIsolatePortName,
+    );
     _init();
   }
 
@@ -157,7 +162,11 @@ class BackgroundPush {
   }
 
   void dispose() {
-    mainIsolateReceivePort?.close();
+    // Remove the port mapping before closing the port
+    if (mainIsolateReceivePort != null) {
+      IsolateNameServer.removePortNameMapping(AppConfig.mainIsolatePortName);
+      mainIsolateReceivePort?.close();
+    }
   }
 
   Future<void> cancelNotification(String roomId) async {
