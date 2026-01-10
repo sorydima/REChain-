@@ -47,7 +47,6 @@ dependencies:
       url: https://github.com/famedly/flutter_typeahead.git
       ref: main
   flutter_vodozemac: ^0.4.1
-  telegram_web_app: ^0.3.3
   flutter_web_auth_2: ^3.1.1 # Version 4 blocked by https://github.com/MixinNetwork/flutter-plugins/issues/379
   flutter_webrtc: ^1.2.1
   geolocator: ^14.0.1

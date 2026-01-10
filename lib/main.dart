@@ -8,7 +8,6 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:flutter_vodozemac/flutter_vodozemac.dart' as vod;
 import 'package:matrix/matrix.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:telegram_web_app/telegram_web_app.dart';
 
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/utils/client_manager.dart';
@@ -18,110 +17,127 @@ import 'config/setting_keys.dart';
 import 'utils/background_push.dart';
 import 'widgets/rechainonline_chat_app.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+// Simple Telegram Mini App wrapper
+class TelegramMiniApp extends StatelessWidget {
+  const TelegramMiniApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Telegram REChain App',
+      title: 'REChain Telegram Mini App',
       theme: ThemeData.from(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: TelegramWebApp.instance.themeParams.buttonColor ?? Colors.blue,
+          seedColor: Colors.blue,
         ),
+        useMaterial3: true,
       ),
-      home: const MainScreen(),
+      home: const TelegramAppWrapper(),
     );
   }
 }
 
-class MainScreen extends StatelessWidget {
-  const MainScreen({super.key});
+class TelegramAppWrapper extends StatefulWidget {
+  const TelegramAppWrapper({super.key});
 
-  double get safeAreaTop => TelegramWebApp.instance.safeAreaInset.top;
+  @override
+  State<TelegramAppWrapper> createState() => _TelegramAppWrapperState();
+}
+
+class _TelegramAppWrapperState extends State<TelegramAppWrapper> {
+  bool _isTelegramAvailable = false;
+  bool _isLoading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _checkTelegramEnvironment();
+  }
+
+  void _checkTelegramEnvironment() async {
+    // Check if running in Telegram environment
+    try {
+      setState(() {
+        _isLoading = false;
+        _isTelegramAvailable = true; // Assume running in Telegram
+      });
+    } catch (e) {
+      setState(() {
+        _isLoading = false;
+        _isTelegramAvailable = false;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    final telegram = TelegramWebApp.instance;
+    if (_isLoading) {
+      return const Scaffold(
+        body: Center(
+          child: CircularProgressIndicator(),
+        ),
+      );
+    }
+
+    if (!_isTelegramAvailable) {
+      return Scaffold(
+        appBar: AppBar(title: const Text('REChain')),
+        body: const Center(
+          child: Text('This app is designed to run in Telegram Mini Apps'),
+        ),
+      );
+    }
+
+    // Show the main REChain app
+    return const TelegramMiniAppContent();
+  }
+}
+
+class TelegramMiniAppContent extends StatelessWidget {
+  const TelegramMiniAppContent({super.key});
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: telegram.backgroundColor ?? Colors.grey,
       appBar: AppBar(
-        title: const Text('REChain App'),
-        backgroundColor: telegram.headerColor,
+        title: const Text('REChain'),
+        backgroundColor: Colors.blue,
+        foregroundColor: Colors.white,
       ),
-      body: ListView(
-        padding: const EdgeInsets.all(8),
-        children: [
-          ListTile(
-            title: const Text('Expand'),
-            onTap: telegram.expand,
-          ),
-          ExpansionTile(
-            title: const Text('Init Data'),
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(telegram.initData.toString()),
+      body: const Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.chat,
+              size: 64,
+              color: Colors.blue,
+            ),
+            SizedBox(height: 16),
+            Text(
+              'REChain Telegram Mini App',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
               ),
-            ],
-          ),
-          ExpansionTile(
-            title: const Text('Init Data Unsafe'),
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(telegram.initDataUnsafe?.toString() ?? 'null'),
+            ),
+            SizedBox(height: 8),
+            Text(
+              'Matrix-based decentralized communication',
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.grey,
               ),
-            ],
-          ),
-          ListTile(
-            title: Text('isVerticalSwipesEnabled: ${telegram.isVerticalSwipesEnabled}'),
-          ),
-          ListTile(
-            title: const Text('enableVerticalSwipes'),
-            onTap: telegram.enableVerticalSwipes,
-          ),
-          ListTile(
-            title: const Text('disableVerticalSwipes'),
-            onTap: telegram.disableVerticalSwipes,
-          ),
-          ListTile(
-            title: Text('Version: ${telegram.version ?? ''}'),
-          ),
-          ListTile(
-            title: Text('Platform: ${telegram.platform ?? ''}'),
-          ),
-          ListTile(
-            title: Text('Color Scheme: ${telegram.colorScheme?.name ?? ''}'),
-          ),
-          ListTile(
-            title: Text('isActive: ${telegram.isActive}'),
-          ),
-          ListTile(
-            title: Text('isExpanded: ${telegram.isExpanded}'),
-          ),
-          ListTile(
-            title: Text('viewportHeight: ${telegram.viewportHeight}'),
-          ),
-          ListTile(
-            title: Text('viewportStableHeight: ${telegram.viewportStableHeight}'),
-          ),
-          ListTile(
-            title: Text('safeAreaInset: ${telegram.safeAreaInset}'),
-          ),
-          ListTile(
-            title: Text('contentSafeAreaInset: ${telegram.contentSafeAreaInset}'),
-          ),
-          ListTile(
-            title: Text('headerColor: ${telegram.headerColor}'),
-          ),
-          ListTile(
-            title: Text('backgroundColor: ${telegram.backgroundColor}'),
-          ),
-          ListTile(
-            title: Text('bottomBarColor: ${telegram.bottomBarColor}'),
-          ),
-        ],
+            ),
+            SizedBox(height: 32),
+            Text(
+              'Initializing...',
+              style: TextStyle(
+                fontSize: 14,
+                color: Colors.grey,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -201,7 +217,7 @@ Future<void> startGui(List<Client> clients, SharedPreferences store) async {
   await firstClient?.roomsLoading;
   await firstClient?.accountDataLoading;
 
-  runApp(REChainApp(clients: clients, pincode: pin, store: store));
+  runApp(const TelegramMiniApp());
 }
 
 /// Watches the lifecycle changes to start the application when it

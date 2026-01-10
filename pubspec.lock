@@ -2004,14 +2004,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.4.0"
-  telegram_web_app:
-    dependency: "direct main"
-    description:
-      name: telegram_web_app
-      sha256: "5c33aaa07d776552ce55b49b401d0e835115fbeb136877c6d19b3b1491000535"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.3.3"
   term_glyph:
     dependency: transitive
     description:
