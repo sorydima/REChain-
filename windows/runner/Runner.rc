@@ -60,16 +60,16 @@ IDI_APP_ICON            ICON                    "resources\\app_icon.ico"
 // Version
 //
 
-#if defined(FLUTTER_VERSION_MAJOR) && defined(FLUTTER_VERSION_MINOR) && defined(FLUTTER_VERSION_PATCH) && defined(FLUTTER_VERSION_BUILD)
-#define VERSION_AS_NUMBER FLUTTER_VERSION_MAJOR,FLUTTER_VERSION_MINOR,FLUTTER_VERSION_PATCH,FLUTTER_VERSION_BUILD
+#ifdef FLUTTER_BUILD_NUMBER
+#define VERSION_AS_NUMBER FLUTTER_BUILD_NUMBER
 #else
-#define VERSION_AS_NUMBER 1,0,0,0
+#define VERSION_AS_NUMBER 4,1,7
 #endif
 
-#if defined(FLUTTER_VERSION)
-#define VERSION_AS_STRING FLUTTER_VERSION
+#ifdef FLUTTER_BUILD_NAME
+#define VERSION_AS_STRING #FLUTTER_BUILD_NAME
 #else
-#define VERSION_AS_STRING "1.0.0"
+#define VERSION_AS_STRING "4.1.8"
 #endif
 
 VS_VERSION_INFO VERSIONINFO
@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.rechain.online" "\0"
-            VALUE "FileDescription", "rechain_new" "\0"
+            VALUE "CompanyName", "com.rechain" "\0"
+            VALUE "FileDescription", "rechainonline" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "rechain_new" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2025 com.rechain.online. All rights reserved." "\0"
-            VALUE "OriginalFilename", "rechain_new.exe" "\0"
-            VALUE "ProductName", "rechain_new" "\0"
+            VALUE "InternalName", "rechainonline" "\0"
+            VALUE "LegalCopyright", "Copyright © 2019-2025 Need help? 🤔 Donate US! ⌛️ For tea, coffee! For the future of decentralized and distributed internet. We do cool and, in my opinion, useful things for the safety and security of users personal data. And on a completely non-commercial basis! 😎 Email us! 👇 A Dmitry Sorokin production. All rights reserved. Powered by REChain ®️. 🪐 Copyright © 2019-2025 REChain, Inc REChain ® is a registered trademark support@rechain.network Please allow anywhere from 1 to 5 business days for E-mail responses! 💌 Our Stats! 👀 At the end of 2023, the number of downloads from the Open-Source Places, Apple AppStore, Google Play Market, and the REChain.Store, namely the Domestic application store from the REChain ®️ brand 🪐, а именно Отечественный магазин приложений от бренда REChain ®️ 🪐 ✨ exceeded 29 million downloads. 😈" "\0"
+            VALUE "OriginalFilename", "rechainonline.exe" "\0"
+            VALUE "ProductName", "rechainonline" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

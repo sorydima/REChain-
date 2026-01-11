@@ -33,25 +33,7 @@ target 'Runner' do
 
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
 
-  # Firebase pods
-  pod 'Firebase/Crashlytics'
-  pod 'Firebase/Analytics'
-  pod 'Firebase/Messaging'
-  
   target 'REChain.Online Share' do
-    inherit! :search_paths
-  end
-  
-  target 'REChainNotificationService' do
-    inherit! :search_paths
-    pod 'Firebase/Crashlytics'
-  end
-  
-  target 'RunnerTests' do
-    inherit! :search_paths
-  end
-  
-  target 'RunnerUITests' do
     inherit! :search_paths
   end
 end
