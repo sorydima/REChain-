@@ -42,6 +42,11 @@ android {
     compileSdkVersion 35
     ndkVersion = "28.0.13004108"
     namespace = "com.rechain.online"
+    
+    dexOptions {
+        javaMaxHeapSize "4g"
+        preDexLibraries = false
+    }
 
     kotlinOptions {
             jvmTarget = '21'
@@ -86,6 +91,9 @@ android {
         }
         release {
             signingConfig signingConfigs.release
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     packagingOptions {
@@ -93,6 +101,18 @@ android {
         pickFirst 'lib/x86_64/libc++_shared.so'
         pickFirst 'lib/armeabi-v7a/libc++_shared.so'
         pickFirst 'lib/arm64-v8a/libc++_shared.so'
+        pickFirst '**/*.jar'
+        exclude 'META-INF/*.kotlin_module'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/AL2.0'
+        exclude 'META-INF/LGPL2.1'
     }
 }
 
@@ -102,12 +122,12 @@ flutter {
 
 dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
-    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.4'
-    implementation 'com.google.firebase:firebase-bom:33.7.0'
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.2'
+    implementation 'com.google.firebase:firebase-bom:33.9.0'
     implementation 'com.google.firebase:firebase-messaging'
     implementation 'com.google.android.gms:play-services-location:21.3.0'
     // Add dependencies.
-    implementation 'com.huawei.agconnect:agconnect-core:1.5.2.300'
+    implementation 'com.huawei.agconnect:agconnect-core:1.9.1.303'
     // implementation 'ru.rustore.sdk:push:6.10.0'
 }
 
