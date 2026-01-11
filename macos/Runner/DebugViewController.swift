@@ -3,7 +3,7 @@ import UserNotifications
 import os.log
 
 class DebugViewController: NSViewController {
-    private let logger = OSLog(subsystem: "com.rechain.dapp", category: "DebugViewController")
+    private let logger = OSLog(subsystem: "com.rechain.online", category: "DebugViewController")
     private var autonomousNotificationService: AutonomousNotificationService?
     
     @IBOutlet weak var stackView: NSStackView!

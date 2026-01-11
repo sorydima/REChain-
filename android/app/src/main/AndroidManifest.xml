@@ -167,7 +167,7 @@
         </receiver>
 
         <receiver
-            android:name="com.rechain.dapp.CustomPushReceiver"
+            android:name="com.rechain.online.CustomPushReceiver"
             android:exported="true"
             android:enabled="true">
             <intent-filter>
@@ -177,7 +177,7 @@
 
         <!-- Boot receiver for Android 14+ compatibility -->
         <receiver
-            android:name="com.rechain.dapp.BootReceiver"
+            android:name="com.rechain.online.BootReceiver"
             android:exported="true"
             android:enabled="true">
             <intent-filter android:priority="1000">

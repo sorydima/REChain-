@@ -21,9 +21,9 @@ cd ..
 
 # install and launch APK
 "$FLUTTER_PATH" install
-adb shell am start -n com.rechain.dapp/com.rechain.dapp.MainActivity
+adb shell am start -n com.rechain.online/com.rechain.online.MainActivity
 
 sleep 5
 
 # check whether REChain runs
-adb shell ps | awk '{print $9}' | grep com.rechain.dapp
+adb shell ps | awk '{print $9}' | grep com.rechain.online

@@ -6,7 +6,7 @@ FLUTTER_PATH="/home/sorydev/flutter/bin/flutter"
 git apply ./scripts/enable-android-google-services.patch
 RECHAIN_ORIG_GROUP="com.rechain"
 RECHAIN_ORIG_TEAM="ABCDE12345"
-#RECHAIN_NEW_GROUP="com.rechain.dapp"
+#RECHAIN_NEW_GROUP="com.rechain.online"
 #RECHAIN_NEW_TEAM="ABCDE12345"
 
 # In some cases (ie: running beta XCode releases) some pods haven't updated their minimum version

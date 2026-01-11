@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=REChain
-Icon=com.rechain.dapp
+Icon=com.rechain.online
 Exec=REChain %U
 Categories=Network;InstantMessaging;Chat;VideoConference;
 Keywords=REChain;Chat;Messenger;Social

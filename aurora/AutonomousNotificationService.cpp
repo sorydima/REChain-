@@ -22,7 +22,7 @@ AutonomousNotificationService::AutonomousNotificationService(QObject *parent)
     , m_badgeEnabled(true)
     , m_debugLogging(false)
     , m_appName("REChain")
-    , m_iconPath("/usr/share/icons/hicolor/128x128/apps/com.rechain.dapp.png")
+    , m_iconPath("/usr/share/icons/hicolor/128x128/apps/com.rechain.online.png")
     , m_soundPath("/usr/share/sounds/")
     , m_badgeCount(0)
     , m_maxNotifications(10)
@@ -440,7 +440,7 @@ void AutonomousNotificationService::sendAuroraNotification(const NotificationDat
     QVariantMap hints;
     hints["urgency"] = static_cast<int>(notification.priority);
     hints["category"] = QString("im.received"); // Aurora OS category
-    hints["desktop-entry"] = "com.rechain.dapp";
+    hints["desktop-entry"] = "com.rechain.online";
     
     if (notification.persistent) {
         hints["resident"] = true;
@@ -524,7 +524,7 @@ void AutonomousNotificationService::updateSystemBadge()
         "setBadge"
     );
     
-    message << "com.rechain.dapp" << m_badgeCount;
+    message << "com.rechain.online" << m_badgeCount;
     
     QDBusConnection::sessionBus().asyncCall(message);
 }

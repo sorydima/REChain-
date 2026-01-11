@@ -1,7 +1,7 @@
 %global __provides_exclude_from ^%{_datadir}/%{name}/lib/.*$
 %global __requires_exclude ^lib(dconf|flutter-embedder|maliit-glib|.+_platform_plugin)\\.so.*$
 
-Name: com.rechain.dapp
+Name: com.rechain.online
 Summary: The inclusion of polls enhances decision-making processes by facilitating quick and efficient feedback gathering. Additionally, the platform supports user-friendly interface & goods!
 Version: 4.1.8
 Release: 1152

@@ -159,7 +159,7 @@ Runner/
 
 ### Firebase Setup
 1. Add `GoogleService-Info.plist` to `macos/Runner/`
-2. Configure Firebase project with bundle ID `com.rechain.dapp`
+2. Configure Firebase project with bundle ID `com.rechain.online`
 3. Enable Crashlytics, Analytics, and Cloud Messaging
 
 ### Signing Configuration

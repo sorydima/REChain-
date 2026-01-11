@@ -101,7 +101,7 @@ private:
     
     std::string m_applicationName = "REChain";
     std::string m_applicationIcon = "rechain";
-    std::string m_desktopEntry = "com.rechain.dapp";
+    std::string m_desktopEntry = "com.rechain.online";
     
     // D-Bus integration
     GDBusConnection* m_dbusConnection = nullptr;

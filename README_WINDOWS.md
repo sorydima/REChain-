@@ -188,8 +188,8 @@ scripts\package_windows.bat
 - **Taskbar** - Progress and overlay icons
 
 ### Method Channels
-- `com.rechain.dapp/autonomous_notifications` - Notification control
-- `com.rechain.dapp/crash_reporting` - Error reporting
+- `com.rechain.online/autonomous_notifications` - Notification control
+- `com.rechain.online/crash_reporting` - Error reporting
 - Flutter-to-native communication bridge
 
 ## 📊 Monitoring

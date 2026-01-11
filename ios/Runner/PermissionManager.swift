@@ -9,7 +9,7 @@ import CoreLocation
 import os.log
 
 class PermissionManager: NSObject {
-    private let logger = OSLog(subsystem: "com.rechain.dapp", category: "PermissionManager")
+    private let logger = OSLog(subsystem: "com.rechain.online", category: "PermissionManager")
     private var locationManager: CLLocationManager?
     
     override init() {

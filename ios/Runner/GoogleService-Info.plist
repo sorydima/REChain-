@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.rechain.dapp</string>
+	<string>com.rechain.online</string>
 	<key>PROJECT_ID</key>
 	<string>rechainonline-d4190</string>
 	<key>STORAGE_BUCKET</key>

@@ -7,7 +7,7 @@ This document describes the complete Android implementation for REChain, includi
 ## 📱 Features Implemented
 
 ### ✅ Core Android Features
-- **Package Structure**: Fixed package name consistency (`com.rechain.dapp`)
+- **Package Structure**: Fixed package name consistency (`com.rechain.online`)
 - **Autonomous Notifications**: Complete notification system for all app events
 - **Background Services**: Persistent background service for notifications
 - **Crash Reporting**: Firebase Crashlytics integration
@@ -32,7 +32,7 @@ This document describes the complete Android implementation for REChain, includi
 
 ### Android Components
 ```
-com.rechain.dapp/
+com.rechain.online/
 ├── MainActivity.kt                           # Main Flutter activity
 ├── REChainApplication.kt                     # Application class
 ├── AutonomousNotificationService.kt          # Notification service
@@ -128,7 +128,7 @@ scripts\build_android.bat
 scripts\test_android.bat
 
 # Manual testing
-adb shell am start -n com.rechain.dapp/.DebugActivity
+adb shell am start -n com.rechain.online/.DebugActivity
 ```
 
 ### Release Build
@@ -140,7 +140,7 @@ adb shell am start -n com.rechain.dapp/.DebugActivity
 
 ### Firebase Setup
 1. Add `google-services.json` to `android/app/`
-2. Configure Firebase project with package name `com.rechain.dapp`
+2. Configure Firebase project with package name `com.rechain.online`
 3. Enable Crashlytics and Analytics
 
 ### Signing Configuration
@@ -170,7 +170,7 @@ storeFile=path/to/your/keystore.jks
 ### Common Issues
 
 1. **Package Name Mismatch**
-   - Ensure all Kotlin files use `package com.rechain.dapp`
+   - Ensure all Kotlin files use `package com.rechain.online`
    - Verify AndroidManifest.xml references correct package
 
 2. **Notification Not Showing**

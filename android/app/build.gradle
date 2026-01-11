@@ -31,7 +31,7 @@ if (keystorePropertiesFile.exists()) {
 
 android {
 
-    namespace = "com.rechain.dapp"
+    namespace = "com.rechain.online"
     compileSdkVersion 36
     ndkVersion = "29.0.13113456"
     
@@ -66,7 +66,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.rechain.dapp"
+        applicationId "com.rechain.online"
         minSdkVersion flutter.minSdkVersion
         targetSdkVersion 36
         versionCode flutterVersionCode.toInteger()
@@ -167,6 +167,12 @@ dependencies {
 
     // Kotlin Coroutines (часто нужны с WorkManager)
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1"
+}
+
+configurations.all {
+    resolutionStrategy {
+        force 'com.google.crypto.tink:tink-android:1.19.0'
+    }
 }
 
 apply plugin: 'com.huawei.agconnect'

@@ -3,7 +3,7 @@ import UserNotifications
 import os.log
 
 class AutonomousNotificationService {
-    private let logger = OSLog(subsystem: "com.rechain.dapp", category: "AutonomousNotificationService")
+    private let logger = OSLog(subsystem: "com.rechain.online", category: "AutonomousNotificationService")
     private let notificationCenter = UNUserNotificationCenter.current()
     
     init() {

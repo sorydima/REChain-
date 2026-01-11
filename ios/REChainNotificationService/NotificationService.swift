@@ -2,7 +2,7 @@ import UserNotifications
 import os.log
 
 class NotificationService: UNNotificationServiceExtension {
-    private let logger = OSLog(subsystem: "com.rechain.dapp.notification-service", category: "NotificationService")
+    private let logger = OSLog(subsystem: "com.rechain.online.notification-service", category: "NotificationService")
     
     var contentHandler: ((UNNotificationContent) -> Void)?
     var bestAttemptContent: UNMutableNotificationContent?

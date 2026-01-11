@@ -8,7 +8,7 @@
 PRODUCT_NAME = rechain_new
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.rechain.dapp.rechainNew
+PRODUCT_BUNDLE_IDENTIFIER = com.rechain.online.rechainNew
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2025 com.rechain.dapp. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2025 com.rechain.online. All rights reserved.

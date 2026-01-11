@@ -9,7 +9,7 @@
         
         <!-- Debug activity for testing notifications -->
         <activity
-            android:name="com.rechain.dapp.DebugActivity"
+            android:name="com.rechain.online.DebugActivity"
             android:exported="true"
             android:theme="@android:style/Theme.Material.Light">
             <intent-filter>

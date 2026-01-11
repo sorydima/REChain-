@@ -109,7 +109,7 @@ private:
     
     // Application info
     std::string m_applicationName = "REChain";
-    std::string m_applicationId = "com.rechain.dapp";
+    std::string m_applicationId = "com.rechain.online";
     std::string m_applicationIcon = "rechain";
     std::string m_executablePath;
     

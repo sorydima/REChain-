@@ -18,7 +18,7 @@
 	<true/>
 	<key>provisioningProfiles</key>
 	<dict>
-		<key>com.rechain.dapp</key>
+		<key>com.rechain.online</key>
 		<string>REChain macOS Distribution</string>
 	</dict>
 </dict>

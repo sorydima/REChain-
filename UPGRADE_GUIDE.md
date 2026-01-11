@@ -36,7 +36,7 @@ import 'package:rechain/new_module.dart';
 oldMethod() => newMethod();
 ```
 
-## Upgrading from v4.1.6 to v4.1.7
+## Upgrading from v4.1.6 to v4.1.8
 
 ### Breaking Changes
 - Removed deprecated API endpoints

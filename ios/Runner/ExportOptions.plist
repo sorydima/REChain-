@@ -10,11 +10,11 @@
 	<string>app-store</string>
 	<key>provisioningProfiles</key>
 	<dict>
-		<key>com.rechain.dapp</key>
+		<key>com.rechain.online</key>
 		<string>REChain App Store</string>
-		<key>com.rechain.dapp.REChainNotificationService</key>
+		<key>com.rechain.online.REChainNotificationService</key>
 		<string>REChain Notification Service</string>
-		<key>com.rechain.dapp.ShareExtension</key>
+		<key>com.rechain.online.ShareExtension</key>
 		<string>REChain Share Extension</string>
 	</dict>
 	<key>signingCertificate</key>

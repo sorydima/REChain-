@@ -224,7 +224,7 @@ The application stores configuration in:
 ### System Integration
 - URL handler: `x-scheme-handler/matrix`
 - MIME types: Matrix protocol links
-- D-Bus service: `com.rechain.dapp.Notifications`
+- D-Bus service: `com.rechain.online.Notifications`
 
 ## Native Services API
 

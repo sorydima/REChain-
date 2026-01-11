@@ -3,7 +3,7 @@ import Cocoa
 import os.log
 
 class BuildConfigHelper {
-    private static let logger = OSLog(subsystem: "com.rechain.dapp", category: "BuildConfig")
+    private static let logger = OSLog(subsystem: "com.rechain.online", category: "BuildConfig")
     
     static func getVersionInfo() -> VersionInfo {
         guard let infoPlist = Bundle.main.infoDictionary else {

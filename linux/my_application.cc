@@ -159,7 +159,7 @@ void InitializeNativeServices() {
   if (notificationService.Initialize()) {
     notificationService.SetApplicationName("REChain");
     notificationService.SetApplicationIcon("rechain");
-    notificationService.SetDesktopEntry("com.rechain.dapp");
+    notificationService.SetDesktopEntry("com.rechain.online");
   }
   
   // Initialize system integration

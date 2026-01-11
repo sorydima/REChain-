@@ -2341,7 +2341,7 @@ Changes:
 
 -   Remove redundant `event_auth` index. ([\#1113](https://github.com/matrix-org/synapse/issues/1113))
 -   Reduce DB hits for replication. ([\#1141](https://github.com/matrix-org/synapse/issues/1141))
--   Implement pluggable password auth. ([\#1155](https://github.com/matrix-org/synapse/issues/1155))
+-   Implement pluggable password auth. ([\#1156](https://github.com/matrix-org/synapse/issues/1156))
 -   Remove rate limiting from app service senders and fix `get_or_create_user` requester, thanks to Patrik Oldsberg. ([\#1157](https://github.com/matrix-org/synapse/issues/1157))
 -   window.postmessage for Interactive Auth fallback. ([\#1159](https://github.com/matrix-org/synapse/issues/1159))
 -   Use sys.executable instead of hardcoded python, thanks to Pedro Larroy. ([\#1162](https://github.com/matrix-org/synapse/issues/1162))

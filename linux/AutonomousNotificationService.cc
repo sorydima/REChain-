@@ -9,7 +9,7 @@
 // D-Bus interface XML definition
 const gchar* AutonomousNotificationService::DBUS_INTERFACE_XML =
     "<node>"
-    "  <interface name='com.rechain.dapp.Notifications'>"
+    "  <interface name='com.rechain.online.Notifications'>"
     "    <method name='ShowNotification'>"
     "      <arg type='s' name='type' direction='in'/>"
     "      <arg type='s' name='title' direction='in'/>"

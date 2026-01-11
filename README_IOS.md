@@ -154,9 +154,9 @@ Runner/
 
 ### Firebase Setup
 1. Add `GoogleService-Info.plist` to `ios/Runner/`
-2. Configure Firebase project with bundle ID `com.rechain.dapp`
+2. Configure Firebase project with bundle ID `com.rechain.online`
 3. Enable Crashlytics, Analytics, and Cloud Messaging
-4. Add notification service extension bundle ID: `com.rechain.dapp.REChainNotificationService`
+4. Add notification service extension bundle ID: `com.rechain.online.REChainNotificationService`
 
 ### Signing Configuration
 1. Open `ios/Runner.xcworkspace` in Xcode

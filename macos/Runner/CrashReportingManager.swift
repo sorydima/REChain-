@@ -4,7 +4,7 @@ import os.log
 
 class CrashReportingManager {
     static let shared = CrashReportingManager()
-    private let logger = OSLog(subsystem: "com.rechain.dapp", category: "CrashReporting")
+    private let logger = OSLog(subsystem: "com.rechain.online", category: "CrashReporting")
     private var isInitialized = false
     
     private init() {}

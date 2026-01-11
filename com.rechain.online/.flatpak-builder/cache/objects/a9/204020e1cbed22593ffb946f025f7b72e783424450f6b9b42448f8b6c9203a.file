@@ -1,4 +1,4 @@
 [Application]
-name=com.rechain.dapp
+name=com.rechain.online
 runtime=org.freedesktop.Platform/x86_64/23.08
 sdk=org.freedesktop.Sdk/x86_64/23.08
