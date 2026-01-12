@@ -13,13 +13,24 @@ if (file("google-services.json").exists()) {
 }
 
 dependencies {
-    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4") // For flutter_local_notifications // Workaround for: https://github.com/MaikuB/flutter_local_notifications/issues/2286
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4") // For flutter_local_notifications
+    implementation("androidx.core:core-ktx:1.17.0") // For Android Auto
+}
+
+configurations.all {
+    val tink = "com.google.crypto.tink:tink-android:1.17.0"
+    resolutionStrategy {
+        force(tink)
+        dependencySubstitution {
+            substitute(module("com.google.crypto.tink:tink")).using(module(tink))
+        }
+    }
 }
 
 android {
     namespace = "com.rechain.online"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = "28.2.13676358"
+    ndkVersion = flutter.ndkVersion
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -63,6 +74,8 @@ android {
     buildTypes {
         release {
             signingConfig = signingConfigs.getByName("release")
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
         }
     }
@@ -70,10 +83,4 @@ android {
 
 flutter {
     source = "../.."
-}
-
-configurations.all {
-    resolutionStrategy {
-        force("com.google.crypto.tink:tink-android:1.19.0")
-    }
 }
