@@ -19,7 +19,7 @@ dependencies {
 android {
     namespace = "com.rechain.online"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = "27.0.12077973"
+    ndkVersion = "28.2.13676358"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -54,7 +54,7 @@ android {
 
     defaultConfig {
         applicationId = "com.rechain.online"
-        minSdk = 21
+        minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
@@ -70,4 +70,10 @@ android {
 
 flutter {
     source = "../.."
+}
+
+configurations.all {
+    resolutionStrategy {
+        force("com.google.crypto.tink:tink-android:1.19.0")
+    }
 }
