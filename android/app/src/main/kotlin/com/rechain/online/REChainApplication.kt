@@ -17,11 +17,11 @@ class REChainApplication : Application() {
         instance = this
         
         // Initialize Timber logging
-        if (BuildConfig.DEBUG) {
+        // if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
-        } else {
-            Timber.plant(ReleaseTree())
-        }
+        // } else {
+        //     Timber.plant(ReleaseTree())
+        // }
         
         Timber.d("REChainApplication initialized")
         

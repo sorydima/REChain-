@@ -137,7 +137,7 @@
           </intent-filter>
         </service>
 
-        <receiver android:name="org.unifiedpush.flutter.connector.UnifiedPushReceiver"
+        <receiver android:name="org.unifiedpush.flutter.connector.MessagingReceiver"
             tools:replace="android:enabled"
             android:enabled="false">
         </receiver>
