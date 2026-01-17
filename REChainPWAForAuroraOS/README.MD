@@ -225,6 +225,9 @@ REChainPWAForAuroraOS/
 ```
 
 ## 🌐 GitHub Pages (предпросмотр)
+
+**Version: 4.1.10+1160** | **Build: 1160**
+
 Проект можно просматривать в браузере по ссылке:
 [https://sorydima.github.io/REChain-/REChainPWAForAuroraOS/](https://sorydima.github.io/REChain-/REChainPWAForAuroraOS/)
 

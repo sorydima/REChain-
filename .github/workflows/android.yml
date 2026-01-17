@@ -1,0 +1,299 @@
+name: REChain Android CI/CD
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - 'android/**'
+      - 'pubspec.yaml'
+      - '.github/workflows/android.yml'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'android/**'
+      - 'pubspec.yaml'
+
+env:
+  flutter_version: '3.32.8'
+  java_version: '17'
+
+jobs:
+  analyze:
+    name: Code Analysis
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ env.java_version }}
+          distribution: 'temurin'
+      
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.flutter_version }}
+      
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.pub-cache
+            build
+            .dart_tool
+          key: ${{ runner.os }}-flutter-${{ env.flutter_version }}-android-${{ hashFiles('pubspec.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-flutter-${{ env.flutter_version }}-android-
+      
+      - name: Get dependencies
+        run: flutter pub get
+      
+      - name: Run Flutter analyzer
+        run: flutter analyze
+      
+      - name: Check formatting
+        run: flutter format --set-exit-if-changed lib/
+
+  test:
+    name: Unit Tests
+    runs-on: ubuntu-latest
+    needs: analyze
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ env.java_version }}
+          distribution: 'temurin'
+      
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.flutter_version }}
+      
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.pub-cache
+            build
+            .dart_tool
+          key: ${{ runner.os }}-flutter-${{ env.flutter_version }}-test-${{ hashFiles('pubspec.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-flutter-${{ env.flutter_version }}-test-
+      
+      - name: Get dependencies
+        run: flutter pub get
+      
+      - name: Run unit tests
+        run: flutter test --coverage
+
+  build-debug:
+    name: Build Debug APK
+    runs-on: ubuntu-latest
+    needs: test
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ env.java_version }}
+          distribution: 'temurin'
+      
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.flutter_version }}
+      
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.pub-cache
+            build
+            .dart_tool
+          key: ${{ runner.os }}-flutter-${{ env.flutter_version }}-build-${{ hashFiles('pubspec.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-flutter-${{ env.flutter_version }}-build-
+      
+      - name: Get dependencies
+        run: flutter pub get
+      
+      - name: Build Debug APK
+        run: flutter build apk --debug --verbose
+      
+      - name: Upload Debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: rechain-debug.apk
+          path: build/app/outputs/flutter-apk/app-debug.apk
+          retention-days: 7
+
+  build-release:
+    name: Build Release APK & AAB
+    runs-on: ubuntu-latest
+    needs: test
+    if: github.ref == 'refs/heads/main' || github.event.repository.private
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ env.java_version }}
+          distribution: 'temurin'
+      
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.flutter_version }}
+      
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.pub-cache
+            build
+            .dart_tool
+          key: ${{ runner.os }}-flutter-${{ env.flutter_version }}-release-${{ hashFiles('pubspec.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-flutter-${{ env.flutter_version }}-release-
+      
+      - name: Get dependencies
+        run: flutter pub get
+      
+      - name: Decode keystore
+        if: env.ANDROID_KEYSTORE_BASE64 != ''
+        run: |
+          echo "${{ env.ANDROID_KEYSTORE_BASE64 }}" | base64 -d > android/release.keystore
+          echo "keystoreFile=release.keystore" > android/key.properties
+          echo "storePassword=${{ env.ANDROID_KEYSTORE_PASSWORD }}" >> android/key.properties
+          echo "keyAlias=${{ env.ANDROID_KEY_ALIAS }}" >> android/key.properties
+          echo "keyPassword=${{ env.ANDROID_KEY_PASSWORD }}" >> android/key.properties
+        shell: bash
+      
+      - name: Build Release APK
+        run: flutter build apk --release --verbose
+        env:
+          ANDROID_KEYSTORE_FILE: ${{ secrets.ANDROID_KEYSTORE_FILE }}
+          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+      
+      - name: Build App Bundle
+        run: flutter build appbundle --release --verbose
+      
+      - name: Upload Release APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: rechain-release.apk
+          path: build/app/outputs/flutter-apk/app-release.apk
+          retention-days: 30
+      
+      - name: Upload App Bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: rechain-release.aab
+          path: build/app/outputs/bundle/release/app-release.aab
+          retention-days: 30
+
+  android-test:
+    name: Android Integration Tests
+    runs-on: macos-latest
+    needs: test
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ env.java_version }}
+          distribution: 'temurin'
+      
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.flutter_version }}
+      
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.pub-cache
+            build
+            .dart_tool
+          key: ${{ runner.os }}-flutter-${{ env.flutter_version }}-test-${{ hashFiles('pubspec.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-flutter-${{ env.flutter_version }}-test-
+      
+      - name: Get dependencies
+        run: flutter pub get
+      
+      - name: Run integration tests
+        run: flutter test integration_test --verbose
+
+  lint:
+    name: Android Lint
+    runs-on: ubuntu-latest
+    needs: analyze
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ env.java_version }}
+          distribution: 'temurin'
+      
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.flutter_version }}
+      
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.pub-cache
+            build
+            .dart_tool
+          key: ${{ runner.os }}-flutter-${{ env.flutter_version }}-lint-${{ hashFiles('pubspec.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-flutter-${{ env.flutter_version }}-lint-
+      
+      - name: Get dependencies
+        run: flutter pub get
+      
+      - name: Run Android lint
+        run: ./gradlew lintDebug
+
+  notify:
+    name: Notify
+    runs-on: ubuntu-latest
+    needs: [build-debug, build-release, android-test, lint]
+    if: always()
+    
+    steps:
+      - name: Send notification
+        if: needs.build-release.result == 'success'
+        run: |
+          echo "✅ Android build completed successfully"
+          echo "📦 Artifacts available for download"
+

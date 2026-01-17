@@ -15,22 +15,22 @@ sudo apt-get update
 sudo apt-get install rechainonline
 
 # Принудительная установка (осторожно!)
-sudo dpkg -i --force-depends rechainonline-4.1.8-amd64.deb
+sudo dpkg -i --force-depends rechainonline-4.1.10-amd64.deb
 ```
 
 #### RPM пакеты (РЕД ОС, ОС «Альт», РОСА)
 ```bash
 # Ошибка: "Failed dependencies"
-sudo dnf install rechainonline-4.1.8-1.x86_64.rpm --skip-broken
-sudo yum localinstall rechainonline-4.1.8-1.x86_64.rpm --nogpgcheck
+sudo dnf install rechainonline-4.1.10-1.x86_64.rpm --skip-broken
+sudo yum localinstall rechainonline-4.1.10-1.x86_64.rpm --nogpgcheck
 
 # Конфликт пакетов
 sudo rpm -e --nodeps conflicting-package
-sudo rpm -i rechainonline-4.1.8-1.x86_64.rpm
+sudo rpm -i rechainonline-4.1.10-1.x86_64.rpm
 
 # Проблемы с подписью
 sudo rpm --import https://rechain.online/gpg-key.asc
-sudo rpm -i rechainonline-4.1.8-1.x86_64.rpm
+sudo rpm -i rechainonline-4.1.10-1.x86_64.rpm
 ```
 
 #### AppImage проблемы
@@ -389,5 +389,5 @@ md5sum /usr/share/rechainonline/rechainonline
 
 ---
 
-*Руководство по устранению неполадок версии 4.1.8+1152*
+*Руководство по устранению неполадок версии 4.1.10+1160*
 *Обновлено для всех поддерживаемых российских ОС Linux*

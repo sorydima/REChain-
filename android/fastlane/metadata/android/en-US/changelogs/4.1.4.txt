@@ -1,4 +1,4 @@
-## REChain 4.1.8 - Changelog
+## REChain 4.1.10 - Changelog
 
 ### Features
 - **Space Hierarchy**: Introduced a new space hierarchy system for better organization and navigation.

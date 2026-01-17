@@ -1,5 +1,5 @@
 
-REChain 4.1.2 brings support for using multiple accounts and has an early implementation of quickly switching accounts via input bar (useful for roleplaying :wink:), which will get better in a future release, but for now, for impatient people, it can be used by enabling a prefix with Element's (Web/Desktop) `/devtools` by editing the account state, which can also be used for sorting accounts.
+REChain 4.1.10 brings support for using multiple accounts and has an early implementation of quickly switching accounts via input bar (useful for roleplaying :wink:), which will get better in a future release, but for now, for impatient people, it can be used by enabling a prefix with Element's (Web/Desktop) `/devtools` by editing the account state, which can also be used for sorting accounts.
 
 These steps are repeated for every account into which quick switching is desired, the ones below add prefix "M" for "mikaela:feneas.org", but to switch that either using the GUI is necessarily or performing the steps as another account (e.g. for setting "C" for "Ciblia:matrix.org"). The switching happens once space is pressed after the prefix char.
 
@@ -19,8 +19,8 @@ These steps are repeated for every account into which quick switching is desired
 
 General notes:
 
-* 4.1.2 had a bug where using automatic server discovery through well-known causes all accounts to get logged out. Use server name instead, e.g. `https://matrix-client.matrix.org` (discovered from https://matrix.org/.well-known/matrix/client)
-  * This is fixed in 4.1.2.
+* 4.1.10 had a bug where using automatic server discovery through well-known causes all accounts to get logged out. Use server name instead, e.g. `https://matrix-client.matrix.org` (discovered from https://matrix.org/.well-known/matrix/client)
+  * This is fixed in 4.1.10.
 * Quick account switching will only work within a bundle, which by default is implied to be the MXID, so by default it's disabled
 * Note the avatar next to the input bar showing which account you are using. It can also be used for switching accounts.
 * Tapping it to change account will also change which account will send any other events like media/reaction etc.

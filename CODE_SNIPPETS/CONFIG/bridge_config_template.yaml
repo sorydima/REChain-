@@ -1,0 +1,180 @@
+# Bridge Configuration Template for REChain
+# Copy this file and customize for your bridge
+
+# Homeserver Configuration
+homeserver:
+  address: http://synapse:8008
+  domain: your.domain.tld
+  # Connection settings
+  connection_timeout: 30
+  read_timeout: 60
+  write_timeout: 60
+  max_retries: 3
+  retry_delay: 5
+
+# Application Service Configuration
+appservice:
+  database: appservice.db
+  database_opts:
+    pool_size: 10
+    max_overflow: 20
+    timeout: 30
+  session_timeout: 300
+  idle_timeout: 600
+
+# Logging Configuration
+logging:
+  level: info
+  format: json
+  output: file
+  log_file: /data/bridge.log
+  max_size: 100M
+  backup_count: 5
+
+# Performance Tuning
+performance:
+  message_processing_workers: 4
+  batch_size: 100
+  batch_timeout: 5
+  rate_limit:
+    enabled: true
+    requests_per_second: 50
+    burst_size: 100
+  cache:
+    enabled: true
+    max_entries: 10000
+    ttl: 3600
+  connection_pool:
+    min_connections: 2
+    max_connections: 20
+    max_idle_time: 300
+
+# Security Settings
+security:
+  encryption:
+    enabled: true
+    algorithm: AES-256-GCM
+  authentication:
+    method: token
+    token_rotation_interval: 86400
+  access_control:
+    default_policy: deny
+    allowed_users:
+      - "@admin:your.domain.tld"
+  user_rate_limit:
+    enabled: true
+    messages_per_minute: 60
+    messages_per_hour: 1000
+
+# Bridge-Specific Settings (customize per bridge)
+bridge:
+  # Bot configuration
+  bot:
+    token: "__CHANGE_ME__"
+    username: "your_bot_username"
+    privacy_mode: "users"
+  
+  # Connection settings
+  connection:
+    use_ipv6: false
+    proxy: null
+    max_connections: 5
+  
+  # Message handling
+  message:
+    format: "matrix"
+    content_format: "html"
+    max_message_size: 65536
+    allow_reactions: true
+    allow_edits: true
+    allow_reply: true
+  
+  # Group bridging
+  group:
+    bridge_initial_chat: true
+    invite_own_puppet_to_pm: false
+    direct_chat_on_invite: true
+  
+  # User bridging
+  user:
+    puppet_source: "platform"
+    avatar_source: "both"
+    displayname_source: "platform"
+  
+  # Admin management
+  admin:
+    enabled: true
+    relaybot: "@relaybot:your.domain.tld"
+  
+  # Relay bot
+  relay:
+    enabled: true
+    username_suffix: "relaybot"
+    icon: "default"
+  
+  # Double puppeting
+  double_puppet:
+    enabled: true
+    source: "platform"
+  
+  # Bridging settings
+  bridging:
+    public: false
+    default_visibility: "private"
+    enable_status_bridging: true
+    enable_typing_bridging: true
+    enable_read_bridging: true
+    enable_presence_bridging: false
+    resend_bridge_info: true
+    async_transmission: true
+  
+  # Push notifications
+  push:
+    enabled: false
+    notifications: false
+    alert_words: []
+  
+  # Metrics
+  metrics:
+    enabled: true
+    port: 8001
+    path: "/metrics"
+  
+  # Webhook configuration
+  webhook:
+    enabled: false
+    url: null
+    secret: null
+  
+  # Room configuration
+  room:
+    default_bridge_name: "bridge"
+    override_mxid_format: "{displayname}"
+    ignore_users:
+      spaces: []
+      users: []
+
+# Experimental Features
+experimental:
+  matrix_live:
+    enabled: false
+  msc:
+    - "msc2409"
+    - "msc3381"
+    - "msc3440"
+
+# Health Check Configuration
+health:
+  enabled: true
+  port: 8008
+  path: "/health"
+  interval: 30
+  timeout: 10
+
+# Backup and Recovery
+backup:
+  enabled: true
+  interval: 86400
+  retention: 7
+  path: "/data/backups"
+

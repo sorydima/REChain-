@@ -1,6 +1,211 @@
-# discord config.yaml
+# discord config.yaml - Upgraded for REChain v4.1.10+1160
+# Enhanced with modern features, performance optimizations, and security improvements
+
 homeserver:
   address: http://synapse:8008
   domain: your.domain.tld
+  # Modern connection settings
+  connection_timeout: 30
+  read_timeout: 60
+  write_timeout: 60
+  max_retries: 3
+  retry_delay: 5
+
 appservice:
   database: appservice.db
+  # Enhanced database configuration
+  database_opts:
+    pool_size: 5
+    max_overflow: 10
+    timeout: 20
+  # Session management
+  session_timeout: 300
+  idle_timeout: 600
+
+# Logging configuration
+logging:
+  level: info
+  format: json
+  output: file
+  log_file: /data/mautrix.log
+  max_size: 100M
+  backup_count: 5
+  structured:
+    enabled: true
+    timestamp_format: ISO8601
+
+# Performance tuning
+performance:
+  # Message processing
+  message_processing_workers: 4
+  batch_size: 100
+  batch_timeout: 5
+  # Rate limiting
+  rate_limit:
+    enabled: true
+    requests_per_second: 50
+    burst_size: 100
+  # Caching
+  cache:
+    enabled: true
+    max_entries: 10000
+    ttl: 3600
+  # Connection pooling
+  connection_pool:
+    min_connections: 2
+    max_connections: 20
+    max_idle_time: 300
+
+# Security enhancements
+security:
+  # Encryption
+  encryption:
+    enabled: true
+    algorithm: AES-256-GCM
+  # Authentication
+  authentication:
+    method: token
+    token_rotation_interval: 86400
+  # Access control
+  access_control:
+    default_policy: deny
+    allowed_users:
+      - "@admin:your.domain.tld"
+  # Rate limiting per user
+  user_rate_limit:
+    enabled: true
+    messages_per_minute: 60
+    messages_per_hour: 1000
+
+# Bridge-specific settings
+bridge:
+  # Discord settings
+  discord:
+    # Bot configuration
+    bot:
+      token: "__CHANGE_ME__"
+      username: "your_bot_username"
+      owner: "__CHANGE_ME__"
+      prefix: "!matrix"
+    # Connection settings
+    connection:
+      use_ipv6: false
+      proxy: null
+      max_connections: 5
+    # Message handling
+    message:
+      format: "matrix"
+      content_format: "html"
+      max_message_size: 65536
+      allow_reactions: true
+      allow_edits: true
+      allow_reply: true
+      allow_forward: true
+      allow_reply_notices: true
+      allow_bots: true
+      allow_commands: true
+      command_prefix: "!matrix"
+    # Channel bridging
+    channel:
+      bridge_initial_chat: true
+      direct_chat_on_invite: true
+      private_chat_on_invite: false
+      sync_permissions: true
+    # User bridging
+    user:
+      puppet_source: "discord"
+      avatar_source: "both"
+      displayname_source: "discord"
+    # Admin management
+    admin:
+      enabled: true
+      relaybot: "@relaybot:your.domain.tld"
+  # Relay bot configuration
+  relay:
+    enabled: true
+    username_suffix: "relaybot"
+    icon: "default"
+  # Double puppeting
+  double_puppet:
+    enabled: true
+    source: "discord"
+  # Bridging settings
+  bridging:
+    public: false
+    default_visibility: "private"
+    enable_status_bridging: true
+    enable_typing_bridging: true
+    enable_read_bridging: true
+    enable_presence_bridging: false
+    resend_bridge_info: true
+    async_transmission: true
+  # Guild configuration
+  guild:
+    bridge_all: false
+    update_guild_info: true
+    update_channel_info: true
+    update_role_info: true
+  # Emoji and sticker bridging
+  emoji:
+    enabled: true
+    emoji_action: "matrix"
+    sticker_action: "matrix"
+  # Voice channel bridging
+  voice:
+    enabled: false
+    bridge_voice: false
+  # Push notifications
+  push:
+    enabled: false
+    notifications: false
+    alert_words: []
+  # Metrics and monitoring
+  metrics:
+    enabled: true
+    port: 8001
+    path: "/metrics"
+  # Webhook configuration
+  webhook:
+    enabled: true
+    url: null
+    secret: null
+  # Room configuration
+  room:
+    default_bridge_name: "discord"
+    override_mxid_format: "{displayname} (discord)"
+    ignore_users:
+      spaces: []
+      users: []
+    alias_template: "discord_{guild}_{channel}"
+
+# Experimental features
+experimental:
+  matrix_live:
+    enabled: false
+  msc:
+    - "msc2409"
+    - "msc3381"
+    - "msc3440"
+
+# Health check configuration
+health:
+  enabled: true
+  port: 8008
+  path: "/health"
+  interval: 30
+  timeout: 10
+
+# Backup and recovery
+backup:
+  enabled: true
+  interval: 86400
+  retention: 7
+  path: "/data/backups"
+
+# Migration settings
+migration:
+  enabled: false
+  from_version: null
+  to_version: "4.1.10+1160"
+  backup_before_migration: true
+

@@ -118,7 +118,7 @@ struct Index {
       Blank()
 
       // Footer
-      Text('REChain v4.1.4 - HarmonyOS')
+      Text('REChain v4.1.10+1160 - HarmonyOS')
         .fontSize(12)
         .fontColor('#999999')
         .margin({ bottom: 20 })

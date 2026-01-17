@@ -1,0 +1,68 @@
+graph TB
+    subgraph "Presentation Layer"
+        Mobile["📱 Flutter Mobile"]
+        Web["🌐 Web PWA"]
+        Desktop["🖥️ Desktop Linux"]
+        Android["🤖 Android App"]
+    end
+
+    subgraph "API Gateway Layer"
+        REST["REST API"]
+        WS["WebSocket Server"]
+        GraphQL["GraphQL Endpoint"]
+        gRPC["gRPC Service"]
+    end
+
+    subgraph "Core Services"
+        Matrix["💬 Matrix Server"]
+        Blockchain["⛓️ Blockchain Services"]
+        IPFS["📦 IPFS Network"]
+        AI["🧠 AI Services"]
+        Plugin["🔌 Plugin Engine"]
+        Identity["🆔 Identity Service"]
+    end
+
+    subgraph "Data Layer"
+        PostgreSQL["🐘 PostgreSQL"]
+        Redis["🔴 Redis Cache"]
+        SQLCipher["🔐 SQLCipher DB"]
+        IPFSStorage["📦 IPFS Storage"]
+    end
+
+    Mobile --> REST
+    Web --> WS
+    Desktop --> GraphQL
+    Android --> gRPC
+
+    REST --> Matrix
+    WS --> Matrix
+    GraphQL --> Plugin
+    gRPC --> Blockchain
+
+    Matrix --> PostgreSQL
+    Blockchain --> Redis
+    IPFS --> IPFSStorage
+    AI --> SQLCipher
+
+    Identity --> Redis
+    Plugin --> Redis
+
+    style Mobile fill:#42a5f5
+    style Web fill:#42a5f5
+    style Desktop fill:#42a5f5
+    style Android fill:#42a5f5
+    style REST fill:#66bb6a
+    style WS fill:#66bb6a
+    style GraphQL fill:#66bb6a
+    style gRPC fill:#66bb6a
+    style Matrix fill:#ffa726
+    style Blockchain fill:#ffa726
+    style IPFS fill:#ffa726
+    style AI fill:#ffa726
+    style Plugin fill:#ffa726
+    style Identity fill:#ffa726
+    style PostgreSQL fill:#ef5350
+    style Redis fill:#ef5350
+    style SQLCipher fill:#ef5350
+    style IPFSStorage fill:#ef5350
+

@@ -1,0 +1,54 @@
+# Keystore Configuration for Release Builds
+# REChain Android Release Signing
+# Version: 4.1.10+1160
+# ⚠️ IMPORTANT: Keep this file out of version control!
+# Add to .gitignore: key.properties
+
+## Release Keystore Details
+# Generate with:
+# keytool -genkey -v -storetype JKS -keyalg RSA -keysize 2048 \
+#   -validity 10000 -keystore release.keystore \
+#   -alias rechain-release -storepass <store_password> -keypass <key_password>
+
+# Keystore file path (absolute or relative to android directory)
+storeFile=../release.keystore
+
+# Keystore password
+storePassword=your_store_password_here
+
+# Key alias name
+keyAlias=rechain-release
+
+# Key password
+keyPassword=your_key_password_here
+
+## Google Play App Signing (Recommended)
+# If using Google Play App Signing, export your upload key:
+# 1. Go to Google Play Console > Release > Setup > App signing
+# 2. Download deployment_cert.der
+# 3. Convert to PEM:
+#    openssl x509 -in deployment_cert.der -inform DER -out upload_cert.pem -outform PEM
+# 4. Configure in build.gradle.kts
+
+## CI/CD Environment Variables
+# For automated builds, use environment variables:
+# - KEYSTORE_FILE (base64 encoded keystore)
+# - KEYSTORE_PASSWORD
+# - KEY_ALIAS
+# - KEY_PASSWORD
+
+## Example for GitHub Actions
+# env:
+#   KEYSTORE_FILE: ${{ secrets.KEYSTORE_FILE }}
+#   KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+#   KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+#   KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+
+## Security Best Practices
+# 1. Never commit keystore files to version control
+# 2. Use strong passwords (16+ characters)
+# 3. Use separate keys for debug and release
+# 4. Store keystores in secure location (encrypted storage)
+# 5. Rotate keys periodically
+# 6. Keep backup in secure offline storage
+

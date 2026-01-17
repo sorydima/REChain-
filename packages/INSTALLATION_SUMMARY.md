@@ -6,9 +6,9 @@
 
 | Формат пакета | Файл | Размер | Статус |
 |---|---|---|---|
-| **DEB** | `rechainonline-4.1.8-amd64.deb` | 48.4 МБ | ✅ Готов |
-| **RPM Binary** | `rpm/RPMS/x86_64/rechainonline-4.1.8-1.x86_64.rpm` | 50.3 МБ | ✅ Готов |
-| **RPM Source** | `rpm/SRPMS/rechainonline-4.1.8-1.src.rpm` | 56.7 МБ | ✅ Готов |
+| **DEB** | `rechainonline-4.1.10+1160-amd64.deb` | 48.4 МБ | ✅ Готов |
+| **RPM Binary** | `rpm/RPMS/x86_64/rechainonline-4.1.10+1160-1.x86_64.rpm` | 50.3 МБ | ✅ Готов |
+| **RPM Source** | `rpm/SRPMS/rechainonline-4.1.10+1160-1.src.rpm` | 56.7 МБ | ✅ Готов |
 | **AppImage** | `appimage/rechainonline.AppDir/` | Структура | ✅ Готов |
 
 ### 🇷🇺 Поддерживаемые российские ОС
@@ -33,15 +33,15 @@
 
 ### Astra Linux (DEB)
 ```bash
-sudo dpkg -i rechainonline-4.1.8-amd64.deb
+sudo dpkg -i rechainonline-4.1.10+1160-amd64.deb
 sudo apt-get install -f
 ```
 
 ### РЕД ОС, ОС «Альт», РОСА (RPM)
 ```bash
-sudo dnf install rechainonline-4.1.8-1.x86_64.rpm
+sudo dnf install rechainonline-4.1.10+1160-1.x86_64.rpm
 # или
-sudo rpm -i rechainonline-4.1.8-1.x86_64.rpm
+sudo rpm -i rechainonline-4.1.10+1160-1.x86_64.rpm
 ```
 
 ### Универсальная установка (AppImage)
@@ -103,6 +103,7 @@ chmod +x appimage/rechainonline.AppDir/AppRun
 **🎯 REChain успешно подготовлен для всех основных российских операционных систем Linux!**
 
 *Сборка завершена: $(date)*  
-*Версия: 4.1.8+1152*  
+*Версия: 4.1.10+1160*  
+*Build: 1160*  
 *Поддерживаемых ОС: 12*  
 *Форматов пакетов: 3 (DEB, RPM, AppImage)*

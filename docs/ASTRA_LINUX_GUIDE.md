@@ -20,13 +20,13 @@ Astra Linux является основной операционной сист�
 ### Стандартная установка
 ```bash
 # Скачайте пакет из доверенного источника
-wget --no-check-certificate https://github.com/sorydima/REChain-/releases/latest/download/rechainonline-4.1.8-amd64.deb
+wget --no-check-certificate https://github.com/sorydima/REChain-/releases/latest/download/rechainonline-4.1.10-amd64.deb
 
 # Проверьте целостность пакета (опционально)
-sha256sum rechainonline-4.1.8-amd64.deb
+sha256sum rechainonline-4.1.10-amd64.deb
 
 # Установите пакет
-sudo dpkg -i rechainonline-4.1.8-amd64.deb
+sudo dpkg -i rechainonline-4.1.10-amd64.deb
 
 # Исправьте зависимости
 sudo apt-get install -f
@@ -38,8 +38,8 @@ sudo apt-get install -f
 sudo pdpl-user -i rechainonline
 
 # Установка с проверкой цифровой подписи
-sudo dpkg --verify rechainonline-4.1.8-amd64.deb
-sudo dpkg -i rechainonline-4.1.8-amd64.deb
+sudo dpkg --verify rechainonline-4.1.10-amd64.deb
+sudo dpkg -i rechainonline-4.1.10-amd64.deb
 
 # Настройка меток безопасности
 sudo pdpl-file -l "Несекретно" /usr/bin/rechainonline
@@ -81,7 +81,7 @@ export http_proxy=http://proxy.company.ru:8080
   tasks:
     - name: Download REChain package
       get_url:
-        url: https://github.com/sorydima/REChain-/releases/latest/download/rechainonline-4.1.8-amd64.deb
+        url: https://github.com/sorydima/REChain-/releases/latest/download/rechainonline-4.1.10-amd64.deb
         dest: /tmp/rechainonline.deb
         
     - name: Install REChain
@@ -234,5 +234,5 @@ ldd /usr/share/rechainonline/rechainonline | grep gtk
 
 ---
 
-*Руководство для Astra Linux версии 4.1.8+1152*
+*Руководство для Astra Linux версии 4.1.10+1160*
 *Сертифицировано для использования в государственных учреждениях РФ*

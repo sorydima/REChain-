@@ -4,7 +4,7 @@
 
 ## Latest Release Information
 
-This document is updated for REChain version 4.1.8+1152, released on 2025-07-08.
+This document is updated for REChain version 4.1.10+1160, released on 2025-12-06.
 
 ---
 
@@ -66,4 +66,4 @@ This Code of Conduct is adapted from the [Contributor Covenant](https://www.cont
 
 ---
 
-*This Code of Conduct is part of the REChain v4.1.8+1152 release documentation.*
+*This Code of Conduct is part of the REChain v4.1.10+1160 release documentation.*

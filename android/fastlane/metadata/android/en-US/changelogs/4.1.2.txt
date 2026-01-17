@@ -1,5 +1,5 @@
 
-# Release Notes and Changelog for REChain ®️ 🪐 v4.1.2
+# Release Notes and Changelog for REChain ®️ 🪐 v4.1.10
 
 ---
 
@@ -72,7 +72,7 @@
 
 Stay tuned for more updates and improvements in future versions. 🚀
 
-## v.4.1.2
+## v.4.1.10
 - design: Highlight emoji only messages (Krille)
 - design: New login design (Krille)
 - docs: fix snapstore badge on website (Krille)

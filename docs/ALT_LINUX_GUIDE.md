@@ -27,26 +27,26 @@
 sudo apt-get update
 
 # Скачивание RPM пакета
-wget https://github.com/sorydima/REChain-/releases/latest/download/rechainonline-4.1.8-1.x86_64.rpm
+wget https://github.com/sorydima/REChain-/releases/latest/download/rechainonline-4.1.10-1.x86_64.rpm
 
 # Установка через apt-rpm
-sudo apt-get install ./rechainonline-4.1.8-1.x86_64.rpm
+sudo apt-get install ./rechainonline-4.1.10-1.x86_64.rpm
 
 # Или конвертация в DEB и установка
-sudo alien -d rechainonline-4.1.8-1.x86_64.rpm
-sudo dpkg -i rechainonline_4.1.8-2_amd64.deb
+sudo alien -d rechainonline-4.1.10-1.x86_64.rpm
+sudo dpkg -i rechainonline_4.1.10-2_amd64.deb
 ```
 
 ### Установка через RPM
 ```bash
 # Прямая установка RPM пакета
-sudo rpm -i rechainonline-4.1.8-1.x86_64.rpm
+sudo rpm -i rechainonline-4.1.10-1.x86_64.rpm
 
 # Установка с игнорированием зависимостей (если необходимо)
-sudo rpm -i --nodeps rechainonline-4.1.8-1.x86_64.rpm
+sudo rpm -i --nodeps rechainonline-4.1.10-1.x86_64.rpm
 
 # Обновление существующей версии
-sudo rpm -U rechainonline-4.1.8-1.x86_64.rpm
+sudo rpm -U rechainonline-4.1.10-1.x86_64.rpm
 ```
 
 ### Установка через Synaptic
@@ -98,8 +98,8 @@ COMPUTERS=(
 for pc in "${COMPUTERS[@]}"; do
     echo "Установка REChain на $pc"
     ssh root@$pc "
-        wget -q https://github.com/sorydima/REChain-/releases/latest/download/rechainonline-4.1.8-1.x86_64.rpm
-        rpm -i rechainonline-4.1.8-1.x86_64.rpm
+        wget -q https://github.com/sorydima/REChain-/releases/latest/download/rechainonline-4.1.10-1.x86_64.rpm
+        rpm -i rechainonline-4.1.10-1.x86_64.rpm
         systemctl enable rechainonline
     "
 done
@@ -280,7 +280,7 @@ sudo apt-get install -f
 
 # Переустановка REChain
 sudo apt-get remove rechainonline
-sudo apt-get install ./rechainonline-4.1.8-1.x86_64.rpm
+sudo apt-get install ./rechainonline-4.1.10-1.x86_64.rpm
 ```
 
 ### Проблемы с графическим интерфейсом
@@ -373,5 +373,5 @@ EOF
 
 ---
 
-*Руководство для ОС «Альт» версии 4.1.8+1152*
+*Руководство для ОС «Альт» версии 4.1.10+1160*
 *Рекомендовано Министерством образования РФ*

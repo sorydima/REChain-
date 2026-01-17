@@ -1,0 +1,7 @@
+REChain Matrix Bridge Setup Bundle
+Version: 4.1.10+1160
+Build: 1160
+Release Date: 2025
+Description: Matrix bridges deployment configuration bundle for REChain
+Compatible with: Synapse 1.100+, Docker Compose 3.8+
+

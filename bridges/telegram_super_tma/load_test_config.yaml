@@ -1,0 +1,341 @@
+# Load Testing Configuration for REChain Bridges
+# Configuration for various load testing scenarios
+
+# ============================================================================
+# TEST SCENARIOS
+# ============================================================================
+scenarios:
+  # Baseline test - normal traffic
+  baseline:
+    name: "Baseline Load Test"
+    description: "Simulates normal daily traffic patterns"
+    
+    # User simulation
+    users: 50
+    spawn_rate: 5  # users per second
+    
+    # Message rate
+    messages_per_second: 20
+    message_size:
+      min: 100
+      max: 1000
+      distribution: "uniform"
+    
+    # Duration
+    duration: 300  # 5 minutes
+    ramp_up: 60    # 1 minute ramp up
+    ramp_down: 60  # 1 minute ramp down
+    
+    # Think time between actions
+    think_time:
+      min: 1
+      max: 5
+      distribution: "exponential"
+    
+    # Target endpoints
+    targets:
+      - endpoint: "/_matrix/client/r0/rooms/{room_id}/send/m.room.message"
+        weight: 0.6
+      - endpoint: "/_matrix/client/r0/sync"
+        weight: 0.3
+      - endpoint: "/_matrix/client/r0/rooms/{room_id}/typing"
+        weight: 0.1
+
+  # Stress test - high traffic
+  stress:
+    name: "Stress Load Test"
+    description: "Simulates peak traffic and stress conditions"
+    
+    users: 500
+    spawn_rate: 50
+    
+    messages_per_second: 200
+    message_size:
+      min: 100
+      max: 5000
+      distribution: "normal"
+    
+    duration: 600  # 10 minutes
+    ramp_up: 120
+    ramp_down: 120
+    
+    think_time:
+      min: 0.1
+      max: 2
+      distribution: "uniform"
+    
+    targets:
+      - endpoint: "/_matrix/client/r0/rooms/{room_id}/send/m.room.message"
+        weight: 0.7
+      - endpoint: "/_matrix/client/r0/sync"
+        weight: 0.2
+      - endpoint: "/_matrix/client/r0/rooms/{room_id}/typing"
+        weight: 0.1
+
+  # Spike test - sudden traffic spike
+  spike:
+    name: "Spike Load Test"
+    description: "Simulates sudden traffic spike"
+    
+    users: 1000
+    spawn_rate: 200  # Very fast spawn
+    
+    messages_per_second: 500
+    message_size:
+      min: 100
+      max: 2000
+      distribution: "uniform"
+    
+    duration: 300
+    ramp_up: 10  # Very fast ramp up
+    ramp_down: 120
+    
+    think_time:
+      min: 0.01
+      max: 0.5
+      distribution: "uniform"
+
+  # Endurance test - long duration
+  endurance:
+    name: "Endurance Load Test"
+    description: "Long-running test to check for memory leaks and stability"
+    
+    users: 100
+    spawn_rate: 10
+    
+    messages_per_second: 50
+    message_size:
+      min: 100
+      max: 500
+      distribution: "uniform"
+    
+    duration: 86400  # 24 hours
+    ramp_up: 300
+    ramp_down: 300
+    
+    think_time:
+      min: 1
+      max: 10
+      distribution: "exponential"
+
+  # Breaking point test - find limits
+  breaking_point:
+    name: "Breaking Point Test"
+    description: "Gradually increase load to find system breaking point"
+    
+    # Start with baseline and increase
+    initial_users: 100
+    max_users: 2000
+    step_users: 100
+    step_duration: 60  # seconds at each step
+    
+    messages_per_second: 50  # per 100 users
+    message_size:
+      min: 100
+      max: 1000
+      distribution: "uniform"
+    
+    # Stop when error rate exceeds threshold
+    stop_conditions:
+      error_rate_threshold: 0.05  # 5% errors
+      latency_p95_threshold: 5000  # 5 seconds
+      http_500_errors: 100
+
+# ============================================================================
+# TARGET SYSTEM CONFIGURATION
+# ============================================================================
+target:
+  # Matrix homeserver
+  homeserver:
+    base_url: "http://localhost:8008"
+    domain: "localhost"
+  
+  # Bridge configuration
+  bridge:
+    type: "telegram"
+    url: "http://localhost:29328"
+  
+  # Authentication
+  auth:
+    type: "token"
+    users:
+      - user_id: "@test_user:localhost"
+        access_token: "__CHANGE_ME__"
+  
+  # Test data
+  test_data:
+    # Rooms to use for testing
+    rooms:
+      - "!test_room_1:localhost"
+      - "!test_room_2:localhost"
+      - "!test_room_3:localhost"
+    
+    # Message templates
+    messages:
+      - "Test message {counter}"
+      - "Performance test - {timestamp}"
+      - "Load testing message #{counter}"
+
+# ============================================================================
+# LOAD GENERATOR CONFIGURATION
+# ============================================================================
+load_generator:
+  # Worker configuration
+  workers: 4
+  
+  # Connection pooling
+  connection_pool:
+    max_connections: 100
+    max_connections_per_worker: 25
+  
+  # Timeouts
+  timeout:
+    connect: 10
+    read: 30
+    write: 30
+  
+  # Retries
+  retries: 3
+  retry_backoff: 0.1
+  
+  # SSL/TLS
+  ssl:
+    verify: false
+    cert_path: null
+
+# ============================================================================
+# METRICS COLLECTION
+# ============================================================================
+metrics:
+  # What to collect
+  collect:
+    - requests
+    - responses
+    - errors
+    - latency
+    - throughput
+    - custom
+  
+  # Percentiles to calculate
+  percentiles:
+    - 50
+    - 75
+    - 90
+    - 95
+    - 99
+    - 99.9
+  
+  # Custom metrics
+  custom_metrics:
+    - name: "messages_sent"
+      type: "counter"
+    - name: "messages_received"
+      type: "counter"
+    - name: "media_uploaded"
+      type: "counter"
+    - name: "sync_calls"
+      type: "counter"
+  
+  # Export configuration
+  export:
+    enabled: true
+    format: "prometheus"
+    endpoint: "http://localhost:9090"
+    job_name: "bridge_load_test"
+
+# ============================================================================
+# REPORTS AND ANALYTICS
+# ============================================================================
+reporting:
+  # Console real-time stats
+  console:
+    enabled: true
+    interval: 5  # seconds
+    
+  # CSV export
+  csv:
+    enabled: true
+    path: "/data/load_test_results.csv"
+    include_iteration_data: false
+  
+  # HTML report
+  html:
+    enabled: true
+    path: "/data/load_test_report.html"
+    template: "default"
+  
+  # JSON report
+  json:
+    enabled: true
+    path: "/data/load_test_results.json"
+    pretty: true
+  
+  # Charts
+  charts:
+    enabled: true
+    types:
+      - "response_times"
+      - "throughput"
+      - "error_rate"
+      - "active_users"
+
+# ============================================================================
+# THRESHOLDS AND ASSERTIONS
+# ============================================================================
+assertions:
+  # Response time thresholds (in milliseconds)
+  response_time:
+    p95: 1000
+    p99: 2000
+    max: 5000
+  
+  # Error rate thresholds
+  error_rate:
+    max: 0.01  # 1%
+    critical: 0.05  # 5%
+  
+  # Throughput requirements
+  throughput:
+    min: 10  # requests per second
+    target: 50
+  
+  # Custom assertions
+  custom:
+    - name: "no_500_errors"
+      condition: "count(response.status == 500) == 0"
+    - name: "all_users_connected"
+      condition: "active_users == target_users"
+
+# ============================================================================
+# ENVIRONMENT VARIABLES
+# ============================================================================
+environment:
+  # Variables for this test run
+  TEST_SCENARIO: "baseline"
+  BRIDGE_TYPE: "telegram"
+  HOMESERVER_URL: "http://localhost:8008"
+  RESULTS_DIR: "/data"
+  
+  # Data generation
+  MESSAGE_COUNT: 10000
+  ROOM_COUNT: 10
+  USER_COUNT: 100
+
+# ============================================================================
+# ARTIFACTS
+# ============================================================================
+artifacts:
+  # Directory for test artifacts
+  directory: "/data/load_test_artifacts"
+  
+  # What to capture
+  capture:
+    - "logs"
+    - "metrics"
+    - "heap_dump"
+    - "cpu_profile"
+  
+  # Cleanup after test
+  cleanup: true
+  retention_days: 7
+

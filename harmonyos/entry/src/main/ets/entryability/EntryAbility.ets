@@ -140,7 +140,8 @@ export default class EntryAbility extends UIAbility {
     this.crashReporter = new REChainCrashReporter();
     const crashConfig = {
       appName: 'REChain',
-      appVersion: '4.1.4',
+      appVersion: '4.1.10+1160',
+      buildNumber: 1160,
       environment: 'production',
       autoSubmitCrashes: true,
       enableDebugLogging: false

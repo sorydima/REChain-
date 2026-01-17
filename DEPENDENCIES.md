@@ -4,7 +4,7 @@
 
 ## Latest Release Information
 
-This dependencies document is updated for REChain version 4.1.8+1152, released on 2025-07-08.
+This dependencies document is updated for REChain version 4.1.10+1160, released on 2025-12-06.
 
 Please ensure all dependencies are compatible with this release.
 
@@ -14,7 +14,7 @@ Refer to [RELEASE_NOTES.md](./RELEASE_NOTES.md) for detailed release information
 
 ## Core Dependencies
 
-- Flutter SDK (compatible with REChain 4.1.8+1152)
+- Flutter SDK (compatible with REChain 4.1.10+1160)
 - Dart SDK
 - Shorebird Code Push
 - Matrix SDK

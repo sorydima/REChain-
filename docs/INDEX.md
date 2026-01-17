@@ -1,274 +1,254 @@
-# REChain Documentation Index - Российские ОС Linux
+# REChain Documentation Index
 
-## 📚 Полный каталог документации
+Welcome to the REChain documentation. Use this index to navigate through all available guides and references.
 
-Добро пожаловать в комплексную документацию REChain для российских операционных систем Linux. Этот индекс поможет вам быстро найти нужную информацию.
+## 📚 Getting Started
 
-## 🎯 Быстрый старт
+| Document | Description |
+|----------|-------------|
+| [Quick Start](QUICK_START.md) | Get REChain running in minutes |
+| [Getting Started](../Getting-Started.md) | Initial setup and configuration |
+| [README.md](../README.md) | Project overview and features |
 
-### Для новых пользователей
-1. **[Главное руководство](README_RUSSIAN_LINUX.md)** - Начните здесь
-2. **[Общие инструкции по установке](RUSSIAN_LINUX_INSTALLATION.md)** - Универсальные инструкции
-3. **[Сводка установки](../packages/INSTALLATION_SUMMARY.md)** - Готовые пакеты
+## 🏗️ Architecture & Design
 
-### Для системных администраторов
-1. **[Автоматизация развертывания](DEPLOYMENT_AUTOMATION.md)** - Скрипты и инструменты
-2. **[Безопасность и соответствие](SECURITY_COMPLIANCE_RUSSIAN.md)** - ФСТЭК и ГОСТ
-3. **[Устранение неполадок](TROUBLESHOOTING_RUSSIAN_LINUX.md)** - Решение проблем
+| Document | Description |
+|----------|-------------|
+| [Architecture Overview](ARCHITECTURE_OVERVIEW.md) | System architecture and components |
+| [Architecture.md](ARCHITECTURE.md) | Detailed technical architecture |
+| [ECOSYSTEM_ARCHITECTURE.md](ECOSYSTEM_ARCHITECTURE.md) | Ecosystem integration design |
 
-## 🇷🇺 Документация по операционным системам
+## 🚀 Deployment
 
-### 🏛️ Государственные и корпоративные ОС
+| Document | Description |
+|----------|-------------|
+| [Deployment Guide](DEPLOYMENT_COMPREHENSIVE.md) | Complete deployment instructions |
+| [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md) | Original deployment documentation |
+| [Docker Guide](CODE_SNIPPETS/DOCKER/) | Container deployment |
+| [Vercel Deployment](VERCEL_DEPLOYMENT.md) | Vercel platform deployment |
 
-#### [Astra Linux](ASTRA_LINUX_GUIDE.md)
-**Целевая аудитория:** Государственные учреждения, крупные корпорации
-- ✅ Мандатный контроль доступа
-- ✅ Интеграция с доменом
-- ✅ Соответствие требованиям ФСТЭК
-- ✅ Корпоративное развертывание
-- ✅ Аудит и мониторинг
+## 🔒 Security
 
-**Ключевые разделы:**
-- Установка в защищенной среде
-- Настройка меток безопасности
-- Массовое развертывание через Ansible
-- Интеграция с системой аутентификации
-- Чек-лист для администраторов
+| Document | Description |
+|----------|-------------|
+| [Security Hardening](SECURITY_HARDENING.md) | Production security configuration |
+| [SECURITY.md](SECURITY.md) | Security overview and policies |
+| [SECURITY_POLICY.md](SECURITY_POLICY.md) | Security policy documentation |
 
-#### [РЕД ОС (RED OS)](RED_OS_GUIDE.md)
-**Целевая аудитория:** Корпоративные пользователи, серверные решения
-- ✅ Корпоративные репозитории
-- ✅ Active Directory/FreeIPA
-- ✅ SELinux конфигурация
-- ✅ Мониторинг Zabbix
-- ✅ Автоматические обновления
+## 🔧 Configuration
 
-**Ключевые разделы:**
-- Установка через DNF/YUM
-- Настройка корпоративного репозитория
-- Интеграция с доменными службами
-- Настройка брандмауэра и SELinux
-- Резервное копирование и восстановление
+| Document | Description |
+|----------|-------------|
+| [Configuration Reference](API_REFERENCE.md) | Complete API and config reference |
+| [CONFIG_SAMPLES](CODE_SNIPPETS/CONFIG/) | Configuration code samples |
+| [CONFIGURATION.md](INTEGRATIONS/CONFIGURATION.md) | Integration configuration |
 
-### 🎓 Образовательные и универсальные ОС
+## 🔌 Integrations
 
-#### [ОС «Альт» (ALT Linux)](ALT_LINUX_GUIDE.md)
-**Целевая аудитория:** Образовательные учреждения, универсальное применение
-- ✅ Образовательные конфигурации
-- ✅ Родительский контроль
-- ✅ Интеграция с электронными дневниками
-- ✅ Библиотечные системы
-- ✅ Поддержка различных DE
+| Document | Description |
+|----------|-------------|
+| [Integration Guide](INTEGRATION_SETUP.md) | Platform integration setup |
+| [AI Services](AI_SERVICES_SETUP.md) | AI integration configuration |
+| [IPFS Integration](IPFS_INTEGRATION.md) | Decentralized storage setup |
+| [Matrix Clients](MATRIX_CLIENTS_INTEGRATION.md) | Client integration guide |
+| [Element Integration](ELEMENT_INTEGRATION.md) | Element client setup |
 
-**Ключевые разделы:**
-- Установка через APT/RPM
-- Настройка для школ и вузов
-- Интеграция с рабочими столами
-- Контент-фильтрация
-- Массовая установка в классах
+## 🌉 Bridges
 
-#### [ОС РОСА (ROSA)](ROSA_LINUX_GUIDE.md)
-**Целевая аудитория:** Домашние пользователи, малый бизнес
-- ✅ Семейные конфигурации
-- ✅ Домашний сервер Matrix
-- ✅ Интеграция с 1С
-- ✅ Мультимедиа и игры
-- ✅ Мобильная синхронизация
+| Document | Description |
+|----------|-------------|
+| [Bridges Overview](../README_Bridges.md) | Bridge architecture and features |
+| [Matrix Backend Extensions](MATRIX_BACKEND_EXTENSIONS.md) | Backend bridge features |
+| [Advanced Integrations](ADVANCED_MATRIX_INTEGRATIONS.md) | Advanced bridging options |
 
-**Ключевые разделы:**
-- Установка через URPMI
-- Настройка для семьи
-- Интеграция с рабочими столами
-- Оптимизация производительности
-- Поддержка мультимедиа
+## 📱 Platform Guides
 
-### ⚡ Специализированные ОС
+| Document | Description |
+|----------|-------------|
+| [Android Guide](PLATFORM_GUIDES/ANDROID_GUIDE.md) | Android deployment |
+| [iOS Guide](PLATFORM_GUIDES/IOS_GUIDE.md) | iOS deployment |
+| [Linux Guide](PLATFORM_GUIDES/LINUX_GUIDE.md) | Linux deployment |
+| [Windows Guide](PLATFORM_GUIDES/WINDOWS_GUIDE.md) | Windows deployment |
+| [Web Guide](PLATFORM_GUIDES/WEB_GUIDE.md) | Web deployment |
 
-#### [ОС «Эльбрус» (Elbrus OS)](ELBRUS_OS_GUIDE.md)
-**Целевая аудитория:** Пользователи процессоров Эльбрус, критически важные системы
-- ✅ Архитектура e2k
-- ✅ Оптимизация для Эльбрус
-- ✅ Российская криптография
-- ✅ Кластерные вычисления
-- ✅ Суперкомпьютеры
+## 🛠️ Development
 
-**Ключевые разделы:**
-- Сборка для архитектуры e2k
-- Оптимизация компилятора LCC
-- Интеграция с КриптоПро CSP
-- Мониторинг производительности
-- Кластерные конфигурации
+| Document | Description |
+|----------|-------------|
+| [CONTRIBUTING.md](CONTRIBUTING.md) | Contribution guidelines |
+| [DEV_ONBOARDING.md](DEV_ONBOARDING.md) | Developer onboarding |
+| [PLUGIN_GUIDE.md](PLUGIN_GUIDE.md) | Plugin development |
+| [TESTING.md](TESTING.md) | Testing documentation |
+| [Code Samples](CODE_SNIPPETS/) | Development code samples |
 
-## 🔧 Техническая документация
+## 🔍 Monitoring & Troubleshooting
 
-### [Устранение неполадок](TROUBLESHOOTING_RUSSIAN_LINUX.md)
-**Комплексное руководство по решению проблем**
+| Document | Description |
+|----------|-------------|
+| [Monitoring Guide](MONITORING_GUIDE.md) | Monitoring setup |
+| [Troubleshooting](TROUBLESHOOTING.md) | Common issues and solutions |
+| [DEBUGGING_GUIDE.md](DEBUGGING_GUIDE.md) | Debugging techniques |
+| [Performance Guide](PERFORMANCE.md) | Performance optimization |
 
-#### Основные разделы:
-- **Проблемы с установкой пакетов**
-  - DEB пакеты (Astra Linux)
-  - RPM пакеты (РЕД ОС, ОС «Альт», РОСА)
-  - AppImage проблемы
-- **Проблемы с запуском**
-  - Графический интерфейс
-  - Библиотеки и зависимости
-  - Права доступа
-- **Сетевые проблемы**
-  - Подключение к Matrix серверам
-  - Прокси и брандмауэры
-  - DNS и сертификаты
-- **Производительность**
-  - Оптимизация ресурсов
-  - Видео/аудио проблемы
-  - Кэширование
+## 📊 Performance & Scaling
 
-### [Автоматизация развертывания](DEPLOYMENT_AUTOMATION.md)
-**Инструменты для массового развертывания**
+| Document | Description |
+|----------|-------------|
+| [SCALING_GUIDE.md](SCALING_GUIDE.md) | Scaling strategies |
+| [PERFORMANCE_GUIDE.md](PERFORMANCE_GUIDE.md) | Performance tuning |
+| [Benchmarking](BENCHMARKS.md) | Performance benchmarks |
 
-#### Основные компоненты:
-- **Скрипты автоматической установки**
-  - Универсальный скрипт определения ОС
-  - Автоматический выбор пакета
-  - Пост-установочная настройка
-- **Ansible Playbooks**
-  - Массовое развертывание
-  - Конфигурационное управление
-  - Мониторинг состояния
-- **Контейнеризация**
-  - Docker образы для тестирования
-  - Kubernetes манифесты
-  - CI/CD интеграция
-- **Мониторинг**
-  - Health check скрипты
-  - Prometheus метрики
-  - Grafana дашборды
+## 🌍 Specialized Deployments
 
-### [Безопасность и соответствие](SECURITY_COMPLIANCE_RUSSIAN.md)
-**Соответствие российским стандартам безопасности**
+| Document | Description |
+|----------|-------------|
+| [Russian Linux](README_RUSSIAN_LINUX.md) | Russian Linux deployment |
+| [Russian Linux Installation](RUSSIAN_LINUX_INSTALLATION.md) | Russian Linux install guide |
+| [Alt Linux](ALT_LINUX_GUIDE.md) | Alt Linux specific |
+| [Astra Linux](ASTRA_LINUX_GUIDE.md) | Astra Linux specific |
+| [Elbrus OS](ELBRUS_OS_GUIDE.md) | Elbrus OS support |
+| [RED OS](RED_OS_GUIDE.md) | RED OS specific |
+| [ROSA Linux](ROSA_LINUX_GUIDE.md) | ROSA Linux specific |
 
-#### Стандарты и требования:
-- **ГОСТ Р 34.10-2012** (Цифровая подпись)
-- **ГОСТ Р 34.11-2012** (Хеширование)
-- **ГОСТ 28147-89** (Шифрование)
-- **Требования ФСТЭК**
-  - Классификация информации
-  - Аудит и журналирование
-  - Контроль целостности
-- **Корпоративная безопасность**
-  - КриптоПро CSP интеграция
-  - VPN и защищенные каналы
-  - SIEM интеграция
-- **Отчеты о соответствии**
-  - Генераторы отчетов ФСТЭК
-  - ГОСТ соответствие
-  - Автоматизированный аудит
+## 🪖 Military & Enterprise
 
-## 📦 Пакеты и установка
+| Document | Description |
+|----------|-------------|
+| [Military Briefing](MILITARY_BRIEFING_RECHAIN.md) | Military use briefing |
+| [Military Specs](MILITARY_TECHNICAL_SPECS.md) | Technical specifications |
+| [Military Compliance](MILITARY_COMPLIANCE_CHECKLIST.md) | Compliance checklist |
+| [Russian Security](SECURITY_COMPLIANCE_RUSSIAN.md) | Russian security standards |
+| [French Deployment](../FRANCE_DEPLOYMENT_PACKAGE.md) | French deployment |
+| [German Deployment](../GERMANY_DEPLOYMENT_PACKAGE.md) | German deployment |
 
-### Доступные форматы пакетов
+## 🎨 UI/UX
 
-| Формат | Размер | Целевые ОС | Статус |
-|--------|--------|------------|--------|
-| **DEB** | 48.4 МБ | Astra Linux | ✅ Готов |
-| **RPM** | 50.3 МБ | РЕД ОС, ОС «Альт», РОСА | ✅ Готов |
-| **AppImage** | Структура | Универсальный | ✅ Готов |
-| **PWA** | Веб-версия | ОС «Аврора» | ✅ Готов |
+| Document | Description |
+|----------|-------------|
+| [Dashboard Integration](AUTH_DASHBOARD_INTEGRATION.md) | Dashboard setup |
+| [FLUTTER_SAMPLES](CODE_SNIPPETS/FLUTTER/) | Flutter code samples |
 
-### Быстрая установка по типу ОС
+## 📖 Reference
 
-```bash
-# Определение типа ОС и автоматическая установка
-curl -fsSL https://raw.githubusercontent.com/sorydima/REChain-/main/scripts/build_russian_linux.sh | bash
-```
+| Document | Description |
+|----------|-------------|
+| [API Reference](API_REFERENCE.md) | Complete API documentation |
+| [Quick Reference](QUICK_REFERENCE.md) | Quick reference guide |
+| [GLOSSARY.md](GLOSSARY.md) | Technical terms glossary |
+| [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) | Community standards |
+| [LICENSE](LICENSE) | Software license |
 
-## 🎯 Использование по сценариям
+## 📦 Distribution & Releases
 
-### Государственные учреждения
-**Рекомендуемая ОС:** Astra Linux
-**Документация:** [Astra Linux Guide](ASTRA_LINUX_GUIDE.md)
-**Особенности:**
-- Соответствие требованиям ФСТЭК
-- Мандатный контроль доступа
-- Интеграция с государственными PKI
-- Аудит всех операций
+| Document | Description |
+|----------|-------------|
+| [BUILD.md](BUILD.md) | Build instructions |
+| [RELEASE_NOTES.md](RELEASE_NOTES.md) | Release information |
+| [CHANGELOG.md](CHANGELOG.md) | Version history |
+| [DISTRIBUTION.md](distribute_options.yaml) | Distribution options |
 
-### Корпоративная среда
-**Рекомендуемая ОС:** РЕД ОС
-**Документация:** [RED OS Guide](RED_OS_GUIDE.md)
-**Особенности:**
-- Active Directory интеграция
-- Централизованное управление
-- Корпоративные политики безопасности
-- Масштабируемое развертывание
+## 🆘 Support
 
-### Образовательные учреждения
-**Рекомендуемая ОС:** ОС «Альт»
-**Документация:** [ALT Linux Guide](ALT_LINUX_GUIDE.md)
-**Особенности:**
-- Родительский контроль
-- Интеграция с электронными дневниками
-- Управление компьютерными классами
-- Образовательный контент
-
-### Домашнее использование
-**Рекомендуемая ОС:** ОС РОСА
-**Документация:** [ROSA Linux Guide](ROSA_LINUX_GUIDE.md)
-**Особенности:**
-- Простота установки и использования
-- Семейные конфигурации
-- Мультимедиа поддержка
-- Синхронизация с мобильными устройствами
-
-### Критически важные системы
-**Рекомендуемая ОС:** ОС «Эльбрус»
-**Документация:** [Elbrus OS Guide](ELBRUS_OS_GUIDE.md)
-**Особенности:**
-- Российские процессоры
-- Максимальная безопасность
-- Изолированные сети
-- Специализированные конфигурации
-
-## 📞 Поддержка и сообщество
-
-### Техническая поддержка
-- **Общая поддержка:** support@rechain.network
-- **Astra Linux:** astra-support@rechain.network
-- **РЕД ОС:** redos-support@rechain.network
-- **ОС «Альт»:** alt-support@rechain.network
-- **РОСА:** rosa-support@rechain.network
-- **Эльбрус:** elbrus-support@rechain.network
-
-### Сообщество
-- **Telegram:** @REChainSupport
-- **Matrix:** #support:rechain.online
-- **GitHub:** https://github.com/sorydima/REChain-/issues
-- **Форум:** https://forum.rechain.online
-
-### Ресурсы
-- **Документация:** https://rechain.online/docs
-- **Блог:** https://blog.rechain.online
-- **YouTube:** https://youtube.com/@REChainOfficial
-- **Обучающие материалы:** https://learn.rechain.online
-
-## 🔄 Обновления документации
-
-**Текущая версия:** 4.1.8+1152  
-**Дата обновления:** Август 2024  
-**Поддерживаемых ОС:** 12 российских дистрибутивов  
-**Форматов документации:** 10 специализированных руководств
-
-### История изменений
-- **v4.1.8** - Добавлена поддержка всех российских ОС
-- **v4.1.6** - Улучшена интеграция с ГОСТ алгоритмами
-- **v4.1.5** - Добавлена поддержка архитектуры Эльбрус
-- **v4.1.4** - Расширена документация по безопасности
+| Document | Description |
+|----------|-------------|
+| [SUPPORT.md](end_user/SUPPORT.md) | Support options |
+| [FAQ.md](FAQ.md) | Frequently asked questions |
+| [TRIAGE.md](TRIAGE.md) | Issue triage process |
+| [SUPPORT_TIERS.md](SUPPORT_TIERS.md) | Support tier information |
 
 ---
 
-**🎯 Навигация по документации:**
-- 📖 **Новичкам:** Начните с [главного руководства](README_RUSSIAN_LINUX.md)
-- 🔧 **Администраторам:** Изучите [автоматизацию развертывания](DEPLOYMENT_AUTOMATION.md)
-- 🔐 **Специалистам по ИБ:** Ознакомьтесь с [требованиями безопасности](SECURITY_COMPLIANCE_RUSSIAN.md)
-- 🚨 **При проблемах:** Обратитесь к [руководству по устранению неполадок](TROUBLESHOOTING_RUSSIAN_LINUX.md)
+## Document Categories
 
-**© 2024 REChain Team. Документация для российских ОС Linux.**
+### 📁 Core Documentation
+- Getting started guides
+- Architecture documentation
+- Deployment instructions
+- Configuration references
+
+### 🔒 Security Documentation
+- Security hardening
+- Compliance guides
+- Audit procedures
+- Incident response
+
+### 🛠️ Development Documentation
+- Contribution guides
+- Plugin development
+- Testing guides
+- Code samples
+
+### 🌐 Platform Documentation
+- Platform-specific guides
+- Integration documentation
+- Deployment procedures
+- Optimization guides
+
+---
+
+## Version Compatibility
+
+| REChain Version | Documentation |
+|-----------------|---------------|
+| 4.2.x | Current docs |
+| 4.1.x | See CHANGELOG.md |
+| 4.0.x | Legacy documentation |
+
+---
+
+## Contributing to Documentation
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
+
+---
+
+## Documentation Standards
+
+All documentation should follow these standards:
+
+### Format Requirements
+- Markdown (.md) format
+- Clear headings hierarchy
+- Code blocks with syntax highlighting
+- Tables for structured data
+
+### Content Guidelines
+- Include practical examples
+- Add troubleshooting sections
+- Link to related documents
+- Provide clear prerequisites
+
+### Style Guide
+- Use active voice
+- Keep sentences concise
+- Use consistent terminology
+- Include callouts for important info
+
+```markdown
+> **Note:** Important information
+> 
+> **Warning:** Cautions and warnings
+> 
+> **Tip:** Helpful tips
+```
+
+---
+
+## Translation
+
+Documentation is available in multiple languages:
+
+- 🇺🇸 English (en)
+- 🇷🇺 Russian (ru) - See Russian-specific docs
+- 🇫🇷 French (fr) - See FRANCE_DEPLOYMENT_PACKAGE
+- 🇩🇪 German (de) - See GERMANY_DEPLOYMENT_PACKAGE
+
+---
+
+*Last updated: 2025-01-09*
+*REChain Version: 4.2.0*

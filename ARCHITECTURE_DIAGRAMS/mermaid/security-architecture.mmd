@@ -1,0 +1,60 @@
+graph TB
+    subgraph "Client Security"
+        ClientTLS[TLS 1.3]
+        ClientPin[Certificate Pinning]
+        ClientStore[Secure Storage]
+    end
+
+    subgraph "Transport Security"
+        TLSTerm[TLS Termination]
+        mTLS[mTLS for Services]
+        VPN[VPN Overlay]
+    end
+
+    subgraph "Application Security"
+        Auth[OAuth2/OIDC]
+        RBAC[RBAC Authorization]
+        InputVal[Input Validation]
+        CSRF[CSRF Protection]
+    end
+
+    subgraph "Data Security"
+        EncryptionAtRest[Encryption at Rest]
+        DBEncryption[SQLCipher]
+        KeyDerivation[bcrypt/Argon2]
+        ZKP[Zero-Knowledge Proofs]
+    end
+
+    subgraph "E2E Encryption"
+        Olm[Olm Protocol]
+        Megolm[Megolm Protocol]
+        KeyVerify[Key Verification]
+        DeviceMgmt[Device Management]
+    end
+
+    ClientTLS --> TLSTerm
+    ClientPin --> TLSTerm
+    ClientStore --> Auth
+
+    TLSTerm --> mTLS
+    mTLS --> VPN
+    VPN --> Auth
+
+    Auth --> RBAC
+    RBAC --> InputVal
+    InputVal --> CSRF
+
+    EncryptionAtRest --> DBEncryption
+    DBEncryption --> KeyDerivation
+    KeyDerivation --> ZKP
+
+    Olm --> Megolm
+    Megolm --> KeyVerify
+    KeyVerify --> DeviceMgmt
+
+    style ClientSecurity fill:#ef5350
+    style TransportSecurity fill:#ef5350
+    style ApplicationSecurity fill:#ef5350
+    style DataSecurity fill:#ef5350
+    style E2EEncryption fill:#ef5350
+

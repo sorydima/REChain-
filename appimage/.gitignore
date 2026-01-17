@@ -1,3 +1,27 @@
-REChain.AppDir
+# AppImage build artifacts
 *.AppImage
-*.AppImage.zsync
+appimagetool.AppImage
+
+# Build directories
+REChain.AppDir/
+REChain-arm64.AppDir/
+*.AppDir/
+
+# Output directory
+output/
+
+# Generated files
+.AppImageThumb.png
+.AppImageIcon.png
+
+# Temporary files
+*.tmp
+*.log
+
+# IDE files
+.vscode/
+.idea/
+
+# macOS files
+.DS_Store
+

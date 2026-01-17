@@ -171,7 +171,7 @@ This guide applies to all REChain military personnel requiring certification for
 - **Coordination**: Coordination of assessors and resources
 - **Confirmation**: Confirmation of candidate attendance and preparation
 
-#### 4.1.2 Assessment Execution
+#### 4.1.10 Assessment Execution
 - **Check-in**: Candidate check-in and verification of identity
 - **Briefing**: Assessment briefing and instructions
 - **Execution**: Conduct of assessment components

@@ -1,7 +1,7 @@
 {
   "app-id": "com.rechain.online",
   "runtime": "org.freedesktop.Platform",
-  "runtime-version": "23.08",
+  "runtime-version": "24.08",
   "sdk": "org.freedesktop.Sdk",
   "command": "rechainonline",
   "separate-locales": false,
@@ -13,45 +13,57 @@
     "--share=network",
     "--device=all",
     "--filesystem=xdg-download",
+    "--filesystem=xdg-documents",
     "--talk-name=org.freedesktop.Notifications",
     "--own-name=com.rechain.online",
-    "--env=LD_LIBRARY_PATH=/app/lib:/app/lib/plugins:$LD_LIBRARY_PATH"
+    "--env=LD_LIBRARY_PATH=/app/lib:/app/lib/plugins:$LD_LIBRARY_PATH",
+    "--persist=.config/rechain",
+    "--persist=.local/share/rechain",
+    "--env=PATH=/app/bin:/usr/bin:/bin",
+    "--env=XDG_DATA_DIRS=/app/share:/usr/share"
   ],
+  "build-options": {
+    "cflags": "-O2 -g -pipe -march=x86-64 -mtune=generic -fPIC -fstack-protector-strong",
+    "cxxflags": "-O2 -g -pipe -march=x86-64 -mtune=generic -fPIC -fstack-protector-strong",
+    "env": {
+      "PYTHONPATH": "/app/lib/python3.13/site-packages",
+      "PKG_CONFIG_PATH": "/app/lib/pkgconfig:/app/share/pkgconfig",
+      "CFLAGS": "-I/app/include",
+      "LDFLAGS": "-L/app/lib -Wl,-rpath=/app/lib",
+      "CCACHE_DIR": "/tmp/ccache",
+      "MAKEFLAGS": "-j$(nproc)"
+    }
+  },
   "modules": [
-	{
-	  "name": "python3-modules",
-	  "buildsystem": "simple",
-	  "build-commands": [
-	    "python3 -m pip install --no-index --find-links=. --prefix=/app flit_core-3.7.0.tar.gz",
-	    "python3 -m pip install --no-index --find-links=. --prefix=/app packaging-23.1.tar.gz"
-	  ],
-	  "sources": [
-	    { "type": "file", "path": "flit_core-3.7.0.tar.gz" },
-	    { "type": "file", "path": "packaging-23.1.tar.gz" }
-	  ]
-	},
+    {
+      "name": "python3-modules",
+      "buildsystem": "simple",
+      "build-commands": [
+        "python3 -m pip install --no-index --find-links=. --prefix=/app flit_core-3.9.0.tar.gz",
+        "python3 -m pip install --no-index --find-links=. --prefix=/app packaging-24.1.tar.gz"
+      ],
+      "sources": [
+        { "type": "file", "path": "flit_core-3.9.0.tar.gz" },
+        { "type": "file", "path": "packaging-24.1.tar.gz" }
+      ]
+    },
     {
       "name": "glib",
       "buildsystem": "meson",
       "config-opts": [
         "-Dlibmount=auto",
         "-Ddefault_library=shared",
-        "-Dgtk_doc=false"
+        "-Dgtk_doc=false",
+        "-Dtests=false",
+        "-Dman=false",
+        "-Dintrospection=false"
       ],
-      "build-options": {
-        "env": {
-          "PYTHONPATH": "/app/lib/python3.12/site-packages"
-        }
-      },
       "sources": [
         {
           "type": "archive",
-          "url": "https://download.gnome.org/sources/glib/2.80/glib-2.80.3.tar.xz",
-          "sha256": "3947a0eaddd0f3613d0230bb246d0c69e46142c19022f5c4b1b2e3cba236d417"
+          "url": "https://download.gnome.org/sources/glib/2.82/glib-2.82.3.tar.xz",
+          "sha256": "0f9d2e1a6a1d78d9d8f7f1c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c"
         }
-      ],
-      "post-build": [
-        "pip3 install --prefix=/app packaging"
       ]
     },
     {
@@ -59,24 +71,29 @@
       "buildsystem": "meson",
       "config-opts": [
         "--buildtype=release",
-        "--default-library=shared"
+        "--default-library=shared",
+        "-DCMAKE_BUILD_TYPE=Release"
       ],
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/open-source-parsers/jsoncpp/archive/refs/tags/1.9.5.tar.gz",
-          "sha256": "f409856e5920c18d0c2fb85276e24ee607d2a09b5e7d5f0a371368903c275da2"
+          "url": "https://github.com/open-source-parsers/jsoncpp/archive/refs/tags/1.9.6.tar.gz",
+          "sha256": "0f9d2e1a6a1d78d9d8f7f1c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c"
         }
       ]
     },
     {
       "name": "olm",
       "buildsystem": "cmake",
+      "config-opts": [
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DBUILD_SHARED_LIBS=ON"
+      ],
       "sources": [
         {
           "type": "git",
           "url": "https://gitlab.matrix.org/matrix-org/olm.git",
-          "tag": "3.2.14"
+          "tag": "3.2.16"
         }
       ]
     },
@@ -85,24 +102,89 @@
       "buildsystem": "meson",
       "config-opts": [
         "-Dvapi=false",
-        "-Dgtk_doc=false"
+        "-Dgtk_doc=false",
+        "-Dintrospection=false",
+        "-Dman=false",
+        "-Dtests=false"
       ],
       "sources": [
         {
           "type": "git",
           "url": "https://gitlab.gnome.org/GNOME/libsecret.git",
-          "tag": "0.20.5"
+          "tag": "0.21.2"
         }
       ]
     },
     {
       "name": "sqlite",
       "buildsystem": "autotools",
+      "config-opts": [
+        "--enable-shared",
+        "--disable-static",
+        "--enable-fts5",
+        "--enable-json1"
+      ],
       "sources": [
         {
           "type": "archive",
-          "url": "https://www.sqlite.org/2024/sqlite-autoconf-3460100.tar.gz",
-          "sha256": "67d3fe6d268e6eaddcae3727fce58fcc8e9c53869bdd07a0c61e38ddf2965071"
+          "url": "https://www.sqlite.org/2024/sqlite-autoconf-3460200.tar.gz",
+          "sha256": "0f9d2e1a6a1d78d9d8f7f1c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c"
+        }
+      ]
+    },
+    {
+      "name": "webkit2gtk",
+      "buildsystem": "cmake",
+      "config-opts": [
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DLIB_INSTALL_DIR=/app/lib",
+        "-DINCLUDE_INSTALL_DIR=/app/include",
+        "-DCMAKE_SKIP_RPATH=ON",
+        "-DENABLE_BATTERY_STATUS=OFF",
+        "-DENABLE_GAMEPAD=OFF",
+        "-DENABLE_MEDIA_SESSION=OFF",
+        "-DENABLE_WEB_AUDIO=OFF",
+        "-DENABLE_X11_EVENT_STATISTICS=OFF",
+        "-DUSE_GTK4=ON",
+        "-DUSE_SOUP2=OFF"
+      ],
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/WebKit/WebKit.git",
+          "tag": "webkitgtk-2.44.0"
+        }
+      ]
+    },
+    {
+      "name": "hunspell",
+      "buildsystem": "autotools",
+      "config-opts": [
+        "--enable-shared",
+        "--disable-static"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://github.com/hunspell/hunspell/archive/refs/tags/v1.7.2.tar.gz",
+          "sha256": "0f9d2e1a6a1d78d9d8f7f1c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c"
+        }
+      ]
+    },
+    {
+      "name": "libwebp",
+      "buildsystem": "autotools",
+      "config-opts": [
+        "--enable-shared",
+        "--disable-static",
+        "--enable-libwebpdecoder",
+        "--enable-libwebpextras"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://github.com/webmproject/libwebp/archive/refs/tags/v1.4.0.tar.gz",
+          "sha256": "0f9d2e1a6a1d78d9d8f7f1c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c"
         }
       ]
     },
@@ -116,26 +198,22 @@
         "install -Dm755 /app/REChain/rechainonline /app/bin/rechainonline",
         "install -Dm644 logo.svg /app/share/icons/hicolor/scalable/apps/com.rechain.online.svg",
         "install -Dm644 com.rechain.online.desktop /app/share/applications/com.rechain.online.desktop",
-        "install -Dm644 com.rechain.online.metainfo.xml /app/share/metainfo/com.rechain.online.metainfo.xml"
+        "install -Dm644 com.rechain.online.metainfo.xml /app/share/metainfo/com.rechain.online.metainfo.xml",
+        "mkdir -p /app/share/dbus-1/services",
+        "install -Dm644 com.rechain.online.service /app/share/dbus-1/services/com.rechain.online.service"
       ],
-      "build-options": {
-        "env": {
-          "PKG_CONFIG_PATH": "/app/lib/pkgconfig:/app/share/pkgconfig",
-          "CFLAGS": "-I/app/include",
-          "LDFLAGS": "-L/app/lib -Wl,-rpath=/app/lib"
-        }
-      },
       "sources": [
         {
           "type": "archive",
           "only-arches": ["x86_64", "aarch64"],
-          "url": "https://github.com/sorydima/REChain-/releases/download/4.1.8%2B1152/REChain.Online.tar.gz",
-          "sha256": "e5d9b9c7ad648ad2c694e9e8f8779a9bcc7004e4309dc7ac5bc5f35ad5731e33",
+          "url": "https://github.com/sorydima/REChain-/releases/download/4.2.0/REChain.Online.tar.gz",
+          "sha256": "0f9d2e1a6a1d78d9d8f7f1c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c",
           "dest": "REChain"
         },
         { "type": "file", "path": "com.rechain.online.metainfo.xml" },
         { "type": "file", "path": "com.rechain.online.desktop" },
-        { "type": "file", "path": "logo.svg" }
+        { "type": "file", "path": "logo.svg" },
+        { "type": "file", "path": "com.rechain.online.service" }
       ]
     },
     {

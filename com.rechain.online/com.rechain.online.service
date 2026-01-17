@@ -1,0 +1,5 @@
+[D-BUS Service]
+Name=com.rechain.online
+Exec=/app/bin/rechainonline
+Type=application
+

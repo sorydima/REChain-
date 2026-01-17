@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # REChain Certbot Wild Multi-Domain Issuer (IPv4 only)
+# Version: 4.1.10+1160
+# Bundle: Matrix Bridge Setup Bundle v4.1.10+1160
 
 # 0. Disable IPv6 for this session (runtime only)
 echo "[INFO] Disabling IPv6 (temporary)..."

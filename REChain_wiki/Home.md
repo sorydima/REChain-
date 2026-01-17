@@ -1,5 +1,7 @@
 # REChain Wiki Home
 
+**Version: 4.1.10+1160** | **Build: 1160** | **Last Updated: 2025**
+
 Welcome to the REChain Ecosystem Wiki! Here you'll find everything you need to build, extend, and use REChain for decentralized communication, blockchain, AI, and more.
 
 ## 📚 Documentation Index

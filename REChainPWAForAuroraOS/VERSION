@@ -1,0 +1,25 @@
+REChain PWA for AuroraOS
+Version: 4.1.10+1160
+Build: 1160
+Release Date: 2025
+Description: Progressive Web App for AuroraOS ecosystem
+Platform: Aurora OS
+Type: PWA (Progressive Web Application)
+License: MIT
+Compatible with: REChain 4.1.10+
+
+Features:
+- Native app installation support
+- Offline mode via service worker
+- AuroraOS compatibility
+- Flutter Web + WebManifest + Background Caching
+- Push notifications support
+
+Distribution:
+- RPM package: com.rechain.pwa
+- GitHub Pages: Available for preview
+- Direct PWA: https://rechain.network/pwa
+
+Last Updated: 2025
+Maintainers: REChain Team
+

@@ -1,5 +1,7 @@
 REChain is available in A LOT of App Stores:
 
+**Version: 4.1.10+1160** | **Build: 1160** | **Release Date: 2025**
+
 - PlayStore (Automatically on commits and on tags)
 - F-Droid (Automatically on every tag but needs manually updated version code)
 - Flathub (Automatically on tag)
@@ -12,5 +14,5 @@ REChain is available in A LOT of App Stores:
 3. Merge all changes into main
 4. Publish a new release to iOS testflight - You can use `./scripts/release-ios-testflight.sh` for this
 5. Test everything on iOS and Android!
-6. Create the new Tag with the version in it -> For version 4.1.2 for example it would be: `v4.1.2`
+6. Create the new Tag with the version in it -> For version 4.1.10+1160 for example it would be: `v4.1.10+1160`
 7. Publish iOS using the web interface from AppStore Connect

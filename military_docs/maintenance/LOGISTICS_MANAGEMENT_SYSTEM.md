@@ -302,7 +302,7 @@ This system applies to all REChain military logistics activities including:
 - **Frequency**: Continuous
 - **Duration**: Ongoing
 
-#### 4.1.2 Storage Operations
+#### 4.1.10 Storage Operations
 - **Objective**: Execute storage operations
 - **Activities**:
   - Review storage requirements
@@ -315,7 +315,7 @@ This system applies to all REChain military logistics activities including:
 - **Frequency**: Continuous
 - **Duration**: Ongoing
 
-#### 4.1.3 Distribution Operations
+#### 4.1.10 Distribution Operations
 - **Objective**: Execute distribution operations
 - **Activities**:
   - Review distribution requirements

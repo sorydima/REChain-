@@ -20,7 +20,7 @@ async function initializeREChainServices() {
     rechainServices.crashReporting = new CrashReportingManager();
     await rechainServices.crashReporting.initialize({
       appName: 'REChain',
-      version: '1.0.0',
+      version: '4.1.10+1160',
       environment: 'production'
     });
 

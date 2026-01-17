@@ -1,0 +1,319 @@
+# Distributed Tracing Configuration for REChain Bridges
+# Supports Jaeger, Zipkin, and OpenTelemetry collectors
+
+# ============================================================================
+# TRACING ENABLED
+# ============================================================================
+tracing:
+  enabled: true
+  
+  # Sampling strategy
+  sampling:
+    # Always sample (1.0) or sample a percentage
+    sample_rate: 0.1  # 10% of traces
+    # Rate for errors (always higher)
+    error_sample_rate: 1.0
+    # Sampling server URL (for adaptive sampling)
+    sampling_server_url: null
+  
+  # Trace context propagation
+  propagation:
+    # W3C Trace Context (default)
+    format: "w3c"
+    # Additional formats
+    formats:
+      - "b3"
+      - "jaeger"
+  
+  # Trace storage
+  storage:
+    # Local file storage (fallback)
+    local:
+      enabled: true
+      path: /data/traces
+      max_size_mb: 100
+      retention_days: 7
+    
+    # Remote collector
+    collector:
+      enabled: false
+      type: null  # jaeger, zipkin, otlp
+      endpoint: null
+      headers: {}
+
+# ============================================================================
+# JAEGER CONFIGURATION
+# ============================================================================
+jaeger:
+  enabled: false
+  
+  # Jaeger agent
+  agent:
+    host: localhost
+    port: 6831
+  
+  # Jaeger collector
+  collector:
+    endpoint: http://jaeger:14268/api/traces
+    user: null
+    password: null
+  
+  # Jaeger UI
+  ui:
+    enabled: true
+    port: 16686
+    path: /
+
+# ============================================================================
+# ZIPKIN CONFIGURATION
+# ============================================================================
+zipkin:
+  enabled: false
+  
+  # Zipkin collector
+  collector:
+    endpoint: http://zipkin:9411/api/v2/spans
+    # AWS X-Ray compatible
+    xray_compatible: false
+  
+  # Zipkin UI
+  ui:
+    enabled: true
+    port: 9411
+    path: /
+
+# ============================================================================
+# OPENTELEMETRY CONFIGURATION
+# ============================================================================
+opentelemetry:
+  enabled: true
+  
+  # OTLP exporter
+  exporter:
+    # Protocol: grpc, http/protobuf, http/json
+    protocol: "grpc"
+    endpoint: "localhost:4317"
+    # TLS configuration
+    tls:
+      enabled: false
+      insecure: true
+      cert_file: null
+      key_file: null
+      ca_file: null
+    # Headers for authentication
+    headers:
+      # authorization: "Bearer token"
+  
+  # Resource attributes
+  resource:
+    attributes:
+      service.name: "rechain-bridge-telegram"
+      service.version: "4.2.0"
+      deployment.environment: "production"
+      # Custom attributes
+      bridge.type: "telegram"
+  
+  # Instrumentation
+  instrumentation:
+    # Enable specific instrumentations
+    requests: true
+    database: true
+    messaging: true
+  
+  # Trace processor
+  processor:
+    # Batch or Simple
+    type: "batch"
+    # Batch settings
+    max_queue_size: 2048
+    max_export_batch_size: 512
+    schedule_delay: 5000  # milliseconds
+    timeout: 30000  # milliseconds
+
+# ============================================================================
+# TRACE SPAN CONFIGURATION
+# ============================================================================
+spans:
+  # Maximum span attributes
+  max_attributes: 128
+  # Maximum span events
+  max_events: 128
+  # Maximum span links
+  max_links: 128
+  # Attribute value length limit
+  max_attribute_value_length: 4096
+  
+  # Standard attributes to include
+  standard_attributes:
+    - mesh.name
+    - mesh.version
+    - bridge.name
+    - bridge.type
+    - operation.name
+    - user.id
+    - room.id
+    - message.id
+  
+  # Sensitive attributes to redact
+  redact_attributes:
+    - message.content
+    - user.token
+    - user.password
+    - api.key
+
+# ============================================================================
+# TRACE SAMPLING RULES
+# ============================================================================
+sampling_rules:
+  # Default sampling rate
+  - name: "default"
+    rate: 0.1
+  
+  # High-traffic endpoints
+  - name: "message.process"
+    rate: 0.05
+  
+  # Debug sampling for errors
+  - name: "error"
+    rate: 1.0
+  
+  # Slow operations
+  - name: "latency.high"
+    rate: 0.5
+    latency_threshold_ms: 1000
+
+# ============================================================================
+# TRACE EXPORTERS
+# ============================================================================
+exporters:
+  # Console exporter (debugging)
+  console:
+    enabled: false
+    pretty_print: true
+  
+  # File exporter (debugging)
+  file:
+    enabled: false
+    path: /data/traces/bridge_traces.json
+    rotation:
+      max_size_mb: 10
+      max_files: 5
+  
+  # Jaeger exporter
+  jaeger:
+    enabled: false
+    endpoint: http://localhost:14268/api/traces
+  
+  # Zipkin exporter
+  zipkin:
+    enabled: false
+    endpoint: http://localhost:9411/api/v2/spans
+  
+  # OTLP exporter
+  otlp:
+    enabled: true
+    endpoint: http://localhost:4317
+    protocol: grpc
+    headers: {}
+
+# ============================================================================
+# TRACE CONTEXT PROPAGATION
+# ============================================================================
+propagation:
+  # W3C Trace Context (default)
+  w3c_trace_context:
+    enabled: true
+  
+  # B3 Propagation (Zipkin)
+  b3:
+    enabled: true
+    single_header: false
+  
+  # Jaeger Propagation
+  jaeger:
+    enabled: false
+  
+  # AWS X-Ray
+  aws_xray:
+    enabled: false
+
+# ============================================================================
+# TRACE PROCESSING
+# ============================================================================
+processing:
+  # Trace sampling
+  sampler:
+    type: "parentbased_traceidratio"
+    rate: 0.1
+  
+  # Span processor
+  span_processor:
+    type: "batch"
+    max_queue_size: 2048
+    max_export_batch_size: 512
+    schedule_delay_ms: 5000
+    timeout_ms: 30000
+  
+  # Exporter configuration
+  exporter:
+    batch:
+      max_queue_size: 2048
+      max_export_batch_size: 512
+      schedule_delay_ms: 5000
+      timeout_ms: 30000
+
+# ============================================================================
+# TRACE UI CONFIGURATION
+# ============================================================================
+ui:
+  enabled: true
+  port: 16686
+  path: /tracing
+  theme: "dark"
+  
+  # Search configuration
+  search:
+    default_limit: 100
+    max_limit: 1000
+  
+  # Authentication
+  auth:
+    enabled: false
+    type: "basic"
+    username: "admin"
+    password: "__CHANGE_ME__"
+
+# ============================================================================
+# TRACE ARCHITECTURE DIAGRAM
+# ============================================================================
+# Bridge Service → Span Exporter → Collector → Storage → UI
+#                                                      ↓
+#                               ┌──────────────────────┴──────────────────────┐
+#                               │              Trace Backends                 │
+#                               │                                               │
+#    ┌──────────────────────────┼───────────────────────────────────────────────┼──
+#    │                          │                                               │
+#    ▼                          ▼                                               ▼
+# [Matrix Client]        [Jaeger/Zipkin]                              [Grafana Tempo]
+#    │                          │                                               │
+#    │   ┌──────────────────────┴──────────────────────┐                       │
+#    │   │              Collectors                      │                       │
+#    │   │                                               │                       │
+#    │   │  ┌─────────┐  ┌─────────┐  ┌─────────┐      │                       │
+#    │   │  │ HTTP    │  │ gRPC    │  │ Kafka   │      │                       │
+#    │   │  └─────────┘  └─────────┘  └─────────┘      │                       │
+#    │   │                                               │                       │
+#    └──►│  ┌─────────────────────────────────────────┐  │                       │
+#        │  │           Storage Backend               │  │                       │
+#        │  │                                         │  │                       │
+#        │  │  ┌──────────┐  ┌──────────┐  ┌────────┐ │  │                       │
+#        │  │  │ Cassandra│  │  Elastic │  │ S3     │ │  │                       │
+#        │  │  │ / Scylla │  │  Search  │  │ Blob   │ │  │                       │
+#        │  │  └──────────┘  └──────────┘  └────────┘ │  │                       │
+#        │  │                                         │  │                       │
+#        │  └─────────────────────────────────────────┘  │                       │
+#        │                                               │                       │
+#        └───────────────────────────────────────────────┘                       │
+#                                                                                │
+# ============================================================================
+

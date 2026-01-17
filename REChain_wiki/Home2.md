@@ -1,5 +1,7 @@
 # Welcome to the REChain- wiki!
 
+**Version: 4.1.10+1160** | **Build: 1160** | **Last Updated: 2025**
+
 # REChain 🪐
 
 ## Overview

@@ -1,0 +1,119 @@
+@startuml
+!theme plain
+skinparam backgroundColor #FFFFFF
+
+title REChain Core Classes - Simplified View
+
+package "Models" {
+    class User {
+        +String id
+        +String username
+        +String displayName
+        +String avatarUrl
+        +Map<String, Device> devices
+        +verifyDevice(deviceId): bool
+    }
+
+    class Room {
+        +String id
+        +String name
+        +List<User> members
+        +EncryptionStatus encryption
+        +List<Message> messages
+        +sendMessage(content): void
+    }
+
+    class Message {
+        +String id
+        +String content
+        +User sender
+        +DateTime timestamp
+        +EncryptionStatus encryption
+        +List<FileAttachment> attachments
+    }
+
+    class Device {
+        +String deviceId
+        +DeviceType type
+        +String publicKey
+        +bool verified
+        +lastSeen: DateTime
+    }
+
+    class FileAttachment {
+        +String url
+        +String mimeType
+        +int size
+        +EncryptionKey key
+        +String thumbnailUrl
+    }
+}
+
+package "Services" {
+    class MatrixClient {
+        -String homeserverUrl
+        -User currentUser
+        -Map<String, Room> rooms
+        +connect(): void
+        +disconnect(): void
+        +sync(): SyncResponse
+        +sendMessage(roomId, content): Message
+    }
+
+    class EncryptionManager {
+        +generateKeyPair(): KeyPair
+        +encryptMessage(content, roomId): EncryptedContent
+        +decryptMessage(encrypted, roomId): String
+        +verifyKey(deviceId, key: String): bool
+    }
+
+    class BlockchainService {
+        +connectWallet(network: Network): Wallet
+        +sendTransaction(tx: Transaction): String
+        +getBalance(address: String): BigInt
+        +signMessage(message: String): Signature
+    }
+
+    class IPFSService {
+        +uploadFile(file: File): CID
+        +downloadFile(cid: CID): File
+        +encryptFile(file: File, key: Key): EncryptedFile
+        +decryptFile(encryptedFile: EncryptedFile, key: Key): File
+    }
+}
+
+package "Repositories" {
+    class UserRepository {
+        +findById(id: String): User
+        +findByUsername(username: String): User
+        +save(user: User): void
+        +update(user: User): void
+    }
+
+    class MessageRepository {
+        +findByRoomId(roomId: String): List<Message>
+        +findById(id: String): Message
+        +save(message: Message): void
+        +delete(id: String): void
+    }
+}
+
+' Relationships
+User "1" --> "*" Device : owns
+User "1" --> "*" Room : member of
+Room "1" --> "*" Message : contains
+Message "1" --> "0..*" FileAttachment : has
+Room "1" --> "1" EncryptionManager : uses
+
+MatrixClient "1" --> "1" User : authenticates
+MatrixClient "1" --> "*" Room : manages
+MatrixClient "1" --> "1" EncryptionManager : uses
+MatrixClient "1" --> "*" MessageRepository : uses
+
+EncryptionManager "1" --> "1" UserRepository : uses
+
+BlockchainService ..> User : provides to
+IPFSService ..> Message : stores for
+
+@enduml
+

@@ -141,7 +141,7 @@ This SOP applies to all REChain military equipment including:
 - **Frequency**: Daily for all mission critical equipment
 - **Responsible**: System Operator
 
-#### 4.1.2 Equipment Visual Inspection
+#### 4.1.10 Equipment Visual Inspection
 - **Equipment**: All field-deployed equipment
 - **Procedure**:
   1. Inspect equipment for physical damage

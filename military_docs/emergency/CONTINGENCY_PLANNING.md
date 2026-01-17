@@ -255,7 +255,7 @@ This guide applies to all REChain military contingency planning including:
 - **Distribution**: All plan stakeholders
 - **Maintenance**: Annual review and update
 
-#### 4.1.2 Plan Procedures
+#### 4.1.10 Plan Procedures
 - **Objective**: Provide detailed plan procedures
 - **Content**:
   - Step-by-step procedures
@@ -268,7 +268,7 @@ This guide applies to all REChain military contingency planning including:
 - **Distribution**: Plan implementation teams
 - **Maintenance**: Quarterly review and update
 
-#### 4.1.3 Plan Resources
+#### 4.1.10 Plan Resources
 - **Objective**: Identify plan resources
 - **Content**:
   - Personnel requirements

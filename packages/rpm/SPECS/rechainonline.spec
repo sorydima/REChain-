@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:           rechainonline
-Version:        4.1.8
+Version:        4.1.10+1160
 Release:        1%{?dist}
 Summary:        REChain - comprehensive platform for Matrix, blockchain, IPFS, AI
 Summary(ru):    РЕЧейн - комплексная платформа для Matrix, блокчейн, IPFS, ИИ
@@ -85,6 +85,10 @@ cp rechainonline.png $RPM_BUILD_ROOT/usr/share/pixmaps/ || true
 /usr/share/pixmaps/rechainonline.png
 
 %changelog
-* Sat Aug 03 2024 REChain Team <support@rechain.network> - 4.1.8-1
+* Sat Aug 03 2024 REChain Team <support@rechain.network> - 4.1.10+1160-1
+- Updated to version 4.1.10+1160
+- Bundle build 1160 for Russian Linux systems
+- Support for РЕД ОС, ОС «Альт», ОС РОСА, and other Russian distributions
+* Sat Aug 03 2024 REChain Team <support@rechain.network> - 4.1.10-1
 - Initial RPM package for Russian Linux systems
 - Support for РЕД ОС, ОС «Альт», ОС РОСА, and other Russian distributions

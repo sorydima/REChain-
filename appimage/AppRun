@@ -1,4 +1,19 @@
 #!/bin/sh
+# AppRun for REChain Application
+# Version: 4.1.10+1160
 
-cd "$(dirname "$0")"
-exec ./rechainonline
+# Get the directory where this script is located
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+export APPDIR="$SCRIPT_DIR"
+
+# Set working directory to script location
+cd "$SCRIPT_DIR"
+
+# Check for bundled libraries and dependencies
+if [ -d "$APPDIR/lib" ]; then
+    export LD_LIBRARY_PATH="$APPDIR/lib:$LD_LIBRARY_PATH"
+fi
+
+# Execute the main application
+exec ./rechainonline "$@"
+

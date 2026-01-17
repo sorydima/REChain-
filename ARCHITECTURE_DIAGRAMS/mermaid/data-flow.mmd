@@ -1,0 +1,21 @@
+sequenceDiagram
+    participant User
+    participant Client
+    participant MatrixServer
+    participant Federation
+    participant Recipient
+    participant Database
+
+    User->>Client: Compose message
+    Client->>Client: Encrypt (E2EE)
+    Client->>MatrixServer: Send encrypted message
+    MatrixServer->>MatrixServer: Store message
+    MatrixServer->>Database: Persist to PostgreSQL
+    MatrixServer->>Federation: Forward to recipient's server
+    Federation->>Recipient: Deliver message
+    Recipient->>RecipientClient: Push notification
+    RecipientClient->>RecipientClient: Decrypt message
+    RecipientClient->>Recipient: Display message
+
+    Note over User,Recipient: End-to-End Encrypted Communication
+

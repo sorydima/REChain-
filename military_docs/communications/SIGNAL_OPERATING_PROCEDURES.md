@@ -280,7 +280,7 @@ This manual applies to all REChain signal operations including:
 - **Responsible**: Satellite Operator
 - **Duration**: 30-60 minutes
 
-#### 4.1.2 Satellite Configuration
+#### 4.1.10 Satellite Configuration
 - **Objective**: Configure satellite equipment
 - **Activities**:
   - Configure satellite parameters
@@ -292,7 +292,7 @@ This manual applies to all REChain signal operations including:
 - **Responsible**: Satellite Operator
 - **Duration**: 30-60 minutes
 
-#### 4.1.3 Security Configuration
+#### 4.1.10 Security Configuration
 - **Objective**: Configure satellite security
 - **Activities**:
   - Install security certificates

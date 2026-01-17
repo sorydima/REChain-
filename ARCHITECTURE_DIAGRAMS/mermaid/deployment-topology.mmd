@@ -1,0 +1,85 @@
+graph TB
+    subgraph "Load Balancer Layer"
+        LB[🌐 Global Load Balancer<br/>Cloudflare/AWS GLB]
+    end
+
+    subgraph "Edge Layer"
+        CDN[📡 CDN Edge Nodes]
+        WAF[🛡️ WAF/DDoS Protection]
+    end
+
+    subgraph "Region: Europe"
+        EU["🇪🇺 EU Region"]
+        EU_Nginx[Nginx Reverse Proxy]
+        EU_Matrix[Matrix Server]
+        EU_DB[(PostgreSQL Cluster)]
+        EU_Redis[(Redis Cache)]
+        EU_IPFS[IPFS Node]
+    end
+
+    subgraph "Region: Americas"
+        US["🇺🇸 US Region"]
+        US_Nginx[Nginx Reverse Proxy]
+        US_Matrix[Matrix Server]
+        US_DB[(PostgreSQL Cluster)]
+        US_Redis[(Redis Cache)]
+        US_IPFS[IPFS Node]
+    end
+
+    subgraph "Region: Asia"
+        AS["🇨🇳 Asia Region"]
+        AS_Nginx[Nginx Reverse Proxy]
+        AS_Matrix[Matrix Server]
+        AS_DB[(PostgreSQL Cluster)]
+        AS_Redis[(Redis Cache)]
+        AS_IPFS[IPFS Node]
+    end
+
+    subgraph "Shared Services"
+        Monitoring[(📊 Prometheus/Grafana)]
+        Logging[(📝 ELK Stack)]
+        AI[🧠 AI Services]
+        Plugin[🔌 Plugin Engine]
+    end
+
+    LB --> WAF
+    WAF --> CDN
+    CDN --> EU_Nginx
+    CDN --> US_Nginx
+    CDN --> AS_Nginx
+
+    EU_Nginx --> EU_Matrix
+    US_Nginx --> US_Matrix
+    AS_Nginx --> AS_Matrix
+
+    EU_Matrix --> EU_DB
+    US_Matrix --> US_DB
+    AS_Matrix --> AS_DB
+
+    EU_Matrix --> EU_Redis
+    US_Matrix --> US_Redis
+    AS_Matrix --> AS_Redis
+
+    EU_IPFS --> EU_Matrix
+    US_IPFS --> US_Matrix
+    AS_IPFS --> AS_Matrix
+
+    EU_Matrix --> Monitoring
+    US_Matrix --> Monitoring
+    AS_Matrix --> Monitoring
+
+    Monitoring --> Logging
+    Monitoring --> AI
+    Monitoring --> Plugin
+
+    style LB fill:#7e57c2
+    style CDN fill:#7e57c2
+    style WAF fill:#7e57c2
+    style EU fill:#42a5f5
+    style US fill:#42a5f5
+    style AS fill:#42a5f5
+    style Monitoring fill:#ff7043
+    style Logging fill:#ff7043
+    style AI fill:#ff7043
+    style Plugin fill:#ff7043
+

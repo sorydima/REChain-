@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.rechain.online</id>
+  <name>REChain</name>
+  <summary>Digital Infrastructure Platform for Autonomous Organizations</summary>
+  
+  <description>
+    <p>
+      REChain is the foundational "Digital Spine" for the next generation of autonomous organizations,
+      bridging the gap between traditional enterprise systems and emerging Web4.0 technologies.
+    </p>
+    <p>
+      A comprehensive platform that unifies Matrix protocol, blockchain, IPFS, AI, and external services
+      into a seamless, extensible, and developer-friendly ecosystem.
+    </p>
+  </description>
+  
+  <launchable type="desktop-id">REChain.desktop</launchable>
+  
+  <url type="homepage">https://online.rechain.network</url>
+  <url type="bugtracker">https://github.com/sorydima/REChain-/issues</url>
+  <url type="help">https://github.com/sorydima/REChain-/wiki</url>
+  
+  <provides>
+    <binary>rechainonline</binary>
+  </provides>
+  
+  <categories>
+    <category>Network</category>
+    <category>Chat</category>
+    <category>InstantMessaging</category>
+    <category>Development</category>
+    <category>Security</category>
+  </categories>
+  
+  <keywords>
+    <keyword>Matrix</keyword>
+    <keyword>Blockchain</keyword>
+    <keyword>IPFS</keyword>
+    <keyword>AI</keyword>
+    <keyword>Decentralized</keyword>
+    <keyword>Secure</keyword>
+    <keyword>Communication</keyword>
+    <keyword>Messaging</keyword>
+    <keyword>Crypto</keyword>
+  </keywords>
+  
+  <screenshots>
+    <screenshot type="default">
+      https://github.com/sorydima/REChain-/raw/main/screenshots/rechain-messenger.png
+    </screenshot>
+    <screenshot>
+      https://github.com/sorydima/REChain-/raw/main/screenshots/rechain-dashboard.png
+    </screenshot>
+  </screenshots>
+  
+  <releases>
+    <release version="4.1.10+1160" date="2025-12-06">
+      <description>
+        <p>Major release with enhanced features:</p>
+        <ul>
+          <li>Matrix Protocol integration with bridges and federation</li>
+          <li>Blockchain support (TON, Ethereum, Bitget)</li>
+          <li>Multi-provider IPFS with encryption</li>
+          <li>AI services for moderation and translation</li>
+          <li>Dynamic plugin system with hot-reload</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+  
+  <content_rating type="oars-1.1">
+    <content_attribute id="social-chat">intense</content_attribute>
+    <content_attribute id="social-info">low</content_attribute>
+  </content_rating>
+  
+  <requires>
+    <memory>1024</memory>
+    <storage>500</storage>
+  </requires>
+  
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>touch</control>
+  </supports>
+  
+  <project_license>Apache-2.0</project_license>
+  <developer_name>REChain Inc.</developer_name>
+  
+  <translation type="gettext">rechain</translation>
+  
+  <custom>
+    <value key="xdg-icon-category">applications</value>
+    <value key="xdg-menu-category">Network</value>
+  </custom>
+  
+  <extends>com.rechain.online</extends>
+</component>
+

@@ -1,6 +1,164 @@
-# whatsapp config.yaml
+# whatsapp config.yaml - Upgraded for REChain v4.1.10+1160
+# Enhanced with modern features, performance optimizations, and security improvements
+
 homeserver:
   address: http://synapse:8008
   domain: your.domain.tld
+  connection_timeout: 30
+  read_timeout: 60
+  write_timeout: 60
+  max_retries: 3
+  retry_delay: 5
+
 appservice:
   database: appservice.db
+  database_opts:
+    pool_size: 5
+    max_overflow: 10
+    timeout: 20
+  session_timeout: 300
+  idle_timeout: 600
+
+logging:
+  level: info
+  format: json
+  output: file
+  log_file: /data/mautrix.log
+  max_size: 100M
+  backup_count: 5
+  structured:
+    enabled: true
+    timestamp_format: ISO8601
+
+performance:
+  message_processing_workers: 4
+  batch_size: 100
+  batch_timeout: 5
+  rate_limit:
+    enabled: true
+    requests_per_second: 50
+    burst_size: 100
+  cache:
+    enabled: true
+    max_entries: 10000
+    ttl: 3600
+  connection_pool:
+    min_connections: 2
+    max_connections: 20
+    max_idle_time: 300
+
+security:
+  encryption:
+    enabled: true
+    algorithm: AES-256-GCM
+  authentication:
+    method: token
+    token_rotation_interval: 86400
+  access_control:
+    default_policy: deny
+    allowed_users:
+      - "@admin:your.domain.tld"
+  user_rate_limit:
+    enabled: true
+    messages_per_minute: 60
+    messages_per_hour: 1000
+
+bridge:
+  whatsapp:
+    phone_number: "__CHANGE_ME__"
+    verify_token: "__CHANGE_ME__"
+    password: "__CHANGE_ME__"
+    device_name: "REChain WhatsApp Bridge"
+    connection:
+      use_ipv6: false
+      proxy: null
+      bypass_appservice_typing: false
+    message:
+      format: "matrix"
+      content_format: "html"
+      max_message_size: 65536
+      allow_reactions: true
+      allow_edits: true
+      allow_reply: true
+      allow_forward: true
+      allow_location: true
+      allow_contact: true
+      allow_image: true
+      allow_video: true
+      allow_audio: true
+      allow_document: true
+    group:
+      bridge_initial_chat: true
+      direct_chat_on_invite: true
+      private_chat_on_invite: false
+      invite_on_bridge: true
+      sync_participants: true
+    user:
+      puppet_source: "whatsapp"
+      avatar_source: "both"
+      displayname_source: "whatsapp"
+    admin:
+      enabled: true
+      relaybot: "@relaybot:your.domain.tld"
+  relay:
+    enabled: true
+    username_suffix: "relaybot"
+    icon: "default"
+  double_puppet:
+    enabled: true
+    source: "whatsapp"
+  bridging:
+    public: false
+    default_visibility: "private"
+    enable_status_bridging: true
+    enable_typing_bridging: true
+    enable_read_bridging: true
+    enable_presence_bridging: false
+    resend_bridge_info: true
+    async_transmission: true
+  push:
+    enabled: false
+    notifications: false
+    alert_words: []
+  metrics:
+    enabled: true
+    port: 8001
+    path: "/metrics"
+  webhook:
+    enabled: false
+    url: null
+    secret: null
+  room:
+    default_bridge_name: "whatsapp"
+    override_mxid_format: "{displayname} (whatsapp)"
+    ignore_users:
+      spaces: []
+      users: []
+
+experimental:
+  matrix_live:
+    enabled: false
+  msc:
+    - "msc2409"
+    - "msc3381"
+    - "msc3440"
+
+health:
+  enabled: true
+  port: 8008
+  path: "/health"
+  interval: 30
+  timeout: 10
+
+backup:
+  enabled: true
+  interval: 86400
+  retention: 7
+  path: "/data/backups"
+
+migration:
+  enabled: false
+  from_version: null
+  to_version: "4.1.10+1160"
+  backup_before_migration: true
+

@@ -11,6 +11,7 @@ export interface AppConfig {
   // Application settings
   appName: string;
   appVersion: string;
+  buildNumber: number;
   environment: string;
   debugMode: boolean;
 
@@ -110,7 +111,8 @@ export class REChainConfig {
       this.config = {
         // Application settings
         appName: await this.getString('appName', 'REChain'),
-        appVersion: await this.getString('appVersion', '4.1.4'),
+        appVersion: await this.getString('appVersion', '4.1.10+1160'),
+        buildNumber: await this.getNumber('buildNumber', 1160),
         environment: await this.getString('environment', 'production'),
         debugMode: await this.getBoolean('debugMode', false),
 
@@ -331,7 +333,11 @@ export class REChainConfig {
   }
 
   public getAppVersion(): string {
-    return this.config?.appVersion || '4.1.4';
+    return this.config?.appVersion || '4.1.10+1160';
+  }
+
+  public getBuildNumber(): number {
+    return this.config?.buildNumber || 1160;
   }
 
   public getEnvironment(): string {

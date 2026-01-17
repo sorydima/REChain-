@@ -1,7 +1,7 @@
 Name:       com.rechain.pwa
 Summary:    REChainPWA
-Version:    1.0.2
-Release:    12
+Version:    4.1.10+1160
+Release:    1
 Group:      Qt/Qt
 License:    BSD-3-Clause
 URL:        https://chainapp.codemagic.app
@@ -36,6 +36,9 @@ REChain Messenger is a decentralized messaging app.
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Sat Aug 03 2024 REChain Team <support@rechain.network> - 4.1.10+1160-1
+- Updated to version 4.1.10+1160
+- Build 1160 for AuroraOS
 * Tue Jul 08 2025 Dmitry Sorokin <dim15168250@yandex.ru>
 - Version 1.0.2
 - Some new stuff ..

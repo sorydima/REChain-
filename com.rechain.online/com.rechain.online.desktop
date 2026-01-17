@@ -1,8 +1,23 @@
 [Desktop Entry]
 Type=Application
 Name=REChain
+Comment=Secure, decentralized messaging platform
 Icon=com.rechain.online
-Exec=REChain %U
-Categories=Network;InstantMessaging;Chat;VideoConference;
-Keywords=REChain;Chat;Messenger;Social
+Exec=rechainonline %U
+Terminal=false
+Categories=Network;InstantMessaging;Chat;VideoConference;Security;Privacy;
+Keywords=REChain;Chat;Messenger;Social;Matrix;E2E;Encrypted;Decentralized;Federated;Messaging;Video;Voice
+StartupWMClass=REChain
 X-Purism-FormFactor=Workstation;Mobile;
+X-GNOME-UsesNotifications=true
+X-KDE-Protocols=matrix;
+MimeType=x-scheme-handler/matrix;
+
+[Actions]
+NewChat=New Chat
+
+[Desktop Action NewChat]
+Name=Start New Chat
+Exec=rechainonline --new-chat
+
+

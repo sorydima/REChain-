@@ -1,0 +1,315 @@
+# REChain Distribution Configuration
+# Version: 4.2.0
+# Description: Configuration for building and distributing REChain packages
+
+# ============================================================================
+# Build Configuration
+# ============================================================================
+
+build:
+  # Version information
+  version:
+    current: "4.2.0"
+    major: 4
+    minor: 2
+    patch: 0
+    codename: "Stability"
+    
+  # Build metadata
+  metadata:
+    build_number: 0
+    git_commit: ""
+    git_branch: ""
+    build_date: ""
+    build_timestamp: ""
+    
+  # Compilation settings
+  compiler:
+    type: "gcc"
+    version: "12+"
+    flags:
+      release: ["-O3", "-DNDEBUG"]
+      debug: ["-g", "-O0", "-DDEBUG"]
+      lto: true
+      pie: true
+    
+  # Architecture support
+  architectures:
+    - x86_64
+    - arm64
+    - armv7
+    - x86
+    
+  # Build outputs
+  output:
+    format: "tar.gz"
+    compression: "gzip"
+    compression_level: 9
+    
+# ============================================================================
+# Package Configuration
+# ============================================================================
+
+package:
+  # Package metadata
+  name: "rechain"
+  full_name: "REChain"
+  description: "Secure, decentralized messaging platform"
+  vendor: "REChain Network"
+  maintainer: "REChain Team <support@rechain.network>"
+  license: "REChain EULA"
+  version_requirement: ">= 4.0.0"
+  
+  # Package contents
+  contents:
+    - type: "binary"
+      path: "/usr/bin/rechain"
+      description: "Main REChain binary"
+    - type: "binary"
+      path: "/usr/bin/rechain-cli"
+      description: "REChain CLI tool"
+    - type: "config"
+      path: "/etc/rechain/config.yaml"
+      description: "Main configuration file"
+    - type: "data"
+      path: "/var/lib/rechain/"
+      description: "Data directory"
+    - type: "doc"
+      path: "/usr/share/doc/rechain/"
+      description: "Documentation"
+    - type: "man"
+      path: "/usr/share/man/"
+      description: "Manual pages"
+    - type: "service"
+      path: "/lib/systemd/system/"
+      description: "Systemd service file"
+    - type: "init"
+      path: "/etc/init.d/"
+      description: "Init script"
+      
+  # Dependencies
+  dependencies:
+    runtime:
+      - "libssl3"
+      - "libcrypto3"
+      - "libsqlite3-0"
+      - "libcurl4"
+      - "zlib1g"
+    recommended:
+      - "gnupg"
+      - "ca-certificates"
+      
+  # Scripts
+  scripts:
+    pre_install: "scripts/pre_install.sh"
+    post_install: "scripts/post_install.sh"
+    pre_remove: "scripts/pre_remove.sh"
+    post_remove: "scripts/post_remove.sh"
+    
+# ============================================================================
+# Distribution Targets
+# ============================================================================
+
+distributions:
+  # Debian/Ubuntu
+  debian:
+    type: "deb"
+    priority: "optional"
+    section: "net"
+    architecture: "any"
+    depends: "${runtime_dependencies}"
+    recommends: "${recommended_dependencies}"
+    conffiles:
+      - "/etc/rechain/config.yaml"
+    triggers:
+      - "register-systemd-user rechain.service"
+      
+  # Red Hat/Fedora
+  redhat:
+    type: "rpm"
+    priority: "optional"
+    group: "Applications/Internet"
+    requires: "${runtime_dependencies}"
+    recommends: "${recommended_dependencies}"
+    autocreate_dirs: "/var/lib/rechain"
+    
+  # Alpine
+  alpine:
+    type: "apk"
+    arch: "x86_64 aarch64 armv7"
+    depends: "${runtime_dependencies}"
+    
+  # Snap
+  snap:
+    type: "snap"
+    confinement: "strict"
+    grade: "stable"
+    plugs:
+      - "home"
+      - "network"
+      - "network-bind"
+      - "audio-playback"
+      
+  # Flatpak
+  flatpak:
+    type: "flatpak"
+    runtime: "org.freedesktop.Platform"
+    runtime_version: "24.08"
+    sdk: "org.freedesktop.Sdk"
+    
+  # Docker
+  docker:
+    type: "docker"
+    base_image: "ubuntu:24.04"
+    multi_stage: true
+    
+  # Source
+  source:
+    type: "tarball"
+    include:
+      - "src/"
+      - "config/"
+      - "scripts/"
+      - "README.md"
+      - "LICENSE"
+      
+# ============================================================================
+# Signing Configuration
+# ============================================================================
+
+signing:
+  # GPG signing
+  gpg:
+    enabled: true
+    key_type: "RSA"
+    key_length: 4096
+    algorithm: "SHA512"
+    key_id: ""
+    keyring: "~/.gnupg/rechain.gpg"
+    
+  # Checksums
+  checksums:
+    sha256: true
+    sha512: true
+    md5: false
+    
+  # Timestamp
+  timestamp:
+    enabled: true
+    server: "http://timestamp.digicert.com"
+    
+# ============================================================================
+# Repository Configuration
+# ============================================================================
+
+repository:
+  # APT repository
+  apt:
+    url: "https://repo.rechain.network/debian"
+    distribution: "stable"
+    component: "main"
+    architectures: ["amd64", "arm64", "armhf"]
+    
+  # YUM/DNF repository
+  yum:
+    baseurl: "https://repo.rechain.network/yum"
+    gpgcheck: true
+    gpgkey: "https://repo.rechain.network/rechain.gpg"
+    
+  # Docker registry
+  docker:
+    registry: "docker.rechain.network"
+    repository: "rechain"
+    tag_prefix: "v"
+    
+  # Snap store
+  snap:
+    channel: "stable"
+    grade: "stable"
+    
+# ============================================================================
+# Verification
+# ============================================================================
+
+verification:
+  # Integrity checks
+  checks:
+    - type: "signature"
+      algorithm: "gpg"
+    - type: "checksum"
+      algorithm: "sha256"
+    - type: "size"
+      tolerance: "1%"
+      
+  # Functional tests
+  tests:
+    - type: "unit"
+      coverage: "> 80%"
+    - type: "integration"
+      timeout: "300s"
+    - type: "smoke"
+      timeout: "60s"
+      
+  # Security scans
+  security:
+    - type: "vulnerability"
+      tool: "trivy"
+      severity: "HIGH"
+    - type: "static"
+      tool: "bandit"
+      level: "LOW"
+      
+# ============================================================================
+# Release Channels
+# ============================================================================
+
+channels:
+  stable:
+    version: "${version}"
+    testing: false
+    auto_update: true
+    priority: 100
+    
+  beta:
+    version: "${version}-beta"
+    testing: true
+    auto_update: true
+    priority: 90
+    
+  nightly:
+    version: "${version}-nightly"
+    commit: "${git_commit}"
+    testing: true
+    auto_update: false
+    priority: 0
+    
+# ============================================================================
+# Notifications
+# ============================================================================
+
+notifications:
+  email:
+    enabled: false
+    recipients:
+      - "releases@rechain.network"
+    on:
+      - "build_complete"
+      - "signing_complete"
+      - "publish_complete"
+      
+  webhook:
+    enabled: false
+    url: "https://hooks.rechain.network/build"
+    on:
+      - "build_start"
+      - "build_fail"
+      - "publish_success"
+      
+  slack:
+    enabled: false
+    channel: "#releases"
+    on:
+      - "build_complete"
+      - "publish_complete"
+      
+

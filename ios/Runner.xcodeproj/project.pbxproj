@@ -205,7 +205,7 @@
 				97C146EC1CF9000F007C117D /* Resources */,
 				C1005C4D261071B5002F4F32 /* Embed App Extensions */,
 				9705A1C41CF9048500538489 /* Embed Frameworks */,
-				F9C8EE392B9AB471152C306E /* [CP] Embed Pods Frameworks */,
+				F9C8EE392B9AB471150C306E /* [CP] Embed Pods Frameworks */,
 				064CBD7CE0D4CD6850C6880A /* [CP] Copy Pods Resources */,
 				3B06AD1E1E4923F5004D2608 /* Thin Binary */,
 			);
@@ -392,7 +392,7 @@
 			shellPath = /bin/sh;
 			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" build\n";
 		};
-		F9C8EE392B9AB471152C306E /* [CP] Embed Pods Frameworks */ = {
+		F9C8EE392B9AB471150C306E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -541,7 +541,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				MARKETING_VERSION = 4.1.2;
+				MARKETING_VERSION = 4.1.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rechain.online;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
@@ -681,7 +681,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				MARKETING_VERSION = 4.1.2;
+				MARKETING_VERSION = 4.1.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rechain.online;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
@@ -715,7 +715,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				MARKETING_VERSION = 4.1.2;
+				MARKETING_VERSION = 4.1.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rechain.online;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
@@ -746,7 +746,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 4.1.2;
+				MARKETING_VERSION = 4.1.10;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rechain.online.REChain.Online-Share";
@@ -781,7 +781,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 4.1.2;
+				MARKETING_VERSION = 4.1.10;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rechain.online.REChain.Online-Share";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -813,7 +813,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 4.1.2;
+				MARKETING_VERSION = 4.1.10;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rechain.online.REChain.Online-Share";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -1,8 +1,15 @@
 # REChain Standard Operating Procedure (SOP) Template
 ## Classification: [INSERT CLASSIFICATION LEVEL]
+## Version: 4.1.10+1160
+## Bundle: REChain Military Documentation v4.1.10+1160
 ### For Official Use Only (FOUO)
 
 ---
+
+**Template Version:** 4.1.10+1160  
+**Bundle Version:** REChain Military Documentation 4.1.10+1160  
+**Build:** 1160  
+**Release Date:** 2025
 
 ## 1. SOP Identification
 
@@ -160,13 +167,13 @@
 - [ ] Security breach detection
 - [ ] Hardware failure affecting operations
 
-#### 4.1.2 Security Incidents
+#### 4.1.10 Security Incidents
 - [ ] Unauthorized access attempt
 - [ ] Malware detection
 - [ ] Data compromise
 - [ ] Denial of service attack
 
-#### 4.1.3 Personnel Emergencies
+#### 4.1.10 Personnel Emergencies
 - [ ] Key personnel unavailable
 - [ ] Medical emergency
 - [ ] Security clearance issue

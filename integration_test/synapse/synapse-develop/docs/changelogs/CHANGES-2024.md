@@ -644,7 +644,7 @@ No significant changes since 1.113.0rc1.
 
 ### Updates to locked dependencies
 
-* Bump bcrypt from 4.1.3 to 4.2.0. ([\#17495](https://github.com/element-hq/synapse/issues/17495))
+* Bump bcrypt from 4.1.10 to 4.2.0. ([\#17495](https://github.com/element-hq/synapse/issues/17495))
 * Bump black from 24.4.2 to 24.8.0. ([\#17522](https://github.com/element-hq/synapse/issues/17522))
 * Bump phonenumbers from 8.13.39 to 8.13.42. ([\#17521](https://github.com/element-hq/synapse/issues/17521))
 * Bump ruff from 0.5.4 to 0.5.5. ([\#17494](https://github.com/element-hq/synapse/issues/17494))
@@ -1019,7 +1019,7 @@ No significant changes since 1.110.0rc3.
 ### Updates to locked dependencies
 
 * Bump anyhow from 1.0.83 to 1.0.86. ([\#17220](https://github.com/element-hq/synapse/issues/17220))
-* Bump bcrypt from 4.1.2 to 4.1.3. ([\#17224](https://github.com/element-hq/synapse/issues/17224))
+* Bump bcrypt from 4.1.10 to 4.1.10. ([\#17224](https://github.com/element-hq/synapse/issues/17224))
 * Bump lxml from 5.2.1 to 5.2.2. ([\#17261](https://github.com/element-hq/synapse/issues/17261))
 * Bump mypy-zope from 1.0.3 to 1.0.4. ([\#17262](https://github.com/element-hq/synapse/issues/17262))
 * Bump phonenumbers from 8.13.35 to 8.13.37. ([\#17235](https://github.com/element-hq/synapse/issues/17235))
@@ -1132,7 +1132,7 @@ No significant changes since 1.107.0rc1.
 
 ### Updates to locked dependencies
 
-* Bump furo from 2024.1.29 to 2024.4.27. ([\#17133](https://github.com/element-hq/synapse/issues/17133))
+* Bump furo from 2024.1.109 to 2024.4.27. ([\#17133](https://github.com/element-hq/synapse/issues/17133))
 * Bump idna from 3.6 to 3.7. ([\#17136](https://github.com/element-hq/synapse/issues/17136))
 * Bump jsonschema from 4.21.1 to 4.22.0. ([\#17157](https://github.com/element-hq/synapse/issues/17157))
 * Bump lxml from 5.1.0 to 5.2.1. ([\#17158](https://github.com/element-hq/synapse/issues/17158))
@@ -1352,7 +1352,7 @@ No significant changes since 1.103.0rc1.
 * Bump JasonEtco/create-an-issue from 2.9.1 to 2.9.2. ([\#16934](https://github.com/element-hq/synapse/issues/16934))
 * Bump anyhow from 1.0.79 to 1.0.80. ([\#16935](https://github.com/element-hq/synapse/issues/16935))
 * Bump dawidd6/action-download-artifact from 3.0.0 to 3.1.1. ([\#16933](https://github.com/element-hq/synapse/issues/16933))
-* Bump furo from 2023.9.10 to 2024.1.29. ([\#16939](https://github.com/element-hq/synapse/issues/16939))
+* Bump furo from 2023.9.10 to 2024.1.109. ([\#16939](https://github.com/element-hq/synapse/issues/16939))
 * Bump pyopenssl from 23.3.0 to 24.0.0. ([\#16937](https://github.com/element-hq/synapse/issues/16937))
 * Bump types-netaddr from 0.10.0.20240106 to 1.2.0.20240219. ([\#16938](https://github.com/element-hq/synapse/issues/16938))
 
@@ -1391,7 +1391,7 @@ No significant changes since 1.103.0rc1.
 ### Updates to locked dependencies
 
 * Bump attrs from 23.1.0 to 23.2.0. ([\#16899](https://github.com/element-hq/synapse/issues/16899))
-* Bump bcrypt from 4.0.1 to 4.1.2. ([\#16900](https://github.com/element-hq/synapse/issues/16900))
+* Bump bcrypt from 4.0.1 to 4.1.10. ([\#16900](https://github.com/element-hq/synapse/issues/16900))
 * Bump pygithub from 2.1.1 to 2.2.0. ([\#16902](https://github.com/element-hq/synapse/issues/16902))
 * Bump sentry-sdk from 1.40.0 to 1.40.3. ([\#16898](https://github.com/element-hq/synapse/issues/16898))
 

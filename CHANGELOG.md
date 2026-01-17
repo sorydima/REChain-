@@ -1,4 +1,4 @@
-## [v4.1.8+1152] - 2025-07-08
+## [v4.1.10+1160] - 2025-12-06
 
 ### Major Features & Integrations
 - Integrated Matrix (advanced backend, bridges, federation, encryption, bots)

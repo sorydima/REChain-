@@ -1,0 +1,54 @@
+graph LR
+    subgraph "Client Applications"
+        A[📱 Mobile App]
+        B[🌐 Web PWA]
+        C[🖥️ Desktop]
+    end
+
+    subgraph "Matrix Protocol"
+        D[Client-Server API]
+        E[Server-Server API]
+        F[Push Gateway]
+    end
+
+    subgraph "Bridges"
+        G[🔗 Telegram Bridge]
+        H[💬 Discord Bridge]
+        I[📱 WhatsApp Bridge]
+        J[💼 Slack Bridge]
+    end
+
+    subgraph "Matrix Servers"
+        K[Synapse/Dendrite]
+        L[Federation]
+        M[E2EE Module]
+    end
+
+    A --> D
+    B --> D
+    C --> D
+    D --> K
+    E --> L
+    K --> L
+    K --> M
+    M --> K
+    G --> K
+    H --> K
+    I --> K
+    J --> K
+    K --> F
+
+    style A fill:#42a5f5
+    style B fill:#42a5f5
+    style C fill:#42a5f5
+    style D fill:#66bb6a
+    style E fill:#66bb6a
+    style F fill:#66bb6a
+    style G fill:#ffa726
+    style H fill:#ffa726
+    style I fill:#ffa726
+    style J fill:#ffa726
+    style K fill:#ef5350
+    style L fill:#ef5350
+    style M fill:#ef5350
+

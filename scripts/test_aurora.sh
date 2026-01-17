@@ -112,7 +112,7 @@ setup_test_environment() {
     cat > "$RECHAIN_TEST_CONFIG_DIR/test.conf" << EOF
 [Application]
 name=REChain Test
-version=4.1.4-test
+version=4.1.10+1160-test
 environment=test
 
 [Logging]

@@ -185,14 +185,14 @@ This document applies to all REChain military communications including:
 - **Antenna Types**: Directional and omnidirectional antennas
 - **Range**: VHF (25-50 miles), UHF (10-25 miles), HF (global)
 
-#### 4.1.2 Data Communications
+#### 4.1.10 Data Communications
 - **Modes**: Data modes with error correction and encryption
 - **Baud Rates**: 300 bps to 56 kbps depending on conditions
 - **Protocols**: AX.25, PACTOR, and custom protocols
 - **Error Correction**: Forward error correction (FEC)
 - **Encryption**: AES-256 encryption with key management
 
-#### 4.1.3 Emergency Communications
+#### 4.1.10 Emergency Communications
 - **Priority Channels**: Dedicated emergency channels
 - **Emergency Protocols**: Standard emergency operating procedures
 - **Backup Systems**: Multiple backup communication systems

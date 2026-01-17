@@ -64,13 +64,13 @@ cp -r build/linux/e2k/release/bundle/* build/elbrus/
 ### Установка через RPM (если доступен)
 ```bash
 # Для систем с поддержкой RPM
-wget https://github.com/sorydima/REChain-/releases/latest/download/rechainonline-4.1.8-1.e2k.rpm
+wget https://github.com/sorydima/REChain-/releases/latest/download/rechainonline-4.1.10-1.e2k.rpm
 
 # Установка
-sudo rpm -i rechainonline-4.1.8-1.e2k.rpm
+sudo rpm -i rechainonline-4.1.10-1.e2k.rpm
 
 # Или через yum/dnf
-sudo yum install rechainonline-4.1.8-1.e2k.rpm
+sudo yum install rechainonline-4.1.10-1.e2k.rpm
 ```
 
 ## ⚡ Оптимизация для процессоров Эльбрус
@@ -420,6 +420,6 @@ EOF
 
 ---
 
-*Руководство для ОС «Эльбрус» версии 4.1.8+1152*
+*Руководство для ОС «Эльбрус» версии 4.1.10+1160*
 *Оптимизировано для архитектуры e2k*
 *Сертифицировано для использования в критически важных системах*

@@ -1,0 +1,141 @@
+{
+  "version": "4.1.10+1160",
+  "last_updated": "2025-01-09",
+  "description": "REChain Platform Fonts Configuration",
+  "fonts": {
+    "roboto": {
+      "name": "Roboto",
+      "version": "3.0",
+      "license": "Apache License 2.0",
+      "designer": "Christian Robertson",
+      "description": "Google's signature family of fonts",
+      "files": [
+        "Roboto-Regular.ttf",
+        "Roboto-Bold.ttf",
+        "Roboto-Light.ttf",
+        "Roboto-Thin.ttf",
+        "Roboto-Medium.ttf",
+        "Roboto-Black.ttf",
+        "Roboto-Italic.ttf",
+        "Roboto-BoldItalic.ttf",
+        "Roboto-LightItalic.ttf",
+        "Roboto-ThinItalic.ttf",
+        "Roboto-MediumItalic.ttf",
+        "Roboto-BlackItalic.ttf"
+      ],
+      "mono_variant": {
+        "name": "Roboto Mono",
+        "description": "Monospace variant of Roboto",
+        "files": [
+          "RobotoMono-Regular.ttf"
+        ]
+      },
+      "features": {
+        "variable_font": false,
+        "hinting": true,
+        "kerning": true,
+        "ligatures": false,
+        "color_support": false
+      },
+      "languages": [
+        "Latin",
+        "Latin Extended",
+        "Cyrillic",
+        "Greek"
+      ],
+      "weights": [
+        100, 300, 400, 500, 700, 900
+      ],
+      "styles": [
+        "normal",
+        "italic"
+      ]
+    },
+    "noto_emoji": {
+      "name": "Noto Color Emoji",
+      "version": "Unicode 15.1",
+      "license": "Apache License 2.0",
+      "designer": "Google",
+      "description": "Full color emoji font with Unicode support",
+      "files": [
+        "NotoColorEmoji.ttf"
+      ],
+      "features": {
+        "variable_font": false,
+        "hinting": true,
+        "kerning": false,
+        "ligatures": false,
+        "color_support": true,
+        "emoji_support": true
+      },
+      "unicode_coverage": "Unicode 15.1",
+      "emoji_count": 3700,
+      "color_format": "CBDT/CBLC"
+    }
+  },
+  "platforms": {
+    "android": {
+      "supported": true,
+      "min_version": "API 21",
+      "integration": "Flutter Asset Bundle"
+    },
+    "ios": {
+      "supported": true,
+      "min_version": "iOS 11.0",
+      "integration": "iOS Font Registration"
+    },
+    "web": {
+      "supported": true,
+      "formats": ["TTF", "WOFF2"],
+      "integration": "CSS Font Loading"
+    },
+    "desktop": {
+      "supported": true,
+      "linux": true,
+      "macos": true,
+      "windows": true,
+      "integration": "System Font Installation"
+    }
+  },
+  "performance": {
+    "compression": {
+      "woff2_ratio": 0.4,
+      "zopfli_enabled": true
+    },
+    "subsetting": {
+      "latin_basic": true,
+      "latin_extended": true,
+      "cyrillic": true,
+      "emoji": true
+    },
+    "caching": {
+      "browser_cache": true,
+      "cdn_distribution": true
+    }
+  },
+  "accessibility": {
+    "high_contrast": true,
+    "large_character_set": true,
+    "rtl_support": true,
+    "screen_reader_compatible": true
+  },
+  "validation": {
+    "checksums": true,
+    "fonttools_validation": true,
+    "flutter_integration": true,
+    "cross_platform_compatibility": true
+  },
+  "build": {
+    "auto_update": true,
+    "backup_before_update": true,
+    "validation_required": true,
+    "checksum_verification": true
+  },
+  "metadata": {
+    "author": "REChain Team",
+    "license": "Apache License 2.0",
+    "homepage": "https://rechain.network",
+    "repository": "https://github.com/sorydima/REChain-",
+    "issues": "https://github.com/sorydima/REChain-/issues"
+  }
+}

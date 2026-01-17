@@ -1,0 +1,91 @@
+# Synapse Configuration Template for REChain
+# Copy this to homeserver.yaml and customize
+
+server_name: "your.domain.tld"
+report_stats: true
+
+# Database Configuration
+database:
+  name: "psycopg2"
+  host: "postgres"
+  port: 5432
+  user: "synapse"
+  password: "your_secure_password"
+  database: "synapse"
+  pool_size: 50
+  max_overflow: 20
+
+# Logging Configuration
+log_config: "/etc/homeserver.yaml.d/log.yaml"
+
+# Rate Limiting
+ratelimiting:
+  enabled: true
+  default_repeat_limit: 10
+  default_per_second: 5
+
+# Message Retention
+message_retention:
+  enabled: true
+  default_policy:
+    min_lifetime: 1d
+    max_lifetime: 1y
+
+# Presence Configuration
+presence:
+  enabled: true
+
+# Federation Configuration
+federation:
+  send_unsign: true
+  allow_outgoing_federation: true
+  client_timeout: 60s
+
+# Application Services
+app_service_config_files:
+  - /data/bridges/telegram_registration.yaml
+  - /data/bridges/discord_registration.yaml
+  - /data/bridges/whatsapp_registration.yaml
+  - /data/bridges/signal_registration.yaml
+
+# VoIP Configuration
+turn_uris:
+  - "turn:turn.example.com:3478?transport=udp"
+  - "turn:turn.example.com:3478?transport=tcp"
+
+# TURN Authentication
+turn_shared_secret: "your_shared_secret"
+
+# Captcha Configuration
+recaptcha_public_key: "your_recaptcha_key"
+recaptcha_private_key: "your_recaptcha_secret"
+enable_registration_captcha: false
+
+# User Registration Configuration
+enable_registration: true
+enable_registration_without_verification: false
+registration_shared_secret: "your_registration_secret"
+
+# Email Configuration
+email:
+  smtp_host: "smtp.example.com"
+  smtp_port: 587
+  smtp_user: "your_smtp_user"
+  smtp_pass: "your_smtp_password"
+  notif_from: "REChain <noreply@your.domain.tld>"
+
+# Push Configuration
+push:
+  enabled: true
+
+# Rooms Configuration
+rooms:
+  encryption_enabled_by_default: true
+  allow_invites: true
+  enable_room_list_search: true
+
+# Experimental Features
+experimental_features:
+  msc3244_support: true
+  msc3771_support: true
+

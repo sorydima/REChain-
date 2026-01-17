@@ -113,7 +113,7 @@ sudo curl -o /etc/yum.repos.d/rechain.repo https://repo.rechain.com/aurora/recha
 sudo pkcon install rechain
 
 # Or install directly from file
-sudo rpm -ivh rechain-4.1.4-1.aarch64.rpm
+sudo rpm -ivh rechain-4.1.10-1.aarch64.rpm
 ```
 
 #### Manual Installation
@@ -136,7 +136,7 @@ The main configuration file is located at `/etc/rechain/rechain.conf`:
 ```ini
 [Application]
 name=REChain
-version=4.1.4
+version=4.1.10
 environment=production
 
 [Notifications]

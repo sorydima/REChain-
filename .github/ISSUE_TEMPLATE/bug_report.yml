@@ -60,7 +60,7 @@ body:
     id: version
     attributes:
       label: Version
-      description: REChain version (e.g., 4.1.8+1152)
+      description: REChain version (e.g., 4.1.10+1160)
     validations:
       required: true
 

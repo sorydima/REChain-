@@ -1,19 +1,277 @@
+# Prometheus Alert Rules for REChain Bridge Monitoring
+# These rules detect issues with bridge health, performance, and availability
+
 groups:
-  - name: supertma-alerts
+  - name: bridge_general
     rules:
-      - alert: SuperTMAHighErrorRate
-        expr: increase(bridge_errors[5m]) > 5
-        for: 5m
-        labels:
-          severity: warning
-        annotations:
-          summary: "Super TMA bridge has a high error rate"
-          description: "More than 5 errors in 5 minutes."
-      - alert: SuperTMADown
-        expr: bridge_uptime_seconds < 60
+      # Bridge Down Alert
+      - alert: BridgeDown
+        expr: bridge_up == 0
         for: 1m
         labels:
           severity: critical
+          team: infrastructure
         annotations:
-          summary: "Super TMA bridge may be down"
-          description: "Uptime dropped below 60 seconds." 
+          summary: "Bridge {{ $labels.bridge }} is down"
+          description: "The {{ $labels.bridge }} bridge has been down for more than 1 minute."
+          runbook_url: "https://wiki.rechain.network/runbooks/bridge-down"
+
+      # High Error Rate
+      - alert: HighErrorRate
+        expr: rate(bridge_errors_total[5m]) > 10
+        for: 5m
+        labels:
+          severity: warning
+          team: infrastructure
+        annotations:
+          summary: "High error rate on {{ $labels.bridge }} bridge"
+          description: "Error rate is {{ $value }} errors per second on {{ $labels.bridge }} bridge."
+          runbook_url: "https://wiki.rechain.network/runbooks/high-error-rate"
+
+      # Critical Error Rate
+      - alert: CriticalErrorRate
+        expr: rate(bridge_errors_total[1m]) > 50
+        for: 2m
+        labels:
+          severity: critical
+          team: infrastructure
+        annotations:
+          summary: "Critical error rate on {{ $labels.bridge }} bridge"
+          description: "Error rate is {{ $value }} errors per second - immediate action required."
+          runbook_url: "https://wiki.rechain.network/runbooks/critical-error-rate"
+
+  - name: bridge_performance
+    rules:
+      # High Latency
+      - alert: HighLatency
+        expr: histogram_quantile(0.95, rate(bridge_latency_seconds_bucket[5m])) > 1
+        for: 5m
+        labels:
+          severity: warning
+          team: performance
+        annotations:
+          summary: "High latency on bridge operations"
+          description: "P95 latency is {{ $value | humanizeDuration }} - performance degradation detected."
+          runbook_url: "https://wiki.rechain.network/runbooks/high-latency"
+
+      # Very High Latency
+      - alert: VeryHighLatency
+        expr: histogram_quantile(0.99, rate(bridge_latency_seconds_bucket[5m])) > 5
+        for: 2m
+        labels:
+          severity: critical
+          team: performance
+        annotations:
+          summary: "Very high latency on bridge operations"
+          description: "P99 latency is {{ $value | humanizeDuration }} - severe performance issues."
+          runbook_url: "https://wiki.rechain.network/runbooks/very-high-latency"
+
+      # Message Processing Delay
+      - alert: MessageProcessingDelay
+        expr: rate(bridge_messages_processed_total[1m]) < 1
+        for: 10m
+        labels:
+          severity: warning
+          team: performance
+        annotations:
+          summary: "Message processing delay detected"
+          description: "Message processing rate has dropped to {{ $value }} messages/min."
+          runbook_url: "https://wiki.rechain.network/runbooks/message-delay"
+
+  - name: bridge_resources
+    rules:
+      # Rate Limit Exhaustion
+      - alert: RateLimitExhaustion
+        expr: bridge_limit_usage_ratio{limit_type="rate_limit"} > 0.9
+        for: 5m
+        labels:
+          severity: warning
+          team: infrastructure
+        annotations:
+          summary: "Rate limit exhaustion on {{ $labels.bridge }}"
+          description: "Rate limit usage is at {{ $value | humanizePercentage }}."
+          runbook_url: "https://wiki.rechain.network/runbooks/rate-limit"
+
+      # Circuit Breaker Open
+      - alert: CircuitBreakerOpen
+        expr: bridge_circuit_breaker_state == 2
+        for: 1m
+        labels:
+          severity: critical
+          team: infrastructure
+        annotations:
+          summary: "Circuit breaker open for {{ $labels.service }}"
+          description: "Circuit breaker for {{ $labels.service }} has been open for 1+ minute."
+          runbook_url: "https://wiki.rechain.network/runbooks/circuit-breaker"
+
+      # Cache Miss Rate High
+      - alert: HighCacheMissRate
+        expr: (
+            rate(bridge_cache_misses_total[5m]) /
+            (rate(bridge_cache_hits_total[5m]) + rate(bridge_cache_misses_total[5m]))
+          ) > 0.5
+        for: 10m
+        labels:
+          severity: warning
+          team: performance
+        annotations:
+          summary: "High cache miss rate"
+          description: "Cache miss rate is {{ $value | humanizePercentage }} - cache tuning needed."
+          runbook_url: "https://wiki.rechain.network/runbooks/cache-miss"
+
+      # Queue Buildup
+      - alert: QueueBuildup
+        expr: bridge_queue_size / bridge_queue_max_size > 0.8
+        for: 5m
+        labels:
+          severity: warning
+          team: performance
+        annotations:
+          summary: "Message queue buildup on {{ $labels.queue }}"
+          description: "Queue {{ $labels.queue }} is {{ $value | humanizePercentage }} full."
+          runbook_url: "https://wiki.rechain/network/runbooks/queue-buildup"
+
+      # Critical Queue Buildup
+      - alert: CriticalQueueBuildup
+        expr: bridge_queue_size / bridge_queue_max_size > 0.95
+        for: 2m
+        labels:
+          severity: critical
+          team: performance
+        annotations:
+          summary: "Critical message queue buildup"
+          description: "Queue {{ $labels.queue }} is {{ $value | humanizePercentage }} full - risk of message loss."
+          runbook_url: "https://wiki.rechain.network/runbooks/critical-queue"
+
+  - name: bridge_availability
+    rules:
+      # Bridge Restart Detected
+      - alert: BridgeRestart
+        expr: changes(bridge_up[1m]) > 0
+        labels:
+          severity: info
+          team: infrastructure
+        annotations:
+          summary: "Bridge {{ $labels.bridge }} restart detected"
+          description: "Bridge {{ $labels.bridge }} has restarted."
+
+      # No Messages Recently
+      - alert: NoMessagesRecent
+        expr: increase(bridge_messages_processed_total[30m]) == 0
+        for: 35m
+        labels:
+          severity: warning
+          team: operations
+        annotations:
+          summary: "No messages on {{ $labels.bridge }} bridge"
+          description: "No messages processed in the last 30 minutes on {{ $labels.bridge }}."
+
+      # High Message Drop Rate
+      - alert: HighMessageDropRate
+        expr: (
+            rate(bridge_errors_total{error_type="dropped"}[5m]) /
+            rate(bridge_messages_processed_total[5m])
+          ) > 0.1
+        for: 5m
+        labels:
+          severity: warning
+          team: reliability
+        annotations:
+          summary: "High message drop rate on {{ $labels.bridge }}"
+          description: "{{ $value | humanizePercentage }} of messages are being dropped."
+          runbook_url: "https://wiki.rechain.network/runbooks/message-drops"
+
+  - name: bridge_slo
+    rules:
+      # SLO: Availability < 99.9%
+      - alert: AvailabilitySLIBreach
+        expr: (
+            (1 - (sum(rate(bridge_errors_total[7d])) / sum(rate(bridge_messages_processed_total[7d])))) * 100
+          ) < 99.9
+        for: 1h
+        labels:
+          severity: critical
+          team: reliability
+        annotations:
+          summary: "Availability SLO breached"
+          description: "7-day availability is {{ $value | humanizePercentage }} - below 99.9% target."
+
+      # SLO: Latency P95 > 500ms
+      - alert: LatencySLIBreach
+        expr: histogram_quantile(0.95, rate(bridge_latency_seconds_bucket[7d])) > 0.5
+        for: 1h
+        labels:
+          severity: warning
+          team: reliability
+        annotations:
+          summary: "Latency SLO breached"
+          description: "P95 latency over 7 days is above 500ms target."
+
+  - bridge_security:
+    rules:
+      # Unusual Error Pattern
+      - alert: UnusualErrorPattern
+        expr: (
+            increase(bridge_errors_total{error_type="auth"}[5m]) >
+            5 * increase(bridge_errors_total{error_type="auth"}[1h]) / 12
+          )
+        for: 5m
+        labels:
+          severity: warning
+          team: security
+        annotations:
+          summary: "Unusual authentication error pattern"
+          description: "Authentication errors are spiking - possible brute force attack."
+
+      # Rate Limit Bypass Attempt
+      - alert: RateLimitBypassAttempt
+        expr: increase(rate_limit_hits_total[1m]) > 100
+        for: 2m
+        labels:
+          severity: warning
+          team: security
+        annotations:
+          summary: "Potential rate limit bypass"
+          description: "High rate of rate limit hits detected - possible bypass attempt."
+
+# Recording rules for commonly used queries
+  - name: bridge_recording_rules
+    rules:
+      # Message success rate
+      - record: bridge_message_success_rate
+        expr: |
+          sum(rate(bridge_messages_processed_total{status="success"}[5m])) /
+          sum(rate(bridge_messages_processed_total[5m]))
+
+      # Overall error rate
+      - record: bridge_error_rate
+        expr: |
+          sum(rate(bridge_errors_total[5m])) /
+          sum(rate(bridge_messages_processed_total[5m]))
+
+      # Cache hit ratio
+      - record: cache_hit_ratio
+        expr: |
+          sum(rate(bridge_cache_hits_total[5m])) /
+          (sum(rate(bridge_cache_hits_total[5m])) + sum(rate(bridge_cache_misses_total[5m])))
+
+      # Queue utilization
+      - record: queue_utilization
+        expr: |
+          bridge_queue_size / bridge_queue_max_size
+
+      # Messages per minute
+      - record: messages_per_minute
+        expr: |
+          sum(rate(bridge_messages_processed_total[1m]))
+
+      # Active bridges count
+      - record: active_bridges
+        expr: |
+          sum(bridge_up)
+
+      # Average latency
+      - record: avg_latency
+        expr: |
+          histogram_quantile(0.50, rate(bridge_latency_seconds_bucket[5m]))
+

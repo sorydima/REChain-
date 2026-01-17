@@ -34,19 +34,19 @@ install_rechain() {
     case $os_type in
         "astra")
             echo "Установка для Astra Linux..."
-            wget "$base_url/rechainonline-4.1.8-amd64.deb"
-            sudo dpkg -i rechainonline-4.1.8-amd64.deb
+            wget "$base_url/rechainonline-4.1.10-amd64.deb"
+            sudo dpkg -i rechainonline-4.1.10-amd64.deb
             sudo apt-get install -f
             ;;
         "redos"|"alt"|"rosa")
             echo "Установка для $os_type..."
-            wget "$base_url/rechainonline-4.1.8-1.x86_64.rpm"
+            wget "$base_url/rechainonline-4.1.10-1.x86_64.rpm"
             if command -v dnf &> /dev/null; then
-                sudo dnf install rechainonline-4.1.8-1.x86_64.rpm
+                sudo dnf install rechainonline-4.1.10-1.x86_64.rpm
             elif command -v yum &> /dev/null; then
-                sudo yum install rechainonline-4.1.8-1.x86_64.rpm
+                sudo yum install rechainonline-4.1.10-1.x86_64.rpm
             else
-                sudo rpm -i rechainonline-4.1.8-1.x86_64.rpm
+                sudo rpm -i rechainonline-4.1.10-1.x86_64.rpm
             fi
             ;;
         "elbrus")
@@ -105,7 +105,7 @@ main "$@"
   hosts: all
   become: yes
   vars:
-    rechain_version: "4.1.8"
+    rechain_version: "4.1.10"
     base_url: "https://github.com/sorydima/REChain-/releases/latest/download"
     
   tasks:
@@ -195,10 +195,10 @@ RUN apt-get update && apt-get install -y \
 RUN useradd -m -s /bin/bash testuser
 
 # Копирование пакета REChain
-COPY rechainonline-4.1.8-1.x86_64.rpm /tmp/
+COPY rechainonline-4.1.10-1.x86_64.rpm /tmp/
 
 # Установка REChain
-RUN rpm -i /tmp/rechainonline-4.1.8-1.x86_64.rpm
+RUN rpm -i /tmp/rechainonline-4.1.10-1.x86_64.rpm
 
 # Настройка окружения
 USER testuser
@@ -228,7 +228,7 @@ spec:
     spec:
       containers:
       - name: rechain
-        image: rechain/russian-linux:4.1.8
+        image: rechain/russian-linux:4.1.10
         ports:
         - containerPort: 8080
         env:

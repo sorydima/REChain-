@@ -8,7 +8,7 @@ This guide provides instructions for upgrading REChain from one version to anoth
 - Check release notes for breaking changes
 - Test upgrades in staging environment first
 
-## Upgrading from v4.1.7 to v4.1.8
+## Upgrading from v4.1.9 to v4.1.10
 
 ### Database Migrations
 ```bash
@@ -36,7 +36,7 @@ import 'package:rechain/new_module.dart';
 oldMethod() => newMethod();
 ```
 
-## Upgrading from v4.1.6 to v4.1.8
+## Upgrading from v4.1.9 to v4.1.10
 
 ### Breaking Changes
 - Removed deprecated API endpoints
@@ -62,7 +62,7 @@ cp config.json config_backup.json
 ### 2. Download New Version
 ```bash
 git pull origin main
-git checkout v4.1.8
+git checkout v4.1.10
 ```
 
 ### 3. Update Dependencies

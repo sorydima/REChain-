@@ -4,7 +4,7 @@
 
 ## Latest Release Information
 
-This deprecation policy is current as of REChain version 4.1.8+1152, released on 2025-07-08.
+This deprecation policy is current as of REChain version 4.1.10+1160, released on 2025-12-06.
 
 For details on deprecation rules and processes, see [RELEASE_NOTES.md](./RELEASE_NOTES.md).
 

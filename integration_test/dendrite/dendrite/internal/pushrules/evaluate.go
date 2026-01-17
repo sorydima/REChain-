@@ -57,7 +57,7 @@ func NewRuleSetEvaluator(ec EvaluationContext, ruleSet *RuleSet) *RuleSetEvaluat
 func (rse *RuleSetEvaluator) MatchEvent(event gomatrixserverlib.PDU, userIDForSender spec.UserIDForSender) (*Rule, error) {
 	// TODO: server-default rules have lower priority than user rules,
 	// but they are stored together with the user rules. It's a bit
-	// unclear what the specification (11.14.1.4 Predefined rules)
+	// unclear what the specification (11.14.1.10 Predefined rules)
 	// means the ordering should be.
 	//
 	// The most reasonable interpretation is that default overrides

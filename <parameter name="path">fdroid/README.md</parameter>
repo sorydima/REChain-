@@ -1,0 +1,306 @@
+<parameter name="content"># REChain F-Droid Configuration
+
+F-Droid repository configuration for hosting REChain Android application.
+
+## Quick Start
+
+### Prerequisites
+
+```bash
+# Install F-Droid tools
+pip3 install fdroidserver
+
+# Or via Docker
+docker pull fdroid/fdroidserver:latest
+```
+
+### Build Commands
+
+```bash
+# Initialize repository
+fdroid init
+
+# Update repository
+fdroid update --create-metadata
+
+# Build app
+fdroid build --verbose network.rechain.app
+
+# Publish to web server
+fdroid publish
+```
+
+## Directory Structure
+
+```
+fdroid/
+├── config.yml              # Repository configuration
+├── app/
+│   ├── build.gradle.kts    # App build configuration
+│   └── src/
+│       └── main/
+│           └── AndroidManifest.xml
+├── metadata/
+│   └── network.rechain.app.yml  # App metadata
+├── gradle.properties        # Gradle settings
+├── build.gradle.kts         # Root build file
+├── keystore.p12            # Signing keystore
+└── README.md               # This file
+```
+
+## Configuration
+
+### config.yml
+
+```yaml
+repo_name: REChain F-Droid Repository
+repo_description: F-Droid repository for REChain secure messaging app
+
+# Web server configuration
+webroot: /var/www/fdroid.rechain.network
+address: 0.0.0.0
+port: 8000
+
+# Signing
+keystore: fdroid/keystore.p12
+keypass: changeit
+alias: fdroid
+
+# Categories
+categories:
+  - Communication
+  - Security
+```
+
+## Application Metadata
+
+### metadata/network.rechain.app.yml
+
+```yaml
+Categories:
+  - Communication
+  - Security
+License: AGPL-3.0-or-later
+AuthorName: REChain Team
+AuthorEmail: support@rechain.network
+WebSite: https://rechain.network
+SourceCode: https://github.com/sorydima/REChain-
+IssueTracker: https://github.com/sorydima/REChain-/issues
+
+Summary: Secure, decentralized messaging application
+Description: |
+  REChain is a secure, decentralized messaging application built on the
+  Matrix protocol. It provides end-to-end encrypted messaging with
+  support for text, voice, video, and file sharing.
+
+  Features:
+  - End-to-end encrypted messaging
+  - Voice and video calls
+  - File sharing
+  - Group chats
+  - Bridge integrations
+  - Self-hosted server support
+
+AntiFeatures:
+  - NonFreeNet: Requires internet connection
+  - Ads: Contains no advertisements
+
+Requires:
+  - Android 5.0+
+
+AutoUpdateMode: Version %v
+UpdateCheckMode: Tags
+```
+
+## Build Process
+
+### 1. Prepare Environment
+
+```bash
+# Clone repository
+git clone https://github.com/sorydima/REChain-.git
+cd REChain-
+
+# Setup F-Droid
+cd fdroid
+
+# Create virtual environment
+python3 -m venv venv
+source venv/bin/activate
+
+# Install F-Droid tools
+pip install fdroidserver
+```
+
+### 2. Configure Repository
+
+```bash
+# Initialize F-Droid repository
+fdroid init
+
+# Configure signing
+export KEYSTORE_PASSWORD="your_password"
+export KEY_PASSWORD="your_password"
+```
+
+### 3. Build Application
+
+```bash
+# Update metadata
+fdroid update --create-metadata
+
+# Build the app
+fdroid build --verbose network.rechain.app
+
+# Sign the APK
+fdroid sign --verbose network.rechain.app
+```
+
+### 4. Publish
+
+```bash
+# Update index
+fdroid update --verbose
+
+# Copy to web directory
+fdroid publish
+
+# Deploy to server
+rsync -avz /var/www/fdroid/ user@fdroid.rechain.network:/var/www/
+```
+
+## CI/CD Integration
+
+### GitHub Actions
+
+```yaml
+name: F-Droid Build
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "0 0 * * 0"  # Weekly build
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: fdroid/fdroidserver:latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build App
+        run: |
+          fdroid init --no-interaction
+          fdroid build --verbose network.rechain.app
+
+      - name: Sign App
+        env:
+          KEYSTORE: ${{ secrets.FDROID_KEYSTORE }}
+        run: |
+          echo "$KEYSTORE" | base64 -d > fdroid/keystore.jks
+          fdroid sign --verbose network.rechain.app
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: fdroid-repo
+          path: repo/
+```
+
+## Security
+
+### Signing Keys
+
+1. Generate signing key:
+   ```bash
+   keytool -genkeypair -v -keystore keystore.p12 \
+     -alias fdroid -keyalg RSA -keysize 4096 \
+     -validity 10000 -storetype PKCS12
+   ```
+
+2. Backup keys securely:
+   ```bash
+   # Store in secure location
+   gpg -c keystore.p12
+   # Save encrypted file to safe location
+   ```
+
+3. Key rotation policy:
+   - Rotate keys every 2 years
+   - Maintain backup keys
+   - Document key ceremonies
+
+## Troubleshooting
+
+### Common Issues
+
+| Issue | Solution |
+|-------|----------|
+| Build fails | Check `fdroid.log` for errors |
+| Signature mismatch | Verify keystore password |
+| Update check fails | Check update URL in metadata |
+| Index corruption | Regenerate with `fdroid update` |
+
+### Debug Mode
+
+```bash
+# Verbose build
+fdroid build --verbose network.rechain.app
+
+# Debug update
+fdroid update --verbose --debug
+
+# Check logs
+cat ~/.cache/fdroid/fdroid.log
+```
+
+### Clean Build
+
+```bash
+# Clear cache
+fdroid clearcache
+
+# Remove build artifacts
+rm -rf build/
+
+# Fresh build
+fdroid build --verbose network.rechain.app
+```
+
+## Best Practices
+
+1. Reproducible Builds:
+   - Use Docker for consistent builds
+   - Pin dependency versions
+   - Document build environment
+
+2. Security:
+   - Use strong signing keys
+   - Store keys securely
+   - Enable signature verification
+
+3. Automation:
+   - Schedule regular builds
+   - Automate metadata updates
+   - Use CI/CD pipelines
+
+4. Documentation:
+   - Keep metadata up to date
+   - Document build process
+   - Maintain changelog
+
+## Links
+
+- F-Droid Documentation: https://f-droid.org/docs/
+- F-Droid GitHub: https://gitlab.com/fdroid/fdroidserver
+- REChain Repository: https://github.com/sorydima/REChain-
+- Issue Tracker: https://github.com/sorydima/REChain-/issues
+
+---
+
+**Last Updated**: 2025-01-09
+**REChain Version**: 4.2.0
+**F-Droid Server**: fdroid.rechain.network
+</parameter>

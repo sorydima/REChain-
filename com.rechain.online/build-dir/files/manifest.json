@@ -63,7 +63,7 @@
           "only-arches" : [
             "x86_64"
           ],
-          "url" : "https://github.com/sorydima/REChain-/releases/download/4.1.8%2B1152/REChain.Online.tar.gz",
+          "url" : "https://github.com/sorydima/REChain-/releases/download/4.1.10%2B1152/REChain.Online.tar.gz",
           "sha256" : "e5d9b9c7ad648ad2c694e9e8f8779a9bcc7004e4309dc7ac5bc5f35ad5731e33",
           "type" : "archive"
         },

@@ -15,6 +15,10 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'extensions/default_flows.dart';
 import 'extensions/wait_for.dart';
 import 'users.dart';
+import 'version.dart';
+
+// REChain Integration Tests - Version 4.1.10+1160
+// Tests for validating app functionality with REChain $kAppVersion
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();

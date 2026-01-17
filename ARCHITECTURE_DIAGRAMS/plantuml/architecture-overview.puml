@@ -1,0 +1,82 @@
+@startuml
+!theme plain
+skinparam backgroundColor #FFFFFF
+skinparam componentStyle rectangle
+
+title REChain System Architecture Overview v4.1.10+1160
+
+package "Presentation Layer" {
+    [Flutter Mobile App] as Mobile
+    [Web PWA] as WebPWA
+    [Desktop Linux] as Desktop
+    [Android App] as Android
+}
+
+package "API Gateway Layer" {
+    [REST API] as REST
+    [WebSocket Server] as WS
+    [GraphQL Endpoint] as GQL
+    [gRPC Service] as GRPC
+}
+
+package "Core Services Layer" {
+    [Matrix Protocol Server] as Matrix
+    [Blockchain Services] as Chain
+    [IPFS Network] as IPFS
+    [AI Services] as AI
+    [Plugin Engine] as Plugin
+    [Identity Service] as Identity
+}
+
+package "Data Layer" {
+    database "PostgreSQL" as PG
+    database "Redis Cache" as Redis
+    database "SQLCipher" as SQL
+    storage "IPFS Storage" as IPFSStore
+}
+
+package "Infrastructure" {
+    [Kubernetes Cluster] as K8s
+    [Prometheus Monitoring] as Monitor
+    [Grafana Dashboards] as Grafana
+    [ELK Logging] as ELK
+}
+
+' Relationships
+Mobile --> REST
+WebPWA --> WS
+Desktop --> GQL
+Android --> GRPC
+
+REST --> Matrix
+WS --> Matrix
+GQL --> Plugin
+GRPC --> Chain
+
+Matrix --> PG
+Chain --> Redis
+IPFS --> IPFSStore
+AI --> SQL
+
+Identity --> Redis
+Plugin --> Redis
+
+PG --> K8s
+Redis --> K8s
+IPFSStore --> K8s
+
+K8s --> Monitor
+K8s --> Grafana
+K8s --> ELK
+
+' Styling
+skinparam component {
+    BackgroundColor<<Presentation>> #42A5F5
+    BackgroundColor<<API>> #66BB6A
+    BackgroundColor<<Core>> #FFA726
+    BackgroundColor<<Data>> #EF5350
+    BackgroundColor<<Infra>> #7E57C2
+}
+
+@enduml
+

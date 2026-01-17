@@ -229,7 +229,7 @@
 - **Dimensions**: 3U rackmount (17.3" x 49.0" x 15.0")
 - **Operating Temperature**: 0°C to 40°C
 
-#### 4.1.2 Portable UPS
+#### 4.1.10 Portable UPS
 - **Model**: REChain UPS P1 (MIL-SPEC P1)
 - **Capacity**: 1 kVA / 900W
 - **Runtime**: 60 minutes at full load

@@ -1,8 +1,15 @@
 # REChain System Operations Standard Operating Procedure
 ## Classification: SECRET/NOFORN
+## Version: 4.1.10+1160
+## Bundle: REChain Military Documentation v4.1.10+1160
 ### For Official Use Only
 
 ---
+
+**Document Version:** 4.1.10+1160  
+**Bundle Version:** REChain Military Documentation 4.1.10+1160  
+**Build:** 1160  
+**Release Date:** 2025
 
 ## 1. SOP Identification
 
@@ -72,10 +79,11 @@ The REChain System Operations Manager may delegate day-to-day operational author
 - [ ] Backup systems are tested and ready
 
 #### 3.1.3 System Requirements
-- [ ] REChain software version 3.2.1 or higher is installed
+- [ ] REChain software version 4.1.10 or higher is installed
 - [ ] All security patches are current (within 7 days)
 - [ ] System backups are current (within 24 hours)
 - [ ] System health checks are passing
+- [ ] Bundle version 4.1.10+1160 requirements met
 
 #### 3.1.4 Authorization Requirements
 - [ ] Daily operations authorization is current
@@ -160,13 +168,13 @@ The REChain System Operations Manager may delegate day-to-day operational author
 - [ ] Security breach detection
 - [ ] Hardware failure affecting core operations
 
-#### 4.1.2 Security Incidents
+#### 4.1.10 Security Incidents
 - [ ] Unauthorized access attempt detected
 - [ ] Malware detection on system
 - [ ] Data compromise suspected
 - [ ] Denial of service attack detected
 
-#### 4.1.3 Personnel Emergencies
+#### 4.1.10 Personnel Emergencies
 - [ ] Key personnel unavailable for extended period
 - [ ] Medical emergency affecting operations
 - [ ] Security clearance issue
@@ -377,6 +385,8 @@ The REChain System Operations Manager may delegate day-to-day operational author
 | 1.1 | 2023-07-15 | Captain John Miller | Updated security procedures |
 | 1.2 | 2023-12-15 | Captain John Miller | Added performance metrics |
 | 2.0 | 2024-01-15 | Captain Jane Doe | Complete rewrite with new system architecture |
+| 4.1.10 | 2025 | REChain Documentation Team | Updated to version 4.1.10+1160 |
+| 4.1.10+1160 | 2025 | REChain Documentation Team | Bundle v4.1.10+1160 release |
 
 ---
 

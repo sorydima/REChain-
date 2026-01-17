@@ -1,0 +1,108 @@
+name: Code Coverage
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '0 0 * * 0'  # Weekly on Sunday
+
+jobs:
+  coverage:
+    name: Coverage Analysis
+    runs-on: ubuntu-latest
+    container: cirrusci/flutter:latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Flutter
+        run: flutter config --no-analytics
+        
+      - name: Get dependencies
+        run: flutter pub get
+        
+      - name: Run tests with coverage
+        run: |
+          flutter test --coverage
+          lcov --summary coverage/lcov.info || true
+          
+      - name: Generate reports
+        run: |
+          mkdir -p coverage/html coverage/xml coverage/json
+          genhtml coverage/lcov.info -o coverage/html
+          python3 scripts/lcov_to_xml.py coverage/lcov.info coverage/xml/coverage.xml
+          python3 scripts/lcov_to_json.py coverage/lcov.info coverage/json/coverage.json
+          
+      - name: Check thresholds
+        run: |
+          ./coverage/scripts/check_thresholds.sh --strict
+          
+      - name: Upload to Codecov
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        uses: codecov/codecov-action@v4
+        with:
+          files: coverage/lcov.info
+          flags: unittests
+          name: codecov-umbrella
+          fail_ci_if_error: false
+          
+      - name: Upload to Coveralls
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        uses: coverallsapp/github-action@v2
+        with:
+          parallel-finished: true
+          
+      - name: Generate coverage badges
+        run: |
+          mkdir -p coverage/badges
+          python3 scripts/generate_badge.py coverage/lcov.info coverage/badges/coverage.svg
+          
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-reports
+          path: |
+            coverage/html/
+            coverage/xml/
+            coverage/json/
+            coverage/badges/
+          retention-days: 30
+          
+      - name: Upload coverage comment
+        if: ${{ github.event_name == 'pull_request' }}
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          recreate: true
+          files: coverage/json/coverage.json
+          
+      - name: Archive coverage history
+        if: ${{ github.event_name == 'push' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-history
+          path: coverage/history/
+          retention-days: 365
+          
+      - name: Comment on PR with coverage
+        if: ${{ github.event_name == 'pull_request' }}
+        run: |
+          TOTAL=$(grep -oP 'lines_hit": \K[0-9]+' coverage/json/coverage.json | head -1)
+          FOUND=$(grep -oP 'lines_found": \K[0-9]+' coverage/json/coverage.json | head -1)
+          PERCENT=$(echo "scale=2; ($TOTAL / $FOUND) * 100" | bc)
+          echo "## Coverage Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Metric | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Lines | $PERCENT% |" >> $GITHUB_STEP_SUMMARY
+          
+      - name: Fail on low coverage
+        run: |
+          COVERAGE=$(grep -oP '"line_coverage": \K[0-9.]+' coverage/json/coverage.json | head -1)
+          if (( $(echo "$COVERAGE < 70" | bc -l) )); then
+            echo "Coverage ($COVERAGE%) is below minimum (70%)"
+            exit 1
+          fi
+

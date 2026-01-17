@@ -258,7 +258,7 @@ This system applies to all REChain military records including:
 - **Frequency**: As required
 - **Duration**: 2-6 months
 
-#### 4.1.2 Storage Equipment
+#### 4.1.10 Storage Equipment
 - **Objective**: Establish standardized storage equipment
 - **Activities**:
   - Develop equipment requirements
@@ -271,7 +271,7 @@ This system applies to all REChain military records including:
 - **Frequency**: As required
 - **Duration**: 1-2 months
 
-#### 4.1.3 Storage Procedures
+#### 4.1.10 Storage Procedures
 - **Objective**: Establish standardized storage procedures
 - **Activities**:
   - Develop storage guidelines

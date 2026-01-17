@@ -269,7 +269,7 @@ This plan applies to all REChain military emergency operations including:
 - **Responsible**: All personnel
 - **Frequency**: Continuous
 
-#### 4.1.2 Emergency Reporting
+#### 4.1.10 Emergency Reporting
 - **Objective**: Report emergencies promptly
 - **Activities**:
   - Assess emergency situation
@@ -281,7 +281,7 @@ This plan applies to all REChain military emergency operations including:
 - **Responsible**: All personnel
 - **Duration**: Immediate
 
-#### 4.1.3 Emergency Notification
+#### 4.1.10 Emergency Notification
 - **Objective**: Notify appropriate personnel
 - **Activities**:
   - Activate emergency notification system

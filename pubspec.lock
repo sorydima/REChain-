@@ -993,7 +993,7 @@ packages:
       sha256: "178d74305e7866013777bab2c3d8726205dc5a4dd935297175b19a23a2e66571"
       url: "https://pub.dev"
     source: hosted
-    version: "4.1.2"
+    version: "4.1.10"
   image:
     dependency: "direct main"
     description:

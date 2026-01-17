@@ -1,0 +1,54 @@
+graph TB
+    subgraph "Wallet Services"
+        TON[TON Wallet]
+        ETH[ Ethereum Wallet]
+        BTC[Bitcoin Wallet]
+        MultiChain[Multi-Chain Support]
+    end
+
+    subgraph "Smart Contracts"
+        TONContracts[TON Contracts]
+        ETHContracts[ETH Contracts]
+        BridgeContracts[Bridge Contracts]
+    end
+
+    subgraph "Trading APIs"
+        Bitget[Bitget API]
+        DEX[DEX Aggregator]
+        OrderBook[Order Book]
+    end
+
+    subgraph "Identity"
+        DID[Decentralized ID]
+        VC[Verifiable Credentials]
+        DIDKit[DID Resolution]
+    end
+
+    subgraph "Token Services"
+        NFT[NFT Management]
+        FT[ Fungible Tokens]
+        Staking[Staking Pools]
+    end
+
+    TON --> TONContracts
+    ETH --> ETHContracts
+    MultiChain --> BridgeContracts
+
+    Bitget --> OrderBook
+    DEX --> OrderBook
+
+    DID --> VC
+    DID --> DIDKit
+
+    NFT --> FT
+    NFT --> Staking
+
+    FT --> Bitget
+    Staking --> ETH
+
+    style WalletServices fill:#ffa726
+    style SmartContracts fill:#ffa726
+    style TradingAPIs fill:#ffa726
+    style Identity fill:#42a5f5
+    style TokenServices fill:#66bb6a
+

@@ -204,7 +204,7 @@ This guide applies to all REChain tactical operations including:
 - **Deliverables**: Site Assessment Report
 - **Duration**: 12-24 hours per site
 
-#### 4.1.2 Deployment Planning
+#### 4.1.10 Deployment Planning
 - **Objective**: Develop detailed deployment plan
 - **Activities**:
   - Determine deployment sequence

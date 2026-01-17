@@ -1,0 +1,56 @@
+@startuml
+!theme plain
+skinparam backgroundColor #FFFFFF
+
+title State Diagrams - Room and Message States
+
+[*] --> Disconnected : App starts
+
+state "Connection States" as Connection {
+    [*] --> Connected
+    Connected --> Syncing : Sync started
+    Syncing --> Connected : Sync complete
+    Connected --> Reconnecting : Connection lost
+    Reconnecting --> Connected : Reconnected
+    Connected --> Disconnected : Logout
+}
+
+state "Room States" as RoomState {
+    [*] --> Invited
+    Invited --> Joined : User accepts
+    Joined --> Left : User leaves
+    Left --> Invited : User re-invited
+    Joined --> Kicked : Admin removes
+    Joined --> Banned : Admin bans
+    Banned --> [*]
+
+    state "Joined" as J {
+        [*] --> Normal
+        Normal -->Encrypted : E2EE enabled
+        Encrypted --> Normal : E2EE disabled
+    }
+}
+
+state "Message States" as MessageState {
+    [*] --> Draft
+    Draft --> Sending : Send clicked
+    Sending --> Sent : Server acknowledged
+    Sending --> Failed : Send error
+    Failed --> Draft : Retry
+    Sent --> Delivered : Recipient received
+    Sent --> Read : Recipient viewed
+    Read --> [*]
+    Delivered --> Read : Viewed
+    Failed --> [*]
+}
+
+state "Encryption States" as Encryption {
+    [*] -> Unverified
+    Unverified --> Verifying : User confirms
+    Verifying --> Verified : Verification complete
+    Verified --> Compromised : Security alert
+    Compromised --> Unverified : Re-verification
+}
+
+@enduml
+

@@ -1,0 +1,55 @@
+graph TB
+    subgraph "Plugin System Core"
+        Registry[📋 Plugin Registry]
+        Loader[📦 Plugin Loader]
+        Sandbox[🏖️ Sandbox Manager]
+        API[🔌 Plugin API]
+    end
+
+    subgraph "Plugin Types"
+        CorePlugins[⚙️ Core Plugins]
+        ThirdParty[🔗 Third-Party Plugins]
+        Custom[🎨 Custom Plugins]
+    end
+
+    subgraph "Plugin Lifecycle"
+        Install[📥 Install]
+        Load[📤 Load]
+        Enable[✅ Enable]
+        Disable[❌ Disable]
+        Update[🔄 Update]
+        Uninstall[🗑️ Uninstall]
+    end
+
+    subgraph "Plugin Capabilities"
+        UI[🎨 UI Components]
+        API[🔌 REST API Access]
+        Events[📡 Event System]
+        Storage[💾 Storage Access]
+        Network[🌐 Network Access]
+    end
+
+    Registry --> Loader
+    Loader --> Sandbox
+    Sandbox --> API
+
+    CorePlugins --> Registry
+    ThirdParty --> Registry
+    Custom --> Registry
+
+    Install --> Load
+    Load --> Enable
+    Enable --> Disable
+    Disable --> Update
+    Update --> Uninstall
+
+    API --> UI
+    API --> Events
+    API --> Storage
+    API --> Network
+
+    style PluginSystemCore fill:#7e57c2
+    style PluginTypes fill:#7e57c2
+    style PluginLifecycle fill:#7e57c2
+    style PluginCapabilities fill:#7e57c2
+

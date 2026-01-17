@@ -1,0 +1,39 @@
+REChain Linux Packages Distribution
+Version: 4.1.10+1160
+Build: 1160
+Release Date: 2025
+Description: REChain packages for Russian and international Linux distributions
+
+Package Formats:
+- DEB (.deb) - For Debian-based systems (Astra Linux, Ubuntu)
+- RPM (.rpm) - For Red Hat-based systems (РЕД ОС, ALT Linux, ROSA)
+- AppImage - Universal binary format
+
+Supported Distributions:
+- Astra Linux (DEB)
+- РЕД ОС (RED OS) (RPM)
+- ОС «Альт» (ALT Linux) (RPM)
+- ОС РОСА (ROSA) (RPM)
+- «ОСнова» (OSNova) (RPM)
+- AlterOS (RPM)
+- ОС «Атлант» (Atlant OS) (RPM)
+- ОС «Стрелец» (Strelets OS) (RPM)
+- ОС «МСВСфера 9» (MSVSphere 9) (RPM)
+- ОС «Лотос» (Lotos OS) (RPM)
+- ОС «Эльбрус» (Elbrus OS) (AppImage/RPM)
+
+Package Components:
+- rechainonline executable
+- Desktop application files
+- Flutter runtime libraries
+- Required dependencies
+
+Build Information:
+- Built with Flutter Linux Build
+- Architecture: x86_64/amd64
+- Localization: ru_RU.UTF-8
+- Security: Russian standards compliant
+
+Documentation: INSTALLATION_SUMMARY.md
+Support: support@rechain.network
+

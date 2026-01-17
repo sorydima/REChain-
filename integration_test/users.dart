@@ -1,3 +1,17 @@
+// REChain Integration Test Users - Version 4.1.10+1160
+// Test user definitions for REChain $kAppVersion integration testing
+
+import 'version.dart';
+
+// Test homeserver URL - configurable via environment variable
+const String kHomeserverUrl = 'http://${String.fromEnvironment(
+  'HOMESERVER',
+  defaultValue: 'localhost',
+)}';
+
+// Version info for test reporting
+const String kTestVersionInfo = 'REChain $kAppVersion (Build $kBuildNumber)';
+
 abstract class Users {
   const Users._();
 
@@ -30,7 +44,5 @@ class User {
   const User(this.name, this.password);
 }
 
-const homeserver = 'http://${String.fromEnvironment(
-  'HOMESERVER',
-  defaultValue: 'localhost',
-)}';
+// Default homeserver URL using version-aware constant
+const homeserver = kHomeserverUrl;

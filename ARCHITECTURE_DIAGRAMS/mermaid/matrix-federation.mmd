@@ -1,0 +1,37 @@
+graph LR
+    subgraph "Home Server A"
+        HS_A[🏠 Home Server A]
+        Client_A[👤 Client A]
+        KeyStore_A[🔑 Key Store A]
+    end
+
+    subgraph "Home Server B"
+        HS_B[🏠 Home Server B]
+        Client_B[👤 Client B]
+        KeyStore_B[🔑 Key Store B]
+    end
+
+    subgraph "Federation"
+        PFS[Federation Protocol]
+        Relay[🕊️ Relay Service]
+    end
+
+    Client_A --> HS_A
+    HS_A --> PFS
+    PFS --> Relay
+    Relay --> PFS
+    PFS --> HS_B
+    HS_B --> Client_B
+
+    KeyStore_A -.-> Client_A
+    KeyStore_B -.-> Client_B
+
+    Note over HS_A,HS_B: Encrypted Federation via<br/> Olm/Megolm Protocol
+
+    style HS_A fill:#42a5f5
+    style HS_B fill:#42a5f5
+    style Client_A fill:#66bb6a
+    style Client_B fill:#66bb6a
+    style PFS fill:#ffa726
+    style Relay fill:#ffa726
+

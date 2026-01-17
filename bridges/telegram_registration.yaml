@@ -1,10 +1,103 @@
-# telegram registration.yaml
+# telegram registration.yaml - Upgraded for REChain v4.2.0
+# Enhanced with modern namespace configuration and security settings
+
 id: telegram
 url: http://telegram:29328
 as_token: __CHANGE_ME__
 hs_token: __CHANGE_ME__
 sender_localpart: telegram-bot
+
+# Modern namespace configuration with regex support
 namespaces:
-  users: []
-  aliases: []
-  rooms: []
+  users:
+    # Exclusive user namespace for bridge puppets
+    - exclusive: true
+      regex: "@telegram_.+:your\\.domain\\.tld"
+    # Relay bot user
+    - exclusive: true
+      regex: "@telegram-relaybot:your\\.domain\\.tld"
+    # Message bridges
+    - exclusive: true
+      regex: "@telegram_[0-9]+:your\\.domain\\.tld"
+  aliases:
+    # Room aliases for bridged rooms
+    - exclusive: true
+      regex: "#telegram_[a-zA-Z0-9_]+:your\\.domain\\.tld"
+  rooms:
+    # Bridged room namespaces
+    - exclusive: true
+      regex: "!telegram_[a-zA-Z0-9_-]+:your\\.domain\\.tld"
+
+# Advanced sender configuration
+sender:
+  # User ID prefix for bridge users
+  user_prefix: "telegram_"
+  # Displayname template
+  displayname_template: "{displayname} (Telegram)"
+  # Avatar configuration
+  avatar:
+    enabled: true
+    default: "mxc://your.domain.tld/telegram_default_avatar"
+
+# Rate limiting configuration
+rate_limiting:
+  # Messages per second per user
+  messages_per_second: 20
+  # Burst size for rate limiting
+  burst_size: 100
+  # Cooldown period in seconds
+  cooldown_seconds: 60
+
+# Protocol-specific settings
+protocol:
+  # Bridge version
+  version: "4.2.0"
+  # Capabilities
+  capabilities:
+    - messages
+    - media
+    - reactions
+    - edits
+    - typing
+    - presence
+    - read_receipts
+    - room_bridging
+    - user_bridging
+  # Features
+  features:
+    double_puppet: true
+    relaybot: true
+    encryption: true
+    mentions: true
+    reply: true
+    forward: true
+
+# Security settings
+security:
+  # Enable token verification
+  verify_tokens: true
+  # Require valid tokens
+  require_valid_token: false
+  # Token expiration in seconds (0 = no expiration)
+  token_expiration: 0
+  # Hook for custom authentication
+  auth_hook: null
+
+# Performance settings
+performance:
+  # Sync interval in milliseconds
+  sync_interval: 500
+  # Message processing timeout
+  message_timeout: 30000
+  # Connection timeout
+  connection_timeout: 30000
+  # Maximum concurrent syncs
+  max_concurrent_syncs: 5
+
+# Logging configuration
+logging:
+  level: "info"
+  format: "json"
+  timestamps: true
+  include_timestamp: true
+

@@ -1,0 +1,298 @@
+# Docker Compose Template for REChain Bridges
+# Production-ready configuration with health checks, scaling, and monitoring
+
+version: '3.9'
+
+services:
+  # =========================================================================
+  # Matrix Synapse Server
+  # =========================================================================
+  synapse:
+    image: matrixdotorg/synapse:latest
+    container_name: rechain-synapse
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8008/_matrix/client/versions"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    volumes:
+      - ./data/synapse:/data:z
+      - ./homeserver.yaml:/etc/homeserver.yaml:ro
+    environment:
+      - SYNAPSE_SERVER_NAME=${DOMAIN:-your.domain.tld}
+      - SYNAPSE_REPORT_STATS=yes
+      - SYNAPSE_LOG_LEVEL=INFO
+    networks:
+      - rechain-network
+    labels:
+      - "rechain.service=synapse"
+      - "rechain.type=server"
+    deploy:
+      resources:
+        limits:
+          cpus: '4'
+          memory: 4G
+        reservations:
+          cpus: '1'
+          memory: 1G
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
+        max-file: "5"
+
+  # =========================================================================
+  # Traefik Reverse Proxy
+  # =========================================================================
+  traefik:
+    image: traefik:v3.0
+    container_name: rechain-traefik
+    restart: unless-stopped
+    command:
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+      - "--api.insecure=true"
+      - "--metrics.prometheus=true"
+      - "--metrics.prometheus.addroutersrules=true"
+      - "--log.level=INFO"
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./traefik/traefik.yml:/etc/traefik/traefik.yml:ro
+      - ./traefik/traefik_dynamic.toml:/etc/traefik/traefik_dynamic.toml:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+      - rechain-network
+    labels:
+      - "rechain.service=traefik"
+      - "rechain.type=proxy"
+    depends_on:
+      - synapse
+
+  # =========================================================================
+  # Certbot for SSL
+  # =========================================================================
+  certbot:
+    image: certbot/certbot:latest
+    container_name: rechain-certbot
+    restart: unless-stopped
+    volumes:
+      - ./certbot:/etc/letsencrypt:rw
+      - ./data/certbot:/var/www/html:ro
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done'"
+    networks:
+      - rechain-network
+    depends_on:
+      - traefik
+
+  # =========================================================================
+  # Telegram Bridge
+  # =========================================================================
+  bridge-telegram:
+    image: mautrix/telegram:latest
+    container_name: rechain-bridge-telegram
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:29328/_matrix/client/versions"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    volumes:
+      - ./data/telegram:/data:z
+      - ./bridges/telegram_config.yaml:/data/config.yaml:ro
+      - ./bridges/telegram_registration.yaml:/data/registration.yaml:ro
+    environment:
+      - HOMESERVER_URL=http://synapse:8008
+      - BRIDGE_NAME=telegram
+      - LOG_LEVEL=INFO
+    networks:
+      - rechain-network
+    labels:
+      - "rechain.service=telegram-bridge"
+      - "rechain.type=bridge"
+    depends_on:
+      - synapse
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+
+  # =========================================================================
+  # Discord Bridge
+  # =========================================================================
+  bridge-discord:
+    image: mautrix/discord:latest
+    container_name: rechain-bridge-discord
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:29328/_matrix/client/versions"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    volumes:
+      - ./data/discord:/data:z
+      - ./bridges/discord_config.yaml:/data/config.yaml:ro
+      - ./bridges/discord_registration.yaml:/data/registration.yaml:ro
+    environment:
+      - HOMESERVER_URL=http://synapse:8008
+      - BRIDGE_NAME=discord
+      - LOG_LEVEL=INFO
+    networks:
+      - rechain-network
+    labels:
+      - "rechain.service=discord-bridge"
+      - "rechain.type=bridge"
+    depends_on:
+      - synapse
+
+  # =========================================================================
+  # WhatsApp Bridge
+  # =========================================================================
+  bridge-whatsapp:
+    image: mautrix/whatsapp:latest
+    container_name: rechain-bridge-whatsapp
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:29328/_matrix/client/versions"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    volumes:
+      - ./data/whatsapp:/data:z
+      - ./bridges/whatsapp_config.yaml:/data/config.yaml:ro
+    environment:
+      - HOMESERVER_URL=http://synapse:8008
+      - BRIDGE_NAME=whatsapp
+      - LOG_LEVEL=INFO
+    networks:
+      - rechain-network
+    labels:
+      - "rechain.service=whatsapp-bridge"
+      - "rechain.type=bridge"
+    depends_on:
+      - synapse
+
+  # =========================================================================
+  # Signal Bridge
+  # =========================================================================
+  bridge-signal:
+    image: mautrix/signal:latest
+    container_name: rechain-bridge-signal
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:29328/_matrix/client/versions"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    volumes:
+      - ./data/signal:/data:z
+      - ./bridges/signal_config.yaml:/data/config.yaml:ro
+    environment:
+      - HOMESERVER_URL=http://synapse:8008
+      - BRIDGE_NAME=signal
+      - LOG_LEVEL=INFO
+    networks:
+      - rechain-network
+    labels:
+      - "rechain.service=signal-bridge"
+      - "rechain.type=bridge"
+    depends_on:
+      - synapse
+
+  # =========================================================================
+  # Prometheus for Metrics
+  # =========================================================================
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: rechain-prometheus
+    restart: unless-stopped
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./data/prometheus:/prometheus:z
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--storage.tsdb.retention.time=15d'
+      - '--web.enable-lifecycle'
+    networks:
+      - rechain-network
+    labels:
+      - "rechain.service=prometheus"
+      - "rechain.type=monitoring"
+    depends_on:
+      - traefik
+
+  # =========================================================================
+  # Grafana for Dashboards
+  # =========================================================================
+  grafana:
+    image: grafana/grafana:latest
+    container_name: rechain-grafana
+    restart: unless-stopped
+    volumes:
+      - ./data/grafana:/var/lib/grafana:z
+      - ./monitoring/grafana/provisioning:/etc/grafana/provisioning:ro
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD:-admin}
+      - GF_USERS_ALLOW_SIGN_UP=false
+    networks:
+      - rechain-network
+    labels:
+      - "rechain.service=grafana"
+      - "rechain.type=monitoring"
+    depends_on:
+      - prometheus
+
+  # =========================================================================
+  # Redis for Caching
+  # =========================================================================
+  redis:
+    image: redis:7-alpine
+    container_name: rechain-redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    volumes:
+      - ./data/redis:/data:z
+    networks:
+      - rechain-network
+    labels:
+      - "rechain.service=redis"
+      - "rechain.type=cache"
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 512M
+
+  # =========================================================================
+  # Network Definition
+  # =========================================================================
+networks:
+  rechain-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.28.0.0/16
+
+# =========================================================================
+# Volume Definitions
+# =========================================================================
+volumes:
+  synapse-data:
+  telegram-data:
+  discord-data:
+  prometheus-data:
+  grafana-data:
+  redis-data:
+

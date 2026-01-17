@@ -258,7 +258,7 @@ This manual applies to all REChain field operations including:
 - **Responsible**: Senior System Administrator
 - **Frequency**: Daily
 
-#### 4.1.2 Network Operations
+#### 4.1.10 Network Operations
 - **Objective**: Conduct daily network operations
 - **Activities**:
   - Monitor network performance and health
@@ -270,7 +270,7 @@ This manual applies to all REChain field operations including:
 - **Responsible**: Network Engineer
 - **Frequency**: Daily
 
-#### 4.1.3 Equipment Operations
+#### 4.1.10 Equipment Operations
 - **Objective**: Conduct daily equipment operations
 - **Activities**:
   - Monitor equipment performance and health

@@ -1,10 +1,99 @@
-# discord registration.yaml
+# discord registration.yaml - Upgraded for REChain v4.2.0
+# Enhanced with modern namespace configuration and Discord-specific settings
+
 id: discord
 url: http://discord:29328
 as_token: __CHANGE_ME__
 hs_token: __CHANGE_ME__
 sender_localpart: discord-bot
+
+# Modern namespace configuration with regex support
 namespaces:
-  users: []
-  aliases: []
-  rooms: []
+  users:
+    # Bridge puppet users
+    - exclusive: true
+      regex: "@discord_[0-9]+:your\\.domain\\.tld"
+    # Relay bot user
+    - exclusive: true
+      regex: "@discord-relaybot:your\\.domain\\.tld"
+    # Webhook bot users
+    - exclusive: true
+      regex: "@discord_webhook_[0-9]+:your\\.domain\\.tld"
+  aliases:
+    # Guild channel room aliases
+    - exclusive: true
+      regex: "#discord_[a-zA-Z0-9_]+-[a-zA-Z0-9_]+:your\\.domain\\.tld"
+    # Direct message aliases
+    - exclusive: true
+      regex: "#discord_dm_[0-9]+:your\\.domain\\.tld"
+  rooms:
+    # Bridged guild channels
+    - exclusive: true
+      regex: "!discord_[0-9]+-[0-9]+:your\\.domain\\.tld"
+
+# Advanced sender configuration
+sender:
+  user_prefix: "discord_"
+  displayname_template: "{displayname} (Discord)"
+  avatar:
+    enabled: true
+    default: "mxc://your.domain.tld/discord_default_avatar"
+
+# Discord-specific rate limiting
+rate_limiting:
+  messages_per_second: 20
+  burst_size: 100
+  cooldown_seconds: 60
+  # Discord API rate limit buffer
+  api_buffer: 0.5
+
+# Protocol-specific settings
+protocol:
+  version: "4.2.0"
+  capabilities:
+    - messages
+    - media
+    - reactions
+    - edits
+    - typing
+    - presence
+    - read_receipts
+    - room_bridging
+    - user_bridging
+    - voice
+    - webhooks
+    - embeds
+    - emoji
+    - stickers
+  features:
+    double_puppet: true
+    relaybot: true
+    encryption: true
+    voice_bridging: false
+    thread_bridging: true
+
+# Security settings
+security:
+  verify_tokens: true
+  require_valid_token: false
+  token_expiration: 0
+  auth_hook: null
+
+# Performance settings
+performance:
+  sync_interval: 500
+  message_timeout: 30000
+  connection_timeout: 30000
+  max_concurrent_syncs: 5
+  # Guild caching
+  cache_guilds: true
+  cache_channels: true
+  cache_users: true
+
+# Logging configuration
+logging:
+  level: "info"
+  format: "json"
+  timestamps: true
+  include_timestamp: true
+

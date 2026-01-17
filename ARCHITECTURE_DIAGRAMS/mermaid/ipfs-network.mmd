@@ -1,0 +1,62 @@
+graph TB
+    subgraph "IPFS Client Layer"
+        Client["📱 REChain Client"]
+        Upload[📤 Upload Service]
+        Download[📥 Download Service]
+        Pin[📌 Pin Manager]
+    end
+
+    subgraph "Encryption Layer"
+        ClientEncrypt[🔐 Client-Side Encryption]
+        KeyExchange[🔑 Key Exchange]
+        EncryptKeys[Encryption Keys]
+    end
+
+    subgraph "IPFS Network"
+        Gateway[🌐 IPFS Gateway]
+        DHT[🔍 DHT Lookup]
+        Bitswap[⚖️ Bitswap Protocol]
+        PinningService[📌 Pinning Service]
+    end
+
+    subgraph "Providers"
+        Pinata[Pinata Cloud]
+        Infura[Infura IPFS]
+        Web3Storage[Web3.Storage]
+        Custom[Custom Providers]
+    end
+
+    subgraph "Storage Backend"
+        S3[AWS S3]
+        Filecoin[Filecoin]
+        Arweave[Arweave]
+        Local[Local Storage]
+    end
+
+    Upload --> ClientEncrypt
+    Download --> ClientEncrypt
+    Pin --> ClientEncrypt
+
+    ClientEncrypt --> KeyExchange
+    KeyExchange --> EncryptKeys
+
+    Gateway --> DHT
+    DHT --> Bitswap
+    Bitswap --> PinningService
+
+    PinningService --> Pinata
+    PinningService --> Infura
+    PinningService --> Web3Storage
+    PinningService --> Custom
+
+    Pinata --> S3
+    Infura --> Filecoin
+    Web3Storage --> Arweave
+    Custom --> Local
+
+    style IPFSClientLayer fill:#42a5f5
+    style EncryptionLayer fill:#ef5350
+    style IPFSNetwork fill:#66bb6a
+    style Providers fill:#ffa726
+    style StorageBackend fill:#7e57c2
+

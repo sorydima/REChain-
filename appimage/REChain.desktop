@@ -1,8 +1,18 @@
 [Desktop Entry]
 Type=Application
 Name=REChain
-Comment=The inclusion of polls enhances decision-making processes by facilitating quick and efficient feedback gathering.
-Exec=AppRun
-Icon=REChain
+GenericName=REChain - Digital Infrastructure Platform
+Comment=The foundational "Digital Spine" for the next generation of autonomous organizations
+Exec=AppRun %U
+Icon=com.rechain.online
 Terminal=false
-Categories=Network;Chat;InstantMessaging;X-Matrix;
+Categories=Network;Chat;InstantMessaging;X-Matrix;Development;Security;
+Keywords=REChain;Matrix;Blockchain;IPFS;AI;Decentralized;Secure;Communication;
+StartupNotify=true
+MimeType=x-scheme-handler/rechain;
+Actions=NewChat;
+
+[Desktop Action NewChat]
+Name=Start New Chat
+Exec=AppRun --new-chat
+

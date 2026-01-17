@@ -1,0 +1,68 @@
+graph TB
+    subgraph "AI Services Layer"
+        Moderation[🛡️ Content Moderation]
+        Translation[🌐 Real-time Translation]
+        Analytics[📊 User Analytics]
+        NLP[🧠 NLP Processing]
+        Generation[✨ Content Generation]
+    end
+
+    subgraph "ML Models"
+        ToxicityModel[🚫 Toxicity Detection]
+        TranslationModel[🌍 Translation Model]
+        SentimentModel[😊 Sentiment Analysis]
+        SummarizationModel[📝 Summarization]
+        ImageModel[🖼️ Image Understanding]
+    end
+
+    subgraph "AI Infrastructure"
+        GPUCluster[🎮 GPU Cluster]
+        ModelServing[📦 Model Serving]
+        Cache[💾 Model Cache]
+        LoadBalancer[⚖️ Load Balancer]
+    end
+
+    subgraph "APIs"
+        RESTAPI[REST API]
+        WebSocketAPI[WebSocket API]
+        StreamingAPI[Streaming API]
+    end
+
+    subgraph "Integration Points"
+        ChatIntegration[💬 Chat]
+        ContentModeration[📰 Content]
+        UserProfile[👤 User Profiles]
+        Search[🔍 Search]
+    end
+
+    Moderation --> ToxicityModel
+    Translation --> TranslationModel
+    Analytics --> SentimentModel
+    NLP --> SummarizationModel
+    NLP --> ImageModel
+
+    ToxicityModel --> GPUCluster
+    TranslationModel --> GPUCluster
+    SentimentModel --> GPUCluster
+    SummarizationModel --> GPUCluster
+    ImageModel --> GPUCluster
+
+    GPUCluster --> ModelServing
+    ModelServing --> Cache
+    ModelServing --> LoadBalancer
+
+    LoadBalancer --> RESTAPI
+    LoadBalancer --> WebSocketAPI
+    LoadBalancer --> StreamingAPI
+
+    RESTAPI --> ChatIntegration
+    WebSocketAPI --> ContentModeration
+    StreamingAPI --> UserProfile
+    Search --> NLP
+
+    style AIServicesLayer fill:#7e57c2
+    style MLModels fill:#42a5f5
+    style AIInfrastructure fill:#66bb6a
+    style APIs fill:#ffa726
+    style IntegrationPoints fill:#ef5350
+

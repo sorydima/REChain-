@@ -15,14 +15,14 @@
         }
       }
     ],
-    "compileSdkVersion": 12,
-    "compatibleSdkVersion": 12,
+    "compileSdkVersion": 13,
+    "compatibleSdkVersion": 13,
     "products": [
       {
         "name": "default",
         "signingConfig": "default",
-        "compileSdkVersion": 12,
-        "compatibleSdkVersion": 12,
+        "compileSdkVersion": 13,
+        "compatibleSdkVersion": 13,
         "runtimeOS": "HarmonyOS"
       }
     ],

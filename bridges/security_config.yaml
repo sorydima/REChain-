@@ -1,0 +1,407 @@
+# REChain Bridges Security Configuration
+# Comprehensive security settings for all bridges
+
+# ============================================================================
+# TRANSPORT LAYER SECURITY (TLS)
+# ============================================================================
+tls:
+  enabled: true
+  
+  # Minimum TLS version
+  min_version: "1.2"
+  
+  # Maximum TLS version
+  max_version: "1.3"
+  
+  # Cipher suites
+  cipher_suites:
+    - "TLS_AES_256_GCM_SHA384"
+    - "TLS_AES_128_GCM_SHA256"
+    - "TLS_CHACHA20_POLY1305_SHA256"
+    - "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384"
+    - "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256"
+  
+  # Certificate configuration
+  certificate:
+    path: "/etc/ssl/certs/bridge.crt"
+    key_path: "/etc/ssl/private/bridge.key"
+    ca_path: "/etc/ssl/certs/ca.crt"
+    
+    # Certificate renewal
+    renewal:
+      enabled: true
+      days_before_expiry: 30
+      auto_renew: true
+  
+  # HSTS (HTTP Strict Transport Security)
+  hsts:
+    enabled: true
+    max_age: 31536000  # 1 year
+    include_subdomains: true
+    preload: true
+
+# ============================================================================
+# AUTHENTICATION CONFIGURATION
+# ============================================================================
+authentication:
+  # Primary authentication method
+  method: "token"  # token, oauth, basic, mfa
+  
+  # Token configuration
+  token:
+    # Token lifetime in seconds (24 hours)
+    lifetime: 86400
+    # Refresh token lifetime (7 days)
+    refresh_lifetime: 604800
+    # Token rotation on use
+    rotate_on_use: true
+    # Number of active tokens per user
+    max_tokens_per_user: 5
+  
+  # OAuth configuration
+  oauth:
+    enabled: false
+    provider: "generic"
+    client_id: "__CHANGE_ME__"
+    client_secret: "__CHANGE_ME__"
+    authorization_endpoint: "https://auth.example.com/oauth/authorize"
+    token_endpoint: "https://auth.example.com/oauth/token"
+    scopes:
+      - "openid"
+      - "profile"
+      - "email"
+  
+  # Multi-Factor Authentication
+  mfa:
+    enabled: false
+    method: "totp"  # totp, sms, email
+    backup_codes: 10
+    grace_period: 300  # 5 minutes to enter MFA code
+  
+  # Rate limiting for auth attempts
+  rate_limit:
+    max_attempts: 5
+    window_seconds: 300  # 5 minutes
+    lockout_duration: 900  # 15 minutes
+
+# ============================================================================
+# AUTHORIZATION & ACCESS CONTROL
+# ============================================================================
+authorization:
+  # Default policy (deny or allow)
+  default_policy: "deny"
+  
+  # Role-based access control
+  rbac:
+    enabled: true
+    
+    roles:
+      admin:
+        permissions:
+          - "bridge:管理"
+          - "user:管理"
+          - "room:管理"
+          - "config:修改"
+        users:
+          - "@admin:your.domain.tld"
+      
+      moderator:
+        permissions:
+          - "room:管理"
+          - "user:踢出"
+        users: []
+      
+      user:
+        permissions:
+          - "room:加入"
+          - "message:发送"
+        users: []
+  
+  # Bridge-specific permissions
+  bridge_permissions:
+    telegram:
+      default_role: "user"
+      admin_users:
+        - "@admin:your.domain.tld"
+    
+    discord:
+      default_role: "user"
+      admin_users:
+        - "@admin:your.domain.tld"
+
+# ============================================================================
+# RATE LIMITING CONFIGURATION
+# ============================================================================
+rate_limiting:
+  enabled: true
+  
+  # Global rate limit
+  global:
+    requests_per_second: 1000
+    burst_size: 2000
+  
+  # Per-user rate limits
+  per_user:
+    messages_per_minute: 60
+    messages_per_hour: 1000
+    messages_per_day: 10000
+    api_calls_per_minute: 120
+  
+  # Per-room rate limits
+  per_room:
+    messages_per_minute: 300
+    users_per_room: 1000
+  
+  # Endpoint-specific limits
+  endpoints:
+    "/_matrix/client/versions":
+      requests_per_minute: 60
+    "/_matrix/client/r0/login":
+      requests_per_minute: 10
+    "/_matrix/client/r0/rooms//send/m.room.message":
+      requests_per_minute: 600
+  
+  # Distributed rate limiting (Redis-backed)
+  distributed:
+    enabled: false
+    redis:
+      host: "redis"
+      port: 6379
+      password: null
+      db: 0
+
+# ============================================================================
+# DDOS PROTECTION
+# ============================================================================
+ddos_protection:
+  enabled: true
+  
+  # SYN flood protection
+  syn_flood:
+    enabled: true
+    backlog_size: 2048
+    timeout: 60
+  
+  # Connection limiting
+  connection_limits:
+    max_connections: 10000
+    max_connections_per_ip: 100
+    connection_timeout: 30
+  
+  # Request validation
+  request_validation:
+    max_request_size: 10MB
+    max_url_length: 2048
+    max_header_size: 8192
+    blocked_extensions:
+      - ".exe"
+      - ".bat"
+      - ".cmd"
+      - ".sh"
+      - ".php"
+  
+  # Bot detection
+  bot_detection:
+    enabled: true
+    challenge_response: true
+    require_user_agent: true
+    blocked_user_agents: []
+  
+  # Geo-blocking (optional)
+  geo_block:
+    enabled: false
+    allowed_countries: []
+    blocked_countries: []
+
+# ============================================================================
+# ENCRYPTION CONFIGURATION
+# ============================================================================
+encryption:
+  # End-to-end encryption
+  e2ee:
+    enabled: true
+    default: false  # Opt-in by default
+    algorithm: "m.megolm.v1.aes-sha2"
+    
+    # Key backup
+    key_backup:
+      enabled: true
+      recovery_key: "__CHANGE_ME__"
+    
+    # Device verification
+    device_verification:
+      required: false
+      blocked_devices: []
+  
+  # Data at rest encryption
+  data_encryption:
+    enabled: true
+    algorithm: "AES-256-GCM"
+    key_rotation: 2592000  # 30 days
+    key_path: "/data/encryption.key"
+  
+  # Field-level encryption
+  field_encryption:
+    enabled: true
+    fields:
+      - "password"
+      - "token"
+      - "api_key"
+      - "private_key"
+
+# ============================================================================
+# INPUT VALIDATION & SANITIZATION
+# ============================================================================
+input_validation:
+  # Message content validation
+  message:
+    max_length: 65536
+    max_media_size: 100MB
+    allowed_content_types:
+      - "text/plain"
+      - "text/html"
+      - "text/markdown"
+      - "image/*"
+      - "audio/*"
+      - "video/*"
+      - "application/pdf"
+    blocked_patterns:
+      - "(?i)<script.*?>.*?</script>"
+      - "(?i)javascript:"
+      - "(?i)on\\w+="
+  
+  # URL validation
+  url:
+    max_length: 2048
+    blocked_domains: []
+    require_https: true
+  
+  # Username validation
+  username:
+    min_length: 3
+    max_length: 255
+    pattern: "^[a-zA-Z0-9_-]+$"
+  
+  # Room alias validation
+  room_alias:
+    min_length: 1
+    max_length: 255
+    pattern: "^[a-zA-Z0-9_-]+$"
+
+# ============================================================================
+# AUDIT LOGGING
+# ============================================================================
+audit_logging:
+  enabled: true
+  
+  # Log events
+  events:
+    - "login"
+    - "logout"
+    - "message_sent"
+    - "message_received"
+    - "room_join"
+    - "room_leave"
+    - "user_ban"
+    - "user_unban"
+    - "config_change"
+    - "permission_change"
+    - "error"
+    - "security_event"
+  
+  # Log format
+  format: "json"
+  
+  # Log storage
+  storage:
+    path: "/data/audit.log"
+    max_size: "100MB"
+    retention: 90  # days
+  
+  # Log shipping
+  shipper:
+    enabled: false
+    type: "fluentd"  # fluentd, logstash, syslog
+    endpoint: null
+
+# ============================================================================
+# SECURITY HEADERS
+# ============================================================================
+security_headers:
+  # Content Security Policy
+  csp:
+    enabled: true
+    policy: |
+      default-src 'self';
+      script-src 'self' 'unsafe-inline';
+      style-src 'self' 'unsafe-inline';
+      img-src 'self' data: https:;
+      connect-src 'self' https: wss:;
+      frame-ancestors 'none';
+  
+  # X-Frame-Options
+  x_frame_options: "DENY"
+  
+  # X-Content-Type-Options
+  x_content_type_options: "nosniff"
+  
+  # X-XSS-Protection
+  x_xss_protection: "1; mode=block"
+  
+  # Referrer-Policy
+  referrer_policy: "strict-origin-when-cross-origin"
+  
+  # Permissions-Policy
+  permissions_policy: |
+    accelerometer=(),
+    camera=(),
+    geolocation=(),
+    gyroscope=(),
+    magnetometer=(),
+    microphone=(),
+    payment=(),
+    usb=()
+
+# ============================================================================
+# INCIDENT RESPONSE
+# ============================================================================
+incident_response:
+  # Automatic threat response
+  auto_response:
+    enabled: true
+    
+    # Brute force detection
+    brute_force:
+      enabled: true
+      max_attempts: 10
+      window_minutes: 5
+      action: "block_ip"
+      block_duration: 3600  # 1 hour
+    
+    # Anomaly detection
+    anomaly:
+      enabled: true
+      threshold: 3.0  # Standard deviations
+      action: "alert"
+  
+  # Alert configuration
+  alerts:
+    enabled: true
+    channels:
+      - "email"
+      - "slack"
+      - "pagerduty"
+    severity_levels:
+      critical:
+        response_time: 5  # minutes
+        escalation: true
+      warning:
+        response_time: 60
+        escalation: false
+  
+  # Kill switch (emergency shutdown)
+  kill_switch:
+    enabled: true
+    require_2fa: true
+    auto_shutdown_on_critical: false
+

@@ -286,14 +286,14 @@ Advanced Training (Expert Level)
 - **Equipment**: Full REChain system replica for training
 - **Features**: 24/7 access, secure facilities, multimedia capabilities
 
-#### 4.1.2 Regional Training Centers
+#### 4.1.10 Regional Training Centers
 - **Locations**: Each regional command headquarters
 - **Capacity**: 50 students per class
 - **Facilities**: Classrooms, basic labs, testing center
 - **Equipment**: Subset of REChain systems for training
 - **Features**: Regular schedule, remote access capabilities
 
-#### 4.1.3 Mobile Training Teams
+#### 4.1.10 Mobile Training Teams
 - **Equipment**: Portable training systems
 - **Capacity**: 20 students per class
 - **Locations**: Deployable to any location

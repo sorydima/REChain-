@@ -1,311 +1,914 @@
-# Updated for REChain version 4.1.8+1152 - 2025-07-08
+# Updated for REChain version 4.1.10+1160 - 2025-01-09
+# Enhanced with health checks, resource limits, logging, and modern features
 version: '3.9'
+
 services:
+  # Main Matrix Synapse Server
   synapse:
     image: matrixdotorg/synapse:latest
-    restart: always
+    restart: unless-stopped
+    hostname: synapse
     volumes:
-    - ./data/synapse:/data
+      - ./data/synapse:/data:z
     environment:
-    - SYNAPSE_SERVER_NAME=your.domain.tld
-    - SYNAPSE_REPORT_STATS=yes
+      - SYNAPSE_SERVER_NAME=your.domain.tld
+      - SYNAPSE_REPORT_STATS=yes
+      - SYNAPSE_LOG_LEVEL=INFO
     networks:
-    - matrix
+      - matrix
     labels:
-    - traefik.enable=true
-    - traefik.http.routers.synapse.rule=Host(`matrix.your.domain.tld`)
-    - traefik.http.routers.synapse.entrypoints=websecure
-    - traefik.http.routers.synapse.tls=true
+      - traefik.enable=true
+      - traefik.http.routers.synapse.rule=Host(`matrix.your.domain.tld`)
+      - traefik.http.routers.synapse.entrypoints=websecure
+      - traefik.http.routers.synapse.tls=true
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8008/_health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+    logging:
+      driver: json-file
+      options:
+        max-size: "100m"
+        max-file: "5"
+
+  # Traefik Reverse Proxy
   traefik:
     image: traefik:v2.11
+    restart: unless-stopped
+    hostname: traefik
     command:
-    - --providers.docker=true
-    - --providers.docker.exposedbydefault=false
-    - --entrypoints.web.address=:80
-    - --entrypoints.websecure.address=:443
-    - --api.insecure=true
-    - --providers.file.filename=/etc/traefik/traefik_dynamic.toml
+      - --providers.docker=true
+      - --providers.docker.exposedbydefault=false
+      - --entrypoints.web.address=:80
+      - --entrypoints.websecure.address=:443
+      - --api.insecure=true
+      - --providers.file.filename=/etc/traefik/traefik_dynamic.toml
+      - --metrics.prometheus=true
+      - --metrics.prometheus.addrouters=true
+      - --metrics.prometheus.entrypoints=true
+      - --tracing.zipkin=true
+      - --tracing.zipkin.http_endpoint=http://localhost:9411/api/v2/spans
     ports:
-    - 80:80
-    - 443:443
+      - target: 80
+        published: 80
+        protocol: tcp
+        mode: host
+      - target: 443
+        published: 443
+        protocol: tcp
+        mode: host
     volumes:
-    - ./traefik/traefik.yml:/etc/traefik/traefik.yml:ro
-    - ./traefik/traefik_dynamic.toml:/etc/traefik/traefik_dynamic.toml:ro
-    - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./traefik/traefik.yml:/etc/traefik/traefik.yml:ro
+      - ./traefik/traefik_dynamic.toml:/etc/traefik/traefik_dynamic.toml:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
     networks:
-    - matrix
+      - matrix
+    healthcheck:
+      test: ["CMD", "traefik", "healthcheck", "--ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
+    logging:
+      driver: json-file
+      options:
+        max-size: "100m"
+        max-file: "5"
+
+  # Certbot for SSL Certificates
   certbot:
-    image: certbot/certbot
+    image: certbot/certbot:latest
+    restart: unless-stopped
     volumes:
-    - ./certbot:/etc/letsencrypt
-    entrypoint: sleep
-    command: infinity
+      - ./certbot:/etc/letsencrypt:rw
+      - ./data/certbot:/var/lib/letsencrypt:rw
+    entrypoint: /bin/sh
+    command: -c "sleep infinity"
     networks:
-    - matrix
+      - matrix
+    depends_on:
+      - traefik
+
+  # Telegram Bridge
   bridge_telegram:
-    image: mautrix/telegram
-    restart: always
+    image: mautrix/telegram:latest
+    restart: unless-stopped
+    hostname: telegram
     volumes:
-    - ./data/telegram:/data
+      - ./data/telegram:/data:z
+      - ./bridges/telegram_config.yaml:/config/config.yaml:ro
     networks:
-    - matrix
+      - matrix
     labels:
-    - traefik.enable=true
-    - traefik.http.routers.bridge_telegram.rule=Host(`telegram.your.domain.tld`)
-    - traefik.http.routers.bridge_telegram.entrypoints=websecure
-    - traefik.http.routers.bridge_telegram.tls=true
+      - traefik.enable=true
+      - traefik.http.routers.bridge_telegram.rule=Host(`telegram.your.domain.tld`)
+      - traefik.http.routers.bridge_telegram.entrypoints=websecure
+      - traefik.http.routers.bridge_telegram.tls=true
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8008/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1G
+        reservations:
+          cpus: '0.25'
+          memory: 256M
+    logging:
+      driver: json-file
+      options:
+        max-size: "100m"
+        max-file: "5"
+    depends_on:
+      - synapse
+
+  # Signal Bridge
   bridge_signal:
-    image: mautrix/signal
-    restart: always
+    image: mautrix/signal:latest
+    restart: unless-stopped
+    hostname: signal
     volumes:
-    - ./data/signal:/data
+      - ./data/signal:/data:z
+      - ./bridges/signal_config.yaml:/config/config.yaml:ro
     networks:
-    - matrix
+      - matrix
     labels:
-    - traefik.enable=true
-    - traefik.http.routers.bridge_signal.rule=Host(`signal.your.domain.tld`)
-    - traefik.http.routers.bridge_signal.entrypoints=websecure
-    - traefik.http.routers.bridge_signal.tls=true
+      - traefik.enable=true
+      - traefik.http.routers.bridge_signal.rule=Host(`signal.your.domain.tld`)
+      - traefik.http.routers.bridge_signal.entrypoints=websecure
+      - traefik.http.routers.bridge_signal.tls=true
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8008/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1G
+        reservations:
+          cpus: '0.25'
+          memory: 256M
+    logging:
+      driver: json-file
+      options:
+        max-size: "100m"
+        max-file: "5"
+    depends_on:
+      - synapse
+
+  # WhatsApp Bridge
   bridge_whatsapp:
-    image: mautrix/whatsapp
-    restart: always
+    image: mautrix/whatsapp:latest
+    restart: unless-stopped
+    hostname: whatsapp
     volumes:
-    - ./data/whatsapp:/data
+      - ./data/whatsapp:/data:z
+      - ./bridges/whatsapp_config.yaml:/config/config.yaml:ro
     networks:
-    - matrix
+      - matrix
     labels:
-    - traefik.enable=true
-    - traefik.http.routers.bridge_whatsapp.rule=Host(`whatsapp.your.domain.tld`)
-    - traefik.http.routers.bridge_whatsapp.entrypoints=websecure
-    - traefik.http.routers.bridge_whatsapp.tls=true
+      - traefik.enable=true
+      - traefik.http.routers.bridge_whatsapp.rule=Host(`whatsapp.your.domain.tld`)
+      - traefik.http.routers.bridge_whatsapp.entrypoints=websecure
+      - traefik.http.routers.bridge_whatsapp.tls=true
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8008/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1G
+        reservations:
+          cpus: '0.25'
+          memory: 256M
+    logging:
+      driver: json-file
+      options:
+        max-size: "100m"
+        max-file: "5"
+    depends_on:
+      - synapse
+
+  # Discord Bridge
   bridge_discord:
-    image: mautrix/discord
-    restart: always
+    image: mautrix/discord:latest
+    restart: unless-stopped
+    hostname: discord
     volumes:
-    - ./data/discord:/data
+      - ./data/discord:/data:z
+      - ./bridges/discord_config.yaml:/config/config.yaml:ro
     networks:
-    - matrix
+      - matrix
     labels:
-    - traefik.enable=true
-    - traefik.http.routers.bridge_discord.rule=Host(`discord.your.domain.tld`)
-    - traefik.http.routers.bridge_discord.entrypoints=websecure
-    - traefik.http.routers.bridge_discord.tls=true
+      - traefik.enable=true
+      - traefik.http.routers.bridge_discord.rule=Host(`discord.your.domain.tld`)
+      - traefik.http.routers.bridge_discord.entrypoints=websecure
+      - traefik.http.routers.bridge_discord.tls=true
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8008/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1G
+        reservations:
+          cpus: '0.25'
+          memory: 256M
+    logging:
+      driver: json-file
+      options:
+        max-size: "100m"
+        max-file: "5"
+    depends_on:
+      - synapse
+
+  # Facebook Bridge
   bridge_facebook:
-    image: mautrix/facebook
-    restart: always
+    image: mautrix/facebook:latest
+    restart: unless-stopped
+    hostname: facebook
     volumes:
-    - ./data/facebook:/data
+      - ./data/facebook:/data:z
     networks:
-    - matrix
+      - matrix
     labels:
-    - traefik.enable=true
-    - traefik.http.routers.bridge_facebook.rule=Host(`facebook.your.domain.tld`)
-    - traefik.http.routers.bridge_facebook.entrypoints=websecure
-    - traefik.http.routers.bridge_facebook.tls=true
+      - traefik.enable=true
+      - traefik.http.routers.bridge_facebook.rule=Host(`facebook.your.domain.tld`)
+      - traefik.http.routers.bridge_facebook.entrypoints=websecure
+      - traefik.http.routers.bridge_facebook.tls=true
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8008/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+        reservations:
+          cpus: '0.1'
+          memory: 128M
+    logging:
+      driver: json-file
+      options:
+        max-size: "100m"
+        max-file: "5"
+    depends_on:
+      - synapse
+
+  # Instagram Bridge
   bridge_instagram:
-    image: mautrix/instagram
-    restart: always
+    image: mautrix/instagram:latest
+    restart: unless-stopped
+    hostname: instagram
     volumes:
-    - ./data/instagram:/data
+      - ./data/instagram:/data:z
     networks:
-    - matrix
+      - matrix
     labels:
-    - traefik.enable=true
-    - traefik.http.routers.bridge_instagram.rule=Host(`instagram.your.domain.tld`)
-    - traefik.http.routers.bridge_instagram.entrypoints=websecure
-    - traefik.http.routers.bridge_instagram.tls=true
+      - traefik.enable=true
+      - traefik.http.routers.bridge_instagram.rule=Host(`instagram.your.domain.tld`)
+      - traefik.http.routers.bridge_instagram.entrypoints=websecure
+      - traefik.http.routers.bridge_instagram.tls=true
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8008/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+        reservations:
+          cpus: '0.1'
+          memory: 128M
+    logging:
+      driver: json-file
+      options:
+        max-size: "100m"
+        max-file: "5"
+    depends_on:
+      - synapse
+
+  # Google Chat Bridge
   bridge_googlechat:
-    image: mautrix/googlechat
-    restart: always
+    image: mautrix/googlechat:latest
+    restart: unless-stopped
+    hostname: googlechat
     volumes:
-    - ./data/googlechat:/data
+      - ./data/googlechat:/data:z
     networks:
-    - matrix
+      - matrix
     labels:
-    - traefik.enable=true
-    - traefik.http.routers.bridge_googlechat.rule=Host(`googlechat.your.domain.tld`)
-    - traefik.http.routers.bridge_googlechat.entrypoints=websecure
-    - traefik.http.routers.bridge_googlechat.tls=true
+      - traefik.enable=true
+      - traefik.http.routers.bridge_googlechat.rule=Host(`googlechat.your.domain.tld`)
+      - traefik.http.routers.bridge_googlechat.entrypoints=websecure
+      - traefik.http.routers.bridge_googlechat.tls=true
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8008/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+        reservations:
+          cpus: '0.1'
+          memory: 128M
+    logging:
+      driver: json-file
+      options:
+        max-size: "100m"
+        max-file: "5"
+    depends_on:
+      - synapse
+
+  # Slack Bridge
   bridge_slack:
-    image: mautrix/slack
-    restart: always
+    image: mautrix/slack:latest
+    restart: unless-stopped
+    hostname: slack
     volumes:
-    - ./data/slack:/data
+      - ./data/slack:/data:z
+      - ./bridges/slack_config.yaml:/config/config.yaml:ro
     networks:
-    - matrix
+      - matrix
     labels:
-    - traefik.enable=true
-    - traefik.http.routers.bridge_slack.rule=Host(`slack.your.domain.tld`)
-    - traefik.http.routers.bridge_slack.entrypoints=websecure
-    - traefik.http.routers.bridge_slack.tls=true
+      - traefik.enable=true
+      - traefik.http.routers.bridge_slack.rule=Host(`slack.your.domain.tld`)
+      - traefik.http.routers.bridge_slack.entrypoints=websecure
+      - traefik.http.routers.bridge_slack.tls=true
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8008/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+        reservations:
+          cpus: '0.1'
+          memory: 128M
+    logging:
+      driver: json-file
+      options:
+        max-size: "100m"
+        max-file: "5"
+    depends_on:
+      - synapse
+
+  # Twitter Bridge
   bridge_twitter:
-    image: mautrix/twitter
-    restart: always
+    image: mautrix/twitter:latest
+    restart: unless-stopped
+    hostname: twitter
     volumes:
-    - ./data/twitter:/data
+      - ./data/twitter:/data:z
     networks:
-    - matrix
+      - matrix
     labels:
-    - traefik.enable=true
-    - traefik.http.routers.bridge_twitter.rule=Host(`twitter.your.domain.tld`)
-    - traefik.http.routers.bridge_twitter.entrypoints=websecure
-    - traefik.http.routers.bridge_twitter.tls=true
+      - traefik.enable=true
+      - traefik.http.routers.bridge_twitter.rule=Host(`twitter.your.domain.tld`)
+      - traefik.http.routers.bridge_twitter.entrypoints=websecure
+      - traefik.http.routers.bridge_twitter.tls=true
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8008/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+        reservations:
+          cpus: '0.1'
+          memory: 128M
+    logging:
+      driver: json-file
+      options:
+        max-size: "100m"
+        max-file: "5"
+    depends_on:
+      - synapse
+
+  # Bluesky Bridge
   bridge_bluesky:
-    image: mautrix/bluesky
-    restart: always
+    image: mautrix/bluesky:latest
+    restart: unless-stopped
+    hostname: bluesky
     volumes:
-    - ./data/bluesky:/data
+      - ./data/bluesky:/data:z
     networks:
-    - matrix
+      - matrix
     labels:
-    - traefik.enable=true
-    - traefik.http.routers.bridge_bluesky.rule=Host(`bluesky.your.domain.tld`)
-    - traefik.http.routers.bridge_bluesky.entrypoints=websecure
-    - traefik.http.routers.bridge_bluesky.tls=true
+      - traefik.enable=true
+      - traefik.http.routers.bridge_bluesky.rule=Host(`bluesky.your.domain.tld`)
+      - traefik.http.routers.bridge_bluesky.entrypoints=websecure
+      - traefik.http.routers.bridge_bluesky.tls=true
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8008/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+        reservations:
+          cpus: '0.1'
+          memory: 128M
+    logging:
+      driver: json-file
+      options:
+        max-size: "100m"
+        max-file: "5"
+    depends_on:
+      - synapse
+
+  # Google Messages Bridge
   bridge_gmessages:
-    image: mautrix/gmessages
-    restart: always
+    image: mautrix/gmessages:latest
+    restart: unless-stopped
+    hostname: gmessages
     volumes:
-    - ./data/gmessages:/data
+      - ./data/gmessages:/data:z
     networks:
-    - matrix
+      - matrix
     labels:
-    - traefik.enable=true
-    - traefik.http.routers.bridge_gmessages.rule=Host(`gmessages.your.domain.tld`)
-    - traefik.http.routers.bridge_gmessages.entrypoints=websecure
-    - traefik.http.routers.bridge_gmessages.tls=true
+      - traefik.enable=true
+      - traefik.http.routers.bridge_gmessages.rule=Host(`gmessages.your.domain.tld`)
+      - traefik.http.routers.bridge_gmessages.entrypoints=websecure
+      - traefik.http.routers.bridge_gmessages.tls=true
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8008/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+        reservations:
+          cpus: '0.1'
+          memory: 128M
+    logging:
+      driver: json-file
+      options:
+        max-size: "100m"
+        max-file: "5"
+    depends_on:
+      - synapse
+
+  # Email Bridge
   bridge_email:
-    image: mautrix/email
-    restart: always
+    image: mautrix/email:latest
+    restart: unless-stopped
+    hostname: email
     volumes:
-    - ./data/email:/data
+      - ./data/email:/data:z
     networks:
-    - matrix
+      - matrix
     labels:
-    - traefik.enable=true
-    - traefik.http.routers.bridge_email.rule=Host(`email.your.domain.tld`)
-    - traefik.http.routers.bridge_email.entrypoints=websecure
-    - traefik.http.routers.bridge_email.tls=true
+      - traefik.enable=true
+      - traefik.http.routers.bridge_email.rule=Host(`email.your.domain.tld`)
+      - traefik.http.routers.bridge_email.entrypoints=websecure
+      - traefik.http.routers.bridge_email.tls=true
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8008/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+        reservations:
+          cpus: '0.1'
+          memory: 128M
+    logging:
+      driver: json-file
+      options:
+        max-size: "100m"
+        max-file: "5"
+    depends_on:
+      - synapse
+
+  # Hookshot Bridge
   bridge_hookshot:
-    image: mautrix/hookshot
-    restart: always
+    image: mautrix/hookshot:latest
+    restart: unless-stopped
+    hostname: hookshot
     volumes:
-    - ./data/hookshot:/data
+      - ./data/hookshot:/data:z
     networks:
-    - matrix
+      - matrix
     labels:
-    - traefik.enable=true
-    - traefik.http.routers.bridge_hookshot.rule=Host(`hookshot.your.domain.tld`)
-    - traefik.http.routers.bridge_hookshot.entrypoints=websecure
-    - traefik.http.routers.bridge_hookshot.tls=true
+      - traefik.enable=true
+      - traefik.http.routers.bridge_hookshot.rule=Host(`hookshot.your.domain.tld`)
+      - traefik.http.routers.bridge_hookshot.entrypoints=websecure
+      - traefik.http.routers.bridge_hookshot.tls=true
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8008/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+        reservations:
+          cpus: '0.1'
+          memory: 128M
+    logging:
+      driver: json-file
+      options:
+        max-size: "100m"
+        max-file: "5"
+    depends_on:
+      - synapse
+
+  # Google Voice Bridge
   bridge_gvoice:
-    image: mautrix/gvoice
-    restart: always
+    image: mautrix/gvoice:latest
+    restart: unless-stopped
+    hostname: gvoice
     volumes:
-    - ./data/gvoice:/data
+      - ./data/gvoice:/data:z
     networks:
-    - matrix
+      - matrix
     labels:
-    - traefik.enable=true
-    - traefik.http.routers.bridge_gvoice.rule=Host(`gvoice.your.domain.tld`)
-    - traefik.http.routers.bridge_gvoice.entrypoints=websecure
-    - traefik.http.routers.bridge_gvoice.tls=true
+      - traefik.enable=true
+      - traefik.http.routers.bridge_gvoice.rule=Host(`gvoice.your.domain.tld`)
+      - traefik.http.routers.bridge_gvoice.entrypoints=websecure
+      - traefik.http.routers.bridge_gvoice.tls=true
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8008/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+        reservations:
+          cpus: '0.1'
+          memory: 128M
+    logging:
+      driver: json-file
+      options:
+        max-size: "100m"
+        max-file: "5"
+    depends_on:
+      - synapse
+
+  # Gitter Bridge
   bridge_gitter:
-    image: mautrix/gitter
-    restart: always
+    image: mautrix/gitter:latest
+    restart: unless-stopped
+    hostname: gitter
     volumes:
-    - ./data/gitter:/data
+      - ./data/gitter:/data:z
     networks:
-    - matrix
+      - matrix
     labels:
-    - traefik.enable=true
-    - traefik.http.routers.bridge_gitter.rule=Host(`gitter.your.domain.tld`)
-    - traefik.http.routers.bridge_gitter.entrypoints=websecure
-    - traefik.http.routers.bridge_gitter.tls=true
+      - traefik.enable=true
+      - traefik.http.routers.bridge_gitter.rule=Host(`gitter.your.domain.tld`)
+      - traefik.http.routers.bridge_gitter.entrypoints=websecure
+      - traefik.http.routers.bridge_gitter.tls=true
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8008/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+        reservations:
+          cpus: '0.1'
+          memory: 128M
+    logging:
+      driver: json-file
+      options:
+        max-size: "100m"
+        max-file: "5"
+    depends_on:
+      - synapse
+
+  # XMPP Bridge
   bridge_xmpp:
-    image: mautrix/xmpp
-    restart: always
+    image: mautrix/xmpp:latest
+    restart: unless-stopped
+    hostname: xmpp
     volumes:
-    - ./data/xmpp:/data
+      - ./data/xmpp:/data:z
     networks:
-    - matrix
+      - matrix
     labels:
-    - traefik.enable=true
-    - traefik.http.routers.bridge_xmpp.rule=Host(`xmpp.your.domain.tld`)
-    - traefik.http.routers.bridge_xmpp.entrypoints=websecure
-    - traefik.http.routers.bridge_xmpp.tls=true
+      - traefik.enable=true
+      - traefik.http.routers.bridge_xmpp.rule=Host(`xmpp.your.domain.tld`)
+      - traefik.http.routers.bridge_xmpp.entrypoints=websecure
+      - traefik.http.routers.bridge_xmpp.tls=true
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8008/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+        reservations:
+          cpus: '0.1'
+          memory: 128M
+    logging:
+      driver: json-file
+      options:
+        max-size: "100m"
+        max-file: "5"
+    depends_on:
+      - synapse
+
+  # Mattermost Bridge
   bridge_mattermost:
-    image: mautrix/mattermost
-    restart: always
+    image: mautrix/mattermost:latest
+    restart: unless-stopped
+    hostname: mattermost
     volumes:
-    - ./data/mattermost:/data
+      - ./data/mattermost:/data:z
     networks:
-    - matrix
+      - matrix
     labels:
-    - traefik.enable=true
-    - traefik.http.routers.bridge_mattermost.rule=Host(`mattermost.your.domain.tld`)
-    - traefik.http.routers.bridge_mattermost.entrypoints=websecure
-    - traefik.http.routers.bridge_mattermost.tls=true
+      - traefik.enable=true
+      - traefik.http.routers.bridge_mattermost.rule=Host(`mattermost.your.domain.tld`)
+      - traefik.http.routers.bridge_mattermost.entrypoints=websecure
+      - traefik.http.routers.bridge_mattermost.tls=true
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8008/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+        reservations:
+          cpus: '0.1'
+          memory: 128M
+    logging:
+      driver: json-file
+      options:
+        max-size: "100m"
+        max-file: "5"
+    depends_on:
+      - synapse
+
+  # Mumble Bridge
   bridge_mumble:
-    image: mautrix/mumble
-    restart: always
+    image: mautrix/mumble:latest
+    restart: unless-stopped
+    hostname: mumble
     volumes:
-    - ./data/mumble:/data
+      - ./data/mumble:/data:z
     networks:
-    - matrix
+      - matrix
     labels:
-    - traefik.enable=true
-    - traefik.http.routers.bridge_mumble.rule=Host(`mumble.your.domain.tld`)
-    - traefik.http.routers.bridge_mumble.entrypoints=websecure
-    - traefik.http.routers.bridge_mumble.tls=true
+      - traefik.enable=true
+      - traefik.http.routers.bridge_mumble.rule=Host(`mumble.your.domain.tld`)
+      - traefik.http.routers.bridge_mumble.entrypoints=websecure
+      - traefik.http.routers.bridge_mumble.tls=true
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8008/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+        reservations:
+          cpus: '0.1'
+          memory: 128M
+    logging:
+      driver: json-file
+      options:
+        max-size: "100m"
+        max-file: "5"
+    depends_on:
+      - synapse
+
+  # WeChat Bridge
   bridge_wechat:
-    image: mautrix/wechat
-    restart: always
+    image: mautrix/wechat:latest
+    restart: unless-stopped
+    hostname: wechat
     volumes:
-    - ./data/wechat:/data
+      - ./data/wechat:/data:z
     networks:
-    - matrix
+      - matrix
     labels:
-    - traefik.enable=true
-    - traefik.http.routers.bridge_wechat.rule=Host(`wechat.your.domain.tld`)
-    - traefik.http.routers.bridge_wechat.entrypoints=websecure
-    - traefik.http.routers.bridge_wechat.tls=true
+      - traefik.enable=true
+      - traefik.http.routers.bridge_wechat.rule=Host(`wechat.your.domain.tld`)
+      - traefik.http.routers.bridge_wechat.entrypoints=websecure
+      - traefik.http.routers.bridge_wechat.tls=true
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8008/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+        reservations:
+          cpus: '0.1'
+          memory: 128M
+    logging:
+      driver: json-file
+      options:
+        max-size: "100m"
+        max-file: "5"
+    depends_on:
+      - synapse
+
+  # KakaoTalk Bridge
   bridge_kakaotalk:
-    image: mautrix/kakaotalk
-    restart: always
+    image: mautrix/kakaotalk:latest
+    restart: unless-stopped
+    hostname: kakaotalk
     volumes:
-    - ./data/kakaotalk:/data
+      - ./data/kakaotalk:/data:z
     networks:
-    - matrix
+      - matrix
     labels:
-    - traefik.enable=true
-    - traefik.http.routers.bridge_kakaotalk.rule=Host(`kakaotalk.your.domain.tld`)
-    - traefik.http.routers.bridge_kakaotalk.entrypoints=websecure
-    - traefik.http.routers.bridge_kakaotalk.tls=true
+      - traefik.enable=true
+      - traefik.http.routers.bridge_kakaotalk.rule=Host(`kakaotalk.your.domain.tld`)
+      - traefik.http.routers.bridge_kakaotalk.entrypoints=websecure
+      - traefik.http.routers.bridge_kakaotalk.tls=true
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8008/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+        reservations:
+          cpus: '0.1'
+          memory: 128M
+    logging:
+      driver: json-file
+      options:
+        max-size: "100m"
+        max-file: "5"
+    depends_on:
+      - synapse
+
+  # QQ Bridge
   bridge_qq:
-    image: mautrix/qq
-    restart: always
+    image: mautrix/qq:latest
+    restart: unless-stopped
+    hostname: qq
     volumes:
-    - ./data/qq:/data
+      - ./data/qq:/data:z
     networks:
-    - matrix
+      - matrix
     labels:
-    - traefik.enable=true
-    - traefik.http.routers.bridge_qq.rule=Host(`qq.your.domain.tld`)
-    - traefik.http.routers.bridge_qq.entrypoints=websecure
-    - traefik.http.routers.bridge_qq.tls=true
+      - traefik.enable=true
+      - traefik.http.routers.bridge_qq.rule=Host(`qq.your.domain.tld`)
+      - traefik.http.routers.bridge_qq.entrypoints=websecure
+      - traefik.http.routers.bridge_qq.tls=true
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8008/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+        reservations:
+          cpus: '0.1'
+          memory: 128M
+    logging:
+      driver: json-file
+      options:
+        max-size: "100m"
+        max-file: "5"
+    depends_on:
+      - synapse
+
+  # Heisenbridge
   bridge_heisenbridge:
-    image: mautrix/heisenbridge
-    restart: always
+    image: mautrix/heisenbridge:latest
+    restart: unless-stopped
+    hostname: heisenbridge
     volumes:
-    - ./data/heisenbridge:/data
+      - ./data/heisenbridge:/data:z
     networks:
-    - matrix
+      - matrix
     labels:
-    - traefik.enable=true
-    - traefik.http.routers.bridge_heisenbridge.rule=Host(`heisenbridge.your.domain.tld`)
-    - traefik.http.routers.bridge_heisenbridge.entrypoints=websecure
-    - traefik.http.routers.bridge_heisenbridge.tls=true
+      - traefik.enable=true
+      - traefik.http.routers.bridge_heisenbridge.rule=Host(`heisenbridge.your.domain.tld`)
+      - traefik.http.routers.bridge_heisenbridge.entrypoints=websecure
+      - traefik.http.routers.bridge_heisenbridge.tls=true
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8008/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+        reservations:
+          cpus: '0.1'
+          memory: 128M
+    logging:
+      driver: json-file
+      options:
+        max-size: "100m"
+        max-file: "5"
+    depends_on:
+      - synapse
+
 networks:
   matrix:
     driver: bridge
+    driver_opts:
+      com.docker.network.bridge.name: br-matrix
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+

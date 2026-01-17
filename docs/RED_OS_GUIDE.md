@@ -20,34 +20,34 @@
 ### Установка через DNF (рекомендуется)
 ```bash
 # Скачайте RPM пакет
-wget https://github.com/sorydima/REChain-/releases/latest/download/rechainonline-4.1.8-1.x86_64.rpm
+wget https://github.com/sorydima/REChain-/releases/latest/download/rechainonline-4.1.10-1.x86_64.rpm
 
 # Установите пакет с автоматическим разрешением зависимостей
-sudo dnf install rechainonline-4.1.8-1.x86_64.rpm
+sudo dnf install rechainonline-4.1.10-1.x86_64.rpm
 
 # Или установите локально
-sudo dnf localinstall rechainonline-4.1.8-1.x86_64.rpm
+sudo dnf localinstall rechainonline-4.1.10-1.x86_64.rpm
 ```
 
 ### Установка через YUM (для старых версий)
 ```bash
 # Для РЕД ОС 7.x
-sudo yum install rechainonline-4.1.8-1.x86_64.rpm
+sudo yum install rechainonline-4.1.10-1.x86_64.rpm
 
 # Или используйте rpm напрямую
-sudo rpm -ivh rechainonline-4.1.8-1.x86_64.rpm
+sudo rpm -ivh rechainonline-4.1.10-1.x86_64.rpm
 ```
 
 ### Установка через RPM
 ```bash
 # Прямая установка
-sudo rpm -i rechainonline-4.1.8-1.x86_64.rpm
+sudo rpm -i rechainonline-4.1.10-1.x86_64.rpm
 
 # Обновление существующей версии
-sudo rpm -U rechainonline-4.1.8-1.x86_64.rpm
+sudo rpm -U rechainonline-4.1.10-1.x86_64.rpm
 
 # Принудительная установка (если есть конфликты)
-sudo rpm -i --force rechainonline-4.1.8-1.x86_64.rpm
+sudo rpm -i --force rechainonline-4.1.10-1.x86_64.rpm
 ```
 
 ## 🏢 Корпоративная настройка
@@ -56,7 +56,7 @@ sudo rpm -i --force rechainonline-4.1.8-1.x86_64.rpm
 ```bash
 # Создание локального репозитория
 sudo mkdir -p /var/www/html/repo/rechainonline
-sudo cp rechainonline-4.1.8-1.x86_64.rpm /var/www/html/repo/rechainonline/
+sudo cp rechainonline-4.1.10-1.x86_64.rpm /var/www/html/repo/rechainonline/
 sudo createrepo /var/www/html/repo/rechainonline/
 
 # Настройка клиентов
@@ -77,7 +77,7 @@ EOF
   hosts: redos_servers
   become: yes
   vars:
-    rechainonline_version: "4.1.8-1"
+    rechainonline_version: "4.1.10-1"
     
   tasks:
     - name: Add REChain repository
@@ -362,5 +362,5 @@ nslookup matrix.org
 
 ---
 
-*Руководство для РЕД ОС версии 4.1.8+1152*
+*Руководство для РЕД ОС версии 4.1.10+1160*
 *Сертифицировано для корпоративного использования*

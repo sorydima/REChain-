@@ -32,12 +32,12 @@ REChain полностью поддерживает все основные ро
 ```bash
 # Структура пакетов
 packages/
-├── rechainonline-4.1.8-amd64.deb          # DEB пакет (48.4 МБ)
+├── rechainonline-4.1.10-amd64.deb          # DEB пакет (48.4 МБ)
 ├── rpm/
 │   ├── RPMS/x86_64/
-│   │   └── rechainonline-4.1.8-1.x86_64.rpm  # RPM пакет (50.3 МБ)
+│   │   └── rechainonline-4.1.10-1.x86_64.rpm  # RPM пакет (50.3 МБ)
 │   └── SRPMS/
-│       └── rechainonline-4.1.8-1.src.rpm     # Исходный RPM (56.7 МБ)
+│       └── rechainonline-4.1.10-1.src.rpm     # Исходный RPM (56.7 МБ)
 └── appimage/
     └── rechainonline.AppDir/               # AppImage структура
         └── AppRun                          # Универсальный запуск
@@ -60,17 +60,17 @@ chmod +x build_russian_linux.sh
 
 #### Для Debian-based систем (Astra Linux)
 ```bash
-wget https://github.com/sorydima/REChain-/releases/latest/download/rechainonline-4.1.8-amd64.deb
-sudo dpkg -i rechainonline-4.1.8-amd64.deb
+wget https://github.com/sorydima/REChain-/releases/latest/download/rechainonline-4.1.10-amd64.deb
+sudo dpkg -i rechainonline-4.1.10-amd64.deb
 sudo apt-get install -f
 ```
 
 #### Для RPM-based систем (РЕД ОС, ОС «Альт», РОСА)
 ```bash
-wget https://github.com/sorydima/REChain-/releases/latest/download/rechainonline-4.1.8-1.x86_64.rpm
-sudo dnf install rechainonline-4.1.8-1.x86_64.rpm
+wget https://github.com/sorydima/REChain-/releases/latest/download/rechainonline-4.1.10-1.x86_64.rpm
+sudo dnf install rechainonline-4.1.10-1.x86_64.rpm
 # или
-sudo rpm -i rechainonline-4.1.8-1.x86_64.rpm
+sudo rpm -i rechainonline-4.1.10-1.x86_64.rpm
 ```
 
 #### Универсальная установка (AppImage)
@@ -185,7 +185,7 @@ chmod +x rechainonline.AppImage
 - **Канал разработки:** Ежедневные сборки
 
 ### График поддержки
-- **Текущая версия:** 4.1.8+1152
+- **Текущая версия:** 4.1.10+1160
 - **LTS поддержка:** 3 года для корпоративных версий
 - **Обновления безопасности:** Ежемесячно
 - **Функциональные обновления:** Ежеквартально
@@ -246,7 +246,7 @@ REChain распространяется под собственной лице�
 ---
 
 **REChain для российских ОС Linux**  
-*Версия документации: 4.1.8+1152*  
+*Версия документации: 4.1.10+1160*  
 *Дата обновления: Август 2024*  
 *Поддерживаемые ОС: 12 российских дистрибутивов*
 

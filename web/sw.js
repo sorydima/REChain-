@@ -3,9 +3,9 @@
  * Handles caching, push notifications, and background sync
  */
 
-const CACHE_NAME = 'rechain-v1.0.0';
-const STATIC_CACHE = 'rechain-static-v1.0.0';
-const DYNAMIC_CACHE = 'rechain-dynamic-v1.0.0';
+const CACHE_NAME = 'rechain-v4.1.10+1160';
+const STATIC_CACHE = 'rechain-static-v4.1.10+1160';
+const DYNAMIC_CACHE = 'rechain-dynamic-v4.1.10+1160';
 
 // Files to cache immediately
 const STATIC_FILES = [

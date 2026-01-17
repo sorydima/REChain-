@@ -1,0 +1,262 @@
+# REChain Bridge Configuration Template
+# Use this template to create new bridge configurations
+# Copy and customize for your specific bridge
+
+# ============================================================================
+# HOMESERVER CONFIGURATION
+# ============================================================================
+homeserver:
+  # Matrix homeserver address (internal Docker networking)
+  address: http://synapse:8008
+  
+  # Your domain name (public)
+  domain: your.domain.tld
+  
+  # Connection settings
+  connection_timeout: 30      # Seconds to wait for connection
+  read_timeout: 60            # Seconds to wait for response
+  write_timeout: 60           # Seconds to wait for write
+  max_retries: 3              # Number of connection retries
+  retry_delay: 5              # Seconds between retries
+
+# ============================================================================
+# APPLICATION SERVICE CONFIGURATION
+# ============================================================================
+appservice:
+  # Database file (SQLite by default)
+  database: appservice.db
+  
+  # Enhanced database options
+  database_opts:
+    pool_size: 5              # Connection pool size
+    max_overflow: 10          # Additional connections for burst
+    timeout: 20               # Query timeout in seconds
+  
+  # Session management
+  session_timeout: 300        # Session timeout in seconds
+  idle_timeout: 600           # Idle timeout in seconds
+
+# ============================================================================
+# LOGGING CONFIGURATION
+# ============================================================================
+logging:
+  level: info                 # debug, info, warning, error
+  format: json                # json or text
+  output: file                # file, stdout, or both
+  log_file: /data/bridge.log
+  max_size: 100M              # Max log file size
+  backup_count: 5             # Number of backup logs to keep
+  structured:
+    enabled: true
+    timestamp_format: ISO8601 # or "YYYY-MM-DD HH:mm:ss"
+
+# ============================================================================
+# PERFORMANCE TUNING
+# ============================================================================
+performance:
+  # Message processing
+  message_processing_workers: 4
+  batch_size: 100              # Messages per batch
+  batch_timeout: 5             # Seconds to wait for batch
+  
+  # Rate limiting
+  rate_limit:
+    enabled: true
+    requests_per_second: 50
+    burst_size: 100
+  
+  # Caching
+  cache:
+    enabled: true
+    max_entries: 10000
+    ttl: 3600                  # Cache TTL in seconds
+  
+  # Connection pooling
+  connection_pool:
+    min_connections: 2
+    max_connections: 20
+    max_idle_time: 300         # Seconds
+
+# ============================================================================
+# SECURITY CONFIGURATION
+# ============================================================================
+security:
+  # Encryption settings
+  encryption:
+    enabled: true
+    algorithm: AES-256-GCM
+  
+  # Authentication
+  authentication:
+    method: token              # token, oauth, basic
+    token_rotation_interval: 86400  # Token rotation in seconds
+  
+  # Access control
+  access_control:
+    default_policy: deny       # deny or allow
+    allowed_users:
+      - "@admin:your.domain.tld"
+    blocked_users: []
+  
+  # Per-user rate limiting
+  user_rate_limit:
+    enabled: true
+    messages_per_minute: 60
+    messages_per_hour: 1000
+
+# ============================================================================
+# BRIDGE-SPECIFIC CONFIGURATION
+# ============================================================================
+bridge:
+  # BRIDGE NAME - Replace with actual bridge name (e.g., telegram, discord)
+  bridge_name:
+    
+    # Authentication credentials
+    auth:
+      # API key or token
+      api_key: "__CHANGE_ME__"
+      # Additional auth fields
+      username: null
+      password: null
+      redirect_uri: null
+    
+    # Connection settings
+    connection:
+      use_ipv6: false
+      proxy: null              # e.g., "socks5://proxy:1080"
+      max_connections: 5
+      timeout: 30
+    
+    # Message handling
+    message:
+      format: matrix           # matrix, text, html
+      content_format: html     # html, text, markdown
+      max_message_size: 65536  # bytes
+      allow_reactions: true
+      allow_edits: true
+      allow_reply: true
+      allow_forward: true
+      allow_reply_notices: true
+    
+    # Group/channel bridging
+    group:
+      bridge_initial_chat: true
+      direct_chat_on_invite: true
+      private_chat_on_invite: false
+      sync_participants: true
+    
+    # User bridging
+    user:
+      puppet_source: "bridge_name"
+      avatar_source: "both"    # bridge, matrix, both
+      displayname_source: "bridge_name"
+    
+    # Admin management
+    admin:
+      enabled: true
+      relaybot: "@relaybot:your.domain.tld"
+  
+  # Relay bot configuration
+  relay:
+    enabled: true
+    username_suffix: "relaybot"
+    icon: "default"
+  
+  # Double puppeting
+  double_puppet:
+    enabled: true
+    source: "bridge_name"
+  
+  # General bridging settings
+  bridging:
+    public: false              # Allow public room bridging
+    default_visibility: "private"
+    enable_status_bridging: true
+    enable_typing_bridging: true
+    enable_read_bridging: true
+    enable_presence_bridging: false
+    resend_bridge_info: true
+    async_transmission: true
+  
+  # Push notifications
+  push:
+    enabled: false
+    notifications: false
+    alert_words: []
+  
+  # Metrics and monitoring
+  metrics:
+    enabled: true
+    port: 8001
+    path: "/metrics"
+  
+  # Webhook configuration
+  webhook:
+    enabled: false
+    url: null
+    secret: null
+  
+  # Room configuration
+  room:
+    default_bridge_name: "bridge_name"
+    override_mxid_format: "{displayname} (bridge_name)"
+    ignore_users:
+      spaces: []
+      users: []
+    alias_template: "bridge_name_{channel}"
+
+# ============================================================================
+# EXPERIMENTAL FEATURES
+# ============================================================================
+experimental:
+  matrix_live:
+    enabled: false
+  
+  # Matrix Spec Changes (MSCs)
+  msc:
+    - "msc2409"  # Authentication factors
+    - "msc3381"  # Polls
+    - "msc3440"  # Threading
+    - "msc3874"  # Read receipts for relaying
+    - "msc3912"  # Room version 10 features
+
+# ============================================================================
+# HEALTH CHECK CONFIGURATION
+# ============================================================================
+health:
+  enabled: true
+  port: 8008
+  path: "/health"
+  interval: 30                # Check interval in seconds
+  timeout: 10                 # Response timeout in seconds
+
+# ============================================================================
+# BACKUP AND RECOVERY
+# ============================================================================
+backup:
+  enabled: true
+  interval: 86400             # Backup interval in seconds (24 hours)
+  retention: 7                # Number of backups to retain
+  path: /data/backups         # Backup storage path
+
+# ============================================================================
+# MIGRATION SETTINGS
+# ============================================================================
+migration:
+  enabled: false
+  from_version: null          # Previous version
+  to_version: "4.2.0"         # Target version
+  backup_before_migration: true
+
+# ============================================================================
+# EXAMPLE: Telegram-specific overrides (remove for other bridges)
+# ============================================================================
+# bridge:
+#   telegram:
+#     bot:
+#       token: "__CHANGE_ME__"
+#       username: "your_bot_username"
+#       privacy_mode: "users"
+#     phone_number: null
+#     verify_token: null
+

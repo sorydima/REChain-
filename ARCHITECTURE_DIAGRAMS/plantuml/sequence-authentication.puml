@@ -1,0 +1,58 @@
+@startuml
+!theme plain
+skinparam backgroundColor #FFFFFF
+
+title Authentication Flow v4.1.10+1160
+
+actor "User" as User
+participant "REChain App" as App
+participant "Matrix Server" as Matrix
+participant "Identity Service" as Identity
+database "PostgreSQL" as DB
+
+== Login Flow ==
+User -> App : Enters credentials
+App -> Matrix : POST /_matrix/client/r0/login
+Matrix -> Identity : Validate credentials
+Identity -> DB : Query user
+DB --> Identity : User found
+Identity --> Matrix : Credentials valid
+Matrix --> App : Access Token + Device ID
+App -> App : Store token securely
+
+== Registration Flow ==
+User -> App : Request registration
+App -> Matrix : POST /_matrix/client/r0/register
+Matrix -> Identity : Create user
+Identity -> DB : Insert user record
+DB --> Identity : User created
+Identity --> Matrix : User created
+Matrix --> App : Registration success
+App -> App : Generate device keys
+App -> Matrix : Upload device keys
+Matrix -> Matrix : Store device keys
+
+== Device Verification ==
+User -> App : Verify device
+App -> Matrix : POST /_matrix/client/r0/keys/verification/start
+Matrix -> User : Verification request
+User -> App : Confirm verification
+App -> Matrix : POST /_matrix/client/r0/keys/verification/accept
+Matrix -> App : Verification complete
+App -> App : Mark device as verified
+
+== Token Refresh ==
+App -> Matrix : POST /_matrix/client/r0/refresh
+Matrix -> Matrix : Validate refresh token
+Matrix --> App : New access token
+App -> App : Update stored token
+
+== Logout ==
+User -> App : Logout
+App -> Matrix : POST /_matrix/client/r0/logout
+Matrix -> Matrix : Revoke token
+Matrix --> App : Logout success
+App -> App : Clear stored credentials
+
+@enduml
+

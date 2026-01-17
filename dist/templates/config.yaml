@@ -1,0 +1,389 @@
+# REChain Default Configuration
+# This is the default configuration file for REChain
+
+# ============================================================================
+# Server Configuration
+# ============================================================================
+
+server:
+  # Server hostname and port
+  host: "0.0.0.0"
+  port: 8008
+  
+  # Number of worker processes (0 = auto)
+  workers: 0
+  
+  # Maximum request size in bytes (10MB default)
+  max_request_size: 10485760
+  
+  # Connection timeout in seconds
+  connection_timeout: 60
+  
+  # Keep-alive timeout
+  keepalive_timeout: 75
+
+# ============================================================================
+# Database Configuration
+# ============================================================================
+
+database:
+  # Database type: sqlite, postgres, mysql
+  type: "sqlite"
+  
+  # Database file path (for SQLite)
+  path: "/var/lib/rechain/database.db"
+  
+  # Connection string (for PostgreSQL/MySQL)
+  # connection_string: "postgresql://user:password@localhost/rechain"
+  
+  # Database options
+  options:
+    # SQLite pragmas
+    journal_mode: "wal"
+    synchronous: "normal"
+    cache_size: "-64000"
+    
+    # Connection pool settings
+    pool_size: 10
+    max_overflow: 20
+    
+  # Enable database encryption
+  encryption:
+    enabled: false
+    key_file: "/etc/rechain/db_key.bin"
+
+# ============================================================================
+# Logging Configuration
+# ============================================================================
+
+logging:
+  # Log level: debug, info, warning, error, critical
+  level: "info"
+  
+  # Log format: json, plain
+  format: "json"
+  
+  # Log output: file, stdout, syslog
+  output: "file"
+  
+  # Log file path
+  file:
+    path: "/var/log/rechain.log"
+    max_size: 104857600  # 100MB
+    backup_count: 5
+    rotate_on_start: true
+  
+  # Log rotation
+  rotation:
+    enabled: true
+    when: "midnight"
+    interval: 1
+    keep: 30
+    
+  # Syslog configuration
+  syslog:
+    facility: "local0"
+    ident: "rechain"
+    address: "/dev/log"
+
+# ============================================================================
+# Security Configuration
+# ============================================================================
+
+security:
+  # TLS/SSL configuration
+  tls:
+    enabled: false
+    cert_path: "/etc/rechain/cert.pem"
+    key_path: "/etc/rechain/key.pem"
+    min_version: "TLSv1.2"
+    ciphers: "ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384"
+    
+  # Enable end-to-end encryption
+  e2e:
+    enabled: true
+    default_algorithm: "m.megolm.v1.aes-sha2"
+    
+  # Rate limiting
+  rate_limit:
+    enabled: true
+    requests_per_minute: 100
+    burst_size: 200
+    exempt_addresses:
+      - "127.0.0.1"
+      - "::1"
+      
+  # Authentication
+  authentication:
+    # Supported methods: password, token, sso
+    methods:
+      - "password"
+      - "token"
+      
+    # Token settings
+    token:
+      algorithm: "HS256"
+      secret: "__CHANGE_ME__"
+      expiry: 86400  # 24 hours
+      
+    # Password policy
+    password:
+      min_length: 8
+      require_uppercase: true
+      require_lowercase: true
+      require_number: true
+      require_special: false
+      
+  # CORS settings
+  cors:
+    enabled: true
+    origins:
+      - "*"
+    methods:
+      - "GET"
+      - "POST"
+      - "PUT"
+      - "DELETE"
+    headers:
+      - "Content-Type"
+      - "Authorization"
+
+# ============================================================================
+# Federation Configuration
+# ============================================================================
+
+federation:
+  # Enable federation
+  enabled: true
+  
+  # Federation port
+  port: 8448
+  
+  # Server name (must match TLS certificate)
+  server_name: "rechain.network"
+  
+  # Signing key
+  signing_key:
+    path: "/etc/rechain/fed_signing_key"
+    
+  # Trusted servers
+  trust_peers: []
+  
+  # Federation rate limiting
+  rate_limit:
+    enabled: true
+    requests_per_second: 10
+    
+  # Perspective servers (for server key distribution)
+  perspective_servers:
+    - "server1.perspective.rechain.network:843"
+    - "server2.perspective.rechain.network:843"
+
+# ============================================================================
+# Room Configuration
+# ============================================================================
+
+rooms:
+  # Default room settings
+  defaults:
+    # Visibility: public, private
+    visibility: "private"
+    
+    # History visibility
+    history_visibility: "joined"
+    
+    # Join rules
+    join_rule: "invite"
+    
+    # Allow guest access
+    allow_guests: false
+    
+    # Room version
+    version: "10"
+    
+  # Maximum room members
+  max_members: 1000000
+  
+  # Room creation rules
+  creation:
+    allow_custom: true
+    allow_bot_users: true
+    allow_roomirectory: true
+    
+  # Encrypted rooms
+  encryption:
+    enabled: true
+    algorithm: "m.megolm.v1.aes-sha2"
+
+# ============================================================================
+# Client Configuration
+# ============================================================================
+
+client:
+  # Default client user agent
+  user_agent: "REChain/${VERSION}"
+  
+  # SSO providers
+  sso:
+    enabled: false
+    providers: []
+    
+  # Presence settings
+  presence:
+    enabled: true
+    timeout: 300
+    
+  # Typing indicators
+  typing:
+    enabled: true
+    timeout: 30000
+    
+  # Read receipts
+  read_receipts:
+    enabled: true
+    send_on_update: true
+
+# ============================================================================
+# Bridge Configuration
+# ============================================================================
+
+bridges:
+  # Enable bridge support
+  enabled: true
+  
+  # Telegram bridge
+  telegram:
+    enabled: false
+    bridge_port: 29328
+    bot_token: "__CHANGE_ME__"
+    
+  # Discord bridge
+  discord:
+    enabled: false
+    bridge_port: 29329
+    bot_token: "__CHANGE_ME__"
+    
+  # Signal bridge
+  signal:
+    enabled: false
+    bridge_port: 29330
+    
+  # WhatsApp bridge
+  whatsapp:
+    enabled: false
+    bridge_port: 29331
+    
+  # IRC bridge
+  irc:
+    enabled: false
+    bridge_port: 29332
+
+# ============================================================================
+# Metrics and Monitoring
+# ============================================================================
+
+metrics:
+  # Enable metrics endpoint
+  enabled: true
+  
+  # Metrics port
+  port: 9090
+  
+  # Metrics path
+  path: "/metrics"
+  
+  # Enable Prometheus format
+  prometheus:
+    enabled: true
+    
+  # Enable Graphite format
+  graphite:
+    enabled: false
+    host: "localhost"
+    port: 2003
+    prefix: "rechain"
+
+# ============================================================================
+# Health Check
+# ============================================================================
+
+health:
+  # Enable health check endpoint
+  enabled: true
+  
+  # Health check port
+  port: 8009
+  
+  # Health check path
+  path: "/health"
+  
+  # Enable detailed health checks
+  detailed: true
+
+# ============================================================================
+# Backup Configuration
+# ============================================================================
+
+backup:
+  # Enable automatic backups
+  enabled: true
+  
+  # Backup interval in seconds (daily)
+  interval: 86400
+  
+  # Backup directory
+  directory: "/var/lib/rechain/backups"
+  
+  # Number of backups to keep
+  retention: 7
+  
+  # Include in backup
+  include:
+    - "database.db"
+    - "keys/"
+    
+  # Exclude from backup
+  exclude:
+    - "cache/"
+    - "logs/"
+
+# ============================================================================
+# Updates
+# ============================================================================
+
+updates:
+  # Check for updates
+  check_updates: true
+  
+  # Update channel: stable, beta, nightly
+  channel: "stable"
+  
+  # Automatic updates
+  auto_update:
+    enabled: true
+    window: "02:00-04:00"
+    
+  # Notify on new version
+  notify: true
+
+# ============================================================================
+# Advanced Configuration
+# ============================================================================
+
+advanced:
+  # TCP_NODELAY
+  tcp_nodelay: true
+  
+  # Reuse port
+  reuse_port: true
+  
+  # Disable UDP
+  disable_udp: false
+  
+  # Soft memory limit in bytes
+  soft_memory_limit: 1073741824  # 1GB
+  
+  # GC settings
+  gc:
+    young_generation_size: "256m"
+    old_generation_size: "1g"

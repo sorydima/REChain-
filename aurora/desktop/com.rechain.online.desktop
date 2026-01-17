@@ -1,12 +1,36 @@
 [Desktop Entry]
 Type=Application
 Name=REChain
-Comment=The inclusion of polls enhances decision-making processes by facilitating quick and efficient feedback gathering. Additionally, the platform supports user-friendly interface & goods!
+Comment=Secure Matrix Messenger for Aurora OS
+GenericName=Secure Matrix Client
+Keywords=messaging;matrix;chat;secure;encrypted;e2ee;
+Exec=rechainonline %u
 Icon=com.rechain.online
-Exec=/usr/bin/com.rechain.online
-X-Nemo-Application-Type=silica-qt5
+Terminal=false
+Categories=Network;Chat;InstantMessaging;Security;
+MimeType=x-scheme-handler/matrix;
 
-[X-Application]
-Permissions=Audio;Call;DeviceInfo;Documents;Downloads;Internet;Location;MediaIndexing;Microphone;Music;NFC;Pictures;PublicDir;PushNotifications;RemovableMedia;ScreenCapture;SecureStorage;Videos;WebView;
-OrganizationName=com.rechain
-ApplicationName=online
+# Aurora OS specific
+X-Aurora-Desktop-File=com.rechain.online.desktop
+X-Aurora-Application-Name=REChain
+X-Aurora-Application-Icon=com.rechain.online
+
+# Actions
+Actions=new-chat;
+
+[New Chat Action]
+Name=New Chat
+Exec=rechainonline --new-chat
+Categories=Network;
+
+# Startup notification
+StartupNotify=true
+StartupWMClass=rechainonline
+
+# Preferences
+X-GNOME-Autostart-Enabled=true
+X-GNOME-Autostart-Delay=5
+
+# URL handling
+X-UrlSchemeHandler=matrix=rechainonline.desktop
+
