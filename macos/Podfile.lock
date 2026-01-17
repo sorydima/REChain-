@@ -52,14 +52,14 @@ PODS:
   - sqflite_darwin (0.0.4):
     - Flutter
     - FlutterMacOS
-  - SQLCipher (4.8.0):
-    - SQLCipher/standard (= 4.8.0)
-  - SQLCipher/common (4.8.0)
-  - SQLCipher/standard (4.8.0):
+  - SQLCipher (4.10.0):
+    - SQLCipher/standard (= 4.10.0)
+  - SQLCipher/common (4.10.0)
+  - SQLCipher/standard (4.10.0):
     - SQLCipher/common
   - sqlcipher_flutter_libs (0.0.1):
     - FlutterMacOS
-    - SQLCipher (~> 4.8.0)
+    - SQLCipher (~> 4.10.0)
   - url_launcher_macos (0.0.1):
     - FlutterMacOS
   - video_compress (0.3.0):
