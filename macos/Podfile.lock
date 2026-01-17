@@ -27,7 +27,7 @@ PODS:
     - FlutterMacOS
   - flutter_webrtc (0.12.6):
     - FlutterMacOS
-    - WebRTC-SDK (= 125.6422.06)
+    - WebRTC-SDK (= 137.7151.04)
   - FlutterMacOS (1.0.0)
   - geolocator_apple (1.2.0):
     - Flutter
@@ -69,7 +69,7 @@ PODS:
     - FlutterMacOS
   - wakelock_plus (0.0.1):
     - FlutterMacOS
-  - WebRTC-SDK (125.6422.06)
+  - WebRTC-SDK (137.7151.04)
   - window_to_front (0.0.1):
     - FlutterMacOS
 
