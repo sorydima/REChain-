@@ -98,15 +98,6 @@ dependencies:
   webrtc_interface: ^1.0.13
   flutter_local_notifications_windows: ^1.0.3
   flutter_secure_storage_windows: ^4.1.0
-+  background_tasker: ^1.0.0
-+  notificationer: ^1.0.0
-+  push_catcher: ^1.0.0
-+  call_api: ^1.0.0
-+  div_kit: ^1.0.0
-+  flame_engine_usage: ^1.0.0
-+  flutter_todo: ^1.0.0
-+  generator_pdf: ^1.0.0
-+  location_finder: ^1.0.0
 
 dev_dependencies:
   flutter_lints: ^6.0.0
@@ -135,20 +126,21 @@ flutter:
   assets:
     - assets/
     - assets/sounds/
-    - assets/vodozemac/
     - shorebird.yaml
 
 msix_config:
   display_name: REChain
   publisher_display_name: REChain
-  publisher: CN=REChain.Online, O=Need help Email us A Dmitry Sorokin production All rights reserved Powered by REChain Copyright © 2019-2025 REChain Inc REChain ® is a registered trademark support@rechain.network Please allow anywhere from 1 to 5 business days for E-mail responses, L=REChain.Online, S=Internet, C=EU
+  publisher: CN=REChain.Online, O=REChain, C=EU
   identity_name: com.rechain.online
   logo_path: assets\logo.png
   capabilities: internetClient, location, microphone, webcam
   protocol_activation: https
   app_uri_handler_hosts: online.rechain.network, matrix.to
   execution_alias: rechainonline
-  sign_msix: false
+  sign_msix: true
+  certificate_path: windows\certificate.pfx
+  certificate_password: REChain2025
   install_certificate: false
 
 dependency_overrides:
