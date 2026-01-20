@@ -2,27 +2,33 @@ GEM
   remote: https://rubygems.org/
   specs:
     CFPropertyList (3.0.3)
+    abbrev (0.1.2)
     addressable (2.8.4)
       public_suffix (>= 2.0.2, < 6.0)
     artifactory (3.0.15)
     atomos (0.1.3)
-    aws-eventstream (1.1.1)
-    aws-partitions (1.469.0)
-    aws-sdk-core (3.114.3)
-      aws-eventstream (~> 1, >= 1.0.2)
-      aws-partitions (~> 1, >= 1.239.0)
-      aws-sigv4 (~> 1.1)
-      jmespath (~> 1.0)
-    aws-sdk-kms (1.44.0)
-      aws-sdk-core (~> 3, >= 3.112.0)
-      aws-sigv4 (~> 1.1)
-    aws-sdk-s3 (1.96.1)
-      aws-sdk-core (~> 3, >= 3.112.0)
+    aws-eventstream (1.4.0)
+    aws-partitions (1.1206.0)
+    aws-sdk-core (3.241.4)
+      aws-eventstream (~> 1, >= 1.3.0)
+      aws-partitions (~> 1, >= 1.992.0)
+      aws-sigv4 (~> 1.9)
+      base64
+      bigdecimal
+      jmespath (~> 1, >= 1.6.1)
+      logger
+    aws-sdk-kms (1.121.0)
+      aws-sdk-core (~> 3, >= 3.241.4)
+      aws-sigv4 (~> 1.5)
+    aws-sdk-s3 (1.208.0)
+      aws-sdk-core (~> 3, >= 3.234.0)
       aws-sdk-kms (~> 1)
-      aws-sigv4 (~> 1.1)
-    aws-sigv4 (1.2.3)
+      aws-sigv4 (~> 1.5)
+    aws-sigv4 (1.12.1)
       aws-eventstream (~> 1, >= 1.0.2)
     babosa (1.0.4)
+    base64 (0.3.0)
+    bigdecimal (4.0.1)
     claide (1.0.3)
     colored (1.2)
     colored2 (3.1.2)
@@ -140,14 +146,17 @@ GEM
     jmespath (1.6.2)
     json (2.5.1)
     jwt (2.2.3)
+    logger (1.7.0)
     memoist (0.16.2)
     mini_magick (4.11.0)
     mini_mime (1.1.0)
     multi_json (1.15.0)
     multipart-post (2.0.0)
+    mutex_m (0.3.0)
     nanaimo (0.3.0)
     naturally (2.2.1)
     os (1.1.1)
+    ostruct (0.6.3)
     plist (3.6.0)
     public_suffix (5.0.3)
     rake (13.0.3)
@@ -199,7 +208,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  abbrev
   fastlane
+  mutex_m
+  ostruct
 
 BUNDLED WITH
    2.1.4
