@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>dmitry.justdev@gmail.com</email>
+    <name>Sorokin Dmitry</name>
+  </maintainer>
+  <longdescription>
+    REChain is a comprehensive platform that unifies Matrix protocol,
+    blockchain, IPFS, AI, and external services into a seamless,
+    extensible, and developer-friendly ecosystem.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">rechain/rechain</remote-id>
+    <bugs-to>https://github.com/rechain/rechain/issues</bugs-to>
+  </upstream>
+</pkgmetadata>

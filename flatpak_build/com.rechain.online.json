@@ -1,0 +1,38 @@
+{
+    "app-id": "com.rechain.online",
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version": "23.08",
+    "sdk": "org.freedesktop.Sdk",
+    "command": "rechain",
+    "finish-args": [
+        "--share=ipc",
+        "--share=network",
+        "--socket=fallback-x11",
+        "--socket=wayland",
+        "--socket=pulseaudio",
+        "--device=dri",
+        "--filesystem=home"
+    ],
+    "modules": [
+        {
+            "name": "rechain",
+            "buildsystem": "simple",
+            "build-commands": [
+                "install -Dm755 rechain_new /app/bin/rechain_new",
+                "cp -r lib /app/",
+                "cp -r data /app/",
+                "install -Dm644 com.rechain.online.svg /app/share/icons/hicolor/scalable/apps/com.rechain.online.svg",
+                "install -Dm644 rechain.desktop /app/share/applications/com.rechain.online.desktop",
+                "echo '#!/bin/bash' > /app/bin/rechain",
+                "echo 'cd /app && exec ./bin/rechain_new' >> /app/bin/rechain",
+                "chmod +x /app/bin/rechain"
+            ],
+            "sources": [
+                {
+                    "type": "dir",
+                    "path": "../tgz_build/rechain-4.1.10"
+                }
+            ]
+        }
+    ]
+}

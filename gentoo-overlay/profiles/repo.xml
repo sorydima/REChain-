@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE repositories SYSTEM "https://www.gentoo.org/dtd/repositories.dtd">
+<repositories xmlns="https://www.gentoo.org/dtd/repositories.dtd" version="1.0">
+  <repo quality="experimental" status="unofficial">
+    <name>rechain-overlay</name>
+    <description>REChain Gentoo Overlay</description>
+    <homepage>https://online.rechain.network</homepage>
+    <owner type="person">
+      <email>dmitry.justdev@gmail.com</email>
+      <name>Sorokin Dmitry</name>
+    </owner>
+    <source type="git">https://github.com/rechain/rechain-overlay.git</source>
+  </repo>
+</repositories>

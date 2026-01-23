@@ -1,0 +1,12 @@
+Package: rechain
+Version: 4.1.10
+Architecture: amd64
+Maintainer: Sorokin Dmitry Olegovich <dmitry.justdev@gmail.com>
+Depends: libgtk-3-0, libssl3
+Section: net
+Priority: optional
+Homepage: https://online.rechain.network
+Description: REChain - Decentralized Matrix Messenger
+ REChain is a comprehensive platform that unifies Matrix protocol,
+ blockchain, IPFS, AI, and external services into a seamless,
+ extensible, and developer-friendly ecosystem.
