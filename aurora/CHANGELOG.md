@@ -155,7 +155,7 @@ sudo ln -sf /usr/share/com.rechain.online/rechainonline /usr/bin/rechainonline
 
 - **Issues:** https://github.com/sorydima/REChain-/issues
 - **Matrix Community:** #chatting:matrix.katya.wtf
-- **Email:** support@rechain.network
+- **Email:** dim15168250@yandex.ru
 - **Aurora OS Forum:** https://forum.aurora-os.org
 
 ---

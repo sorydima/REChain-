@@ -520,7 +520,7 @@ ms_print massif.out.*
 
 - **Issues:** https://github.com/sorydima/REChain-/issues
 - **Matrix Community:** #chatting:matrix.katya.wtf
-- **Email:** support@rechain.network
+- **Email:** dim15168250@yandex.ru
 - **Aurora OS Forum:** https://forum.aurora-os.org
 
 ---

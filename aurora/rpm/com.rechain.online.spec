@@ -1,6 +1,6 @@
 Name:           com.rechain.online
 Version:        4.1.10+1160
-Release:        1%{?dist}
+Release:        1160%{?dist}
 Summary:        REChain - Secure Matrix Client for Aurora OS
 License:        Apache-2.0
 URL:            https://online.rechain.network

@@ -396,7 +396,7 @@ StartupManager::configure({
 - **Documentation:** [Wiki](https://github.com/sorydima/REChain-/wiki)
 - **Issues:** [GitHub Issues](https://github.com/sorydima/REChain-/issues)
 - **Matrix:** #chatting:matrix.katya.wtf
-- **Email:** support@rechain.network
+- **Email:** dim15168250@yandex.ru
 
 ---
 

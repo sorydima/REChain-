@@ -215,7 +215,7 @@ Contributions are welcome! Please see our contributing guidelines:
 
 - **GitHub Issues:** Report bugs and request features
 - **Matrix Community:** [#chatting:matrix.katya.wtf](https://matrix.to/#/#chatting:matrix.katya.wtf)
-- **Email:** support@rechain.network
+- **Email:** dim15168250@yandex.ru
 - **Aurora OS Forum:** https://forum.aurora-os.org
 
 ---
@@ -225,7 +225,7 @@ Contributions are welcome! Please see our contributing guidelines:
 REChain is licensed under the Apache License 2.0.
 
 ```
-Copyright © 2019-2025 REChain Inc.
+Copyright © 2019-2026 REChain Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
