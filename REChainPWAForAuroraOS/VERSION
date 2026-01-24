@@ -1,7 +1,7 @@
 REChain PWA for AuroraOS
 Version: 4.1.10+1160
 Build: 1160
-Release Date: 2025
+Release Date: 2026
 Description: Progressive Web App for AuroraOS ecosystem
 Platform: Aurora OS
 Type: PWA (Progressive Web Application)
@@ -18,8 +18,8 @@ Features:
 Distribution:
 - RPM package: com.rechain.pwa
 - GitHub Pages: Available for preview
-- Direct PWA: https://rechain.network/pwa
+- Direct PWA: https://chat.codemagic.app
 
-Last Updated: 2025
-Maintainers: REChain Team
+Last Updated: 2026
+Maintainers: REChain Dream Team
 

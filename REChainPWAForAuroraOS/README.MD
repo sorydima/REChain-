@@ -16,7 +16,7 @@ service-worker.js.map
 LICENSE
 MIT License
 
-Copyright (c) 2024 REChain Network Solutions
+Copyright (c) 2024-2026 REChain Network Solutions
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -56,6 +56,13 @@ Thank you for considering contributing! We welcome all kinds of contributions:
 CHANGELOG.md
 # Changelog
 
+## 4.1.10+1160 — 2026-01-23
+- Updated to version 4.1.10+1160
+- Build 1160 for AuroraOS
+- Enhanced PWA functionality
+- Improved offline caching
+- Better Aurora OS integration
+
 ## 0.1.0 — 2024-05-03
 - Initial Flutter PWA setup for Aurora OS
 - Added service worker and manifest support
@@ -67,7 +74,7 @@ AURORA-INSTALL.md
 # Установка REChain PWA на Aurora OS
 
 1. Откройте браузер Aurora и перейдите по адресу:
-   `https://rechain.network/pwa`
+   `https://chat.codemagic.app`
 2. Включите "Установить как приложение" (через меню браузера).
 3. Приложение будет добавлено на главный экран.
 4. Убедитесь, что разрешены уведомления и работа в фоне.
@@ -113,7 +120,7 @@ REChainPWAForAuroraOS/
 Инструкции в [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 ---
-Разработка: [REChain Network Solutions](https://rechain.network)
+Разработка: [REChain Network Solutions](https://chat.codemagic.app)
 
 .gitignore
 # Flutter/Dart
@@ -133,7 +140,7 @@ service-worker.js.map
 LICENSE
 MIT License
 
-Copyright (c) 2024 REChain Network Solutions
+Copyright (c) 2024-2026 REChain Network Solutions
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -173,6 +180,13 @@ Thank you for considering contributing! We welcome all kinds of contributions:
 CHANGELOG.md
 # Changelog
 
+## 4.1.10+1160 — 2026-01-23
+- Updated to version 4.1.10+1160
+- Build 1160 for AuroraOS
+- Enhanced PWA functionality
+- Improved offline caching
+- Better Aurora OS integration
+
 ## 0.1.0 — 2024-05-03
 - Initial Flutter PWA setup for Aurora OS
 - Added service worker and manifest support
@@ -183,7 +197,7 @@ AURORA-INSTALL.md
 # Установка REChain PWA на Aurora OS
 
 1. Откройте браузер Aurora и перейдите по адресу:
-   `https://rechain.network/pwa`
+   `https://chat.codemagic.app`
 2. Включите "Установить как приложение" (через меню браузера).
 3. Приложение будет добавлено на главный экран.
 4. Убедитесь, что разрешены уведомления и работа в фоне.
