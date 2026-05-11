@@ -20,7 +20,7 @@ dependencies:
   cupertino_icons: any
   desktop_drop: ^0.7.0
   desktop_notifications: ^0.6.3
-  device_info_plus: ^12.3.0
+  device_info_plus: ^12.4.0
   dynamic_color: ^1.7.0
   emoji_picker_flutter: ^4.3.0
   emojis: ^0.9.9
