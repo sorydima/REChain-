@@ -12,7 +12,7 @@ dependencies:
   app_links: ^6.3.2
   archive: ^4.0.7
   async: ^2.11.0
-  badges: ^3.1.2
+  badges: ^3.2.0
   blurhash_dart: ^1.2.1
   chewie: ^1.11.3
   collection: ^1.18.0
