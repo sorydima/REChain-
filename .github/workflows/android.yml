@@ -27,7 +27,7 @@ jobs:
         uses: actions/checkout@v4
       
       - name: Setup Java
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           java-version: ${{ env.java_version }}
           distribution: 'temurin'
@@ -67,7 +67,7 @@ jobs:
         uses: actions/checkout@v4
       
       - name: Setup Java
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           java-version: ${{ env.java_version }}
           distribution: 'temurin'
@@ -104,7 +104,7 @@ jobs:
         uses: actions/checkout@v4
       
       - name: Setup Java
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           java-version: ${{ env.java_version }}
           distribution: 'temurin'
@@ -151,7 +151,7 @@ jobs:
           fetch-depth: 0
       
       - name: Setup Java
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           java-version: ${{ env.java_version }}
           distribution: 'temurin'
@@ -220,7 +220,7 @@ jobs:
         uses: actions/checkout@v4
       
       - name: Setup Java
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           java-version: ${{ env.java_version }}
           distribution: 'temurin'
@@ -257,7 +257,7 @@ jobs:
         uses: actions/checkout@v4
       
       - name: Setup Java
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           java-version: ${{ env.java_version }}
           distribution: 'temurin'
