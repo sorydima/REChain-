@@ -34,7 +34,7 @@ jobs:
         .\scripts\build_windows_ci.ps1 -BuildType "Release" -FlutterVersion "$env:FLUTTER_VERSION"
 
     - name: Upload Windows Artifacts
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: rechain-windows
         path: build/windows/runner/Release/
@@ -58,7 +58,7 @@ jobs:
         ./scripts/build_linux_ci.sh release "$FLUTTER_VERSION"
 
     - name: Upload Linux Artifacts
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: rechain-linux
         path: build/linux/x64/release/bundle/
@@ -125,7 +125,7 @@ jobs:
       run: flutter build macos --release
 
     - name: Upload macOS Artifacts
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: rechain-macos
         path: build/macos/Build/Products/Release/
@@ -190,7 +190,7 @@ jobs:
       run: flutter build apk --release
 
     - name: Upload Android Artifacts
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: rechain-android
         path: build/app/outputs/flutter-apk/
@@ -252,7 +252,7 @@ jobs:
       run: flutter build web --release
 
     - name: Upload Web Artifacts
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: rechain-web
         path: build/web/
