@@ -1,3 +1,36 @@
+# REChain Changelog
+
+## [v4.1.20+1161] - 2026-10-21
+
+### Features & Improvements
+- Continued development of the REChain messaging experience.
+- Improved consistency across messaging, room navigation, and conversation interactions.
+- Refined handling of messages, attachments, and media content.
+- Improved application behavior across supported desktop and mobile platforms.
+
+### Stability & Bug Fixes
+- Addressed potential issues affecting application stability and navigation.
+- Improved handling of UI state during dialogs, menus, and screen transitions.
+- Refined error handling and asynchronous UI operations.
+- Improved reliability when opening conversations and interacting with chat components.
+
+### Performance & Reliability
+- Optimized application behavior for a smoother user experience.
+- Improved resource handling and general runtime reliability.
+- Refined internal components to support maintainability and future development.
+
+### Compatibility
+- Continued maintenance of the Flutter-based cross-platform application.
+- Maintained the existing REChain and Matrix-oriented application architecture.
+
+### Build
+- Updated application version to `4.1.20+1161`.
+- Prepared the release for distribution through supported REChain channels.
+
+---
+
+REChain — secure, open, and decentralized communication.
+
 [v4.1.10+1160] - 2025-12-06
 
 Major Features & Integrations
