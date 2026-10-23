@@ -76,7 +76,7 @@ Users are fully responsible for content they generate, transmit, or store within
 
 If you encounter content or conduct that violates these standards:
 1. Use the **in-app reporting system**
-2. Email **abuse@rechain.online** with relevant details
+2. Email **sorydima@rechain.space** with relevant details
 3. Include screenshots, timestamps, or links that clearly show the issue
 
 We treat all reports with urgency and confidentiality.
