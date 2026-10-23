@@ -36,6 +36,7 @@ android {
     namespace = "com.rechain.online"
     // Workaround for https://github.com/juliansteenbakker/flutter_secure_storage/issues/1224
     compileSdk = 37 //flutter.compileSdkVersion
+    compileSdkMinor = 0
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
