@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 import 'dart:async';
 
 extension StreamExtension on Stream {
@@ -35,7 +40,7 @@ extension StreamExtension on Stream {
     };
     final subscription = listen(
       (_) => onMessage?.call(),
-      onDone: () => controller.close(),
+      onDone: controller.close,
       onError: (e, s) => controller.addError(e, s),
     );
     // add proper cleanup to the subscription and the controller, to not memory leak

@@ -1,10 +1,13 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:matrix/matrix.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
-import 'package:rechainonline/config/setting_keys.dart';
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
+
 import '../../../config/app_config.dart';
 
 class ReplyContent extends StatelessWidget {
@@ -32,8 +35,7 @@ class ReplyContent extends StatelessWidget {
     final displayEvent = timeline != null
         ? replyEvent.getDisplayEvent(timeline)
         : replyEvent;
-    final fontSize =
-        AppConfig.messageFontSize * AppSettings.fontSizeFactor.value;
+    const fontSize = AppConfig.messageFontSize;
     final color = theme.brightness == Brightness.dark
         ? theme.colorScheme.onTertiaryContainer
         : ownMessage
@@ -77,12 +79,15 @@ class ReplyContent extends StatelessWidget {
                   },
                 ),
                 Text(
-                  displayEvent.calcLocalizedBodyFallback(
-                    MatrixLocals(L10n.of(context)),
-                    withSenderNamePrefix: false,
-                    hideReply: true,
-                    plaintextBody: true,
-                  ),
+                  displayEvent
+                      .calcLocalizedBodyFallback(
+                        MatrixLocals(L10n.of(context)),
+                        withSenderNamePrefix: false,
+                        hideReply: true,
+                        plaintextBody: true,
+                      )
+                      .trim()
+                      .replaceAll('\n', ' '),
                   overflow: TextOverflow.ellipsis,
                   maxLines: 1,
                   style: TextStyle(

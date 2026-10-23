@@ -1,11 +1,14 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:collection/collection.dart';
 import 'package:dynamic_color/dynamic_color.dart';
+import 'package:rechainonline/utils/color_value.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import 'package:rechainonline/utils/color_value.dart';
 
 class ThemeBuilder extends StatefulWidget {
   final Widget Function(
@@ -41,7 +44,7 @@ class ThemeController extends State<ThemeBuilder> {
   static ThemeController of(BuildContext context) =>
       Provider.of<ThemeController>(context, listen: false);
 
-  void _loadData(dynamic _) async {
+  Future<void> _loadData(_) async {
     final preferences = _sharedPreferences ??=
         await SharedPreferences.getInstance();
 

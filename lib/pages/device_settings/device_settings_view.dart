@@ -1,9 +1,14 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/config/themes.dart';
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/pages/device_settings/device_settings.dart';
 import 'package:rechainonline/widgets/layouts/max_width_body.dart';
+import 'package:material_ui/material_ui.dart';
+
 import 'user_device_list_item.dart';
 
 class DevicesSettingsView extends StatelessWidget {

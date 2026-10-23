@@ -1,17 +1,20 @@
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 import 'dart:convert';
 import 'dart:ui';
-
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-
-import 'package:matrix/encryption.dart';
-import 'package:matrix/matrix.dart';
 
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/widgets/adaptive_dialogs/adaptive_dialog_action.dart';
 import 'package:rechainonline/widgets/adaptive_dialogs/show_ok_cancel_alert_dialog.dart';
 import 'package:rechainonline/widgets/avatar.dart';
 import 'package:rechainonline/widgets/future_loading_dialog.dart';
+import 'package:flutter/services.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/encryption.dart';
+import 'package:matrix/matrix.dart';
 
 class KeyVerificationDialog extends StatefulWidget {
   Future<bool?> show(BuildContext context) => showAdaptiveDialog<bool>(
@@ -60,6 +63,7 @@ class KeyVerificationPageState extends State<KeyVerificationDialog> {
     ].contains(widget.request.state)) {
       widget.request.cancel('m.user');
     }
+    textEditingController?.dispose();
     super.dispose();
   }
 
@@ -84,6 +88,7 @@ class KeyVerificationPageState extends State<KeyVerificationDialog> {
       },
     );
     if (valid.error != null) {
+      if (!mounted) return;
       await showOkAlertDialog(
         useRootNavigator: false,
         context: context,
@@ -91,6 +96,8 @@ class KeyVerificationPageState extends State<KeyVerificationDialog> {
       );
     }
   }
+
+  TextEditingController? textEditingController;
 
   @override
   Widget build(BuildContext context) {
@@ -117,10 +124,10 @@ class KeyVerificationPageState extends State<KeyVerificationDialog> {
         throw 'Not implemented';
       case KeyVerificationState.askSSSS:
         // prompt the user for their ssss passphrase / key
-        final textEditingController = TextEditingController();
+        textEditingController = TextEditingController();
         String input;
         body = Container(
-          margin: const EdgeInsets.only(left: 8.0, right: 8.0),
+          margin: const EdgeInsets.symmetric(horizontal: 8.0),
           child: Column(
             mainAxisSize: .min,
             children: <Widget>[
@@ -153,7 +160,7 @@ class KeyVerificationPageState extends State<KeyVerificationDialog> {
         buttons.add(
           AdaptiveDialogAction(
             child: Text(L10n.of(context).submit),
-            onPressed: () => checkInput(textEditingController.text),
+            onPressed: () => checkInput(textEditingController!.text),
           ),
         );
         buttons.add(
@@ -180,9 +187,10 @@ class KeyVerificationPageState extends State<KeyVerificationDialog> {
         );
         buttons.add(
           AdaptiveDialogAction(
-            onPressed: () => widget.request.rejectVerification().then(
-              (_) => Navigator.of(context, rootNavigator: false).pop(false),
-            ),
+            onPressed: () => widget.request.rejectVerification().then((_) {
+              if (!context.mounted) return;
+              Navigator.of(context, rootNavigator: false).pop(false);
+            }),
             child: Text(
               L10n.of(context).reject,
               style: TextStyle(color: theme.colorScheme.error),
@@ -248,7 +256,7 @@ class KeyVerificationPageState extends State<KeyVerificationDialog> {
         } else {
           title = Text(L10n.of(context).compareNumbersMatch);
           final numbers = widget.request.sasNumbers;
-          final numbstr = '${numbers[0]}-${numbers[1]}-${numbers[2]}';
+          final numbstr = '${numbers.first}-${numbers[1]}-${numbers[2]}';
           compareWidget = TextSpan(
             text: numbstr,
             style: const TextStyle(fontSize: 40),

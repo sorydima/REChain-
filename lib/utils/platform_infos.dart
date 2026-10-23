@@ -1,14 +1,18 @@
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 import 'dart:io';
-
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-
-import 'package:go_router/go_router.dart';
-import 'package:package_info_plus/package_info_plus.dart';
-import 'package:url_launcher/url_launcher_string.dart';
 
 import 'package:rechainonline/config/setting_keys.dart';
 import 'package:rechainonline/l10n/l10n.dart';
+import 'package:flutter/foundation.dart';
+import 'package:go_router/go_router.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:package_info_plus/package_info_plus.dart';
+import 'package:url_launcher/url_launcher_string.dart';
+
 import '../config/app_config.dart';
 
 abstract class PlatformInfos {
@@ -33,10 +37,15 @@ abstract class PlatformInfos {
   static bool get supportsVideoPlayer =>
       !PlatformInfos.isWindows && !PlatformInfos.isLinux;
 
-  /// Web could also record in theory but currently only wav which is too large
+  static bool get supportsCustomImageResizer =>
+      PlatformInfos.isWeb || PlatformInfos.isMobile;
+
+  /// Web could also record in theory but currently creates broken opus
   static bool get platformCanRecord => (isMobile || isMacOS);
 
-  static String get clientName =>
+  static bool get supportsAppLock => (isMobile || isMacOS);
+
+  static String get appDisplayName =>
       '${AppSettings.applicationName.value} ${isWeb ? 'web' : Platform.operatingSystem}${kReleaseMode ? '' : 'Debug'}';
 
   static Future<String> getVersion() async {
@@ -47,16 +56,18 @@ abstract class PlatformInfos {
     return version;
   }
 
-  static void showDialog(BuildContext context) async {
+  static Future<void> showDialog(BuildContext context) async {
+    final l10n = L10n.of(context);
     final version = await PlatformInfos.getVersion();
+    if (!context.mounted) return;
     showAboutDialog(
       context: context,
       children: [
-        Text('Version: $version'),
+        Text(l10n.versionWithNumber(version)),
         TextButton.icon(
           onPressed: () => launchUrlString(AppConfig.sourceCodeUrl),
           icon: const Icon(Icons.source_outlined),
-          label: Text(L10n.of(context).sourceCode),
+          label: Text(l10n.sourceCode),
         ),
         Builder(
           builder: (innerContext) {
@@ -66,7 +77,7 @@ abstract class PlatformInfos {
                 Navigator.of(innerContext).pop();
               },
               icon: const Icon(Icons.list_outlined),
-              label: const Text('Logs'),
+              label: Text(l10n.logs),
             );
           },
         ),
@@ -78,16 +89,18 @@ abstract class PlatformInfos {
                 Navigator.of(innerContext).pop();
               },
               icon: const Icon(Icons.settings_applications_outlined),
-              label: const Text('Advanced Configs'),
+              label: Text(l10n.advancedConfigs),
             );
           },
         ),
       ],
-      applicationIcon: Image.asset(
-        'assets/logo.png',
-        width: 64,
-        height: 64,
-        filterQuality: FilterQuality.medium,
+      applicationIcon: ClipRRect(
+        borderRadius: BorderRadius.circular(64),
+        child: Image.asset(
+          './assets/logo/mini/logo_mini.png',
+          width: 64,
+          height: 64,
+        ),
       ),
       applicationName: AppSettings.applicationName.value,
     );

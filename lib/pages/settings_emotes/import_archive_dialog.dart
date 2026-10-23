@@ -1,17 +1,20 @@
-import 'dart:async';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import 'dart:async';
 
 import 'package:archive/archive.dart';
 import 'package:collection/collection.dart';
-import 'package:matrix/matrix.dart';
-
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/pages/settings_emotes/settings_emotes.dart';
 import 'package:rechainonline/utils/client_manager.dart';
 import 'package:rechainonline/widgets/adaptive_dialogs/show_ok_cancel_alert_dialog.dart';
 import 'package:rechainonline/widgets/matrix.dart';
+import 'package:flutter/services.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
 
 class ImportEmoteArchiveDialog extends StatefulWidget {
   final EmotesSettingsController controller;
@@ -93,6 +96,7 @@ class _ImportEmoteArchiveDialogState extends State<ImportEmoteArchiveDialog> {
   }
 
   Future<void> _addEmotePack() async {
+    final matrix = Matrix.of(context);
     setState(() {
       _loading = true;
       _progress = 0;
@@ -150,7 +154,7 @@ class _ImportEmoteArchiveDialogState extends State<ImportEmoteArchiveDialog> {
         } else {
           mxcFile = thumbnail;
         }
-        final uri = await Matrix.of(context).client.uploadContent(
+        final uri = await matrix.client.uploadContent(
           mxcFile.bytes,
           filename: mxcFile.name,
           contentType: mxcFile.mimeType,
@@ -180,6 +184,7 @@ class _ImportEmoteArchiveDialogState extends State<ImportEmoteArchiveDialog> {
       }
     }
 
+    if (!mounted) return;
     await widget.controller.save(context);
     _importMap.removeWhere(
       (key, value) => successfulUploads.contains(key.name),
@@ -216,14 +221,26 @@ class _EmojiImportPreview extends StatefulWidget {
 
 class _EmojiImportPreviewState extends State<_EmojiImportPreview> {
   final hasErrorNotifier = ValueNotifier(false);
+  final controller = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    controller.text = widget.entry.value;
+  }
+
+  @override
+  void dispose() {
+    hasErrorNotifier.dispose();
+    controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
     // TODO: support Lottie here as well ...
-    final controller = TextEditingController(text: widget.entry.value);
-
     return Stack(
       alignment: Alignment.topRight,
       children: [

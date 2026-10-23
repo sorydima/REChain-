@@ -1,11 +1,16 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
-import 'package:matrix/matrix.dart';
-
 import 'package:rechainonline/config/themes.dart';
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/pages/chat/sticker_picker_dialog.dart';
+import 'package:rechainonline/pages/chat/trust_user_key_dialog.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
+
 import 'chat.dart';
 
 class ChatEmojiPicker extends StatelessWidget {
@@ -71,7 +76,12 @@ class ChatEmojiPicker extends StatelessWidget {
                         ),
                         StickerPickerDialog(
                           room: controller.room,
-                          onSelected: (sticker) {
+                          onSelected: (sticker) async {
+                            final proceed = await showTrustUserInRoomDialog(
+                              context,
+                              controller.room,
+                            );
+                            if (!proceed) return;
                             controller.room.sendEvent(
                               {
                                 'body': sticker.body,

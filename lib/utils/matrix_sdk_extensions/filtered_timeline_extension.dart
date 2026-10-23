@@ -1,6 +1,10 @@
-import 'package:matrix/matrix.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/config/setting_keys.dart';
+import 'package:matrix/matrix.dart';
 
 extension VisibleInGuiExtension on List<Event> {
   List<Event> filterByVisibleInGui({
@@ -38,16 +42,11 @@ extension IsStateExtension on Event {
       // if we enabled to hide all unknown events, don't show those
       (!AppSettings.hideUnknownEvents.value || isEventTypeKnown);
 
-  bool get isState => !{
-    EventTypes.Message,
-    EventTypes.Sticker,
-    EventTypes.Encrypted,
-  }.contains(type);
+  bool get isState => !{EventTypes.Message, EventTypes.Sticker}.contains(type);
 
   bool get isCollapsedState => !{
     EventTypes.Message,
     EventTypes.Sticker,
-    EventTypes.Encrypted,
     EventTypes.RoomCreate,
     EventTypes.RoomTombstone,
   }.contains(type);

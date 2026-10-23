@@ -1,8 +1,12 @@
-import 'package:flutter/widgets.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:matrix/matrix.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/l10n/l10n.dart';
+import 'package:flutter/widgets.dart';
+import 'package:matrix/matrix.dart';
+
 import '../config/app_config.dart';
 
 extension RoomStatusExtension on Room {

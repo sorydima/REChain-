@@ -1,11 +1,15 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:badges/badges.dart';
-import 'package:matrix/matrix.dart';
-
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/widgets/hover_builder.dart';
 import 'package:rechainonline/widgets/unread_rooms_badge.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
+
 import '../../config/themes.dart';
 
 class NaviRailItem extends StatelessWidget {
@@ -35,7 +39,7 @@ class NaviRailItem extends StatelessWidget {
     return HoverBuilder(
       builder: (context, hovered) {
         return SizedBox(
-          height: 72,
+          height: 64,
           width: rechainonlineThemes.navRailWidth,
           child: Stack(
             children: [
@@ -68,8 +72,8 @@ class NaviRailItem extends StatelessWidget {
                   child: Material(
                     borderRadius: borderRadius,
                     color: isSelected
-                        ? theme.colorScheme.primaryContainer
-                        : theme.colorScheme.surfaceContainerHigh,
+                        ? theme.colorScheme.secondaryContainer
+                        : theme.colorScheme.surfaceContainerHighest,
                     child: Tooltip(
                       message: toolTip,
                       child: InkWell(

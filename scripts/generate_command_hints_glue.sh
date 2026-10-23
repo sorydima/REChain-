@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
+
+# SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+# SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 # Generates some glue code for translation of /command hints.
 
 # How to use this:
@@ -17,7 +23,7 @@ String commandHint(L10n l10n, String command) {
 $(sed -n \
   's/[[:blank:]]*\"\(commandHint_\([[:lower:]]*\)\)\".*/    case "\2":\
       return l10n.\1;/p' \
-  assets/l10n/intl_en.arb
+  lib/l10n/intl_en.arb
 )
     default:
       return \"\";

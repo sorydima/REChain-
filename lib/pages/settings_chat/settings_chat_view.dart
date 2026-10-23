@@ -1,14 +1,19 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:go_router/go_router.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
+import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
 import 'package:rechainonline/config/setting_keys.dart';
 import 'package:rechainonline/config/themes.dart';
 import 'package:rechainonline/l10n/l10n.dart';
+import 'package:rechainonline/utils/adaptive_bottom_sheet.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
 import 'package:rechainonline/widgets/layouts/max_width_body.dart';
-import 'package:rechainonline/widgets/matrix.dart';
 import 'package:rechainonline/widgets/settings_switch_list_tile.dart';
+import 'package:go_router/go_router.dart';
+import 'package:material_ui/material_ui.dart';
+
 import 'settings_chat.dart';
 
 class SettingsChatView extends StatelessWidget {
@@ -41,6 +46,10 @@ class SettingsChatView extends StatelessWidget {
                 setting: AppSettings.hideRedactedEvents,
               ),
               SettingsSwitchListTile.adaptive(
+                title: L10n.of(context).hideRoomsInSpaces,
+                setting: AppSettings.hideRoomsInSpaces,
+              ),
+              SettingsSwitchListTile.adaptive(
                 title: L10n.of(context).hideInvalidOrUnknownMessageFormats,
                 setting: AppSettings.hideUnknownEvents,
               ),
@@ -57,6 +66,74 @@ class SettingsChatView extends StatelessWidget {
                 title: L10n.of(context).swipeRightToLeftToReply,
                 setting: AppSettings.swipeRightToLeftToReply,
               ),
+              SettingsSwitchListTile.adaptive(
+                title: L10n.of(context).showThumbnailsInTimeline,
+                setting: AppSettings.showThumbnailsInTimeline,
+              ),
+              SettingsSwitchListTile.adaptive(
+                title: L10n.of(context).doubleTapToReact,
+                subtitle: L10n.of(context).doubleTapToReactDescription,
+                setting: AppSettings.doubleTapToReact,
+                onChanged: (_) => controller.updateState(),
+              ),
+              if (AppSettings.doubleTapToReact.value)
+                ListTile(
+                  title: Text(L10n.of(context).doubleTapReaction),
+                  trailing: Text(
+                    AppSettings.doubleTapReaction.value,
+                    style: const TextStyle(fontSize: 24),
+                  ),
+                  onTap: () async {
+                    final emoji = await showAdaptiveBottomSheet<String>(
+                      context: context,
+                      builder: (context) => Scaffold(
+                        appBar: AppBar(
+                          title: Text(L10n.of(context).doubleTapReaction),
+                          leading: CloseButton(
+                            onPressed: () => Navigator.of(context).pop(null),
+                          ),
+                        ),
+                        body: SizedBox(
+                          height: double.infinity,
+                          child: EmojiPicker(
+                            onEmojiSelected: (_, emoji) =>
+                                Navigator.of(context).pop(emoji.emoji),
+                            config: Config(
+                              locale: Localizations.localeOf(context),
+                              emojiViewConfig: const EmojiViewConfig(
+                                backgroundColor: Colors.transparent,
+                              ),
+                              bottomActionBarConfig:
+                                  const BottomActionBarConfig(enabled: false),
+                              categoryViewConfig: CategoryViewConfig(
+                                initCategory: Category.SMILEYS,
+                                backspaceColor: theme.colorScheme.primary,
+                                iconColor: theme.colorScheme.primary.withAlpha(
+                                  128,
+                                ),
+                                iconColorSelected: theme.colorScheme.primary,
+                                indicatorColor: theme.colorScheme.primary,
+                                backgroundColor: theme.colorScheme.surface,
+                              ),
+                              skinToneConfig: SkinToneConfig(
+                                dialogBackgroundColor: Color.lerp(
+                                  theme.colorScheme.surface,
+                                  theme.colorScheme.primaryContainer,
+                                  0.75,
+                                )!,
+                                indicatorColor: theme.colorScheme.onSurface,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    );
+                    if (emoji != null) {
+                      await AppSettings.doubleTapReaction.setItem(emoji);
+                      controller.updateState();
+                    }
+                  },
+                ),
               Divider(color: theme.dividerColor),
               ListTile(
                 title: Text(
@@ -75,24 +152,6 @@ class SettingsChatView extends StatelessWidget {
                   padding: EdgeInsets.all(16.0),
                   child: Icon(Icons.chevron_right_outlined),
                 ),
-              ),
-              Divider(color: theme.dividerColor),
-              ListTile(
-                title: Text(
-                  L10n.of(context).calls,
-                  style: TextStyle(
-                    color: theme.colorScheme.secondary,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              SettingsSwitchListTile.adaptive(
-                title: L10n.of(context).experimentalVideoCalls,
-                onChanged: (b) {
-                  Matrix.of(context).createVoipPlugin();
-                  return;
-                },
-                setting: AppSettings.experimentalVoip,
               ),
             ],
           ),

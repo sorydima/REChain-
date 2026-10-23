@@ -1,6 +1,10 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:go_router/go_router.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:matrix/matrix.dart';
 
 class LogViewer extends StatefulWidget {
@@ -46,13 +50,15 @@ class LogViewerState extends State<LogViewer> {
           ),
         ],
       ),
-      body: ListView.builder(
-        itemCount: outputEvents.length,
-        itemBuilder: (context, i) => SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: SelectableText(
-            outputEvents[i].toDisplayString(),
-            style: TextStyle(color: outputEvents[i].color),
+      body: SelectionArea(
+        child: ListView.builder(
+          itemCount: outputEvents.length,
+          itemBuilder: (context, i) => SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Text(
+              outputEvents[i].toDisplayString(),
+              style: TextStyle(color: outputEvents[i].color),
+            ),
           ),
         ),
       ),
@@ -81,10 +87,10 @@ extension on LogEvent {
   String toDisplayString() {
     var str = '# [${level.toString().split('.').last.toUpperCase()}] $title';
     if (exception != null) {
-      str += ' - ${exception.toString()}';
+      str += ' - $exception';
     }
     if (stackTrace != null) {
-      str += '\n${stackTrace.toString()}';
+      str += '\n$stackTrace';
     }
     return str;
   }

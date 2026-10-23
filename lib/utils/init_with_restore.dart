@@ -1,14 +1,18 @@
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 import 'dart:convert';
 import 'dart:ui';
-
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:matrix/matrix.dart';
 
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/config/setting_keys.dart';
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/utils/client_manager.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:matrix/matrix.dart';
 
 class SessionBackup {
   final String? olmAccount;

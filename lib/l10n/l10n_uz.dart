@@ -9,26 +9,40 @@ class L10nUz extends L10n {
   L10nUz([String locale = 'uz']) : super(locale);
 
   @override
-  String get alwaysUse24HourFormat => 'true';
+  String get editImage => 'Edit image';
+
+  @override
+  String get rotateLeft => 'Rotate left';
+
+  @override
+  String get rotateRight => 'Rotate right';
+
+  @override
+  String get mirror => 'Mirror';
+
+  @override
+  String get save => 'Save';
+
+  @override
+  String get draw => 'Draw';
+
+  @override
+  String get undo => 'Undo';
+
+  @override
+  String get clear => 'Clear';
+
+  @override
+  String get eraser => 'Eraser';
+
+  @override
+  String get crop => 'Crop';
 
   @override
   String get repeatPassword => 'Parolni takrorlang';
 
   @override
   String get notAnImage => 'Rasm fayli emas.';
-
-  @override
-  String get setCustomPermissionLevel => 'Maxsus ruxsatlar darajasini sozlash';
-
-  @override
-  String get setPermissionsLevelDescription =>
-      'Quyidagi oldindan belgilangan rolni tanlang yoki 0-100 orasidagi maxsus ruxsatlar darajasini kiriting.';
-
-  @override
-  String get ignoreUser => 'Foydalanuvchini e’tiborsiz qoldirish';
-
-  @override
-  String get normalUser => 'Oddiy foydalanuvchi';
 
   @override
   String get remove => 'O‘chirish';
@@ -69,6 +83,9 @@ class L10nUz extends L10n {
   String get account => 'Hisob';
 
   @override
+  String get accountsAndSettings => 'Accounts and settings';
+
+  @override
   String activatedEndToEndEncryption(String username) {
     return '🔐 $username shifrlashni yakunlash uchun faollashtirdi';
   }
@@ -77,16 +94,13 @@ class L10nUz extends L10n {
   String get addEmail => 'Email qo‘shish';
 
   @override
-  String get confirmMatrixId =>
-      'Hisobingizni o‘chirish uchun REChain ID hisobingizni tasdiqlang.';
+  String get confirmREChainId =>
+      'Please confirm your REChain ID in order to delete your account.';
 
   @override
   String supposedMxid(String mxid) {
     return 'Bu $mxid bo‘lishi kerak';
   }
-
-  @override
-  String get addChatDescription => 'Suhbat tavsifini kiriting...';
 
   @override
   String get addToSpace => 'Maydonga qo‘shish';
@@ -99,9 +113,6 @@ class L10nUz extends L10n {
 
   @override
   String get all => 'Hammasi';
-
-  @override
-  String get allChats => 'Hamma suhbatlar';
 
   @override
   String get commandHint_roomupgrade =>
@@ -157,6 +168,9 @@ class L10nUz extends L10n {
   String get areYouSure => 'Ishonchingiz komilmi?';
 
   @override
+  String get discardEdits => 'You have unsaved changes. Discard your edits?';
+
+  @override
   String get areYouSureYouWantToLogout =>
       'Haqiqatan ham hisobingizdan chiqamoqchimisiz?';
 
@@ -193,22 +207,6 @@ class L10nUz extends L10n {
   String get sendOnEnter => 'Enterda yuborish';
 
   @override
-  String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
-    return 'Homeserver quyidagi Spec versiyalarini qo\'llab-quvvatlaydi:\n$serverVersions\nLekin bu ilova faqat $supportedVersions versiyalarini qo\'llab-quvvatlaydi';
-  }
-
-  @override
-  String countChatsAndCountParticipants(int chats, int participants) {
-    return '$chats suhbatlar va $participants ishtirokchilar';
-  }
-
-  @override
   String get noMoreChatsFound => 'Boshqa chatlar topilmadi...';
 
   @override
@@ -216,16 +214,10 @@ class L10nUz extends L10n {
       'Bu yerda hali chat topilmadi. Quyidagi tugmadan foydalanib, kimdir bilan yangi suhbat boshlang. ⤵️';
 
   @override
-  String get joinedChats => 'Qo\'shilgan suhbatlar';
-
-  @override
   String get unread => 'Oʻqilmagan';
 
   @override
   String get space => 'Boʻshliq';
-
-  @override
-  String get spaces => 'Boʻshliqlar';
 
   @override
   String get banFromChat => 'Suhbatdan taqiqlash';
@@ -243,9 +235,6 @@ class L10nUz extends L10n {
 
   @override
   String get blocked => 'Bloklandi';
-
-  @override
-  String get botMessages => 'Bot xabarlari';
 
   @override
   String get cancel => 'Bekor qilish';
@@ -269,18 +258,8 @@ class L10nUz extends L10n {
   }
 
   @override
-  String changedTheChatDescriptionTo(String username, String description) {
-    return '$username suhbat tavsifini \'$description\'ga oʻzgartirdi';
-  }
-
-  @override
   String changedTheChatName(Object username) {
     return '$username chat nomini o‘zgartirdi';
-  }
-
-  @override
-  String changedTheChatNameTo(String username, String chatname) {
-    return '$username suhbat nomini: \'$chatname\'ga oʻzgartirdi';
   }
 
   @override
@@ -360,20 +339,10 @@ class L10nUz extends L10n {
   String get chat => 'Suhbat';
 
   @override
-  String get yourChatBackupHasBeenSetUp => 'Suhbat zaxirangiz sozlandi.';
-
-  @override
   String get chatBackup => 'Suhbat zaxirasi';
 
   @override
-  String get chatBackupDescription =>
-      'Eski xabarlaringiz tiklash kaliti bilan himoyalangan. Uni yo‘qotib qo‘ymasligingizga ishonch hosil qiling.';
-
-  @override
   String get chatDetails => 'Suhbat tafsilotlari';
-
-  @override
-  String get chatHasBeenAddedToThisSpace => 'Suhbat bu maydonga kiritildi';
 
   @override
   String get chats => 'Suhbatlar';
@@ -472,20 +441,8 @@ class L10nUz extends L10n {
   String get configureChat => 'Suhbatni sozlash';
 
   @override
-  String get confirm => 'Tasdiqlash';
-
-  @override
-  String get connect => 'Ulanish';
-
-  @override
   String get contactHasBeenInvitedToTheGroup =>
       'Kontakt guruhga taklif qilindi';
-
-  @override
-  String get containsDisplayName => 'Displey nomni oʻz ichiga oladi';
-
-  @override
-  String get containsUserName => 'Foydalanuvchi nomini oʻz ichiga oladi';
 
   @override
   String get contentHasBeenReported =>
@@ -544,16 +501,6 @@ class L10nUz extends L10n {
   }
 
   @override
-  String dateWithoutYear(String month, String day) {
-    return '$month-$day';
-  }
-
-  @override
-  String dateWithYear(String year, String month, String day) {
-    return '$year-$month-$day';
-  }
-
-  @override
   String get deactivateAccountWarning =>
       'Bu sizning foydalanuvchi hisobingizni oʻchirib qoʻyadi. Buni qaytarib boʻlmaydi! Ishonchingiz komilmi?';
 
@@ -571,19 +518,10 @@ class L10nUz extends L10n {
   String get deleteMessage => 'Xabarni oʻchirish';
 
   @override
-  String get device => 'Qurilma';
-
-  @override
-  String get deviceId => 'Qurilma ID';
-
-  @override
   String get devices => 'Qurilmalar';
 
   @override
   String get directChats => 'Shaxsiy suhbatlar';
-
-  @override
-  String get allRooms => 'Barcha guruh suhbatlar';
 
   @override
   String get displaynameHasBeenChanged => 'Displey nomi o‘zgartirildi';
@@ -620,12 +558,6 @@ class L10nUz extends L10n {
       'Yaqinda ishlatilgan emotsiyalar shu yerda chiqadi...';
 
   @override
-  String get emotePacks => 'Guruh uchun Emote toʻplamlar';
-
-  @override
-  String get emoteSettings => 'Emote Sozlamalari';
-
-  @override
   String get globalChatId => 'Ommaviy suhbat IDʼsi';
 
   @override
@@ -636,9 +568,6 @@ class L10nUz extends L10n {
       'Bu suhbatga kim qoʻshilishi mumkin va suhbatni qanday topish mumkin.';
 
   @override
-  String get calls => 'Qoʻngʻiroqlar';
-
-  @override
   String get customEmojisAndStickers => 'Maxsus emojilar va stikerlar';
 
   @override
@@ -647,10 +576,6 @@ class L10nUz extends L10n {
 
   @override
   String get emoteShortcode => 'Emote qisqa kodi';
-
-  @override
-  String get emoteWarnNeedToPick =>
-      'Siz emote qisqa kodi va rasmni tanlashingiz kerak!';
 
   @override
   String get emptyChat => 'Boʻsh suhbat';
@@ -683,27 +608,9 @@ class L10nUz extends L10n {
   String get enterAnEmailAddress => 'Email manzilini kiriting';
 
   @override
-  String get homeserver => 'Uy serveri';
-
-  @override
-  String get enterYourHomeserver => 'Uy serveriga kiring';
-
-  @override
   String errorObtainingLocation(String error) {
     return 'Joylashuv axboroti olinmadi: $error';
   }
-
-  @override
-  String get everythingReady => 'Hammasi tayyor!';
-
-  @override
-  String get extremeOffensive => 'O‘ta haqoratomuz';
-
-  @override
-  String get fileName => 'Fayl nomi';
-
-  @override
-  String get rechainonline => 'REChain';
 
   @override
   String get fontSize => 'Shrift oʻlchami';
@@ -716,9 +623,6 @@ class L10nUz extends L10n {
 
   @override
   String get fromTheInvitation => 'Taklifnomadan';
-
-  @override
-  String get goToTheNewRoom => 'Yangi guruhga oʻtish';
 
   @override
   String get group => 'Guruh';
@@ -755,9 +659,6 @@ class L10nUz extends L10n {
   String get help => 'Yordam';
 
   @override
-  String get hideRedactedEvents => 'Tahrirlangan tadbirlarni yashirish';
-
-  @override
   String get hideRedactedMessages => 'Oʻchirilgan xabarlarni yashirish';
 
   @override
@@ -767,15 +668,6 @@ class L10nUz extends L10n {
   @override
   String get hideInvalidOrUnknownMessageFormats =>
       'Notoʻgʻri yoki nomaʼlum xabar formatlarini yashirish';
-
-  @override
-  String get howOffensiveIsThisContent => 'Bu kontent qanchalik haqoratli?';
-
-  @override
-  String get id => 'ID';
-
-  @override
-  String get identity => 'Shaxs';
 
   @override
   String get block => 'Bloklash';
@@ -797,15 +689,7 @@ class L10nUz extends L10n {
   String get incorrectPassphraseOrKey => 'Notoʻgʻri parol yoki tiklash kaliti';
 
   @override
-  String get inoffensive => 'Zararsiz';
-
-  @override
   String get inviteContact => 'Kontaktni taklif qilish';
-
-  @override
-  String inviteContactToGroupQuestion(Object contact, Object groupName) {
-    return '$contact ni \"$groupName\" suhbatiga taklif qilishni istaysizmi?';
-  }
 
   @override
   String inviteContactToGroup(String groupName) {
@@ -839,9 +723,6 @@ class L10nUz extends L10n {
 
   @override
   String get invitedUsersOnly => 'Faqat taklif qilingan foydalanuvchilar';
-
-  @override
-  String get inviteForMe => 'Men uchun taklif qilish';
 
   @override
   String inviteText(String username, String link) {
@@ -884,9 +765,6 @@ class L10nUz extends L10n {
   String get leftTheChat => 'Suhbatni tark etdi';
 
   @override
-  String get license => 'Litsenziya';
-
-  @override
   String get lightTheme => 'Yorugʻlik';
 
   @override
@@ -900,21 +778,6 @@ class L10nUz extends L10n {
   @override
   String get dehydrateWarning =>
       'Bu amalni bekor qilib boʻlmaydi. Zaxira faylini xavfsiz saqlang.';
-
-  @override
-  String get dehydrateTor => 'TOR foydalanuvchilari: Seansni eksport qilish';
-
-  @override
-  String get dehydrateTorLong =>
-      'TOR foydalanuvchilari uchun oynani yopishdan oldin seansni eksport qilish tavsiya etiladi.';
-
-  @override
-  String get hydrateTor =>
-      'TOR foydalanuvchilari: Seans eksportini import qilish';
-
-  @override
-  String get hydrateTorLong =>
-      'Seansingizni oxirgi marta TOR’da eksport qildingizmi? Uni tezda import qiling va suhbatni davom ettiring.';
 
   @override
   String get hydrate => 'Zaxira faylidan tiklash';
@@ -945,9 +808,6 @@ class L10nUz extends L10n {
   String get logout => 'Chiqish';
 
   @override
-  String get memberChanges => 'Aʼzo oʻzgarishlari';
-
-  @override
   String get mention => 'Qayd etmoq';
 
   @override
@@ -961,10 +821,6 @@ class L10nUz extends L10n {
 
   @override
   String get muteChat => 'Suhbatni ovozsizlantirish';
-
-  @override
-  String get needPantalaimonWarning =>
-      'Iltimos, hozircha Pantalaimon boshdan-oyoq shifrlashdan foydalanishi kerakligini yodda tuting.';
 
   @override
   String get newChat => 'Yangi suhbat';
@@ -1007,9 +863,6 @@ class L10nUz extends L10n {
   String get scanQrCode => 'QR kodini skanerlang';
 
   @override
-  String get none => 'Hech biri';
-
-  @override
   String get noPasswordRecoveryDescription =>
       'Siz hali parolingizni tiklash usulini qoʻshmadingiz.';
 
@@ -1023,10 +876,6 @@ class L10nUz extends L10n {
   String get notifications => 'Bildirishnomalar';
 
   @override
-  String get notificationsEnabledForThisAccount =>
-      'Ushbu hisob uchun bildirishnomalar yoqildi';
-
-  @override
   String numUsersTyping(int count) {
     return '$count foydalanuvchilar yozmoqda…';
   }
@@ -1035,16 +884,7 @@ class L10nUz extends L10n {
   String get obtainingLocation => 'Joylashuv aniqlanmoqda…';
 
   @override
-  String get offensive => 'Haqoratomuz';
-
-  @override
-  String get offline => 'Oflayn';
-
-  @override
   String get ok => 'Hop';
-
-  @override
-  String get online => 'Onlayn';
 
   @override
   String get onlineKeyBackupEnabled => 'Onlayn kalit zaxira nusxasi yoqilgan';
@@ -1061,9 +901,6 @@ class L10nUz extends L10n {
 
   @override
   String get openCamera => 'Kamerani ochish';
-
-  @override
-  String get openVideoCamera => 'Video uchun kamerani oching';
 
   @override
   String get oneClientLoggedOut => 'Mijozlaringizdan biri tizimdan chiqdi';
@@ -1084,18 +921,10 @@ class L10nUz extends L10n {
   String get bundleName => 'Toʻplam nomi';
 
   @override
-  String get enableMultiAccounts =>
-      '(BETA) Ushbu qurilmada bir nechta hisoblarni yoqish';
-
-  @override
   String get openInMaps => 'Xaritalarda ochish';
 
   @override
   String get link => 'Havola';
-
-  @override
-  String get serverRequiresEmail =>
-      'Ushbu server roʻyxatdan oʻtish uchun elektron pochta manzilingizni tasdiqlashi kerak.';
 
   @override
   String get or => 'Yoki';
@@ -1116,41 +945,13 @@ class L10nUz extends L10n {
   String get passwordHasBeenChanged => 'Parol oʻzgartirildi';
 
   @override
-  String get hideMemberChangesInPublicChats =>
-      'Ommaviy suhbatlarda aʼzolarga oʻzgartirishlarni yashirish';
-
-  @override
-  String get hideMemberChangesInPublicChatsBody =>
-      'Oʻqish qulayligini oshirish uchun kimdir ochiq suhbatga qoʻshilsa yoki undan chiqsa, suhbat vaqt jadvalida koʻrsatilmasin.';
-
-  @override
-  String get overview => 'Umumiy ma\'lumot';
-
-  @override
-  String get notifyMeFor => 'Menga bildirishnoma yuborish';
-
-  @override
   String get passwordRecoverySettings => 'Parolni qayta tiklash sozlamalari';
 
   @override
   String get passwordRecovery => 'Parolni qayta tiklash';
 
   @override
-  String get people => 'Odamlar';
-
-  @override
-  String get pickImage => 'Rasm tanlash';
-
-  @override
   String get pin => 'Toʻgʻnash';
-
-  @override
-  String play(String fileName) {
-    return '${fileName}ni oʻynash';
-  }
-
-  @override
-  String get pleaseChoose => 'Iltimos tanlang';
 
   @override
   String get pleaseChooseAPasscode => 'Iltimos, kirish kodini tanlang';
@@ -1158,14 +959,6 @@ class L10nUz extends L10n {
   @override
   String get pleaseClickOnLink =>
       'Iltimos, elektron pochtadagi havolani bosing va keyin davom eting.';
-
-  @override
-  String get pleaseEnter4Digits =>
-      'Ilova qulfini oʻchirish uchun 4 ta raqamni kiriting yoki boʻsh qoldiring.';
-
-  @override
-  String get pleaseEnterRecoveryKey =>
-      'Iltimos, tiklash kalitingizni kiriting:';
 
   @override
   String get pleaseEnterYourPassword => 'Iltimos parolingizni kiriting';
@@ -1187,21 +980,12 @@ class L10nUz extends L10n {
   String get publicRooms => 'Ommaviy guruhlar';
 
   @override
-  String get pushRules => 'Push qoidalari';
-
-  @override
   String get reason => 'Sabab';
-
-  @override
-  String get recording => 'Yozilmoqda';
 
   @override
   String redactedBy(String username) {
     return '$username tomonidan tahrirlangan';
   }
-
-  @override
-  String get directChat => 'Shaxsiy suhbat';
 
   @override
   String redactedByBecause(String username, String reason) {
@@ -1217,9 +1001,6 @@ class L10nUz extends L10n {
   String get redactMessage => 'Xabarni tahrirlash';
 
   @override
-  String get register => 'Roʻyxatdan oʻtish';
-
-  @override
   String get reject => 'Rad qilish';
 
   @override
@@ -1228,18 +1009,7 @@ class L10nUz extends L10n {
   }
 
   @override
-  String get rejoin => 'Qayta qoʻshilish';
-
-  @override
   String get removeAllOtherDevices => 'Qolgan barcha qurilmalarni oʻchirish';
-
-  @override
-  String removedBy(String username) {
-    return '$username tomonidan oʻchirildi';
-  }
-
-  @override
-  String get removeDevice => 'Qurilmani oʻchirish';
 
   @override
   String get unbanFromChat => 'Suhbat blokidan chiqazish';
@@ -1258,13 +1028,18 @@ class L10nUz extends L10n {
   String get reportMessage => 'Xabar berish';
 
   @override
-  String get requestPermission => 'Ruxsat soʻrash';
-
-  @override
   String get roomHasBeenUpgraded => 'Xona takomillashtirildi';
 
   @override
+  String sendingFilesDoNotExit(int count) {
+    return 'Sending $count files... Please do not exit!';
+  }
+
+  @override
   String get roomVersion => 'Guruh versiyasi';
+
+  @override
+  String get compressingVideo => 'Compressing video...';
 
   @override
   String get saveFile => 'Fayl saqlash';
@@ -1274,17 +1049,6 @@ class L10nUz extends L10n {
 
   @override
   String get security => 'Xavfsizlik';
-
-  @override
-  String get recoveryKey => 'Tiklash kaliti';
-
-  @override
-  String get recoveryKeyLost => 'Tiklash kaliti yo‘qolib qoldimi?';
-
-  @override
-  String seenByUser(String username) {
-    return '$username ko‘rgan';
-  }
 
   @override
   String get send => 'Yuborish';
@@ -1311,12 +1075,6 @@ class L10nUz extends L10n {
 
   @override
   String get sendMessages => 'Xabarlar yuborish';
-
-  @override
-  String get sendOriginal => 'Asl nusxani yuborish';
-
-  @override
-  String get sendSticker => 'Stiker yuborish';
 
   @override
   String get sendVideo => 'Video yuborish';
@@ -1352,23 +1110,10 @@ class L10nUz extends L10n {
   }
 
   @override
-  String get separateChatTypes =>
-      'To‘g‘ridan-to‘g‘ri suhbatlar va guruhlarni alohida ajratish';
-
-  @override
   String get setAsCanonicalAlias => 'Asosiy taxallus sifatida belgilash';
 
   @override
-  String get setCustomEmotes => 'Maxsus hissiyotlarni sozlash';
-
-  @override
   String get setChatDescription => 'Suhbat tavsifini sozlash';
-
-  @override
-  String get setInvitationLink => 'Taklif havolasini sozlash';
-
-  @override
-  String get setPermissionsLevel => 'Ruxsatlar darajasini belgilash';
 
   @override
   String get setStatus => 'Holatni sozlash';
@@ -1388,19 +1133,6 @@ class L10nUz extends L10n {
   String get shareLocation => 'Joylashuvni ulashish';
 
   @override
-  String get showPassword => 'Parolni ko‘rsatish';
-
-  @override
-  String get presenceStyle => 'Mavjudlik:';
-
-  @override
-  String get presencesToggle =>
-      'Boshqa foydalanuvchilarning holat xabarlarini ko‘rsatish';
-
-  @override
-  String get singlesignon => 'Yagona kirish';
-
-  @override
   String get skip => 'Tashlab ketish';
 
   @override
@@ -1416,9 +1148,6 @@ class L10nUz extends L10n {
   String startedACall(String senderName) {
     return '$senderName chaqiruv boshladi';
   }
-
-  @override
-  String get startFirstChat => 'Birinchi suhbatni boshlash';
 
   @override
   String get status => 'Holati';
@@ -1447,29 +1176,11 @@ class L10nUz extends L10n {
   String get theyMatch => 'Ular mos keladi';
 
   @override
-  String get title => 'REChain';
-
-  @override
-  String get toggleFavorite => 'Saralanganni almashtirish';
-
-  @override
-  String get toggleMuted => 'O‘chirib qo‘yish';
-
-  @override
-  String get toggleUnread => 'O‘qilgan/O‘qilmaganni belgilash';
-
-  @override
   String get tooManyRequestsWarning =>
       'Talablar soni oshib ketdi. Keyinroq qayta urining!';
 
   @override
-  String get transferFromAnotherDevice => 'Boshqa qurilmadan uzatish';
-
-  @override
   String get tryToSendAgain => 'Qayta yuborishga urining';
-
-  @override
-  String get unavailable => 'Mavjud emas';
 
   @override
   String unbannedUser(String username, String targetName) {
@@ -1497,17 +1208,6 @@ class L10nUz extends L10n {
   String get unpin => 'Olib tashlash';
 
   @override
-  String unreadChats(int unreadCount) {
-    String _temp0 = intl.Intl.pluralLogic(
-      unreadCount,
-      locale: localeName,
-      other: '$unreadCount ta o‘qilmagan chat',
-      one: '1 ta oʻqilmagan suhbat',
-    );
-    return '$_temp0';
-  }
-
-  @override
   String userAndOthersAreTyping(String username, int count) {
     return '$username va yana $count kishi yozmoqda…';
   }
@@ -1528,9 +1228,6 @@ class L10nUz extends L10n {
   }
 
   @override
-  String get username => 'Foydalanuvchi nomi';
-
-  @override
   String userSentUnknownEvent(String username, String type) {
     return '$username $type tadbirini yubordi';
   }
@@ -1542,9 +1239,6 @@ class L10nUz extends L10n {
   String get verified => 'Tasdiqlangan';
 
   @override
-  String get verify => 'Tasdiqlash';
-
-  @override
   String get verifyStart => 'Tasdiqlashni boshlash';
 
   @override
@@ -1552,9 +1246,6 @@ class L10nUz extends L10n {
 
   @override
   String get verifyTitle => 'Boshqa hisob tasdiqlanmoqda';
-
-  @override
-  String get videoCall => 'Video chaqiruv';
 
   @override
   String get visibilityOfTheChatHistory => 'Suhbat tarixining ko‘rinishi';
@@ -1580,9 +1271,6 @@ class L10nUz extends L10n {
       'Hamkor raqamlarni qabul qilishi kutilmoqda…';
 
   @override
-  String get wallpaper => 'Fon rasmi:';
-
-  @override
   String get warning => 'Ogohlantirish!';
 
   @override
@@ -1597,10 +1285,6 @@ class L10nUz extends L10n {
   @override
   String get whyDoYouWantToReportThis =>
       'Nima uchun bu haqda xabar bermoqchisiz?';
-
-  @override
-  String get wipeChatBackup =>
-      'Yangi tiklash kalitini yaratish uchun suhbat zaxirasi tozalansinmi?';
 
   @override
   String get withTheseAddressesRecoveryDescription =>
@@ -1620,9 +1304,6 @@ class L10nUz extends L10n {
       'Siz ortiq bu suhbatda qatnashmayapsiz';
 
   @override
-  String get youHaveBeenBannedFromThisChat => 'Bu suhbatdan bloklandingiz';
-
-  @override
   String get yourPublicKey => 'Ochiq kalitingiz';
 
   @override
@@ -1630,9 +1311,6 @@ class L10nUz extends L10n {
 
   @override
   String get time => 'Vaqt';
-
-  @override
-  String get messageType => 'Xabar turi';
 
   @override
   String get sender => 'Yuboruvchi';
@@ -1644,35 +1322,10 @@ class L10nUz extends L10n {
   String get removeFromSpace => 'Guruhdan olib tashlash';
 
   @override
-  String get addToSpaceDescription =>
-      'Bu suhbatni unga kiritish uchun guruhni tanlang.';
-
-  @override
-  String get start => 'Boshlash';
-
-  @override
-  String get pleaseEnterRecoveryKeyDescription =>
-      'Eski xabarlaringizni qulfdan chiqarish uchun, iltimos, avvalgi seansdan yaratilgan tiklash kalitingizni kiriting. Sizning tiklash kalitingiz parolingiz EMAS.';
-
-  @override
-  String get publish => 'Nashr qilish';
-
-  @override
-  String videoWithSize(String size) {
-    return 'Video ($size)';
-  }
-
-  @override
-  String get openChat => 'Suhbatni ochish';
-
-  @override
   String get markAsRead => 'Oʻqilgan sifatida belgilash';
 
   @override
   String get reportUser => 'Foydalanuvchi haqida xabar berish';
-
-  @override
-  String get dismiss => 'Rad qilmoq';
 
   @override
   String reactedWith(String sender, String reaction) {
@@ -1690,73 +1343,12 @@ class L10nUz extends L10n {
   String get emojis => 'Emojilar';
 
   @override
-  String get placeCall => 'Qoʻngʻiroq qilish';
-
-  @override
-  String get voiceCall => 'Ovozli qoʻngʻiroq';
-
-  @override
   String get unsupportedAndroidVersion =>
       'Qoʻllab-quvvatlanmaydigan Android versiyasi';
 
   @override
   String get unsupportedAndroidVersionLong =>
       'Bu funksiya Androidning yangi versiyasini talab qiladi. Iltimos, yangilanishlar yoki Mobile Katya OS qoʻllab-quvvatlashini tekshiring.';
-
-  @override
-  String get videoCallsBetaWarning =>
-      'Iltimos, video qoʻngʻiroqlar hozirda beta-versiyada ekanligini unutmang. Ular kutilganidek ishlamasligi yoki barcha platformalarda umuman ishlamasligi mumkin.';
-
-  @override
-  String get experimentalVideoCalls => 'Tajriba video qoʻngʻiroqlar';
-
-  @override
-  String get emailOrUsername => 'Elektron pochta yoki foydalanuvchi nomi';
-
-  @override
-  String get indexedDbErrorTitle => 'Shaxsiy rejim bilan bogʻliq muammolar';
-
-  @override
-  String get indexedDbErrorLong =>
-      'Xabarlarni saqlash, afsuski, sukut bo\'yicha maxfiy rejimda yoqilmagan.\nIltimos, tashrif buyuring\n- about:config\n- dom.indexedDB.privateBrowsing.enabled ga true berilgan\nAks holda, REChain ni ishga tushirish mumkin emas.';
-
-  @override
-  String switchToAccount(String number) {
-    return '$number hisobiga oʻtish';
-  }
-
-  @override
-  String get nextAccount => 'Keyingi hisob';
-
-  @override
-  String get previousAccount => 'Oldingi hisob';
-
-  @override
-  String get addWidget => 'Vidjet qoʻshish';
-
-  @override
-  String get widgetVideo => 'Video';
-
-  @override
-  String get widgetEtherpad => 'Matnli qayd';
-
-  @override
-  String get widgetJitsi => 'Jitsi Meet';
-
-  @override
-  String get widgetCustom => 'Maxsus';
-
-  @override
-  String get widgetName => 'Nomi';
-
-  @override
-  String get widgetUrlError => 'Bu yaroqli URL emas.';
-
-  @override
-  String get widgetNameError => 'Iltimos, displey nomini kiriting.';
-
-  @override
-  String get errorAddingWidget => 'Vidjet kiritilmadi.';
 
   @override
   String get youRejectedTheInvitation => 'Taklifni rad etdingiz';
@@ -1778,18 +1370,8 @@ class L10nUz extends L10n {
   }
 
   @override
-  String youInvitedToBy(String alias) {
-    return '📩 Sizni quyidagi havola orqali taklif qilishdi:\n$alias';
-  }
-
-  @override
   String youInvitedBy(String user) {
     return '📩 Sizni $user taklif qildi';
-  }
-
-  @override
-  String invitedBy(String user) {
-    return '📩 $user taklif qilgan';
   }
 
   @override
@@ -1824,30 +1406,10 @@ class L10nUz extends L10n {
   String get noOneCanJoin => 'Hech kim qoʻshila olmaydi';
 
   @override
-  String userWouldLikeToChangeTheChat(String user) {
-    return '$user suhbatga qoʻshilmoqchi.';
-  }
-
-  @override
-  String get noPublicLinkHasBeenCreatedYet =>
-      'Hech qanday ochiq havola yaratilmagan';
-
-  @override
   String get knock => 'Taqillating';
 
   @override
   String get users => 'Foydalanuvchilar';
-
-  @override
-  String get unlockOldMessages => 'Eski xabarlarni qulfdan chiqaring';
-
-  @override
-  String get storeInSecureStorageDescription =>
-      'Qayta tiklash kalitini ushbu qurilmaning xavfsiz xotirasida saqlang.';
-
-  @override
-  String get saveKeyManuallyDescription =>
-      'Tizim ulashish dialog oynasi yoki buferni ishga tushirish orqali ushbu kalitni qoʻlda saqlang.';
 
   @override
   String get storeInAndroidKeystore => 'Android KeyStoreʼda saqlang';
@@ -1870,37 +1432,6 @@ class L10nUz extends L10n {
   String get custom => 'Maxsus';
 
   @override
-  String get foregroundServiceRunning =>
-      'Bu bildirishnoma old plan xizmati ishlab turgan paytda paydo bo‘ladi.';
-
-  @override
-  String get screenSharingTitle => 'Ekranni ulashish';
-
-  @override
-  String get screenSharingDetail => 'Siz ekraningizni REChain’da ulashmoqdasiz';
-
-  @override
-  String get callingPermissions => 'Qoʻngʻiroq qilish ruxsatlar';
-
-  @override
-  String get callingAccount => 'Qoʻngʻiroq qilishi hisobi';
-
-  @override
-  String get callingAccountDetails =>
-      'REChain’ga mahalliy android terish ilovasidan foydalanishga ruxsat beradi.';
-
-  @override
-  String get appearOnTop => 'Teppada paydo boʻladi';
-
-  @override
-  String get appearOnTopDetails =>
-      'Ilovaning yuqori qismida koʻrinishiga ruxsat beradi (agar sizda REChain qoʻngʻiroq qiluvchi hisobi sifatida oʻrnatilgan boʻlsa, kerak emas)';
-
-  @override
-  String get otherCallingPermissions =>
-      'Mikrofon, kamera va boshqa REChain ruxsatnomalari';
-
-  @override
   String get whyIsThisMessageEncrypted =>
       'Nima uchun bu xabarni oʻqib boʻlmaydi?';
 
@@ -1909,31 +1440,7 @@ class L10nUz extends L10n {
       'Bu xabar siz ushbu qurilmada hisobingizga kirishdan oldin yuborilgan boʻlsa sodir boʻlishi mumkin.\n\nShuningdek, joʻnatuvchi qurilmangizni bloklagan yoki internet ulanishida biron bir muammo yuzaga kelgan boʻlishi mumkin.\n\nXabarni boshqa sessiyada oʻqiy olasizmi? Keyin xabarni undan uzatishingiz mumkin! Sozlamalar > Qurilmalar boʻlimiga oʻting va qurilmalaringiz bir-birini tasdiqlaganligiga ishonch hosil qiling. Keyingi safar xonani ochganingizda va ikkala sessiya ham oldinda boʻlganda, kalitlar avtomatik ravishda uzatiladi.\n\nTizimdan chiqishda yoki qurilmalarni almashtirishda kalitlarni yoʻqotishni xohlamaysizmi? Sozlamalarda suhbatning zaxira nusxasini yoqganingizga ishonch hosil qiling.';
 
   @override
-  String get newGroup => 'Yangi guruh';
-
-  @override
   String get newSpace => 'Yangi maydon';
-
-  @override
-  String get enterSpace => 'Maydonga kirish';
-
-  @override
-  String get enterRoom => 'Guruhga kirish';
-
-  @override
-  String get allSpaces => 'Barcha maydonlar';
-
-  @override
-  String numChats(String number) {
-    return '$number suhbatlar';
-  }
-
-  @override
-  String get hideUnimportantStateEvents =>
-      'Muhim boʻlmagan shtat tadbirlarini yashirish';
-
-  @override
-  String get hidePresences => 'Holat roʻyxati yashirilsinmi?';
 
   @override
   String get doNotShowAgain => 'Qaytib koʻrsatilmasin';
@@ -1956,9 +1463,6 @@ class L10nUz extends L10n {
 
   @override
   String get sorryThatsNotPossible => 'Kechirasiz... bu mumkin emas';
-
-  @override
-  String get deviceKeys => 'Qurilma kalitlari:';
 
   @override
   String get reopenChat => 'Suhbatni qayta ochish';
@@ -2000,25 +1504,6 @@ class L10nUz extends L10n {
   String get report => 'hisobot';
 
   @override
-  String get signInWithPassword => 'Parol bilan kirish';
-
-  @override
-  String get pleaseTryAgainLaterOrChooseDifferentServer =>
-      'Keyinroq qayta urining yoki boshqa serverni tanlang.';
-
-  @override
-  String signInWith(String provider) {
-    return '$provider bilan kiring';
-  }
-
-  @override
-  String get profileNotFound =>
-      'Foydalanuvchi serverda topilmadi. Ehtimol, ulanishda muammo bor yoki foydalanuvchi mavjud emas.';
-
-  @override
-  String get setTheme => 'Mavzu tanlash:';
-
-  @override
   String get setColorTheme => 'Rang mavzusini sozlash:';
 
   @override
@@ -2026,9 +1511,6 @@ class L10nUz extends L10n {
 
   @override
   String get inviteGroupChat => '📨 Guruh suhbatiga taklif';
-
-  @override
-  String get invitePrivateChat => '📨 Shaxsiy suhbatga taklif';
 
   @override
   String get invalidInput => 'Xato kiritildi!';
@@ -2114,9 +1596,6 @@ class L10nUz extends L10n {
       'Kechirasiz... bu toʻgʻri tiklash kaliti emasga oʻxshaydi.';
 
   @override
-  String get startConversation => 'Suhbat boshlash';
-
-  @override
   String get commandHint_sendraw => 'Xom jsonni yuborish';
 
   @override
@@ -2154,9 +1633,6 @@ class L10nUz extends L10n {
   String get passwordIsWrong => 'Siz kiritgan maxfiy soʻz xato';
 
   @override
-  String get publicLink => 'Ommaviy havola';
-
-  @override
   String get publicChatAddresses => 'Ommaviy suhbat manzillari';
 
   @override
@@ -2172,24 +1648,10 @@ class L10nUz extends L10n {
   String get addChatOrSubSpace => 'Suhbat yoki sub-maydon qoʻshing';
 
   @override
-  String get subspace => 'Sub-maydonlar';
-
-  @override
-  String get decline => 'Rad qilish';
-
-  @override
   String get thisDevice => 'Ushbu qurilma:';
 
   @override
   String get initAppError => 'Ilovani ishga tushirishda xatolik yuz berdi';
-
-  @override
-  String get userRole => 'Foydalanuvchi roli';
-
-  @override
-  String minimumPowerLevel(String level) {
-    return '$level minimal quvvat darajasidir.';
-  }
 
   @override
   String searchIn(String chat) {
@@ -2206,11 +1668,6 @@ class L10nUz extends L10n {
   String get files => 'Fayllar';
 
   @override
-  String databaseBuildErrorBody(String url, String error) {
-    return 'SQlite maʼlumotlar bazasini yaratib boʻlmadi. Ilova hozircha eski maʼlumotlar bazasidan foydalanishga harakat qilmoqda. Iltimos, ushbu xato haqida $url manzilidagi dasturchilarga xabar bering. Xato xabari: $error';
-  }
-
-  @override
   String sessionLostBody(String url, String error) {
     return 'Seansingiz yoʻqoldi. Iltimos, ushbu xato haqida $url manzilidagi dasturchilarga xabar bering. Xato xabari: $error';
   }
@@ -2218,11 +1675,6 @@ class L10nUz extends L10n {
   @override
   String restoreSessionBody(String url, String error) {
     return 'Ilova endi seansingizni zaxira nusxasidan tiklashga harakat qiladi. Iltimos, ushbu xato haqida $url manzilidagi dasturchilarga xabar bering. Xato xabari: $error';
-  }
-
-  @override
-  String forwardMessageTo(String roomName) {
-    return 'Xabarni ${roomName}ga yoʻnaltirilsinmi?';
   }
 
   @override
@@ -2288,9 +1740,6 @@ class L10nUz extends L10n {
   }
 
   @override
-  String get transparent => 'Shaffof';
-
-  @override
   String get incomingMessages => 'Kiruvchi xabarlar';
 
   @override
@@ -2319,12 +1768,6 @@ class L10nUz extends L10n {
   String thereAreCountUsersBlocked(Object count) {
     return 'Hozirda $count ta foydalanuvchi bloklangan.';
   }
-
-  @override
-  String get restricted => 'Cheklangan';
-
-  @override
-  String get knockRestricted => 'Taqillatish cheklangan';
 
   @override
   String goToSpace(Object space) {
@@ -2387,20 +1830,18 @@ class L10nUz extends L10n {
   String get changelog => 'O‘zgarishlar jurnali';
 
   @override
+  String updateAvailable(String version) {
+    return 'Update $version available';
+  }
+
+  @override
+  String get download => 'Download';
+
+  @override
   String get sendCanceled => 'Yuborish bekor qilindi';
 
   @override
-  String get loginWithMatrixId => 'REChain-ID bilan kirish';
-
-  @override
-  String get discoverHomeservers => 'Uy serverlarini kashf eting';
-
-  @override
-  String get whatIsAHomeserver => 'Uy serveri nima?';
-
-  @override
-  String get homeserverDescription =>
-      'Barcha ma’lumotlaringiz xuddi elektron pochta provayderi kabi homeserverda saqlanadi. Siz qaysi uy serveridan foydalanishni tanlashingiz mumkin, shu bilan birga siz hamma bilan muloqot qilishingiz mumkin. Batafsil: https://github.com/sorydima/REChain-.git';
+  String get loginWithREChainId => 'Login with REChain-ID';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
@@ -2408,29 +1849,6 @@ class L10nUz extends L10n {
 
   @override
   String get calculatingFileSize => 'Fayl hajmi hisoblanmoqda...';
-
-  @override
-  String get prepareSendingAttachment =>
-      'Yuborish uchun biriktirmani tayyorlang...';
-
-  @override
-  String get sendingAttachment => 'Biriktirish yuborilmoqda...';
-
-  @override
-  String get generatingVideoThumbnail => 'Video eskizi yaratilmoqda...';
-
-  @override
-  String get compressVideo => 'Video siqilmoqda...';
-
-  @override
-  String sendingAttachmentCountOfCount(int index, int length) {
-    return 'Biriktirma yuborilmoqda: $index of $length...';
-  }
-
-  @override
-  String serverLimitReached(int seconds) {
-    return 'Server limiti tugadi! $seconds soniya kutilmoqda...';
-  }
 
   @override
   String get oneOfYourDevicesIsNotVerified =>
@@ -2442,10 +1860,6 @@ class L10nUz extends L10n {
 
   @override
   String get continueText => 'Davom ettirish';
-
-  @override
-  String get welcomeText =>
-      'Hey Hey 👋 Bu REChain. Siz https://github.com/sorydima/REChain-.git bilan mos keladigan istalgan uy serveriga kirishingiz mumkin. Va keyin istalgan kishi bilan suhbatlashishingiz mumkin. Bu ulkan markazlashtirilmagan xabar almashish tarmog\'i!';
 
   @override
   String get blur => 'Xiralashtirish:';
@@ -2530,10 +1944,6 @@ class L10nUz extends L10n {
 
   @override
   String get waitingForServer => 'Server kutilmoqda...';
-
-  @override
-  String get appIntroduction =>
-      'REChain sizga turli messenjerlar orqali doʻstlaringiz bilan suhbatlashish imkonini beradi. Batafsil maʼlumotni https://github.com/sorydima/REChain-.git saytida oling yoki shunchaki *Davom etish* tugmasini bosing.';
 
   @override
   String get newChatRequest => '📩 Yangi suhbat uchun soʻrov';
@@ -2779,6 +2189,12 @@ class L10nUz extends L10n {
   String get moreEvents => 'Boshqa hodisalar';
 
   @override
+  String get showMore => 'Show more';
+
+  @override
+  String get showLess => 'Show less';
+
+  @override
   String get declineInvitation => 'Taklifni rad etish';
 
   @override
@@ -2793,18 +2209,6 @@ class L10nUz extends L10n {
 
   @override
   String get resume => 'Davom etish';
-
-  @override
-  String get newSubSpace => 'Yangi quyi maydon';
-
-  @override
-  String get moveToDifferentSpace => 'Boshqa maydonga o‘tish';
-
-  @override
-  String get moveUp => 'Yuqoriga surish';
-
-  @override
-  String get moveDown => 'Pastga surish';
 
   @override
   String get removeFromSpaceDescription =>
@@ -2826,17 +2230,6 @@ class L10nUz extends L10n {
   }
 
   @override
-  String get donate => 'Xayriya qilmoq';
-
-  @override
-  String startedAPoll(String username) {
-    return '$username so‘rovnoma boshladi.';
-  }
-
-  @override
-  String get poll => 'So‘rov';
-
-  @override
   String get startPoll => 'So‘rovni boshlash';
 
   @override
@@ -2844,9 +2237,6 @@ class L10nUz extends L10n {
 
   @override
   String get answersVisible => 'Javoblar ko‘rinadi';
-
-  @override
-  String get answersHidden => 'Javoblar berkitildi';
 
   @override
   String get pollQuestion => 'So‘rovnoma savoli';
@@ -2931,16 +2321,480 @@ class L10nUz extends L10n {
       'Ishonchingiz komilmi? Chat zaxirasini yoqmasdan qurilmangizni almashtirsangiz, xabarlaringizga kira olmay qolishingiz mumkin.';
 
   @override
-  String get loadingMessages => 'Xabarlar yuklanmoqda';
-
-  @override
-  String get setupChatBackup => 'Chat zaxirasini sozlash';
-
-  @override
   String get noMoreResultsFound => 'No more results found';
 
   @override
   String chatSearchedUntil(String time) {
     return 'Chat searched until $time';
+  }
+
+  @override
+  String get federationBaseUrl => 'Federation Base URL';
+
+  @override
+  String get clientWellKnownInformation => 'Client-Well-Known Information:';
+
+  @override
+  String get baseUrl => 'Base URL';
+
+  @override
+  String get identityServer => 'Identity Server:';
+
+  @override
+  String versionWithNumber(String version) {
+    return 'Version: $version';
+  }
+
+  @override
+  String get logs => 'Logs';
+
+  @override
+  String get advancedConfigs => 'Advanced Configs';
+
+  @override
+  String get advancedConfigurations => 'Advanced configurations';
+
+  @override
+  String get signIn => 'Sign in';
+
+  @override
+  String get createNewAccount => 'Create new account';
+
+  @override
+  String get signUpGreeting =>
+      'REChain is decentralized! Select a server where you want to create your account and let\'s go!';
+
+  @override
+  String get signInGreeting =>
+      'You already have an account in REChain? Welcome back! Select your homeserver and sign in.';
+
+  @override
+  String get theProcessWasCanceled => 'The process was canceled.';
+
+  @override
+  String get join => 'Join';
+
+  @override
+  String get searchOrEnterHomeserverAddress =>
+      'Search or enter homeserver address';
+
+  @override
+  String get matrixId => 'REChain ID';
+
+  @override
+  String get setPowerLevel => 'Set power level';
+
+  @override
+  String get makeModerator => 'Make moderator';
+
+  @override
+  String get makeAdmin => 'Make admin';
+
+  @override
+  String get removeModeratorRights => 'Remove moderator rights';
+
+  @override
+  String get removeAdminRights => 'Remove admin rights';
+
+  @override
+  String get powerLevel => 'Power level';
+
+  @override
+  String get setPowerLevelDescription =>
+      'Power levels define what a member is allowed to do in this room and usually range between 0 and 100.';
+
+  @override
+  String get owner => 'Owner';
+
+  @override
+  String get mute => 'Mute';
+
+  @override
+  String get createNewChat => 'Create new chat';
+
+  @override
+  String get reset => 'Reset';
+
+  @override
+  String get supportrechainonline => 'Support REChain';
+
+  @override
+  String get support => 'Support';
+
+  @override
+  String get setLowPriority => 'Set low priority';
+
+  @override
+  String get unsetLowPriority => 'Unset low priority';
+
+  @override
+  String get playSoundOnNotification => 'Play sound on notification';
+
+  @override
+  String get addTag => 'Add tag';
+
+  @override
+  String get removeTag => 'Remove tag';
+
+  @override
+  String get tagName => 'Tag name';
+
+  @override
+  String get createNewTag => 'Create new tag';
+
+  @override
+  String get hideRoomsInSpaces => 'Hide rooms that are in a space';
+
+  @override
+  String get possibleByYou =>
+      'This release was only possible thanks to your support. REChain remains free, open-source, and entirely community-driven.';
+
+  @override
+  String get showThumbnailsInTimeline => 'Show thumbnails of images and videos';
+
+  @override
+  String get appSubtitle => 'Secure [REChain] Communication';
+
+  @override
+  String get appDescription =>
+      'Communicate encrypted over the decentralized [REChain] network in an easy and accessible way for everyone.';
+
+  @override
+  String get interactiveVerification => 'Interactive verification';
+
+  @override
+  String get interactiveVerificationDescription =>
+      'If you are next to each other or communicate via a secure channel then you can verify all devices at once by comparing a security number or emojis.';
+
+  @override
+  String countUnverifiedDevices(int count) {
+    return '$count unverified devices in the chat.';
+  }
+
+  @override
+  String get encryptedMessage => 'Encrypted message';
+
+  @override
+  String get unencryptedMessage => 'Unencrypted message';
+
+  @override
+  String get messageCanOnlyBeReadByUser =>
+      'Your message is end to end encrypted and can only be read by this user:';
+
+  @override
+  String get messageCanOnlyBeReadByUsers =>
+      'Your message is end to end encrypted and can only be read by these users:';
+
+  @override
+  String publicKey(String key) {
+    return 'Public key: $key';
+  }
+
+  @override
+  String get deviceIdentityKey => 'Device identity key';
+
+  @override
+  String get restoreBootstrapEmptyDevicesDescription =>
+      'Please enter your passphrase or recovery key to verify this device and get access to your encrypted message backup.';
+
+  @override
+  String get restoreBootstrapDevicesDescription =>
+      'Please pick one of your other devices, to verify this session:';
+
+  @override
+  String get resetAccount => 'Reset account';
+
+  @override
+  String get restoreCryptoIdentity => 'Restore Crypto Identity';
+
+  @override
+  String get resetCryptoIdentity => 'Reset Crypto Identity';
+
+  @override
+  String get setUpCryptoIdentity => 'Set Up Crypto Identity';
+
+  @override
+  String get waitingForKeys =>
+      'Waiting for keys... Please keep the other device active.';
+
+  @override
+  String get noKeysTransmitted => 'No keys transmitted. Please try again.';
+
+  @override
+  String get unlock => 'Unlock';
+
+  @override
+  String get openFile => 'Open file';
+
+  @override
+  String get resetAccountWarning =>
+      'When you reset your account you will lose the access to your old messages forever. All your current devices need to be verified again. Please only perform this action when you have no other devices left to verify your session and you have lost your recovery key and passphrase!';
+
+  @override
+  String get newPassphraseDescription =>
+      'REChain uses end to end encryption. To not lose your messages, please choose a strong passphrase to secure your crypto identity and your encrypted message backup.';
+
+  @override
+  String get newPassphrase => 'New passphrase';
+
+  @override
+  String get repeatPassphrase => 'Repeat passphrase';
+
+  @override
+  String get passphrasesMatch => 'Passphrases match';
+
+  @override
+  String get passphraseLengthRequirement => 'At least 12 characters long.';
+
+  @override
+  String get passphraseUpperAndLowerCaseRequirement =>
+      'Contains uppercase and lowercase characters.';
+
+  @override
+  String get passphraseSpecialCharactersRequirement =>
+      'Contains special characters.';
+
+  @override
+  String get passphraseNumberRequirement => 'Contains one numbers.';
+
+  @override
+  String get storeRecoveryKeyDescription =>
+      'Please note down your recovery key to be able to restore your encrypted messages and your crypto identity on.';
+
+  @override
+  String get saveAsFile => 'Save as file';
+
+  @override
+  String get youAreReadyToStart => 'You are ready to start!';
+
+  @override
+  String get noUserKeyFound => 'No user key found';
+
+  @override
+  String knownSince(String date) {
+    return 'Known since: $date';
+  }
+
+  @override
+  String get unsignedDevice => 'Unsigned device';
+
+  @override
+  String get signedDevice => 'Signed device';
+
+  @override
+  String get noCurve25519KeyFound => 'No curve25519 key found';
+
+  @override
+  String get messageNotDecryptable => 'Message not decryptable';
+
+  @override
+  String get today => 'Today';
+
+  @override
+  String get sending => 'Sending';
+
+  @override
+  String get generatingThumbnail => 'Generating thumbnail';
+
+  @override
+  String get encrypting => 'Encrypting';
+
+  @override
+  String get uploading => 'Uploading';
+
+  @override
+  String get edited => '(edited)';
+
+  @override
+  String get couldNotBeSent => 'Could not be sent';
+
+  @override
+  String get yesterday => 'Yesterday';
+
+  @override
+  String get resetRecoveryKey => 'Reset recovery key';
+
+  @override
+  String get pleaseEnter6Digits =>
+      'Please enter 6 digits to enable the app lock.';
+
+  @override
+  String get disableAppLock => 'Disable app lock';
+
+  @override
+  String get disableAppLockAreYouSure =>
+      'Are you sure you want to disable the app lock?';
+
+  @override
+  String get enableBiometrics => 'Enable biometric authentication';
+
+  @override
+  String get disableBiometrics => 'Disable biometric authentication';
+
+  @override
+  String get biometricsDescription =>
+      'With biometric authentication you can unlock the app with your face or your fingerprint. The capabilities depend on your device.';
+
+  @override
+  String get useAppLock => 'Use app lock';
+
+  @override
+  String get unlockWithBiometrics => 'Unlock with biometric authentication';
+
+  @override
+  String get resetPin => 'Reset pin';
+
+  @override
+  String forwardCountMessages(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count messages',
+      one: 'one message',
+    );
+    return 'Forward $_temp0?';
+  }
+
+  @override
+  String get loadingMessages => 'Xabarlar yuklanmoqda';
+
+  @override
+  String get buildDoesNotSupportFirebase =>
+      'This build does not support firebase cloud messaging.';
+
+  @override
+  String get unableToRegisterDeviceForFirebase =>
+      'Unable to register device for firebase cloud messaging.';
+
+  @override
+  String get unifiedPushDistributors => 'Unified Push distributors:';
+
+  @override
+  String get doubleTapToReact => 'Double-tap to react';
+
+  @override
+  String get doubleTapToReactDescription =>
+      'Double-tap a message to react instead of selecting text';
+
+  @override
+  String get doubleTapReaction => 'Double-tap reaction';
+
+  @override
+  String get shareCrashReports => 'Share crash reports';
+
+  @override
+  String get shareCrashReportsDescription =>
+      'Automatically share crash reports with the developers?';
+
+  @override
+  String countActiveCallMembers(int count) {
+    return '$count active call members';
+  }
+
+  @override
+  String get enterCall => 'Enter call';
+
+  @override
+  String get videoCallsBetaWarning =>
+      'Iltimos, video qoʻngʻiroqlar hozirda beta-versiyada ekanligini unutmang. Ular kutilganidek ishlamasligi yoki barcha platformalarda umuman ishlamasligi mumkin.';
+
+  @override
+  String get noDevicesFound => 'No devices found';
+
+  @override
+  String get incomingCall => 'Incoming call';
+
+  @override
+  String get videoCall => 'Video chaqiruv';
+
+  @override
+  String get voiceCall => 'Ovozli qoʻngʻiroq';
+
+  @override
+  String get missedCall => 'Missed call';
+
+  @override
+  String get callBack => 'Call back';
+
+  @override
+  String get hangUp => 'Hang up';
+
+  @override
+  String get waitingForParticipant => 'Waiting for participant...';
+
+  @override
+  String get decline => 'Rad qilish';
+
+  @override
+  String get startCall => 'Start call';
+
+  @override
+  String get selectCamera => 'Select camera';
+
+  @override
+  String get selectMicrophone => 'Select microphone';
+
+  @override
+  String get selectSpeaker => 'Select speaker';
+
+  @override
+  String get toggleMicrophone => 'Toggle microphone';
+
+  @override
+  String get toggleCamera => 'Toggle camera';
+
+  @override
+  String get startScreensharing => 'Start screensharing';
+
+  @override
+  String get stopScreensharing => 'Stop screensharing';
+
+  @override
+  String get raiseHand => 'Raise hand';
+
+  @override
+  String get stopRaiseHand => 'Stop raise hand';
+
+  @override
+  String get preferSpeaker => 'Prefer speaker';
+
+  @override
+  String unexpectedErrorOccurded(String msg) {
+    return 'Unfortunately, an unexpected error has occurred: $msg';
+  }
+
+  @override
+  String incomingCallFrom(String user) {
+    return 'Incoming call from $user';
+  }
+
+  @override
+  String serverRespondedWithError(String error) {
+    return 'The server has replied with an error message: $error';
+  }
+
+  @override
+  String get sharedLocation => 'Shared location';
+
+  @override
+  String get pasteImage => 'Paste image';
+
+  @override
+  String get noImageInClipboard => 'No image in clipboard';
+
+  @override
+  String get doYouAlsoWantToBlock => 'Do you also want to block this user?';
+
+  @override
+  String get declineAndBlock => 'Decline and block';
+
+  @override
+  String senderHasInvitedYouToTheChat(String sender, String nameOrAlias) {
+    return '$sender has invited you to the chat \'$nameOrAlias\'.';
+  }
+
+  @override
+  String senderHasInvitedYouToTheSpace(String sender, String nameOrAlias) {
+    return '$sender has invited you to the space \'$nameOrAlias\'.';
   }
 }

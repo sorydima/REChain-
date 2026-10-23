@@ -1,8 +1,7 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:go_router/go_router.dart';
-import 'package:matrix/matrix.dart';
-import 'package:pretty_qr_code/pretty_qr_code.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/config/themes.dart';
@@ -10,10 +9,14 @@ import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/pages/new_private_chat/new_private_chat.dart';
 import 'package:rechainonline/utils/localized_exception_extension.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
-import 'package:rechainonline/utils/url_launcher.dart';
 import 'package:rechainonline/widgets/avatar.dart';
 import 'package:rechainonline/widgets/layouts/max_width_body.dart';
 import 'package:rechainonline/widgets/matrix.dart';
+import 'package:go_router/go_router.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
+import 'package:pretty_qr_code/pretty_qr_code.dart';
+
 import '../../widgets/qr_code_viewer.dart';
 
 class NewPrivateChatView extends StatelessWidget {
@@ -33,15 +36,6 @@ class NewPrivateChatView extends StatelessWidget {
         leading: const Center(child: BackButton()),
         title: Text(L10n.of(context).newChat),
         backgroundColor: theme.scaffoldBackgroundColor,
-        actions: [
-          TextButton(
-            onPressed: UrlLauncher(
-              context,
-              AppConfig.startChatTutorial,
-            ).launchUrl,
-            child: Text(L10n.of(context).help),
-          ),
-        ],
       ),
       body: MaxWidthBody(
         withScrolling: false,

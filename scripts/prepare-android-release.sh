@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
+
+# SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+# SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 cd android
 echo $FDROID_KEY | base64 --decode --ignore-garbage > key.jks
 echo "storePassword=${FDROID_KEY_PASS}" >> key.properties

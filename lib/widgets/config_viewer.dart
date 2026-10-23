@@ -1,11 +1,15 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:go_router/go_router.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/config/setting_keys.dart';
+import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/widgets/adaptive_dialogs/show_text_input_dialog.dart';
 import 'package:rechainonline/widgets/matrix.dart';
+import 'package:go_router/go_router.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ConfigViewer extends StatefulWidget {
   const ConfigViewer({super.key});
@@ -15,7 +19,9 @@ class ConfigViewer extends StatefulWidget {
 }
 
 class _ConfigViewerState extends State<ConfigViewer> {
-  void _changeSetting(
+  String _searchQuery = '';
+
+  Future<void> _changeSetting(
     AppSettings appSetting,
     SharedPreferences store,
     String initialValue,
@@ -47,15 +53,32 @@ class _ConfigViewerState extends State<ConfigViewer> {
     setState(() {});
   }
 
+  Future<void> _reset() async {
+    await AppSettings.reset();
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final normalizedQuery = _searchQuery.trim().toLowerCase();
+    final filteredSettings = AppSettings.values
+        .where((setting) {
+          if (normalizedQuery.isEmpty) return true;
+          return setting.name.toLowerCase().contains(normalizedQuery);
+        })
+        .toList(growable: false);
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Advanced configurations'),
+        title: Text(L10n.of(context).advancedConfigurations),
         leading: BackButton(onPressed: () => context.go('/')),
+        actions: [
+          TextButton(onPressed: _reset, child: Text(L10n.of(context).reset)),
+        ],
       ),
       body: Column(
+        crossAxisAlignment: .stretch,
         children: [
           Container(
             margin: const EdgeInsets.all(16),
@@ -66,12 +89,29 @@ class _ConfigViewerState extends State<ConfigViewer> {
               style: TextStyle(color: theme.colorScheme.onErrorContainer),
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: TextField(
+              onChanged: (value) => setState(() => _searchQuery = value),
+              decoration: InputDecoration(
+                hintText: 'Search config key',
+                prefixIcon: const Icon(Icons.search),
+                border: const OutlineInputBorder(),
+                isDense: true,
+                filled: true,
+                fillColor: theme.colorScheme.surfaceContainerHighest.withAlpha(
+                  128,
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(height: 8),
           Expanded(
             child: ListView.builder(
-              itemCount: AppSettings.values.length,
+              itemCount: filteredSettings.length,
               itemBuilder: (context, i) {
                 final store = Matrix.of(context).store;
-                final appSetting = AppSettings.values[i];
+                final appSetting = filteredSettings[i];
                 var value = '';
                 if (appSetting is AppSettings<String>) {
                   value = appSetting.value;
@@ -80,7 +120,13 @@ class _ConfigViewerState extends State<ConfigViewer> {
                   value = appSetting.value.toString();
                 }
                 if (appSetting is AppSettings<bool>) {
-                  value = appSetting.value.toString();
+                  return SwitchListTile.adaptive(
+                    title: Text(appSetting.name),
+                    subtitle: Text(value),
+                    value: appSetting.value,
+                    onChanged: (value) =>
+                        _changeSetting(appSetting, store, (!value).toString()),
+                  );
                 }
                 if (appSetting is AppSettings<double>) {
                   value = appSetting.value.toString();

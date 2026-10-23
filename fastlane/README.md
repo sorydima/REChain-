@@ -1,56 +1,10 @@
-fastlane documentation
-----
+<!--
+SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-# Installation
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
 
-Make sure you have the latest version of the Xcode command line tools installed:
+This directory exists because of the F-Droid build process. F-Droid is using the same directory structure as Fastlane for the app metadata.
 
-```sh
-xcode-select --install
-```
-
-For _fastlane_ installation instructions, see [Installing _fastlane_](https://docs.fastlane.tools/#installing-fastlane)
-
-# Available Actions
-
-## Android
-
-### android set_build_code_internal
-
-```sh
-[bundle exec] fastlane android set_build_code_internal
-```
-
-
-
-### android deploy_internal_test
-
-```sh
-[bundle exec] fastlane android deploy_internal_test
-```
-
-
-
-### android deploy_candidate
-
-```sh
-[bundle exec] fastlane android deploy_candidate
-```
-
-
-
-### android deploy_release
-
-```sh
-[bundle exec] fastlane android deploy_release
-```
-
-
-
-----
-
-This README.md is auto-generated and will be re-generated every time [_fastlane_](https://fastlane.tools) is run.
-
-More information about _fastlane_ can be found on [fastlane.tools](https://fastlane.tools).
-
-The documentation of _fastlane_ can be found on [docs.fastlane.tools](https://docs.fastlane.tools).
+Because F-Droid expects the metadata to be located in the root of the repository we need to have this symlink.

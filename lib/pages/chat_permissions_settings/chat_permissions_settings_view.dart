@@ -1,12 +1,16 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:matrix/matrix.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/pages/chat_permissions_settings/chat_permissions_settings.dart';
 import 'package:rechainonline/pages/chat_permissions_settings/permission_list_tile.dart';
+import 'package:rechainonline/utils/matrix_live_kit_calls/matrix_live_kit_call_member.dart';
 import 'package:rechainonline/widgets/layouts/max_width_body.dart';
 import 'package:rechainonline/widgets/matrix.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
 
 class ChatPermissionsSettingsView extends StatelessWidget {
   final ChatPermissionsSettingsController controller;
@@ -41,6 +45,8 @@ class ChatPermissionsSettingsView extends StatelessWidget {
             final eventsPowerLevels = Map<String, int?>.from(
               powerLevelsContent.tryGetMap<String, int?>('events') ?? {},
             )..removeWhere((k, v) => v is! int);
+            eventsPowerLevels[MatrixRtcCallMember.eventType] ??=
+                powerLevelsContent['state_default'] as int? ?? 50;
             return Column(
               children: [
                 ListTile(

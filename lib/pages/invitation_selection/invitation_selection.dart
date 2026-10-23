@@ -1,13 +1,17 @@
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 import 'dart:async';
-
-import 'package:flutter/material.dart';
-
-import 'package:matrix/matrix.dart';
 
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/pages/invitation_selection/invitation_selection_view.dart';
 import 'package:rechainonline/widgets/future_loading_dialog.dart';
 import 'package:rechainonline/widgets/matrix.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
+
 import '../../utils/localized_exception_extension.dart';
 
 class InvitationSelection extends StatefulWidget {
@@ -50,7 +54,13 @@ class InvitationSelectionController extends State<InvitationSelection> {
     return contacts;
   }
 
-  void inviteAction(BuildContext context, String id, String displayname) async {
+  Future<void> inviteAction(
+    BuildContext context,
+    String id,
+    String displayname,
+  ) async {
+    final l10n = L10n.of(context);
+    final scaffoldMessenger = ScaffoldMessenger.of(context);
     final room = Matrix.of(context).client.getRoomById(roomId!)!;
 
     final success = await showFutureLoadingDialog(
@@ -58,15 +68,14 @@ class InvitationSelectionController extends State<InvitationSelection> {
       future: () => room.invite(id),
     );
     if (success.error == null) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(L10n.of(context).contactHasBeenInvitedToTheGroup),
-        ),
+      if (!context.mounted) return;
+      scaffoldMessenger.showSnackBar(
+        SnackBar(content: Text(l10n.contactHasBeenInvitedToTheGroup)),
       );
     }
   }
 
-  void searchUserWithCoolDown(String text) async {
+  void searchUserWithCoolDown(String text) {
     coolDown?.cancel();
     coolDown = Timer(
       const Duration(milliseconds: 500),
@@ -74,7 +83,7 @@ class InvitationSelectionController extends State<InvitationSelection> {
     );
   }
 
-  void searchUser(BuildContext context, String text) async {
+  Future<void> searchUser(BuildContext context, String text) async {
     coolDown?.cancel();
     if (text.isEmpty) {
       setState(() => foundProfiles = []);
@@ -88,6 +97,7 @@ class InvitationSelectionController extends State<InvitationSelection> {
     try {
       response = await matrix.client.searchUserDirectory(text, limit: 10);
     } catch (e) {
+      if (!context.mounted) return;
       ScaffoldMessenger.of(
         context,
       ).showSnackBar(SnackBar(content: Text((e).toLocalizedString(context))));
@@ -97,7 +107,7 @@ class InvitationSelectionController extends State<InvitationSelection> {
     }
     setState(() {
       foundProfiles = List<Profile>.from(response.results);
-      if (text.isValidMatrixId &&
+      if (text.isValidMatrixIdStrict() &&
           foundProfiles.indexWhere((profile) => text == profile.userId) == -1) {
         setState(
           () => foundProfiles = [
@@ -106,6 +116,12 @@ class InvitationSelectionController extends State<InvitationSelection> {
         );
       }
     });
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
   }
 
   @override

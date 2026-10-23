@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 extension SizeString on num {
   String get sizeString {
     var size = toDouble();
@@ -7,15 +12,15 @@ extension SizeString on num {
     if (size < 1000 * 1000) {
       size = size / 1000;
       size = (size * 10).round() / 10;
-      return '${size.toString()} KB';
+      return '$size KB';
     }
     if (size < 1000 * 1000 * 1000) {
       size = size / 1000000;
       size = (size * 10).round() / 10;
-      return '${size.toString()} MB';
+      return '$size MB';
     }
     size = size / 1000 * 1000 * 1000 * 1000;
     size = (size * 10).round() / 10;
-    return '${size.toString()} GB';
+    return '$size GB';
   }
 }

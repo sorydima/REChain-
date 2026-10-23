@@ -6,9 +6,6 @@
 #endif
 
 #include "flutter/generated_plugin_registrant.h"
-#include "AutonomousNotificationService.h"
-#include "CrashReportingManager.h"
-#include "LinuxSystemIntegration.h"
 
 struct _MyApplication {
   GtkApplication parent_instance;
@@ -73,15 +70,9 @@ static void my_application_activate(GApplication* application) {
 
   fl_register_plugins(FL_PLUGIN_REGISTRY(view));
 
-  // Initialize native services
-  InitializeNativeServices();
-
-  gtk_widget_grab_focus(GTK_WIDGET(view));
   gtk_widget_show(GTK_WIDGET(window));
-
-  g_object_unref(view);
-
-  return TRUE;
+  gtk_widget_show(GTK_WIDGET(view));
+  gtk_widget_grab_focus(GTK_WIDGET(view));
 }
 
 // Implements GApplication::local_command_line.
@@ -143,32 +134,4 @@ MyApplication* my_application_new() {
                                      "application-id", APPLICATION_ID,
                                      "flags", G_APPLICATION_NON_UNIQUE,
                                      nullptr));
-}
-
-// Native services initialization implementation
-void InitializeNativeServices() {
-  // Initialize crash reporting manager
-  auto& crashManager = CrashReportingManager::GetInstance();
-  if (crashManager.Initialize()) {
-    crashManager.StartSession();
-    crashManager.LogInfo("Linux native services initialization started");
-  }
-  
-  // Initialize notification service
-  auto& notificationService = AutonomousNotificationService::GetInstance();
-  if (notificationService.Initialize()) {
-    notificationService.SetApplicationName("REChain");
-    notificationService.SetApplicationIcon("rechain");
-    notificationService.SetDesktopEntry("com.rechain.online");
-  }
-  
-  // Initialize system integration
-  auto& systemIntegration = LinuxSystemIntegration::GetInstance();
-  if (systemIntegration.Initialize()) {
-    systemIntegration.RegisterDesktopEntry();
-    systemIntegration.RegisterURLScheme("matrix");
-    systemIntegration.CreateSystemTrayIcon();
-  }
-  
-  crashManager.LogInfo("Linux native services initialization completed");
 }

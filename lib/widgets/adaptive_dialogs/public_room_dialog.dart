@@ -1,13 +1,18 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:flutter_linkify/flutter_linkify.dart';
-import 'package:go_router/go_router.dart';
-import 'package:matrix/matrix.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/l10n/l10n.dart';
-import 'package:rechainonline/models/public_room.dart';
+import 'package:rechainonline/utils/rechainonline_share.dart';
 import 'package:rechainonline/widgets/adaptive_dialogs/show_ok_cancel_alert_dialog.dart';
+import 'package:rechainonline/widgets/adaptive_dialogs/show_text_input_dialog.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
+import 'package:go_router/go_router.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
+
 import '../../config/themes.dart';
 import '../../utils/url_launcher.dart';
 import '../avatar.dart';
@@ -24,7 +29,8 @@ class PublicRoomDialog extends StatelessWidget {
 
   const PublicRoomDialog({super.key, this.roomAlias, this.chunk, this.via});
 
-  void _joinRoom(BuildContext context) async {
+  Future<void> _joinRoom(BuildContext context) async {
+    final l10n = L10n.of(context);
     final client = Matrix.of(context).client;
     final chunk = this.chunk;
     final knock = chunk?.joinRule == 'knock';
@@ -48,12 +54,13 @@ class PublicRoomDialog extends StatelessWidget {
     );
     final roomId = result.result;
     if (roomId == null) return;
+    if (!context.mounted) return;
     if (knock && client.getRoomById(roomId) == null) {
       Navigator.of(context).pop<bool>(true);
       await showOkAlertDialog(
         context: context,
-        title: L10n.of(context).youHaveKnocked,
-        message: L10n.of(context).pleaseWaitUntilInvited,
+        title: l10n.youHaveKnocked,
+        message: l10n.pleaseWaitUntilInvited,
       );
       return;
     }
@@ -72,40 +79,18 @@ class PublicRoomDialog extends StatelessWidget {
 
   bool _testRoom(PublishedRoomsChunk r) => r.canonicalAlias == roomAlias;
 
-  Future<PublicRoom> _search(BuildContext context) async {
+  Future<PublishedRoomsChunk> _search(BuildContext context) async {
+    final l10n = L10n.of(context);
     final chunk = this.chunk;
-    if (chunk != null) return PublicRoom.fromJson({
-      'room_id': chunk.roomId,
-      'name': chunk.name,
-      'topic': chunk.topic,
-      'avatar_url': chunk.avatarUrl?.toString(),
-      'canonical_alias': chunk.canonicalAlias,
-      'num_joined_members': chunk.numJoinedMembers,
-      'world_readable': chunk.worldReadable,
-      'guest_can_join': chunk.guestCanJoin,
-      'join_rule': chunk.joinRule,
-      'room_type': chunk.roomType,
-    });
+    if (chunk != null) return chunk;
     final query = await Matrix.of(context).client.queryPublicRooms(
       server: roomAlias!.domain,
       filter: PublicRoomQueryFilter(genericSearchTerm: roomAlias),
     );
     if (!query.chunk.any(_testRoom)) {
-      throw (L10n.of(context).noRoomsFound);
+      throw (l10n.noRoomsFound);
     }
-    final foundChunk = query.chunk.firstWhere(_testRoom);
-    return PublicRoom.fromJson({
-      'room_id': foundChunk.roomId,
-      'name': foundChunk.name,
-      'topic': foundChunk.topic,
-      'avatar_url': foundChunk.avatarUrl?.toString(),
-      'canonical_alias': foundChunk.canonicalAlias,
-      'num_joined_members': foundChunk.numJoinedMembers,
-      'world_readable': foundChunk.worldReadable,
-      'guest_can_join': foundChunk.guestCanJoin,
-      'join_rule': foundChunk.joinRule,
-      'room_type': foundChunk.roomType,
-    });
+    return query.chunk.firstWhere(_testRoom);
   }
 
   @override
@@ -114,16 +99,9 @@ class PublicRoomDialog extends StatelessWidget {
     final roomLink = roomAlias ?? chunk?.roomId;
     var copied = false;
     return AlertDialog.adaptive(
-      title: ConstrainedBox(
-        constraints: const BoxConstraints(maxWidth: 256),
-        child: Text(
-          chunk?.name ?? roomAlias?.localpart ?? chunk?.roomId ?? 'Unknown',
-          textAlign: TextAlign.center,
-        ),
-      ),
       content: ConstrainedBox(
-        constraints: const BoxConstraints(maxWidth: 256, maxHeight: 256),
-        child: FutureBuilder<PublicRoom>(
+        constraints: const BoxConstraints(maxWidth: 256),
+        child: FutureBuilder<PublishedRoomsChunk>(
           future: _search(context),
           builder: (context, snapshot) {
             final theme = Theme.of(context);
@@ -137,121 +115,197 @@ class PublicRoomDialog extends StatelessWidget {
                 mainAxisSize: .min,
                 crossAxisAlignment: .stretch,
                 children: [
-                  if (roomLink != null)
-                    HoverBuilder(
-                      builder: (context, hovered) => StatefulBuilder(
-                        builder: (context, setState) => MouseRegion(
-                          cursor: SystemMouseCursors.click,
-                          child: GestureDetector(
-                            onTap: () {
-                              Clipboard.setData(ClipboardData(text: roomLink));
-                              setState(() {
-                                copied = true;
-                              });
-                            },
-                            child: RichText(
-                              text: TextSpan(
-                                children: [
-                                  WidgetSpan(
-                                    child: Padding(
-                                      padding: const EdgeInsets.only(
-                                        right: 4.0,
-                                      ),
-                                      child: AnimatedScale(
-                                        duration:
-                                            rechainonlineThemes.animationDuration,
-                                        curve: rechainonlineThemes.animationCurve,
-                                        scale: hovered
-                                            ? 1.33
-                                            : copied
-                                            ? 1.25
-                                            : 1.0,
-                                        child: Icon(
-                                          copied
-                                              ? Icons.check_circle
-                                              : Icons.copy,
-                                          size: 12,
-                                          color: copied ? Colors.green : null,
+                  Row(
+                    spacing: 12,
+                    children: [
+                      Avatar(
+                        mxContent: avatar,
+                        name: profile?.name ?? roomLink,
+                        size: Avatar.defaultSize * 1.5,
+                        onTap: avatar != null
+                            ? () => showDialog(
+                                context: context,
+                                builder: (_) => MxcImageViewer(avatar),
+                              )
+                            : null,
+                      ),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: .start,
+                          children: [
+                            Text(
+                              profile?.name ??
+                                  roomLink ??
+                                  profile?.roomId ??
+                                  ' - ',
+                              maxLines: 1,
+                              overflow: .ellipsis,
+                              style: TextStyle(fontSize: 16),
+                            ),
+                            const SizedBox(height: 8),
+                            if (roomLink != null)
+                              HoverBuilder(
+                                builder: (context, hovered) => StatefulBuilder(
+                                  builder: (context, setState) => MouseRegion(
+                                    cursor: SystemMouseCursors.click,
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        Clipboard.setData(
+                                          ClipboardData(text: roomLink),
+                                        );
+                                        setState(() {
+                                          copied = true;
+                                        });
+                                      },
+                                      child: RichText(
+                                        text: TextSpan(
+                                          children: [
+                                            WidgetSpan(
+                                              child: Padding(
+                                                padding: const EdgeInsets.only(
+                                                  right: 4.0,
+                                                ),
+                                                child: AnimatedScale(
+                                                  duration: rechainonlineThemes
+                                                      .animationDuration,
+                                                  curve: rechainonlineThemes
+                                                      .animationCurve,
+                                                  scale: hovered
+                                                      ? 1.33
+                                                      : copied
+                                                      ? 1.25
+                                                      : 1.0,
+                                                  child: Icon(
+                                                    copied
+                                                        ? Icons.check_circle
+                                                        : Icons.copy,
+                                                    size: 12,
+                                                    color: copied
+                                                        ? Colors.green
+                                                        : null,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                            TextSpan(text: roomLink),
+                                          ],
+                                          style: theme.textTheme.bodyMedium
+                                              ?.copyWith(fontSize: 10),
                                         ),
+                                        maxLines: 1,
+                                        textAlign: TextAlign.center,
                                       ),
                                     ),
                                   ),
-                                  TextSpan(text: roomLink),
-                                ],
-                                style: theme.textTheme.bodyMedium?.copyWith(
-                                  fontSize: 10,
                                 ),
                               ),
-                              textAlign: TextAlign.center,
+
+                            if (profile?.numJoinedMembers != null)
+                              Text(
+                                L10n.of(context).countParticipants(
+                                  profile?.numJoinedMembers ?? 0,
+                                ),
+                                style: const TextStyle(fontSize: 10),
+                                textAlign: TextAlign.center,
+                              ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  if (topic != null && topic.isNotEmpty)
+                    ConstrainedBox(
+                      constraints: BoxConstraints(maxHeight: 200),
+                      child: Scrollbar(
+                        thumbVisibility: true,
+                        trackVisibility: true,
+                        child: SingleChildScrollView(
+                          child: SelectableLinkify(
+                            text: topic,
+                            textScaleFactor: MediaQuery.textScalerOf(
+                              context,
+                            ).scale(1),
+                            textAlign: .start,
+                            options: const LinkifyOptions(humanize: false),
+                            style: TextStyle(
+                              color: theme.colorScheme.onSurface,
                             ),
+                            linkStyle: TextStyle(
+                              color: theme.colorScheme.primary,
+                              decoration: TextDecoration.underline,
+                              decorationColor: theme.colorScheme.primary,
+                            ),
+                            onOpen: (url) =>
+                                UrlLauncher(context, url.url).launchUrl(),
                           ),
                         ),
                       ),
                     ),
-                  Center(
-                    child: Avatar(
-                      mxContent: avatar,
-                      name: profile?.name ?? roomLink,
-                      size: Avatar.defaultSize * 2,
-                      onTap: avatar != null
-                          ? () => showDialog(
-                              context: context,
-                              builder: (_) => MxcImageViewer(avatar),
-                            )
-                          : null,
+
+                  Row(
+                    mainAxisAlignment: .spaceBetween,
+                    spacing: 4,
+                    children: [
+                      AdaptiveIconTextButton(
+                        label: L10n.of(context).report,
+                        icon: Icons.gavel_outlined,
+                        onTap: () async {
+                          Navigator.of(context).pop();
+                          final reason = await showTextInputDialog(
+                            context: context,
+                            title: L10n.of(context).whyDoYouWantToReportThis,
+                            okLabel: L10n.of(context).report,
+                            cancelLabel: L10n.of(context).cancel,
+                            hintText: L10n.of(context).reason,
+                          );
+                          if (reason == null || reason.isEmpty) return;
+                          if (!context.mounted) return;
+                          await showFutureLoadingDialog(
+                            context: context,
+                            future: () => Matrix.of(context).client.reportRoom(
+                              chunk?.roomId ?? roomAlias!,
+                              reason,
+                            ),
+                          );
+                        },
+                      ),
+                      AdaptiveIconTextButton(
+                        label: L10n.of(context).copy,
+                        icon: Icons.copy_outlined,
+                        onTap: () =>
+                            Clipboard.setData(ClipboardData(text: roomLink!)),
+                      ),
+                      AdaptiveIconTextButton(
+                        label: L10n.of(context).share,
+                        icon: Icons.adaptive.share,
+                        onTap: () => rechainonlineShare.share(
+                          'https://matrix.to/#/$roomLink',
+                          context,
+                        ),
+                      ),
+                    ],
+                  ),
+                  AdaptiveDialogInkWell(
+                    onTap: () => _joinRoom(context),
+                    child: Text(
+                      chunk?.joinRule == 'knock' &&
+                              Matrix.of(
+                                    context,
+                                  ).client.getRoomById(chunk!.roomId) ==
+                                  null
+                          ? L10n.of(context).knock
+                          : chunk?.roomType == 'm.space'
+                          ? L10n.of(context).joinSpace
+                          : L10n.of(context).joinRoom,
+                      style: TextStyle(color: theme.colorScheme.secondary),
                     ),
                   ),
-                  if (profile?.numJoinedMembers != null)
-                    Text(
-                      L10n.of(
-                        context,
-                      ).countParticipants(profile?.numJoinedMembers ?? 0),
-                      style: const TextStyle(fontSize: 10),
-                      textAlign: TextAlign.center,
-                    ),
-                  if (topic != null && topic.isNotEmpty)
-                    SelectableLinkify(
-                      text: topic,
-                      textScaleFactor: MediaQuery.textScalerOf(
-                        context,
-                      ).scale(1),
-                      textAlign: TextAlign.center,
-                      options: const LinkifyOptions(humanize: false),
-                      linkStyle: TextStyle(
-                        color: theme.colorScheme.primary,
-                        decoration: TextDecoration.underline,
-                        decorationColor: theme.colorScheme.primary,
-                      ),
-                      onOpen: (url) =>
-                          UrlLauncher(context, url.url).launchUrl(),
-                    ),
                 ],
               ),
             );
           },
         ),
       ),
-      actions: [
-        AdaptiveDialogAction(
-          bigButtons: true,
-          borderRadius: AdaptiveDialogAction.topRadius,
-          onPressed: () => _joinRoom(context),
-          child: Text(
-            chunk?.joinRule == 'knock' &&
-                    Matrix.of(context).client.getRoomById(chunk!.roomId) == null
-                ? L10n.of(context).knock
-                : chunk?.roomType == 'm.space'
-                ? L10n.of(context).joinSpace
-                : L10n.of(context).joinRoom,
-          ),
-        ),
-        AdaptiveDialogAction(
-          bigButtons: true,
-          borderRadius: AdaptiveDialogAction.bottomRadius,
-          onPressed: Navigator.of(context).pop,
-          child: Text(L10n.of(context).close),
-        ),
-      ],
     );
   }
 }

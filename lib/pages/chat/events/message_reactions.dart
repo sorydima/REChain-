@@ -1,13 +1,16 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:collection/collection.dart' show IterableExtension;
-import 'package:matrix/matrix.dart';
-
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/widgets/avatar.dart';
 import 'package:rechainonline/widgets/future_loading_dialog.dart';
 import 'package:rechainonline/widgets/matrix.dart';
 import 'package:rechainonline/widgets/mxc_image.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
 
 class MessageReactions extends StatelessWidget {
   final Event event;
@@ -26,7 +29,7 @@ class MessageReactions extends StatelessWidget {
 
     for (final e in allReactionEvents) {
       final key = e.content
-          .tryGetMap<String, dynamic>('m.relates_to')
+          .tryGetMap<String, Object?>('m.relates_to')
           ?.tryGet<String>('key');
       if (key != null) {
         if (!reactionMap.containsKey(key)) {
@@ -66,7 +69,7 @@ class MessageReactions extends StatelessWidget {
                 if (evt != null) {
                   showFutureLoadingDialog(
                     context: context,
-                    future: () => evt.redactEvent(),
+                    future: evt.redactEvent,
                   );
                 }
               } else {
@@ -79,15 +82,6 @@ class MessageReactions extends StatelessWidget {
             ).show(context),
           ),
         ),
-        if (allReactionEvents.any((e) => e.status.isSending))
-          const SizedBox(
-            width: 24,
-            height: 24,
-            child: Padding(
-              padding: EdgeInsets.all(4.0),
-              child: CircularProgressIndicator.adaptive(strokeWidth: 1),
-            ),
-          ),
       ],
     );
   }
@@ -114,61 +108,45 @@ class _Reaction extends StatelessWidget {
 
     Widget content;
     if (reactionKey.startsWith('mxc://')) {
-      content = Row(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          MxcImage(
-            uri: Uri.parse(reactionKey),
-            width: 20,
-            height: 20,
-            animated: false,
-            isThumbnail: false,
-          ),
-          if (count > 1) ...[
-            const SizedBox(width: 4),
-            Text(
-              count.toString(),
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: theme.colorScheme.onSurface,
-                fontSize: DefaultTextStyle.of(context).style.fontSize,
-              ),
-            ),
-          ],
-        ],
+      content = MxcImage(
+        uri: Uri.parse(reactionKey),
+        width: 20,
+        height: 20,
+        animated: false,
+        isThumbnail: false,
       );
     } else {
       var renderKey = Characters(reactionKey);
       if (renderKey.length > 10) {
         renderKey = renderKey.getRange(0, 9) + Characters('…');
       }
-      content = Text(
-        renderKey.toString() + (count > 1 ? ' $count' : ''),
-        style: TextStyle(
-          color: theme.colorScheme.onSurface,
-          fontSize: DefaultTextStyle.of(context).style.fontSize,
-        ),
-      );
+      content = Text(renderKey.toString(), style: TextStyle(fontSize: 14));
     }
-    return InkWell(
-      onTap: () => onTap != null ? onTap!() : null,
-      onLongPress: () => onLongPress != null ? onLongPress!() : null,
-      borderRadius: BorderRadius.circular(AppConfig.borderRadius / 2),
-      child: Container(
-        decoration: BoxDecoration(
-          color: reacted == true
-              ? theme.colorScheme.primaryContainer
-              : theme.colorScheme.surfaceContainerHigh,
-          border: Border.all(
-            color: reacted == true
-                ? theme.colorScheme.primary
-                : theme.colorScheme.surfaceContainerHigh,
-            width: 1,
+    return Badge(
+      isLabelVisible: count > 1,
+      label: Text(count.toString()),
+      textStyle: TextStyle(fontSize: 10),
+      textColor: theme.colorScheme.onPrimary,
+      backgroundColor: theme.colorScheme.primary.withAlpha(200),
+      child: InkWell(
+        onTap: () => onTap != null ? onTap!() : null,
+        onLongPress: () => onLongPress != null ? onLongPress!() : null,
+        borderRadius: BorderRadius.circular(AppConfig.borderRadius / 2),
+        child: Container(
+          decoration: BoxDecoration(
+            color: theme.colorScheme.secondaryContainer,
+            border: Border.all(
+              color: reacted == true
+                  ? theme.colorScheme.secondary
+                  : theme.colorScheme.secondaryContainer,
+              width: 1,
+            ),
+            borderRadius: BorderRadius.circular(AppConfig.borderRadius / 2),
           ),
-          borderRadius: BorderRadius.circular(AppConfig.borderRadius / 2),
+          height: 24,
+          padding: const EdgeInsets.symmetric(horizontal: 3),
+          child: content,
         ),
-        padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
-        child: content,
       ),
     );
   }
@@ -194,7 +172,7 @@ class _AdaptableReactorsDialog extends StatelessWidget {
 
   const _AdaptableReactorsDialog({this.client, this.reactionEntry});
 
-  Future<bool?> show(BuildContext context) => showAdaptiveDialog(
+  Future<bool?> show(BuildContext context) => showDialog(
     context: context,
     builder: (context) => this,
     barrierDismissible: true,
@@ -225,6 +203,6 @@ class _AdaptableReactorsDialog extends StatelessWidget {
 
     final title = Center(child: Text(reactionEntry!.key));
 
-    return AlertDialog.adaptive(title: title, content: body);
+    return AlertDialog(title: title, content: body);
   }
 }

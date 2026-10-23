@@ -1,0 +1,95 @@
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import 'package:rechainonline/config/setting_keys.dart';
+import 'package:rechainonline/l10n/l10n.dart';
+import 'package:rechainonline/pages/sign_in/view_model/model/public_homeserver_data.dart';
+import 'package:rechainonline/utils/localized_exception_extension.dart';
+import 'package:rechainonline/utils/platform_infos.dart';
+import 'package:rechainonline/utils/sign_in_flows/oidc_login.dart';
+import 'package:rechainonline/utils/sign_in_flows/sso_login.dart';
+import 'package:rechainonline/widgets/adaptive_dialogs/show_ok_cancel_alert_dialog.dart';
+import 'package:rechainonline/widgets/matrix.dart';
+import 'package:flutter/foundation.dart';
+import 'package:go_router/go_router.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
+import 'package:url_launcher/url_launcher_string.dart';
+
+Future<void> connectToHomeserverFlow(
+  PublicHomeserverData homeserverData,
+  BuildContext context,
+  void Function(AsyncSnapshot<bool>) setState,
+  bool signUp,
+) async {
+  setState(AsyncSnapshot.waiting());
+  try {
+    final homeserverInput = homeserverData.name!;
+    var homeserver = Uri.parse(homeserverInput);
+    if (homeserver.scheme.isEmpty) {
+      homeserver = Uri.https(homeserverInput, '');
+    }
+    final l10n = L10n.of(context);
+    final client = await Matrix.of(context).getLoginClient();
+    final (_, _, loginFlows, authMetadata) = await client.checkHomeserver(
+      homeserver,
+      fetchAuthMetadata: true,
+    );
+
+    final regLink = homeserverData.regLink;
+    final supportsSso = loginFlows.any((flow) => flow.type == 'm.login.sso');
+
+    if ((kIsWeb || PlatformInfos.isLinux) &&
+        (supportsSso || authMetadata != null || (signUp && regLink != null))) {
+      if (!context.mounted) return;
+      final consent = await showOkCancelAlertDialog(
+        context: context,
+        title: l10n.appWantsToUseForLogin(homeserverInput),
+        message: l10n.appWantsToUseForLoginDescription,
+        okLabel: l10n.continueText,
+      );
+      if (consent != OkCancelResult.ok) return;
+      if (!context.mounted) return;
+    }
+    if (!context.mounted) return;
+
+    if (authMetadata != null && AppSettings.enableMatrixNativeOIDC.value) {
+      await oidcLoginFlow(client, context, signUp);
+    } else if (supportsSso) {
+      await ssoLoginFlow(client, context, signUp, loginFlows);
+    } else {
+      if (signUp && regLink != null) {
+        await launchUrlString(regLink);
+      }
+      if (!context.mounted) return;
+      final pathSegments = List.of(
+        GoRouter.of(context).routeInformationProvider.value.uri.pathSegments,
+      );
+      if (pathSegments.last != 'home') pathSegments.removeLast();
+      pathSegments.add('login');
+      context.push('/${pathSegments.join('/')}', extra: client);
+      setState(AsyncSnapshot.withData(ConnectionState.done, true));
+      return;
+    }
+
+    await AppSettings.defaultHomeserver.setItem(homeserverInput);
+
+    if (context.mounted) {
+      setState(AsyncSnapshot.withData(ConnectionState.done, true));
+      context.go('/backup');
+    }
+  } catch (e, s) {
+    Logs().w('Unable to login', e, s);
+    setState(AsyncSnapshot.withError(ConnectionState.done, e, s));
+    if (!context.mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          e.toLocalizedString(context, ExceptionContext.checkHomeserver),
+        ),
+      ),
+    );
+  }
+}

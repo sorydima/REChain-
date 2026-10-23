@@ -1,10 +1,14 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:go_router/go_router.dart';
-import 'package:matrix/matrix.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/utils/localized_exception_extension.dart';
+import 'package:go_router/go_router.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
+
 import '../../widgets/layouts/max_width_body.dart';
 import '../../widgets/matrix.dart';
 import '../chat_details/participant_list_item.dart';
@@ -124,10 +128,7 @@ class ChatMembersView extends StatelessWidget {
                           SizedBox(
                             height: 64,
                             child: ListView.builder(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 12.0,
-                                vertical: 12.0,
-                              ),
+                              padding: const EdgeInsets.all(12.0),
                               scrollDirection: Axis.horizontal,
                               itemCount: availableFilters.length,
                               itemBuilder: (context, i) => Padding(

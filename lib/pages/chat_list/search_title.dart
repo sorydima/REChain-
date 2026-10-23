@@ -1,4 +1,9 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import 'package:material_ui/material_ui.dart';
 
 class SearchTitle extends StatelessWidget {
   final String title;
@@ -52,7 +57,7 @@ class SearchTitle extends StatelessWidget {
                     Expanded(
                       child: Align(
                         alignment: Alignment.centerRight,
-                        child: trailing!,
+                        child: trailing,
                       ),
                     ),
                 ],

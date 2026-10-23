@@ -1,11 +1,14 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:matrix/matrix.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/pages/settings_3pid/settings_3pid.dart';
 import 'package:rechainonline/widgets/layouts/max_width_body.dart';
 import 'package:rechainonline/widgets/matrix.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
 
 class Settings3PidView extends StatelessWidget {
   final Settings3PidController controller;

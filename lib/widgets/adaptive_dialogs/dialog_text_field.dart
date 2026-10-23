@@ -1,5 +1,11 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import 'package:cupertino_ui/cupertino_ui.dart';
+import 'package:rechainonline/config/app_config.dart';
+import 'package:material_ui/material_ui.dart';
 
 class DialogTextField extends StatelessWidget {
   final TextEditingController? controller;
@@ -17,6 +23,8 @@ class DialogTextField extends StatelessWidget {
   final TextInputType? keyboardType;
   final int? maxLength;
   final bool autocorrect = true;
+  final bool readOnly;
+  final TextStyle? textStyle;
 
   const DialogTextField({
     super.key,
@@ -33,6 +41,8 @@ class DialogTextField extends StatelessWidget {
     this.counterText,
     this.errorText,
     this.obscureText = false,
+    this.readOnly = false,
+    this.textStyle,
   });
 
   @override
@@ -47,6 +57,7 @@ class DialogTextField extends StatelessWidget {
       case TargetPlatform.linux:
       case TargetPlatform.windows:
         return TextField(
+          readOnly: readOnly,
           controller: controller,
           obscureText: obscureText,
           minLines: minLines,
@@ -54,7 +65,18 @@ class DialogTextField extends StatelessWidget {
           maxLength: maxLength,
           keyboardType: keyboardType,
           autocorrect: autocorrect,
+          style: textStyle,
           decoration: InputDecoration(
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(AppConfig.borderRadius / 2),
+              borderSide: BorderSide(color: theme.dividerColor),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(AppConfig.borderRadius / 2),
+              borderSide: BorderSide(color: theme.dividerColor),
+            ),
+            filled: true,
+            fillColor: theme.colorScheme.surfaceBright,
             errorText: errorText,
             hintText: hintText,
             labelText: labelText,
@@ -72,12 +94,14 @@ class DialogTextField extends StatelessWidget {
               height: placeholder == null ? null : ((maxLines ?? 1) + 1) * 20,
               child: CupertinoTextField(
                 controller: controller,
+                readOnly: readOnly,
                 obscureText: obscureText,
                 minLines: minLines,
                 maxLines: maxLines,
                 maxLength: maxLength,
                 keyboardType: keyboardType,
                 autocorrect: autocorrect,
+                style: textStyle,
                 prefix: prefixText != null ? Text(prefixText) : null,
                 suffix: suffixText != null ? Text(suffixText) : null,
                 placeholder: placeholder,

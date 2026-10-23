@@ -1,12 +1,15 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:matrix/matrix.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/pages/chat_search/search_footer.dart';
 import 'package:rechainonline/utils/date_time_extension.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/event_extension.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
 
 class ChatSearchFilesTab extends StatelessWidget {
   final Room room;
@@ -49,15 +52,15 @@ class ChatSearchFilesTab extends StatelessWidget {
           final filetype = (filename.contains('.')
               ? filename.split('.').last.toUpperCase()
               : event.content
-                        .tryGetMap<String, dynamic>('info')
+                        .tryGetMap<String, Object?>('info')
                         ?.tryGet<String>('mimetype')
                         ?.toUpperCase() ??
                     'UNKNOWN');
           final sizeString = event.sizeString;
           final prevEvent = i > 0 ? events[i - 1] : null;
-          final sameEnvironment = prevEvent == null
-              ? false
-              : prevEvent.originServerTs.sameEnvironment(event.originServerTs);
+          final sameEnvironment =
+              prevEvent != null &&
+              prevEvent.originServerTs.sameEnvironment(event.originServerTs);
           return Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(

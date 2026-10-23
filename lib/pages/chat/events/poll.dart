@@ -1,46 +1,17 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:async/async.dart';
-import 'package:flutter_linkify/flutter_linkify.dart';
-import 'package:matrix/matrix.dart' hide Result;
-
 import 'package:rechainonline/config/app_config.dart';
-import 'package:rechainonline/config/setting_keys.dart';
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/utils/url_launcher.dart';
 import 'package:rechainonline/widgets/avatar.dart';
 import 'package:rechainonline/widgets/future_loading_dialog.dart';
-
-// Missing type definitions for polls
-enum PollKind {
-  disclosed,
-  undisclosed,
-}
-
-class PollAnswer {
-  final String id;
-  final String answer;
-  
-  PollAnswer({
-    required this.id,
-    required this.answer,
-  });
-}
-
-class PollStartContent {
-  final PollKind kind;
-  final String question;
-  final List<PollAnswer> answers;
-  final int maxSelections;
-  
-  PollStartContent({
-    required this.kind,
-    required this.question,
-    required this.answers,
-    this.maxSelections = 1,
-  });
-}
-
+import 'package:flutter_linkify/flutter_linkify.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart' hide Result;
 
 class PollWidget extends StatelessWidget {
   final Event event;
@@ -56,17 +27,11 @@ class PollWidget extends StatelessWidget {
   });
 
   void _endPoll(BuildContext context) =>
-      showFutureLoadingDialog(context: context, future: () => event.endPoll());
+      showFutureLoadingDialog(context: context, future: event.endPoll);
 
-  void _toggleVote(
-    BuildContext context,
-    String answerId,
-    int maxSelection,
-  ) async {
+  void _toggleVote(BuildContext context, String answerId, int maxSelection) {
     final userId = event.room.client.userID!;
-    final responses = event.getPollResponses(timeline);
-    final answerIdsSet = responses[userId] as Set<String>? ?? <String>{};
-    final answerIds = answerIdsSet.toSet();
+    final answerIds = event.getPollResponses(timeline)[userId] ?? {};
     if (!answerIds.remove(answerId)) {
       answerIds.add(answerId);
       if (answerIds.length > maxSelection) {
@@ -96,32 +61,28 @@ class PollWidget extends StatelessWidget {
         !pollHasBeenEnded;
     final maxPolls = responses.length;
     final answersVisible =
-        true || // Always show answers for now
+        eventContent.pollStartContent.kind == PollKind.disclosed ||
         pollHasBeenEnded;
 
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
       child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: .min,
+        crossAxisAlignment: .start,
         children: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Linkify(
-              text: 'Poll Question', // Use placeholder for now
+              text: eventContent.pollStartContent.question.mText,
               textScaleFactor: MediaQuery.textScalerOf(context).scale(1),
               style: TextStyle(
                 color: textColor,
-                fontSize:
-                    AppSettings.fontSizeFactor.value *
-                    AppConfig.messageFontSize,
+                fontSize: AppConfig.messageFontSize,
               ),
               options: const LinkifyOptions(humanize: false),
               linkStyle: TextStyle(
                 color: linkColor,
-                fontSize:
-                    AppSettings.fontSizeFactor.value *
-                    AppConfig.messageFontSize,
+                fontSize: AppConfig.messageFontSize,
                 decoration: TextDecoration.underline,
                 decorationColor: linkColor,
               ),
@@ -129,10 +90,9 @@ class PollWidget extends StatelessWidget {
             ),
           ),
           Divider(color: linkColor.withAlpha(64)),
-          ...[].map((answer) { // Use empty list for now
-            final pollAnswer = answer as PollAnswer;
+          ...eventContent.pollStartContent.answers.map((answer) {
             final votedUserIds = responses.entries
-                .where((entry) => entry.value.contains(pollAnswer.id))
+                .where((entry) => entry.value.contains(answer.id))
                 .map((entry) => entry.key)
                 .toSet();
             return Material(
@@ -140,7 +100,7 @@ class PollWidget extends StatelessWidget {
               clipBehavior: Clip.hardEdge,
               child: CheckboxListTile.adaptive(
                 value:
-                    responses[event.room.client.userID!]?.contains(pollAnswer.id) ??
+                    responses[event.room.client.userID!]?.contains(answer.id) ??
                     false,
                 contentPadding: const EdgeInsets.symmetric(horizontal: 16),
                 checkboxScaleFactor: 1.5,
@@ -151,24 +111,22 @@ class PollWidget extends StatelessWidget {
                     ? null
                     : (_) => _toggleVote(
                         context,
-                        pollAnswer.id,
-                        1, // Use default value
+                        answer.id,
+                        eventContent.pollStartContent.maxSelections,
                       ),
                 title: Text(
-                  pollAnswer.answer,
+                  answer.mText,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     color: textColor,
-                    fontSize:
-                        AppConfig.messageFontSize *
-                        AppSettings.fontSizeFactor.value,
+                    fontSize: AppConfig.messageFontSize,
                   ),
                 ),
                 subtitle: answersVisible
                     ? Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: .start,
+                        mainAxisSize: .min,
                         children: [
                           SingleChildScrollView(
                             scrollDirection: Axis.horizontal,
@@ -182,8 +140,7 @@ class PollWidget extends StatelessWidget {
                                   overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
                                     color: linkColor,
-                                    fontSize:
-                                        12 * AppSettings.fontSizeFactor.value,
+                                    fontSize: 12,
                                   ),
                                 ),
                                 const SizedBox(width: 2),
@@ -200,8 +157,7 @@ class PollWidget extends StatelessWidget {
                                       name:
                                           user?.calcDisplayname() ??
                                           userId.localpart,
-                                      size:
-                                          12 * AppSettings.fontSizeFactor.value,
+                                      size: 12,
                                     ),
                                   );
                                 }),
@@ -244,7 +200,7 @@ class PollWidget extends StatelessWidget {
                 L10n.of(context).answersWillBeVisibleWhenPollHasEnded,
                 style: TextStyle(
                   color: linkColor,
-                  fontSize: 12 * AppSettings.fontSizeFactor.value,
+                  fontSize: 12,
                   fontStyle: FontStyle.italic,
                 ),
               ),
@@ -256,7 +212,7 @@ class PollWidget extends StatelessWidget {
                 L10n.of(context).pollHasBeenEnded,
                 style: TextStyle(
                   color: linkColor,
-                  fontSize: 12 * AppSettings.fontSizeFactor.value,
+                  fontSize: 12,
                   fontStyle: FontStyle.italic,
                 ),
               ),

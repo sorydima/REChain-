@@ -1,10 +1,14 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:share_plus/share_plus.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
+import 'package:flutter/services.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:share_plus/share_plus.dart';
+
 import '../widgets/matrix.dart';
 
 abstract class rechainonlineShare {
@@ -13,26 +17,34 @@ abstract class rechainonlineShare {
     BuildContext context, {
     bool copyOnly = false,
   }) async {
+    final l10n = L10n.of(context);
+    final scaffoldMessenger = ScaffoldMessenger.of(context);
     if (PlatformInfos.isMobile && !copyOnly) {
       final box = context.findRenderObject() as RenderBox;
-      await Share.share(
-        text,
-        sharePositionOrigin: box.localToGlobal(Offset.zero) & box.size,
+      await SharePlus.instance.share(
+        ShareParams(
+          text: text,
+          sharePositionOrigin: box.localToGlobal(Offset.zero) & box.size,
+        ),
       );
       return;
     }
     await Clipboard.setData(ClipboardData(text: text));
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(SnackBar(content: Text(L10n.of(context).copiedToClipboard)));
+    if (!PlatformInfos.isMobile) {
+      scaffoldMessenger.showSnackBar(
+        SnackBar(showCloseIcon: true, content: Text(l10n.copiedToClipboard)),
+      );
+    }
     return;
   }
 
   static Future<void> shareInviteLink(BuildContext context) async {
+    final l10n = L10n.of(context);
     final client = Matrix.of(context).client;
     final ownProfile = await client.fetchOwnProfile();
+    if (!context.mounted) return;
     await rechainonlineShare.share(
-      L10n.of(context).inviteText(
+      l10n.inviteText(
         ownProfile.displayName ?? client.userID!,
         'https://matrix.to/#/${client.userID}?client=com.rechain',
       ),

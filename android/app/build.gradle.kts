@@ -3,7 +3,6 @@ import java.io.FileInputStream
 
 plugins {
     id("com.android.application")
-    id("kotlin-android")
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
 }
@@ -13,20 +12,17 @@ if (file("google-services.json").exists()) {
 }
 
 dependencies {
-    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4") // For flutter_local_notifications
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4") // For flutter_local_notifications // Workaround for: https://github.com/MaikuB/flutter_local_notifications/issues/2286
     implementation("androidx.core:core-ktx:1.17.0") // For Android Auto
-    implementation("androidx.lifecycle:lifecycle-service:2.8.7")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.7")
-    implementation("androidx.work:work-runtime-ktx:2.8.1")
-    implementation("com.jakewharton.timber:timber:5.0.1")
-    implementation("androidx.multidex:multidex:2.0.1")
-    implementation("com.google.android.play:core:1.10.3")
-    implementation("com.google.android.play:core-ktx:1.8.1")
-    // implementation("com.github.UnifiedPush:android-connector:2.5.0") // Removed due to conflict
 }
 
+
+// Workaround for https://pub.dev/packages/unifiedpush#the-build-fails-because-of-duplicate-classes
 configurations.all {
-    val tink = "com.google.crypto.tink:tink-android:1.17.0"
+    // Use the latest version published: https://central.sonatype.com/artifact/com.google.crypto.tink/tink-android
+    val tink = "com.google.crypto.tink:tink-android:1.23.0"
+    // You can also use the library declaration catalog
+    // val tink = libs.google.tink
     resolutionStrategy {
         force(tink)
         dependencySubstitution {
@@ -35,14 +31,12 @@ configurations.all {
     }
 }
 
+
 android {
     namespace = "com.rechain.online"
-    compileSdk = flutter.compileSdkVersion
+    // Workaround for https://github.com/juliansteenbakker/flutter_secure_storage/issues/1224
+    compileSdk = 37 //flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
-
-    defaultConfig {
-        
-    }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -50,16 +44,12 @@ android {
         isCoreLibraryDesugaringEnabled = true
     }
 
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11.toString()
-    }
-
     signingConfigs {
        create("release") {
-            keyAlias = "androiddebugkey"
-            keyPassword = "android"
-            storeFile = file(System.getProperty("user.home") + "/.android/debug.keystore")
-            storePassword = "android"
+            keyAlias = "dummyAlias"
+            keyPassword = "dummyPassword"
+            storeFile = file("dummy.keystore")
+            storePassword = "dummyStorePassword"
         }
     }
 
@@ -81,7 +71,9 @@ android {
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
-        multiDexEnabled = true
+        ndk { // Workaround for https://github.com/flutter/flutter/issues/162153#issuecomment-2612443642
+            abiFilters += listOf("armeabi-v7a", "arm64-v8a", "x86_64", "x86")
+        }
     }
 
     buildTypes {
@@ -93,6 +85,13 @@ android {
         }
     }
 }
+
+kotlin {
+    compilerOptions {
+        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11
+    }
+}
+
 
 flutter {
     source = "../.."

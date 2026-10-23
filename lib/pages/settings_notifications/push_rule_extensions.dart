@@ -1,6 +1,10 @@
-import 'package:matrix/matrix.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/l10n/l10n.dart';
+import 'package:matrix/matrix.dart';
 
 extension PushRuleExtension on PushRule {
   String getPushRuleName(L10n l10n) {
@@ -117,6 +121,6 @@ extension PushRuleKindLocal on PushRuleKind {
 
 extension on String {
   String capitalize() {
-    return "${this[0].toUpperCase()}${substring(1).toLowerCase()}";
+    return '${this[0].toUpperCase()}${substring(1).toLowerCase()}';
   }
 }

@@ -1,9 +1,19 @@
-import 'dart:io';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:flutter/foundation.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:collection/collection.dart';
-import 'package:desktop_notifications/desktop_notifications.dart';
+import 'package:rechainonline/config/app_config.dart';
+import 'package:rechainonline/config/setting_keys.dart';
+import 'package:rechainonline/l10n/l10n.dart';
+import 'package:rechainonline/utils/custom_http_client.dart';
+import 'package:rechainonline/utils/custom_image_resizer.dart';
+import 'package:rechainonline/utils/init_with_restore.dart';
+import 'package:rechainonline/utils/matrix_live_kit_calls/matrix_live_kit_call_member.dart';
+import 'package:rechainonline/utils/notification_background_handler.dart';
+import 'package:rechainonline/utils/platform_infos.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_vodozemac/flutter_vodozemac.dart' as vod;
 import 'package:matrix/encryption/utils/key_verification.dart';
@@ -11,11 +21,6 @@ import 'package:matrix/matrix.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:universal_html/html.dart' as html;
 
-import 'package:rechainonline/config/setting_keys.dart';
-import 'package:rechainonline/l10n/l10n.dart';
-import 'package:rechainonline/utils/custom_http_client.dart';
-import 'package:rechainonline/utils/init_with_restore.dart';
-import 'package:rechainonline/utils/platform_infos.dart';
 import 'matrix_sdk_extensions/flutter_matrix_dart_sdk_database/builder.dart';
 
 abstract class ClientManager {
@@ -34,7 +39,7 @@ abstract class ClientManager {
       await store.remove(clientNamespace);
     }
     if (clientNames.isEmpty) {
-      clientNames.add(PlatformInfos.clientName);
+      clientNames.add(PlatformInfos.appDisplayName);
       await store.setStringList(clientNamespace, clientNames.toList());
     }
     final clients = await Future.wait(
@@ -100,7 +105,10 @@ abstract class ClientManager {
         )
       : NativeImplementationsIsolate(
           compute,
-          vodozemacInit: () => vod.init(wasmPath: './assets/assets/vodozemac/'),
+          vodozemacInit: () => vod.init(
+            wasmPath:
+                './assets/assets/vodozemac/${AppConfig.vodozemacVersion}/',
+          ),
         );
 
   static Future<Client> createClient(
@@ -121,8 +129,13 @@ abstract class ClientManager {
       importantStateEvents: <String>{
         // To make room emotes work
         'im.ponies.room_emotes',
+        // To display call state in chat list
+        MatrixRtcCallMember.eventType,
       },
-      logLevel: kReleaseMode ? Level.warning : Level.verbose,
+      customImageResizer: PlatformInfos.supportsCustomImageResizer
+          ? customImageResizer
+          : null,
+      logLevel: Level.verbose,
       database: await flutterMatrixSdkDatabaseBuilder(clientName),
       supportedLoginTypes: {
         AuthenticationTypes.password,
@@ -136,42 +149,45 @@ abstract class ClientManager {
             (share) => share.name == shareKeysWith,
           ) ??
           ShareKeysWith.all,
-      convertLinebreaksInFormatting: false,
-      onSoftLogout: enableSoftLogout
-          ? (client) => client.refreshAccessToken()
-          : null,
+      onSoftLogout: enableSoftLogout ? (c) => c.refreshAccessToken() : null,
+      sendTimelineEventTimeout: Duration(
+        seconds: AppSettings.sendTimelineEventTimeout.value,
+      ),
     );
   }
 
-  static void sendInitNotification(String title, String body) async {
+  static WindowsInitializationSettings get windowsNotificationSettings =>
+      WindowsInitializationSettings(
+        appName: AppSettings.applicationName.value,
+        appUserModelId: AppConfig.appId,
+        guid: AppConfig.windowsNotificationGuid,
+      );
+
+  static Future<void> sendInitNotification(String title, String body) async {
     if (kIsWeb) {
       html.Notification(title, body: body);
-      return;
-    }
-    if (Platform.isLinux) {
-      await NotificationsClient().notify(
-        title,
-        body: body,
-        appName: AppSettings.applicationName.value,
-        hints: [NotificationHint.soundName('message-new-instant')],
-      );
       return;
     }
 
     final flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
 
     await flutterLocalNotificationsPlugin.initialize(
-      const InitializationSettings(
-        android: AndroidInitializationSettings('notifications_icon'),
-        iOS: DarwinInitializationSettings(),
+      settings: InitializationSettings(
+        android: const AndroidInitializationSettings('notifications_icon'),
+        iOS: const DarwinInitializationSettings(),
+        linux: LinuxInitializationSettings(
+          defaultActionName: rechainonlineChatNotificationActions.open.name,
+        ),
+        windows: windowsNotificationSettings,
+        macOS: const DarwinInitializationSettings(),
       ),
     );
 
-    flutterLocalNotificationsPlugin.show(
-      0,
-      title,
-      body,
-      const NotificationDetails(
+    await flutterLocalNotificationsPlugin.show(
+      id: 0,
+      title: title,
+      body: body,
+      notificationDetails: const NotificationDetails(
         android: AndroidNotificationDetails(
           'error_message',
           'Error Messages',

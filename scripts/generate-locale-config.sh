@@ -1,7 +1,12 @@
 #!/bin/bash
 
+# SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+# SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 # Directory containing the ARB files
-l10n_dir="./assets/l10n"
+l10n_dir="./lib/l10n"
 # Target directory for the locale_config.xml file
 xml_dir="./android/app/src/main/res/xml"
 

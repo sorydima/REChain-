@@ -1,15 +1,16 @@
-import 'dart:developer';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:flutter/material.dart';
-
-import 'package:go_router/go_router.dart';
-import 'package:matrix/matrix.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/pages/chat_permissions_settings/chat_permissions_settings_view.dart';
 import 'package:rechainonline/widgets/future_loading_dialog.dart';
 import 'package:rechainonline/widgets/matrix.dart';
 import 'package:rechainonline/widgets/permission_slider_dialog.dart';
+import 'package:go_router/go_router.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
 
 class ChatPermissionsSettings extends StatefulWidget {
   const ChatPermissionsSettings({super.key});
@@ -21,7 +22,7 @@ class ChatPermissionsSettings extends StatefulWidget {
 
 class ChatPermissionsSettingsController extends State<ChatPermissionsSettings> {
   String? get roomId => GoRouterState.of(context).pathParameters['roomid'];
-  void editPowerLevel(
+  Future<void> editPowerLevel(
     BuildContext context,
     String key,
     int currentLevel, {
@@ -40,6 +41,7 @@ class ChatPermissionsSettingsController extends State<ChatPermissionsSettings> {
       currentLevel: currentLevel,
     );
     if (newLevel == null) return;
+    if (!context.mounted) return;
     final content = Map<String, dynamic>.from(
       room.getState(EventTypes.RoomPowerLevels)!.content,
     );
@@ -51,7 +53,6 @@ class ChatPermissionsSettingsController extends State<ChatPermissionsSettings> {
     } else {
       content[key] = newLevel;
     }
-    inspect(content);
     await showFutureLoadingDialog(
       context: context,
       future: () => room.client.setRoomStateWithKey(

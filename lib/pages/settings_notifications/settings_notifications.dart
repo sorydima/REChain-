@@ -1,8 +1,9 @@
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 import 'dart:convert';
-
-import 'package:flutter/material.dart';
-
-import 'package:matrix/matrix.dart';
 
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/l10n/l10n.dart';
@@ -12,6 +13,9 @@ import 'package:rechainonline/widgets/adaptive_dialogs/adaptive_dialog_action.da
 import 'package:rechainonline/widgets/adaptive_dialogs/show_modal_action_popup.dart';
 import 'package:rechainonline/widgets/adaptive_dialogs/show_ok_cancel_alert_dialog.dart';
 import 'package:rechainonline/widgets/future_loading_dialog.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
+
 import '../../widgets/matrix.dart';
 import 'settings_notifications_view.dart';
 
@@ -26,7 +30,7 @@ class SettingsNotifications extends StatefulWidget {
 class SettingsNotificationsController extends State<SettingsNotifications> {
   bool isLoading = false;
 
-  void onPusherTap(Pusher pusher) async {
+  Future<void> onPusherTap(Pusher pusher) async {
     final delete = await showModalActionPopup<bool>(
       context: context,
       title: pusher.deviceDisplayName,
@@ -41,6 +45,7 @@ class SettingsNotificationsController extends State<SettingsNotifications> {
       ],
     );
     if (delete != true) return;
+    if (!mounted) return;
 
     final success = await showFutureLoadingDialog(
       context: context,
@@ -58,7 +63,7 @@ class SettingsNotificationsController extends State<SettingsNotifications> {
 
   Future<List<Pusher>?>? pusherFuture;
 
-  void togglePushRule(PushRuleKind kind, PushRule pushRule) async {
+  Future<void> togglePushRule(PushRuleKind kind, PushRule pushRule) async {
     setState(() {
       isLoading = true;
     });
@@ -91,7 +96,7 @@ class SettingsNotificationsController extends State<SettingsNotifications> {
     }
   }
 
-  void editPushRule(PushRule rule, PushRuleKind kind) async {
+  Future<void> editPushRule(PushRule rule, PushRuleKind kind) async {
     final theme = Theme.of(context);
     final action = await showAdaptiveDialog<PushRuleDialogAction>(
       context: context,

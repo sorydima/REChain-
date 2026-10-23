@@ -1,10 +1,14 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:matrix/matrix.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/widgets/member_actions_popup_menu_button.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
+
 import '../../widgets/avatar.dart';
 
 class ParticipantListItem extends StatelessWidget {
@@ -24,27 +28,42 @@ class ParticipantListItem extends StatelessWidget {
       Membership.leave => L10n.of(context).leftTheChat,
     };
 
-    final permissionBatch = user.powerLevel >= 100
-        ? L10n.of(context).admin
-        : user.powerLevel >= 50
-        ? L10n.of(context).moderator
-        : '';
+    final permissionBatch = switch (user.powerLevel.role) {
+      PowerLevelRole.user => null,
+      PowerLevelRole.moderator => L10n.of(context).moderator,
+      PowerLevelRole.admin => L10n.of(context).admin,
+      PowerLevelRole.owner => L10n.of(context).owner,
+    };
+
+    final isAdminOrOwner =
+        user.powerLevel.role == PowerLevelRole.admin ||
+        user.powerLevel.role == PowerLevelRole.owner;
 
     return ListTile(
       onTap: () => showMemberActionsPopupMenu(context: context, user: user),
       title: Row(
         children: <Widget>[
+          if (user.room.client.userDeviceKeys[user.id]?.masterKey?.verified ==
+              true)
+            Padding(
+              padding: const EdgeInsets.only(right: 2.0),
+              child: Icon(
+                Icons.verified,
+                color: Theme.of(context).colorScheme.primary,
+                size: 16,
+              ),
+            ),
           Expanded(
             child: Text(
               user.calcDisplayname(),
               overflow: TextOverflow.ellipsis,
             ),
           ),
-          if (permissionBatch.isNotEmpty)
+          if (permissionBatch != null)
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
               decoration: BoxDecoration(
-                color: user.powerLevel >= 100
+                color: isAdminOrOwner
                     ? theme.colorScheme.tertiary
                     : theme.colorScheme.tertiaryContainer,
                 borderRadius: BorderRadius.circular(AppConfig.borderRadius),
@@ -52,7 +71,7 @@ class ParticipantListItem extends StatelessWidget {
               child: Text(
                 permissionBatch,
                 style: theme.textTheme.labelSmall?.copyWith(
-                  color: user.powerLevel >= 100
+                  color: isAdminOrOwner
                       ? theme.colorScheme.onTertiary
                       : theme.colorScheme.onTertiaryContainer,
                 ),

@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:animations/animations.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 import 'package:emoji_picker_flutter/locales/default_emoji_set_locale.dart';
-import 'package:matrix/matrix.dart';
-
 import 'package:rechainonline/config/setting_keys.dart';
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/pages/chat/recording_input_row.dart';
@@ -11,7 +11,11 @@ import 'package:rechainonline/pages/chat/recording_view_model.dart';
 import 'package:rechainonline/utils/other_party_can_receive.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
 import 'package:rechainonline/widgets/avatar.dart';
+import 'package:rechainonline/widgets/hover_builder.dart';
 import 'package:rechainonline/widgets/matrix.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
+
 import '../../config/themes.dart';
 import 'chat.dart';
 import 'input_bar.dart';
@@ -19,13 +23,17 @@ import 'input_bar.dart';
 class ChatInputRow extends StatelessWidget {
   final ChatController controller;
 
+  static const double height = 56.0;
+
   const ChatInputRow(this.controller, {super.key});
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-
-    const height = 48.0;
+    final textMessageOnly =
+        controller.sendController.text.isNotEmpty ||
+        controller.replyEvent != null ||
+        controller.editEvent != null;
 
     if (!controller.room.otherPartyCanReceiveMessages) {
       return Center(
@@ -124,13 +132,11 @@ class ChatInputRow extends StatelessWidget {
                       : const SizedBox.shrink(),
                 ]
               : <Widget>[
-                  const SizedBox(width: 4),
+                  const SizedBox(width: 8),
                   AnimatedContainer(
                     duration: rechainonlineThemes.animationDuration,
                     curve: rechainonlineThemes.animationCurve,
-                    width: controller.sendController.text.isNotEmpty
-                        ? 0
-                        : height,
+                    width: textMessageOnly ? 0 : 48,
                     height: height,
                     alignment: Alignment.center,
                     decoration: const BoxDecoration(),
@@ -170,70 +176,8 @@ class ChatInputRow extends StatelessWidget {
                             contentPadding: const EdgeInsets.all(0),
                           ),
                         ),
-                        PopupMenuItem(
-                          value: AddPopupMenuActions.image,
-                          child: ListTile(
-                            leading: CircleAvatar(
-                              backgroundColor:
-                                  theme.colorScheme.onPrimaryContainer,
-                              foregroundColor:
-                                  theme.colorScheme.primaryContainer,
-                              child: const Icon(Icons.photo_outlined),
-                            ),
-                            title: Text(L10n.of(context).sendImage),
-                            contentPadding: const EdgeInsets.all(0),
-                          ),
-                        ),
-                        PopupMenuItem(
-                          value: AddPopupMenuActions.video,
-                          child: ListTile(
-                            leading: CircleAvatar(
-                              backgroundColor:
-                                  theme.colorScheme.onPrimaryContainer,
-                              foregroundColor:
-                                  theme.colorScheme.primaryContainer,
-                              child: const Icon(
-                                Icons.video_camera_back_outlined,
-                              ),
-                            ),
-                            title: Text(L10n.of(context).sendVideo),
-                            contentPadding: const EdgeInsets.all(0),
-                          ),
-                        ),
-                        PopupMenuItem(
-                          value: AddPopupMenuActions.file,
-                          child: ListTile(
-                            leading: CircleAvatar(
-                              backgroundColor:
-                                  theme.colorScheme.onPrimaryContainer,
-                              foregroundColor:
-                                  theme.colorScheme.primaryContainer,
-                              child: const Icon(Icons.attachment_outlined),
-                            ),
-                            title: Text(L10n.of(context).sendFile),
-                            contentPadding: const EdgeInsets.all(0),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  if (PlatformInfos.isMobile)
-                    AnimatedContainer(
-                      duration: rechainonlineThemes.animationDuration,
-                      curve: rechainonlineThemes.animationCurve,
-                      width: controller.sendController.text.isNotEmpty
-                          ? 0
-                          : height,
-                      height: height,
-                      alignment: Alignment.center,
-                      decoration: const BoxDecoration(),
-                      clipBehavior: Clip.hardEdge,
-                      child: PopupMenuButton(
-                        useRootNavigator: true,
-                        icon: const Icon(Icons.camera_alt_outlined),
-                        onSelected: controller.onAddPopupMenuButtonSelected,
-                        iconColor: theme.colorScheme.onPrimaryContainer,
-                        itemBuilder: (context) => [
+                        PopupMenuDivider(),
+                        if (PlatformInfos.isMobile) ...[
                           PopupMenuItem(
                             value: AddPopupMenuActions.videoCamera,
                             child: ListTile(
@@ -262,37 +206,65 @@ class ChatInputRow extends StatelessWidget {
                               contentPadding: const EdgeInsets.all(0),
                             ),
                           ),
+                          PopupMenuDivider(),
                         ],
-                      ),
+                        PopupMenuItem(
+                          value: AddPopupMenuActions.video,
+                          child: ListTile(
+                            leading: CircleAvatar(
+                              backgroundColor:
+                                  theme.colorScheme.onPrimaryContainer,
+                              foregroundColor:
+                                  theme.colorScheme.primaryContainer,
+                              child: const Icon(Icons.movie_outlined),
+                            ),
+                            title: Text(L10n.of(context).sendVideo),
+                            contentPadding: const EdgeInsets.all(0),
+                          ),
+                        ),
+                        PopupMenuItem(
+                          value: AddPopupMenuActions.image,
+                          child: ListTile(
+                            leading: CircleAvatar(
+                              backgroundColor:
+                                  theme.colorScheme.onPrimaryContainer,
+                              foregroundColor:
+                                  theme.colorScheme.primaryContainer,
+                              child: const Icon(Icons.image_outlined),
+                            ),
+                            title: Text(L10n.of(context).sendImage),
+                            contentPadding: const EdgeInsets.all(0),
+                          ),
+                        ),
+                        PopupMenuItem(
+                          value: AddPopupMenuActions.file,
+                          child: ListTile(
+                            leading: CircleAvatar(
+                              backgroundColor:
+                                  theme.colorScheme.onPrimaryContainer,
+                              foregroundColor:
+                                  theme.colorScheme.primaryContainer,
+                              child: const Icon(Icons.attachment_outlined),
+                            ),
+                            title: Text(L10n.of(context).sendFile),
+                            contentPadding: const EdgeInsets.all(0),
+                          ),
+                        ),
+                      ],
                     ),
+                  ),
                   Container(
                     height: height,
-                    width: height,
+                    width: 48,
                     alignment: Alignment.center,
                     child: IconButton(
                       tooltip: L10n.of(context).emojis,
                       color: theme.colorScheme.onPrimaryContainer,
-                      icon: PageTransitionSwitcher(
-                        transitionBuilder:
-                            (
-                              Widget child,
-                              Animation<double> primaryAnimation,
-                              Animation<double> secondaryAnimation,
-                            ) {
-                              return SharedAxisTransition(
-                                animation: primaryAnimation,
-                                secondaryAnimation: secondaryAnimation,
-                                transitionType: SharedAxisTransitionType.scaled,
-                                fillColor: Colors.transparent,
-                                child: child,
-                              );
-                            },
-                        child: Icon(
-                          controller.showEmojiPicker
-                              ? Icons.keyboard
-                              : Icons.add_reaction_outlined,
-                          key: ValueKey(controller.showEmojiPicker),
-                        ),
+                      icon: Icon(
+                        controller.showEmojiPicker
+                            ? Icons.keyboard
+                            : Icons.add_reaction_outlined,
+                        key: ValueKey(controller.showEmojiPicker),
                       ),
                       onPressed: controller.emojiPickerAction,
                     ),
@@ -302,13 +274,13 @@ class ChatInputRow extends StatelessWidget {
                       Matrix.of(context).currentBundle!.length > 1)
                     Container(
                       height: height,
-                      width: height,
+                      width: 48,
                       alignment: Alignment.center,
                       child: _ChatAccountPicker(controller),
                     ),
                   Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 0.0),
+                      padding: const EdgeInsets.symmetric(vertical: 2.0),
                       child: InputBar(
                         room: controller.room,
                         minLines: 1,
@@ -332,7 +304,9 @@ class ChatInputRow extends StatelessWidget {
                             top: 3.0,
                           ),
                           counter: const SizedBox.shrink(),
-                          hintText: L10n.of(context).writeAMessage,
+                          hintText: controller.room.encrypted
+                              ? L10n.of(context).encryptedMessage
+                              : L10n.of(context).unencryptedMessage,
                           hintMaxLines: 1,
                           border: InputBorder.none,
                           enabledBorder: InputBorder.none,
@@ -360,28 +334,45 @@ class ChatInputRow extends StatelessWidget {
                     alignment: Alignment.center,
                     child:
                         PlatformInfos.platformCanRecord &&
-                            controller.sendController.text.isEmpty
-                        ? IconButton(
-                            tooltip: L10n.of(context).voiceMessage,
-                            onPressed: () =>
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text(
-                                      L10n.of(
-                                        context,
-                                      ).longPressToRecordVoiceMessage,
-                                    ),
-                                  ),
-                                ),
-                            onLongPress: () => recordingViewModel
-                                .startRecording(controller.room),
-                            style: IconButton.styleFrom(
-                              backgroundColor: theme.bubbleColor,
-                              foregroundColor: theme.onBubbleColor,
+                            !controller.sendController.text.isNotEmpty &&
+                            controller.editEvent == null
+                        ? HoverBuilder(
+                            builder: (context, hovered) => IconButton(
+                              tooltip: L10n.of(context).voiceMessage,
+                              onPressed: hovered
+                                  ? () => recordingViewModel.startRecording(
+                                      controller.room,
+                                    )
+                                  : () => ScaffoldMessenger.of(context)
+                                        .showSnackBar(
+                                          SnackBar(
+                                            margin: EdgeInsets.only(
+                                              bottom: height + 16,
+                                              left: 16,
+                                              right: 16,
+                                              top: 16,
+                                            ),
+                                            showCloseIcon: true,
+                                            content: Text(
+                                              L10n.of(
+                                                context,
+                                              ).longPressToRecordVoiceMessage,
+                                            ),
+                                          ),
+                                        ),
+                              onLongPress: () => recordingViewModel
+                                  .startRecording(controller.room),
+                              style: IconButton.styleFrom(
+                                backgroundColor: theme.bubbleColor,
+                                foregroundColor: theme.onBubbleColor,
+                              ),
+                              icon: Icon(
+                                hovered ? Icons.mic : Icons.mic_none_outlined,
+                              ),
                             ),
-                            icon: const Icon(Icons.mic_none_outlined),
                           )
                         : IconButton(
+                            key: Key('send_button'),
                             tooltip: L10n.of(context).send,
                             onPressed: controller.send,
                             style: IconButton.styleFrom(

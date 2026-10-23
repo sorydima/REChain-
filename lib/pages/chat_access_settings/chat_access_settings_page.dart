@@ -1,12 +1,15 @@
-import 'package:flutter/material.dart' hide Visibility;
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:matrix/matrix.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/pages/chat_access_settings/chat_access_settings_controller.dart';
 import 'package:rechainonline/utils/rechainonline_share.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
 import 'package:rechainonline/widgets/layouts/max_width_body.dart';
+import 'package:material_ui/material_ui.dart' hide Visibility;
+import 'package:matrix/matrix.dart';
 
 class ChatAccessSettingsPageView extends StatelessWidget {
   final ChatAccessSettingsController controller;
@@ -181,9 +184,7 @@ class ChatAccessSettingsPageView extends StatelessWidget {
                         return const SizedBox.shrink();
                       }
                       localAddresses.remove(room.canonicalAlias);
-                      localAddresses.removeWhere(
-                        (alias) => altAliases.contains(alias),
-                      );
+                      localAddresses.removeWhere(altAliases.contains);
                       return Column(
                         mainAxisSize: .min,
                         children: localAddresses

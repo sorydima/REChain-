@@ -1,15 +1,22 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
-import 'package:matrix/matrix.dart';
-import 'package:slugify/slugify.dart';
-
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/config/setting_keys.dart';
 import 'package:rechainonline/l10n/l10n.dart';
+import 'package:rechainonline/pages/chat/trust_user_key_dialog.dart';
 import 'package:rechainonline/utils/markdown_context_builder.dart';
+import 'package:rechainonline/utils/platform_infos.dart';
 import 'package:rechainonline/widgets/mxc_image.dart';
+import 'package:flutter/services.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
+import 'package:pasteboard/pasteboard.dart';
+import 'package:slugify/slugify.dart';
+
 import '../../widgets/avatar.dart';
 import '../../widgets/matrix.dart';
 import 'command_hints.dart';
@@ -159,7 +166,7 @@ class InputBar extends StatelessWidget {
                     slugify(
                       user.displayName!.toLowerCase(),
                     ).contains(userSearch))) ||
-            user.id.split(':')[0].toLowerCase().contains(userSearch)) {
+            user.id.localpart!.toLowerCase().contains(userSearch)) {
           ret.add({
             'type': 'user',
             'mxid': user.id,
@@ -185,17 +192,14 @@ class InputBar extends StatelessWidget {
                 ((state.content['alias'] is String &&
                         state.content
                             .tryGet<String>('alias')!
-                            .split(':')[0]
+                            .localpart!
                             .toLowerCase()
                             .contains(roomSearch)) ||
                     (state.content['alt_aliases'] is List &&
                         (state.content['alt_aliases'] as List).any(
                           (l) =>
                               l is String &&
-                              l
-                                  .split(':')[0]
-                                  .toLowerCase()
-                                  .contains(roomSearch),
+                              l.localpart!.toLowerCase().contains(roomSearch),
                         )))) ||
             (r.name.toLowerCase().contains(roomSearch))) {
           ret.add({
@@ -388,48 +392,75 @@ class InputBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Autocomplete<Map<String, String?>>(
+      key: Key('chat_input_field'),
       focusNode: focusNode,
       textEditingController: controller,
       optionsBuilder: getSuggestions,
-      fieldViewBuilder: (context, controller, focusNode, _) => TextField(
-        controller: controller,
-        focusNode: focusNode,
-        readOnly: readOnly,
-        contextMenuBuilder: (c, e) => markdownContextBuilder(c, e, controller),
-        contentInsertionConfiguration: ContentInsertionConfiguration(
-          onContentInserted: (KeyboardInsertedContent content) {
-            final data = content.data;
-            if (data == null) return;
-
-            final file = MatrixFile(
-              mimeType: content.mimeType,
-              bytes: data,
-              name: content.uri.split('/').last,
-            );
-            room.sendFileEvent(file, shrinkImageMaxDimension: 1600);
-          },
+      fieldViewBuilder: (context, controller, focusNode, _) => MediaQuery(
+        data: MediaQuery.of(context).copyWith(
+          textScaler: TextScaler.linear(AppSettings.fontSizeFactor.value),
         ),
-        minLines: minLines,
-        maxLines: maxLines,
-        keyboardType: keyboardType!,
-        textInputAction: textInputAction,
-        autofocus: autofocus!,
-        inputFormatters: [
-          LengthLimitingTextInputFormatter((maxPDUSize / 3).floor()),
-        ],
-        onSubmitted: (text) {
-          // fix for library for now
-          // it sets the types for the callback incorrectly
-          onSubmitted!(text);
-        },
-        maxLength: AppSettings.textMessageMaxLength.value,
-        decoration: decoration,
-        onChanged: (text) {
-          // fix for the library for now
-          // it sets the types for the callback incorrectly
-          onChanged!(text);
-        },
-        textCapitalization: TextCapitalization.sentences,
+        child: TextField(
+          controller: controller,
+          focusNode: focusNode,
+          readOnly: readOnly,
+          onEditingComplete: () {
+          },
+          contextMenuBuilder: (c, e) => MarkdownContextBuilder(
+            editableTextState: e,
+            controller: controller,
+            onPasteImage: PlatformInfos.isIOS && onSubmitImage != null
+                ? () async {
+                    final scaffoldMessenger = ScaffoldMessenger.of(context);
+                    final l10n = L10n.of(context);
+                    final image = await Pasteboard.image;
+                    if (image == null) {
+                      scaffoldMessenger.showSnackBar(
+                        SnackBar(content: Text(l10n.noImageInClipboard)),
+                      );
+                      return;
+                    }
+                    onSubmitImage!(image);
+                  }
+                : null,
+          ),
+          contentInsertionConfiguration: ContentInsertionConfiguration(
+            onContentInserted: (KeyboardInsertedContent content) async {
+              final proceed = await showTrustUserInRoomDialog(context, room);
+              if (!proceed) return;
+              final data = content.data;
+              if (data == null) return;
+
+              final file = MatrixFile(
+                mimeType: content.mimeType,
+                bytes: data,
+                name: content.uri.split('/').last,
+              );
+              room.sendFileEvent(file, shrinkImageMaxDimension: 1600);
+            },
+          ),
+          minLines: minLines,
+          maxLines: maxLines,
+          keyboardType: keyboardType,
+          textInputAction: textInputAction,
+          autofocus: autofocus!,
+          inputFormatters: [
+            LengthLimitingTextInputFormatter((maxPDUSize / 3).floor()),
+          ],
+          onSubmitted: (text) {
+            // fix for library for now
+            // it sets the types for the callback incorrectly
+            onSubmitted!(text);
+          },
+          maxLength: AppSettings.textMessageMaxLength.value,
+          decoration: decoration,
+          onChanged: (text) {
+            // fix for the library for now
+            // it sets the types for the callback incorrectly
+            onChanged!(text);
+          },
+          textCapitalization: TextCapitalization.sentences,
+        ),
       ),
       optionsViewBuilder: (c, onSelected, s) {
         final suggestions = s.toList();
@@ -439,6 +470,7 @@ class InputBar extends StatelessWidget {
           borderRadius: BorderRadius.circular(AppConfig.borderRadius),
           clipBehavior: Clip.hardEdge,
           child: ListView.builder(
+            padding: EdgeInsets.zero,
             shrinkWrap: true,
             itemCount: suggestions.length,
             itemBuilder: (context, i) => buildSuggestion(

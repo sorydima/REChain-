@@ -1,18 +1,24 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:flutter_linkify/flutter_linkify.dart';
-import 'package:go_router/go_router.dart';
-import 'package:matrix/matrix.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
+import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/pages/chat_details/chat_details.dart';
 import 'package:rechainonline/pages/chat_details/participant_list_item.dart';
-import 'package:rechainonline/utils/rechainonline_share.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
+import 'package:rechainonline/utils/verified_room_extension.dart';
 import 'package:rechainonline/widgets/avatar.dart';
 import 'package:rechainonline/widgets/chat_settings_popup_menu.dart';
+import 'package:rechainonline/widgets/future_loading_dialog.dart';
 import 'package:rechainonline/widgets/layouts/max_width_body.dart';
 import 'package:rechainonline/widgets/matrix.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
+import 'package:go_router/go_router.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
+
 import '../../utils/url_launcher.dart';
 import '../../widgets/mxc_image_viewer.dart';
 import '../../widgets/qr_code_viewer.dart';
@@ -45,7 +51,7 @@ class ChatDetailsView extends StatelessWidget {
       ),
       builder: (context, snapshot) {
         var members = room.getParticipants().toList()
-          ..sort((b, a) => a.powerLevel.compareTo(b.powerLevel));
+          ..sort((b, a) => a.powerLevel.level.compareTo(b.powerLevel.level));
         members = members.take(10).toList();
         final actualMembersCount =
             (room.summary.mInvitedMemberCount ?? 0) +
@@ -91,122 +97,151 @@ class ChatDetailsView extends StatelessWidget {
                   ? Column(
                       crossAxisAlignment: .stretch,
                       children: <Widget>[
-                        Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(32.0),
-                              child: Stack(
-                                children: [
-                                  Hero(
-                                    tag:
-                                        controller.widget.embeddedCloseButton !=
-                                            null
-                                        ? 'embedded_content_banner'
-                                        : 'content_banner',
-                                    child: Avatar(
-                                      mxContent: room.avatar,
-                                      name: displayname,
-                                      size: Avatar.defaultSize * 2.5,
-                                      onTap: roomAvatar != null
-                                          ? () => showDialog(
-                                              context: context,
-                                              builder: (_) =>
-                                                  MxcImageViewer(roomAvatar),
-                                            )
-                                          : null,
-                                    ),
-                                  ),
-                                  if (!room.isDirectChat &&
-                                      room.canChangeStateEvent(
-                                        EventTypes.RoomAvatar,
-                                      ))
-                                    Positioned(
-                                      bottom: 0,
-                                      right: 0,
-                                      child: FloatingActionButton.small(
-                                        onPressed: controller.setAvatarAction,
-                                        heroTag: null,
-                                        child: const Icon(
-                                          Icons.camera_alt_outlined,
-                                        ),
-                                      ),
-                                    ),
-                                ],
+                        Center(
+                          child: Stack(
+                            children: [
+                              Hero(
+                                tag:
+                                    controller.widget.embeddedCloseButton !=
+                                        null
+                                    ? 'embedded_content_banner'
+                                    : 'content_banner',
+                                child: Avatar(
+                                  mxContent: room.avatar,
+                                  name: displayname,
+                                  size: Avatar.defaultSize * 2.5,
+                                  onTap: roomAvatar != null
+                                      ? () => showDialog(
+                                          context: context,
+                                          builder: (_) =>
+                                              MxcImageViewer(roomAvatar),
+                                        )
+                                      : null,
+                                ),
                               ),
-                            ),
-                            Expanded(
-                              child: Column(
-                                mainAxisAlignment: .center,
-                                crossAxisAlignment: .start,
-                                children: [
-                                  TextButton.icon(
-                                    onPressed: () => room.isDirectChat
-                                        ? null
-                                        : room.canChangeStateEvent(
-                                            EventTypes.RoomName,
-                                          )
-                                        ? controller.setDisplaynameAction()
-                                        : rechainonlineShare.share(
-                                            displayname,
-                                            context,
-                                            copyOnly: true,
-                                          ),
-                                    icon: Icon(
-                                      room.isDirectChat
-                                          ? Icons.chat_bubble_outline
-                                          : room.canChangeStateEvent(
-                                              EventTypes.RoomName,
-                                            )
-                                          ? Icons.edit_outlined
-                                          : Icons.copy_outlined,
-                                      size: 16,
-                                    ),
-                                    style: TextButton.styleFrom(
-                                      foregroundColor:
-                                          theme.colorScheme.onSurface,
-                                      iconColor: theme.colorScheme.onSurface,
-                                    ),
-                                    label: Text(
-                                      room.isDirectChat
-                                          ? L10n.of(context).directChat
-                                          : displayname,
-                                      maxLines: 1,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: const TextStyle(fontSize: 18),
+                              if (!room.isDirectChat &&
+                                  room.canChangeStateEvent(
+                                    EventTypes.RoomAvatar,
+                                  ))
+                                Positioned(
+                                  bottom: 0,
+                                  right: 0,
+                                  child: FloatingActionButton.small(
+                                    onPressed: controller.setAvatarAction,
+                                    heroTag: null,
+                                    child: const Icon(
+                                      Icons.camera_alt_outlined,
                                     ),
                                   ),
-                                  TextButton.icon(
-                                    onPressed: () => room.isDirectChat
-                                        ? null
-                                        : context.push(
-                                            '/rooms/${controller.roomId}/details/members',
-                                          ),
-                                    icon: const Icon(
-                                      Icons.group_outlined,
-                                      size: 14,
-                                    ),
-                                    style: TextButton.styleFrom(
-                                      foregroundColor:
-                                          theme.colorScheme.secondary,
-                                      iconColor: theme.colorScheme.secondary,
-                                    ),
-                                    label: Text(
-                                      L10n.of(
-                                        context,
-                                      ).countParticipants(actualMembersCount),
-                                      maxLines: 1,
-                                      overflow: TextOverflow.ellipsis,
-                                      //    style: const TextStyle(fontSize: 12),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
+                                ),
+                            ],
+                          ),
                         ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Center(
+                            child: TextButton.icon(
+                              onPressed:
+                                  room.isDirectChat ||
+                                      !room.canChangeStateEvent(
+                                        EventTypes.RoomName,
+                                      )
+                                  ? null
+                                  : controller.setDisplaynameAction,
+                              icon:
+                                  room.isDirectChat ||
+                                      !room.canChangeStateEvent(
+                                        EventTypes.RoomName,
+                                      )
+                                  ? null
+                                  : Icon(Icons.edit_outlined, size: 16),
+
+                              style: TextButton.styleFrom(
+                                foregroundColor: theme.colorScheme.onSurface,
+                                iconColor: theme.colorScheme.onSurface,
+                                disabledForegroundColor:
+                                    theme.colorScheme.onSurface,
+                              ),
+                              label: Row(
+                                mainAxisSize: .min,
+                                spacing: 4,
+                                children: [
+                                  if (room.allUsersVerified)
+                                    Icon(
+                                      Icons.verified,
+                                      color: Theme.of(
+                                        context,
+                                      ).colorScheme.primary,
+                                      size: 18,
+                                    ),
+                                  Text(
+                                    displayname,
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: const TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        StreamBuilder(
+                          stream: room.client.onSync.stream.where(
+                            (s) =>
+                                s.accountData?.any(
+                                  (data) => data.type == 'm.push_rules',
+                                ) ??
+                                false,
+                          ),
+                          builder: (context, _) => Wrap(
+                            alignment: .center,
+                            spacing: 16,
+                            runSpacing: 16,
+                            children: [
+                              _MainChatDetailsButton(
+                                onPressed: () =>
+                                    context.go('/rooms/${room.id}/search'),
+                                label: L10n.of(context).search,
+                                icon: Icons.search,
+                              ),
+                              _MainChatDetailsButton(
+                                onPressed: () => context.push(
+                                  '/rooms/${room.id}/details/emotes',
+                                ),
+                                label: L10n.of(context).stickers,
+                                icon: Icons.emoji_emotions_outlined,
+                              ),
+                              if (room.pushRuleState == PushRuleState.notify)
+                                _MainChatDetailsButton(
+                                  onPressed: () => showFutureLoadingDialog(
+                                    context: context,
+                                    future: () => room.setPushRuleState(
+                                      PushRuleState.mentionsOnly,
+                                    ),
+                                  ),
+                                  label: L10n.of(context).mute,
+                                  icon: Icons.notifications_on_outlined,
+                                )
+                              else
+                                _MainChatDetailsButton(
+                                  onPressed: () => showFutureLoadingDialog(
+                                    context: context,
+                                    future: () => room.setPushRuleState(
+                                      PushRuleState.notify,
+                                    ),
+                                  ),
+                                  label: L10n.of(context).unmuteChat,
+                                  icon: Icons.notifications_off_outlined,
+                                ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(height: 16),
                         if (room.canChangeStateEvent(EventTypes.RoomTopic) ||
                             room.topic.isNotEmpty) ...[
-                          Divider(color: theme.dividerColor),
                           ListTile(
                             title: Text(
                               L10n.of(context).chatDescription,
@@ -305,21 +340,15 @@ class ChatDetailsView extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
+                          trailing: !room.isDirectChat && room.canInvite
+                              ? TextButton.icon(
+                                  icon: Icon(Icons.add),
+                                  label: Text(L10n.of(context).invite),
+                                  onPressed: () =>
+                                      context.go('/rooms/${room.id}/invite'),
+                                )
+                              : null,
                         ),
-                        if (!room.isDirectChat && room.canInvite)
-                          ListTile(
-                            title: Text(L10n.of(context).inviteContact),
-                            leading: CircleAvatar(
-                              backgroundColor:
-                                  theme.colorScheme.primaryContainer,
-                              foregroundColor:
-                                  theme.colorScheme.onPrimaryContainer,
-                              radius: Avatar.defaultSize / 2,
-                              child: const Icon(Icons.add_outlined),
-                            ),
-                            trailing: const Icon(Icons.chevron_right_outlined),
-                            onTap: () => context.go('/rooms/${room.id}/invite'),
-                          ),
                       ],
                     )
                   : i < members.length + 1
@@ -328,13 +357,6 @@ class ChatDetailsView extends StatelessWidget {
                       title: Text(
                         L10n.of(context).loadCountMoreParticipants(
                           (actualMembersCount - members.length),
-                        ),
-                      ),
-                      leading: CircleAvatar(
-                        backgroundColor: theme.scaffoldBackgroundColor,
-                        child: const Icon(
-                          Icons.group_outlined,
-                          color: Colors.grey,
                         ),
                       ),
                       onTap: () => context.push(
@@ -346,6 +368,51 @@ class ChatDetailsView extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+}
+
+class _MainChatDetailsButton extends StatelessWidget {
+  final VoidCallback onPressed;
+  final String label;
+  final IconData icon;
+
+  const _MainChatDetailsButton({
+    required this.onPressed,
+    required this.label,
+    required this.icon,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return Material(
+      color: theme.colorScheme.surfaceContainerHigh,
+      borderRadius: BorderRadius.circular(AppConfig.borderRadius),
+      child: InkWell(
+        onTap: onPressed,
+        borderRadius: BorderRadius.circular(AppConfig.borderRadius),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+          child: Column(
+            crossAxisAlignment: .center,
+            mainAxisSize: .min,
+            children: [
+              Icon(icon, color: theme.colorScheme.secondary),
+              SizedBox(
+                width: 64,
+                child: Text(
+                  label,
+                  maxLines: 1,
+                  overflow: .ellipsis,
+                  textAlign: .center,
+                  style: TextStyle(color: theme.colorScheme.secondary),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

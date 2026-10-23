@@ -1,0 +1,74 @@
+# SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+# SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+version = 1
+
+[[annotations]]
+path = [
+    ".mailmap",
+    ".tool_versions.yaml",
+    "pubspec.lock",
+    "*.json",
+    ".vscode/**",
+    "lib/l10n/**",
+    "assets/vodozemac/**",
+    ".github/**",
+    ".gitignore",
+    ".metadata",
+    "android/**",
+    "ios/**",
+    "linux/**",
+    "macos/**",
+    "integration_test/.gitignore",
+    "integration_test/data/**",
+    "integration_test/synapse/**",
+    "snap/**",
+    "windows/**",
+    "web/**",
+    "test/metadata/**"
+]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2017-Present Dmitry Sorokin"
+SPDX-License-Identifier = "AGPL-3.0-or-later"
+
+[[annotations]]
+path = [
+    "assets/sounds/**"
+]
+SPDX-FileCopyrightText = "Pixabay"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = [
+    "assets/sas-emoji.json"
+]
+SPDX-FileCopyrightText = "Matrix Foundation"
+SPDX-License-Identifier = "Apache-2.0"
+
+# App Logo
+[[annotations]]
+path = [
+    "assets/logo/*/logo**",
+    "android/app/src/main/res/mipmap**/**",
+    "ios/Runner/Assets.xcassets/AppIcon.appiconset/**",
+    "macos/Runner/Assets.xcassets/AppIcon.appiconset/**",
+    "web/icons/**",
+    "web/splash/**",
+    "snap/gui/*.png",
+    "windows/runner/resources/app_icon.ico",
+]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2017-Present Fabiyamada"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+# Artwork
+[[annotations]]
+path = [
+    "assets/logo/*/mascot.**",
+    "assets/logo/*/banner.**",
+]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2017-Present Dmitry Sorokin"
+SPDX-License-Identifier = "LicenseRef-All-Rights-Reserved"

@@ -1,11 +1,11 @@
 {
-    "name": "rechain_new",
-    "short_name": "rechain_new",
+    "name": "REChain",
+    "short_name": "REChain",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#FFFFFF",
+    "theme_color": "#41a2bc",
+    "description": "REChain ®️ 🪐 Platform encourages collaborative communication through features such as threads, allowing users to organize discussions and streamline conversations. The inclusion of polls enhances decision-making processes by facilitating quick and efficient feedback gathering. Additionally, the platform supports user-friendly interface & goods!🚀",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

@@ -1,21 +1,24 @@
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 import 'dart:async';
-
-import 'package:flutter/material.dart';
-
-import 'package:matrix/matrix.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/widgets/adaptive_dialogs/show_ok_cancel_alert_dialog.dart';
 import 'package:rechainonline/widgets/adaptive_dialogs/show_text_input_dialog.dart';
 import 'package:rechainonline/widgets/rechainonline_chat_app.dart';
 import 'package:rechainonline/widgets/matrix.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 extension UiaRequestManager on MatrixState {
   Future uiaRequestHandler(UiaRequest uiaRequest) async {
     final l10n = L10n.of(context);
     final navigatorContext =
-        REChain.pp.router.routerDelegate.navigatorKey.currentContext ??
+        rechainonlineChatApp.router.routerDelegate.navigatorKey.currentContext ??
         context;
     try {
       if (uiaRequest.state != UiaRequestState.waitForUser ||
@@ -42,41 +45,15 @@ extension UiaRequestManager on MatrixState {
           if (input == null || input.isEmpty) {
             return uiaRequest.cancel();
           }
-          return uiaRequest.completeStage(
+          return await uiaRequest.completeStage(
             AuthenticationPassword(
               session: uiaRequest.session,
               password: input,
               identifier: AuthenticationUserIdentifier(user: client.userID!),
             ),
           );
-        case AuthenticationTypes.emailIdentity:
-          if (currentThreepidCreds == null) {
-            return uiaRequest.cancel(
-              UiaException(L10n.of(context).serverRequiresEmail),
-            );
-          }
-          final auth = AuthenticationThreePidCreds(
-            session: uiaRequest.session,
-            type: AuthenticationTypes.emailIdentity,
-            threepidCreds: ThreepidCreds(
-              sid: currentThreepidCreds!.sid,
-              clientSecret: currentClientSecret,
-            ),
-          );
-          if (OkCancelResult.ok ==
-              await showOkCancelAlertDialog(
-                useRootNavigator: false,
-                context: navigatorContext,
-                title: l10n.weSentYouAnEmail,
-                message: l10n.pleaseClickOnLink,
-                okLabel: l10n.iHaveClickedOnLink,
-                cancelLabel: l10n.cancel,
-              )) {
-            return uiaRequest.completeStage(auth);
-          }
-          return uiaRequest.cancel();
         case AuthenticationTypes.dummy:
-          return uiaRequest.completeStage(
+          return await uiaRequest.completeStage(
             AuthenticationData(
               type: AuthenticationTypes.dummy,
               session: uiaRequest.session,
@@ -105,14 +82,15 @@ extension UiaRequestManager on MatrixState {
 
           launchUrl(url, mode: LaunchMode.inAppBrowserView);
           final completer = Completer();
-          final listener = AppLifecycleListener(
-            onResume: () => completer.complete(),
-          );
+          final listener = AppLifecycleListener(onResume: completer.complete);
           await completer.future;
           listener.dispose();
 
-          return uiaRequest.completeStage(
-            AuthenticationData(session: uiaRequest.session),
+          return await uiaRequest.completeStage(
+            AuthenticationData(
+              session: uiaRequest.session,
+              type: stageUrl == null ? null : stage,
+            ),
           );
       }
     } catch (e, s) {

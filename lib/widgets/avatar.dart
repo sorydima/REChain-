@@ -1,23 +1,26 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:matrix/matrix.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/utils/string_color.dart';
 import 'package:rechainonline/widgets/mxc_image.dart';
 import 'package:rechainonline/widgets/presence_builder.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
 
 class Avatar extends StatelessWidget {
   final Uri? mxContent;
   final String? name;
   final double size;
   final void Function()? onTap;
-  static const double defaultSize = 44;
+  static const double defaultSize = 48;
   final Client? client;
   final String? presenceUserId;
   final Color? presenceBackgroundColor;
   final BorderRadius? borderRadius;
   final IconData? icon;
-  final BorderSide? border;
+  final ShapeBorder? shapeBorder;
   final Color? backgroundColor;
   final Color? textColor;
 
@@ -30,21 +33,26 @@ class Avatar extends StatelessWidget {
     this.presenceUserId,
     this.presenceBackgroundColor,
     this.borderRadius,
-    this.border,
+    this.shapeBorder,
     this.icon,
     this.backgroundColor,
     this.textColor,
     super.key,
   });
 
+  String _calcFallbackLetters() {
+    final name = this.name?.trim();
+    if (name == null || name.isEmpty) return '@';
+    final words = name.split(' ');
+    if (words.length <= 1) return name.substring(0, 1);
+    return '${words.first.substring(0, 1)}${words.last.substring(0, 1)}';
+  }
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-    final name = this.name;
-    final fallbackLetters = name == null || name.isEmpty
-        ? '@'
-        : name.substring(0, 1);
+    final fallbackLetters = _calcFallbackLetters();
 
     final noPic =
         mxContent == null ||
@@ -61,10 +69,12 @@ class Avatar extends StatelessWidget {
             color: theme.brightness == Brightness.light
                 ? Colors.white
                 : Colors.black,
-            shape: RoundedRectangleBorder(
-              borderRadius: borderRadius,
-              side: border ?? BorderSide.none,
-            ),
+            shape:
+                shapeBorder ??
+                RoundedSuperellipseBorder(
+                  borderRadius: borderRadius,
+                  side: BorderSide.none,
+                ),
             clipBehavior: Clip.antiAlias,
             child: MxcImage(
               client: client,
@@ -78,7 +88,9 @@ class Avatar extends StatelessWidget {
               placeholder: (_) => noPic
                   ? Container(
                       decoration: BoxDecoration(
-                        color: backgroundColor ?? name?.lightColorAvatar,
+                        color:
+                            backgroundColor ??
+                            fallbackLetters.colorScheme.primaryContainer,
                       ),
                       alignment: Alignment.center,
                       child: Text(
@@ -86,7 +98,9 @@ class Avatar extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontFamily: 'RobotoMono',
-                          color: textColor ?? Colors.white,
+                          color:
+                              textColor ??
+                              fallbackLetters.colorScheme.onPrimaryContainer,
                           fontWeight: FontWeight.bold,
                           fontSize: (size / 2.5).roundToDouble(),
                         ),

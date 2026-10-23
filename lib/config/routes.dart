@@ -1,13 +1,13 @@
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 import 'dart:async';
-
-import 'package:flutter/material.dart';
-
-import 'package:go_router/go_router.dart';
-import 'package:matrix/matrix.dart';
 
 import 'package:rechainonline/config/themes.dart';
 import 'package:rechainonline/pages/archive/archive.dart';
-import 'package:rechainonline/pages/bootstrap/bootstrap_dialog.dart';
+import 'package:rechainonline/pages/bootstrap/bootstrap_page.dart';
 import 'package:rechainonline/pages/chat/chat.dart';
 import 'package:rechainonline/pages/chat_access_settings/chat_access_settings_controller.dart';
 import 'package:rechainonline/pages/chat_details/chat_details.dart';
@@ -17,7 +17,7 @@ import 'package:rechainonline/pages/chat_members/chat_members.dart';
 import 'package:rechainonline/pages/chat_permissions_settings/chat_permissions_settings.dart';
 import 'package:rechainonline/pages/chat_search/chat_search_page.dart';
 import 'package:rechainonline/pages/device_settings/device_settings.dart';
-import 'package:rechainonline/pages/homeserver_picker/homeserver_picker.dart';
+import 'package:rechainonline/pages/intro/intro_page_presenter.dart';
 import 'package:rechainonline/pages/invitation_selection/invitation_selection.dart';
 import 'package:rechainonline/pages/login/login.dart';
 import 'package:rechainonline/pages/new_group/new_group.dart';
@@ -32,12 +32,16 @@ import 'package:rechainonline/pages/settings_notifications/settings_notification
 import 'package:rechainonline/pages/settings_password/settings_password.dart';
 import 'package:rechainonline/pages/settings_security/settings_security.dart';
 import 'package:rechainonline/pages/settings_style/settings_style.dart';
+import 'package:rechainonline/pages/sign_in/sign_in_page.dart';
 import 'package:rechainonline/widgets/config_viewer.dart';
 import 'package:rechainonline/widgets/layouts/empty_page.dart';
 import 'package:rechainonline/widgets/layouts/two_column_layout.dart';
 import 'package:rechainonline/widgets/log_view.dart';
 import 'package:rechainonline/widgets/matrix.dart';
 import 'package:rechainonline/widgets/share_scaffold_dialog.dart';
+import 'package:go_router/go_router.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
 
 abstract class AppRoutes {
   static FutureOr<String?> loggedInRedirect(
@@ -66,13 +70,22 @@ abstract class AppRoutes {
     ),
     GoRoute(
       path: '/home',
-      pageBuilder: (context, state) => defaultPageBuilder(
-        context,
-        state,
-        const HomeserverPicker(addMultiAccount: false),
-      ),
+      pageBuilder: (context, state) =>
+          defaultPageBuilder(context, state, const IntroPagePresenter()),
       redirect: loggedInRedirect,
       routes: [
+        GoRoute(
+          path: 'sign_in',
+          pageBuilder: (context, state) =>
+              defaultPageBuilder(context, state, SignInPage(signUp: false)),
+          redirect: loggedInRedirect,
+        ),
+        GoRoute(
+          path: 'sign_up',
+          pageBuilder: (context, state) =>
+              defaultPageBuilder(context, state, SignInPage(signUp: true)),
+          redirect: loggedInRedirect,
+        ),
         GoRoute(
           path: 'login',
           pageBuilder: (context, state) => defaultPageBuilder(
@@ -100,7 +113,7 @@ abstract class AppRoutes {
       pageBuilder: (context, state) => defaultPageBuilder(
         context,
         state,
-        BootstrapDialog(wipe: state.uri.queryParameters['wipe'] == 'true'),
+        BootstrapPage(reset: state.uri.queryParameters['reset'] == 'true'),
       ),
     ),
     ShellRoute(
@@ -149,8 +162,11 @@ abstract class AppRoutes {
                     context,
                     state,
                     ChatPage(
+                      key: ValueKey(state.uri),
                       roomId: state.pathParameters['roomid']!,
                       eventId: state.uri.queryParameters['event'],
+                      timeline: state.extra as Timeline?,
+                      action: state.uri.queryParameters['action'],
                     ),
                   ),
                   redirect: loggedOutRedirect,
@@ -160,14 +176,23 @@ abstract class AppRoutes {
             ),
             GoRoute(
               path: 'newprivatechat',
-              pageBuilder: (context, state) =>
-                  defaultPageBuilder(context, state, const NewPrivateChat()),
+              pageBuilder: (context, state) => defaultPageBuilder(
+                context,
+                state,
+                NewPrivateChat(
+                  key: ValueKey('new_chat_${state.uri.fragment}'),
+                  deeplink: state.uri.fragment,
+                ),
+              ),
               redirect: loggedOutRedirect,
             ),
             GoRoute(
               path: 'newgroup',
-              pageBuilder: (context, state) =>
-                  defaultPageBuilder(context, state, const NewGroup()),
+              pageBuilder: (context, state) => defaultPageBuilder(
+                context,
+                state,
+                NewGroup(spaceId: state.uri.queryParameters['space_id']),
+              ),
               redirect: loggedOutRedirect,
             ),
             GoRoute(
@@ -175,7 +200,10 @@ abstract class AppRoutes {
               pageBuilder: (context, state) => defaultPageBuilder(
                 context,
                 state,
-                const NewGroup(createGroupType: CreateGroupType.space),
+                NewGroup(
+                  createGroupType: CreateGroupType.space,
+                  spaceId: state.uri.queryParameters['space_id'],
+                ),
               ),
               redirect: loggedOutRedirect,
             ),
@@ -187,6 +215,7 @@ abstract class AppRoutes {
                     ? TwoColumnLayout(
                         mainView: Settings(key: state.pageKey),
                         sideView: child,
+                        hasNavigationRail: false,
                       )
                     : child,
               ),
@@ -255,9 +284,27 @@ abstract class AppRoutes {
                       pageBuilder: (context, state) => defaultPageBuilder(
                         context,
                         state,
-                        const HomeserverPicker(addMultiAccount: true),
+                        const IntroPagePresenter(),
                       ),
                       routes: [
+                        GoRoute(
+                          path: 'sign_in',
+                          pageBuilder: (context, state) => defaultPageBuilder(
+                            context,
+                            state,
+                            SignInPage(signUp: false),
+                          ),
+                          redirect: loggedOutRedirect,
+                        ),
+                        GoRoute(
+                          path: 'sign_up',
+                          pageBuilder: (context, state) => defaultPageBuilder(
+                            context,
+                            state,
+                            SignInPage(signUp: true),
+                          ),
+                          redirect: loggedOutRedirect,
+                        ),
                         GoRoute(
                           path: 'login',
                           pageBuilder: (context, state) => defaultPageBuilder(
@@ -344,9 +391,11 @@ abstract class AppRoutes {
                   context,
                   state,
                   ChatPage(
+                    key: ValueKey(state.uri),
                     roomId: state.pathParameters['roomid']!,
                     shareItems: shareItems,
                     eventId: state.uri.queryParameters['event'],
+                    action: state.uri.queryParameters['action'],
                   ),
                 );
               },
@@ -465,11 +514,19 @@ abstract class AppRoutes {
     BuildContext context,
     GoRouterState state,
     Widget child,
-  ) => rechainonlineThemes.isColumnMode(context)
-      ? noTransitionPageBuilder(context, state, child)
-      : MaterialPage(
-          key: state.pageKey,
-          restorationId: state.pageKey.value,
-          child: child,
-        );
+  ) {
+    final clientName = state.uri.queryParameters['client'];
+    if (clientName != null) {
+      final matrix = Matrix.of(context);
+      final client = matrix.getClientByName(clientName);
+      if (client != null) matrix.setActiveClient(client);
+    }
+    return rechainonlineThemes.isColumnMode(context)
+        ? noTransitionPageBuilder(context, state, child)
+        : MaterialPage(
+            key: state.pageKey,
+            restorationId: state.pageKey.value,
+            child: child,
+          );
+  }
 }

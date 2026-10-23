@@ -1,9 +1,9 @@
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 import 'dart:math';
-
-import 'package:flutter/material.dart';
-
-import 'package:flutter_linkify/flutter_linkify.dart';
-import 'package:matrix/matrix.dart';
 
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/config/setting_keys.dart';
@@ -13,6 +13,10 @@ import 'package:rechainonline/utils/platform_infos.dart';
 import 'package:rechainonline/utils/url_launcher.dart';
 import 'package:rechainonline/widgets/blur_hash.dart';
 import 'package:rechainonline/widgets/mxc_image.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
+
 import '../../image_viewer/image_viewer.dart';
 
 class EventVideoPlayer extends StatelessWidget {
@@ -56,7 +60,7 @@ class EventVideoPlayer extends StatelessWidget {
         : Duration(milliseconds: durationInt);
 
     return Column(
-      mainAxisSize: MainAxisSize.min,
+      mainAxisSize: .min,
       spacing: 8,
       children: [
         Material(
@@ -81,9 +85,12 @@ class EventVideoPlayer extends StatelessWidget {
                 tag: event.eventId,
                 child: Stack(
                   children: [
-                    if (event.hasThumbnail)
+                    if (event.hasThumbnail &&
+                        AppSettings.showThumbnailsInTimeline.value)
                       MxcImage(
                         event: event,
+                        cacheKey: event.transactionId ?? event.eventId,
+                        cacheName: event.room.id,
                         isThumbnail: true,
                         width: width,
                         height: height,
@@ -137,16 +144,12 @@ class EventVideoPlayer extends StatelessWidget {
                 textScaleFactor: MediaQuery.textScalerOf(context).scale(1),
                 style: TextStyle(
                   color: textColor,
-                  fontSize:
-                      AppSettings.fontSizeFactor.value *
-                      AppConfig.messageFontSize,
+                  fontSize: AppConfig.messageFontSize,
                 ),
                 options: const LinkifyOptions(humanize: false),
                 linkStyle: TextStyle(
                   color: linkColor,
-                  fontSize:
-                      AppSettings.fontSizeFactor.value *
-                      AppConfig.messageFontSize,
+                  fontSize: AppConfig.messageFontSize,
                   decoration: TextDecoration.underline,
                   decorationColor: linkColor,
                 ),

@@ -1,13 +1,16 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:intl/intl.dart';
-import 'package:matrix/matrix.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/pages/chat/events/video_player.dart';
 import 'package:rechainonline/pages/chat_search/search_footer.dart';
 import 'package:rechainonline/pages/image_viewer/image_viewer.dart';
 import 'package:rechainonline/widgets/mxc_image.dart';
+import 'package:intl/intl.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
 
 class ChatSearchImagesTab extends StatelessWidget {
   final Room room;

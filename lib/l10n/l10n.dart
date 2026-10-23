@@ -199,11 +199,65 @@ abstract class L10n {
     Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant'),
   ];
 
-  /// Set to true to always display time of day in 24 hour format.
+  /// No description provided for @editImage.
   ///
   /// In en, this message translates to:
-  /// **'false'**
-  String get alwaysUse24HourFormat;
+  /// **'Edit image'**
+  String get editImage;
+
+  /// No description provided for @rotateLeft.
+  ///
+  /// In en, this message translates to:
+  /// **'Rotate left'**
+  String get rotateLeft;
+
+  /// No description provided for @rotateRight.
+  ///
+  /// In en, this message translates to:
+  /// **'Rotate right'**
+  String get rotateRight;
+
+  /// No description provided for @mirror.
+  ///
+  /// In en, this message translates to:
+  /// **'Mirror'**
+  String get mirror;
+
+  /// No description provided for @save.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get save;
+
+  /// No description provided for @draw.
+  ///
+  /// In en, this message translates to:
+  /// **'Draw'**
+  String get draw;
+
+  /// No description provided for @undo.
+  ///
+  /// In en, this message translates to:
+  /// **'Undo'**
+  String get undo;
+
+  /// No description provided for @clear.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear'**
+  String get clear;
+
+  /// No description provided for @eraser.
+  ///
+  /// In en, this message translates to:
+  /// **'Eraser'**
+  String get eraser;
+
+  /// No description provided for @crop.
+  ///
+  /// In en, this message translates to:
+  /// **'Crop'**
+  String get crop;
 
   /// No description provided for @repeatPassword.
   ///
@@ -216,30 +270,6 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'Not an image file.'**
   String get notAnImage;
-
-  /// No description provided for @setCustomPermissionLevel.
-  ///
-  /// In en, this message translates to:
-  /// **'Set custom permission level'**
-  String get setCustomPermissionLevel;
-
-  /// No description provided for @setPermissionsLevelDescription.
-  ///
-  /// In en, this message translates to:
-  /// **'Please choose a predefined role below or enter a custom permission level between 0 and 100.'**
-  String get setPermissionsLevelDescription;
-
-  /// No description provided for @ignoreUser.
-  ///
-  /// In en, this message translates to:
-  /// **'Ignore user'**
-  String get ignoreUser;
-
-  /// No description provided for @normalUser.
-  ///
-  /// In en, this message translates to:
-  /// **'Normal user'**
-  String get normalUser;
 
   /// No description provided for @remove.
   ///
@@ -307,6 +337,12 @@ abstract class L10n {
   /// **'Account'**
   String get account;
 
+  /// No description provided for @accountsAndSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Accounts and settings'**
+  String get accountsAndSettings;
+
   /// No description provided for @activatedEndToEndEncryption.
   ///
   /// In en, this message translates to:
@@ -319,23 +355,17 @@ abstract class L10n {
   /// **'Add email'**
   String get addEmail;
 
-  /// No description provided for @confirmMatrixId.
+  /// No description provided for @confirmREChainId.
   ///
   /// In en, this message translates to:
-  /// **'Please confirm your Matrix x REChain ID in order to delete your account.'**
-  String get confirmMatrixId;
+  /// **'Please confirm your REChain ID in order to delete your account.'**
+  String get confirmREChainId;
 
   /// No description provided for @supposedMxid.
   ///
   /// In en, this message translates to:
   /// **'This should be {mxid}'**
   String supposedMxid(String mxid);
-
-  /// No description provided for @addChatDescription.
-  ///
-  /// In en, this message translates to:
-  /// **'Add a chat description...'**
-  String get addChatDescription;
 
   /// No description provided for @addToSpace.
   ///
@@ -360,12 +390,6 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'All'**
   String get all;
-
-  /// No description provided for @allChats.
-  ///
-  /// In en, this message translates to:
-  /// **'All chats'**
-  String get allChats;
 
   /// No description provided for @commandHint_roomupgrade.
   ///
@@ -442,7 +466,7 @@ abstract class L10n {
   /// No description provided for @areGuestsAllowedToJoin.
   ///
   /// In en, this message translates to:
-  /// **'Are guest users allowed to join'**
+  /// **'Are guest users allowed to join?'**
   String get areGuestsAllowedToJoin;
 
   /// No description provided for @areYouSure.
@@ -450,6 +474,12 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'Are you sure?'**
   String get areYouSure;
+
+  /// No description provided for @discardEdits.
+  ///
+  /// In en, this message translates to:
+  /// **'You have unsaved changes. Discard your edits?'**
+  String get discardEdits;
 
   /// No description provided for @areYouSureYouWantToLogout.
   ///
@@ -503,24 +533,6 @@ abstract class L10n {
   /// **'Send on enter'**
   String get sendOnEnter;
 
-  /// No description provided for @badServerVersionsException.
-  ///
-  /// In en, this message translates to:
-  /// **'The homeserver supports the Spec versions:\n{serverVersions}\nBut this app supports only {supportedVersions}'**
-  String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  );
-
-  /// No description provided for @countChatsAndCountParticipants.
-  ///
-  /// In en, this message translates to:
-  /// **'{chats} chats and {participants} participants'**
-  String countChatsAndCountParticipants(int chats, int participants);
-
   /// No description provided for @noMoreChatsFound.
   ///
   /// In en, this message translates to:
@@ -533,12 +545,6 @@ abstract class L10n {
   /// **'No chats found here yet. Start a new chat with someone by using the button below. ⤵️'**
   String get noChatsFoundHere;
 
-  /// No description provided for @joinedChats.
-  ///
-  /// In en, this message translates to:
-  /// **'Joined chats'**
-  String get joinedChats;
-
   /// No description provided for @unread.
   ///
   /// In en, this message translates to:
@@ -550,12 +556,6 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'Space'**
   String get space;
-
-  /// No description provided for @spaces.
-  ///
-  /// In en, this message translates to:
-  /// **'Spaces'**
-  String get spaces;
 
   /// No description provided for @banFromChat.
   ///
@@ -587,12 +587,6 @@ abstract class L10n {
   /// **'Blocked'**
   String get blocked;
 
-  /// No description provided for @botMessages.
-  ///
-  /// In en, this message translates to:
-  /// **'Bot messages'**
-  String get botMessages;
-
   /// No description provided for @cancel.
   ///
   /// In en, this message translates to:
@@ -623,23 +617,11 @@ abstract class L10n {
   /// **'{username} changed the chat description'**
   String changedTheChatDescription(Object username);
 
-  /// No description provided for @changedTheChatDescriptionTo.
-  ///
-  /// In en, this message translates to:
-  /// **'{username} changed the chat description to: \'{description}\''**
-  String changedTheChatDescriptionTo(String username, String description);
-
   /// No description provided for @changedTheChatName.
   ///
   /// In en, this message translates to:
   /// **'{username} changed the chat name'**
   String changedTheChatName(Object username);
-
-  /// No description provided for @changedTheChatNameTo.
-  ///
-  /// In en, this message translates to:
-  /// **'{username} changed the chat name to: \'{chatname}\''**
-  String changedTheChatNameTo(String username, String chatname);
 
   /// No description provided for @changedTheChatPermissions.
   ///
@@ -749,35 +731,17 @@ abstract class L10n {
   /// **'Chat'**
   String get chat;
 
-  /// No description provided for @yourChatBackupHasBeenSetUp.
-  ///
-  /// In en, this message translates to:
-  /// **'Your chat backup has been set up.'**
-  String get yourChatBackupHasBeenSetUp;
-
   /// No description provided for @chatBackup.
   ///
   /// In en, this message translates to:
   /// **'Chat backup'**
   String get chatBackup;
 
-  /// No description provided for @chatBackupDescription.
-  ///
-  /// In en, this message translates to:
-  /// **'Your messages are secured with a recovery key. Please make sure you don\'t lose it.'**
-  String get chatBackupDescription;
-
   /// No description provided for @chatDetails.
   ///
   /// In en, this message translates to:
   /// **'Chat details'**
   String get chatDetails;
-
-  /// No description provided for @chatHasBeenAddedToThisSpace.
-  ///
-  /// In en, this message translates to:
-  /// **'Chat has been added to this space'**
-  String get chatHasBeenAddedToThisSpace;
 
   /// No description provided for @chats.
   ///
@@ -806,7 +770,7 @@ abstract class L10n {
   /// No description provided for @commandHint_markasdm.
   ///
   /// In en, this message translates to:
-  /// **'Mark as direct message room for the giving Matrix x REChain ID'**
+  /// **'Mark as direct message room for the giving REChain ID'**
   String get commandHint_markasdm;
 
   /// No description provided for @commandHint_markasgroup.
@@ -953,35 +917,11 @@ abstract class L10n {
   /// **'Configure chat'**
   String get configureChat;
 
-  /// No description provided for @confirm.
-  ///
-  /// In en, this message translates to:
-  /// **'Confirm'**
-  String get confirm;
-
-  /// No description provided for @connect.
-  ///
-  /// In en, this message translates to:
-  /// **'Connect'**
-  String get connect;
-
   /// No description provided for @contactHasBeenInvitedToTheGroup.
   ///
   /// In en, this message translates to:
   /// **'Contact has been invited to the group'**
   String get contactHasBeenInvitedToTheGroup;
-
-  /// No description provided for @containsDisplayName.
-  ///
-  /// In en, this message translates to:
-  /// **'Contains display name'**
-  String get containsDisplayName;
-
-  /// No description provided for @containsUserName.
-  ///
-  /// In en, this message translates to:
-  /// **'Contains username'**
-  String get containsUserName;
 
   /// No description provided for @contentHasBeenReported.
   ///
@@ -1022,7 +962,7 @@ abstract class L10n {
   /// No description provided for @countParticipants.
   ///
   /// In en, this message translates to:
-  /// **'{count} participants'**
+  /// **'{count, plural, =1{1 participant} other{{count} participants}}'**
   String countParticipants(int count);
 
   /// No description provided for @countInvited.
@@ -1073,18 +1013,6 @@ abstract class L10n {
   /// **'{date}, {timeOfDay}'**
   String dateAndTimeOfDay(String date, String timeOfDay);
 
-  /// No description provided for @dateWithoutYear.
-  ///
-  /// In en, this message translates to:
-  /// **'{month}-{day}'**
-  String dateWithoutYear(String month, String day);
-
-  /// No description provided for @dateWithYear.
-  ///
-  /// In en, this message translates to:
-  /// **'{year}-{month}-{day}'**
-  String dateWithYear(String year, String month, String day);
-
   /// No description provided for @deactivateAccountWarning.
   ///
   /// In en, this message translates to:
@@ -1115,18 +1043,6 @@ abstract class L10n {
   /// **'Delete message'**
   String get deleteMessage;
 
-  /// No description provided for @device.
-  ///
-  /// In en, this message translates to:
-  /// **'Device'**
-  String get device;
-
-  /// No description provided for @deviceId.
-  ///
-  /// In en, this message translates to:
-  /// **'Device ID'**
-  String get deviceId;
-
   /// No description provided for @devices.
   ///
   /// In en, this message translates to:
@@ -1138,12 +1054,6 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'Direct Chats'**
   String get directChats;
-
-  /// No description provided for @allRooms.
-  ///
-  /// In en, this message translates to:
-  /// **'All Group Chats'**
-  String get allRooms;
 
   /// No description provided for @displaynameHasBeenChanged.
   ///
@@ -1211,18 +1121,6 @@ abstract class L10n {
   /// **'Recently-used emotes will appear here...'**
   String get emoteKeyboardNoRecents;
 
-  /// No description provided for @emotePacks.
-  ///
-  /// In en, this message translates to:
-  /// **'Emote packs for room'**
-  String get emotePacks;
-
-  /// No description provided for @emoteSettings.
-  ///
-  /// In en, this message translates to:
-  /// **'Emote Settings'**
-  String get emoteSettings;
-
   /// No description provided for @globalChatId.
   ///
   /// In en, this message translates to:
@@ -1241,12 +1139,6 @@ abstract class L10n {
   /// **'Who is allowed to join this chat and how the chat can be discovered.'**
   String get accessAndVisibilityDescription;
 
-  /// No description provided for @calls.
-  ///
-  /// In en, this message translates to:
-  /// **'Calls'**
-  String get calls;
-
   /// No description provided for @customEmojisAndStickers.
   ///
   /// In en, this message translates to:
@@ -1264,12 +1156,6 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'Emote shortcode'**
   String get emoteShortcode;
-
-  /// No description provided for @emoteWarnNeedToPick.
-  ///
-  /// In en, this message translates to:
-  /// **'You need to pick an emote shortcode and an image!'**
-  String get emoteWarnNeedToPick;
 
   /// No description provided for @emptyChat.
   ///
@@ -1325,47 +1211,11 @@ abstract class L10n {
   /// **'Enter an email address'**
   String get enterAnEmailAddress;
 
-  /// No description provided for @homeserver.
-  ///
-  /// In en, this message translates to:
-  /// **'Homeserver'**
-  String get homeserver;
-
-  /// No description provided for @enterYourHomeserver.
-  ///
-  /// In en, this message translates to:
-  /// **'Enter your homeserver'**
-  String get enterYourHomeserver;
-
   /// No description provided for @errorObtainingLocation.
   ///
   /// In en, this message translates to:
   /// **'Error obtaining location: {error}'**
   String errorObtainingLocation(String error);
-
-  /// No description provided for @everythingReady.
-  ///
-  /// In en, this message translates to:
-  /// **'Everything ready!'**
-  String get everythingReady;
-
-  /// No description provided for @extremeOffensive.
-  ///
-  /// In en, this message translates to:
-  /// **'Extremely offensive'**
-  String get extremeOffensive;
-
-  /// No description provided for @fileName.
-  ///
-  /// In en, this message translates to:
-  /// **'File name'**
-  String get fileName;
-
-  /// No description provided for @rechainonline.
-  ///
-  /// In en, this message translates to:
-  /// **'REChain'**
-  String get rechainonline;
 
   /// No description provided for @fontSize.
   ///
@@ -1390,12 +1240,6 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'From the invitation'**
   String get fromTheInvitation;
-
-  /// No description provided for @goToTheNewRoom.
-  ///
-  /// In en, this message translates to:
-  /// **'Go to the new room'**
-  String get goToTheNewRoom;
 
   /// No description provided for @group.
   ///
@@ -1457,12 +1301,6 @@ abstract class L10n {
   /// **'Help'**
   String get help;
 
-  /// No description provided for @hideRedactedEvents.
-  ///
-  /// In en, this message translates to:
-  /// **'Hide redacted events'**
-  String get hideRedactedEvents;
-
   /// No description provided for @hideRedactedMessages.
   ///
   /// In en, this message translates to:
@@ -1480,24 +1318,6 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'Hide invalid or unknown message formats'**
   String get hideInvalidOrUnknownMessageFormats;
-
-  /// No description provided for @howOffensiveIsThisContent.
-  ///
-  /// In en, this message translates to:
-  /// **'How offensive is this content?'**
-  String get howOffensiveIsThisContent;
-
-  /// No description provided for @id.
-  ///
-  /// In en, this message translates to:
-  /// **'ID'**
-  String get id;
-
-  /// No description provided for @identity.
-  ///
-  /// In en, this message translates to:
-  /// **'Identity'**
-  String get identity;
 
   /// No description provided for @block.
   ///
@@ -1535,23 +1355,11 @@ abstract class L10n {
   /// **'Incorrect passphrase or recovery key'**
   String get incorrectPassphraseOrKey;
 
-  /// No description provided for @inoffensive.
-  ///
-  /// In en, this message translates to:
-  /// **'Inoffensive'**
-  String get inoffensive;
-
   /// No description provided for @inviteContact.
   ///
   /// In en, this message translates to:
   /// **'Invite contact'**
   String get inviteContact;
-
-  /// No description provided for @inviteContactToGroupQuestion.
-  ///
-  /// In en, this message translates to:
-  /// **'Do you want to invite {contact} to the chat \"{groupName}\"?'**
-  String inviteContactToGroupQuestion(Object contact, Object groupName);
 
   /// No description provided for @inviteContactToGroup.
   ///
@@ -1607,22 +1415,16 @@ abstract class L10n {
   /// **'Invited users only'**
   String get invitedUsersOnly;
 
-  /// No description provided for @inviteForMe.
-  ///
-  /// In en, this message translates to:
-  /// **'Invite for me'**
-  String get inviteForMe;
-
   /// No description provided for @inviteText.
   ///
   /// In en, this message translates to:
-  /// **'{username} invited you to REChain.\n1. Visit github.com/sorydima/REChain- and install the app \n2. Sign up or sign in \n3. Open the invite link: \n {link}'**
+  /// **'{username} invited you to REChain.\n1. Visit https://github.com/sorydima/REChain- and install the app \n2. Sign up or sign in \n3. Open the invite link: \n {link}'**
   String inviteText(String username, String link);
 
   /// No description provided for @isTyping.
   ///
   /// In en, this message translates to:
-  /// **'is typing…'**
+  /// **'is typing'**
   String get isTyping;
 
   /// No description provided for @joinedTheChat.
@@ -1673,12 +1475,6 @@ abstract class L10n {
   /// **'Left the chat'**
   String get leftTheChat;
 
-  /// No description provided for @license.
-  ///
-  /// In en, this message translates to:
-  /// **'License'**
-  String get license;
-
   /// No description provided for @lightTheme.
   ///
   /// In en, this message translates to:
@@ -1702,30 +1498,6 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'This action cannot be undone. Ensure you safely store the backup file.'**
   String get dehydrateWarning;
-
-  /// No description provided for @dehydrateTor.
-  ///
-  /// In en, this message translates to:
-  /// **'TOR Users: Export session'**
-  String get dehydrateTor;
-
-  /// No description provided for @dehydrateTorLong.
-  ///
-  /// In en, this message translates to:
-  /// **'For TOR users, it is recommended to export the session before closing the window.'**
-  String get dehydrateTorLong;
-
-  /// No description provided for @hydrateTor.
-  ///
-  /// In en, this message translates to:
-  /// **'TOR Users: Import session export'**
-  String get hydrateTor;
-
-  /// No description provided for @hydrateTorLong.
-  ///
-  /// In en, this message translates to:
-  /// **'Did you export your session last time on TOR? Quickly import it and continue chatting.'**
-  String get hydrateTorLong;
 
   /// No description provided for @hydrate.
   ///
@@ -1775,12 +1547,6 @@ abstract class L10n {
   /// **'Logout'**
   String get logout;
 
-  /// No description provided for @memberChanges.
-  ///
-  /// In en, this message translates to:
-  /// **'Member changes'**
-  String get memberChanges;
-
   /// No description provided for @mention.
   ///
   /// In en, this message translates to:
@@ -1810,12 +1576,6 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'Mute chat'**
   String get muteChat;
-
-  /// No description provided for @needPantalaimonWarning.
-  ///
-  /// In en, this message translates to:
-  /// **'Please be aware that you need Pantalaimon to use end-to-end encryption for now.'**
-  String get needPantalaimonWarning;
 
   /// No description provided for @newChat.
   ///
@@ -1889,12 +1649,6 @@ abstract class L10n {
   /// **'Scan QR code'**
   String get scanQrCode;
 
-  /// No description provided for @none.
-  ///
-  /// In en, this message translates to:
-  /// **'None'**
-  String get none;
-
   /// No description provided for @noPasswordRecoveryDescription.
   ///
   /// In en, this message translates to:
@@ -1919,12 +1673,6 @@ abstract class L10n {
   /// **'Notifications'**
   String get notifications;
 
-  /// No description provided for @notificationsEnabledForThisAccount.
-  ///
-  /// In en, this message translates to:
-  /// **'Notifications enabled for this account'**
-  String get notificationsEnabledForThisAccount;
-
   /// No description provided for @numUsersTyping.
   ///
   /// In en, this message translates to:
@@ -1937,29 +1685,11 @@ abstract class L10n {
   /// **'Obtaining location…'**
   String get obtainingLocation;
 
-  /// No description provided for @offensive.
-  ///
-  /// In en, this message translates to:
-  /// **'Offensive'**
-  String get offensive;
-
-  /// No description provided for @offline.
-  ///
-  /// In en, this message translates to:
-  /// **'Offline'**
-  String get offline;
-
   /// No description provided for @ok.
   ///
   /// In en, this message translates to:
   /// **'Ok'**
   String get ok;
-
-  /// No description provided for @online.
-  ///
-  /// In en, this message translates to:
-  /// **'Online'**
-  String get online;
 
   /// No description provided for @onlineKeyBackupEnabled.
   ///
@@ -1990,12 +1720,6 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'Open camera'**
   String get openCamera;
-
-  /// No description provided for @openVideoCamera.
-  ///
-  /// In en, this message translates to:
-  /// **'Open camera for a video'**
-  String get openVideoCamera;
 
   /// No description provided for @oneClientLoggedOut.
   ///
@@ -2033,12 +1757,6 @@ abstract class L10n {
   /// **'Bundle name'**
   String get bundleName;
 
-  /// No description provided for @enableMultiAccounts.
-  ///
-  /// In en, this message translates to:
-  /// **'(BETA) Enable multi accounts on this device'**
-  String get enableMultiAccounts;
-
   /// No description provided for @openInMaps.
   ///
   /// In en, this message translates to:
@@ -2050,12 +1768,6 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'Link'**
   String get link;
-
-  /// No description provided for @serverRequiresEmail.
-  ///
-  /// In en, this message translates to:
-  /// **'This server needs to validate your email address for registration.'**
-  String get serverRequiresEmail;
 
   /// No description provided for @or.
   ///
@@ -2093,30 +1805,6 @@ abstract class L10n {
   /// **'Password has been changed'**
   String get passwordHasBeenChanged;
 
-  /// No description provided for @hideMemberChangesInPublicChats.
-  ///
-  /// In en, this message translates to:
-  /// **'Hide member changes in public chats'**
-  String get hideMemberChangesInPublicChats;
-
-  /// No description provided for @hideMemberChangesInPublicChatsBody.
-  ///
-  /// In en, this message translates to:
-  /// **'Do not show in the chat timeline if someone joins or leaves a public chat to improve readability.'**
-  String get hideMemberChangesInPublicChatsBody;
-
-  /// No description provided for @overview.
-  ///
-  /// In en, this message translates to:
-  /// **'Overview'**
-  String get overview;
-
-  /// No description provided for @notifyMeFor.
-  ///
-  /// In en, this message translates to:
-  /// **'Notify me for'**
-  String get notifyMeFor;
-
   /// No description provided for @passwordRecoverySettings.
   ///
   /// In en, this message translates to:
@@ -2129,35 +1817,11 @@ abstract class L10n {
   /// **'Password recovery'**
   String get passwordRecovery;
 
-  /// No description provided for @people.
-  ///
-  /// In en, this message translates to:
-  /// **'People'**
-  String get people;
-
-  /// No description provided for @pickImage.
-  ///
-  /// In en, this message translates to:
-  /// **'Pick an image'**
-  String get pickImage;
-
   /// No description provided for @pin.
   ///
   /// In en, this message translates to:
   /// **'Pin'**
   String get pin;
-
-  /// No description provided for @play.
-  ///
-  /// In en, this message translates to:
-  /// **'Play {fileName}'**
-  String play(String fileName);
-
-  /// No description provided for @pleaseChoose.
-  ///
-  /// In en, this message translates to:
-  /// **'Please choose'**
-  String get pleaseChoose;
 
   /// No description provided for @pleaseChooseAPasscode.
   ///
@@ -2170,18 +1834,6 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'Please click on the link in the email and then proceed.'**
   String get pleaseClickOnLink;
-
-  /// No description provided for @pleaseEnter4Digits.
-  ///
-  /// In en, this message translates to:
-  /// **'Please enter 4 digits or leave empty to disable app lock.'**
-  String get pleaseEnter4Digits;
-
-  /// No description provided for @pleaseEnterRecoveryKey.
-  ///
-  /// In en, this message translates to:
-  /// **'Please enter your recovery key:'**
-  String get pleaseEnterRecoveryKey;
 
   /// No description provided for @pleaseEnterYourPassword.
   ///
@@ -2219,35 +1871,17 @@ abstract class L10n {
   /// **'Public Rooms'**
   String get publicRooms;
 
-  /// No description provided for @pushRules.
-  ///
-  /// In en, this message translates to:
-  /// **'Push rules'**
-  String get pushRules;
-
   /// No description provided for @reason.
   ///
   /// In en, this message translates to:
   /// **'Reason'**
   String get reason;
 
-  /// No description provided for @recording.
-  ///
-  /// In en, this message translates to:
-  /// **'Recording'**
-  String get recording;
-
   /// No description provided for @redactedBy.
   ///
   /// In en, this message translates to:
   /// **'Redacted by {username}'**
   String redactedBy(String username);
-
-  /// No description provided for @directChat.
-  ///
-  /// In en, this message translates to:
-  /// **'Direct chat'**
-  String get directChat;
 
   /// No description provided for @redactedByBecause.
   ///
@@ -2267,12 +1901,6 @@ abstract class L10n {
   /// **'Redact message'**
   String get redactMessage;
 
-  /// No description provided for @register.
-  ///
-  /// In en, this message translates to:
-  /// **'Register'**
-  String get register;
-
   /// No description provided for @reject.
   ///
   /// In en, this message translates to:
@@ -2285,29 +1913,11 @@ abstract class L10n {
   /// **'{username} rejected the invitation'**
   String rejectedTheInvitation(String username);
 
-  /// No description provided for @rejoin.
-  ///
-  /// In en, this message translates to:
-  /// **'Rejoin'**
-  String get rejoin;
-
   /// No description provided for @removeAllOtherDevices.
   ///
   /// In en, this message translates to:
   /// **'Remove all other devices'**
   String get removeAllOtherDevices;
-
-  /// No description provided for @removedBy.
-  ///
-  /// In en, this message translates to:
-  /// **'Removed by {username}'**
-  String removedBy(String username);
-
-  /// No description provided for @removeDevice.
-  ///
-  /// In en, this message translates to:
-  /// **'Remove device'**
-  String get removeDevice;
 
   /// No description provided for @unbanFromChat.
   ///
@@ -2339,23 +1949,29 @@ abstract class L10n {
   /// **'Report message'**
   String get reportMessage;
 
-  /// No description provided for @requestPermission.
-  ///
-  /// In en, this message translates to:
-  /// **'Request permission'**
-  String get requestPermission;
-
   /// No description provided for @roomHasBeenUpgraded.
   ///
   /// In en, this message translates to:
   /// **'Room has been upgraded'**
   String get roomHasBeenUpgraded;
 
+  /// No description provided for @sendingFilesDoNotExit.
+  ///
+  /// In en, this message translates to:
+  /// **'Sending {count} files... Please do not exit!'**
+  String sendingFilesDoNotExit(int count);
+
   /// No description provided for @roomVersion.
   ///
   /// In en, this message translates to:
   /// **'Room version'**
   String get roomVersion;
+
+  /// No description provided for @compressingVideo.
+  ///
+  /// In en, this message translates to:
+  /// **'Compressing video...'**
+  String get compressingVideo;
 
   /// No description provided for @saveFile.
   ///
@@ -2374,24 +1990,6 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'Security'**
   String get security;
-
-  /// No description provided for @recoveryKey.
-  ///
-  /// In en, this message translates to:
-  /// **'Recovery key'**
-  String get recoveryKey;
-
-  /// No description provided for @recoveryKeyLost.
-  ///
-  /// In en, this message translates to:
-  /// **'Recovery key lost?'**
-  String get recoveryKeyLost;
-
-  /// No description provided for @seenByUser.
-  ///
-  /// In en, this message translates to:
-  /// **'Seen by {username}'**
-  String seenByUser(String username);
 
   /// No description provided for @send.
   ///
@@ -2441,18 +2039,6 @@ abstract class L10n {
   /// **'Send messages'**
   String get sendMessages;
 
-  /// No description provided for @sendOriginal.
-  ///
-  /// In en, this message translates to:
-  /// **'Send original'**
-  String get sendOriginal;
-
-  /// No description provided for @sendSticker.
-  ///
-  /// In en, this message translates to:
-  /// **'Send sticker'**
-  String get sendSticker;
-
   /// No description provided for @sendVideo.
   ///
   /// In en, this message translates to:
@@ -2495,41 +2081,17 @@ abstract class L10n {
   /// **'{senderName} sent call information'**
   String sentCallInformations(String senderName);
 
-  /// No description provided for @separateChatTypes.
-  ///
-  /// In en, this message translates to:
-  /// **'Separate Direct Chats and Groups'**
-  String get separateChatTypes;
-
   /// No description provided for @setAsCanonicalAlias.
   ///
   /// In en, this message translates to:
   /// **'Set as main alias'**
   String get setAsCanonicalAlias;
 
-  /// No description provided for @setCustomEmotes.
-  ///
-  /// In en, this message translates to:
-  /// **'Set custom emotes'**
-  String get setCustomEmotes;
-
   /// No description provided for @setChatDescription.
   ///
   /// In en, this message translates to:
   /// **'Set chat description'**
   String get setChatDescription;
-
-  /// No description provided for @setInvitationLink.
-  ///
-  /// In en, this message translates to:
-  /// **'Set invitation link'**
-  String get setInvitationLink;
-
-  /// No description provided for @setPermissionsLevel.
-  ///
-  /// In en, this message translates to:
-  /// **'Set permissions level'**
-  String get setPermissionsLevel;
 
   /// No description provided for @setStatus.
   ///
@@ -2561,30 +2123,6 @@ abstract class L10n {
   /// **'Share location'**
   String get shareLocation;
 
-  /// No description provided for @showPassword.
-  ///
-  /// In en, this message translates to:
-  /// **'Show password'**
-  String get showPassword;
-
-  /// No description provided for @presenceStyle.
-  ///
-  /// In en, this message translates to:
-  /// **'Presence:'**
-  String get presenceStyle;
-
-  /// No description provided for @presencesToggle.
-  ///
-  /// In en, this message translates to:
-  /// **'Show status messages from other users'**
-  String get presencesToggle;
-
-  /// No description provided for @singlesignon.
-  ///
-  /// In en, this message translates to:
-  /// **'Single Sign on'**
-  String get singlesignon;
-
   /// No description provided for @skip.
   ///
   /// In en, this message translates to:
@@ -2614,12 +2152,6 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'{senderName} started a call'**
   String startedACall(String senderName);
-
-  /// No description provided for @startFirstChat.
-  ///
-  /// In en, this message translates to:
-  /// **'Start your first chat'**
-  String get startFirstChat;
 
   /// No description provided for @status.
   ///
@@ -2669,53 +2201,17 @@ abstract class L10n {
   /// **'They Match'**
   String get theyMatch;
 
-  /// Title for the application
-  ///
-  /// In en, this message translates to:
-  /// **'REChain'**
-  String get title;
-
-  /// No description provided for @toggleFavorite.
-  ///
-  /// In en, this message translates to:
-  /// **'Toggle Favorite'**
-  String get toggleFavorite;
-
-  /// No description provided for @toggleMuted.
-  ///
-  /// In en, this message translates to:
-  /// **'Toggle Muted'**
-  String get toggleMuted;
-
-  /// No description provided for @toggleUnread.
-  ///
-  /// In en, this message translates to:
-  /// **'Mark Read/Unread'**
-  String get toggleUnread;
-
   /// No description provided for @tooManyRequestsWarning.
   ///
   /// In en, this message translates to:
   /// **'Too many requests. Please try again later!'**
   String get tooManyRequestsWarning;
 
-  /// No description provided for @transferFromAnotherDevice.
-  ///
-  /// In en, this message translates to:
-  /// **'Transfer from another device'**
-  String get transferFromAnotherDevice;
-
   /// No description provided for @tryToSendAgain.
   ///
   /// In en, this message translates to:
   /// **'Try to send again'**
   String get tryToSendAgain;
-
-  /// No description provided for @unavailable.
-  ///
-  /// In en, this message translates to:
-  /// **'Unavailable'**
-  String get unavailable;
 
   /// No description provided for @unbannedUser.
   ///
@@ -2759,12 +2255,6 @@ abstract class L10n {
   /// **'Unpin'**
   String get unpin;
 
-  /// No description provided for @unreadChats.
-  ///
-  /// In en, this message translates to:
-  /// **'{unreadCount, plural, =1{1 unread chat} other{{unreadCount} unread chats}}'**
-  String unreadChats(int unreadCount);
-
   /// No description provided for @userAndOthersAreTyping.
   ///
   /// In en, this message translates to:
@@ -2789,12 +2279,6 @@ abstract class L10n {
   /// **'🚪 {username} left the chat'**
   String userLeftTheChat(String username);
 
-  /// No description provided for @username.
-  ///
-  /// In en, this message translates to:
-  /// **'Username'**
-  String get username;
-
   /// No description provided for @userSentUnknownEvent.
   ///
   /// In en, this message translates to:
@@ -2813,12 +2297,6 @@ abstract class L10n {
   /// **'Verified'**
   String get verified;
 
-  /// No description provided for @verify.
-  ///
-  /// In en, this message translates to:
-  /// **'Verify'**
-  String get verify;
-
   /// No description provided for @verifyStart.
   ///
   /// In en, this message translates to:
@@ -2836,12 +2314,6 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'Verifying other account'**
   String get verifyTitle;
-
-  /// No description provided for @videoCall.
-  ///
-  /// In en, this message translates to:
-  /// **'Video call'**
-  String get videoCall;
 
   /// No description provided for @visibilityOfTheChatHistory.
   ///
@@ -2885,12 +2357,6 @@ abstract class L10n {
   /// **'Waiting for partner to accept the numbers…'**
   String get waitingPartnerNumbers;
 
-  /// No description provided for @wallpaper.
-  ///
-  /// In en, this message translates to:
-  /// **'Wallpaper:'**
-  String get wallpaper;
-
   /// No description provided for @warning.
   ///
   /// In en, this message translates to:
@@ -2920,12 +2386,6 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'Why do you want to report this?'**
   String get whyDoYouWantToReportThis;
-
-  /// No description provided for @wipeChatBackup.
-  ///
-  /// In en, this message translates to:
-  /// **'Wipe your chat backup to create a new recovery key?'**
-  String get wipeChatBackup;
 
   /// No description provided for @withTheseAddressesRecoveryDescription.
   ///
@@ -2957,12 +2417,6 @@ abstract class L10n {
   /// **'You are no longer participating in this chat'**
   String get youAreNoLongerParticipatingInThisChat;
 
-  /// No description provided for @youHaveBeenBannedFromThisChat.
-  ///
-  /// In en, this message translates to:
-  /// **'You have been banned from this chat'**
-  String get youHaveBeenBannedFromThisChat;
-
   /// No description provided for @yourPublicKey.
   ///
   /// In en, this message translates to:
@@ -2980,12 +2434,6 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'Time'**
   String get time;
-
-  /// No description provided for @messageType.
-  ///
-  /// In en, this message translates to:
-  /// **'Message Type'**
-  String get messageType;
 
   /// No description provided for @sender.
   ///
@@ -3005,42 +2453,6 @@ abstract class L10n {
   /// **'Remove from space'**
   String get removeFromSpace;
 
-  /// No description provided for @addToSpaceDescription.
-  ///
-  /// In en, this message translates to:
-  /// **'Select a space to add this chat to it.'**
-  String get addToSpaceDescription;
-
-  /// No description provided for @start.
-  ///
-  /// In en, this message translates to:
-  /// **'Start'**
-  String get start;
-
-  /// No description provided for @pleaseEnterRecoveryKeyDescription.
-  ///
-  /// In en, this message translates to:
-  /// **'To unlock your old messages, please enter your recovery key that has been generated in a previous session. Your recovery key is NOT your password.'**
-  String get pleaseEnterRecoveryKeyDescription;
-
-  /// No description provided for @publish.
-  ///
-  /// In en, this message translates to:
-  /// **'Publish'**
-  String get publish;
-
-  /// No description provided for @videoWithSize.
-  ///
-  /// In en, this message translates to:
-  /// **'Video ({size})'**
-  String videoWithSize(String size);
-
-  /// No description provided for @openChat.
-  ///
-  /// In en, this message translates to:
-  /// **'Open Chat'**
-  String get openChat;
-
   /// No description provided for @markAsRead.
   ///
   /// In en, this message translates to:
@@ -3052,12 +2464,6 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'Report user'**
   String get reportUser;
-
-  /// No description provided for @dismiss.
-  ///
-  /// In en, this message translates to:
-  /// **'Dismiss'**
-  String get dismiss;
 
   /// No description provided for @reactedWith.
   ///
@@ -3083,18 +2489,6 @@ abstract class L10n {
   /// **'Emojis'**
   String get emojis;
 
-  /// No description provided for @placeCall.
-  ///
-  /// In en, this message translates to:
-  /// **'Place call'**
-  String get placeCall;
-
-  /// No description provided for @voiceCall.
-  ///
-  /// In en, this message translates to:
-  /// **'Voice call'**
-  String get voiceCall;
-
   /// No description provided for @unsupportedAndroidVersion.
   ///
   /// In en, this message translates to:
@@ -3106,108 +2500,6 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'This feature requires a newer Android version. Please check for updates or Mobile Katya OS support.'**
   String get unsupportedAndroidVersionLong;
-
-  /// No description provided for @videoCallsBetaWarning.
-  ///
-  /// In en, this message translates to:
-  /// **'Please note that video calls are currently in beta. They might not work as expected or work at all on all platforms.'**
-  String get videoCallsBetaWarning;
-
-  /// No description provided for @experimentalVideoCalls.
-  ///
-  /// In en, this message translates to:
-  /// **'Experimental video calls'**
-  String get experimentalVideoCalls;
-
-  /// No description provided for @emailOrUsername.
-  ///
-  /// In en, this message translates to:
-  /// **'Email or username'**
-  String get emailOrUsername;
-
-  /// No description provided for @indexedDbErrorTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Private mode issues'**
-  String get indexedDbErrorTitle;
-
-  /// No description provided for @indexedDbErrorLong.
-  ///
-  /// In en, this message translates to:
-  /// **'The message storage is unfortunately not enabled in private mode by default.\nPlease visit\n - about:config\n - set dom.indexedDB.privateBrowsing.enabled to true\nOtherwise, it is not possible to run REChain.'**
-  String get indexedDbErrorLong;
-
-  /// No description provided for @switchToAccount.
-  ///
-  /// In en, this message translates to:
-  /// **'Switch to account {number}'**
-  String switchToAccount(String number);
-
-  /// No description provided for @nextAccount.
-  ///
-  /// In en, this message translates to:
-  /// **'Next account'**
-  String get nextAccount;
-
-  /// No description provided for @previousAccount.
-  ///
-  /// In en, this message translates to:
-  /// **'Previous account'**
-  String get previousAccount;
-
-  /// No description provided for @addWidget.
-  ///
-  /// In en, this message translates to:
-  /// **'Add widget'**
-  String get addWidget;
-
-  /// No description provided for @widgetVideo.
-  ///
-  /// In en, this message translates to:
-  /// **'Video'**
-  String get widgetVideo;
-
-  /// No description provided for @widgetEtherpad.
-  ///
-  /// In en, this message translates to:
-  /// **'Text note'**
-  String get widgetEtherpad;
-
-  /// No description provided for @widgetJitsi.
-  ///
-  /// In en, this message translates to:
-  /// **'Jitsi Meet'**
-  String get widgetJitsi;
-
-  /// No description provided for @widgetCustom.
-  ///
-  /// In en, this message translates to:
-  /// **'Custom'**
-  String get widgetCustom;
-
-  /// No description provided for @widgetName.
-  ///
-  /// In en, this message translates to:
-  /// **'Name'**
-  String get widgetName;
-
-  /// No description provided for @widgetUrlError.
-  ///
-  /// In en, this message translates to:
-  /// **'This is not a valid URL.'**
-  String get widgetUrlError;
-
-  /// No description provided for @widgetNameError.
-  ///
-  /// In en, this message translates to:
-  /// **'Please provide a display name.'**
-  String get widgetNameError;
-
-  /// No description provided for @errorAddingWidget.
-  ///
-  /// In en, this message translates to:
-  /// **'Error adding the widget.'**
-  String get errorAddingWidget;
 
   /// No description provided for @youRejectedTheInvitation.
   ///
@@ -3239,23 +2531,11 @@ abstract class L10n {
   /// **'You have withdrawn the invitation for {user}'**
   String youHaveWithdrawnTheInvitationFor(String user);
 
-  /// No description provided for @youInvitedToBy.
-  ///
-  /// In en, this message translates to:
-  /// **'📩 You have been invited via link to:\n{alias}'**
-  String youInvitedToBy(String alias);
-
   /// No description provided for @youInvitedBy.
   ///
   /// In en, this message translates to:
   /// **'📩 You have been invited by {user}'**
   String youInvitedBy(String user);
-
-  /// No description provided for @invitedBy.
-  ///
-  /// In en, this message translates to:
-  /// **'📩 Invited by {user}'**
-  String invitedBy(String user);
 
   /// No description provided for @youInvitedUser.
   ///
@@ -3299,18 +2579,6 @@ abstract class L10n {
   /// **'No one can join'**
   String get noOneCanJoin;
 
-  /// No description provided for @userWouldLikeToChangeTheChat.
-  ///
-  /// In en, this message translates to:
-  /// **'{user} would like to join the chat.'**
-  String userWouldLikeToChangeTheChat(String user);
-
-  /// No description provided for @noPublicLinkHasBeenCreatedYet.
-  ///
-  /// In en, this message translates to:
-  /// **'No public link has been created yet'**
-  String get noPublicLinkHasBeenCreatedYet;
-
   /// No description provided for @knock.
   ///
   /// In en, this message translates to:
@@ -3322,24 +2590,6 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'Users'**
   String get users;
-
-  /// No description provided for @unlockOldMessages.
-  ///
-  /// In en, this message translates to:
-  /// **'Unlock old messages'**
-  String get unlockOldMessages;
-
-  /// No description provided for @storeInSecureStorageDescription.
-  ///
-  /// In en, this message translates to:
-  /// **'Store the recovery key in the secure storage of this device.'**
-  String get storeInSecureStorageDescription;
-
-  /// No description provided for @saveKeyManuallyDescription.
-  ///
-  /// In en, this message translates to:
-  /// **'Save this key manually by triggering the system share dialog or clipboard.'**
-  String get saveKeyManuallyDescription;
 
   /// No description provided for @storeInAndroidKeystore.
   ///
@@ -3377,60 +2627,6 @@ abstract class L10n {
   /// **'Custom'**
   String get custom;
 
-  /// No description provided for @foregroundServiceRunning.
-  ///
-  /// In en, this message translates to:
-  /// **'This notification appears when the foreground service is running.'**
-  String get foregroundServiceRunning;
-
-  /// No description provided for @screenSharingTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'screen sharing'**
-  String get screenSharingTitle;
-
-  /// No description provided for @screenSharingDetail.
-  ///
-  /// In en, this message translates to:
-  /// **'You are sharing your screen in REChain'**
-  String get screenSharingDetail;
-
-  /// No description provided for @callingPermissions.
-  ///
-  /// In en, this message translates to:
-  /// **'Calling permissions'**
-  String get callingPermissions;
-
-  /// No description provided for @callingAccount.
-  ///
-  /// In en, this message translates to:
-  /// **'Calling account'**
-  String get callingAccount;
-
-  /// No description provided for @callingAccountDetails.
-  ///
-  /// In en, this message translates to:
-  /// **'Allows REChain to use the native android dialer app.'**
-  String get callingAccountDetails;
-
-  /// No description provided for @appearOnTop.
-  ///
-  /// In en, this message translates to:
-  /// **'Appear on top'**
-  String get appearOnTop;
-
-  /// No description provided for @appearOnTopDetails.
-  ///
-  /// In en, this message translates to:
-  /// **'Allows the app to appear on top (not needed if you already have REChain setup as a calling account)'**
-  String get appearOnTopDetails;
-
-  /// No description provided for @otherCallingPermissions.
-  ///
-  /// In en, this message translates to:
-  /// **'Microphone, camera and other REChain permissions'**
-  String get otherCallingPermissions;
-
   /// No description provided for @whyIsThisMessageEncrypted.
   ///
   /// In en, this message translates to:
@@ -3443,53 +2639,11 @@ abstract class L10n {
   /// **'This can happen if the message was sent before you have signed in to your account at this device.\n\nIt is also possible that the sender has blocked your device or something went wrong with the internet connection.\n\nAre you able to read the message on another session? Then you can transfer the message from it! Go to Settings > Devices and make sure that your devices have verified each other. When you open the room the next time and both sessions are in the foreground, the keys will be transmitted automatically.\n\nDo you not want to lose the keys when logging out or switching devices? Make sure that you have enabled the chat backup in the settings.'**
   String get noKeyForThisMessage;
 
-  /// No description provided for @newGroup.
-  ///
-  /// In en, this message translates to:
-  /// **'New group'**
-  String get newGroup;
-
   /// No description provided for @newSpace.
   ///
   /// In en, this message translates to:
   /// **'New space'**
   String get newSpace;
-
-  /// No description provided for @enterSpace.
-  ///
-  /// In en, this message translates to:
-  /// **'Enter space'**
-  String get enterSpace;
-
-  /// No description provided for @enterRoom.
-  ///
-  /// In en, this message translates to:
-  /// **'Enter room'**
-  String get enterRoom;
-
-  /// No description provided for @allSpaces.
-  ///
-  /// In en, this message translates to:
-  /// **'All spaces'**
-  String get allSpaces;
-
-  /// No description provided for @numChats.
-  ///
-  /// In en, this message translates to:
-  /// **'{number} chats'**
-  String numChats(String number);
-
-  /// No description provided for @hideUnimportantStateEvents.
-  ///
-  /// In en, this message translates to:
-  /// **'Hide unimportant state events'**
-  String get hideUnimportantStateEvents;
-
-  /// No description provided for @hidePresences.
-  ///
-  /// In en, this message translates to:
-  /// **'Hide Status List?'**
-  String get hidePresences;
 
   /// No description provided for @doNotShowAgain.
   ///
@@ -3526,12 +2680,6 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'Sorry... that is not possible'**
   String get sorryThatsNotPossible;
-
-  /// No description provided for @deviceKeys.
-  ///
-  /// In en, this message translates to:
-  /// **'Device keys:'**
-  String get deviceKeys;
 
   /// No description provided for @reopenChat.
   ///
@@ -3599,36 +2747,6 @@ abstract class L10n {
   /// **'report'**
   String get report;
 
-  /// No description provided for @signInWithPassword.
-  ///
-  /// In en, this message translates to:
-  /// **'Sign in with password'**
-  String get signInWithPassword;
-
-  /// No description provided for @pleaseTryAgainLaterOrChooseDifferentServer.
-  ///
-  /// In en, this message translates to:
-  /// **'Please try again later or choose a different server.'**
-  String get pleaseTryAgainLaterOrChooseDifferentServer;
-
-  /// No description provided for @signInWith.
-  ///
-  /// In en, this message translates to:
-  /// **'Sign in with {provider}'**
-  String signInWith(String provider);
-
-  /// No description provided for @profileNotFound.
-  ///
-  /// In en, this message translates to:
-  /// **'The user could not be found on the server. Maybe there is a connection problem or the user doesn\'t exist.'**
-  String get profileNotFound;
-
-  /// No description provided for @setTheme.
-  ///
-  /// In en, this message translates to:
-  /// **'Set theme:'**
-  String get setTheme;
-
   /// No description provided for @setColorTheme.
   ///
   /// In en, this message translates to:
@@ -3646,12 +2764,6 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'📨 Group chat invite'**
   String get inviteGroupChat;
-
-  /// No description provided for @invitePrivateChat.
-  ///
-  /// In en, this message translates to:
-  /// **'📨 Private chat invite'**
-  String get invitePrivateChat;
 
   /// No description provided for @invalidInput.
   ///
@@ -3680,7 +2792,7 @@ abstract class L10n {
   /// No description provided for @roomUpgradeDescription.
   ///
   /// In en, this message translates to:
-  /// **'The chat will then be recreated with the new room version. All participants will be notified that they need to switch to the new chat. You can find out more about room versions at https://github.com/sorydima/REChain-.git'**
+  /// **'The chat will then be recreated with the new room version. All participants will be notified that they need to switch to the new chat. You can find out more about room versions at https://spec.matrix.org/latest/rooms/'**
   String get roomUpgradeDescription;
 
   /// No description provided for @removeDevicesDescription.
@@ -3785,12 +2897,6 @@ abstract class L10n {
   /// **'Sorry... this does not seem to be the correct recovery key.'**
   String get wrongRecoveryKey;
 
-  /// No description provided for @startConversation.
-  ///
-  /// In en, this message translates to:
-  /// **'Start conversation'**
-  String get startConversation;
-
   /// No description provided for @commandHint_sendraw.
   ///
   /// In en, this message translates to:
@@ -3857,12 +2963,6 @@ abstract class L10n {
   /// **'Your entered password is wrong'**
   String get passwordIsWrong;
 
-  /// No description provided for @publicLink.
-  ///
-  /// In en, this message translates to:
-  /// **'Public link'**
-  String get publicLink;
-
   /// No description provided for @publicChatAddresses.
   ///
   /// In en, this message translates to:
@@ -3893,18 +2993,6 @@ abstract class L10n {
   /// **'Add chat or sub space'**
   String get addChatOrSubSpace;
 
-  /// No description provided for @subspace.
-  ///
-  /// In en, this message translates to:
-  /// **'Subspace'**
-  String get subspace;
-
-  /// No description provided for @decline.
-  ///
-  /// In en, this message translates to:
-  /// **'Decline'**
-  String get decline;
-
   /// No description provided for @thisDevice.
   ///
   /// In en, this message translates to:
@@ -3916,18 +3004,6 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'An error occured while init the app'**
   String get initAppError;
-
-  /// No description provided for @userRole.
-  ///
-  /// In en, this message translates to:
-  /// **'User role'**
-  String get userRole;
-
-  /// No description provided for @minimumPowerLevel.
-  ///
-  /// In en, this message translates to:
-  /// **'{level} is the minimum power level.'**
-  String minimumPowerLevel(String level);
 
   /// No description provided for @searchIn.
   ///
@@ -3953,12 +3029,6 @@ abstract class L10n {
   /// **'Files'**
   String get files;
 
-  /// No description provided for @databaseBuildErrorBody.
-  ///
-  /// In en, this message translates to:
-  /// **'Unable to build the SQlite database. The app tries to use the legacy database for now. Please report this error to the developers at {url}. The error message is: {error}'**
-  String databaseBuildErrorBody(String url, String error);
-
   /// No description provided for @sessionLostBody.
   ///
   /// In en, this message translates to:
@@ -3970,12 +3040,6 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'The app now tries to restore your session from the backup. Please report this error to the developers at {url}. The error message is: {error}'**
   String restoreSessionBody(String url, String error);
-
-  /// No description provided for @forwardMessageTo.
-  ///
-  /// In en, this message translates to:
-  /// **'Forward message to {roomName}?'**
-  String forwardMessageTo(String roomName);
 
   /// No description provided for @sendReadReceipts.
   ///
@@ -4067,12 +3131,6 @@ abstract class L10n {
   /// **'{sender} started key verification'**
   String startedKeyVerification(String sender);
 
-  /// No description provided for @transparent.
-  ///
-  /// In en, this message translates to:
-  /// **'Transparent'**
-  String get transparent;
-
   /// No description provided for @incomingMessages.
   ///
   /// In en, this message translates to:
@@ -4120,18 +3178,6 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'Right now there are {count} users blocked.'**
   String thereAreCountUsersBlocked(Object count);
-
-  /// No description provided for @restricted.
-  ///
-  /// In en, this message translates to:
-  /// **'Restricted'**
-  String get restricted;
-
-  /// No description provided for @knockRestricted.
-  ///
-  /// In en, this message translates to:
-  /// **'Knock restricted'**
-  String get knockRestricted;
 
   /// No description provided for @goToSpace.
   ///
@@ -4223,35 +3269,29 @@ abstract class L10n {
   /// **'Changelog'**
   String get changelog;
 
+  /// No description provided for @updateAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Update {version} available'**
+  String updateAvailable(String version);
+
+  /// No description provided for @download.
+  ///
+  /// In en, this message translates to:
+  /// **'Download'**
+  String get download;
+
   /// No description provided for @sendCanceled.
   ///
   /// In en, this message translates to:
   /// **'Sending canceled'**
   String get sendCanceled;
 
-  /// No description provided for @loginWithMatrixId.
+  /// No description provided for @loginWithREChainId.
   ///
   /// In en, this message translates to:
   /// **'Login with REChain-ID'**
-  String get loginWithMatrixId;
-
-  /// No description provided for @discoverHomeservers.
-  ///
-  /// In en, this message translates to:
-  /// **'Discover homeservers'**
-  String get discoverHomeservers;
-
-  /// No description provided for @whatIsAHomeserver.
-  ///
-  /// In en, this message translates to:
-  /// **'What is a homeserver?'**
-  String get whatIsAHomeserver;
-
-  /// No description provided for @homeserverDescription.
-  ///
-  /// In en, this message translates to:
-  /// **'All your data is stored on the homeserver, just like an email provider. You can choose which homeserver you want to use, while you can still communicate with everyone. Learn more at at https://github.com/sorydima/REChain-.git'**
-  String get homeserverDescription;
+  String get loginWithREChainId;
 
   /// No description provided for @doesNotSeemToBeAValidHomeserver.
   ///
@@ -4264,42 +3304,6 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'Calculating file size...'**
   String get calculatingFileSize;
-
-  /// No description provided for @prepareSendingAttachment.
-  ///
-  /// In en, this message translates to:
-  /// **'Prepare sending attachment...'**
-  String get prepareSendingAttachment;
-
-  /// No description provided for @sendingAttachment.
-  ///
-  /// In en, this message translates to:
-  /// **'Sending attachment...'**
-  String get sendingAttachment;
-
-  /// No description provided for @generatingVideoThumbnail.
-  ///
-  /// In en, this message translates to:
-  /// **'Generating video thumbnail...'**
-  String get generatingVideoThumbnail;
-
-  /// No description provided for @compressVideo.
-  ///
-  /// In en, this message translates to:
-  /// **'Compressing video...'**
-  String get compressVideo;
-
-  /// No description provided for @sendingAttachmentCountOfCount.
-  ///
-  /// In en, this message translates to:
-  /// **'Sending attachment {index} of {length}...'**
-  String sendingAttachmentCountOfCount(int index, int length);
-
-  /// No description provided for @serverLimitReached.
-  ///
-  /// In en, this message translates to:
-  /// **'Server limit reached! Waiting {seconds} seconds...'**
-  String serverLimitReached(int seconds);
 
   /// No description provided for @oneOfYourDevicesIsNotVerified.
   ///
@@ -4318,12 +3322,6 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'Continue'**
   String get continueText;
-
-  /// No description provided for @welcomeText.
-  ///
-  /// In en, this message translates to:
-  /// **'Hey Hey 👋 This is REChain. You can sign in to any homeserver, which is compatible with https://github.com/sorydima/REChain-.git. And then chat with anyone. It\'s a huge decentralized messaging network!'**
-  String get welcomeText;
 
   /// No description provided for @blur.
   ///
@@ -4480,12 +3478,6 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'Waiting for server...'**
   String get waitingForServer;
-
-  /// No description provided for @appIntroduction.
-  ///
-  /// In en, this message translates to:
-  /// **'REChain lets you chat with your friends across different messengers. Learn more at https://github.com/sorydima/REChain-.git or just tap *Continue*.'**
-  String get appIntroduction;
 
   /// No description provided for @newChatRequest.
   ///
@@ -4901,6 +3893,18 @@ abstract class L10n {
   /// **'More events'**
   String get moreEvents;
 
+  /// No description provided for @showMore.
+  ///
+  /// In en, this message translates to:
+  /// **'Show more'**
+  String get showMore;
+
+  /// No description provided for @showLess.
+  ///
+  /// In en, this message translates to:
+  /// **'Show less'**
+  String get showLess;
+
   /// No description provided for @declineInvitation.
   ///
   /// In en, this message translates to:
@@ -4931,30 +3935,6 @@ abstract class L10n {
   /// **'Resume'**
   String get resume;
 
-  /// No description provided for @newSubSpace.
-  ///
-  /// In en, this message translates to:
-  /// **'New sub space'**
-  String get newSubSpace;
-
-  /// No description provided for @moveToDifferentSpace.
-  ///
-  /// In en, this message translates to:
-  /// **'Move to different space'**
-  String get moveToDifferentSpace;
-
-  /// No description provided for @moveUp.
-  ///
-  /// In en, this message translates to:
-  /// **'Move up'**
-  String get moveUp;
-
-  /// No description provided for @moveDown.
-  ///
-  /// In en, this message translates to:
-  /// **'Move down'**
-  String get moveDown;
-
   /// No description provided for @removeFromSpaceDescription.
   ///
   /// In en, this message translates to:
@@ -4979,24 +3959,6 @@ abstract class L10n {
   /// **'Space member of {spaces} can knock'**
   String spaceMemberOfCanKnock(String spaces);
 
-  /// No description provided for @donate.
-  ///
-  /// In en, this message translates to:
-  /// **'Donate'**
-  String get donate;
-
-  /// No description provided for @startedAPoll.
-  ///
-  /// In en, this message translates to:
-  /// **'{username} started a poll.'**
-  String startedAPoll(String username);
-
-  /// No description provided for @poll.
-  ///
-  /// In en, this message translates to:
-  /// **'Poll'**
-  String get poll;
-
   /// No description provided for @startPoll.
   ///
   /// In en, this message translates to:
@@ -5014,12 +3976,6 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'Answers visible'**
   String get answersVisible;
-
-  /// No description provided for @answersHidden.
-  ///
-  /// In en, this message translates to:
-  /// **'Answers hidden'**
-  String get answersHidden;
 
   /// No description provided for @pollQuestion.
   ///
@@ -5147,18 +4103,6 @@ abstract class L10n {
   /// **'Are you sure? Without enabling the chat backup you may lose access to your messages if you switch your device.'**
   String get skipChatBackupWarning;
 
-  /// No description provided for @loadingMessages.
-  ///
-  /// In en, this message translates to:
-  /// **'Loading messages'**
-  String get loadingMessages;
-
-  /// No description provided for @setupChatBackup.
-  ///
-  /// In en, this message translates to:
-  /// **'Set up chat backup'**
-  String get setupChatBackup;
-
   /// No description provided for @noMoreResultsFound.
   ///
   /// In en, this message translates to:
@@ -5170,6 +4114,840 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'Chat searched until {time}'**
   String chatSearchedUntil(String time);
+
+  /// No description provided for @federationBaseUrl.
+  ///
+  /// In en, this message translates to:
+  /// **'Federation Base URL'**
+  String get federationBaseUrl;
+
+  /// No description provided for @clientWellKnownInformation.
+  ///
+  /// In en, this message translates to:
+  /// **'Client-Well-Known Information:'**
+  String get clientWellKnownInformation;
+
+  /// No description provided for @baseUrl.
+  ///
+  /// In en, this message translates to:
+  /// **'Base URL'**
+  String get baseUrl;
+
+  /// No description provided for @identityServer.
+  ///
+  /// In en, this message translates to:
+  /// **'Identity Server:'**
+  String get identityServer;
+
+  /// No description provided for @versionWithNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Version: {version}'**
+  String versionWithNumber(String version);
+
+  /// No description provided for @logs.
+  ///
+  /// In en, this message translates to:
+  /// **'Logs'**
+  String get logs;
+
+  /// No description provided for @advancedConfigs.
+  ///
+  /// In en, this message translates to:
+  /// **'Advanced Configs'**
+  String get advancedConfigs;
+
+  /// No description provided for @advancedConfigurations.
+  ///
+  /// In en, this message translates to:
+  /// **'Advanced configurations'**
+  String get advancedConfigurations;
+
+  /// No description provided for @signIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in'**
+  String get signIn;
+
+  /// No description provided for @createNewAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Create new account'**
+  String get createNewAccount;
+
+  /// No description provided for @signUpGreeting.
+  ///
+  /// In en, this message translates to:
+  /// **'REChain is decentralized! Select a server where you want to create your account and let\'s go!'**
+  String get signUpGreeting;
+
+  /// No description provided for @signInGreeting.
+  ///
+  /// In en, this message translates to:
+  /// **'You already have an account in REChain? Welcome back! Select your homeserver and sign in.'**
+  String get signInGreeting;
+
+  /// No description provided for @theProcessWasCanceled.
+  ///
+  /// In en, this message translates to:
+  /// **'The process was canceled.'**
+  String get theProcessWasCanceled;
+
+  /// No description provided for @join.
+  ///
+  /// In en, this message translates to:
+  /// **'Join'**
+  String get join;
+
+  /// No description provided for @searchOrEnterHomeserverAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Search or enter homeserver address'**
+  String get searchOrEnterHomeserverAddress;
+
+  /// No description provided for @matrixId.
+  ///
+  /// In en, this message translates to:
+  /// **'REChain ID'**
+  String get matrixId;
+
+  /// No description provided for @setPowerLevel.
+  ///
+  /// In en, this message translates to:
+  /// **'Set power level'**
+  String get setPowerLevel;
+
+  /// No description provided for @makeModerator.
+  ///
+  /// In en, this message translates to:
+  /// **'Make moderator'**
+  String get makeModerator;
+
+  /// No description provided for @makeAdmin.
+  ///
+  /// In en, this message translates to:
+  /// **'Make admin'**
+  String get makeAdmin;
+
+  /// No description provided for @removeModeratorRights.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove moderator rights'**
+  String get removeModeratorRights;
+
+  /// No description provided for @removeAdminRights.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove admin rights'**
+  String get removeAdminRights;
+
+  /// No description provided for @powerLevel.
+  ///
+  /// In en, this message translates to:
+  /// **'Power level'**
+  String get powerLevel;
+
+  /// No description provided for @setPowerLevelDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Power levels define what a member is allowed to do in this room and usually range between 0 and 100.'**
+  String get setPowerLevelDescription;
+
+  /// No description provided for @owner.
+  ///
+  /// In en, this message translates to:
+  /// **'Owner'**
+  String get owner;
+
+  /// This should be a very short string because there is not much space in the button!
+  ///
+  /// In en, this message translates to:
+  /// **'Mute'**
+  String get mute;
+
+  /// No description provided for @createNewChat.
+  ///
+  /// In en, this message translates to:
+  /// **'Create new chat'**
+  String get createNewChat;
+
+  /// No description provided for @reset.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset'**
+  String get reset;
+
+  /// No description provided for @supportrechainonline.
+  ///
+  /// In en, this message translates to:
+  /// **'Support REChain'**
+  String get supportrechainonline;
+
+  /// No description provided for @support.
+  ///
+  /// In en, this message translates to:
+  /// **'Support'**
+  String get support;
+
+  /// No description provided for @setLowPriority.
+  ///
+  /// In en, this message translates to:
+  /// **'Set low priority'**
+  String get setLowPriority;
+
+  /// No description provided for @unsetLowPriority.
+  ///
+  /// In en, this message translates to:
+  /// **'Unset low priority'**
+  String get unsetLowPriority;
+
+  /// No description provided for @playSoundOnNotification.
+  ///
+  /// In en, this message translates to:
+  /// **'Play sound on notification'**
+  String get playSoundOnNotification;
+
+  /// No description provided for @addTag.
+  ///
+  /// In en, this message translates to:
+  /// **'Add tag'**
+  String get addTag;
+
+  /// No description provided for @removeTag.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove tag'**
+  String get removeTag;
+
+  /// No description provided for @tagName.
+  ///
+  /// In en, this message translates to:
+  /// **'Tag name'**
+  String get tagName;
+
+  /// No description provided for @createNewTag.
+  ///
+  /// In en, this message translates to:
+  /// **'Create new tag'**
+  String get createNewTag;
+
+  /// No description provided for @hideRoomsInSpaces.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide rooms that are in a space'**
+  String get hideRoomsInSpaces;
+
+  /// No description provided for @possibleByYou.
+  ///
+  /// In en, this message translates to:
+  /// **'This release was only possible thanks to your support. REChain remains free, open-source, and entirely community-driven.'**
+  String get possibleByYou;
+
+  /// No description provided for @showThumbnailsInTimeline.
+  ///
+  /// In en, this message translates to:
+  /// **'Show thumbnails of images and videos'**
+  String get showThumbnailsInTimeline;
+
+  /// No description provided for @appSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Secure [REChain] Communication'**
+  String get appSubtitle;
+
+  /// No description provided for @appDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Communicate encrypted over the decentralized [REChain] network in an easy and accessible way for everyone.'**
+  String get appDescription;
+
+  /// No description provided for @interactiveVerification.
+  ///
+  /// In en, this message translates to:
+  /// **'Interactive verification'**
+  String get interactiveVerification;
+
+  /// No description provided for @interactiveVerificationDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'If you are next to each other or communicate via a secure channel then you can verify all devices at once by comparing a security number or emojis.'**
+  String get interactiveVerificationDescription;
+
+  /// No description provided for @countUnverifiedDevices.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} unverified devices in the chat.'**
+  String countUnverifiedDevices(int count);
+
+  /// No description provided for @encryptedMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Encrypted message'**
+  String get encryptedMessage;
+
+  /// No description provided for @unencryptedMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Unencrypted message'**
+  String get unencryptedMessage;
+
+  /// No description provided for @messageCanOnlyBeReadByUser.
+  ///
+  /// In en, this message translates to:
+  /// **'Your message is end to end encrypted and can only be read by this user:'**
+  String get messageCanOnlyBeReadByUser;
+
+  /// No description provided for @messageCanOnlyBeReadByUsers.
+  ///
+  /// In en, this message translates to:
+  /// **'Your message is end to end encrypted and can only be read by these users:'**
+  String get messageCanOnlyBeReadByUsers;
+
+  /// No description provided for @publicKey.
+  ///
+  /// In en, this message translates to:
+  /// **'Public key: {key}'**
+  String publicKey(String key);
+
+  /// No description provided for @deviceIdentityKey.
+  ///
+  /// In en, this message translates to:
+  /// **'Device identity key'**
+  String get deviceIdentityKey;
+
+  /// No description provided for @restoreBootstrapEmptyDevicesDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your passphrase or recovery key to verify this device and get access to your encrypted message backup.'**
+  String get restoreBootstrapEmptyDevicesDescription;
+
+  /// No description provided for @restoreBootstrapDevicesDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Please pick one of your other devices, to verify this session:'**
+  String get restoreBootstrapDevicesDescription;
+
+  /// No description provided for @resetAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset account'**
+  String get resetAccount;
+
+  /// No description provided for @restoreCryptoIdentity.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore Crypto Identity'**
+  String get restoreCryptoIdentity;
+
+  /// No description provided for @resetCryptoIdentity.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset Crypto Identity'**
+  String get resetCryptoIdentity;
+
+  /// No description provided for @setUpCryptoIdentity.
+  ///
+  /// In en, this message translates to:
+  /// **'Set Up Crypto Identity'**
+  String get setUpCryptoIdentity;
+
+  /// No description provided for @waitingForKeys.
+  ///
+  /// In en, this message translates to:
+  /// **'Waiting for keys... Please keep the other device active.'**
+  String get waitingForKeys;
+
+  /// No description provided for @noKeysTransmitted.
+  ///
+  /// In en, this message translates to:
+  /// **'No keys transmitted. Please try again.'**
+  String get noKeysTransmitted;
+
+  /// No description provided for @unlock.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock'**
+  String get unlock;
+
+  /// No description provided for @openFile.
+  ///
+  /// In en, this message translates to:
+  /// **'Open file'**
+  String get openFile;
+
+  /// No description provided for @resetAccountWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'When you reset your account you will lose the access to your old messages forever. All your current devices need to be verified again. Please only perform this action when you have no other devices left to verify your session and you have lost your recovery key and passphrase!'**
+  String get resetAccountWarning;
+
+  /// No description provided for @newPassphraseDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'REChain uses end to end encryption. To not lose your messages, please choose a strong passphrase to secure your crypto identity and your encrypted message backup.'**
+  String get newPassphraseDescription;
+
+  /// No description provided for @newPassphrase.
+  ///
+  /// In en, this message translates to:
+  /// **'New passphrase'**
+  String get newPassphrase;
+
+  /// No description provided for @repeatPassphrase.
+  ///
+  /// In en, this message translates to:
+  /// **'Repeat passphrase'**
+  String get repeatPassphrase;
+
+  /// No description provided for @passphrasesMatch.
+  ///
+  /// In en, this message translates to:
+  /// **'Passphrases match'**
+  String get passphrasesMatch;
+
+  /// No description provided for @passphraseLengthRequirement.
+  ///
+  /// In en, this message translates to:
+  /// **'At least 12 characters long.'**
+  String get passphraseLengthRequirement;
+
+  /// No description provided for @passphraseUpperAndLowerCaseRequirement.
+  ///
+  /// In en, this message translates to:
+  /// **'Contains uppercase and lowercase characters.'**
+  String get passphraseUpperAndLowerCaseRequirement;
+
+  /// No description provided for @passphraseSpecialCharactersRequirement.
+  ///
+  /// In en, this message translates to:
+  /// **'Contains special characters.'**
+  String get passphraseSpecialCharactersRequirement;
+
+  /// No description provided for @passphraseNumberRequirement.
+  ///
+  /// In en, this message translates to:
+  /// **'Contains one numbers.'**
+  String get passphraseNumberRequirement;
+
+  /// No description provided for @storeRecoveryKeyDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Please note down your recovery key to be able to restore your encrypted messages and your crypto identity on.'**
+  String get storeRecoveryKeyDescription;
+
+  /// No description provided for @saveAsFile.
+  ///
+  /// In en, this message translates to:
+  /// **'Save as file'**
+  String get saveAsFile;
+
+  /// No description provided for @youAreReadyToStart.
+  ///
+  /// In en, this message translates to:
+  /// **'You are ready to start!'**
+  String get youAreReadyToStart;
+
+  /// No description provided for @noUserKeyFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No user key found'**
+  String get noUserKeyFound;
+
+  /// No description provided for @knownSince.
+  ///
+  /// In en, this message translates to:
+  /// **'Known since: {date}'**
+  String knownSince(String date);
+
+  /// No description provided for @unsignedDevice.
+  ///
+  /// In en, this message translates to:
+  /// **'Unsigned device'**
+  String get unsignedDevice;
+
+  /// No description provided for @signedDevice.
+  ///
+  /// In en, this message translates to:
+  /// **'Signed device'**
+  String get signedDevice;
+
+  /// No description provided for @noCurve25519KeyFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No curve25519 key found'**
+  String get noCurve25519KeyFound;
+
+  /// No description provided for @messageNotDecryptable.
+  ///
+  /// In en, this message translates to:
+  /// **'Message not decryptable'**
+  String get messageNotDecryptable;
+
+  /// No description provided for @today.
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get today;
+
+  /// No description provided for @sending.
+  ///
+  /// In en, this message translates to:
+  /// **'Sending'**
+  String get sending;
+
+  /// No description provided for @generatingThumbnail.
+  ///
+  /// In en, this message translates to:
+  /// **'Generating thumbnail'**
+  String get generatingThumbnail;
+
+  /// No description provided for @encrypting.
+  ///
+  /// In en, this message translates to:
+  /// **'Encrypting'**
+  String get encrypting;
+
+  /// No description provided for @uploading.
+  ///
+  /// In en, this message translates to:
+  /// **'Uploading'**
+  String get uploading;
+
+  /// No description provided for @edited.
+  ///
+  /// In en, this message translates to:
+  /// **'(edited)'**
+  String get edited;
+
+  /// No description provided for @couldNotBeSent.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not be sent'**
+  String get couldNotBeSent;
+
+  /// No description provided for @yesterday.
+  ///
+  /// In en, this message translates to:
+  /// **'Yesterday'**
+  String get yesterday;
+
+  /// No description provided for @resetRecoveryKey.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset recovery key'**
+  String get resetRecoveryKey;
+
+  /// No description provided for @pleaseEnter6Digits.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter 6 digits to enable the app lock.'**
+  String get pleaseEnter6Digits;
+
+  /// No description provided for @disableAppLock.
+  ///
+  /// In en, this message translates to:
+  /// **'Disable app lock'**
+  String get disableAppLock;
+
+  /// No description provided for @disableAppLockAreYouSure.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to disable the app lock?'**
+  String get disableAppLockAreYouSure;
+
+  /// No description provided for @enableBiometrics.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable biometric authentication'**
+  String get enableBiometrics;
+
+  /// No description provided for @disableBiometrics.
+  ///
+  /// In en, this message translates to:
+  /// **'Disable biometric authentication'**
+  String get disableBiometrics;
+
+  /// No description provided for @biometricsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'With biometric authentication you can unlock the app with your face or your fingerprint. The capabilities depend on your device.'**
+  String get biometricsDescription;
+
+  /// No description provided for @useAppLock.
+  ///
+  /// In en, this message translates to:
+  /// **'Use app lock'**
+  String get useAppLock;
+
+  /// No description provided for @unlockWithBiometrics.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock with biometric authentication'**
+  String get unlockWithBiometrics;
+
+  /// No description provided for @resetPin.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset pin'**
+  String get resetPin;
+
+  /// No description provided for @forwardCountMessages.
+  ///
+  /// In en, this message translates to:
+  /// **'Forward {count, plural, =1{one message} other{{count} messages}}?'**
+  String forwardCountMessages(int count);
+
+  /// No description provided for @loadingMessages.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading messages...'**
+  String get loadingMessages;
+
+  /// No description provided for @buildDoesNotSupportFirebase.
+  ///
+  /// In en, this message translates to:
+  /// **'This build does not support firebase cloud messaging.'**
+  String get buildDoesNotSupportFirebase;
+
+  /// No description provided for @unableToRegisterDeviceForFirebase.
+  ///
+  /// In en, this message translates to:
+  /// **'Unable to register device for firebase cloud messaging.'**
+  String get unableToRegisterDeviceForFirebase;
+
+  /// No description provided for @unifiedPushDistributors.
+  ///
+  /// In en, this message translates to:
+  /// **'Unified Push distributors:'**
+  String get unifiedPushDistributors;
+
+  /// No description provided for @doubleTapToReact.
+  ///
+  /// In en, this message translates to:
+  /// **'Double-tap to react'**
+  String get doubleTapToReact;
+
+  /// No description provided for @doubleTapToReactDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Double-tap a message to react instead of selecting text'**
+  String get doubleTapToReactDescription;
+
+  /// No description provided for @doubleTapReaction.
+  ///
+  /// In en, this message translates to:
+  /// **'Double-tap reaction'**
+  String get doubleTapReaction;
+
+  /// No description provided for @shareCrashReports.
+  ///
+  /// In en, this message translates to:
+  /// **'Share crash reports'**
+  String get shareCrashReports;
+
+  /// No description provided for @shareCrashReportsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Automatically share crash reports with the developers?'**
+  String get shareCrashReportsDescription;
+
+  /// No description provided for @countActiveCallMembers.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} active call members'**
+  String countActiveCallMembers(int count);
+
+  /// No description provided for @enterCall.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter call'**
+  String get enterCall;
+
+  /// No description provided for @videoCallsBetaWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'Video calls are a beta feature. There might be bugs or unexpected behavior. We would be happy to hear about your feedback.'**
+  String get videoCallsBetaWarning;
+
+  /// No description provided for @noDevicesFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No devices found'**
+  String get noDevicesFound;
+
+  /// No description provided for @incomingCall.
+  ///
+  /// In en, this message translates to:
+  /// **'Incoming call'**
+  String get incomingCall;
+
+  /// No description provided for @videoCall.
+  ///
+  /// In en, this message translates to:
+  /// **'Video call'**
+  String get videoCall;
+
+  /// No description provided for @voiceCall.
+  ///
+  /// In en, this message translates to:
+  /// **'Voice call'**
+  String get voiceCall;
+
+  /// No description provided for @missedCall.
+  ///
+  /// In en, this message translates to:
+  /// **'Missed call'**
+  String get missedCall;
+
+  /// No description provided for @callBack.
+  ///
+  /// In en, this message translates to:
+  /// **'Call back'**
+  String get callBack;
+
+  /// No description provided for @hangUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Hang up'**
+  String get hangUp;
+
+  /// No description provided for @waitingForParticipant.
+  ///
+  /// In en, this message translates to:
+  /// **'Waiting for participant...'**
+  String get waitingForParticipant;
+
+  /// No description provided for @decline.
+  ///
+  /// In en, this message translates to:
+  /// **'Decline'**
+  String get decline;
+
+  /// No description provided for @startCall.
+  ///
+  /// In en, this message translates to:
+  /// **'Start call'**
+  String get startCall;
+
+  /// No description provided for @selectCamera.
+  ///
+  /// In en, this message translates to:
+  /// **'Select camera'**
+  String get selectCamera;
+
+  /// No description provided for @selectMicrophone.
+  ///
+  /// In en, this message translates to:
+  /// **'Select microphone'**
+  String get selectMicrophone;
+
+  /// No description provided for @selectSpeaker.
+  ///
+  /// In en, this message translates to:
+  /// **'Select speaker'**
+  String get selectSpeaker;
+
+  /// No description provided for @toggleMicrophone.
+  ///
+  /// In en, this message translates to:
+  /// **'Toggle microphone'**
+  String get toggleMicrophone;
+
+  /// No description provided for @toggleCamera.
+  ///
+  /// In en, this message translates to:
+  /// **'Toggle camera'**
+  String get toggleCamera;
+
+  /// No description provided for @startScreensharing.
+  ///
+  /// In en, this message translates to:
+  /// **'Start screensharing'**
+  String get startScreensharing;
+
+  /// No description provided for @stopScreensharing.
+  ///
+  /// In en, this message translates to:
+  /// **'Stop screensharing'**
+  String get stopScreensharing;
+
+  /// No description provided for @raiseHand.
+  ///
+  /// In en, this message translates to:
+  /// **'Raise hand'**
+  String get raiseHand;
+
+  /// No description provided for @stopRaiseHand.
+  ///
+  /// In en, this message translates to:
+  /// **'Stop raise hand'**
+  String get stopRaiseHand;
+
+  /// No description provided for @preferSpeaker.
+  ///
+  /// In en, this message translates to:
+  /// **'Prefer speaker'**
+  String get preferSpeaker;
+
+  /// No description provided for @unexpectedErrorOccurded.
+  ///
+  /// In en, this message translates to:
+  /// **'Unfortunately, an unexpected error has occurred: {msg}'**
+  String unexpectedErrorOccurded(String msg);
+
+  /// No description provided for @incomingCallFrom.
+  ///
+  /// In en, this message translates to:
+  /// **'Incoming call from {user}'**
+  String incomingCallFrom(String user);
+
+  /// No description provided for @serverRespondedWithError.
+  ///
+  /// In en, this message translates to:
+  /// **'The server has replied with an error message: {error}'**
+  String serverRespondedWithError(String error);
+
+  /// No description provided for @sharedLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Shared location'**
+  String get sharedLocation;
+
+  /// No description provided for @pasteImage.
+  ///
+  /// In en, this message translates to:
+  /// **'Paste image'**
+  String get pasteImage;
+
+  /// No description provided for @noImageInClipboard.
+  ///
+  /// In en, this message translates to:
+  /// **'No image in clipboard'**
+  String get noImageInClipboard;
+
+  /// No description provided for @doYouAlsoWantToBlock.
+  ///
+  /// In en, this message translates to:
+  /// **'Do you also want to block this user?'**
+  String get doYouAlsoWantToBlock;
+
+  /// No description provided for @declineAndBlock.
+  ///
+  /// In en, this message translates to:
+  /// **'Decline and block'**
+  String get declineAndBlock;
+
+  /// No description provided for @senderHasInvitedYouToTheChat.
+  ///
+  /// In en, this message translates to:
+  /// **'{sender} has invited you to the chat \'{nameOrAlias}\'.'**
+  String senderHasInvitedYouToTheChat(String sender, String nameOrAlias);
+
+  /// No description provided for @senderHasInvitedYouToTheSpace.
+  ///
+  /// In en, this message translates to:
+  /// **'{sender} has invited you to the space \'{nameOrAlias}\'.'**
+  String senderHasInvitedYouToTheSpace(String sender, String nameOrAlias);
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {

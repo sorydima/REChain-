@@ -1,15 +1,21 @@
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import 'dart:convert';
 import 'dart:io';
 import 'dart:math';
 import 'dart:typed_data';
 
-import 'package:flutter/material.dart';
-
-import 'package:matrix/matrix.dart';
-
+import 'package:archive/archive.dart';
 import 'package:rechainonline/config/themes.dart';
 import 'package:rechainonline/utils/client_download_content_extension.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_file_extension.dart';
 import 'package:rechainonline/widgets/matrix.dart';
+import 'package:lottie/lottie.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
 
 class MxcImage extends StatefulWidget {
   final Uri? uri;
@@ -25,8 +31,12 @@ class MxcImage extends StatefulWidget {
   final ThumbnailMethod thumbnailMethod;
   final Widget Function(BuildContext context)? placeholder;
   final String? cacheKey;
+  final String? cacheName;
   final Client? client;
   final BorderRadius borderRadius;
+
+  static void clearCache(String cacheName) =>
+      _MxcImageState._imageDataCaches.remove(cacheName);
 
   const MxcImage({
     this.uri,
@@ -44,6 +54,7 @@ class MxcImage extends StatefulWidget {
     this.cacheKey,
     this.client,
     this.borderRadius = BorderRadius.zero,
+    this.cacheName,
     super.key,
   });
 
@@ -52,7 +63,10 @@ class MxcImage extends StatefulWidget {
 }
 
 class _MxcImageState extends State<MxcImage> {
-  static final Map<String, Uint8List> _imageDataCache = {};
+  static final Map<String?, Map<String, Uint8List>> _imageDataCaches = {};
+  Map<String, Uint8List> get _imageDataCache =>
+      _imageDataCaches[widget.cacheName ?? ''] ??= {};
+
   Uint8List? _imageDataNoCache;
 
   Uint8List? get _imageData => widget.cacheKey == null
@@ -96,10 +110,18 @@ class _MxcImageState extends State<MxcImage> {
     }
 
     if (event != null) {
+      final useThumbnail = widget.isThumbnail && event.hasThumbnail;
+      if (!useThumbnail &&
+          !{
+            MessageTypes.Image,
+            MessageTypes.Sticker,
+          }.contains(event.messageType)) {
+        Logs().e('Event of type ${event.messageType} has no thumbnail!');
+      }
       final data = await event.downloadAndDecryptAttachment(
-        getThumbnail: widget.isThumbnail,
+        getThumbnail: useThumbnail,
       );
-      if (data.detectFileType is MatrixImageFile || widget.isThumbnail) {
+      if (data.detectFileType is MatrixImageFile) {
         if (!mounted) return;
         setState(() {
           _imageData = data.bytes;
@@ -109,7 +131,7 @@ class _MxcImageState extends State<MxcImage> {
     }
   }
 
-  void _tryLoad() async {
+  Future<void> _tryLoad() async {
     if (_imageData != null) {
       return;
     }
@@ -119,6 +141,8 @@ class _MxcImageState extends State<MxcImage> {
       if (!mounted) return;
       await Future.delayed(widget.retryDuration);
       _tryLoad();
+    } on MatrixException catch (e) {
+      Logs().d('Unable to load image', e);
     }
   }
 
@@ -128,51 +152,115 @@ class _MxcImageState extends State<MxcImage> {
     WidgetsBinding.instance.addPostFrameCallback((_) => _tryLoad());
   }
 
-  Widget placeholder(BuildContext context) =>
-      widget.placeholder?.call(context) ??
-      Container(
-        width: widget.width,
-        height: widget.height,
-        alignment: Alignment.center,
-        child: const CircularProgressIndicator.adaptive(strokeWidth: 2),
-      );
-
   @override
   Widget build(BuildContext context) {
     final data = _imageData;
     final hasData = data != null && data.isNotEmpty;
+    final ungzippedLottieData = data == null ? null : _ungzipLottie(data);
 
-    return AnimatedSwitcher(
+    Widget errorFallback(
+      BuildContext context,
+      Object error,
+      StackTrace? stackTrace,
+    ) {
+      Logs().d('Unable to render mxc image', error, stackTrace);
+      return SizedBox(
+        width: widget.width,
+        height: widget.height,
+        child: Material(
+          color: Theme.of(context).colorScheme.surfaceContainer,
+          child: Icon(
+            Icons.broken_image_outlined,
+            size: min(widget.height ?? 64, 64),
+            color: Theme.of(context).colorScheme.onSurface,
+          ),
+        ),
+      );
+    }
+
+    final imageChild = data == null
+        ? _MxcImagePlaceholder(
+            width: widget.width,
+            height: widget.height,
+            placeholder: widget.placeholder,
+          )
+        : (ungzippedLottieData != null
+              ? Lottie.memory(
+                  ungzippedLottieData,
+                  width: widget.width,
+                  height: widget.height,
+                  fit: widget.fit,
+                  errorBuilder: errorFallback,
+                )
+              : Image.memory(
+                  data,
+                  width: widget.width,
+                  height: widget.height,
+                  fit: widget.fit,
+                  filterQuality: widget.isThumbnail
+                      ? FilterQuality.low
+                      : FilterQuality.medium,
+                  errorBuilder: errorFallback,
+                ));
+
+    return AnimatedCrossFade(
       duration: rechainonlineThemes.animationDuration,
-      child: hasData
-          ? ClipRRect(
-              borderRadius: widget.borderRadius,
-              child: Image.memory(
-                data,
-                width: widget.width,
-                height: widget.height,
-                fit: widget.fit,
-                filterQuality: widget.isThumbnail
-                    ? FilterQuality.low
-                    : FilterQuality.medium,
-                errorBuilder: (context, e, s) {
-                  Logs().d('Unable to render mxc image', e, s);
-                  return SizedBox(
-                    width: widget.width,
-                    height: widget.height,
-                    child: Material(
-                      color: Theme.of(context).colorScheme.surfaceContainer,
-                      child: Icon(
-                        Icons.broken_image_outlined,
-                        size: min(widget.height ?? 64, 64),
-                        color: Theme.of(context).colorScheme.onSurface,
-                      ),
-                    ),
-                  );
-                },
-              ),
-            )
-          : placeholder(context),
+      firstChild: ClipRRect(
+        borderRadius: widget.borderRadius,
+        child: imageChild,
+      ),
+      secondChild: _MxcImagePlaceholder(
+        width: widget.width,
+        height: widget.height,
+        placeholder: widget.placeholder,
+      ),
+      crossFadeState: hasData
+          ? CrossFadeState.showFirst
+          : CrossFadeState.showSecond,
     );
   }
+}
+
+class _MxcImagePlaceholder extends StatelessWidget {
+  final double? width;
+  final double? height;
+  final Widget Function(BuildContext context)? placeholder;
+
+  const _MxcImagePlaceholder({
+    required this.width,
+    required this.height,
+    required this.placeholder,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return placeholder?.call(context) ??
+        Container(
+          width: width,
+          height: height,
+          alignment: Alignment.center,
+          child: const CircularProgressIndicator.adaptive(strokeWidth: 2),
+        );
+  }
+}
+
+Uint8List? _ungzipLottie(Uint8List data) {
+  // early return if the data is not gzipped
+  if (data.length < 2 || data.first != 0x1f || data[1] != 0x8b) {
+    return null;
+  }
+
+  // try decoding json
+  try {
+    final decompressed = GZipDecoder().decodeBytes(data);
+    final jsonStr = utf8.decode(decompressed);
+    final json = jsonDecode(jsonStr);
+    if (json is Map && json.containsKey('v')) {
+      return Uint8List.fromList(utf8.encode(jsonStr));
+    }
+  } catch (_) {
+    return null;
+  }
+
+  return null;
 }

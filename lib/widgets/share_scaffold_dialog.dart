@@ -1,15 +1,19 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:cross_file/cross_file.dart';
-import 'package:go_router/go_router.dart';
-import 'package:matrix/matrix.dart';
-
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/config/themes.dart';
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
+import 'package:rechainonline/widgets/adaptive_dialogs/show_ok_cancel_alert_dialog.dart';
 import 'package:rechainonline/widgets/avatar.dart';
 import 'package:rechainonline/widgets/matrix.dart';
+import 'package:go_router/go_router.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
 
 abstract class ShareItem {}
 
@@ -48,17 +52,33 @@ class _ShareScaffoldDialogState extends State<ShareScaffoldDialog> {
     });
   }
 
-  void _forwardAction() async {
+  Future<void> _forwardAction() async {
     final roomId = selectedRoomId;
     if (roomId == null) {
       throw Exception(
         'Started forward action before room was selected. This should never happen.',
       );
     }
+    if (widget.items.any((item) => item is! FileShareItem)) {
+      final consent = await showOkCancelAlertDialog(
+        context: context,
+        title: L10n.of(context).forwardCountMessages(widget.items.length),
+        okLabel: L10n.of(context).forward,
+        cancelLabel: L10n.of(context).cancel,
+      );
+      if (consent != OkCancelResult.ok) return;
+    }
+    if (!mounted) return;
     while (context.canPop()) {
       context.pop();
     }
     context.go('/rooms/$roomId', extra: widget.items);
+  }
+
+  @override
+  void dispose() {
+    _filterController.dispose();
+    super.dispose();
   }
 
   @override
@@ -130,37 +150,40 @@ class _ShareScaffoldDialogState extends State<ShareScaffoldDialog> {
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Opacity(
                   opacity: filterOut ? 0.5 : 1,
-                  child: CheckboxListTile.adaptive(
-                    checkboxShape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(90),
-                    ),
-                    controlAffinity: ListTileControlAffinity.trailing,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(
-                        AppConfig.borderRadius,
+                  child: FutureBuilder(
+                    future: room.loadHeroUsers(),
+                    builder: (context, _) => CheckboxListTile.adaptive(
+                      checkboxShape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(90),
                       ),
+                      controlAffinity: ListTileControlAffinity.trailing,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(
+                          AppConfig.borderRadius,
+                        ),
+                      ),
+                      secondary: Avatar(
+                        mxContent: room.avatar,
+                        name: displayname,
+                        size: Avatar.defaultSize * 0.75,
+                      ),
+                      title: Text(
+                        displayname,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      subtitle: Text(
+                        room.directChatMatrixID ??
+                            L10n.of(context).countParticipants(
+                              (room.summary.mJoinedMemberCount ?? 0) +
+                                  (room.summary.mInvitedMemberCount ?? 0),
+                            ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      value: selectedRoomId == room.id,
+                      onChanged: (_) => _toggleRoom(room.id),
                     ),
-                    secondary: Avatar(
-                      mxContent: room.avatar,
-                      name: displayname,
-                      size: Avatar.defaultSize * 0.75,
-                    ),
-                    title: Text(
-                      displayname,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                    subtitle: Text(
-                      room.directChatMatrixID ??
-                          L10n.of(context).countParticipants(
-                            (room.summary.mJoinedMemberCount ?? 0) +
-                                (room.summary.mInvitedMemberCount ?? 0),
-                          ),
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                    value: selectedRoomId == room.id,
-                    onChanged: (_) => _toggleRoom(room.id),
                   ),
                 ),
               );
@@ -176,11 +199,13 @@ class _ShareScaffoldDialogState extends State<ShareScaffoldDialog> {
             : Material(
                 elevation: 8,
                 shadowColor: theme.appBarTheme.shadowColor,
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: ElevatedButton(
-                    onPressed: _forwardAction,
-                    child: Text(L10n.of(context).forward),
+                child: SafeArea(
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: ElevatedButton(
+                      onPressed: _forwardAction,
+                      child: Text(L10n.of(context).forward),
+                    ),
                   ),
                 ),
               ),

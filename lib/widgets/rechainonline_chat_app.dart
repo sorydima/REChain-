@@ -1,45 +1,41 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:go_router/go_router.dart';
-import 'package:matrix/matrix.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
+import 'dart:developer';
+
+import 'package:cupertino_ui/cupertino_ui.dart';
+import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/config/routes.dart';
 import 'package:rechainonline/config/setting_keys.dart';
 import 'package:rechainonline/config/themes.dart';
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/widgets/app_lock.dart';
+import 'package:rechainonline/widgets/layouts/call_overlay.dart';
 import 'package:rechainonline/widgets/theme_builder.dart';
+import 'package:go_router/go_router.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
 import '../utils/custom_scroll_behaviour.dart';
 import 'matrix.dart';
 
-// Global REChain class for accessing app-wide properties
-class REChain {
-  static final REChain _instance = REChain._internal();
-  factory REChain() => _instance;
-  REChain._internal();
-
-  static REChain get pp => _instance;
-  
-  late GoRouter router;
-  
-  void initializeRouter(GoRouter router) {
-    this.router = router;
-  }
-}
-
-class REChainApp extends StatelessWidget {
+class rechainonlineChatApp extends StatelessWidget {
   final Widget? testWidget;
   final List<Client> clients;
-  final String? pincode;
+  final ({String? pincode, bool useBiometrics}) appLockSettings;
   final SharedPreferences store;
+  final Locale? locale;
 
-  const REChainApp({
+  const rechainonlineChatApp({
     super.key,
     this.testWidget,
     required this.clients,
     required this.store,
-    this.pincode,
+    required this.appLockSettings,
+    this.locale,
   });
 
   /// getInitialLink may rereturn the value multiple times if this view is
@@ -52,17 +48,49 @@ class REChainApp extends StatelessWidget {
   static final GoRouter router = GoRouter(
     routes: AppRoutes.routes,
     debugLogDiagnostics: true,
+    redirect: (context, state) {
+      // Workaround for content sharings passed to go router:
+      if ({
+        'content',
+        'sharemedia-com.rechain.online',
+      }.contains(state.uri.scheme)) {
+        Logs().d('Ignore content sharing handling in go router', state.uri);
+        return '/';
+      }
+
+      if (state.uri.scheme == 'matrix') {
+        debugger();
+        final type = state.uri.pathSegments.first;
+        final id = state.uri.pathSegments[1];
+        switch (type) {
+          case 'roomid':
+            final roomId = '!$id';
+            return '/rooms/$roomId';
+          case 'r':
+            final alias = '#$id';
+            return '/rooms/newprivatechat#$alias';
+          case 'u':
+            final userId = '@$id';
+            return '/rooms/newprivatechat#$userId';
+        }
+      }
+
+      // Pass deep links to app:
+      if (state.uri.toString().startsWith(AppConfig.deepLinkPrefix)) {
+        return '/rooms/newprivatechat#${state.uri}';
+      }
+      return null;
+    },
   );
 
   @override
   Widget build(BuildContext context) {
-    // Initialize the global router
-    REChain.pp.initializeRouter(router);
-    
     return ThemeBuilder(
       builder: (context, themeMode, primaryColor) => MaterialApp.router(
         title: AppSettings.applicationName.value,
         themeMode: themeMode,
+        debugShowCheckedModeBanner: false,
+        locale: locale,
         theme: rechainonlineThemes.buildTheme(context, Brightness.light, primaryColor),
         darkTheme: rechainonlineThemes.buildTheme(
           context,
@@ -70,18 +98,25 @@ class REChainApp extends StatelessWidget {
           primaryColor,
         ),
         scrollBehavior: CustomScrollBehavior(),
-        localizationsDelegates: L10n.localizationsDelegates,
+        localizationsDelegates: [
+          ...L10n.localizationsDelegates,
+          ...GlobalMaterialLocalizations.delegates,
+          ...GlobalCupertinoLocalizations.delegates,
+        ],
         supportedLocales: L10n.supportedLocales,
         routerConfig: router,
         builder: (context, child) => AppLockWidget(
-          pincode: pincode,
-          clients: clients,
+          pincode: appLockSettings.pincode,
+          useBiometrics: appLockSettings.useBiometrics,
+          isLoggedIn: clients.any((client) => client.isLogged()),
           // Need a navigator above the Matrix widget for
           // displaying dialogs
           child: Matrix(
             clients: clients,
             store: store,
-            child: testWidget ?? child,
+            child: CallOverlay(
+              child: testWidget ?? child ?? const SizedBox.shrink(),
+            ),
           ),
         ),
       ),

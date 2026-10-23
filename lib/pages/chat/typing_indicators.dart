@@ -1,12 +1,15 @@
-import 'dart:async';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:flutter/material.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/config/themes.dart';
 import 'package:rechainonline/pages/chat/chat.dart';
 import 'package:rechainonline/widgets/avatar.dart';
 import 'package:rechainonline/widgets/matrix.dart';
+import 'package:rechainonline/widgets/typing_animation.dart';
+import 'package:material_ui/material_ui.dart';
 
 class TypingIndicators extends StatelessWidget {
   final ChatController controller;
@@ -87,7 +90,7 @@ class TypingIndicators extends StatelessWidget {
                   ),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8),
-                    child: typingUsers.isEmpty ? null : const _TypingDots(),
+                    child: typingUsers.isEmpty ? null : const TypingAnimation(),
                   ),
                 ),
               ],
@@ -95,67 +98,6 @@ class TypingIndicators extends StatelessWidget {
           ),
         );
       },
-    );
-  }
-}
-
-class _TypingDots extends StatefulWidget {
-  const _TypingDots();
-
-  @override
-  State<_TypingDots> createState() => __TypingDotsState();
-}
-
-class __TypingDotsState extends State<_TypingDots> {
-  int _tick = 0;
-
-  late final Timer _timer;
-
-  static const Duration animationDuration = Duration(milliseconds: 300);
-
-  @override
-  void initState() {
-    _timer = Timer.periodic(animationDuration, (_) {
-      if (!mounted) {
-        return;
-      }
-      setState(() {
-        _tick = (_tick + 1) % 4;
-      });
-    });
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    _timer.cancel();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    const size = 8.0;
-
-    return Row(
-      mainAxisSize: .min,
-      children: [
-        for (var i = 1; i <= 3; i++)
-          AnimatedContainer(
-            duration: animationDuration * 1.5,
-            curve: rechainonlineThemes.animationCurve,
-            width: size,
-            height: _tick == i ? size * 2 : size,
-            margin: EdgeInsets.symmetric(
-              horizontal: 2,
-              vertical: _tick == i ? 4 : 8,
-            ),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(size * 2),
-              color: theme.colorScheme.secondary,
-            ),
-          ),
-      ],
     );
   }
 }

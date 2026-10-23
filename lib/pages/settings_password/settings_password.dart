@@ -1,11 +1,14 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:go_router/go_router.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/pages/settings_password/settings_password_view.dart';
 import 'package:rechainonline/utils/localized_exception_extension.dart';
 import 'package:rechainonline/widgets/matrix.dart';
+import 'package:go_router/go_router.dart';
+import 'package:material_ui/material_ui.dart';
 
 class SettingsPassword extends StatefulWidget {
   const SettingsPassword({super.key});
@@ -25,7 +28,10 @@ class SettingsPasswordController extends State<SettingsPassword> {
 
   bool loading = false;
 
-  void changePassword() async {
+  Future<void> changePassword() async {
+    final l10n = L10n.of(context);
+    final scaffoldMessenger = ScaffoldMessenger.of(context);
+    final theme = Theme.of(context);
     setState(() {
       oldPasswordError = newPassword1Error = newPassword2Error = null;
     });
@@ -53,27 +59,38 @@ class SettingsPasswordController extends State<SettingsPassword> {
       loading = true;
     });
     try {
-      final scaffoldMessenger = ScaffoldMessenger.of(context);
       await Matrix.of(context).client.changePassword(
         newPassword1Controller.text,
         oldPassword: oldPasswordController.text,
       );
+      if (!mounted) return;
       scaffoldMessenger.showSnackBar(
-        SnackBar(content: Text(L10n.of(context).passwordHasBeenChanged)),
+        SnackBar(content: Text(l10n.passwordHasBeenChanged)),
       );
       if (mounted) context.pop();
     } catch (e) {
-      setState(() {
-        newPassword2Error = e.toLocalizedString(
-          context,
-          ExceptionContext.changePassword,
-        );
-      });
+      scaffoldMessenger.showSnackBar(
+        SnackBar(
+          backgroundColor: theme.colorScheme.error,
+          content: Text(
+            e.toLocalizedString(context),
+            style: TextStyle(color: theme.colorScheme.onError),
+          ),
+        ),
+      );
     } finally {
       setState(() {
         loading = false;
       });
     }
+  }
+
+  @override
+  void dispose() {
+    oldPasswordController.dispose();
+    newPassword1Controller.dispose();
+    newPassword2Controller.dispose();
+    super.dispose();
   }
 
   @override

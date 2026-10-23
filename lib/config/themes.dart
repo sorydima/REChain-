@@ -1,8 +1,12 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/config/setting_keys.dart';
-import 'app_config.dart';
+import 'package:flutter/services.dart';
+import 'package:material_ui/material_ui.dart';
 
 abstract class rechainonlineThemes {
   static const double columnWidth = 380.0;
@@ -44,24 +48,18 @@ abstract class rechainonlineThemes {
     final colorScheme = ColorScheme.fromSeed(
       brightness: brightness,
       seedColor: seed ?? Color(AppSettings.colorSchemeSeedInt.value),
+      dynamicSchemeVariant: DynamicSchemeVariant.rainbow,
     );
     final isColumnMode = rechainonlineThemes.isColumnMode(context);
+    final dividerColor = brightness == Brightness.dark
+        ? colorScheme.surfaceContainerHighest
+        : colorScheme.surfaceContainer;
     return ThemeData(
       visualDensity: VisualDensity.standard,
       useMaterial3: true,
       brightness: brightness,
       colorScheme: colorScheme,
-      dividerColor: brightness == Brightness.dark
-          ? colorScheme.surfaceContainerHighest
-          : colorScheme.surfaceContainer,
-      popupMenuTheme: PopupMenuThemeData(
-        color: colorScheme.surfaceContainerLow,
-        iconColor: colorScheme.onSurface,
-        textStyle: TextStyle(color: colorScheme.onSurface),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(AppConfig.borderRadius / 2),
-        ),
-      ),
+      dividerColor: dividerColor,
       segmentedButtonTheme: SegmentedButtonThemeData(
         style: SegmentedButton.styleFrom(
           iconColor: colorScheme.onSurface,
@@ -74,7 +72,7 @@ abstract class rechainonlineThemes {
       ),
       inputDecorationTheme: InputDecorationTheme(
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(AppConfig.borderRadius),
+          borderRadius: BorderRadius.circular(AppConfig.borderRadius / 2),
         ),
         contentPadding: const EdgeInsets.all(12),
       ),
@@ -88,9 +86,6 @@ abstract class rechainonlineThemes {
       ),
       appBarTheme: AppBarTheme(
         toolbarHeight: isColumnMode ? 72 : 56,
-        shadowColor: isColumnMode
-            ? colorScheme.surfaceContainer.withAlpha(128)
-            : null,
         surfaceTintColor: isColumnMode ? colorScheme.surface : null,
         backgroundColor: isColumnMode ? colorScheme.surface : null,
         actionsPadding: isColumnMode

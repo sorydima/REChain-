@@ -1,11 +1,14 @@
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 import 'dart:math';
-
-import 'package:flutter/material.dart';
-
-import 'package:matrix/matrix.dart';
 
 import 'package:rechainonline/config/setting_keys.dart';
 import 'package:rechainonline/l10n/l10n.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
 
 class CuteContent extends StatefulWidget {
   final Event event;
@@ -37,8 +40,8 @@ class _CuteContentState extends State<CuteContent> {
         return GestureDetector(
           onTap: addOverlay,
           child: Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: .min,
+            mainAxisAlignment: .center,
             children: [
               Text(widget.event.text, style: const TextStyle(fontSize: 150)),
               if (label != null) Text(label),
@@ -52,6 +55,7 @@ class _CuteContentState extends State<CuteContent> {
   Future<void> addOverlay() async {
     _isOverlayShown = true;
     await Future.delayed(const Duration(milliseconds: 50));
+    if (!mounted) return;
 
     OverlayEntry? overlay;
     overlay = OverlayEntry(
@@ -166,6 +170,12 @@ class _CuteEventOverlayState extends State<CuteEventOverlay>
     if (status == AnimationStatus.completed) {
       widget.onAnimationEnd.call();
     }
+  }
+
+  @override
+  void dispose() {
+    controller?.dispose();
+    super.dispose();
   }
 }
 

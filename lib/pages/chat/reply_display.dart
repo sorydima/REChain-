@@ -1,9 +1,13 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:matrix/matrix.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
+
 import '../../config/themes.dart';
 import 'chat.dart';
 import 'events/reply_content.dart';
@@ -16,33 +20,42 @@ class ReplyDisplay extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-    return AnimatedContainer(
+    return AnimatedSize(
       duration: rechainonlineThemes.animationDuration,
       curve: rechainonlineThemes.animationCurve,
-      height: controller.editEvent != null || controller.replyEvent != null
-          ? 56
-          : 0,
       clipBehavior: Clip.hardEdge,
-      decoration: BoxDecoration(color: theme.colorScheme.onInverseSurface),
-      child: Row(
-        children: <Widget>[
-          IconButton(
-            tooltip: L10n.of(context).close,
-            icon: const Icon(Icons.close),
-            onPressed: controller.cancelReplyEventAction,
-          ),
-          Expanded(
-            child: controller.replyEvent != null
-                ? ReplyContent(
-                    controller.replyEvent!,
-                    timeline: controller.timeline!,
-                  )
-                : _EditContent(
-                    controller.editEvent?.getDisplayEvent(controller.timeline!),
-                  ),
-          ),
-        ],
-      ),
+      child: controller.editEvent != null || controller.replyEvent != null
+          ? Material(
+              color: theme.colorScheme.surfaceContainer,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                child: Row(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: IconButton(
+                        tooltip: L10n.of(context).close,
+                        icon: const Icon(Icons.close),
+                        onPressed: controller.cancelReplyEventAction,
+                      ),
+                    ),
+                    Expanded(
+                      child: controller.replyEvent != null
+                          ? ReplyContent(
+                              controller.replyEvent!,
+                              timeline: controller.timeline,
+                            )
+                          : _EditContent(
+                              controller.editEvent?.getDisplayEvent(
+                                controller.timeline!,
+                              ),
+                            ),
+                    ),
+                  ],
+                ),
+              ),
+            )
+          : SizedBox.shrink(),
     );
   }
 }
@@ -64,11 +77,14 @@ class _EditContent extends StatelessWidget {
         Icon(Icons.edit, color: theme.colorScheme.primary),
         Container(width: 15.0),
         Text(
-          event.calcLocalizedBodyFallback(
-            MatrixLocals(L10n.of(context)),
-            withSenderNamePrefix: false,
-            hideReply: true,
-          ),
+          event
+              .calcLocalizedBodyFallback(
+                MatrixLocals(L10n.of(context)),
+                withSenderNamePrefix: false,
+                hideReply: true,
+              )
+              .trim()
+              .replaceAll('\n', ' '),
           overflow: TextOverflow.ellipsis,
           maxLines: 1,
           style: TextStyle(color: theme.textTheme.bodyMedium!.color),

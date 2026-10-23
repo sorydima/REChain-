@@ -1,11 +1,23 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:matrix/matrix.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
+import 'package:rechainonline/config/setting_keys.dart';
 import 'package:rechainonline/config/themes.dart';
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/pages/settings_notifications/push_rule_extensions.dart';
+import 'package:rechainonline/utils/background_push.dart';
+import 'package:rechainonline/utils/platform_infos.dart';
+import 'package:rechainonline/utils/push_helper.dart';
 import 'package:rechainonline/widgets/layouts/max_width_body.dart';
+import 'package:rechainonline/widgets/settings_switch_list_tile.dart';
+import 'package:flutter/foundation.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
+import 'package:unifiedpush/unifiedpush.dart';
+import 'package:unifiedpush_ui/unifiedpush_ui.dart';
+
 import '../../utils/localized_exception_extension.dart';
 import '../../widgets/matrix.dart';
 import 'settings_notifications.dart';
@@ -28,6 +40,7 @@ class SettingsNotificationsView extends StatelessWidget {
       if (pushRules?.underride?.isNotEmpty ?? false)
         (rules: pushRules?.underride ?? [], kind: PushRuleKind.underride),
     ];
+    final pushService = Matrix.of(context).backgroundPush;
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: !rechainonlineThemes.isColumnMode(context),
@@ -45,9 +58,23 @@ class SettingsNotificationsView extends StatelessWidget {
           ),
           builder: (BuildContext context, _) {
             final theme = Theme.of(context);
+            final lastReceivedPush =
+                lastReceivedPushNotification[Matrix.of(
+                  context,
+                ).client.clientName];
             return SelectionArea(
               child: Column(
                 children: [
+                  if (kDebugMode && lastReceivedPush != null)
+                    ListTile(
+                      title: Text('Last received push notification'),
+                      subtitle: Text(lastReceivedPush.toIso8601String()),
+                    ),
+                  if (kIsWeb)
+                    SettingsSwitchListTile.adaptive(
+                      title: L10n.of(context).playSoundOnNotification,
+                      setting: AppSettings.webNotificationSound,
+                    ),
                   if (pushRules != null)
                     for (final category in pushCategories) ...[
                       ListTile(
@@ -108,6 +135,63 @@ class SettingsNotificationsView extends StatelessWidget {
                         ),
                       Divider(color: theme.dividerColor),
                     ],
+
+                  if (pushService?.firebaseEnabled != true)
+                    ListTile(
+                      title: Text(L10n.of(context).buildDoesNotSupportFirebase),
+                      leading: Icon(
+                        Icons.close,
+                        color: theme.colorScheme.error,
+                      ),
+                    ),
+                  if (PlatformInfos.isAndroid)
+                    FutureBuilder(
+                      future: UnifiedPush.getDistributors(),
+                      builder: (context, snapshot) {
+                        final distributors = snapshot.data;
+                        if (distributors == null || distributors.isEmpty) {
+                          if (pushService?.firebaseEnabled == true &&
+                              pushService?.fcmToken == null) {
+                            return ListTile(
+                              title: Text(
+                                L10n.of(
+                                  context,
+                                ).unableToRegisterDeviceForFirebase,
+                              ),
+                              leading: Icon(
+                                Icons.close,
+                                color: theme.colorScheme.error,
+                              ),
+                            );
+                          }
+                          return SizedBox.shrink();
+                        }
+                        return ListTile(
+                          title: Text(L10n.of(context).unifiedPushDistributors),
+                          leading: Icon(Icons.info_outlined),
+                          subtitle: SelectableText(distributors.join(', ')),
+                          trailing: distributors.length >= 2
+                              ? IconButton(
+                                  onPressed: () => UnifiedPushUi(
+                                    context: context,
+                                    instances: ['default'],
+                                    unifiedPushFunctions: UPFunctions(),
+                                    showNoDistribDialog: false,
+                                    onNoDistribDialogDismissed:
+                                        () {}, // TODO: Implement me
+                                  ).registerAppWithDialog(),
+                                  icon: Icon(Icons.edit_outlined),
+                                  style: IconButton.styleFrom(
+                                    backgroundColor:
+                                        theme.colorScheme.primaryContainer,
+                                    foregroundColor:
+                                        theme.colorScheme.onPrimaryContainer,
+                                  ),
+                                )
+                              : null,
+                        );
+                      },
+                    ),
                   ListTile(
                     title: Text(
                       L10n.of(context).devices,
@@ -145,16 +229,16 @@ class SettingsNotificationsView extends StatelessWidget {
                           ),
                         );
                       }
-                      return ListView.builder(
-                        physics: const NeverScrollableScrollPhysics(),
-                        shrinkWrap: true,
-                        itemCount: pushers.length,
-                        itemBuilder: (_, i) => ListTile(
-                          title: Text(
-                            '${pushers[i].appDisplayName} - ${pushers[i].appId}',
+                      return SelectionArea(
+                        child: ListView.builder(
+                          physics: const NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          itemCount: pushers.length,
+                          itemBuilder: (_, i) => ListTile(
+                            title: Text(pushers[i].appId),
+                            subtitle: Text(pushers[i].data.url.toString()),
+                            onTap: () => controller.onPusherTap(pushers[i]),
                           ),
-                          subtitle: Text(pushers[i].data.url.toString()),
-                          onTap: () => controller.onPusherTap(pushers[i]),
                         ),
                       );
                     },

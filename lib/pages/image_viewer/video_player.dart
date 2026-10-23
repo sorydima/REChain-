@@ -1,18 +1,21 @@
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 import 'dart:io';
 
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-
 import 'package:chewie/chewie.dart';
-import 'package:matrix/matrix.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:universal_html/html.dart' as html;
-import 'package:video_player/video_player.dart';
-
 import 'package:rechainonline/utils/localized_exception_extension.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/event_extension.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
 import 'package:rechainonline/widgets/blur_hash.dart';
+import 'package:flutter/foundation.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:video_player/video_player.dart';
+
 import '../../../utils/error_reporter.dart';
 import '../../widgets/mxc_image.dart';
 
@@ -35,7 +38,7 @@ class EventVideoPlayerState extends State<EventVideoPlayer> {
   final _supportsVideoPlayer =
       !PlatformInfos.isWindows && !PlatformInfos.isLinux;
 
-  void _downloadAction() async {
+  Future<void> _downloadAction() async {
     if (!_supportsVideoPlayer) {
       widget.event.saveFile(context);
       return;
@@ -43,9 +46,20 @@ class EventVideoPlayerState extends State<EventVideoPlayer> {
 
     try {
       final fileSize = widget.event.content
-          .tryGetMap<String, dynamic>('info')
+          .tryGetMap<String, Object?>('info')
           ?.tryGet<int>('size');
-      final videoFile = await widget.event.downloadAndDecryptAttachment();
+      final videoFile = await widget.event.downloadAndDecryptAttachment(
+        onDownloadProgress: fileSize == null
+            ? null
+            : (progress) {
+                final progressPercentage = progress / fileSize;
+                setState(() {
+                  _downloadProgress = progressPercentage < 1
+                      ? progressPercentage
+                      : null;
+                });
+              },
+      );
 
       // Dispose the controllers if we already have them.
       _disposeControllers();
@@ -53,14 +67,15 @@ class EventVideoPlayerState extends State<EventVideoPlayer> {
 
       // Create the VideoPlayerController from the contents of videoFile.
       if (kIsWeb) {
-        final blob = html.Blob([videoFile.bytes]);
-        final networkUri = Uri.parse(html.Url.createObjectUrlFromBlob(blob));
-        videoPlayerController = VideoPlayerController.networkUrl(networkUri);
+        videoPlayerController = VideoPlayerController.networkUrl(
+          Uri.dataFromBytes(videoFile.bytes, mimeType: videoFile.mimeType),
+        );
       } else {
         final tempDir = await getTemporaryDirectory();
-        final fileName = Uri.encodeComponent(
-          widget.event.attachmentOrThumbnailMxcUrl()!.pathSegments.last,
-        );
+        final fileNameStr =
+            widget.event.attachmentMxcUrl?.pathSegments.last ??
+            widget.event.body;
+        final fileName = Uri.encodeComponent(fileNameStr);
         final file = File('${tempDir.path}/${fileName}_${videoFile.name}');
         if (await file.exists() == false) {
           await file.writeAsBytes(videoFile.bytes);
@@ -71,10 +86,6 @@ class EventVideoPlayerState extends State<EventVideoPlayer> {
 
       await videoPlayerController.initialize();
 
-      final infoMap = widget.event.content.tryGetMap<String, Object?>('info');
-      final videoWidth = infoMap?.tryGet<int>('w') ?? 400;
-      final videoHeight = infoMap?.tryGet<int>('h') ?? 300;
-
       // Create a ChewieController on top.
       setState(() {
         _chewieController = ChewieController(
@@ -83,14 +94,16 @@ class EventVideoPlayerState extends State<EventVideoPlayer> {
           autoPlay: true,
           autoInitialize: true,
           looping: true,
-          aspectRatio: videoHeight == 0 ? null : videoWidth / videoHeight,
+          aspectRatio: _videoPlayerController?.value.aspectRatio,
         );
       });
     } on IOException catch (e) {
+      if (!mounted) return;
       ScaffoldMessenger.of(
         context,
       ).showSnackBar(SnackBar(content: Text(e.toLocalizedString(context))));
     } catch (e, s) {
+      if (!mounted) return;
       ErrorReporter(context, 'Unable to play video').onErrorCallback(e, s);
     }
   }

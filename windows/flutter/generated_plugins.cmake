@@ -3,23 +3,23 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
-  app_links
+  connectivity_plus
   desktop_drop
+  desktop_webview_window
   dynamic_color
   emoji_picker_flutter
   file_selector_windows
-  firebase_core
   flutter_secure_storage_windows
   flutter_webrtc
   geolocator_windows
+  livekit_client
+  local_auth_windows
+  media_kit_libs_windows_audio
   pasteboard
-  permission_handler_windows
   record_windows
   screen_retriever_windows
   share_plus
-  sqlcipher_flutter_libs
   url_launcher_windows
-  webcrypto
   window_manager
   window_to_front
 )
@@ -27,6 +27,7 @@ list(APPEND FLUTTER_PLUGIN_LIST
 list(APPEND FLUTTER_FFI_PLUGIN_LIST
   flutter_local_notifications_windows
   flutter_vodozemac
+  jni
 )
 
 set(PLUGIN_BUNDLED_LIBRARIES)

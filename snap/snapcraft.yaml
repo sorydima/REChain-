@@ -1,7 +1,7 @@
 name: rechainonline
 title: REChain
 base: core20
-version: 4.1.10+1160
+version: 4.1.20+1161
 license: AGPL-3.0
 summary: The inclusion of polls enhances decision-making processes.
 description: |
@@ -17,7 +17,7 @@ description: |
   ## Dream
   Imagine a world where anyone can chat freely without corporate surveillance.
   Join the community: https://matrix.to/#/#chatting:matrix.katya.wtf
-  Website: http://online.rechain.network
+  Website: https://github.com/sorydima/REChain-
   Microblog: https://instagram.com/rechain_inc
 
 grade: stable

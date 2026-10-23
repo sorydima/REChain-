@@ -1,6 +1,10 @@
-import 'package:matrix/matrix.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/l10n/l10n.dart';
+import 'package:matrix/matrix.dart';
 
 /// This is a temporary helper class until there is a proper solution to this with the new system
 class MatrixLocals extends MatrixLocalizations {
@@ -175,9 +179,6 @@ class MatrixLocals extends MatrixLocalizations {
   String kickedAndBanned(String senderName, String targetName) {
     return l10n.kickedAndBanned(senderName, targetName);
   }
-
-  @override
-  String get needPantalaimonWarning => l10n.oopsSomethingWentWrong;
 
   @override
   String get noPermission => l10n.noKeyForThisMessage;
@@ -371,4 +372,8 @@ class MatrixLocals extends MatrixLocalizations {
 
   @override
   String get pollHasBeenEnded => l10n.pollHasBeenEnded;
+
+  @override
+  String incomingCallFrom(String senderName) =>
+      l10n.incomingCallFrom(senderName);
 }

@@ -1,16 +1,20 @@
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 import 'dart:convert';
-
-import 'package:flutter/material.dart';
-
-import 'package:flutter_linkify/flutter_linkify.dart';
-import 'package:matrix/matrix.dart';
-import 'package:url_launcher/url_launcher_string.dart';
 
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/config/themes.dart';
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/utils/localized_exception_extension.dart';
 import 'package:rechainonline/widgets/layouts/max_width_body.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
+import 'package:url_launcher/url_launcher_string.dart';
+
 import '../../widgets/matrix.dart';
 import 'settings_homeserver.dart';
 
@@ -157,9 +161,10 @@ class SettingsHomeserverView extends StatelessWidget {
                         subtitle: Text(data.version),
                       ),
                       ListTile(
-                        title: const Text('Federation Base URL'),
+                        title: Text(L10n.of(context).federationBaseUrl),
                         subtitle: Linkify(
                           text: data.federationBaseUrl.toString(),
+                          style: TextStyle(color: theme.colorScheme.onSurface),
                           textScaleFactor: MediaQuery.textScalerOf(
                             context,
                           ).scale(1),
@@ -178,7 +183,6 @@ class SettingsHomeserverView extends StatelessWidget {
               Divider(color: theme.dividerColor),
               FutureBuilder(
                 future: client.getWellknown(),
-                initialData: client.wellKnown,
                 builder: (context, snapshot) {
                   final error = snapshot.error;
                   if (error != null) {
@@ -210,7 +214,7 @@ class SettingsHomeserverView extends StatelessWidget {
                     children: [
                       ListTile(
                         title: Text(
-                          'Client-Well-Known Information:',
+                          L10n.of(context).clientWellKnownInformation,
                           style: TextStyle(
                             color: theme.colorScheme.secondary,
                             fontWeight: FontWeight.bold,
@@ -218,9 +222,10 @@ class SettingsHomeserverView extends StatelessWidget {
                         ),
                       ),
                       ListTile(
-                        title: const Text('Base URL'),
+                        title: Text(L10n.of(context).baseUrl),
                         subtitle: Linkify(
                           text: wellKnown.mHomeserver.baseUrl.toString(),
+                          style: TextStyle(color: theme.colorScheme.onSurface),
                           textScaleFactor: MediaQuery.textScalerOf(
                             context,
                           ).scale(1),
@@ -234,9 +239,12 @@ class SettingsHomeserverView extends StatelessWidget {
                       ),
                       if (identityServer != null)
                         ListTile(
-                          title: const Text('Identity Server:'),
+                          title: Text(L10n.of(context).identityServer),
                           subtitle: Linkify(
                             text: identityServer.baseUrl.toString(),
+                            style: TextStyle(
+                              color: theme.colorScheme.onSurface,
+                            ),
                             textScaleFactor: MediaQuery.textScalerOf(
                               context,
                             ).scale(1),

@@ -1,12 +1,13 @@
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 import 'dart:async';
 
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-
+import 'package:archive/archive.dart'
+    if (dart.library.io) 'package:archive/archive_io.dart';
 import 'package:file_picker/file_picker.dart';
-import 'package:http/http.dart' hide Client;
-import 'package:matrix/matrix.dart';
-
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/utils/client_manager.dart';
 import 'package:rechainonline/utils/file_selector.dart';
@@ -14,12 +15,14 @@ import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_file_extension.
 import 'package:rechainonline/widgets/adaptive_dialogs/show_ok_cancel_alert_dialog.dart';
 import 'package:rechainonline/widgets/adaptive_dialogs/show_text_input_dialog.dart';
 import 'package:rechainonline/widgets/future_loading_dialog.dart';
+import 'package:flutter/foundation.dart';
+import 'package:http/http.dart' hide Client;
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
+
 import '../../widgets/matrix.dart';
 import 'import_archive_dialog.dart';
 import 'settings_emotes_view.dart';
-
-import 'package:archive/archive.dart'
-    if (dart.library.io) 'package:archive/archive_io.dart';
 
 class EmotesSettings extends StatefulWidget {
   final String? roomId;
@@ -234,9 +237,9 @@ class EmotesSettingsController extends State<EmotesSettings> {
               ?.tryGetMap<String, Object?>(stateKey ?? '') !=
           null;
 
-  bool get readonly => room == null
-      ? false
-      : room?.canChangeStateEvent('im.ponies.room_emotes') == false;
+  bool get readonly =>
+      room != null &&
+      room?.canChangeStateEvent('im.ponies.room_emotes') == false;
 
   void resetAction() {
     setState(() {
@@ -245,7 +248,7 @@ class EmotesSettingsController extends State<EmotesSettings> {
     });
   }
 
-  void createImagePack() async {
+  Future<void> createImagePack() async {
     final room = this.room;
     if (room == null) throw Exception('Cannot create image pack without room');
 
@@ -287,14 +290,15 @@ class EmotesSettingsController extends State<EmotesSettings> {
     setState(() {});
   }
 
-  void saveAction() async {
+  Future<void> saveAction() async {
     await save(context);
     setState(() {
       showSave = false;
     });
   }
 
-  void createStickers() async {
+  Future<void> createStickers() async {
+    final matrix = Matrix.of(context);
     final pickedFiles = await selectFiles(
       context,
       type: FileType.image,
@@ -317,7 +321,7 @@ class EmotesSettingsController extends State<EmotesSettings> {
                 nativeImplementations: ClientManager.nativeImplementations,
               ) ??
               file;
-          final uri = await Matrix.of(context).client.uploadContent(
+          final uri = await matrix.client.uploadContent(
             file.bytes,
             filename: file.name,
             contentType: file.mimeType,
@@ -351,6 +355,13 @@ class EmotesSettingsController extends State<EmotesSettings> {
   }
 
   @override
+  void dispose() {
+    packDisplayNameController.dispose();
+    packAttributionController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return EmotesSettingsView(this);
   }
@@ -360,8 +371,10 @@ class EmotesSettingsController extends State<EmotesSettings> {
 
     if (result.isEmpty) return;
 
-    final buffer = await result.single.readAsBytes();
-    final archive = ZipDecoder().decodeBytes(buffer);
+    final buffer = InputMemoryStream(await result.single.readAsBytes());
+
+    final archive = ZipDecoder().decodeStream(buffer);
+    if (!mounted) return;
 
     await showDialog(
       context: context,
@@ -376,7 +389,7 @@ class EmotesSettingsController extends State<EmotesSettings> {
   Future<void> exportAsZip() async {
     final client = Matrix.of(context).client;
 
-    await showFutureLoadingDialog(
+    final result = await showFutureLoadingDialog<MatrixFile>(
       context: context,
       future: () async {
         final pack = _getPack();
@@ -397,13 +410,13 @@ class EmotesSettingsController extends State<EmotesSettings> {
         final fileName =
             '${pack.pack.displayName ?? client.userID?.localpart ?? 'emotes'}.zip';
         final output = ZipEncoder().encode(archive);
-        if (output == null) return;
 
-        MatrixFile(
-          name: fileName,
-          bytes: Uint8List.fromList(output),
-        ).save(context);
+        return MatrixFile(name: fileName, bytes: Uint8List.fromList(output));
       },
     );
+    final file = result.result;
+    if (file == null) return;
+    if (!mounted) return;
+    file.save(context);
   }
 }

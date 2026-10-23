@@ -1,16 +1,20 @@
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 import 'dart:async';
-
-import 'package:flutter/material.dart';
-
-import 'package:go_router/go_router.dart';
-import 'package:matrix/matrix.dart';
 
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/widgets/adaptive_dialogs/show_ok_cancel_alert_dialog.dart';
 import 'package:rechainonline/widgets/future_loading_dialog.dart';
+import 'package:go_router/go_router.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
+
 import 'matrix.dart';
 
-enum ChatPopupMenuActions { details, mute, unmute, emote, leave, search }
+enum ChatPopupMenuActions { details, encryption, leave, search }
 
 class ChatSettingsPopupMenu extends StatefulWidget {
   final Room room;
@@ -30,9 +34,6 @@ class ChatSettingsPopupMenuState extends State<ChatSettingsPopupMenu> {
     notificationChangeSub?.cancel();
     super.dispose();
   }
-
-  void goToEmoteSettings() =>
-      context.push('/rooms/${widget.room.id}/details/emotes');
 
   @override
   Widget build(BuildContext context) {
@@ -54,16 +55,18 @@ class ChatSettingsPopupMenuState extends State<ChatSettingsPopupMenu> {
           onSelected: (choice) async {
             switch (choice) {
               case ChatPopupMenuActions.leave:
+                final l10n = L10n.of(context);
                 final router = GoRouter.of(context);
                 final confirmed = await showOkCancelAlertDialog(
                   context: context,
-                  title: L10n.of(context).areYouSure,
-                  message: L10n.of(context).archiveRoomDescription,
-                  okLabel: L10n.of(context).leave,
-                  cancelLabel: L10n.of(context).cancel,
+                  title: l10n.areYouSure,
+                  message: l10n.archiveRoomDescription,
+                  okLabel: l10n.leave,
+                  cancelLabel: l10n.cancel,
                   isDestructive: true,
                 );
                 if (confirmed != OkCancelResult.ok) return;
+                if (!context.mounted) return;
                 final result = await showFutureLoadingDialog(
                   context: context,
                   future: () => widget.room.leave(),
@@ -73,32 +76,19 @@ class ChatSettingsPopupMenuState extends State<ChatSettingsPopupMenu> {
                 }
 
                 break;
-              case ChatPopupMenuActions.mute:
-                await showFutureLoadingDialog(
-                  context: context,
-                  future: () =>
-                      widget.room.setPushRuleState(PushRuleState.mentionsOnly),
-                );
-                break;
-              case ChatPopupMenuActions.unmute:
-                await showFutureLoadingDialog(
-                  context: context,
-                  future: () =>
-                      widget.room.setPushRuleState(PushRuleState.notify),
-                );
-                break;
               case ChatPopupMenuActions.details:
                 _showChatDetails();
                 break;
               case ChatPopupMenuActions.search:
                 context.go('/rooms/${widget.room.id}/search');
                 break;
-              case ChatPopupMenuActions.emote:
-                goToEmoteSettings();
+              case ChatPopupMenuActions.encryption:
+                context.go('/rooms/${widget.room.id}/encryption');
+                break;
             }
           },
           itemBuilder: (BuildContext context) => [
-            if (widget.displayChatDetails)
+            if (widget.displayChatDetails && widget.room.membership == .join)
               PopupMenuItem<ChatPopupMenuActions>(
                 value: ChatPopupMenuActions.details,
                 child: Row(
@@ -109,48 +99,28 @@ class ChatSettingsPopupMenuState extends State<ChatSettingsPopupMenu> {
                   ],
                 ),
               ),
-            if (widget.room.pushRuleState == PushRuleState.notify)
+            if (widget.room.membership case .join || .leave)
               PopupMenuItem<ChatPopupMenuActions>(
-                value: ChatPopupMenuActions.mute,
+                value: ChatPopupMenuActions.search,
                 child: Row(
                   children: [
-                    const Icon(Icons.notifications_off_outlined),
+                    const Icon(Icons.search_outlined),
                     const SizedBox(width: 12),
-                    Text(L10n.of(context).muteChat),
-                  ],
-                ),
-              )
-            else
-              PopupMenuItem<ChatPopupMenuActions>(
-                value: ChatPopupMenuActions.unmute,
-                child: Row(
-                  children: [
-                    const Icon(Icons.notifications_on_outlined),
-                    const SizedBox(width: 12),
-                    Text(L10n.of(context).unmuteChat),
+                    Text(L10n.of(context).search),
                   ],
                 ),
               ),
-            PopupMenuItem<ChatPopupMenuActions>(
-              value: ChatPopupMenuActions.search,
-              child: Row(
-                children: [
-                  const Icon(Icons.search_outlined),
-                  const SizedBox(width: 12),
-                  Text(L10n.of(context).search),
-                ],
+            if (widget.room.membership case .join || .leave)
+              PopupMenuItem<ChatPopupMenuActions>(
+                value: ChatPopupMenuActions.encryption,
+                child: Row(
+                  children: [
+                    const Icon(Icons.lock_outlined),
+                    const SizedBox(width: 12),
+                    Text(L10n.of(context).encryption),
+                  ],
+                ),
               ),
-            ),
-            PopupMenuItem<ChatPopupMenuActions>(
-              value: ChatPopupMenuActions.emote,
-              child: Row(
-                children: [
-                  const Icon(Icons.emoji_emotions_outlined),
-                  const SizedBox(width: 12),
-                  Text(L10n.of(context).emoteSettings),
-                ],
-              ),
-            ),
             PopupMenuItem<ChatPopupMenuActions>(
               value: ChatPopupMenuActions.leave,
               child: Row(

@@ -1,15 +1,18 @@
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 import 'dart:async';
 
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-
-import 'package:geolocator/geolocator.dart';
-import 'package:matrix/matrix.dart';
-
+import 'package:cupertino_ui/cupertino_ui.dart';
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/pages/chat/events/map_bubble.dart';
 import 'package:rechainonline/widgets/adaptive_dialogs/adaptive_dialog_action.dart';
 import 'package:rechainonline/widgets/future_loading_dialog.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
 
 class SendLocationDialog extends StatefulWidget {
   final Room room;
@@ -73,7 +76,7 @@ class SendLocationDialogState extends State<SendLocationDialog> {
     }
   }
 
-  void sendAction() async {
+  Future<void> sendAction() async {
     setState(() => isSending = true);
     final body =
         'https://www.openstreetmap.org/?mlat=${position!.latitude}&mlon=${position!.longitude}#map=16/${position!.latitude}/${position!.longitude}';
@@ -83,6 +86,7 @@ class SendLocationDialogState extends State<SendLocationDialog> {
       context: context,
       future: () => widget.room.sendLocation(body, uri),
     );
+    if (!mounted) return;
     Navigator.of(context, rootNavigator: false).pop();
   }
 

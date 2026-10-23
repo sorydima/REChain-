@@ -1,20 +1,26 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:matrix/matrix.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/utils/url_launcher.dart';
 import 'package:rechainonline/widgets/mxc_image.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
+
 import '../../widgets/avatar.dart';
 
 class StickerPickerDialog extends StatefulWidget {
   final Room room;
+  final ImagePackUsage usage;
   final void Function(ImagePackImageContent) onSelected;
 
   const StickerPickerDialog({
     required this.onSelected,
     required this.room,
+    this.usage = ImagePackUsage.sticker,
     super.key,
   });
 
@@ -29,111 +35,41 @@ class StickerPickerDialogState extends State<StickerPickerDialog> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-    final stickerPacks = widget.room.getImagePacks(ImagePackUsage.sticker);
+    final stickerPacks = widget.room.getImagePacks(widget.usage);
     final packSlugs = stickerPacks.keys.toList();
 
-    // ignore: prefer_function_declarations_over_variables
-    final packBuilder = (BuildContext context, int packIndex) {
-      final pack = stickerPacks[packSlugs[packIndex]]!;
-      final filteredImagePackImageEntried = pack.images.entries.toList();
-      if (searchFilter?.isNotEmpty ?? false) {
-        filteredImagePackImageEntried.removeWhere(
-          (e) =>
-              !(e.key.toLowerCase().contains(searchFilter!.toLowerCase()) ||
-                  (e.value.body?.toLowerCase().contains(
-                        searchFilter!.toLowerCase(),
-                      ) ??
-                      false)),
-        );
-      }
-      final imageKeys = filteredImagePackImageEntried
-          .map((e) => e.key)
-          .toList();
-      if (imageKeys.isEmpty) {
-        return const SizedBox.shrink();
-      }
-      final packName = pack.pack.displayName ?? packSlugs[packIndex];
-      return Column(
-        children: <Widget>[
-          if (packIndex != 0) const SizedBox(height: 20),
-          if (packName != 'user')
-            ListTile(
-              leading: Avatar(
-                mxContent: pack.pack.avatarUrl,
-                name: packName,
-                client: widget.room.client,
-              ),
-              title: Text(packName),
-            ),
-          const SizedBox(height: 6),
-          GridView.builder(
-            itemCount: imageKeys.length,
-            gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-              maxCrossAxisExtent: 84,
-              mainAxisSpacing: 8.0,
-              crossAxisSpacing: 8.0,
-            ),
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            itemBuilder: (BuildContext context, int imageIndex) {
-              final image = pack.images[imageKeys[imageIndex]]!;
-              return Tooltip(
-                message: image.body ?? imageKeys[imageIndex],
-                child: InkWell(
-                  radius: AppConfig.borderRadius,
-                  key: ValueKey(image.url.toString()),
-                  onTap: () {
-                    // copy the image
-                    final imageCopy = ImagePackImageContent.fromJson(
-                      image.toJson().copy(),
-                    );
-                    // set the body, if it doesn't exist, to the key
-                    imageCopy.body ??= imageKeys[imageIndex];
-                    widget.onSelected(imageCopy);
-                  },
-                  child: AbsorbPointer(
-                    absorbing: true,
-                    child: MxcImage(
-                      uri: image.url,
-                      fit: BoxFit.contain,
-                      width: 128,
-                      height: 128,
-                      animated: true,
-                      isThumbnail: false,
-                    ),
-                  ),
-                ),
-              );
-            },
-          ),
-        ],
-      );
-    };
-
-    return Scaffold(
-      backgroundColor: theme.colorScheme.onInverseSurface,
-      body: SizedBox(
-        width: double.maxFinite,
+    return Material(
+      color: theme.colorScheme.onInverseSurface,
+      child: SafeArea(
+        top: false,
         child: CustomScrollView(
           slivers: <Widget>[
             SliverAppBar(
               floating: true,
-              pinned: true,
+              primary: false,
+              toolbarHeight: 72,
               scrolledUnderElevation: 0,
-              automaticallyImplyLeading: false,
               backgroundColor: Colors.transparent,
-              title: SizedBox(
-                height: 42,
-                child: TextField(
-                  autofocus: false,
-                  decoration: InputDecoration(
-                    filled: true,
-                    hintText: L10n.of(context).search,
-                    prefixIcon: const Icon(Icons.search_outlined),
-                    contentPadding: EdgeInsets.zero,
+              automaticallyImplyLeading: false,
+              title: TextField(
+                autofocus: false,
+                decoration: InputDecoration(
+                  filled: true,
+                  fillColor: theme.colorScheme.secondaryContainer,
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                    borderRadius: BorderRadius.circular(99),
                   ),
-                  onChanged: (s) => setState(() => searchFilter = s),
+                  contentPadding: EdgeInsets.zero,
+                  hintText: L10n.of(context).search,
+                  hintStyle: TextStyle(
+                    color: theme.colorScheme.onPrimaryContainer,
+                    fontWeight: FontWeight.normal,
+                  ),
+                  floatingLabelBehavior: FloatingLabelBehavior.never,
+                  prefixIcon: const Icon(Icons.search_outlined),
                 ),
+                onChanged: (s) => setState(() => searchFilter = s),
               ),
             ),
             if (packSlugs.isEmpty)
@@ -157,11 +93,91 @@ class StickerPickerDialogState extends State<StickerPickerDialog> {
                 ),
               )
             else
-              SliverList(
-                delegate: SliverChildBuilderDelegate(
-                  packBuilder,
-                  childCount: packSlugs.length,
-                ),
+              SliverList.builder(
+                itemCount: packSlugs.length,
+                itemBuilder: (BuildContext context, int packIndex) {
+                  final pack = stickerPacks[packSlugs[packIndex]]!;
+                  final filteredImagePackImageEntried = pack.images.entries
+                      .toList();
+                  if (searchFilter?.isNotEmpty ?? false) {
+                    filteredImagePackImageEntried.removeWhere(
+                      (e) =>
+                          !(e.key.toLowerCase().contains(
+                                searchFilter!.toLowerCase(),
+                              ) ||
+                              (e.value.body?.toLowerCase().contains(
+                                    searchFilter!.toLowerCase(),
+                                  ) ??
+                                  false)),
+                    );
+                  }
+                  final imageKeys = filteredImagePackImageEntried
+                      .map((e) => e.key)
+                      .toList();
+                  if (imageKeys.isEmpty) {
+                    return const SizedBox.shrink();
+                  }
+                  final packName =
+                      pack.pack.displayName ?? packSlugs[packIndex];
+                  return Column(
+                    children: <Widget>[
+                      if (packIndex != 0) const SizedBox(height: 20),
+                      if (packName != 'user')
+                        ListTile(
+                          leading: Avatar(
+                            mxContent: pack.pack.avatarUrl,
+                            name: packName,
+                            client: widget.room.client,
+                          ),
+                          title: Text(packName),
+                        ),
+                      const SizedBox(height: 6),
+                      GridView.builder(
+                        padding: EdgeInsets.zero,
+                        itemCount: imageKeys.length,
+                        gridDelegate:
+                            const SliverGridDelegateWithMaxCrossAxisExtent(
+                              maxCrossAxisExtent: 84,
+                              mainAxisSpacing: 8.0,
+                              crossAxisSpacing: 8.0,
+                            ),
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemBuilder: (BuildContext context, int imageIndex) {
+                          final image = pack.images[imageKeys[imageIndex]]!;
+                          return Tooltip(
+                            message: image.body ?? imageKeys[imageIndex],
+                            child: InkWell(
+                              radius: AppConfig.borderRadius,
+                              key: ValueKey(image.url.toString()),
+                              onTap: () {
+                                // copy the image
+                                final imageCopy =
+                                    ImagePackImageContent.fromJson(
+                                      image.toJson().copy(),
+                                    );
+                                // set the body, if it doesn't exist, to the key
+                                imageCopy.body ??= imageKeys[imageIndex];
+                                widget.onSelected(imageCopy);
+                              },
+                              child: AbsorbPointer(
+                                absorbing: true,
+                                child: MxcImage(
+                                  uri: image.url,
+                                  fit: BoxFit.contain,
+                                  width: 128,
+                                  height: 128,
+                                  animated: true,
+                                  isThumbnail: false,
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+                    ],
+                  );
+                },
               ),
           ],
         ),

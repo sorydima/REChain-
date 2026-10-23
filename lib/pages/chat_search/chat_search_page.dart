@@ -1,9 +1,12 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:matrix/matrix.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/pages/chat_search/chat_search_view.dart';
 import 'package:rechainonline/widgets/matrix.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
 
 class ChatSearchPage extends StatefulWidget {
   final String roomId;
@@ -44,14 +47,67 @@ class ChatSearchController extends State<ChatSearchPage>
     });
   }
 
-  void startSearch() async {
-    // Search functionality disabled for compilation
-    setState(() {
-      isLoading = false;
-      messagesEndReached = true;
-      imagesEndReached = true;
-      filesEndReached = true;
-    });
+  Future<void> startSearch() async {
+    switch (tabController.index) {
+      case 0:
+        final searchQuery = searchController.text.trim();
+        if (searchQuery.isEmpty) return;
+        setState(() {
+          isLoading = true;
+        });
+        final result = await room!.searchEvents(
+          searchTerm: searchController.text.trim(),
+          nextBatch: messagesNextBatch,
+        );
+        setState(() {
+          isLoading = false;
+          messages.addAll(result.events);
+          messagesNextBatch = result.nextBatch;
+          messagesEndReached = result.nextBatch == null;
+          searchedUntil = result.searchedUntil;
+        });
+        return;
+      case 1:
+        setState(() {
+          isLoading = true;
+        });
+        final result = await room!.searchEvents(
+          searchFunc: (event) => {
+            MessageTypes.Image,
+            MessageTypes.Video,
+          }.contains(event.messageType),
+          nextBatch: imagesNextBatch,
+        );
+        setState(() {
+          isLoading = false;
+          images.addAll(result.events);
+          imagesNextBatch = result.nextBatch;
+          imagesEndReached = result.nextBatch == null;
+          searchedUntil = result.searchedUntil;
+        });
+        return;
+      case 2:
+        setState(() {
+          isLoading = true;
+        });
+        final result = await room!.searchEvents(
+          searchFunc: (event) =>
+              event.messageType == MessageTypes.File ||
+              (event.messageType == MessageTypes.Audio &&
+                  !event.content.containsKey('org.matrix.msc3245.voice')),
+          nextBatch: filesNextBatch,
+        );
+        setState(() {
+          isLoading = false;
+          files.addAll(result.events);
+          filesNextBatch = result.nextBatch;
+          filesEndReached = result.nextBatch == null;
+          searchedUntil = result.searchedUntil;
+        });
+        return;
+      default:
+        return;
+    }
   }
 
   void _onTabChanged() {
@@ -77,6 +133,8 @@ class ChatSearchController extends State<ChatSearchPage>
   @override
   void dispose() {
     tabController.removeListener(_onTabChanged);
+    searchController.dispose();
+    tabController.dispose();
     super.dispose();
   }
 

@@ -1,14 +1,27 @@
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-
 import 'package:collection/collection.dart';
-import 'package:desktop_notifications/desktop_notifications.dart';
-import 'package:image_picker/image_picker.dart';
+import 'package:rechainonline/l10n/l10n.dart';
+import 'package:rechainonline/utils/client_manager.dart';
+import 'package:rechainonline/utils/init_with_restore.dart';
+import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_file_extension.dart';
+import 'package:rechainonline/utils/notification_background_handler.dart';
+import 'package:rechainonline/utils/platform_infos.dart';
+import 'package:rechainonline/utils/uia_request_manager.dart';
+import 'package:rechainonline/widgets/adaptive_dialogs/show_ok_cancel_alert_dialog.dart';
+import 'package:rechainonline/widgets/rechainonline_chat_app.dart';
+import 'package:rechainonline/widgets/future_loading_dialog.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:intl/intl.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:matrix/encryption.dart';
 import 'package:matrix/matrix.dart';
 import 'package:provider/provider.dart';
@@ -16,23 +29,11 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:universal_html/html.dart' as html;
 import 'package:url_launcher/url_launcher_string.dart';
 
-import 'package:rechainonline/l10n/l10n.dart';
-import 'package:rechainonline/utils/client_manager.dart';
-import 'package:rechainonline/utils/init_with_restore.dart';
-import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_file_extension.dart';
-import 'package:rechainonline/utils/platform_infos.dart';
-import 'package:rechainonline/utils/uia_request_manager.dart';
-import 'package:rechainonline/utils/voip_plugin.dart';
-import 'package:rechainonline/widgets/adaptive_dialogs/show_ok_cancel_alert_dialog.dart';
-import 'package:rechainonline/widgets/rechainonline_chat_app.dart';
-import 'package:rechainonline/widgets/future_loading_dialog.dart';
 import '../config/setting_keys.dart';
 import '../pages/key_verification/key_verification_dialog.dart';
 import '../utils/account_bundles.dart';
 import '../utils/background_push.dart';
 import 'local_notifications_extension.dart';
-
-// import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class Matrix extends StatefulWidget {
   final Widget? child;
@@ -59,17 +60,18 @@ class Matrix extends StatefulWidget {
       Provider.of<MatrixState>(context, listen: false);
 }
 
-class MatrixState extends State<Matrix> with WidgetsBindingObserver {
+class MatrixState extends State<Matrix> {
   int _activeClient = -1;
   String? activeBundle;
 
   SharedPreferences get store => widget.store;
 
-  XFile? loginAvatar;
-  String? loginUsername;
-  bool? loginRegistrationSupported;
-
   BackgroundPush? backgroundPush;
+
+  final ValueNotifier<String?> activeCallRoomId = ValueNotifier(null);
+  final ValueNotifier<CallPosition> callPosition = ValueNotifier(
+    CallPosition.fullScreen,
+  );
 
   Client get client {
     if (_activeClient < 0 || _activeClient >= widget.clients.length) {
@@ -78,22 +80,15 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
     return widget.clients[_activeClient];
   }
 
-  VoipPlugin? voipPlugin;
-
   bool get isMultiAccount => widget.clients.length > 1;
 
   int getClientIndexByMatrixId(String matrixId) =>
       widget.clients.indexWhere((client) => client.userID == matrixId);
 
-  late String currentClientSecret;
-  RequestTokenResponse? currentThreepidCreds;
-
   void setActiveClient(Client? cl) {
     final i = widget.clients.indexWhere((c) => c == cl);
     if (i != -1) {
       _activeClient = i;
-      // TODO: Multi-client VoiP support
-      createVoipPlugin();
     } else {
       Logs().w('Tried to set an unknown client ${cl!.userID} as active');
     }
@@ -111,7 +106,8 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
   }
 
   Map<String?, List<Client?>> get accountBundles {
-    final resBundles = <String?, List<_AccountBundleWithClient>>{};
+    final resBundles =
+        <String?, List<({Client? client, AccountBundle? bundle})>>{};
     for (var i = 0; i < widget.clients.length; i++) {
       final bundles = widget.clients[i].accountBundles;
       for (final bundle in bundles) {
@@ -119,9 +115,10 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
           continue;
         }
         resBundles[bundle.name] ??= [];
-        resBundles[bundle.name]!.add(
-          _AccountBundleWithClient(client: widget.clients[i], bundle: bundle),
-        );
+        resBundles[bundle.name]!.add((
+          client: widget.clients[i],
+          bundle: bundle,
+        ));
       }
     }
     for (final b in resBundles.values) {
@@ -166,8 +163,9 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
                   store,
                 );
                 _registerSubs(_loginClientCandidate!.clientName);
+                setActiveClient(_loginClientCandidate);
                 _loginClientCandidate = null;
-                REChainApp.router.go('/backup');
+                rechainonlineChatApp.router.go('/backup');
               });
     if (widget.clients.isEmpty) widget.clients.add(candidate);
     return candidate;
@@ -179,7 +177,7 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
   final onRoomKeyRequestSub = <String, StreamSubscription>{};
   final onKeyVerificationRequestSub = <String, StreamSubscription>{};
   final onNotification = <String, StreamSubscription>{};
-  final onLoginStateChanged = <String, StreamSubscription<LoginState>>{};
+  final onLogoutSub = <String, StreamSubscription<LoginState>>{};
   final onUiaRequest = <String, StreamSubscription<UiaRequest>>{};
 
   String? _cachedPassword;
@@ -197,25 +195,20 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
     });
   }
 
-  bool webHasFocus = true;
-
   String? get activeRoomId {
-    final route = REChainApp.router.routeInformationProvider.value.uri.path;
+    final route = rechainonlineChatApp.router.routeInformationProvider.value.uri.path;
     if (!route.startsWith('/rooms/')) return null;
     return route.split('/')[2];
   }
 
-  final linuxNotifications = PlatformInfos.isLinux
-      ? NotificationsClient()
-      : null;
-  final Map<String, int> linuxNotificationIds = {};
-
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addObserver(this);
+    _listener = AppLifecycleListener(onStateChange: didChangeAppLifecycleState);
     initMatrix();
   }
+
+  AppLifecycleListener? _listener;
 
   void _registerSubs(String name) {
     final c = getClientByName(name);
@@ -248,44 +241,64 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
                   KeyVerificationState.done,
                   KeyVerificationState.error,
                 }.contains(request.state)) {
-              REChainApp.router.pop('dialog');
+              rechainonlineChatApp.router.pop('dialog');
             }
             hidPopup = true;
           };
           request.onUpdate = null;
           hidPopup = true;
           await KeyVerificationDialog(request: request).show(
-            REChainApp.router.routerDelegate.navigatorKey.currentContext ??
+            rechainonlineChatApp.router.routerDelegate.navigatorKey.currentContext ??
                 context,
           );
         });
-    onLoginStateChanged[name] ??= c.onLoginStateChanged.stream.listen((state) {
-      final loggedInWithMultipleClients = widget.clients.length > 1;
-      if (state == LoginState.loggedOut) {
-        _cancelSubs(c.clientName);
-        widget.clients.remove(c);
-        ClientManager.removeClientNameFromStore(c.clientName, store);
-        InitWithRestoreExtension.deleteSessionBackup(name);
-      }
-      if (loggedInWithMultipleClients && state != LoginState.loggedIn) {
-        ScaffoldMessenger.of(
-          REChain.pp.router.routerDelegate.navigatorKey.currentContext ??
-              context,
-        ).showSnackBar(
-          SnackBar(content: Text(L10n.of(context).oneClientLoggedOut)),
-        );
+    onLogoutSub[name] ??= c.onLoginStateChanged.stream
+        .where((state) => state == LoginState.loggedOut)
+        .listen((_) {
+          final loggedInWithMultipleClients = widget.clients.length > 1;
 
-        if (state != LoginState.loggedIn) {
-        REChainApp.router.go('/rooms');
-        }
-      } else {
-        REChain.pp.router.go(
-          state == LoginState.loggedIn ? '/backup' : '/home',
-        );
-      }
-    });
+          _cancelSubs(c.clientName);
+          widget.clients.remove(c);
+          ClientManager.removeClientNameFromStore(c.clientName, store);
+          InitWithRestoreExtension.deleteSessionBackup(name);
+
+          if (loggedInWithMultipleClients) {
+            final snackbarContext =
+                rechainonlineChatApp
+                    .router
+                    .routerDelegate
+                    .navigatorKey
+                    .currentContext ??
+                context;
+
+            if (!snackbarContext.mounted) return;
+            final l10n = L10n.of(snackbarContext);
+            ScaffoldMessenger.of(
+              snackbarContext,
+            ).showSnackBar(SnackBar(content: Text(l10n.oneClientLoggedOut)));
+            return;
+          }
+          rechainonlineChatApp.router.go('/');
+        });
     onUiaRequest[name] ??= c.onUiaRequest.stream.listen(uiaRequestHandler);
-    if (PlatformInfos.isWeb || PlatformInfos.isLinux) {
+    if (PlatformInfos.isWeb || PlatformInfos.isDesktop) {
+      FlutterLocalNotificationsPlugin().initialize(
+        settings: InitializationSettings(
+          linux: LinuxInitializationSettings(
+            defaultActionName: rechainonlineChatNotificationActions.open.name,
+          ),
+          windows: ClientManager.windowsNotificationSettings,
+          macOS: const DarwinInitializationSettings(),
+          iOS: const DarwinInitializationSettings(),
+          android: const AndroidInitializationSettings('notifications_icon'),
+        ),
+        onDidReceiveNotificationResponse: (response) => notificationTap(
+          response,
+          clients: widget.clients,
+          router: rechainonlineChatApp.router,
+          l10n: null,
+        ),
+      );
       c.onSync.stream.first.then((s) {
         html.Notification.requestPermission();
         onNotification[name] ??= c.onNotification.stream.listen(
@@ -300,8 +313,8 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
     onRoomKeyRequestSub.remove(name);
     onKeyVerificationRequestSub[name]?.cancel();
     onKeyVerificationRequestSub.remove(name);
-    onLoginStateChanged[name]?.cancel();
-    onLoginStateChanged.remove(name);
+    onLogoutSub[name]?.cancel();
+    onLogoutSub.remove(name);
     onNotification[name]?.cancel();
     onNotification.remove(name);
   }
@@ -315,14 +328,12 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
       backgroundPush = BackgroundPush(
         this,
         onFcmError: (errorMsg, {Uri? link}) async {
+          final context =
+              rechainonlineChatApp.router.routerDelegate.navigatorKey.currentContext ??
+              this.context;
+          if (!context.mounted) return;
           final result = await showOkCancelAlertDialog(
-            context:
-          REChainApp
-              .router
-              .routerDelegate
-              .navigatorKey
-              .currentContext ??
-              context,
+            context: context,
             title: L10n.of(context).pushNotificationsNotAvailable,
             message: errorMsg,
             okLabel: link == null
@@ -342,23 +353,10 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
         },
       );
     }
-
-    createVoipPlugin();
   }
 
-  void createVoipPlugin() async {
-    if (AppSettings.experimentalVoip.value) {
-      voipPlugin = null;
-      return;
-    }
-    voipPlugin = VoipPlugin(this);
-  }
-
-  @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    final foreground =
-        state != AppLifecycleState.inactive &&
-        state != AppLifecycleState.paused;
+    final foreground = state == AppLifecycleState.resumed;
     for (final client in widget.clients) {
       client.syncPresence = state == AppLifecycleState.resumed
           ? null
@@ -373,15 +371,30 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
 
   @override
   void dispose() {
-    WidgetsBinding.instance.removeObserver(this);
+    _listener?.dispose();
 
-    onRoomKeyRequestSub.values.map((s) => s.cancel());
-    onKeyVerificationRequestSub.values.map((s) => s.cancel());
-    onLoginStateChanged.values.map((s) => s.cancel());
-    onNotification.values.map((s) => s.cancel());
-    client.httpClient.close();
+    for (final sub in onRoomKeyRequestSub.values) {
+      sub.cancel();
+    }
+    for (final sub in onKeyVerificationRequestSub.values) {
+      sub.cancel();
+    }
+    for (final sub in onLogoutSub.values) {
+      sub.cancel();
+    }
+    for (final sub in onNotification.values) {
+      sub.cancel();
+    }
+    for (final sub in onUiaRequest.values) {
+      sub.cancel();
+    }
+    onRoomKeyRequestSub.clear();
+    onKeyVerificationRequestSub.clear();
+    onLogoutSub.clear();
+    onNotification.clear();
+    onUiaRequest.clear();
 
-    linuxNotifications?.close();
+    voiceMessageEventId.dispose();
 
     super.dispose();
   }
@@ -392,15 +405,17 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
   }
 
   Future<void> dehydrateAction(BuildContext context) async {
+    final l10n = L10n.of(context);
     final response = await showOkCancelAlertDialog(
       context: context,
       isDestructive: true,
-      title: L10n.of(context).dehydrate,
-      message: L10n.of(context).dehydrateWarning,
+      title: l10n.dehydrate,
+      message: l10n.dehydrateWarning,
     );
     if (response != OkCancelResult.ok) {
       return;
     }
+    if (!context.mounted) return;
     final result = await showFutureLoadingDialog(
       context: context,
       future: client.exportDump,
@@ -411,16 +426,12 @@ class MatrixState extends State<Matrix> with WidgetsBindingObserver {
     final exportBytes = Uint8List.fromList(const Utf8Codec().encode(export));
 
     final exportFileName =
-        'rechainonlinechat-export-${DateFormat(DateFormat.YEAR_MONTH_DAY).format(DateTime.now())}.rechainonlinebackup';
+        'rechainonline-export-${DateFormat(DateFormat.YEAR_MONTH_DAY).format(DateTime.now())}.rechainonlinebackup';
 
     final file = MatrixFile(bytes: exportBytes, name: exportFileName);
+    if (!context.mounted) return;
     file.save(context);
   }
 }
 
-class _AccountBundleWithClient {
-  final Client? client;
-  final AccountBundle? bundle;
-
-  _AccountBundleWithClient({this.client, this.bundle});
-}
+enum CallPosition { fullScreen, top }

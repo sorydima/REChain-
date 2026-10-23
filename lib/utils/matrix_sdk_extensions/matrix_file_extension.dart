@@ -1,17 +1,20 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:file_picker/file_picker.dart';
+import 'package:rechainonline/l10n/l10n.dart';
+import 'package:rechainonline/utils/size_string.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:matrix/matrix.dart';
 import 'package:share_plus/share_plus.dart';
 
-import 'package:rechainonline/l10n/l10n.dart';
-import 'package:rechainonline/utils/size_string.dart';
-
 extension MatrixFileExtension on MatrixFile {
-  void save(BuildContext context) async {
+  Future<void> save(BuildContext context) async {
     final scaffoldMessenger = ScaffoldMessenger.of(context);
     final l10n = L10n.of(context);
-    final downloadPath = await FilePicker.platform.saveFile(
+    final downloadPath = await FilePicker.saveFile(
       dialogTitle: l10n.saveFile,
       fileName: name,
       type: filePickerFileType,
@@ -20,7 +23,10 @@ extension MatrixFileExtension on MatrixFile {
     if (downloadPath == null) return;
 
     scaffoldMessenger.showSnackBar(
-      SnackBar(content: Text(l10n.fileHasBeenSavedAt(downloadPath))),
+      SnackBar(
+        content: Text(l10n.fileHasBeenSavedAt(downloadPath.toString())),
+        showCloseIcon: true,
+      ),
     );
   }
 
@@ -31,16 +37,18 @@ extension MatrixFileExtension on MatrixFile {
     return FileType.any;
   }
 
-  void share(BuildContext context) async {
+  Future<void> share(BuildContext context) async {
     // Workaround for iPad from
     // https://github.com/fluttercommunity/plus_plugins/tree/main/packages/share_plus/share_plus#ipad
     final box = context.findRenderObject() as RenderBox?;
 
-    await Share.shareXFiles(
-      [XFile.fromData(bytes, name: name, mimeType: mimeType)],
-      sharePositionOrigin: box == null
-          ? null
-          : box.localToGlobal(Offset.zero) & box.size,
+    await SharePlus.instance.share(
+      ShareParams(
+        files: [XFile.fromData(bytes, name: name, mimeType: mimeType)],
+        sharePositionOrigin: box == null
+            ? null
+            : box.localToGlobal(Offset.zero) & box.size,
+      ),
     );
     return;
   }

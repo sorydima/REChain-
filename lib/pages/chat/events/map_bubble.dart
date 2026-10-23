@@ -1,7 +1,14 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import 'package:rechainonline/l10n/l10n.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
+import 'package:material_ui/material_ui.dart';
+
+import '../../../config/app_config.dart';
 
 class MapBubble extends StatelessWidget {
   final double latitude;
@@ -10,6 +17,8 @@ class MapBubble extends StatelessWidget {
   final double width;
   final double height;
   final double radius;
+  final VoidCallback? onTap;
+
   const MapBubble({
     required this.latitude,
     required this.longitude,
@@ -17,6 +26,7 @@ class MapBubble extends StatelessWidget {
     this.width = 400,
     this.height = 400,
     this.radius = 10.0,
+    this.onTap,
     super.key,
   });
 
@@ -24,65 +34,70 @@ class MapBubble extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(radius),
-      child: Container(
-        constraints: BoxConstraints.loose(Size(width, height)),
-        child: AspectRatio(
-          aspectRatio: width / height,
-          child: Stack(
-            children: <Widget>[
-              FlutterMap(
-                options: MapOptions(
-                  initialCenter: LatLng(latitude, longitude),
-                  initialZoom: zoom,
+    return Container(
+      constraints: BoxConstraints.loose(Size(width, height)),
+      child: AspectRatio(
+        aspectRatio: width / height,
+        child: Stack(
+          children: <Widget>[
+            FlutterMap(
+              options: MapOptions(
+                initialCenter: LatLng(latitude, longitude),
+                initialZoom: zoom,
+              ),
+              children: [
+                TileLayer(
+                  maxZoom: 20,
+                  minZoom: 0,
+                  urlTemplate:
+                      'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                  userAgentPackageName: AppConfig.appId,
+                  subdomains: const ['a', 'b', 'c'],
                 ),
-                children: [
-                  TileLayer(
-                    maxZoom: 20,
-                    minZoom: 0,
-                    urlTemplate:
-                        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-                    subdomains: const ['a', 'b', 'c'],
-                  ),
-                  MarkerLayer(
-                    rotate: true,
-                    markers: [
-                      Marker(
-                        point: LatLng(latitude, longitude),
-                        width: 30,
-                        height: 30,
-                        child: Transform.translate(
-                          // No idea why the offset has to be like this, instead of -15
-                          // It has been determined by trying out, though, that this yields
-                          // the tip of the location pin to be static when zooming.
-                          // Might have to do with psychological perception of where the tip exactly is
-                          offset: const Offset(0, -12.5),
-                          child: const Icon(
-                            Icons.location_pin,
-                            color: Colors.red,
-                            size: 30,
-                          ),
+                MarkerLayer(
+                  rotate: true,
+                  markers: [
+                    Marker(
+                      point: LatLng(latitude, longitude),
+                      width: 30,
+                      height: 30,
+                      child: Transform.translate(
+                        // No idea why the offset has to be like this, instead of -15
+                        // It has been determined by trying out, though, that this yields
+                        // the tip of the location pin to be static when zooming.
+                        // Might have to do with psychological perception of where the tip exactly is
+                        offset: const Offset(0, -12.5),
+                        child: const Icon(
+                          Icons.location_pin,
+                          color: Colors.red,
+                          size: 30,
                         ),
                       ),
-                    ],
-                  ),
-                ],
-              ),
-              Container(
-                alignment: Alignment.bottomRight,
-                child: Text(
-                  ' © OpenStreetMap contributors ',
-                  style: TextStyle(
-                    color: theme.brightness == Brightness.dark
-                        ? Colors.white
-                        : Colors.black,
-                    backgroundColor: theme.appBarTheme.backgroundColor,
-                  ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            Container(
+              alignment: Alignment.bottomRight,
+              child: Text(
+                ' © OpenStreetMap contributors ',
+                style: TextStyle(
+                  color: theme.brightness == Brightness.dark
+                      ? Colors.white
+                      : Colors.black,
+                  backgroundColor: theme.appBarTheme.backgroundColor,
                 ),
               ),
-            ],
-          ),
+            ),
+            Material(
+              color: Colors.transparent,
+              child: Tooltip(
+                message: L10n.of(context).openInMaps,
+                child: InkWell(onTap: onTap, child: SizedBox.expand()),
+              ),
+            ),
+          ],
         ),
       ),
     );

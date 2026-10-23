@@ -1,12 +1,15 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:matrix/matrix.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/pages/archive/archive_view.dart';
 import 'package:rechainonline/widgets/adaptive_dialogs/show_ok_cancel_alert_dialog.dart';
 import 'package:rechainonline/widgets/future_loading_dialog.dart';
 import 'package:rechainonline/widgets/matrix.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
 
 class Archive extends StatefulWidget {
   const Archive({super.key});
@@ -16,28 +19,27 @@ class Archive extends StatefulWidget {
 }
 
 class ArchiveController extends State<Archive> {
-  List<Room> archive = [];
+  List<ArchivedRoom> archive = [];
 
-  Future<List<Room>> getArchive(BuildContext context) async {
+  Future<List<ArchivedRoom>> getArchive(BuildContext context) async {
     if (archive.isNotEmpty) return archive;
-    return archive = await Matrix.of(context).client.loadArchive();
+    return archive = await Matrix.of(context).client.loadArchiveWithTimeline();
   }
 
-  void forgetRoomAction(int i) async {
+  Future<void> forgetRoomAction(int i) async {
     await showFutureLoadingDialog(
       context: context,
       future: () async {
-        Logs().v('Forget room ${archive.last.getLocalizedDisplayname()}');
-        await archive[i].forget();
+        Logs().v('Forget room ${archive.last.room.getLocalizedDisplayname()}');
+        await archive[i].room.forget();
         archive.removeAt(i);
       },
     );
     setState(() {});
   }
 
-  void forgetAllAction() async {
+  Future<void> forgetAllAction() async {
     final archive = this.archive;
-    final client = Matrix.of(context).client;
     if (archive.isEmpty) return;
     if (await showOkCancelAlertDialog(
           useRootNavigator: false,
@@ -50,19 +52,21 @@ class ArchiveController extends State<Archive> {
         OkCancelResult.ok) {
       return;
     }
+    if (!mounted) return;
     await showFutureLoadingDialog(
       context: context,
       futureWithProgress: (onProgress) async {
         final count = archive.length;
         while (archive.isNotEmpty) {
           onProgress(1 - (archive.length / count));
-          Logs().v('Forget room ${archive.last.getLocalizedDisplayname()}');
-          await archive.last.forget();
+          Logs().v(
+            'Forget room ${archive.last.room.getLocalizedDisplayname()}',
+          );
+          await archive.last.room.forget();
           archive.removeLast();
         }
       },
     );
-    client.clearArchivesFromCache();
     setState(() {});
   }
 

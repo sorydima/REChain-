@@ -1,7 +1,11 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/utils/date_time_extension.dart';
+import 'package:material_ui/material_ui.dart';
 
 class SearchFooter extends StatelessWidget {
   final DateTime? searchedUntil;
@@ -32,7 +36,7 @@ class SearchFooter extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          mainAxisSize: MainAxisSize.min,
+          mainAxisSize: .min,
           children: [
             if (searchedUntil != null)
               Padding(

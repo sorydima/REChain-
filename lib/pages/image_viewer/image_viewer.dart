@@ -1,13 +1,17 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:matrix/matrix.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/config/themes.dart';
 import 'package:rechainonline/pages/image_viewer/image_viewer_view.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
 import 'package:rechainonline/utils/show_scaffold_dialog.dart';
 import 'package:rechainonline/widgets/share_scaffold_dialog.dart';
+import 'package:flutter/services.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
+
 import '../../utils/matrix_sdk_extensions/event_extension.dart';
 
 class ImageViewer extends StatefulWidget {
@@ -58,16 +62,16 @@ class ImageViewerController extends State<ImageViewer> {
 
   void onKeyEvent(KeyEvent event) {
     switch (event.logicalKey) {
-      case LogicalKeyboardKey.arrowUp:
+      case LogicalKeyboardKey.arrowLeft:
         if (canGoBack) prevImage();
         break;
-      case LogicalKeyboardKey.arrowDown:
+      case LogicalKeyboardKey.arrowRight:
         if (canGoNext) nextImage();
         break;
     }
   }
 
-  void prevImage() async {
+  Future<void> prevImage() async {
     await pageController.previousPage(
       duration: rechainonlineThemes.animationDuration,
       curve: rechainonlineThemes.animationCurve,
@@ -76,7 +80,7 @@ class ImageViewerController extends State<ImageViewer> {
     setState(() {});
   }
 
-  void nextImage() async {
+  Future<void> nextImage() async {
     await pageController.nextPage(
       duration: rechainonlineThemes.animationDuration,
       curve: rechainonlineThemes.animationCurve,
@@ -116,6 +120,13 @@ class ImageViewerController extends State<ImageViewer> {
         Navigator.of(context, rootNavigator: false).pop();
       }
     }
+  }
+
+  @override
+  void dispose() {
+    focusNode.dispose();
+    pageController.dispose();
+    super.dispose();
   }
 
   @override

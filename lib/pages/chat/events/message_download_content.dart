@@ -1,13 +1,16 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:flutter_linkify/flutter_linkify.dart';
-import 'package:matrix/matrix.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/config/app_config.dart';
-import 'package:rechainonline/config/setting_keys.dart';
+import 'package:rechainonline/pages/chat/events/file_send_status_indicator.dart';
 import 'package:rechainonline/utils/file_description.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/event_extension.dart';
 import 'package:rechainonline/utils/url_launcher.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
 
 class MessageDownloadContent extends StatelessWidget {
   final Event event;
@@ -27,15 +30,16 @@ class MessageDownloadContent extends StatelessWidget {
     final filetype = (filename.contains('.')
         ? filename.split('.').last.toUpperCase()
         : event.content
-                  .tryGetMap<String, dynamic>('info')
+                  .tryGetMap<String, Object?>('info')
                   ?.tryGet<String>('mimetype')
                   ?.toUpperCase() ??
               'UNKNOWN');
     final sizeString = event.sizeString ?? '?MB';
     final fileDescription = event.fileDescription;
+    final fileSendingStatus = event.fileSendingStatus;
     return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: .min,
+      crossAxisAlignment: .start,
       spacing: 8,
       children: [
         Material(
@@ -47,16 +51,25 @@ class MessageDownloadContent extends StatelessWidget {
               width: 400,
               padding: const EdgeInsets.all(16.0),
               child: Row(
-                mainAxisSize: MainAxisSize.min,
+                mainAxisSize: .min,
                 spacing: 16,
                 children: [
-                  CircleAvatar(
-                    backgroundColor: textColor.withAlpha(32),
-                    child: Icon(Icons.file_download_outlined, color: textColor),
-                  ),
-                  Expanded(
+                  if (fileSendingStatus != null)
+                    FileSendStatusIndicator(
+                      fileSendingStatus: fileSendingStatus,
+                    )
+                  else
+                    CircleAvatar(
+                      backgroundColor: textColor.withAlpha(32),
+                      child: Icon(
+                        Icons.file_download_outlined,
+                        color: textColor,
+                      ),
+                    ),
+                  Flexible(
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: .start,
+                      mainAxisSize: .min,
                       children: [
                         Text(
                           filename,
@@ -65,17 +78,13 @@ class MessageDownloadContent extends StatelessWidget {
                           style: TextStyle(
                             color: textColor,
                             fontWeight: FontWeight.w500,
-                            fontSize: 14,
                           ),
                         ),
                         Text(
                           '$sizeString | $filetype',
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            color: textColor,
-                            fontSize: 10,
-                          ),
+                          style: TextStyle(color: textColor, fontSize: 10),
                         ),
                       ],
                     ),
@@ -85,7 +94,7 @@ class MessageDownloadContent extends StatelessWidget {
             ),
           ),
         ),
-        if (fileDescription != null)
+        if (fileDescription != null) ...[
           Padding(
             padding: const EdgeInsets.symmetric(
               horizontal: 16.0,
@@ -96,22 +105,19 @@ class MessageDownloadContent extends StatelessWidget {
               textScaleFactor: MediaQuery.textScalerOf(context).scale(1),
               style: TextStyle(
                 color: textColor,
-                fontSize:
-                    AppSettings.fontSizeFactor.value *
-                    AppConfig.messageFontSize,
+                fontSize: AppConfig.messageFontSize,
               ),
               options: const LinkifyOptions(humanize: false),
               linkStyle: TextStyle(
                 color: linkColor,
-                fontSize:
-                    AppSettings.fontSizeFactor.value *
-                    AppConfig.messageFontSize,
+                fontSize: AppConfig.messageFontSize,
                 decoration: TextDecoration.underline,
                 decorationColor: linkColor,
               ),
               onOpen: (url) => UrlLauncher(context, url.url).launchUrl(),
             ),
           ),
+        ],
       ],
     );
   }

@@ -1,8 +1,12 @@
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:blurhash_dart/blurhash_dart.dart' as b;
+import 'package:flutter/foundation.dart';
 import 'package:image/image.dart' as image;
+import 'package:material_ui/material_ui.dart';
 
 class BlurHash extends StatefulWidget {
   final double width;

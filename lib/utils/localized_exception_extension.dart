@@ -1,14 +1,19 @@
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 import 'dart:io';
 import 'dart:math';
 
-import 'package:flutter/material.dart';
-
+import 'package:rechainonline/l10n/l10n.dart';
+import 'package:rechainonline/utils/other_party_can_receive.dart';
+import 'package:flutter/services.dart';
 import 'package:http/http.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:matrix/encryption.dart';
 import 'package:matrix/matrix.dart';
 
-import 'package:rechainonline/l10n/l10n.dart';
-import 'package:rechainonline/utils/other_party_can_receive.dart';
 import 'uia_request_manager.dart';
 
 extension LocalizedExceptionExtension on Object {
@@ -51,11 +56,22 @@ extension LocalizedExceptionExtension on Object {
           if (exceptionContext == ExceptionContext.joinRoom) {
             return L10n.of(context).unableToJoinChat;
           }
-          return (this as MatrixException).errorMessage;
+          return L10n.of(
+            context,
+          ).serverRespondedWithError((this as MatrixException).errorMessage);
       }
     }
     if (this is InvalidPassphraseException) {
       return L10n.of(context).wrongRecoveryKey;
+    }
+    if (this is PlatformException) {
+      if ((this as PlatformException).code == 'CANCELED') {
+        return L10n.of(context).theProcessWasCanceled;
+      }
+      final message = (this as PlatformException).message;
+      if (message != null) {
+        return message;
+      }
     }
     if (this is BadServerLoginTypesException) {
       final serverVersions = (this as BadServerLoginTypesException)
@@ -68,11 +84,9 @@ extension LocalizedExceptionExtension on Object {
           .toString()
           .replaceAll('{', '"')
           .replaceAll('}', '"');
-      return L10n.of(context).badServerLoginTypesException(
-        serverVersions,
-        supportedVersions,
-        supportedVersions,
-      );
+      return L10n.of(
+        context,
+      ).badServerLoginTypesException(serverVersions, supportedVersions, supportedVersions);
     }
     if (this is IOException ||
         this is SocketException ||
@@ -95,8 +109,7 @@ extension LocalizedExceptionExtension on Object {
       return L10n.of(context).unableToJoinChat;
     }
 
-    Logs().w('Something went wrong: ', this);
-    return L10n.of(context).oopsSomethingWentWrong;
+    return L10n.of(context).unexpectedErrorOccurded(toString());
   }
 }
 

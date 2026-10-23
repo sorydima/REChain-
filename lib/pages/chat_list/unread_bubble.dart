@@ -1,8 +1,11 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:matrix/matrix.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/config/themes.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
 
 class UnreadBubble extends StatelessWidget {
   final Room room;
@@ -11,7 +14,7 @@ class UnreadBubble extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final unread = room.isUnread;
+    final unread = room.isUnreadOrInvited;
     final hasNotifications = room.notificationCount > 0;
     final unreadBubbleSize = unread || room.hasNewMessages
         ? room.notificationCount > 0
@@ -31,12 +34,14 @@ class UnreadBubble extends StatelessWidget {
       decoration: BoxDecoration(
         color: room.highlightCount > 0
             ? theme.colorScheme.error
-            : hasNotifications || room.markedUnread
+            : hasNotifications ||
+                  room.markedUnread ||
+                  room.membership == .invite
             ? theme.colorScheme.primary
             : theme.colorScheme.primaryContainer,
-        borderRadius: BorderRadius.circular(7),
+        borderRadius: BorderRadius.circular(unreadBubbleSize),
       ),
-      child: hasNotifications
+      child: hasNotifications || room.markedUnread
           ? Text(
               room.notificationCount.toString(),
               style: TextStyle(
@@ -48,7 +53,7 @@ class UnreadBubble extends StatelessWidget {
                 fontSize: 13,
                 fontWeight: FontWeight.w500,
               ),
-              textAlign: TextAlign.center,
+              textAlign: .center,
             )
           : const SizedBox.shrink(),
     );

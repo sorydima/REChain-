@@ -1,8 +1,7 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:flutter_linkify/flutter_linkify.dart';
-import 'package:go_router/go_router.dart';
-import 'package:matrix/matrix.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/pages/chat_search/search_footer.dart';
@@ -10,6 +9,10 @@ import 'package:rechainonline/utils/date_time_extension.dart';
 import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
 import 'package:rechainonline/utils/url_launcher.dart';
 import 'package:rechainonline/widgets/avatar.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
+import 'package:go_router/go_router.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
 
 class ChatSearchMessageTab extends StatelessWidget {
   final String searchQuery;
@@ -117,6 +120,7 @@ class _MessageSearchResultListTile extends StatelessWidget {
       subtitle: Linkify(
         textScaleFactor: MediaQuery.textScalerOf(context).scale(1),
         options: const LinkifyOptions(humanize: false),
+        style: TextStyle(color: theme.colorScheme.onSurface),
         linkStyle: TextStyle(
           color: theme.colorScheme.primary,
           decoration: TextDecoration.underline,

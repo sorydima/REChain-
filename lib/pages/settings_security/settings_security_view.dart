@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:go_router/go_router.dart';
-import 'package:matrix/matrix.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/config/app_config.dart';
 import 'package:rechainonline/config/setting_keys.dart';
@@ -9,9 +9,15 @@ import 'package:rechainonline/config/themes.dart';
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/utils/beautify_string_extension.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
+import 'package:rechainonline/widgets/app_lock.dart';
 import 'package:rechainonline/widgets/layouts/max_width_body.dart';
 import 'package:rechainonline/widgets/matrix.dart';
 import 'package:rechainonline/widgets/settings_switch_list_tile.dart';
+import 'package:go_router/go_router.dart';
+import 'package:local_auth/local_auth.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
+
 import 'settings_security.dart';
 
 class SettingsSecurityView extends StatelessWidget {
@@ -22,6 +28,9 @@ class SettingsSecurityView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final client = Matrix.of(context).client;
+    final publicMasterKey =
+        client.userDeviceKeys[client.userID]?.masterKey?.publicKey;
 
     return Scaffold(
       appBar: AppBar(
@@ -70,6 +79,12 @@ class SettingsSecurityView extends StatelessWidget {
                     subtitle: L10n.of(context).sendReadReceiptsDescription,
                     setting: AppSettings.sendPublicReadReceipts,
                   ),
+                  SettingsSwitchListTile.adaptive(
+                    title: L10n.of(context).shareCrashReports,
+                    subtitle: L10n.of(context).shareCrashReportsDescription,
+                    setting: AppSettings.autoSendErrorReports,
+                    defaultValue: false,
+                  ),
                   ListTile(
                     trailing: const Icon(Icons.chevron_right_outlined),
                     title: Text(L10n.of(context).blockedUsers),
@@ -81,15 +96,45 @@ class SettingsSecurityView extends StatelessWidget {
                     onTap: () =>
                         context.go('/rooms/settings/security/ignorelist'),
                   ),
-                  if (Matrix.of(context).client.encryption != null) ...{
-                    if (PlatformInfos.isMobile)
+                  if (PlatformInfos.supportsAppLock) ...[
+                    Divider(color: theme.dividerColor),
+                    ListTile(
+                      title: Text(
+                        L10n.of(context).appLock,
+                        style: TextStyle(
+                          color: theme.colorScheme.secondary,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      subtitle: Text(L10n.of(context).appLockDescription),
+                    ),
+                    SwitchListTile.adaptive(
+                      value: AppLock.of(context).isActive,
+                      title: Text(L10n.of(context).useAppLock),
+                      onChanged: (active) => active
+                          ? controller.setAppLockAction()
+                          : controller.disableAppLockAction(),
+                    ),
+                    if (AppLock.of(context).isActive) ...[
+                      FutureBuilder(
+                        future: LocalAuthentication().canCheckBiometrics,
+                        builder: (context, snapshot) {
+                          if (snapshot.data != true) return SizedBox.shrink();
+                          return SwitchListTile.adaptive(
+                            value: AppLock.of(context).useBiometrics,
+                            onChanged: (_) => controller.toggleBiometrics(),
+                            title: Text(L10n.of(context).unlockWithBiometrics),
+                          );
+                        },
+                      ),
                       ListTile(
-                        trailing: const Icon(Icons.chevron_right_outlined),
-                        title: Text(L10n.of(context).appLock),
-                        subtitle: Text(L10n.of(context).appLockDescription),
+                        trailing: const Icon(Icons.lock_reset_outlined),
+                        title: Text(L10n.of(context).resetPin),
                         onTap: controller.setAppLockAction,
                       ),
-                  },
+                    ],
+                  ],
+
                   Divider(color: theme.dividerColor),
                   ListTile(
                     title: Text(
@@ -137,9 +182,18 @@ class SettingsSecurityView extends StatelessWidget {
                       ),
                     ),
                   ),
+                  if (publicMasterKey != null)
+                    ListTile(
+                      title: Text(L10n.of(context).yourPublicKey),
+                      leading: const Icon(Icons.verified_user_outlined),
+                      subtitle: SelectableText(
+                        publicMasterKey.beautified,
+                        style: const TextStyle(fontFamily: 'RobotoMono'),
+                      ),
+                    ),
                   ListTile(
-                    title: Text(L10n.of(context).yourPublicKey),
-                    leading: const Icon(Icons.vpn_key_outlined),
+                    title: Text(L10n.of(context).deviceIdentityKey),
+                    leading: const Icon(Icons.mobile_friendly_outlined),
                     subtitle: SelectableText(
                       Matrix.of(context).client.fingerprintKey.beautified,
                       style: const TextStyle(fontFamily: 'RobotoMono'),
@@ -154,6 +208,7 @@ class SettingsSecurityView extends StatelessWidget {
                       onTap: () =>
                           context.go('/rooms/settings/security/password'),
                     ),
+                  Divider(color: theme.dividerColor),
                   ListTile(
                     iconColor: Colors.orange,
                     leading: const Icon(Icons.delete_sweep_outlined),
@@ -163,7 +218,6 @@ class SettingsSecurityView extends StatelessWidget {
                     ),
                     onTap: controller.dehydrateAction,
                   ),
-                  Divider(color: theme.dividerColor),
                   ListTile(
                     iconColor: Colors.red,
                     leading: const Icon(Icons.delete_outlined),

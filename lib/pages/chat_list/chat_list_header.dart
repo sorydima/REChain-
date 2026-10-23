@@ -1,12 +1,17 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:matrix/matrix.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
+import 'package:rechainonline/config/setting_keys.dart';
 import 'package:rechainonline/config/themes.dart';
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/pages/chat_list/chat_list.dart';
 import 'package:rechainonline/pages/chat_list/client_chooser_button.dart';
 import 'package:rechainonline/utils/sync_status_localization.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
+
 import '../../widgets/matrix.dart';
 
 class ChatListHeader extends StatelessWidget implements PreferredSizeWidget {
@@ -23,13 +28,19 @@ class ChatListHeader extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final client = Matrix.of(context).client;
+    final isColumnMode = rechainonlineThemes.isColumnMode(context);
 
     return SliverAppBar(
       floating: true,
       toolbarHeight: 72,
-      pinned: rechainonlineThemes.isColumnMode(context),
+      pinned: isColumnMode,
       scrolledUnderElevation: 0,
-      backgroundColor: Colors.transparent,
+      shape: isColumnMode
+          ? Border(bottom: BorderSide(color: theme.dividerColor, width: 1))
+          : null,
+      backgroundColor: isColumnMode
+          ? theme.colorScheme.surface.withAlpha(240)
+          : Colors.transparent,
       automaticallyImplyLeading: false,
       title: StreamBuilder(
         stream: client.onSyncStatus.stream,
@@ -54,16 +65,14 @@ class ChatListHeader extends StatelessWidget implements PreferredSizeWidget {
                 borderSide: BorderSide.none,
                 borderRadius: BorderRadius.circular(99),
               ),
-              contentPadding: EdgeInsets.zero,
               hintText: hide
                   ? L10n.of(context).searchChatsRooms
                   : status.calcLocalizedString(context),
               hintStyle: TextStyle(
-                color: status.error != null
-                    ? Colors.orange
-                    : theme.colorScheme.onPrimaryContainer,
+                color: theme.colorScheme.onPrimaryContainer,
                 fontWeight: FontWeight.normal,
               ),
+
               prefixIcon: hide
                   ? controller.isSearchMode
                         ? IconButton(
@@ -72,26 +81,32 @@ class ChatListHeader extends StatelessWidget implements PreferredSizeWidget {
                             onPressed: controller.cancelSearch,
                             color: theme.colorScheme.onPrimaryContainer,
                           )
-                        : IconButton(
+                        : isColumnMode ||
+                              (controller.spaces.isEmpty &&
+                                  !AppSettings.displayNavigationRail.value)
+                        ? IconButton(
+                            tooltip: L10n.of(context).search,
                             onPressed: controller.startSearch,
                             icon: Icon(
                               Icons.search_outlined,
                               color: theme.colorScheme.onPrimaryContainer,
                             ),
                           )
-                  : Container(
-                      margin: const EdgeInsets.all(12),
+                        : IconButton(
+                            tooltip: L10n.of(context).displayNavigationRail,
+                            onPressed: controller.openNavrail,
+                            icon: Icon(
+                              Icons.menu,
+                              color: theme.colorScheme.onPrimaryContainer,
+                            ),
+                          )
+                  : SizedBox(
                       width: 8,
                       height: 8,
                       child: Center(
                         child: CircularProgressIndicator.adaptive(
                           strokeWidth: 2,
                           value: status.progress,
-                          valueColor: status.error != null
-                              ? const AlwaysStoppedAnimation<Color>(
-                                  Colors.orange,
-                                )
-                              : null,
                         ),
                       ),
                     ),

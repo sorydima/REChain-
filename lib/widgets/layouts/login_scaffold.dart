@@ -1,79 +1,106 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:url_launcher/url_launcher.dart';
-import 'package:url_launcher/url_launcher_string.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/config/app_config.dart';
+import 'package:rechainonline/config/setting_keys.dart';
 import 'package:rechainonline/config/themes.dart';
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:particles_network/particles_network.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class LoginScaffold extends StatelessWidget {
   final Widget body;
   final AppBar? appBar;
-  final bool enforceMobileMode;
+  final Widget? bottomNavigationBar;
 
   const LoginScaffold({
     super.key,
     required this.body,
     this.appBar,
-    this.enforceMobileMode = false,
+    this.bottomNavigationBar,
   });
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-    final isMobileMode =
-        enforceMobileMode || !rechainonlineThemes.isColumnMode(context);
-    if (isMobileMode) {
-      return Scaffold(
-        key: const Key('LoginScaffold'),
-        appBar: appBar,
-        body: SafeArea(child: body),
-      );
-    }
-    return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            theme.colorScheme.surfaceContainerLow,
-            theme.colorScheme.surfaceContainer,
-            theme.colorScheme.surfaceContainerHighest,
-          ],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
-      ),
-      child: Column(
-        children: [
-          const SizedBox(height: 16),
-          Expanded(
-            child: Center(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: Material(
-                  borderRadius: BorderRadius.circular(AppConfig.borderRadius),
-                  clipBehavior: Clip.hardEdge,
-                  elevation: theme.appBarTheme.scrolledUnderElevation ?? 4,
-                  shadowColor: theme.appBarTheme.shadowColor,
-                  child: ConstrainedBox(
-                    constraints: isMobileMode
-                        ? const BoxConstraints()
-                        : const BoxConstraints(maxWidth: 480, maxHeight: 640),
-                    child: Scaffold(
-                      key: const Key('LoginScaffold'),
-                      appBar: appBar,
-                      body: SafeArea(child: body),
-                    ),
-                  ),
-                ),
-              ),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final isMobileMode = !rechainonlineThemes.isColumnModeByWidth(
+          constraints.maxWidth,
+        );
+        if (isMobileMode) {
+          return Scaffold(
+            key: const Key('LoginScaffold'),
+            appBar: appBar,
+            body: SafeArea(child: body),
+            bottomNavigationBar: bottomNavigationBar,
+          );
+        }
+        return Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                theme.colorScheme.surfaceContainerLow,
+                theme.colorScheme.surfaceContainer,
+                theme.colorScheme.surfaceContainerHighest,
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
             ),
           ),
-          const _PrivacyButtons(mainAxisAlignment: .center),
-        ],
-      ),
+          child: Stack(
+            children: [
+              if (!MediaQuery.disableAnimationsOf(context))
+                ParticleNetwork(
+                  maxSpeed: 0.25,
+                  particleColor: theme.colorScheme.primary,
+                  lineColor: theme.colorScheme.secondary,
+                ),
+              Column(
+                children: [
+                  const SizedBox(height: 16),
+                  Expanded(
+                    child: Center(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                        child: Material(
+                          borderRadius: BorderRadius.circular(
+                            AppConfig.borderRadius,
+                          ),
+                          clipBehavior: Clip.hardEdge,
+                          elevation:
+                              theme.appBarTheme.scrolledUnderElevation ?? 4,
+                          shadowColor: theme.appBarTheme.shadowColor,
+                          child: ConstrainedBox(
+                            constraints: isMobileMode
+                                ? const BoxConstraints()
+                                : const BoxConstraints(
+                                    maxWidth: 480,
+                                    maxHeight: 640,
+                                  ),
+                            child: Scaffold(
+                              key: const Key('LoginScaffold'),
+                              appBar: appBar,
+                              body: SafeArea(child: body),
+                              bottomNavigationBar: bottomNavigationBar,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  const _PrivacyButtons(mainAxisAlignment: .center),
+                ],
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }
@@ -94,7 +121,7 @@ class _PrivacyButtons extends StatelessWidget {
           mainAxisAlignment: mainAxisAlignment,
           children: [
             TextButton(
-              onPressed: () => launchUrlString(AppConfig.website),
+              onPressed: () => launchUrlString(AppSettings.website.value),
               child: Text(L10n.of(context).website, style: shadowTextStyle),
             ),
             TextButton(
@@ -102,7 +129,7 @@ class _PrivacyButtons extends StatelessWidget {
               child: Text(L10n.of(context).help, style: shadowTextStyle),
             ),
             TextButton(
-              onPressed: () => launchUrl(AppConfig.privacyUrl),
+              onPressed: () => launchUrlString(AppSettings.privacyPolicy.value),
               child: Text(L10n.of(context).privacy, style: shadowTextStyle),
             ),
             TextButton(

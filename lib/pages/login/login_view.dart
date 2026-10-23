@@ -1,8 +1,12 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/widgets/layouts/login_scaffold.dart';
-import 'package:rechainonline/widgets/matrix.dart';
+import 'package:material_ui/material_ui.dart';
+
 import 'login.dart';
 
 class LoginView extends StatelessWidget {
@@ -15,32 +19,18 @@ class LoginView extends StatelessWidget {
     final theme = Theme.of(context);
 
     final homeserver = controller.widget.client.homeserver
-        .toString()
+        ?.toString()
         .replaceFirst('https://', '');
-    final title = L10n.of(context).logInTo(homeserver);
-    final titleParts = title.split(homeserver);
+    final title = homeserver == null
+        ? L10n.of(context).loginWithREChainId
+        : L10n.of(context).logInTo(homeserver);
 
     return LoginScaffold(
-      enforceMobileMode: Matrix.of(
-        context,
-      ).widget.clients.any((client) => client.isLogged()),
       appBar: AppBar(
         leading: controller.loading ? null : const Center(child: BackButton()),
         automaticallyImplyLeading: !controller.loading,
         titleSpacing: !controller.loading ? 0 : null,
-        title: Text.rich(
-          TextSpan(
-            children: [
-              TextSpan(text: titleParts.first),
-              TextSpan(
-                text: homeserver,
-                style: const TextStyle(fontWeight: FontWeight.bold),
-              ),
-              TextSpan(text: titleParts.last),
-            ],
-          ),
-          style: const TextStyle(fontSize: 18),
-        ),
+        title: Text(title),
       ),
       body: Builder(
         builder: (context) {
@@ -48,9 +38,18 @@ class LoginView extends StatelessWidget {
             child: ListView(
               padding: const EdgeInsets.symmetric(horizontal: 8),
               children: <Widget>[
-                Hero(
-                  tag: 'info-logo',
-                  child: Image.asset('assets/banner_transparent.png'),
+                Center(
+                  child: Hero(
+                    tag: 'info-logo',
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(128),
+                      child: Image.asset(
+                        './assets/logo/mini/logo_mini.png',
+                        width: 128,
+                        height: 128,
+                      ),
+                    ),
+                  ),
                 ),
                 const SizedBox(height: 16),
                 Padding(
@@ -71,7 +70,7 @@ class LoginView extends StatelessWidget {
                       errorText: controller.usernameError,
                       errorStyle: const TextStyle(color: Colors.orange),
                       hintText: '@username:domain',
-                      labelText: L10n.of(context).emailOrUsername,
+                      labelText: L10n.of(context).matrixId,
                     ),
                   ),
                 ),
@@ -121,18 +120,19 @@ class LoginView extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 16),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                  child: TextButton(
-                    onPressed: controller.loading
-                        ? () {}
-                        : controller.passwordForgotten,
-                    style: TextButton.styleFrom(
-                      foregroundColor: theme.colorScheme.error,
+                if (homeserver != null)
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                    child: TextButton(
+                      onPressed: controller.loading
+                          ? () {}
+                          : controller.passwordForgotten,
+                      style: TextButton.styleFrom(
+                        foregroundColor: theme.colorScheme.error,
+                      ),
+                      child: Text(L10n.of(context).passwordForgotten),
                     ),
-                    child: Text(L10n.of(context).passwordForgotten),
                   ),
-                ),
                 const SizedBox(height: 16),
               ],
             ),

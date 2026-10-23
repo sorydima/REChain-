@@ -9,26 +9,40 @@ class L10nRo extends L10n {
   L10nRo([String locale = 'ro']) : super(locale);
 
   @override
-  String get alwaysUse24HourFormat => 'false';
+  String get editImage => 'Edit image';
+
+  @override
+  String get rotateLeft => 'Rotate left';
+
+  @override
+  String get rotateRight => 'Rotate right';
+
+  @override
+  String get mirror => 'Mirror';
+
+  @override
+  String get save => 'Save';
+
+  @override
+  String get draw => 'Draw';
+
+  @override
+  String get undo => 'Undo';
+
+  @override
+  String get clear => 'Clear';
+
+  @override
+  String get eraser => 'Eraser';
+
+  @override
+  String get crop => 'Crop';
 
   @override
   String get repeatPassword => 'Repetați parola';
 
   @override
   String get notAnImage => 'Not an image file.';
-
-  @override
-  String get setCustomPermissionLevel => 'Set custom permission level';
-
-  @override
-  String get setPermissionsLevelDescription =>
-      'Please choose a predefined role below or enter a custom permission level between 0 and 100.';
-
-  @override
-  String get ignoreUser => 'Ignore user';
-
-  @override
-  String get normalUser => 'Normal user';
 
   @override
   String get remove => 'Eliminați';
@@ -68,6 +82,9 @@ class L10nRo extends L10n {
   String get account => 'Cont';
 
   @override
+  String get accountsAndSettings => 'Accounts and settings';
+
+  @override
   String activatedEndToEndEncryption(String username) {
     return '$username a activat criptarea end-to-end';
   }
@@ -76,16 +93,13 @@ class L10nRo extends L10n {
   String get addEmail => 'Adăugați email';
 
   @override
-  String get confirmMatrixId =>
-      'Vă rugăm să confirmați REChain ID-ul vostru să ștergeți contul vostru.';
+  String get confirmREChainId =>
+      'Please confirm your REChain ID in order to delete your account.';
 
   @override
   String supposedMxid(String mxid) {
     return 'ID-ul ar trebuii să fie $mxid';
   }
-
-  @override
-  String get addChatDescription => 'Add a chat description...';
 
   @override
   String get addToSpace => 'Adăugați la spațiu';
@@ -98,9 +112,6 @@ class L10nRo extends L10n {
 
   @override
   String get all => 'Toate';
-
-  @override
-  String get allChats => 'Toate Chaturile';
 
   @override
   String get commandHint_roomupgrade =>
@@ -155,6 +166,9 @@ class L10nRo extends L10n {
   String get areYouSure => 'Ești sigur?';
 
   @override
+  String get discardEdits => 'You have unsaved changes. Discard your edits?';
+
+  @override
   String get areYouSureYouWantToLogout =>
       'Sunteți sigur că doriți să vă deconectați?';
 
@@ -189,22 +203,6 @@ class L10nRo extends L10n {
   String get sendOnEnter => 'Trimite cu tasta enter';
 
   @override
-  String badServerVersionsException(
-    String serverVersions,
-    String supportedVersions,
-    Object serverVerions,
-    Object supoortedVersions,
-    Object suportedVersions,
-  ) {
-    return 'Homeserver-ul suportă versiunele de Spec următoare:\n$serverVersions\nDar această aplicație suportă numai $supportedVersions';
-  }
-
-  @override
-  String countChatsAndCountParticipants(int chats, int participants) {
-    return '$chats chats and $participants participants';
-  }
-
-  @override
   String get noMoreChatsFound => 'No more chats found...';
 
   @override
@@ -212,16 +210,10 @@ class L10nRo extends L10n {
       'No chats found here yet. Start a new chat with someone by using the button below. ⤵️';
 
   @override
-  String get joinedChats => 'Joined chats';
-
-  @override
   String get unread => 'Unread';
 
   @override
   String get space => 'Space';
-
-  @override
-  String get spaces => 'Spaces';
 
   @override
   String get banFromChat => 'Interzis din conversație';
@@ -239,9 +231,6 @@ class L10nRo extends L10n {
 
   @override
   String get blocked => 'Blocat';
-
-  @override
-  String get botMessages => 'Mesaje Bot';
 
   @override
   String get cancel => 'Anulează';
@@ -265,18 +254,8 @@ class L10nRo extends L10n {
   }
 
   @override
-  String changedTheChatDescriptionTo(String username, String description) {
-    return '$username a schimbat descrierea grupului în \'$description\'';
-  }
-
-  @override
   String changedTheChatName(Object username) {
     return '$username changed the chat name';
-  }
-
-  @override
-  String changedTheChatNameTo(String username, String chatname) {
-    return '$username a schimbat porecla în \'$chatname\'';
   }
 
   @override
@@ -356,22 +335,10 @@ class L10nRo extends L10n {
   String get chat => 'Chat';
 
   @override
-  String get yourChatBackupHasBeenSetUp =>
-      'Backup-ul vostru de chat a fost configurat.';
-
-  @override
   String get chatBackup => 'Backup de chat';
 
   @override
-  String get chatBackupDescription =>
-      'Mesajele voastre vechi sunt sigurate cu o cheie de recuperare. Vă rugăm să nu o pierdeți.';
-
-  @override
   String get chatDetails => 'Detalii de chat';
-
-  @override
-  String get chatHasBeenAddedToThisSpace =>
-      'Chatul a fost adăugat la acest spațiu';
 
   @override
   String get chats => 'Chaturi';
@@ -472,20 +439,8 @@ class L10nRo extends L10n {
   String get configureChat => 'Configurați chat';
 
   @override
-  String get confirm => 'Confirmați';
-
-  @override
-  String get connect => 'Conectați';
-
-  @override
   String get contactHasBeenInvitedToTheGroup =>
       'Contactul a fost invitat la grup';
-
-  @override
-  String get containsDisplayName => 'Conține displayname';
-
-  @override
-  String get containsUserName => 'Conține nume de utilizator';
 
   @override
   String get contentHasBeenReported =>
@@ -544,16 +499,6 @@ class L10nRo extends L10n {
   }
 
   @override
-  String dateWithoutYear(String month, String day) {
-    return '$month-$day';
-  }
-
-  @override
-  String dateWithYear(String year, String month, String day) {
-    return '$year-$month-$day';
-  }
-
-  @override
   String get deactivateAccountWarning =>
       'Această acțiune va dezactiva contul vostru. Nu poate fi anulat! Sunteți sigur?';
 
@@ -570,19 +515,10 @@ class L10nRo extends L10n {
   String get deleteMessage => 'Ștergeți mesajul';
 
   @override
-  String get device => 'Dispozitiv';
-
-  @override
-  String get deviceId => 'ID-ul Dispozitiv';
-
-  @override
   String get devices => 'Dispozitive';
 
   @override
   String get directChats => 'Chaturi directe';
-
-  @override
-  String get allRooms => 'Toate chaturi de grup';
 
   @override
   String get displaynameHasBeenChanged => 'Displayname a fost schimbat';
@@ -619,12 +555,6 @@ class L10nRo extends L10n {
       'Recently-used emotes will appear here...';
 
   @override
-  String get emotePacks => 'Pachete de emoturi din cameră';
-
-  @override
-  String get emoteSettings => 'Configurări Emote';
-
-  @override
   String get globalChatId => 'Global chat ID';
 
   @override
@@ -635,9 +565,6 @@ class L10nRo extends L10n {
       'Who is allowed to join this chat and how the chat can be discovered.';
 
   @override
-  String get calls => 'Calls';
-
-  @override
   String get customEmojisAndStickers => 'Custom emojis and stickers';
 
   @override
@@ -646,10 +573,6 @@ class L10nRo extends L10n {
 
   @override
   String get emoteShortcode => 'Shortcode de emote';
-
-  @override
-  String get emoteWarnNeedToPick =>
-      'Trebuie să alegeți shortcode pentru emote și o imagine!';
 
   @override
   String get emptyChat => 'Chat gol';
@@ -682,27 +605,9 @@ class L10nRo extends L10n {
   String get enterAnEmailAddress => 'Introduceți o adresă email';
 
   @override
-  String get homeserver => 'Homeserver';
-
-  @override
-  String get enterYourHomeserver => 'Introduceți homeserverul vostru';
-
-  @override
   String errorObtainingLocation(String error) {
     return 'Obținerea locației a eșuat: $error';
   }
-
-  @override
-  String get everythingReady => 'Totul e gata!';
-
-  @override
-  String get extremeOffensive => 'De foarte mare ofensă';
-
-  @override
-  String get fileName => 'Nume de fișier';
-
-  @override
-  String get rechainonline => 'REChain';
 
   @override
   String get fontSize => 'Mărimea fontului';
@@ -715,9 +620,6 @@ class L10nRo extends L10n {
 
   @override
   String get fromTheInvitation => 'De la invitația';
-
-  @override
-  String get goToTheNewRoom => 'Mergeți la camera nouă';
 
   @override
   String get group => 'Grup';
@@ -754,9 +656,6 @@ class L10nRo extends L10n {
   String get help => 'Ajutor';
 
   @override
-  String get hideRedactedEvents => 'Ascunde evenimente redactate';
-
-  @override
   String get hideRedactedMessages => 'Hide redacted messages';
 
   @override
@@ -766,15 +665,6 @@ class L10nRo extends L10n {
   @override
   String get hideInvalidOrUnknownMessageFormats =>
       'Hide invalid or unknown message formats';
-
-  @override
-  String get howOffensiveIsThisContent => 'Cât de ofensiv este acest conținut?';
-
-  @override
-  String get id => 'ID';
-
-  @override
-  String get identity => 'Identitate';
 
   @override
   String get block => 'Block';
@@ -797,15 +687,7 @@ class L10nRo extends L10n {
       'Parolă sau cheie de recuperare incorectă';
 
   @override
-  String get inoffensive => 'Inofensiv';
-
-  @override
   String get inviteContact => 'Invitați contact';
-
-  @override
-  String inviteContactToGroupQuestion(Object contact, Object groupName) {
-    return 'Do you want to invite $contact to the chat \"$groupName\"?';
-  }
 
   @override
   String inviteContactToGroup(String groupName) {
@@ -839,9 +721,6 @@ class L10nRo extends L10n {
 
   @override
   String get invitedUsersOnly => 'Numai utilizatori invitați';
-
-  @override
-  String get inviteForMe => 'Invitați pentru mine';
 
   @override
   String inviteText(String username, String link) {
@@ -884,9 +763,6 @@ class L10nRo extends L10n {
   String get leftTheChat => 'A plecat din chat';
 
   @override
-  String get license => 'Permis';
-
-  @override
   String get lightTheme => 'Luminat';
 
   @override
@@ -900,20 +776,6 @@ class L10nRo extends L10n {
   @override
   String get dehydrateWarning =>
       'Această actiune nu poate fi anulată. Asigurați-vă că păstrați fișierul backup.';
-
-  @override
-  String get dehydrateTor => 'Utilizatori de TOR: Exportați sesiunea';
-
-  @override
-  String get dehydrateTorLong =>
-      'Pentru utilizatori de TOR, este recomandat să exportați sesiunea înainte de a închideți fereastra.';
-
-  @override
-  String get hydrateTor => 'Utilizatori TOR: Importați sesiune exportată';
-
-  @override
-  String get hydrateTorLong =>
-      'Ați exportat sesiunea vostră ultima dată pe TOR? Importați-o repede și continuați să conversați.';
 
   @override
   String get hydrate => 'Restaurați din fișier backup';
@@ -944,9 +806,6 @@ class L10nRo extends L10n {
   String get logout => 'Deconectați-vă';
 
   @override
-  String get memberChanges => 'Schimbări de membri';
-
-  @override
   String get mention => 'Menționați';
 
   @override
@@ -960,10 +819,6 @@ class L10nRo extends L10n {
 
   @override
   String get muteChat => 'Amuțați chatul';
-
-  @override
-  String get needPantalaimonWarning =>
-      'Vă rugăm să fiți conștienți că e nevoie de Pantalaimon să folosiți criptare end-to-end deocamdată.';
 
   @override
   String get newChat => 'Chat nou';
@@ -1006,9 +861,6 @@ class L10nRo extends L10n {
   String get scanQrCode => 'Scanați cod QR';
 
   @override
-  String get none => 'Niciunul';
-
-  @override
   String get noPasswordRecoveryDescription =>
       'Nu ați adăugat încă nici un mod de recuperare pentru parola voastră.';
 
@@ -1022,10 +874,6 @@ class L10nRo extends L10n {
   String get notifications => 'Notificări';
 
   @override
-  String get notificationsEnabledForThisAccount =>
-      'Notificări activate pentru acest cont';
-
-  @override
   String numUsersTyping(int count) {
     return '$count utilizatori tastează…';
   }
@@ -1034,16 +882,7 @@ class L10nRo extends L10n {
   String get obtainingLocation => 'Obținând locație…';
 
   @override
-  String get offensive => 'Ofensiv';
-
-  @override
-  String get offline => 'Offline';
-
-  @override
   String get ok => 'Ok';
-
-  @override
-  String get online => 'Online';
 
   @override
   String get onlineKeyBackupEnabled => 'Backup de cheie online este activat';
@@ -1060,9 +899,6 @@ class L10nRo extends L10n {
 
   @override
   String get openCamera => 'Deschideți camera';
-
-  @override
-  String get openVideoCamera => 'Deschideți camera pentru video';
 
   @override
   String get oneClientLoggedOut =>
@@ -1084,18 +920,10 @@ class L10nRo extends L10n {
   String get bundleName => 'Numele pachetului';
 
   @override
-  String get enableMultiAccounts =>
-      '(BETA) Activați multiple conturi pe acest dispozitiv';
-
-  @override
   String get openInMaps => 'Deschideți pe hartă';
 
   @override
   String get link => 'Link';
-
-  @override
-  String get serverRequiresEmail =>
-      'Acest server trebuie să valideze emailul vostru pentru înregistrare.';
 
   @override
   String get or => 'Sau';
@@ -1116,41 +944,13 @@ class L10nRo extends L10n {
   String get passwordHasBeenChanged => 'Parola a fost schimbată';
 
   @override
-  String get hideMemberChangesInPublicChats =>
-      'Hide member changes in public chats';
-
-  @override
-  String get hideMemberChangesInPublicChatsBody =>
-      'Do not show in the chat timeline if someone joins or leaves a public chat to improve readability.';
-
-  @override
-  String get overview => 'Overview';
-
-  @override
-  String get notifyMeFor => 'Notify me for';
-
-  @override
   String get passwordRecoverySettings => 'Password recovery settings';
 
   @override
   String get passwordRecovery => 'Recuperare parolei';
 
   @override
-  String get people => 'Persoane';
-
-  @override
-  String get pickImage => 'Alegeți o imagine';
-
-  @override
   String get pin => 'Fixați';
-
-  @override
-  String play(String fileName) {
-    return 'Redați $fileName';
-  }
-
-  @override
-  String get pleaseChoose => 'Vă rugăm să alegeți';
 
   @override
   String get pleaseChooseAPasscode => 'Vă rugăm să alegeți un passcode';
@@ -1158,14 +958,6 @@ class L10nRo extends L10n {
   @override
   String get pleaseClickOnLink =>
       'Vă rugăm să deschideți linkul din email și apoi să procedați.';
-
-  @override
-  String get pleaseEnter4Digits =>
-      'Vă rugăm să introduceți 4 cifre sau puteți să lăsați gol să dezactivați lacătul aplicației.';
-
-  @override
-  String get pleaseEnterRecoveryKey =>
-      'Vă rugăm să introduceți cheia voastră de recuperare:';
 
   @override
   String get pleaseEnterYourPassword =>
@@ -1189,21 +981,12 @@ class L10nRo extends L10n {
   String get publicRooms => 'Camere Publice';
 
   @override
-  String get pushRules => 'Regulile Push';
-
-  @override
   String get reason => 'Motiv';
-
-  @override
-  String get recording => 'Înregistrare';
 
   @override
   String redactedBy(String username) {
     return 'Redacted by $username';
   }
-
-  @override
-  String get directChat => 'Direct chat';
 
   @override
   String redactedByBecause(String username, String reason) {
@@ -1219,9 +1002,6 @@ class L10nRo extends L10n {
   String get redactMessage => 'Redactați mesaj';
 
   @override
-  String get register => 'Înregistrați-vă';
-
-  @override
   String get reject => 'Respingeți';
 
   @override
@@ -1230,18 +1010,7 @@ class L10nRo extends L10n {
   }
 
   @override
-  String get rejoin => 'Reintrați';
-
-  @override
   String get removeAllOtherDevices => 'Eliminați toate celelalte dispozitive';
-
-  @override
-  String removedBy(String username) {
-    return 'Eliminat de $username';
-  }
-
-  @override
-  String get removeDevice => 'Eliminați dispozitivul';
 
   @override
   String get unbanFromChat => 'Revoca interzicerea din chat';
@@ -1260,13 +1029,18 @@ class L10nRo extends L10n {
   String get reportMessage => 'Raportați mesajul';
 
   @override
-  String get requestPermission => 'Cereți permisiune';
-
-  @override
   String get roomHasBeenUpgraded => 'Camera a fost actualizată';
 
   @override
+  String sendingFilesDoNotExit(int count) {
+    return 'Sending $count files... Please do not exit!';
+  }
+
+  @override
   String get roomVersion => 'Versiunea camerei';
+
+  @override
+  String get compressingVideo => 'Compressing video...';
 
   @override
   String get saveFile => 'Salvați fișierul';
@@ -1276,17 +1050,6 @@ class L10nRo extends L10n {
 
   @override
   String get security => 'Securitate';
-
-  @override
-  String get recoveryKey => 'Cheie de recuperare';
-
-  @override
-  String get recoveryKeyLost => 'Cheia de recuperare pierdută?';
-
-  @override
-  String seenByUser(String username) {
-    return 'Văzut de $username';
-  }
 
   @override
   String get send => 'Trimiteți';
@@ -1313,12 +1076,6 @@ class L10nRo extends L10n {
 
   @override
   String get sendMessages => 'Trimiteți mesaje';
-
-  @override
-  String get sendOriginal => 'Trimiteți original';
-
-  @override
-  String get sendSticker => 'Trimiteți sticker';
 
   @override
   String get sendVideo => 'Trimiteți video';
@@ -1354,22 +1111,10 @@ class L10nRo extends L10n {
   }
 
   @override
-  String get separateChatTypes => 'Afișați chaturi directe și grupuri separat';
-
-  @override
   String get setAsCanonicalAlias => 'Stabiliți ca pseudonimul primar';
 
   @override
-  String get setCustomEmotes => 'Stabiliți emoji-uri personalizate';
-
-  @override
   String get setChatDescription => 'Set chat description';
-
-  @override
-  String get setInvitationLink => 'Stabiliți linkul de invitație';
-
-  @override
-  String get setPermissionsLevel => 'Stabiliți nivelul de permisii';
 
   @override
   String get setStatus => 'Stabiliți status';
@@ -1389,18 +1134,6 @@ class L10nRo extends L10n {
   String get shareLocation => 'Partajați locația';
 
   @override
-  String get showPassword => 'Afișați parola';
-
-  @override
-  String get presenceStyle => 'Presence:';
-
-  @override
-  String get presencesToggle => 'Show status messages from other users';
-
-  @override
-  String get singlesignon => 'Autentificare unică';
-
-  @override
   String get skip => 'Săriți peste';
 
   @override
@@ -1416,9 +1149,6 @@ class L10nRo extends L10n {
   String startedACall(String senderName) {
     return '$senderName a început un apel';
   }
-
-  @override
-  String get startFirstChat => 'Începeți primul chatul vostru';
 
   @override
   String get status => 'Status';
@@ -1448,29 +1178,11 @@ class L10nRo extends L10n {
   String get theyMatch => 'Sunt asemănători';
 
   @override
-  String get title => 'REChain';
-
-  @override
-  String get toggleFavorite => 'Comutați favoritul';
-
-  @override
-  String get toggleMuted => 'Comutați amuțeștarea';
-
-  @override
-  String get toggleUnread => 'Marcați Citit/Necitit';
-
-  @override
   String get tooManyRequestsWarning =>
       'Prea multe cereri. Vă rugăm să încercați din nou mai tărziu!';
 
   @override
-  String get transferFromAnotherDevice => 'Transfera de la alt dispozitiv';
-
-  @override
   String get tryToSendAgain => 'Încercați să trimiteți din nou';
-
-  @override
-  String get unavailable => 'Nedisponibil';
 
   @override
   String unbannedUser(String username, String targetName) {
@@ -1498,17 +1210,6 @@ class L10nRo extends L10n {
   String get unpin => 'Anulează fixarea';
 
   @override
-  String unreadChats(int unreadCount) {
-    String _temp0 = intl.Intl.pluralLogic(
-      unreadCount,
-      locale: localeName,
-      other: '$unreadCount chaturi necitite',
-      one: 'Un chat necitit',
-    );
-    return '$_temp0';
-  }
-
-  @override
   String userAndOthersAreTyping(String username, int count) {
     return '$username și $count alți tastează…';
   }
@@ -1529,9 +1230,6 @@ class L10nRo extends L10n {
   }
 
   @override
-  String get username => 'Nume de utilizator';
-
-  @override
   String userSentUnknownEvent(String username, String type) {
     return '$username a trimis un eveniment $type';
   }
@@ -1543,9 +1241,6 @@ class L10nRo extends L10n {
   String get verified => 'Verificat';
 
   @override
-  String get verify => 'Verificați';
-
-  @override
   String get verifyStart => 'Începeți verificare';
 
   @override
@@ -1553,9 +1248,6 @@ class L10nRo extends L10n {
 
   @override
   String get verifyTitle => 'Verificând celălalt cont';
-
-  @override
-  String get videoCall => 'Apel video';
 
   @override
   String get visibilityOfTheChatHistory => 'Vizibilitatea istoria chatului';
@@ -1582,9 +1274,6 @@ class L10nRo extends L10n {
       'Așteptând pe partenerul să accepte numerele…';
 
   @override
-  String get wallpaper => 'Imagine de fundal';
-
-  @override
   String get warning => 'Avertizment!';
 
   @override
@@ -1600,10 +1289,6 @@ class L10nRo extends L10n {
   @override
   String get whyDoYouWantToReportThis =>
       'De ce doriți să reportați acest conținut?';
-
-  @override
-  String get wipeChatBackup =>
-      'Ștergeți backup-ul vostru de chat să creați o nouă cheie de recuperare?';
 
   @override
   String get withTheseAddressesRecoveryDescription =>
@@ -1623,10 +1308,6 @@ class L10nRo extends L10n {
       'Nu mai participați în acest chat';
 
   @override
-  String get youHaveBeenBannedFromThisChat =>
-      'Ați fost interzis din acest chat';
-
-  @override
   String get yourPublicKey => 'Cheia voastră publică';
 
   @override
@@ -1634,9 +1315,6 @@ class L10nRo extends L10n {
 
   @override
   String get time => 'Timp';
-
-  @override
-  String get messageType => 'Fel de mesaj';
 
   @override
   String get sender => 'Trimițător';
@@ -1648,35 +1326,10 @@ class L10nRo extends L10n {
   String get removeFromSpace => 'Eliminați din spațiu';
 
   @override
-  String get addToSpaceDescription =>
-      'Alegeți un spațiu în care să adăugați acest chat.';
-
-  @override
-  String get start => 'Începeți';
-
-  @override
-  String get pleaseEnterRecoveryKeyDescription =>
-      'Să vă deblocați mesajele vechi, vă rugăm să introduceți cheia de recuperare creată de o seșiune anterioră. Cheia de recuperare NU este parola voastră.';
-
-  @override
-  String get publish => 'Publicați';
-
-  @override
-  String videoWithSize(String size) {
-    return 'Video ($size)';
-  }
-
-  @override
-  String get openChat => 'Deschideți Chat';
-
-  @override
   String get markAsRead => 'Marcați ca citit';
 
   @override
   String get reportUser => 'Reportați utilizator';
-
-  @override
-  String get dismiss => 'Respingeți';
 
   @override
   String reactedWith(String sender, String reaction) {
@@ -1694,72 +1347,11 @@ class L10nRo extends L10n {
   String get emojis => 'Emoji-uri';
 
   @override
-  String get placeCall => 'Faceți apel';
-
-  @override
-  String get voiceCall => 'Apel vocal';
-
-  @override
   String get unsupportedAndroidVersion => 'Versiune de Android nesuportat';
 
   @override
   String get unsupportedAndroidVersionLong =>
       'Această funcție are nevoie de o versiune de Android mai nouă. Vă rugăm să verificați dacă sunt actualizări sau suport de la Mobile Katya OS.';
-
-  @override
-  String get videoCallsBetaWarning =>
-      'Vă rugăm să luați notă că apeluri video sunt în beta. Se poate că nu funcționează normal sau de loc pe fie care platformă.';
-
-  @override
-  String get experimentalVideoCalls => 'Apeluri video experimentale';
-
-  @override
-  String get emailOrUsername => 'Email sau nume de utilizator';
-
-  @override
-  String get indexedDbErrorTitle => 'Probleme cu modul privat';
-
-  @override
-  String get indexedDbErrorLong =>
-      'Stocarea de mesaje nu este activat implicit în modul privat.\nVă rugăm să vizitați\n- about:config\n- stabiliți dom.indexedDB.privateBrowsing.enabled la true\nAstfel, nu este posibil să folosiți REChain.';
-
-  @override
-  String switchToAccount(String number) {
-    return 'Schimbați la contul $number';
-  }
-
-  @override
-  String get nextAccount => 'Contul următor';
-
-  @override
-  String get previousAccount => 'Contul anterior';
-
-  @override
-  String get addWidget => 'Adăugați widget';
-
-  @override
-  String get widgetVideo => 'Video';
-
-  @override
-  String get widgetEtherpad => 'Notiță text';
-
-  @override
-  String get widgetJitsi => 'Jitsi Meet';
-
-  @override
-  String get widgetCustom => 'Personalizat';
-
-  @override
-  String get widgetName => 'Nume';
-
-  @override
-  String get widgetUrlError => 'Acest URL nu este valibil.';
-
-  @override
-  String get widgetNameError => 'Vă rugăm să introduceți un nume de afișare.';
-
-  @override
-  String get errorAddingWidget => 'Adăugarea widget-ului a eșuat.';
 
   @override
   String get youRejectedTheInvitation => 'Ați respins invitația';
@@ -1781,18 +1373,8 @@ class L10nRo extends L10n {
   }
 
   @override
-  String youInvitedToBy(String alias) {
-    return '📩 You have been invited via link to:\n$alias';
-  }
-
-  @override
   String youInvitedBy(String user) {
     return '📩Ați fost invitat de $user';
-  }
-
-  @override
-  String invitedBy(String user) {
-    return '📩 Invited by $user';
   }
 
   @override
@@ -1827,30 +1409,10 @@ class L10nRo extends L10n {
   String get noOneCanJoin => 'No one can join';
 
   @override
-  String userWouldLikeToChangeTheChat(String user) {
-    return '$user would like to join the chat.';
-  }
-
-  @override
-  String get noPublicLinkHasBeenCreatedYet =>
-      'No public link has been created yet';
-
-  @override
   String get knock => 'Knock';
 
   @override
   String get users => 'Utilizatori';
-
-  @override
-  String get unlockOldMessages => 'Deblocați mesajele vechi';
-
-  @override
-  String get storeInSecureStorageDescription =>
-      'Păstrați cheia de recuperare în stocarea sigură a acestui dispozitiv.';
-
-  @override
-  String get saveKeyManuallyDescription =>
-      'Activați dialogul de partajare sistemului sau folosiți clipboard-ul să salvați manual această cheie.';
 
   @override
   String get storeInAndroidKeystore => 'Stoca în Android KeyStore';
@@ -1873,37 +1435,6 @@ class L10nRo extends L10n {
   String get custom => 'Personalizat';
 
   @override
-  String get foregroundServiceRunning =>
-      'Această notificare apare când serviciul de foreground rulează.';
-
-  @override
-  String get screenSharingTitle => 'partajarea de ecran';
-
-  @override
-  String get screenSharingDetail => 'Partajați ecranul în REChain';
-
-  @override
-  String get callingPermissions => 'Permisiuni de apel';
-
-  @override
-  String get callingAccount => 'Cont de apel';
-
-  @override
-  String get callingAccountDetails =>
-      'Permite REChain să folosească aplicația de apeluri nativă android.';
-
-  @override
-  String get appearOnTop => 'Apare deasupra';
-
-  @override
-  String get appearOnTopDetails =>
-      'Permite aplicația să apare deasupra (nu este necesar dacă aveți REChain stabilit ca cont de apeluri)';
-
-  @override
-  String get otherCallingPermissions =>
-      'Microfon, cameră și alte permisiuni lui REChain';
-
-  @override
   String get whyIsThisMessageEncrypted => 'De ce este acest mesaj ilizibil?';
 
   @override
@@ -1911,31 +1442,7 @@ class L10nRo extends L10n {
       'Această chestie poate să se întâmple când mesajul a fost trimis înainte să vă conectați contul cu acest dispozitiv.\n\nO altă explicație ar fi dacă trimițătorul a blocat dispozitivul vostru sau ceva s-a întâmplat cu conexiunea la internet\n\nPuteți să citiți mesajul în o altă seșiune? Atunci puteți să transferați mesajul de acolo! Mergeți la Configurări > Dispozitive și verificați că dispozitivele s-au verificat. Când deschideți camera în viitor și ambele seșiune sunt în foreground, cheile va fi transmise automat. \n\nDoriți să îți păstrați cheile când deconectați sau schimbați dispozitive? Fiți atenți să activați backup de chat în configurări.';
 
   @override
-  String get newGroup => 'Grup nou';
-
-  @override
   String get newSpace => 'Spațiu nou';
-
-  @override
-  String get enterSpace => 'Intrați în spațiu';
-
-  @override
-  String get enterRoom => 'Intrați în cameră';
-
-  @override
-  String get allSpaces => 'Toate spațiile';
-
-  @override
-  String numChats(String number) {
-    return '$number chaturi';
-  }
-
-  @override
-  String get hideUnimportantStateEvents =>
-      'Ascundeți evenimente de stare neimportante';
-
-  @override
-  String get hidePresences => 'Hide Status List?';
 
   @override
   String get doNotShowAgain => 'Nu se mai apară din nou';
@@ -1958,9 +1465,6 @@ class L10nRo extends L10n {
 
   @override
   String get sorryThatsNotPossible => 'Scuze... acest nu este posibil';
-
-  @override
-  String get deviceKeys => 'Cheile dispozitivului:';
 
   @override
   String get reopenChat => 'Deschide din nou chatul';
@@ -2002,25 +1506,6 @@ class L10nRo extends L10n {
   String get report => 'reportați';
 
   @override
-  String get signInWithPassword => 'Conectați-vă cu parolă';
-
-  @override
-  String get pleaseTryAgainLaterOrChooseDifferentServer =>
-      'Vă rugăm să încercați din nou mai târziu sau să alegeți un server diferit.';
-
-  @override
-  String signInWith(String provider) {
-    return 'Sign in with $provider';
-  }
-
-  @override
-  String get profileNotFound =>
-      'The user could not be found on the server. Maybe there is a connection problem or the user doesn\'t exist.';
-
-  @override
-  String get setTheme => 'Set theme:';
-
-  @override
   String get setColorTheme => 'Set color theme:';
 
   @override
@@ -2028,9 +1513,6 @@ class L10nRo extends L10n {
 
   @override
   String get inviteGroupChat => '📨 Group chat invite';
-
-  @override
-  String get invitePrivateChat => '📨 Private chat invite';
 
   @override
   String get invalidInput => 'Invalid input!';
@@ -2049,7 +1531,7 @@ class L10nRo extends L10n {
 
   @override
   String get roomUpgradeDescription =>
-      'The chat will then be recreated with the new room version. All participants will be notified that they need to switch to the new chat. You can find out more about room versions at https://github.com/sorydima/REChain-.git';
+      'The chat will then be recreated with the new room version. All participants will be notified that they need to switch to the new chat. You can find out more about room versions at https://spec.matrix.org/latest/rooms/';
 
   @override
   String get removeDevicesDescription =>
@@ -2114,9 +1596,6 @@ class L10nRo extends L10n {
       'Sorry... this does not seem to be the correct recovery key.';
 
   @override
-  String get startConversation => 'Start conversation';
-
-  @override
   String get commandHint_sendraw => 'Send raw json';
 
   @override
@@ -2151,9 +1630,6 @@ class L10nRo extends L10n {
   String get passwordIsWrong => 'Your entered password is wrong';
 
   @override
-  String get publicLink => 'Public link';
-
-  @override
   String get publicChatAddresses => 'Public chat addresses';
 
   @override
@@ -2169,24 +1645,10 @@ class L10nRo extends L10n {
   String get addChatOrSubSpace => 'Add chat or sub space';
 
   @override
-  String get subspace => 'Subspace';
-
-  @override
-  String get decline => 'Decline';
-
-  @override
   String get thisDevice => 'This device:';
 
   @override
   String get initAppError => 'An error occured while init the app';
-
-  @override
-  String get userRole => 'User role';
-
-  @override
-  String minimumPowerLevel(String level) {
-    return '$level is the minimum power level.';
-  }
 
   @override
   String searchIn(String chat) {
@@ -2203,11 +1665,6 @@ class L10nRo extends L10n {
   String get files => 'Files';
 
   @override
-  String databaseBuildErrorBody(String url, String error) {
-    return 'Unable to build the SQlite database. The app tries to use the legacy database for now. Please report this error to the developers at $url. The error message is: $error';
-  }
-
-  @override
   String sessionLostBody(String url, String error) {
     return 'Your session is lost. Please report this error to the developers at $url. The error message is: $error';
   }
@@ -2215,11 +1672,6 @@ class L10nRo extends L10n {
   @override
   String restoreSessionBody(String url, String error) {
     return 'The app now tries to restore your session from the backup. Please report this error to the developers at $url. The error message is: $error';
-  }
-
-  @override
-  String forwardMessageTo(String roomName) {
-    return 'Forward message to $roomName?';
   }
 
   @override
@@ -2285,9 +1737,6 @@ class L10nRo extends L10n {
   }
 
   @override
-  String get transparent => 'Transparent';
-
-  @override
   String get incomingMessages => 'Incoming messages';
 
   @override
@@ -2315,12 +1764,6 @@ class L10nRo extends L10n {
   String thereAreCountUsersBlocked(Object count) {
     return 'Right now there are $count users blocked.';
   }
-
-  @override
-  String get restricted => 'Restricted';
-
-  @override
-  String get knockRestricted => 'Knock restricted';
 
   @override
   String goToSpace(Object space) {
@@ -2382,20 +1825,18 @@ class L10nRo extends L10n {
   String get changelog => 'Changelog';
 
   @override
+  String updateAvailable(String version) {
+    return 'Update $version available';
+  }
+
+  @override
+  String get download => 'Download';
+
+  @override
   String get sendCanceled => 'Sending canceled';
 
   @override
-  String get loginWithMatrixId => 'Login with REChain-ID';
-
-  @override
-  String get discoverHomeservers => 'Discover homeservers';
-
-  @override
-  String get whatIsAHomeserver => 'What is a homeserver?';
-
-  @override
-  String get homeserverDescription =>
-      'All your data is stored on the homeserver, just like an email provider. You can choose which homeserver you want to use, while you can still communicate with everyone. Learn more at at https://github.com/sorydima/REChain-.git';
+  String get loginWithREChainId => 'Login with REChain-ID';
 
   @override
   String get doesNotSeemToBeAValidHomeserver =>
@@ -2403,28 +1844,6 @@ class L10nRo extends L10n {
 
   @override
   String get calculatingFileSize => 'Calculating file size...';
-
-  @override
-  String get prepareSendingAttachment => 'Prepare sending attachment...';
-
-  @override
-  String get sendingAttachment => 'Sending attachment...';
-
-  @override
-  String get generatingVideoThumbnail => 'Generating video thumbnail...';
-
-  @override
-  String get compressVideo => 'Compressing video...';
-
-  @override
-  String sendingAttachmentCountOfCount(int index, int length) {
-    return 'Sending attachment $index of $length...';
-  }
-
-  @override
-  String serverLimitReached(int seconds) {
-    return 'Server limit reached! Waiting $seconds seconds...';
-  }
 
   @override
   String get oneOfYourDevicesIsNotVerified =>
@@ -2436,10 +1855,6 @@ class L10nRo extends L10n {
 
   @override
   String get continueText => 'Continue';
-
-  @override
-  String get welcomeText =>
-      'Hey Hey 👋 This is REChain. You can sign in to any homeserver, which is compatible with https://github.com/sorydima/REChain-.git. And then chat with anyone. It\'s a huge decentralized messaging network!';
 
   @override
   String get blur => 'Blur:';
@@ -2524,10 +1939,6 @@ class L10nRo extends L10n {
 
   @override
   String get waitingForServer => 'Waiting for server...';
-
-  @override
-  String get appIntroduction =>
-      'REChain lets you chat with your friends across different messengers. Learn more at https://github.com/sorydima/REChain-.git or just tap *Continue*.';
 
   @override
   String get newChatRequest => '📩 New chat request';
@@ -2767,6 +2178,12 @@ class L10nRo extends L10n {
   String get moreEvents => 'More events';
 
   @override
+  String get showMore => 'Show more';
+
+  @override
+  String get showLess => 'Show less';
+
+  @override
   String get declineInvitation => 'Decline invitation';
 
   @override
@@ -2781,18 +2198,6 @@ class L10nRo extends L10n {
 
   @override
   String get resume => 'Resume';
-
-  @override
-  String get newSubSpace => 'New sub space';
-
-  @override
-  String get moveToDifferentSpace => 'Move to different space';
-
-  @override
-  String get moveUp => 'Move up';
-
-  @override
-  String get moveDown => 'Move down';
 
   @override
   String get removeFromSpaceDescription =>
@@ -2814,17 +2219,6 @@ class L10nRo extends L10n {
   }
 
   @override
-  String get donate => 'Donate';
-
-  @override
-  String startedAPoll(String username) {
-    return '$username started a poll.';
-  }
-
-  @override
-  String get poll => 'Poll';
-
-  @override
   String get startPoll => 'Start poll';
 
   @override
@@ -2832,9 +2226,6 @@ class L10nRo extends L10n {
 
   @override
   String get answersVisible => 'Answers visible';
-
-  @override
-  String get answersHidden => 'Answers hidden';
 
   @override
   String get pollQuestion => 'Poll question';
@@ -2918,16 +2309,480 @@ class L10nRo extends L10n {
       'Are you sure? Without enabling the chat backup you may lose access to your messages if you switch your device.';
 
   @override
-  String get loadingMessages => 'Loading messages';
-
-  @override
-  String get setupChatBackup => 'Set up chat backup';
-
-  @override
   String get noMoreResultsFound => 'No more results found';
 
   @override
   String chatSearchedUntil(String time) {
     return 'Chat searched until $time';
+  }
+
+  @override
+  String get federationBaseUrl => 'Federation Base URL';
+
+  @override
+  String get clientWellKnownInformation => 'Client-Well-Known Information:';
+
+  @override
+  String get baseUrl => 'Base URL';
+
+  @override
+  String get identityServer => 'Identity Server:';
+
+  @override
+  String versionWithNumber(String version) {
+    return 'Version: $version';
+  }
+
+  @override
+  String get logs => 'Logs';
+
+  @override
+  String get advancedConfigs => 'Advanced Configs';
+
+  @override
+  String get advancedConfigurations => 'Advanced configurations';
+
+  @override
+  String get signIn => 'Sign in';
+
+  @override
+  String get createNewAccount => 'Create new account';
+
+  @override
+  String get signUpGreeting =>
+      'REChain is decentralized! Select a server where you want to create your account and let\'s go!';
+
+  @override
+  String get signInGreeting =>
+      'You already have an account in REChain? Welcome back! Select your homeserver and sign in.';
+
+  @override
+  String get theProcessWasCanceled => 'The process was canceled.';
+
+  @override
+  String get join => 'Join';
+
+  @override
+  String get searchOrEnterHomeserverAddress =>
+      'Search or enter homeserver address';
+
+  @override
+  String get matrixId => 'REChain ID';
+
+  @override
+  String get setPowerLevel => 'Set power level';
+
+  @override
+  String get makeModerator => 'Make moderator';
+
+  @override
+  String get makeAdmin => 'Make admin';
+
+  @override
+  String get removeModeratorRights => 'Remove moderator rights';
+
+  @override
+  String get removeAdminRights => 'Remove admin rights';
+
+  @override
+  String get powerLevel => 'Power level';
+
+  @override
+  String get setPowerLevelDescription =>
+      'Power levels define what a member is allowed to do in this room and usually range between 0 and 100.';
+
+  @override
+  String get owner => 'Owner';
+
+  @override
+  String get mute => 'Mute';
+
+  @override
+  String get createNewChat => 'Create new chat';
+
+  @override
+  String get reset => 'Reset';
+
+  @override
+  String get supportrechainonline => 'Support REChain';
+
+  @override
+  String get support => 'Support';
+
+  @override
+  String get setLowPriority => 'Set low priority';
+
+  @override
+  String get unsetLowPriority => 'Unset low priority';
+
+  @override
+  String get playSoundOnNotification => 'Play sound on notification';
+
+  @override
+  String get addTag => 'Add tag';
+
+  @override
+  String get removeTag => 'Remove tag';
+
+  @override
+  String get tagName => 'Tag name';
+
+  @override
+  String get createNewTag => 'Create new tag';
+
+  @override
+  String get hideRoomsInSpaces => 'Hide rooms that are in a space';
+
+  @override
+  String get possibleByYou =>
+      'This release was only possible thanks to your support. REChain remains free, open-source, and entirely community-driven.';
+
+  @override
+  String get showThumbnailsInTimeline => 'Show thumbnails of images and videos';
+
+  @override
+  String get appSubtitle => 'Secure [REChain] Communication';
+
+  @override
+  String get appDescription =>
+      'Communicate encrypted over the decentralized [REChain] network in an easy and accessible way for everyone.';
+
+  @override
+  String get interactiveVerification => 'Interactive verification';
+
+  @override
+  String get interactiveVerificationDescription =>
+      'If you are next to each other or communicate via a secure channel then you can verify all devices at once by comparing a security number or emojis.';
+
+  @override
+  String countUnverifiedDevices(int count) {
+    return '$count unverified devices in the chat.';
+  }
+
+  @override
+  String get encryptedMessage => 'Encrypted message';
+
+  @override
+  String get unencryptedMessage => 'Unencrypted message';
+
+  @override
+  String get messageCanOnlyBeReadByUser =>
+      'Your message is end to end encrypted and can only be read by this user:';
+
+  @override
+  String get messageCanOnlyBeReadByUsers =>
+      'Your message is end to end encrypted and can only be read by these users:';
+
+  @override
+  String publicKey(String key) {
+    return 'Public key: $key';
+  }
+
+  @override
+  String get deviceIdentityKey => 'Device identity key';
+
+  @override
+  String get restoreBootstrapEmptyDevicesDescription =>
+      'Please enter your passphrase or recovery key to verify this device and get access to your encrypted message backup.';
+
+  @override
+  String get restoreBootstrapDevicesDescription =>
+      'Please pick one of your other devices, to verify this session:';
+
+  @override
+  String get resetAccount => 'Reset account';
+
+  @override
+  String get restoreCryptoIdentity => 'Restore Crypto Identity';
+
+  @override
+  String get resetCryptoIdentity => 'Reset Crypto Identity';
+
+  @override
+  String get setUpCryptoIdentity => 'Set Up Crypto Identity';
+
+  @override
+  String get waitingForKeys =>
+      'Waiting for keys... Please keep the other device active.';
+
+  @override
+  String get noKeysTransmitted => 'No keys transmitted. Please try again.';
+
+  @override
+  String get unlock => 'Unlock';
+
+  @override
+  String get openFile => 'Open file';
+
+  @override
+  String get resetAccountWarning =>
+      'When you reset your account you will lose the access to your old messages forever. All your current devices need to be verified again. Please only perform this action when you have no other devices left to verify your session and you have lost your recovery key and passphrase!';
+
+  @override
+  String get newPassphraseDescription =>
+      'REChain uses end to end encryption. To not lose your messages, please choose a strong passphrase to secure your crypto identity and your encrypted message backup.';
+
+  @override
+  String get newPassphrase => 'New passphrase';
+
+  @override
+  String get repeatPassphrase => 'Repeat passphrase';
+
+  @override
+  String get passphrasesMatch => 'Passphrases match';
+
+  @override
+  String get passphraseLengthRequirement => 'At least 12 characters long.';
+
+  @override
+  String get passphraseUpperAndLowerCaseRequirement =>
+      'Contains uppercase and lowercase characters.';
+
+  @override
+  String get passphraseSpecialCharactersRequirement =>
+      'Contains special characters.';
+
+  @override
+  String get passphraseNumberRequirement => 'Contains one numbers.';
+
+  @override
+  String get storeRecoveryKeyDescription =>
+      'Please note down your recovery key to be able to restore your encrypted messages and your crypto identity on.';
+
+  @override
+  String get saveAsFile => 'Save as file';
+
+  @override
+  String get youAreReadyToStart => 'You are ready to start!';
+
+  @override
+  String get noUserKeyFound => 'No user key found';
+
+  @override
+  String knownSince(String date) {
+    return 'Known since: $date';
+  }
+
+  @override
+  String get unsignedDevice => 'Unsigned device';
+
+  @override
+  String get signedDevice => 'Signed device';
+
+  @override
+  String get noCurve25519KeyFound => 'No curve25519 key found';
+
+  @override
+  String get messageNotDecryptable => 'Message not decryptable';
+
+  @override
+  String get today => 'Today';
+
+  @override
+  String get sending => 'Sending';
+
+  @override
+  String get generatingThumbnail => 'Generating thumbnail';
+
+  @override
+  String get encrypting => 'Encrypting';
+
+  @override
+  String get uploading => 'Uploading';
+
+  @override
+  String get edited => '(edited)';
+
+  @override
+  String get couldNotBeSent => 'Could not be sent';
+
+  @override
+  String get yesterday => 'Yesterday';
+
+  @override
+  String get resetRecoveryKey => 'Reset recovery key';
+
+  @override
+  String get pleaseEnter6Digits =>
+      'Please enter 6 digits to enable the app lock.';
+
+  @override
+  String get disableAppLock => 'Disable app lock';
+
+  @override
+  String get disableAppLockAreYouSure =>
+      'Are you sure you want to disable the app lock?';
+
+  @override
+  String get enableBiometrics => 'Enable biometric authentication';
+
+  @override
+  String get disableBiometrics => 'Disable biometric authentication';
+
+  @override
+  String get biometricsDescription =>
+      'With biometric authentication you can unlock the app with your face or your fingerprint. The capabilities depend on your device.';
+
+  @override
+  String get useAppLock => 'Use app lock';
+
+  @override
+  String get unlockWithBiometrics => 'Unlock with biometric authentication';
+
+  @override
+  String get resetPin => 'Reset pin';
+
+  @override
+  String forwardCountMessages(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count messages',
+      one: 'one message',
+    );
+    return 'Forward $_temp0?';
+  }
+
+  @override
+  String get loadingMessages => 'Loading messages...';
+
+  @override
+  String get buildDoesNotSupportFirebase =>
+      'This build does not support firebase cloud messaging.';
+
+  @override
+  String get unableToRegisterDeviceForFirebase =>
+      'Unable to register device for firebase cloud messaging.';
+
+  @override
+  String get unifiedPushDistributors => 'Unified Push distributors:';
+
+  @override
+  String get doubleTapToReact => 'Double-tap to react';
+
+  @override
+  String get doubleTapToReactDescription =>
+      'Double-tap a message to react instead of selecting text';
+
+  @override
+  String get doubleTapReaction => 'Double-tap reaction';
+
+  @override
+  String get shareCrashReports => 'Share crash reports';
+
+  @override
+  String get shareCrashReportsDescription =>
+      'Automatically share crash reports with the developers?';
+
+  @override
+  String countActiveCallMembers(int count) {
+    return '$count active call members';
+  }
+
+  @override
+  String get enterCall => 'Enter call';
+
+  @override
+  String get videoCallsBetaWarning =>
+      'Vă rugăm să luați notă că apeluri video sunt în beta. Se poate că nu funcționează normal sau de loc pe fie care platformă.';
+
+  @override
+  String get noDevicesFound => 'No devices found';
+
+  @override
+  String get incomingCall => 'Incoming call';
+
+  @override
+  String get videoCall => 'Apel video';
+
+  @override
+  String get voiceCall => 'Apel vocal';
+
+  @override
+  String get missedCall => 'Missed call';
+
+  @override
+  String get callBack => 'Call back';
+
+  @override
+  String get hangUp => 'Hang up';
+
+  @override
+  String get waitingForParticipant => 'Waiting for participant...';
+
+  @override
+  String get decline => 'Decline';
+
+  @override
+  String get startCall => 'Start call';
+
+  @override
+  String get selectCamera => 'Select camera';
+
+  @override
+  String get selectMicrophone => 'Select microphone';
+
+  @override
+  String get selectSpeaker => 'Select speaker';
+
+  @override
+  String get toggleMicrophone => 'Toggle microphone';
+
+  @override
+  String get toggleCamera => 'Toggle camera';
+
+  @override
+  String get startScreensharing => 'Start screensharing';
+
+  @override
+  String get stopScreensharing => 'Stop screensharing';
+
+  @override
+  String get raiseHand => 'Raise hand';
+
+  @override
+  String get stopRaiseHand => 'Stop raise hand';
+
+  @override
+  String get preferSpeaker => 'Prefer speaker';
+
+  @override
+  String unexpectedErrorOccurded(String msg) {
+    return 'Unfortunately, an unexpected error has occurred: $msg';
+  }
+
+  @override
+  String incomingCallFrom(String user) {
+    return 'Incoming call from $user';
+  }
+
+  @override
+  String serverRespondedWithError(String error) {
+    return 'The server has replied with an error message: $error';
+  }
+
+  @override
+  String get sharedLocation => 'Shared location';
+
+  @override
+  String get pasteImage => 'Paste image';
+
+  @override
+  String get noImageInClipboard => 'No image in clipboard';
+
+  @override
+  String get doYouAlsoWantToBlock => 'Do you also want to block this user?';
+
+  @override
+  String get declineAndBlock => 'Decline and block';
+
+  @override
+  String senderHasInvitedYouToTheChat(String sender, String nameOrAlias) {
+    return '$sender has invited you to the chat \'$nameOrAlias\'.';
+  }
+
+  @override
+  String senderHasInvitedYouToTheSpace(String sender, String nameOrAlias) {
+    return '$sender has invited you to the space \'$nameOrAlias\'.';
   }
 }

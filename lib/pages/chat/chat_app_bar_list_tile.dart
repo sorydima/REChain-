@@ -1,8 +1,11 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:flutter_linkify/flutter_linkify.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/utils/url_launcher.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
+import 'package:material_ui/material_ui.dart';
 
 class ChatAppBarListTile extends StatelessWidget {
   final Widget? leading;
@@ -31,7 +34,7 @@ class ChatAppBarListTile extends StatelessWidget {
         onTap: onTap,
         child: Row(
           children: [
-            if (leading != null) leading,
+            ?leading,
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 4.0),
@@ -56,7 +59,7 @@ class ChatAppBarListTile extends StatelessWidget {
                 ),
               ),
             ),
-            if (trailing != null) trailing,
+            ?trailing,
           ],
         ),
       ),

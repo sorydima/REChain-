@@ -1,70 +1,32 @@
 package com.rechain.online
 
-import io.flutter.embedding.android.FlutterActivity
+import io.flutter.embedding.android.FlutterFragment
+import io.flutter.embedding.android.FlutterFragmentActivity
 import io.flutter.embedding.engine.FlutterEngine
+import io.flutter.embedding.engine.dart.DartExecutor.DartEntrypoint
+
 import android.content.Context
-import android.content.Intent
-import android.content.IntentFilter
-import android.content.BroadcastReceiver
-import android.os.Bundle
-import io.flutter.plugin.common.EventChannel
-import io.flutter.plugin.common.MethodChannel
 
-class MainActivity : FlutterActivity() {
-    private val INIT_CHANNEL = "rechain.push/init"
-    private val EVENT_CHANNEL = "rechain.push/events"
+class MainActivity : FlutterFragmentActivity() {
 
-    private var eventSink: EventChannel.EventSink? = null
+    override fun attachBaseContext(base: Context) {
+        super.attachBaseContext(base)
+    }
+
+
+    override fun provideFlutterEngine(context: Context): FlutterEngine? {
+        return provideEngine(getApplicationContext())
+    }
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
-        super.configureFlutterEngine(flutterEngine)
+        // do nothing, because the engine was been configured in provideEngine
+    }
 
-        // Инициализация по запросу
-        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, INIT_CHANNEL).setMethodCallHandler {
-                call, result ->
-            if (call.method == "initializePush") {
-                initializePush()
-                result.success("Push Initialized")
-            } else {
-                result.notImplemented()
-            }
+    // Prevent Flutter engine gets destroyed on back button close.
+    override fun createFlutterFragment(): FlutterFragment =
+        super.createFlutterFragment().apply {
+            arguments?.putBoolean("destroy_engine_with_fragment", false)
         }
-
-        // EventChannel для получения пушей
-        EventChannel(flutterEngine.dartExecutor.binaryMessenger, EVENT_CHANNEL).setStreamHandler(
-            object : EventChannel.StreamHandler {
-                override fun onListen(arguments: Any?, events: EventChannel.EventSink?) {
-                    eventSink = events
-                }
-
-                override fun onCancel(arguments: Any?) {
-                    eventSink = null
-                }
-            }
-        )
-    }
-
-    private fun initializePush() {
-        val context = applicationContext
-
-        // Регистрируем наш кастомный ресивер
-        val filter = IntentFilter("com.rechain.push.RECEIVED")
-        registerReceiver(pushReceiver, filter)
-    }
-
-    private val pushReceiver = object : BroadcastReceiver() {
-        override fun onReceive(context: Context?, intent: Intent?) {
-            val payload = intent?.getStringExtra("payload")
-            payload?.let {
-                eventSink?.success(it)
-            }
-        }
-    }
-
-    override fun onDestroy() {
-        unregisterReceiver(pushReceiver)
-        super.onDestroy()
-    }
 
     companion object {
         var engine: FlutterEngine? = null
@@ -73,6 +35,19 @@ class MainActivity : FlutterActivity() {
             engine = eng
             return eng
         }
+
+        // Make push services run in the same engine.
+        // https://codeberg.org/UnifiedPush/flutter-connector/src/branch/main/unifiedpush_android/android/src/main/kotlin/org/unifiedpush/flutter/connector/UnifiedPushService.kt#L17-L32
+        fun provideRunningEngine(context: Context): FlutterEngine {
+            var eng = engine
+            if (eng == null) {
+                eng = provideEngine(context)
+                eng.getLocalizationPlugin().sendLocalesToFlutter(
+                    context.getResources().getConfiguration())
+                eng.getDartExecutor().executeDartEntrypoint(
+                    DartEntrypoint.createDefault())
+            }
+            return eng
+        }
     }
 }
-

@@ -1,10 +1,13 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:flutter_linkify/flutter_linkify.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/utils/url_launcher.dart';
 import 'package:rechainonline/widgets/adaptive_dialogs/adaptive_dialog_action.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
+import 'package:material_ui/material_ui.dart';
 
 enum OkCancelResult { ok, cancel }
 
@@ -31,6 +34,7 @@ Future<OkCancelResult?> showOkCancelAlertDialog({
           : SelectableLinkify(
               text: message,
               textScaleFactor: MediaQuery.textScalerOf(context).scale(1),
+              style: TextStyle(color: Theme.of(context).colorScheme.onSurface),
               linkStyle: TextStyle(
                 color: Theme.of(context).colorScheme.primary,
                 decorationColor: Theme.of(context).colorScheme.primary,
@@ -41,11 +45,13 @@ Future<OkCancelResult?> showOkCancelAlertDialog({
     ),
     actions: [
       AdaptiveDialogAction(
+        key: Key('ok_cancel_alert_dialog_cancel_button'),
         onPressed: () =>
             Navigator.of(context).pop<OkCancelResult>(OkCancelResult.cancel),
         child: Text(cancelLabel ?? L10n.of(context).cancel),
       ),
       AdaptiveDialogAction(
+        key: Key('ok_cancel_alert_dialog_ok_button'),
         onPressed: () =>
             Navigator.of(context).pop<OkCancelResult>(OkCancelResult.ok),
         autofocus: true,
@@ -81,6 +87,7 @@ Future<OkCancelResult?> showOkAlertDialog({
           : SelectableLinkify(
               text: message,
               textScaleFactor: MediaQuery.textScalerOf(context).scale(1),
+              style: TextStyle(color: Theme.of(context).colorScheme.onSurface),
               linkStyle: TextStyle(
                 color: Theme.of(context).colorScheme.primary,
                 decorationColor: Theme.of(context).colorScheme.primary,

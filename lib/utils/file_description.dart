@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 import 'package:matrix/matrix.dart';
 
 extension FileDescriptionExtension on Event {
@@ -11,15 +16,12 @@ extension FileDescriptionExtension on Event {
     }.contains(messageType)) {
       return null;
     }
-    final formattedBody = content.tryGet<String>('formatted_body');
-    if (formattedBody != null && formattedBody.isNotEmpty) return formattedBody;
-
     final filename = content.tryGet<String>('filename');
-    final body = content.tryGet<String>('body');
+    final body = calcUnlocalizedBody(hideReply: true, plaintextBody: true);
+
     if (filename != body &&
-        body != null &&
         filename != null &&
-        body.isNotEmpty) {
+        content.tryGet<String>('body')?.isNotEmpty == true) {
       return body;
     }
     return null;

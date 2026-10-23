@@ -1,10 +1,13 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:matrix/matrix.dart';
-import 'package:matrix/msc_extensions/msc_3381_polls/models/poll_event_content.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/l10n/l10n.dart';
+import 'package:rechainonline/pages/chat/trust_user_key_dialog.dart';
 import 'package:rechainonline/utils/localized_exception_extension.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
 
 class StartPollBottomSheet extends StatefulWidget {
   final Room room;
@@ -29,20 +32,27 @@ class _StartPollBottomSheetState extends State<StartPollBottomSheet> {
 
   String? _txid;
 
-  void _createPoll() async {
+  Future<void> _createPoll() async {
+    final proceed = await showTrustUserInRoomDialog(context, widget.room);
+    if (!proceed || !mounted) return;
     try {
       var id = 0;
       _txid ??= widget.room.client.generateUniqueTransactionId();
       await widget.room.startPoll(
         question: _bodyController.text.trim(),
-        answers: _answers.map((answer) => PollAnswer(
-                id: '${++id}',
-                mText: answer.text.trim(),
-              )).toList(),
+        answers: _answers
+            .map(
+              (answerController) => PollAnswer(
+                id: (++id).toString(),
+                mText: answerController.text.trim(),
+              ),
+            )
+            .toList(),
         kind: _pollKind,
         maxSelections: _allowMultipleAnswers ? _answers.length : 1,
         txid: _txid,
       );
+      if (!mounted) return;
       Navigator.of(context).pop();
     } catch (e, s) {
       Logs().w('Unable to create poll', e, s);
@@ -53,7 +63,7 @@ class _StartPollBottomSheetState extends State<StartPollBottomSheet> {
     }
   }
 
-  void _updateCanCreate([dynamic _]) {
+  void _updateCanCreate([_]) {
     final newCanCreate =
         _bodyController.text.trim().isNotEmpty &&
         !_answers.any((controller) => controller.text.trim().isEmpty);
@@ -62,6 +72,15 @@ class _StartPollBottomSheetState extends State<StartPollBottomSheet> {
         _canCreate = newCanCreate;
       });
     }
+  }
+
+  @override
+  void dispose() {
+    _bodyController.dispose();
+    for (final answerController in _answers) {
+      answerController.dispose();
+    }
+    super.dispose();
   }
 
   @override

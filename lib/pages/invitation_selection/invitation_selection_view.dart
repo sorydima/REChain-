@@ -1,12 +1,16 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:matrix/matrix.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/pages/invitation_selection/invitation_selection.dart';
 import 'package:rechainonline/widgets/avatar.dart';
 import 'package:rechainonline/widgets/layouts/max_width_body.dart';
 import 'package:rechainonline/widgets/matrix.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
+
 import '../../widgets/adaptive_dialogs/user_dialog.dart';
 
 class InvitationSelectionView extends StatelessWidget {
@@ -191,10 +195,9 @@ class _InviteContactListTile extends StatelessWidget {
         overflow: TextOverflow.ellipsis,
         style: TextStyle(color: theme.colorScheme.secondary),
       ),
-      trailing: TextButton.icon(
+      trailing: TextButton(
         onPressed: isMember ? null : onTap,
-        label: Text(isMember ? l10n.participant : l10n.invite),
-        icon: Icon(isMember ? Icons.check : Icons.add),
+        child: Text(isMember ? l10n.participant : l10n.invite),
       ),
     );
   }

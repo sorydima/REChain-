@@ -1,19 +1,21 @@
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 import 'dart:convert';
 import 'dart:isolate';
 import 'dart:ui';
 
 import 'package:collection/collection.dart';
+import 'package:rechainonline/l10n/l10n.dart';
+import 'package:rechainonline/utils/client_manager.dart';
+import 'package:rechainonline/utils/push_helper.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_vodozemac/flutter_vodozemac.dart' as vod;
 import 'package:go_router/go_router.dart';
 import 'package:matrix/matrix.dart';
 
-import 'package:rechainonline/l10n/l10n.dart';
-import 'package:rechainonline/utils/client_download_content_extension.dart';
-import 'package:rechainonline/utils/client_manager.dart';
-import 'package:rechainonline/utils/matrix_sdk_extensions/matrix_locals.dart';
-import 'package:rechainonline/utils/platform_infos.dart';
-import 'package:rechainonline/utils/push_helper.dart';
 import '../config/app_config.dart';
 import '../config/setting_keys.dart';
 
@@ -26,6 +28,7 @@ extension NotificationResponseJson on NotificationResponse {
     'actionId': actionId,
     'input': input,
     'payload': payload,
+    'data': data,
   });
 
   static NotificationResponse fromJsonString(String jsonString) {
@@ -38,6 +41,7 @@ extension NotificationResponseJson on NotificationResponse {
       actionId: json['actionId'] as String?,
       input: json['input'] as String?,
       payload: json['payload'] as String?,
+      data: json['data'] as Map<String, dynamic>,
     );
   }
 }
@@ -51,7 +55,7 @@ Future<void> waitForPushIsolateDone() async {
 }
 
 @pragma('vm:entry-point')
-void notificationTapBackground(
+Future<void> notificationTapBackground(
   NotificationResponse notificationResponse,
 ) async {
   final sendPort = IsolateNameServer.lookupPortByName(
@@ -77,10 +81,14 @@ void notificationTapBackground(
     _vodInitialized = true;
   }
   final store = await AppSettings.init();
-  final client = (await ClientManager.getClients(
-    initialize: false,
-    store: store,
-  )).first;
+
+  final payload = rechainonlineChatPushPayload.fromString(
+    notificationResponse.payload ?? '',
+  );
+  final clientName = payload.clientName;
+  final client = clientName == null
+      ? (await ClientManager.getClients(store: store, initialize: false)).first
+      : (await ClientManager.createClient(clientName, store));
   await client.abortSync();
   await client.init(
     waitForFirstSync: false,
@@ -91,7 +99,7 @@ void notificationTapBackground(
     throw Exception('Notification tab in background but not logged in!');
   }
   try {
-    await notificationTap(notificationResponse, client: client);
+    await notificationTap(notificationResponse, clients: [client]);
   } finally {
     await client.dispose(closeDatabase: false);
     pushIsolateReceivePort.sendPort.send('DONE');
@@ -103,16 +111,28 @@ void notificationTapBackground(
 Future<void> notificationTap(
   NotificationResponse notificationResponse, {
   GoRouter? router,
-  required Client client,
+  required List<Client> clients,
   L10n? l10n,
 }) async {
   Logs().d(
     'Notification action handler started',
     notificationResponse.notificationResponseType.name,
   );
-  final payload = PushPayload.fromString(
+  final payload = rechainonlineChatPushPayload.fromString(
     notificationResponse.payload ?? '',
   );
+  final client =
+      clients.firstWhereOrNull(
+        (client) => client.clientName == payload.clientName,
+      ) ??
+      clients.first;
+
+  updateSummaryNotification(
+    flutterLocalNotificationsPlugin: FlutterLocalNotificationsPlugin(),
+    clientName: client.clientName,
+    l10n: await lookupL10n(PlatformDispatcher.instance.locale),
+  );
+
   switch (notificationResponse.notificationResponseType) {
     case NotificationResponseType.selectedNotification:
       final roomId = payload.roomId;
@@ -130,13 +150,9 @@ Future<void> notificationTap(
             .waitForRoomInSync(roomId)
             .timeout(const Duration(seconds: 30));
       }
-      router.go(
-        client.getRoomById(roomId)?.membership == Membership.invite
-            ? '/rooms'
-            : '/rooms/$roomId',
-      );
+      router.go('/rooms/$roomId?client=${client.clientName}');
     case NotificationResponseType.selectedNotificationAction:
-      final actionType = NotificationActions.values.singleWhereOrNull(
+      final actionType = rechainonlineChatNotificationActions.values.singleWhereOrNull(
         (action) => action.name == notificationResponse.actionId,
       );
       if (actionType == null) {
@@ -156,13 +172,13 @@ Future<void> notificationTap(
         );
       }
       switch (actionType) {
-        case NotificationActions.markAsRead:
+        case rechainonlineChatNotificationActions.markAsRead:
           await room.setReadMarker(
             payload.eventId ?? room.lastEvent!.eventId,
             mRead: payload.eventId ?? room.lastEvent!.eventId,
             public: AppSettings.sendPublicReadReceipts.value,
           );
-        case NotificationActions.reply:
+        case rechainonlineChatNotificationActions.reply:
           final input = notificationResponse.input;
           if (input == null || input.isEmpty) {
             throw Exception(
@@ -170,88 +186,21 @@ Future<void> notificationTap(
             );
           }
 
-          final eventId = await room.sendTextEvent(
+          await room.sendTextEvent(
             input,
             parseCommands: false,
+            displayPendingEvent: false,
           );
-
-          if (PlatformInfos.isAndroid) {
-            final ownProfile = await room.client.fetchOwnProfile();
-            final avatar = ownProfile.avatarUrl;
-            final avatarFile = avatar == null
-                ? null
-                : await client
-                      .downloadMxcCached(
-                        avatar,
-                        thumbnailMethod: ThumbnailMethod.crop,
-                        width: notificationAvatarDimension,
-                        height: notificationAvatarDimension,
-                        animated: false,
-                        isThumbnail: true,
-                        rounded: true,
-                      )
-                      .timeout(const Duration(seconds: 3));
-            final messagingStyleInformation =
-                await AndroidFlutterLocalNotificationsPlugin()
-                    .getActiveNotificationMessagingStyle(room.id.hashCode);
-            if (messagingStyleInformation == null) return;
-            l10n ??= await lookupL10n(PlatformDispatcher.instance.locale);
-            messagingStyleInformation.messages?.add(
-              Message(
-                input,
-                DateTime.now(),
-                Person(
-                  key: room.client.userID,
-                  name: l10n.you,
-                  icon: avatarFile == null
-                      ? null
-                      : ByteArrayAndroidIcon(avatarFile),
-                ),
-              ),
-            );
-
-            await FlutterLocalNotificationsPlugin().show(
-              room.id.hashCode,
-              room.getLocalizedDisplayname(MatrixLocals(l10n)),
-              input,
-              NotificationDetails(
-                android: AndroidNotificationDetails(
-                  AppConfig.pushNotificationsChannelId,
-                  l10n.incomingMessages,
-                  category: AndroidNotificationCategory.message,
-                  shortcutId: room.id,
-                  styleInformation: messagingStyleInformation,
-                  groupKey: room.id,
-                  playSound: false,
-                  enableVibration: false,
-                  actions: <AndroidNotificationAction>[
-                    AndroidNotificationAction(
-                      NotificationActions.reply.name,
-                      l10n.reply,
-                      inputs: [
-                        AndroidNotificationActionInput(
-                          label: l10n.writeAMessage,
-                        ),
-                      ],
-                      cancelNotification: false,
-                      allowGeneratedReplies: true,
-                    ),
-                    AndroidNotificationAction(
-                      'mark_as_read',
-                      l10n.markAsRead,
-                    ),
-                  ],
-                ),
-              ),
-              payload: PushPayload(
-                client.clientName,
-                room.id,
-                eventId,
-              ).toString(),
-            );
-          }
+        case rechainonlineChatNotificationActions.mute:
+          await room.setPushRuleState(PushRuleState.mentionsOnly);
+        case rechainonlineChatNotificationActions.open:
+          router?.go('/rooms/$roomId?client=${client.clientName}');
+        case rechainonlineChatNotificationActions.enterCall:
+          router?.go('/rooms/$roomId?client=${client.clientName}&action=call');
       }
+    case NotificationResponseType.notificationDismissed:
+      return;
   }
 }
 
-enum NotificationActions { markAsRead, reply }
+enum rechainonlineChatNotificationActions { markAsRead, reply, mute, open, enterCall }

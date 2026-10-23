@@ -1,26 +1,35 @@
-# Dockerfile for REChain version 4.1.10+1152 - latest release as of 2025-07-08
+# SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+# SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-# Use Cirrus CI Flutter image as builder
-FROM ghcr.io/cirruslabs/flutter as builder
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
-# Install necessary tools
-RUN sudo apt update && sudo apt install -y curl wget jq
+FROM ubuntu:26.04 AS builder
+RUN apt-get update && apt-get install -y curl wget git unzip xz-utils jq build-essential pkg-config libssl-dev ca-certificates
 
-# Download yq for YAML processing
+ARG TARGETARCH
 WORKDIR /tmp
-RUN wget https://github.com/mikefarah/yq/releases/download/v4.40.5/yq_linux_amd64.tar.gz
-RUN tar -xzvf ./yq_linux_amd64.tar.gz
-RUN mv yq_linux_amd64 /usr/bin/yq
+RUN wget https://github.com/mikefarah/yq/releases/download/v4.40.5/yq_linux_${TARGETARCH}.tar.gz
+RUN tar -xzvf ./yq_linux_${TARGETARCH}.tar.gz
+RUN mv yq_linux_${TARGETARCH} /usr/bin/yq
 
-# Copy project files and build Flutter web app
-COPY . /app
+# Install the Flutter version defined in .tool_versions.yaml
 WORKDIR /app
+COPY .tool_versions.yaml /app/
+RUN git clone --depth 1 --branch "$(yq '.environment.flutter' .tool_versions.yaml)" \
+      https://github.com/flutter/flutter.git /opt/flutter
+ENV PATH="/opt/flutter/bin:${PATH}"
+RUN flutter precache --web
+
+RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
+ENV PATH="/root/.cargo/bin:${PATH}"
+RUN rustup component add rust-src --toolchain nightly
+
+COPY . /app
 RUN ./scripts/prepare-web.sh
 COPY config.* /app/
 RUN flutter pub get
 RUN flutter build web --dart-define=FLUTTER_WEB_CANVASKIT_URL=canvaskit/ --release --source-maps
 
-# Use nginx alpine image to serve the built web app
 FROM docker.io/nginx:alpine
 RUN rm -rf /usr/share/nginx/html
 COPY --from=builder /app/build/web /usr/share/nginx/html

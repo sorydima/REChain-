@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:matrix/matrix.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/l10n/l10n.dart';
 import 'package:rechainonline/utils/platform_infos.dart';
@@ -9,6 +9,10 @@ import 'package:rechainonline/utils/url_launcher.dart';
 import 'package:rechainonline/widgets/layouts/max_width_body.dart';
 import 'package:rechainonline/widgets/mxc_image.dart';
 import 'package:rechainonline/widgets/mxc_image_viewer.dart';
+import 'package:flutter/services.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart';
+
 import '../../widgets/matrix.dart';
 import 'settings_emotes.dart';
 
@@ -43,22 +47,25 @@ class EmotesSettingsView extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: !controller.showSave,
-        title: controller.showSave
+        leading: controller.showSave
             ? TextButton(
                 onPressed: controller.resetAction,
                 child: Text(L10n.of(context).cancel),
               )
-            : Text(L10n.of(context).customEmojisAndStickers),
+            : null,
+        title: Text(L10n.of(context).customEmojisAndStickers),
         actions: [
           if (controller.showSave)
-            ElevatedButton(
-              onPressed: () => controller.save(context),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: theme.colorScheme.primary,
-                foregroundColor: theme.colorScheme.onPrimary,
+            Padding(
+              padding: const EdgeInsets.only(right: 16.0),
+              child: TextButton(
+                onPressed: () => controller.save(context),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: theme.colorScheme.primary,
+                  foregroundColor: theme.colorScheme.onPrimary,
+                ),
+                child: Text(L10n.of(context).saveChanges),
               ),
-              child: Text(L10n.of(context).saveChanges),
             )
           else
             PopupMenuButton<PopupMenuEmojiActions>(
@@ -229,6 +236,7 @@ class EmotesSettingsView extends StatelessWidget {
                     itemBuilder: (BuildContext context, int i) {
                       final imageCode = imageKeys[i];
                       final image = controller.pack!.images[imageCode]!;
+                      // TODO: Dispose this
                       final textEditingController = TextEditingController();
                       textEditingController.text = imageCode;
                       final useShortCuts =

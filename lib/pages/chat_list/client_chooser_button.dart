@@ -1,15 +1,17 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
 
-import 'package:go_router/go_router.dart';
-import 'package:matrix/matrix.dart';
-import 'package:url_launcher/url_launcher_string.dart';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
-import 'package:rechainonline/config/app_config.dart';
-import 'package:rechainonline/config/themes.dart';
+import 'package:async/async.dart';
 import 'package:rechainonline/l10n/l10n.dart';
-import 'package:rechainonline/widgets/adaptive_dialogs/show_ok_cancel_alert_dialog.dart';
 import 'package:rechainonline/widgets/avatar.dart';
 import 'package:rechainonline/widgets/matrix.dart';
+import 'package:go_router/go_router.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:matrix/matrix.dart' hide Result;
+import 'package:url_launcher/url_launcher_string.dart';
+
 import '../../utils/rechainonline_share.dart';
 import 'chat_list.dart';
 
@@ -22,9 +24,9 @@ class ClientChooserButton extends StatelessWidget {
     final matrix = Matrix.of(context);
     final bundles = matrix.accountBundles.keys.toList()
       ..sort(
-        (a, b) => a!.isValidMatrixId == b!.isValidMatrixId
+        (a, b) => a!.isValidMatrixIdStrict() == b!.isValidMatrixIdStrict()
             ? 0
-            : a.isValidMatrixId && !b.isValidMatrixId
+            : a.isValidMatrixIdStrict() && !b.isValidMatrixIdStrict()
             ? -1
             : 1,
       );
@@ -69,17 +71,6 @@ class ClientChooserButton extends StatelessWidget {
           ],
         ),
       ),
-      if (Matrix.of(context).backgroundPush?.firebaseEnabled != true)
-        PopupMenuItem(
-          value: SettingsAction.support,
-          child: Row(
-            children: [
-              const Icon(Icons.favorite, color: Colors.red),
-              const SizedBox(width: 18),
-              Text(L10n.of(context).donate),
-            ],
-          ),
-        ),
       PopupMenuItem(
         value: SettingsAction.settings,
         child: Row(
@@ -90,6 +81,16 @@ class ClientChooserButton extends StatelessWidget {
           ],
         ),
       ),
+      PopupMenuItem(
+        value: SettingsAction.support,
+        child: Row(
+          children: [
+            Icon(Icons.favorite, color: Colors.red),
+            const SizedBox(width: 18),
+            Text(L10n.of(context).supportrechainonline),
+          ],
+        ),
+      ),
       const PopupMenuDivider(),
       for (final bundle in bundles) ...[
         if (matrix.accountBundles[bundle]!.length != 1 ||
@@ -97,8 +98,8 @@ class ClientChooserButton extends StatelessWidget {
           PopupMenuItem(
             value: null,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: .start,
+              mainAxisSize: .min,
               children: [
                 Text(
                   bundle!,
@@ -119,33 +120,35 @@ class ClientChooserButton extends StatelessWidget {
                 value: client,
                 child: FutureBuilder<Profile?>(
                   future: client.fetchOwnProfile(),
-                  builder: (context, snapshot) => Row(
-                    children: [
-                      Avatar(
-                        mxContent: snapshot.data?.avatarUrl,
-                        name:
-                            snapshot.data?.displayName ??
-                            client.userID!.localpart,
-                        size: 32,
-                      ),
-                      const SizedBox(width: 12),
-                      Expanded(
-                        child: Text(
-                          snapshot.data?.displayName ??
-                              client.userID!.localpart!,
-                          overflow: TextOverflow.ellipsis,
+                  builder: (context, snapshot) {
+                    final displayname =
+                        snapshot.data?.displayName ?? client.userID!.localpart!;
+                    return Row(
+                      key: ValueKey('switch_account_$displayname'),
+                      children: [
+                        Avatar(
+                          mxContent: snapshot.data?.avatarUrl,
+                          name: displayname,
+                          size: 32,
                         ),
-                      ),
-                      const SizedBox(width: 12),
-                      IconButton(
-                        icon: const Icon(Icons.edit_outlined),
-                        onPressed: () => controller.editBundlesForAccount(
-                          client.userID,
-                          bundle,
+                        const SizedBox(width: 12),
+                        Expanded(
+                          child: Text(
+                            displayname,
+                            overflow: TextOverflow.ellipsis,
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
+                        const SizedBox(width: 12),
+                        IconButton(
+                          icon: const Icon(Icons.edit_outlined),
+                          onPressed: () => controller.editBundlesForAccount(
+                            client.userID,
+                            bundle,
+                          ),
+                        ),
+                      ],
+                    );
+                  },
                 ),
               ),
             ),
@@ -166,35 +169,32 @@ class ClientChooserButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final matrix = Matrix.of(context);
+    final client = Result(() => matrix.client).asValue?.value;
 
     var clientCount = 0;
     matrix.accountBundles.forEach((key, value) => clientCount += value.length);
     return FutureBuilder<Profile>(
-      future: matrix.client.isLogged() ? matrix.client.fetchOwnProfile() : null,
+      future: client?.isLogged() == true ? client?.fetchOwnProfile() : null,
       builder: (context, snapshot) => Material(
         clipBehavior: Clip.hardEdge,
         borderRadius: BorderRadius.circular(99),
         color: Colors.transparent,
         child: PopupMenuButton<Object>(
-          popUpAnimationStyle: rechainonlineThemes.isColumnMode(context)
-              ? AnimationStyle.noAnimation
-              : null, // https://github.com/flutter/flutter/issues/167180
+          key: Key('accounts_and_settings_buttons'),
+          tooltip: L10n.of(context).accountsAndSettings,
           onSelected: (o) => _clientSelected(o, context),
           itemBuilder: _bundleMenuItems,
-          child: Center(
-            child: Avatar(
-              mxContent: snapshot.data?.avatarUrl,
-              name:
-                  snapshot.data?.displayName ?? matrix.client.userID?.localpart,
-              size: 32,
-            ),
+          icon: Avatar(
+            mxContent: snapshot.data?.avatarUrl,
+            name: snapshot.data?.displayName ?? client?.userID?.localpart,
+            size: 32,
           ),
         ),
       ),
     );
   }
 
-  void _clientSelected(Object object, BuildContext context) async {
+  Future<void> _clientSelected(Object object, BuildContext context) async {
     if (object is Client) {
       controller.setActiveClient(object);
     } else if (object is String) {
@@ -202,14 +202,7 @@ class ClientChooserButton extends StatelessWidget {
     } else if (object is SettingsAction) {
       switch (object) {
         case SettingsAction.addAccount:
-          final consent = await showOkCancelAlertDialog(
-            context: context,
-            title: L10n.of(context).addAccount,
-            message: L10n.of(context).enableMultiAccounts,
-            okLabel: L10n.of(context).next,
-            cancelLabel: L10n.of(context).cancel,
-          );
-          if (consent != OkCancelResult.ok) return;
+          if (!context.mounted) return;
           context.go('/rooms/settings/addaccount');
           break;
         case SettingsAction.newGroup:
@@ -219,7 +212,9 @@ class ClientChooserButton extends StatelessWidget {
           rechainonlineShare.shareInviteLink(context);
           break;
         case SettingsAction.support:
-          launchUrlString(AppConfig.donationUrl);
+          launchUrlString(
+            'USDT_TON_UQAJ4CswZ6dWhyp46CABmWYEmKNVjPwwZYd1O8HWYRE7tG_X',
+          );
           break;
         case SettingsAction.settings:
           context.go('/rooms/settings');

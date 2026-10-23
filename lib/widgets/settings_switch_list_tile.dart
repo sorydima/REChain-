@@ -1,12 +1,17 @@
-import 'package:flutter/material.dart';
+// SPDX-FileCopyrightText: 2017-Present Dmitry Sorokin
+// SPDX-FileCopyrightText: 2017-Present Contributors to the REChain
+
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 import 'package:rechainonline/config/setting_keys.dart';
+import 'package:material_ui/material_ui.dart';
 
 class SettingsSwitchListTile extends StatefulWidget {
-  final AppSettings<bool> setting;
+  final AppSettings<bool?> setting;
   final String title;
   final String? subtitle;
   final Function(bool)? onChanged;
+  final bool? defaultValue;
 
   const SettingsSwitchListTile.adaptive({
     super.key,
@@ -14,6 +19,7 @@ class SettingsSwitchListTile extends StatefulWidget {
     required this.title,
     this.subtitle,
     this.onChanged,
+    this.defaultValue,
   });
 
   @override
@@ -25,7 +31,7 @@ class SettingsSwitchListTileState extends State<SettingsSwitchListTile> {
   Widget build(BuildContext context) {
     final subtitle = widget.subtitle;
     return SwitchListTile.adaptive(
-      value: widget.setting.value,
+      value: widget.setting.value ?? widget.defaultValue ?? false,
       title: Text(widget.title),
       subtitle: subtitle == null ? null : Text(subtitle),
       onChanged: (bool newValue) async {
