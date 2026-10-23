@@ -756,7 +756,7 @@ packages:
       sha256: "209e7661da113a5f889ae55d574c48f245145def64df9a9fcac04d147e6f9d4e"
       url: "https://pub.dev"
     source: hosted
-    version: "0.8.1"
+    version: "0.9.0"
   flutter_web_auth_2:
     dependency: "direct main"
     description:
@@ -2352,7 +2352,7 @@ packages:
       sha256: efce261575f7de97ebd052b16775cd57f940e8212af47d288050c166b9f9a167
       url: "https://pub.dev"
     source: hosted
-    version: "0.8.0"
+    version: "0.9.0"
   wakelock_plus:
     dependency: "direct main"
     description:
