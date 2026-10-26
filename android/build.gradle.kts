@@ -21,15 +21,23 @@ tasks.register<Delete>("clean") {
 }
 
 subprojects {
-    afterEvaluate {
-        val android = extensions.findByName("android")
-        if (android != null) {
-            try {
-                val method = android.javaClass.getMethod("compileSdkVersion", Int::class.javaPrimitiveType)
-                method.invoke(android, 35)
-            } catch (e: Exception) {
-                // Fallback for subprojects without android extension
+    if (project.name != "app") {
+        val updateCompileSdk = {
+            val android = project.extensions.findByName("android")
+            if (android != null) {
+                try {
+                    val method = android.javaClass.getMethod("compileSdkVersion", Int::class.javaPrimitiveType)
+                    method.invoke(android, 36)
+                } catch (e: Exception) {
+                    // Ignore
+                }
             }
+        }
+
+        if (project.state.executed) {
+            updateCompileSdk()
+        } else {
+            project.afterEvaluate { updateCompileSdk() }
         }
     }
 }
