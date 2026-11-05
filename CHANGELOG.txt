@@ -1,6 +1,6 @@
 # REChain Changelog
 
-## [v4.1.20+1161] - 2026-10-21
+## [v4.1.20+1162] - 2026-10-21
 
 ### Features & Improvements
 - Continued development of the REChain messaging experience.
@@ -24,7 +24,7 @@
 - Maintained the existing REChain and Matrix-oriented application architecture.
 
 ### Build
-- Updated application version to `4.1.20+1161`.
+- Updated application version to `4.1.20+1162`.
 - Prepared the release for distribution through supported REChain channels.
 
 ---
