@@ -205,3 +205,11 @@ web/e2ee.worker.dart.js.deps
 web/e2ee.worker.dart.js.map
 
 test/rust
+
+# Allow required web runtime binaries
+!web/native_executor.js
+!assets/assets/vodozemac/
+!assets/assets/vodozemac/**
+!web/pkg/
+!web/pkg/**
+!web/vodozemac_bindings_dart*
