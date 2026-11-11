@@ -36,5 +36,5 @@ If you see "App Installer could not install this package":
 For support: support@rechain.network
 
 ============================================
-       Copyright 2019-2025 REChain Inc
+       Copyright 2019-2026 REChain Inc
 ============================================
