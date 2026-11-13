@@ -23,31 +23,27 @@ description: |
 grade: stable
 confinement: strict
 
-parts:
-    build-packages:
-      - clang
-      - cmake
-      - curl
-      - libgtk-3-dev
-      - ninja-build
-      - unzip
-      - xz-utils
-      - zip
-    override-prime: ''
+apps:
+  rechainonline:
+    command: rechainonline
+    extensions: [gnome-3-38]
+    plugs:
+      - network
+      - network-bind
+      - audio-playback
+      - audio-record
+      - camera
+      - home
+      - removable-media
+      - screen-inhibit-control
+      - password-manager-service
 
+parts:
   rechainonline:
     source: build/linux/x64/release/bundle
     plugin: dump
-    build-packages:
-      - libsecret-1-dev
-      - libjsoncpp-dev
-      - libssl-dev
-      - curl
-      - libpciaccess-dev
-    build-snaps:
-      - rustup
     stage-packages:
       - libsecret-1-0
-      - libjsoncpp1
+      - libjsoncpp25
       - libpciaccess0
-      - libssl1.1   # ✅ Correct for core20 (Ubuntu 20.04)
+      - libssl3t64
