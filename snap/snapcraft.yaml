@@ -24,24 +24,6 @@ grade: stable
 confinement: strict
 
 parts:
-  flutter-git:
-    source: https://github.com/flutter/flutter.git
-    source-tag: 3.32.5
-    source-depth: 1
-    plugin: nil
-    override-build: |
-      set -e
-      INSTALL_DIR="${CRAFT_PART_INSTALL:-$SNAPCRAFT_PART_INSTALL}"
-      SRC_DIR="${CRAFT_PART_SRC:-$SNAPCRAFT_PART_SRC}"
-
-      mkdir -p "$INSTALL_DIR/usr/bin"
-      mkdir -p "$INSTALL_DIR/usr/libexec"
-
-      cp -r "$SRC_DIR" "$INSTALL_DIR/usr/libexec/flutter"
-      ln -s "$INSTALL_DIR/usr/libexec/flutter/bin/flutter" "$INSTALL_DIR/usr/bin/flutter"
-      ln -s "$INSTALL_DIR/usr/libexec/flutter/bin/dart" "$INSTALL_DIR/usr/bin/dart"
-
-      "$INSTALL_DIR/usr/bin/flutter" doctor
     build-packages:
       - clang
       - cmake
@@ -54,20 +36,8 @@ parts:
     override-prime: ''
 
   rechainonline:
-    after: [flutter-git]
-    plugin: nil
-    source: .
-    override-build: |
-      set -eu
-      STAGE_DIR="${CRAFT_STAGE:-$SNAPCRAFT_PART_INSTALL}"
-      export PATH="$PATH:$STAGE_DIR/usr/bin"
-
-      rm -rf build
-
-      flutter build linux --release -v
-
-      mkdir -p "$CRAFT_PART_INSTALL/bin"
-      cp -r build/linux/*/release/bundle/* "$CRAFT_PART_INSTALL/bin/"
+    source: build/linux/x64/release/bundle
+    plugin: dump
     build-packages:
       - libsecret-1-dev
       - libjsoncpp-dev
