@@ -1,11 +1,11 @@
 #!/bin/bash
 set -e
 
-# REChain Matrix Bridge Setup Bundle - Version 4.1.10+1160
+# REChain Matrix Bridge Setup Bundle - Version 4.1.20+1162
 # Installation script for Matrix bridge configurations
 # Compatible with Synapse 1.100+, Docker Compose 3.8+
 
-echo "REChain Matrix Bridge Setup Bundle v4.1.10+1160"
+echo "REChain Matrix Bridge Setup Bundle v4.1.20+1162"
 echo "================================================"
 echo ""
 
@@ -17,4 +17,4 @@ for file in /opt/matrix/bridges/*_registration.yaml; do
 done
 echo "Bridges setup files installed."
 echo ""
-echo "Bundle version: 4.1.10+1160 (Build 1160)"
+echo "Bundle version: 4.1.20+1162 (Build 1162)"

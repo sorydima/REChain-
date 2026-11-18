@@ -4,7 +4,7 @@
 
 ## Latest Release Information
 
-This deprecation schedule is current as of REChain version 4.1.10+1160, released on 2025-12-06.
+This deprecation schedule is current as of REChain version 4.1.20+1162, released on 2026-10-21.
 
 Please refer to [RELEASE_NOTES.md](./RELEASE_NOTES.md) for details on deprecated features and planned removals.
 

@@ -8,7 +8,7 @@ import 'package:flutter_test/flutter_test.dart';
 import '../users.dart';
 import 'wait_for.dart';
 
-// REChain Default Flows Extension - Version 4.1.10+1160
+// REChain Default Flows Extension - Version 4.1.20+1162
 // Common test flows for REChain $kAppVersion integration testing
 
 extension DefaultFlowExtensions on WidgetTester {

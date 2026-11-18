@@ -1,11 +1,11 @@
-/// Integration test version constants for REChain 4.1.10+1160
+/// Integration test version constants for REChain 4.1.20+1162
 /// This file contains version information used across integration tests
 
 /// The current app version being tested
-const String kAppVersion = '4.1.10+1160';
+const String kAppVersion = '4.1.20+1162';
 
 /// The build number for this version
-const int kBuildNumber = 1160;
+const int kBuildNumber = 1162;
 
 /// The app name for testing
 const String kAppName = 'REChain';

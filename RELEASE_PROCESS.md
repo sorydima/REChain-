@@ -3,15 +3,15 @@
 This document outlines the steps to release new versions of REChain and manage Shorebird patches.
 
 ## Current Version
-- 4.1.10+1160
+- 4.1.20+1162
 
-## Release Steps for Version 4.1.10+1160
+## Release Steps for Version 4.1.20+1162
 
-1. Update version numbers in all relevant files including CHANGELOG.md, RELEASE_NOTES.md, and other documentation.
+1. Update version numbers in all relevant files including pubspec.yaml, snap/snapcraft.yaml, CHANGELOG.md, CHANGELOG.txt, RELEASE_NOTES.md, and other documentation.
 2. Run all tests to ensure stability.
 3. Build release artifacts for all supported platforms.
 4. Update deployment scripts and configurations as needed.
-5. Tag the release in the version control system with `v4.1.10+1160`.
+5. Tag the release in the version control system with `v4.1.20+1162` (see [VERSION_CONTROL.md](./VERSION_CONTROL.md)).
 6. Publish release artifacts to distribution channels.
 7. Announce the release via official communication channels.
 8. Monitor post-release for any issues.

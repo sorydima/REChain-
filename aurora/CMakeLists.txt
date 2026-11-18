@@ -1,6 +1,6 @@
 # REChain Aurora OS Build Configuration
-# Version: 4.1.10+1160
-# Last Updated: 2025-12-06
+# Version: 4.1.20+1162
+# Last Updated: 2026-10-21
 
 cmake_minimum_required(VERSION 3.16)
 project(com.rechain.online LANGUAGES CXX)
@@ -8,7 +8,7 @@ project(com.rechain.online LANGUAGES CXX)
 #==============================================================================
 # Project Information
 #==============================================================================
-set(PROJECT_VERSION "4.1.10+1160")
+set(PROJECT_VERSION "4.1.20+1162")
 set(PROJECT_DESCRIPTION "REChain - Secure Matrix Client for Aurora OS")
 set(PROJECT_HOMEPAGE "https://online.rechain.network")
 set(PROJECT_AUTHOR "REChain Dream Team")

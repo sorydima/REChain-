@@ -4,7 +4,7 @@
 
 ## Latest Release Information
 
-This document is updated for REChain version 4.1.10+1160, released on 2025-12-06.
+This document is updated for REChain version 4.1.20+1162, released on 2026-10-21.
 
 ---
 
@@ -99,4 +99,4 @@ REChain Governance outlines the principles, structures, and processes that guide
 
 ---
 
-*This governance document is part of the REChain v4.1.10+1160 release documentation.*
+*This governance document is part of the REChain v4.1.20+1162 release documentation.*

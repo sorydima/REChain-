@@ -1,7 +1,7 @@
 #!/bin/bash
 # REChain Aurora OS Build Script
-# Version: 4.1.10+1160
-# Last Updated: 2025-12-06
+# Version: 4.1.20+1162
+# Last Updated: 2026-10-21
 
 set -e
 
@@ -19,7 +19,7 @@ NC='\033[0m' # No Color
 # Configuration
 #==============================================================================
 PROJECT_NAME="com.rechain.online"
-VERSION="4.1.10+1160"
+VERSION="4.1.20+1162"
 BUILD_TYPE="${1:-Release}"
 ARCHITECTURE="${2:-armv7l}"
 BUILD_DIR="build"

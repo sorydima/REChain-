@@ -1,6 +1,15 @@
 # REChain Aurora OS Changelog
-# Version: 4.1.10+1160
-# Last Updated: 2025-12-06
+# Version: 4.1.20+1162
+# Last Updated: 2026-10-21
+
+---
+
+## v4.1.20+1162 (2026-10-21)
+
+### Changed
+- ✅ Synced Aurora packaging and documentation with REChain 4.1.20+1162
+- ✅ Included core messaging, navigation and UI state stability improvements
+- ✅ Updated build metadata, changelog and version references
 
 ---
 

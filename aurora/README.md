@@ -1,6 +1,6 @@
 # REChain Aurora OS README
-# Version: 4.1.10+1160
-# Last Updated: 2025-12-06
+# Version: 4.1.20+1162
+# Last Updated: 2026-10-21
 
 ---
 
@@ -55,20 +55,20 @@ Matrix protocol with deep integration into Aurora OS features.
 
 ```bash
 # Download the RPM package
-wget https://github.com/sorydima/REChain-/releases/download/v4.1.10+1160/com.rechain.online-4.1.10+1160-1.armv7hl.rpm
+wget https://github.com/sorydima/REChain-/releases/download/v4.1.20+1162/com.rechain.online-4.1.20+1162-1.armv7hl.rpm
 
 # Install
-sudo rpm -ivh com.rechain.online-4.1.10+1160-1.armv7hl.rpm
+sudo rpm -ivh com.rechain.online-4.1.20+1162-1.armv7hl.rpm
 ```
 
 #### DEB Package
 
 ```bash
 # Download the DEB package
-wget https://github.com/sorydima/REChain-/releases/download/v4.1.10+1160/com.rechain.online_4.1.10+1160_armhf.deb
+wget https://github.com/sorydima/REChain-/releases/download/v4.1.20+1162/com.rechain.online_4.1.20+1162_armhf.deb
 
 # Install
-sudo dpkg -i com.rechain.online_4.1.10+1160_armhf.deb
+sudo dpkg -i com.rechain.online_4.1.20+1162_armhf.deb
 sudo apt-get install -f  # Fix dependencies
 ```
 

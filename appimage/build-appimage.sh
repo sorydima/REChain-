@@ -1,6 +1,6 @@
 #!/bin/bash
 # REChain AppImage Build Script
-# Version: 4.1.10+1160
+# Version: 4.1.20+1162
 set -e
 
 # Colors for output
@@ -12,7 +12,7 @@ NC='\033[0m' # No Color
 
 # Configuration
 APP_NAME="REChain"
-VERSION="4.1.10+1160"
+VERSION="4.1.20+1162"
 ARCH="${1:-x86_64}"
 APP_DIR="REChain.AppDir"
 OUTPUT_DIR="output"

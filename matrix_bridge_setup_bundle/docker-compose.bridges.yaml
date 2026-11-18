@@ -1,7 +1,7 @@
-# REChain Matrix Bridge Setup Bundle v4.1.10+1160
+# REChain Matrix Bridge Setup Bundle v4.1.20+1162
 # Docker Compose configuration for Matrix bridges (standalone)
 # Compatible with Synapse 1.100+, Docker Compose 3.8+
-# Build: 1160
+# Build: 1162
 
 version: '3.8'
 services:

@@ -56,9 +56,9 @@ Thank you for considering contributing! We welcome all kinds of contributions:
 CHANGELOG.md
 # Changelog
 
-## 4.1.10+1160 — 2026-01-23
-- Updated to version 4.1.10+1160
-- Build 1160 for AuroraOS
+## 4.1.20+1162 — 2026-01-23
+- Updated to version 4.1.20+1162
+- Build 1162 for AuroraOS
 - Enhanced PWA functionality
 - Improved offline caching
 - Better Aurora OS integration
@@ -180,9 +180,9 @@ Thank you for considering contributing! We welcome all kinds of contributions:
 CHANGELOG.md
 # Changelog
 
-## 4.1.10+1160 — 2026-01-23
-- Updated to version 4.1.10+1160
-- Build 1160 for AuroraOS
+## 4.1.20+1162 — 2026-01-23
+- Updated to version 4.1.20+1162
+- Build 1162 for AuroraOS
 - Enhanced PWA functionality
 - Improved offline caching
 - Better Aurora OS integration
@@ -240,7 +240,7 @@ REChainPWAForAuroraOS/
 
 ## 🌐 GitHub Pages (предпросмотр)
 
-**Version: 4.1.10+1160** | **Build: 1160**
+**Version: 4.1.20+1162** | **Build: 1162**
 
 Проект можно просматривать в браузере по ссылке:
 [https://sorydima.github.io/REChain-/REChainPWAForAuroraOS/](https://sorydima.github.io/REChain-/REChainPWAForAuroraOS/)

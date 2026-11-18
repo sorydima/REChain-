@@ -22,7 +22,7 @@ Download pre-built AppImages from:
 
 ## 📦 What's Included
 
-- REChain Application (v4.1.10+1160)
+- REChain Application (v4.1.20+1162)
 - Matrix Protocol Support
 - Blockchain Integration (TON, Ethereum, Bitget)
 - IPFS Decentralized Storage
@@ -58,7 +58,7 @@ cp AppRun REChain.AppDir/
 
 # 5. Build the AppImage
 chmod +x appimagetool
-./appimagetool REChain.AppDir REChain-4.1.10+1160-x86_64.AppImage
+./appimagetool REChain.AppDir REChain-4.1.20+1162-x86_64.AppImage
 ```
 
 ### Optional: Multi-Architecture Build
@@ -72,7 +72,7 @@ mkdir -p REChain-arm64.AppDir
 cp -r build/linux/arm64/release/bundle/* REChain-arm64.AppDir/
 
 # Build arm64 AppImage
-./appimagetool REChain-arm64.AppDir REChain-4.1.10+1160-arm64.AppImage
+./appimagetool REChain-arm64.AppDir REChain-4.1.20+1162-arm64.AppImage
 ```
 
 ## 📋 AppDir Structure

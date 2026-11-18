@@ -1,8 +1,8 @@
 
 # Matrix Bridges Final Installer
 
-**Version:** 4.1.10+1160  
-**Build:** 1160  
+**Version:** 4.1.20+1162  
+**Build:** 1162  
 **Release Date:** 2025
 
 Этот архив содержит:
@@ -14,7 +14,7 @@
 
 - **Synapse Version:** 1.100+
 - **Docker Compose:** 3.8+
-- **REChain Version:** 4.1.10+1160
+- **REChain Version:** 4.1.20+1162
 
 ## Использование
 

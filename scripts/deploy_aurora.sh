@@ -119,7 +119,7 @@ setup_deployment_environment() {
     
     # Set deployment metadata
     export DEPLOY_TIMESTAMP=$(date +%Y%m%d-%H%M%S)
-    export DEPLOY_VERSION="4.1.10+1160-$DEPLOY_TIMESTAMP"
+    export DEPLOY_VERSION="4.1.20+1162-$DEPLOY_TIMESTAMP"
     export DEPLOY_BUILD_ID="aurora-$TARGET_ARCH-$DEPLOY_TIMESTAMP"
     
     log_success "Deployment environment configured"
@@ -249,7 +249,7 @@ EOF
     
     # Create source tarball
     local source_dir="$rpm_build_dir/SOURCES"
-    tar -czf "$source_dir/rechain-4.1.10+1160.tar.gz" \
+    tar -czf "$source_dir/rechain-4.1.20+1162.tar.gz" \
         -C "$PROJECT_ROOT" \
         --exclude=".git" \
         --exclude="build" \
@@ -273,7 +273,7 @@ create_deb_package() {
     log_info "Creating DEB package..."
     
     local deb_build_dir="$DEPLOY_DIR/debbuild"
-    local package_dir="$deb_build_dir/rechain_4.1.10+1160_$TARGET_ARCH"
+    local package_dir="$deb_build_dir/rechain_4.1.20+1162_$TARGET_ARCH"
     
     # Setup DEB package structure
     mkdir -p "$package_dir"/{DEBIAN,usr/bin,usr/share/applications,usr/share/icons/hicolor/128x128/apps,etc/rechain}
@@ -288,7 +288,7 @@ create_deb_package() {
     # Create control file
     cat > "$package_dir/DEBIAN/control" << EOF
 Package: rechain
-Version: 4.1.10+1160
+Version: 4.1.20+1162
 Section: net
 Priority: optional
 Architecture: $TARGET_ARCH
@@ -303,7 +303,7 @@ EOF
     
     # Build DEB package
     cd "$deb_build_dir"
-    dpkg-deb --build "rechain_4.1.10+1160_$TARGET_ARCH"
+    dpkg-deb --build "rechain_4.1.20+1162_$TARGET_ARCH"
     
     # Copy to packages directory
     cp *.deb "$DEPLOY_DIR/packages/"
@@ -456,7 +456,7 @@ deploy_aurora_store() {
     "package": {
         "name": "rechain",
         "displayName": "REChain",
-        "version": "4.1.10+1160",
+        "version": "4.1.20+1162",
         "category": "Communication",
         "description": "Secure Matrix client for Aurora OS",
         "developer": "REChain Team",

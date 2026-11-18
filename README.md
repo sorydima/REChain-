@@ -591,10 +591,9 @@ Harmony OS specific assets should be placed in `android/app/src/harmonyos/res/` 
 
 ---
 
-## 📢 Release v4.1.10+1160 - 2025-12-06
+## 📢 Release v4.1.20+1162 - 2026-10-21
 
-We are excited to announce the release of REChain version 4.1.10+1160! This release brings major integrations including Matrix, Telegram, blockchain, IPFS, and AI services, along with a dynamic plugin system, unified APIs, and enhanced developer and user experiences.
-
+We are excited to announce the release of REChain version 4.1.20+1162! This is a stability-focused release: the messaging experience, room navigation, attachments and media handling are more consistent, UI state is more reliable during dialogs, menus and screen transitions, and asynchronous operations behave better across all supported desktop and mobile platforms.
 
 For detailed information, please see the [CHANGELOG](./CHANGELOG.md) and [RELEASE NOTES](./RELEASE_NOTES.md).
 

@@ -1,11 +1,11 @@
 
 name: matrix-ultimate
 base: core22
-version: '4.1.10+1160'
-summary: Matrix Ultimate Bundle - REChain v4.1.10+1160
+version: '4.1.20+1162'
+summary: Matrix Ultimate Bundle - REChain v4.1.20+1162
 description: |
   Full self-hosted Matrix server bundle with bridges and Element.
-  REChain Matrix Bridge Setup Bundle v4.1.10+1160
+  REChain Matrix Bridge Setup Bundle v4.1.20+1162
 
 confinement: strict
 

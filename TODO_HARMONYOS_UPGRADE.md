@@ -1,5 +1,7 @@
 # HarmonyOS Version 4.1.10+1160 Upgrade TODO List
 
+> **Archived:** completed for `4.1.10+1160`. The current release is `4.1.20+1162` — see [CHANGELOG.md](./CHANGELOG.md) and [VERSION_CONTROL.md](./VERSION_CONTROL.md).
+
 ## Files to Update:
 
 1. [x] harmonyos/entry/src/main/ets/pages/Index.ets - Update version display

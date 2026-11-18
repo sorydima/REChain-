@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 
-// REChain Wait For Extension - Version 4.1.10+1160
+// REChain Wait For Extension - Version 4.1.20+1162
 // Utility extensions for REChain $kAppVersion integration testing
 
 /// Workaround for https://github.com/flutter/flutter/issues/88765

@@ -1,4 +1,4 @@
-# F-Droid Repository Configuration for REChain v4.1.10+1160
+# F-Droid Repository Configuration for REChain v4.1.20+1162
 
 This directory contains the F-Droid repository configuration for REChain platform builds.
 
@@ -8,27 +8,27 @@ This directory contains the F-Droid repository configuration for REChain platfor
 - Production-ready stable releases
 - Recommended for general users
 - Includes security updates and bug fixes
-- Version: 4.1.10+1160
+- Version: 4.1.20+1162
 
 ### Stable Repository (`config.stable.py`)
 - Enterprise-grade stable builds
 - Extended testing and validation
 - Long-term support included
-- Version: 4.1.10+1160-stable
+- Version: 4.1.20+1162-stable
 
 ### Nightly Repository (`config.nightly.py`)
 - Development and nightly builds
 - Latest features and improvements
 - For testing and development only
 - ⚠️ Not recommended for production use
-- Version: 4.1.10+1160-nightly
+- Version: 4.1.20+1162-nightly
 
 ## Application Metadata
 
 ### com.rechain.online.yml
 - F-Droid metadata for REChain Android application
 - Includes build configuration, descriptions, and update settings
-- Version: 4.1.10+1160
+- Version: 4.1.20+1162
 
 ## Setup Instructions
 
@@ -123,10 +123,11 @@ For support and questions:
 
 ## Version History
 
+- **v4.1.20+1162** (2026-10-21): Messaging, navigation and UI stability improvements
 - **v4.1.10+1160** (2025-01-09): Enhanced security, performance optimizations, new features
 - **v4.1.9+1159** (2024-12-15): Bug fixes and stability improvements
 - **v4.1.8+1158** (2024-11-20): UI/UX enhancements and accessibility improvements
 
 ---
 
-*Updated for REChain v4.1.10+1160 - 2025-01-09*
+*Updated for REChain v4.1.20+1162 - 2026-10-21*

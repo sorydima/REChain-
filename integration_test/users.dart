@@ -1,4 +1,4 @@
-// REChain Integration Test Users - Version 4.1.10+1160
+// REChain Integration Test Users - Version 4.1.20+1162
 // Test user definitions for REChain $kAppVersion integration testing
 
 import 'version.dart';

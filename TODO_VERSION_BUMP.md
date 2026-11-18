@@ -1,6 +1,8 @@
 # Scripts Version Upgrade TODO
 # Target version: 4.1.10+1160
 
+> **Archived:** completed for `4.1.10+1160`. The current release is `4.1.20+1162` — see [CHANGELOG.md](./CHANGELOG.md) and [VERSION_CONTROL.md](./VERSION_CONTROL.md).
+
 ## Phase 1: Core Scripts - COMPLETED
 - [x] Update scripts/deploy_aurora.sh - Replace all hardcoded 4.1.10 with 4.1.10+1160
 - [x] Update scripts/test_aurora.sh - Update test configuration version

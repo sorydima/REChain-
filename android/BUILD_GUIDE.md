@@ -1,5 +1,5 @@
 # REChain Android Build Configuration
-# Version: 4.1.10+1160
+# Version: 4.1.20+1162
 
 ## Build Variants
 ### Standard Flavors
@@ -33,7 +33,7 @@
 
 ## Version Management
 - **versionCode**: Incremented for each release
-- **versionName**: Semantic versioning (e.g., 4.1.10+1160)
+- **versionName**: Semantic versioning (e.g., 4.1.20+1162)
 - **versionName displayed**: User-facing version (e.g., 4.1.10)
 
 ## SDK Configuration

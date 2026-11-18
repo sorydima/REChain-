@@ -1,5 +1,5 @@
-# F-Droid Metadata for REChain v4.1.10+1160
-# Updated on 2025-01-09 for enhanced features and security
+# F-Droid Metadata for REChain v4.1.20+1162
+# Updated on 2026-10-21 for enhanced features and security
 
 Categories:
   - Internet
@@ -19,7 +19,7 @@ Donate: https://rechain.network/donate
 AutoName: REChain ®️ 🪐 ✨
 Summary: "Advanced Matrix-based communication platform with AI-powered security and privacy features for modern decentralized messaging.\n"
 Description: |
-    REChain ®️ 🪐 ✨ v4.1.10+1160 - Advanced Matrix-based communication platform with enhanced security, privacy features, and modern messaging capabilities.
+    REChain ®️ 🪐 ✨ v4.1.20+1162 - Advanced Matrix-based communication platform with enhanced security, privacy features, and modern messaging capabilities.
 
     REChain ®️ 🪐 ✨ is a cutting-edge communication platform designed as a comprehensive security and privacy analysis tool, fully focused on platform moments and messages for communication. Built on advanced source code libraries developed by our team, it's created for those who respect freedom, privacy, and the safety of personal data. 🌤
 
@@ -27,7 +27,7 @@ Description: |
 
     Written in Flutter with modern architecture, our goal is to create an easy-to-use instant messenger that's open source and accessible to everyone.
 
-    🚀 **Enhanced Features in v4.1.10+1160:**
+    🚀 **Enhanced Features in v4.1.20+1162:**
 
     📩 **Advanced Messaging**: Send all kinds of messages, images, files, and media!
     🎙️ **Voice & Audio**: High-quality voice messages and audio sharing!
@@ -83,7 +83,7 @@ Description: |
     - Security Audits: 15+ independent security audits passed
     - Uptime: 99.9% service availability
 
-    🌟 **What's New in v4.1.10+1160:**
+    🌟 **What's New in v4.1.20+1162:**
     - Enhanced AI-powered security features
     - Improved performance for large deployments
     - New enterprise collaboration tools
@@ -98,9 +98,9 @@ Repo: https://github.com/sorydima/REChain-.git
 
 # Build configuration
 Builds:
-  - versionName: 4.1.10+1160
-    versionCode: 41101160
-    commit: v4.1.10+1160
+  - versionName: 4.1.20+1162
+    versionCode: 41201162
+    commit: v4.1.20+1162
     subdir: android
     gradle:
       - yes
@@ -109,8 +109,8 @@ Builds:
 AutoUpdateMode: Version
 UpdateCheckMode: Tags
 UpdateCheckData: pubspec.yaml|version:\s.+\+(.+)|.|version:\s(.+)\+
-CurrentVersion: 4.1.10+1160
-CurrentVersionCode: 41101160
+CurrentVersion: 4.1.20+1162
+CurrentVersionCode: 41201162
 
 # Additional metadata
 AntiFeatures:

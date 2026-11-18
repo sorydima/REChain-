@@ -1,15 +1,15 @@
 # REChain Military Personnel Management System
 ## Classification: SECRET/NOFORN
-## Version: 4.1.10+1160
-## Bundle: REChain Military Documentation v4.1.10+1160
+## Version: 4.1.20+1162
+## Bundle: REChain Military Documentation v4.1.20+1162
 ### For Official Use Only
 
 ---
 
-**Document Version:** 4.1.10+1160  
-**Bundle Version:** REChain Military Documentation 4.1.10+1160  
-**Build:** 1160  
-**Release Date:** 2025
+**Document Version:** 4.1.20+1162  
+**Bundle Version:** REChain Military Documentation 4.1.20+1162  
+**Build:** 1162  
+**Release Date:** 2026
 
 ## 1. Personnel Management Overview
 

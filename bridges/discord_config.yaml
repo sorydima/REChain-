@@ -1,4 +1,4 @@
-# discord config.yaml - Upgraded for REChain v4.1.10+1160
+# discord config.yaml - Upgraded for REChain v4.1.20+1162
 # Enhanced with modern features, performance optimizations, and security improvements
 
 homeserver:
@@ -206,6 +206,6 @@ backup:
 migration:
   enabled: false
   from_version: null
-  to_version: "4.1.10+1160"
+  to_version: "4.1.20+1162"
   backup_before_migration: true
 

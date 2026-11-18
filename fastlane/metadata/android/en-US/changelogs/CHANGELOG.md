@@ -1,3 +1,24 @@
+## [v4.1.20+1162] - 2026-10-21
+
+### Features & Improvements
+- Improved consistency across messaging, room navigation and conversation interactions
+- Refined handling of messages, attachments and media content
+- Improved application behavior across supported desktop and mobile platforms
+
+### Stability & Bug Fixes
+- Improved UI state handling during dialogs, menus and screen transitions
+- Refined error handling and asynchronous UI operations
+- Improved reliability when opening conversations and interacting with chat components
+
+### Performance & Reliability
+- Optimized application behavior for a smoother user experience
+- Improved resource handling and general runtime reliability
+
+### Build
+- Updated application version to `4.1.20+1162`
+
+---
+
 ## [v4.1.10+1160] - 2025-12-06
 
 ### Major Features & Integrations

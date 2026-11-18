@@ -17,7 +17,7 @@ import 'extensions/wait_for.dart';
 import 'users.dart';
 import 'version.dart';
 
-// REChain Integration Tests - Version 4.1.10+1160
+// REChain Integration Tests - Version 4.1.20+1162
 // Tests for validating app functionality with REChain $kAppVersion
 
 void main() {

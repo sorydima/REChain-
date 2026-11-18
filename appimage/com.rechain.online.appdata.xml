@@ -55,6 +55,18 @@
   </screenshots>
   
   <releases>
+    <release version="4.1.20+1162" date="2026-10-21">
+      <description>
+        <p>Stability and messaging release:</p>
+        <ul>
+          <li>Refined messaging, room navigation and conversation interactions</li>
+          <li>Improved message, attachment and media handling</li>
+          <li>More reliable UI state during dialogs, menus and transitions</li>
+          <li>Improved error handling and asynchronous UI operations</li>
+          <li>General performance and runtime reliability improvements</li>
+        </ul>
+      </description>
+    </release>
     <release version="4.1.10+1160" date="2025-12-06">
       <description>
         <p>Major release with enhanced features:</p>

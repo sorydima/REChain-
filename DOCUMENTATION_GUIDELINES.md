@@ -4,7 +4,7 @@
 
 ## Latest Release Information
 
-This documentation is maintained for REChain version 4.1.10+1160, released on 2025-12-06. Please ensure all documentation updates correspond to this release.
+This documentation is maintained for REChain version 4.1.20+1162, released on 2026-10-21. Please ensure all documentation updates correspond to this release.
 
 For detailed release notes, see [RELEASE_NOTES.md](./RELEASE_NOTES.md).
 

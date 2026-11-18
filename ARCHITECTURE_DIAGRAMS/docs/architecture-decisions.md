@@ -2,10 +2,10 @@
 
 ## 📋 Overview
 
-This document records key architectural decisions made for REChain v4.1.10+1160.
+This document records key architectural decisions made for REChain v4.1.20+1162.
 
-**Version:** 4.1.10+1160  
-**Last Updated:** 2025-12-06
+**Version:** 4.1.20+1162
+**Last Updated:** 2026-10-21
 
 ---
 
@@ -329,6 +329,7 @@ Adopt Kubernetes for container orchestration with Helm charts.
 
 | Version | Date | Description |
 |---------|------|-------------|
+| 4.1.20+1162 | 2026-10-21 | Version sync; no new ADRs in this release |
 | 4.1.10+1160 | 2025-12-06 | Added AI Services ADR |
 | 4.1.10+1152 | 2025-07-08 | Initial ADRs documented |
 

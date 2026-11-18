@@ -1,6 +1,6 @@
 # REChain Aurora OS Build Guide
-# Version: 4.1.10+1160
-# Last Updated: 2025-12-06
+# Version: 4.1.20+1162
+# Last Updated: 2026-10-21
 
 ---
 
@@ -229,7 +229,7 @@ sudo make install
 cpack -G RPM
 
 # Install RPM
-sudo rpm -ivh com.rechain.online-4.1.10+1160-1.armv7hl.rpm
+sudo rpm -ivh com.rechain.online-4.1.20+1162-1.armv7hl.rpm
 ```
 
 ### DEB Package Installation
@@ -239,7 +239,7 @@ sudo rpm -ivh com.rechain.online-4.1.10+1160-1.armv7hl.rpm
 cpack -G DEB
 
 # Install DEB
-sudo dpkg -i com.rechain.online_4.1.10+1160_armhf.deb
+sudo dpkg -i com.rechain.online_4.1.20+1162_armhf.deb
 
 # Fix dependencies if needed
 sudo apt-get install -f
@@ -368,7 +368,7 @@ cd build
 cpack -G RPM
 
 # Result:
-# com.rechain.online-4.1.10+1160-1.armv7hl.rpm
+# com.rechain.online-4.1.20+1162-1.armv7hl.rpm
 ```
 
 ### Build DEB Package
@@ -378,7 +378,7 @@ cd build
 cpack -G DEB
 
 # Result:
-# com.rechain.online_4.1.10+1160_armhf.deb
+# com.rechain.online_4.1.20+1162_armhf.deb
 ```
 
 ### Build Source Package
@@ -388,7 +388,7 @@ cd build
 cpack -G TXZ
 
 # Result:
-# com.rechain.online-4.1.10+1160.tar.xz
+# com.rechain.online-4.1.20+1162.tar.xz
 ```
 
 ### Build AppImage (for testing)
@@ -399,7 +399,7 @@ wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appima
 chmod +x appimagetool-x86_64.AppImage
 
 # Build
-./appimagetool-x86_64.AppImage bundle/ rechainonline-4.1.10+1160-x86_64.AppImage
+./appimagetool-x86_64.AppImage bundle/ rechainonline-4.1.20+1162-x86_64.AppImage
 ```
 
 ---
@@ -529,6 +529,7 @@ ms_print massif.out.*
 
 | Version | Date | Changes |
 |---------|------|---------|
+| 4.1.20+1162 | 2026-10-21 | Version sync and messaging stability updates |
 | 4.1.10+1160 | 2025-12-06 | Updated for Aurora OS 4.2 |
 | 4.1.10+1152 | 2025-07-08 | Initial Aurora OS support |
 | 4.1.9+1147 | 2025-06-01 | Pre-release documentation |

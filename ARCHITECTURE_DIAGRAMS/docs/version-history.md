@@ -4,14 +4,24 @@
 
 This document tracks changes to architecture diagrams in the REChain project.
 
-**Current Version:** 4.1.10+1160  
-**Last Updated:** 2025-12-06
+**Current Version:** 4.1.20+1162
+**Last Updated:** 2026-10-21
 
 ---
 
 ## 📊 Version Comparison
 
-### v4.1.10+1160 (2025-12-06) - Current
+### v4.1.20+1162 (2026-10-21) - Current
+
+#### Changes
+
+- Version synchronized with the core REChain release `4.1.20+1162`
+- Messaging, room navigation and UI state refinements reflected in the diagrams
+- No structural architecture changes in this release
+
+---
+
+### v4.1.10+1160 (2025-12-06)
 
 #### New Diagrams Added
 
@@ -62,7 +72,7 @@ This document tracks changes to architecture diagrams in the REChain project.
 
 ## 📁 File Manifest
 
-### Current Structure (v4.1.10+1160)
+### Current Structure (v4.1.20+1162)
 
 ```
 ARCHITECTURE_DIAGRAMS/
@@ -122,7 +132,7 @@ ARCHITECTURE_DIAGRAMS/
 
 ## 📈 Statistics
 
-### v4.1.10+1160
+### v4.1.20+1162 (unchanged from v4.1.10+1160)
 
 - **Total Diagrams:** 14
 - **Mermaid Diagrams:** 10

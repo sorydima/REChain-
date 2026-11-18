@@ -1,0 +1,9 @@
+REChain 4.1.20+1162
+
+• Smoother, more consistent messaging and room navigation
+• More reliable UI state during dialogs, menus and transitions
+• Improved message, attachment and media handling
+• Better error handling and asynchronous UI operations
+• General performance and runtime reliability improvements
+
+No breaking changes — safe upgrade from 4.1.10+1160.

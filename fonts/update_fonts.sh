@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# REChain Fonts Update Script v4.1.10+1160
-# Updated: 2025-01-09
+# REChain Fonts Update Script v4.1.20+1162
+# Updated: 2026-10-21
 # This script updates fonts to the latest versions and validates integrity
 
 set -e
@@ -266,7 +266,7 @@ test_flutter_integration() {
 
 # Main update function
 main() {
-    log_info "REChain Fonts Update Script v4.1.10+1160"
+    log_info "REChain Fonts Update Script v4.1.20+1162"
     log_info "Starting font update process..."
 
     check_dependencies

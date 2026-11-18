@@ -4,8 +4,8 @@
 
 This guide explains how to create, edit, and maintain architecture diagrams for REChain.
 
-**Version:** 4.1.10+1160  
-**Last Updated:** 2025-12-06
+**Version:** 4.1.20+1162  
+**Last Updated:** 2026-10-21
 
 ---
 
