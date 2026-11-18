@@ -75,10 +75,6 @@ shorebird patch android
 - [Shorebird Documentation](https://docs.shorebird.dev/)
 - [Shorebird Code Push Package](https://pub.dev/packages/shorebird_code_push)
 
-https://api.codemagic.io/apps/688f97e647fd81ea2dff2a29/688f97e647fd81ea2dff2a28/status_badge.svg
-
-[![Codemagic build status](https://api.codemagic.io/apps/688f97e647fd81ea2dff2a29/688f97e647fd81ea2dff2a28/status_badge.svg)](https://codemagic.io/app/688f97e647fd81ea2dff2a29/688f97e647fd81ea2dff2a28/latest_build)
-
 # REChain: Digital Infrastructure of Autonomous Organizations
 
 <!--
@@ -86,7 +82,7 @@ https://api.codemagic.io/apps/688f97e647fd81ea2dff2a29/688f97e647fd81ea2dff2a28/
   Example: https://github.com/<owner>/<repo>/actions/workflows/<workflow_file>.yml/badge.svg
 -->
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
-[![Flutter](https://img.shields.io/badge/Flutter-3.32.8-blue.svg)](https://flutter.dev)
+[![Flutter](https://img.shields.io/badge/Flutter-3.47.9-blue.svg)](https://flutter.dev)
 [![Matrix](https://img.shields.io/badge/Matrix-Protocol-green.svg)](https://matrix.org)
 
 > **REChain is the foundational "Digital Spine" for the next generation of autonomous organizations, bridging the gap between traditional enterprise systems and emerging Web4.0 technologies.**
