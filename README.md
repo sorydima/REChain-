@@ -1,6 +1,6 @@
-https://api.codemagic.io/apps/696b69023ad5d03b17ee073f/696b69023ad5d03b17ee073e/status_badge.svg
+https://api.codemagic.io/apps/66841ff8a7038504acaa04bf/66841ff8a7038504acaa04be/status_badge.svg
 
-[![Codemagic build status](https://api.codemagic.io/apps/696b69023ad5d03b17ee073f/696b69023ad5d03b17ee073e/status_badge.svg)](https://codemagic.io/app/696b69023ad5d03b17ee073f/696b69023ad5d03b17ee073e/latest_build)
+[![Codemagic build status](https://api.codemagic.io/apps/66841ff8a7038504acaa04bf/66841ff8a7038504acaa04be/status_badge.svg)](https://codemagic.io/app/66841ff8a7038504acaa04bf/66841ff8a7038504acaa04be/latest_build)
 
 ## 🐦 Shorebird Integration (Code Push Updates)
 
