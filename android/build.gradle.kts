@@ -3,6 +3,15 @@ allprojects {
         google()
         mavenCentral()
     }
+
+    configurations.all {
+        resolutionStrategy {
+            force(
+                "androidx.core:core:1.17.0",
+                "androidx.core:core-ktx:1.17.0"
+            )
+        }
+    }
 }
 
 val newBuildDir: Directory = rootProject.layout.buildDirectory.dir("../../build").get()
@@ -12,6 +21,7 @@ subprojects {
     val newSubprojectBuildDir: Directory = newBuildDir.dir(project.name)
     project.layout.buildDirectory.value(newSubprojectBuildDir)
 }
+
 subprojects {
     project.evaluationDependsOn(":app")
 }
@@ -27,7 +37,7 @@ subprojects {
             if (android != null) {
                 try {
                     val method = android.javaClass.getMethod("compileSdkVersion", Int::class.javaPrimitiveType)
-                    method.invoke(android, 36)
+                    method.invoke(android, 37)
                 } catch (e: Exception) {
                     // Ignore
                 }
