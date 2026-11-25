@@ -13,7 +13,7 @@ if (file("google-services.json").exists()) {
 
 dependencies {
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4") // For flutter_local_notifications // Workaround for: https://github.com/MaikuB/flutter_local_notifications/issues/2286
-    implementation("androidx.core:core-ktx:1.17.0") // For Android Auto
+    implementation("androidx.core:core-ktx:1.19.0") // For Android Auto
     implementation("androidx.work:work-runtime-ktx:2.10.0")
     implementation("androidx.lifecycle:lifecycle-service:2.8.7")
     implementation("com.jakewharton.timber:timber:5.0.1")
@@ -21,14 +21,13 @@ dependencies {
 }
 
 // Workaround for https://pub.dev/packages/unifiedpush#the-build-fails-because-of-duplicate-classes
-// and transitive androidx.core 1.19.0 AAR metadata mismatch
 configurations.all {
     val tink = "com.google.crypto.tink:tink-android:1.23.0"
     resolutionStrategy {
         force(
             tink,
-            "androidx.core:core:1.17.0",
-            "androidx.core:core-ktx:1.17.0"
+            "androidx.core:core:1.19.0",
+            "androidx.core:core-ktx:1.19.0"
         )
         dependencySubstitution {
             substitute(module("com.google.crypto.tink:tink")).using(module(tink))
