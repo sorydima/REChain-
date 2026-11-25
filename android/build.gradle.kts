@@ -7,8 +7,8 @@ allprojects {
     configurations.all {
         resolutionStrategy {
             force(
-                "androidx.core:core:1.17.0",
-                "androidx.core:core-ktx:1.17.0"
+                "androidx.core:core:1.19.0",
+                "androidx.core:core-ktx:1.19.0"
             )
         }
     }
