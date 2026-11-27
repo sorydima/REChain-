@@ -98,7 +98,7 @@ require (
 	github.com/golang/snappy v0.0.4 // indirect
 	github.com/google/go-tpm v0.9.8 // indirect
 	github.com/h2non/filetype v1.1.3 // indirect
-	github.com/hjson/hjson-go/v4 v4.4.0 // indirect
+	github.com/hjson/hjson-go/v4 v4.5.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/juju/errors v1.0.0 // indirect
 	github.com/klauspost/compress v1.18.4 // indirect
