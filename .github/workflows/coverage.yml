@@ -61,7 +61,7 @@ jobs:
           python3 scripts/generate_badge.py coverage/lcov.info coverage/badges/coverage.svg
           
       - name: Upload artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: coverage-reports
           path: |
@@ -80,7 +80,7 @@ jobs:
           
       - name: Archive coverage history
         if: ${{ github.event_name == 'push' }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: coverage-history
           path: coverage/history/
